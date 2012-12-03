@@ -1,4 +1,5 @@
-usr/bin
-usr/lib/lib*-1.1.0.so
-usr/lib/openrtm-1.1/ec/RTPreemptEC.so.0
-usr/lib/openrtm-1.1/sdo/ComponentObserverConsumer.so.0
+usr/bin/rtc*
+usr/bin/rtm*
+usr/lib/libRTC-1.1.0.so
+usr/lib/openrtm-1.1/ec/RTPreemptEC.so*
+usr/lib/openrtm-1.1/sdo/ComponentObserverConsumer.so*
