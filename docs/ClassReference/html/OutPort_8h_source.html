@@ -1,0 +1,180 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<title>OpenRTM: OutPort.h ソースファイル</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<!-- 作成： Doxygen 1.6.3 -->
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="index.html"><span>メインページ</span></a></li>
+      <li><a href="namespaces.html"><span>ネームスペース</span></a></li>
+      <li><a href="annotated.html"><span>クラス</span></a></li>
+      <li class="current"><a href="files.html"><span>ファイル</span></a></li>
+    </ul>
+  </div>
+  <div class="tabs">
+    <ul>
+      <li><a href="files.html"><span>ファイル一覧</span></a></li>
+      <li><a href="globals.html"><span>ファイルメンバ</span></a></li>
+    </ul>
+  </div>
+<h1>OutPort.h</h1><a href="OutPort_8h.html">説明を見る。</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="comment">// -*- C++ -*-</span>
+<a name="l00020"></a>00020 <span class="comment"></span><span class="preprocessor">#ifndef RTC_OUTPORT_H</span>
+<a name="l00021"></a>00021 <span class="preprocessor"></span><span class="preprocessor">#define RTC_OUTPORT_H</span>
+<a name="l00022"></a>00022 <span class="preprocessor"></span>
+<a name="l00023"></a>00023 <span class="preprocessor">#include &lt;iostream&gt;</span>
+<a name="l00024"></a>00024 <span class="preprocessor">#include &lt;string&gt;</span>
+<a name="l00025"></a>00025 
+<a name="l00026"></a>00026 <span class="preprocessor">#include &lt;<a class="code" href="TimeValue_8h.html">coil/TimeValue.h</a>&gt;</span>
+<a name="l00027"></a>00027 <span class="preprocessor">#include &lt;<a class="code" href="Time_8h.html">coil/Time.h</a>&gt;</span>
+<a name="l00028"></a>00028 <span class="preprocessor">#include &lt;<a class="code" href="TimeMeasure_8h.html" title="Periodic time measurement class.">coil/TimeMeasure.h</a>&gt;</span>
+<a name="l00029"></a>00029 <span class="preprocessor">#include &lt;<a class="code" href="OS_8h.html">coil/OS.h</a>&gt;</span>
+<a name="l00030"></a>00030 
+<a name="l00031"></a>00031 <span class="preprocessor">#include &lt;<a class="code" href="RTC_8h.html" title="RTComponent header.">rtm/RTC.h</a>&gt;</span>
+<a name="l00032"></a>00032 <span class="preprocessor">#include &lt;<a class="code" href="Typename_8h.html" title="Typename function.">rtm/Typename.h</a>&gt;</span>
+<a name="l00033"></a>00033 <span class="preprocessor">#include &lt;<a class="code" href="OutPortBase_8h.html" title="InPortBase base class.">rtm/OutPortBase.h</a>&gt;</span>
+<a name="l00034"></a>00034 <span class="preprocessor">#include &lt;<a class="code" href="CdrBufferBase_8h.html">rtm/CdrBufferBase.h</a>&gt;</span>
+<a name="l00035"></a>00035 <span class="preprocessor">#include &lt;<a class="code" href="PortCallback_8h.html" title="PortCallback class.">rtm/PortCallback.h</a>&gt;</span>
+<a name="l00036"></a>00036 <span class="preprocessor">#include &lt;<a class="code" href="OutPortConnector_8h.html" title="OutPortConnector class.">rtm/OutPortConnector.h</a>&gt;</span>
+<a name="l00037"></a>00037 
+<a name="l00059"></a>00059 <span class="keyword">template</span> &lt;<span class="keyword">class</span> DataType&gt;
+<a name="l00060"></a><a class="code" href="OutPort_8h.html#ab602811e83be4a797912ee3db90cf723">00060</a> <span class="keywordtype">void</span> <a class="code" href="OutPort_8h.html#ab602811e83be4a797912ee3db90cf723" title="データにタイムスタンプをセットする">setTimestamp</a>(DataType&amp; data)
+<a name="l00061"></a>00061 {
+<a name="l00062"></a>00062       <span class="comment">// set timestamp</span>
+<a name="l00063"></a>00063       <a class="code" href="classcoil_1_1TimeValue.html" title="TimeValue クラス.">coil::TimeValue</a> tm(<a class="code" href="namespacecoil.html#a19f910feee9788512677cf626e980f82" title="時刻とタイムゾーンを取得する">coil::gettimeofday</a>());
+<a name="l00064"></a>00064       data.tm.sec  = tm.<a class="code" href="classcoil_1_1TimeValue.html#a44b946e975c4980b6c84a5ca90b64018" title="秒単位の値を取得する">sec</a>();
+<a name="l00065"></a>00065       data.tm.nsec = tm.<a class="code" href="classcoil_1_1TimeValue.html#ad302adbb6df64245093d6a6ecd5a7576" title="マイクロ秒単位の値を取得する">usec</a>() * 1000;
+<a name="l00066"></a>00066 }
+<a name="l00067"></a>00067 
+<a name="l00068"></a>00068 <span class="keyword">namespace </span>RTC
+<a name="l00069"></a>00069 {
+<a name="l00105"></a>00105   <span class="keyword">template</span> &lt;<span class="keyword">class</span> DataType&gt;
+<a name="l00106"></a><a class="code" href="classRTC_1_1OutPort.html">00106</a>   <span class="keyword">class </span><a class="code" href="classRTC_1_1OutPort.html" title="OutPort テンプレートクラス.">OutPort</a>
+<a name="l00107"></a>00107     : <span class="keyword">public</span> <a class="code" href="classRTC_1_1OutPortBase.html" title="OutPort 基底クラス.">OutPortBase</a>
+<a name="l00108"></a>00108   {
+<a name="l00109"></a>00109   <span class="keyword">public</span>:
+<a name="l00133"></a><a class="code" href="classRTC_1_1OutPort.html#af564b47046f4c79713e7a16d5f476aa6">00133</a>     <a class="code" href="classRTC_1_1OutPort.html#af564b47046f4c79713e7a16d5f476aa6" title="コンストラクタ">OutPort</a>(<span class="keyword">const</span> <span class="keywordtype">char</span>* name, DataType&amp; value)
+<a name="l00134"></a>00134 <span class="preprocessor">#if defined(__GNUC__) &amp;&amp; (__GNUC__ &lt;= 3 &amp;&amp; __GNUC_MINOR__ &lt;= 3) </span>
+<a name="l00135"></a>00135 <span class="preprocessor"></span>      : <a class="code" href="classRTC_1_1OutPortBase.html#a95786a0eb7c1f637357de98f015e4866" title="コンストラクタ">OutPortBase</a>(name, ::CORBA_Util::toRepositoryIdOfStruct&lt;DataType&gt;()),
+<a name="l00136"></a>00136 <span class="preprocessor">#else</span>
+<a name="l00137"></a>00137 <span class="preprocessor"></span>      : <a class="code" href="classRTC_1_1OutPortBase.html#a95786a0eb7c1f637357de98f015e4866" title="コンストラクタ">OutPortBase</a>(name, ::CORBA_Util::toRepositoryId&lt;DataType&gt;()),
+<a name="l00138"></a>00138 <span class="preprocessor">#endif</span>
+<a name="l00139"></a>00139 <span class="preprocessor"></span>        m_value(value), m_onWrite(0), m_onWriteConvert(0)
+<a name="l00140"></a>00140     {
+<a name="l00141"></a>00141     }
+<a name="l00142"></a>00142     
+<a name="l00158"></a><a class="code" href="classRTC_1_1OutPort.html#a678f9415aae9691b109cac05ab7efc0f">00158</a>     <span class="keyword">virtual</span> <a class="code" href="classRTC_1_1OutPort.html#a678f9415aae9691b109cac05ab7efc0f">~OutPort</a>(<span class="keywordtype">void</span>)
+<a name="l00159"></a>00159     {
+<a name="l00160"></a>00160     }
+<a name="l00161"></a>00161     
+<a name="l00203"></a><a class="code" href="classRTC_1_1OutPort.html#a7b12cce88841e731f8bd57fb98062dcf">00203</a>     <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code" href="classRTC_1_1OutPort.html#a4eefb7caaaf1a48cc7a1678bbd58624c" title="データ書き込み">write</a>(DataType&amp; value)
+<a name="l00204"></a>00204     {
+<a name="l00205"></a>00205       <a class="code" href="SystemLogger_8h.html#a7a1fba8759d5440619471ff7197f3afd" title="トレースログ出力マクロ。">RTC_TRACE</a>((<span class="stringliteral">&quot;DataType write()&quot;</span>));
+<a name="l00206"></a>00206 
+<a name="l00207"></a>00207       <span class="keywordflow">if</span> (m_onWrite != NULL)
+<a name="l00208"></a>00208         {
+<a name="l00209"></a>00209           (*m_onWrite)(value);
+<a name="l00210"></a>00210           <a class="code" href="SystemLogger_8h.html#a7a1fba8759d5440619471ff7197f3afd" title="トレースログ出力マクロ。">RTC_TRACE</a>((<span class="stringliteral">&quot;OnWrite called&quot;</span>));
+<a name="l00211"></a>00211         }
+<a name="l00212"></a>00212 
+<a name="l00213"></a>00213       <span class="keywordtype">bool</span> result(<span class="keyword">true</span>);
+<a name="l00214"></a>00214       std::vector&lt;const char *&gt; disconnect_ids;
+<a name="l00215"></a>00215       {
+<a name="l00216"></a>00216         <a class="code" href="classcoil_1_1Guard.html">Guard</a> guard(<a class="code" href="classRTC_1_1PortBase.html#acbdf425104a21619d4c887e415e045c8">m_connectorsMutex</a>);
+<a name="l00217"></a>00217         <span class="comment">// check number of connectors</span>
+<a name="l00218"></a>00218         <span class="keywordtype">size_t</span> conn_size(<a class="code" href="classRTC_1_1OutPortBase.html#a9e128dfb805e355c7c536500312bfad9" title="接続リスト">m_connectors</a>.size());
+<a name="l00219"></a>00219         <span class="keywordflow">if</span> (!(conn_size &gt; 0)) { <span class="keywordflow">return</span> <span class="keyword">false</span>; }
+<a name="l00220"></a>00220         
+<a name="l00221"></a>00221         m_status.resize(conn_size);
+<a name="l00222"></a>00222 
+<a name="l00223"></a>00223         <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i(0), len(conn_size); i &lt; len; ++i)
+<a name="l00224"></a>00224           {
+<a name="l00225"></a>00225             ReturnCode ret;
+<a name="l00226"></a>00226             <span class="keywordflow">if</span> (m_onWriteConvert != NULL)
+<a name="l00227"></a>00227               {
+<a name="l00228"></a>00228                 <a class="code" href="SystemLogger_8h.html#a8584f4f111f7c1a87bc2f78ae81faca8" title="デバッグログ出力マクロ。">RTC_DEBUG</a>((<span class="stringliteral">&quot;m_connectors.OnWriteConvert called&quot;</span>));
+<a name="l00229"></a>00229                 ret = <a class="code" href="classRTC_1_1OutPortBase.html#a9e128dfb805e355c7c536500312bfad9" title="接続リスト">m_connectors</a>[i]-&gt;write(((*m_onWriteConvert)(value)));
+<a name="l00230"></a>00230               }
+<a name="l00231"></a>00231             <span class="keywordflow">else</span>
+<a name="l00232"></a>00232               {
+<a name="l00233"></a>00233                 <a class="code" href="SystemLogger_8h.html#a8584f4f111f7c1a87bc2f78ae81faca8" title="デバッグログ出力マクロ。">RTC_DEBUG</a>((<span class="stringliteral">&quot;m_connectors.write called&quot;</span>));
+<a name="l00234"></a>00234                 ret = <a class="code" href="classRTC_1_1OutPortBase.html#a9e128dfb805e355c7c536500312bfad9" title="接続リスト">m_connectors</a>[i]-&gt;write(value);
+<a name="l00235"></a>00235               }
+<a name="l00236"></a>00236             m_status[i] = ret;
+<a name="l00237"></a>00237             <span class="keywordflow">if</span> (ret == <a class="code" href="classRTC_1_1DataPortStatus.html#ac47c3e85f39e51eb55230337c0efc64fa348f113d004fb38d3f95c1a6f0b39536">PORT_OK</a>) { <span class="keywordflow">continue</span>; }
+<a name="l00238"></a>00238       
+<a name="l00239"></a>00239             result = <span class="keyword">false</span>;
+<a name="l00240"></a>00240             <span class="keyword">const</span> <span class="keywordtype">char</span>* id(<a class="code" href="classRTC_1_1OutPortBase.html#a9e128dfb805e355c7c536500312bfad9" title="接続リスト">m_connectors</a>[i]-&gt;profile().<span class="keywordtype">id</span>.c_str());
+<a name="l00241"></a>00241             RTC::ConnectorProfile prof(<a class="code" href="classRTC_1_1PortBase.html#a271f7e306eec757069326b493c6838e2" title="id を持つ ConnectorProfile を探す">findConnProfile</a>(<span class="keywordtype">id</span>));
+<a name="l00242"></a>00242 
+<a name="l00243"></a>00243             <span class="keywordflow">if</span> (ret == <a class="code" href="classRTC_1_1DataPortStatus.html#ac47c3e85f39e51eb55230337c0efc64faa3b0bd12978000bd5fdb1098d8e8b646">CONNECTION_LOST</a>)
+<a name="l00244"></a>00244               {
+<a name="l00245"></a>00245                 <a class="code" href="SystemLogger_8h.html#a39971e40900477d0c115aee9ecb08ad2" title="ワーニングログ出力マクロ。">RTC_WARN</a>((<span class="stringliteral">&quot;connection_lost id: %s&quot;</span>, <span class="keywordtype">id</span>));
+<a name="l00246"></a>00246                 <span class="keywordflow">if</span> (<a class="code" href="classRTC_1_1PortBase.html#a2d7cfeb11e8bccae7702badef6d384f4" title="Callback functor オブジェクト.">m_onConnectionLost</a> != 0)
+<a name="l00247"></a>00247                   {
+<a name="l00248"></a>00248                     (*m_onConnectionLost)(prof);
+<a name="l00249"></a>00249                   }
+<a name="l00250"></a>00250                 disconnect_ids.push_back(<span class="keywordtype">id</span>);
+<a name="l00251"></a>00251               }
+<a name="l00252"></a>00252           }
+<a name="l00253"></a>00253       }
+<a name="l00254"></a>00254       <a class="code" href="namespaceCORBA__SeqUtil.html#a9d725601baae2cbaa4acae40275b2923" title="CORBA sequence に対して functor を適用する.">std::for_each</a>(disconnect_ids.begin(),disconnect_ids.end(),
+<a name="l00255"></a>00255                     std::bind1st(std::mem_fun(&amp;<a class="code" href="classRTC_1_1PortBase.html#a1ac6bea826249d3b2b9cb09d475e54f8" title="[CORBA interface] Port の接続を解除する">PortBase::disconnect</a>),<span class="keyword">this</span>));
+<a name="l00256"></a>00256       <span class="keywordflow">return</span> result;
+<a name="l00257"></a>00257     }
+<a name="l00258"></a>00258     
+<a name="l00280"></a><a class="code" href="classRTC_1_1OutPort.html#a4eefb7caaaf1a48cc7a1678bbd58624c">00280</a>     <span class="keywordtype">bool</span> <a class="code" href="classRTC_1_1OutPort.html#a4eefb7caaaf1a48cc7a1678bbd58624c" title="データ書き込み">write</a>()
+<a name="l00281"></a>00281     {
+<a name="l00282"></a>00282       <span class="keywordflow">return</span> <a class="code" href="classRTC_1_1OutPort.html#a4eefb7caaaf1a48cc7a1678bbd58624c" title="データ書き込み">write</a>(m_value);
+<a name="l00283"></a>00283     }
+<a name="l00284"></a>00284     
+<a name="l00310"></a><a class="code" href="classRTC_1_1OutPort.html#ab96cafce5bda52fe093c451ea0ea5e80">00310</a>     <span class="keywordtype">bool</span> <a class="code" href="classRTC_1_1OutPort.html#ab96cafce5bda52fe093c451ea0ea5e80" title="データ書き込み">operator&lt;&lt;</a>(DataType&amp; value)
+<a name="l00311"></a>00311     {
+<a name="l00312"></a>00312       <span class="keywordflow">return</span> <a class="code" href="classRTC_1_1OutPort.html#a4eefb7caaaf1a48cc7a1678bbd58624c" title="データ書き込み">write</a>(value);
+<a name="l00313"></a>00313     }
+<a name="l00314"></a>00314 
+<a name="l00347"></a><a class="code" href="classRTC_1_1OutPort.html#a8d9d6078d0766ef178eaa0e7a89e4323">00347</a>     <a class="code" href="classRTC_1_1DataPortStatus.html#ac47c3e85f39e51eb55230337c0efc64f">DataPortStatus::Enum</a> <a class="code" href="classRTC_1_1OutPort.html#a8d9d6078d0766ef178eaa0e7a89e4323" title="特定のコネクタへの書き込みステータスを得る">getStatus</a>(<span class="keywordtype">int</span> index)
+<a name="l00348"></a>00348     {
+<a name="l00349"></a>00349       <span class="keywordflow">return</span> m_status[index];
+<a name="l00350"></a>00350     }
+<a name="l00381"></a><a class="code" href="classRTC_1_1OutPort.html#a2e599360675f20b2a462185d9fb4f6ee">00381</a>     <a class="code" href="namespaceRTC.html#aa4f6f3cb09aa70fbbd3cfb341518142d">DataPortStatusList</a> <a class="code" href="classRTC_1_1OutPort.html#a2e599360675f20b2a462185d9fb4f6ee" title="特定のコネクタへの書き込みステータスリストを得る">getStatusList</a>()
+<a name="l00382"></a>00382     {
+<a name="l00383"></a>00383       <span class="keywordflow">return</span> m_status;
+<a name="l00384"></a>00384     }
+<a name="l00385"></a>00385 
+<a name="l00415"></a><a class="code" href="classRTC_1_1OutPort.html#a9a23160be80aa4394c11f257d6f3b985">00415</a>     <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="classRTC_1_1OutPort.html#a9a23160be80aa4394c11f257d6f3b985" title="OnWrite コールバックの設定.">setOnWrite</a>(<a class="code" href="classRTC_1_1OnWrite.html" title="write() 時のコールバック抽象クラス">OnWrite&lt;DataType&gt;</a>* on_write)
+<a name="l00416"></a>00416     {
+<a name="l00417"></a>00417       m_onWrite = on_write;
+<a name="l00418"></a>00418     }
+<a name="l00419"></a>00419     
+<a name="l00456"></a><a class="code" href="classRTC_1_1OutPort.html#acfcace76efbc58ef8f9654b467a2ef3c">00456</a>     <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="classRTC_1_1OutPort.html#acfcace76efbc58ef8f9654b467a2ef3c" title="OnWriteConvert コールバックの設定.">setOnWriteConvert</a>(<a class="code" href="structRTC_1_1OnWriteConvert.html" title="write() 時のデータ変換コールバック抽象クラス">OnWriteConvert&lt;DataType&gt;</a>* on_wconvert)
+<a name="l00457"></a>00457     {
+<a name="l00458"></a>00458       m_onWriteConvert = on_wconvert;
+<a name="l00459"></a>00459     }
+<a name="l00460"></a>00460     
+<a name="l00461"></a>00461   <span class="keyword">private</span>:
+<a name="l00462"></a>00462     std::string m_typename;
+<a name="l00470"></a>00470     DataType&amp; m_value;
+<a name="l00471"></a>00471     
+<a name="l00479"></a>00479     <a class="code" href="classRTC_1_1OnWrite.html" title="write() 時のコールバック抽象クラス">OnWrite&lt;DataType&gt;</a>* m_onWrite;
+<a name="l00480"></a>00480     
+<a name="l00488"></a>00488     <a class="code" href="structRTC_1_1OnWriteConvert.html" title="write() 時のデータ変換コールバック抽象クラス">OnWriteConvert&lt;DataType&gt;</a>* m_onWriteConvert;
+<a name="l00489"></a>00489 
+<a name="l00490"></a>00490     <a class="code" href="classcoil_1_1TimeMeasure.html" title="TimeMeasure クラス.">coil::TimeMeasure</a> m_cdrtime;
+<a name="l00491"></a>00491 
+<a name="l00492"></a>00492     <a class="code" href="namespaceRTC.html#aa4f6f3cb09aa70fbbd3cfb341518142d">DataPortStatusList</a> m_status;
+<a name="l00493"></a>00493   };
+<a name="l00494"></a>00494 }; <span class="comment">// namespace RTC</span>
+<a name="l00495"></a>00495 
+<a name="l00496"></a>00496 <span class="preprocessor">#endif // RTC_OUTPORT_H</span>
+</pre></div></div>
+<hr class="footer"/><address style="text-align: right;"><small>OpenRTMに対してThu May 24 23:25:18 2012に生成されました。&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.6.3 </small></address>
+</body>
+</html>

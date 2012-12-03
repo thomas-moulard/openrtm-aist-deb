@@ -1,0 +1,572 @@
+\section{クラス SDOPackage::Configuration\_\-impl}
+\label{classSDOPackage_1_1Configuration__impl}\index{SDOPackage::Configuration\_\-impl@{SDOPackage::Configuration\_\-impl}}
+
+
+\doxyref{SDO}{p.}{classSDO} Configuration 実装クラス.  
+
+
+
+
+{\ttfamily \#include $<$SdoConfiguration.h$>$}
+
+\subsection*{構成}
+\begin{DoxyCompactItemize}
+\item 
+struct {\bf config\_\-id}
+\begin{DoxyCompactList}\small\item\em ConfigurationSet用functor. \item\end{DoxyCompactList}\item 
+struct {\bf nv\_\-name}
+\begin{DoxyCompactList}\small\item\em NVList用functor. \item\end{DoxyCompactList}\item 
+struct {\bf org\_\-id}
+\begin{DoxyCompactList}\small\item\em Organization用functor. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public メソッド}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Configuration\_\-impl} ({\bf RTC::ConfigAdmin} \&configAdmin, {\bf RTC::SdoServiceAdmin} \&sdoServiceAdmin)
+\begin{DoxyCompactList}\small\item\em コンストラクタ \item\end{DoxyCompactList}\item 
+virtual {\bf $\sim$Configuration\_\-impl} (void)
+\begin{DoxyCompactList}\small\item\em 仮想デストラクタ \item\end{DoxyCompactList}\item 
+virtual CORBA::Boolean {\bf set\_\-device\_\-profile} (const DeviceProfile \&dProfile)  throw (CORBA::SystemException,	     InvalidParameter, NotAvailable, InternalError)
+\begin{DoxyCompactList}\small\item\em [CORBA interface] \doxyref{SDO}{p.}{classSDO} の DeviceProfile のセット \item\end{DoxyCompactList}\item 
+virtual CORBA::Boolean {\bf add\_\-service\_\-profile} (const ServiceProfile \&sProfile)  throw (CORBA::SystemException,	     InvalidParameter, NotAvailable, InternalError)
+\begin{DoxyCompactList}\small\item\em [CORBA interface] \doxyref{SDO}{p.}{classSDO} の ServiceProfile のセット \item\end{DoxyCompactList}\item 
+virtual CORBA::Boolean {\bf add\_\-organization} (Organization\_\-ptr org)  throw (CORBA::SystemException,	     InvalidParameter, NotAvailable, InternalError)
+\begin{DoxyCompactList}\small\item\em [CORBA interface] Organization の追加 \item\end{DoxyCompactList}\item 
+virtual CORBA::Boolean {\bf remove\_\-service\_\-profile} (const char $\ast$id)  throw (CORBA::SystemException,	     InvalidParameter, NotAvailable, InternalError)
+\begin{DoxyCompactList}\small\item\em [CORBA interface] ServiceProfile の削除 \item\end{DoxyCompactList}\item 
+virtual CORBA::Boolean {\bf remove\_\-organization} (const char $\ast$organization\_\-id)  throw (CORBA::SystemException,	     InvalidParameter, NotAvailable, InternalError)
+\begin{DoxyCompactList}\small\item\em [CORBA interface] Organization の参照の削除 \item\end{DoxyCompactList}\item 
+virtual ParameterList $\ast$ {\bf get\_\-configuration\_\-parameters} ()  throw (CORBA::SystemException,	     NotAvailable, InternalError)
+\begin{DoxyCompactList}\small\item\em [CORBA interface] 設定パラメータのリストの取得 \item\end{DoxyCompactList}\item 
+virtual NVList $\ast$ {\bf get\_\-configuration\_\-parameter\_\-values} ()  throw (CORBA::SystemException,	     NotAvailable, InternalError)
+\begin{DoxyCompactList}\small\item\em [CORBA interface] Configuration parameter の値のリストの取得 \item\end{DoxyCompactList}\item 
+virtual CORBA::Any $\ast$ {\bf get\_\-configuration\_\-parameter\_\-value} (const char $\ast$name)  throw (CORBA::SystemException,	     InvalidParameter, NotAvailable, InternalError)
+\begin{DoxyCompactList}\small\item\em [CORBA interface] Configuration parameter の値の取得 \item\end{DoxyCompactList}\item 
+virtual CORBA::Boolean {\bf set\_\-configuration\_\-parameter} (const char $\ast$name, const CORBA::Any \&value)  throw (CORBA::SystemException,	     InvalidParameter, NotAvailable, InternalError)
+\begin{DoxyCompactList}\small\item\em [CORBA interface] Configuration パラメータの変更 \item\end{DoxyCompactList}\item 
+virtual ConfigurationSetList $\ast$ {\bf get\_\-configuration\_\-sets} ()  throw (CORBA::SystemException,	     NotAvailable, InternalError)
+\begin{DoxyCompactList}\small\item\em [CORBA interface] ConfigurationSet リストの取得 \item\end{DoxyCompactList}\item 
+virtual ConfigurationSet $\ast$ {\bf get\_\-configuration\_\-set} (const char $\ast${\bf config\_\-id})  throw (CORBA::SystemException,	     NotAvailable, InternalError)
+\begin{DoxyCompactList}\small\item\em [CORBA interface] ConfigurationSet の取得 \item\end{DoxyCompactList}\item 
+virtual ConfigurationSet $\ast$ {\bf get\_\-active\_\-configuration\_\-set} ()  throw (CORBA::SystemException,	     NotAvailable, InternalError)
+\begin{DoxyCompactList}\small\item\em [CORBA interface] アクティブな ConfigurationSet を取得する \item\end{DoxyCompactList}\item 
+virtual CORBA::Boolean {\bf add\_\-configuration\_\-set} (const ConfigurationSet \&configuration\_\-set)  throw (CORBA::SystemException,	     InvalidParameter, NotAvailable, InternalError)
+\begin{DoxyCompactList}\small\item\em [CORBA interface] ConfigurationSet を追加する \item\end{DoxyCompactList}\item 
+virtual CORBA::Boolean {\bf set\_\-configuration\_\-set\_\-values} (const ConfigurationSet \&configuration\_\-set)  throw (CORBA::SystemException,	     InvalidParameter, NotAvailable, InternalError)
+\begin{DoxyCompactList}\small\item\em [CORBA interface] ConfigurationSet をセットする \item\end{DoxyCompactList}\item 
+virtual CORBA::Boolean {\bf remove\_\-configuration\_\-set} (const char $\ast${\bf config\_\-id})  throw (CORBA::SystemException,	     InvalidParameter, NotAvailable, InternalError)
+\begin{DoxyCompactList}\small\item\em [CORBA interface] ConfigurationSet を削除する \item\end{DoxyCompactList}\item 
+virtual CORBA::Boolean {\bf activate\_\-configuration\_\-set} (const char $\ast${\bf config\_\-id})  throw (CORBA::SystemException,	     InvalidParameter, NotAvailable, InternalError)
+\begin{DoxyCompactList}\small\item\em [CORBA interface] ConfigurationSet のアクティブ化 \item\end{DoxyCompactList}\item 
+Configuration\_\-ptr {\bf getObjRef} ()
+\begin{DoxyCompactList}\small\item\em オブジェクト　リファレンスを取得する \item\end{DoxyCompactList}\item 
+const DeviceProfile {\bf getDeviceProfile} ()
+\begin{DoxyCompactList}\small\item\em \doxyref{SDO}{p.}{classSDO} の DeviceProfile を取得する. \item\end{DoxyCompactList}\item 
+const OrganizationList {\bf getOrganizations} ()
+\begin{DoxyCompactList}\small\item\em \doxyref{SDO}{p.}{classSDO} の Organization リストを取得する. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected メソッド}
+\begin{DoxyCompactItemize}
+\item 
+const std::string {\bf getUUID} () const 
+\begin{DoxyCompactList}\small\item\em UUIDを生成する. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected 変数}
+\begin{DoxyCompactItemize}
+\item 
+::{\bf RTC::Logger} {\bf rtclog}
+\item 
+Configuration\_\-var {\bf m\_\-objref}
+\begin{DoxyCompactList}\small\item\em CORBA オブジェクトへの参照. \item\end{DoxyCompactList}\item 
+DeviceProfile {\bf m\_\-deviceProfile}
+\begin{DoxyCompactList}\small\item\em Lock 付き \doxyref{SDO}{p.}{classSDO} DeviceProfile. \item\end{DoxyCompactList}\item 
+{\bf Mutex} {\bf m\_\-dprofile\_\-mutex}
+\item 
+ParameterList {\bf m\_\-parameters}
+\begin{DoxyCompactList}\small\item\em \doxyref{SDO}{p.}{classSDO} Parameter. \item\end{DoxyCompactList}\item 
+{\bf Mutex} {\bf m\_\-params\_\-mutex}
+\item 
+{\bf RTC::ConfigAdmin} \& {\bf m\_\-configsets}
+\begin{DoxyCompactList}\small\item\em Lock 付き \doxyref{SDO}{p.}{classSDO} ConfigurationSetList. \item\end{DoxyCompactList}\item 
+{\bf Mutex} {\bf m\_\-config\_\-mutex}
+\item 
+{\bf RTC::SdoServiceAdmin} \& {\bf m\_\-sdoservice}
+\begin{DoxyCompactList}\small\item\em Lock 付き \doxyref{SDO}{p.}{classSDO} Service 管理オブジェクト. \item\end{DoxyCompactList}\item 
+{\bf Mutex} {\bf m\_\-sdoservice\_\-mutex}
+\item 
+OrganizationList {\bf m\_\-organizations}
+\begin{DoxyCompactList}\small\item\em Lock 付き \doxyref{SDO}{p.}{classSDO} OrganizationList. \item\end{DoxyCompactList}\item 
+{\bf Mutex} {\bf m\_\-org\_\-mutex}
+\end{DoxyCompactItemize}
+
+
+\subsection{説明}
+\doxyref{SDO}{p.}{classSDO} Configuration 実装クラス. Configuration interface は Resource Data Model で定義されたデータの 追加、削除等の操作を行うためのインターフェースである。 DeviceProfile, ServiceProfile, ConfigurationProfile および Organization の変更を行うためのオペレーションを備えている。SDO の仕様ではアクセス制御 およびセキュリティに関する詳細については規定していない。
+
+複数の設定 (Configuration) を保持することにより、容易かつ素早くある設定 を反映させることができる。事前に定義された複数の設定を ConfigurationSets および configuration profile として保持することができる。ひとつの ConfigurationSet は特定の設定に関連付けられた全プロパティ値のリストを、 ユニークID、詳細とともに持っている。これにより、各設定項目の詳細を記述し 区別することができる。Configuration interface のオペレーションはこれら ConfiguratioinSets の管理を支援する。
+
+
+\begin{DoxyItemize}
+\item ConfigurationSet: id, description, NVList から構成される1セットの設定
+\item ConfigurationSetList: ConfigurationSet のリスト
+\item Parameter: name, type, allowed\_\-values から構成されるパラメータ定義。
+\item ActiveConfigurationSet: 現在有効なコンフィギュレーションの1セット。
+\end{DoxyItemize}
+
+以下、SDO仕様に明記されていないもしくは解釈がわからないため独自解釈
+
+以下の関数は ParameterList に対して処理を行う。
+\begin{DoxyItemize}
+\item \doxyref{get\_\-configuration\_\-parameters()}{p.}{classSDOPackage_1_1Configuration__impl_a719cf33d63573f2c77e76cc0bd7c95a1}
+\end{DoxyItemize}
+
+以下の関数はアクティブなConfigurationSetに対する処理を行う
+\begin{DoxyItemize}
+\item \doxyref{get\_\-configuration\_\-parameter\_\-values()}{p.}{classSDOPackage_1_1Configuration__impl_a35e8b8d9af4a2b4f78e0a86244bff558}
+\item \doxyref{get\_\-configuration\_\-parameter\_\-value()}{p.}{classSDOPackage_1_1Configuration__impl_a27497be83bfe0bacde9fc4f89c861077}
+\item \doxyref{set\_\-configuration\_\-parameter()}{p.}{classSDOPackage_1_1Configuration__impl_ad8be3428eca25a151d9e0a11447828b0}
+\end{DoxyItemize}
+
+以下の関数はConfigurationSetListに対して処理を行う
+\begin{DoxyItemize}
+\item \doxyref{get\_\-configuration\_\-sets()}{p.}{classSDOPackage_1_1Configuration__impl_a77844f4a7407bc48c11a455f89d32f4d}
+\item \doxyref{get\_\-configuration\_\-set()}{p.}{classSDOPackage_1_1Configuration__impl_a9053da972df19c6411b0326eb5239b39}
+\item \doxyref{set\_\-configuration\_\-set\_\-values()}{p.}{classSDOPackage_1_1Configuration__impl_a89a53c51f56795a098f3be79052413ad}
+\item \doxyref{get\_\-active\_\-configuration\_\-set()}{p.}{classSDOPackage_1_1Configuration__impl_aee57768379674404422130e0f04468e2}
+\item \doxyref{add\_\-configuration\_\-set()}{p.}{classSDOPackage_1_1Configuration__impl_a3765b45decf597811c3e0f562b914fab}
+\item \doxyref{remove\_\-configuration\_\-set()}{p.}{classSDOPackage_1_1Configuration__impl_ac82aad180dcb37a3d652abb0e368da0a}
+\item \doxyref{activate\_\-configuration\_\-set()}{p.}{classSDOPackage_1_1Configuration__impl_a7264893ed1b678fcf301a73304bf77b7}
+\end{DoxyItemize}
+
+\begin{DoxySince}{から}
+0.4.0 
+\end{DoxySince}
+
+
+\subsection{コンストラクタとデストラクタ}
+\index{SDOPackage::Configuration\_\-impl@{SDOPackage::Configuration\_\-impl}!Configuration\_\-impl@{Configuration\_\-impl}}
+\index{Configuration\_\-impl@{Configuration\_\-impl}!SDOPackage::Configuration_impl@{SDOPackage::Configuration\_\-impl}}
+\subsubsection[{Configuration\_\-impl}]{\setlength{\rightskip}{0pt plus 5cm}SDOPackage::Configuration\_\-impl::Configuration\_\-impl ({\bf RTC::ConfigAdmin} \& {\em configAdmin}, \/  {\bf RTC::SdoServiceAdmin} \& {\em sdoServiceAdmin})}\label{classSDOPackage_1_1Configuration__impl_aa9a10c1aa6abb899a866f501ba2c4075}
+
+
+コンストラクタ 
+
+コンストラクタ
+
+
+\begin{DoxyParams}{引数}
+\item[{\em configAdmin}]ConfigurationSetList \end{DoxyParams}
+\index{SDOPackage::Configuration\_\-impl@{SDOPackage::Configuration\_\-impl}!$\sim$Configuration\_\-impl@{$\sim$Configuration\_\-impl}}
+\index{$\sim$Configuration\_\-impl@{$\sim$Configuration\_\-impl}!SDOPackage::Configuration_impl@{SDOPackage::Configuration\_\-impl}}
+\subsubsection[{$\sim$Configuration\_\-impl}]{\setlength{\rightskip}{0pt plus 5cm}virtual SDOPackage::Configuration\_\-impl::$\sim$Configuration\_\-impl (void)\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classSDOPackage_1_1Configuration__impl_a64d2363427a77cb4b8e79e2f6d55e6d7}
+
+
+仮想デストラクタ 
+
+仮想デストラクタ。 
+
+\subsection{関数}
+\index{SDOPackage::Configuration\_\-impl@{SDOPackage::Configuration\_\-impl}!activate\_\-configuration\_\-set@{activate\_\-configuration\_\-set}}
+\index{activate\_\-configuration\_\-set@{activate\_\-configuration\_\-set}!SDOPackage::Configuration_impl@{SDOPackage::Configuration\_\-impl}}
+\subsubsection[{activate\_\-configuration\_\-set}]{\setlength{\rightskip}{0pt plus 5cm}virtual CORBA::Boolean SDOPackage::Configuration\_\-impl::activate\_\-configuration\_\-set (const char $\ast$ {\em config\_\-id})  throw (CORBA::SystemException,	     InvalidParameter, NotAvailable, InternalError)\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classSDOPackage_1_1Configuration__impl_a7264893ed1b678fcf301a73304bf77b7}
+
+
+[CORBA interface] ConfigurationSet のアクティブ化 
+
+ConfigurationProfile に格納された ConfigurationSet のうち一つを アクティブにする。 このオペレーションは特定の ConfigurationSet をアクティブにする。 すなわち、SDO のコンフィギュレーション・プロパティがその格納されている ConfigurationSet により設定されるプロパティの値に変更される。 指定された ConfigurationSet の値がアクティブ・コンフィギュレーション にコピーされるということを意味する。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em \doxyref{config\_\-id}{p.}{structSDOPackage_1_1Configuration__impl_1_1config__id}}]アクティブ化する ConfigurationSet の id。\end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+オペレーションが成功したかどうか。
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{例外}
+\item[{\em SDONotExists}]ターゲットのSDOが存在しない。(本例外は、CORBA標準 システム例外のOBJECT\_\-NOT\_\-EXISTにマッピングされる) \item[{\em InvalidParameter}]引数 \char`\"{}config\_\-id\char`\"{} が null である、もしくは 引数で指定された ConfigurationSet が存在しない。 \item[{\em NotAvailable}]SDOは存在するが応答がない。 \item[{\em InternalError}]内部的エラーが発生した。 \end{DoxyExceptions}
+\index{SDOPackage::Configuration\_\-impl@{SDOPackage::Configuration\_\-impl}!add\_\-configuration\_\-set@{add\_\-configuration\_\-set}}
+\index{add\_\-configuration\_\-set@{add\_\-configuration\_\-set}!SDOPackage::Configuration_impl@{SDOPackage::Configuration\_\-impl}}
+\subsubsection[{add\_\-configuration\_\-set}]{\setlength{\rightskip}{0pt plus 5cm}virtual CORBA::Boolean SDOPackage::Configuration\_\-impl::add\_\-configuration\_\-set (const ConfigurationSet \& {\em configuration\_\-set})  throw (CORBA::SystemException,	     InvalidParameter, NotAvailable, InternalError)\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classSDOPackage_1_1Configuration__impl_a3765b45decf597811c3e0f562b914fab}
+
+
+[CORBA interface] ConfigurationSet を追加する 
+
+ConfigurationProfile に ConfigurationSet を追加するオペレーション。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em configuration\_\-set}]追加する ConfigurationSet。\end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+オペレーションが成功したかどうか。
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{例外}
+\item[{\em SDONotExists}]ターゲットのSDOが存在しない。(本例外は、CORBA標準 システム例外のOBJECT\_\-NOT\_\-EXISTにマッピングされる) \item[{\em InvalidParameter}]\char`\"{}configurationSet\char`\"{} が null か、 \char`\"{}configurationSet\char`\"{}で定義された属性の１つが不正か、 指定された configurationSet もIDが既に存在する。 \item[{\em NotAvailable}]SDOは存在するが応答がない。 \item[{\em InternalError}]内部的エラーが発生した。 \end{DoxyExceptions}
+\index{SDOPackage::Configuration\_\-impl@{SDOPackage::Configuration\_\-impl}!add\_\-organization@{add\_\-organization}}
+\index{add\_\-organization@{add\_\-organization}!SDOPackage::Configuration_impl@{SDOPackage::Configuration\_\-impl}}
+\subsubsection[{add\_\-organization}]{\setlength{\rightskip}{0pt plus 5cm}virtual CORBA::Boolean SDOPackage::Configuration\_\-impl::add\_\-organization (Organization\_\-ptr {\em org})  throw (CORBA::SystemException,	     InvalidParameter, NotAvailable, InternalError)\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classSDOPackage_1_1Configuration__impl_a7963b66fe9bdbac8b23528ec5c7bca79}
+
+
+[CORBA interface] Organization の追加 
+
+このオペレーションは Organization object のリファレンスを追加する。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em org}]追加する Organization\end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+オペレーションが成功したかどうかを返す。
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{例外}
+\item[{\em SDONotExists}]ターゲットのSDOが存在しない。(本例外は、CORBA標準 システム例外のOBJECT\_\-NOT\_\-EXISTにマッピングされる) \item[{\em NotAvailable}]SDOは存在するが応答がない。 \item[{\em InvalidParameter}]引数 \char`\"{}organization\char`\"{} が null である。 \item[{\em InternalError}]内部的エラーが発生した。 \end{DoxyExceptions}
+\index{SDOPackage::Configuration\_\-impl@{SDOPackage::Configuration\_\-impl}!add\_\-service\_\-profile@{add\_\-service\_\-profile}}
+\index{add\_\-service\_\-profile@{add\_\-service\_\-profile}!SDOPackage::Configuration_impl@{SDOPackage::Configuration\_\-impl}}
+\subsubsection[{add\_\-service\_\-profile}]{\setlength{\rightskip}{0pt plus 5cm}virtual CORBA::Boolean SDOPackage::Configuration\_\-impl::add\_\-service\_\-profile (const ServiceProfile \& {\em sProfile})  throw (CORBA::SystemException,	     InvalidParameter, NotAvailable, InternalError)\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classSDOPackage_1_1Configuration__impl_a42e08f0ca92fa64b4728c499d1e4e707}
+
+
+[CORBA interface] \doxyref{SDO}{p.}{classSDO} の ServiceProfile のセット 
+
+このオペレーションはこの Configuration interface を所有する対象 \doxyref{SDO}{p.}{classSDO} の ServiceProfile を追加する。もし引数の ServiceProfile の id が空であれば 新しい ID が生成されその ServiceProfile を格納する。もし id が空で なければ、SDO は同じ id を持つ ServiceProfile を検索する。 同じ id が存在しなければこの ServiceProfile を追加し、id が存在すれば 上書きをする。\par
+ (注意：最新バージョンではオペレーション名がadd\_\-service\_\-profile変更)
+
+
+\begin{DoxyParams}{引数}
+\item[{\em sProfile}]追加する ServiceProfile\end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+オペレーションが成功したかどうかを返す。
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{例外}
+\item[{\em SDONotExists}]ターゲットのSDOが存在しない。(本例外は、CORBA標準 システム例外のOBJECT\_\-NOT\_\-EXISTにマッピングされる) \item[{\em InvalidParameter}]引数 \char`\"{}sProfile\char`\"{} が nullである。 \item[{\em NotAvailable}]SDOは存在するが応答がない。 \item[{\em InternalError}]内部的エラーが発生した。 \end{DoxyExceptions}
+\index{SDOPackage::Configuration\_\-impl@{SDOPackage::Configuration\_\-impl}!get\_\-active\_\-configuration\_\-set@{get\_\-active\_\-configuration\_\-set}}
+\index{get\_\-active\_\-configuration\_\-set@{get\_\-active\_\-configuration\_\-set}!SDOPackage::Configuration_impl@{SDOPackage::Configuration\_\-impl}}
+\subsubsection[{get\_\-active\_\-configuration\_\-set}]{\setlength{\rightskip}{0pt plus 5cm}virtual ConfigurationSet$\ast$ SDOPackage::Configuration\_\-impl::get\_\-active\_\-configuration\_\-set ()  throw (CORBA::SystemException,	     NotAvailable, InternalError)\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classSDOPackage_1_1Configuration__impl_aee57768379674404422130e0f04468e2}
+
+
+[CORBA interface] アクティブな ConfigurationSet を取得する 
+
+このオペレーションは当該SDOの現在アクティブな ConfigurationSet を返す。 (もしSDOの現在の設定が予め定義された ConfigurationSet により設定されて いるならば。) ConfigurationSet は以下の場合にはアクティブではないものとみなされる。
+
+
+\begin{DoxyItemize}
+\item 現在の設定が予め定義された ConfigurationSet によりセットされていない、
+\item \doxyref{SDO}{p.}{classSDO} の設定がアクティブになった後に変更された、
+\item \doxyref{SDO}{p.}{classSDO} を設定する ConfigurationSet が変更された、
+\end{DoxyItemize}
+
+これらの場合には、空の ConfigurationSet が返される。
+
+\begin{DoxyReturn}{戻り値}
+現在アクティブな ConfigurationSet。
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{例外}
+\item[{\em SDONotExists}]ターゲットのSDOが存在しない。(本例外は、CORBA標準 システム例外のOBJECT\_\-NOT\_\-EXISTにマッピングされる) \item[{\em NotAvailable}]SDOは存在するが応答がない。 \item[{\em InternalError}]内部的エラーが発生した。 \end{DoxyExceptions}
+\index{SDOPackage::Configuration\_\-impl@{SDOPackage::Configuration\_\-impl}!get\_\-configuration\_\-parameter\_\-value@{get\_\-configuration\_\-parameter\_\-value}}
+\index{get\_\-configuration\_\-parameter\_\-value@{get\_\-configuration\_\-parameter\_\-value}!SDOPackage::Configuration_impl@{SDOPackage::Configuration\_\-impl}}
+\subsubsection[{get\_\-configuration\_\-parameter\_\-value}]{\setlength{\rightskip}{0pt plus 5cm}virtual CORBA::Any$\ast$ SDOPackage::Configuration\_\-impl::get\_\-configuration\_\-parameter\_\-value (const char $\ast$ {\em name})  throw (CORBA::SystemException,	     InvalidParameter, NotAvailable, InternalError)\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classSDOPackage_1_1Configuration__impl_a27497be83bfe0bacde9fc4f89c861077}
+
+
+[CORBA interface] Configuration parameter の値の取得 
+
+このオペレーションは引数 \char`\"{}name\char`\"{} で指定されたパラメータ値を返す。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em name}]値を要求するパラメータの名前。\end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+指定されたパラメータの値。
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{例外}
+\item[{\em SDONotExists}]ターゲットのSDOが存在しない。(本例外は、CORBA標準 システム例外のOBJECT\_\-NOT\_\-EXISTにマッピングされる) \item[{\em InvalidParameter}]引数 \char`\"{}name\char`\"{} が null である。 もしくは \char`\"{}name\char`\"{} に関連付けられたパラメータが存在しない。 \item[{\em NotAvailable}]SDOは存在するが応答がない。 \item[{\em InternalError}]内部的エラーが発生した。 \end{DoxyExceptions}
+\index{SDOPackage::Configuration\_\-impl@{SDOPackage::Configuration\_\-impl}!get\_\-configuration\_\-parameter\_\-values@{get\_\-configuration\_\-parameter\_\-values}}
+\index{get\_\-configuration\_\-parameter\_\-values@{get\_\-configuration\_\-parameter\_\-values}!SDOPackage::Configuration_impl@{SDOPackage::Configuration\_\-impl}}
+\subsubsection[{get\_\-configuration\_\-parameter\_\-values}]{\setlength{\rightskip}{0pt plus 5cm}virtual NVList$\ast$ SDOPackage::Configuration\_\-impl::get\_\-configuration\_\-parameter\_\-values ()  throw (CORBA::SystemException,	     NotAvailable, InternalError)\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classSDOPackage_1_1Configuration__impl_a35e8b8d9af4a2b4f78e0a86244bff558}
+
+
+[CORBA interface] Configuration parameter の値のリストの取得 
+
+このオペレーションは全ての configuration パラメータおよび値を返す。
+
+\begin{DoxyReturn}{戻り値}
+全ての configuration パラメータと値のリスト。
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{例外}
+\item[{\em SDONotExists}]ターゲットのSDOが存在しない。(本例外は、CORBA標準 システム例外のOBJECT\_\-NOT\_\-EXISTにマッピングされる) \item[{\em NotAvailable}]SDOは存在するが応答がない。 \item[{\em InternalError}]内部的エラーが発生した。 \end{DoxyExceptions}
+\index{SDOPackage::Configuration\_\-impl@{SDOPackage::Configuration\_\-impl}!get\_\-configuration\_\-parameters@{get\_\-configuration\_\-parameters}}
+\index{get\_\-configuration\_\-parameters@{get\_\-configuration\_\-parameters}!SDOPackage::Configuration_impl@{SDOPackage::Configuration\_\-impl}}
+\subsubsection[{get\_\-configuration\_\-parameters}]{\setlength{\rightskip}{0pt plus 5cm}virtual ParameterList$\ast$ SDOPackage::Configuration\_\-impl::get\_\-configuration\_\-parameters ()  throw (CORBA::SystemException,	     NotAvailable, InternalError)\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classSDOPackage_1_1Configuration__impl_a719cf33d63573f2c77e76cc0bd7c95a1}
+
+
+[CORBA interface] 設定パラメータのリストの取得 
+
+このオペレーションは configuration parameter のリストを返す。 \doxyref{SDO}{p.}{classSDO} が設定可能なパラメータを持たなければ空のリストを返す。
+
+\begin{DoxyReturn}{戻り値}
+設定を特徴付けるパラメータ定義のリスト。
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{例外}
+\item[{\em SDONotExists}]ターゲットのSDOが存在しない。(本例外は、CORBA標準 システム例外のOBJECT\_\-NOT\_\-EXISTにマッピングされる) \item[{\em NotAvailable}]SDOは存在するが応答がない。 \item[{\em InternalError}]内部的エラーが発生した。 \end{DoxyExceptions}
+\index{SDOPackage::Configuration\_\-impl@{SDOPackage::Configuration\_\-impl}!get\_\-configuration\_\-set@{get\_\-configuration\_\-set}}
+\index{get\_\-configuration\_\-set@{get\_\-configuration\_\-set}!SDOPackage::Configuration_impl@{SDOPackage::Configuration\_\-impl}}
+\subsubsection[{get\_\-configuration\_\-set}]{\setlength{\rightskip}{0pt plus 5cm}virtual ConfigurationSet$\ast$ SDOPackage::Configuration\_\-impl::get\_\-configuration\_\-set (const char $\ast$ {\em config\_\-id})  throw (CORBA::SystemException,	     NotAvailable, InternalError)\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classSDOPackage_1_1Configuration__impl_a9053da972df19c6411b0326eb5239b39}
+
+
+[CORBA interface] ConfigurationSet の取得 
+
+このオペレーションは引数で指定された ConfigurationSet の ID に関連 付けられた ConfigurationSet を返す。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em \doxyref{config\_\-id}{p.}{structSDOPackage_1_1Configuration__impl_1_1config__id}}]ConfigurationSet の識別子。\end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+引数により指定された ConfigurationSet。
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{例外}
+\item[{\em SDONotExists}]ターゲットのSDOが存在しない。(本例外は、CORBA標準 システム例外のOBJECT\_\-NOT\_\-EXISTにマッピングされる) \item[{\em InvalidParameter}]\char`\"{}config\_\-id\char`\"{} が null か、指定された ConfigurationSet が存在しない。 \item[{\em NotAvailable}]SDOは存在するが応答がない。 \item[{\em InternalError}]内部的エラーが発生した。 \end{DoxyExceptions}
+\index{SDOPackage::Configuration\_\-impl@{SDOPackage::Configuration\_\-impl}!get\_\-configuration\_\-sets@{get\_\-configuration\_\-sets}}
+\index{get\_\-configuration\_\-sets@{get\_\-configuration\_\-sets}!SDOPackage::Configuration_impl@{SDOPackage::Configuration\_\-impl}}
+\subsubsection[{get\_\-configuration\_\-sets}]{\setlength{\rightskip}{0pt plus 5cm}virtual ConfigurationSetList$\ast$ SDOPackage::Configuration\_\-impl::get\_\-configuration\_\-sets ()  throw (CORBA::SystemException,	     NotAvailable, InternalError)\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classSDOPackage_1_1Configuration__impl_a77844f4a7407bc48c11a455f89d32f4d}
+
+
+[CORBA interface] ConfigurationSet リストの取得 
+
+このオペレーションは ConfigurationProfile が持つ ConfigurationSet の リストを返す。 \doxyref{SDO}{p.}{classSDO} が ConfigurationSet を持たなければ空のリストを返す。
+
+\begin{DoxyReturn}{戻り値}
+保持している ConfigurationSet のリストの現在値。
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{例外}
+\item[{\em SDONotExists}]ターゲットのSDOが存在しない。(本例外は、CORBA標準 システム例外のOBJECT\_\-NOT\_\-EXISTにマッピングされる) \item[{\em NotAvailable}]SDOは存在するが応答がない。 \item[{\em InternalError}]内部的エラーが発生した。 \end{DoxyExceptions}
+\index{SDOPackage::Configuration\_\-impl@{SDOPackage::Configuration\_\-impl}!getDeviceProfile@{getDeviceProfile}}
+\index{getDeviceProfile@{getDeviceProfile}!SDOPackage::Configuration_impl@{SDOPackage::Configuration\_\-impl}}
+\subsubsection[{getDeviceProfile}]{\setlength{\rightskip}{0pt plus 5cm}const DeviceProfile SDOPackage::Configuration\_\-impl::getDeviceProfile ()}\label{classSDOPackage_1_1Configuration__impl_a68fcf4197d16a2e3207066b91f8a3b3b}
+
+
+\doxyref{SDO}{p.}{classSDO} の DeviceProfile を取得する. 
+
+\doxyref{SDO}{p.}{classSDO} の DeviceProfile を取得する
+
+\begin{DoxyReturn}{戻り値}
+\doxyref{SDO}{p.}{classSDO} の DeviceProfile 
+\end{DoxyReturn}
+\index{SDOPackage::Configuration\_\-impl@{SDOPackage::Configuration\_\-impl}!getObjRef@{getObjRef}}
+\index{getObjRef@{getObjRef}!SDOPackage::Configuration_impl@{SDOPackage::Configuration\_\-impl}}
+\subsubsection[{getObjRef}]{\setlength{\rightskip}{0pt plus 5cm}Configuration\_\-ptr SDOPackage::Configuration\_\-impl::getObjRef ()}\label{classSDOPackage_1_1Configuration__impl_a8d613297a107207f423427d27ea08d51}
+
+
+オブジェクト　リファレンスを取得する 
+
+対象のオブジェクトリファレンスを取得する
+
+\begin{DoxyReturn}{戻り値}
+オブジェクトリファレンス 
+\end{DoxyReturn}
+\index{SDOPackage::Configuration\_\-impl@{SDOPackage::Configuration\_\-impl}!getOrganizations@{getOrganizations}}
+\index{getOrganizations@{getOrganizations}!SDOPackage::Configuration_impl@{SDOPackage::Configuration\_\-impl}}
+\subsubsection[{getOrganizations}]{\setlength{\rightskip}{0pt plus 5cm}const OrganizationList SDOPackage::Configuration\_\-impl::getOrganizations ()}\label{classSDOPackage_1_1Configuration__impl_ae418c54724bbdd5be5e8dc78d3185666}
+
+
+\doxyref{SDO}{p.}{classSDO} の Organization リストを取得する. 
+
+\doxyref{SDO}{p.}{classSDO} の Organization リストを取得する
+
+\begin{DoxyReturn}{戻り値}
+\doxyref{SDO}{p.}{classSDO} の Organization リスト 
+\end{DoxyReturn}
+\index{SDOPackage::Configuration\_\-impl@{SDOPackage::Configuration\_\-impl}!getUUID@{getUUID}}
+\index{getUUID@{getUUID}!SDOPackage::Configuration_impl@{SDOPackage::Configuration\_\-impl}}
+\subsubsection[{getUUID}]{\setlength{\rightskip}{0pt plus 5cm}const std::string SDOPackage::Configuration\_\-impl::getUUID () const\hspace{0.3cm}{\ttfamily  [protected]}}\label{classSDOPackage_1_1Configuration__impl_a6226cee3af7cc21745134e4a4fec5472}
+
+
+UUIDを生成する. 
+
+UUIDを生成する
+
+\begin{DoxyReturn}{戻り値}
+生成したUUID 
+\end{DoxyReturn}
+\index{SDOPackage::Configuration\_\-impl@{SDOPackage::Configuration\_\-impl}!remove\_\-configuration\_\-set@{remove\_\-configuration\_\-set}}
+\index{remove\_\-configuration\_\-set@{remove\_\-configuration\_\-set}!SDOPackage::Configuration_impl@{SDOPackage::Configuration\_\-impl}}
+\subsubsection[{remove\_\-configuration\_\-set}]{\setlength{\rightskip}{0pt plus 5cm}virtual CORBA::Boolean SDOPackage::Configuration\_\-impl::remove\_\-configuration\_\-set (const char $\ast$ {\em config\_\-id})  throw (CORBA::SystemException,	     InvalidParameter, NotAvailable, InternalError)\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classSDOPackage_1_1Configuration__impl_ac82aad180dcb37a3d652abb0e368da0a}
+
+
+[CORBA interface] ConfigurationSet を削除する 
+
+ConfigurationProfile から ConfigurationSet を削除する。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em \doxyref{config\_\-id}{p.}{structSDOPackage_1_1Configuration__impl_1_1config__id}}]削除する ConfigurationSet の id。\end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+オペレーションが成功したかどうか。
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{例外}
+\item[{\em SDONotExists}]ターゲットのSDOが存在しない。(本例外は、CORBA標準 システム例外のOBJECT\_\-NOT\_\-EXISTにマッピングされる) \item[{\em InvalidParameter}]引数 \char`\"{}configurationSetID\char`\"{} が null である、 もしくは、引数で指定された ConfigurationSet が存在しない。 \item[{\em NotAvailable}]SDOは存在するが応答がない。 \item[{\em InternalError}]内部的エラーが発生した。 \end{DoxyExceptions}
+\index{SDOPackage::Configuration\_\-impl@{SDOPackage::Configuration\_\-impl}!remove\_\-organization@{remove\_\-organization}}
+\index{remove\_\-organization@{remove\_\-organization}!SDOPackage::Configuration_impl@{SDOPackage::Configuration\_\-impl}}
+\subsubsection[{remove\_\-organization}]{\setlength{\rightskip}{0pt plus 5cm}virtual CORBA::Boolean SDOPackage::Configuration\_\-impl::remove\_\-organization (const char $\ast$ {\em organization\_\-id})  throw (CORBA::SystemException,	     InvalidParameter, NotAvailable, InternalError)\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classSDOPackage_1_1Configuration__impl_a8cc3deeb795a9b9c42c9507375660670}
+
+
+[CORBA interface] Organization の参照の削除 
+
+このオペレーションは Organization の参照を削除する。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em organization\_\-id}]削除する Organization の一意な id。\end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+オペレーションが成功したかどうかを返す。
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{例外}
+\item[{\em SDONotExists}]ターゲットのSDOが存在しない。(本例外は、CORBA標準 システム例外のOBJECT\_\-NOT\_\-EXISTにマッピングされる) \item[{\em InvalidParameter}]引数 \char`\"{}organization\_\-id\char`\"{} が null である。 もしくは \char`\"{}organization\_\-id\char`\"{} に関連付けられた OrganizationProfile が存在しない。 \item[{\em NotAvailable}]SDOは存在するが応答がない。 \item[{\em InternalError}]内部的エラーが発生した。 \end{DoxyExceptions}
+\index{SDOPackage::Configuration\_\-impl@{SDOPackage::Configuration\_\-impl}!remove\_\-service\_\-profile@{remove\_\-service\_\-profile}}
+\index{remove\_\-service\_\-profile@{remove\_\-service\_\-profile}!SDOPackage::Configuration_impl@{SDOPackage::Configuration\_\-impl}}
+\subsubsection[{remove\_\-service\_\-profile}]{\setlength{\rightskip}{0pt plus 5cm}virtual CORBA::Boolean SDOPackage::Configuration\_\-impl::remove\_\-service\_\-profile (const char $\ast$ {\em id})  throw (CORBA::SystemException,	     InvalidParameter, NotAvailable, InternalError)\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classSDOPackage_1_1Configuration__impl_ac5efa6fdefbae7f0f851fadf0fffdf48}
+
+
+[CORBA interface] ServiceProfile の削除 
+
+このオペレーションはこの Configuration interface を持つ \doxyref{SDO}{p.}{classSDO} の Service の ServiceProfile を削除する。削除する ServiceProfile は引数により指定される。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em id}]削除する ServiceProfile の serviceID。\end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+オペレーションが成功したかどうかを返す。
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{例外}
+\item[{\em SDONotExists}]ターゲットのSDOが存在しない。(本例外は、CORBA標準 システム例外のOBJECT\_\-NOT\_\-EXISTにマッピングされる) \item[{\em InvalidParameter}]引数 \char`\"{}id\char`\"{} が null である。もしくは \char`\"{}id\char`\"{} に 関連付けられた ServiceProfile が存在しない。 \item[{\em NotAvailable}]SDOは存在するが応答がない。 \item[{\em InternalError}]内部的エラーが発生した。 \end{DoxyExceptions}
+\index{SDOPackage::Configuration\_\-impl@{SDOPackage::Configuration\_\-impl}!set\_\-configuration\_\-parameter@{set\_\-configuration\_\-parameter}}
+\index{set\_\-configuration\_\-parameter@{set\_\-configuration\_\-parameter}!SDOPackage::Configuration_impl@{SDOPackage::Configuration\_\-impl}}
+\subsubsection[{set\_\-configuration\_\-parameter}]{\setlength{\rightskip}{0pt plus 5cm}virtual CORBA::Boolean SDOPackage::Configuration\_\-impl::set\_\-configuration\_\-parameter (const char $\ast$ {\em name}, \/  const CORBA::Any \& {\em value})  throw (CORBA::SystemException,	     InvalidParameter, NotAvailable, InternalError)\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classSDOPackage_1_1Configuration__impl_ad8be3428eca25a151d9e0a11447828b0}
+
+
+[CORBA interface] Configuration パラメータの変更 
+
+このオペレーションは \char`\"{}name\char`\"{} で指定したパラメータの値を \char`\"{}value\char`\"{} に 変更する。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em name}]変更対象パラメータの名前。 \item[{\em value}]変更対象パラメータの新しい値。\end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+オペレーションが成功したかどうかを返す。
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{例外}
+\item[{\em SDONotExists}]ターゲットのSDOが存在しない。(本例外は、CORBA標準 システム例外のOBJECT\_\-NOT\_\-EXISTにマッピングされる) \item[{\em InvalidParameter}]引数( \char`\"{}name\char`\"{}もしくは\char`\"{}value\char`\"{}) が null である。 もしくは \char`\"{}name\char`\"{} に関連付けられたパラメータが存在しない。 \item[{\em NotAvailable}]SDOは存在するが応答がない。 \item[{\em InternalError}]内部的エラーが発生した。 \end{DoxyExceptions}
+\index{SDOPackage::Configuration\_\-impl@{SDOPackage::Configuration\_\-impl}!set\_\-configuration\_\-set\_\-values@{set\_\-configuration\_\-set\_\-values}}
+\index{set\_\-configuration\_\-set\_\-values@{set\_\-configuration\_\-set\_\-values}!SDOPackage::Configuration_impl@{SDOPackage::Configuration\_\-impl}}
+\subsubsection[{set\_\-configuration\_\-set\_\-values}]{\setlength{\rightskip}{0pt plus 5cm}virtual CORBA::Boolean SDOPackage::Configuration\_\-impl::set\_\-configuration\_\-set\_\-values (const ConfigurationSet \& {\em configuration\_\-set})  throw (CORBA::SystemException,	     InvalidParameter, NotAvailable, InternalError)\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classSDOPackage_1_1Configuration__impl_a89a53c51f56795a098f3be79052413ad}
+
+
+[CORBA interface] ConfigurationSet をセットする 
+
+このオペレーションは指定された id の ConfigurationSet を更新する。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em \doxyref{config\_\-id}{p.}{structSDOPackage_1_1Configuration__impl_1_1config__id}}]変更する ConfigurationSet の ID。 \item[{\em configuration\_\-set}]変更する ConfigurationSet そのもの。\end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+ConfigurationSet が正常に更新できた場合は true。 そうでなければ false を返す。
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{例外}
+\item[{\em InvalidParameter}]\doxyref{config\_\-id}{p.}{structSDOPackage_1_1Configuration__impl_1_1config__id} が null か、 指定された id で格納された ConfigurationSetが 存在しないか、指定された configuration\_\-set内 の属性の１つが不正。 \item[{\em SDONotExists}]ターゲットのSDOが存在しない。(本例外は、CORBA標準 システム例外のOBJECT\_\-NOT\_\-EXISTにマッピングされる) \item[{\em NotAvailable}]SDOは存在するが応答がない。 \item[{\em InternalError}]内部的エラーが発生した。 \end{DoxyExceptions}
+\index{SDOPackage::Configuration\_\-impl@{SDOPackage::Configuration\_\-impl}!set\_\-device\_\-profile@{set\_\-device\_\-profile}}
+\index{set\_\-device\_\-profile@{set\_\-device\_\-profile}!SDOPackage::Configuration_impl@{SDOPackage::Configuration\_\-impl}}
+\subsubsection[{set\_\-device\_\-profile}]{\setlength{\rightskip}{0pt plus 5cm}virtual CORBA::Boolean SDOPackage::Configuration\_\-impl::set\_\-device\_\-profile (const DeviceProfile \& {\em dProfile})  throw (CORBA::SystemException,	     InvalidParameter, NotAvailable, InternalError)\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classSDOPackage_1_1Configuration__impl_ae54b63a9474dd9a98854e186cf5ae167}
+
+
+[CORBA interface] \doxyref{SDO}{p.}{classSDO} の DeviceProfile のセット 
+
+このオペレーションは \doxyref{SDO}{p.}{classSDO} の DeviceProfile をセットする。SDO が DeviceProfile を保持していない場合は新たな DeviceProfile を生成し、 DeviceProfile をすでに保持している場合は既存のものと置き換える。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em dProfile}]\doxyref{SDO}{p.}{classSDO} に関連付けられる DeviceProfile。\end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+オペレーションが成功したかどうかを返す。
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{例外}
+\item[{\em SDONotExists}]ターゲットのSDOが存在しない。(本例外は、CORBA標準 システム例外のOBJECT\_\-NOT\_\-EXISTにマッピングされる) \item[{\em NotAvailable}]SDOは存在するが応答がない。 \item[{\em InvalidParameter}]引数 \char`\"{}dProfile\char`\"{} が null である。 \item[{\em InternalError}]内部的エラーが発生した。 \end{DoxyExceptions}
+
+
+\subsection{変数}
+\index{SDOPackage::Configuration\_\-impl@{SDOPackage::Configuration\_\-impl}!m\_\-config\_\-mutex@{m\_\-config\_\-mutex}}
+\index{m\_\-config\_\-mutex@{m\_\-config\_\-mutex}!SDOPackage::Configuration_impl@{SDOPackage::Configuration\_\-impl}}
+\subsubsection[{m\_\-config\_\-mutex}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Mutex} {\bf SDOPackage::Configuration\_\-impl::m\_\-config\_\-mutex}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classSDOPackage_1_1Configuration__impl_af254d8973fdb5c36b8169a7552cc64d4}
+\index{SDOPackage::Configuration\_\-impl@{SDOPackage::Configuration\_\-impl}!m\_\-configsets@{m\_\-configsets}}
+\index{m\_\-configsets@{m\_\-configsets}!SDOPackage::Configuration_impl@{SDOPackage::Configuration\_\-impl}}
+\subsubsection[{m\_\-configsets}]{\setlength{\rightskip}{0pt plus 5cm}{\bf RTC::ConfigAdmin}\& {\bf SDOPackage::Configuration\_\-impl::m\_\-configsets}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classSDOPackage_1_1Configuration__impl_a7cd573c3000eb9242ee023fcea7b5112}
+
+
+Lock 付き \doxyref{SDO}{p.}{classSDO} ConfigurationSetList. 
+
+\index{SDOPackage::Configuration\_\-impl@{SDOPackage::Configuration\_\-impl}!m\_\-deviceProfile@{m\_\-deviceProfile}}
+\index{m\_\-deviceProfile@{m\_\-deviceProfile}!SDOPackage::Configuration_impl@{SDOPackage::Configuration\_\-impl}}
+\subsubsection[{m\_\-deviceProfile}]{\setlength{\rightskip}{0pt plus 5cm}DeviceProfile {\bf SDOPackage::Configuration\_\-impl::m\_\-deviceProfile}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classSDOPackage_1_1Configuration__impl_a66e90439d4abad6f5d82ffe3295bf7ec}
+
+
+Lock 付き \doxyref{SDO}{p.}{classSDO} DeviceProfile. 
+
+\index{SDOPackage::Configuration\_\-impl@{SDOPackage::Configuration\_\-impl}!m\_\-dprofile\_\-mutex@{m\_\-dprofile\_\-mutex}}
+\index{m\_\-dprofile\_\-mutex@{m\_\-dprofile\_\-mutex}!SDOPackage::Configuration_impl@{SDOPackage::Configuration\_\-impl}}
+\subsubsection[{m\_\-dprofile\_\-mutex}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Mutex} {\bf SDOPackage::Configuration\_\-impl::m\_\-dprofile\_\-mutex}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classSDOPackage_1_1Configuration__impl_a9689abe24b863917c2a59b6040803a1b}
+\index{SDOPackage::Configuration\_\-impl@{SDOPackage::Configuration\_\-impl}!m\_\-objref@{m\_\-objref}}
+\index{m\_\-objref@{m\_\-objref}!SDOPackage::Configuration_impl@{SDOPackage::Configuration\_\-impl}}
+\subsubsection[{m\_\-objref}]{\setlength{\rightskip}{0pt plus 5cm}Configuration\_\-var {\bf SDOPackage::Configuration\_\-impl::m\_\-objref}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classSDOPackage_1_1Configuration__impl_a36a9f12d50e566abcbd3fe236c83a350}
+
+
+CORBA オブジェクトへの参照. 
+
+\index{SDOPackage::Configuration\_\-impl@{SDOPackage::Configuration\_\-impl}!m\_\-org\_\-mutex@{m\_\-org\_\-mutex}}
+\index{m\_\-org\_\-mutex@{m\_\-org\_\-mutex}!SDOPackage::Configuration_impl@{SDOPackage::Configuration\_\-impl}}
+\subsubsection[{m\_\-org\_\-mutex}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Mutex} {\bf SDOPackage::Configuration\_\-impl::m\_\-org\_\-mutex}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classSDOPackage_1_1Configuration__impl_a88038663067f3f3f5cc525ee9e2aba1d}
+\index{SDOPackage::Configuration\_\-impl@{SDOPackage::Configuration\_\-impl}!m\_\-organizations@{m\_\-organizations}}
+\index{m\_\-organizations@{m\_\-organizations}!SDOPackage::Configuration_impl@{SDOPackage::Configuration\_\-impl}}
+\subsubsection[{m\_\-organizations}]{\setlength{\rightskip}{0pt plus 5cm}OrganizationList {\bf SDOPackage::Configuration\_\-impl::m\_\-organizations}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classSDOPackage_1_1Configuration__impl_a3aedc84961dbfe19b7f6d4fe7ab1c09b}
+
+
+Lock 付き \doxyref{SDO}{p.}{classSDO} OrganizationList. 
+
+\index{SDOPackage::Configuration\_\-impl@{SDOPackage::Configuration\_\-impl}!m\_\-parameters@{m\_\-parameters}}
+\index{m\_\-parameters@{m\_\-parameters}!SDOPackage::Configuration_impl@{SDOPackage::Configuration\_\-impl}}
+\subsubsection[{m\_\-parameters}]{\setlength{\rightskip}{0pt plus 5cm}ParameterList {\bf SDOPackage::Configuration\_\-impl::m\_\-parameters}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classSDOPackage_1_1Configuration__impl_acaea00148dbf45d58a42f6d7aabfa082}
+
+
+\doxyref{SDO}{p.}{classSDO} Parameter. 
+
+実装技術に非依存な変数(パラメータ)を定義するデータ構造。 パラメータ構造は、変数の名前と型を定義する。 定義されている属性は以下のとおり。
+\begin{DoxyItemize}
+\item name : パラメータの名前。
+\item type : パラメータの型名。パラメータ・データ型のオリジナルの値範囲は 属性 allowedValues の定義で限定することができる。
+\end{DoxyItemize}
+
+allowedValues : パラメータが取ることのできる値。 パラメータ型に固有の定義を限定する必要がある場合のみ この属性は使用される。例えば、文字列パラメータに許さ れる値を列挙によって限定したり、数値型パラメータに許 される値を範囲によって限定したりする。パラメータに許 される値は、列挙、範囲またはインターバル構造で定義す ることができる。 もしもパラメータに対する制約がない場合は、allowedValues 属性はnullとなる。すなわち、パラメータ型に固有の範囲 であればどのような値も取ることができる。
+
+struct Parameter \{ string name; TypeCode type; AllowedValues allowed\_\-values; \};
+
+Lock 付き \doxyref{SDO}{p.}{classSDO} ParameterList \index{SDOPackage::Configuration\_\-impl@{SDOPackage::Configuration\_\-impl}!m\_\-params\_\-mutex@{m\_\-params\_\-mutex}}
+\index{m\_\-params\_\-mutex@{m\_\-params\_\-mutex}!SDOPackage::Configuration_impl@{SDOPackage::Configuration\_\-impl}}
+\subsubsection[{m\_\-params\_\-mutex}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Mutex} {\bf SDOPackage::Configuration\_\-impl::m\_\-params\_\-mutex}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classSDOPackage_1_1Configuration__impl_acc6db9158b0f0bc0b7e333ecebbb80b7}
+\index{SDOPackage::Configuration\_\-impl@{SDOPackage::Configuration\_\-impl}!m\_\-sdoservice@{m\_\-sdoservice}}
+\index{m\_\-sdoservice@{m\_\-sdoservice}!SDOPackage::Configuration_impl@{SDOPackage::Configuration\_\-impl}}
+\subsubsection[{m\_\-sdoservice}]{\setlength{\rightskip}{0pt plus 5cm}{\bf RTC::SdoServiceAdmin}\& {\bf SDOPackage::Configuration\_\-impl::m\_\-sdoservice}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classSDOPackage_1_1Configuration__impl_af667dca0114e7e41f7df5ecd304a2d39}
+
+
+Lock 付き \doxyref{SDO}{p.}{classSDO} Service 管理オブジェクト. 
+
+\index{SDOPackage::Configuration\_\-impl@{SDOPackage::Configuration\_\-impl}!m\_\-sdoservice\_\-mutex@{m\_\-sdoservice\_\-mutex}}
+\index{m\_\-sdoservice\_\-mutex@{m\_\-sdoservice\_\-mutex}!SDOPackage::Configuration_impl@{SDOPackage::Configuration\_\-impl}}
+\subsubsection[{m\_\-sdoservice\_\-mutex}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Mutex} {\bf SDOPackage::Configuration\_\-impl::m\_\-sdoservice\_\-mutex}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classSDOPackage_1_1Configuration__impl_ae8b2a69d6acc56f1d3291200a70ce60d}
+\index{SDOPackage::Configuration\_\-impl@{SDOPackage::Configuration\_\-impl}!rtclog@{rtclog}}
+\index{rtclog@{rtclog}!SDOPackage::Configuration_impl@{SDOPackage::Configuration\_\-impl}}
+\subsubsection[{rtclog}]{\setlength{\rightskip}{0pt plus 5cm}::{\bf RTC::Logger} {\bf SDOPackage::Configuration\_\-impl::rtclog}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classSDOPackage_1_1Configuration__impl_a9ed7b17de24aa80ee09593a98df0e4b9}

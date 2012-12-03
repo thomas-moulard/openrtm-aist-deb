@@ -1,0 +1,187 @@
+\section{RTC::PeriodicECSharedComposite Class Reference}
+\label{classRTC_1_1PeriodicECSharedComposite}\index{RTC::PeriodicECSharedComposite@{RTC::PeriodicECSharedComposite}}
+
+
+\doxyref{PeriodicECSharedComposite}{p.}{classRTC_1_1PeriodicECSharedComposite} class.  
+
+
+
+
+{\ttfamily \#include $<$PeriodicECSharedComposite.h$>$}
+
+Inheritance diagram for RTC::PeriodicECSharedComposite:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2cm]{classRTC_1_1PeriodicECSharedComposite}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf PeriodicECSharedComposite} ({\bf Manager} $\ast$manager)
+\begin{DoxyCompactList}\small\item\em Constructor. \item\end{DoxyCompactList}\item 
+virtual {\bf $\sim$PeriodicECSharedComposite} (void)
+\begin{DoxyCompactList}\small\item\em Destructor. \item\end{DoxyCompactList}\item 
+virtual ReturnCode\_\-t {\bf onInitialize} (void)
+\begin{DoxyCompactList}\small\item\em Initialization. \item\end{DoxyCompactList}\item 
+virtual ReturnCode\_\-t {\bf onActivated} ({\bf RTC::UniqueId} exec\_\-handle)
+\begin{DoxyCompactList}\small\item\em Callback function to activate. \item\end{DoxyCompactList}\item 
+virtual ReturnCode\_\-t {\bf onDeactivated} ({\bf RTC::UniqueId} exec\_\-handle)
+\begin{DoxyCompactList}\small\item\em Callback function to deactivate. \item\end{DoxyCompactList}\item 
+virtual ReturnCode\_\-t {\bf onReset} ({\bf RTC::UniqueId} exec\_\-handle)
+\begin{DoxyCompactList}\small\item\em Callback function to reset. \item\end{DoxyCompactList}\item 
+virtual ReturnCode\_\-t {\bf onFinalize} (void)
+\begin{DoxyCompactList}\small\item\em [ComponentAction CORBA interface] Finalize \doxyref{RTC}{p.}{namespaceRTC} \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std::vector$<$ std::string $>$ {\bf m\_\-members}
+\begin{DoxyCompactList}\small\item\em Components. \item\end{DoxyCompactList}\item 
+OpenRTM::DataFlowComponent\_\-var {\bf m\_\-ref}
+\begin{DoxyCompactList}\small\item\em Reference of object. \item\end{DoxyCompactList}\item 
+{\bf SDOPackage::PeriodicECOrganization} $\ast$ {\bf m\_\-org}
+\begin{DoxyCompactList}\small\item\em Reference of Organization. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\doxyref{PeriodicECSharedComposite}{p.}{classRTC_1_1PeriodicECSharedComposite} class. This is a base class of the data flow type RT-\/Component. Inherit this class when implementing various data flow type RT-\/Components.
+
+\begin{DoxySince}{Since}
+0.4.0 
+\end{DoxySince}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{RTC::PeriodicECSharedComposite@{RTC::PeriodicECSharedComposite}!PeriodicECSharedComposite@{PeriodicECSharedComposite}}
+\index{PeriodicECSharedComposite@{PeriodicECSharedComposite}!RTC::PeriodicECSharedComposite@{RTC::PeriodicECSharedComposite}}
+\subsubsection[{PeriodicECSharedComposite}]{\setlength{\rightskip}{0pt plus 5cm}RTC::PeriodicECSharedComposite::PeriodicECSharedComposite ({\bf Manager} $\ast$ {\em manager})}\label{classRTC_1_1PeriodicECSharedComposite_ae7e24b70eb71a55520c0dc3c33b14ac9}
+
+
+Constructor. 
+
+Constructor
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em manager}]\doxyref{Manager}{p.}{classRTC_1_1Manager} object \end{DoxyParams}
+\index{RTC::PeriodicECSharedComposite@{RTC::PeriodicECSharedComposite}!$\sim$PeriodicECSharedComposite@{$\sim$PeriodicECSharedComposite}}
+\index{$\sim$PeriodicECSharedComposite@{$\sim$PeriodicECSharedComposite}!RTC::PeriodicECSharedComposite@{RTC::PeriodicECSharedComposite}}
+\subsubsection[{$\sim$PeriodicECSharedComposite}]{\setlength{\rightskip}{0pt plus 5cm}virtual RTC::PeriodicECSharedComposite::$\sim$PeriodicECSharedComposite (void)\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classRTC_1_1PeriodicECSharedComposite_a1ddd153f7ef2512abbd2613058fde0f4}
+
+
+Destructor. 
+
+Destructor 
+
+\subsection{Member Function Documentation}
+\index{RTC::PeriodicECSharedComposite@{RTC::PeriodicECSharedComposite}!onActivated@{onActivated}}
+\index{onActivated@{onActivated}!RTC::PeriodicECSharedComposite@{RTC::PeriodicECSharedComposite}}
+\subsubsection[{onActivated}]{\setlength{\rightskip}{0pt plus 5cm}virtual ReturnCode\_\-t RTC::PeriodicECSharedComposite::onActivated ({\bf RTC::UniqueId} {\em exec\_\-handle})\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classRTC_1_1PeriodicECSharedComposite_a8d14176829861b061cfbb07ad0874856}
+
+
+Callback function to activate. 
+
+This is a callback function that is executed when ComponentAction::on\_\-activated was invoked.\par
+ As for actual activation of each component, since this function is dummy-\/implemented to return RTC::RTC\_\-OK unconditionally, you need to implement this function by overriding it.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em exec\_\-handle}]ID of the participant ExecutionContext\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The return code of ReturnCode\_\-t type 
+\end{DoxyReturn}
+
+
+Reimplemented from {\bf RTC::RTObject\_\-impl} \doxyref{}{p.}{classRTC_1_1RTObject__impl_a8f5ab867b59f72634b2e19afac941be4}.
+
+\index{RTC::PeriodicECSharedComposite@{RTC::PeriodicECSharedComposite}!onDeactivated@{onDeactivated}}
+\index{onDeactivated@{onDeactivated}!RTC::PeriodicECSharedComposite@{RTC::PeriodicECSharedComposite}}
+\subsubsection[{onDeactivated}]{\setlength{\rightskip}{0pt plus 5cm}virtual ReturnCode\_\-t RTC::PeriodicECSharedComposite::onDeactivated ({\bf RTC::UniqueId} {\em exec\_\-handle})\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classRTC_1_1PeriodicECSharedComposite_a3e0dcca8ec43176ecea64a68f6496b99}
+
+
+Callback function to deactivate. 
+
+This is a callback function that is executed when ComponentAction::on\_\-deactivated was invoked.\par
+ As for actual deactivation of each component, since this function is dummy-\/implemented to return RTC::RTC\_\-OK unconditionally, you need to implement this function by overriding it.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em exec\_\-handle}]ID of the participant ExecutionContext\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The return code of ReturnCode\_\-t type 
+\end{DoxyReturn}
+
+
+Reimplemented from {\bf RTC::RTObject\_\-impl} \doxyref{}{p.}{classRTC_1_1RTObject__impl_a55a81b783612a34523af2677eb9d72bd}.
+
+\index{RTC::PeriodicECSharedComposite@{RTC::PeriodicECSharedComposite}!onFinalize@{onFinalize}}
+\index{onFinalize@{onFinalize}!RTC::PeriodicECSharedComposite@{RTC::PeriodicECSharedComposite}}
+\subsubsection[{onFinalize}]{\setlength{\rightskip}{0pt plus 5cm}virtual ReturnCode\_\-t RTC::PeriodicECSharedComposite::onFinalize (void)\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classRTC_1_1PeriodicECSharedComposite_ac95f6324faef90dbe1af768e4da9d1c8}
+
+
+[ComponentAction CORBA interface] Finalize \doxyref{RTC}{p.}{namespaceRTC} 
+
+The \doxyref{RTC}{p.}{namespaceRTC} is being destroyed. Any final RTC-\/specific tear-\/down logic should be performed here. As a result of this operation, \doxyref{onFinalize()}{p.}{classRTC_1_1PeriodicECSharedComposite_ac95f6324faef90dbe1af768e4da9d1c8} callback function is called.
+
+\begin{DoxyReturn}{Returns}
+The return code of ReturnCode\_\-t type 
+\end{DoxyReturn}
+
+
+Reimplemented from {\bf RTC::RTObject\_\-impl} \doxyref{}{p.}{classRTC_1_1RTObject__impl_ae255034d04d2797a594f908b58a17971}.
+
+\index{RTC::PeriodicECSharedComposite@{RTC::PeriodicECSharedComposite}!onInitialize@{onInitialize}}
+\index{onInitialize@{onInitialize}!RTC::PeriodicECSharedComposite@{RTC::PeriodicECSharedComposite}}
+\subsubsection[{onInitialize}]{\setlength{\rightskip}{0pt plus 5cm}virtual ReturnCode\_\-t RTC::PeriodicECSharedComposite::onInitialize (void)\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classRTC_1_1PeriodicECSharedComposite_a71c8ed52c564c0c1f8a38379ab3bdcd2}
+
+
+Initialization. 
+
+Initialization the data flow type RT-\/Component. Write the actual initialization code in each concrete class. 
+
+Reimplemented from {\bf RTC::RTObject\_\-impl} \doxyref{}{p.}{classRTC_1_1RTObject__impl_ad98483b34aebe913fc7e73d4efa156f3}.
+
+\index{RTC::PeriodicECSharedComposite@{RTC::PeriodicECSharedComposite}!onReset@{onReset}}
+\index{onReset@{onReset}!RTC::PeriodicECSharedComposite@{RTC::PeriodicECSharedComposite}}
+\subsubsection[{onReset}]{\setlength{\rightskip}{0pt plus 5cm}virtual ReturnCode\_\-t RTC::PeriodicECSharedComposite::onReset ({\bf RTC::UniqueId} {\em exec\_\-handle})\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classRTC_1_1PeriodicECSharedComposite_af71130d5e46cd7d6659c6e516508262e}
+
+
+Callback function to reset. 
+
+This is a callback function that is executed when ComponentAction::on\_\-reset was invoked.\par
+ As for actual reset of each component, since this function is dummy-\/implemented to return RTC::RTC\_\-OK unconditionally, you need to implement this function by overriding it.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em exec\_\-handle}]ID of the participant ExecutionContext\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The return code of ReturnCode\_\-t type 
+\end{DoxyReturn}
+
+
+Reimplemented from {\bf RTC::RTObject\_\-impl} \doxyref{}{p.}{classRTC_1_1RTObject__impl_ab1bd11e5c23b1d21d7d4489bda4cd245}.
+
+
+
+\subsection{Member Data Documentation}
+\index{RTC::PeriodicECSharedComposite@{RTC::PeriodicECSharedComposite}!m\_\-members@{m\_\-members}}
+\index{m\_\-members@{m\_\-members}!RTC::PeriodicECSharedComposite@{RTC::PeriodicECSharedComposite}}
+\subsubsection[{m\_\-members}]{\setlength{\rightskip}{0pt plus 5cm}std::vector$<$std::string$>$ {\bf RTC::PeriodicECSharedComposite::m\_\-members}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC_1_1PeriodicECSharedComposite_ac33066866dceedf503156f4dcdf93aa5}
+
+
+Components. 
+
+\index{RTC::PeriodicECSharedComposite@{RTC::PeriodicECSharedComposite}!m\_\-org@{m\_\-org}}
+\index{m\_\-org@{m\_\-org}!RTC::PeriodicECSharedComposite@{RTC::PeriodicECSharedComposite}}
+\subsubsection[{m\_\-org}]{\setlength{\rightskip}{0pt plus 5cm}{\bf SDOPackage::PeriodicECOrganization}$\ast$ {\bf RTC::PeriodicECSharedComposite::m\_\-org}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC_1_1PeriodicECSharedComposite_a61022d09e05fd6faafb54bc845a02c26}
+
+
+Reference of Organization. 
+
+\index{RTC::PeriodicECSharedComposite@{RTC::PeriodicECSharedComposite}!m\_\-ref@{m\_\-ref}}
+\index{m\_\-ref@{m\_\-ref}!RTC::PeriodicECSharedComposite@{RTC::PeriodicECSharedComposite}}
+\subsubsection[{m\_\-ref}]{\setlength{\rightskip}{0pt plus 5cm}OpenRTM::DataFlowComponent\_\-var {\bf RTC::PeriodicECSharedComposite::m\_\-ref}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC_1_1PeriodicECSharedComposite_a726b062abb5343f935857c05a816b6c5}
+
+
+Reference of object. 
+

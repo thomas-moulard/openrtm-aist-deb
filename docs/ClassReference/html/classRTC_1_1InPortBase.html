@@ -1,0 +1,1208 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<title>OpenRTM: クラス RTC::InPortBase</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<!-- 作成： Doxygen 1.6.3 -->
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="index.html"><span>メインページ</span></a></li>
+      <li><a href="namespaces.html"><span>ネームスペース</span></a></li>
+      <li class="current"><a href="annotated.html"><span>クラス</span></a></li>
+      <li><a href="files.html"><span>ファイル</span></a></li>
+    </ul>
+  </div>
+  <div class="tabs">
+    <ul>
+      <li><a href="annotated.html"><span>構成</span></a></li>
+      <li><a href="hierarchy.html"><span>クラス階層</span></a></li>
+      <li><a href="functions.html"><span>構成メンバ</span></a></li>
+    </ul>
+  </div>
+  <div class="navpath"><a class="el" href="namespaceRTC.html">RTC</a>::<a class="el" href="classRTC_1_1InPortBase.html">InPortBase</a>
+  </div>
+</div>
+<div class="contents">
+<h1>クラス RTC::InPortBase</h1><!-- doxytag: class="RTC::InPortBase" --><!-- doxytag: inherits="RTC::PortBase,RTC::DataPortStatus" -->
+<p><a class="el" href="classRTC_1_1InPort.html" title="InPort テンプレートクラス.">InPort</a> 用 Port.  
+<a href="#_details">[詳細]</a></p>
+
+<p><code>#include &lt;<a class="el" href="InPortBase_8h_source.html">InPortBase.h</a>&gt;</code></p>
+<div class="dynheader">
+RTC::InPortBaseに対する継承グラフ</div>
+<div class="dynsection">
+ <div class="center">
+  <img src="classRTC_1_1InPortBase.png" usemap="#RTC::InPortBase_map" alt=""/>
+  <map id="RTC::InPortBase_map" name="RTC::InPortBase_map">
+<area href="classRTC_1_1PortBase.html" alt="RTC::PortBase" shape="rect" coords="0,0,153,24"/>
+<area href="classRTC_1_1DataPortStatus.html" alt="RTC::DataPortStatus" shape="rect" coords="163,0,316,24"/>
+<area href="classRTC_1_1InPort.html" alt="RTC::InPort&lt; DataType &gt;" shape="rect" coords="81,112,234,136"/>
+</map>
+ </div>
+</div>
+
+<p><a href="classRTC_1_1InPortBase-members.html">すべてのメンバ一覧</a></p>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr><td colspan="2"><h2>Public メソッド</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1InPortBase.html#acf7e8f976e2d5c40132a02fe309b1f1e">InPortBase</a> (const char *name, const char *data_type)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">コンストラクタ  <a href="#acf7e8f976e2d5c40132a02fe309b1f1e"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1InPortBase.html#a32e533d6c608f0d6125440b7366c857c">~InPortBase</a> (void)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1InPortBase.html#adeeb77472583af68e16c1b6ac6aee118">init</a> (<a class="el" href="classcoil_1_1Properties.html">coil::Properties</a> &amp;prop)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">プロパティの初期化  <a href="#adeeb77472583af68e16c1b6ac6aee118"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1InPortBase.html#a448e72f4d6d7890c4fb6add7d86d04b5">read</a> ()=0</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight"><a class="el" href="classRTC_1_1RTObject__impl.html#a69b50eea5bc7f862114602963cca84ca" title="全 InPort のデータを読み込む。">RTObject_impl::readAll()</a>から呼ばれる仮想関数.  <a href="#a448e72f4d6d7890c4fb6add7d86d04b5"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classcoil_1_1Properties.html">coil::Properties</a> &amp;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1InPortBase.html#a86cfb64b99b76f6ae34288704fdf4ed4">properties</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">プロパティを取得する  <a href="#a86cfb64b99b76f6ae34288704fdf4ed4"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">const std::vector<br class="typebreak"/>
+&lt; <a class="el" href="classRTC_1_1InPortConnector.html">InPortConnector</a> * &gt; &amp;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1InPortBase.html#a5e247ce406f48bd4cd40ce25d98764d4">connectors</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Connector を取得.  <a href="#a5e247ce406f48bd4cd40ce25d98764d4"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceRTC.html#afeb55822b3bb685ea943cf95c6320bdc">ConnectorInfoList</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1InPortBase.html#aa79b490a1fae07ca9a0ed5a99267b608">getConnectorProfiles</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">ConnectorProfile を取得.  <a href="#aa79b490a1fae07ca9a0ed5a99267b608"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacecoil.html#ac44b80f207f9471f2cc10a0e4202f9ea">coil::vstring</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1InPortBase.html#a93477a719d89b0da08b23f4da5f48fae">getConnectorIds</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">ConnectorId を取得.  <a href="#a93477a719d89b0da08b23f4da5f48fae"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacecoil.html#ac44b80f207f9471f2cc10a0e4202f9ea">coil::vstring</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1InPortBase.html#aa722937ee4e9be0d531db5e207bf0853">getConnectorNames</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Connectorの名前を取得.  <a href="#aa722937ee4e9be0d531db5e207bf0853"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classRTC_1_1InPortConnector.html">InPortConnector</a> *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1InPortBase.html#aea583e55d4d025245afd712300230f4f">getConnectorById</a> (const char *id)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">ConnectorProfileをIDで取得.  <a href="#aea583e55d4d025245afd712300230f4f"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classRTC_1_1InPortConnector.html">InPortConnector</a> *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1InPortBase.html#a322f9c5319fd7102202289b394893bf7">getConnectorByName</a> (const char *name)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">ConnectorProfileを名前で取得.  <a href="#a322f9c5319fd7102202289b394893bf7"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1InPortBase.html#adffe2b716bbf5ce808010c26ff9cb453">getConnectorProfileById</a> (const char *id, <a class="el" href="classRTC_1_1ConnectorInfo.html">ConnectorInfo</a> &amp;prof)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">ConnectorProfileをIDで取得.  <a href="#adffe2b716bbf5ce808010c26ff9cb453"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1InPortBase.html#ae8ba538d6c318a9ddfb9242a72a6c26b">getConnectorProfileByName</a> (const char *name, <a class="el" href="classRTC_1_1ConnectorInfo.html">ConnectorInfo</a> &amp;prof)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">ConnectorProfileを名前で取得.  <a href="#ae8ba538d6c318a9ddfb9242a72a6c26b"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1InPortBase.html#a4188e629df750498e0d3b100f51133ff">activateInterfaces</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">InPortを activates する.  <a href="#a4188e629df750498e0d3b100f51133ff"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1InPortBase.html#a4d8bba26fce07c092ebffbab6b1aa881">deactivateInterfaces</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">全ての Port のインターフェースを deactivates する  <a href="#a4d8bba26fce07c092ebffbab6b1aa881"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1InPortBase.html#a87108f42506a526d05dd72d67a1654af">addConnectorDataListener</a> (<a class="el" href="namespaceRTC.html#aecdfe03a1e91ff9522a322e4bcc9ed71">ConnectorDataListenerType</a> listener_type, <a class="el" href="classRTC_1_1ConnectorDataListener.html">ConnectorDataListener</a> *listener, bool autoclean=true)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight"><a class="el" href="classRTC_1_1ConnectorDataListener.html" title="ConnectorDataListener クラス.">ConnectorDataListener</a> リスナを追加する.  <a href="#a87108f42506a526d05dd72d67a1654af"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1InPortBase.html#ad371ba04fc81e381ff74751bc2f400c9">removeConnectorDataListener</a> (<a class="el" href="namespaceRTC.html#aecdfe03a1e91ff9522a322e4bcc9ed71">ConnectorDataListenerType</a> listener_type, <a class="el" href="classRTC_1_1ConnectorDataListener.html">ConnectorDataListener</a> *listener)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight"><a class="el" href="classRTC_1_1ConnectorDataListener.html" title="ConnectorDataListener クラス.">ConnectorDataListener</a> リスナを削除する.  <a href="#ad371ba04fc81e381ff74751bc2f400c9"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1InPortBase.html#af3f78ee20e085969a55854b6bcacb0f0">addConnectorListener</a> (<a class="el" href="namespaceRTC.html#a56d51b87875a454c91b4fee8af41422c">ConnectorListenerType</a> callback_type, <a class="el" href="classRTC_1_1ConnectorListener.html">ConnectorListener</a> *listener, bool autoclean=true)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight"><a class="el" href="classRTC_1_1ConnectorListener.html" title="ConnectorListener クラス.">ConnectorListener</a> リスナを追加する.  <a href="#af3f78ee20e085969a55854b6bcacb0f0"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1InPortBase.html#a28f441f50e37fd06c7cf7c4c5b02e321">removeConnectorListener</a> (<a class="el" href="namespaceRTC.html#a56d51b87875a454c91b4fee8af41422c">ConnectorListenerType</a> callback_type, <a class="el" href="classRTC_1_1ConnectorListener.html">ConnectorListener</a> *listener)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight"><a class="el" href="classRTC_1_1ConnectorDataListener.html" title="ConnectorDataListener クラス.">ConnectorDataListener</a> リスナを削除する.  <a href="#a28f441f50e37fd06c7cf7c4c5b02e321"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1InPortBase.html#afb766071f5b6f5f7d783a02fbe30ab61">isLittleEndian</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">endian 設定を返す  <a href="#afb766071f5b6f5f7d783a02fbe30ab61"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual ReturnCode_t&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1InPortBase.html#ab37ad76d4270c20133b52b1bbdf3b529">connect</a> (ConnectorProfile &amp;connector_profile)  throw (CORBA::SystemException)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">[CORBA interface] Port の接続を行う  <a href="#ab37ad76d4270c20133b52b1bbdf3b529"></a><br/></td></tr>
+<tr><td colspan="2"><h2>Public 変数</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">DATAPORTSTATUS_ENUM typedef <br class="typebreak"/>
+std::vector&lt; <a class="el" href="classRTC_1_1InPortConnector.html">InPortConnector</a> * &gt;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1InPortBase.html#a0b1bc541de27728a4a1758d9b2c8b667">ConnectorList</a></td></tr>
+<tr><td colspan="2"><h2>Protected メソッド</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual ReturnCode_t&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1InPortBase.html#ad836b599b157efb1a31ec61999015986">publishInterfaces</a> (ConnectorProfile &amp;connector_profile)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Interface情報を公開する.  <a href="#ad836b599b157efb1a31ec61999015986"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual ReturnCode_t&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1InPortBase.html#adf648c377e5730a2de6dc48fc47543fb">subscribeInterfaces</a> (const ConnectorProfile &amp;connector_profile)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Interfaceに接続する.  <a href="#adf648c377e5730a2de6dc48fc47543fb"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1InPortBase.html#a118932439dce0dc96571b0123615c36e">unsubscribeInterfaces</a> (const ConnectorProfile &amp;connector_profile)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Interfaceへの接続を解除する.  <a href="#a118932439dce0dc96571b0123615c36e"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1InPortBase.html#ac3195cece5da04b052b6d60a99f7c0fa">initProviders</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight"><a class="el" href="classRTC_1_1InPort.html" title="InPort テンプレートクラス.">InPort</a> provider の初期化.  <a href="#ac3195cece5da04b052b6d60a99f7c0fa"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1InPortBase.html#aea0abf42128b7f945c3f5787ee19581a">initConsumers</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight"><a class="el" href="classRTC_1_1OutPort.html" title="OutPort テンプレートクラス.">OutPort</a> consumer の初期化.  <a href="#aea0abf42128b7f945c3f5787ee19581a"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1InPortBase.html#ae32b6fb379655aeaf86db44db06e6d77">checkEndian</a> (const <a class="el" href="classcoil_1_1Properties.html">coil::Properties</a> &amp;prop, bool &amp;littleEndian)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">シリアライザのエンディアンをチェックする  <a href="#ae32b6fb379655aeaf86db44db06e6d77"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classRTC_1_1InPortProvider.html">InPortProvider</a> *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1InPortBase.html#a4f82e38b34bd3fd392d53f1543da3b58">createProvider</a> (ConnectorProfile &amp;cprof, <a class="el" href="classcoil_1_1Properties.html">coil::Properties</a> &amp;prop)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight"><a class="el" href="classRTC_1_1InPort.html" title="InPort テンプレートクラス.">InPort</a> provider の生成.  <a href="#a4f82e38b34bd3fd392d53f1543da3b58"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classRTC_1_1OutPortConsumer.html">OutPortConsumer</a> *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1InPortBase.html#a48146d910456ba7b1ebca68e96f77db4">createConsumer</a> (const ConnectorProfile &amp;cprof, <a class="el" href="classcoil_1_1Properties.html">coil::Properties</a> &amp;prop)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight"><a class="el" href="classRTC_1_1OutPort.html" title="OutPort テンプレートクラス.">OutPort</a> consumer の生成.  <a href="#a48146d910456ba7b1ebca68e96f77db4"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classRTC_1_1InPortConnector.html">InPortConnector</a> *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1InPortBase.html#aa6fe75ede17566f7847394f56700ba6d">createConnector</a> (ConnectorProfile &amp;cprof, <a class="el" href="classcoil_1_1Properties.html">coil::Properties</a> &amp;prop, <a class="el" href="classRTC_1_1InPortProvider.html">InPortProvider</a> *provider)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight"><a class="el" href="classRTC_1_1InPortPushConnector.html" title="InPortPushConnector クラス.">InPortPushConnector</a> の生成.  <a href="#aa6fe75ede17566f7847394f56700ba6d"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classRTC_1_1InPortConnector.html">InPortConnector</a> *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1InPortBase.html#ac7be351658bb18c655b7fea9a2dac68b">createConnector</a> (const ConnectorProfile &amp;cprof, <a class="el" href="classcoil_1_1Properties.html">coil::Properties</a> &amp;prop, <a class="el" href="classRTC_1_1OutPortConsumer.html">OutPortConsumer</a> *consumer)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight"><a class="el" href="classRTC_1_1InPortPullConnector.html" title="InPortPullConnector クラス.">InPortPullConnector</a> の生成.  <a href="#ac7be351658bb18c655b7fea9a2dac68b"></a><br/></td></tr>
+<tr><td colspan="2"><h2>Protected 変数</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1InPortBase.html#a5fd4766bd238d2ab34762c31dd540207">m_singlebuffer</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">バッファモード  <a href="#a5fd4766bd238d2ab34762c31dd540207"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classRTC_1_1BufferBase.html">CdrBufferBase</a> *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1InPortBase.html#a7f1256c1d2997346096eeb37d7432c12">m_thebuffer</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">バッファ  <a href="#a7f1256c1d2997346096eeb37d7432c12"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classcoil_1_1Properties.html">coil::Properties</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1InPortBase.html#a0698919a5564d63513141f21140f0502">m_properties</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">プロパティ  <a href="#a0698919a5564d63513141f21140f0502"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacecoil.html#ac44b80f207f9471f2cc10a0e4202f9ea">coil::vstring</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1InPortBase.html#a2c75bbef4ccdb0874560f0197c0fc13b">m_providerTypes</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">利用可能provider  <a href="#a2c75bbef4ccdb0874560f0197c0fc13b"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacecoil.html#ac44b80f207f9471f2cc10a0e4202f9ea">coil::vstring</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1InPortBase.html#ac97601d0996bf6305b97b3262612f6ea">m_consumerTypes</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">利用可能consumer  <a href="#ac97601d0996bf6305b97b3262612f6ea"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classRTC_1_1InPortBase.html#a0b1bc541de27728a4a1758d9b2c8b667">ConnectorList</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1InPortBase.html#a65d955701137db34a6df824ad0f6e9b9">m_connectors</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">接続リスト  <a href="#a65d955701137db34a6df824ad0f6e9b9"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1InPortBase.html#a09f80d55c9f6d5eff1b7087d9fd966a1">m_littleEndian</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">接続エンディアン  <a href="#a09f80d55c9f6d5eff1b7087d9fd966a1"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classRTC_1_1ConnectorListeners.html">ConnectorListeners</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1InPortBase.html#a5f89fa0e14e3085813752095a2fb22d0">m_listeners</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight"><a class="el" href="classRTC_1_1ConnectorDataListener.html" title="ConnectorDataListener クラス.">ConnectorDataListener</a> リスナ.  <a href="#a5f89fa0e14e3085813752095a2fb22d0"></a><br/></td></tr>
+</table>
+<hr/><a name="_details"></a><h2>説明</h2>
+<p><a class="el" href="classRTC_1_1InPort.html" title="InPort テンプレートクラス.">InPort</a> 用 Port. </p>
+<p>データ入力ポートの実装クラス。</p>
+<dl class="since"><dt><b>から:</b></dt><dd>0.4.0 </dd></dl>
+<hr/><h2>コンストラクタとデストラクタ</h2>
+<a class="anchor" id="acf7e8f976e2d5c40132a02fe309b1f1e"></a><!-- doxytag: member="RTC::InPortBase::InPortBase" ref="acf7e8f976e2d5c40132a02fe309b1f1e" args="(const char *name, const char *data_type)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">RTC::InPortBase::InPortBase </td>
+          <td>(</td>
+          <td class="paramtype">const char *&nbsp;</td>
+          <td class="paramname"> <em>name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&nbsp;</td>
+          <td class="paramname"> <em>data_type</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>コンストラクタ </p>
+<p>コンストラクタ</p>
+<dl><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>name</em>&nbsp;</td><td>ポート名称 </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>data_type</em>&nbsp;</td><td>データタイプ </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a32e533d6c608f0d6125440b7366c857c"></a><!-- doxytag: member="RTC::InPortBase::~InPortBase" ref="a32e533d6c608f0d6125440b7366c857c" args="(void)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual RTC::InPortBase::~InPortBase </td>
+          <td>(</td>
+          <td class="paramtype">void&nbsp;</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>デストラクタ </p>
+
+</div>
+</div>
+<hr/><h2>関数</h2>
+<a class="anchor" id="a4188e629df750498e0d3b100f51133ff"></a><!-- doxytag: member="RTC::InPortBase::activateInterfaces" ref="a4188e629df750498e0d3b100f51133ff" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void RTC::InPortBase::activateInterfaces </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>InPortを activates する. </p>
+<p>Port に登録されている全てのインターフェースを activate する。 </p>
+
+<p><a class="el" href="classRTC_1_1PortBase.html#ad779347bae007555968dda9e78004e34">RTC::PortBase</a>を実装しています。</p>
+
+</div>
+</div>
+<a class="anchor" id="a87108f42506a526d05dd72d67a1654af"></a><!-- doxytag: member="RTC::InPortBase::addConnectorDataListener" ref="a87108f42506a526d05dd72d67a1654af" args="(ConnectorDataListenerType listener_type, ConnectorDataListener *listener, bool autoclean=true)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void RTC::InPortBase::addConnectorDataListener </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespaceRTC.html#aecdfe03a1e91ff9522a322e4bcc9ed71">ConnectorDataListenerType</a>&nbsp;</td>
+          <td class="paramname"> <em>listener_type</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classRTC_1_1ConnectorDataListener.html">ConnectorDataListener</a> *&nbsp;</td>
+          <td class="paramname"> <em>listener</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&nbsp;</td>
+          <td class="paramname"> <em>autoclean</em> = <code>true</code></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p><a class="el" href="classRTC_1_1ConnectorDataListener.html" title="ConnectorDataListener クラス.">ConnectorDataListener</a> リスナを追加する. </p>
+<p>バッファ書き込みまたは読み出しイベントに関連する各種リスナを設定する。</p>
+<p>設定できるリスナのタイプとコールバックイベントは以下の通り</p>
+<ul>
+<li>ON_BUFFER_WRITE: バッファ書き込み時</li>
+<li>ON_BUFFER_FULL: バッファフル時</li>
+<li>ON_BUFFER_WRITE_TIMEOUT: バッファ書き込みタイムアウト時</li>
+<li>ON_BUFFER_OVERWRITE: バッファ上書き時</li>
+<li>ON_BUFFER_READ: バッファ読み出し時</li>
+<li>ON_SEND: InProtへの送信時</li>
+<li>ON_RECEIVED: InProtへの送信完了時</li>
+<li>ON_SEND_ERTIMEOUT: OutPort側タイムアウト時</li>
+<li>ON_SEND_ERERROR: OutPort側エラー時</li>
+<li>ON_RECEIVER_FULL: InProt側バッファフル時</li>
+<li>ON_RECEIVER_TIMEOUT: InProt側バッファタイムアウト時</li>
+<li>ON_RECEIVER_ERROR: InProt側エラー時</li>
+</ul>
+<p>リスナは <a class="el" href="classRTC_1_1ConnectorDataListener.html" title="ConnectorDataListener クラス.">ConnectorDataListener</a> を継承し、以下のシグニチャを持つ operator() を実装している必要がある。</p>
+<p><a class="el" href="classRTC_1_1ConnectorDataListener.html" title="ConnectorDataListener クラス.">ConnectorDataListener</a>:: operator()(const ConnectorProfile&amp;, const cdrStream&amp;)</p>
+<p>デフォルトでは、この関数に与えたリスナオブジェクトの所有権は OutPortに移り、OutPort解体時もしくは、 <a class="el" href="classRTC_1_1InPortBase.html#ad371ba04fc81e381ff74751bc2f400c9" title="ConnectorDataListener リスナを削除する.">removeConnectorDataListener()</a> により削除時に自動的に解体される。 リスナオブジェクトの所有権を呼び出し側で維持したい場合は、第3引 数に false を指定し、自動的な解体を抑制することができる。</p>
+<dl><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>listener_type</em>&nbsp;</td><td>リスナタイプ </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>listener</em>&nbsp;</td><td>リスナオブジェクトへのポインタ </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>autoclean</em>&nbsp;</td><td>リスナオブジェクトの自動的解体を行うかどうかのフラグ </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="af3f78ee20e085969a55854b6bcacb0f0"></a><!-- doxytag: member="RTC::InPortBase::addConnectorListener" ref="af3f78ee20e085969a55854b6bcacb0f0" args="(ConnectorListenerType callback_type, ConnectorListener *listener, bool autoclean=true)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void RTC::InPortBase::addConnectorListener </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespaceRTC.html#a56d51b87875a454c91b4fee8af41422c">ConnectorListenerType</a>&nbsp;</td>
+          <td class="paramname"> <em>callback_type</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classRTC_1_1ConnectorListener.html">ConnectorListener</a> *&nbsp;</td>
+          <td class="paramname"> <em>listener</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&nbsp;</td>
+          <td class="paramname"> <em>autoclean</em> = <code>true</code></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p><a class="el" href="classRTC_1_1ConnectorListener.html" title="ConnectorListener クラス.">ConnectorListener</a> リスナを追加する. </p>
+<p>バッファ書き込みまたは読み出しイベントに関連する各種リスナを設定する。</p>
+<p>設定できるリスナのタイプは</p>
+<ul>
+<li>ON_BUFFER_EMPTY: バッファが空の場合</li>
+<li>ON_BUFFER_READTIMEOUT: バッファが空でタイムアウトした場合</li>
+</ul>
+<p>リスナは以下のシグニチャを持つ operator() を実装している必要がある。</p>
+<p>ConnectorListener::operator()(const ConnectorProfile&amp;)</p>
+<p>デフォルトでは、この関数に与えたリスナオブジェクトの所有権は OutPortに移り、OutPort解体時もしくは、 <a class="el" href="classRTC_1_1InPortBase.html#a28f441f50e37fd06c7cf7c4c5b02e321" title="ConnectorDataListener リスナを削除する.">removeConnectorListener()</a> により削除時に自動的に解体される。 リスナオブジェクトの所有権を呼び出し側で維持したい場合は、第3引 数に false を指定し、自動的な解体を抑制することができる。</p>
+<dl><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>listener_type</em>&nbsp;</td><td>リスナタイプ </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>listener</em>&nbsp;</td><td>リスナオブジェクトへのポインタ </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>autoclean</em>&nbsp;</td><td>リスナオブジェクトの自動的解体を行うかどうかのフラグ </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="ae32b6fb379655aeaf86db44db06e6d77"></a><!-- doxytag: member="RTC::InPortBase::checkEndian" ref="ae32b6fb379655aeaf86db44db06e6d77" args="(const coil::Properties &amp;prop, bool &amp;littleEndian)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool RTC::InPortBase::checkEndian </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classcoil_1_1Properties.html">coil::Properties</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>prop</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool &amp;&nbsp;</td>
+          <td class="paramname"> <em>littleEndian</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td><code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>シリアライザのエンディアンをチェックする </p>
+<p>与えられたプロパティに設定されている、データのシリアライザのエン ディアン指定をチェックする。正しいエンディアン指定がなされていれ ば、true を返し、引数 littleEndian に、設定値がリトルエンディア ンであれば true が、ビッグエンディアンであれば false が返される。</p>
+<dl><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>prop</em>&nbsp;</td><td>チェックするプロパティ </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>littleEndian</em>&nbsp;</td><td>エンディアン情報（true:little,false:big） </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>戻り値:</b></dt><dd>true:"serializer"キーが存在しない または 存在していて内容がある。 ,false:"serializer"キーが存在しているが内容が空 または 存在しているが内容が"little","big" 以外。 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ab37ad76d4270c20133b52b1bbdf3b529"></a><!-- doxytag: member="RTC::InPortBase::connect" ref="ab37ad76d4270c20133b52b1bbdf3b529" args="(ConnectorProfile &amp;connector_profile)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual ReturnCode_t RTC::InPortBase::connect </td>
+          <td>(</td>
+          <td class="paramtype">ConnectorProfile &amp;&nbsp;</td>
+          <td class="paramname"> <em>connector_profile</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td>  throw (CORBA::SystemException)<code> [virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>[CORBA interface] Port の接続を行う </p>
+<p>与えられた ConnectoionProfile の情報に基づき、Port間の接続を確立 する。この関数は主にアプリケーションプログラムやツールから呼び出 すことを前提としている。</p>
+<dl><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>connector_profile</em>&nbsp;</td><td>ConnectorProfile </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>戻り値:</b></dt><dd>ReturnCode_t 型のリターンコード </dd></dl>
+
+<p><a class="el" href="classRTC_1_1PortBase.html#a139d07d2e94f7e793aedf4aa24b92462">RTC::PortBase</a>を再定義しています。</p>
+
+</div>
+</div>
+<a class="anchor" id="a5e247ce406f48bd4cd40ce25d98764d4"></a><!-- doxytag: member="RTC::InPortBase::connectors" ref="a5e247ce406f48bd4cd40ce25d98764d4" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const std::vector&lt;<a class="el" href="classRTC_1_1InPortConnector.html">InPortConnector</a>*&gt;&amp; RTC::InPortBase::connectors </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Connector を取得. </p>
+<p>現在所有しているコネクタを取得する。</p>
+<dl class="return"><dt><b>戻り値:</b></dt><dd>connector のリスト </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ac7be351658bb18c655b7fea9a2dac68b"></a><!-- doxytag: member="RTC::InPortBase::createConnector" ref="ac7be351658bb18c655b7fea9a2dac68b" args="(const ConnectorProfile &amp;cprof, coil::Properties &amp;prop, OutPortConsumer *consumer)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classRTC_1_1InPortConnector.html">InPortConnector</a>* RTC::InPortBase::createConnector </td>
+          <td>(</td>
+          <td class="paramtype">const ConnectorProfile &amp;&nbsp;</td>
+          <td class="paramname"> <em>cprof</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classcoil_1_1Properties.html">coil::Properties</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>prop</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classRTC_1_1OutPortConsumer.html">OutPortConsumer</a> *&nbsp;</td>
+          <td class="paramname"> <em>consumer</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td><code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p><a class="el" href="classRTC_1_1InPortPullConnector.html" title="InPortPullConnector クラス.">InPortPullConnector</a> の生成. </p>
+<p>Connector を生成し、生成が成功すれば m_connectors に保存する。 生成に失敗した場合 0 を返す。 </p>
+
+</div>
+</div>
+<a class="anchor" id="aa6fe75ede17566f7847394f56700ba6d"></a><!-- doxytag: member="RTC::InPortBase::createConnector" ref="aa6fe75ede17566f7847394f56700ba6d" args="(ConnectorProfile &amp;cprof, coil::Properties &amp;prop, InPortProvider *provider)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classRTC_1_1InPortConnector.html">InPortConnector</a>* RTC::InPortBase::createConnector </td>
+          <td>(</td>
+          <td class="paramtype">ConnectorProfile &amp;&nbsp;</td>
+          <td class="paramname"> <em>cprof</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classcoil_1_1Properties.html">coil::Properties</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>prop</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classRTC_1_1InPortProvider.html">InPortProvider</a> *&nbsp;</td>
+          <td class="paramname"> <em>provider</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td><code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p><a class="el" href="classRTC_1_1InPortPushConnector.html" title="InPortPushConnector クラス.">InPortPushConnector</a> の生成. </p>
+<p>Connector を生成し、生成が成功すれば m_connectors に保存する。 生成に失敗した場合 0 を返す。 </p>
+
+</div>
+</div>
+<a class="anchor" id="a48146d910456ba7b1ebca68e96f77db4"></a><!-- doxytag: member="RTC::InPortBase::createConsumer" ref="a48146d910456ba7b1ebca68e96f77db4" args="(const ConnectorProfile &amp;cprof, coil::Properties &amp;prop)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classRTC_1_1OutPortConsumer.html">OutPortConsumer</a>* RTC::InPortBase::createConsumer </td>
+          <td>(</td>
+          <td class="paramtype">const ConnectorProfile &amp;&nbsp;</td>
+          <td class="paramname"> <em>cprof</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classcoil_1_1Properties.html">coil::Properties</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>prop</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td><code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p><a class="el" href="classRTC_1_1OutPort.html" title="OutPort テンプレートクラス.">OutPort</a> consumer の生成. </p>
+<p><a class="el" href="classRTC_1_1OutPortConsumer.html" title="OutPortConsumer 抽象クラス.">OutPortConsumer</a> を生成する。 生成に失敗した場合 0 を返す。 </p>
+
+</div>
+</div>
+<a class="anchor" id="a4f82e38b34bd3fd392d53f1543da3b58"></a><!-- doxytag: member="RTC::InPortBase::createProvider" ref="a4f82e38b34bd3fd392d53f1543da3b58" args="(ConnectorProfile &amp;cprof, coil::Properties &amp;prop)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classRTC_1_1InPortProvider.html">InPortProvider</a>* RTC::InPortBase::createProvider </td>
+          <td>(</td>
+          <td class="paramtype">ConnectorProfile &amp;&nbsp;</td>
+          <td class="paramname"> <em>cprof</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classcoil_1_1Properties.html">coil::Properties</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>prop</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td><code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p><a class="el" href="classRTC_1_1InPort.html" title="InPort テンプレートクラス.">InPort</a> provider の生成. </p>
+<p><a class="el" href="classRTC_1_1InPortProvider.html">InPortProvider</a> を生成し、情報を ConnectorProfile に公開する。 生成に失敗した場合 0 を返す。 </p>
+
+</div>
+</div>
+<a class="anchor" id="a4d8bba26fce07c092ebffbab6b1aa881"></a><!-- doxytag: member="RTC::InPortBase::deactivateInterfaces" ref="a4d8bba26fce07c092ebffbab6b1aa881" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void RTC::InPortBase::deactivateInterfaces </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>全ての Port のインターフェースを deactivates する </p>
+<p>Port に登録されている全てのインターフェースを deactivate する。 </p>
+
+<p><a class="el" href="classRTC_1_1PortBase.html#a8dfb8a33b92b9fc9b6c070df2def633f">RTC::PortBase</a>を実装しています。</p>
+
+</div>
+</div>
+<a class="anchor" id="aea583e55d4d025245afd712300230f4f"></a><!-- doxytag: member="RTC::InPortBase::getConnectorById" ref="aea583e55d4d025245afd712300230f4f" args="(const char *id)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classRTC_1_1InPortConnector.html">InPortConnector</a>* RTC::InPortBase::getConnectorById </td>
+          <td>(</td>
+          <td class="paramtype">const char *&nbsp;</td>
+          <td class="paramname"> <em>id</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>ConnectorProfileをIDで取得. </p>
+<p>現在所有しているコネクタをIDで取得する。</p>
+<dl><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>id</em>&nbsp;</td><td>Connector ID </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>戻り値:</b></dt><dd>コネクタへのポインタ </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a322f9c5319fd7102202289b394893bf7"></a><!-- doxytag: member="RTC::InPortBase::getConnectorByName" ref="a322f9c5319fd7102202289b394893bf7" args="(const char *name)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classRTC_1_1InPortConnector.html">InPortConnector</a>* RTC::InPortBase::getConnectorByName </td>
+          <td>(</td>
+          <td class="paramtype">const char *&nbsp;</td>
+          <td class="paramname"> <em>name</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>ConnectorProfileを名前で取得. </p>
+<p>現在所有しているコネクタを名前で取得する。</p>
+<dl><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>name</em>&nbsp;</td><td>Connector name </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>戻り値:</b></dt><dd>コネクタへのポインタ </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a93477a719d89b0da08b23f4da5f48fae"></a><!-- doxytag: member="RTC::InPortBase::getConnectorIds" ref="a93477a719d89b0da08b23f4da5f48fae" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespacecoil.html#ac44b80f207f9471f2cc10a0e4202f9ea">coil::vstring</a> RTC::InPortBase::getConnectorIds </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>ConnectorId を取得. </p>
+<p>現在所有しているコネクタのIDを取得する。</p>
+<dl class="return"><dt><b>戻り値:</b></dt><dd>ConnectorId のリスト </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="aa722937ee4e9be0d531db5e207bf0853"></a><!-- doxytag: member="RTC::InPortBase::getConnectorNames" ref="aa722937ee4e9be0d531db5e207bf0853" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespacecoil.html#ac44b80f207f9471f2cc10a0e4202f9ea">coil::vstring</a> RTC::InPortBase::getConnectorNames </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Connectorの名前を取得. </p>
+<p>現在所有しているコネクタの名前を取得する。</p>
+<dl class="return"><dt><b>戻り値:</b></dt><dd>Connector名のリスト </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="adffe2b716bbf5ce808010c26ff9cb453"></a><!-- doxytag: member="RTC::InPortBase::getConnectorProfileById" ref="adffe2b716bbf5ce808010c26ff9cb453" args="(const char *id, ConnectorInfo &amp;prof)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool RTC::InPortBase::getConnectorProfileById </td>
+          <td>(</td>
+          <td class="paramtype">const char *&nbsp;</td>
+          <td class="paramname"> <em>id</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classRTC_1_1ConnectorInfo.html">ConnectorInfo</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>prof</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>ConnectorProfileをIDで取得. </p>
+<p>現在所有しているコネクタをIDで取得する。</p>
+<dl><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>id</em>&nbsp;</td><td>Connector ID </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>prof</em>&nbsp;</td><td>ConnectorProfile </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>戻り値:</b></dt><dd>false 指定したIDがない </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ae8ba538d6c318a9ddfb9242a72a6c26b"></a><!-- doxytag: member="RTC::InPortBase::getConnectorProfileByName" ref="ae8ba538d6c318a9ddfb9242a72a6c26b" args="(const char *name, ConnectorInfo &amp;prof)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool RTC::InPortBase::getConnectorProfileByName </td>
+          <td>(</td>
+          <td class="paramtype">const char *&nbsp;</td>
+          <td class="paramname"> <em>name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classRTC_1_1ConnectorInfo.html">ConnectorInfo</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>prof</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>ConnectorProfileを名前で取得. </p>
+<p>現在所有しているコネクタを名前で取得する。</p>
+<dl><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>name</em>&nbsp;</td><td>Connector name </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>prof</em>&nbsp;</td><td>ConnectorProfile </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>戻り値:</b></dt><dd>false 指定した名前がない </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="aa79b490a1fae07ca9a0ed5a99267b608"></a><!-- doxytag: member="RTC::InPortBase::getConnectorProfiles" ref="aa79b490a1fae07ca9a0ed5a99267b608" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespaceRTC.html#afeb55822b3bb685ea943cf95c6320bdc">ConnectorInfoList</a> RTC::InPortBase::getConnectorProfiles </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>ConnectorProfile を取得. </p>
+<p>現在所有しているコネクタのProfileを取得する。</p>
+<dl class="return"><dt><b>戻り値:</b></dt><dd>ConnectorProfile のリスト </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="adeeb77472583af68e16c1b6ac6aee118"></a><!-- doxytag: member="RTC::InPortBase::init" ref="adeeb77472583af68e16c1b6ac6aee118" args="(coil::Properties &amp;prop)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void RTC::InPortBase::init </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classcoil_1_1Properties.html">coil::Properties</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>prop</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>プロパティの初期化 </p>
+<p>指定されたプロパティで初期化する。</p>
+<dl><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>prop</em>&nbsp;</td><td>設定するプロパティ </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="aea0abf42128b7f945c3f5787ee19581a"></a><!-- doxytag: member="RTC::InPortBase::initConsumers" ref="aea0abf42128b7f945c3f5787ee19581a" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void RTC::InPortBase::initConsumers </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p><a class="el" href="classRTC_1_1OutPort.html" title="OutPort テンプレートクラス.">OutPort</a> consumer の初期化. </p>
+
+</div>
+</div>
+<a class="anchor" id="ac3195cece5da04b052b6d60a99f7c0fa"></a><!-- doxytag: member="RTC::InPortBase::initProviders" ref="ac3195cece5da04b052b6d60a99f7c0fa" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void RTC::InPortBase::initProviders </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p><a class="el" href="classRTC_1_1InPort.html" title="InPort テンプレートクラス.">InPort</a> provider の初期化. </p>
+
+</div>
+</div>
+<a class="anchor" id="afb766071f5b6f5f7d783a02fbe30ab61"></a><!-- doxytag: member="RTC::InPortBase::isLittleEndian" ref="afb766071f5b6f5f7d783a02fbe30ab61" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool RTC::InPortBase::isLittleEndian </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>endian 設定を返す </p>
+<p>endian 設定のbool値を返す。</p>
+<dl class="return"><dt><b>戻り値:</b></dt><dd>m_littleEndian がlittleの場合true、bigの場合false を返す。 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a86cfb64b99b76f6ae34288704fdf4ed4"></a><!-- doxytag: member="RTC::InPortBase::properties" ref="a86cfb64b99b76f6ae34288704fdf4ed4" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classcoil_1_1Properties.html">coil::Properties</a>&amp; RTC::InPortBase::properties </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>プロパティを取得する </p>
+<p>ポートのプロパティを取得する。</p>
+<dl class="return"><dt><b>戻り値:</b></dt><dd>プロパティ </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ad836b599b157efb1a31ec61999015986"></a><!-- doxytag: member="RTC::InPortBase::publishInterfaces" ref="ad836b599b157efb1a31ec61999015986" args="(ConnectorProfile &amp;connector_profile)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual ReturnCode_t RTC::InPortBase::publishInterfaces </td>
+          <td>(</td>
+          <td class="paramtype">ConnectorProfile &amp;&nbsp;</td>
+          <td class="paramname"> <em>connector_profile</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [protected, virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Interface情報を公開する. </p>
+<p>Interface情報を公開する。 引数の ConnectorProfile に格納されている dataflow_type が push 型 の場合は、指定された interface_type の <a class="el" href="classRTC_1_1InPortProvider.html">InPortProvider</a> に関する情報 を ConnectorProfile::properties に書込み呼び出し側に戻す。</p>
+<p>dataport.dataflow_type</p>
+<dl><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>connector_profile</em>&nbsp;</td><td>コネクタプロファイル</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>戻り値:</b></dt><dd>ReturnCode_t 型のリターンコード </dd></dl>
+
+<p><a class="el" href="classRTC_1_1PortBase.html#acf31878c5912f56c122aaa2310e182de">RTC::PortBase</a>を実装しています。</p>
+
+</div>
+</div>
+<a class="anchor" id="a448e72f4d6d7890c4fb6add7d86d04b5"></a><!-- doxytag: member="RTC::InPortBase::read" ref="a448e72f4d6d7890c4fb6add7d86d04b5" args="()=0" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual bool RTC::InPortBase::read </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [pure virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p><a class="el" href="classRTC_1_1RTObject__impl.html#a69b50eea5bc7f862114602963cca84ca" title="全 InPort のデータを読み込む。">RTObject_impl::readAll()</a>から呼ばれる仮想関数. </p>
+<p>DataPort からデータを読み出す</p>
+<dl class="return"><dt><b>戻り値:</b></dt><dd>true:成功,false:失敗 </dd></dl>
+
+<p><a class="el" href="classRTC_1_1InPort.html#a1b6e58e0c821b46148266ddfd0b9bd54">RTC::InPort&lt; DataType &gt;</a>で実装されています。</p>
+
+</div>
+</div>
+<a class="anchor" id="ad371ba04fc81e381ff74751bc2f400c9"></a><!-- doxytag: member="RTC::InPortBase::removeConnectorDataListener" ref="ad371ba04fc81e381ff74751bc2f400c9" args="(ConnectorDataListenerType listener_type, ConnectorDataListener *listener)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void RTC::InPortBase::removeConnectorDataListener </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespaceRTC.html#aecdfe03a1e91ff9522a322e4bcc9ed71">ConnectorDataListenerType</a>&nbsp;</td>
+          <td class="paramname"> <em>listener_type</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classRTC_1_1ConnectorDataListener.html">ConnectorDataListener</a> *&nbsp;</td>
+          <td class="paramname"> <em>listener</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p><a class="el" href="classRTC_1_1ConnectorDataListener.html" title="ConnectorDataListener クラス.">ConnectorDataListener</a> リスナを削除する. </p>
+<p>設定した各種リスナを削除する。</p>
+<dl><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>listener_type</em>&nbsp;</td><td>リスナタイプ </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>listener</em>&nbsp;</td><td>リスナオブジェクトへのポインタ </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a28f441f50e37fd06c7cf7c4c5b02e321"></a><!-- doxytag: member="RTC::InPortBase::removeConnectorListener" ref="a28f441f50e37fd06c7cf7c4c5b02e321" args="(ConnectorListenerType callback_type, ConnectorListener *listener)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void RTC::InPortBase::removeConnectorListener </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespaceRTC.html#a56d51b87875a454c91b4fee8af41422c">ConnectorListenerType</a>&nbsp;</td>
+          <td class="paramname"> <em>callback_type</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classRTC_1_1ConnectorListener.html">ConnectorListener</a> *&nbsp;</td>
+          <td class="paramname"> <em>listener</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p><a class="el" href="classRTC_1_1ConnectorDataListener.html" title="ConnectorDataListener クラス.">ConnectorDataListener</a> リスナを削除する. </p>
+<p>設定した各種リスナを削除する。</p>
+<dl><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>listener_type</em>&nbsp;</td><td>リスナタイプ </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>listener</em>&nbsp;</td><td>リスナオブジェクトへのポインタ </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="adf648c377e5730a2de6dc48fc47543fb"></a><!-- doxytag: member="RTC::InPortBase::subscribeInterfaces" ref="adf648c377e5730a2de6dc48fc47543fb" args="(const ConnectorProfile &amp;connector_profile)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual ReturnCode_t RTC::InPortBase::subscribeInterfaces </td>
+          <td>(</td>
+          <td class="paramtype">const ConnectorProfile &amp;&nbsp;</td>
+          <td class="paramname"> <em>connector_profile</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [protected, virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Interfaceに接続する. </p>
+<p>Interfaceに接続する。 Portが所有するConsumerに適合するProviderに関する情報を ConnectorProfile::properties から抽出し、 ConsumerにCORBAオブジェクト参照を設定する。</p>
+<dl><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>connector_profile</em>&nbsp;</td><td>コネクタ・プロファイル</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>戻り値:</b></dt><dd>ReturnCode_t 型のリターンコード </dd></dl>
+
+<p><a class="el" href="classRTC_1_1PortBase.html#afce755069836c1ee637784e2a9e5a02b">RTC::PortBase</a>を実装しています。</p>
+
+</div>
+</div>
+<a class="anchor" id="a118932439dce0dc96571b0123615c36e"></a><!-- doxytag: member="RTC::InPortBase::unsubscribeInterfaces" ref="a118932439dce0dc96571b0123615c36e" args="(const ConnectorProfile &amp;connector_profile)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void RTC::InPortBase::unsubscribeInterfaces </td>
+          <td>(</td>
+          <td class="paramtype">const ConnectorProfile &amp;&nbsp;</td>
+          <td class="paramname"> <em>connector_profile</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [protected, virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Interfaceへの接続を解除する. </p>
+<p>Interfaceへの接続を解除する。 与えられたConnectorProfileに関連するConsumerに設定された全てのObjectを 解放し接続を解除する。</p>
+<dl><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>connector_profile</em>&nbsp;</td><td>コネクタ・プロファイル </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p><a class="el" href="classRTC_1_1PortBase.html#a8a843a387e99d4d4daa6e829eb1db569">RTC::PortBase</a>を実装しています。</p>
+
+</div>
+</div>
+<hr/><h2>変数</h2>
+<a class="anchor" id="a0b1bc541de27728a4a1758d9b2c8b667"></a><!-- doxytag: member="RTC::InPortBase::ConnectorList" ref="a0b1bc541de27728a4a1758d9b2c8b667" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">DATAPORTSTATUS_ENUM typedef std::vector&lt;<a class="el" href="classRTC_1_1InPortConnector.html">InPortConnector</a>*&gt; <a class="el" href="classRTC_1_1InPortBase.html#a0b1bc541de27728a4a1758d9b2c8b667">RTC::InPortBase::ConnectorList</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a65d955701137db34a6df824ad0f6e9b9"></a><!-- doxytag: member="RTC::InPortBase::m_connectors" ref="a65d955701137db34a6df824ad0f6e9b9" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classRTC_1_1InPortBase.html#a0b1bc541de27728a4a1758d9b2c8b667">ConnectorList</a> <a class="el" href="classRTC_1_1InPortBase.html#a65d955701137db34a6df824ad0f6e9b9">RTC::InPortBase::m_connectors</a><code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>接続リスト </p>
+
+<p>参照元 <a class="el" href="InPort_8h_source.html#l00276">RTC::InPort&lt; DataType &gt;::isEmpty()</a>, <a class="el" href="InPort_8h_source.html#l00225">RTC::InPort&lt; DataType &gt;::isNew()</a>, と <a class="el" href="InPort_8h_source.html#l00378">RTC::InPort&lt; DataType &gt;::read()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ac97601d0996bf6305b97b3262612f6ea"></a><!-- doxytag: member="RTC::InPortBase::m_consumerTypes" ref="ac97601d0996bf6305b97b3262612f6ea" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespacecoil.html#ac44b80f207f9471f2cc10a0e4202f9ea">coil::vstring</a> <a class="el" href="classRTC_1_1InPortBase.html#ac97601d0996bf6305b97b3262612f6ea">RTC::InPortBase::m_consumerTypes</a><code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>利用可能consumer </p>
+
+</div>
+</div>
+<a class="anchor" id="a5f89fa0e14e3085813752095a2fb22d0"></a><!-- doxytag: member="RTC::InPortBase::m_listeners" ref="a5f89fa0e14e3085813752095a2fb22d0" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classRTC_1_1ConnectorListeners.html">ConnectorListeners</a> <a class="el" href="classRTC_1_1InPortBase.html#a5f89fa0e14e3085813752095a2fb22d0">RTC::InPortBase::m_listeners</a><code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p><a class="el" href="classRTC_1_1ConnectorDataListener.html" title="ConnectorDataListener クラス.">ConnectorDataListener</a> リスナ. </p>
+
+</div>
+</div>
+<a class="anchor" id="a09f80d55c9f6d5eff1b7087d9fd966a1"></a><!-- doxytag: member="RTC::InPortBase::m_littleEndian" ref="a09f80d55c9f6d5eff1b7087d9fd966a1" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="classRTC_1_1InPortBase.html#a09f80d55c9f6d5eff1b7087d9fd966a1">RTC::InPortBase::m_littleEndian</a><code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>接続エンディアン </p>
+
+</div>
+</div>
+<a class="anchor" id="a0698919a5564d63513141f21140f0502"></a><!-- doxytag: member="RTC::InPortBase::m_properties" ref="a0698919a5564d63513141f21140f0502" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classcoil_1_1Properties.html">coil::Properties</a> <a class="el" href="classRTC_1_1InPortBase.html#a0698919a5564d63513141f21140f0502">RTC::InPortBase::m_properties</a><code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>プロパティ </p>
+
+</div>
+</div>
+<a class="anchor" id="a2c75bbef4ccdb0874560f0197c0fc13b"></a><!-- doxytag: member="RTC::InPortBase::m_providerTypes" ref="a2c75bbef4ccdb0874560f0197c0fc13b" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespacecoil.html#ac44b80f207f9471f2cc10a0e4202f9ea">coil::vstring</a> <a class="el" href="classRTC_1_1InPortBase.html#a2c75bbef4ccdb0874560f0197c0fc13b">RTC::InPortBase::m_providerTypes</a><code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>利用可能provider </p>
+
+</div>
+</div>
+<a class="anchor" id="a5fd4766bd238d2ab34762c31dd540207"></a><!-- doxytag: member="RTC::InPortBase::m_singlebuffer" ref="a5fd4766bd238d2ab34762c31dd540207" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="classRTC_1_1InPortBase.html#a5fd4766bd238d2ab34762c31dd540207">RTC::InPortBase::m_singlebuffer</a><code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>バッファモード </p>
+<p>true:single buffer mode. false:multi buffer mode. </p>
+
+</div>
+</div>
+<a class="anchor" id="a7f1256c1d2997346096eeb37d7432c12"></a><!-- doxytag: member="RTC::InPortBase::m_thebuffer" ref="a7f1256c1d2997346096eeb37d7432c12" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classRTC_1_1BufferBase.html">CdrBufferBase</a>* <a class="el" href="classRTC_1_1InPortBase.html#a7f1256c1d2997346096eeb37d7432c12">RTC::InPortBase::m_thebuffer</a><code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>バッファ </p>
+
+</div>
+</div>
+</div>
+<hr class="footer"/><address style="text-align: right;"><small>OpenRTMに対してThu May 24 23:25:19 2012に生成されました。&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.6.3 </small></address>
+</body>
+</html>

@@ -1,0 +1,384 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<title>OpenRTM: クラス テンプレート coil::Factory&lt; AbstractClass, Identifier, Compare, Creator, Destructor &gt;</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<!-- 作成： Doxygen 1.6.3 -->
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="index.html"><span>メインページ</span></a></li>
+      <li><a href="namespaces.html"><span>ネームスペース</span></a></li>
+      <li class="current"><a href="annotated.html"><span>クラス</span></a></li>
+      <li><a href="files.html"><span>ファイル</span></a></li>
+    </ul>
+  </div>
+  <div class="tabs">
+    <ul>
+      <li><a href="annotated.html"><span>構成</span></a></li>
+      <li><a href="hierarchy.html"><span>クラス階層</span></a></li>
+      <li><a href="functions.html"><span>構成メンバ</span></a></li>
+    </ul>
+  </div>
+  <div class="navpath"><a class="el" href="namespacecoil.html">coil</a>::<a class="el" href="classcoil_1_1Factory.html">Factory</a>
+  </div>
+</div>
+<div class="contents">
+<h1>クラス テンプレート coil::Factory&lt; AbstractClass, Identifier, Compare, Creator, Destructor &gt;</h1><!-- doxytag: class="coil::Factory" -->
+<p><a class="el" href="classcoil_1_1Factory.html" title="Factory テンプレートクラス.">Factory</a> テンプレートクラス.  
+<a href="#_details">[詳細]</a></p>
+
+<p><code>#include &lt;<a class="el" href="coil_2include_2coil_2Factory_8h_source.html">Factory.h</a>&gt;</code></p>
+<div class="dynheader">
+coil::Factory&lt; AbstractClass, Identifier, Compare, Creator, Destructor &gt;に対する継承グラフ</div>
+<div class="dynsection">
+ <div class="center">
+  <img src="classcoil_1_1Factory.png" usemap="#coil::Factory&lt; AbstractClass, Identifier, Compare, Creator, Destructor &gt;_map" alt=""/>
+  <map id="coil::Factory&lt; AbstractClass, Identifier, Compare, Creator, Destructor &gt;_map" name="coil::Factory&lt; AbstractClass, Identifier, Compare, Creator, Destructor &gt;_map">
+<area href="classcoil_1_1GlobalFactory.html" alt="coil::GlobalFactory&lt; AbstractClass, Identifier, Compare, Creator, Destructor &gt;" shape="rect" coords="0,56,458,80"/>
+</map>
+ </div>
+</div>
+
+<p><a href="classcoil_1_1Factory-members.html">すべてのメンバ一覧</a></p>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr><td colspan="2"><h2>構成</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">class &nbsp;</td><td class="memItemRight" valign="bottom"><b>FactoryEntry</b></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">FactoryEntry クラス. <br/></td></tr>
+<tr><td colspan="2"><h2>Public 型</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">enum &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcoil_1_1Factory.html#ad3daf45b88091bf7eded408aff26767e">ReturnCode</a> { <br/>
+&nbsp;&nbsp;<a class="el" href="classcoil_1_1Factory.html#ad3daf45b88091bf7eded408aff26767ea784faadaad92a19ebdf5e46bc51797bc">FACTORY_OK</a>, 
+<a class="el" href="classcoil_1_1Factory.html#ad3daf45b88091bf7eded408aff26767ea83232a6633f9253871a7e394d0579af1">FACTORY_ERROR</a>, 
+<a class="el" href="classcoil_1_1Factory.html#ad3daf45b88091bf7eded408aff26767ea775603a29140211fb2a075a8dc8c15a8">ALREADY_EXISTS</a>, 
+<a class="el" href="classcoil_1_1Factory.html#ad3daf45b88091bf7eded408aff26767ead089df73956ca711b29d1231202c534f">NOT_FOUND</a>, 
+<br/>
+&nbsp;&nbsp;<a class="el" href="classcoil_1_1Factory.html#ad3daf45b88091bf7eded408aff26767ea8295bf74c563b880f6a05424192e5721">INVALID_ARG</a>, 
+<a class="el" href="classcoil_1_1Factory.html#ad3daf45b88091bf7eded408aff26767ea752306a145550a11ad7a374800b76c1f">UNKNOWN_ERROR</a>
+<br/>
+ }</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">typedef std::map&lt; Identifier, <br class="typebreak"/>
+FactoryEntry &gt;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcoil_1_1Factory.html#ab061a29a06208bd555d18a0cec31643e">FactoryMap</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">typedef FactoryMap::iterator&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcoil_1_1Factory.html#a3f166d1a15f75685bc71f26818b3742e">FactoryMapIt</a></td></tr>
+<tr><td colspan="2"><h2>Public メソッド</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcoil_1_1Factory.html#a613021c4ef085965a978cc89bd3b51e2">hasFactory</a> (const Identifier &amp;id)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">ファクトリー有無チェック  <a href="#a613021c4ef085965a978cc89bd3b51e2"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">std::vector&lt; Identifier &gt;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcoil_1_1Factory.html#aa9f653dfebd545ee6af63b339b2e18b5">getIdentifiers</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">ファクトリーIDリスト取得  <a href="#aa9f653dfebd545ee6af63b339b2e18b5"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classcoil_1_1Factory.html#ad3daf45b88091bf7eded408aff26767e">ReturnCode</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcoil_1_1Factory.html#a16c7d1aa9d9b47a5047831c3d7cb8cea">addFactory</a> (const Identifier &amp;id, Creator creator, Destructor destructor)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">ファクトリー登録  <a href="#a16c7d1aa9d9b47a5047831c3d7cb8cea"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classcoil_1_1Factory.html#ad3daf45b88091bf7eded408aff26767e">ReturnCode</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcoil_1_1Factory.html#a4c501f613299acf93d30179e91674f77">removeFactory</a> (const Identifier &amp;id)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">ファクトリー削除  <a href="#a4c501f613299acf93d30179e91674f77"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">AbstractClass *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcoil_1_1Factory.html#abfe2f51244047f026f1e86bef7880220">createObject</a> (const Identifier &amp;id)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">ファクトリーオブジェクト生成  <a href="#abfe2f51244047f026f1e86bef7880220"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcoil_1_1Factory.html#a3bc2ace6f1d5ef8d7208fdd501d5a78c">deleteObject</a> (const Identifier &amp;id, AbstractClass *&amp;obj)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">ファクトリーオブジェクト削除  <a href="#a3bc2ace6f1d5ef8d7208fdd501d5a78c"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcoil_1_1Factory.html#a48aaa74f2c0c36dbe7261f94450bbbc2">deleteObject</a> (AbstractClass *&amp;obj)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">ファクトリーオブジェクト削除  <a href="#a48aaa74f2c0c36dbe7261f94450bbbc2"></a><br/></td></tr>
+</table>
+<hr/><a name="_details"></a><h2>説明</h2>
+<h3>template&lt;class AbstractClass, typename Identifier = std::string, typename Compare = std::less&lt;Identifier&gt;, typename Creator = AbstractClass* (*)(), typename Destructor = void (*)(AbstractClass*&amp;)&gt;<br/>
+ class coil::Factory&lt; AbstractClass, Identifier, Compare, Creator, Destructor &gt;</h3>
+
+<p><a class="el" href="classcoil_1_1Factory.html" title="Factory テンプレートクラス.">Factory</a> テンプレートクラス. </p>
+<hr/><h2>型定義</h2>
+<a class="anchor" id="ab061a29a06208bd555d18a0cec31643e"></a><!-- doxytag: member="coil::Factory::FactoryMap" ref="ab061a29a06208bd555d18a0cec31643e" args="" -->
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class AbstractClass , typename Identifier  = std::string, typename Compare  = std::less&lt;Identifier&gt;, typename Creator  = AbstractClass* (*)(), typename Destructor  = void (*)(AbstractClass*&amp;)&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef std::map&lt;Identifier, FactoryEntry&gt; <a class="el" href="classcoil_1_1Factory.html">coil::Factory</a>&lt; AbstractClass, Identifier, Compare, Creator, Destructor &gt;::<a class="el" href="classcoil_1_1Factory.html#ab061a29a06208bd555d18a0cec31643e">FactoryMap</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a3f166d1a15f75685bc71f26818b3742e"></a><!-- doxytag: member="coil::Factory::FactoryMapIt" ref="a3f166d1a15f75685bc71f26818b3742e" args="" -->
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class AbstractClass , typename Identifier  = std::string, typename Compare  = std::less&lt;Identifier&gt;, typename Creator  = AbstractClass* (*)(), typename Destructor  = void (*)(AbstractClass*&amp;)&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef FactoryMap::iterator <a class="el" href="classcoil_1_1Factory.html">coil::Factory</a>&lt; AbstractClass, Identifier, Compare, Creator, Destructor &gt;::<a class="el" href="classcoil_1_1Factory.html#a3f166d1a15f75685bc71f26818b3742e">FactoryMapIt</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<hr/><h2>列挙型</h2>
+<a class="anchor" id="ad3daf45b88091bf7eded408aff26767e"></a><!-- doxytag: member="coil::Factory::ReturnCode" ref="ad3daf45b88091bf7eded408aff26767e" args="" -->
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class AbstractClass , typename Identifier  = std::string, typename Compare  = std::less&lt;Identifier&gt;, typename Creator  = AbstractClass* (*)(), typename Destructor  = void (*)(AbstractClass*&amp;)&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="classcoil_1_1Factory.html#ad3daf45b88091bf7eded408aff26767e">coil::Factory::ReturnCode</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<dl><dt><b>列挙型の値: </b></dt><dd><table border="0" cellspacing="2" cellpadding="0">
+<tr><td valign="top"><em><a class="anchor" id="ad3daf45b88091bf7eded408aff26767ea784faadaad92a19ebdf5e46bc51797bc"></a><!-- doxytag: member="FACTORY_OK" ref="ad3daf45b88091bf7eded408aff26767ea784faadaad92a19ebdf5e46bc51797bc" args="" -->FACTORY_OK</em>&nbsp;</td><td>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="ad3daf45b88091bf7eded408aff26767ea83232a6633f9253871a7e394d0579af1"></a><!-- doxytag: member="FACTORY_ERROR" ref="ad3daf45b88091bf7eded408aff26767ea83232a6633f9253871a7e394d0579af1" args="" -->FACTORY_ERROR</em>&nbsp;</td><td>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="ad3daf45b88091bf7eded408aff26767ea775603a29140211fb2a075a8dc8c15a8"></a><!-- doxytag: member="ALREADY_EXISTS" ref="ad3daf45b88091bf7eded408aff26767ea775603a29140211fb2a075a8dc8c15a8" args="" -->ALREADY_EXISTS</em>&nbsp;</td><td>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="ad3daf45b88091bf7eded408aff26767ead089df73956ca711b29d1231202c534f"></a><!-- doxytag: member="NOT_FOUND" ref="ad3daf45b88091bf7eded408aff26767ead089df73956ca711b29d1231202c534f" args="" -->NOT_FOUND</em>&nbsp;</td><td>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="ad3daf45b88091bf7eded408aff26767ea8295bf74c563b880f6a05424192e5721"></a><!-- doxytag: member="INVALID_ARG" ref="ad3daf45b88091bf7eded408aff26767ea8295bf74c563b880f6a05424192e5721" args="" -->INVALID_ARG</em>&nbsp;</td><td>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="ad3daf45b88091bf7eded408aff26767ea752306a145550a11ad7a374800b76c1f"></a><!-- doxytag: member="UNKNOWN_ERROR" ref="ad3daf45b88091bf7eded408aff26767ea752306a145550a11ad7a374800b76c1f" args="" -->UNKNOWN_ERROR</em>&nbsp;</td><td>
+</td></tr>
+</table>
+</dd>
+</dl>
+
+</div>
+</div>
+<hr/><h2>関数</h2>
+<a class="anchor" id="a16c7d1aa9d9b47a5047831c3d7cb8cea"></a><!-- doxytag: member="coil::Factory::addFactory" ref="a16c7d1aa9d9b47a5047831c3d7cb8cea" args="(const Identifier &amp;id, Creator creator, Destructor destructor)" -->
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class AbstractClass , typename Identifier  = std::string, typename Compare  = std::less&lt;Identifier&gt;, typename Creator  = AbstractClass* (*)(), typename Destructor  = void (*)(AbstractClass*&amp;)&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classcoil_1_1Factory.html#ad3daf45b88091bf7eded408aff26767e">ReturnCode</a> <a class="el" href="classcoil_1_1Factory.html">coil::Factory</a>&lt; AbstractClass, Identifier, Compare, Creator, Destructor &gt;::addFactory </td>
+          <td>(</td>
+          <td class="paramtype">const Identifier &amp;&nbsp;</td>
+          <td class="paramname"> <em>id</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Creator&nbsp;</td>
+          <td class="paramname"> <em>creator</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Destructor&nbsp;</td>
+          <td class="paramname"> <em>destructor</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>ファクトリー登録 </p>
+<p>ファクトリーを登録する。</p>
+<dl><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>id</em>&nbsp;</td><td>ファクトリーID </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>creator</em>&nbsp;</td><td>クリエータ用ファンクタ </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>destructor</em>&nbsp;</td><td>デストラクタ用ファンクタ</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>戻り値:</b></dt><dd>FACTORY_OK: 正常終了 ALREADY_EXISTS: 登録済み INVALID_ARG: creator か destructor が不正な値を含む </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="abfe2f51244047f026f1e86bef7880220"></a><!-- doxytag: member="coil::Factory::createObject" ref="abfe2f51244047f026f1e86bef7880220" args="(const Identifier &amp;id)" -->
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class AbstractClass , typename Identifier  = std::string, typename Compare  = std::less&lt;Identifier&gt;, typename Creator  = AbstractClass* (*)(), typename Destructor  = void (*)(AbstractClass*&amp;)&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">AbstractClass* <a class="el" href="classcoil_1_1Factory.html">coil::Factory</a>&lt; AbstractClass, Identifier, Compare, Creator, Destructor &gt;::createObject </td>
+          <td>(</td>
+          <td class="paramtype">const Identifier &amp;&nbsp;</td>
+          <td class="paramname"> <em>id</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>ファクトリーオブジェクト生成 </p>
+<p>ファクトリーオブジェクトを生成する。</p>
+<dl><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>id</em>&nbsp;</td><td>ファクトリーID</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>戻り値:</b></dt><dd>AbstractClass のポインタ </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a48aaa74f2c0c36dbe7261f94450bbbc2"></a><!-- doxytag: member="coil::Factory::deleteObject" ref="a48aaa74f2c0c36dbe7261f94450bbbc2" args="(AbstractClass *&amp;obj)" -->
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class AbstractClass , typename Identifier  = std::string, typename Compare  = std::less&lt;Identifier&gt;, typename Creator  = AbstractClass* (*)(), typename Destructor  = void (*)(AbstractClass*&amp;)&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classcoil_1_1Factory.html">coil::Factory</a>&lt; AbstractClass, Identifier, Compare, Creator, Destructor &gt;::deleteObject </td>
+          <td>(</td>
+          <td class="paramtype">AbstractClass *&amp;&nbsp;</td>
+          <td class="paramname"> <em>obj</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>ファクトリーオブジェクト削除 </p>
+<p>ファクトリーオブジェクトを削除する。</p>
+<dl><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>obj</em>&nbsp;</td><td>ファクトリーオブジェクト </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a3bc2ace6f1d5ef8d7208fdd501d5a78c"></a><!-- doxytag: member="coil::Factory::deleteObject" ref="a3bc2ace6f1d5ef8d7208fdd501d5a78c" args="(const Identifier &amp;id, AbstractClass *&amp;obj)" -->
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class AbstractClass , typename Identifier  = std::string, typename Compare  = std::less&lt;Identifier&gt;, typename Creator  = AbstractClass* (*)(), typename Destructor  = void (*)(AbstractClass*&amp;)&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classcoil_1_1Factory.html">coil::Factory</a>&lt; AbstractClass, Identifier, Compare, Creator, Destructor &gt;::deleteObject </td>
+          <td>(</td>
+          <td class="paramtype">const Identifier &amp;&nbsp;</td>
+          <td class="paramname"> <em>id</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">AbstractClass *&amp;&nbsp;</td>
+          <td class="paramname"> <em>obj</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>ファクトリーオブジェクト削除 </p>
+<p>ファクトリーオブジェクトを削除する。</p>
+<dl><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>id</em>&nbsp;</td><td>ファクトリーID </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>obj</em>&nbsp;</td><td>ファクトリーオブジェクト </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="aa9f653dfebd545ee6af63b339b2e18b5"></a><!-- doxytag: member="coil::Factory::getIdentifiers" ref="aa9f653dfebd545ee6af63b339b2e18b5" args="()" -->
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class AbstractClass , typename Identifier  = std::string, typename Compare  = std::less&lt;Identifier&gt;, typename Creator  = AbstractClass* (*)(), typename Destructor  = void (*)(AbstractClass*&amp;)&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;Identifier&gt; <a class="el" href="classcoil_1_1Factory.html">coil::Factory</a>&lt; AbstractClass, Identifier, Compare, Creator, Destructor &gt;::getIdentifiers </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>ファクトリーIDリスト取得 </p>
+<p>ファクトリーIDリストを返す。</p>
+<dl class="return"><dt><b>戻り値:</b></dt><dd>ID リスト </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a613021c4ef085965a978cc89bd3b51e2"></a><!-- doxytag: member="coil::Factory::hasFactory" ref="a613021c4ef085965a978cc89bd3b51e2" args="(const Identifier &amp;id)" -->
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class AbstractClass , typename Identifier  = std::string, typename Compare  = std::less&lt;Identifier&gt;, typename Creator  = AbstractClass* (*)(), typename Destructor  = void (*)(AbstractClass*&amp;)&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="classcoil_1_1Factory.html">coil::Factory</a>&lt; AbstractClass, Identifier, Compare, Creator, Destructor &gt;::hasFactory </td>
+          <td>(</td>
+          <td class="paramtype">const Identifier &amp;&nbsp;</td>
+          <td class="paramname"> <em>id</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>ファクトリー有無チェック </p>
+<p>指定IDのファクトリー有無を返す。</p>
+<dl><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>id</em>&nbsp;</td><td>ファクトリーID</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>戻り値:</b></dt><dd>true: 有り, false: 無し </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a4c501f613299acf93d30179e91674f77"></a><!-- doxytag: member="coil::Factory::removeFactory" ref="a4c501f613299acf93d30179e91674f77" args="(const Identifier &amp;id)" -->
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class AbstractClass , typename Identifier  = std::string, typename Compare  = std::less&lt;Identifier&gt;, typename Creator  = AbstractClass* (*)(), typename Destructor  = void (*)(AbstractClass*&amp;)&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classcoil_1_1Factory.html#ad3daf45b88091bf7eded408aff26767e">ReturnCode</a> <a class="el" href="classcoil_1_1Factory.html">coil::Factory</a>&lt; AbstractClass, Identifier, Compare, Creator, Destructor &gt;::removeFactory </td>
+          <td>(</td>
+          <td class="paramtype">const Identifier &amp;&nbsp;</td>
+          <td class="paramname"> <em>id</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>ファクトリー削除 </p>
+<p>ファクトリーを削除する。</p>
+<dl><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>id</em>&nbsp;</td><td>ファクトリーID</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>戻り値:</b></dt><dd>FACTORY_OK: 正常終了 NOT_FOUND: ID未登録 </dd></dl>
+
+</div>
+</div>
+</div>
+<hr class="footer"/><address style="text-align: right;"><small>OpenRTMに対してThu May 24 23:25:19 2012に生成されました。&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.6.3 </small></address>
+</body>
+</html>

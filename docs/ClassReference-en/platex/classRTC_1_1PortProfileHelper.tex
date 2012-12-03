@@ -1,0 +1,339 @@
+\section{RTC::PortProfileHelper Class Reference}
+\label{classRTC_1_1PortProfileHelper}\index{RTC::PortProfileHelper@{RTC::PortProfileHelper}}
+
+
+PortProfile helper class.  
+
+
+
+
+{\ttfamily \#include $<$PortProfileHelper.h$>$}
+
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct {\bfseries conn\_\-id}
+\item 
+struct {\bfseries conn\_\-name}
+\item 
+struct {\bfseries if\_\-name}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf PortProfileHelper} ()
+\begin{DoxyCompactList}\small\item\em Constructor. \item\end{DoxyCompactList}\item 
+virtual {\bf $\sim$PortProfileHelper} (void)
+\begin{DoxyCompactList}\small\item\em Destructor. \item\end{DoxyCompactList}\item 
+void {\bf setPortProfile} (const PortProfile \&profile)
+\begin{DoxyCompactList}\small\item\em Set PortProfile. \item\end{DoxyCompactList}\item 
+PortProfile $\ast$ {\bf getPortProfile} ()
+\begin{DoxyCompactList}\small\item\em Get PortProfile. \item\end{DoxyCompactList}\item 
+void {\bf setName} (const char $\ast$name)
+\begin{DoxyCompactList}\small\item\em Set PortProfile.name. \item\end{DoxyCompactList}\item 
+const char $\ast$ {\bf getName} () const 
+\begin{DoxyCompactList}\small\item\em Get PortProfile.name. \item\end{DoxyCompactList}\item 
+void {\bf appendPortInterfaceProfile} (PortInterfaceProfile if\_\-prof)
+\begin{DoxyCompactList}\small\item\em Append PortInterfaceProfile to the PortProfile. \item\end{DoxyCompactList}\item 
+const PortInterfaceProfileList \& {\bf getPortInterfaceProfiles} () const 
+\begin{DoxyCompactList}\small\item\em Get PortInterfaceProfileList. \item\end{DoxyCompactList}\item 
+const PortInterfaceProfile {\bf getPortInterfaceProfile} (const char $\ast$instance\_\-name) const 
+\begin{DoxyCompactList}\small\item\em Get PortInterfaceProfile. \item\end{DoxyCompactList}\item 
+void {\bf erasePortInterfaceProfile} (const char $\ast$instance\_\-name)
+\begin{DoxyCompactList}\small\item\em Erase PortInterfaceProfile from the PortProfile. \item\end{DoxyCompactList}\item 
+void {\bf setPortRef} (PortService\_\-ptr port)
+\begin{DoxyCompactList}\small\item\em Set Port's object reference. \item\end{DoxyCompactList}\item 
+PortService\_\-ptr {\bf getPortRef} () const 
+\begin{DoxyCompactList}\small\item\em Get Port's object reference. \item\end{DoxyCompactList}\item 
+void {\bf appendConnectorProfile} (ConnectorProfile conn\_\-profile)
+\begin{DoxyCompactList}\small\item\em Append ConnectorProfile. \item\end{DoxyCompactList}\item 
+const ConnectorProfileList {\bf getConnectorProfiles} () const 
+\begin{DoxyCompactList}\small\item\em Get ConnectorProfileList. \item\end{DoxyCompactList}\item 
+const ConnectorProfile {\bf getConnectorProfile} (const char $\ast$name) const 
+\begin{DoxyCompactList}\small\item\em Get ConnectorProfile. \item\end{DoxyCompactList}\item 
+const ConnectorProfile {\bf getConnectorProfileById} (const char $\ast$id) const 
+\begin{DoxyCompactList}\small\item\em Get ConnectorProfile. \item\end{DoxyCompactList}\item 
+void {\bf eraseConnectorProfile} (const char $\ast$name)
+\begin{DoxyCompactList}\small\item\em Erase ConnectorProfile. \item\end{DoxyCompactList}\item 
+void {\bf eraseConnectorProfileById} (const char $\ast$id)
+\begin{DoxyCompactList}\small\item\em Erase ConnectorProfile. \item\end{DoxyCompactList}\item 
+void {\bf setOwner} (RTObject\_\-ptr owner)
+\begin{DoxyCompactList}\small\item\em Set owner's object reference to the PortProfile. \item\end{DoxyCompactList}\item 
+RTObject\_\-ptr {\bf getOwner} () const 
+\begin{DoxyCompactList}\small\item\em Get owner's object reference from the PortProfile. \item\end{DoxyCompactList}\item 
+void {\bf setProperties} (NVList \&prop)
+\begin{DoxyCompactList}\small\item\em Set properties to the PortProfile. \item\end{DoxyCompactList}\item 
+const NVList \& {\bf getProperties} () const 
+\begin{DoxyCompactList}\small\item\em Get properties of the PortProfile. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+PortProfile helper class. This class manages the PortProfile that is profiles of the \doxyref{RTC}{p.}{namespaceRTC}:Port. This is mainly used in \doxyref{PortBase}{p.}{classRTC_1_1PortBase} class. 
+
+\subsection{Constructor \& Destructor Documentation}
+\index{RTC::PortProfileHelper@{RTC::PortProfileHelper}!PortProfileHelper@{PortProfileHelper}}
+\index{PortProfileHelper@{PortProfileHelper}!RTC::PortProfileHelper@{RTC::PortProfileHelper}}
+\subsubsection[{PortProfileHelper}]{\setlength{\rightskip}{0pt plus 5cm}RTC::PortProfileHelper::PortProfileHelper ()}\label{classRTC_1_1PortProfileHelper_a9461fe0f4c58e4556ad8620e0f952e04}
+
+
+Constructor. 
+
+Constructor \index{RTC::PortProfileHelper@{RTC::PortProfileHelper}!$\sim$PortProfileHelper@{$\sim$PortProfileHelper}}
+\index{$\sim$PortProfileHelper@{$\sim$PortProfileHelper}!RTC::PortProfileHelper@{RTC::PortProfileHelper}}
+\subsubsection[{$\sim$PortProfileHelper}]{\setlength{\rightskip}{0pt plus 5cm}virtual RTC::PortProfileHelper::$\sim$PortProfileHelper (void)\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classRTC_1_1PortProfileHelper_aa193920a7ca90f2f6f88413e37d2ddc6}
+
+
+Destructor. 
+
+Destructor 
+
+\subsection{Member Function Documentation}
+\index{RTC::PortProfileHelper@{RTC::PortProfileHelper}!appendConnectorProfile@{appendConnectorProfile}}
+\index{appendConnectorProfile@{appendConnectorProfile}!RTC::PortProfileHelper@{RTC::PortProfileHelper}}
+\subsubsection[{appendConnectorProfile}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::PortProfileHelper::appendConnectorProfile (ConnectorProfile {\em conn\_\-profile})}\label{classRTC_1_1PortProfileHelper_aeb9e2b522ace6358c47b078d0d24a2df}
+
+
+Append ConnectorProfile. 
+
+This operation appends the ConnectorProfile to the PortProfile.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em conn\_\-profile}]ConnectorProfile to be added. \end{DoxyParams}
+\index{RTC::PortProfileHelper@{RTC::PortProfileHelper}!appendPortInterfaceProfile@{appendPortInterfaceProfile}}
+\index{appendPortInterfaceProfile@{appendPortInterfaceProfile}!RTC::PortProfileHelper@{RTC::PortProfileHelper}}
+\subsubsection[{appendPortInterfaceProfile}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::PortProfileHelper::appendPortInterfaceProfile (PortInterfaceProfile {\em if\_\-prof})}\label{classRTC_1_1PortProfileHelper_a3688e99bab76f91ec066d687733d8311}
+
+
+Append PortInterfaceProfile to the PortProfile. 
+
+This operation appends the PortInterfaceProfile to the PortProfile
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em if\_\-profile}]PortInterfaceProfile to be appended the PortProfile \end{DoxyParams}
+\index{RTC::PortProfileHelper@{RTC::PortProfileHelper}!eraseConnectorProfile@{eraseConnectorProfile}}
+\index{eraseConnectorProfile@{eraseConnectorProfile}!RTC::PortProfileHelper@{RTC::PortProfileHelper}}
+\subsubsection[{eraseConnectorProfile}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::PortProfileHelper::eraseConnectorProfile (const char $\ast$ {\em name})}\label{classRTC_1_1PortProfileHelper_a17027ea239a500648b2f8b5c71604a92}
+
+
+Erase ConnectorProfile. 
+
+This operation erases the ConnectorProfile from the PortProfile.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em name}]The name of the ConnectorProfile to be erased. \end{DoxyParams}
+\index{RTC::PortProfileHelper@{RTC::PortProfileHelper}!eraseConnectorProfileById@{eraseConnectorProfileById}}
+\index{eraseConnectorProfileById@{eraseConnectorProfileById}!RTC::PortProfileHelper@{RTC::PortProfileHelper}}
+\subsubsection[{eraseConnectorProfileById}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::PortProfileHelper::eraseConnectorProfileById (const char $\ast$ {\em id})}\label{classRTC_1_1PortProfileHelper_a6ce8029af5d7c1eac6a600d1392e19f8}
+
+
+Erase ConnectorProfile. 
+
+This operation erases the ConnectorProfile from the PortProfile.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em id}]The ID of the ConnectorProfile to be erased. \end{DoxyParams}
+\index{RTC::PortProfileHelper@{RTC::PortProfileHelper}!erasePortInterfaceProfile@{erasePortInterfaceProfile}}
+\index{erasePortInterfaceProfile@{erasePortInterfaceProfile}!RTC::PortProfileHelper@{RTC::PortProfileHelper}}
+\subsubsection[{erasePortInterfaceProfile}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::PortProfileHelper::erasePortInterfaceProfile (const char $\ast$ {\em instance\_\-name})}\label{classRTC_1_1PortProfileHelper_a1fe482f149415a6695daf871b27ec7ba}
+
+
+Erase PortInterfaceProfile from the PortProfile. 
+
+This operation erases the PortInterfaceProfile from the PortProfile
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em instance\_\-name}]PortInterfaceProfile to be erased from the PortProfile \end{DoxyParams}
+\index{RTC::PortProfileHelper@{RTC::PortProfileHelper}!getConnectorProfile@{getConnectorProfile}}
+\index{getConnectorProfile@{getConnectorProfile}!RTC::PortProfileHelper@{RTC::PortProfileHelper}}
+\subsubsection[{getConnectorProfile}]{\setlength{\rightskip}{0pt plus 5cm}const ConnectorProfile RTC::PortProfileHelper::getConnectorProfile (const char $\ast$ {\em name}) const}\label{classRTC_1_1PortProfileHelper_af8f4c120d1270b9f765f44f9abbcd385}
+
+
+Get ConnectorProfile. 
+
+This operation returns the ConnectorProfile specified by name.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em name}]The name of ConnectorProfile \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+ConnectorProfile. 
+\end{DoxyReturn}
+\index{RTC::PortProfileHelper@{RTC::PortProfileHelper}!getConnectorProfileById@{getConnectorProfileById}}
+\index{getConnectorProfileById@{getConnectorProfileById}!RTC::PortProfileHelper@{RTC::PortProfileHelper}}
+\subsubsection[{getConnectorProfileById}]{\setlength{\rightskip}{0pt plus 5cm}const ConnectorProfile RTC::PortProfileHelper::getConnectorProfileById (const char $\ast$ {\em id}) const}\label{classRTC_1_1PortProfileHelper_a6588b2165e50ba60b72919141cf77d90}
+
+
+Get ConnectorProfile. 
+
+This operation returns the ConnectorProfile specified by ID.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em id}]The ID of ConnectorProfile \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+ConnectorProfile. 
+\end{DoxyReturn}
+\index{RTC::PortProfileHelper@{RTC::PortProfileHelper}!getConnectorProfiles@{getConnectorProfiles}}
+\index{getConnectorProfiles@{getConnectorProfiles}!RTC::PortProfileHelper@{RTC::PortProfileHelper}}
+\subsubsection[{getConnectorProfiles}]{\setlength{\rightskip}{0pt plus 5cm}const ConnectorProfileList RTC::PortProfileHelper::getConnectorProfiles () const}\label{classRTC_1_1PortProfileHelper_a317a4707085ace828989e40a4cd9df72}
+
+
+Get ConnectorProfileList. 
+
+This operation returns the list of ConnectorProfile of the PortProfile.
+
+\begin{DoxyReturn}{Returns}
+Port's ConnectorProfileList. 
+\end{DoxyReturn}
+\index{RTC::PortProfileHelper@{RTC::PortProfileHelper}!getName@{getName}}
+\index{getName@{getName}!RTC::PortProfileHelper@{RTC::PortProfileHelper}}
+\subsubsection[{getName}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ RTC::PortProfileHelper::getName () const}\label{classRTC_1_1PortProfileHelper_a1ea140e419f0353b2e3ba53cf2f95a55}
+
+
+Get PortProfile.name. 
+
+This operation returns a pointer to the PortProfile.name.
+
+\begin{DoxyReturn}{Returns}
+The pointer to PortProfile.name. 
+\end{DoxyReturn}
+\index{RTC::PortProfileHelper@{RTC::PortProfileHelper}!getOwner@{getOwner}}
+\index{getOwner@{getOwner}!RTC::PortProfileHelper@{RTC::PortProfileHelper}}
+\subsubsection[{getOwner}]{\setlength{\rightskip}{0pt plus 5cm}RTObject\_\-ptr RTC::PortProfileHelper::getOwner () const}\label{classRTC_1_1PortProfileHelper_a3586f461074369276a5a4c2b72986dd8}
+
+
+Get owner's object reference from the PortProfile. 
+
+This operation returns the owner's object reference of the PortProfile.
+
+\begin{DoxyReturn}{Returns}
+The owner's object reference of PortProfile. 
+\end{DoxyReturn}
+\index{RTC::PortProfileHelper@{RTC::PortProfileHelper}!getPortInterfaceProfile@{getPortInterfaceProfile}}
+\index{getPortInterfaceProfile@{getPortInterfaceProfile}!RTC::PortProfileHelper@{RTC::PortProfileHelper}}
+\subsubsection[{getPortInterfaceProfile}]{\setlength{\rightskip}{0pt plus 5cm}const PortInterfaceProfile RTC::PortProfileHelper::getPortInterfaceProfile (const char $\ast$ {\em instance\_\-name}) const}\label{classRTC_1_1PortProfileHelper_a27dcb6af463b32a020c102492c68dd7f}
+
+
+Get PortInterfaceProfile. 
+
+This operation returns the PortInterfaceProfile specified by instance\_\-name.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em instance\_\-name}]instance\_\-name of the PortInterfaceProfile \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+PortInterfaceProfile 
+\end{DoxyReturn}
+\index{RTC::PortProfileHelper@{RTC::PortProfileHelper}!getPortInterfaceProfiles@{getPortInterfaceProfiles}}
+\index{getPortInterfaceProfiles@{getPortInterfaceProfiles}!RTC::PortProfileHelper@{RTC::PortProfileHelper}}
+\subsubsection[{getPortInterfaceProfiles}]{\setlength{\rightskip}{0pt plus 5cm}const PortInterfaceProfileList\& RTC::PortProfileHelper::getPortInterfaceProfiles () const}\label{classRTC_1_1PortProfileHelper_acf235a771a40ccaf67b8d48fd91ce430}
+
+
+Get PortInterfaceProfileList. 
+
+This operation returns the PortInterfaceProfileList.
+
+\begin{DoxyReturn}{Returns}
+PortInterfaceProfileList 
+\end{DoxyReturn}
+\index{RTC::PortProfileHelper@{RTC::PortProfileHelper}!getPortProfile@{getPortProfile}}
+\index{getPortProfile@{getPortProfile}!RTC::PortProfileHelper@{RTC::PortProfileHelper}}
+\subsubsection[{getPortProfile}]{\setlength{\rightskip}{0pt plus 5cm}PortProfile$\ast$ RTC::PortProfileHelper::getPortProfile ()}\label{classRTC_1_1PortProfileHelper_a96ad86397d2fbb7cd0bd931bea2a8e8b}
+
+
+Get PortProfile. 
+
+This operation returns the PortProfile.
+
+\begin{DoxyReturn}{Returns}
+The PortProfile stored by the object. 
+\end{DoxyReturn}
+\index{RTC::PortProfileHelper@{RTC::PortProfileHelper}!getPortRef@{getPortRef}}
+\index{getPortRef@{getPortRef}!RTC::PortProfileHelper@{RTC::PortProfileHelper}}
+\subsubsection[{getPortRef}]{\setlength{\rightskip}{0pt plus 5cm}PortService\_\-ptr RTC::PortProfileHelper::getPortRef () const}\label{classRTC_1_1PortProfileHelper_a0ff844c3336b2ff3cb0b3dd265ac16d7}
+
+
+Get Port's object reference. 
+
+This operation returns the object reference of the PortProfile.
+
+\begin{DoxyReturn}{Returns}
+Port's object reference associated with the PortProfile. 
+\end{DoxyReturn}
+\index{RTC::PortProfileHelper@{RTC::PortProfileHelper}!getProperties@{getProperties}}
+\index{getProperties@{getProperties}!RTC::PortProfileHelper@{RTC::PortProfileHelper}}
+\subsubsection[{getProperties}]{\setlength{\rightskip}{0pt plus 5cm}const NVList\& RTC::PortProfileHelper::getProperties () const}\label{classRTC_1_1PortProfileHelper_a988bc4ec7976f5fd653c1dcb48bf16ec}
+
+
+Get properties of the PortProfile. 
+
+This operation returns the properties of the PortProfile.
+
+\begin{DoxyReturn}{Returns}
+The NVList of PortProfile's properties. 
+\end{DoxyReturn}
+\index{RTC::PortProfileHelper@{RTC::PortProfileHelper}!setName@{setName}}
+\index{setName@{setName}!RTC::PortProfileHelper@{RTC::PortProfileHelper}}
+\subsubsection[{setName}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::PortProfileHelper::setName (const char $\ast$ {\em name})}\label{classRTC_1_1PortProfileHelper_ab97df83e386d84d250109bb3770eee64}
+
+
+Set PortProfile.name. 
+
+This operation stores a copy of given name to the PortProfile.name.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em name}]The name of Port to be stored to the PortProfile.name. \end{DoxyParams}
+\index{RTC::PortProfileHelper@{RTC::PortProfileHelper}!setOwner@{setOwner}}
+\index{setOwner@{setOwner}!RTC::PortProfileHelper@{RTC::PortProfileHelper}}
+\subsubsection[{setOwner}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::PortProfileHelper::setOwner (RTObject\_\-ptr {\em owner})}\label{classRTC_1_1PortProfileHelper_aa97f28b29ab594657a5d201854e2bb6a}
+
+
+Set owner's object reference to the PortProfile. 
+
+This operation sets the owner's object reference to the PortProfile.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em owner}]The owner's object reference of PortProfile. \end{DoxyParams}
+\index{RTC::PortProfileHelper@{RTC::PortProfileHelper}!setPortProfile@{setPortProfile}}
+\index{setPortProfile@{setPortProfile}!RTC::PortProfileHelper@{RTC::PortProfileHelper}}
+\subsubsection[{setPortProfile}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::PortProfileHelper::setPortProfile (const PortProfile \& {\em profile})}\label{classRTC_1_1PortProfileHelper_acfe228eb5e5f95633c537cb00006c430}
+
+
+Set PortProfile. 
+
+This operation copies the given PortProfile and overwrites the existent PortProfile by the given ProtProfile.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em PortProfile}]The PortProfile to be stored. \end{DoxyParams}
+\index{RTC::PortProfileHelper@{RTC::PortProfileHelper}!setPortRef@{setPortRef}}
+\index{setPortRef@{setPortRef}!RTC::PortProfileHelper@{RTC::PortProfileHelper}}
+\subsubsection[{setPortRef}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::PortProfileHelper::setPortRef (PortService\_\-ptr {\em port})}\label{classRTC_1_1PortProfileHelper_a819b0c4f1532c14781a94329dad59962}
+
+
+Set Port's object reference. 
+
+This operation set the object reference of the Port.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em port}]Port's object reference to be set. \end{DoxyParams}
+\index{RTC::PortProfileHelper@{RTC::PortProfileHelper}!setProperties@{setProperties}}
+\index{setProperties@{setProperties}!RTC::PortProfileHelper@{RTC::PortProfileHelper}}
+\subsubsection[{setProperties}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::PortProfileHelper::setProperties (NVList \& {\em prop})}\label{classRTC_1_1PortProfileHelper_adf607e508e6848e24a8b57367756e7ce}
+
+
+Set properties to the PortProfile. 
+
+This operation set the properties to the PortProfile.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em prop}]The NVList of PortProfile's properties. \end{DoxyParams}

@@ -1,0 +1,126 @@
+\section{クラス coil::GetOpt}
+\label{classcoil_1_1GetOpt}\index{coil::GetOpt@{coil::GetOpt}}
+
+
+\doxyref{GetOpt}{p.}{classcoil_1_1GetOpt} クラス.  
+
+
+
+
+{\ttfamily \#include $<$OS.h$>$}
+
+\subsection*{Public メソッド}
+\begin{DoxyCompactItemize}
+\item 
+{\bf GetOpt} (int argc, char $\ast$const argv[$\,$], const char $\ast$opt, int flag)
+\begin{DoxyCompactList}\small\item\em コンストラクタ \item\end{DoxyCompactList}\item 
+{\bf $\sim$GetOpt} ()
+\begin{DoxyCompactList}\small\item\em デストラクタ \item\end{DoxyCompactList}\item 
+int {\bf operator()} ()
+\begin{DoxyCompactList}\small\item\em コマンドライン引数解析 \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public 変数}
+\begin{DoxyCompactItemize}
+\item 
+char $\ast$ {\bf optarg}
+\item 
+int {\bf optind}
+\begin{DoxyCompactList}\small\item\em オプション引数 \item\end{DoxyCompactList}\item 
+int {\bf opterr}
+\begin{DoxyCompactList}\small\item\em 処理対象引数 \item\end{DoxyCompactList}\item 
+int {\bf optopt}
+\begin{DoxyCompactList}\small\item\em エラー表示 0:抑止、1:表示 \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{説明}
+\doxyref{GetOpt}{p.}{classcoil_1_1GetOpt} クラス. 
+
+\subsection{コンストラクタとデストラクタ}
+\index{coil::GetOpt@{coil::GetOpt}!GetOpt@{GetOpt}}
+\index{GetOpt@{GetOpt}!coil::GetOpt@{coil::GetOpt}}
+\subsubsection[{GetOpt}]{\setlength{\rightskip}{0pt plus 5cm}coil::GetOpt::GetOpt (int {\em argc}, \/  char $\ast$const  {\em argv}[$\,$], \/  const char $\ast$ {\em opt}, \/  int {\em flag})\hspace{0.3cm}{\ttfamily  [inline]}}\label{classcoil_1_1GetOpt_ac5d327f254117a66c9f2f1a60d02f2fd}
+
+
+コンストラクタ 
+
+コンストラクタ。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em name}]オブジェクト名 \end{DoxyParams}
+
+
+参照先 optind.
+
+\index{coil::GetOpt@{coil::GetOpt}!$\sim$GetOpt@{$\sim$GetOpt}}
+\index{$\sim$GetOpt@{$\sim$GetOpt}!coil::GetOpt@{coil::GetOpt}}
+\subsubsection[{$\sim$GetOpt}]{\setlength{\rightskip}{0pt plus 5cm}coil::GetOpt::$\sim$GetOpt ()\hspace{0.3cm}{\ttfamily  [inline]}}\label{classcoil_1_1GetOpt_ac72f5662f12ddac40609a91d7ef91dca}
+
+
+デストラクタ 
+
+デストラクタ。 
+
+参照先 optind.
+
+
+
+\subsection{関数}
+\index{coil::GetOpt@{coil::GetOpt}!operator()@{operator()}}
+\index{operator()@{operator()}!coil::GetOpt@{coil::GetOpt}}
+\subsubsection[{operator()}]{\setlength{\rightskip}{0pt plus 5cm}int coil::GetOpt::operator() ()\hspace{0.3cm}{\ttfamily  [inline]}}\label{classcoil_1_1GetOpt_aeccfe44e8e4cf01a3eb105f06414e3f8}
+
+
+コマンドライン引数解析 
+
+コマンドライン引数を解析する。
+
+\begin{DoxyReturn}{戻り値}
+解析結果 
+\end{DoxyReturn}
+
+
+参照先 optarg, opterr, optind, と optopt.
+
+
+
+\subsection{変数}
+\index{coil::GetOpt@{coil::GetOpt}!optarg@{optarg}}
+\index{optarg@{optarg}!coil::GetOpt@{coil::GetOpt}}
+\subsubsection[{optarg}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ {\bf coil::GetOpt::optarg}}\label{classcoil_1_1GetOpt_ab737d20597f45c203ee94149602fd76e}
+
+
+参照元 operator()().
+
+\index{coil::GetOpt@{coil::GetOpt}!opterr@{opterr}}
+\index{opterr@{opterr}!coil::GetOpt@{coil::GetOpt}}
+\subsubsection[{opterr}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf coil::GetOpt::opterr}}\label{classcoil_1_1GetOpt_ad0c8937327497c149a3e9fc2b8848849}
+
+
+処理対象引数 
+
+
+
+参照元 operator()().
+
+\index{coil::GetOpt@{coil::GetOpt}!optind@{optind}}
+\index{optind@{optind}!coil::GetOpt@{coil::GetOpt}}
+\subsubsection[{optind}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf coil::GetOpt::optind}}\label{classcoil_1_1GetOpt_a65e9137c10e3f5d0558b1a2581314ac2}
+
+
+オプション引数 
+
+
+
+参照元 GetOpt(), operator()(), と $\sim$GetOpt().
+
+\index{coil::GetOpt@{coil::GetOpt}!optopt@{optopt}}
+\index{optopt@{optopt}!coil::GetOpt@{coil::GetOpt}}
+\subsubsection[{optopt}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf coil::GetOpt::optopt}}\label{classcoil_1_1GetOpt_a6b068abe70b88844f85a2eda5855e29d}
+
+
+エラー表示 0:抑止、1:表示 
+
+
+
+参照元 operator()().
+

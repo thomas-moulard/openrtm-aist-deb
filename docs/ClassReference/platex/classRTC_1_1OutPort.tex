@@ -1,0 +1,197 @@
+\section{クラス テンプレート RTC::OutPort$<$ DataType $>$}
+\label{classRTC_1_1OutPort}\index{RTC::OutPort@{RTC::OutPort}}
+
+
+\doxyref{OutPort}{p.}{classRTC_1_1OutPort} テンプレートクラス.  
+
+
+
+
+{\ttfamily \#include $<$OutPort.h$>$}
+
+RTC::OutPort$<$ DataType $>$に対する継承グラフ\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3cm]{classRTC_1_1OutPort}
+\end{center}
+\end{figure}
+\subsection*{Public メソッド}
+\begin{DoxyCompactItemize}
+\item 
+{\bf OutPort} (const char $\ast$name, DataType \&value)
+\begin{DoxyCompactList}\small\item\em コンストラクタ \item\end{DoxyCompactList}\item 
+virtual {\bf $\sim$OutPort} (void)
+\item 
+virtual bool {\bf write} (DataType \&value)
+\begin{DoxyCompactList}\small\item\em データ書き込み \item\end{DoxyCompactList}\item 
+bool {\bf write} ()
+\begin{DoxyCompactList}\small\item\em データ書き込み \item\end{DoxyCompactList}\item 
+bool {\bf operator$<$$<$} (DataType \&value)
+\begin{DoxyCompactList}\small\item\em データ書き込み \item\end{DoxyCompactList}\item 
+{\bf DataPortStatus::Enum} {\bf getStatus} (int index)
+\begin{DoxyCompactList}\small\item\em 特定のコネクタへの書き込みステータスを得る \item\end{DoxyCompactList}\item 
+{\bf DataPortStatusList} {\bf getStatusList} ()
+\begin{DoxyCompactList}\small\item\em 特定のコネクタへの書き込みステータスリストを得る \item\end{DoxyCompactList}\item 
+void {\bf setOnWrite} ({\bf OnWrite}$<$ DataType $>$ $\ast$on\_\-write)
+\begin{DoxyCompactList}\small\item\em \doxyref{OnWrite}{p.}{classRTC_1_1OnWrite} コールバックの設定. \item\end{DoxyCompactList}\item 
+void {\bf setOnWriteConvert} ({\bf OnWriteConvert}$<$ DataType $>$ $\ast$on\_\-wconvert)
+\begin{DoxyCompactList}\small\item\em \doxyref{OnWriteConvert}{p.}{structRTC_1_1OnWriteConvert} コールバックの設定. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{説明}
+\subsubsection*{template$<$class DataType$>$ class RTC::OutPort$<$ DataType $>$}
+
+\doxyref{OutPort}{p.}{classRTC_1_1OutPort} テンプレートクラス. \doxyref{OutPort}{p.}{classRTC_1_1OutPort} テンプレートクラス、テンプレートの引数として、OutPortが 扱うデータ型 DataType をとる。
+
+OnWrite系コールバック (書込みに起因するイベントによりコールされる)
+
+
+\begin{DoxyItemize}
+\item void OnWrite$<$DataType$>$::operator()(const DataType): \doxyref{OutPort::write()}{p.}{classRTC_1_1OutPort_a4eefb7caaaf1a48cc7a1678bbd58624c} を呼び出し書き込みを行う際にコールされる。
+\end{DoxyItemize}
+
+
+\begin{DoxyItemize}
+\item DataType OnWriteConvert$<$DataType$>$::operator()(const DataType): \doxyref{OutPort::write()}{p.}{classRTC_1_1OutPort_a4eefb7caaaf1a48cc7a1678bbd58624c} を呼び出し、データをバッファに書き込む前に呼ばれ データの変換を行う。operator()()の戻り値がシリアライズされバッファに 書き込まれる。
+\end{DoxyItemize}
+
+\begin{DoxySince}{から}
+0.2.0 
+\end{DoxySince}
+
+
+\subsection{コンストラクタとデストラクタ}
+\index{RTC::OutPort@{RTC::OutPort}!OutPort@{OutPort}}
+\index{OutPort@{OutPort}!RTC::OutPort@{RTC::OutPort}}
+\subsubsection[{OutPort}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class DataType $>$ {\bf RTC::OutPort}$<$ DataType $>$::{\bf OutPort} (const char $\ast$ {\em name}, \/  DataType \& {\em value})\hspace{0.3cm}{\ttfamily  [inline]}}\label{classRTC_1_1OutPort_af564b47046f4c79713e7a16d5f476aa6}
+
+
+コンストラクタ 
+
+コンストラクタ
+
+
+\begin{DoxyParams}{引数}
+\item[{\em name}]ポート名 \item[{\em value}]このポートにバインドされるデータ変数 \item[{\em length}]バッファ長(デフォルト値:8) \end{DoxyParams}
+\index{RTC::OutPort@{RTC::OutPort}!$\sim$OutPort@{$\sim$OutPort}}
+\index{$\sim$OutPort@{$\sim$OutPort}!RTC::OutPort@{RTC::OutPort}}
+\subsubsection[{$\sim$OutPort}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class DataType $>$ virtual {\bf RTC::OutPort}$<$ DataType $>$::$\sim${\bf OutPort} (void)\hspace{0.3cm}{\ttfamily  [inline, virtual]}}\label{classRTC_1_1OutPort_a678f9415aae9691b109cac05ab7efc0f}
+デストラクタ 
+
+\subsection{関数}
+\index{RTC::OutPort@{RTC::OutPort}!getStatus@{getStatus}}
+\index{getStatus@{getStatus}!RTC::OutPort@{RTC::OutPort}}
+\subsubsection[{getStatus}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class DataType $>$ {\bf DataPortStatus::Enum} {\bf RTC::OutPort}$<$ DataType $>$::getStatus (int {\em index})\hspace{0.3cm}{\ttfamily  [inline]}}\label{classRTC_1_1OutPort_a8d9d6078d0766ef178eaa0e7a89e4323}
+
+
+特定のコネクタへの書き込みステータスを得る 
+
+\doxyref{OutPort}{p.}{classRTC_1_1OutPort} は接続ごとに Connector と呼ばれる仮想データチャネルを持 つ。write() 関数はこれら Connector に対してデータを書き込むが、 各 Connector は書き込みごとにステータスを返す。write() 関数では、 すべての Connector が正常終了したときのみ true を返し、それ以外 では false を返却する。この関数は \doxyref{write()}{p.}{classRTC_1_1OutPort_a4eefb7caaaf1a48cc7a1678bbd58624c} が false の場合ステー タスを調べるのに使用することができる。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em index}]Connector の index \end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+ステータス 
+\end{DoxyReturn}
+\index{RTC::OutPort@{RTC::OutPort}!getStatusList@{getStatusList}}
+\index{getStatusList@{getStatusList}!RTC::OutPort@{RTC::OutPort}}
+\subsubsection[{getStatusList}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class DataType $>$ {\bf DataPortStatusList} {\bf RTC::OutPort}$<$ DataType $>$::getStatusList ()\hspace{0.3cm}{\ttfamily  [inline]}}\label{classRTC_1_1OutPort_a2e599360675f20b2a462185d9fb4f6ee}
+
+
+特定のコネクタへの書き込みステータスリストを得る 
+
+\doxyref{OutPort}{p.}{classRTC_1_1OutPort} は接続ごとに Connector と呼ばれる仮想データチャネルを持 つ。write() 関数はこれら Connector に対してデータを書き込むが、 各 Connector は書き込みごとにステータスを返す。write() 関数では、 すべての Connector が正常終了したときのみ true を返し、それ以外 では false を返却する。この関数は \doxyref{write()}{p.}{classRTC_1_1OutPort_a4eefb7caaaf1a48cc7a1678bbd58624c} が false の場合ステー タスを調べるのに使用することができる。
+
+\begin{DoxyReturn}{戻り値}
+ステータスリスト 
+\end{DoxyReturn}
+\index{RTC::OutPort@{RTC::OutPort}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!RTC::OutPort@{RTC::OutPort}}
+\subsubsection[{operator$<$$<$}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class DataType $>$ bool {\bf RTC::OutPort}$<$ DataType $>$::operator$<$$<$ (DataType \& {\em value})\hspace{0.3cm}{\ttfamily  [inline]}}\label{classRTC_1_1OutPort_ab96cafce5bda52fe093c451ea0ea5e80}
+
+
+データ書き込み 
+
+ポートへデータを書き込む。 設定された値をポートに書き込む。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em value}]書き込み対象データ\end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+書き込み処理結果(書き込み成功:true、書き込み失敗:false) 
+\end{DoxyReturn}
+
+
+参照先 RTC::OutPort$<$ DataType $>$::write().
+
+\index{RTC::OutPort@{RTC::OutPort}!setOnWrite@{setOnWrite}}
+\index{setOnWrite@{setOnWrite}!RTC::OutPort@{RTC::OutPort}}
+\subsubsection[{setOnWrite}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class DataType $>$ void {\bf RTC::OutPort}$<$ DataType $>$::setOnWrite ({\bf OnWrite}$<$ DataType $>$ $\ast$ {\em on\_\-write})\hspace{0.3cm}{\ttfamily  [inline]}}\label{classRTC_1_1OutPort_a9a23160be80aa4394c11f257d6f3b985}
+
+
+\doxyref{OnWrite}{p.}{classRTC_1_1OnWrite} コールバックの設定. 
+
+\doxyref{write()}{p.}{classRTC_1_1OutPort_a4eefb7caaaf1a48cc7a1678bbd58624c} 呼び出し時に、各コネクタに対してデータを書き込む直前に呼 ばれる \doxyref{OnWrite}{p.}{classRTC_1_1OnWrite} コールバックファンクタを設定する。この関数により 設定されたファンクタオブジェクトの所有権は、呼び出し側が持つ。し たがっ const て、このファンクタオブジェクトの解体責任は呼び出し側にある。 ファンクタの設定を解除する場合には引数に 0 を渡すことで、コール バックが無効となる。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em on\_\-write}]\doxyref{OnWrite}{p.}{classRTC_1_1OnWrite} コールバックファンクタ \end{DoxyParams}
+\index{RTC::OutPort@{RTC::OutPort}!setOnWriteConvert@{setOnWriteConvert}}
+\index{setOnWriteConvert@{setOnWriteConvert}!RTC::OutPort@{RTC::OutPort}}
+\subsubsection[{setOnWriteConvert}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class DataType $>$ void {\bf RTC::OutPort}$<$ DataType $>$::setOnWriteConvert ({\bf OnWriteConvert}$<$ DataType $>$ $\ast$ {\em on\_\-wconvert})\hspace{0.3cm}{\ttfamily  [inline]}}\label{classRTC_1_1OutPort_acfcace76efbc58ef8f9654b467a2ef3c}
+
+
+\doxyref{OnWriteConvert}{p.}{structRTC_1_1OnWriteConvert} コールバックの設定. 
+
+\doxyref{write()}{p.}{classRTC_1_1OutPort_a4eefb7caaaf1a48cc7a1678bbd58624c} 呼び出し時に、各コネクタに対してデータを書き込み直前に呼 ばれ、データ変換を行う \doxyref{OnWriteConvert}{p.}{structRTC_1_1OnWriteConvert} コールバックファンクタを設 定する。引数に直近で書き込まれたデータが与えられ、戻り値に実際に コネクタまたはバッファに書き込まれるデータを返すファンクタを設定 する。この関数により設定されたファンクタオブジェクトの所有権は、 呼び出し側が持つ。したがっ const て、このファンクタオブジェクト の解体責任は呼び出し側にある。ファンクタの設定を解除する場合には 引数に 0 を渡すことで、コールバックが無効となる。 データ書き込み 時に呼ばれる \doxyref{OnWriteConvert}{p.}{structRTC_1_1OnWriteConvert} コールバックファンクタを設定する。こ のコールバック関数の処理結果が書き込まれる。このため書き込みデー タのフィルタリングが可能となる。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em on\_\-wconvert}]\doxyref{OnWriteConvert}{p.}{structRTC_1_1OnWriteConvert} コールバックファンクタ \end{DoxyParams}
+\index{RTC::OutPort@{RTC::OutPort}!write@{write}}
+\index{write@{write}!RTC::OutPort@{RTC::OutPort}}
+\subsubsection[{write}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class DataType $>$ bool {\bf RTC::OutPort}$<$ DataType $>$::write ()\hspace{0.3cm}{\ttfamily  [inline, virtual]}}\label{classRTC_1_1OutPort_a4eefb7caaaf1a48cc7a1678bbd58624c}
+
+
+データ書き込み 
+
+ポートへデータを書き込む。 バインドされた変数に設定された値をポートに書き込む。
+
+\begin{DoxyReturn}{戻り値}
+書き込み処理結果(書き込み成功:true、書き込み失敗:false) 
+\end{DoxyReturn}
+
+
+{\bf RTC::OutPortBase} \doxyref{}{p.}{classRTC_1_1OutPortBase_a282e66241624ed46a8963ecf4ff70f01}を実装しています。
+
+
+
+参照元 RTC::OutPort$<$ DataType $>$::operator$<$$<$().
+
+\index{RTC::OutPort@{RTC::OutPort}!write@{write}}
+\index{write@{write}!RTC::OutPort@{RTC::OutPort}}
+\subsubsection[{write}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class DataType $>$ virtual bool {\bf RTC::OutPort}$<$ DataType $>$::write (DataType \& {\em value})\hspace{0.3cm}{\ttfamily  [inline, virtual]}}\label{classRTC_1_1OutPort_a7b12cce88841e731f8bd57fb98062dcf}
+
+
+データ書き込み 
+
+ポートへデータを書き込む。
+
+
+\begin{DoxyItemize}
+\item コールバックファンクタ \doxyref{OnWrite}{p.}{classRTC_1_1OnWrite} がセットされている場合、 \doxyref{OutPort}{p.}{classRTC_1_1OutPort} が保持するバッファに書き込む前に \doxyref{OnWrite}{p.}{classRTC_1_1OnWrite} が呼ばれる。
+\item \doxyref{OutPort}{p.}{classRTC_1_1OutPort} が保持するバッファがオーバーフローを検出できるバッファであり、 かつ、書き込む際にバッファがオーバーフローを検出した場合、 コールバックファンクタ OnOverflow が呼ばれる。
+\item コールバックファンクタ \doxyref{OnWriteConvert}{p.}{structRTC_1_1OnWriteConvert} がセットされている場合、 バッファ書き込み時に、 \doxyref{OnWriteConvert}{p.}{structRTC_1_1OnWriteConvert} の operator() の戻り値が バッファに書き込まれる。
+\end{DoxyItemize}
+
+
+\begin{DoxyParams}{引数}
+\item[{\em value}]書き込み対象データ\end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+書き込み処理結果(書き込み成功:true、書き込み失敗:false) 
+\end{DoxyReturn}
+
+
+参照先 RTC::DataPortStatus::CONNECTION\_\-LOST, RTC::PortBase::disconnect(), RTC::PortBase::findConnProfile(), CORBA\_\-SeqUtil::for\_\-each(), RTC::OutPortBase::m\_\-connectors, RTC::PortBase::m\_\-connectorsMutex, RTC::PortBase::m\_\-onConnectionLost, RTC::DataPortStatus::PORT\_\-OK, RTC\_\-DEBUG, RTC\_\-TRACE, と RTC\_\-WARN.
+

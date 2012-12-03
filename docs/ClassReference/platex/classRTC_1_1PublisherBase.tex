@@ -1,0 +1,208 @@
+\section{クラス RTC::PublisherBase}
+\label{classRTC_1_1PublisherBase}\index{RTC::PublisherBase@{RTC::PublisherBase}}
+
+
+Publisher 基底クラス.  
+
+
+
+
+{\ttfamily \#include $<$PublisherBase.h$>$}
+
+RTC::PublisherBaseに対する継承グラフ\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3cm]{classRTC_1_1PublisherBase}
+\end{center}
+\end{figure}
+\subsection*{Public メソッド}
+\begin{DoxyCompactItemize}
+\item 
+virtual DATAPORTSTATUS\_\-ENUM {\bf $\sim$PublisherBase} (void)
+\begin{DoxyCompactList}\small\item\em デストラクタ \item\end{DoxyCompactList}\item 
+virtual ReturnCode {\bf init} ({\bf coil::Properties} \&prop)=0
+\begin{DoxyCompactList}\small\item\em 設定初期化 \item\end{DoxyCompactList}\item 
+virtual ReturnCode {\bf setConsumer} ({\bf InPortConsumer} $\ast$consumer)=0
+\begin{DoxyCompactList}\small\item\em InPortコンシューマのセット. \item\end{DoxyCompactList}\item 
+virtual ReturnCode {\bf setBuffer} ({\bf BufferBase}$<$ cdrMemoryStream $>$ $\ast$buffer)=0
+\begin{DoxyCompactList}\small\item\em バッファのセット \item\end{DoxyCompactList}\item 
+virtual ReturnCode {\bf setListener} ({\bf ConnectorInfo} \&info, {\bf ConnectorListeners} $\ast$listeners)=0
+\begin{DoxyCompactList}\small\item\em リスナを設定する。 \item\end{DoxyCompactList}\item 
+virtual ReturnCode {\bf write} (const cdrMemoryStream \&data, unsigned long sec, unsigned long usec)=0
+\begin{DoxyCompactList}\small\item\em データを書き込む \item\end{DoxyCompactList}\item 
+virtual bool {\bf isActive} ()=0
+\begin{DoxyCompactList}\small\item\em アクティブ化確認 \item\end{DoxyCompactList}\item 
+virtual ReturnCode {\bf activate} ()=0
+\begin{DoxyCompactList}\small\item\em アクティブ化する \item\end{DoxyCompactList}\item 
+virtual ReturnCode {\bf deactivate} ()=0
+\begin{DoxyCompactList}\small\item\em 非アクティブ化する \item\end{DoxyCompactList}\item 
+virtual void {\bf release} ()
+\begin{DoxyCompactList}\small\item\em Publisher を破棄する。. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{説明}
+Publisher 基底クラス. データ送出タイミングを管理して送出を駆動するPublisher$\ast$ の基底クラス。 各種 Publisher はこのクラスを継承して詳細を実装する。
+
+\begin{DoxySince}{から}
+0.4.0 
+\end{DoxySince}
+
+
+\subsection{コンストラクタとデストラクタ}
+\index{RTC::PublisherBase@{RTC::PublisherBase}!$\sim$PublisherBase@{$\sim$PublisherBase}}
+\index{$\sim$PublisherBase@{$\sim$PublisherBase}!RTC::PublisherBase@{RTC::PublisherBase}}
+\subsubsection[{$\sim$PublisherBase}]{\setlength{\rightskip}{0pt plus 5cm}virtual DATAPORTSTATUS\_\-ENUM RTC::PublisherBase::$\sim$PublisherBase (void)\hspace{0.3cm}{\ttfamily  [inline, virtual]}}\label{classRTC_1_1PublisherBase_aded4450169b85220e99be1985dc29776}
+
+
+デストラクタ 
+
+
+
+\subsection{関数}
+\index{RTC::PublisherBase@{RTC::PublisherBase}!activate@{activate}}
+\index{activate@{activate}!RTC::PublisherBase@{RTC::PublisherBase}}
+\subsubsection[{activate}]{\setlength{\rightskip}{0pt plus 5cm}virtual ReturnCode RTC::PublisherBase::activate ()\hspace{0.3cm}{\ttfamily  [pure virtual]}}\label{classRTC_1_1PublisherBase_a4f0e0ca91e07a25481ffa83ef027feb6}
+
+
+アクティブ化する 
+
+Publisher をアクティブ化する。この関数を呼び出すことにより、 Publisherが持つ、データを送信するスレッドが動作を開始する。初期 化が行われていないなどにより、事前条件を満たさない場合、エラーコー ド PRECONDITION\_\-NOT\_\-MET を返す。
+
+\begin{DoxyReturn}{戻り値}
+PORT\_\-OK 正常終了 PRECONDITION\_\-NOT\_\-MET 事前条件を満たさない 
+\end{DoxyReturn}
+
+
+{\bf RTC::PublisherFlush} \doxyref{}{p.}{classRTC_1_1PublisherFlush_ae9797c90a29dc02d477b4ec9d9fbad1c}, {\bf RTC::PublisherNew} \doxyref{}{p.}{classRTC_1_1PublisherNew_a8dccae837b6e92229a2cf7a1c8f836a5}, と {\bf RTC::PublisherPeriodic} \doxyref{}{p.}{classRTC_1_1PublisherPeriodic_a9150a94418d36a413af5edf83a4aef4a}で実装されています。
+
+\index{RTC::PublisherBase@{RTC::PublisherBase}!deactivate@{deactivate}}
+\index{deactivate@{deactivate}!RTC::PublisherBase@{RTC::PublisherBase}}
+\subsubsection[{deactivate}]{\setlength{\rightskip}{0pt plus 5cm}virtual ReturnCode RTC::PublisherBase::deactivate ()\hspace{0.3cm}{\ttfamily  [pure virtual]}}\label{classRTC_1_1PublisherBase_ace68807ed92a38af8ca49ece25db0d8a}
+
+
+非アクティブ化する 
+
+Publisher を非アクティブ化する。この関数を呼び出すことにより、 Publisherが持つ、データを送信するスレッドが動作を停止する。初期 化が行われていないなどにより、事前条件を満たさない場合、エラーコー ド PRECONDITION\_\-NOT\_\-MET を返す。
+
+\begin{DoxyReturn}{戻り値}
+PORT\_\-OK 正常終了 PRECONDITION\_\-NOT\_\-MET 事前条件を満たさない 
+\end{DoxyReturn}
+
+
+{\bf RTC::PublisherFlush} \doxyref{}{p.}{classRTC_1_1PublisherFlush_a5d288cbf168685dc2c85578b0f4485c1}, {\bf RTC::PublisherNew} \doxyref{}{p.}{classRTC_1_1PublisherNew_a41177856ad39e6540132e8e7f07f8406}, と {\bf RTC::PublisherPeriodic} \doxyref{}{p.}{classRTC_1_1PublisherPeriodic_abaa6ffa1931e0b654827606e0c756c8e}で実装されています。
+
+\index{RTC::PublisherBase@{RTC::PublisherBase}!init@{init}}
+\index{init@{init}!RTC::PublisherBase@{RTC::PublisherBase}}
+\subsubsection[{init}]{\setlength{\rightskip}{0pt plus 5cm}virtual ReturnCode RTC::PublisherBase::init ({\bf coil::Properties} \& {\em prop})\hspace{0.3cm}{\ttfamily  [pure virtual]}}\label{classRTC_1_1PublisherBase_a9915af3afab216e2b39fa8702b54b0b7}
+
+
+設定初期化 
+
+InPortConsumerの各種設定を行う。実装クラスでは、与えられた Propertiesから必要な情報を取得して各種設定を行う。この \doxyref{init()}{p.}{classRTC_1_1PublisherBase_a9915af3afab216e2b39fa8702b54b0b7} 関 数は、OutPortProvider生成直後および、接続時にそれぞれ呼ばれる可 能性がある。したがって、この関数は複数回呼ばれることを想定して記 述されるべきである。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em prop}]設定情報 \end{DoxyParams}
+
+
+{\bf RTC::PublisherFlush} \doxyref{}{p.}{classRTC_1_1PublisherFlush_a89931a404b169f942de90e0493d39aa9}, {\bf RTC::PublisherNew} \doxyref{}{p.}{classRTC_1_1PublisherNew_a01bff99edfad7f69e9a75fb07a91d5e6}, と {\bf RTC::PublisherPeriodic} \doxyref{}{p.}{classRTC_1_1PublisherPeriodic_a4be180578218cc6f04d4fb409e28c5df}で実装されています。
+
+\index{RTC::PublisherBase@{RTC::PublisherBase}!isActive@{isActive}}
+\index{isActive@{isActive}!RTC::PublisherBase@{RTC::PublisherBase}}
+\subsubsection[{isActive}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool RTC::PublisherBase::isActive ()\hspace{0.3cm}{\ttfamily  [pure virtual]}}\label{classRTC_1_1PublisherBase_aed0e118b4a1bda091ba38066cc8e4c7b}
+
+
+アクティブ化確認 
+
+Publisher はデータポートと同期して activate/deactivate される。 \doxyref{activate()}{p.}{classRTC_1_1PublisherBase_a4f0e0ca91e07a25481ffa83ef027feb6} / \doxyref{deactivate()}{p.}{classRTC_1_1PublisherBase_ace68807ed92a38af8ca49ece25db0d8a} 関数によって、アクティブ状態と非アクティ ブ状態が切り替わる。この関数により、現在アクティブ状態か、非アク ティブ状態かを確認することができる。
+
+\begin{DoxyReturn}{戻り値}
+状態確認結果(アクティブ状態:true、非アクティブ状態:false) 
+\end{DoxyReturn}
+
+
+{\bf RTC::PublisherFlush} \doxyref{}{p.}{classRTC_1_1PublisherFlush_a8e6f548411b5956b73d8c3592f15da2a}, {\bf RTC::PublisherNew} \doxyref{}{p.}{classRTC_1_1PublisherNew_a05304d710c7e77dd3702422dd3cc91aa}, と {\bf RTC::PublisherPeriodic} \doxyref{}{p.}{classRTC_1_1PublisherPeriodic_abd214f80d5ace7ebbf50f72f474de34a}で実装されています。
+
+\index{RTC::PublisherBase@{RTC::PublisherBase}!release@{release}}
+\index{release@{release}!RTC::PublisherBase@{RTC::PublisherBase}}
+\subsubsection[{release}]{\setlength{\rightskip}{0pt plus 5cm}virtual void RTC::PublisherBase::release ()\hspace{0.3cm}{\ttfamily  [inline, virtual]}}\label{classRTC_1_1PublisherBase_a77aa978b2f391d6c9f2ee18419ba1b20}
+
+
+Publisher を破棄する。. 
+
+当該 Publisher を破棄する。 当該 Publisher が不要になった場合に PublisherFactory から呼び出される。 \index{RTC::PublisherBase@{RTC::PublisherBase}!setBuffer@{setBuffer}}
+\index{setBuffer@{setBuffer}!RTC::PublisherBase@{RTC::PublisherBase}}
+\subsubsection[{setBuffer}]{\setlength{\rightskip}{0pt plus 5cm}virtual ReturnCode RTC::PublisherBase::setBuffer ({\bf BufferBase}$<$ cdrMemoryStream $>$ $\ast$ {\em buffer})\hspace{0.3cm}{\ttfamily  [pure virtual]}}\label{classRTC_1_1PublisherBase_adb0d076dd59cab8cf37555d97f4cb62b}
+
+
+バッファのセット 
+
+この関数では、この Publisher に関連付けられるバッファをセットする。 バッファオブジェクトがヌルポインタの場合、INVALID\_\-ARGSが返される。 それ以外の場合は、PORT\_\-OK が返される。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em buffer}]CDR buffer へのポインタ \end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+ReturnCode PORT\_\-OK 正常終了 INVALID\_\-ARGS 引数に不正な値が含まれている 
+\end{DoxyReturn}
+\index{RTC::PublisherBase@{RTC::PublisherBase}!setConsumer@{setConsumer}}
+\index{setConsumer@{setConsumer}!RTC::PublisherBase@{RTC::PublisherBase}}
+\subsubsection[{setConsumer}]{\setlength{\rightskip}{0pt plus 5cm}virtual ReturnCode RTC::PublisherBase::setConsumer ({\bf InPortConsumer} $\ast$ {\em consumer})\hspace{0.3cm}{\ttfamily  [pure virtual]}}\label{classRTC_1_1PublisherBase_a7ff8bf60fa9d713402572404b3dc922c}
+
+
+InPortコンシューマのセット. 
+
+この関数では、この Publisher に関連付けられるコンシューマをセットする。 コンシューマオブジェクトがヌルポインタの場合、INVALID\_\-ARGSが返される。 それ以外の場合は、PORT\_\-OK が返される。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em consumer}]Consumer へのポインタ \end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+ReturnCode PORT\_\-OK 正常終了 INVALID\_\-ARGS 引数に不正な値が含まれている 
+\end{DoxyReturn}
+
+
+{\bf RTC::PublisherFlush} \doxyref{}{p.}{classRTC_1_1PublisherFlush_afb12f77e4557f2419f6a61b031f4798f}, {\bf RTC::PublisherNew} \doxyref{}{p.}{classRTC_1_1PublisherNew_a8a0485bf2d39c01c4abf3692be2f6db2}, と {\bf RTC::PublisherPeriodic} \doxyref{}{p.}{classRTC_1_1PublisherPeriodic_a853af9b51af9c3d76aff407695a1e697}で実装されています。
+
+\index{RTC::PublisherBase@{RTC::PublisherBase}!setListener@{setListener}}
+\index{setListener@{setListener}!RTC::PublisherBase@{RTC::PublisherBase}}
+\subsubsection[{setListener}]{\setlength{\rightskip}{0pt plus 5cm}virtual ReturnCode RTC::PublisherBase::setListener ({\bf ConnectorInfo} \& {\em info}, \/  {\bf ConnectorListeners} $\ast$ {\em listeners})\hspace{0.3cm}{\ttfamily  [pure virtual]}}\label{classRTC_1_1PublisherBase_a9d12db1358f8b70a5ee761d905170bc2}
+
+
+リスナを設定する。 
+
+Publisher に対してリスナオブジェクト \doxyref{ConnectorListeners}{p.}{classRTC_1_1ConnectorListeners} を設定する。 各種リスナオブジェクトを含む \doxyref{ConnectorListeners}{p.}{classRTC_1_1ConnectorListeners} をセットすることで、 バッファの読み書き、データの送信時等にこれらのリスナをコールする。 \doxyref{ConnectorListeners}{p.}{classRTC_1_1ConnectorListeners} オブジェクトの所有権はポートまたは RTObject が持ち Publisher 削除時に \doxyref{ConnectorListeners}{p.}{classRTC_1_1ConnectorListeners} は削除されることはない。 \doxyref{ConnectorListeners}{p.}{classRTC_1_1ConnectorListeners} がヌルポインタの場合 INVALID\_\-ARGS を返す。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em info}]ConnectorProfile をローカル化したオブジェクト \doxyref{ConnectorInfo}{p.}{classRTC_1_1ConnectorInfo} \item[{\em listeners}]リスナを多数保持する \doxyref{ConnectorListeners}{p.}{classRTC_1_1ConnectorListeners} オブジェクト \end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+PORT\_\-OK 正常終了 INVALID\_\-ARGS 不正な引数 
+\end{DoxyReturn}
+
+
+{\bf RTC::PublisherFlush} \doxyref{}{p.}{classRTC_1_1PublisherFlush_a6297071d496c75c969b700832f32f595}, {\bf RTC::PublisherNew} \doxyref{}{p.}{classRTC_1_1PublisherNew_a14b2739ed8f2e756c89747b56db45161}, と {\bf RTC::PublisherPeriodic} \doxyref{}{p.}{classRTC_1_1PublisherPeriodic_a89a8c02590eda932df803278f0cc65bb}で実装されています。
+
+\index{RTC::PublisherBase@{RTC::PublisherBase}!write@{write}}
+\index{write@{write}!RTC::PublisherBase@{RTC::PublisherBase}}
+\subsubsection[{write}]{\setlength{\rightskip}{0pt plus 5cm}virtual ReturnCode RTC::PublisherBase::write (const cdrMemoryStream \& {\em data}, \/  unsigned long {\em sec}, \/  unsigned long {\em usec})\hspace{0.3cm}{\ttfamily  [pure virtual]}}\label{classRTC_1_1PublisherBase_abd693b65ffe07276683facfd710be537}
+
+
+データを書き込む 
+
+Publisher に対してデータを書き込む。コンシューマ、リスナ等が適切 に設定されていない等、Publisher オブジェクトが正しく初期化されて いない場合、この関数を呼び出すとエラーコード PRECONDITION\_\-NOT\_\-MET が返され、書き込み等の操作は一切行われない。
+
+書き込みに対して、コンシューマがフル状態、コンシューマのエラー、 コンシューマへの書き込みがタイムアウトした場合にはそれぞれ、エラー コード SEND\_\-FULL, SEND\_\-ERROR, SEND\_\-TIMEOUT が返される。
+
+これら以外のエラーの場合、PORT\_\-ERROR が返される。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em data}]書き込むデータ \item[{\em sec}]タイムアウト時間 \item[{\em nsec}]タイムアウト時間\end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+PORT\_\-OK 正常終了 PRECONDITION\_\-NO\_\-MET consumer, buffer, listener等が適切に設定 されていない等、このオブジェクトの事前条件 を満たさない場合。 SEND\_\-FULL 送信先がフル状態 SEND\_\-TIMEOUT 送信先がタイムアウトした CONNECTION\_\-LOST 接続が切断されたことを検知した。 
+\end{DoxyReturn}
+
+
+{\bf RTC::PublisherFlush} \doxyref{}{p.}{classRTC_1_1PublisherFlush_ad84eb745390b45d7c23730409a017787}, {\bf RTC::PublisherNew} \doxyref{}{p.}{classRTC_1_1PublisherNew_aea22c81a78df515c6fb06a227d1f3ce6}, と {\bf RTC::PublisherPeriodic} \doxyref{}{p.}{classRTC_1_1PublisherPeriodic_ae5954cbc4b8b4f9839535d3bd7763e13}で実装されています。
+

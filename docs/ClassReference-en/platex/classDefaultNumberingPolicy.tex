@@ -1,0 +1,111 @@
+\section{DefaultNumberingPolicy Class Reference}
+\label{classDefaultNumberingPolicy}\index{DefaultNumberingPolicy@{DefaultNumberingPolicy}}
+
+
+Class for naming policy management when creating objects.  
+
+
+
+
+{\ttfamily \#include $<$NumberingPolicy.h$>$}
+
+Inheritance diagram for DefaultNumberingPolicy:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2cm]{classDefaultNumberingPolicy}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf DefaultNumberingPolicy} ()
+\begin{DoxyCompactList}\small\item\em Constructor. \item\end{DoxyCompactList}\item 
+virtual {\bf $\sim$DefaultNumberingPolicy} (void)
+\begin{DoxyCompactList}\small\item\em Destractor. \item\end{DoxyCompactList}\item 
+virtual std::string {\bf onCreate} (void $\ast$obj)
+\begin{DoxyCompactList}\small\item\em Create the name when creating object. \item\end{DoxyCompactList}\item 
+virtual void {\bf onDelete} (void $\ast$obj)
+\begin{DoxyCompactList}\small\item\em Delete the name when deleting object. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+long int {\bf find} (void $\ast$obj)
+\begin{DoxyCompactList}\small\item\em Find the object. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Class for naming policy management when creating objects. This is a class to manage the naming policy when creating objects.
+
+\begin{DoxySince}{Since}
+0.4.0 
+\end{DoxySince}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{DefaultNumberingPolicy@{DefaultNumberingPolicy}!DefaultNumberingPolicy@{DefaultNumberingPolicy}}
+\index{DefaultNumberingPolicy@{DefaultNumberingPolicy}!DefaultNumberingPolicy@{DefaultNumberingPolicy}}
+\subsubsection[{DefaultNumberingPolicy}]{\setlength{\rightskip}{0pt plus 5cm}DefaultNumberingPolicy::DefaultNumberingPolicy ()\hspace{0.3cm}{\ttfamily  [inline]}}\label{classDefaultNumberingPolicy_a23d721393d786e7abb7cb08c1763c44a}
+
+
+Constructor. 
+
+Constructor \index{DefaultNumberingPolicy@{DefaultNumberingPolicy}!$\sim$DefaultNumberingPolicy@{$\sim$DefaultNumberingPolicy}}
+\index{$\sim$DefaultNumberingPolicy@{$\sim$DefaultNumberingPolicy}!DefaultNumberingPolicy@{DefaultNumberingPolicy}}
+\subsubsection[{$\sim$DefaultNumberingPolicy}]{\setlength{\rightskip}{0pt plus 5cm}virtual DefaultNumberingPolicy::$\sim$DefaultNumberingPolicy (void)\hspace{0.3cm}{\ttfamily  [inline, virtual]}}\label{classDefaultNumberingPolicy_aeb44191706cd96bd89968b969e8ea9b4}
+
+
+Destractor. 
+
+
+
+\subsection{Member Function Documentation}
+\index{DefaultNumberingPolicy@{DefaultNumberingPolicy}!find@{find}}
+\index{find@{find}!DefaultNumberingPolicy@{DefaultNumberingPolicy}}
+\subsubsection[{find}]{\setlength{\rightskip}{0pt plus 5cm}long int DefaultNumberingPolicy::find (void $\ast$ {\em obj})\hspace{0.3cm}{\ttfamily  [protected]}}\label{classDefaultNumberingPolicy_a1b8f6103327b51c80aeed0e1c0683797}
+
+
+Find the object. 
+
+Find the specified object in the object list and return its index when it is stored.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em obj}]The target object for the find\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Object index for storage 
+\end{DoxyReturn}
+\index{DefaultNumberingPolicy@{DefaultNumberingPolicy}!onCreate@{onCreate}}
+\index{onCreate@{onCreate}!DefaultNumberingPolicy@{DefaultNumberingPolicy}}
+\subsubsection[{onCreate}]{\setlength{\rightskip}{0pt plus 5cm}virtual std::string DefaultNumberingPolicy::onCreate (void $\ast$ {\em obj})\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classDefaultNumberingPolicy_ad446abe9c24085dc3676a316e0d5da0c}
+
+
+Create the name when creating object. 
+
+Create the name when creating object. Create the name corresponding to the number of generated instances.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em obj}]The target object for the name creation\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Names of the created object 
+\end{DoxyReturn}
+
+
+Implements {\bf NumberingPolicy} \doxyref{}{p.}{classNumberingPolicy_a5a24d7cdf2cff8c97b1c798114504c31}.
+
+\index{DefaultNumberingPolicy@{DefaultNumberingPolicy}!onDelete@{onDelete}}
+\index{onDelete@{onDelete}!DefaultNumberingPolicy@{DefaultNumberingPolicy}}
+\subsubsection[{onDelete}]{\setlength{\rightskip}{0pt plus 5cm}virtual void DefaultNumberingPolicy::onDelete (void $\ast$ {\em obj})\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classDefaultNumberingPolicy_a216be8d1b29ecf328f04f98516364182}
+
+
+Delete the name when deleting object. 
+
+Delete the name when deleting object. Substract the generated number of instances when deleting the object.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em obj}]The target object for the name delete \end{DoxyParams}
+
+
+Implements {\bf NumberingPolicy} \doxyref{}{p.}{classNumberingPolicy_a0bc5ddc2193e6415142327b4a5814d86}.
+

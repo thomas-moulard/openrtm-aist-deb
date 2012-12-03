@@ -1,0 +1,258 @@
+\section{クラス テンプレート RTC::PeriodicExecutionContext::DFP$<$ Object $>$}
+\label{classRTC_1_1PeriodicExecutionContext_1_1DFP}\index{RTC::PeriodicExecutionContext::DFP@{RTC::PeriodicExecutionContext::DFP}}
+
+
+\doxyref{DFP}{p.}{classRTC_1_1PeriodicExecutionContext_1_1DFP} クラス.  
+
+
+
+
+{\ttfamily \#include $<$PeriodicExecutionContext.h$>$}
+
+RTC::PeriodicExecutionContext::DFP$<$ Object $>$に対する継承グラフ\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2cm]{classRTC_1_1PeriodicExecutionContext_1_1DFP}
+\end{center}
+\end{figure}
+\subsection*{Public メソッド}
+\begin{DoxyCompactItemize}
+\item 
+{\bf DFP} (Object obj, ExecutionContextHandle\_\-t id)
+\begin{DoxyCompactList}\small\item\em デフォルトコンストラクタ \item\end{DoxyCompactList}\item 
+void {\bf on\_\-startup} (void)
+\begin{DoxyCompactList}\small\item\em ExecutionContext 実行開始時に呼ばれる関数. \item\end{DoxyCompactList}\item 
+void {\bf on\_\-shutdown} (void)
+\begin{DoxyCompactList}\small\item\em ExecutionContext 停止時に呼ばれる関数. \item\end{DoxyCompactList}\item 
+void {\bf on\_\-activated} (const {\bf ECStates} \&st)
+\begin{DoxyCompactList}\small\item\em RTコンポーネントがアクティブ化された時に呼ばれる関数. \item\end{DoxyCompactList}\item 
+void {\bf on\_\-deactivated} (const {\bf ECStates} \&st)
+\begin{DoxyCompactList}\small\item\em RTコンポーネントが非アクティブ化された時に呼ばれる関数. \item\end{DoxyCompactList}\item 
+void {\bf on\_\-aborting} (const {\bf ECStates} \&st)
+\begin{DoxyCompactList}\small\item\em RTコンポーネントでエラーが発生した時に呼ばれる関数. \item\end{DoxyCompactList}\item 
+void {\bf on\_\-error} (const {\bf ECStates} \&st)
+\begin{DoxyCompactList}\small\item\em RTコンポーネントがエラー状態の時に呼ばれる関数. \item\end{DoxyCompactList}\item 
+void {\bf on\_\-reset} (const {\bf ECStates} \&st)
+\begin{DoxyCompactList}\small\item\em RTコンポーネントをリセットする時に呼ばれる関数. \item\end{DoxyCompactList}\item 
+void {\bf on\_\-execute} (const {\bf ECStates} \&st)
+\begin{DoxyCompactList}\small\item\em RTコンポーネント実行時に定期的に呼ばれる関数. \item\end{DoxyCompactList}\item 
+void {\bf on\_\-state\_\-update} (const {\bf ECStates} \&st)
+\begin{DoxyCompactList}\small\item\em RTコンポーネント実行時に定期的に呼ばれる関数. \item\end{DoxyCompactList}\item 
+void {\bf on\_\-rate\_\-changed} (void)
+\begin{DoxyCompactList}\small\item\em ExecutionContext の実行周期変更時に呼ばれる関数. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public 変数}
+\begin{DoxyCompactItemize}
+\item 
+Object {\bf m\_\-obj}
+\begin{DoxyCompactList}\small\item\em 管理対象コンポーネント \item\end{DoxyCompactList}\item 
+bool {\bf m\_\-active}
+\begin{DoxyCompactList}\small\item\em 管理対象コンポーネントの動作状態フラグ \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{説明}
+\subsubsection*{template$<$class Object$>$ class RTC::PeriodicExecutionContext::DFP$<$ Object $>$}
+
+\doxyref{DFP}{p.}{classRTC_1_1PeriodicExecutionContext_1_1DFP} クラス. 参加者リストに登録された DataFlowParticipant の関数を起動するための テンプレートクラス。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em Object}]管理対象コンポーネントの型\end{DoxyParams}
+\begin{DoxySince}{から}
+0.4.0 
+\end{DoxySince}
+
+
+\subsection{コンストラクタとデストラクタ}
+\index{RTC::PeriodicExecutionContext::DFP@{RTC::PeriodicExecutionContext::DFP}!DFP@{DFP}}
+\index{DFP@{DFP}!RTC::PeriodicExecutionContext::DFP@{RTC::PeriodicExecutionContext::DFP}}
+\subsubsection[{DFP}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Object$>$ {\bf RTC::PeriodicExecutionContext::DFP}$<$ Object $>$::{\bf DFP} (Object {\em obj}, \/  ExecutionContextHandle\_\-t {\em id})\hspace{0.3cm}{\ttfamily  [inline]}}\label{classRTC_1_1PeriodicExecutionContext_1_1DFP_a3a9221720e97918631cb49268e16058b}
+
+
+デフォルトコンストラクタ 
+
+デフォルトコンストラクタ
+
+
+\begin{DoxyParams}{引数}
+\item[{\em obj}]管理対象コンポーネント \item[{\em id}]所属する ExecutionContext のID \end{DoxyParams}
+
+
+\subsection{関数}
+\index{RTC::PeriodicExecutionContext::DFP@{RTC::PeriodicExecutionContext::DFP}!on\_\-aborting@{on\_\-aborting}}
+\index{on\_\-aborting@{on\_\-aborting}!RTC::PeriodicExecutionContext::DFP@{RTC::PeriodicExecutionContext::DFP}}
+\subsubsection[{on\_\-aborting}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Object$>$ void {\bf RTC::PeriodicExecutionContext::DFP}$<$ Object $>$::on\_\-aborting (const {\bf ECStates} \& {\em st})\hspace{0.3cm}{\ttfamily  [inline, virtual]}}\label{classRTC_1_1PeriodicExecutionContext_1_1DFP_a56b2f4893a7fd424fc744892581057d7}
+
+
+RTコンポーネントでエラーが発生した時に呼ばれる関数. 
+
+管理対象のRTコンポーネントにエラーが発生した時(Error状態へ遷移時) に管理対象コンポーネントの on\_\-aborting を呼びだす。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em st}]対象RTコンポーネントの現在の状態 \end{DoxyParams}
+
+
+{\bf RTC::PeriodicExecutionContext::DFPBase} \doxyref{}{p.}{classRTC_1_1PeriodicExecutionContext_1_1DFPBase_a4326e1e3a6fd23cd534c37016a9d6ff6}を実装しています。
+
+\index{RTC::PeriodicExecutionContext::DFP@{RTC::PeriodicExecutionContext::DFP}!on\_\-activated@{on\_\-activated}}
+\index{on\_\-activated@{on\_\-activated}!RTC::PeriodicExecutionContext::DFP@{RTC::PeriodicExecutionContext::DFP}}
+\subsubsection[{on\_\-activated}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Object$>$ void {\bf RTC::PeriodicExecutionContext::DFP}$<$ Object $>$::on\_\-activated (const {\bf ECStates} \& {\em st})\hspace{0.3cm}{\ttfamily  [inline, virtual]}}\label{classRTC_1_1PeriodicExecutionContext_1_1DFP_aab354f4aec81a3de94c897d42a08814c}
+
+
+RTコンポーネントがアクティブ化された時に呼ばれる関数. 
+
+管理対象のRTコンポーネントがアクティブ化された時(Active状態へ遷移時) に、管理対象コンポーネントの on\_\-activated を呼びだす。 管理対象コンポーネントのアクティブ化が失敗した場合には、ステートマシン を Error 状態に遷移させる。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em st}]対象RTコンポーネントの現在の状態 \end{DoxyParams}
+
+
+{\bf RTC::PeriodicExecutionContext::DFPBase} \doxyref{}{p.}{classRTC_1_1PeriodicExecutionContext_1_1DFPBase_a7617ab4164f5516ee411a23273577148}を実装しています。
+
+\index{RTC::PeriodicExecutionContext::DFP@{RTC::PeriodicExecutionContext::DFP}!on\_\-deactivated@{on\_\-deactivated}}
+\index{on\_\-deactivated@{on\_\-deactivated}!RTC::PeriodicExecutionContext::DFP@{RTC::PeriodicExecutionContext::DFP}}
+\subsubsection[{on\_\-deactivated}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Object$>$ void {\bf RTC::PeriodicExecutionContext::DFP}$<$ Object $>$::on\_\-deactivated (const {\bf ECStates} \& {\em st})\hspace{0.3cm}{\ttfamily  [inline, virtual]}}\label{classRTC_1_1PeriodicExecutionContext_1_1DFP_aa0b4398840866335bfd3a35aa2a1378c}
+
+
+RTコンポーネントが非アクティブ化された時に呼ばれる関数. 
+
+管理対象のRTコンポーネントが非アクティブ化された時 (Deactive状態へ遷移時)に、管理対象コンポーネントの on\_\-deactivated を 呼びだす。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em st}]対象RTコンポーネントの現在の状態 \end{DoxyParams}
+
+
+{\bf RTC::PeriodicExecutionContext::DFPBase} \doxyref{}{p.}{classRTC_1_1PeriodicExecutionContext_1_1DFPBase_afdb8f5efa070e18e5aecf34e117c4916}を実装しています。
+
+\index{RTC::PeriodicExecutionContext::DFP@{RTC::PeriodicExecutionContext::DFP}!on\_\-error@{on\_\-error}}
+\index{on\_\-error@{on\_\-error}!RTC::PeriodicExecutionContext::DFP@{RTC::PeriodicExecutionContext::DFP}}
+\subsubsection[{on\_\-error}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Object$>$ void {\bf RTC::PeriodicExecutionContext::DFP}$<$ Object $>$::on\_\-error (const {\bf ECStates} \& {\em st})\hspace{0.3cm}{\ttfamily  [inline, virtual]}}\label{classRTC_1_1PeriodicExecutionContext_1_1DFP_a1921bae9d427aa285566e15bd08e6500}
+
+
+RTコンポーネントがエラー状態の時に呼ばれる関数. 
+
+管理対象のRTコンポーネントがエラー状態にいる間、 管理対象コンポーネントの on\_\-aborting を定期的に呼びだす。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em st}]対象RTコンポーネントの現在の状態 \end{DoxyParams}
+
+
+{\bf RTC::PeriodicExecutionContext::DFPBase} \doxyref{}{p.}{classRTC_1_1PeriodicExecutionContext_1_1DFPBase_aabc82635a64722f77fa359a4f6308122}を実装しています。
+
+\index{RTC::PeriodicExecutionContext::DFP@{RTC::PeriodicExecutionContext::DFP}!on\_\-execute@{on\_\-execute}}
+\index{on\_\-execute@{on\_\-execute}!RTC::PeriodicExecutionContext::DFP@{RTC::PeriodicExecutionContext::DFP}}
+\subsubsection[{on\_\-execute}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Object$>$ void {\bf RTC::PeriodicExecutionContext::DFP}$<$ Object $>$::on\_\-execute (const {\bf ECStates} \& {\em st})\hspace{0.3cm}{\ttfamily  [inline, virtual]}}\label{classRTC_1_1PeriodicExecutionContext_1_1DFP_ab44ccec81e068726d371929b0b955a25}
+
+
+RTコンポーネント実行時に定期的に呼ばれる関数. 
+
+管理対象のRTコンポーネントが Active 状態であるとともに、 ExecutionContext が Running 状態の場合に、設定された動作周期で 定期的に管理対象コンポーネントの on\_\-execute を呼びだす。関数の 実行に失敗した場合(返値が RTC\_\-OK 以外)、管理対象コンポーネント の状態を Error 状態に遷移させる。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em st}]対象RTコンポーネントの現在の状態 \end{DoxyParams}
+
+
+{\bf RTC::PeriodicExecutionContext::DFPBase} \doxyref{}{p.}{classRTC_1_1PeriodicExecutionContext_1_1DFPBase_a4ac335580091c6300144717ed1ed4555}を実装しています。
+
+\index{RTC::PeriodicExecutionContext::DFP@{RTC::PeriodicExecutionContext::DFP}!on\_\-rate\_\-changed@{on\_\-rate\_\-changed}}
+\index{on\_\-rate\_\-changed@{on\_\-rate\_\-changed}!RTC::PeriodicExecutionContext::DFP@{RTC::PeriodicExecutionContext::DFP}}
+\subsubsection[{on\_\-rate\_\-changed}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Object$>$ void {\bf RTC::PeriodicExecutionContext::DFP}$<$ Object $>$::on\_\-rate\_\-changed (void)\hspace{0.3cm}{\ttfamily  [inline, virtual]}}\label{classRTC_1_1PeriodicExecutionContext_1_1DFP_a283b40d3a75a439b2a0ac4f7e2740736}
+
+
+ExecutionContext の実行周期変更時に呼ばれる関数. 
+
+参加している ExecutionContext の実行周期が変更となった場合に、 管理対象コンポーネントの on\_\-rate\_\-changed を呼びだす。 
+
+{\bf RTC::PeriodicExecutionContext::DFPBase} \doxyref{}{p.}{classRTC_1_1PeriodicExecutionContext_1_1DFPBase_a72fe285405c24be95d14f8c73ed993be}を実装しています。
+
+
+
+参照元 RTC::PeriodicExecutionContext::invoke\_\-on\_\-rate\_\-changed::operator()().
+
+\index{RTC::PeriodicExecutionContext::DFP@{RTC::PeriodicExecutionContext::DFP}!on\_\-reset@{on\_\-reset}}
+\index{on\_\-reset@{on\_\-reset}!RTC::PeriodicExecutionContext::DFP@{RTC::PeriodicExecutionContext::DFP}}
+\subsubsection[{on\_\-reset}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Object$>$ void {\bf RTC::PeriodicExecutionContext::DFP}$<$ Object $>$::on\_\-reset (const {\bf ECStates} \& {\em st})\hspace{0.3cm}{\ttfamily  [inline, virtual]}}\label{classRTC_1_1PeriodicExecutionContext_1_1DFP_adeb73de058b07b0abc6570c3e639cc5b}
+
+
+RTコンポーネントをリセットする時に呼ばれる関数. 
+
+管理対象のRTコンポーネントをリセットする際に、管理対象コンポーネント の on\_\-reset を呼びだす。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em st}]対象RTコンポーネントの現在の状態 \end{DoxyParams}
+
+
+{\bf RTC::PeriodicExecutionContext::DFPBase} \doxyref{}{p.}{classRTC_1_1PeriodicExecutionContext_1_1DFPBase_ad26d3a6118ce1f2b97527af86a8bb14d}を実装しています。
+
+\index{RTC::PeriodicExecutionContext::DFP@{RTC::PeriodicExecutionContext::DFP}!on\_\-shutdown@{on\_\-shutdown}}
+\index{on\_\-shutdown@{on\_\-shutdown}!RTC::PeriodicExecutionContext::DFP@{RTC::PeriodicExecutionContext::DFP}}
+\subsubsection[{on\_\-shutdown}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Object$>$ void {\bf RTC::PeriodicExecutionContext::DFP}$<$ Object $>$::on\_\-shutdown (void)\hspace{0.3cm}{\ttfamily  [inline, virtual]}}\label{classRTC_1_1PeriodicExecutionContext_1_1DFP_a312588691ba1da141cae496d74bb2b7f}
+
+
+ExecutionContext 停止時に呼ばれる関数. 
+
+参加している ExecutionContext が実行を停止する時(Stopped状態へ遷移時) に、管理対象コンポーネントの on\_\-shutdown を呼びだす。 
+
+{\bf RTC::PeriodicExecutionContext::DFPBase} \doxyref{}{p.}{classRTC_1_1PeriodicExecutionContext_1_1DFPBase_a9acf5ba2d252539b0d853e5492177a1b}を実装しています。
+
+
+
+参照元 RTC::PeriodicExecutionContext::invoke\_\-on\_\-shutdown::operator()().
+
+\index{RTC::PeriodicExecutionContext::DFP@{RTC::PeriodicExecutionContext::DFP}!on\_\-startup@{on\_\-startup}}
+\index{on\_\-startup@{on\_\-startup}!RTC::PeriodicExecutionContext::DFP@{RTC::PeriodicExecutionContext::DFP}}
+\subsubsection[{on\_\-startup}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Object$>$ void {\bf RTC::PeriodicExecutionContext::DFP}$<$ Object $>$::on\_\-startup (void)\hspace{0.3cm}{\ttfamily  [inline, virtual]}}\label{classRTC_1_1PeriodicExecutionContext_1_1DFP_a79b7b4a99f8d2cd0dc407c1b326dcb85}
+
+
+ExecutionContext 実行開始時に呼ばれる関数. 
+
+参加している ExecutionContext が実行を開始する時(Running状態へ遷移時) に、管理対象コンポーネントの on\_\-startup を呼びだす。 
+
+{\bf RTC::PeriodicExecutionContext::DFPBase} \doxyref{}{p.}{classRTC_1_1PeriodicExecutionContext_1_1DFPBase_a761ebe484557229fe21a6b6488567d2f}を実装しています。
+
+
+
+参照元 RTC::PeriodicExecutionContext::invoke\_\-on\_\-startup::operator()().
+
+\index{RTC::PeriodicExecutionContext::DFP@{RTC::PeriodicExecutionContext::DFP}!on\_\-state\_\-update@{on\_\-state\_\-update}}
+\index{on\_\-state\_\-update@{on\_\-state\_\-update}!RTC::PeriodicExecutionContext::DFP@{RTC::PeriodicExecutionContext::DFP}}
+\subsubsection[{on\_\-state\_\-update}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Object$>$ void {\bf RTC::PeriodicExecutionContext::DFP}$<$ Object $>$::on\_\-state\_\-update (const {\bf ECStates} \& {\em st})\hspace{0.3cm}{\ttfamily  [inline, virtual]}}\label{classRTC_1_1PeriodicExecutionContext_1_1DFP_a0689e39bbc51b091833c3cf5ef070297}
+
+
+RTコンポーネント実行時に定期的に呼ばれる関数. 
+
+管理対象のRTコンポーネントが Active 状態であるとともに、 ExecutionContext が Running 状態の場合に、設定された動作周期で 定期的に管理対象コンポーネントの on\_\-state\_\-update を呼びだす。 関数の実行に失敗した場合(返値が RTC\_\-OK 以外)、管理対象コンポー ネントの状態を Error 状態に遷移させる。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em st}]対象RTコンポーネントの現在の状態 \end{DoxyParams}
+
+
+{\bf RTC::PeriodicExecutionContext::DFPBase} \doxyref{}{p.}{classRTC_1_1PeriodicExecutionContext_1_1DFPBase_a840339510d7a4d0eef17f495638bbbc3}を実装しています。
+
+
+
+\subsection{変数}
+\index{RTC::PeriodicExecutionContext::DFP@{RTC::PeriodicExecutionContext::DFP}!m\_\-active@{m\_\-active}}
+\index{m\_\-active@{m\_\-active}!RTC::PeriodicExecutionContext::DFP@{RTC::PeriodicExecutionContext::DFP}}
+\subsubsection[{m\_\-active}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Object$>$ bool {\bf RTC::PeriodicExecutionContext::DFP}$<$ Object $>$::{\bf m\_\-active}}\label{classRTC_1_1PeriodicExecutionContext_1_1DFP_a26c3f482f8c0fc239af8b180aa8de4de}
+
+
+管理対象コンポーネントの動作状態フラグ 
+
+\index{RTC::PeriodicExecutionContext::DFP@{RTC::PeriodicExecutionContext::DFP}!m\_\-obj@{m\_\-obj}}
+\index{m\_\-obj@{m\_\-obj}!RTC::PeriodicExecutionContext::DFP@{RTC::PeriodicExecutionContext::DFP}}
+\subsubsection[{m\_\-obj}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Object$>$ Object {\bf RTC::PeriodicExecutionContext::DFP}$<$ Object $>$::{\bf m\_\-obj}}\label{classRTC_1_1PeriodicExecutionContext_1_1DFP_a12f00ab69fa3e68cb5b0ee83dbe010af}
+
+
+管理対象コンポーネント 
+
+
+
+参照元 RTC::PeriodicExecutionContext::DFP$<$ OpenRTM::DataFlowComponent\_\-var $>$::on\_\-aborting(), RTC::PeriodicExecutionContext::DFP$<$ OpenRTM::DataFlowComponent\_\-var $>$::on\_\-activated(), RTC::PeriodicExecutionContext::DFP$<$ OpenRTM::DataFlowComponent\_\-var $>$::on\_\-deactivated(), RTC::PeriodicExecutionContext::DFP$<$ OpenRTM::DataFlowComponent\_\-var $>$::on\_\-error(), RTC::PeriodicExecutionContext::DFP$<$ OpenRTM::DataFlowComponent\_\-var $>$::on\_\-execute(), RTC::PeriodicExecutionContext::DFP$<$ OpenRTM::DataFlowComponent\_\-var $>$::on\_\-rate\_\-changed(), RTC::PeriodicExecutionContext::DFP$<$ OpenRTM::DataFlowComponent\_\-var $>$::on\_\-reset(), RTC::PeriodicExecutionContext::DFP$<$ OpenRTM::DataFlowComponent\_\-var $>$::on\_\-shutdown(), RTC::PeriodicExecutionContext::DFP$<$ OpenRTM::DataFlowComponent\_\-var $>$::on\_\-startup(), RTC::PeriodicExecutionContext::DFP$<$ OpenRTM::DataFlowComponent\_\-var $>$::on\_\-state\_\-update(), と RTC::PeriodicExecutionContext::Comp::operator=().
+

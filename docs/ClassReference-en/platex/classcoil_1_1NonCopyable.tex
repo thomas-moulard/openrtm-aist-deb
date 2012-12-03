@@ -1,0 +1,45 @@
+\section{coil::NonCopyable Class Reference}
+\label{classcoil_1_1NonCopyable}\index{coil::NonCopyable@{coil::NonCopyable}}
+
+
+Non-\/copyable Mixin.  
+
+
+
+
+{\ttfamily \#include $<$NonCopyable.h$>$}
+
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf NonCopyable} ()
+\begin{DoxyCompactList}\small\item\em Constructor. \item\end{DoxyCompactList}\item 
+{\bf $\sim$NonCopyable} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Non-\/copyable Mixin. This mix-\/in class prevents objects of a class from being copy-\/constructed or assigned to each other. User can prohibit the class copying by inheriting from \doxyref{NonCopyable}{p.}{classcoil_1_1NonCopyable} class as a private base class.
+
+-\/example: class CopyProhibitedClass : private \doxyref{NonCopyable}{p.}{classcoil_1_1NonCopyable} \{\};
+
+This mix-\/in class prevents objects of a class from being copy-\/constructed or assigned to each other. User can prohibit the class copying by inheriting from \doxyref{NonCopyable}{p.}{classcoil_1_1NonCopyable} class as a private base class.　The CRTP (Curiously Recursive Template Pattern) version would be used for empty base optimization for multipe-\/inherited.
+
+-\/example: class CopyProhibitedClass : private \doxyref{NonCopyable}{p.}{classcoil_1_1NonCopyable} \{\}; 
+
+\subsection{Constructor \& Destructor Documentation}
+\index{coil::NonCopyable@{coil::NonCopyable}!NonCopyable@{NonCopyable}}
+\index{NonCopyable@{NonCopyable}!coil::NonCopyable@{coil::NonCopyable}}
+\subsubsection[{NonCopyable}]{\setlength{\rightskip}{0pt plus 5cm}coil::NonCopyable::NonCopyable ()\hspace{0.3cm}{\ttfamily  [inline, protected]}}\label{classcoil_1_1NonCopyable_a4e2595899e62bfe0ed4db66e285b85d9}
+
+
+Constructor. 
+
+Constructor \index{coil::NonCopyable@{coil::NonCopyable}!$\sim$NonCopyable@{$\sim$NonCopyable}}
+\index{$\sim$NonCopyable@{$\sim$NonCopyable}!coil::NonCopyable@{coil::NonCopyable}}
+\subsubsection[{$\sim$NonCopyable}]{\setlength{\rightskip}{0pt plus 5cm}coil::NonCopyable::$\sim$NonCopyable ()\hspace{0.3cm}{\ttfamily  [inline, protected]}}\label{classcoil_1_1NonCopyable_a0dc4a13a68c4f3a35a74378cf949f53a}
+
+
+Destructor. 
+
+Destructor 

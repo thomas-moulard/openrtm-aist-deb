@@ -1,0 +1,38 @@
+\section{Routing.h File Reference}
+\label{Routing_8h}\index{Routing.h@{Routing.h}}
+
+
+Network routing information handling functions.  
+
+
+{\ttfamily \#include $<$string$>$}\par
+\subsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace {\bf coil}
+
+
+\begin{DoxyCompactList}\small\item\em Common Object Interface Layer. \item\end{DoxyCompactList}
+
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool {\bf coil::dest\_\-to\_\-endpoint} (std::string dest\_\-addr, std::string \&endpoint)
+\begin{DoxyCompactList}\small\item\em Getting network interface name from destination address. \item\end{DoxyCompactList}\item 
+bool {\bf coil::find\_\-dest\_\-ifname} (std::string dest\_\-addr, std::string \&dest\_\-if)
+\begin{DoxyCompactList}\small\item\em Getting network interface name from destination address. \item\end{DoxyCompactList}\item 
+bool {\bf coil::ifname\_\-to\_\-ipaddr} (std::string ifname, std::string \&ipaddr)
+\begin{DoxyCompactList}\small\item\em Get IP address from a network interface name. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Network routing information handling functions. \begin{DoxyDate}{Date}
+\$Date\$ 
+\end{DoxyDate}
+\begin{DoxyAuthor}{Author}
+Noriaki Ando $<${\tt n-\/ando@aist.go.jp}$>$
+\end{DoxyAuthor}
+Copyright (C) 2010 Noriaki Ando Task-\/intelligence Research Group, Intelligent Systems Research Institute, National Institute of Advanced Industrial Science and Technology (AIST), Japan All rights reserved.
+
+\$Id\$ 

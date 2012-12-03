@@ -1,0 +1,79 @@
+\section{RTObject.h File Reference}
+\label{RTObject_8h}\index{RTObject.h@{RTObject.h}}
+
+
+RT component base class.  
+
+
+{\ttfamily \#include $<$coil/Properties.h$>$}\par
+{\ttfamily \#include $<$rtm/RTC.h$>$}\par
+{\ttfamily \#include $<$rtm/idl/RTCSkel.h$>$}\par
+{\ttfamily \#include $<$rtm/idl/OpenRTMSkel.h$>$}\par
+{\ttfamily \#include $<$rtm/PortBase.h$>$}\par
+{\ttfamily \#include $<$rtm/PortAdmin.h$>$}\par
+{\ttfamily \#include $<$rtm/InPortBase.h$>$}\par
+{\ttfamily \#include $<$rtm/OutPortBase.h$>$}\par
+{\ttfamily \#include $<$rtm/CorbaPort.h$>$}\par
+{\ttfamily \#include $<$rtm/ConfigAdmin.h$>$}\par
+{\ttfamily \#include $<$rtm/SystemLogger.h$>$}\par
+{\ttfamily \#include $<$rtm/ComponentActionListener.h$>$}\par
+{\ttfamily \#include $<$rtm/SdoServiceAdmin.h$>$}\par
+{\ttfamily \#include $<$rtm/PortConnectListener.h$>$}\par
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class {\bf RTC::RTObject\_\-impl}
+\begin{DoxyCompactList}\small\item\em RT-\/Component class. \item\end{DoxyCompactList}\item 
+struct {\bf RTC::RTObject\_\-impl::svc\_\-name}
+\begin{DoxyCompactList}\small\item\em Functor to find from SDOService \doxyref{Profile}{p.}{classProfile} List by id. \item\end{DoxyCompactList}\item 
+struct {\bf RTC::RTObject\_\-impl::nv\_\-name}
+\begin{DoxyCompactList}\small\item\em Functor to find NVList. \item\end{DoxyCompactList}\item 
+struct {\bf RTC::RTObject\_\-impl::ec\_\-copy}
+\begin{DoxyCompactList}\small\item\em Functor to copy ExecutionContext. \item\end{DoxyCompactList}\item 
+struct {\bf RTC::RTObject\_\-impl::ec\_\-find}
+\begin{DoxyCompactList}\small\item\em Functor to find ExecutionContext. \item\end{DoxyCompactList}\item 
+struct {\bf RTC::RTObject\_\-impl::deactivate\_\-comps}
+\begin{DoxyCompactList}\small\item\em Functor to deactivate \doxyref{RTC}{p.}{namespaceRTC}. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace {\bf SDOPackage}
+
+
+\begin{DoxyCompactList}\small\item\em \doxyref{SDO}{p.}{classSDO} Package. \item\end{DoxyCompactList}
+
+\item 
+namespace {\bf RTC}
+
+
+\begin{DoxyCompactList}\small\item\em RT-\/Component. \item\end{DoxyCompactList}
+
+\end{DoxyCompactItemize}
+\subsection*{Defines}
+\begin{DoxyCompactItemize}
+\item 
+\#define {\bf ECOTHER\_\-OFFSET}~1000
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+RT component base class. \begin{DoxyDate}{Date}
+
+\end{DoxyDate}
+\begin{DoxyParagraph}{Date}
+2008-\/01-\/14 07:57:18 
+\end{DoxyParagraph}
+\begin{DoxyAuthor}{Author}
+Noriaki Ando $<${\tt n-\/ando@aist.go.jp}$>$
+\end{DoxyAuthor}
+Copyright (C) 2006-\/2010 Intelligent Systems Research Institute, National Institute of Advanced Industrial Science and Technology (AIST), Japan All rights reserved.
+
+\begin{DoxyParagraph}{Id}
+\doxyref{RTObject.h}{p.}{RTObject_8h} 2209 2011-\/07-\/27 14:02:57Z n-\/ando 
+\end{DoxyParagraph}
+
+
+\subsection{Define Documentation}
+\index{RTObject.h@{RTObject.h}!ECOTHER\_\-OFFSET@{ECOTHER\_\-OFFSET}}
+\index{ECOTHER\_\-OFFSET@{ECOTHER\_\-OFFSET}!RTObject.h@{RTObject.h}}
+\subsubsection[{ECOTHER\_\-OFFSET}]{\setlength{\rightskip}{0pt plus 5cm}\#define ECOTHER\_\-OFFSET~1000}\label{RTObject_8h_a5f00a32f5fbb917ada3f611f4a516a28}

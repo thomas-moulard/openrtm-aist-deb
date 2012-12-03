@@ -1,0 +1,324 @@
+\section{RTM::Manager Interface Reference}
+\label{interfaceRTM_1_1Manager}\index{RTM::Manager@{RTM::Manager}}
+
+
+{\ttfamily import \char`\"{}Manager.idl\char`\"{};}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf RTC::ReturnCode\_\-t} {\bf load\_\-module} (in string pathname, in string initfunc)
+\begin{DoxyCompactList}\small\item\em Loading a module. \item\end{DoxyCompactList}\item 
+{\bf RTC::ReturnCode\_\-t} {\bf unload\_\-module} (in string pathname)
+\begin{DoxyCompactList}\small\item\em Unloading a module. \item\end{DoxyCompactList}\item 
+{\bf ModuleProfileList} {\bf get\_\-loadable\_\-modules} ()
+\begin{DoxyCompactList}\small\item\em Getting loadable module profiles. \item\end{DoxyCompactList}\item 
+{\bf ModuleProfileList} {\bf get\_\-loaded\_\-modules} ()
+\begin{DoxyCompactList}\small\item\em Getting loaded module profiles. \item\end{DoxyCompactList}\item 
+{\bf ModuleProfileList} {\bf get\_\-factory\_\-profiles} ()
+\begin{DoxyCompactList}\small\item\em Getting component factory profiles. \item\end{DoxyCompactList}\item 
+{\bf RTC::RTObject} {\bf create\_\-component} (in string module\_\-name)
+\begin{DoxyCompactList}\small\item\em Creating an RT-\/Component. \item\end{DoxyCompactList}\item 
+{\bf RTC::ReturnCode\_\-t} {\bf delete\_\-component} (in string instance\_\-name)
+\begin{DoxyCompactList}\small\item\em Deleting an RT-\/Component. \item\end{DoxyCompactList}\item 
+{\bf RTC::RTCList} {\bf get\_\-components} ()
+\begin{DoxyCompactList}\small\item\em Getting RT-\/Component list running on this manager. \item\end{DoxyCompactList}\item 
+{\bf RTC::ComponentProfileList} {\bf get\_\-component\_\-profiles} ()
+\begin{DoxyCompactList}\small\item\em Getting RT-\/Component's profile list running on this manager. \item\end{DoxyCompactList}\item 
+{\bf ManagerProfile} {\bf get\_\-profile} ()
+\begin{DoxyCompactList}\small\item\em Getting this manager's profile. \item\end{DoxyCompactList}\item 
+{\bf NVList} {\bf get\_\-configuration} ()
+\begin{DoxyCompactList}\small\item\em Getting this manager's configuration. \item\end{DoxyCompactList}\item 
+{\bf RTC::ReturnCode\_\-t} {\bf set\_\-configuration} (in string name, in string value)
+\begin{DoxyCompactList}\small\item\em Setting manager's configuration. \item\end{DoxyCompactList}\item 
+boolean {\bf is\_\-master} ()
+\begin{DoxyCompactList}\small\item\em Whether this manager is master or not. \item\end{DoxyCompactList}\item 
+{\bf ManagerList} {\bf get\_\-master\_\-managers} ()
+\begin{DoxyCompactList}\small\item\em Getting master managers. \item\end{DoxyCompactList}\item 
+{\bf RTC::ReturnCode\_\-t} {\bf add\_\-master\_\-manager} (in {\bf Manager} mgr)
+\begin{DoxyCompactList}\small\item\em Getting a master manager. \item\end{DoxyCompactList}\item 
+{\bf RTC::ReturnCode\_\-t} {\bf remove\_\-master\_\-manager} (in {\bf Manager} mgr)
+\begin{DoxyCompactList}\small\item\em Removing a master manager. \item\end{DoxyCompactList}\item 
+{\bf ManagerList} {\bf get\_\-slave\_\-managers} ()
+\begin{DoxyCompactList}\small\item\em Getting slave managers. \item\end{DoxyCompactList}\item 
+{\bf RTC::ReturnCode\_\-t} {\bf add\_\-slave\_\-manager} (in {\bf Manager} mgr)
+\begin{DoxyCompactList}\small\item\em Getting a slave manager. \item\end{DoxyCompactList}\item 
+{\bf RTC::ReturnCode\_\-t} {\bf remove\_\-slave\_\-manager} (in {\bf Manager} mgr)
+\begin{DoxyCompactList}\small\item\em Removing a slave manager. \item\end{DoxyCompactList}\item 
+{\bf RTC::ReturnCode\_\-t} {\bf fork} ()
+\item 
+{\bf RTC::ReturnCode\_\-t} {\bf shutdown} ()
+\item 
+{\bf RTC::ReturnCode\_\-t} {\bf restart} ()
+\item 
+Object {\bf get\_\-service} (in string name)
+\end{DoxyCompactItemize}
+
+
+\subsection{Member Function Documentation}
+\index{RTM::Manager@{RTM::Manager}!add\_\-master\_\-manager@{add\_\-master\_\-manager}}
+\index{add\_\-master\_\-manager@{add\_\-master\_\-manager}!RTM::Manager@{RTM::Manager}}
+\subsubsection[{add\_\-master\_\-manager}]{\setlength{\rightskip}{0pt plus 5cm}{\bf RTC::ReturnCode\_\-t} RTM::Manager::add\_\-master\_\-manager (in {\bf Manager} {\em mgr})}\label{interfaceRTM_1_1Manager_a6eecb69fab7dbea8e3377c6648356b76}
+
+
+Getting a master manager. 
+
+This operation add a master manager to this manager.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em mgr}]A master manager \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+ReturnCode\_\-t
+\end{DoxyReturn}
+\index{RTM::Manager@{RTM::Manager}!add\_\-slave\_\-manager@{add\_\-slave\_\-manager}}
+\index{add\_\-slave\_\-manager@{add\_\-slave\_\-manager}!RTM::Manager@{RTM::Manager}}
+\subsubsection[{add\_\-slave\_\-manager}]{\setlength{\rightskip}{0pt plus 5cm}{\bf RTC::ReturnCode\_\-t} RTM::Manager::add\_\-slave\_\-manager (in {\bf Manager} {\em mgr})}\label{interfaceRTM_1_1Manager_ad818c6d8113d723f21b2abe6a64b615c}
+
+
+Getting a slave manager. 
+
+This operation add a slave manager to this manager.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em mgr}]A slave manager \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+ReturnCode\_\-t
+\end{DoxyReturn}
+\index{RTM::Manager@{RTM::Manager}!create\_\-component@{create\_\-component}}
+\index{create\_\-component@{create\_\-component}!RTM::Manager@{RTM::Manager}}
+\subsubsection[{create\_\-component}]{\setlength{\rightskip}{0pt plus 5cm}{\bf RTC::RTObject} RTM::Manager::create\_\-component (in string {\em module\_\-name})}\label{interfaceRTM_1_1Manager_aabfa3a0eb982dd87d772fcf5c9b99081}
+
+
+Creating an RT-\/Component. 
+
+This operation creates RT-\/Component according to the string argument.
+
+\begin{DoxyReturn}{Returns}
+A created RT-\/Component
+\end{DoxyReturn}
+\index{RTM::Manager@{RTM::Manager}!delete\_\-component@{delete\_\-component}}
+\index{delete\_\-component@{delete\_\-component}!RTM::Manager@{RTM::Manager}}
+\subsubsection[{delete\_\-component}]{\setlength{\rightskip}{0pt plus 5cm}{\bf RTC::ReturnCode\_\-t} RTM::Manager::delete\_\-component (in string {\em instance\_\-name})}\label{interfaceRTM_1_1Manager_a96bf4f72dac2f021f6a7384cdade2245}
+
+
+Deleting an RT-\/Component. 
+
+This operation delete an RT-\/Component according to the string argument.
+
+\begin{DoxyReturn}{Returns}
+Return code
+\end{DoxyReturn}
+\index{RTM::Manager@{RTM::Manager}!fork@{fork}}
+\index{fork@{fork}!RTM::Manager@{RTM::Manager}}
+\subsubsection[{fork}]{\setlength{\rightskip}{0pt plus 5cm}{\bf RTC::ReturnCode\_\-t} RTM::Manager::fork ()}\label{interfaceRTM_1_1Manager_af6d4aab0145042cd0332e50a96ddc876}
+\index{RTM::Manager@{RTM::Manager}!get\_\-component\_\-profiles@{get\_\-component\_\-profiles}}
+\index{get\_\-component\_\-profiles@{get\_\-component\_\-profiles}!RTM::Manager@{RTM::Manager}}
+\subsubsection[{get\_\-component\_\-profiles}]{\setlength{\rightskip}{0pt plus 5cm}{\bf RTC::ComponentProfileList} RTM::Manager::get\_\-component\_\-profiles ()}\label{interfaceRTM_1_1Manager_abe71e5357edf11e879b21dc09bbc6dc0}
+
+
+Getting RT-\/Component's profile list running on this manager. 
+
+This operation returns RT-\/Component's profile list running on this manager.
+
+\begin{DoxyReturn}{Returns}
+A list of RT-\/Components' profiles
+\end{DoxyReturn}
+\index{RTM::Manager@{RTM::Manager}!get\_\-components@{get\_\-components}}
+\index{get\_\-components@{get\_\-components}!RTM::Manager@{RTM::Manager}}
+\subsubsection[{get\_\-components}]{\setlength{\rightskip}{0pt plus 5cm}{\bf RTC::RTCList} RTM::Manager::get\_\-components ()}\label{interfaceRTM_1_1Manager_a9280a086716df3139f02fde17a54c470}
+
+
+Getting RT-\/Component list running on this manager. 
+
+This operation returns RT-\/Component list running on this manager.
+
+\begin{DoxyReturn}{Returns}
+A list of RT-\/Components
+\end{DoxyReturn}
+\index{RTM::Manager@{RTM::Manager}!get\_\-configuration@{get\_\-configuration}}
+\index{get\_\-configuration@{get\_\-configuration}!RTM::Manager@{RTM::Manager}}
+\subsubsection[{get\_\-configuration}]{\setlength{\rightskip}{0pt plus 5cm}{\bf NVList} RTM::Manager::get\_\-configuration ()}\label{interfaceRTM_1_1Manager_ab84ddc9130dfeeea8c50c0f8d2a9e80f}
+
+
+Getting this manager's configuration. 
+
+This operation returns this manager's configuration.
+
+\begin{DoxyReturn}{Returns}
+Manager's configuration
+\end{DoxyReturn}
+\index{RTM::Manager@{RTM::Manager}!get\_\-factory\_\-profiles@{get\_\-factory\_\-profiles}}
+\index{get\_\-factory\_\-profiles@{get\_\-factory\_\-profiles}!RTM::Manager@{RTM::Manager}}
+\subsubsection[{get\_\-factory\_\-profiles}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ModuleProfileList} RTM::Manager::get\_\-factory\_\-profiles ()}\label{interfaceRTM_1_1Manager_a39aa5af496922ef8caa786a1a0a0cf90}
+
+
+Getting component factory profiles. 
+
+This operation returns component factory profiles from loaded RT-\/Component module factory profiles.
+
+\begin{DoxyReturn}{Returns}
+An RT-\/Component factory profile list.
+\end{DoxyReturn}
+\index{RTM::Manager@{RTM::Manager}!get\_\-loadable\_\-modules@{get\_\-loadable\_\-modules}}
+\index{get\_\-loadable\_\-modules@{get\_\-loadable\_\-modules}!RTM::Manager@{RTM::Manager}}
+\subsubsection[{get\_\-loadable\_\-modules}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ModuleProfileList} RTM::Manager::get\_\-loadable\_\-modules ()}\label{interfaceRTM_1_1Manager_a0e5715c4cacc9e547d012b8ca0762265}
+
+
+Getting loadable module profiles. 
+
+This operation returns loadable module profiles.
+
+\begin{DoxyReturn}{Returns}
+A module profile list.
+\end{DoxyReturn}
+\index{RTM::Manager@{RTM::Manager}!get\_\-loaded\_\-modules@{get\_\-loaded\_\-modules}}
+\index{get\_\-loaded\_\-modules@{get\_\-loaded\_\-modules}!RTM::Manager@{RTM::Manager}}
+\subsubsection[{get\_\-loaded\_\-modules}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ModuleProfileList} RTM::Manager::get\_\-loaded\_\-modules ()}\label{interfaceRTM_1_1Manager_aa2b83683a2810830c335fb547264dc01}
+
+
+Getting loaded module profiles. 
+
+This operation returns loaded module profiles.
+
+\begin{DoxyReturn}{Returns}
+A module profile list.
+\end{DoxyReturn}
+\index{RTM::Manager@{RTM::Manager}!get\_\-master\_\-managers@{get\_\-master\_\-managers}}
+\index{get\_\-master\_\-managers@{get\_\-master\_\-managers}!RTM::Manager@{RTM::Manager}}
+\subsubsection[{get\_\-master\_\-managers}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ManagerList} RTM::Manager::get\_\-master\_\-managers ()}\label{interfaceRTM_1_1Manager_abca05cb20132674bf82520689479b41c}
+
+
+Getting master managers. 
+
+This operation returns master manager list if this manager is slave. If this manager is master, an empty sequence would be returned.
+
+\begin{DoxyReturn}{Returns}
+Master manager list
+\end{DoxyReturn}
+\index{RTM::Manager@{RTM::Manager}!get\_\-profile@{get\_\-profile}}
+\index{get\_\-profile@{get\_\-profile}!RTM::Manager@{RTM::Manager}}
+\subsubsection[{get\_\-profile}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ManagerProfile} RTM::Manager::get\_\-profile ()}\label{interfaceRTM_1_1Manager_a2640ab430699432e7103d777880347f3}
+
+
+Getting this manager's profile. 
+
+This operation returns this manager's profile.
+
+\begin{DoxyReturn}{Returns}
+Manager's profile
+\end{DoxyReturn}
+\index{RTM::Manager@{RTM::Manager}!get\_\-service@{get\_\-service}}
+\index{get\_\-service@{get\_\-service}!RTM::Manager@{RTM::Manager}}
+\subsubsection[{get\_\-service}]{\setlength{\rightskip}{0pt plus 5cm}Object RTM::Manager::get\_\-service (in string {\em name})}\label{interfaceRTM_1_1Manager_a06deb421ae0acb333ed6ef3a86b0d1b1}
+\index{RTM::Manager@{RTM::Manager}!get\_\-slave\_\-managers@{get\_\-slave\_\-managers}}
+\index{get\_\-slave\_\-managers@{get\_\-slave\_\-managers}!RTM::Manager@{RTM::Manager}}
+\subsubsection[{get\_\-slave\_\-managers}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ManagerList} RTM::Manager::get\_\-slave\_\-managers ()}\label{interfaceRTM_1_1Manager_a7fa681c86d41a463e50c40ca4e738744}
+
+
+Getting slave managers. 
+
+This operation returns slave manager list if this manager is slave. If this manager is slave, an empty sequence would be returned.
+
+\begin{DoxyReturn}{Returns}
+Slave manager list
+\end{DoxyReturn}
+\index{RTM::Manager@{RTM::Manager}!is\_\-master@{is\_\-master}}
+\index{is\_\-master@{is\_\-master}!RTM::Manager@{RTM::Manager}}
+\subsubsection[{is\_\-master}]{\setlength{\rightskip}{0pt plus 5cm}boolean RTM::Manager::is\_\-master ()}\label{interfaceRTM_1_1Manager_aebab7e3e7c75c519c76a6ff2b1c5548b}
+
+
+Whether this manager is master or not. 
+
+It returns \char`\"{}True\char`\"{} if this manager is a master, and it returns \char`\"{}False\char`\"{} in other cases.
+
+\begin{DoxyReturn}{Returns}
+A boolean value that means it is master or not.
+\end{DoxyReturn}
+\index{RTM::Manager@{RTM::Manager}!load\_\-module@{load\_\-module}}
+\index{load\_\-module@{load\_\-module}!RTM::Manager@{RTM::Manager}}
+\subsubsection[{load\_\-module}]{\setlength{\rightskip}{0pt plus 5cm}{\bf RTC::ReturnCode\_\-t} RTM::Manager::load\_\-module (in string {\em pathname}, \/  in string {\em initfunc})}\label{interfaceRTM_1_1Manager_a46feff9b41dcc474a7498a69ec19af9a}
+
+
+Loading a module. 
+
+This operation loads a specified loadable module¡¢and perform initialization with the specified function.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em pathname}]A path to a loading module. \item[{\em initfunc}]Module initialization function. \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The return code.
+\end{DoxyReturn}
+\index{RTM::Manager@{RTM::Manager}!remove\_\-master\_\-manager@{remove\_\-master\_\-manager}}
+\index{remove\_\-master\_\-manager@{remove\_\-master\_\-manager}!RTM::Manager@{RTM::Manager}}
+\subsubsection[{remove\_\-master\_\-manager}]{\setlength{\rightskip}{0pt plus 5cm}{\bf RTC::ReturnCode\_\-t} RTM::Manager::remove\_\-master\_\-manager (in {\bf Manager} {\em mgr})}\label{interfaceRTM_1_1Manager_a1e842aed3d5e908b9ea6551acf78bbe9}
+
+
+Removing a master manager. 
+
+This operation removes a master manager from this manager.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em mgr}]A master manager \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+ReturnCode\_\-t
+\end{DoxyReturn}
+\index{RTM::Manager@{RTM::Manager}!remove\_\-slave\_\-manager@{remove\_\-slave\_\-manager}}
+\index{remove\_\-slave\_\-manager@{remove\_\-slave\_\-manager}!RTM::Manager@{RTM::Manager}}
+\subsubsection[{remove\_\-slave\_\-manager}]{\setlength{\rightskip}{0pt plus 5cm}{\bf RTC::ReturnCode\_\-t} RTM::Manager::remove\_\-slave\_\-manager (in {\bf Manager} {\em mgr})}\label{interfaceRTM_1_1Manager_ad984d2fb3ea504dfbf8313d71098468a}
+
+
+Removing a slave manager. 
+
+This operation removes a slave manager from this manager.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em mgr}]A slave manager \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+ReturnCode\_\-t
+\end{DoxyReturn}
+\index{RTM::Manager@{RTM::Manager}!restart@{restart}}
+\index{restart@{restart}!RTM::Manager@{RTM::Manager}}
+\subsubsection[{restart}]{\setlength{\rightskip}{0pt plus 5cm}{\bf RTC::ReturnCode\_\-t} RTM::Manager::restart ()}\label{interfaceRTM_1_1Manager_a886c97532b313bc30986c95ca1ff7cdf}
+\index{RTM::Manager@{RTM::Manager}!set\_\-configuration@{set\_\-configuration}}
+\index{set\_\-configuration@{set\_\-configuration}!RTM::Manager@{RTM::Manager}}
+\subsubsection[{set\_\-configuration}]{\setlength{\rightskip}{0pt plus 5cm}{\bf RTC::ReturnCode\_\-t} RTM::Manager::set\_\-configuration (in string {\em name}, \/  in string {\em value})}\label{interfaceRTM_1_1Manager_a8acd5729f68ca75ddfc38a1f8422a550}
+
+
+Setting manager's configuration. 
+
+This operation sets managers configuration.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em name}]A configuration key name to be set \item[{\em value}]A configuration value to be set \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Return code
+\end{DoxyReturn}
+\index{RTM::Manager@{RTM::Manager}!shutdown@{shutdown}}
+\index{shutdown@{shutdown}!RTM::Manager@{RTM::Manager}}
+\subsubsection[{shutdown}]{\setlength{\rightskip}{0pt plus 5cm}{\bf RTC::ReturnCode\_\-t} RTM::Manager::shutdown ()}\label{interfaceRTM_1_1Manager_a75461238281c9a84dedd1e57a07d27fb}
+\index{RTM::Manager@{RTM::Manager}!unload\_\-module@{unload\_\-module}}
+\index{unload\_\-module@{unload\_\-module}!RTM::Manager@{RTM::Manager}}
+\subsubsection[{unload\_\-module}]{\setlength{\rightskip}{0pt plus 5cm}{\bf RTC::ReturnCode\_\-t} RTM::Manager::unload\_\-module (in string {\em pathname})}\label{interfaceRTM_1_1Manager_ac780ecdb7260936b2b800e97edecd42c}
+
+
+Unloading a module. 
+
+This operation unloads a specified loadable module.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em pathname}]A path to a loading module. \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The return code.
+\end{DoxyReturn}
+
+
+The documentation for this interface was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+{\bf Manager.idl}\end{DoxyCompactItemize}

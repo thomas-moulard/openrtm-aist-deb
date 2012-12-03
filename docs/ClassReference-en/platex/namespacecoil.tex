@@ -1,0 +1,939 @@
+\section{coil Namespace Reference}
+\label{namespacecoil}\index{coil@{coil}}
+
+
+Common Object Interface Layer.  
+
+
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class {\bf Allocator}
+\begin{DoxyCompactList}\small\item\em \doxyref{Allocator}{p.}{classcoil_1_1Allocator} class. \item\end{DoxyCompactList}\item 
+class {\bf Async}
+\begin{DoxyCompactList}\small\item\em \doxyref{Async}{p.}{classcoil_1_1Async} class. \item\end{DoxyCompactList}\item 
+class {\bf Async\_\-t}
+\begin{DoxyCompactList}\small\item\em \doxyref{Async\_\-t}{p.}{classcoil_1_1Async__t} template class. \item\end{DoxyCompactList}\item 
+class {\bf Async\_\-ref\_\-t}
+\begin{DoxyCompactList}\small\item\em \doxyref{Async\_\-ref\_\-t}{p.}{classcoil_1_1Async__ref__t} template class. \item\end{DoxyCompactList}\item 
+class {\bf Condition}
+\begin{DoxyCompactList}\small\item\em \doxyref{Condition}{p.}{classcoil_1_1Condition} template class. \item\end{DoxyCompactList}\item 
+class {\bf DynamicLib}
+\begin{DoxyCompactList}\small\item\em \doxyref{DynamicLib}{p.}{classcoil_1_1DynamicLib} class. \item\end{DoxyCompactList}\item 
+class {\bf Factory}
+\begin{DoxyCompactList}\small\item\em \doxyref{Factory}{p.}{classcoil_1_1Factory} template class. \item\end{DoxyCompactList}\item 
+class {\bf GlobalFactory}
+\begin{DoxyCompactList}\small\item\em \doxyref{GlobalFactory}{p.}{classcoil_1_1GlobalFactory} template class. \item\end{DoxyCompactList}\item 
+class {\bf Guard}
+\begin{DoxyCompactList}\small\item\em \doxyref{Guard}{p.}{classcoil_1_1Guard} template class. \item\end{DoxyCompactList}\item 
+class {\bf log\_\-streambuf}
+\begin{DoxyCompactList}\small\item\em \doxyref{log\_\-streambuf}{p.}{classcoil_1_1log__streambuf} template class \item\end{DoxyCompactList}\item 
+class {\bf log\_\-stream}
+\begin{DoxyCompactList}\small\item\em \doxyref{log\_\-stream}{p.}{classcoil_1_1log__stream} template class \item\end{DoxyCompactList}\item 
+class {\bf Mutex}
+\begin{DoxyCompactList}\small\item\em \doxyref{Mutex}{p.}{classcoil_1_1Mutex} class. \item\end{DoxyCompactList}\item 
+class {\bf NonCopyable}
+\begin{DoxyCompactList}\small\item\em Non-\/copyable Mixin. \item\end{DoxyCompactList}\item 
+class {\bf NonCopyableCRTP}
+\item 
+class {\bf GetOpt}
+\begin{DoxyCompactList}\small\item\em \doxyref{GetOpt}{p.}{classcoil_1_1GetOpt} class. \item\end{DoxyCompactList}\item 
+class {\bf PeriodicTask}
+\begin{DoxyCompactList}\small\item\em \doxyref{PeriodicTask}{p.}{classcoil_1_1PeriodicTask} class. \item\end{DoxyCompactList}\item 
+class {\bf TaskFuncBase}
+\begin{DoxyCompactList}\small\item\em \doxyref{TaskFuncBase}{p.}{classcoil_1_1TaskFuncBase} class. \item\end{DoxyCompactList}\item 
+class {\bf TaskFunc}
+\begin{DoxyCompactList}\small\item\em \doxyref{TaskFunc}{p.}{classcoil_1_1TaskFunc} template class. \item\end{DoxyCompactList}\item 
+class {\bf PeriodicTaskBase}
+\begin{DoxyCompactList}\small\item\em \doxyref{PeriodicTaskBase}{p.}{classcoil_1_1PeriodicTaskBase} class. \item\end{DoxyCompactList}\item 
+class {\bf Properties}
+\begin{DoxyCompactList}\small\item\em Class represents a set of properties. \item\end{DoxyCompactList}\item 
+class {\bf SignalAction}
+\begin{DoxyCompactList}\small\item\em \doxyref{SignalAction}{p.}{classcoil_1_1SignalAction} class. \item\end{DoxyCompactList}\item 
+class {\bf Singleton}
+\begin{DoxyCompactList}\small\item\em \doxyref{Singleton}{p.}{classcoil_1_1Singleton} template class. \item\end{DoxyCompactList}\item 
+class {\bf Task}
+\begin{DoxyCompactList}\small\item\em \doxyref{Task}{p.}{classcoil_1_1Task} class. \item\end{DoxyCompactList}\item 
+class {\bf TimeMeasure}
+\begin{DoxyCompactList}\small\item\em \doxyref{TimeMeasure}{p.}{classcoil_1_1TimeMeasure} class. \item\end{DoxyCompactList}\item 
+class {\bf Timer}
+\begin{DoxyCompactList}\small\item\em \doxyref{Timer}{p.}{classcoil_1_1Timer} class. \item\end{DoxyCompactList}\item 
+class {\bf TimeValue}
+\begin{DoxyCompactList}\small\item\em \doxyref{TimeValue}{p.}{classcoil_1_1TimeValue} class. \item\end{DoxyCompactList}\item 
+class {\bf UUID}
+\item 
+class {\bf UUID\_\-Generator}
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef {\bf log\_\-streambuf}$<$ char $>$ {\bf LogStreamBuffer}
+\item 
+typedef {\bf log\_\-stream}$<$ char $>$ {\bf LogStream}
+\item 
+typedef ::{\bf utsname} {\bf utsname}
+\begin{DoxyCompactList}\small\item\em Get System information. \item\end{DoxyCompactList}\item 
+typedef ::{\bf pid\_\-t} {\bf pid\_\-t}
+\begin{DoxyCompactList}\small\item\em Get process ID of the caller process. \item\end{DoxyCompactList}\item 
+typedef void($\ast$ {\bf SignalHandler} )(int)
+\item 
+typedef std::vector$<$ std::string $>$ {\bf vstring}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename Object , typename Func $>$ }\\{\bf Async\_\-t}$<$ Object, Func $>$ $\ast$ {\bf AsyncInvoker} (Object $\ast$obj, Func func, bool auto\_\-delete=false)
+\begin{DoxyCompactList}\small\item\em Helper function for async member function summons. \item\end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Object , typename Func $>$ }\\{\bf Async\_\-ref\_\-t}$<$ Object, Func $>$ $\ast$ {\bf AsyncInvoker} (Object $\ast$obj, Func $\ast$func, bool auto\_\-delete=false)
+\begin{DoxyCompactList}\small\item\em Helper function for async member function summons. \item\end{DoxyCompactList}\item 
+unsigned short {\bf crc16} (const char $\ast$str, size\_\-t len)
+\item 
+unsigned long {\bf crc32} (const char $\ast$str, size\_\-t len)
+\begin{DoxyCompactList}\small\item\em CRC-\/32 calculation function. \item\end{DoxyCompactList}\item 
+{\footnotesize template$<$class AbstractClass , class ConcreteClass $>$ }\\AbstractClass $\ast$ {\bf Creator} ()
+\begin{DoxyCompactList}\small\item\em Creator template. \item\end{DoxyCompactList}\item 
+{\footnotesize template$<$class AbstractClass , class ConcreteClass $>$ }\\void {\bf Destructor} (AbstractClass $\ast$\&obj)
+\begin{DoxyCompactList}\small\item\em Destructor template. \item\end{DoxyCompactList}\item 
+std::string {\bf dirname} (char $\ast$path)
+\begin{DoxyCompactList}\small\item\em Get a directory part than a file pass. \item\end{DoxyCompactList}\item 
+std::string {\bf basename} (const char $\ast$path)
+\begin{DoxyCompactList}\small\item\em Get a file name part than a file pass. \item\end{DoxyCompactList}\item 
+{\bf coil::vstring} {\bf filelist} (const char $\ast$path, const char $\ast$glob\_\-str=\char`\"{}\char`\"{})
+\begin{DoxyCompactList}\small\item\em Get file list. \item\end{DoxyCompactList}\item 
+int {\bf uname} ({\bf utsname} $\ast$name)
+\item 
+{\bf pid\_\-t} {\bf getpid} ()
+\item 
+{\bf pid\_\-t} {\bf getppid} ()
+\begin{DoxyCompactList}\small\item\em Get process ID of the parent process. \item\end{DoxyCompactList}\item 
+char $\ast$ {\bf getenv} (const char $\ast$name)
+\begin{DoxyCompactList}\small\item\em Get environment variable. \item\end{DoxyCompactList}\item 
+int {\bf launch\_\-shell} (std::string command)
+\begin{DoxyCompactList}\small\item\em Launching a process. \item\end{DoxyCompactList}\item 
+int {\bf daemon} (int nochdir, int noclose)
+\item 
+bool {\bf dest\_\-to\_\-endpoint} (std::string dest\_\-addr, std::string \&endpoint)
+\begin{DoxyCompactList}\small\item\em Getting network interface name from destination address. \item\end{DoxyCompactList}\item 
+bool {\bf find\_\-dest\_\-ifname} (std::string dest\_\-addr, std::string \&dest\_\-if)
+\begin{DoxyCompactList}\small\item\em Getting network interface name from destination address. \item\end{DoxyCompactList}\item 
+bool {\bf ifname\_\-to\_\-ipaddr} (std::string ifname, std::string \&ipaddr)
+\begin{DoxyCompactList}\small\item\em Get IP address from a network interface name. \item\end{DoxyCompactList}\item 
+std::wstring {\bf string2wstring} (std::string str)
+\begin{DoxyCompactList}\small\item\em string to wstring conversion \item\end{DoxyCompactList}\item 
+std::string {\bf wstring2string} (std::wstring wstr)
+\begin{DoxyCompactList}\small\item\em wstring to string conversion \item\end{DoxyCompactList}\item 
+void {\bf toUpper} (std::string \&str)
+\begin{DoxyCompactList}\small\item\em Uppercase String Transformation. \item\end{DoxyCompactList}\item 
+void {\bf toLower} (std::string \&str)
+\begin{DoxyCompactList}\small\item\em Lowercase String Transformation. \item\end{DoxyCompactList}\item 
+int {\bf getlinePortable} (std::istream \&istr, std::string \&line)
+\begin{DoxyCompactList}\small\item\em Read a line from input stream. \item\end{DoxyCompactList}\item 
+bool {\bf isEscaped} (const std::string \&str, std::string::size\_\-type pos)
+\begin{DoxyCompactList}\small\item\em Check whether the character is escaped or not. \item\end{DoxyCompactList}\item 
+std::string {\bf escape} (const std::string str)
+\begin{DoxyCompactList}\small\item\em Escape string. \item\end{DoxyCompactList}\item 
+std::string {\bf unescape} (const std::string str)
+\begin{DoxyCompactList}\small\item\em Unescape string. \item\end{DoxyCompactList}\item 
+void {\bf eraseBlank} (std::string \&str)
+\begin{DoxyCompactList}\small\item\em Erase blank characters of string. \item\end{DoxyCompactList}\item 
+void {\bf eraseHeadBlank} (std::string \&str)
+\begin{DoxyCompactList}\small\item\em Erase the head blank characters of string. \item\end{DoxyCompactList}\item 
+void {\bf eraseTailBlank} (std::string \&str)
+\begin{DoxyCompactList}\small\item\em Erase the tail blank characters of string. \item\end{DoxyCompactList}\item 
+void {\bf eraseBothEndsBlank} (std::string \&str)
+\begin{DoxyCompactList}\small\item\em Erase the head blank and the tail blank characters of string. \item\end{DoxyCompactList}\item 
+std::string {\bf normalize} (std::string \&str)
+\begin{DoxyCompactList}\small\item\em Erase the head/tail blank and replace upper case to lower case. \item\end{DoxyCompactList}\item 
+unsigned int {\bf replaceString} (std::string \&str, const std::string from, const std::string to)
+\begin{DoxyCompactList}\small\item\em Replace string. \item\end{DoxyCompactList}\item 
+{\bf vstring} {\bf split} (const std::string \&input, const std::string \&delimiter, bool ignore\_\-empty=false)
+\begin{DoxyCompactList}\small\item\em Split string by delimiter. \item\end{DoxyCompactList}\item 
+bool {\bf toBool} (std::string str, std::string yes, std::string no, bool default\_\-value=true)
+\begin{DoxyCompactList}\small\item\em Convert given string into bool value. \item\end{DoxyCompactList}\item 
+bool {\bf includes} (const {\bf vstring} \&list, std::string value, bool ignore\_\-case=true)
+\begin{DoxyCompactList}\small\item\em Include if a string is included in string list. \item\end{DoxyCompactList}\item 
+bool {\bf includes} (const std::string \&list, std::string value, bool ignore\_\-case=true)
+\begin{DoxyCompactList}\small\item\em Include if a string is included in string list. \item\end{DoxyCompactList}\item 
+bool {\bf isAbsolutePath} (const std::string \&str)
+\begin{DoxyCompactList}\small\item\em Investigate whether the given string is absolute path or not. \item\end{DoxyCompactList}\item 
+bool {\bf isURL} (const std::string \&str)
+\begin{DoxyCompactList}\small\item\em Investigate whether the given string is URL or not. \item\end{DoxyCompactList}\item 
+{\footnotesize template$<$class Printable $>$ }\\std::string {\bf otos} (Printable n)
+\begin{DoxyCompactList}\small\item\em Convert the given object to std::string. \item\end{DoxyCompactList}\item 
+{\footnotesize template$<$typename To $>$ }\\bool {\bf stringTo} (To \&val, const char $\ast$str)
+\begin{DoxyCompactList}\small\item\em Convert the given std::string to object. \item\end{DoxyCompactList}\item 
+{\footnotesize template$<$$>$ }\\bool {\bf stringTo$<$ std::string $>$} (std::string \&val, const char $\ast$str)
+\begin{DoxyCompactList}\small\item\em Convert the given string to std::string. \item\end{DoxyCompactList}\item 
+{\bf vstring} {\bf unique\_\-sv} ({\bf vstring} sv)
+\begin{DoxyCompactList}\small\item\em Eliminate duplication from the given string list. \item\end{DoxyCompactList}\item 
+std::string {\bf flatten} ({\bf vstring} sv)
+\begin{DoxyCompactList}\small\item\em Create CSV file from the given string list. \item\end{DoxyCompactList}\item 
+char $\ast$$\ast$ {\bf toArgv} (const {\bf vstring} \&args)
+\begin{DoxyCompactList}\small\item\em Convert the given string list into the argument list. \item\end{DoxyCompactList}\item 
+std::string {\bf sprintf} (char const $\ast$\_\-\_\-restrict fmt,...)
+\begin{DoxyCompactList}\small\item\em Convert it into a format given with an argumen. \item\end{DoxyCompactList}\item 
+unsigned int {\bf sleep} (unsigned int seconds)
+\begin{DoxyCompactList}\small\item\em Stop a processing at specified second time. \item\end{DoxyCompactList}\item 
+int {\bf sleep} ({\bf TimeValue} interval)
+\begin{DoxyCompactList}\small\item\em Stop a processing at specified second time. \item\end{DoxyCompactList}\item 
+int {\bf usleep} (useconds\_\-t usec)
+\begin{DoxyCompactList}\small\item\em Stop a processing at specified micro second time. \item\end{DoxyCompactList}\item 
+int {\bf gettimeofday} (struct timeval $\ast$tv, struct timezone $\ast$tz)
+\begin{DoxyCompactList}\small\item\em Get the time and timezone. \item\end{DoxyCompactList}\item 
+{\bf TimeValue} {\bf gettimeofday} ()
+\begin{DoxyCompactList}\small\item\em Get the time. \item\end{DoxyCompactList}\item 
+int {\bf settimeofday} (const struct timeval $\ast$tv, const struct timezone $\ast$tz)
+\begin{DoxyCompactList}\small\item\em Set the time and timezone. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Common Object Interface Layer. 
+
+\subsection{Typedef Documentation}
+\index{coil@{coil}!LogStream@{LogStream}}
+\index{LogStream@{LogStream}!coil@{coil}}
+\subsubsection[{LogStream}]{\setlength{\rightskip}{0pt plus 5cm}typedef {\bf log\_\-stream}$<$char$>$ {\bf coil::LogStream}}\label{namespacecoil_a61ed7150f67f7f375e4647b7be48eca7}
+\index{coil@{coil}!LogStreamBuffer@{LogStreamBuffer}}
+\index{LogStreamBuffer@{LogStreamBuffer}!coil@{coil}}
+\subsubsection[{LogStreamBuffer}]{\setlength{\rightskip}{0pt plus 5cm}typedef {\bf log\_\-streambuf}$<$char$>$ {\bf coil::LogStreamBuffer}}\label{namespacecoil_aee9db6758e0fffcb55fc3535842d3e98}
+\index{coil@{coil}!pid\_\-t@{pid\_\-t}}
+\index{pid\_\-t@{pid\_\-t}!coil@{coil}}
+\subsubsection[{pid\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}typedef ::{\bf pid\_\-t} {\bf coil::pid\_\-t}}\label{namespacecoil_a9b4fff7de7d767eb84a2ebef6d35d024}
+
+
+Get process ID of the caller process. 
+
+Return a process ID of the caller process.
+
+\begin{DoxyReturn}{Returns}
+Process ID 
+\end{DoxyReturn}
+\index{coil@{coil}!SignalHandler@{SignalHandler}}
+\index{SignalHandler@{SignalHandler}!coil@{coil}}
+\subsubsection[{SignalHandler}]{\setlength{\rightskip}{0pt plus 5cm}typedef void($\ast$ {\bf coil::SignalHandler})(int)}\label{namespacecoil_a3935a219154da03913345ab079b4e791}
+\index{coil@{coil}!utsname@{utsname}}
+\index{utsname@{utsname}!coil@{coil}}
+\subsubsection[{utsname}]{\setlength{\rightskip}{0pt plus 5cm}typedef ::{\bf utsname} {\bf coil::utsname}}\label{namespacecoil_adc6b0c76f612cf80e2df3f37b5ed6f76}
+
+
+Get System information. 
+
+Return a system information to a structure.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em name}]Name of structure\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0: Successful, -\/1: failed 
+\end{DoxyReturn}
+\index{coil@{coil}!vstring@{vstring}}
+\index{vstring@{vstring}!coil@{coil}}
+\subsubsection[{vstring}]{\setlength{\rightskip}{0pt plus 5cm}typedef std::vector$<$std::string$>$ {\bf coil::vstring}}\label{namespacecoil_ac44b80f207f9471f2cc10a0e4202f9ea}
+
+
+\subsection{Function Documentation}
+\index{coil@{coil}!AsyncInvoker@{AsyncInvoker}}
+\index{AsyncInvoker@{AsyncInvoker}!coil@{coil}}
+\subsubsection[{AsyncInvoker}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Object , typename Func $>$ {\bf Async\_\-ref\_\-t}$<$Object, Func$>$$\ast$ coil::AsyncInvoker (Object $\ast$ {\em obj}, \/  Func $\ast$ {\em func}, \/  bool {\em auto\_\-delete} = {\ttfamily false})\hspace{0.3cm}{\ttfamily  [inline]}}\label{namespacecoil_a6a774d2568d53f800d0504d64cde1f4d}
+
+
+Helper function for async member function summons. 
+
+Helper function for async member function summons.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em obj}]The target object for the asynchronous function. \item[{\em func}]Asynchronous function. \item[{\em auto\_\-delete}]flag for automatic instance destruction.\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\doxyref{Async\_\-ref\_\-t}{p.}{classcoil_1_1Async__ref__t} Instance 
+\end{DoxyReturn}
+\index{coil@{coil}!AsyncInvoker@{AsyncInvoker}}
+\index{AsyncInvoker@{AsyncInvoker}!coil@{coil}}
+\subsubsection[{AsyncInvoker}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Object , typename Func $>$ {\bf Async\_\-t}$<$Object, Func$>$$\ast$ coil::AsyncInvoker (Object $\ast$ {\em obj}, \/  Func {\em func}, \/  bool {\em auto\_\-delete} = {\ttfamily false})\hspace{0.3cm}{\ttfamily  [inline]}}\label{namespacecoil_af871c8ea1919908ab5dd7c84897e7b3e}
+
+
+Helper function for async member function summons. 
+
+Helper function for async member function summons.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em obj}]The target object for the asynchronous function. \item[{\em func}]Asynchronous function. \item[{\em auto\_\-delete}]flag for automatic instance destruction.\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\doxyref{Async\_\-t}{p.}{classcoil_1_1Async__t} Instance 
+\end{DoxyReturn}
+\index{coil@{coil}!basename@{basename}}
+\index{basename@{basename}!coil@{coil}}
+\subsubsection[{basename}]{\setlength{\rightskip}{0pt plus 5cm}std::string coil::basename (const char $\ast$ {\em path})\hspace{0.3cm}{\ttfamily  [inline]}}\label{namespacecoil_aa32553db1abc9b9c9dfd0a201f69ecf0}
+
+
+Get a file name part than a file pass. 
+
+Get a directory part than a file pass.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em path}]File path\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+File name 
+\end{DoxyReturn}
+\index{coil@{coil}!crc16@{crc16}}
+\index{crc16@{crc16}!coil@{coil}}
+\subsubsection[{crc16}]{\setlength{\rightskip}{0pt plus 5cm}unsigned short coil::crc16 (const char $\ast$ {\em str}, \/  size\_\-t {\em len})}\label{namespacecoil_a810e5279eee44c4bfd70261cd51dcd8c}
+\index{coil@{coil}!crc32@{crc32}}
+\index{crc32@{crc32}!coil@{coil}}
+\subsubsection[{crc32}]{\setlength{\rightskip}{0pt plus 5cm}unsigned long coil::crc32 (const char $\ast$ {\em str}, \/  size\_\-t {\em len})}\label{namespacecoil_a6c3973b2c232b1b7608ad97cc3de7323}
+
+
+CRC-\/32 calculation function. 
+
+CRC type: RFC2083 Appendix 15 {\tt http://www.faqs.org/rfcs/rfc2083.html} {\tt http://www.efg2.com/Lab/Mathematics/CRC.htm} CRC polynomial: 0xedb88320L Initial value: 0xFFFFFFFF Output XOR: 0xFFFFFFFF Input bit inversion: None Output bit inversion: None Bit shift: right
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em str}]Data stream \item[{\em len}]Data length\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Result calculation 
+\end{DoxyReturn}
+\index{coil@{coil}!Creator@{Creator}}
+\index{Creator@{Creator}!coil@{coil}}
+\subsubsection[{Creator}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class AbstractClass , class ConcreteClass $>$ AbstractClass$\ast$ coil::Creator ()\hspace{0.3cm}{\ttfamily  [inline]}}\label{namespacecoil_a7f96c97693a425d037804baac00e095a}
+
+
+Creator template. 
+
+\index{coil@{coil}!daemon@{daemon}}
+\index{daemon@{daemon}!coil@{coil}}
+\subsubsection[{daemon}]{\setlength{\rightskip}{0pt plus 5cm}int coil::daemon (int {\em nochdir}, \/  int {\em noclose})}\label{namespacecoil_a4cb16acad915bcfb507f9721d811dd06}
+\index{coil@{coil}!dest\_\-to\_\-endpoint@{dest\_\-to\_\-endpoint}}
+\index{dest\_\-to\_\-endpoint@{dest\_\-to\_\-endpoint}!coil@{coil}}
+\subsubsection[{dest\_\-to\_\-endpoint}]{\setlength{\rightskip}{0pt plus 5cm}bool coil::dest\_\-to\_\-endpoint (std::string {\em dest\_\-addr}, \/  std::string \& {\em endpoint})}\label{namespacecoil_a41b12f5eee452f6e0141c03f66d1451e}
+
+
+Getting network interface name from destination address. 
+
+This operation returns IP address of a endpoint to be used to communicate with the given destination address. IP address and FQDN hostname are available for the destination address dest\_\-addr. If a destination address are reachable and an endpoint IP address is available, this operation returns true, and otherwise false.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em dest\_\-addr}]a destination address or host name \item[{\em endpoint}]a IP address of the endpoint to be used to communicate with the destination address \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+successful: true, failed: false 
+\end{DoxyReturn}
+\index{coil@{coil}!Destructor@{Destructor}}
+\index{Destructor@{Destructor}!coil@{coil}}
+\subsubsection[{Destructor}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class AbstractClass , class ConcreteClass $>$ void coil::Destructor (AbstractClass $\ast$\& {\em obj})\hspace{0.3cm}{\ttfamily  [inline]}}\label{namespacecoil_a3d92b40c32da6da798031e58bb1c2cf0}
+
+
+Destructor template. 
+
+\index{coil@{coil}!dirname@{dirname}}
+\index{dirname@{dirname}!coil@{coil}}
+\subsubsection[{dirname}]{\setlength{\rightskip}{0pt plus 5cm}std::string coil::dirname (char $\ast$ {\em path})\hspace{0.3cm}{\ttfamily  [inline]}}\label{namespacecoil_abdcffe47716c2bef3011516e58ae6632}
+
+
+Get a directory part than a file pass. 
+
+Get a directory part than a file pass.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em path}]File path\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Directory name 
+\end{DoxyReturn}
+\index{coil@{coil}!eraseBlank@{eraseBlank}}
+\index{eraseBlank@{eraseBlank}!coil@{coil}}
+\subsubsection[{eraseBlank}]{\setlength{\rightskip}{0pt plus 5cm}void coil::eraseBlank (std::string \& {\em str})}\label{namespacecoil_aa9311f7aa6bcc858fca2551b1541c9b5}
+
+
+Erase blank characters of string. 
+
+Erase blank characters that exist at the head of the given string. Space ' 'and tab '$\backslash$t' are supported as the blank character.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em str}]The target blank characters of string for the erase \end{DoxyParams}
+\index{coil@{coil}!eraseBothEndsBlank@{eraseBothEndsBlank}}
+\index{eraseBothEndsBlank@{eraseBothEndsBlank}!coil@{coil}}
+\subsubsection[{eraseBothEndsBlank}]{\setlength{\rightskip}{0pt plus 5cm}void coil::eraseBothEndsBlank (std::string \& {\em str})}\label{namespacecoil_a56f957c879e2682aaf14235776ad9911}
+
+
+Erase the head blank and the tail blank characters of string. 
+
+Erase the head blank characters and the blank characters that exist at the tail of the given string. Space ' 'and tab '$\backslash$t' are supported as the blank character.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em str}]The target tail blank characters of string for the erase \end{DoxyParams}
+\index{coil@{coil}!eraseHeadBlank@{eraseHeadBlank}}
+\index{eraseHeadBlank@{eraseHeadBlank}!coil@{coil}}
+\subsubsection[{eraseHeadBlank}]{\setlength{\rightskip}{0pt plus 5cm}void coil::eraseHeadBlank (std::string \& {\em str})}\label{namespacecoil_a75a6f8fef55110bf753e17113956a5aa}
+
+
+Erase the head blank characters of string. 
+
+Erase the blank characters that exist at the head of the given string. Space ' 'and tab '$\backslash$t' are supported as the blank character.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em str}]The target head blank characters of string for the erase \end{DoxyParams}
+\index{coil@{coil}!eraseTailBlank@{eraseTailBlank}}
+\index{eraseTailBlank@{eraseTailBlank}!coil@{coil}}
+\subsubsection[{eraseTailBlank}]{\setlength{\rightskip}{0pt plus 5cm}void coil::eraseTailBlank (std::string \& {\em str})}\label{namespacecoil_aa8756a9aa018c01dc29ac995619e8aaf}
+
+
+Erase the tail blank characters of string. 
+
+Erase the blank characters that exist at the tail of the given string. Space ' 'and tab '$\backslash$t' are supported as the blank character.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em str}]The target tail blank characters of string for the erase \end{DoxyParams}
+\index{coil@{coil}!escape@{escape}}
+\index{escape@{escape}!coil@{coil}}
+\subsubsection[{escape}]{\setlength{\rightskip}{0pt plus 5cm}std::string coil::escape (const std::string {\em str})}\label{namespacecoil_a5468287738f599e96bfeae77538beffa}
+
+
+Escape string. 
+
+The following characters are converted. \par
+ HT -\/$>$ \char`\"{}$\backslash$t\char`\"{} \par
+ LF -\/$>$ \char`\"{}$\backslash$n\char`\"{} \par
+ CR -\/$>$ \char`\"{}$\backslash$r\char`\"{} \par
+ FF -\/$>$ \char`\"{}$\backslash$f\char`\"{} \par
+ Single quote and double quote are not processed.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em str}]The target string for the escape\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Result string of the escape 
+\end{DoxyReturn}
+\index{coil@{coil}!filelist@{filelist}}
+\index{filelist@{filelist}!coil@{coil}}
+\subsubsection[{filelist}]{\setlength{\rightskip}{0pt plus 5cm}{\bf coil::vstring} coil::filelist (const char $\ast$ {\em path}, \/  const char $\ast$ {\em glob\_\-str} = {\ttfamily \char`\"{}\char`\"{}})\hspace{0.3cm}{\ttfamily  [inline]}}\label{namespacecoil_a547033f382c22a803629efffb3e6e123}
+
+
+Get file list. 
+
+Get a list matching a file designated than a directory path.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em path}]Directory path \item[{\em glob\_\-str}]File name\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+File list 
+\end{DoxyReturn}
+\index{coil@{coil}!find\_\-dest\_\-ifname@{find\_\-dest\_\-ifname}}
+\index{find\_\-dest\_\-ifname@{find\_\-dest\_\-ifname}!coil@{coil}}
+\subsubsection[{find\_\-dest\_\-ifname}]{\setlength{\rightskip}{0pt plus 5cm}bool coil::find\_\-dest\_\-ifname (std::string {\em dest\_\-addr}, \/  std::string \& {\em dest\_\-if})}\label{namespacecoil_af849b6f4c4710dabf4765e8623761b18}
+
+
+Getting network interface name from destination address. 
+
+This operation returns network interface name to be used to communicate with the given destination address. IP address and FQDN hostname are available for the destination address dest\_\-addr. Returned dest\_\-if means the network interface name. If a destination address are reachable and network interface name is available, this operation returns true, and otherwise false.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em dest\_\-addr}]a destination address or host name \item[{\em dest\_\-if}]a network interface name to be used to communicate with the destination address \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+successful: true, failed: false 
+\end{DoxyReturn}
+\index{coil@{coil}!flatten@{flatten}}
+\index{flatten@{flatten}!coil@{coil}}
+\subsubsection[{flatten}]{\setlength{\rightskip}{0pt plus 5cm}std::string coil::flatten (vstring {\em sv})}\label{namespacecoil_af9c944ec4bf36843974a5866c4e70fdb}
+
+
+Create CSV file from the given string list. 
+
+Create CSV that arranged each element of the character string list given by the argument. If the string list is empty, the null will be returned.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em sv}]The target string list for creating CSV\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+String of CSV creating result 
+\end{DoxyReturn}
+\index{coil@{coil}!getenv@{getenv}}
+\index{getenv@{getenv}!coil@{coil}}
+\subsubsection[{getenv}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ coil::getenv (const char $\ast$ {\em name})\hspace{0.3cm}{\ttfamily  [inline]}}\label{namespacecoil_ab52b28376cab527895db8bbd21226a17}
+
+
+Get environment variable. 
+
+Return a environment variable.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em name}]Name of environment variable\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Value of environment variable(NULL: nonexistent) 
+\end{DoxyReturn}
+\index{coil@{coil}!getlinePortable@{getlinePortable}}
+\index{getlinePortable@{getlinePortable}!coil@{coil}}
+\subsubsection[{getlinePortable}]{\setlength{\rightskip}{0pt plus 5cm}int coil::getlinePortable (std::istream \& {\em istr}, \/  std::string \& {\em line})}\label{namespacecoil_ac2fb8023ff7e12f922078ac81e3e0176}
+
+
+Read a line from input stream. 
+
+This function reads a line from input stream. UNIX, Windows or mixed line feed code is acceptable.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em istr}]The input stream. \item[{\em line}]The output variable to store string to be read.\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The length of read string except line feed character. 
+\end{DoxyReturn}
+\index{coil@{coil}!getpid@{getpid}}
+\index{getpid@{getpid}!coil@{coil}}
+\subsubsection[{getpid}]{\setlength{\rightskip}{0pt plus 5cm}{\bf pid\_\-t} coil::getpid ()\hspace{0.3cm}{\ttfamily  [inline]}}\label{namespacecoil_ab722a30c68cdaaceeb3372eb963210ff}
+\index{coil@{coil}!getppid@{getppid}}
+\index{getppid@{getppid}!coil@{coil}}
+\subsubsection[{getppid}]{\setlength{\rightskip}{0pt plus 5cm}{\bf pid\_\-t} coil::getppid ()\hspace{0.3cm}{\ttfamily  [inline]}}\label{namespacecoil_a178b8a9f74486e91455765bcf4a862e5}
+
+
+Get process ID of the parent process. 
+
+Return a process ID of the parent process.
+
+\begin{DoxyReturn}{Returns}
+Process ID 
+\end{DoxyReturn}
+\index{coil@{coil}!gettimeofday@{gettimeofday}}
+\index{gettimeofday@{gettimeofday}!coil@{coil}}
+\subsubsection[{gettimeofday}]{\setlength{\rightskip}{0pt plus 5cm}{\bf TimeValue} coil::gettimeofday ()\hspace{0.3cm}{\ttfamily  [inline]}}\label{namespacecoil_a955d158a2dcab31ebbd6dbc73e85bb69}
+
+
+Get the time. 
+
+Get the time
+
+\begin{DoxyReturn}{Returns}
+\doxyref{TimeValue}{p.}{classcoil_1_1TimeValue} object 
+\end{DoxyReturn}
+
+
+References gettimeofday().
+
+\index{coil@{coil}!gettimeofday@{gettimeofday}}
+\index{gettimeofday@{gettimeofday}!coil@{coil}}
+\subsubsection[{gettimeofday}]{\setlength{\rightskip}{0pt plus 5cm}int coil::gettimeofday (struct timeval $\ast$ {\em tv}, \/  struct timezone $\ast$ {\em tz})\hspace{0.3cm}{\ttfamily  [inline]}}\label{namespacecoil_a19f910feee9788512677cf626e980f82}
+
+
+Get the time and timezone. 
+
+Get the time and timezone
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em tv}]Structure of time \item[{\em tz}]Structure of timezone\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0: successful, -\/1: failed 
+\end{DoxyReturn}
+
+
+Referenced by gettimeofday(), and setTimestamp().
+
+\index{coil@{coil}!ifname\_\-to\_\-ipaddr@{ifname\_\-to\_\-ipaddr}}
+\index{ifname\_\-to\_\-ipaddr@{ifname\_\-to\_\-ipaddr}!coil@{coil}}
+\subsubsection[{ifname\_\-to\_\-ipaddr}]{\setlength{\rightskip}{0pt plus 5cm}bool coil::ifname\_\-to\_\-ipaddr (std::string {\em ifname}, \/  std::string \& {\em ipaddr})}\label{namespacecoil_ab4747abfda8c952f8e4e903bd96fe417}
+
+
+Get IP address from a network interface name. 
+
+This operation returns IP address which is assigned with the given network interface. If IP address could be obtained from the network interface name, this operation returns true, otherwise false.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em ifname}]a network interface name \item[{\em ipaddr}]IP address that is assigned to the network interface \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+successful: true, failed: false 
+\end{DoxyReturn}
+\index{coil@{coil}!includes@{includes}}
+\index{includes@{includes}!coil@{coil}}
+\subsubsection[{includes}]{\setlength{\rightskip}{0pt plus 5cm}bool coil::includes (const std::string \& {\em list}, \/  std::string {\em value}, \/  bool {\em ignore\_\-case} = {\ttfamily true})}\label{namespacecoil_afaa7699c27db02758a4d779caf99a04c}
+
+
+Include if a string is included in string list. 
+
+if the second argument is included in the comma separated string list of the first argument, This operation returns \char`\"{}true value\char`\"{}.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em list}]The target comma separated string \item[{\em value}]The searched string \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true: included, false: not included 
+\end{DoxyReturn}
+\index{coil@{coil}!includes@{includes}}
+\index{includes@{includes}!coil@{coil}}
+\subsubsection[{includes}]{\setlength{\rightskip}{0pt plus 5cm}bool coil::includes (const vstring \& {\em list}, \/  std::string {\em value}, \/  bool {\em ignore\_\-case} = {\ttfamily true})}\label{namespacecoil_acc30237f1b384aee8ed0302dd9066910}
+
+
+Include if a string is included in string list. 
+
+if the second argument is included in the comma separated string list of the first argument, This operation returns \char`\"{}true value\char`\"{}.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em list}]The target comma separated string \item[{\em value}]The searched string \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true: included, false: not included 
+\end{DoxyReturn}
+\index{coil@{coil}!isAbsolutePath@{isAbsolutePath}}
+\index{isAbsolutePath@{isAbsolutePath}!coil@{coil}}
+\subsubsection[{isAbsolutePath}]{\setlength{\rightskip}{0pt plus 5cm}bool coil::isAbsolutePath (const std::string \& {\em str})}\label{namespacecoil_a56fc6f04844f58dd5e5f2e2bde8e5888}
+
+
+Investigate whether the given string is absolute path or not. 
+
+Investigate whether the given string is absolute path or not. Investigate it as an absolute path, if the string is as follows:
+\begin{DoxyItemize}
+\item The first character '/' (UNIX)
+\item The first 3 characters are alphabet ＋'/'＋'$\backslash$' (Windows)
+\item The first 2 characters are '$\backslash$$\backslash$' (Windows network path)
+\end{DoxyItemize}
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em str}]The target string for the investigation\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Investigation result of absolute path 
+\end{DoxyReturn}
+\index{coil@{coil}!isEscaped@{isEscaped}}
+\index{isEscaped@{isEscaped}!coil@{coil}}
+\subsubsection[{isEscaped}]{\setlength{\rightskip}{0pt plus 5cm}bool coil::isEscaped (const std::string \& {\em str}, \/  std::string::size\_\-type {\em pos})}\label{namespacecoil_a2145e89f3e55466d8a270b0a29e89f41}
+
+
+Check whether the character is escaped or not. 
+
+Check whether the specified character is escaped or not
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em str}]The string that includes the character to be investigated. \item[{\em pos}]The position of the character to be investigated.\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the specified character is escaped, else False. 
+\end{DoxyReturn}
+\index{coil@{coil}!isURL@{isURL}}
+\index{isURL@{isURL}!coil@{coil}}
+\subsubsection[{isURL}]{\setlength{\rightskip}{0pt plus 5cm}bool coil::isURL (const std::string \& {\em str})}\label{namespacecoil_a23bec236aa41f7293fa2ef08d37476b0}
+
+
+Investigate whether the given string is URL or not. 
+
+Investigate whether the given string is URL or not. When the string '://' is included in the given character string, make it of URL representation.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em str}]The target string for investigation\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+URL investigation result 
+\end{DoxyReturn}
+\index{coil@{coil}!launch\_\-shell@{launch\_\-shell}}
+\index{launch\_\-shell@{launch\_\-shell}!coil@{coil}}
+\subsubsection[{launch\_\-shell}]{\setlength{\rightskip}{0pt plus 5cm}int coil::launch\_\-shell (std::string {\em command})}\label{namespacecoil_a1b81e319a2c66cd59503f0fa5978d67c}
+
+
+Launching a process. 
+
+This function launches a process. The argument is command file name be launched. The command will be searched according to the environment variable PATH of command search path. 0 will be returned if launching process is successful, and -\/1 will be returned if it is failed.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em command}]full path string to a command to be executed. \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0: successful, -\/1: failed 
+\end{DoxyReturn}
+\index{coil@{coil}!normalize@{normalize}}
+\index{normalize@{normalize}!coil@{coil}}
+\subsubsection[{normalize}]{\setlength{\rightskip}{0pt plus 5cm}std::string coil::normalize (std::string \& {\em str})}\label{namespacecoil_a6c3625d0e92edb211223d275c1c8c216}
+
+
+Erase the head/tail blank and replace upper case to lower case. 
+
+Erase the head blank characters and the blank characters that exist at the tail of the given string. Space ' 'and tab '$\backslash$t' are supported as the blank character. And all upper case cahracters are converted into lower case.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em str}]The target string for the erase \end{DoxyParams}
+
+
+Referenced by RTC::ConnectorDataListenerT$<$ DataType $>$::operator()().
+
+\index{coil@{coil}!otos@{otos}}
+\index{otos@{otos}!coil@{coil}}
+\subsubsection[{otos}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Printable $>$ std::string coil::otos (Printable {\em n})\hspace{0.3cm}{\ttfamily  [inline]}}\label{namespacecoil_aa611dae1d82bb273e80ad7890d1d471e}
+
+
+Convert the given object to std::string. 
+
+Convert the object specified by the argument to string.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em n}]The target object for conversion\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+String conversion result 
+\end{DoxyReturn}
+\index{coil@{coil}!replaceString@{replaceString}}
+\index{replaceString@{replaceString}!coil@{coil}}
+\subsubsection[{replaceString}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int coil::replaceString (std::string \& {\em str}, \/  const std::string {\em from}, \/  const std::string {\em to})}\label{namespacecoil_a7d643c3e9ef1ae65dfe835dbc079e7c3}
+
+
+Replace string. 
+
+Replace the given string with the specified characters.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em str}]The target characters of string for replacement processing \item[{\em from}]Characters of replacement source \item[{\em to}]Characters of replacement destination \end{DoxyParams}
+\index{coil@{coil}!settimeofday@{settimeofday}}
+\index{settimeofday@{settimeofday}!coil@{coil}}
+\subsubsection[{settimeofday}]{\setlength{\rightskip}{0pt plus 5cm}int coil::settimeofday (const struct timeval $\ast$ {\em tv}, \/  const struct timezone $\ast$ {\em tz})\hspace{0.3cm}{\ttfamily  [inline]}}\label{namespacecoil_a2d216ddffbfa09135807a6f60211caae}
+
+
+Set the time and timezone. 
+
+Set the time and timezone
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em tv}]Structure of time \item[{\em tz}]Structure of timezone\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0: successful, -\/1: failed 
+\end{DoxyReturn}
+\index{coil@{coil}!sleep@{sleep}}
+\index{sleep@{sleep}!coil@{coil}}
+\subsubsection[{sleep}]{\setlength{\rightskip}{0pt plus 5cm}int coil::sleep (TimeValue {\em interval})\hspace{0.3cm}{\ttfamily  [inline]}}\label{namespacecoil_abd42913a7c9778a74dfb3d3d74086da5}
+
+
+Stop a processing at specified second time. 
+
+Stop a processing at specified second time.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em interval}]\doxyref{TimeValue}{p.}{classcoil_1_1TimeValue} object\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0: successful, $>$0: failed 
+\end{DoxyReturn}
+
+
+References coil::TimeValue::sec(), and coil::TimeValue::usec().
+
+\index{coil@{coil}!sleep@{sleep}}
+\index{sleep@{sleep}!coil@{coil}}
+\subsubsection[{sleep}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int coil::sleep (unsigned int {\em seconds})\hspace{0.3cm}{\ttfamily  [inline]}}\label{namespacecoil_a31572723427db430ed96286f223bd69c}
+
+
+Stop a processing at specified second time. 
+
+Stop a processing at specified second time.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em seconds}]Second time\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0: successful, $>$0: failed 
+\end{DoxyReturn}
+\index{coil@{coil}!split@{split}}
+\index{split@{split}!coil@{coil}}
+\subsubsection[{split}]{\setlength{\rightskip}{0pt plus 5cm}{\bf vstring} coil::split (const std::string \& {\em input}, \/  const std::string \& {\em delimiter}, \/  bool {\em ignore\_\-empty} = {\ttfamily false})}\label{namespacecoil_a7c9782e536d2701e7a444d1ab4d2a096}
+
+
+Split string by delimiter. 
+
+Split the set string by the given delimiter
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em input}]The target characters of string for split \item[{\em delimiter}]Split string (delimiter)\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Split string result list 
+\end{DoxyReturn}
+
+
+Referenced by RTC::ConnectorDataListenerT$<$ DataType $>$::operator()().
+
+\index{coil@{coil}!sprintf@{sprintf}}
+\index{sprintf@{sprintf}!coil@{coil}}
+\subsubsection[{sprintf}]{\setlength{\rightskip}{0pt plus 5cm}std::string coil::sprintf (char const $\ast$\_\-\_\-restrict {\em fmt}, \/   {\em ...})}\label{namespacecoil_a104ce63c9d3aa721ef9a170bb30f2916}
+
+
+Convert it into a format given with an argumen. 
+
+Convert it into a format given with an argument and return it.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em fmt}]Format\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+String of conversion result 
+\end{DoxyReturn}
+\index{coil@{coil}!string2wstring@{string2wstring}}
+\index{string2wstring@{string2wstring}!coil@{coil}}
+\subsubsection[{string2wstring}]{\setlength{\rightskip}{0pt plus 5cm}std::wstring coil::string2wstring (std::string {\em str})}\label{namespacecoil_a79371147b29c42f5e63ac13758ec7419}
+
+
+string to wstring conversion 
+
+This function convert from a string to a wstring.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em str}]The input std::string type string \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Converted std::wstring type string 
+\end{DoxyReturn}
+\index{coil@{coil}!stringTo@{stringTo}}
+\index{stringTo@{stringTo}!coil@{coil}}
+\subsubsection[{stringTo}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename To $>$ bool coil::stringTo (To \& {\em val}, \/  const char $\ast$ {\em str})\hspace{0.3cm}{\ttfamily  [inline]}}\label{namespacecoil_a4e20c33e8a0b6e8ce466729221f0ff38}
+
+
+Convert the given std::string to object. 
+
+Convert string given by the argument to specified object.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em val}]The object of conversion destination \item[{\em str}]String of conversion source\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true: successful, false: failed 
+\end{DoxyReturn}
+\index{coil@{coil}!stringTo$<$ std::string $>$@{stringTo$<$ std::string $>$}}
+\index{stringTo$<$ std::string $>$@{stringTo$<$ std::string $>$}!coil@{coil}}
+\subsubsection[{stringTo$<$ std::string $>$}]{\setlength{\rightskip}{0pt plus 5cm}template$<$$>$ bool coil::stringTo$<$ std::string $>$ (std::string \& {\em val}, \/  const char $\ast$ {\em str})\hspace{0.3cm}{\ttfamily  [inline]}}\label{namespacecoil_aa704a18ebe2c7e32ac6272af5c2a5f43}
+
+
+Convert the given string to std::string. 
+
+Convert string given by the argument to std::string.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em val}]String of conversion destination \item[{\em str}]String of conversion source\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true: successful, false: failed 
+\end{DoxyReturn}
+\index{coil@{coil}!toArgv@{toArgv}}
+\index{toArgv@{toArgv}!coil@{coil}}
+\subsubsection[{toArgv}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$$\ast$ coil::toArgv (const vstring \& {\em args})}\label{namespacecoil_afdbb5de51175e79d4e04f02fe643762b}
+
+
+Convert the given string list into the argument list. 
+
+Convert the string list into the argument list by adding '$\backslash$0' to each element at the end of the string list given by the argument
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em args}]The target string list for conversion\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+String of argument conversion result 
+\end{DoxyReturn}
+\index{coil@{coil}!toBool@{toBool}}
+\index{toBool@{toBool}!coil@{coil}}
+\subsubsection[{toBool}]{\setlength{\rightskip}{0pt plus 5cm}bool coil::toBool (std::string {\em str}, \/  std::string {\em yes}, \/  std::string {\em no}, \/  bool {\em default\_\-value} = {\ttfamily true})}\label{namespacecoil_ac426ffd4de27cca8bc96bffaee83e792}
+
+
+Convert given string into bool value. 
+
+Compare the specified string with the true representation string and the false representation string, and return the result as bool value. If it matches neither the true representation string nor the false representation string as a result of the comparison, the given default value will be return.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em str}]The target string for investigation \item[{\em yes}]The true representation string \item[{\em no}]The false representation string \item[{\em default\_\-value}]The default value (The default value:true) \end{DoxyParams}
+\index{coil@{coil}!toLower@{toLower}}
+\index{toLower@{toLower}!coil@{coil}}
+\subsubsection[{toLower}]{\setlength{\rightskip}{0pt plus 5cm}void coil::toLower (std::string \& {\em str})}\label{namespacecoil_a658f635b8f64879d13b3797182e0992e}
+
+
+Lowercase String Transformation. 
+
+This function transforms a given string to lowercase letters
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em str}]The input string \end{DoxyParams}
+\index{coil@{coil}!toUpper@{toUpper}}
+\index{toUpper@{toUpper}!coil@{coil}}
+\subsubsection[{toUpper}]{\setlength{\rightskip}{0pt plus 5cm}void coil::toUpper (std::string \& {\em str})}\label{namespacecoil_a39b0287d062f66e2c22db9a65df164c8}
+
+
+Uppercase String Transformation. 
+
+This function transforms a given string to uppercase letters
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em str}]The input string \end{DoxyParams}
+\index{coil@{coil}!uname@{uname}}
+\index{uname@{uname}!coil@{coil}}
+\subsubsection[{uname}]{\setlength{\rightskip}{0pt plus 5cm}int coil::uname (utsname $\ast$ {\em name})\hspace{0.3cm}{\ttfamily  [inline]}}\label{namespacecoil_ac70d645ba9aefde9132a75c3b09ff011}
+\index{coil@{coil}!unescape@{unescape}}
+\index{unescape@{unescape}!coil@{coil}}
+\subsubsection[{unescape}]{\setlength{\rightskip}{0pt plus 5cm}std::string coil::unescape (const std::string {\em str})}\label{namespacecoil_a0052de6e322bfc6d53ceab79e1f0c944}
+
+
+Unescape string. 
+
+The following characters are converted. \par
+ \char`\"{}$\backslash$t\char`\"{} -\/$>$ HT \par
+ \char`\"{}$\backslash$n\char`\"{} -\/$>$ LF \par
+ \char`\"{}$\backslash$r\char`\"{} -\/$>$ CR \par
+ \char`\"{}$\backslash$f\char`\"{} -\/$>$ FF \par
+ \char`\"{}$\backslash$\char`\"{}\char`\"{} -\/$>$ \char`\"{} \par
+ \char`\"{}$\backslash$'\char`\"{} -\/$>$ ' \par
+ Note: This is not complete inversion of the escape processing.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em str}]The target string for the unescape\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Result string of the unescape 
+\end{DoxyReturn}
+\index{coil@{coil}!unique\_\-sv@{unique\_\-sv}}
+\index{unique\_\-sv@{unique\_\-sv}!coil@{coil}}
+\subsubsection[{unique\_\-sv}]{\setlength{\rightskip}{0pt plus 5cm}{\bf vstring} coil::unique\_\-sv (vstring {\em sv})}\label{namespacecoil_afc37c252e9fb9de534b286d5a38b2b2d}
+
+
+Eliminate duplication from the given string list. 
+
+Create a list of eliminating duplication from the string list given by the argument.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em sv}]The string list for confirmation source\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Eliminating duplication result list 
+\end{DoxyReturn}
+\index{coil@{coil}!usleep@{usleep}}
+\index{usleep@{usleep}!coil@{coil}}
+\subsubsection[{usleep}]{\setlength{\rightskip}{0pt plus 5cm}int coil::usleep (useconds\_\-t {\em usec})\hspace{0.3cm}{\ttfamily  [inline]}}\label{namespacecoil_ab99d570b031760903000cac8bb976fc2}
+
+
+Stop a processing at specified micro second time. 
+
+Stop a processing at specified micro second time.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em usec}]Micro second time\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0: successful, -\/1: failed 
+\end{DoxyReturn}
+\index{coil@{coil}!wstring2string@{wstring2string}}
+\index{wstring2string@{wstring2string}!coil@{coil}}
+\subsubsection[{wstring2string}]{\setlength{\rightskip}{0pt plus 5cm}std::string coil::wstring2string (std::wstring {\em wstr})}\label{namespacecoil_aa0a7c4523060891f3531b25b207a252f}
+
+
+wstring to string conversion 
+
+This function convert from a wstring to a string.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em str}]The input std::wstring type string \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Converted std::string type string 
+\end{DoxyReturn}

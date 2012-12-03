@@ -1,0 +1,149 @@
+\section{RTC::OutPortCorbaCdrProvider Class Reference}
+\label{classRTC_1_1OutPortCorbaCdrProvider}\index{RTC::OutPortCorbaCdrProvider@{RTC::OutPortCorbaCdrProvider}}
+
+
+\doxyref{OutPortCorbaCdrProvider}{p.}{classRTC_1_1OutPortCorbaCdrProvider} class.  
+
+
+
+
+{\ttfamily \#include $<$OutPortCorbaCdrProvider.h$>$}
+
+Inheritance diagram for RTC::OutPortCorbaCdrProvider:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3cm]{classRTC_1_1OutPortCorbaCdrProvider}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf OutPortCorbaCdrProvider} (void)
+\begin{DoxyCompactList}\small\item\em Constructor. \item\end{DoxyCompactList}\item 
+virtual {\bf $\sim$OutPortCorbaCdrProvider} (void)
+\begin{DoxyCompactList}\small\item\em Destructor. \item\end{DoxyCompactList}\item 
+virtual void {\bf init} ({\bf coil::Properties} \&prop)
+\begin{DoxyCompactList}\small\item\em Initializing configuration. \item\end{DoxyCompactList}\item 
+virtual void {\bf setBuffer} ({\bf CdrBufferBase} $\ast$buffer)
+\begin{DoxyCompactList}\small\item\em Setting outside buffer's pointer. \item\end{DoxyCompactList}\item 
+virtual void {\bf setListener} ({\bf ConnectorInfo} \&info, {\bf ConnectorListeners} $\ast$listeners)
+\begin{DoxyCompactList}\small\item\em Set the listener. \item\end{DoxyCompactList}\item 
+virtual void {\bf setConnector} ({\bf OutPortConnector} $\ast$connector)
+\begin{DoxyCompactList}\small\item\em set Connector \item\end{DoxyCompactList}\item 
+virtual ::OpenRTM::PortStatus {\bf get} (::OpenRTM::CdrData\_\-out data)  throw (CORBA::SystemException)
+\begin{DoxyCompactList}\small\item\em [CORBA interface] Get data from the buffer \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\doxyref{OutPortCorbaCdrProvider}{p.}{classRTC_1_1OutPortCorbaCdrProvider} class. The \doxyref{OutPort}{p.}{classRTC_1_1OutPort} provider class which uses the OpenRTM::OutPortCdr interface in CORBA for data transfer and realizes a pull-\/type dataflow.
+
+\begin{DoxySince}{Since}
+0.4.0 
+\end{DoxySince}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{RTC::OutPortCorbaCdrProvider@{RTC::OutPortCorbaCdrProvider}!OutPortCorbaCdrProvider@{OutPortCorbaCdrProvider}}
+\index{OutPortCorbaCdrProvider@{OutPortCorbaCdrProvider}!RTC::OutPortCorbaCdrProvider@{RTC::OutPortCorbaCdrProvider}}
+\subsubsection[{OutPortCorbaCdrProvider}]{\setlength{\rightskip}{0pt plus 5cm}RTC::OutPortCorbaCdrProvider::OutPortCorbaCdrProvider (void)}\label{classRTC_1_1OutPortCorbaCdrProvider_a6ae410b91af0d248adc5bf6498c4e815}
+
+
+Constructor. 
+
+Constructor \index{RTC::OutPortCorbaCdrProvider@{RTC::OutPortCorbaCdrProvider}!$\sim$OutPortCorbaCdrProvider@{$\sim$OutPortCorbaCdrProvider}}
+\index{$\sim$OutPortCorbaCdrProvider@{$\sim$OutPortCorbaCdrProvider}!RTC::OutPortCorbaCdrProvider@{RTC::OutPortCorbaCdrProvider}}
+\subsubsection[{$\sim$OutPortCorbaCdrProvider}]{\setlength{\rightskip}{0pt plus 5cm}virtual RTC::OutPortCorbaCdrProvider::$\sim$OutPortCorbaCdrProvider (void)\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classRTC_1_1OutPortCorbaCdrProvider_a5e0c31bdf52a13601a3a66b0a40ffe0a}
+
+
+Destructor. 
+
+Destructor 
+
+\subsection{Member Function Documentation}
+\index{RTC::OutPortCorbaCdrProvider@{RTC::OutPortCorbaCdrProvider}!get@{get}}
+\index{get@{get}!RTC::OutPortCorbaCdrProvider@{RTC::OutPortCorbaCdrProvider}}
+\subsubsection[{get}]{\setlength{\rightskip}{0pt plus 5cm}virtual ::OpenRTM::PortStatus RTC::OutPortCorbaCdrProvider::get (::OpenRTM::CdrData\_\-out {\em data})  throw (CORBA::SystemException)}\label{classRTC_1_1OutPortCorbaCdrProvider_a6719eca2d225d82d45b838859f0e3c09}
+
+
+[CORBA interface] Get data from the buffer 
+
+Get data from the internal buffer.
+
+\begin{DoxyReturn}{Returns}
+Data got from the buffer. 
+\end{DoxyReturn}
+\index{RTC::OutPortCorbaCdrProvider@{RTC::OutPortCorbaCdrProvider}!init@{init}}
+\index{init@{init}!RTC::OutPortCorbaCdrProvider@{RTC::OutPortCorbaCdrProvider}}
+\subsubsection[{init}]{\setlength{\rightskip}{0pt plus 5cm}virtual void RTC::OutPortCorbaCdrProvider::init ({\bf coil::Properties} \& {\em prop})\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classRTC_1_1OutPortCorbaCdrProvider_adcd8c23040d9924f17b8da1b146b9b0f}
+
+
+Initializing configuration. 
+
+This operation would be called to configure in initialization. In the concrete class, configuration should be performed getting appropriate information from the given Properties data. This function might be called right after instantiation and connection sequence respectivly. Therefore, this function should be implemented assuming multiple call.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em prop}]Configuration information \end{DoxyParams}
+
+
+Reimplemented from {\bf RTC::OutPortProvider} \doxyref{}{p.}{classRTC_1_1OutPortProvider_a8b0d9b4a0c892a952017c552dc79f307}.
+
+\index{RTC::OutPortCorbaCdrProvider@{RTC::OutPortCorbaCdrProvider}!setBuffer@{setBuffer}}
+\index{setBuffer@{setBuffer}!RTC::OutPortCorbaCdrProvider@{RTC::OutPortCorbaCdrProvider}}
+\subsubsection[{setBuffer}]{\setlength{\rightskip}{0pt plus 5cm}virtual void RTC::OutPortCorbaCdrProvider::setBuffer ({\bf CdrBufferBase} $\ast$ {\em buffer})\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classRTC_1_1OutPortCorbaCdrProvider_ae2bb838e78395398c40b61d22cf6bfc3}
+
+
+Setting outside buffer's pointer. 
+
+A pointer to a buffer from which \doxyref{OutPortProvider}{p.}{classRTC_1_1OutPortProvider} retrieve data. If already buffer is set, previous buffer's pointer will be overwritten by the given pointer to a buffer. Since \doxyref{OutPortProvider}{p.}{classRTC_1_1OutPortProvider} does not assume ownership of the buffer pointer, destructor of the buffer should be done by user.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em buffer}]A pointer to a data buffer to be used by \doxyref{OutPortProvider}{p.}{classRTC_1_1OutPortProvider} \end{DoxyParams}
+
+
+Implements {\bf RTC::OutPortProvider} \doxyref{}{p.}{classRTC_1_1OutPortProvider_af929cbafd60ad99d5f78f1a9e373ddcd}.
+
+\index{RTC::OutPortCorbaCdrProvider@{RTC::OutPortCorbaCdrProvider}!setConnector@{setConnector}}
+\index{setConnector@{setConnector}!RTC::OutPortCorbaCdrProvider@{RTC::OutPortCorbaCdrProvider}}
+\subsubsection[{setConnector}]{\setlength{\rightskip}{0pt plus 5cm}virtual void RTC::OutPortCorbaCdrProvider::setConnector ({\bf OutPortConnector} $\ast$ {\em connector})\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classRTC_1_1OutPortCorbaCdrProvider_a9c123a084fed1934967664c54a9e586e}
+
+
+set Connector 
+
+\doxyref{OutPort}{p.}{classRTC_1_1OutPort} creates \doxyref{OutPortConnector}{p.}{classRTC_1_1OutPortConnector} object when it establishes connection between \doxyref{OutPort}{p.}{classRTC_1_1OutPort} and \doxyref{InPort}{p.}{classRTC_1_1InPort}, and it calls this function with a pointer to the connector object. Since the \doxyref{OutPort}{p.}{classRTC_1_1OutPort} has the ownership of this connector, \doxyref{OutPortProvider}{p.}{classRTC_1_1OutPortProvider} should not delete it.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em connector}]\doxyref{OutPortConnector}{p.}{classRTC_1_1OutPortConnector} \end{DoxyParams}
+
+
+Implements {\bf RTC::OutPortProvider} \doxyref{}{p.}{classRTC_1_1OutPortProvider_aa7c4eb96da64ea33a3136cfa496a6ecc}.
+
+\index{RTC::OutPortCorbaCdrProvider@{RTC::OutPortCorbaCdrProvider}!setListener@{setListener}}
+\index{setListener@{setListener}!RTC::OutPortCorbaCdrProvider@{RTC::OutPortCorbaCdrProvider}}
+\subsubsection[{setListener}]{\setlength{\rightskip}{0pt plus 5cm}virtual void RTC::OutPortCorbaCdrProvider::setListener ({\bf ConnectorInfo} \& {\em info}, \/  {\bf ConnectorListeners} $\ast$ {\em listeners})\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classRTC_1_1OutPortCorbaCdrProvider_ad3f9c75e0390d1a619fa25b71e333281}
+
+
+Set the listener. 
+
+\doxyref{OutPort}{p.}{classRTC_1_1OutPort} provides callback functionality that calls specific listener objects according to the events in the data publishing process. For details, see documentation of \doxyref{ConnectorDataListener}{p.}{classRTC_1_1ConnectorDataListener} class and \doxyref{ConnectorListener}{p.}{classRTC_1_1ConnectorListener} class in \doxyref{ConnectorListener.h}{p.}{ConnectorListener_8h}. In this \doxyref{OutPortCorbaCdrProvider}{p.}{classRTC_1_1OutPortCorbaCdrProvider} provides the following callbacks.
+
+
+\begin{DoxyItemize}
+\item ON\_\-BUFFER\_\-READ
+\item ON\_\-SEND
+\item ON\_\-BUFFER\_\-EMPTY
+\item ON\_\-BUFFER\_\-READ\_\-TIMEOUT
+\item ON\_\-SENDER\_\-EMPTY
+\item ON\_\-SENDER\_\-TIMEOUT
+\item ON\_\-SENDER\_\-ERROR
+\end{DoxyItemize}
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em info}]Connector information \item[{\em listeners}]Listener objects \end{DoxyParams}
+
+
+Implements {\bf RTC::OutPortProvider} \doxyref{}{p.}{classRTC_1_1OutPortProvider_a85ba5a46d8793c16a21e423acbc81a00}.
+

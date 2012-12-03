@@ -1,0 +1,204 @@
+\section{クラス coil::Timer}
+\label{classcoil_1_1Timer}\index{coil::Timer@{coil::Timer}}
+
+
+Timerクラス.  
+
+
+
+
+{\ttfamily \#include $<$Timer.h$>$}
+
+coil::Timerに対する継承グラフ\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2cm]{classcoil_1_1Timer}
+\end{center}
+\end{figure}
+\subsection*{構成}
+\begin{DoxyCompactItemize}
+\item 
+struct {\bfseries Task}
+\end{DoxyCompactItemize}
+\subsection*{Public メソッド}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Timer} ({\bf TimeValue} \&interval)
+\begin{DoxyCompactList}\small\item\em コンストラクタ \item\end{DoxyCompactList}\item 
+virtual {\bf $\sim$Timer} ()
+\item 
+virtual int {\bf open} (void $\ast$args)
+\begin{DoxyCompactList}\small\item\em \doxyref{Timer}{p.}{classcoil_1_1Timer} 用スレッド生成. \item\end{DoxyCompactList}\item 
+virtual int {\bf svc} (void)
+\begin{DoxyCompactList}\small\item\em \doxyref{Timer}{p.}{classcoil_1_1Timer} 用のスレッド実行関数. \item\end{DoxyCompactList}\item 
+void {\bf start} ()
+\begin{DoxyCompactList}\small\item\em \doxyref{Timer}{p.}{classcoil_1_1Timer} タスク開始. \item\end{DoxyCompactList}\item 
+void {\bf stop} ()
+\begin{DoxyCompactList}\small\item\em \doxyref{Timer}{p.}{classcoil_1_1Timer} タスク停止. \item\end{DoxyCompactList}\item 
+void {\bf invoke} ()
+\begin{DoxyCompactList}\small\item\em \doxyref{Timer}{p.}{classcoil_1_1Timer} タスク実行. \item\end{DoxyCompactList}\item 
+{\bf ListenerId} {\bf registerListener} ({\bf ListenerBase} $\ast$listener, {\bf TimeValue} tm)
+\begin{DoxyCompactList}\small\item\em リスナー登録 \item\end{DoxyCompactList}\item 
+{\footnotesize template$<$class ListenerClass $>$ }\\{\bf ListenerId} {\bf registerListenerObj} (ListenerClass $\ast$obj, void(ListenerClass::$\ast$cbf)(), {\bf TimeValue} tm)
+\begin{DoxyCompactList}\small\item\em リスナー登録 \item\end{DoxyCompactList}\item 
+{\bf ListenerId} {\bf registerListenerFunc} (void($\ast$cbf)(), {\bf TimeValue} tm)
+\begin{DoxyCompactList}\small\item\em リスナー登録 \item\end{DoxyCompactList}\item 
+bool {\bf unregisterListener} ({\bf ListenerId} id)
+\begin{DoxyCompactList}\small\item\em リスナー登録解除 \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{説明}
+Timerクラス. 登録されたリスナーのコールバック関数を、設定された周期で定期的に呼び出す。
+
+\begin{DoxySince}{から}
+0.4.0 
+\end{DoxySince}
+
+
+\subsection{コンストラクタとデストラクタ}
+\index{coil::Timer@{coil::Timer}!Timer@{Timer}}
+\index{Timer@{Timer}!coil::Timer@{coil::Timer}}
+\subsubsection[{Timer}]{\setlength{\rightskip}{0pt plus 5cm}coil::Timer::Timer ({\bf TimeValue} \& {\em interval})}\label{classcoil_1_1Timer_a2bfd7ab681cc531bbc83b360381701bc}
+
+
+コンストラクタ 
+
+コンストラクタ
+
+
+\begin{DoxyParams}{引数}
+\item[{\em interval}]タイマ起動周期 \end{DoxyParams}
+\index{coil::Timer@{coil::Timer}!$\sim$Timer@{$\sim$Timer}}
+\index{$\sim$Timer@{$\sim$Timer}!coil::Timer@{coil::Timer}}
+\subsubsection[{$\sim$Timer}]{\setlength{\rightskip}{0pt plus 5cm}virtual coil::Timer::$\sim$Timer ()\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classcoil_1_1Timer_a9f17edc7404a27113a8d1afdc7cda75e}
+デストラクタ 
+
+\subsection{関数}
+\index{coil::Timer@{coil::Timer}!invoke@{invoke}}
+\index{invoke@{invoke}!coil::Timer@{coil::Timer}}
+\subsubsection[{invoke}]{\setlength{\rightskip}{0pt plus 5cm}void coil::Timer::invoke ()}\label{classcoil_1_1Timer_a9eea18837cfc8238a150c7edd2ea126f}
+
+
+\doxyref{Timer}{p.}{classcoil_1_1Timer} タスク実行. 
+
+登録された各リスナの起動待ち時間からタイマ起動周期を減算する。 起動待ち時間がゼロとなったリスナが存在する場合は、 コールバック関数を呼び出す。 \index{coil::Timer@{coil::Timer}!open@{open}}
+\index{open@{open}!coil::Timer@{coil::Timer}}
+\subsubsection[{open}]{\setlength{\rightskip}{0pt plus 5cm}virtual int coil::Timer::open (void $\ast$ {\em args})\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classcoil_1_1Timer_a0ab295e065392c392418c676328a2601}
+
+
+\doxyref{Timer}{p.}{classcoil_1_1Timer} 用スレッド生成. 
+
+\doxyref{Timer}{p.}{classcoil_1_1Timer} 用の内部スレッドを生成し起動する。 これは ACE\_\-Task サービスクラスメソッドのオーバーライド。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em args}]通常は0\end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+生成処理実行結果 
+\end{DoxyReturn}
+
+
+{\bf coil::Task} \doxyref{}{p.}{classcoil_1_1Task_af964d1b21ddf53987e8190cb4e5d9613}を再定義しています。
+
+\index{coil::Timer@{coil::Timer}!registerListener@{registerListener}}
+\index{registerListener@{registerListener}!coil::Timer@{coil::Timer}}
+\subsubsection[{registerListener}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ListenerId} coil::Timer::registerListener ({\bf ListenerBase} $\ast$ {\em listener}, \/  {\bf TimeValue} {\em tm})}\label{classcoil_1_1Timer_a5cd3df0f12623b5318d99492267fca91}
+
+
+リスナー登録 
+
+本 \doxyref{Timer}{p.}{classcoil_1_1Timer} から起動するコールバック関数用のリスナーを起動周期を指定して 登録する。 同一リスナーが既に登録済みの場合は、リスナーの起動周期を指定した値に 更新する。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em listener}]登録対象リスナー \item[{\em tm}]リスナー起動周期\end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+登録リスナーID 
+\end{DoxyReturn}
+
+
+参照元 registerListenerFunc(), と registerListenerObj().
+
+\index{coil::Timer@{coil::Timer}!registerListenerFunc@{registerListenerFunc}}
+\index{registerListenerFunc@{registerListenerFunc}!coil::Timer@{coil::Timer}}
+\subsubsection[{registerListenerFunc}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ListenerId} coil::Timer::registerListenerFunc (void($\ast$)() {\em cbf}, \/  {\bf TimeValue} {\em tm})\hspace{0.3cm}{\ttfamily  [inline]}}\label{classcoil_1_1Timer_a82b82d790b8844abe8ef2b2615fb0e6f}
+
+
+リスナー登録 
+
+コールバック対象メソッドと起動周期を指定してリスナーを登録する。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em cbf}]コールバック対象メソッド \item[{\em tm}]リスナー起動周期\end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+登録リスナーID 
+\end{DoxyReturn}
+
+
+参照先 registerListener().
+
+\index{coil::Timer@{coil::Timer}!registerListenerObj@{registerListenerObj}}
+\index{registerListenerObj@{registerListenerObj}!coil::Timer@{coil::Timer}}
+\subsubsection[{registerListenerObj}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class ListenerClass $>$ {\bf ListenerId} coil::Timer::registerListenerObj (ListenerClass $\ast$ {\em obj}, \/  void(ListenerClass::$\ast$)() {\em cbf}, \/  {\bf TimeValue} {\em tm})\hspace{0.3cm}{\ttfamily  [inline]}}\label{classcoil_1_1Timer_a4614be3527ca79ed65aac408e78b42c0}
+
+
+リスナー登録 
+
+コールバック対象オブジェクト、コールバック対象メソッドおよび起動周期を 指定してリスナーを登録する。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em obj}]コールバック対象オブジェクト \item[{\em cbf}]コールバック対象メソッド \item[{\em tm}]リスナー起動周期\end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+登録リスナーID 
+\end{DoxyReturn}
+
+
+参照先 registerListener().
+
+\index{coil::Timer@{coil::Timer}!start@{start}}
+\index{start@{start}!coil::Timer@{coil::Timer}}
+\subsubsection[{start}]{\setlength{\rightskip}{0pt plus 5cm}void coil::Timer::start ()}\label{classcoil_1_1Timer_a86a306e173930600e377510fa231b8a4}
+
+
+\doxyref{Timer}{p.}{classcoil_1_1Timer} タスク開始. 
+
+\doxyref{Timer}{p.}{classcoil_1_1Timer} 用新規スレッドを生成し、処理を開始する。 \index{coil::Timer@{coil::Timer}!stop@{stop}}
+\index{stop@{stop}!coil::Timer@{coil::Timer}}
+\subsubsection[{stop}]{\setlength{\rightskip}{0pt plus 5cm}void coil::Timer::stop ()}\label{classcoil_1_1Timer_ae07b79a6b6619a1534d9fa9f7a5d32f9}
+
+
+\doxyref{Timer}{p.}{classcoil_1_1Timer} タスク停止. 
+
+\doxyref{Timer}{p.}{classcoil_1_1Timer} タスクを停止する。 \index{coil::Timer@{coil::Timer}!svc@{svc}}
+\index{svc@{svc}!coil::Timer@{coil::Timer}}
+\subsubsection[{svc}]{\setlength{\rightskip}{0pt plus 5cm}virtual int coil::Timer::svc (void)\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classcoil_1_1Timer_af995c8abd6fe7d6aa92fdf21c41e8670}
+
+
+\doxyref{Timer}{p.}{classcoil_1_1Timer} 用のスレッド実行関数. 
+
+\doxyref{Timer}{p.}{classcoil_1_1Timer} 用のスレッド実行関数。 登録されたリスナーのコールバック関数を呼び出す。
+
+\begin{DoxyReturn}{戻り値}
+実行結果 
+\end{DoxyReturn}
+
+
+{\bf coil::Task} \doxyref{}{p.}{classcoil_1_1Task_ae68f22a4afbe8cddde1fe910bc3dd226}を再定義しています。
+
+\index{coil::Timer@{coil::Timer}!unregisterListener@{unregisterListener}}
+\index{unregisterListener@{unregisterListener}!coil::Timer@{coil::Timer}}
+\subsubsection[{unregisterListener}]{\setlength{\rightskip}{0pt plus 5cm}bool coil::Timer::unregisterListener ({\bf ListenerId} {\em id})}\label{classcoil_1_1Timer_a66259cc3579bafbf3fbfa595253d558a}
+
+
+リスナー登録解除 
+
+指定したIDのリスナーの登録を解除する。 指定したIDのリスナーが未登録の場合、false を返す。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em id}]登録解除対象リスナーID\end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+登録解除結果 
+\end{DoxyReturn}

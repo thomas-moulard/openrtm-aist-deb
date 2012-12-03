@@ -1,0 +1,117 @@
+\section{RTC::PortService Interface Reference}
+\label{interfaceRTC_1_1PortService}\index{RTC::PortService@{RTC::PortService}}
+
+
+\doxyref{PortService}{p.}{interfaceRTC_1_1PortService}.  
+
+
+
+
+{\ttfamily import \char`\"{}RTC.idl\char`\"{};}
+
+Inheritance diagram for RTC::PortService:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2cm]{interfaceRTC_1_1PortService}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf PortProfile} {\bf get\_\-port\_\-profile} ()
+\begin{DoxyCompactList}\small\item\em get\_\-port\_\-profile \item\end{DoxyCompactList}\item 
+{\bf ConnectorProfileList} {\bf get\_\-connector\_\-profiles} ()
+\begin{DoxyCompactList}\small\item\em get\_\-connector\_\-profiles \item\end{DoxyCompactList}\item 
+{\bf ConnectorProfile} {\bf get\_\-connector\_\-profile} (in {\bf UniqueIdentifier} connector\_\-id)
+\begin{DoxyCompactList}\small\item\em get\_\-connector\_\-profiles \item\end{DoxyCompactList}\item 
+{\bf ReturnCode\_\-t} {\bf connect} (inout {\bf ConnectorProfile} connector\_\-profile)
+\begin{DoxyCompactList}\small\item\em connect \item\end{DoxyCompactList}\item 
+{\bf ReturnCode\_\-t} {\bf disconnect} (in {\bf UniqueIdentifier} connector\_\-id)
+\begin{DoxyCompactList}\small\item\em disconnect \item\end{DoxyCompactList}\item 
+{\bf ReturnCode\_\-t} {\bf disconnect\_\-all} ()
+\begin{DoxyCompactList}\small\item\em disconnect\_\-all \item\end{DoxyCompactList}\item 
+{\bf ReturnCode\_\-t} {\bf notify\_\-connect} (inout {\bf ConnectorProfile} connector\_\-profile)
+\begin{DoxyCompactList}\small\item\em notify\_\-connect \item\end{DoxyCompactList}\item 
+{\bf ReturnCode\_\-t} {\bf notify\_\-disconnect} (in {\bf UniqueIdentifier} connector\_\-id)
+\begin{DoxyCompactList}\small\item\em notify\_\-disconnect \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\doxyref{PortService}{p.}{interfaceRTC_1_1PortService}. \subsection{Description}\label{namespaceRTC_Description}
+An instance of the \doxyref{PortService}{p.}{interfaceRTC_1_1PortService} interface represents a port (i.e., UML::Composite Structures::Ports::Port) of an \doxyref{RTC}{p.}{namespaceRTC}. It provides operations that allow it to be connected to and disconnected from other ports.\subsection{Semantics}\label{namespaceRTC_Semantics}
+A port service can support unidirectional or bidirectional communication. A port service may allow for a service-\/oriented connection, in which other connected ports, invoke methods on it. It may also allow for a data-\/centric connection, in which data values are streamed in or out. In either case, the connection is described by an instance of \doxyref{ConnectorProfile}{p.}{structRTC_1_1ConnectorProfile}. However, the behavioral contracts of such connections are dependent on the interfaces exposed by the ports and are not described normatively by this specification. 
+
+\subsection{Member Function Documentation}
+\index{RTC::PortService@{RTC::PortService}!connect@{connect}}
+\index{connect@{connect}!RTC::PortService@{RTC::PortService}}
+\subsubsection[{connect}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ReturnCode\_\-t} RTC::PortService::connect (inout {\bf ConnectorProfile} {\em connector\_\-profile})}\label{interfaceRTC_1_1PortService_a7d1a4236a839d99274f2ba0c25858996}
+
+
+connect 
+
+\subsection{Description}\label{namespaceRTC_Description}
+This operation establishes connection between this port and the peer ports according to given ConnectionProfile.\subsection{Semantics}\label{namespaceRTC_Semantics}
+A \doxyref{ConnectorProfile}{p.}{structRTC_1_1ConnectorProfile} has a sequence of port references. This port invokes the notify\_\-connect operation of one of the ports included in the sequence. It follows that the notification of connection is propagated by the notify\_\-connect operation with \doxyref{ConnectorProfile}{p.}{structRTC_1_1ConnectorProfile}. This operation returns \doxyref{ConnectorProfile}{p.}{structRTC_1_1ConnectorProfile} return value and returns ReturnCode\_\-t as return codes. \index{RTC::PortService@{RTC::PortService}!disconnect@{disconnect}}
+\index{disconnect@{disconnect}!RTC::PortService@{RTC::PortService}}
+\subsubsection[{disconnect}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ReturnCode\_\-t} RTC::PortService::disconnect (in {\bf UniqueIdentifier} {\em connector\_\-id})}\label{interfaceRTC_1_1PortService_ad6a9a46323d4c2e49131c3ec5717d9e3}
+
+
+disconnect 
+
+\subsection{Description}\label{namespaceRTC_Description}
+This operation destroys the connection between this port and its peer ports using the ID that was given when the connection was established.\subsection{Semantics}\label{namespaceRTC_Semantics}
+This port invokes the notify\_\-disconnect operation of one of the ports included in the sequence of the \doxyref{ConnectorProfile}{p.}{structRTC_1_1ConnectorProfile} stored when the connection was established. The notification of disconnection is propagated by the notify\_\-disconnect operation. \index{RTC::PortService@{RTC::PortService}!disconnect\_\-all@{disconnect\_\-all}}
+\index{disconnect\_\-all@{disconnect\_\-all}!RTC::PortService@{RTC::PortService}}
+\subsubsection[{disconnect\_\-all}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ReturnCode\_\-t} RTC::PortService::disconnect\_\-all ()}\label{interfaceRTC_1_1PortService_a4d1bf316f490f0cc29cc10ff4183dac5}
+
+
+disconnect\_\-all 
+
+\subsection{Description}\label{namespaceRTC_Description}
+This operation destroys all connection channels owned by the \doxyref{PortService}{p.}{interfaceRTC_1_1PortService}. \index{RTC::PortService@{RTC::PortService}!get\_\-connector\_\-profile@{get\_\-connector\_\-profile}}
+\index{get\_\-connector\_\-profile@{get\_\-connector\_\-profile}!RTC::PortService@{RTC::PortService}}
+\subsubsection[{get\_\-connector\_\-profile}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ConnectorProfile} RTC::PortService::get\_\-connector\_\-profile (in {\bf UniqueIdentifier} {\em connector\_\-id})}\label{interfaceRTC_1_1PortService_a7766a1632deded815a2a312148933057}
+
+
+get\_\-connector\_\-profiles 
+
+\subsection{Description}\label{namespaceRTC_Description}
+This operation returns a list of the ConnectorProfiles of the \doxyref{PortService}{p.}{interfaceRTC_1_1PortService}. \index{RTC::PortService@{RTC::PortService}!get\_\-connector\_\-profiles@{get\_\-connector\_\-profiles}}
+\index{get\_\-connector\_\-profiles@{get\_\-connector\_\-profiles}!RTC::PortService@{RTC::PortService}}
+\subsubsection[{get\_\-connector\_\-profiles}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ConnectorProfileList} RTC::PortService::get\_\-connector\_\-profiles ()}\label{interfaceRTC_1_1PortService_a2f1edec9892d8228960f3930ca18393a}
+
+
+get\_\-connector\_\-profiles 
+
+\subsection{Description}\label{namespaceRTC_Description}
+This operation returns a list of the ConnectorProfiles of the \doxyref{PortService}{p.}{interfaceRTC_1_1PortService}. \index{RTC::PortService@{RTC::PortService}!get\_\-port\_\-profile@{get\_\-port\_\-profile}}
+\index{get\_\-port\_\-profile@{get\_\-port\_\-profile}!RTC::PortService@{RTC::PortService}}
+\subsubsection[{get\_\-port\_\-profile}]{\setlength{\rightskip}{0pt plus 5cm}{\bf PortProfile} RTC::PortService::get\_\-port\_\-profile ()}\label{interfaceRTC_1_1PortService_a90d7e716d7c9ca13bde3767b6d138e53}
+
+
+get\_\-port\_\-profile 
+
+\subsection{Description}\label{namespaceRTC_Description}
+This operation returns the \doxyref{PortProfile}{p.}{structRTC_1_1PortProfile} of the \doxyref{PortService}{p.}{interfaceRTC_1_1PortService}. \index{RTC::PortService@{RTC::PortService}!notify\_\-connect@{notify\_\-connect}}
+\index{notify\_\-connect@{notify\_\-connect}!RTC::PortService@{RTC::PortService}}
+\subsubsection[{notify\_\-connect}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ReturnCode\_\-t} RTC::PortService::notify\_\-connect (inout {\bf ConnectorProfile} {\em connector\_\-profile})}\label{interfaceRTC_1_1PortService_af021417d7d9c8966dd346d7193d5219b}
+
+
+notify\_\-connect 
+
+\subsection{Description}\label{namespaceRTC_Description}
+This operation notifies this \doxyref{PortService}{p.}{interfaceRTC_1_1PortService} of the connection between its corresponding port and the other ports and propagates the given ConnectionProfile.\subsection{Semantics}\label{namespaceRTC_Semantics}
+A \doxyref{ConnectorProfile}{p.}{structRTC_1_1ConnectorProfile} has a sequence of port references. This \doxyref{PortService}{p.}{interfaceRTC_1_1PortService} stores the \doxyref{ConnectorProfile}{p.}{structRTC_1_1ConnectorProfile} and invokes the notify\_\-connect operation of the next \doxyref{PortService}{p.}{interfaceRTC_1_1PortService} in the sequence. As ports are added to the connector, \doxyref{PortService}{p.}{interfaceRTC_1_1PortService} references are added to the \doxyref{ConnectorProfile}{p.}{structRTC_1_1ConnectorProfile} and provided to the caller. In this way, notification of connection is propagated with the \doxyref{ConnectorProfile}{p.}{structRTC_1_1ConnectorProfile}. \index{RTC::PortService@{RTC::PortService}!notify\_\-disconnect@{notify\_\-disconnect}}
+\index{notify\_\-disconnect@{notify\_\-disconnect}!RTC::PortService@{RTC::PortService}}
+\subsubsection[{notify\_\-disconnect}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ReturnCode\_\-t} RTC::PortService::notify\_\-disconnect (in {\bf UniqueIdentifier} {\em connector\_\-id})}\label{interfaceRTC_1_1PortService_a13b9bb81cc0772ba243697a2d8e3e63d}
+
+
+notify\_\-disconnect 
+
+\subsection{Description}\label{namespaceRTC_Description}
+This operation notifies a \doxyref{PortService}{p.}{interfaceRTC_1_1PortService} of a disconnection between its corresponding port and the other ports. The disconnected connector is identified by the given ID, which was given when the connection was established.\subsection{Semantics}\label{namespaceRTC_Semantics}
+This port invokes the notify\_\-disconnect operation of the next \doxyref{PortService}{p.}{interfaceRTC_1_1PortService} in the sequence of the \doxyref{ConnectorProfile}{p.}{structRTC_1_1ConnectorProfile} that was stored when the connection was established. As ports are disconnected, \doxyref{PortService}{p.}{interfaceRTC_1_1PortService} references are removed from the \doxyref{ConnectorProfile}{p.}{structRTC_1_1ConnectorProfile}. In this way, the notification of disconnection is propagated by the notify\_\-disconnect operation. 
+
+The documentation for this interface was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+{\bf RTC.idl}\end{DoxyCompactItemize}

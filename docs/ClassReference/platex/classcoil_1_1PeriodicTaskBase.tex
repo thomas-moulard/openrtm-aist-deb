@@ -1,0 +1,300 @@
+\section{クラス coil::PeriodicTaskBase}
+\label{classcoil_1_1PeriodicTaskBase}\index{coil::PeriodicTaskBase@{coil::PeriodicTaskBase}}
+
+
+\doxyref{PeriodicTaskBase}{p.}{classcoil_1_1PeriodicTaskBase} クラス.  
+
+
+
+
+{\ttfamily \#include $<$PeriodicTaskBase.h$>$}
+
+coil::PeriodicTaskBaseに対する継承グラフ\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3cm]{classcoil_1_1PeriodicTaskBase}
+\end{center}
+\end{figure}
+\subsection*{Public メソッド}
+\begin{DoxyCompactItemize}
+\item 
+virtual {\bf $\sim$PeriodicTaskBase} ()
+\begin{DoxyCompactList}\small\item\em デストラクタ \item\end{DoxyCompactList}\item 
+virtual void {\bf activate} ()=0
+\begin{DoxyCompactList}\small\item\em タスク実行を開始する純粋仮想関数 \item\end{DoxyCompactList}\item 
+virtual void {\bf finalize} ()=0
+\begin{DoxyCompactList}\small\item\em タスク実行を終了する純粋仮想関数 \item\end{DoxyCompactList}\item 
+virtual int {\bf suspend} (void)=0
+\begin{DoxyCompactList}\small\item\em タスク実行を中断する純粋仮想関数 \item\end{DoxyCompactList}\item 
+virtual int {\bf resume} (void)=0
+\begin{DoxyCompactList}\small\item\em 中断されているタスクを再開する純粋仮想関数 \item\end{DoxyCompactList}\item 
+virtual void {\bf signal} ()=0
+\begin{DoxyCompactList}\small\item\em 中断されているタスクを1周期だけ実行する純粋仮想関数 \item\end{DoxyCompactList}\item 
+virtual bool {\bf setTask} ({\bf TaskFuncBase} $\ast$func, bool delete\_\-in\_\-dtor=true)=0
+\begin{DoxyCompactList}\small\item\em タスク実行関数をセットする純粋仮想関数 \item\end{DoxyCompactList}\item 
+{\footnotesize template$<$class O , class F $>$ }\\bool {\bf setTask} (O $\ast$obj, F fun)
+\begin{DoxyCompactList}\small\item\em タスク実行関数をセットする \item\end{DoxyCompactList}\item 
+virtual void {\bf setPeriod} (double period)=0
+\begin{DoxyCompactList}\small\item\em タスク実行周期をセットする純粋仮想関数 \item\end{DoxyCompactList}\item 
+virtual void {\bf setPeriod} ({\bf coil::TimeValue} \&period)=0
+\begin{DoxyCompactList}\small\item\em タスク実行周期をセットする純粋仮想関数 \item\end{DoxyCompactList}\item 
+virtual void {\bf executionMeasure} (bool value)=0
+\begin{DoxyCompactList}\small\item\em タスク関数実行時間計測を有効にする純粋仮想関数 \item\end{DoxyCompactList}\item 
+virtual void {\bf executionMeasureCount} (int n)=0
+\begin{DoxyCompactList}\small\item\em タスク関数実行時間計測周期用純粋仮想関数 \item\end{DoxyCompactList}\item 
+virtual void {\bf periodicMeasure} (bool value)=0
+\begin{DoxyCompactList}\small\item\em タスク周期時間計測を有効にする純粋仮想関数 \item\end{DoxyCompactList}\item 
+virtual void {\bf periodicMeasureCount} (int n)=0
+\begin{DoxyCompactList}\small\item\em タスク周期時間計測周期用純粋仮想関数 \item\end{DoxyCompactList}\item 
+virtual {\bf coil::TimeMeasure::Statistics} {\bf getExecStat} ()=0
+\begin{DoxyCompactList}\small\item\em タスク関数実行時間計測結果を取得する純粋仮想関数 \item\end{DoxyCompactList}\item 
+virtual {\bf coil::TimeMeasure::Statistics} {\bf getPeriodStat} ()=0
+\begin{DoxyCompactList}\small\item\em タスク周期時間計測結果を取得する純粋仮想関数 \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{説明}
+\doxyref{PeriodicTaskBase}{p.}{classcoil_1_1PeriodicTaskBase} クラス. 
+
+\subsection{コンストラクタとデストラクタ}
+\index{coil::PeriodicTaskBase@{coil::PeriodicTaskBase}!$\sim$PeriodicTaskBase@{$\sim$PeriodicTaskBase}}
+\index{$\sim$PeriodicTaskBase@{$\sim$PeriodicTaskBase}!coil::PeriodicTaskBase@{coil::PeriodicTaskBase}}
+\subsubsection[{$\sim$PeriodicTaskBase}]{\setlength{\rightskip}{0pt plus 5cm}virtual coil::PeriodicTaskBase::$\sim$PeriodicTaskBase ()\hspace{0.3cm}{\ttfamily  [inline, virtual]}}\label{classcoil_1_1PeriodicTaskBase_a9ac3e837fc6d85bde48034f1d029b464}
+
+
+デストラクタ 
+
+デストラクタ。 
+
+\subsection{関数}
+\index{coil::PeriodicTaskBase@{coil::PeriodicTaskBase}!activate@{activate}}
+\index{activate@{activate}!coil::PeriodicTaskBase@{coil::PeriodicTaskBase}}
+\subsubsection[{activate}]{\setlength{\rightskip}{0pt plus 5cm}virtual void coil::PeriodicTaskBase::activate ()\hspace{0.3cm}{\ttfamily  [pure virtual]}}\label{classcoil_1_1PeriodicTaskBase_ae3deb2c37063d35ad294bfbb07dafdba}
+
+
+タスク実行を開始する純粋仮想関数 
+
+タスク実行を開始する純粋仮想関数。 
+
+{\bf coil::Task} \doxyref{}{p.}{classcoil_1_1Task_a812bc27f5acb67931a4c03c07c7aeb9e}を再定義しています。
+
+
+
+{\bf coil::PeriodicTask} \doxyref{}{p.}{classcoil_1_1PeriodicTask_a7c697df8165aecf55667950e1777a334}で実装されています。
+
+\index{coil::PeriodicTaskBase@{coil::PeriodicTaskBase}!executionMeasure@{executionMeasure}}
+\index{executionMeasure@{executionMeasure}!coil::PeriodicTaskBase@{coil::PeriodicTaskBase}}
+\subsubsection[{executionMeasure}]{\setlength{\rightskip}{0pt plus 5cm}virtual void coil::PeriodicTaskBase::executionMeasure (bool {\em value})\hspace{0.3cm}{\ttfamily  [pure virtual]}}\label{classcoil_1_1PeriodicTaskBase_a969bd9f66f23c61202ce68f612e2569a}
+
+
+タスク関数実行時間計測を有効にする純粋仮想関数 
+
+タスク関数実行時間計測を有効にする純粋仮想関数。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em value}]フラグ(true: 有効, false: 無効) \end{DoxyParams}
+
+
+{\bf coil::PeriodicTask} \doxyref{}{p.}{classcoil_1_1PeriodicTask_a988c867d54f6fa8ef112935391a7e879}で実装されています。
+
+\index{coil::PeriodicTaskBase@{coil::PeriodicTaskBase}!executionMeasureCount@{executionMeasureCount}}
+\index{executionMeasureCount@{executionMeasureCount}!coil::PeriodicTaskBase@{coil::PeriodicTaskBase}}
+\subsubsection[{executionMeasureCount}]{\setlength{\rightskip}{0pt plus 5cm}virtual void coil::PeriodicTaskBase::executionMeasureCount (int {\em n})\hspace{0.3cm}{\ttfamily  [pure virtual]}}\label{classcoil_1_1PeriodicTaskBase_af1f506c85ca94d5d0781fa3b060ecb77}
+
+
+タスク関数実行時間計測周期用純粋仮想関数 
+
+タスク関数実行時間計測周期用純粋仮想関数。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em n}]計測周期 \end{DoxyParams}
+
+
+{\bf coil::PeriodicTask} \doxyref{}{p.}{classcoil_1_1PeriodicTask_ad1fe71158f351c23a0bfa7e245ce50e3}で実装されています。
+
+\index{coil::PeriodicTaskBase@{coil::PeriodicTaskBase}!finalize@{finalize}}
+\index{finalize@{finalize}!coil::PeriodicTaskBase@{coil::PeriodicTaskBase}}
+\subsubsection[{finalize}]{\setlength{\rightskip}{0pt plus 5cm}virtual void coil::PeriodicTaskBase::finalize ()\hspace{0.3cm}{\ttfamily  [pure virtual]}}\label{classcoil_1_1PeriodicTaskBase_a2e131861d53d1553d2bb12d7c5bbddf4}
+
+
+タスク実行を終了する純粋仮想関数 
+
+タスク実行を終了する純粋仮想関数。 
+
+{\bf coil::Task} \doxyref{}{p.}{classcoil_1_1Task_af7cfcc8cf5c0c322739a92374ce05cca}を再定義しています。
+
+
+
+{\bf coil::PeriodicTask} \doxyref{}{p.}{classcoil_1_1PeriodicTask_a5ec56997c14c95ee3ce095979fa47f61}で実装されています。
+
+\index{coil::PeriodicTaskBase@{coil::PeriodicTaskBase}!getExecStat@{getExecStat}}
+\index{getExecStat@{getExecStat}!coil::PeriodicTaskBase@{coil::PeriodicTaskBase}}
+\subsubsection[{getExecStat}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf coil::TimeMeasure::Statistics} coil::PeriodicTaskBase::getExecStat ()\hspace{0.3cm}{\ttfamily  [pure virtual]}}\label{classcoil_1_1PeriodicTaskBase_adc1f0e6d261d05032bbeac1206fc2ca7}
+
+
+タスク関数実行時間計測結果を取得する純粋仮想関数 
+
+タスク関数実行時間計測結果を取得する純粋仮想関数。 
+
+{\bf coil::PeriodicTask} \doxyref{}{p.}{classcoil_1_1PeriodicTask_a06d63b05971974973608a9c2a8b067af}で実装されています。
+
+\index{coil::PeriodicTaskBase@{coil::PeriodicTaskBase}!getPeriodStat@{getPeriodStat}}
+\index{getPeriodStat@{getPeriodStat}!coil::PeriodicTaskBase@{coil::PeriodicTaskBase}}
+\subsubsection[{getPeriodStat}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf coil::TimeMeasure::Statistics} coil::PeriodicTaskBase::getPeriodStat ()\hspace{0.3cm}{\ttfamily  [pure virtual]}}\label{classcoil_1_1PeriodicTaskBase_a2fad97663ebc6a3514bca02353bb2359}
+
+
+タスク周期時間計測結果を取得する純粋仮想関数 
+
+タスク周期時間計測結果を取得する純粋仮想関数。 
+
+{\bf coil::PeriodicTask} \doxyref{}{p.}{classcoil_1_1PeriodicTask_ae41aa8a685f0b029169b9d64acdcc6af}で実装されています。
+
+\index{coil::PeriodicTaskBase@{coil::PeriodicTaskBase}!periodicMeasure@{periodicMeasure}}
+\index{periodicMeasure@{periodicMeasure}!coil::PeriodicTaskBase@{coil::PeriodicTaskBase}}
+\subsubsection[{periodicMeasure}]{\setlength{\rightskip}{0pt plus 5cm}virtual void coil::PeriodicTaskBase::periodicMeasure (bool {\em value})\hspace{0.3cm}{\ttfamily  [pure virtual]}}\label{classcoil_1_1PeriodicTaskBase_af4f2a4cace2e2cf8b37f733aeed03880}
+
+
+タスク周期時間計測を有効にする純粋仮想関数 
+
+タスク周期時間計測を有効にする純粋仮想関数。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em value}]フラグ(true: 有効, false: 無効) \end{DoxyParams}
+
+
+{\bf coil::PeriodicTask} \doxyref{}{p.}{classcoil_1_1PeriodicTask_aa30b1a0c6044c0cd5cdcf0c1e25cd867}で実装されています。
+
+\index{coil::PeriodicTaskBase@{coil::PeriodicTaskBase}!periodicMeasureCount@{periodicMeasureCount}}
+\index{periodicMeasureCount@{periodicMeasureCount}!coil::PeriodicTaskBase@{coil::PeriodicTaskBase}}
+\subsubsection[{periodicMeasureCount}]{\setlength{\rightskip}{0pt plus 5cm}virtual void coil::PeriodicTaskBase::periodicMeasureCount (int {\em n})\hspace{0.3cm}{\ttfamily  [pure virtual]}}\label{classcoil_1_1PeriodicTaskBase_a0c5b0e9a6414138ed05fe6f138ab47ae}
+
+
+タスク周期時間計測周期用純粋仮想関数 
+
+タスク周期時間計測周期用純粋仮想関数。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em n}]計測周期 \end{DoxyParams}
+
+
+{\bf coil::PeriodicTask} \doxyref{}{p.}{classcoil_1_1PeriodicTask_a3fe9bf5ced1f672f196c5ee85c428173}で実装されています。
+
+\index{coil::PeriodicTaskBase@{coil::PeriodicTaskBase}!resume@{resume}}
+\index{resume@{resume}!coil::PeriodicTaskBase@{coil::PeriodicTaskBase}}
+\subsubsection[{resume}]{\setlength{\rightskip}{0pt plus 5cm}virtual int coil::PeriodicTaskBase::resume (void)\hspace{0.3cm}{\ttfamily  [pure virtual]}}\label{classcoil_1_1PeriodicTaskBase_aed680b3484a799cf932f7c65188018b5}
+
+
+中断されているタスクを再開する純粋仮想関数 
+
+中断されているタスクを再開する純粋仮想関数。 
+
+{\bf coil::Task} \doxyref{}{p.}{classcoil_1_1Task_a093088197230d448855155cddda19b11}を再定義しています。
+
+
+
+{\bf coil::PeriodicTask} \doxyref{}{p.}{classcoil_1_1PeriodicTask_acf42beb37616fc6418c04e199ea57263}で実装されています。
+
+\index{coil::PeriodicTaskBase@{coil::PeriodicTaskBase}!setPeriod@{setPeriod}}
+\index{setPeriod@{setPeriod}!coil::PeriodicTaskBase@{coil::PeriodicTaskBase}}
+\subsubsection[{setPeriod}]{\setlength{\rightskip}{0pt plus 5cm}virtual void coil::PeriodicTaskBase::setPeriod ({\bf coil::TimeValue} \& {\em period})\hspace{0.3cm}{\ttfamily  [pure virtual]}}\label{classcoil_1_1PeriodicTaskBase_aa400f55fc0a3123f19146c242944eba0}
+
+
+タスク実行周期をセットする純粋仮想関数 
+
+タスク実行周期をセットする純粋仮想関数。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em period}]実行周期 \end{DoxyParams}
+
+
+{\bf coil::PeriodicTask} \doxyref{}{p.}{classcoil_1_1PeriodicTask_a737580314afb30b8e576e0b8c562fa37}で実装されています。
+
+\index{coil::PeriodicTaskBase@{coil::PeriodicTaskBase}!setPeriod@{setPeriod}}
+\index{setPeriod@{setPeriod}!coil::PeriodicTaskBase@{coil::PeriodicTaskBase}}
+\subsubsection[{setPeriod}]{\setlength{\rightskip}{0pt plus 5cm}virtual void coil::PeriodicTaskBase::setPeriod (double {\em period})\hspace{0.3cm}{\ttfamily  [pure virtual]}}\label{classcoil_1_1PeriodicTaskBase_a861a2d0e555d800179f8777b65fa053f}
+
+
+タスク実行周期をセットする純粋仮想関数 
+
+タスク実行周期をセットする純粋仮想関数。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em period}]実行周期 \end{DoxyParams}
+
+
+{\bf coil::PeriodicTask} \doxyref{}{p.}{classcoil_1_1PeriodicTask_aea8e9a3c53c9ed3cc18545ab6471e7c6}で実装されています。
+
+\index{coil::PeriodicTaskBase@{coil::PeriodicTaskBase}!setTask@{setTask}}
+\index{setTask@{setTask}!coil::PeriodicTaskBase@{coil::PeriodicTaskBase}}
+\subsubsection[{setTask}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class O , class F $>$ bool coil::PeriodicTaskBase::setTask (O $\ast$ {\em obj}, \/  F {\em fun})\hspace{0.3cm}{\ttfamily  [inline]}}\label{classcoil_1_1PeriodicTaskBase_a5ad1174d04d2c01f1fb36bcc4ae84e38}
+
+
+タスク実行関数をセットする 
+
+タスク実行関数をセットする
+
+
+\begin{DoxyParams}{引数}
+\item[{\em obj}]オブジェクト \item[{\em fun}]関数\end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+true: 成功, false: 失敗 
+\end{DoxyReturn}
+
+
+{\bf coil::PeriodicTask} \doxyref{}{p.}{classcoil_1_1PeriodicTask_a13d65e19e45a3bef97b0ba8c311f2e09}で再定義されています。
+
+
+
+参照先 setTask().
+
+\index{coil::PeriodicTaskBase@{coil::PeriodicTaskBase}!setTask@{setTask}}
+\index{setTask@{setTask}!coil::PeriodicTaskBase@{coil::PeriodicTaskBase}}
+\subsubsection[{setTask}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool coil::PeriodicTaskBase::setTask ({\bf TaskFuncBase} $\ast$ {\em func}, \/  bool {\em delete\_\-in\_\-dtor} = {\ttfamily true})\hspace{0.3cm}{\ttfamily  [pure virtual]}}\label{classcoil_1_1PeriodicTaskBase_a8a474e1d1471f106e67ee063dac3eba2}
+
+
+タスク実行関数をセットする純粋仮想関数 
+
+タスク実行関数をセットする純粋仮想関数。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em func}]関数 \item[{\em delete\_\-in\_\-dtor}]削除フラグ \end{DoxyParams}
+
+
+{\bf coil::PeriodicTask} \doxyref{}{p.}{classcoil_1_1PeriodicTask_a7639cfa0161dccc496fd6e0b7301a9ba}で実装されています。
+
+
+
+参照元 setTask().
+
+\index{coil::PeriodicTaskBase@{coil::PeriodicTaskBase}!signal@{signal}}
+\index{signal@{signal}!coil::PeriodicTaskBase@{coil::PeriodicTaskBase}}
+\subsubsection[{signal}]{\setlength{\rightskip}{0pt plus 5cm}virtual void coil::PeriodicTaskBase::signal ()\hspace{0.3cm}{\ttfamily  [pure virtual]}}\label{classcoil_1_1PeriodicTaskBase_a62746e37dadba8ce7af043d10993f246}
+
+
+中断されているタスクを1周期だけ実行する純粋仮想関数 
+
+中断されているタスクを1周期だけ実行する純粋仮想関数。 
+
+{\bf coil::PeriodicTask} \doxyref{}{p.}{classcoil_1_1PeriodicTask_ab8922b61fe6496415b374494a9c5bee1}で実装されています。
+
+\index{coil::PeriodicTaskBase@{coil::PeriodicTaskBase}!suspend@{suspend}}
+\index{suspend@{suspend}!coil::PeriodicTaskBase@{coil::PeriodicTaskBase}}
+\subsubsection[{suspend}]{\setlength{\rightskip}{0pt plus 5cm}virtual int coil::PeriodicTaskBase::suspend (void)\hspace{0.3cm}{\ttfamily  [pure virtual]}}\label{classcoil_1_1PeriodicTaskBase_a3868ef5fb39dcb023c3fade0a307898d}
+
+
+タスク実行を中断する純粋仮想関数 
+
+タスク実行を中断する純粋仮想関数。 
+
+{\bf coil::Task} \doxyref{}{p.}{classcoil_1_1Task_a9f65419174b1974a9b145042562af9a8}を再定義しています。
+
+
+
+{\bf coil::PeriodicTask} \doxyref{}{p.}{classcoil_1_1PeriodicTask_acc1199a128277eb89e7737df00d33264}で実装されています。
+

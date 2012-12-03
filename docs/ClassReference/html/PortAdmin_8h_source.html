@@ -1,0 +1,147 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<title>OpenRTM: PortAdmin.h ソースファイル</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<!-- 作成： Doxygen 1.6.3 -->
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="index.html"><span>メインページ</span></a></li>
+      <li><a href="namespaces.html"><span>ネームスペース</span></a></li>
+      <li><a href="annotated.html"><span>クラス</span></a></li>
+      <li class="current"><a href="files.html"><span>ファイル</span></a></li>
+    </ul>
+  </div>
+  <div class="tabs">
+    <ul>
+      <li><a href="files.html"><span>ファイル一覧</span></a></li>
+      <li><a href="globals.html"><span>ファイルメンバ</span></a></li>
+    </ul>
+  </div>
+<h1>PortAdmin.h</h1><a href="PortAdmin_8h.html">説明を見る。</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="comment">// -*- C++ -*-</span>
+<a name="l00020"></a>00020 <span class="comment"></span><span class="preprocessor">#ifndef RTC_PORTADMIN_H</span>
+<a name="l00021"></a>00021 <span class="preprocessor"></span><span class="preprocessor">#define RTC_PORTADMIN_H</span>
+<a name="l00022"></a>00022 <span class="preprocessor"></span>
+<a name="l00023"></a>00023 <span class="preprocessor">#include &lt;rtm/idl/RTCSkel.h&gt;</span>
+<a name="l00024"></a>00024 <span class="preprocessor">#include &lt;<a class="code" href="PortBase_8h.html" title="RTC&amp;#39;s Port base class.">rtm/PortBase.h</a>&gt;</span>
+<a name="l00025"></a>00025 <span class="preprocessor">#include &lt;<a class="code" href="ObjectManager_8h.html" title="Object management class.">rtm/ObjectManager.h</a>&gt;</span>
+<a name="l00026"></a>00026 <span class="preprocessor">#include &lt;<a class="code" href="SystemLogger_8h.html" title="RT component logger class.">rtm/SystemLogger.h</a>&gt;</span>
+<a name="l00027"></a>00027 
+<a name="l00028"></a>00028 <span class="keyword">namespace </span>RTC
+<a name="l00029"></a>00029 {
+<a name="l00052"></a><a class="code" href="classRTC_1_1PortAdmin.html">00052</a>   <span class="keyword">class </span><a class="code" href="classRTC_1_1PortAdmin.html" title="PortAdmin クラス.">PortAdmin</a>
+<a name="l00053"></a>00053   {
+<a name="l00054"></a>00054   <span class="keyword">public</span>:
+<a name="l00074"></a>00074     <a class="code" href="classRTC_1_1PortAdmin.html#ab70dd6f7371a224a6a44caf8cfdb81d9" title="コンストラクタ">PortAdmin</a>(CORBA::ORB_ptr orb, PortableServer::POA_ptr poa);
+<a name="l00075"></a>00075     
+<a name="l00089"></a><a class="code" href="classRTC_1_1PortAdmin.html#a435aaaa0ef266144e7f3988a688d7a06">00089</a>     <span class="keyword">virtual</span> <a class="code" href="classRTC_1_1PortAdmin.html#a435aaaa0ef266144e7f3988a688d7a06">~PortAdmin</a>(<span class="keywordtype">void</span>){};
+<a name="l00090"></a>00090     
+<a name="l00111"></a>00111     PortServiceList* <a class="code" href="classRTC_1_1PortAdmin.html#a91ab285dbda2344e11c114392831c59e" title="Port リストの取得.">getPortServiceList</a>() <span class="keyword">const</span>;
+<a name="l00112"></a>00112     
+<a name="l00133"></a>00133     PortProfileList <a class="code" href="classRTC_1_1PortAdmin.html#aa0b32752b29b1bb7ffa827ebb11f9877" title="PorProfile リストの取得.">getPortProfileList</a>() <span class="keyword">const</span>;
+<a name="l00134"></a>00134     
+<a name="l00161"></a>00161     PortService_ptr <a class="code" href="classRTC_1_1PortAdmin.html#a632aca3e9093b1bddfd68213eb8eeb5b" title="Port のオブジェクト参照の取得.">getPortRef</a>(<span class="keyword">const</span> <span class="keywordtype">char</span>* port_name) <span class="keyword">const</span>;
+<a name="l00162"></a>00162     
+<a name="l00189"></a>00189     <a class="code" href="classRTC_1_1PortBase.html" title="Port の基底クラス.">PortBase</a>* <a class="code" href="classRTC_1_1PortAdmin.html#af6ff5fc507a3b489942c3d823243c664" title="Port のサーバントのポインタの取得.">getPort</a>(<span class="keyword">const</span> <span class="keywordtype">char</span>* port_name) <span class="keyword">const</span>;
+<a name="l00190"></a>00190     
+<a name="l00217"></a>00217     <span class="keywordtype">bool</span> <a class="code" href="classRTC_1_1PortAdmin.html#a53a07df246a641d118bc08ab7d12ac50" title="Port を登録する.">addPort</a>(<a class="code" href="classRTC_1_1PortBase.html" title="Port の基底クラス.">PortBase</a>&amp; port);
+<a name="l00218"></a>00218 
+<a name="l00245"></a>00245     <span class="keywordtype">bool</span> <a class="code" href="classRTC_1_1PortAdmin.html#a53a07df246a641d118bc08ab7d12ac50" title="Port を登録する.">addPort</a>(PortService_ptr port);
+<a name="l00246"></a>00246 
+<a name="l00271"></a>00271     <span class="keywordtype">void</span> <a class="code" href="classRTC_1_1PortAdmin.html#a6bccc0ed704420864145a2bf4385e4fb" title="Port を登録する.">registerPort</a>(<a class="code" href="classRTC_1_1PortBase.html" title="Port の基底クラス.">PortBase</a>&amp; port);
+<a name="l00272"></a>00272 
+<a name="l00297"></a>00297     <span class="keywordtype">void</span> <a class="code" href="classRTC_1_1PortAdmin.html#a6bccc0ed704420864145a2bf4385e4fb" title="Port を登録する.">registerPort</a>(PortService_ptr port);
+<a name="l00298"></a>00298     
+<a name="l00324"></a>00324     <span class="keywordtype">bool</span> <a class="code" href="classRTC_1_1PortAdmin.html#a9d4f260015610f8146e4565cfad6a271" title="Port の登録を解除する.">removePort</a>(<a class="code" href="classRTC_1_1PortBase.html" title="Port の基底クラス.">PortBase</a>&amp; port);
+<a name="l00325"></a>00325 
+<a name="l00351"></a>00351     <span class="keywordtype">bool</span> <a class="code" href="classRTC_1_1PortAdmin.html#a9d4f260015610f8146e4565cfad6a271" title="Port の登録を解除する.">removePort</a>(PortService_ptr port);
+<a name="l00352"></a>00352 
+<a name="l00376"></a>00376     <span class="keywordtype">void</span> <a class="code" href="classRTC_1_1PortAdmin.html#ac0050a4e0717a69f0d847f2376d76e5f" title="Port の登録を解除する.">deletePort</a>(<a class="code" href="classRTC_1_1PortBase.html" title="Port の基底クラス.">PortBase</a>&amp; port);
+<a name="l00377"></a>00377 
+<a name="l00401"></a>00401     <span class="keywordtype">void</span> <a class="code" href="classRTC_1_1PortAdmin.html#ac0050a4e0717a69f0d847f2376d76e5f" title="Port の登録を解除する.">deletePort</a>(PortService_ptr port);
+<a name="l00402"></a>00402     
+<a name="l00427"></a>00427     <span class="keywordtype">void</span> <a class="code" href="classRTC_1_1PortAdmin.html#a19dddbe864f258cc0d6274a2eca1d72e" title="名称指定によりPort の登録を解除する">deletePortByName</a>(<span class="keyword">const</span> <span class="keywordtype">char</span>* port_name);
+<a name="l00428"></a>00428 
+<a name="l00447"></a>00447     <span class="keywordtype">void</span> <a class="code" href="classRTC_1_1PortAdmin.html#ab1a5651c4ab2bebf7b33da1fa627eddf" title="全ての Port のインターフェースを activates する">activatePorts</a>();
+<a name="l00448"></a>00448 
+<a name="l00467"></a>00467     <span class="keywordtype">void</span> <a class="code" href="classRTC_1_1PortAdmin.html#ace7994ceed8a8cf261a63ae6bafc97db" title="全ての Port のインターフェースを deactivates する">deactivatePorts</a>();
+<a name="l00468"></a>00468 
+<a name="l00486"></a>00486     <span class="keywordtype">void</span> <a class="code" href="classRTC_1_1PortAdmin.html#a3d5da08a2156a638b33d80feaf39d979" title="全ての Port をdeactivateし登録を削除する">finalizePorts</a>();
+<a name="l00487"></a>00487     
+<a name="l00488"></a>00488   <span class="keyword">private</span>:
+<a name="l00496"></a>00496     CORBA::ORB_var m_pORB;
+<a name="l00497"></a>00497     
+<a name="l00505"></a>00505     PortableServer::POA_var m_pPOA;
+<a name="l00506"></a>00506     
+<a name="l00514"></a>00514     PortServiceList m_portRefs;
+<a name="l00515"></a>00515 
+<a name="l00523"></a>00523     <span class="keyword">mutable</span> <a class="code" href="classRTC_1_1Logger.html" title="Logger クラス.">Logger</a> rtclog;
+<a name="l00524"></a>00524 
+<a name="l00532"></a>00532     <span class="keyword">template</span> &lt;<span class="keyword">class</span> T&gt;
+<a name="l00533"></a>00533     <span class="keyword">class </span>comp_op
+<a name="l00534"></a>00534     {
+<a name="l00535"></a>00535     <span class="keyword">public</span>:
+<a name="l00536"></a>00536       comp_op(<span class="keyword">const</span> <span class="keywordtype">char</span>* _name)
+<a name="l00537"></a>00537         : m_name(_name)
+<a name="l00538"></a>00538       {
+<a name="l00539"></a>00539       }
+<a name="l00540"></a>00540       comp_op(T* obj) 
+<a name="l00541"></a>00541         : m_name((const char*)(obj-&gt;getProfile().name))
+<a name="l00542"></a>00542       {
+<a name="l00543"></a>00543       }
+<a name="l00544"></a>00544       <span class="keywordtype">bool</span> operator()(T* obj)
+<a name="l00545"></a>00545       {
+<a name="l00546"></a>00546         std::string name((<span class="keyword">const</span> <span class="keywordtype">char</span>*)obj-&gt;getProfile().name);
+<a name="l00547"></a>00547         <span class="keywordflow">return</span> m_name == name;
+<a name="l00548"></a>00548       }
+<a name="l00549"></a>00549     <span class="keyword">private</span>:
+<a name="l00550"></a>00550       std::string m_name;
+<a name="l00551"></a>00551     };
+<a name="l00552"></a>00552 
+<a name="l00560"></a>00560     <span class="keyword">class </span>port_prof_collect
+<a name="l00561"></a>00561     {
+<a name="l00562"></a>00562     <span class="keyword">public</span>:
+<a name="l00563"></a>00563       port_prof_collect(PortProfileList&amp; p) : m_p(p) {}
+<a name="l00564"></a>00564       <span class="keywordtype">void</span> operator()(<span class="keyword">const</span> PortBase* port)
+<a name="l00565"></a>00565       {
+<a name="l00566"></a>00566         <a class="code" href="namespaceCORBA__SeqUtil.html#a143f1f7c4c9cddca4062cbc659df452f" title="CORBA sequence の最後に要素を追加する.">CORBA_SeqUtil::push_back</a>(m_p, port-&gt;getPortProfile());
+<a name="l00567"></a>00567       }
+<a name="l00568"></a>00568     <span class="keyword">private</span>:
+<a name="l00569"></a>00569       PortProfileList&amp; m_p;
+<a name="l00570"></a>00570     };
+<a name="l00571"></a>00571 
+<a name="l00579"></a>00579     <span class="keyword">class </span>port_prof_collect2
+<a name="l00580"></a>00580     {
+<a name="l00581"></a>00581     <span class="keyword">public</span>:
+<a name="l00582"></a>00582       port_prof_collect2(PortProfileList&amp; p) : m_p(p) {}
+<a name="l00583"></a>00583       <span class="keywordtype">void</span> operator()(<span class="keyword">const</span> PortService_ptr port)
+<a name="l00584"></a>00584       {
+<a name="l00585"></a>00585         PortProfile* pp(port-&gt;get_port_profile());
+<a name="l00586"></a>00586         <a class="code" href="namespaceCORBA__SeqUtil.html#a143f1f7c4c9cddca4062cbc659df452f" title="CORBA sequence の最後に要素を追加する.">CORBA_SeqUtil::push_back</a>(m_p, *(pp));
+<a name="l00587"></a>00587         <span class="keyword">delete</span> pp;
+<a name="l00588"></a>00588       }
+<a name="l00589"></a>00589     <span class="keyword">private</span>:
+<a name="l00590"></a>00590       PortProfileList&amp; m_p;
+<a name="l00591"></a>00591     };
+<a name="l00592"></a>00592     
+<a name="l00593"></a>00593     <span class="keyword">struct </span>find_port_name;
+<a name="l00594"></a>00594     <span class="keyword">struct </span>find_port;
+<a name="l00595"></a>00595     <span class="keyword">struct </span>del_port;
+<a name="l00596"></a>00596     
+<a name="l00597"></a>00597     <span class="comment">// サーバントを直接格納するオブジェクトマネージャ</span>
+<a name="l00598"></a>00598     <a class="code" href="classObjectManager.html" title="オブジェクト管理用クラス">ObjectManager&lt;const char*, PortBase, comp_op&lt;PortBase&gt;</a> &gt; m_portServants;
+<a name="l00599"></a>00599     
+<a name="l00600"></a>00600   };
+<a name="l00601"></a>00601 };     <span class="comment">// namespace RTC</span>
+<a name="l00602"></a>00602 <span class="preprocessor">#endif // RTC_PORTADMIN_H</span>
+</pre></div></div>
+<hr class="footer"/><address style="text-align: right;"><small>OpenRTMに対してThu May 24 23:25:18 2012に生成されました。&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.6.3 </small></address>
+</body>
+</html>

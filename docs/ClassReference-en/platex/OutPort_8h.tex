@@ -1,0 +1,74 @@
+\section{OutPort.h File Reference}
+\label{OutPort_8h}\index{OutPort.h@{OutPort.h}}
+
+
+OutPort class.  
+
+
+{\ttfamily \#include $<$iostream$>$}\par
+{\ttfamily \#include $<$string$>$}\par
+{\ttfamily \#include $<$coil/TimeValue.h$>$}\par
+{\ttfamily \#include $<$coil/Time.h$>$}\par
+{\ttfamily \#include $<$coil/TimeMeasure.h$>$}\par
+{\ttfamily \#include $<$coil/OS.h$>$}\par
+{\ttfamily \#include $<$rtm/RTC.h$>$}\par
+{\ttfamily \#include $<$rtm/Typename.h$>$}\par
+{\ttfamily \#include $<$rtm/OutPortBase.h$>$}\par
+{\ttfamily \#include $<$rtm/CdrBufferBase.h$>$}\par
+{\ttfamily \#include $<$rtm/PortCallback.h$>$}\par
+{\ttfamily \#include $<$rtm/OutPortConnector.h$>$}\par
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class {\bf RTC::OutPort$<$ DataType $>$}
+\begin{DoxyCompactList}\small\item\em \doxyref{OutPort}{p.}{classRTC_1_1OutPort} template class. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace {\bf RTC}
+
+
+\begin{DoxyCompactList}\small\item\em RT-\/Component. \item\end{DoxyCompactList}
+
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$class DataType $>$ }\\void {\bf setTimestamp} (DataType \&data)
+\begin{DoxyCompactList}\small\item\em Setting timestamp to data. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+OutPort class. \begin{DoxyDate}{Date}
+
+\end{DoxyDate}
+\begin{DoxyParagraph}{Date}
+2007-\/12-\/31 03:08:05 
+\end{DoxyParagraph}
+\begin{DoxyAuthor}{Author}
+Noriaki Ando $<${\tt n-\/ando@aist.go.jp}$>$
+\end{DoxyAuthor}
+Copyright (C) 2006-\/2009 Noriaki Ando Task-\/intelligence Research Group, Intelligent Systems Research Institute, National Institute of Advanced Industrial Science and Technology (AIST), Japan All rights reserved.
+
+\begin{DoxyParagraph}{Id}
+\doxyref{OutPort.h}{p.}{OutPort_8h} 2143 2011-\/05-\/26 14:30:49Z n-\/ando 
+\end{DoxyParagraph}
+
+
+\subsection{Function Documentation}
+\index{OutPort.h@{OutPort.h}!setTimestamp@{setTimestamp}}
+\index{setTimestamp@{setTimestamp}!OutPort.h@{OutPort.h}}
+\subsubsection[{setTimestamp}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class DataType $>$ void setTimestamp (DataType \& {\em data})\hspace{0.3cm}{\ttfamily  [inline]}}\label{OutPort_8h_ab602811e83be4a797912ee3db90cf723}
+
+
+Setting timestamp to data. 
+
+This function sets timestamp to data of data port. This data should have tm.sec, tm.nsec as members of the structure.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em data}]Data to be set timestamp. After executing this function, current timestamp is set to the data. \end{DoxyParams}
+
+
+References coil::gettimeofday(), coil::TimeValue::sec(), and coil::TimeValue::usec().
+

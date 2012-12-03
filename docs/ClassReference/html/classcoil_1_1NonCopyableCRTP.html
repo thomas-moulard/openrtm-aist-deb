@@ -1,0 +1,102 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<title>OpenRTM: クラス テンプレート coil::NonCopyableCRTP&lt; T &gt;</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<!-- 作成： Doxygen 1.6.3 -->
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="index.html"><span>メインページ</span></a></li>
+      <li><a href="namespaces.html"><span>ネームスペース</span></a></li>
+      <li class="current"><a href="annotated.html"><span>クラス</span></a></li>
+      <li><a href="files.html"><span>ファイル</span></a></li>
+    </ul>
+  </div>
+  <div class="tabs">
+    <ul>
+      <li><a href="annotated.html"><span>構成</span></a></li>
+      <li><a href="hierarchy.html"><span>クラス階層</span></a></li>
+      <li><a href="functions.html"><span>構成メンバ</span></a></li>
+    </ul>
+  </div>
+  <div class="navpath"><a class="el" href="namespacecoil.html">coil</a>::<a class="el" href="classcoil_1_1NonCopyableCRTP.html">NonCopyableCRTP</a>
+  </div>
+</div>
+<div class="contents">
+<h1>クラス テンプレート coil::NonCopyableCRTP&lt; T &gt;</h1><!-- doxytag: class="coil::NonCopyableCRTP" -->
+<p>コピー禁止ミックスイン(CRTP版)  
+<a href="#_details">[詳細]</a></p>
+
+<p><code>#include &lt;<a class="el" href="NonCopyable_8h_source.html">NonCopyable.h</a>&gt;</code></p>
+
+<p><a href="classcoil_1_1NonCopyableCRTP-members.html">すべてのメンバ一覧</a></p>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr><td colspan="2"><h2>Protected メソッド</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcoil_1_1NonCopyableCRTP.html#a3234df905b8bb0c1fdbff8d86c5d3933">NonCopyableCRTP</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">コンストラクタ  <a href="#a3234df905b8bb0c1fdbff8d86c5d3933"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcoil_1_1NonCopyableCRTP.html#abf9fdd83a0a9a7d3ea13268ba12c41c6">~NonCopyableCRTP</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">デストラクタ  <a href="#abf9fdd83a0a9a7d3ea13268ba12c41c6"></a><br/></td></tr>
+</table>
+<hr/><a name="_details"></a><h2>説明</h2>
+<h3>template&lt;class T&gt;<br/>
+ class coil::NonCopyableCRTP&lt; T &gt;</h3>
+
+<p>コピー禁止ミックスイン(CRTP版) </p>
+<p>対象クラスのオブジェクトのコピーを禁止する。コピーを禁止したいクラ スでは、NonCopyableをprivate継承することでオブジェクトのコピーを禁 止することができる。このCRTP (Curiously Recursive Template Pattern) 版は、空の基底クラスに対する最適化 (Empty Base Optimization) を行わせたい場合に利用する。</p>
+<p>-例: struct A : <a class="el" href="classcoil_1_1NonCopyableCRTP.html" title="コピー禁止ミックスイン(CRTP版)">NonCopyableCRTP</a> {}; struct B : <a class="el" href="classcoil_1_1NonCopyableCRTP.html" title="コピー禁止ミックスイン(CRTP版)">NonCopyableCRTP</a><b> {}; struct C: A, B {}; </b></p>
+<hr/><h2>コンストラクタとデストラクタ</h2>
+<a class="anchor" id="a3234df905b8bb0c1fdbff8d86c5d3933"></a><!-- doxytag: member="coil::NonCopyableCRTP::NonCopyableCRTP" ref="a3234df905b8bb0c1fdbff8d86c5d3933" args="()" -->
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classcoil_1_1NonCopyableCRTP.html">coil::NonCopyableCRTP</a>&lt; T &gt;::<a class="el" href="classcoil_1_1NonCopyableCRTP.html">NonCopyableCRTP</a> </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [inline, protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>コンストラクタ </p>
+<p>コンストラクタ。 </p>
+
+</div>
+</div>
+<a class="anchor" id="abf9fdd83a0a9a7d3ea13268ba12c41c6"></a><!-- doxytag: member="coil::NonCopyableCRTP::~NonCopyableCRTP" ref="abf9fdd83a0a9a7d3ea13268ba12c41c6" args="()" -->
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classcoil_1_1NonCopyableCRTP.html">coil::NonCopyableCRTP</a>&lt; T &gt;::~<a class="el" href="classcoil_1_1NonCopyableCRTP.html">NonCopyableCRTP</a> </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [inline, protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>デストラクタ </p>
+<p>デストラクタ。 </p>
+
+</div>
+</div>
+</div>
+<hr class="footer"/><address style="text-align: right;"><small>OpenRTMに対してThu May 24 23:25:19 2012に生成されました。&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.6.3 </small></address>
+</body>
+</html>

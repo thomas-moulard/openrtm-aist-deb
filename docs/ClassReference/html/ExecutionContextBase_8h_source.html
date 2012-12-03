@@ -1,0 +1,67 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<title>OpenRTM: ExecutionContextBase.h ソースファイル</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<!-- 作成： Doxygen 1.6.3 -->
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="index.html"><span>メインページ</span></a></li>
+      <li><a href="namespaces.html"><span>ネームスペース</span></a></li>
+      <li><a href="annotated.html"><span>クラス</span></a></li>
+      <li class="current"><a href="files.html"><span>ファイル</span></a></li>
+    </ul>
+  </div>
+  <div class="tabs">
+    <ul>
+      <li><a href="files.html"><span>ファイル一覧</span></a></li>
+      <li><a href="globals.html"><span>ファイルメンバ</span></a></li>
+    </ul>
+  </div>
+<h1>ExecutionContextBase.h</h1><a href="ExecutionContextBase_8h.html">説明を見る。</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="comment">// -*- C++ -*-</span>
+<a name="l00019"></a>00019 <span class="comment"></span><span class="preprocessor">#ifndef RTC_EXECUTIONCONTEXTBASE_H</span>
+<a name="l00020"></a>00020 <span class="preprocessor"></span><span class="preprocessor">#define RTC_EXECUTIONCONTEXTBASE_H</span>
+<a name="l00021"></a>00021 <span class="preprocessor"></span>
+<a name="l00022"></a>00022 <span class="preprocessor">#include &lt;rtm/idl/RTCSkel.h&gt;</span>
+<a name="l00023"></a>00023 <span class="preprocessor">#include &lt;rtm/idl/OpenRTMSkel.h&gt;</span>
+<a name="l00024"></a>00024 <span class="preprocessor">#include &lt;<a class="code" href="rtm_2Factory_8h.html">rtm/Factory.h</a>&gt;</span>
+<a name="l00025"></a>00025 
+<a name="l00026"></a>00026 <span class="preprocessor">#ifdef WIN32</span>
+<a name="l00027"></a>00027 <span class="preprocessor"></span><span class="preprocessor">#pragma warning( disable : 4290 )</span>
+<a name="l00028"></a>00028 <span class="preprocessor"></span><span class="preprocessor">#endif</span>
+<a name="l00029"></a>00029 <span class="preprocessor"></span>
+<a name="l00030"></a>00030 <span class="keyword">namespace </span>RTC
+<a name="l00031"></a>00031 {
+<a name="l00051"></a><a class="code" href="classRTC_1_1ExecutionContextBase.html">00051</a>   <span class="keyword">class </span><a class="code" href="classRTC_1_1ExecutionContextBase.html" title="ExecutionContext用基底クラス.">ExecutionContextBase</a>
+<a name="l00052"></a>00052     : <span class="keyword">public</span> <span class="keyword">virtual</span> POA_OpenRTM::ExtTrigExecutionContextService,
+<a name="l00053"></a>00053       <span class="keyword">public</span> <span class="keyword">virtual</span> PortableServer::<a class="code" href="RTC_8h.html#a4e6e58270671e9109809d6c77137ee89">RefCountServantBase</a>
+<a name="l00054"></a>00054   {
+<a name="l00055"></a>00055   <span class="keyword">public</span>:
+<a name="l00069"></a><a class="code" href="classRTC_1_1ExecutionContextBase.html#a3859cce1770696b6e8486e1199b47541">00069</a>     <span class="keyword">virtual</span> <a class="code" href="classRTC_1_1ExecutionContextBase.html#a3859cce1770696b6e8486e1199b47541">~ExecutionContextBase</a>(<span class="keywordtype">void</span>){};
+<a name="l00070"></a>00070     
+<a name="l00084"></a><a class="code" href="classRTC_1_1ExecutionContextBase.html#a9a72856fe8c46ab49c54042d30c9e343">00084</a>     <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classRTC_1_1ExecutionContextBase.html#a9a72856fe8c46ab49c54042d30c9e343" title="ExecutionContextの処理を進める.">tick</a>()
+<a name="l00085"></a>00085       throw (CORBA::SystemException)
+<a name="l00086"></a>00086     {};
+<a name="l00087"></a>00087 
+<a name="l00101"></a>00101     <span class="keyword">virtual</span> RTC::ReturnCode_t <a class="code" href="classRTC_1_1ExecutionContextBase.html#a63f6427cfe69b5dbc92fa192e26bcf7e">bindComponent</a>(<a class="code" href="classRTC_1_1RTObject__impl.html" title="RTコンポーネントクラス.">RTObject_impl</a>* rtc) = 0;
+<a name="l00102"></a>00102 
+<a name="l00116"></a>00116     <span class="keyword">virtual</span> RTC::ExecutionContextService_ptr <a class="code" href="classRTC_1_1ExecutionContextBase.html#a05d88ee228cc75ab82e2c25c3eafc7db">getObjRef</a>() = 0;
+<a name="l00117"></a>00117   };  <span class="comment">// class ExecutionContextBase</span>
+<a name="l00118"></a>00118 };  <span class="comment">// namespace RTC</span>
+<a name="l00119"></a>00119 
+<a name="l00120"></a>00120 <span class="preprocessor">#ifdef WIN32</span>
+<a name="l00121"></a>00121 <span class="preprocessor"></span><span class="preprocessor">#pragma warning( default : 4290 )</span>
+<a name="l00122"></a>00122 <span class="preprocessor"></span><span class="preprocessor">#endif</span>
+<a name="l00123"></a>00123 <span class="preprocessor"></span>
+<a name="l00124"></a>00124 <span class="preprocessor">#endif // RTC_EXECUTIONCONTEXTBASE_H</span>
+</pre></div></div>
+<hr class="footer"/><address style="text-align: right;"><small>OpenRTMに対してThu May 24 23:25:18 2012に生成されました。&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.6.3 </small></address>
+</body>
+</html>

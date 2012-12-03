@@ -1,0 +1,1202 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<title>OpenRTM: クラス RTC::ConfigAdmin</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<!-- 作成： Doxygen 1.6.3 -->
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="index.html"><span>メインページ</span></a></li>
+      <li><a href="namespaces.html"><span>ネームスペース</span></a></li>
+      <li class="current"><a href="annotated.html"><span>クラス</span></a></li>
+      <li><a href="files.html"><span>ファイル</span></a></li>
+    </ul>
+  </div>
+  <div class="tabs">
+    <ul>
+      <li><a href="annotated.html"><span>構成</span></a></li>
+      <li><a href="hierarchy.html"><span>クラス階層</span></a></li>
+      <li><a href="functions.html"><span>構成メンバ</span></a></li>
+    </ul>
+  </div>
+  <div class="navpath"><a class="el" href="namespaceRTC.html">RTC</a>::<a class="el" href="classRTC_1_1ConfigAdmin.html">ConfigAdmin</a>
+  </div>
+</div>
+<div class="contents">
+<h1>クラス RTC::ConfigAdmin</h1><!-- doxytag: class="RTC::ConfigAdmin" -->
+<p><a class="el" href="classRTC_1_1ConfigAdmin.html" title="ConfigAdmin クラス.">ConfigAdmin</a> クラス.  
+<a href="#_details">[詳細]</a></p>
+
+<p><code>#include &lt;<a class="el" href="ConfigAdmin_8h_source.html">ConfigAdmin.h</a>&gt;</code></p>
+
+<p><a href="classRTC_1_1ConfigAdmin-members.html">すべてのメンバ一覧</a></p>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr><td colspan="2"><h2>構成</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">struct &nbsp;</td><td class="memItemRight" valign="bottom"><b>find_conf</b></td></tr>
+<tr><td colspan="2"><h2>Public メソッド</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1ConfigAdmin.html#a28596cf49170b6e982ffcb9d6046eb2b">ConfigAdmin</a> (<a class="el" href="classcoil_1_1Properties.html">coil::Properties</a> &amp;prop)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">コンストラクタ  <a href="#a28596cf49170b6e982ffcb9d6046eb2b"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1ConfigAdmin.html#a95583c13525f3dde969248f1ae68624d">~ConfigAdmin</a> (void)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">仮想デストラクタ  <a href="#a95583c13525f3dde969248f1ae68624d"></a><br/></td></tr>
+<tr><td class="memTemplParams" colspan="2">template&lt;typename VarType &gt; </td></tr>
+<tr><td class="memTemplItemLeft" align="right" valign="top">bool&nbsp;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classRTC_1_1ConfigAdmin.html#a2c1674931ce1cff6815df69f2a7a3a7c">bindParameter</a> (const char *param_name, VarType &amp;var, const char *def_val, bool(*trans)(VarType &amp;, const char *)=coil::stringTo)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">コンフィギュレーションパラメータの設定  <a href="#a2c1674931ce1cff6815df69f2a7a3a7c"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1ConfigAdmin.html#a858c419de43392804dd934dd62c1874a">update</a> (void)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">コンフィギュレーションパラメータの更新 (アクティブコンフィギュレーションセット)  <a href="#a858c419de43392804dd934dd62c1874a"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1ConfigAdmin.html#a6a183d22dfa7c58ba5d21982aac34645">update</a> (const char *config_set)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">コンフィギュレーションパラメータの更新(ID指定)  <a href="#a6a183d22dfa7c58ba5d21982aac34645"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1ConfigAdmin.html#a4b1ce69c995d6a89d743cbfd38088de4">update</a> (const char *config_set, const char *config_param)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">コンフィギュレーションパラメータの更新(名称指定)  <a href="#a4b1ce69c995d6a89d743cbfd38088de4"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1ConfigAdmin.html#ab831318a81892b36a1b9ffeff5d94f52">isExist</a> (const char *name)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">コンフィギュレーションパラメータの存在確認  <a href="#ab831318a81892b36a1b9ffeff5d94f52"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1ConfigAdmin.html#a455bea81a5322f75b578d0f727eda59b">isChanged</a> (void)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">コンフィギュレーションパラメータの変更確認  <a href="#a455bea81a5322f75b578d0f727eda59b"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">const char *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1ConfigAdmin.html#a54b5645d445e5b0670ed959f8a7d0f91">getActiveId</a> (void)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">アクティブ・コンフィギュレーションセットIDの取得  <a href="#a54b5645d445e5b0670ed959f8a7d0f91"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1ConfigAdmin.html#ae9f137786d647ff991566def5b5a755c">haveConfig</a> (const char *config_id)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">コンフィギュレーションセットの存在確認  <a href="#ae9f137786d647ff991566def5b5a755c"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1ConfigAdmin.html#aa040caf9bf2b2970d90e779694144cb6">isActive</a> (void)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">コンフィギュレーションセットのアクティブ化確認  <a href="#aa040caf9bf2b2970d90e779694144cb6"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">const std::vector<br class="typebreak"/>
+&lt; <a class="el" href="classcoil_1_1Properties.html">coil::Properties</a> * &gt; &amp;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1ConfigAdmin.html#a9367d39f878ec8d817e8aabacd27deb6">getConfigurationSets</a> (void)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">全コンフィギュレーションセットの取得  <a href="#a9367d39f878ec8d817e8aabacd27deb6"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classcoil_1_1Properties.html">coil::Properties</a> &amp;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1ConfigAdmin.html#a51b2ad46ba5184fc1361dbd86ed2309a">getConfigurationSet</a> (const char *config_id)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">指定したIDのコンフィギュレーションセットの取得  <a href="#a51b2ad46ba5184fc1361dbd86ed2309a"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1ConfigAdmin.html#a31d4e545b48aa3ea2fc03109b301586d">setConfigurationSetValues</a> (const <a class="el" href="classcoil_1_1Properties.html">coil::Properties</a> &amp;configuration_set)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">指定したプロパティのコンフィギュレーションセットへの追加  <a href="#a31d4e545b48aa3ea2fc03109b301586d"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classcoil_1_1Properties.html">coil::Properties</a> &amp;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1ConfigAdmin.html#a40c1de78caa9c8ff2ca02ee972f26bb9">getActiveConfigurationSet</a> (void)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">アクティブ・コンフィギュレーションセットを取得  <a href="#a40c1de78caa9c8ff2ca02ee972f26bb9"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1ConfigAdmin.html#a35e38434ba8b409ae1207d81f4904a4d">addConfigurationSet</a> (const <a class="el" href="classcoil_1_1Properties.html">coil::Properties</a> &amp;configuration_set)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">コンフィギュレーションセットに設定値を追加  <a href="#a35e38434ba8b409ae1207d81f4904a4d"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1ConfigAdmin.html#aef99fcfb1f6ca7b09b85c10082236f71">removeConfigurationSet</a> (const char *config_id)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">コンフィギュレーションセットの削除  <a href="#aef99fcfb1f6ca7b09b85c10082236f71"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1ConfigAdmin.html#a5215efd13ca14ed67cbbbd533556c0a3">activateConfigurationSet</a> (const char *config_id)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">コンフィギュレーションセットのアクティブ化  <a href="#a5215efd13ca14ed67cbbbd533556c0a3"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1ConfigAdmin.html#a8b79519d97b3ed7f3b5494e0293ce89a">setOnUpdate</a> (<a class="el" href="classRTC_1_1ConfigurationSetNameListener.html">OnUpdateCallback</a> *cb)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1ConfigAdmin.html#a7107f4e36c971416d66a38aa6c411845">setOnUpdateParam</a> (<a class="el" href="classRTC_1_1ConfigurationParamListener.html">OnUpdateParamCallback</a> *cb)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1ConfigAdmin.html#a82d98e0d07b947481df6eb521f72e433">setOnSetConfigurationSet</a> (<a class="el" href="classRTC_1_1ConfigurationSetListener.html">OnSetConfigurationSetCallback</a> *cb)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1ConfigAdmin.html#a59eef8941b5459ba22e350698e3f6ea4">setOnAddConfigurationSet</a> (<a class="el" href="classRTC_1_1ConfigurationSetListener.html">OnAddConfigurationAddCallback</a> *cb)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1ConfigAdmin.html#aadb495472bf829913d38becdd22b4556">setOnRemoveConfigurationSet</a> (<a class="el" href="classRTC_1_1ConfigurationSetNameListener.html">OnRemoveConfigurationSetCallback</a> *cb)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1ConfigAdmin.html#a4753202ebd65da301020a15f926a999d">setOnActivateSet</a> (<a class="el" href="classRTC_1_1ConfigurationSetNameListener.html">OnActivateSetCallback</a> *cb)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1ConfigAdmin.html#a8cb21913dd1346a4f0780f9bd242489e">addConfigurationParamListener</a> (<a class="el" href="namespaceRTC.html#aa8fda6ab22174c0ec7cf1971ab775885">ConfigurationParamListenerType</a> type, <a class="el" href="classRTC_1_1ConfigurationParamListener.html">ConfigurationParamListener</a> *listener, bool autoclean=true)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight"><a class="el" href="classRTC_1_1ConfigurationParamListener.html" title="ConfigurationParamListener クラス.">ConfigurationParamListener</a> を追加する.  <a href="#a8cb21913dd1346a4f0780f9bd242489e"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1ConfigAdmin.html#a79763dcf92cdf59a2bb4e4e6c3f63c7b">removeConfigurationParamListener</a> (<a class="el" href="namespaceRTC.html#aa8fda6ab22174c0ec7cf1971ab775885">ConfigurationParamListenerType</a> type, <a class="el" href="classRTC_1_1ConfigurationParamListener.html">ConfigurationParamListener</a> *listener)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight"><a class="el" href="classRTC_1_1ConfigurationParamListener.html" title="ConfigurationParamListener クラス.">ConfigurationParamListener</a> を削除する.  <a href="#a79763dcf92cdf59a2bb4e4e6c3f63c7b"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1ConfigAdmin.html#ab230e41c008e759111274ba4a6002e1b">addConfigurationSetListener</a> (<a class="el" href="namespaceRTC.html#a017f708593789bc2e6e30ea09de43247">ConfigurationSetListenerType</a> type, <a class="el" href="classRTC_1_1ConfigurationSetListener.html">ConfigurationSetListener</a> *listener, bool autoclean=true)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight"><a class="el" href="classRTC_1_1ConfigurationSetListener.html" title="ConfigurationSetListener クラス.">ConfigurationSetListener</a> を追加する.  <a href="#ab230e41c008e759111274ba4a6002e1b"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1ConfigAdmin.html#a6430e9e76bbfcb01b76149ed4c6a8fe6">removeConfigurationSetListener</a> (<a class="el" href="namespaceRTC.html#a017f708593789bc2e6e30ea09de43247">ConfigurationSetListenerType</a> type, <a class="el" href="classRTC_1_1ConfigurationSetListener.html">ConfigurationSetListener</a> *listener)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight"><a class="el" href="classRTC_1_1ConfigurationSetListener.html" title="ConfigurationSetListener クラス.">ConfigurationSetListener</a> を削除する.  <a href="#a6430e9e76bbfcb01b76149ed4c6a8fe6"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1ConfigAdmin.html#acb37502f739689a2a9679c4124cf7e13">addConfigurationSetNameListener</a> (<a class="el" href="namespaceRTC.html#a93709e2f94e525230cc561c7374690c4">ConfigurationSetNameListenerType</a> type, <a class="el" href="classRTC_1_1ConfigurationSetNameListener.html">ConfigurationSetNameListener</a> *listener, bool autoclean=true)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight"><a class="el" href="classRTC_1_1ConfigurationSetNameListener.html" title="ConfigurationSetNameListener クラス.">ConfigurationSetNameListener</a> を追加する.  <a href="#acb37502f739689a2a9679c4124cf7e13"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1ConfigAdmin.html#a8359cb98b8c8c46ed10cac65d11633d7">removeConfigurationSetNameListener</a> (<a class="el" href="namespaceRTC.html#a93709e2f94e525230cc561c7374690c4">ConfigurationSetNameListenerType</a> type, <a class="el" href="classRTC_1_1ConfigurationSetNameListener.html">ConfigurationSetNameListener</a> *listener)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight"><a class="el" href="classRTC_1_1ConfigurationSetNameListener.html" title="ConfigurationSetNameListener クラス.">ConfigurationSetNameListener</a> を削除する.  <a href="#a8359cb98b8c8c46ed10cac65d11633d7"></a><br/></td></tr>
+<tr><td colspan="2"><h2>Protected メソッド</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1ConfigAdmin.html#acfc856750b241a8443b2a0a21c011584">onUpdate</a> (const char *config_set)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">コンフィギュレーションパラメータの更新(ID指定)時にコールされる  <a href="#acfc856750b241a8443b2a0a21c011584"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1ConfigAdmin.html#a232e973f13bd1baa5cc1f24e5edbdc5a">onUpdateParam</a> (const char *config_set, const char *config_param)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">コンフィギュレーションパラメータの更新(名称指定)時にコールされる  <a href="#a232e973f13bd1baa5cc1f24e5edbdc5a"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1ConfigAdmin.html#a954735fe16a1b13c00e1b662f6c1084f">onSetConfigurationSet</a> (const <a class="el" href="classcoil_1_1Properties.html">coil::Properties</a> &amp;config_set)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">コンフィギュレーションセットへの追加時にコールされる  <a href="#a954735fe16a1b13c00e1b662f6c1084f"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1ConfigAdmin.html#aabb91b474ddf417b91b6c61c65ff06f0">onAddConfigurationSet</a> (const <a class="el" href="classcoil_1_1Properties.html">coil::Properties</a> &amp;config_set)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">設定値が追加されたときにコールされる。  <a href="#aabb91b474ddf417b91b6c61c65ff06f0"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1ConfigAdmin.html#aab440a6cf5e8562a54834aa7697007c1">onRemoveConfigurationSet</a> (const char *config_id)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">セットが削除されてるときにコールされる。  <a href="#aab440a6cf5e8562a54834aa7697007c1"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1ConfigAdmin.html#ace61d4e3f1c644c1ffb8151807fdd76d">onActivateSet</a> (const char *config_id)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">セットがアクティブ化されたときにコールされる。  <a href="#ace61d4e3f1c644c1ffb8151807fdd76d"></a><br/></td></tr>
+</table>
+<hr/><a name="_details"></a><h2>説明</h2>
+<p><a class="el" href="classRTC_1_1ConfigAdmin.html" title="ConfigAdmin クラス.">ConfigAdmin</a> クラス. </p>
+<p>各種コンフィギュレーション情報を管理するクラス。 用語を以下のように定義する。</p>
+<ul>
+<li>コンフィギュレーション: コンポーネントの設定情報。</li>
+</ul>
+<ul>
+<li>(コンフィギュレーション)パラメータ： key-value からなる設定情報。 <a class="el" href="classcoil_1_1Properties.html" title="プロパティセットを表現するクラス">coil::Properties</a> 変数として扱われ、key、value 共に文字列として保 持される。key をコンフィギュレーションパラメータ名、value をコン フィギュレーションパラメータ値と呼ぶ。</li>
+</ul>
+<ul>
+<li>コンフィギュレーションセット： コンフィギュレーションパラメータ のリストで、名前 (ID) によって区別される。IDをコンフィギュレーショ ンセットIDと呼ぶ。</li>
+</ul>
+<ul>
+<li>(コンフィギュレーション)パラメータ変数：コンフィギュレーションパ ラメータをRTCのアクティビティ内で実際に利用する際に参照される変 数。パラメータごとに固有の型を持つ。</li>
+</ul>
+<ul>
+<li>アクティブ(コンフィギュレーション)セット：現在有効なコンフィギュ レーションセットのことであり、唯一つ存在する。原則として、アクティ ブコンフィギュレーションセットのパラメータがコンフィギュレーショ ンパラメータ変数に反映される。</li>
+</ul>
+<p>このクラスでは、コンフィギュレーションのための以下の2つの情報を保 持している。</p>
+<ol type="1">
+<li>コンフィギュレーションセットのリスト</li>
+<li>パラメータ変数のリスト</li>
+</ol>
+<p>基本的には、(1) のコンフィギュレーションセットのリストのうち一つを、 (2) のパラメータ変数へ反映させる、のが本クラスの目的である。通常、 パラメータ変数の変更操作は、コンフィギュレーションセットの変更とパ ラメータ変数への反映の2段階で行われる。</p>
+<p>コンフィギュレーションセットのリストの操作には、以下の関数を用いる。</p>
+<ul>
+<li><a class="el" href="classRTC_1_1ConfigAdmin.html#a9367d39f878ec8d817e8aabacd27deb6" title="全コンフィギュレーションセットの取得">getConfigurationSets()</a></li>
+<li><a class="el" href="classRTC_1_1ConfigAdmin.html#a51b2ad46ba5184fc1361dbd86ed2309a" title="指定したIDのコンフィギュレーションセットの取得">getConfigurationSet()</a></li>
+<li><a class="el" href="classRTC_1_1ConfigAdmin.html#a31d4e545b48aa3ea2fc03109b301586d" title="指定したプロパティのコンフィギュレーションセットへの追�...">setConfigurationSetValues()</a></li>
+<li><a class="el" href="classRTC_1_1ConfigAdmin.html#a40c1de78caa9c8ff2ca02ee972f26bb9" title="アクティブ・コンフィギュレーションセットを取得">getActiveConfigurationSet()</a></li>
+<li><a class="el" href="classRTC_1_1ConfigAdmin.html#a35e38434ba8b409ae1207d81f4904a4d" title="コンフィギュレーションセットに設定値を追加">addConfigurationSet()</a></li>
+<li><a class="el" href="classRTC_1_1ConfigAdmin.html#aef99fcfb1f6ca7b09b85c10082236f71" title="コンフィギュレーションセットの削除">removeConfigurationSet()</a></li>
+<li><a class="el" href="classRTC_1_1ConfigAdmin.html#a5215efd13ca14ed67cbbbd533556c0a3" title="コンフィギュレーションセットのアクティブ化">activateConfigurationSet()</a></li>
+</ul>
+<p>これらの関数により、コンフィギュレーションセットの変更、追加、削除、 取得、アクティブ化を行う。これらの操作により変更されたコンフィギュ レーションセットを、RTCのアクティビティから使用するパラメータ変数 に反映させるには、以下の <a class="el" href="classRTC_1_1ConfigAdmin.html#a858c419de43392804dd934dd62c1874a" title="コンフィギュレーションパラメータの更新 (アクティブコンフィギュレー�...">update()</a> 関数を用いる。</p>
+<ul>
+<li><a class="el" href="classRTC_1_1ConfigAdmin.html#a858c419de43392804dd934dd62c1874a" title="コンフィギュレーションパラメータの更新 (アクティブコンフィギュレー�...">update(void)</a></li>
+<li><a class="el" href="classRTC_1_1ConfigAdmin.html#a6a183d22dfa7c58ba5d21982aac34645" title="コンフィギュレーションパラメータの更新(ID指定)">update(const char* config_set)</a></li>
+<li><a class="el" href="classRTC_1_1ConfigAdmin.html#a4b1ce69c995d6a89d743cbfd38088de4" title="コンフィギュレーションパラメータの更新(名称指定)">update(const char* config_set, const char* config_param)</a></li>
+</ul>
+<p>コンフィギュレーション操作をフックするためにコールバックファンクタ を与えることができる。フックできる操作は以下の通り。</p>
+<ul>
+<li>ON_UPDATE : <a class="el" href="classRTC_1_1ConfigAdmin.html#a858c419de43392804dd934dd62c1874a" title="コンフィギュレーションパラメータの更新 (アクティブコンフィギュレー�...">update()</a> コール時</li>
+<li>ON_UPDATE_PARAM : update(param) コール時</li>
+<li>ON_SET_CONFIGURATIONSET : setConfigurationSet() コール時</li>
+<li>ON_ADD_CONFIGURATIONSET : <a class="el" href="classRTC_1_1ConfigAdmin.html#a35e38434ba8b409ae1207d81f4904a4d" title="コンフィギュレーションセットに設定値を追加">addConfigurationSet()</a> コール時</li>
+<li>ON_REMOVE_CONFIGURATIONSET : <a class="el" href="classRTC_1_1ConfigAdmin.html#aef99fcfb1f6ca7b09b85c10082236f71" title="コンフィギュレーションセットの削除">removeConfigurationSet()</a> コール時</li>
+<li>ON_ACTIVATE_CONFIGURATIONSET: <a class="el" href="classRTC_1_1ConfigAdmin.html#a5215efd13ca14ed67cbbbd533556c0a3" title="コンフィギュレーションセットのアクティブ化">activateConfigurationSet()</a> コール時</li>
+</ul>
+<dl class="since"><dt><b>から:</b></dt><dd>0.4.0 </dd></dl>
+<hr/><h2>コンストラクタとデストラクタ</h2>
+<a class="anchor" id="a28596cf49170b6e982ffcb9d6046eb2b"></a><!-- doxytag: member="RTC::ConfigAdmin::ConfigAdmin" ref="a28596cf49170b6e982ffcb9d6046eb2b" args="(coil::Properties &amp;prop)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">RTC::ConfigAdmin::ConfigAdmin </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classcoil_1_1Properties.html">coil::Properties</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>prop</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>コンストラクタ </p>
+<p>コンストラクタ</p>
+<dl><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>prop</em>&nbsp;</td><td>設定対象プロパティ名 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a95583c13525f3dde969248f1ae68624d"></a><!-- doxytag: member="RTC::ConfigAdmin::~ConfigAdmin" ref="a95583c13525f3dde969248f1ae68624d" args="(void)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">RTC::ConfigAdmin::~ConfigAdmin </td>
+          <td>(</td>
+          <td class="paramtype">void&nbsp;</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>仮想デストラクタ </p>
+<p>仮想デストラクタ。 </p>
+
+</div>
+</div>
+<hr/><h2>関数</h2>
+<a class="anchor" id="a5215efd13ca14ed67cbbbd533556c0a3"></a><!-- doxytag: member="RTC::ConfigAdmin::activateConfigurationSet" ref="a5215efd13ca14ed67cbbbd533556c0a3" args="(const char *config_id)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool RTC::ConfigAdmin::activateConfigurationSet </td>
+          <td>(</td>
+          <td class="paramtype">const char *&nbsp;</td>
+          <td class="paramname"> <em>config_id</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>コンフィギュレーションセットのアクティブ化 </p>
+<p>指定したIDのコンフィギュレーションセットをアクティブ化する。 指定したIDのコンフィギュレーションセットが存在しない場合は、 falseを返す。</p>
+<dl><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>config_id</em>&nbsp;</td><td>削除対象コンフィギュレーションセットのID</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>戻り値:</b></dt><dd>アクティブ処理結果(成功:true、失敗:false) </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a8cb21913dd1346a4f0780f9bd242489e"></a><!-- doxytag: member="RTC::ConfigAdmin::addConfigurationParamListener" ref="a8cb21913dd1346a4f0780f9bd242489e" args="(ConfigurationParamListenerType type, ConfigurationParamListener *listener, bool autoclean=true)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void RTC::ConfigAdmin::addConfigurationParamListener </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespaceRTC.html#aa8fda6ab22174c0ec7cf1971ab775885">ConfigurationParamListenerType</a>&nbsp;</td>
+          <td class="paramname"> <em>type</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classRTC_1_1ConfigurationParamListener.html">ConfigurationParamListener</a> *&nbsp;</td>
+          <td class="paramname"> <em>listener</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&nbsp;</td>
+          <td class="paramname"> <em>autoclean</em> = <code>true</code></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p><a class="el" href="classRTC_1_1ConfigurationParamListener.html" title="ConfigurationParamListener クラス.">ConfigurationParamListener</a> を追加する. </p>
+<p><a class="el" href="classRTC_1_1ConfigAdmin.html#a4b1ce69c995d6a89d743cbfd38088de4" title="コンフィギュレーションパラメータの更新(名称指定)">update(const char* config_set, const char* config_param)</a> が呼ばれた際に コールされるリスナ <a class="el" href="classRTC_1_1ConfigurationParamListener.html" title="ConfigurationParamListener クラス.">ConfigurationParamListener</a> を追加する。 type には現在のところ ON_UPDATE_CONFIG_PARAM のみが入る。</p>
+<dl><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>type</em>&nbsp;</td><td>ConfigurationParamListenerType型の値。 ON_UPDATE_CONFIG_PARAM がある。</td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>listener</em>&nbsp;</td><td><a class="el" href="classRTC_1_1ConfigurationParamListener.html" title="ConfigurationParamListener クラス.">ConfigurationParamListener</a> 型のリスナオブジェクト。 </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>autoclean</em>&nbsp;</td><td>リスナオブジェクトを自動で削除するかどうかのフラグ </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a35e38434ba8b409ae1207d81f4904a4d"></a><!-- doxytag: member="RTC::ConfigAdmin::addConfigurationSet" ref="a35e38434ba8b409ae1207d81f4904a4d" args="(const coil::Properties &amp;configuration_set)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool RTC::ConfigAdmin::addConfigurationSet </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classcoil_1_1Properties.html">coil::Properties</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>configuration_set</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>コンフィギュレーションセットに設定値を追加 </p>
+<p>コンフィギュレーションセットに設定値を追加する。</p>
+<dl><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>configuration_set</em>&nbsp;</td><td>追加するプロパティ</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>戻り値:</b></dt><dd>追加処理結果(追加成功:true、追加失敗:false) </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ab230e41c008e759111274ba4a6002e1b"></a><!-- doxytag: member="RTC::ConfigAdmin::addConfigurationSetListener" ref="ab230e41c008e759111274ba4a6002e1b" args="(ConfigurationSetListenerType type, ConfigurationSetListener *listener, bool autoclean=true)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void RTC::ConfigAdmin::addConfigurationSetListener </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespaceRTC.html#a017f708593789bc2e6e30ea09de43247">ConfigurationSetListenerType</a>&nbsp;</td>
+          <td class="paramname"> <em>type</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classRTC_1_1ConfigurationSetListener.html">ConfigurationSetListener</a> *&nbsp;</td>
+          <td class="paramname"> <em>listener</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&nbsp;</td>
+          <td class="paramname"> <em>autoclean</em> = <code>true</code></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p><a class="el" href="classRTC_1_1ConfigurationSetListener.html" title="ConfigurationSetListener クラス.">ConfigurationSetListener</a> を追加する. </p>
+<p>ConfigurationSet が更新されたときなどに呼ばれるリスナ <a class="el" href="classRTC_1_1ConfigurationSetListener.html" title="ConfigurationSetListener クラス.">ConfigurationSetListener</a> を追加する。設定可能なイベントは以下の 2種類がある。</p>
+<ul>
+<li>ON_SET_CONFIG_SET: <a class="el" href="classRTC_1_1ConfigAdmin.html#a31d4e545b48aa3ea2fc03109b301586d" title="指定したプロパティのコンフィギュレーションセットへの追�...">setConfigurationSetValues()</a> で ConfigurationSet に値が設定された場合。</li>
+<li>ON_ADD_CONFIG_SET: <a class="el" href="classRTC_1_1ConfigAdmin.html#a35e38434ba8b409ae1207d81f4904a4d" title="コンフィギュレーションセットに設定値を追加">addConfigurationSet()</a> で新しい ConfigurationSet が追加された場合。</li>
+</ul>
+<dl><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>type</em>&nbsp;</td><td>ConfigurationSetListenerType型の値。 </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>listener</em>&nbsp;</td><td><a class="el" href="classRTC_1_1ConfigurationSetListener.html" title="ConfigurationSetListener クラス.">ConfigurationSetListener</a> 型のリスナオブジェクト。 </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>autoclean</em>&nbsp;</td><td>リスナオブジェクトを自動で削除するかどうかのフラグ </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="acb37502f739689a2a9679c4124cf7e13"></a><!-- doxytag: member="RTC::ConfigAdmin::addConfigurationSetNameListener" ref="acb37502f739689a2a9679c4124cf7e13" args="(ConfigurationSetNameListenerType type, ConfigurationSetNameListener *listener, bool autoclean=true)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void RTC::ConfigAdmin::addConfigurationSetNameListener </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespaceRTC.html#a93709e2f94e525230cc561c7374690c4">ConfigurationSetNameListenerType</a>&nbsp;</td>
+          <td class="paramname"> <em>type</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classRTC_1_1ConfigurationSetNameListener.html">ConfigurationSetNameListener</a> *&nbsp;</td>
+          <td class="paramname"> <em>listener</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&nbsp;</td>
+          <td class="paramname"> <em>autoclean</em> = <code>true</code></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p><a class="el" href="classRTC_1_1ConfigurationSetNameListener.html" title="ConfigurationSetNameListener クラス.">ConfigurationSetNameListener</a> を追加する. </p>
+<p>ConfigurationSetName が更新されたときなどに呼ばれるリスナ <a class="el" href="classRTC_1_1ConfigurationSetNameListener.html" title="ConfigurationSetNameListener クラス.">ConfigurationSetNameListener</a> を追加する。設定可能なイベントは以下の 3種類がある。</p>
+<ul>
+<li>ON_UPDATE_CONFIG_SET: ある ConfigurationSet がアップデートされた</li>
+<li>ON_REMOVE_CONFIG_SET: ある ConfigurationSet が削除された</li>
+<li>ON_ACTIVATE_CONFIG_SET: ある ConfigurationSet がアクティブ化された</li>
+</ul>
+<dl><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>type</em>&nbsp;</td><td>ConfigurationSetNameListenerType型の値。 </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>listener</em>&nbsp;</td><td><a class="el" href="classRTC_1_1ConfigurationSetNameListener.html" title="ConfigurationSetNameListener クラス.">ConfigurationSetNameListener</a> 型のリスナオブジェクト。 </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>autoclean</em>&nbsp;</td><td>リスナオブジェクトを自動で削除するかどうかのフラグ </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a2c1674931ce1cff6815df69f2a7a3a7c"></a><!-- doxytag: member="RTC::ConfigAdmin::bindParameter" ref="a2c1674931ce1cff6815df69f2a7a3a7c" args="(const char *param_name, VarType &amp;var, const char *def_val, bool(*trans)(VarType &amp;, const char *)=coil::stringTo)" -->
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename VarType &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">bool RTC::ConfigAdmin::bindParameter </td>
+          <td>(</td>
+          <td class="paramtype">const char *&nbsp;</td>
+          <td class="paramname"> <em>param_name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">VarType &amp;&nbsp;</td>
+          <td class="paramname"> <em>var</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&nbsp;</td>
+          <td class="paramname"> <em>def_val</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool(*)(VarType &amp;, const char *)&nbsp;</td>
+          <td class="paramname"> <em>trans</em> = <code>coil::stringTo</code></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>コンフィギュレーションパラメータの設定 </p>
+<p>コンフィギュレーションパラメータと変数をバインドする 指定した名称のコンフィギュレーションパラメータが既に存在する場合は falseを返す。 &lt;VarType&gt;としてコンフィギュレーションパラメータのデータ型を指定する。</p>
+<dl><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>param_name</em>&nbsp;</td><td>コンフィギュレーションパラメータ名 </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>var</em>&nbsp;</td><td>コンフィギュレーションパラメータ格納用変数 </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>def_val</em>&nbsp;</td><td>コンフィギュレーションパラメータデフォルト値 </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>trans</em>&nbsp;</td><td>コンフィギュレーションパラメータ文字列変換用関数</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>戻り値:</b></dt><dd>設定結果(設定成功:true，設定失敗:false) </dd></dl>
+
+<p>参照元 <a class="el" href="RTObject_8h_source.html#l02251">RTC::RTObject_impl::bindParameter()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a40c1de78caa9c8ff2ca02ee972f26bb9"></a><!-- doxytag: member="RTC::ConfigAdmin::getActiveConfigurationSet" ref="a40c1de78caa9c8ff2ca02ee972f26bb9" args="(void)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="classcoil_1_1Properties.html">coil::Properties</a>&amp; RTC::ConfigAdmin::getActiveConfigurationSet </td>
+          <td>(</td>
+          <td class="paramtype">void&nbsp;</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>アクティブ・コンフィギュレーションセットを取得 </p>
+<p>現在アクティブとなっているコンフィギュレーションセットを取得する。 アクティブとなっているコンフィギュレーションセットが存在しない場合は、 空のコンフィギュレーションセット を返す。</p>
+<dl class="return"><dt><b>戻り値:</b></dt><dd>アクティブ・コンフィギュレーションセット </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a54b5645d445e5b0670ed959f8a7d0f91"></a><!-- doxytag: member="RTC::ConfigAdmin::getActiveId" ref="a54b5645d445e5b0670ed959f8a7d0f91" args="(void)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const char* RTC::ConfigAdmin::getActiveId </td>
+          <td>(</td>
+          <td class="paramtype">void&nbsp;</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>アクティブ・コンフィギュレーションセットIDの取得 </p>
+<p>現在アクティブなコンフィギュレーションセットのIDを取得する。</p>
+<dl class="return"><dt><b>戻り値:</b></dt><dd>アクティブ・コンフィギュレーションセットID </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a51b2ad46ba5184fc1361dbd86ed2309a"></a><!-- doxytag: member="RTC::ConfigAdmin::getConfigurationSet" ref="a51b2ad46ba5184fc1361dbd86ed2309a" args="(const char *config_id)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="classcoil_1_1Properties.html">coil::Properties</a>&amp; RTC::ConfigAdmin::getConfigurationSet </td>
+          <td>(</td>
+          <td class="paramtype">const char *&nbsp;</td>
+          <td class="paramname"> <em>config_id</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>指定したIDのコンフィギュレーションセットの取得 </p>
+<p>IDで指定したコンフィギュレーションセットを取得する。 指定したコンフィギュレーションセットが存在しない場合は、 空のコンフィギュレーションセットを返す。</p>
+<dl><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>config_id</em>&nbsp;</td><td>取得対象コンフィギュレーションセットのID</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>戻り値:</b></dt><dd>コンフィギュレーションセット </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a9367d39f878ec8d817e8aabacd27deb6"></a><!-- doxytag: member="RTC::ConfigAdmin::getConfigurationSets" ref="a9367d39f878ec8d817e8aabacd27deb6" args="(void)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const std::vector&lt;<a class="el" href="classcoil_1_1Properties.html">coil::Properties</a>*&gt;&amp; RTC::ConfigAdmin::getConfigurationSets </td>
+          <td>(</td>
+          <td class="paramtype">void&nbsp;</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>全コンフィギュレーションセットの取得 </p>
+<p>設定されている全コンフィギュレーションセットを取得する。</p>
+<dl class="return"><dt><b>戻り値:</b></dt><dd>全コンフィギュレーションセット </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ae9f137786d647ff991566def5b5a755c"></a><!-- doxytag: member="RTC::ConfigAdmin::haveConfig" ref="ae9f137786d647ff991566def5b5a755c" args="(const char *config_id)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool RTC::ConfigAdmin::haveConfig </td>
+          <td>(</td>
+          <td class="paramtype">const char *&nbsp;</td>
+          <td class="paramname"> <em>config_id</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>コンフィギュレーションセットの存在確認 </p>
+<p>指定したコンフィギュレーションセットが存在するか確認する。</p>
+<dl><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>config_id</em>&nbsp;</td><td>確認対象コンフィギュレーションセットID</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>戻り値:</b></dt><dd>存在確認結果(指定したConfigSetあり:true、なし:false) </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="aa040caf9bf2b2970d90e779694144cb6"></a><!-- doxytag: member="RTC::ConfigAdmin::isActive" ref="aa040caf9bf2b2970d90e779694144cb6" args="(void)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool RTC::ConfigAdmin::isActive </td>
+          <td>(</td>
+          <td class="paramtype">void&nbsp;</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>コンフィギュレーションセットのアクティブ化確認 </p>
+<p>コンフィギュレーションセットがアクティブ化されているか確認する。</p>
+<dl class="return"><dt><b>戻り値:</b></dt><dd>状態確認結果(アクティブ状態:true、非アクティブ状態:false) </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a455bea81a5322f75b578d0f727eda59b"></a><!-- doxytag: member="RTC::ConfigAdmin::isChanged" ref="a455bea81a5322f75b578d0f727eda59b" args="(void)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool RTC::ConfigAdmin::isChanged </td>
+          <td>(</td>
+          <td class="paramtype">void&nbsp;</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>コンフィギュレーションパラメータの変更確認 </p>
+<p>コンフィギュレーションパラメータが変更されたか確認する。</p>
+<dl class="return"><dt><b>戻り値:</b></dt><dd>変更確認結果(変更あり:true、変更なし:false) </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ab831318a81892b36a1b9ffeff5d94f52"></a><!-- doxytag: member="RTC::ConfigAdmin::isExist" ref="ab831318a81892b36a1b9ffeff5d94f52" args="(const char *name)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool RTC::ConfigAdmin::isExist </td>
+          <td>(</td>
+          <td class="paramtype">const char *&nbsp;</td>
+          <td class="paramname"> <em>name</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>コンフィギュレーションパラメータの存在確認 </p>
+<p>指定した名称を持つコンフィギュレーションパラメータ変数が存在する か確認する。ここで存在確認を行うパラメータ変数とは、 <a class="el" href="classRTC_1_1ConfigAdmin.html#a2c1674931ce1cff6815df69f2a7a3a7c" title="コンフィギュレーションパラメータの設定">bindParameter()</a> によって登録される、変数を持つパラメータである。</p>
+<dl><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>name</em>&nbsp;</td><td>コンフィギュレーションパラメータ名称。</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>戻り値:</b></dt><dd>存在確認結果(パラメータあり:true，パラメータなし:false) </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ace61d4e3f1c644c1ffb8151807fdd76d"></a><!-- doxytag: member="RTC::ConfigAdmin::onActivateSet" ref="ace61d4e3f1c644c1ffb8151807fdd76d" args="(const char *config_id)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void RTC::ConfigAdmin::onActivateSet </td>
+          <td>(</td>
+          <td class="paramtype">const char *&nbsp;</td>
+          <td class="paramname"> <em>config_id</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>セットがアクティブ化されたときにコールされる。 </p>
+<p>設定されてるコールバックオブジェクトを呼び出す。</p>
+<dl><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>config_id</em>&nbsp;</td><td>プロパティ </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="aabb91b474ddf417b91b6c61c65ff06f0"></a><!-- doxytag: member="RTC::ConfigAdmin::onAddConfigurationSet" ref="aabb91b474ddf417b91b6c61c65ff06f0" args="(const coil::Properties &amp;config_set)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void RTC::ConfigAdmin::onAddConfigurationSet </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classcoil_1_1Properties.html">coil::Properties</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>config_set</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>設定値が追加されたときにコールされる。 </p>
+<p>設定されてるコールバックオブジェクトを呼び出す。</p>
+<dl><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>configuration_set</em>&nbsp;</td><td>プロパティ </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="aab440a6cf5e8562a54834aa7697007c1"></a><!-- doxytag: member="RTC::ConfigAdmin::onRemoveConfigurationSet" ref="aab440a6cf5e8562a54834aa7697007c1" args="(const char *config_id)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void RTC::ConfigAdmin::onRemoveConfigurationSet </td>
+          <td>(</td>
+          <td class="paramtype">const char *&nbsp;</td>
+          <td class="paramname"> <em>config_id</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>セットが削除されてるときにコールされる。 </p>
+<p>設定されてるコールバックオブジェクトを呼び出す。</p>
+<dl><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>config_id</em>&nbsp;</td><td>プロパティ </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a954735fe16a1b13c00e1b662f6c1084f"></a><!-- doxytag: member="RTC::ConfigAdmin::onSetConfigurationSet" ref="a954735fe16a1b13c00e1b662f6c1084f" args="(const coil::Properties &amp;config_set)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void RTC::ConfigAdmin::onSetConfigurationSet </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classcoil_1_1Properties.html">coil::Properties</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>config_set</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>コンフィギュレーションセットへの追加時にコールされる </p>
+<p>設定されてるコールバックオブジェクトを呼び出す。</p>
+<dl><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>configuration_set</em>&nbsp;</td><td>プロパティ </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="acfc856750b241a8443b2a0a21c011584"></a><!-- doxytag: member="RTC::ConfigAdmin::onUpdate" ref="acfc856750b241a8443b2a0a21c011584" args="(const char *config_set)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void RTC::ConfigAdmin::onUpdate </td>
+          <td>(</td>
+          <td class="paramtype">const char *&nbsp;</td>
+          <td class="paramname"> <em>config_set</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>コンフィギュレーションパラメータの更新(ID指定)時にコールされる </p>
+<p>設定されてるコールバックオブジェクトを呼び出す。</p>
+<dl><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>config_set</em>&nbsp;</td><td>設定対象のコンフィギュレーションセットID </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a232e973f13bd1baa5cc1f24e5edbdc5a"></a><!-- doxytag: member="RTC::ConfigAdmin::onUpdateParam" ref="a232e973f13bd1baa5cc1f24e5edbdc5a" args="(const char *config_set, const char *config_param)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void RTC::ConfigAdmin::onUpdateParam </td>
+          <td>(</td>
+          <td class="paramtype">const char *&nbsp;</td>
+          <td class="paramname"> <em>config_set</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&nbsp;</td>
+          <td class="paramname"> <em>config_param</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td><code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>コンフィギュレーションパラメータの更新(名称指定)時にコールされる </p>
+<p>設定されてるコールバックオブジェクトを呼び出す。</p>
+<dl><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>config_set</em>&nbsp;</td><td>コンフィギュレーションID </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>config_param</em>&nbsp;</td><td>コンフィギュレーションパラメータ名 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a79763dcf92cdf59a2bb4e4e6c3f63c7b"></a><!-- doxytag: member="RTC::ConfigAdmin::removeConfigurationParamListener" ref="a79763dcf92cdf59a2bb4e4e6c3f63c7b" args="(ConfigurationParamListenerType type, ConfigurationParamListener *listener)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void RTC::ConfigAdmin::removeConfigurationParamListener </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespaceRTC.html#aa8fda6ab22174c0ec7cf1971ab775885">ConfigurationParamListenerType</a>&nbsp;</td>
+          <td class="paramname"> <em>type</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classRTC_1_1ConfigurationParamListener.html">ConfigurationParamListener</a> *&nbsp;</td>
+          <td class="paramname"> <em>listener</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p><a class="el" href="classRTC_1_1ConfigurationParamListener.html" title="ConfigurationParamListener クラス.">ConfigurationParamListener</a> を削除する. </p>
+<p>addConfigurationParamListener で追加されたリスナオブジェクトを削除する。</p>
+<dl><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>type</em>&nbsp;</td><td>ConfigurationParamListenerType型の値。 ON_UPDATE_CONFIG_PARAM がある。 </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>listener</em>&nbsp;</td><td>与えたリスナオブジェクトへのポインタ </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="aef99fcfb1f6ca7b09b85c10082236f71"></a><!-- doxytag: member="RTC::ConfigAdmin::removeConfigurationSet" ref="aef99fcfb1f6ca7b09b85c10082236f71" args="(const char *config_id)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool RTC::ConfigAdmin::removeConfigurationSet </td>
+          <td>(</td>
+          <td class="paramtype">const char *&nbsp;</td>
+          <td class="paramname"> <em>config_id</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>コンフィギュレーションセットの削除 </p>
+<p>指定したIDのコンフィギュレーションセットを削除する。</p>
+<p>指定したIDのコンフィギュレーションセットが存在しない場合は、 falseを返す。削除可能なコンフィギュレーションセットは、 addConfigruationSet() によって追加したコンフィギュレーションセッ トのみであり、デフォルトコンフィギュレーションセット、コンポーネ ント起動時にファイルから読み込まれるコンフィギュレーションセット は削除することができない。</p>
+<p>また、指定したコンフィギュレーションセットが現在アクティブである 場合には、いかなるコンフィギュレーションセットでも削除できない。</p>
+<p>この関数により実際にコンフィギュレーションセットが削除された場合、 <a class="el" href="classRTC_1_1ConfigAdmin.html#aadb495472bf829913d38becdd22b4556">setOnRemoveConfigurationSet()</a> でセットされたコールバック関数が呼 び出される。</p>
+<dl><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>config_id</em>&nbsp;</td><td>削除対象コンフィギュレーションセットのID</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>戻り値:</b></dt><dd>削除処理結果(削除成功:true、削除失敗:false) </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a6430e9e76bbfcb01b76149ed4c6a8fe6"></a><!-- doxytag: member="RTC::ConfigAdmin::removeConfigurationSetListener" ref="a6430e9e76bbfcb01b76149ed4c6a8fe6" args="(ConfigurationSetListenerType type, ConfigurationSetListener *listener)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void RTC::ConfigAdmin::removeConfigurationSetListener </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespaceRTC.html#a017f708593789bc2e6e30ea09de43247">ConfigurationSetListenerType</a>&nbsp;</td>
+          <td class="paramname"> <em>type</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classRTC_1_1ConfigurationSetListener.html">ConfigurationSetListener</a> *&nbsp;</td>
+          <td class="paramname"> <em>listener</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p><a class="el" href="classRTC_1_1ConfigurationSetListener.html" title="ConfigurationSetListener クラス.">ConfigurationSetListener</a> を削除する. </p>
+<p>addConfigurationSetListener で追加されたリスナオブジェクトを削除する。</p>
+<dl><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>type</em>&nbsp;</td><td>ConfigurationSetListenerType型の値。 </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>listener</em>&nbsp;</td><td>与えたリスナオブジェクトへのポインタ </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a8359cb98b8c8c46ed10cac65d11633d7"></a><!-- doxytag: member="RTC::ConfigAdmin::removeConfigurationSetNameListener" ref="a8359cb98b8c8c46ed10cac65d11633d7" args="(ConfigurationSetNameListenerType type, ConfigurationSetNameListener *listener)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void RTC::ConfigAdmin::removeConfigurationSetNameListener </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespaceRTC.html#a93709e2f94e525230cc561c7374690c4">ConfigurationSetNameListenerType</a>&nbsp;</td>
+          <td class="paramname"> <em>type</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classRTC_1_1ConfigurationSetNameListener.html">ConfigurationSetNameListener</a> *&nbsp;</td>
+          <td class="paramname"> <em>listener</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p><a class="el" href="classRTC_1_1ConfigurationSetNameListener.html" title="ConfigurationSetNameListener クラス.">ConfigurationSetNameListener</a> を削除する. </p>
+<p>addConfigurationSetNameListener で追加されたリスナオブジェクトを 削除する。</p>
+<dl><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>type</em>&nbsp;</td><td>ConfigurationSetNameListenerType型の値。 ON_UPDATE_CONFIG_PARAM がある。 </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>listener</em>&nbsp;</td><td>与えたリスナオブジェクトへのポインタ </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a31d4e545b48aa3ea2fc03109b301586d"></a><!-- doxytag: member="RTC::ConfigAdmin::setConfigurationSetValues" ref="a31d4e545b48aa3ea2fc03109b301586d" args="(const coil::Properties &amp;configuration_set)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool RTC::ConfigAdmin::setConfigurationSetValues </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classcoil_1_1Properties.html">coil::Properties</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>configuration_set</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>指定したプロパティのコンフィギュレーションセットへの追加 </p>
+<p>指定したプロパティをIDで指定したコンフィギュレーションセットへ追加する。 指定したIDと一致するコンフィギュレーションセットが存在しない場合は、 false を返す。</p>
+<dl><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>config_id</em>&nbsp;</td><td>追加対象コンフィギュレーションセットのID </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>configuration_set</em>&nbsp;</td><td>追加するプロパティ</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>戻り値:</b></dt><dd>追加処理実行結果(追加成功:true、追加失敗:false) </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a4753202ebd65da301020a15f926a999d"></a><!-- doxytag: member="RTC::ConfigAdmin::setOnActivateSet" ref="a4753202ebd65da301020a15f926a999d" args="(OnActivateSetCallback *cb)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void RTC::ConfigAdmin::setOnActivateSet </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classRTC_1_1ConfigurationSetNameListener.html">OnActivateSetCallback</a> *&nbsp;</td>
+          <td class="paramname"> <em>cb</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a59eef8941b5459ba22e350698e3f6ea4"></a><!-- doxytag: member="RTC::ConfigAdmin::setOnAddConfigurationSet" ref="a59eef8941b5459ba22e350698e3f6ea4" args="(OnAddConfigurationAddCallback *cb)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void RTC::ConfigAdmin::setOnAddConfigurationSet </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classRTC_1_1ConfigurationSetListener.html">OnAddConfigurationAddCallback</a> *&nbsp;</td>
+          <td class="paramname"> <em>cb</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="aadb495472bf829913d38becdd22b4556"></a><!-- doxytag: member="RTC::ConfigAdmin::setOnRemoveConfigurationSet" ref="aadb495472bf829913d38becdd22b4556" args="(OnRemoveConfigurationSetCallback *cb)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void RTC::ConfigAdmin::setOnRemoveConfigurationSet </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classRTC_1_1ConfigurationSetNameListener.html">OnRemoveConfigurationSetCallback</a> *&nbsp;</td>
+          <td class="paramname"> <em>cb</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a82d98e0d07b947481df6eb521f72e433"></a><!-- doxytag: member="RTC::ConfigAdmin::setOnSetConfigurationSet" ref="a82d98e0d07b947481df6eb521f72e433" args="(OnSetConfigurationSetCallback *cb)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void RTC::ConfigAdmin::setOnSetConfigurationSet </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classRTC_1_1ConfigurationSetListener.html">OnSetConfigurationSetCallback</a> *&nbsp;</td>
+          <td class="paramname"> <em>cb</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a8b79519d97b3ed7f3b5494e0293ce89a"></a><!-- doxytag: member="RTC::ConfigAdmin::setOnUpdate" ref="a8b79519d97b3ed7f3b5494e0293ce89a" args="(OnUpdateCallback *cb)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void RTC::ConfigAdmin::setOnUpdate </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classRTC_1_1ConfigurationSetNameListener.html">OnUpdateCallback</a> *&nbsp;</td>
+          <td class="paramname"> <em>cb</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a7107f4e36c971416d66a38aa6c411845"></a><!-- doxytag: member="RTC::ConfigAdmin::setOnUpdateParam" ref="a7107f4e36c971416d66a38aa6c411845" args="(OnUpdateParamCallback *cb)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void RTC::ConfigAdmin::setOnUpdateParam </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classRTC_1_1ConfigurationParamListener.html">OnUpdateParamCallback</a> *&nbsp;</td>
+          <td class="paramname"> <em>cb</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a4b1ce69c995d6a89d743cbfd38088de4"></a><!-- doxytag: member="RTC::ConfigAdmin::update" ref="a4b1ce69c995d6a89d743cbfd38088de4" args="(const char *config_set, const char *config_param)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void RTC::ConfigAdmin::update </td>
+          <td>(</td>
+          <td class="paramtype">const char *&nbsp;</td>
+          <td class="paramname"> <em>config_set</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&nbsp;</td>
+          <td class="paramname"> <em>config_param</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>コンフィギュレーションパラメータの更新(名称指定) </p>
+<p>特定のコンフィギュレーション変数の値を、指定したIDを持つコンフィ ギュレーションセットの値で更新する。これにより、アクティブなコン フィギュレーションセットは変更されない。したがって、アクティブコ ンフィギュレーションセットとパラメータ変数の間に矛盾が発生する可 能性があるので注意が必要である。</p>
+<p>指定したIDのコンフィギュレーションセットや、指定した名称のパラメー タが存在しない場合は、何もせずに終了する。</p>
+<dl><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>config_set</em>&nbsp;</td><td>コンフィギュレーションID </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>config_param</em>&nbsp;</td><td>コンフィギュレーションパラメータ名 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a6a183d22dfa7c58ba5d21982aac34645"></a><!-- doxytag: member="RTC::ConfigAdmin::update" ref="a6a183d22dfa7c58ba5d21982aac34645" args="(const char *config_set)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void RTC::ConfigAdmin::update </td>
+          <td>(</td>
+          <td class="paramtype">const char *&nbsp;</td>
+          <td class="paramname"> <em>config_set</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>コンフィギュレーションパラメータの更新(ID指定) </p>
+<p>コンフィギュレーション変数の値を、指定したIDを持つコンフィギュレー ションセットの値で更新する。これにより、アクティブなコンフィギュ レーションセットは変更されない。したがって、アクティブコンフィギュ レーションセットとパラメータ変数の間に矛盾が発生する可能性がある ので注意が必要である。</p>
+<p>指定したIDのコンフィギュレーションセットが存在しない場合は、何も せずに終了する。</p>
+<dl><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>config_set</em>&nbsp;</td><td>設定対象のコンフィギュレーションセットID </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a858c419de43392804dd934dd62c1874a"></a><!-- doxytag: member="RTC::ConfigAdmin::update" ref="a858c419de43392804dd934dd62c1874a" args="(void)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void RTC::ConfigAdmin::update </td>
+          <td>(</td>
+          <td class="paramtype">void&nbsp;</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>コンフィギュレーションパラメータの更新 (アクティブコンフィギュレーションセット) </p>
+<p>コンフィギュレーションセットが更新されている場合に、現在アクティ ブになっているコンフィギュレーションに設定した値で、コンフィギュ レーションパラメータの値を更新する。この処理での更新は、アクティ ブとなっているコンフィギュレーションセットが存在している場合、前 回の更新からコンフィギュレーションセットの内容が更新されている場 合のみ実行される。 </p>
+
+</div>
+</div>
+</div>
+<hr class="footer"/><address style="text-align: right;"><small>OpenRTMに対してThu May 24 23:25:19 2012に生成されました。&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.6.3 </small></address>
+</body>
+</html>

@@ -1,0 +1,176 @@
+\section{クラス RTC::SdoServiceConsumerBase}
+\label{classRTC_1_1SdoServiceConsumerBase}\index{RTC::SdoServiceConsumerBase@{RTC::SdoServiceConsumerBase}}
+
+
+SdoServiceConsumer　基底クラス.  
+
+
+
+
+{\ttfamily \#include $<$SdoServiceConsumerBase.h$>$}
+
+\subsection*{Public メソッド}
+\begin{DoxyCompactItemize}
+\item 
+virtual {\bf $\sim$SdoServiceConsumerBase} ()
+\begin{DoxyCompactList}\small\item\em 仮想デストラクタ \item\end{DoxyCompactList}\item 
+virtual bool {\bf init} ({\bf RTObject\_\-impl} \&rtobj, const SDOPackage::ServiceProfile \&profile)=0
+\begin{DoxyCompactList}\small\item\em コンシューマクラスの初期化関数 \item\end{DoxyCompactList}\item 
+virtual bool {\bf reinit} (const SDOPackage::ServiceProfile \&profile)=0
+\begin{DoxyCompactList}\small\item\em コンシューマクラスの再初期化関数 \item\end{DoxyCompactList}\item 
+virtual const SDOPackage::ServiceProfile \& {\bf getProfile} () const =0
+\begin{DoxyCompactList}\small\item\em ServiceProfile を返す. \item\end{DoxyCompactList}\item 
+virtual void {\bf finalize} ()=0
+\begin{DoxyCompactList}\small\item\em 終了処理 \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{説明}
+SdoServiceConsumer　基底クラス. SDOで定義されているSDOサービスのコンシューマを実装するための基底ク ラス。SDOサービスには、外部から提供サービスをRTC(\doxyref{SDO}{p.}{classSDO})側で利用する SDOサービスコンシューマと、RTC(\doxyref{SDO}{p.}{classSDO})自身がSDOサービスを提供するSDO サービスプロバイダがある。すべてのSDOサービスコンシューマはこの基 底クラスを継承して実装される。
+
+このオブジェクトのライフサイクルは以下の通り。
+
+
+\begin{DoxyEnumerate}
+\item オブジェクトは通常、共有オブジェクト (so, DLL) としてコンパイル・ リンクされる。
+\item マネージャに対してロードされるとモジュール初期化関数によりオブ ジェクトファクトリが、SdoServiceConsumerFactory に対して登録さ れる。登録のキーにはサービスインターフェースの IFR (interface repository) ID が利用され、これによりサービスが区別される。
+\item 外部のツールなどからサービスプロバイダがアタッチされた場合、サー ビスインターフェースの IFR ID が同一である \doxyref{SDO}{p.}{classSDO} コンシューマがイ ンスタンス化され、提供されたSDOサービスの ServiceProfile (この 構造体はサービスのオブジェクトリファレンスを含む) がコンシュー マにアタッチされる。
+\item このときのアタッチシーケンスは以下の通り。
+\begin{DoxyEnumerate}
+\item SDO::get\_\-configuration() により Configuration オブジェクトを取得
+\item Configuration::add\_\-service\_\-profile() により外部側の SdoServiceProvider を ServiceProfile により \doxyref{RTC}{p.}{namespaceRTC} に与える。
+\item RTC側でサービスを呼び出す必要が有った場合、この SdoServiceConsumer が保持しているサービスオブジェクトプロキシ に対して呼び出しを行う
+\end{DoxyEnumerate}
+\item 最終的に SdoServiceConsumer が不要になった場合には、 Configuration::remove\_\-service\_\-profile() が id とともに呼び出され SDOサービスコンシューマが \doxyref{RTC}{p.}{namespaceRTC} から削除される。
+\end{DoxyEnumerate}
+
+
+\begin{DoxyPre}\end{DoxyPre}
+
+
+
+\begin{DoxyPre}   [\doxyref{RTC}{p.}{namespaceRTC}] [\doxyref{SDO}{p.}{classSDO} consumer] [Configuration]  [\doxyref{SDO}{p.}{classSDO} service]    [Other]
+     |          :             |                 |            |
+     |          :         get\_configuration()   |            |
+     |<---------:-------------------------------|------------|
+     |          :             |                 |            |
+     |          :             |   add\_service\_profile(prof)  |
+     |          :  create()   |<----------------|------------|
+     |          |<------------|                 |            |
+     |          |         call\_sdo\_service()    |            |
+     |          |-------------|---------------->|            |
+     |          |         call\_sdo\_service2()   |            |
+     |          |-------------|---------------->|            |
+     |          |             |       :         |            |
+     |          |             |                 |            |
+     |          |             | remove\_service\_profile(id)   |
+     |          |  delete()   |<----------------|------------|
+     |          x<------------|                 |            |
+     |                        |                 x            x\end{DoxyPre}
+
+
+
+\begin{DoxyPre} \end{DoxyPre}
+
+
+このクラスの実装に当たっては、少なくとも以下の純粋仮想関数を実装す る必要がある。
+
+
+\begin{DoxyItemize}
+\item \doxyref{init()}{p.}{classRTC_1_1SdoServiceConsumerBase_a9e454d76db971863a7498dce52acd26c}: 初期化関数。与えられた RTObject および ServiceProfile か ら、当該オブジェクトを初期化する。
+\item \doxyref{reinit()}{p.}{classRTC_1_1SdoServiceConsumerBase_a422e9ad09cea8a41f3dcb077a71915df}: 再初期化関数。ServiceProfile は設定情報更新のため同一 IDで呼び出されることが有るが、その際にこの関数が新たな ServiceProfile とともに呼び出される。関数内では、設定の変更など 再初期化処理を実装する。
+\item \doxyref{getProfile()}{p.}{classRTC_1_1SdoServiceConsumerBase_ab4a65437935f84849f3e1161344a0eb1}: 設定されたプロファイルを返す関数。
+\item \doxyref{finalize()}{p.}{classRTC_1_1SdoServiceConsumerBase_a3b26d2a7ec88ac0168a51db5aaf692c6}: 終了処理。コンシューマがデタッチされる際に呼び出され る関数。関数内では終了処理を実装する。
+\end{DoxyItemize}
+
+SdoServiceConsumer は通常共有オブジェクトとしてコンパイル・リンク される。共有オブジェクトのエントリポイントは通常コンパイルされたファ イル名の basename + \char`\"{}Init\char`\"{} にしておく。以下に、クラス名、ファイル 名、エントリポイント関数名の推奨例を示す。
+
+
+\begin{DoxyItemize}
+\item 実装クラス名: MySdoServiceConusmer
+\item ファイル名: MySdoServiceConsumer.h. MySdoServiceConsumer.cpp
+\item 共有オブジェクト名: MySdoServiceConsumer.so (or DLL)
+\item エントリポイント関数名: MySdoServiceConsumerInit()
+\end{DoxyItemize}
+
+エントリポイント関数は通常以下のように、SdoServiceConsumerFactory に当該コンシューマのファクトリ (と解体ファンクタ) を登録する以下の ような関数になる。
+
+
+\begin{DoxyPre}
+ extern "C"
+ \{
+   void MySdoServiceConsumerInit()
+   \{
+     \doxyref{RTC::SdoServiceConsumerFactory}{p.}{namespaceRTC_a6c2099a80b4f7567f31080ee7490549b}\& factory
+       = \doxyref{RTC::SdoServiceConsumerFactory::instance()}{p.}{classcoil_1_1Singleton_aea119e0534a0de4b63a8f84c7d68b223};
+     factory.addFactory(\doxyref{CORBA\_Util::toRepositoryId<OpenRTM::MySdoService>()}{p.}{namespaceCORBA__Util_a47a5aa0e695c80e6461d2034cae19d5b},
+                        coil::Creator< \doxyref{RTC::SdoServiceConsumerBase}{p.}{classRTC_1_1SdoServiceConsumerBase},
+                        RTC::MySdoServiceConsumer>,
+                        coil::Destructor< \doxyref{RTC::SdoServiceConsumerBase}{p.}{classRTC_1_1SdoServiceConsumerBase},
+                        RTC::MySdoServiceConsumer>);
+   \}
+ \};
+ \end{DoxyPre}
+ 
+
+\subsection{コンストラクタとデストラクタ}
+\index{RTC::SdoServiceConsumerBase@{RTC::SdoServiceConsumerBase}!$\sim$SdoServiceConsumerBase@{$\sim$SdoServiceConsumerBase}}
+\index{$\sim$SdoServiceConsumerBase@{$\sim$SdoServiceConsumerBase}!RTC::SdoServiceConsumerBase@{RTC::SdoServiceConsumerBase}}
+\subsubsection[{$\sim$SdoServiceConsumerBase}]{\setlength{\rightskip}{0pt plus 5cm}virtual RTC::SdoServiceConsumerBase::$\sim$SdoServiceConsumerBase ()\hspace{0.3cm}{\ttfamily  [inline, virtual]}}\label{classRTC_1_1SdoServiceConsumerBase_ae45b7d29a8fc76d5d05f2d891bbc9096}
+
+
+仮想デストラクタ 
+
+
+
+\subsection{関数}
+\index{RTC::SdoServiceConsumerBase@{RTC::SdoServiceConsumerBase}!finalize@{finalize}}
+\index{finalize@{finalize}!RTC::SdoServiceConsumerBase@{RTC::SdoServiceConsumerBase}}
+\subsubsection[{finalize}]{\setlength{\rightskip}{0pt plus 5cm}virtual void RTC::SdoServiceConsumerBase::finalize ()\hspace{0.3cm}{\ttfamily  [pure virtual]}}\label{classRTC_1_1SdoServiceConsumerBase_a3b26d2a7ec88ac0168a51db5aaf692c6}
+
+
+終了処理 
+
+SDOサービスがでタッチされる際に呼び出される終了処理用関数。サー ビスのでタッチに際して、当該オブジェクトが保持するリソースを解放 するなどの処理を行う。 \index{RTC::SdoServiceConsumerBase@{RTC::SdoServiceConsumerBase}!getProfile@{getProfile}}
+\index{getProfile@{getProfile}!RTC::SdoServiceConsumerBase@{RTC::SdoServiceConsumerBase}}
+\subsubsection[{getProfile}]{\setlength{\rightskip}{0pt plus 5cm}virtual const SDOPackage::ServiceProfile\& RTC::SdoServiceConsumerBase::getProfile () const\hspace{0.3cm}{\ttfamily  [pure virtual]}}\label{classRTC_1_1SdoServiceConsumerBase_ab4a65437935f84849f3e1161344a0eb1}
+
+
+ServiceProfile を返す. 
+
+\doxyref{init()}{p.}{classRTC_1_1SdoServiceConsumerBase_a9e454d76db971863a7498dce52acd26c}/reinit()で与えられた ServiceProfile は通常オブジェクト内 で保持される。SDO Service 管理フレームワークは管理上このオブジェ クトに対応する ServiceProfile を必要とするので、この関数では保持 されている ServiceProfile を返す。
+
+\begin{DoxyReturn}{戻り値}
+このオブジェクトが保持している ServiceProfile 
+\end{DoxyReturn}
+\index{RTC::SdoServiceConsumerBase@{RTC::SdoServiceConsumerBase}!init@{init}}
+\index{init@{init}!RTC::SdoServiceConsumerBase@{RTC::SdoServiceConsumerBase}}
+\subsubsection[{init}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool RTC::SdoServiceConsumerBase::init ({\bf RTObject\_\-impl} \& {\em rtobj}, \/  const SDOPackage::ServiceProfile \& {\em profile})\hspace{0.3cm}{\ttfamily  [pure virtual]}}\label{classRTC_1_1SdoServiceConsumerBase_a9e454d76db971863a7498dce52acd26c}
+
+
+コンシューマクラスの初期化関数 
+
+このオブジェクトの初期化を行う。外部からSDOサービスが ServiceProfile とともにアタッチされると、SDOコンシューマがインス タンス化され、その直後に \doxyref{SDO}{p.}{classSDO} サービスがアタッチされた \doxyref{RTC}{p.}{namespaceRTC} と与え られた ServiceProfile を引数としてこの関数が呼ばれる。
+
+関数内では、ServiceProfile 内の \doxyref{SDO}{p.}{classSDO} サービスリファレンスを \doxyref{CorbaConsumer}{p.}{classRTC_1_1CorbaConsumer} クラス等を利用しオブジェクト内に保持するとともに、 properties から設定内容を読み込みサービス固有の設定等を行う。与 えられたサービスのオブジェクトリファレンスが不正、あるいは properties の内容が不正、等の場合は戻り値に false を返す。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em rtobj}]このオブジェクトがインスタンス化された \doxyref{RTC}{p.}{namespaceRTC} \item[{\em profile}]外部から与えられた \doxyref{SDO}{p.}{classSDO} ServiceProfile \end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+与えられた \doxyref{SDO}{p.}{classSDO} Service や ServiceProfile が不正の場合 false 
+\end{DoxyReturn}
+\index{RTC::SdoServiceConsumerBase@{RTC::SdoServiceConsumerBase}!reinit@{reinit}}
+\index{reinit@{reinit}!RTC::SdoServiceConsumerBase@{RTC::SdoServiceConsumerBase}}
+\subsubsection[{reinit}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool RTC::SdoServiceConsumerBase::reinit (const SDOPackage::ServiceProfile \& {\em profile})\hspace{0.3cm}{\ttfamily  [pure virtual]}}\label{classRTC_1_1SdoServiceConsumerBase_a422e9ad09cea8a41f3dcb077a71915df}
+
+
+コンシューマクラスの再初期化関数 
+
+このオブジェクトの再初期化を行う。ServiceProfile には id フィー ルドにセッション固有の UUID がセットされているが、同一の id の場 合、properties に設定された設定情報の変更や、service フィールド のサービスの参照の変更が行われる。その際に呼ばれるのがこの \doxyref{reinit()}{p.}{classRTC_1_1SdoServiceConsumerBase_a422e9ad09cea8a41f3dcb077a71915df} 関数である。実装では、service フィールドのオブジェクト リファレンスの同一性を確認し、異なっている場合保持しているリファ レンスを更新する必要がある。また properties には新たな設定が与え られている可能性があるので、内容を読み込み設定を更新する。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em profile}]新たに与えられた \doxyref{SDO}{p.}{classSDO} ServiceProfile \end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+不正な ServiceProfile が与えられた場合は false 
+\end{DoxyReturn}

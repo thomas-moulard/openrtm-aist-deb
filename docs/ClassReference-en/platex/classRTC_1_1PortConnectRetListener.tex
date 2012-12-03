@@ -1,0 +1,70 @@
+\section{RTC::PortConnectRetListener Class Reference}
+\label{classRTC_1_1PortConnectRetListener}\index{RTC::PortConnectRetListener@{RTC::PortConnectRetListener}}
+
+
+\doxyref{PortConnectRetListener}{p.}{classRTC_1_1PortConnectRetListener} class.  
+
+
+
+
+{\ttfamily \#include $<$PortConnectListener.h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual {\bf $\sim$PortConnectRetListener} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \item\end{DoxyCompactList}\item 
+virtual void {\bf operator()} (const char $\ast$portname, RTC::ConnectorProfile \&profile, ReturnCode\_\-t ret)=0
+\begin{DoxyCompactList}\small\item\em Virtual Callback function. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static const char $\ast$ {\bf toString} ({\bf PortConnectRetListenerType} type)
+\begin{DoxyCompactList}\small\item\em Convert PortConnectRetListenerType into string. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\doxyref{PortConnectRetListener}{p.}{classRTC_1_1PortConnectRetListener} class. This class is abstract base class for listener classes that provides callbacks for various events in rtobject.
+
+
+\begin{DoxyItemize}
+\item ON\_\-CONNECT\_\-NEXTPORT: after cascade-\/call in notify\_\-connect()
+\item ON\_\-SUBSCRIBE\_\-INTERFACES: after IF subscribing in notify\_\-connect()
+\item ON\_\-CONNECTED: completed nofity\_\-connect() connection process
+\item ON\_\-DISCONNECT\_\-NEXT: after cascade-\/call in notify\_\-disconnect()
+\item ON\_\-DISCONNECTED: completed notify\_\-disconnect() disconnection 
+\end{DoxyItemize}
+
+\subsection{Constructor \& Destructor Documentation}
+\index{RTC::PortConnectRetListener@{RTC::PortConnectRetListener}!$\sim$PortConnectRetListener@{$\sim$PortConnectRetListener}}
+\index{$\sim$PortConnectRetListener@{$\sim$PortConnectRetListener}!RTC::PortConnectRetListener@{RTC::PortConnectRetListener}}
+\subsubsection[{$\sim$PortConnectRetListener}]{\setlength{\rightskip}{0pt plus 5cm}virtual RTC::PortConnectRetListener::$\sim$PortConnectRetListener ()\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classRTC_1_1PortConnectRetListener_a11aa036c8f0f623a0f844ccdc5ca6de9}
+
+
+Destructor. 
+
+
+
+\subsection{Member Function Documentation}
+\index{RTC::PortConnectRetListener@{RTC::PortConnectRetListener}!operator()@{operator()}}
+\index{operator()@{operator()}!RTC::PortConnectRetListener@{RTC::PortConnectRetListener}}
+\subsubsection[{operator()}]{\setlength{\rightskip}{0pt plus 5cm}virtual void RTC::PortConnectRetListener::operator() (const char $\ast$ {\em portname}, \/  RTC::ConnectorProfile \& {\em profile}, \/  ReturnCode\_\-t {\em ret})\hspace{0.3cm}{\ttfamily  [pure virtual]}}\label{classRTC_1_1PortConnectRetListener_a72a1c966ec78ecf40f912ff10157f978}
+
+
+Virtual Callback function. 
+
+This is a the Callback function for \doxyref{PortConnectRetListener}{p.}{classRTC_1_1PortConnectRetListener}. \index{RTC::PortConnectRetListener@{RTC::PortConnectRetListener}!toString@{toString}}
+\index{toString@{toString}!RTC::PortConnectRetListener@{RTC::PortConnectRetListener}}
+\subsubsection[{toString}]{\setlength{\rightskip}{0pt plus 5cm}static const char$\ast$ RTC::PortConnectRetListener::toString ({\bf PortConnectRetListenerType} {\em type})\hspace{0.3cm}{\ttfamily  [static]}}\label{classRTC_1_1PortConnectRetListener_a94d6da928d397e42fb744952afb30e66}
+
+
+Convert PortConnectRetListenerType into string. 
+
+Convert PortConnectRetListenerType into string.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em type}]The target PortConnectRetListenerType for transformation\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Trnasformation result of string representation 
+\end{DoxyReturn}

@@ -1,0 +1,203 @@
+\section{RTC::PublisherBase Class Reference}
+\label{classRTC_1_1PublisherBase}\index{RTC::PublisherBase@{RTC::PublisherBase}}
+
+
+Base class of Publisher.  
+
+
+
+
+{\ttfamily \#include $<$PublisherBase.h$>$}
+
+Inheritance diagram for RTC::PublisherBase:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3cm]{classRTC_1_1PublisherBase}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual DATAPORTSTATUS\_\-ENUM {\bf $\sim$PublisherBase} (void)
+\begin{DoxyCompactList}\small\item\em Destructor. \item\end{DoxyCompactList}\item 
+virtual ReturnCode {\bf init} ({\bf coil::Properties} \&prop)=0
+\begin{DoxyCompactList}\small\item\em Initializing configuration. \item\end{DoxyCompactList}\item 
+virtual ReturnCode {\bf setConsumer} ({\bf InPortConsumer} $\ast$consumer)=0
+\begin{DoxyCompactList}\small\item\em Store \doxyref{InPort}{p.}{classRTC_1_1InPort} consumer. \item\end{DoxyCompactList}\item 
+virtual ReturnCode {\bf setBuffer} ({\bf BufferBase}$<$ cdrMemoryStream $>$ $\ast$buffer)=0
+\begin{DoxyCompactList}\small\item\em Setting buffer pointer. \item\end{DoxyCompactList}\item 
+virtual ReturnCode {\bf setListener} ({\bf ConnectorInfo} \&info, {\bf ConnectorListeners} $\ast$listeners)=0
+\begin{DoxyCompactList}\small\item\em Set the listener. \item\end{DoxyCompactList}\item 
+virtual ReturnCode {\bf write} (const cdrMemoryStream \&data, unsigned long sec, unsigned long usec)=0
+\begin{DoxyCompactList}\small\item\em Write data. \item\end{DoxyCompactList}\item 
+virtual bool {\bf isActive} ()=0
+\begin{DoxyCompactList}\small\item\em If publisher is active state. \item\end{DoxyCompactList}\item 
+virtual ReturnCode {\bf activate} ()=0
+\begin{DoxyCompactList}\small\item\em activation \item\end{DoxyCompactList}\item 
+virtual ReturnCode {\bf deactivate} ()=0
+\begin{DoxyCompactList}\small\item\em deactivation \item\end{DoxyCompactList}\item 
+virtual void {\bf release} ()
+\begin{DoxyCompactList}\small\item\em Release the Publisher. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Base class of Publisher. This is a base class of Publisher$\ast$. This class manages data send timing. Variation of Publisher$\ast$ which implements details of Publisher inherits this \doxyref{PublisherBase}{p.}{classRTC_1_1PublisherBase} class. 
+
+\subsection{Constructor \& Destructor Documentation}
+\index{RTC::PublisherBase@{RTC::PublisherBase}!$\sim$PublisherBase@{$\sim$PublisherBase}}
+\index{$\sim$PublisherBase@{$\sim$PublisherBase}!RTC::PublisherBase@{RTC::PublisherBase}}
+\subsubsection[{$\sim$PublisherBase}]{\setlength{\rightskip}{0pt plus 5cm}virtual DATAPORTSTATUS\_\-ENUM RTC::PublisherBase::$\sim$PublisherBase (void)\hspace{0.3cm}{\ttfamily  [inline, virtual]}}\label{classRTC_1_1PublisherBase_aded4450169b85220e99be1985dc29776}
+
+
+Destructor. 
+
+
+
+\subsection{Member Function Documentation}
+\index{RTC::PublisherBase@{RTC::PublisherBase}!activate@{activate}}
+\index{activate@{activate}!RTC::PublisherBase@{RTC::PublisherBase}}
+\subsubsection[{activate}]{\setlength{\rightskip}{0pt plus 5cm}virtual ReturnCode RTC::PublisherBase::activate ()\hspace{0.3cm}{\ttfamily  [pure virtual]}}\label{classRTC_1_1PublisherBase_a4f0e0ca91e07a25481ffa83ef027feb6}
+
+
+activation 
+
+This function activates the publisher. By calling this function, this publisher starts the thread that pushes data to \doxyref{InPort}{p.}{classRTC_1_1InPort}. If precondition such as initialization process and so on is not met, the error code PRECONDITION\_\-NOT\_\-MET is returned.
+
+\begin{DoxyReturn}{Returns}
+PORT\_\-OK normal return PRECONDITION\_\-NOT\_\-MET precondition is not met 
+\end{DoxyReturn}
+
+
+Implemented in {\bf RTC::PublisherFlush} \doxyref{}{p.}{classRTC_1_1PublisherFlush_ae9797c90a29dc02d477b4ec9d9fbad1c}, {\bf RTC::PublisherNew} \doxyref{}{p.}{classRTC_1_1PublisherNew_a8dccae837b6e92229a2cf7a1c8f836a5}, and {\bf RTC::PublisherPeriodic} \doxyref{}{p.}{classRTC_1_1PublisherPeriodic_a9150a94418d36a413af5edf83a4aef4a}.
+
+\index{RTC::PublisherBase@{RTC::PublisherBase}!deactivate@{deactivate}}
+\index{deactivate@{deactivate}!RTC::PublisherBase@{RTC::PublisherBase}}
+\subsubsection[{deactivate}]{\setlength{\rightskip}{0pt plus 5cm}virtual ReturnCode RTC::PublisherBase::deactivate ()\hspace{0.3cm}{\ttfamily  [pure virtual]}}\label{classRTC_1_1PublisherBase_ace68807ed92a38af8ca49ece25db0d8a}
+
+
+deactivation 
+
+This function deactivates the publisher. By calling this function, this publisher stops the thread that pushes data to \doxyref{InPort}{p.}{classRTC_1_1InPort}. If precondition such as initialization process and so on is not met, the error code PRECONDITION\_\-NOT\_\-MET is returned.
+
+\begin{DoxyReturn}{Returns}
+PORT\_\-OK normal return PRECONDITION\_\-NOT\_\-MET precondition is not met 
+\end{DoxyReturn}
+
+
+Implemented in {\bf RTC::PublisherFlush} \doxyref{}{p.}{classRTC_1_1PublisherFlush_a5d288cbf168685dc2c85578b0f4485c1}, {\bf RTC::PublisherNew} \doxyref{}{p.}{classRTC_1_1PublisherNew_a41177856ad39e6540132e8e7f07f8406}, and {\bf RTC::PublisherPeriodic} \doxyref{}{p.}{classRTC_1_1PublisherPeriodic_abaa6ffa1931e0b654827606e0c756c8e}.
+
+\index{RTC::PublisherBase@{RTC::PublisherBase}!init@{init}}
+\index{init@{init}!RTC::PublisherBase@{RTC::PublisherBase}}
+\subsubsection[{init}]{\setlength{\rightskip}{0pt plus 5cm}virtual ReturnCode RTC::PublisherBase::init ({\bf coil::Properties} \& {\em prop})\hspace{0.3cm}{\ttfamily  [pure virtual]}}\label{classRTC_1_1PublisherBase_a9915af3afab216e2b39fa8702b54b0b7}
+
+
+Initializing configuration. 
+
+This operation would be called to configure in initialization. In the concrete class, configuration should be performed getting appropriate information from the given Properties data. This function might be called right after instantiation and connection sequence respectivly. Therefore, this function should be implemented assuming multiple call.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em prop}]Configuration information \end{DoxyParams}
+
+
+Implemented in {\bf RTC::PublisherFlush} \doxyref{}{p.}{classRTC_1_1PublisherFlush_a89931a404b169f942de90e0493d39aa9}, {\bf RTC::PublisherNew} \doxyref{}{p.}{classRTC_1_1PublisherNew_a01bff99edfad7f69e9a75fb07a91d5e6}, and {\bf RTC::PublisherPeriodic} \doxyref{}{p.}{classRTC_1_1PublisherPeriodic_a4be180578218cc6f04d4fb409e28c5df}.
+
+\index{RTC::PublisherBase@{RTC::PublisherBase}!isActive@{isActive}}
+\index{isActive@{isActive}!RTC::PublisherBase@{RTC::PublisherBase}}
+\subsubsection[{isActive}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool RTC::PublisherBase::isActive ()\hspace{0.3cm}{\ttfamily  [pure virtual]}}\label{classRTC_1_1PublisherBase_aed0e118b4a1bda091ba38066cc8e4c7b}
+
+
+If publisher is active state. 
+
+A Publisher can be activated/deactivated synchronized with the data port. The active state and the non-\/active state are made transition by the \char`\"{}activate()\char`\"{} and the \char`\"{}deactivate()\char`\"{} functions respectively. This function confirms if the publisher is in active state.
+
+\begin{DoxyReturn}{Returns}
+Result of state confirmation (Active state:true, Inactive state:false) 
+\end{DoxyReturn}
+
+
+Implemented in {\bf RTC::PublisherFlush} \doxyref{}{p.}{classRTC_1_1PublisherFlush_a8e6f548411b5956b73d8c3592f15da2a}, {\bf RTC::PublisherNew} \doxyref{}{p.}{classRTC_1_1PublisherNew_a05304d710c7e77dd3702422dd3cc91aa}, and {\bf RTC::PublisherPeriodic} \doxyref{}{p.}{classRTC_1_1PublisherPeriodic_abd214f80d5ace7ebbf50f72f474de34a}.
+
+\index{RTC::PublisherBase@{RTC::PublisherBase}!release@{release}}
+\index{release@{release}!RTC::PublisherBase@{RTC::PublisherBase}}
+\subsubsection[{release}]{\setlength{\rightskip}{0pt plus 5cm}virtual void RTC::PublisherBase::release ()\hspace{0.3cm}{\ttfamily  [inline, virtual]}}\label{classRTC_1_1PublisherBase_a77aa978b2f391d6c9f2ee18419ba1b20}
+
+
+Release the Publisher. 
+
+Release this Publisher. When Publisher becomes unnecessary, this is invoked from PublisherFactory. \index{RTC::PublisherBase@{RTC::PublisherBase}!setBuffer@{setBuffer}}
+\index{setBuffer@{setBuffer}!RTC::PublisherBase@{RTC::PublisherBase}}
+\subsubsection[{setBuffer}]{\setlength{\rightskip}{0pt plus 5cm}virtual ReturnCode RTC::PublisherBase::setBuffer ({\bf BufferBase}$<$ cdrMemoryStream $>$ $\ast$ {\em buffer})\hspace{0.3cm}{\ttfamily  [pure virtual]}}\label{classRTC_1_1PublisherBase_adb0d076dd59cab8cf37555d97f4cb62b}
+
+
+Setting buffer pointer. 
+
+This operation sets a buffer that is associated with this object. If the buffer object is NULL, INVALID\_\-ARGS will be returned.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em buffer}]A pointer to a CDR buffer object. \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+ReturnCode PORT\_\-OK normal return INVALID\_\-ARGS given argument has invalid value 
+\end{DoxyReturn}
+\index{RTC::PublisherBase@{RTC::PublisherBase}!setConsumer@{setConsumer}}
+\index{setConsumer@{setConsumer}!RTC::PublisherBase@{RTC::PublisherBase}}
+\subsubsection[{setConsumer}]{\setlength{\rightskip}{0pt plus 5cm}virtual ReturnCode RTC::PublisherBase::setConsumer ({\bf InPortConsumer} $\ast$ {\em consumer})\hspace{0.3cm}{\ttfamily  [pure virtual]}}\label{classRTC_1_1PublisherBase_a7ff8bf60fa9d713402572404b3dc922c}
+
+
+Store \doxyref{InPort}{p.}{classRTC_1_1InPort} consumer. 
+
+This operation sets a consumer that is associated with this object. If the consumer object is NULL, INVALID\_\-ARGS will be returned.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em consumer}]A pointer to a consumer object. \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+ReturnCode PORT\_\-OK normal return INVALID\_\-ARGS given argument has invalid value 
+\end{DoxyReturn}
+
+
+Implemented in {\bf RTC::PublisherFlush} \doxyref{}{p.}{classRTC_1_1PublisherFlush_afb12f77e4557f2419f6a61b031f4798f}, {\bf RTC::PublisherNew} \doxyref{}{p.}{classRTC_1_1PublisherNew_a8a0485bf2d39c01c4abf3692be2f6db2}, and {\bf RTC::PublisherPeriodic} \doxyref{}{p.}{classRTC_1_1PublisherPeriodic_a853af9b51af9c3d76aff407695a1e697}.
+
+\index{RTC::PublisherBase@{RTC::PublisherBase}!setListener@{setListener}}
+\index{setListener@{setListener}!RTC::PublisherBase@{RTC::PublisherBase}}
+\subsubsection[{setListener}]{\setlength{\rightskip}{0pt plus 5cm}virtual ReturnCode RTC::PublisherBase::setListener ({\bf ConnectorInfo} \& {\em info}, \/  {\bf ConnectorListeners} $\ast$ {\em listeners})\hspace{0.3cm}{\ttfamily  [pure virtual]}}\label{classRTC_1_1PublisherBase_a9d12db1358f8b70a5ee761d905170bc2}
+
+
+Set the listener. 
+
+This function sets \doxyref{ConnectorListeners}{p.}{classRTC_1_1ConnectorListeners} listener object to the Publisher. By setting \doxyref{ConnectorListeners}{p.}{classRTC_1_1ConnectorListeners} containing various listeners objects, these listeners are called at the time of reading and writing of a buffer, and transmission of data etc. Since the ownership of the \doxyref{ConnectorListeners}{p.}{classRTC_1_1ConnectorListeners} object is owned by Port or RTObject, the Publisher never deletes the \doxyref{ConnectorListeners}{p.}{classRTC_1_1ConnectorListeners} object. If the given ConnectorListeners' pointer is NULL, this function returns INVALID\_\-ARGS.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em info}]\doxyref{ConnectorInfo}{p.}{classRTC_1_1ConnectorInfo} that is localized object of ConnectorProfile \item[{\em listeners}]\doxyref{ConnectorListeners}{p.}{classRTC_1_1ConnectorListeners} that holds various listeners \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+PORT\_\-OK Normal return INVALID\_\-ARGS Invalid arguments 
+\end{DoxyReturn}
+
+
+Implemented in {\bf RTC::PublisherFlush} \doxyref{}{p.}{classRTC_1_1PublisherFlush_a6297071d496c75c969b700832f32f595}, {\bf RTC::PublisherNew} \doxyref{}{p.}{classRTC_1_1PublisherNew_a14b2739ed8f2e756c89747b56db45161}, and {\bf RTC::PublisherPeriodic} \doxyref{}{p.}{classRTC_1_1PublisherPeriodic_a89a8c02590eda932df803278f0cc65bb}.
+
+\index{RTC::PublisherBase@{RTC::PublisherBase}!write@{write}}
+\index{write@{write}!RTC::PublisherBase@{RTC::PublisherBase}}
+\subsubsection[{write}]{\setlength{\rightskip}{0pt plus 5cm}virtual ReturnCode RTC::PublisherBase::write (const cdrMemoryStream \& {\em data}, \/  unsigned long {\em sec}, \/  unsigned long {\em usec})\hspace{0.3cm}{\ttfamily  [pure virtual]}}\label{classRTC_1_1PublisherBase_abd693b65ffe07276683facfd710be537}
+
+
+Write data. 
+
+This function writes data into the Publisher. If this function is called without initializing correctly such as a consumer, listeners, etc., error code PRECONDITION\_\-NOT\_\-MET will be returned and no operation of the writing etc. will be performed.
+
+When publisher writes data, if the consumer returns full-\/status, returns error, is returned with timeout, error codes BUFFER\_\-FULL, BUFFER\_\-ERROR and BUFFER\_\-TIMEOUT will be returned respectively.
+
+In other cases, PROT\_\-ERROR will be returned.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em data}]Data to be wrote to the buffer \item[{\em sec}]Timeout time in unit seconds \item[{\em nsec}]Timeout time in unit nano-\/seconds \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+PORT\_\-OK Normal return PRECONDITION\_\-NO\_\-MET Precondition does not met. A consumer, a buffer, listenes are not set properly. SEND\_\-FULL Data was sent but full-\/status returned SEND\_\-TIMEOUT Data was sent but timeout occurred CONNECTION\_\-LOST detected that the connection has been lost 
+\end{DoxyReturn}
+
+
+Implemented in {\bf RTC::PublisherFlush} \doxyref{}{p.}{classRTC_1_1PublisherFlush_ad84eb745390b45d7c23730409a017787}, {\bf RTC::PublisherNew} \doxyref{}{p.}{classRTC_1_1PublisherNew_aea22c81a78df515c6fb06a227d1f3ce6}, and {\bf RTC::PublisherPeriodic} \doxyref{}{p.}{classRTC_1_1PublisherPeriodic_ae5954cbc4b8b4f9839535d3bd7763e13}.
+

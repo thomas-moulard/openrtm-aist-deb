@@ -1,0 +1,204 @@
+\section{coil::Timer Class Reference}
+\label{classcoil_1_1Timer}\index{coil::Timer@{coil::Timer}}
+
+
+\doxyref{Timer}{p.}{classcoil_1_1Timer} class.  
+
+
+
+
+{\ttfamily \#include $<$Timer.h$>$}
+
+Inheritance diagram for coil::Timer:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2cm]{classcoil_1_1Timer}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct {\bfseries Task}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Timer} ({\bf TimeValue} \&interval)
+\begin{DoxyCompactList}\small\item\em Constructor. \item\end{DoxyCompactList}\item 
+virtual {\bf $\sim$Timer} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \item\end{DoxyCompactList}\item 
+virtual int {\bf open} (void $\ast$args)
+\begin{DoxyCompactList}\small\item\em Create thread for \doxyref{Timer}{p.}{classcoil_1_1Timer}. \item\end{DoxyCompactList}\item 
+virtual int {\bf svc} (void)
+\begin{DoxyCompactList}\small\item\em Thread execution function for \doxyref{Timer}{p.}{classcoil_1_1Timer}. \item\end{DoxyCompactList}\item 
+void {\bf start} ()
+\begin{DoxyCompactList}\small\item\em Start \doxyref{Timer}{p.}{classcoil_1_1Timer} task. \item\end{DoxyCompactList}\item 
+void {\bf stop} ()
+\item 
+void {\bf invoke} ()
+\begin{DoxyCompactList}\small\item\em Invoke \doxyref{Timer}{p.}{classcoil_1_1Timer} task. \item\end{DoxyCompactList}\item 
+{\bf ListenerId} {\bf registerListener} ({\bf ListenerBase} $\ast$listener, {\bf TimeValue} tm)
+\begin{DoxyCompactList}\small\item\em Register listener. \item\end{DoxyCompactList}\item 
+{\footnotesize template$<$class ListenerClass $>$ }\\{\bf ListenerId} {\bf registerListenerObj} (ListenerClass $\ast$obj, void(ListenerClass::$\ast$cbf)(), {\bf TimeValue} tm)
+\begin{DoxyCompactList}\small\item\em Register listener. \item\end{DoxyCompactList}\item 
+{\bf ListenerId} {\bf registerListenerFunc} (void($\ast$cbf)(), {\bf TimeValue} tm)
+\begin{DoxyCompactList}\small\item\em Register listener. \item\end{DoxyCompactList}\item 
+bool {\bf unregisterListener} ({\bf ListenerId} id)
+\begin{DoxyCompactList}\small\item\em Unregister listener. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\doxyref{Timer}{p.}{classcoil_1_1Timer} class. Invoke the callback function of registered listener periodically at the set cycle.
+
+\begin{DoxySince}{Since}
+0.4.0 
+\end{DoxySince}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{coil::Timer@{coil::Timer}!Timer@{Timer}}
+\index{Timer@{Timer}!coil::Timer@{coil::Timer}}
+\subsubsection[{Timer}]{\setlength{\rightskip}{0pt plus 5cm}coil::Timer::Timer ({\bf TimeValue} \& {\em interval})}\label{classcoil_1_1Timer_a2bfd7ab681cc531bbc83b360381701bc}
+
+
+Constructor. 
+
+Constructor
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em interval}]The interval of timer \end{DoxyParams}
+\index{coil::Timer@{coil::Timer}!$\sim$Timer@{$\sim$Timer}}
+\index{$\sim$Timer@{$\sim$Timer}!coil::Timer@{coil::Timer}}
+\subsubsection[{$\sim$Timer}]{\setlength{\rightskip}{0pt plus 5cm}virtual coil::Timer::$\sim$Timer ()\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classcoil_1_1Timer_a9f17edc7404a27113a8d1afdc7cda75e}
+
+
+Destructor. 
+
+Destructor 
+
+\subsection{Member Function Documentation}
+\index{coil::Timer@{coil::Timer}!invoke@{invoke}}
+\index{invoke@{invoke}!coil::Timer@{coil::Timer}}
+\subsubsection[{invoke}]{\setlength{\rightskip}{0pt plus 5cm}void coil::Timer::invoke ()}\label{classcoil_1_1Timer_a9eea18837cfc8238a150c7edd2ea126f}
+
+
+Invoke \doxyref{Timer}{p.}{classcoil_1_1Timer} task. 
+
+Subtract the interval of timer from the waiting time for invocation of each registered listener. If the listener whose waiting time reached 0 exists, invoke the callback function. \index{coil::Timer@{coil::Timer}!open@{open}}
+\index{open@{open}!coil::Timer@{coil::Timer}}
+\subsubsection[{open}]{\setlength{\rightskip}{0pt plus 5cm}virtual int coil::Timer::open (void $\ast$ {\em args})\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classcoil_1_1Timer_a0ab295e065392c392418c676328a2601}
+
+
+Create thread for \doxyref{Timer}{p.}{classcoil_1_1Timer}. 
+
+Create an internal thread for \doxyref{Timer}{p.}{classcoil_1_1Timer} and launch it. This is an override of ACE\_\-Task service class method.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em args}]Usually 0\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Creation processing result 
+\end{DoxyReturn}
+
+
+Reimplemented from {\bf coil::Task} \doxyref{}{p.}{classcoil_1_1Task_af964d1b21ddf53987e8190cb4e5d9613}.
+
+\index{coil::Timer@{coil::Timer}!registerListener@{registerListener}}
+\index{registerListener@{registerListener}!coil::Timer@{coil::Timer}}
+\subsubsection[{registerListener}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ListenerId} coil::Timer::registerListener ({\bf ListenerBase} $\ast$ {\em listener}, \/  {\bf TimeValue} {\em tm})}\label{classcoil_1_1Timer_a5cd3df0f12623b5318d99492267fca91}
+
+
+Register listener. 
+
+Register the listener of callback function invoked from this \doxyref{Timer}{p.}{classcoil_1_1Timer} by specifying the interval. If the same listener has already been regiseterd, the value specified the invocation interval of listener will be updated.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em listener}]Listener for the registration \item[{\em tm}]The invocation interval of listener\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+ID of the registerd listener 
+\end{DoxyReturn}
+
+
+Referenced by registerListenerFunc(), and registerListenerObj().
+
+\index{coil::Timer@{coil::Timer}!registerListenerFunc@{registerListenerFunc}}
+\index{registerListenerFunc@{registerListenerFunc}!coil::Timer@{coil::Timer}}
+\subsubsection[{registerListenerFunc}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ListenerId} coil::Timer::registerListenerFunc (void($\ast$)() {\em cbf}, \/  {\bf TimeValue} {\em tm})\hspace{0.3cm}{\ttfamily  [inline]}}\label{classcoil_1_1Timer_a82b82d790b8844abe8ef2b2615fb0e6f}
+
+
+Register listener. 
+
+Register listener by specifying the method for callback and the invocation interval.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em cbf}]Target method for callback \item[{\em tm}]The invocation interval of listener\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+ID of the registerd listener 
+\end{DoxyReturn}
+
+
+References registerListener().
+
+\index{coil::Timer@{coil::Timer}!registerListenerObj@{registerListenerObj}}
+\index{registerListenerObj@{registerListenerObj}!coil::Timer@{coil::Timer}}
+\subsubsection[{registerListenerObj}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class ListenerClass $>$ {\bf ListenerId} coil::Timer::registerListenerObj (ListenerClass $\ast$ {\em obj}, \/  void(ListenerClass::$\ast$)() {\em cbf}, \/  {\bf TimeValue} {\em tm})\hspace{0.3cm}{\ttfamily  [inline]}}\label{classcoil_1_1Timer_a4614be3527ca79ed65aac408e78b42c0}
+
+
+Register listener. 
+
+Register listener by specifying the object for callback, the method for callback and the invocation interval.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em obj}]Target object for callback \item[{\em cbf}]Target method for callback \item[{\em tm}]The invocation interval of listener\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+ID of the registerd listener 
+\end{DoxyReturn}
+
+
+References registerListener().
+
+\index{coil::Timer@{coil::Timer}!start@{start}}
+\index{start@{start}!coil::Timer@{coil::Timer}}
+\subsubsection[{start}]{\setlength{\rightskip}{0pt plus 5cm}void coil::Timer::start ()}\label{classcoil_1_1Timer_a86a306e173930600e377510fa231b8a4}
+
+
+Start \doxyref{Timer}{p.}{classcoil_1_1Timer} task. 
+
+Create a new theread for \doxyref{Timer}{p.}{classcoil_1_1Timer} and start processing. \index{coil::Timer@{coil::Timer}!stop@{stop}}
+\index{stop@{stop}!coil::Timer@{coil::Timer}}
+\subsubsection[{stop}]{\setlength{\rightskip}{0pt plus 5cm}void coil::Timer::stop ()}\label{classcoil_1_1Timer_ae07b79a6b6619a1534d9fa9f7a5d32f9}
+Stop \doxyref{Timer}{p.}{classcoil_1_1Timer} task. \index{coil::Timer@{coil::Timer}!svc@{svc}}
+\index{svc@{svc}!coil::Timer@{coil::Timer}}
+\subsubsection[{svc}]{\setlength{\rightskip}{0pt plus 5cm}virtual int coil::Timer::svc (void)\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classcoil_1_1Timer_af995c8abd6fe7d6aa92fdf21c41e8670}
+
+
+Thread execution function for \doxyref{Timer}{p.}{classcoil_1_1Timer}. 
+
+Thread execution function for \doxyref{Timer}{p.}{classcoil_1_1Timer}. Invoke the callback function of registered listener.
+
+\begin{DoxyReturn}{Returns}
+Execution result 
+\end{DoxyReturn}
+
+
+Reimplemented from {\bf coil::Task} \doxyref{}{p.}{classcoil_1_1Task_ae68f22a4afbe8cddde1fe910bc3dd226}.
+
+\index{coil::Timer@{coil::Timer}!unregisterListener@{unregisterListener}}
+\index{unregisterListener@{unregisterListener}!coil::Timer@{coil::Timer}}
+\subsubsection[{unregisterListener}]{\setlength{\rightskip}{0pt plus 5cm}bool coil::Timer::unregisterListener ({\bf ListenerId} {\em id})}\label{classcoil_1_1Timer_a66259cc3579bafbf3fbfa595253d558a}
+
+
+Unregister listener. 
+
+Unregister the listener specified by ID. If the listener specified by ID is not registerd, false will be returned.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em id}]ID of the unregisterd listener\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Unregistration result 
+\end{DoxyReturn}

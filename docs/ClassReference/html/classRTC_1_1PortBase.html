@@ -1,0 +1,2151 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<title>OpenRTM: クラス RTC::PortBase</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<!-- 作成： Doxygen 1.6.3 -->
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="index.html"><span>メインページ</span></a></li>
+      <li><a href="namespaces.html"><span>ネームスペース</span></a></li>
+      <li class="current"><a href="annotated.html"><span>クラス</span></a></li>
+      <li><a href="files.html"><span>ファイル</span></a></li>
+    </ul>
+  </div>
+  <div class="tabs">
+    <ul>
+      <li><a href="annotated.html"><span>構成</span></a></li>
+      <li><a href="hierarchy.html"><span>クラス階層</span></a></li>
+      <li><a href="functions.html"><span>構成メンバ</span></a></li>
+    </ul>
+  </div>
+  <div class="navpath"><a class="el" href="namespaceRTC.html">RTC</a>::<a class="el" href="classRTC_1_1PortBase.html">PortBase</a>
+  </div>
+</div>
+<div class="contents">
+<h1>クラス RTC::PortBase</h1><!-- doxytag: class="RTC::PortBase" -->
+<p>Port の基底クラス.  
+<a href="#_details">[詳細]</a></p>
+
+<p><code>#include &lt;<a class="el" href="PortBase_8h_source.html">PortBase.h</a>&gt;</code></p>
+<div class="dynheader">
+RTC::PortBaseに対する継承グラフ</div>
+<div class="dynsection">
+ <div class="center">
+  <img src="classRTC_1_1PortBase.png" usemap="#RTC::PortBase_map" alt=""/>
+  <map id="RTC::PortBase_map" name="RTC::PortBase_map">
+<area href="classRTC_1_1CorbaPort.html" alt="RTC::CorbaPort" shape="rect" coords="0,56,163,80"/>
+<area href="classRTC_1_1InPortBase.html" alt="RTC::InPortBase" shape="rect" coords="173,56,336,80"/>
+<area href="classRTC_1_1OutPortBase.html" alt="RTC::OutPortBase" shape="rect" coords="346,56,509,80"/>
+<area href="classRTC_1_1InPort.html" alt="RTC::InPort&lt; DataType &gt;" shape="rect" coords="173,112,336,136"/>
+<area href="classRTC_1_1OutPort.html" alt="RTC::OutPort&lt; DataType &gt;" shape="rect" coords="346,112,509,136"/>
+</map>
+ </div>
+</div>
+
+<p><a href="classRTC_1_1PortBase-members.html">すべてのメンバ一覧</a></p>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr><td colspan="2"><h2>構成</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">struct &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structRTC_1_1PortBase_1_1find__conn__id.html">find_conn_id</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">id を持つ ConnectorProfile を探す Functor  <a href="structRTC_1_1PortBase_1_1find__conn__id.html#_details">[詳細]</a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">struct &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structRTC_1_1PortBase_1_1find__interface.html">find_interface</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">name と polarity から interface を探す Functor  <a href="structRTC_1_1PortBase_1_1find__interface.html#_details">[詳細]</a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">struct &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structRTC_1_1PortBase_1_1find__port__ref.html">find_port_ref</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">コンストラクタ引数 port_ref と同じオブジェクト参照を探す Functor  <a href="structRTC_1_1PortBase_1_1find__port__ref.html#_details">[詳細]</a><br/></td></tr>
+<tr><td colspan="2"><h2>Public メソッド</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1PortBase.html#a778ffb56398a68f1a9254773a4bbc0b7">PortBase</a> (const char *name=&quot;&quot;)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">コンストラクタ  <a href="#a778ffb56398a68f1a9254773a4bbc0b7"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1PortBase.html#acc3ed2687a796b80c0b29d170e2e27aa">~PortBase</a> (void)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">デストラクタ  <a href="#acc3ed2687a796b80c0b29d170e2e27aa"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual PortProfile *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1PortBase.html#ae38441f66c19863e383f461de846a062">get_port_profile</a> ()  throw (CORBA::SystemException)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">[CORBA interface] PortProfileを取得する  <a href="#ae38441f66c19863e383f461de846a062"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">const PortProfile &amp;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1PortBase.html#af76274dad83b880e0773c0f109c8deb8">getPortProfile</a> () const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">PortProfile を取得する。.  <a href="#af76274dad83b880e0773c0f109c8deb8"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual ConnectorProfileList *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1PortBase.html#a00e8e5597add78a8e8f044a98ff60cfd">get_connector_profiles</a> ()  throw (CORBA::SystemException)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">[CORBA interface] ConnectorProfileListを取得する  <a href="#a00e8e5597add78a8e8f044a98ff60cfd"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual ConnectorProfile *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1PortBase.html#a66847c611f82d14894356fd122315c06">get_connector_profile</a> (const char *connector_id)  throw (CORBA::SystemException)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">[CORBA interface] ConnectorProfile を取得する  <a href="#a66847c611f82d14894356fd122315c06"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual ReturnCode_t&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1PortBase.html#a139d07d2e94f7e793aedf4aa24b92462">connect</a> (ConnectorProfile &amp;connector_profile)  throw (CORBA::SystemException)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">[CORBA interface] Port の接続を行う  <a href="#a139d07d2e94f7e793aedf4aa24b92462"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual ReturnCode_t&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1PortBase.html#a9bcc3c981a6649f37f3ad7eac31e5766">notify_connect</a> (ConnectorProfile &amp;connector_profile)  throw (CORBA::SystemException)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">[CORBA interface] Port の接続通知を行う  <a href="#a9bcc3c981a6649f37f3ad7eac31e5766"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual ReturnCode_t&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1PortBase.html#a1ac6bea826249d3b2b9cb09d475e54f8">disconnect</a> (const char *connector_id)  throw (CORBA::SystemException)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">[CORBA interface] Port の接続を解除する  <a href="#a1ac6bea826249d3b2b9cb09d475e54f8"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual ReturnCode_t&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1PortBase.html#ae78bb7882d22bca794bd0faa78452aca">notify_disconnect</a> (const char *connector_id)  throw (CORBA::SystemException)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">[CORBA interface] Port の接続解除通知を行う  <a href="#ae78bb7882d22bca794bd0faa78452aca"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual ReturnCode_t&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1PortBase.html#a2464e0184036a389c4083625d7a1435f">disconnect_all</a> ()  throw (CORBA::SystemException)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">[CORBA interface] Port の全接続を解除する  <a href="#a2464e0184036a389c4083625d7a1435f"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1PortBase.html#ad779347bae007555968dda9e78004e34">activateInterfaces</a> ()=0</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Port の全てのインターフェースを activates する.  <a href="#ad779347bae007555968dda9e78004e34"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1PortBase.html#a8dfb8a33b92b9fc9b6c070df2def633f">deactivateInterfaces</a> ()=0</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">全ての Port のインターフェースを deactivates する  <a href="#a8dfb8a33b92b9fc9b6c070df2def633f"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1PortBase.html#a4429d9d48ba72f621ed446b50bdf9043">setName</a> (const char *name)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Port の名前を設定する.  <a href="#a4429d9d48ba72f621ed446b50bdf9043"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">const char *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1PortBase.html#a2897e7321c60684612cb286954e84653">getName</a> () const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Port の名前を取得する.  <a href="#a2897e7321c60684612cb286954e84653"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">const PortProfile &amp;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1PortBase.html#ab5ab1328c5d5be82e5a213f6900c4eb8">getProfile</a> () const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">PortProfileを取得する.  <a href="#ab5ab1328c5d5be82e5a213f6900c4eb8"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1PortBase.html#a710706ff630c6502e3de6cf5dd302c83">setPortRef</a> (PortService_ptr port_ref)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Port のオブジェクト参照を設定する.  <a href="#a710706ff630c6502e3de6cf5dd302c83"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">PortService_ptr&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1PortBase.html#a2b8a9dad7bcb51557471a7d034631d25">getPortRef</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Port のオブジェクト参照を取得する.  <a href="#a2b8a9dad7bcb51557471a7d034631d25"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1PortBase.html#a1431e933c50b7f31df6446051ca4b3fe">setOwner</a> (RTObject_ptr owner)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Port の owner の RTObject を指定する.  <a href="#a1431e933c50b7f31df6446051ca4b3fe"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1PortBase.html#affce1efdd04a8b66af5238ee435a5b2b">setOnPublishInterfaces</a> (<a class="el" href="classRTC_1_1ConnectionCallback.html">ConnectionCallback</a> *on_publish)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">インターフェースを公開する際に呼ばれるコールバックをセットする  <a href="#affce1efdd04a8b66af5238ee435a5b2b"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1PortBase.html#ac9783d3edef34a7f5c5cef910b4fa33a">setOnSubscribeInterfaces</a> (<a class="el" href="classRTC_1_1ConnectionCallback.html">ConnectionCallback</a> *on_subscribe)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">インターフェースを取得する際に呼ばれるコールバックをセットする  <a href="#ac9783d3edef34a7f5c5cef910b4fa33a"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1PortBase.html#a7c97305b47e95f96dffaee6871db9b5d">setOnConnected</a> (<a class="el" href="classRTC_1_1ConnectionCallback.html">ConnectionCallback</a> *on_connected)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">接続完了時に呼ばれるコールバックをセットする  <a href="#a7c97305b47e95f96dffaee6871db9b5d"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1PortBase.html#aff023d4b2faa7d161b7c91ef9273a705">setOnUnsubscribeInterfaces</a> (<a class="el" href="classRTC_1_1ConnectionCallback.html">ConnectionCallback</a> *on_subscribe)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">インターフェースを解放する際に呼ばれるコールバックをセットする  <a href="#aff023d4b2faa7d161b7c91ef9273a705"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1PortBase.html#a8f26ec4ff60e7728a09cbd34a6a2ca33">setOnDisconnected</a> (<a class="el" href="classRTC_1_1ConnectionCallback.html">ConnectionCallback</a> *on_disconnected)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">接続解除に呼ばれるコールバックをセットする  <a href="#a8f26ec4ff60e7728a09cbd34a6a2ca33"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1PortBase.html#aa7797b53a5199aecb86ebd6e11da9a6e">setOnConnectionLost</a> (<a class="el" href="classRTC_1_1ConnectionCallback.html">ConnectionCallback</a> *on_connection_lost)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">ポートの接続がロストした場合に呼び出されるコールバックをセットする  <a href="#aa7797b53a5199aecb86ebd6e11da9a6e"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1PortBase.html#aa0fca5f8b8ce5503439f21c7e940227b">setPortConnectListenerHolder</a> (<a class="el" href="classRTC_1_1PortConnectListeners.html">PortConnectListeners</a> *portconnListeners)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight"><a class="el" href="classRTC_1_1PortConnectListeners.html" title="PortConnectListeners クラス.">PortConnectListeners</a> のホルダをセットする.  <a href="#aa0fca5f8b8ce5503439f21c7e940227b"></a><br/></td></tr>
+<tr><td colspan="2"><h2>Protected 型</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="classcoil_1_1Guard.html">coil::Guard</a>&lt; <a class="el" href="classcoil_1_1Mutex.html">coil::Mutex</a> &gt;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1PortBase.html#afed27d51e39b7ad3a0cd0a7c80cc6b53">Guard</a></td></tr>
+<tr><td colspan="2"><h2>Protected メソッド</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual ReturnCode_t&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1PortBase.html#acf31878c5912f56c122aaa2310e182de">publishInterfaces</a> (ConnectorProfile &amp;connector_profile)=0</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Interface 情報を公開する.  <a href="#acf31878c5912f56c122aaa2310e182de"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual ReturnCode_t&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1PortBase.html#acd7017c12c99c59c191d1269b40a7423">connectNext</a> (ConnectorProfile &amp;connector_profile)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">次の Port に対して <a class="el" href="classRTC_1_1PortBase.html#a9bcc3c981a6649f37f3ad7eac31e5766" title="[CORBA interface] Port の接続通知を行う">notify_connect()</a> をコールする  <a href="#acd7017c12c99c59c191d1269b40a7423"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual ReturnCode_t&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1PortBase.html#a4eeddc35a698e4020e7ba96627dcde3b">disconnectNext</a> (ConnectorProfile &amp;connector_profile)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">次の Port に対して <a class="el" href="classRTC_1_1PortBase.html#ae78bb7882d22bca794bd0faa78452aca" title="[CORBA interface] Port の接続解除通知を行う">notify_disconnect()</a> をコールする  <a href="#a4eeddc35a698e4020e7ba96627dcde3b"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual ReturnCode_t&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1PortBase.html#afce755069836c1ee637784e2a9e5a02b">subscribeInterfaces</a> (const ConnectorProfile &amp;connector_profile)=0</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Interface 情報を公開する.  <a href="#afce755069836c1ee637784e2a9e5a02b"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1PortBase.html#a8a843a387e99d4d4daa6e829eb1db569">unsubscribeInterfaces</a> (const ConnectorProfile &amp;connector_profile)=0</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Interface の接続を解除する.  <a href="#a8a843a387e99d4d4daa6e829eb1db569"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1PortBase.html#a9dce68b24fdfbf13f835f6b8b83f2282">setConnectionLimit</a> (int limit_value)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">接続の最大数を設定する。  <a href="#a9dce68b24fdfbf13f835f6b8b83f2282"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual ReturnCode_t&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1PortBase.html#afa9ee9900b247eb705c1dd27a6f6efe8">_publishInterfaces</a> (void)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Interface情報を公開する.  <a href="#afa9ee9900b247eb705c1dd27a6f6efe8"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1PortBase.html#a9829b707373bd30160e1b6df7244f0bc">isEmptyId</a> (const ConnectorProfile &amp;connector_profile) const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">ConnectorProfile の connector_id フィールドが空かどうか判定.  <a href="#a9829b707373bd30160e1b6df7244f0bc"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">const std::string&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1PortBase.html#a6ff52fee873d00a96b0e33880397af44">getUUID</a> () const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">UUIDを生成する.  <a href="#a6ff52fee873d00a96b0e33880397af44"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1PortBase.html#a7d8fb06825e17568567786987bd00fbb">setUUID</a> (ConnectorProfile &amp;connector_profile) const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">UUIDを生成し ConnectorProfile にセットする.  <a href="#a7d8fb06825e17568567786987bd00fbb"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1PortBase.html#a15653054a5bd4e0559e0c3edec3b11d3">isExistingConnId</a> (const char *id)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">id が既存の ConnectorProfile のものかどうか判定する  <a href="#a15653054a5bd4e0559e0c3edec3b11d3"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">ConnectorProfile&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1PortBase.html#a271f7e306eec757069326b493c6838e2">findConnProfile</a> (const char *id)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">id を持つ ConnectorProfile を探す  <a href="#a271f7e306eec757069326b493c6838e2"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">CORBA::Long&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1PortBase.html#a7626d1f676704dfa3d3f173c7964cc7c">findConnProfileIndex</a> (const char *id)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">id を持つ ConnectorProfile を探す  <a href="#a7626d1f676704dfa3d3f173c7964cc7c"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1PortBase.html#aaaa8155f6dd891d0a4b77e6f6c55c97b">updateConnectorProfile</a> (const ConnectorProfile &amp;connector_profile)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">ConnectorProfile の追加もしくは更新.  <a href="#aaaa8155f6dd891d0a4b77e6f6c55c97b"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1PortBase.html#a3803219dc15de9ebb9bf096a82cfb383">eraseConnectorProfile</a> (const char *id)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">ConnectorProfile を削除する.  <a href="#a3803219dc15de9ebb9bf096a82cfb383"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1PortBase.html#a91146c0cd579ad2d67b0bca8c7a437bf">appendInterface</a> (const char *name, const char *type_name, PortInterfacePolarity pol)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">PortInterfaceProfile に インターフェースを登録する.  <a href="#a91146c0cd579ad2d67b0bca8c7a437bf"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1PortBase.html#aef670f0cfa3bafbc0207e0ea63f7a083">deleteInterface</a> (const char *name, PortInterfacePolarity pol)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">PortInterfaceProfile からインターフェース登録を削除する.  <a href="#aef670f0cfa3bafbc0207e0ea63f7a083"></a><br/></td></tr>
+<tr><td class="memTemplParams" colspan="2">template&lt;class ValueType &gt; </td></tr>
+<tr><td class="memTemplItemLeft" align="right" valign="top">void&nbsp;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classRTC_1_1PortBase.html#ab6548d7c61ff22a34b418ae4964177ba">addProperty</a> (const char *key, ValueType value)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">PortProfile の properties に NameValue 値を追加する.  <a href="#ab6548d7c61ff22a34b418ae4964177ba"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1PortBase.html#ac6d94d956a43f47157c2aacd0be1da4c">appendProperty</a> (const char *key, const char *value)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">PortProfile の properties に NameValue 値を要素に追加する.  <a href="#ac6d94d956a43f47157c2aacd0be1da4c"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1PortBase.html#aa9e0697ef8a7138cdf30ab756ecc9242">updateConnectors</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">存在しないポートをdisconnectする。  <a href="#aa9e0697ef8a7138cdf30ab756ecc9242"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1PortBase.html#abfc03f49c63f915a307ce34fed244439">checkPorts</a> (::RTC::PortServiceList &amp;ports)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">ポートの存在を確認する。  <a href="#abfc03f49c63f915a307ce34fed244439"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1PortBase.html#a6c5fc09077478e84e9c26405bf7be4d1">onNotifyConnect</a> (const char *portname, RTC::ConnectorProfile &amp;profile)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1PortBase.html#a1f81e3d706c34c0ff4ad77445629c1f3">onNotifyDisconnect</a> (const char *portname, RTC::ConnectorProfile &amp;profile)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1PortBase.html#af3a2ec35c3c1eb1c59dc6634069d04a0">onUnsubscribeInterfaces</a> (const char *portname, RTC::ConnectorProfile &amp;profile)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1PortBase.html#a70dd82c8188309bb79d64907d638542f">onPublishInterfaces</a> (const char *portname, RTC::ConnectorProfile &amp;profile, ReturnCode_t ret)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1PortBase.html#a1f1b927fc26a71d74b7f82be3c57fe54">onConnectNextport</a> (const char *portname, RTC::ConnectorProfile &amp;profile, ReturnCode_t ret)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1PortBase.html#af5c66c1f389171c0fad73e26a74a619e">onSubscribeInterfaces</a> (const char *portname, RTC::ConnectorProfile &amp;profile, ReturnCode_t ret)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1PortBase.html#a454895298d71c2f046db0071a7e2b1ae">onConnected</a> (const char *portname, RTC::ConnectorProfile &amp;profile, ReturnCode_t ret)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1PortBase.html#a2558aed0af62dca59972bafa8be29617">onDisconnectNextport</a> (const char *portname, RTC::ConnectorProfile &amp;profile, ReturnCode_t ret)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1PortBase.html#a6c8539e8b047205a3cdf5b34c27a246e">onDisconnected</a> (const char *portname, RTC::ConnectorProfile &amp;profile, ReturnCode_t ret)</td></tr>
+<tr><td colspan="2"><h2>Protected 変数</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classRTC_1_1Logger.html">Logger</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1PortBase.html#ab111ca721c706fe5e93da18705ace90e">rtclog</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">ロガーストリーム  <a href="#ab111ca721c706fe5e93da18705ace90e"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">PortProfile&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1PortBase.html#a02b8a89853dc64600f9301a87f50138a">m_profile</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Port の PortProfile.  <a href="#a02b8a89853dc64600f9301a87f50138a"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">RTC::PortService_var&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1PortBase.html#a6add3c9750060e44acaec9e70a78ed92">m_objref</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Port の オブジェクト参照.  <a href="#a6add3c9750060e44acaec9e70a78ed92"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classcoil_1_1Mutex.html">coil::Mutex</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1PortBase.html#a2ee84ba32ff8423c318798dea9814642">m_profile_mutex</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">PortProfile の mutex.  <a href="#a2ee84ba32ff8423c318798dea9814642"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classcoil_1_1Mutex.html">coil::Mutex</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1PortBase.html#acbdf425104a21619d4c887e415e045c8">m_connectorsMutex</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">std::string&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1PortBase.html#a6f33c6161ecc2b00babcb3a18c7438df">m_ownerInstanceName</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">インスタンス名  <a href="#a6f33c6161ecc2b00babcb3a18c7438df"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1PortBase.html#a0c568d0d7ffd5c5dfbf7cdfbd27e22c9">m_connectionLimit</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Port の接続の最大数.  <a href="#a0c568d0d7ffd5c5dfbf7cdfbd27e22c9"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classRTC_1_1ConnectionCallback.html">ConnectionCallback</a> *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1PortBase.html#a85b7308b6911a14bbd26f62106fa2986">m_onPublishInterfaces</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Callback functor オブジェクト.  <a href="#a85b7308b6911a14bbd26f62106fa2986"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classRTC_1_1ConnectionCallback.html">ConnectionCallback</a> *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1PortBase.html#a63ef15306f2d4d66b9570f11d8715057">m_onSubscribeInterfaces</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Callback functor オブジェクト.  <a href="#a63ef15306f2d4d66b9570f11d8715057"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classRTC_1_1ConnectionCallback.html">ConnectionCallback</a> *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1PortBase.html#a52852f17f0978a6a639fcf6c8a8a71b6">m_onConnected</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Callback functor オブジェクト.  <a href="#a52852f17f0978a6a639fcf6c8a8a71b6"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classRTC_1_1ConnectionCallback.html">ConnectionCallback</a> *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1PortBase.html#a34d4ada2f1dfcebec2adc85e5aea484a">m_onUnsubscribeInterfaces</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Callback functor オブジェクト.  <a href="#a34d4ada2f1dfcebec2adc85e5aea484a"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classRTC_1_1ConnectionCallback.html">ConnectionCallback</a> *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1PortBase.html#ac1ddf7686081da5a663f9109b7ad740f">m_onDisconnected</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Callback functor オブジェクト.  <a href="#ac1ddf7686081da5a663f9109b7ad740f"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classRTC_1_1ConnectionCallback.html">ConnectionCallback</a> *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1PortBase.html#a2d7cfeb11e8bccae7702badef6d384f4">m_onConnectionLost</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Callback functor オブジェクト.  <a href="#a2d7cfeb11e8bccae7702badef6d384f4"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classRTC_1_1PortConnectListeners.html">PortConnectListeners</a> *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1PortBase.html#a0e9ebbf6f53845b48d087240eeb8656f">m_portconnListeners</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">PortConnectListenerホルダ.  <a href="#a0e9ebbf6f53845b48d087240eeb8656f"></a><br/></td></tr>
+</table>
+<hr/><a name="_details"></a><h2>説明</h2>
+<p>Port の基底クラス. </p>
+<p>RTC::Port の基底となるクラス。 RTC::Port はほぼ UML Port の概念を継承しており、ほぼ同等のものとみなす ことができる。RT コンポーネントのコンセプトにおいては、 Port はコンポーネントに付属し、コンポーネントが他のコンポーネントと相互作用 を行う接点であり、通常幾つかのインターフェースと関連付けられる。 コンポーネントは Port を通して外部に対しインターフェースを提供または要求 することができ、Portはその接続を管理する役割を担う。 </p>
+<p>Port の具象クラスは、通常 RT コンポーネントインスタンス生成時に同時に 生成され、提供・要求インターフェースを登録した後、RT コンポーネントに 登録され、外部からアクセス可能な Port として機能することを想定している。 </p>
+<p>RTC::Port は CORBA インターフェースとして以下のオペレーションを提供する。</p>
+<ul>
+<li><a class="el" href="classRTC_1_1PortBase.html#ae38441f66c19863e383f461de846a062" title="[CORBA interface] PortProfileを取得する">get_port_profile()</a></li>
+<li><a class="el" href="classRTC_1_1PortBase.html#a00e8e5597add78a8e8f044a98ff60cfd" title="[CORBA interface] ConnectorProfileListを取得する">get_connector_profiles()</a></li>
+<li><a class="el" href="classRTC_1_1PortBase.html#a66847c611f82d14894356fd122315c06" title="[CORBA interface] ConnectorProfile を取得する">get_connector_profile()</a></li>
+<li><a class="el" href="classRTC_1_1PortBase.html#a139d07d2e94f7e793aedf4aa24b92462" title="[CORBA interface] Port の接続を行う">connect()</a></li>
+<li><a class="el" href="classRTC_1_1PortBase.html#a9bcc3c981a6649f37f3ad7eac31e5766" title="[CORBA interface] Port の接続通知を行う">notify_connect()</a></li>
+<li><a class="el" href="classRTC_1_1PortBase.html#a1ac6bea826249d3b2b9cb09d475e54f8" title="[CORBA interface] Port の接続を解除する">disconnect()</a></li>
+<li><a class="el" href="classRTC_1_1PortBase.html#ae78bb7882d22bca794bd0faa78452aca" title="[CORBA interface] Port の接続解除通知を行う">notify_disconnect()</a></li>
+<li><a class="el" href="classRTC_1_1PortBase.html#a2464e0184036a389c4083625d7a1435f" title="[CORBA interface] Port の全接続を解除する">disconnect_all()</a></li>
+</ul>
+<p>このクラスでは、これらのオペレーションの実装を提供する。 </p>
+<p>これらのオペレーションのうち、get_port_profile(), <a class="el" href="classRTC_1_1PortBase.html#a00e8e5597add78a8e8f044a98ff60cfd" title="[CORBA interface] ConnectorProfileListを取得する">get_connector_profiles()</a>, <a class="el" href="classRTC_1_1PortBase.html#a66847c611f82d14894356fd122315c06" title="[CORBA interface] ConnectorProfile を取得する">get_connector_profile()</a>, <a class="el" href="classRTC_1_1PortBase.html#a139d07d2e94f7e793aedf4aa24b92462" title="[CORBA interface] Port の接続を行う">connect()</a>, <a class="el" href="classRTC_1_1PortBase.html#a1ac6bea826249d3b2b9cb09d475e54f8" title="[CORBA interface] Port の接続を解除する">disconnect()</a>, <a class="el" href="classRTC_1_1PortBase.html#a2464e0184036a389c4083625d7a1435f" title="[CORBA interface] Port の全接続を解除する">disconnect_all()</a> は、 サブクラスにおいて特に振る舞いを変更する必要がないため、オーバーライド することは推奨されない。 </p>
+<p><a class="el" href="classRTC_1_1PortBase.html#a9bcc3c981a6649f37f3ad7eac31e5766" title="[CORBA interface] Port の接続通知を行う">notify_connect()</a>, <a class="el" href="classRTC_1_1PortBase.html#ae78bb7882d22bca794bd0faa78452aca" title="[CORBA interface] Port の接続解除通知を行う">notify_disconnect()</a> については、サブクラスが提供・要求 するインターフェースの種類に応じて、振る舞いを変更する必要が生ずる 可能性があるが、これらを直接オーバーライドすることは推奨されず、 後述の <a class="el" href="classRTC_1_1PortBase.html#a9bcc3c981a6649f37f3ad7eac31e5766" title="[CORBA interface] Port の接続通知を行う">notify_connect()</a>, <a class="el" href="classRTC_1_1PortBase.html#ae78bb7882d22bca794bd0faa78452aca" title="[CORBA interface] Port の接続解除通知を行う">notify_disconnect()</a> の項においても述べられる通り これらの関数に関連した protected 関数をオーバーライドすることにより 振る舞いを変更することが推奨される。</p>
+<dl class="since"><dt><b>から:</b></dt><dd>0.4.0 </dd></dl>
+<hr/><h2>型定義</h2>
+<a class="anchor" id="afed27d51e39b7ad3a0cd0a7c80cc6b53"></a><!-- doxytag: member="RTC::PortBase::Guard" ref="afed27d51e39b7ad3a0cd0a7c80cc6b53" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef <a class="el" href="classcoil_1_1Guard.html">coil::Guard</a>&lt;<a class="el" href="classcoil_1_1Mutex.html">coil::Mutex</a>&gt; <a class="el" href="classcoil_1_1Guard.html">RTC::PortBase::Guard</a><code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<hr/><h2>コンストラクタとデストラクタ</h2>
+<a class="anchor" id="a778ffb56398a68f1a9254773a4bbc0b7"></a><!-- doxytag: member="RTC::PortBase::PortBase" ref="a778ffb56398a68f1a9254773a4bbc0b7" args="(const char *name=&quot;&quot;)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">RTC::PortBase::PortBase </td>
+          <td>(</td>
+          <td class="paramtype">const char *&nbsp;</td>
+          <td class="paramname"> <em>name</em> = <code>&quot;&quot;</code></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>コンストラクタ </p>
+<p><a class="el" href="classRTC_1_1PortBase.html" title="Port の基底クラス.">PortBase</a> のコンストラクタは Port 名 name を引数に取り初期化を行う と同時に、自分自身を CORBA Object として活性化し、自身の PortProfile の port_ref に自身のオブジェクトリファレンスを格納する。 名前には、"." 以外の文字列を使用することができる。</p>
+<dl><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>name</em>&nbsp;</td><td>Port の名前(デフォルト値:"") </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="acc3ed2687a796b80c0b29d170e2e27aa"></a><!-- doxytag: member="RTC::PortBase::~PortBase" ref="acc3ed2687a796b80c0b29d170e2e27aa" args="(void)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual RTC::PortBase::~PortBase </td>
+          <td>(</td>
+          <td class="paramtype">void&nbsp;</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>デストラクタ </p>
+<p>デストラクタでは、PortService CORBA オブジェクトの deactivate を 行う。deactivateに際して例外を投げることはない。 </p>
+
+</div>
+</div>
+<hr/><h2>関数</h2>
+<a class="anchor" id="afa9ee9900b247eb705c1dd27a6f6efe8"></a><!-- doxytag: member="RTC::PortBase::_publishInterfaces" ref="afa9ee9900b247eb705c1dd27a6f6efe8" args="(void)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual ReturnCode_t RTC::PortBase::_publishInterfaces </td>
+          <td>(</td>
+          <td class="paramtype">void&nbsp;</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [protected, virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Interface情報を公開する. </p>
+<p>Interface情報を公開する。</p>
+<p>dataport.dataflow_type</p>
+<dl class="return"><dt><b>戻り値:</b></dt><dd>ReturnCode_t 型のリターンコード </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ad779347bae007555968dda9e78004e34"></a><!-- doxytag: member="RTC::PortBase::activateInterfaces" ref="ad779347bae007555968dda9e78004e34" args="()=0" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void RTC::PortBase::activateInterfaces </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [pure virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Port の全てのインターフェースを activates する. </p>
+<p>Port に登録されている全てのインターフェースを activate する。 </p>
+
+<p><a class="el" href="classRTC_1_1CorbaPort.html#a1b9efe804a293b2c38a9cbe3b5ba54a0">RTC::CorbaPort</a>, <a class="el" href="classRTC_1_1InPortBase.html#a4188e629df750498e0d3b100f51133ff">RTC::InPortBase</a>, と <a class="el" href="classRTC_1_1OutPortBase.html#a4741de18bb77db12a192055468eca8a8">RTC::OutPortBase</a>で実装されています。</p>
+
+</div>
+</div>
+<a class="anchor" id="ab6548d7c61ff22a34b418ae4964177ba"></a><!-- doxytag: member="RTC::PortBase::addProperty" ref="ab6548d7c61ff22a34b418ae4964177ba" args="(const char *key, ValueType value)" -->
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class ValueType &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">void RTC::PortBase::addProperty </td>
+          <td>(</td>
+          <td class="paramtype">const char *&nbsp;</td>
+          <td class="paramname"> <em>key</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">ValueType&nbsp;</td>
+          <td class="paramname"> <em>value</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td><code> [inline, protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>PortProfile の properties に NameValue 値を追加する. </p>
+<p>PortProfile の properties に NameValue 値を追加する。 追加するデータの型をValueTypeで指定する。</p>
+<dl><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>key</em>&nbsp;</td><td>properties の name </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>value</em>&nbsp;</td><td>properties の value </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>参照先 <a class="el" href="PortBase_8h_source.html#l02070">m_profile</a>, <a class="el" href="NVUtil_8h_source.html#l00079">NVUtil::newNV()</a>, と <a class="el" href="CORBA__SeqUtil_8h_source.html#l00175">CORBA_SeqUtil::push_back()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a91146c0cd579ad2d67b0bca8c7a437bf"></a><!-- doxytag: member="RTC::PortBase::appendInterface" ref="a91146c0cd579ad2d67b0bca8c7a437bf" args="(const char *name, const char *type_name, PortInterfacePolarity pol)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool RTC::PortBase::appendInterface </td>
+          <td>(</td>
+          <td class="paramtype">const char *&nbsp;</td>
+          <td class="paramname"> <em>name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&nbsp;</td>
+          <td class="paramname"> <em>type_name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">PortInterfacePolarity&nbsp;</td>
+          <td class="paramname"> <em>pol</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td><code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>PortInterfaceProfile に インターフェースを登録する. </p>
+<p>このオペレーションは Port が持つ PortProfile の、PortInterfaceProfile にインターフェースの情報を追加する。 この情報は、get_port_profile() によって得られる PortProfile のうち PortInterfaceProfile の値を変更するのみであり、実際にインターフェースを 提供したり要求したりする場合には、サブクラスで、 publishInterface() , subscribeInterface() 等の関数を適切にオーバーライドしインターフェースの 提供、要求処理を行わなければならない。</p>
+<p>インターフェース(のインスタンス)名は Port 内で一意でなければならない。 同名のインターフェースがすでに登録されている場合、この関数は false を 返す。</p>
+<dl><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>name</em>&nbsp;</td><td>インターフェースのインスタンスの名前 </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>type_name</em>&nbsp;</td><td>インターフェースの型の名前 </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>pol</em>&nbsp;</td><td>インターフェースの属性 (RTC::PROVIDED もしくは <a class="el" href="namespaceRTC.html" title="RTコンポーネント.">RTC</a>:REQUIRED)</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>戻り値:</b></dt><dd>インターフェース登録処理結果。 同名のインターフェースが既に登録されていれば false を返す。 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ac6d94d956a43f47157c2aacd0be1da4c"></a><!-- doxytag: member="RTC::PortBase::appendProperty" ref="ac6d94d956a43f47157c2aacd0be1da4c" args="(const char *key, const char *value)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void RTC::PortBase::appendProperty </td>
+          <td>(</td>
+          <td class="paramtype">const char *&nbsp;</td>
+          <td class="paramname"> <em>key</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&nbsp;</td>
+          <td class="paramname"> <em>value</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td><code> [inline, protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>PortProfile の properties に NameValue 値を要素に追加する. </p>
+<p>PortProfile の properties に NameValue 値を要素に追加する。この 関数により設定された properties は get_prot_profile() により外部 から参照される。</p>
+<dl><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>key</em>&nbsp;</td><td>properties の name </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>value</em>&nbsp;</td><td>properties の value </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>参照先 <a class="el" href="namespaceNVUtil.html#aa481ca6c5c584b9da26d56fc2c4be67c">NVUtil::appendStringValue()</a>, と <a class="el" href="PortBase_8h_source.html#l02070">m_profile</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="abfc03f49c63f915a307ce34fed244439"></a><!-- doxytag: member="RTC::PortBase::checkPorts" ref="abfc03f49c63f915a307ce34fed244439" args="(::RTC::PortServiceList &amp;ports)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool RTC::PortBase::checkPorts </td>
+          <td>(</td>
+          <td class="paramtype">::RTC::PortServiceList &amp;&nbsp;</td>
+          <td class="paramname"> <em>ports</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>ポートの存在を確認する。 </p>
+<dl><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>ports</em>&nbsp;</td><td>確認するポート </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>戻り値:</b></dt><dd>true:存在する,false:存在しない </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a139d07d2e94f7e793aedf4aa24b92462"></a><!-- doxytag: member="RTC::PortBase::connect" ref="a139d07d2e94f7e793aedf4aa24b92462" args="(ConnectorProfile &amp;connector_profile)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual ReturnCode_t RTC::PortBase::connect </td>
+          <td>(</td>
+          <td class="paramtype">ConnectorProfile &amp;&nbsp;</td>
+          <td class="paramname"> <em>connector_profile</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td>  throw (CORBA::SystemException)<code> [virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>[CORBA interface] Port の接続を行う </p>
+<p>与えられた ConnectoionProfile の情報に基づき、Port間の接続を確立 する。この関数は主にアプリケーションプログラムやツールから呼び出 すことを前提としている。</p>
+<dl class="pre"><dt><b>事前条件:</b></dt><dd>アプリケーションプログラムは、コンポーネント間の複数の Port を接続するために、適切な値をセットした ConnectorProfile を <a class="el" href="classRTC_1_1PortBase.html#a139d07d2e94f7e793aedf4aa24b92462" title="[CORBA interface] Port の接続を行う">connect()</a> の引数として与えて呼び出さなければならない。</dd>
+<dd>
+<a class="el" href="classRTC_1_1PortBase.html#a139d07d2e94f7e793aedf4aa24b92462" title="[CORBA interface] Port の接続を行う">connect()</a> に与える ConnectorProfile のメンバーのうち、 name, ports, properties メンバーに対してデータをセットしなければ ならない。connector_id には通常空文字を設定するか、適当なUUIDを 文字列で設定する必要がある。</dd>
+<dd>
+ConnectorProfile::name は接続につける名前で CORBA::string 型に格納できる任意の文字列である必要がある。</dd>
+<dd>
+ConnectorProfile::connector_id はすべての接続に対して一意な ID (通常はUUID) が格納される。UUIDの設定は <a class="el" href="classRTC_1_1PortBase.html#a139d07d2e94f7e793aedf4aa24b92462" title="[CORBA interface] Port の接続を行う">connect()</a> 関数内で行 われるので、呼び出し側は空文字を設定する。既存の接続と同じUUIDを 設定し <a class="el" href="classRTC_1_1PortBase.html#a139d07d2e94f7e793aedf4aa24b92462" title="[CORBA interface] Port の接続を行う">connect()</a> を呼び出した場合には PRECONDITION_NOT_MET エラー を返す。ただし、将来の拡張で既存の接続プロファイルを更新するため に既存の UUID を設定して呼び出す使用法が用いられる可能性がある。</dd>
+<dd>
+ConnectorProfile::ports は RTC::PortService のシーケンスで、 接続を構成する通常2つ以上のポートのオブジェクト参照を代入する必 要がある。例外として、ポートのオブジェクト参照を1つだけ格納して <a class="el" href="classRTC_1_1PortBase.html#a139d07d2e94f7e793aedf4aa24b92462" title="[CORBA interface] Port の接続を行う">connect()</a>を呼び出すことで、ポートのインターフェース情報を取得し たり、特殊なポート(CORBAのRTCPortService以外の相手)に対して接 続を行う場合もある。</dd>
+<dd>
+ConnectorProfile::properties はポートに関連付けられたインター フェースに対するプロパティを与えるために使用する。プロパティは、 string 型をキー、Any 型を値としてもつペアのシーケンスであり、値 には任意のCORBAデータ型を格納できるが、可能な限り string 型とし て格納されることが推奨される。</dd>
+<dd>
+以上 <a class="el" href="classRTC_1_1PortBase.html#a139d07d2e94f7e793aedf4aa24b92462" title="[CORBA interface] Port の接続を行う">connect()</a> 呼び出し時に設定する ConnectorProfile のメン バをまとめると以下のようになる。</dd></dl>
+<ul>
+<li>ConnectorProfile::name: 任意の接続名</li>
+<li>ConnectorProfile::connector_id: 空文字</li>
+<li>ConnectorProfile::ports: 1つ以上のポート</li>
+<li>ConnectorProfile::properties: インターフェースに対するプロパティ</li>
+</ul>
+<dl class="post"><dt><b>事後条件:</b></dt><dd><a class="el" href="classRTC_1_1PortBase.html#a139d07d2e94f7e793aedf4aa24b92462" title="[CORBA interface] Port の接続を行う">connect()</a> 関数は、ConnectorProfileportsに格納されたポー トシーケンスの先頭のポートに対して <a class="el" href="classRTC_1_1PortBase.html#a9bcc3c981a6649f37f3ad7eac31e5766" title="[CORBA interface] Port の接続通知を行う">notify_connect()</a> を呼ぶ。</dd>
+<dd>
+<a class="el" href="classRTC_1_1PortBase.html#a9bcc3c981a6649f37f3ad7eac31e5766" title="[CORBA interface] Port の接続通知を行う">notify_connect()</a> は ConnectorProfile::ports に格納されたポー ト順に <a class="el" href="classRTC_1_1PortBase.html#a9bcc3c981a6649f37f3ad7eac31e5766" title="[CORBA interface] Port の接続通知を行う">notify_connect()</a> をカスケード呼び出しする。このカスケード 呼び出しは、途中のnotify_connect() でエラーが出てもポートのオブ ジェクト参照が有効である限り、必ずすべてのポートに対して行われる ことが保証される。有効でないオブジェクト参照がシーケンス中に存在 する場合、そのポートをスキップして、次のポートに対して <a class="el" href="classRTC_1_1PortBase.html#a9bcc3c981a6649f37f3ad7eac31e5766" title="[CORBA interface] Port の接続通知を行う">notify_connect()</a> を呼び出す。</dd>
+<dd>
+<a class="el" href="classRTC_1_1PortBase.html#a139d07d2e94f7e793aedf4aa24b92462" title="[CORBA interface] Port の接続を行う">connect()</a> 関数は、notify_connect()の戻り値がRTC_OKであれば、 RTC_OK を返す。この時点で接続は完了する。RTC_OK以外 の場合は、この接続IDに対してdisconnect()を呼び出し接続を解除し、 <a class="el" href="classRTC_1_1PortBase.html#a9bcc3c981a6649f37f3ad7eac31e5766" title="[CORBA interface] Port の接続通知を行う">notify_connect()</a> が返したエラーリターンコードをそのまま返す。</dd>
+<dd>
+<a class="el" href="classRTC_1_1PortBase.html#a139d07d2e94f7e793aedf4aa24b92462" title="[CORBA interface] Port の接続を行う">connect()</a> の引数として渡した ConnectorProfile には、 ConnectorProfile::connector_id および、途中のポートが <a class="el" href="classRTC_1_1PortBase.html#acf31878c5912f56c122aaa2310e182de" title="Interface 情報を公開する.">publishInterfaces()</a> で公開したポートインターフェースの各種情報が 格納されている。connect() および途中の <a class="el" href="classRTC_1_1PortBase.html#a9bcc3c981a6649f37f3ad7eac31e5766" title="[CORBA interface] Port の接続通知を行う">notify_connect()</a> が ConnectorProfile::{name, ports} を変更することはない。</dd></dl>
+<dl><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>connector_profile</em>&nbsp;</td><td>ConnectorProfile </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>戻り値:</b></dt><dd>ReturnCode_t 型のリターンコード </dd></dl>
+
+<p><a class="el" href="classRTC_1_1InPortBase.html#ab37ad76d4270c20133b52b1bbdf3b529">RTC::InPortBase</a>, と <a class="el" href="classRTC_1_1OutPortBase.html#ab6297aece321369ebc78900962627f0d">RTC::OutPortBase</a>で再定義されています。</p>
+
+</div>
+</div>
+<a class="anchor" id="acd7017c12c99c59c191d1269b40a7423"></a><!-- doxytag: member="RTC::PortBase::connectNext" ref="acd7017c12c99c59c191d1269b40a7423" args="(ConnectorProfile &amp;connector_profile)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual ReturnCode_t RTC::PortBase::connectNext </td>
+          <td>(</td>
+          <td class="paramtype">ConnectorProfile &amp;&nbsp;</td>
+          <td class="paramname"> <em>connector_profile</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [protected, virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>次の Port に対して <a class="el" href="classRTC_1_1PortBase.html#a9bcc3c981a6649f37f3ad7eac31e5766" title="[CORBA interface] Port の接続通知を行う">notify_connect()</a> をコールする </p>
+<p>ConnectorProfile の port_ref 内に格納されている Port のオブジェクト リファレンスのシーケンスの中から、自身の Port の次の Port に対して <a class="el" href="classRTC_1_1PortBase.html#a9bcc3c981a6649f37f3ad7eac31e5766" title="[CORBA interface] Port の接続通知を行う">notify_connect()</a> をコールする。</p>
+<dl><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>connector_profile</em>&nbsp;</td><td>接続に関するプロファイル情報</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>戻り値:</b></dt><dd>ReturnCode_t 型のリターンコード </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a8dfb8a33b92b9fc9b6c070df2def633f"></a><!-- doxytag: member="RTC::PortBase::deactivateInterfaces" ref="a8dfb8a33b92b9fc9b6c070df2def633f" args="()=0" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void RTC::PortBase::deactivateInterfaces </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [pure virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>全ての Port のインターフェースを deactivates する </p>
+<p>Port に登録されている全てのインターフェースを deactivate する。 </p>
+
+<p><a class="el" href="classRTC_1_1CorbaPort.html#a4c25f8e04aa9cceff24c31ea3fec4e5b">RTC::CorbaPort</a>, <a class="el" href="classRTC_1_1InPortBase.html#a4d8bba26fce07c092ebffbab6b1aa881">RTC::InPortBase</a>, と <a class="el" href="classRTC_1_1OutPortBase.html#aa08d3ddfdf0b00398b40e76164622e43">RTC::OutPortBase</a>で実装されています。</p>
+
+</div>
+</div>
+<a class="anchor" id="aef670f0cfa3bafbc0207e0ea63f7a083"></a><!-- doxytag: member="RTC::PortBase::deleteInterface" ref="aef670f0cfa3bafbc0207e0ea63f7a083" args="(const char *name, PortInterfacePolarity pol)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool RTC::PortBase::deleteInterface </td>
+          <td>(</td>
+          <td class="paramtype">const char *&nbsp;</td>
+          <td class="paramname"> <em>name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">PortInterfacePolarity&nbsp;</td>
+          <td class="paramname"> <em>pol</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td><code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>PortInterfaceProfile からインターフェース登録を削除する. </p>
+<p>このオペレーションは Port が持つ PortProfile の、PortInterfaceProfile からインターフェースの情報を削除する。</p>
+<dl><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>name</em>&nbsp;</td><td>インターフェースのインスタンスの名前 </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>pol</em>&nbsp;</td><td>インターフェースの属性 (RTC::PROVIDED もしくは <a class="el" href="namespaceRTC.html" title="RTコンポーネント.">RTC</a>:REQUIRED)</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>戻り値:</b></dt><dd>インターフェース削除処理結果。 インターフェースが登録されていなければ false を返す。 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a1ac6bea826249d3b2b9cb09d475e54f8"></a><!-- doxytag: member="RTC::PortBase::disconnect" ref="a1ac6bea826249d3b2b9cb09d475e54f8" args="(const char *connector_id)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual ReturnCode_t RTC::PortBase::disconnect </td>
+          <td>(</td>
+          <td class="paramtype">const char *&nbsp;</td>
+          <td class="paramname"> <em>connector_id</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td>  throw (CORBA::SystemException)<code> [virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>[CORBA interface] Port の接続を解除する </p>
+<p>このオペレーションは与えられた connector_id に対応する接続を解除 する。connector_id は通常、システム全体において一意な UUID の文 字列であり、事前に <a class="el" href="classRTC_1_1PortBase.html#a139d07d2e94f7e793aedf4aa24b92462" title="[CORBA interface] Port の接続を行う">connect()</a>/notify_connect() の呼び出しにより確 立された接続プロファイル ConnectorProfile::connector_id に対応す る。</p>
+<dl class="pre"><dt><b>事前条件:</b></dt><dd>connector_id は Port が保持する ConnectorProfile の少なくと も一つの ID に一致する文字列でなければならない。当該 Port が持つ ConnectorProfile のリスト内に connector_id と同一の ID を持つ ConnectorProfile が存在しなければこの関数は BAD_PARAMETER エラー を返す。</dd>
+<dd>
+connector_id と同じ ID を持つ ConnectorProfile::ports には 有効な Port の参照が含まれていなければならない。</dd></dl>
+<dl class="post"><dt><b>事後条件:</b></dt><dd><a class="el" href="classRTC_1_1PortBase.html#a1ac6bea826249d3b2b9cb09d475e54f8" title="[CORBA interface] Port の接続を解除する">disconnect()</a> 関数は、ConnectorProfileports の Port の参 照リストの先頭に対して、notify_disconnect() を呼び出す。参照が無 効であるなど、notify_disconnect() の呼び出しに失敗した場合には、 参照リストの先頭から順番に成功するまで <a class="el" href="classRTC_1_1PortBase.html#ae78bb7882d22bca794bd0faa78452aca" title="[CORBA interface] Port の接続解除通知を行う">notify_disconnect()</a> の呼 び出しを試す。notify_disconnect() の呼び出しに一つでも成功すれば、 <a class="el" href="classRTC_1_1PortBase.html#ae78bb7882d22bca794bd0faa78452aca" title="[CORBA interface] Port の接続解除通知を行う">notify_disconnect()</a> の返却値をそのまま返し、一つも成功しなかった 場合には RTC_ERROR エラーを返す。</dd></dl>
+<dl><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>connector_id</em>&nbsp;</td><td>ConnectorProfile の ID </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>戻り値:</b></dt><dd>ReturnCode_t 型のリターンコード </dd></dl>
+
+<p>参照元 <a class="el" href="OutPort_8h_source.html#l00203">RTC::OutPort&lt; DataType &gt;::write()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a2464e0184036a389c4083625d7a1435f"></a><!-- doxytag: member="RTC::PortBase::disconnect_all" ref="a2464e0184036a389c4083625d7a1435f" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual ReturnCode_t RTC::PortBase::disconnect_all </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td>  throw (CORBA::SystemException)<code> [virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>[CORBA interface] Port の全接続を解除する </p>
+<p>このオペレーションはこの Port に関連した全ての接続を解除する。</p>
+<dl class="return"><dt><b>戻り値:</b></dt><dd>ReturnCode_t 型のリターンコード </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a4eeddc35a698e4020e7ba96627dcde3b"></a><!-- doxytag: member="RTC::PortBase::disconnectNext" ref="a4eeddc35a698e4020e7ba96627dcde3b" args="(ConnectorProfile &amp;connector_profile)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual ReturnCode_t RTC::PortBase::disconnectNext </td>
+          <td>(</td>
+          <td class="paramtype">ConnectorProfile &amp;&nbsp;</td>
+          <td class="paramname"> <em>connector_profile</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [protected, virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>次の Port に対して <a class="el" href="classRTC_1_1PortBase.html#ae78bb7882d22bca794bd0faa78452aca" title="[CORBA interface] Port の接続解除通知を行う">notify_disconnect()</a> をコールする </p>
+<p>ConnectorProfile の port_ref 内に格納されている Port のオブジェクト リファレンスのシーケンスの中から、自身の Port の次の Port に対して <a class="el" href="classRTC_1_1PortBase.html#ae78bb7882d22bca794bd0faa78452aca" title="[CORBA interface] Port の接続解除通知を行う">notify_disconnect()</a> をコールする。</p>
+<dl><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>connector_profile</em>&nbsp;</td><td>接続に関するプロファイル情報</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>戻り値:</b></dt><dd>ReturnCode_t 型のリターンコード </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a3803219dc15de9ebb9bf096a82cfb383"></a><!-- doxytag: member="RTC::PortBase::eraseConnectorProfile" ref="a3803219dc15de9ebb9bf096a82cfb383" args="(const char *id)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool RTC::PortBase::eraseConnectorProfile </td>
+          <td>(</td>
+          <td class="paramtype">const char *&nbsp;</td>
+          <td class="paramname"> <em>id</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>ConnectorProfile を削除する. </p>
+<p>このオペレーションは Port の PortProfile が保持している ConnectorProfileList のうち与えられた id を持つ ConnectorProfile を削除する。</p>
+<dl><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>id</em>&nbsp;</td><td>削除する ConnectorProfile の id</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>戻り値:</b></dt><dd>正常に削除できた場合は true、 指定した ConnectorProfile が見つからない場合は false を返す </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a271f7e306eec757069326b493c6838e2"></a><!-- doxytag: member="RTC::PortBase::findConnProfile" ref="a271f7e306eec757069326b493c6838e2" args="(const char *id)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">ConnectorProfile RTC::PortBase::findConnProfile </td>
+          <td>(</td>
+          <td class="paramtype">const char *&nbsp;</td>
+          <td class="paramname"> <em>id</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>id を持つ ConnectorProfile を探す </p>
+<p>このオペレーションは与えられた ID を持つ ConnectorProfile を Port が もつ ConnectorProfile のリスト中から探す。 もし、同一の id を持つ ConnectorProfile がなければ、空の ConnectorProfile が返される。</p>
+<dl><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>id</em>&nbsp;</td><td>検索する connector_id</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>戻り値:</b></dt><dd>connector_id を持つ ConnectorProfile </dd></dl>
+
+<p>参照元 <a class="el" href="OutPort_8h_source.html#l00203">RTC::OutPort&lt; DataType &gt;::write()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a7626d1f676704dfa3d3f173c7964cc7c"></a><!-- doxytag: member="RTC::PortBase::findConnProfileIndex" ref="a7626d1f676704dfa3d3f173c7964cc7c" args="(const char *id)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">CORBA::Long RTC::PortBase::findConnProfileIndex </td>
+          <td>(</td>
+          <td class="paramtype">const char *&nbsp;</td>
+          <td class="paramname"> <em>id</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>id を持つ ConnectorProfile を探す </p>
+<p>このオペレーションは与えられた ID を持つ ConnectorProfile を Port が もつ ConnectorProfile のリスト中から探しインデックスを返す。 もし、同一の id を持つ ConnectorProfile がなければ、-1 を返す。</p>
+<dl><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>id</em>&nbsp;</td><td>検索する connector_id</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>戻り値:</b></dt><dd>Port の ConnectorProfile リストのインデックス </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a66847c611f82d14894356fd122315c06"></a><!-- doxytag: member="RTC::PortBase::get_connector_profile" ref="a66847c611f82d14894356fd122315c06" args="(const char *connector_id)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual ConnectorProfile* RTC::PortBase::get_connector_profile </td>
+          <td>(</td>
+          <td class="paramtype">const char *&nbsp;</td>
+          <td class="paramname"> <em>connector_id</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td>  throw (CORBA::SystemException)<code> [virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>[CORBA interface] ConnectorProfile を取得する </p>
+<p>connector_id で指定された ConnectorProfile を返す。この関数は CORBA オペレーションであり、CORBA のメモリ管理規則に従い、呼び出 し側は返される ConnectorProfile オブジェクトを解体する責任がある。</p>
+<dl class="pre"><dt><b>事前条件:</b></dt><dd>引数に与える connector_id は有効な文字列でなければならない。 空文字を指定した場合、または指定した connector_id を持つ ConnectorProfile が見つからない場合は、空の ConnectorProfile を 返す。</dd></dl>
+<dl class="post"><dt><b>事後条件:</b></dt><dd>この関数を呼び出すことにより内部状態が変更されることはない。</dd></dl>
+<dl><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>connector_id</em>&nbsp;</td><td>ConnectorProfile の ID </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>戻り値:</b></dt><dd>connector_id で指定された ConnectorProfile </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a00e8e5597add78a8e8f044a98ff60cfd"></a><!-- doxytag: member="RTC::PortBase::get_connector_profiles" ref="a00e8e5597add78a8e8f044a98ff60cfd" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual ConnectorProfileList* RTC::PortBase::get_connector_profiles </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td>  throw (CORBA::SystemException)<code> [virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>[CORBA interface] ConnectorProfileListを取得する </p>
+<p>Portが保持する ConnectorProfile の sequence を返す。この関数は CORBA オペレーションであり、CORBA のメモリ管理規則に従い、呼び出 し側は返される ConnectorProfileList オブジェクトを解体する責任が ある。</p>
+<p>ConnectorProfile は Port 間の接続プロファイル情報を保持する構造体であり、 接続時にPort間で情報交換を行い、関連するすべての Port で同一の値が 保持される。 ConnectorProfile は以下のメンバーを保持している。</p>
+<ul>
+<li>name [string 型] このコネクタの名前。</li>
+<li>connector_id [string 型] ユニークなID</li>
+<li>ports [Port sequnce] このコネクタに関連する Port のオブジェクト リファレンスのシーケンス。</li>
+<li>properties [NVList 型] その他のプロパティ。</li>
+</ul>
+<dl class="post"><dt><b>事後条件:</b></dt><dd>この関数を呼び出すことにより内部状態が変更されることはない。</dd></dl>
+<dl class="return"><dt><b>戻り値:</b></dt><dd>この Port が保持する ConnectorProfile </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ae38441f66c19863e383f461de846a062"></a><!-- doxytag: member="RTC::PortBase::get_port_profile" ref="ae38441f66c19863e383f461de846a062" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual PortProfile* RTC::PortBase::get_port_profile </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td>  throw (CORBA::SystemException)<code> [virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>[CORBA interface] PortProfileを取得する </p>
+<p>Portが保持するPortProfileを返す。この関数は CORBA オペレーション であり、CORBA のメモリ管理規則に従い、呼び出し側は返される PortProfile オブジェクトを解体する責任がある。PortProfile 構造体 は以下のメンバーを持つ。</p>
+<ul>
+<li>name [string 型] Port の名前。</li>
+<li>interfaces [PortInterfaceProfileList 型] Port が保持する PortInterfaceProfile のシーケンス</li>
+<li>port_ref [Port Object 型] Port 自身のオブジェクトリファレンス</li>
+<li>connector_profile [ConnectorProfileList 型] Port が現在保持する ConnectorProfile のシーケンス</li>
+<li>owner [RTObject Object 型] この Port を所有する RTObjectのリファレンス</li>
+<li>properties [NVList 型] その他のプロパティ。</li>
+</ul>
+<dl class="post"><dt><b>事後条件:</b></dt><dd>この関数を呼び出すことにより内部状態が変更されることはない。</dd></dl>
+<dl class="return"><dt><b>戻り値:</b></dt><dd>PortProfile </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a2897e7321c60684612cb286954e84653"></a><!-- doxytag: member="RTC::PortBase::getName" ref="a2897e7321c60684612cb286954e84653" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const char* RTC::PortBase::getName </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Port の名前を取得する. </p>
+<p>Port の名前を取得する。</p>
+<dl class="return"><dt><b>戻り値:</b></dt><dd>Port の名前 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="af76274dad83b880e0773c0f109c8deb8"></a><!-- doxytag: member="RTC::PortBase::getPortProfile" ref="af76274dad83b880e0773c0f109c8deb8" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const PortProfile&amp; RTC::PortBase::getPortProfile </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>PortProfile を取得する。. </p>
+<p>この関数は、オブジェクト内部に保持されている PortProfile の const 参照を返す const 関数である。</p>
+<dl class="post"><dt><b>事後条件:</b></dt><dd>この関数を呼び出すことにより内部状態が変更されることはない。</dd></dl>
+<dl class="return"><dt><b>戻り値:</b></dt><dd>PortProfile </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a2b8a9dad7bcb51557471a7d034631d25"></a><!-- doxytag: member="RTC::PortBase::getPortRef" ref="a2b8a9dad7bcb51557471a7d034631d25" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">PortService_ptr RTC::PortBase::getPortRef </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Port のオブジェクト参照を取得する. </p>
+<p>このオペレーションは Port の PortProfile が保持している この Port 自身のオブジェクト参照を取得する。</p>
+<dl class="return"><dt><b>戻り値:</b></dt><dd>この Port のオブジェクト参照 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ab5ab1328c5d5be82e5a213f6900c4eb8"></a><!-- doxytag: member="RTC::PortBase::getProfile" ref="ab5ab1328c5d5be82e5a213f6900c4eb8" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const PortProfile&amp; RTC::PortBase::getProfile </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>PortProfileを取得する. </p>
+<p>Portが保持する PortProfile の const 参照を返す。</p>
+<dl class="return"><dt><b>戻り値:</b></dt><dd>この Port の PortProfile </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a6ff52fee873d00a96b0e33880397af44"></a><!-- doxytag: member="RTC::PortBase::getUUID" ref="a6ff52fee873d00a96b0e33880397af44" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const std::string RTC::PortBase::getUUID </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const<code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>UUIDを生成する. </p>
+<p>このオペレーションは UUID を生成する。</p>
+<dl class="return"><dt><b>戻り値:</b></dt><dd>uuid </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a9829b707373bd30160e1b6df7244f0bc"></a><!-- doxytag: member="RTC::PortBase::isEmptyId" ref="a9829b707373bd30160e1b6df7244f0bc" args="(const ConnectorProfile &amp;connector_profile) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool RTC::PortBase::isEmptyId </td>
+          <td>(</td>
+          <td class="paramtype">const ConnectorProfile &amp;&nbsp;</td>
+          <td class="paramname"> <em>connector_profile</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const<code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>ConnectorProfile の connector_id フィールドが空かどうか判定. </p>
+<p>指定された ConnectorProfile の connector_id が空であるかどうかの判定を 行う。</p>
+<dl><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>connector_profile</em>&nbsp;</td><td>判定対象コネクタプロファイル</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>戻り値:</b></dt><dd>引数で与えられた ConnectorProfile の connector_id が空であれば、 true、そうでなければ false を返す。 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a15653054a5bd4e0559e0c3edec3b11d3"></a><!-- doxytag: member="RTC::PortBase::isExistingConnId" ref="a15653054a5bd4e0559e0c3edec3b11d3" args="(const char *id)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool RTC::PortBase::isExistingConnId </td>
+          <td>(</td>
+          <td class="paramtype">const char *&nbsp;</td>
+          <td class="paramname"> <em>id</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>id が既存の ConnectorProfile のものかどうか判定する </p>
+<p>このオペレーションは与えられた ID が既存の ConnectorProfile のリスト中に 存在するかどうか判定する。</p>
+<dl><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>id</em>&nbsp;</td><td>判定する connector_id</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>戻り値:</b></dt><dd>id の存在判定結果 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a9bcc3c981a6649f37f3ad7eac31e5766"></a><!-- doxytag: member="RTC::PortBase::notify_connect" ref="a9bcc3c981a6649f37f3ad7eac31e5766" args="(ConnectorProfile &amp;connector_profile)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual ReturnCode_t RTC::PortBase::notify_connect </td>
+          <td>(</td>
+          <td class="paramtype">ConnectorProfile &amp;&nbsp;</td>
+          <td class="paramname"> <em>connector_profile</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td>  throw (CORBA::SystemException)<code> [virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>[CORBA interface] Port の接続通知を行う </p>
+<p>このオペレーションは、Port間の接続が行われる際に、Port間で内部的 に呼ばれるオペレーションであって、通常アプリケーションプログラム や、Port以外のRTC関連オブジェクト等から呼び出されることは想定さ れていない。</p>
+<p><a class="el" href="classRTC_1_1PortBase.html#a9bcc3c981a6649f37f3ad7eac31e5766" title="[CORBA interface] Port の接続通知を行う">notify_connect()</a> 自体はテンプレートメソッドパターンとして、サブ クラスで実装されることが前提の <a class="el" href="classRTC_1_1PortBase.html#acf31878c5912f56c122aaa2310e182de" title="Interface 情報を公開する.">publishInterfaces()</a>, <a class="el" href="classRTC_1_1PortBase.html#afce755069836c1ee637784e2a9e5a02b" title="Interface 情報を公開する.">subscribeInterfaces()</a> の2つの関数を内部で呼び出す。処理の手順は 以下の通りである。</p>
+<ul>
+<li><a class="el" href="classRTC_1_1PortBase.html#acf31878c5912f56c122aaa2310e182de" title="Interface 情報を公開する.">publishInterfaces()</a>: インターフェース情報の公開</li>
+<li><a class="el" href="classRTC_1_1PortBase.html#acd7017c12c99c59c191d1269b40a7423" title="次の Port に対して notify_connect() をコールする">connectNext()</a>: 次の Port の <a class="el" href="classRTC_1_1PortBase.html#a9bcc3c981a6649f37f3ad7eac31e5766" title="[CORBA interface] Port の接続通知を行う">notify_connect()</a> の呼び出し</li>
+<li><a class="el" href="classRTC_1_1PortBase.html#afce755069836c1ee637784e2a9e5a02b" title="Interface 情報を公開する.">subscribeInterfaces()</a>: インターフェース情報の取得</li>
+<li>接続情報の保存</li>
+</ul>
+<p><a class="el" href="classRTC_1_1PortBase.html#a9bcc3c981a6649f37f3ad7eac31e5766" title="[CORBA interface] Port の接続通知を行う">notify_connect()</a> は ConnectorProfile::ports に格納されている Port の順序に従って、カスケード状に呼び出しを行うことにより、イ ンターフェース情報の公開と取得を関連すすべてのポートに対して行う。 このカスケード呼び出しは途中で中断されることはなく、必ず ConnectorProfile::ports に格納されている全ポートに対して行われる。</p>
+<dl class="pre"><dt><b>事前条件:</b></dt><dd><a class="el" href="classRTC_1_1PortBase.html#a9bcc3c981a6649f37f3ad7eac31e5766" title="[CORBA interface] Port の接続通知を行う">notify_connect()</a> は ConnectorProfile::ports 内に格納されて いる Port 参照リストのうち、当該 Port 自身の参照の次に格納されて いる Port に対して <a class="el" href="classRTC_1_1PortBase.html#a9bcc3c981a6649f37f3ad7eac31e5766" title="[CORBA interface] Port の接続通知を行う">notify_connect()</a> を呼び出す。したがって ConnectorProfile::ports には当該 Port の参照が格納されている必要 がある。もし、自身の参照が格納されていない場合、その他の処理によ りエラーが上書きされなければ、BAD_PARAMETER エラーが返される。</dd>
+<dd>
+呼び出し時に ConnectorProfile::connector_id には一意なIDと して UUID が保持されている必要がある。通常 connector_id は <a class="el" href="classRTC_1_1PortBase.html#a139d07d2e94f7e793aedf4aa24b92462" title="[CORBA interface] Port の接続を行う">connect()</a> 関数により与えられ、空文字の場合は動作は未定義である。</dd></dl>
+<dl class="post"><dt><b>事後条件:</b></dt><dd>ConnectorProfile::name, ConnectorProfile::connector_id, ConnectorProfile::ports は <a class="el" href="classRTC_1_1PortBase.html#a9bcc3c981a6649f37f3ad7eac31e5766" title="[CORBA interface] Port の接続通知を行う">notify_connect()</a> の呼び出しにより 書き換えられることはなく不変である。</dd>
+<dd>
+ConnectorProfile::properties は <a class="el" href="classRTC_1_1PortBase.html#a9bcc3c981a6649f37f3ad7eac31e5766" title="[CORBA interface] Port の接続通知を行う">notify_connect()</a> の内部で、 当該 Port が持つサービスインターフェースに関する情報を他の Port に伝えるために、プロパティ情報が書き込まれる。</dd>
+<dd>
+なお、ConnectorProfileports のリストの最初 Port の notify_connet() が終了した時点では、すべての関連する Port の <a class="el" href="classRTC_1_1PortBase.html#a9bcc3c981a6649f37f3ad7eac31e5766" title="[CORBA interface] Port の接続通知を行う">notify_connect()</a> の呼び出しが完了する。publishInterfaces(), <a class="el" href="classRTC_1_1PortBase.html#acd7017c12c99c59c191d1269b40a7423" title="次の Port に対して notify_connect() をコールする">connectNext()</a>, <a class="el" href="classRTC_1_1PortBase.html#afce755069836c1ee637784e2a9e5a02b" title="Interface 情報を公開する.">subscribeInterfaces()</a> および接続情報の保存のいず れかの段階でエラーが発生した場合でも、エラーコードは内部的に保持 されており、最初に生じたエラーのエラーコードが返される。</dd></dl>
+<dl><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>connector_profile</em>&nbsp;</td><td>ConnectorProfile </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>戻り値:</b></dt><dd>ReturnCode_t 型のリターンコード </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ae78bb7882d22bca794bd0faa78452aca"></a><!-- doxytag: member="RTC::PortBase::notify_disconnect" ref="ae78bb7882d22bca794bd0faa78452aca" args="(const char *connector_id)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual ReturnCode_t RTC::PortBase::notify_disconnect </td>
+          <td>(</td>
+          <td class="paramtype">const char *&nbsp;</td>
+          <td class="paramname"> <em>connector_id</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td>  throw (CORBA::SystemException)<code> [virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>[CORBA interface] Port の接続解除通知を行う </p>
+<p>このオペレーションは、Port間の接続解除が行われる際に、Port間で内 部的に呼ばれるオペレーションであり、通常アプリケーションプログラ ムや、 Port 以外の <a class="el" href="namespaceRTC.html" title="RTコンポーネント.">RTC</a> 関連オブジェクト等から呼び出されることは 想定されていない。</p>
+<p><a class="el" href="classRTC_1_1PortBase.html#ae78bb7882d22bca794bd0faa78452aca" title="[CORBA interface] Port の接続解除通知を行う">notify_disconnect()</a> 自体はテンプレートメソッドパターンとして、サ ブクラスで実装されることが前提の <a class="el" href="classRTC_1_1PortBase.html#a8a843a387e99d4d4daa6e829eb1db569" title="Interface の接続を解除する.">unsubscribeInterfaces()</a> 関数を 内部で呼び出す。処理の手順は以下の通りである。</p>
+<ul>
+<li>ConnectorProfile の検索</li>
+<li>次の Port の <a class="el" href="classRTC_1_1PortBase.html#ae78bb7882d22bca794bd0faa78452aca" title="[CORBA interface] Port の接続解除通知を行う">notify_disconnect()</a> 呼び出し</li>
+<li><a class="el" href="classRTC_1_1PortBase.html#a8a843a387e99d4d4daa6e829eb1db569" title="Interface の接続を解除する.">unsubscribeInterfaces()</a></li>
+<li>ConnectorProfile の削除</li>
+</ul>
+<p><a class="el" href="classRTC_1_1PortBase.html#ae78bb7882d22bca794bd0faa78452aca" title="[CORBA interface] Port の接続解除通知を行う">notify_disconnect()</a> は ConnectorProfile::ports に格納されている Port の順序に従って、カスケード状に呼び出しを行うことにより、接 続の解除をすべての Port に通知する。</p>
+<dl class="pre"><dt><b>事前条件:</b></dt><dd>Port は与えられた connector_id に対応する ConnectorProfile を保持していなければならない。</dd></dl>
+<dl class="post"><dt><b>事後条件:</b></dt><dd>connector_id に対応する ConnectorProfile が見つからない場 合はBAD_PARAMETER エラーを返す。</dd>
+<dd>
+カスケード呼び出しを行う際には ConnectorProfile::ports に 保持されている Port の参照リストのうち、自身の参照の次の参照に対 して <a class="el" href="classRTC_1_1PortBase.html#ae78bb7882d22bca794bd0faa78452aca" title="[CORBA interface] Port の接続解除通知を行う">notify_disconnect()</a> を呼び出すが、その呼び出しで例外が発生 した場合には、呼び出しをスキップしリストの次の参照に対して <a class="el" href="classRTC_1_1PortBase.html#ae78bb7882d22bca794bd0faa78452aca" title="[CORBA interface] Port の接続解除通知を行う">notify_disconnect()</a> を呼び出す。一つも呼び出しに成功しない場合、 RTC_ERROR エラーコードを返す。</dd>
+<dd>
+なお、ConnectorProfileports のリストの最初 Port の notify_disconnet() が終了した時点では、すべての関連する Port の <a class="el" href="classRTC_1_1PortBase.html#ae78bb7882d22bca794bd0faa78452aca" title="[CORBA interface] Port の接続解除通知を行う">notify_disconnect()</a> の呼び出しが完了する。</dd></dl>
+<dl><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>connector_id</em>&nbsp;</td><td>ConnectorProfile の ID </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>戻り値:</b></dt><dd>ReturnCode_t 型のリターンコード </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a454895298d71c2f046db0071a7e2b1ae"></a><!-- doxytag: member="RTC::PortBase::onConnected" ref="a454895298d71c2f046db0071a7e2b1ae" args="(const char *portname, RTC::ConnectorProfile &amp;profile, ReturnCode_t ret)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void RTC::PortBase::onConnected </td>
+          <td>(</td>
+          <td class="paramtype">const char *&nbsp;</td>
+          <td class="paramname"> <em>portname</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">RTC::ConnectorProfile &amp;&nbsp;</td>
+          <td class="paramname"> <em>profile</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">ReturnCode_t&nbsp;</td>
+          <td class="paramname"> <em>ret</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td><code> [inline, protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>参照先 <a class="el" href="PortBase_8h_source.html#l02211">m_portconnListeners</a>, と <a class="el" href="PortConnectListener_8h_source.html#l00166">RTC::ON_CONNECTED</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a1f1b927fc26a71d74b7f82be3c57fe54"></a><!-- doxytag: member="RTC::PortBase::onConnectNextport" ref="a1f1b927fc26a71d74b7f82be3c57fe54" args="(const char *portname, RTC::ConnectorProfile &amp;profile, ReturnCode_t ret)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void RTC::PortBase::onConnectNextport </td>
+          <td>(</td>
+          <td class="paramtype">const char *&nbsp;</td>
+          <td class="paramname"> <em>portname</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">RTC::ConnectorProfile &amp;&nbsp;</td>
+          <td class="paramname"> <em>profile</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">ReturnCode_t&nbsp;</td>
+          <td class="paramname"> <em>ret</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td><code> [inline, protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>参照先 <a class="el" href="PortBase_8h_source.html#l02211">m_portconnListeners</a>, と <a class="el" href="PortConnectListener_8h_source.html#l00164">RTC::ON_CONNECT_NEXTPORT</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a6c8539e8b047205a3cdf5b34c27a246e"></a><!-- doxytag: member="RTC::PortBase::onDisconnected" ref="a6c8539e8b047205a3cdf5b34c27a246e" args="(const char *portname, RTC::ConnectorProfile &amp;profile, ReturnCode_t ret)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void RTC::PortBase::onDisconnected </td>
+          <td>(</td>
+          <td class="paramtype">const char *&nbsp;</td>
+          <td class="paramname"> <em>portname</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">RTC::ConnectorProfile &amp;&nbsp;</td>
+          <td class="paramname"> <em>profile</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">ReturnCode_t&nbsp;</td>
+          <td class="paramname"> <em>ret</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td><code> [inline, protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>参照先 <a class="el" href="PortBase_8h_source.html#l02211">m_portconnListeners</a>, と <a class="el" href="PortConnectListener_8h_source.html#l00168">RTC::ON_DISCONNECTED</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a2558aed0af62dca59972bafa8be29617"></a><!-- doxytag: member="RTC::PortBase::onDisconnectNextport" ref="a2558aed0af62dca59972bafa8be29617" args="(const char *portname, RTC::ConnectorProfile &amp;profile, ReturnCode_t ret)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void RTC::PortBase::onDisconnectNextport </td>
+          <td>(</td>
+          <td class="paramtype">const char *&nbsp;</td>
+          <td class="paramname"> <em>portname</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">RTC::ConnectorProfile &amp;&nbsp;</td>
+          <td class="paramname"> <em>profile</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">ReturnCode_t&nbsp;</td>
+          <td class="paramname"> <em>ret</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td><code> [inline, protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>参照先 <a class="el" href="PortBase_8h_source.html#l02211">m_portconnListeners</a>, と <a class="el" href="PortConnectListener_8h_source.html#l00167">RTC::ON_DISCONNECT_NEXT</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a6c5fc09077478e84e9c26405bf7be4d1"></a><!-- doxytag: member="RTC::PortBase::onNotifyConnect" ref="a6c5fc09077478e84e9c26405bf7be4d1" args="(const char *portname, RTC::ConnectorProfile &amp;profile)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void RTC::PortBase::onNotifyConnect </td>
+          <td>(</td>
+          <td class="paramtype">const char *&nbsp;</td>
+          <td class="paramname"> <em>portname</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">RTC::ConnectorProfile &amp;&nbsp;</td>
+          <td class="paramname"> <em>profile</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td><code> [inline, protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>参照先 <a class="el" href="PortBase_8h_source.html#l02211">m_portconnListeners</a>, と <a class="el" href="PortConnectListener_8h_source.html#l00051">RTC::ON_NOTIFY_CONNECT</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a1f81e3d706c34c0ff4ad77445629c1f3"></a><!-- doxytag: member="RTC::PortBase::onNotifyDisconnect" ref="a1f81e3d706c34c0ff4ad77445629c1f3" args="(const char *portname, RTC::ConnectorProfile &amp;profile)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void RTC::PortBase::onNotifyDisconnect </td>
+          <td>(</td>
+          <td class="paramtype">const char *&nbsp;</td>
+          <td class="paramname"> <em>portname</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">RTC::ConnectorProfile &amp;&nbsp;</td>
+          <td class="paramname"> <em>profile</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td><code> [inline, protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>参照先 <a class="el" href="PortBase_8h_source.html#l02211">m_portconnListeners</a>, と <a class="el" href="PortConnectListener_8h_source.html#l00052">RTC::ON_NOTIFY_DISCONNECT</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a70dd82c8188309bb79d64907d638542f"></a><!-- doxytag: member="RTC::PortBase::onPublishInterfaces" ref="a70dd82c8188309bb79d64907d638542f" args="(const char *portname, RTC::ConnectorProfile &amp;profile, ReturnCode_t ret)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void RTC::PortBase::onPublishInterfaces </td>
+          <td>(</td>
+          <td class="paramtype">const char *&nbsp;</td>
+          <td class="paramname"> <em>portname</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">RTC::ConnectorProfile &amp;&nbsp;</td>
+          <td class="paramname"> <em>profile</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">ReturnCode_t&nbsp;</td>
+          <td class="paramname"> <em>ret</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td><code> [inline, protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>参照先 <a class="el" href="PortBase_8h_source.html#l02211">m_portconnListeners</a>, と <a class="el" href="PortConnectListener_8h_source.html#l00163">RTC::ON_PUBLISH_INTERFACES</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="af5c66c1f389171c0fad73e26a74a619e"></a><!-- doxytag: member="RTC::PortBase::onSubscribeInterfaces" ref="af5c66c1f389171c0fad73e26a74a619e" args="(const char *portname, RTC::ConnectorProfile &amp;profile, ReturnCode_t ret)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void RTC::PortBase::onSubscribeInterfaces </td>
+          <td>(</td>
+          <td class="paramtype">const char *&nbsp;</td>
+          <td class="paramname"> <em>portname</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">RTC::ConnectorProfile &amp;&nbsp;</td>
+          <td class="paramname"> <em>profile</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">ReturnCode_t&nbsp;</td>
+          <td class="paramname"> <em>ret</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td><code> [inline, protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>参照先 <a class="el" href="PortBase_8h_source.html#l02211">m_portconnListeners</a>, と <a class="el" href="PortConnectListener_8h_source.html#l00165">RTC::ON_SUBSCRIBE_INTERFACES</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="af3a2ec35c3c1eb1c59dc6634069d04a0"></a><!-- doxytag: member="RTC::PortBase::onUnsubscribeInterfaces" ref="af3a2ec35c3c1eb1c59dc6634069d04a0" args="(const char *portname, RTC::ConnectorProfile &amp;profile)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void RTC::PortBase::onUnsubscribeInterfaces </td>
+          <td>(</td>
+          <td class="paramtype">const char *&nbsp;</td>
+          <td class="paramname"> <em>portname</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">RTC::ConnectorProfile &amp;&nbsp;</td>
+          <td class="paramname"> <em>profile</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td><code> [inline, protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>参照先 <a class="el" href="PortBase_8h_source.html#l02211">m_portconnListeners</a>, と <a class="el" href="PortConnectListener_8h_source.html#l00053">RTC::ON_UNSUBSCRIBE_INTERFACES</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="acf31878c5912f56c122aaa2310e182de"></a><!-- doxytag: member="RTC::PortBase::publishInterfaces" ref="acf31878c5912f56c122aaa2310e182de" args="(ConnectorProfile &amp;connector_profile)=0" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual ReturnCode_t RTC::PortBase::publishInterfaces </td>
+          <td>(</td>
+          <td class="paramtype">ConnectorProfile &amp;&nbsp;</td>
+          <td class="paramname"> <em>connector_profile</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [protected, pure virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Interface 情報を公開する. </p>
+<p>このオペレーションは、notify_connect() 処理シーケンスの始めにコール される純粋仮想関数である。 <a class="el" href="classRTC_1_1PortBase.html#a9bcc3c981a6649f37f3ad7eac31e5766" title="[CORBA interface] Port の接続通知を行う">notify_connect()</a> では、</p>
+<ul>
+<li><a class="el" href="classRTC_1_1PortBase.html#acf31878c5912f56c122aaa2310e182de" title="Interface 情報を公開する.">publishInterfaces()</a></li>
+<li><a class="el" href="classRTC_1_1PortBase.html#acd7017c12c99c59c191d1269b40a7423" title="次の Port に対して notify_connect() をコールする">connectNext()</a></li>
+<li><a class="el" href="classRTC_1_1PortBase.html#afce755069836c1ee637784e2a9e5a02b" title="Interface 情報を公開する.">subscribeInterfaces()</a></li>
+<li><a class="el" href="classRTC_1_1PortBase.html#aaaa8155f6dd891d0a4b77e6f6c55c97b" title="ConnectorProfile の追加もしくは更新.">updateConnectorProfile()</a></li>
+</ul>
+<p>の順に protected 関数がコールされ接続処理が行われる。 <br/>
+ 具象 Port ではこのオペレーションをオーバーライドし、引数として 与えられた ConnectorProfile に従い処理を行い、パラメータが不適切 であれば、RteurnCode_t 型のエラーコードを返す。 通常 publishInterafaces() 内においては、この Port に属する インターフェースに関する情報を ConnectorProfile に対して適切に設定し 他の Port に通知しなければならない。 <br/>
+ また、この関数がコールされる段階では、他の Port の Interface に関する 情報はすべて含まれていないので、他の Port の Interface を取得する処理 は <a class="el" href="classRTC_1_1PortBase.html#afce755069836c1ee637784e2a9e5a02b" title="Interface 情報を公開する.">subscribeInterfaces()</a> 内で行われるべきである。 <br/>
+ このオペレーションは、新規の connector_id に対しては接続の生成、 既存の connector_id に対しては更新が適切に行われる必要がある。</p>
+<dl><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>connector_profile</em>&nbsp;</td><td>接続に関するプロファイル情報</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>戻り値:</b></dt><dd>ReturnCode_t 型のリターンコード </dd></dl>
+
+<p><a class="el" href="classRTC_1_1CorbaPort.html#a71aa316c3324369c4462193d10a5d098">RTC::CorbaPort</a>, <a class="el" href="classRTC_1_1InPortBase.html#ad836b599b157efb1a31ec61999015986">RTC::InPortBase</a>, と <a class="el" href="classRTC_1_1OutPortBase.html#ab71eea8c300820c2dd21dd13a61f6e0f">RTC::OutPortBase</a>で実装されています。</p>
+
+</div>
+</div>
+<a class="anchor" id="a9dce68b24fdfbf13f835f6b8b83f2282"></a><!-- doxytag: member="RTC::PortBase::setConnectionLimit" ref="a9dce68b24fdfbf13f835f6b8b83f2282" args="(int limit_value)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void RTC::PortBase::setConnectionLimit </td>
+          <td>(</td>
+          <td class="paramtype">int&nbsp;</td>
+          <td class="paramname"> <em>limit_value</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [protected, virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>接続の最大数を設定する。 </p>
+<dl><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>limit_value</em>&nbsp;</td><td>最大数 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a4429d9d48ba72f621ed446b50bdf9043"></a><!-- doxytag: member="RTC::PortBase::setName" ref="a4429d9d48ba72f621ed446b50bdf9043" args="(const char *name)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void RTC::PortBase::setName </td>
+          <td>(</td>
+          <td class="paramtype">const char *&nbsp;</td>
+          <td class="paramname"> <em>name</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Port の名前を設定する. </p>
+<p>Port の名前を設定する。この名前は Port が保持する PortProfile.name に反映される。</p>
+<dl><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>name</em>&nbsp;</td><td>Port の名前 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a7c97305b47e95f96dffaee6871db9b5d"></a><!-- doxytag: member="RTC::PortBase::setOnConnected" ref="a7c97305b47e95f96dffaee6871db9b5d" args="(ConnectionCallback *on_connected)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void RTC::PortBase::setOnConnected </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classRTC_1_1ConnectionCallback.html">ConnectionCallback</a> *&nbsp;</td>
+          <td class="paramname"> <em>on_connected</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>接続完了時に呼ばれるコールバックをセットする </p>
+<p>このオペレーションは、このポートが接続完了時に呼ばれる、コールバッ クファンクタをセットする。</p>
+<p>コールバックファンクタの所有権は、呼び出し側にあり、オブジェクト が必要なくなった時に解体するのは呼び出し側の責任である。</p>
+<p>このコールバックファンクタは、ポートの接続実行関数である <a class="el" href="classRTC_1_1PortBase.html#a9bcc3c981a6649f37f3ad7eac31e5766" title="[CORBA interface] Port の接続通知を行う">notify_connect()</a> の終了直前に、接続処理が正常終了する際に限って 呼び出されるコールバックである。接続処理の過程でエラーが発生した 場合には呼び出されない。</p>
+<p>このコールバックファンクタは <a class="el" href="classRTC_1_1PortBase.html#a9bcc3c981a6649f37f3ad7eac31e5766" title="[CORBA interface] Port の接続通知を行う">notify_connect()</a> が out パラメータ として返すのと同じ引数 ConnectorProfile とともに呼び出されるので、 この接続において公開されたすべてのインターフェース情報を得ること ができる。このコールバックを利用して、notify_connect() が返す ConnectorProfile を変更することが可能であるが、接続関係の不整合 を招かないよう、ConnectorProfile の変更には注意を要する。</p>
+<dl><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>on_subscribe</em>&nbsp;</td><td><a class="el" href="classRTC_1_1ConnectionCallback.html" title="connect/notify_connect() 時のコールバック抽象クラス">ConnectionCallback</a> のサブクラスオブジェクトのポインタ </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="aa7797b53a5199aecb86ebd6e11da9a6e"></a><!-- doxytag: member="RTC::PortBase::setOnConnectionLost" ref="aa7797b53a5199aecb86ebd6e11da9a6e" args="(ConnectionCallback *on_connection_lost)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void RTC::PortBase::setOnConnectionLost </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classRTC_1_1ConnectionCallback.html">ConnectionCallback</a> *&nbsp;</td>
+          <td class="paramname"> <em>on_connection_lost</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>ポートの接続がロストした場合に呼び出されるコールバックをセットする </p>
+<p>このオペレーションは、このポートの接続がロストした場合に呼ばれる、 コールバックファンクタをセットする。</p>
+<p>InPortは、相手側OutPortとの 接続をロストした場合、接続を強制的に切断するので、 引き続き OnDisconnect コールバックが呼び出される。</p>
+<dl><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>on_connection_lost</em>&nbsp;</td><td><a class="el" href="classRTC_1_1ConnectionCallback.html" title="connect/notify_connect() 時のコールバック抽象クラス">ConnectionCallback</a> のサブクラスオブジェク トのポインタ </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a8f26ec4ff60e7728a09cbd34a6a2ca33"></a><!-- doxytag: member="RTC::PortBase::setOnDisconnected" ref="a8f26ec4ff60e7728a09cbd34a6a2ca33" args="(ConnectionCallback *on_disconnected)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void RTC::PortBase::setOnDisconnected </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classRTC_1_1ConnectionCallback.html">ConnectionCallback</a> *&nbsp;</td>
+          <td class="paramname"> <em>on_disconnected</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>接続解除に呼ばれるコールバックをセットする </p>
+<p>このオペレーションは、このポートの接続解除時に呼ばれる、コールバッ クファンクタをセットする。</p>
+<p>コールバックファンクタの所有権は、呼び出し側にあり、オブジェクト が必要なくなった時に解体するのは呼び出し側の責任である。</p>
+<p>このコールバックファンクタは、ポートの接続解除実行関数である <a class="el" href="classRTC_1_1PortBase.html#ae78bb7882d22bca794bd0faa78452aca" title="[CORBA interface] Port の接続解除通知を行う">notify_disconnect()</a> の終了直前に、呼び出されるコールバックである。</p>
+<p>このコールバックファンクタは接続に対応する ConnectorProfile とと もに呼び出される。この ConnectorProfile はこのファンクタ呼出し後 に破棄されるので、変更がほかに影響を与えることはない。</p>
+<dl><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>on_disconnected</em>&nbsp;</td><td><a class="el" href="classRTC_1_1ConnectionCallback.html" title="connect/notify_connect() 時のコールバック抽象クラス">ConnectionCallback</a> のサブクラスオブジェク トのポインタ </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="affce1efdd04a8b66af5238ee435a5b2b"></a><!-- doxytag: member="RTC::PortBase::setOnPublishInterfaces" ref="affce1efdd04a8b66af5238ee435a5b2b" args="(ConnectionCallback *on_publish)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void RTC::PortBase::setOnPublishInterfaces </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classRTC_1_1ConnectionCallback.html">ConnectionCallback</a> *&nbsp;</td>
+          <td class="paramname"> <em>on_publish</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>インターフェースを公開する際に呼ばれるコールバックをセットする </p>
+<p>このオペレーションは、このポートが接続時に、ポート自身が持つサー ビスインターフェース情報を公開するタイミングで呼ばれるコールバッ クファンクタをセットする。</p>
+<p>コールバックファンクタの所有権は、呼び出し側にあり、オブジェクト が必要なくなった時に解体するのは呼び出し側の責任である。</p>
+<p>このコールバックファンクタは、PortBaseクラスの仮想関数である <a class="el" href="classRTC_1_1PortBase.html#acf31878c5912f56c122aaa2310e182de" title="Interface 情報を公開する.">publishInterfaces()</a> が呼ばれたあとに、同じ引数 ConnectorProfile と ともに呼び出される。このコールバックを利用して、 <a class="el" href="classRTC_1_1PortBase.html#acf31878c5912f56c122aaa2310e182de" title="Interface 情報を公開する.">publishInterfaces()</a> が公開した ConnectorProfile を変更することが可 能であるが、接続関係の不整合を招かないよう、ConnectorProfile の 変更には注意を要する。</p>
+<dl><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>on_publish</em>&nbsp;</td><td><a class="el" href="classRTC_1_1ConnectionCallback.html" title="connect/notify_connect() 時のコールバック抽象クラス">ConnectionCallback</a> のサブクラスオブジェクトのポインタ </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="ac9783d3edef34a7f5c5cef910b4fa33a"></a><!-- doxytag: member="RTC::PortBase::setOnSubscribeInterfaces" ref="ac9783d3edef34a7f5c5cef910b4fa33a" args="(ConnectionCallback *on_subscribe)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void RTC::PortBase::setOnSubscribeInterfaces </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classRTC_1_1ConnectionCallback.html">ConnectionCallback</a> *&nbsp;</td>
+          <td class="paramname"> <em>on_subscribe</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>インターフェースを取得する際に呼ばれるコールバックをセットする </p>
+<p>このオペレーションは、このポートが接続時に、相手のポートが持つサー ビスインターフェース情報を取得するタイミングで呼ばれるコールバッ クファンクタをセットする。</p>
+<p>コールバックファンクタの所有権は、呼び出し側にあり、オブジェクト が必要なくなった時に解体するのは呼び出し側の責任である。</p>
+<p>このコールバックファンクタは、PortBaseクラスの仮想関数である <a class="el" href="classRTC_1_1PortBase.html#afce755069836c1ee637784e2a9e5a02b" title="Interface 情報を公開する.">subscribeInterfaces()</a> が呼ばれる前に、同じ引数 ConnectorProfile と ともに呼び出される。このコールバックを利用して、 <a class="el" href="classRTC_1_1PortBase.html#afce755069836c1ee637784e2a9e5a02b" title="Interface 情報を公開する.">subscribeInterfaces()</a> に与える ConnectorProfile を変更することが可 能であるが、接続関係の不整合を招かないよう、ConnectorProfile の 変更には注意を要する。</p>
+<dl><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>on_subscribe</em>&nbsp;</td><td><a class="el" href="classRTC_1_1ConnectionCallback.html" title="connect/notify_connect() 時のコールバック抽象クラス">ConnectionCallback</a> のサブクラスオブジェクトのポインタ </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="aff023d4b2faa7d161b7c91ef9273a705"></a><!-- doxytag: member="RTC::PortBase::setOnUnsubscribeInterfaces" ref="aff023d4b2faa7d161b7c91ef9273a705" args="(ConnectionCallback *on_subscribe)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void RTC::PortBase::setOnUnsubscribeInterfaces </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classRTC_1_1ConnectionCallback.html">ConnectionCallback</a> *&nbsp;</td>
+          <td class="paramname"> <em>on_subscribe</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>インターフェースを解放する際に呼ばれるコールバックをセットする </p>
+<p>このオペレーションは、このポートが接続時に、相手のポートが持つサー ビスインターフェース情報を解放するタイミングで呼ばれるコールバッ クファンクタをセットする。</p>
+<p>コールバックファンクタの所有権は、呼び出し側にあり、オブジェクト が必要なくなった時に解体するのは呼び出し側の責任である。</p>
+<p>このコールバックファンクタは、PortBaseクラスの仮想関数である <a class="el" href="classRTC_1_1PortBase.html#a8a843a387e99d4d4daa6e829eb1db569" title="Interface の接続を解除する.">unsubscribeInterfaces()</a> が呼ばれる前に、同じ引数 ConnectorProfile と ともに呼び出される。このコールバックを利用して、 <a class="el" href="classRTC_1_1PortBase.html#a8a843a387e99d4d4daa6e829eb1db569" title="Interface の接続を解除する.">unsubscribeInterfaces()</a> に与える ConnectorProfile を変更することが可 能であるが、接続関係の不整合を招かないよう、ConnectorProfile の 変更には注意を要する。</p>
+<dl><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>on_unsubscribe</em>&nbsp;</td><td><a class="el" href="classRTC_1_1ConnectionCallback.html" title="connect/notify_connect() 時のコールバック抽象クラス">ConnectionCallback</a> のサブクラスオブジェク トのポインタ </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a1431e933c50b7f31df6446051ca4b3fe"></a><!-- doxytag: member="RTC::PortBase::setOwner" ref="a1431e933c50b7f31df6446051ca4b3fe" args="(RTObject_ptr owner)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void RTC::PortBase::setOwner </td>
+          <td>(</td>
+          <td class="paramtype">RTObject_ptr&nbsp;</td>
+          <td class="paramname"> <em>owner</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Port の owner の RTObject を指定する. </p>
+<p>このオペレーションは Port の PortProfile.owner を設定する。</p>
+<dl><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>owner</em>&nbsp;</td><td>この Port を所有する RTObject の参照 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="aa0fca5f8b8ce5503439f21c7e940227b"></a><!-- doxytag: member="RTC::PortBase::setPortConnectListenerHolder" ref="aa0fca5f8b8ce5503439f21c7e940227b" args="(PortConnectListeners *portconnListeners)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void RTC::PortBase::setPortConnectListenerHolder </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classRTC_1_1PortConnectListeners.html">PortConnectListeners</a> *&nbsp;</td>
+          <td class="paramname"> <em>portconnListeners</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p><a class="el" href="classRTC_1_1PortConnectListeners.html" title="PortConnectListeners クラス.">PortConnectListeners</a> のホルダをセットする. </p>
+<p>ポートの接続に関するリスナ群を保持するホルダクラスへのポインタを セットする。この関数は通常親のRTObjectから呼ばれ、RTObjectが持つ ホルダクラスへのポインタがセットされる。</p>
+<dl><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>portconnListeners</em>&nbsp;</td><td><a class="el" href="classRTC_1_1PortConnectListeners.html" title="PortConnectListeners クラス.">PortConnectListeners</a> オブジェクトのポインタ </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a710706ff630c6502e3de6cf5dd302c83"></a><!-- doxytag: member="RTC::PortBase::setPortRef" ref="a710706ff630c6502e3de6cf5dd302c83" args="(PortService_ptr port_ref)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void RTC::PortBase::setPortRef </td>
+          <td>(</td>
+          <td class="paramtype">PortService_ptr&nbsp;</td>
+          <td class="paramname"> <em>port_ref</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Port のオブジェクト参照を設定する. </p>
+<p>このオペレーションは Port の PortProfile にこの Port 自身の オブジェクト参照を設定する。</p>
+<dl><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>port_ref</em>&nbsp;</td><td>この Port のオブジェクト参照 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a7d8fb06825e17568567786987bd00fbb"></a><!-- doxytag: member="RTC::PortBase::setUUID" ref="a7d8fb06825e17568567786987bd00fbb" args="(ConnectorProfile &amp;connector_profile) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void RTC::PortBase::setUUID </td>
+          <td>(</td>
+          <td class="paramtype">ConnectorProfile &amp;&nbsp;</td>
+          <td class="paramname"> <em>connector_profile</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const<code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>UUIDを生成し ConnectorProfile にセットする. </p>
+<p>このオペレーションは UUID を生成し、ConnectorProfile にセットする。</p>
+<dl><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>connector_profile</em>&nbsp;</td><td>connector_id をセットする ConnectorProfile </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="afce755069836c1ee637784e2a9e5a02b"></a><!-- doxytag: member="RTC::PortBase::subscribeInterfaces" ref="afce755069836c1ee637784e2a9e5a02b" args="(const ConnectorProfile &amp;connector_profile)=0" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual ReturnCode_t RTC::PortBase::subscribeInterfaces </td>
+          <td>(</td>
+          <td class="paramtype">const ConnectorProfile &amp;&nbsp;</td>
+          <td class="paramname"> <em>connector_profile</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [protected, pure virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Interface 情報を公開する. </p>
+<p>このオペレーションは、notify_connect() 処理シーケンスの中間にコール される純粋仮想関数である。 <a class="el" href="classRTC_1_1PortBase.html#a9bcc3c981a6649f37f3ad7eac31e5766" title="[CORBA interface] Port の接続通知を行う">notify_connect()</a> では、</p>
+<ul>
+<li><a class="el" href="classRTC_1_1PortBase.html#acf31878c5912f56c122aaa2310e182de" title="Interface 情報を公開する.">publishInterfaces()</a></li>
+<li><a class="el" href="classRTC_1_1PortBase.html#acd7017c12c99c59c191d1269b40a7423" title="次の Port に対して notify_connect() をコールする">connectNext()</a></li>
+<li><a class="el" href="classRTC_1_1PortBase.html#afce755069836c1ee637784e2a9e5a02b" title="Interface 情報を公開する.">subscribeInterfaces()</a></li>
+<li><a class="el" href="classRTC_1_1PortBase.html#aaaa8155f6dd891d0a4b77e6f6c55c97b" title="ConnectorProfile の追加もしくは更新.">updateConnectorProfile()</a></li>
+</ul>
+<p>の順に protected 関数がコールされ接続処理が行われる。 <br/>
+ 具象 Port ではこのオペレーションをオーバーライドし、引数として 与えられた ConnectorProfile に従い処理を行い、パラメータが不適切 であれば、RteurnCode_t 型のエラーコードを返す。 引数 ConnectorProfile には他の Port の Interface に関する情報が 全て含まれている。 通常 subscribeInterafaces() 内においては、この Port が使用する Interface に関する情報を取得し、要求側のインターフェースに対して 情報を設定しなければならない。 <br/>
+ このオペレーションは、新規の connector_id に対しては接続の生成、 既存の connector_id に対しては更新が適切に行われる必要がある。</p>
+<dl><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>connector_profile</em>&nbsp;</td><td>接続に関するプロファイル情報</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>戻り値:</b></dt><dd>ReturnCode_t 型のリターンコード </dd></dl>
+
+<p><a class="el" href="classRTC_1_1CorbaPort.html#ad9a122cbe2f9892cc9555e805571742e">RTC::CorbaPort</a>, <a class="el" href="classRTC_1_1InPortBase.html#adf648c377e5730a2de6dc48fc47543fb">RTC::InPortBase</a>, と <a class="el" href="classRTC_1_1OutPortBase.html#a76018cbaa5c13fa3363e196c442f5c49">RTC::OutPortBase</a>で実装されています。</p>
+
+</div>
+</div>
+<a class="anchor" id="a8a843a387e99d4d4daa6e829eb1db569"></a><!-- doxytag: member="RTC::PortBase::unsubscribeInterfaces" ref="a8a843a387e99d4d4daa6e829eb1db569" args="(const ConnectorProfile &amp;connector_profile)=0" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void RTC::PortBase::unsubscribeInterfaces </td>
+          <td>(</td>
+          <td class="paramtype">const ConnectorProfile &amp;&nbsp;</td>
+          <td class="paramname"> <em>connector_profile</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [protected, pure virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Interface の接続を解除する. </p>
+<p>このオペレーションは、notify_disconnect() 処理シーケンスの終わりにコール される純粋仮想関数である。 <a class="el" href="classRTC_1_1PortBase.html#ae78bb7882d22bca794bd0faa78452aca" title="[CORBA interface] Port の接続解除通知を行う">notify_disconnect()</a> では、</p>
+<ul>
+<li><a class="el" href="classRTC_1_1PortBase.html#a4eeddc35a698e4020e7ba96627dcde3b" title="次の Port に対して notify_disconnect() をコールする">disconnectNext()</a></li>
+<li><a class="el" href="classRTC_1_1PortBase.html#a8a843a387e99d4d4daa6e829eb1db569" title="Interface の接続を解除する.">unsubscribeInterfaces()</a></li>
+<li><a class="el" href="classRTC_1_1PortBase.html#a3803219dc15de9ebb9bf096a82cfb383" title="ConnectorProfile を削除する.">eraseConnectorProfile()</a> の順に protected 関数がコールされ接続解除処理が行われる。 <br/>
+ 具象 Port ではこのオペレーションをオーバーライドし、引数として 与えられた ConnectorProfile に従い接続解除処理を行う。</li>
+</ul>
+<dl><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>connector_profile</em>&nbsp;</td><td>接続に関するプロファイル情報 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p><a class="el" href="classRTC_1_1CorbaPort.html#a4776e122a3066d9e3a3e5d1e5da45b98">RTC::CorbaPort</a>, <a class="el" href="classRTC_1_1InPortBase.html#a118932439dce0dc96571b0123615c36e">RTC::InPortBase</a>, と <a class="el" href="classRTC_1_1OutPortBase.html#ad2c373292a41c5f2eb088e7ae124b857">RTC::OutPortBase</a>で実装されています。</p>
+
+</div>
+</div>
+<a class="anchor" id="aaaa8155f6dd891d0a4b77e6f6c55c97b"></a><!-- doxytag: member="RTC::PortBase::updateConnectorProfile" ref="aaaa8155f6dd891d0a4b77e6f6c55c97b" args="(const ConnectorProfile &amp;connector_profile)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void RTC::PortBase::updateConnectorProfile </td>
+          <td>(</td>
+          <td class="paramtype">const ConnectorProfile &amp;&nbsp;</td>
+          <td class="paramname"> <em>connector_profile</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>ConnectorProfile の追加もしくは更新. </p>
+<p>このオペレーションは与えられた ConnectorProfile を Port に追加もしくは 更新保存する。 与えられた ConnectorProfile の connector_id と同じ ID を持つ ConnectorProfile がリストになければ、リストに追加し、 同じ ID が存在すれば ConnectorProfile を上書き保存する。</p>
+<dl><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>connector_profile</em>&nbsp;</td><td>追加もしくは更新する ConnectorProfile </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="aa9e0697ef8a7138cdf30ab756ecc9242"></a><!-- doxytag: member="RTC::PortBase::updateConnectors" ref="aa9e0697ef8a7138cdf30ab756ecc9242" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void RTC::PortBase::updateConnectors </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>存在しないポートをdisconnectする。 </p>
+<p>死んだPortを検出し、もし死んでいるポートがあった場合には、接続を 解除する。 </p>
+
+</div>
+</div>
+<hr/><h2>変数</h2>
+<a class="anchor" id="a0c568d0d7ffd5c5dfbf7cdfbd27e22c9"></a><!-- doxytag: member="RTC::PortBase::m_connectionLimit" ref="a0c568d0d7ffd5c5dfbf7cdfbd27e22c9" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int <a class="el" href="classRTC_1_1PortBase.html#a0c568d0d7ffd5c5dfbf7cdfbd27e22c9">RTC::PortBase::m_connectionLimit</a><code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Port の接続の最大数. </p>
+
+</div>
+</div>
+<a class="anchor" id="acbdf425104a21619d4c887e415e045c8"></a><!-- doxytag: member="RTC::PortBase::m_connectorsMutex" ref="acbdf425104a21619d4c887e415e045c8" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classcoil_1_1Mutex.html">coil::Mutex</a> <a class="el" href="classRTC_1_1PortBase.html#acbdf425104a21619d4c887e415e045c8">RTC::PortBase::m_connectorsMutex</a><code> [mutable, protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>参照元 <a class="el" href="InPort_8h_source.html#l00276">RTC::InPort&lt; DataType &gt;::isEmpty()</a>, <a class="el" href="InPort_8h_source.html#l00225">RTC::InPort&lt; DataType &gt;::isNew()</a>, <a class="el" href="InPort_8h_source.html#l00378">RTC::InPort&lt; DataType &gt;::read()</a>, と <a class="el" href="OutPort_8h_source.html#l00203">RTC::OutPort&lt; DataType &gt;::write()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a6add3c9750060e44acaec9e70a78ed92"></a><!-- doxytag: member="RTC::PortBase::m_objref" ref="a6add3c9750060e44acaec9e70a78ed92" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">RTC::PortService_var <a class="el" href="classRTC_1_1PortBase.html#a6add3c9750060e44acaec9e70a78ed92">RTC::PortBase::m_objref</a><code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Port の オブジェクト参照. </p>
+
+</div>
+</div>
+<a class="anchor" id="a52852f17f0978a6a639fcf6c8a8a71b6"></a><!-- doxytag: member="RTC::PortBase::m_onConnected" ref="a52852f17f0978a6a639fcf6c8a8a71b6" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classRTC_1_1ConnectionCallback.html">ConnectionCallback</a>* <a class="el" href="classRTC_1_1PortBase.html#a52852f17f0978a6a639fcf6c8a8a71b6">RTC::PortBase::m_onConnected</a><code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Callback functor オブジェクト. </p>
+<p>接続完了時に呼ばれるコールバックオブジェクト </p>
+
+</div>
+</div>
+<a class="anchor" id="a2d7cfeb11e8bccae7702badef6d384f4"></a><!-- doxytag: member="RTC::PortBase::m_onConnectionLost" ref="a2d7cfeb11e8bccae7702badef6d384f4" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classRTC_1_1ConnectionCallback.html">ConnectionCallback</a>* <a class="el" href="classRTC_1_1PortBase.html#a2d7cfeb11e8bccae7702badef6d384f4">RTC::PortBase::m_onConnectionLost</a><code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Callback functor オブジェクト. </p>
+<p>ポートの接続がロストした場合に呼び出されるコールバックオブジェクト </p>
+
+<p>参照元 <a class="el" href="OutPort_8h_source.html#l00203">RTC::OutPort&lt; DataType &gt;::write()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ac1ddf7686081da5a663f9109b7ad740f"></a><!-- doxytag: member="RTC::PortBase::m_onDisconnected" ref="ac1ddf7686081da5a663f9109b7ad740f" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classRTC_1_1ConnectionCallback.html">ConnectionCallback</a>* <a class="el" href="classRTC_1_1PortBase.html#ac1ddf7686081da5a663f9109b7ad740f">RTC::PortBase::m_onDisconnected</a><code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Callback functor オブジェクト. </p>
+<p>接続解除に呼ばれるコールバックオブジェクト </p>
+
+</div>
+</div>
+<a class="anchor" id="a85b7308b6911a14bbd26f62106fa2986"></a><!-- doxytag: member="RTC::PortBase::m_onPublishInterfaces" ref="a85b7308b6911a14bbd26f62106fa2986" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classRTC_1_1ConnectionCallback.html">ConnectionCallback</a>* <a class="el" href="classRTC_1_1PortBase.html#a85b7308b6911a14bbd26f62106fa2986">RTC::PortBase::m_onPublishInterfaces</a><code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Callback functor オブジェクト. </p>
+<p>インターフェースを公開する際に呼ばれるコールバックオブジェクト </p>
+
+</div>
+</div>
+<a class="anchor" id="a63ef15306f2d4d66b9570f11d8715057"></a><!-- doxytag: member="RTC::PortBase::m_onSubscribeInterfaces" ref="a63ef15306f2d4d66b9570f11d8715057" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classRTC_1_1ConnectionCallback.html">ConnectionCallback</a>* <a class="el" href="classRTC_1_1PortBase.html#a63ef15306f2d4d66b9570f11d8715057">RTC::PortBase::m_onSubscribeInterfaces</a><code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Callback functor オブジェクト. </p>
+<p>インターフェースを取得する際に呼ばれるコールバックオブジェクト </p>
+
+</div>
+</div>
+<a class="anchor" id="a34d4ada2f1dfcebec2adc85e5aea484a"></a><!-- doxytag: member="RTC::PortBase::m_onUnsubscribeInterfaces" ref="a34d4ada2f1dfcebec2adc85e5aea484a" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classRTC_1_1ConnectionCallback.html">ConnectionCallback</a>* <a class="el" href="classRTC_1_1PortBase.html#a34d4ada2f1dfcebec2adc85e5aea484a">RTC::PortBase::m_onUnsubscribeInterfaces</a><code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Callback functor オブジェクト. </p>
+<p>インターフェースを解放する際に呼ばれるコールバックオブジェクト </p>
+
+</div>
+</div>
+<a class="anchor" id="a6f33c6161ecc2b00babcb3a18c7438df"></a><!-- doxytag: member="RTC::PortBase::m_ownerInstanceName" ref="a6f33c6161ecc2b00babcb3a18c7438df" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string <a class="el" href="classRTC_1_1PortBase.html#a6f33c6161ecc2b00babcb3a18c7438df">RTC::PortBase::m_ownerInstanceName</a><code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>インスタンス名 </p>
+
+</div>
+</div>
+<a class="anchor" id="a0e9ebbf6f53845b48d087240eeb8656f"></a><!-- doxytag: member="RTC::PortBase::m_portconnListeners" ref="a0e9ebbf6f53845b48d087240eeb8656f" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classRTC_1_1PortConnectListeners.html">PortConnectListeners</a>* <a class="el" href="classRTC_1_1PortBase.html#a0e9ebbf6f53845b48d087240eeb8656f">RTC::PortBase::m_portconnListeners</a><code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>PortConnectListenerホルダ. </p>
+<p>PortConnectListenrを保持するホルダ </p>
+
+<p>参照元 <a class="el" href="PortBase_8h_source.html#l02021">onConnected()</a>, <a class="el" href="PortBase_8h_source.html#l01997">onConnectNextport()</a>, <a class="el" href="PortBase_8h_source.html#l02043">onDisconnected()</a>, <a class="el" href="PortBase_8h_source.html#l02032">onDisconnectNextport()</a>, <a class="el" href="PortBase_8h_source.html#l01956">onNotifyConnect()</a>, <a class="el" href="PortBase_8h_source.html#l01966">onNotifyDisconnect()</a>, <a class="el" href="PortBase_8h_source.html#l01985">onPublishInterfaces()</a>, <a class="el" href="PortBase_8h_source.html#l02009">onSubscribeInterfaces()</a>, と <a class="el" href="PortBase_8h_source.html#l01975">onUnsubscribeInterfaces()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a02b8a89853dc64600f9301a87f50138a"></a><!-- doxytag: member="RTC::PortBase::m_profile" ref="a02b8a89853dc64600f9301a87f50138a" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">PortProfile <a class="el" href="classRTC_1_1PortBase.html#a02b8a89853dc64600f9301a87f50138a">RTC::PortBase::m_profile</a><code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Port の PortProfile. </p>
+
+<p>参照元 <a class="el" href="PortBase_8h_source.html#l01876">addProperty()</a>, と <a class="el" href="PortBase_8h_source.html#l01907">appendProperty()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a2ee84ba32ff8423c318798dea9814642"></a><!-- doxytag: member="RTC::PortBase::m_profile_mutex" ref="a2ee84ba32ff8423c318798dea9814642" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classcoil_1_1Mutex.html">coil::Mutex</a> <a class="el" href="classRTC_1_1PortBase.html#a2ee84ba32ff8423c318798dea9814642">RTC::PortBase::m_profile_mutex</a><code> [mutable, protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>PortProfile の mutex. </p>
+
+</div>
+</div>
+<a class="anchor" id="ab111ca721c706fe5e93da18705ace90e"></a><!-- doxytag: member="RTC::PortBase::rtclog" ref="ab111ca721c706fe5e93da18705ace90e" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classRTC_1_1Logger.html">Logger</a> <a class="el" href="classRTC_1_1PortBase.html#ab111ca721c706fe5e93da18705ace90e">RTC::PortBase::rtclog</a><code> [mutable, protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>ロガーストリーム </p>
+
+</div>
+</div>
+</div>
+<hr class="footer"/><address style="text-align: right;"><small>OpenRTMに対してThu May 24 23:25:20 2012に生成されました。&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.6.3 </small></address>
+</body>
+</html>

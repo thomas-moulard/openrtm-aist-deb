@@ -1,0 +1,52 @@
+\section{クラス ListenerBase}
+\label{classListenerBase}\index{ListenerBase@{ListenerBase}}
+
+
+\doxyref{ListenerBase}{p.}{classListenerBase} クラス.  
+
+
+
+
+{\ttfamily \#include $<$Listener.h$>$}
+
+ListenerBaseに対する継承グラフ\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=1.93772cm]{classListenerBase}
+\end{center}
+\end{figure}
+\subsection*{Public メソッド}
+\begin{DoxyCompactItemize}
+\item 
+virtual {\bf $\sim$ListenerBase} ()
+\item 
+virtual void {\bf invoke} ()=0
+\begin{DoxyCompactList}\small\item\em コールバック処理 \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{説明}
+\doxyref{ListenerBase}{p.}{classListenerBase} クラス. タイマーに登録するリスナー用抽象インターフェースクラス。
+
+\begin{DoxySince}{から}
+0.4.0 
+\end{DoxySince}
+
+
+\subsection{コンストラクタとデストラクタ}
+\index{ListenerBase@{ListenerBase}!$\sim$ListenerBase@{$\sim$ListenerBase}}
+\index{$\sim$ListenerBase@{$\sim$ListenerBase}!ListenerBase@{ListenerBase}}
+\subsubsection[{$\sim$ListenerBase}]{\setlength{\rightskip}{0pt plus 5cm}virtual ListenerBase::$\sim$ListenerBase ()\hspace{0.3cm}{\ttfamily  [inline, virtual]}}\label{classListenerBase_ae9c4a6c29939edf6f10a3c0393fbf10d}
+デストラクタ 
+
+\subsection{関数}
+\index{ListenerBase@{ListenerBase}!invoke@{invoke}}
+\index{invoke@{invoke}!ListenerBase@{ListenerBase}}
+\subsubsection[{invoke}]{\setlength{\rightskip}{0pt plus 5cm}virtual void ListenerBase::invoke ()\hspace{0.3cm}{\ttfamily  [pure virtual]}}\label{classListenerBase_af2cace07df880215fda280ed3cbe0b0b}
+
+
+コールバック処理 
+
+コールバック処理用純粋仮想関数 
+
+{\bf ListenerObject$<$ ListenerClass, CallbackFunc $>$} \doxyref{}{p.}{classListenerObject_a89a5e9d005b8043419f4ccbb244f29d4}, と {\bf ListenerFunc} \doxyref{}{p.}{classListenerFunc_aaad57f69b0e6c85d9a6b01cec53bc74f}で実装されています。
+

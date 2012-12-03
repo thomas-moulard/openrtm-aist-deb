@@ -1,0 +1,321 @@
+\section{RTC::NamingManager Class Reference}
+\label{classRTC_1_1NamingManager}\index{RTC::NamingManager@{RTC::NamingManager}}
+
+
+NamingServer management class.  
+
+
+
+
+{\ttfamily \#include $<$NamingManager.h$>$}
+
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct {\bf Comps}
+\begin{DoxyCompactList}\small\item\em Structure for component management. \item\end{DoxyCompactList}\item 
+struct {\bf Mgr}
+\begin{DoxyCompactList}\small\item\em Structure for ManagerServant management. \item\end{DoxyCompactList}\item 
+class {\bf Names}
+\begin{DoxyCompactList}\small\item\em Structure for NameServer management. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf NamingManager} ({\bf Manager} $\ast$manager)
+\begin{DoxyCompactList}\small\item\em Constructor. \item\end{DoxyCompactList}\item 
+virtual {\bf $\sim$NamingManager} (void)
+\begin{DoxyCompactList}\small\item\em Destructor. \item\end{DoxyCompactList}\item 
+void {\bf registerNameServer} (const char $\ast$method, const char $\ast$name\_\-server)
+\begin{DoxyCompactList}\small\item\em Regster the NameServer. \item\end{DoxyCompactList}\item 
+void {\bf bindObject} (const char $\ast$name, const {\bf RTObject\_\-impl} $\ast$rtobj)
+\begin{DoxyCompactList}\small\item\em Bind the specified objects to NamingService. \item\end{DoxyCompactList}\item 
+void {\bf bindObject} (const char $\ast$name, const {\bf RTM::ManagerServant} $\ast$mgr)
+\begin{DoxyCompactList}\small\item\em Bind the specified ManagerServants to NamingService. \item\end{DoxyCompactList}\item 
+void {\bf update} ()
+\begin{DoxyCompactList}\small\item\em Update information of NamingServer. \item\end{DoxyCompactList}\item 
+void {\bf unbindObject} (const char $\ast$name)
+\begin{DoxyCompactList}\small\item\em Unbind the specified objects from NamingService. \item\end{DoxyCompactList}\item 
+void {\bf unbindAll} ()
+\begin{DoxyCompactList}\small\item\em Unbind all objects from NamingService. \item\end{DoxyCompactList}\item 
+std::vector$<$ {\bf RTObject\_\-impl} $\ast$ $>$ {\bf getObjects} ()
+\begin{DoxyCompactList}\small\item\em Get all bound objects. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf NamingBase} $\ast$ {\bf createNamingObj} (const char $\ast$method, const char $\ast$name\_\-server)
+\begin{DoxyCompactList}\small\item\em Create objects for NameServer management. \item\end{DoxyCompactList}\item 
+void {\bf bindCompsTo} ({\bf NamingBase} $\ast$ns)
+\begin{DoxyCompactList}\small\item\em Register the configured component to NameServer. \item\end{DoxyCompactList}\item 
+void {\bf registerCompName} (const char $\ast$name, const {\bf RTObject\_\-impl} $\ast$rtobj)
+\begin{DoxyCompactList}\small\item\em Configure the components that will be registered to NameServer. \item\end{DoxyCompactList}\item 
+void {\bf registerMgrName} (const char $\ast$name, const {\bf RTM::ManagerServant} $\ast$mgr)
+\begin{DoxyCompactList}\small\item\em Configure the ManagerServants that will be registered to NameServer. \item\end{DoxyCompactList}\item 
+void {\bf unregisterCompName} (const char $\ast$name)
+\begin{DoxyCompactList}\small\item\em Unregister the components that will be registered to NameServer. \item\end{DoxyCompactList}\item 
+void {\bf unregisterMgrName} (const char $\ast$name)
+\begin{DoxyCompactList}\small\item\em Unregister the ManagerServants that will be registered to NameServer. \item\end{DoxyCompactList}\item 
+void {\bf retryConnection} ({\bf Names} $\ast$ns)
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std::vector$<$ {\bf Names} $\ast$ $>$ {\bf m\_\-names}
+\begin{DoxyCompactList}\small\item\em NameServer list. \item\end{DoxyCompactList}\item 
+{\bf Mutex} {\bf m\_\-namesMutex}
+\begin{DoxyCompactList}\small\item\em Mutex of NameServer list. \item\end{DoxyCompactList}\item 
+std::vector$<$ {\bf Comps} $\ast$ $>$ {\bf m\_\-compNames}
+\begin{DoxyCompactList}\small\item\em Component list. \item\end{DoxyCompactList}\item 
+{\bf Mutex} {\bf m\_\-compNamesMutex}
+\begin{DoxyCompactList}\small\item\em Mutex of Component list. \item\end{DoxyCompactList}\item 
+std::vector$<$ {\bf Mgr} $\ast$ $>$ {\bf m\_\-mgrNames}
+\begin{DoxyCompactList}\small\item\em ManagerServant list. \item\end{DoxyCompactList}\item 
+{\bf Mutex} {\bf m\_\-mgrNamesMutex}
+\begin{DoxyCompactList}\small\item\em Mutex of ManagerServant list. \item\end{DoxyCompactList}\item 
+{\bf Manager} $\ast$ {\bf m\_\-manager}
+\begin{DoxyCompactList}\small\item\em \doxyref{Manager}{p.}{classRTC_1_1Manager} object. \item\end{DoxyCompactList}\item 
+{\bf Logger} {\bf rtclog}
+\begin{DoxyCompactList}\small\item\em \doxyref{Logger}{p.}{classRTC_1_1Logger} stream. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+NamingServer management class. NamingServer management class. Manage to register and unregister components to NamingService.
+
+\begin{DoxySince}{Since}
+0.4.0 
+\end{DoxySince}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{RTC::NamingManager@{RTC::NamingManager}!NamingManager@{NamingManager}}
+\index{NamingManager@{NamingManager}!RTC::NamingManager@{RTC::NamingManager}}
+\subsubsection[{NamingManager}]{\setlength{\rightskip}{0pt plus 5cm}RTC::NamingManager::NamingManager ({\bf Manager} $\ast$ {\em manager})}\label{classRTC_1_1NamingManager_a2d927cb41678fb5f21335515340d2c86}
+
+
+Constructor. 
+
+Constructor
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em manager}]\doxyref{Manager}{p.}{classRTC_1_1Manager} object \end{DoxyParams}
+\index{RTC::NamingManager@{RTC::NamingManager}!$\sim$NamingManager@{$\sim$NamingManager}}
+\index{$\sim$NamingManager@{$\sim$NamingManager}!RTC::NamingManager@{RTC::NamingManager}}
+\subsubsection[{$\sim$NamingManager}]{\setlength{\rightskip}{0pt plus 5cm}virtual RTC::NamingManager::$\sim$NamingManager (void)\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classRTC_1_1NamingManager_ab8aede9161f52b474eb9ce4a0cfc0bcb}
+
+
+Destructor. 
+
+
+
+\subsection{Member Function Documentation}
+\index{RTC::NamingManager@{RTC::NamingManager}!bindCompsTo@{bindCompsTo}}
+\index{bindCompsTo@{bindCompsTo}!RTC::NamingManager@{RTC::NamingManager}}
+\subsubsection[{bindCompsTo}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::NamingManager::bindCompsTo ({\bf NamingBase} $\ast$ {\em ns})\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC_1_1NamingManager_a7f48ebff1a98fa1e6dc30f34f6f56337}
+
+
+Register the configured component to NameServer. 
+
+Register the already configured components to NameServer.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em ns}]The target NameServer for the registration \end{DoxyParams}
+\index{RTC::NamingManager@{RTC::NamingManager}!bindObject@{bindObject}}
+\index{bindObject@{bindObject}!RTC::NamingManager@{RTC::NamingManager}}
+\subsubsection[{bindObject}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::NamingManager::bindObject (const char $\ast$ {\em name}, \/  const {\bf RTM::ManagerServant} $\ast$ {\em mgr})}\label{classRTC_1_1NamingManager_ae909f8abcff48157d70f5430a04f5cc1}
+
+
+Bind the specified ManagerServants to NamingService. 
+
+Bind the specified ManagerServants to CORBA NamingService by specified names.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em name}]\doxyref{Names}{p.}{classRTC_1_1NamingManager_1_1Names} at the binding \item[{\em mgr}]The target ManagerServants for the binding \end{DoxyParams}
+\index{RTC::NamingManager@{RTC::NamingManager}!bindObject@{bindObject}}
+\index{bindObject@{bindObject}!RTC::NamingManager@{RTC::NamingManager}}
+\subsubsection[{bindObject}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::NamingManager::bindObject (const char $\ast$ {\em name}, \/  const {\bf RTObject\_\-impl} $\ast$ {\em rtobj})}\label{classRTC_1_1NamingManager_ade403b12d90cb607df901d97c3d3c32f}
+
+
+Bind the specified objects to NamingService. 
+
+Bind the specified objects to CORBA NamingService by specified names.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em name}]\doxyref{Names}{p.}{classRTC_1_1NamingManager_1_1Names} at the binding \item[{\em rtobj}]The target objects for the binding \end{DoxyParams}
+\index{RTC::NamingManager@{RTC::NamingManager}!createNamingObj@{createNamingObj}}
+\index{createNamingObj@{createNamingObj}!RTC::NamingManager@{RTC::NamingManager}}
+\subsubsection[{createNamingObj}]{\setlength{\rightskip}{0pt plus 5cm}{\bf NamingBase}$\ast$ RTC::NamingManager::createNamingObj (const char $\ast$ {\em method}, \/  const char $\ast$ {\em name\_\-server})\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC_1_1NamingManager_a3c337a0f68c16203eb911d009b190a5a}
+
+
+Create objects for NameServer management. 
+
+Create objects of specified type for NameServer management.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em method}]NamingService format \item[{\em name\_\-server}]NameServer name\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Created NameServer objects 
+\end{DoxyReturn}
+\index{RTC::NamingManager@{RTC::NamingManager}!getObjects@{getObjects}}
+\index{getObjects@{getObjects}!RTC::NamingManager@{RTC::NamingManager}}
+\subsubsection[{getObjects}]{\setlength{\rightskip}{0pt plus 5cm}std::vector$<${\bf RTObject\_\-impl}$\ast$$>$ RTC::NamingManager::getObjects ()}\label{classRTC_1_1NamingManager_a01f71c35884ad26284094de49b504dd0}
+
+
+Get all bound objects. 
+
+Get all bound objects.
+
+\begin{DoxyReturn}{Returns}
+Bound object list 
+\end{DoxyReturn}
+\index{RTC::NamingManager@{RTC::NamingManager}!registerCompName@{registerCompName}}
+\index{registerCompName@{registerCompName}!RTC::NamingManager@{RTC::NamingManager}}
+\subsubsection[{registerCompName}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::NamingManager::registerCompName (const char $\ast$ {\em name}, \/  const {\bf RTObject\_\-impl} $\ast$ {\em rtobj})\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC_1_1NamingManager_a35243abca48730805b8172181b7e1256}
+
+
+Configure the components that will be registered to NameServer. 
+
+Configure the components that will be registered to NameServer.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em name}]\doxyref{Names}{p.}{classRTC_1_1NamingManager_1_1Names} of components at the registration \item[{\em rtobj}]The target objects for registration \end{DoxyParams}
+\index{RTC::NamingManager@{RTC::NamingManager}!registerMgrName@{registerMgrName}}
+\index{registerMgrName@{registerMgrName}!RTC::NamingManager@{RTC::NamingManager}}
+\subsubsection[{registerMgrName}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::NamingManager::registerMgrName (const char $\ast$ {\em name}, \/  const {\bf RTM::ManagerServant} $\ast$ {\em mgr})\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC_1_1NamingManager_a5980b779fee33d57b28e6d67b897f033}
+
+
+Configure the ManagerServants that will be registered to NameServer. 
+
+Configure the ManagerServants that will be registered to NameServer.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em name}]\doxyref{Names}{p.}{classRTC_1_1NamingManager_1_1Names} of ManagerServants at the registration \item[{\em mgr}]The target ManagerServants for registration \end{DoxyParams}
+\index{RTC::NamingManager@{RTC::NamingManager}!registerNameServer@{registerNameServer}}
+\index{registerNameServer@{registerNameServer}!RTC::NamingManager@{RTC::NamingManager}}
+\subsubsection[{registerNameServer}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::NamingManager::registerNameServer (const char $\ast$ {\em method}, \/  const char $\ast$ {\em name\_\-server})}\label{classRTC_1_1NamingManager_ab2155792df34d57d0ef6a802914bb9e4}
+
+
+Regster the NameServer. 
+
+Register NameServer by specified format. Currently. only CORBA can be specified.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em method}]Format of NamingService \item[{\em name\_\-server}]Name of NameServer for registration \end{DoxyParams}
+\index{RTC::NamingManager@{RTC::NamingManager}!retryConnection@{retryConnection}}
+\index{retryConnection@{retryConnection}!RTC::NamingManager@{RTC::NamingManager}}
+\subsubsection[{retryConnection}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::NamingManager::retryConnection ({\bf Names} $\ast$ {\em ns})\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC_1_1NamingManager_afd3abcbc1eb01392b58f9f0b2c160736}
+\index{RTC::NamingManager@{RTC::NamingManager}!unbindAll@{unbindAll}}
+\index{unbindAll@{unbindAll}!RTC::NamingManager@{RTC::NamingManager}}
+\subsubsection[{unbindAll}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::NamingManager::unbindAll ()}\label{classRTC_1_1NamingManager_ade0902fd897f9b4e8c37a2f6fba8d76c}
+
+
+Unbind all objects from NamingService. 
+
+Unbind all objects from CORBA NamingService. \index{RTC::NamingManager@{RTC::NamingManager}!unbindObject@{unbindObject}}
+\index{unbindObject@{unbindObject}!RTC::NamingManager@{RTC::NamingManager}}
+\subsubsection[{unbindObject}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::NamingManager::unbindObject (const char $\ast$ {\em name})}\label{classRTC_1_1NamingManager_a3fcfc7666a199f3fd89529a1bc8df3da}
+
+
+Unbind the specified objects from NamingService. 
+
+Unbind the specified objects from NamingService.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em name}]The target objects for the unbinding \end{DoxyParams}
+\index{RTC::NamingManager@{RTC::NamingManager}!unregisterCompName@{unregisterCompName}}
+\index{unregisterCompName@{unregisterCompName}!RTC::NamingManager@{RTC::NamingManager}}
+\subsubsection[{unregisterCompName}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::NamingManager::unregisterCompName (const char $\ast$ {\em name})\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC_1_1NamingManager_a038eb214ba1b7a928aa278252ca0f0fb}
+
+
+Unregister the components that will be registered to NameServer. 
+
+Unregister the components that will be registered to NameServer.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em name}]\doxyref{Names}{p.}{classRTC_1_1NamingManager_1_1Names} of the target components for unregistration \end{DoxyParams}
+\index{RTC::NamingManager@{RTC::NamingManager}!unregisterMgrName@{unregisterMgrName}}
+\index{unregisterMgrName@{unregisterMgrName}!RTC::NamingManager@{RTC::NamingManager}}
+\subsubsection[{unregisterMgrName}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::NamingManager::unregisterMgrName (const char $\ast$ {\em name})\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC_1_1NamingManager_a95d0916eda2bc1d3f7599696cf9c0485}
+
+
+Unregister the ManagerServants that will be registered to NameServer. 
+
+Unregister the ManagerServants that will be registered to NameServer.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em name}]\doxyref{Names}{p.}{classRTC_1_1NamingManager_1_1Names} of the target ManagerServants for unregistration \end{DoxyParams}
+\index{RTC::NamingManager@{RTC::NamingManager}!update@{update}}
+\index{update@{update}!RTC::NamingManager@{RTC::NamingManager}}
+\subsubsection[{update}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::NamingManager::update ()}\label{classRTC_1_1NamingManager_a0c71e845495a5eac4e53adb2bf5ae8ec}
+
+
+Update information of NamingServer. 
+
+Update the object information registered in the specified NameServer. 
+
+\subsection{Member Data Documentation}
+\index{RTC::NamingManager@{RTC::NamingManager}!m\_\-compNames@{m\_\-compNames}}
+\index{m\_\-compNames@{m\_\-compNames}!RTC::NamingManager@{RTC::NamingManager}}
+\subsubsection[{m\_\-compNames}]{\setlength{\rightskip}{0pt plus 5cm}std::vector$<${\bf Comps}$\ast$$>$ {\bf RTC::NamingManager::m\_\-compNames}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC_1_1NamingManager_a13c4cf95f0fbc44f1686f526a0cf2fde}
+
+
+Component list. 
+
+\index{RTC::NamingManager@{RTC::NamingManager}!m\_\-compNamesMutex@{m\_\-compNamesMutex}}
+\index{m\_\-compNamesMutex@{m\_\-compNamesMutex}!RTC::NamingManager@{RTC::NamingManager}}
+\subsubsection[{m\_\-compNamesMutex}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Mutex} {\bf RTC::NamingManager::m\_\-compNamesMutex}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC_1_1NamingManager_a6e116477ec6b544f62f8ca212c00080c}
+
+
+Mutex of Component list. 
+
+\index{RTC::NamingManager@{RTC::NamingManager}!m\_\-manager@{m\_\-manager}}
+\index{m\_\-manager@{m\_\-manager}!RTC::NamingManager@{RTC::NamingManager}}
+\subsubsection[{m\_\-manager}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Manager}$\ast$ {\bf RTC::NamingManager::m\_\-manager}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC_1_1NamingManager_ab2c3030a11d9ffc21ab657cc5460b627}
+
+
+\doxyref{Manager}{p.}{classRTC_1_1Manager} object. 
+
+\index{RTC::NamingManager@{RTC::NamingManager}!m\_\-mgrNames@{m\_\-mgrNames}}
+\index{m\_\-mgrNames@{m\_\-mgrNames}!RTC::NamingManager@{RTC::NamingManager}}
+\subsubsection[{m\_\-mgrNames}]{\setlength{\rightskip}{0pt plus 5cm}std::vector$<${\bf Mgr}$\ast$$>$ {\bf RTC::NamingManager::m\_\-mgrNames}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC_1_1NamingManager_ad7df7a9f7c40fd460fd64541c1212bf5}
+
+
+ManagerServant list. 
+
+\index{RTC::NamingManager@{RTC::NamingManager}!m\_\-mgrNamesMutex@{m\_\-mgrNamesMutex}}
+\index{m\_\-mgrNamesMutex@{m\_\-mgrNamesMutex}!RTC::NamingManager@{RTC::NamingManager}}
+\subsubsection[{m\_\-mgrNamesMutex}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Mutex} {\bf RTC::NamingManager::m\_\-mgrNamesMutex}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC_1_1NamingManager_ad3482ce8bd9129963388cabc0ec82fe9}
+
+
+Mutex of ManagerServant list. 
+
+\index{RTC::NamingManager@{RTC::NamingManager}!m\_\-names@{m\_\-names}}
+\index{m\_\-names@{m\_\-names}!RTC::NamingManager@{RTC::NamingManager}}
+\subsubsection[{m\_\-names}]{\setlength{\rightskip}{0pt plus 5cm}std::vector$<${\bf Names}$\ast$$>$ {\bf RTC::NamingManager::m\_\-names}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC_1_1NamingManager_a3ad836712c9cc68d42d3c27181693113}
+
+
+NameServer list. 
+
+\index{RTC::NamingManager@{RTC::NamingManager}!m\_\-namesMutex@{m\_\-namesMutex}}
+\index{m\_\-namesMutex@{m\_\-namesMutex}!RTC::NamingManager@{RTC::NamingManager}}
+\subsubsection[{m\_\-namesMutex}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Mutex} {\bf RTC::NamingManager::m\_\-namesMutex}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC_1_1NamingManager_a08e0b0067867d2d7ace6bcd655b0c1d3}
+
+
+Mutex of NameServer list. 
+
+\index{RTC::NamingManager@{RTC::NamingManager}!rtclog@{rtclog}}
+\index{rtclog@{rtclog}!RTC::NamingManager@{RTC::NamingManager}}
+\subsubsection[{rtclog}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Logger} {\bf RTC::NamingManager::rtclog}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC_1_1NamingManager_a7c15bb6f509227e231bc4f4116b8cf91}
+
+
+\doxyref{Logger}{p.}{classRTC_1_1Logger} stream. 
+

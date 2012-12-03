@@ -1,0 +1,96 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<title>OpenRTM: PortCallback.h ソースファイル</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<!-- 作成： Doxygen 1.6.3 -->
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="index.html"><span>メインページ</span></a></li>
+      <li><a href="namespaces.html"><span>ネームスペース</span></a></li>
+      <li><a href="annotated.html"><span>クラス</span></a></li>
+      <li class="current"><a href="files.html"><span>ファイル</span></a></li>
+    </ul>
+  </div>
+  <div class="tabs">
+    <ul>
+      <li><a href="files.html"><span>ファイル一覧</span></a></li>
+      <li><a href="globals.html"><span>ファイルメンバ</span></a></li>
+    </ul>
+  </div>
+<h1>PortCallback.h</h1><a href="PortCallback_8h.html">説明を見る。</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="comment">// -*- C++ -*-</span>
+<a name="l00020"></a>00020 <span class="comment"></span><span class="preprocessor">#ifndef RTC_PORTCALLBACK_H</span>
+<a name="l00021"></a>00021 <span class="preprocessor"></span><span class="preprocessor">#define RTC_PORTCALLBACK_H</span>
+<a name="l00022"></a>00022 <span class="preprocessor"></span>
+<a name="l00023"></a>00023 <span class="keyword">class </span>cdrStream;
+<a name="l00024"></a>00024 
+<a name="l00025"></a>00025 <span class="keyword">namespace </span>RTC
+<a name="l00026"></a>00026 {
+<a name="l00027"></a>00027   <span class="comment">//============================================================</span>
+<a name="l00028"></a>00028   <span class="comment">// callback functor base classes</span>
+<a name="l00055"></a><a class="code" href="classRTC_1_1ConnectionCallback.html">00055</a> <span class="comment"></span>  <span class="keyword">class </span><a class="code" href="classRTC_1_1ConnectionCallback.html" title="connect/notify_connect() 時のコールバック抽象クラス">ConnectionCallback</a>
+<a name="l00056"></a>00056   {
+<a name="l00057"></a>00057   <span class="keyword">public</span>:
+<a name="l00071"></a><a class="code" href="classRTC_1_1ConnectionCallback.html#a8ce9ddf57298521257e45003717763df">00071</a>     <span class="keyword">virtual</span> <a class="code" href="classRTC_1_1ConnectionCallback.html#a8ce9ddf57298521257e45003717763df">~ConnectionCallback</a>(<span class="keywordtype">void</span>){}
+<a name="l00072"></a>00072 
+<a name="l00094"></a>00094     <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classRTC_1_1ConnectionCallback.html#ab28717e4f965c2ddbf89eb4d5f27b0ac" title="コールバック関数">operator()</a>(RTC::ConnectorProfile&amp; profile) = 0;
+<a name="l00095"></a>00095   };
+<a name="l00096"></a>00096 
+<a name="l00097"></a>00097 
+<a name="l00124"></a><a class="code" href="classRTC_1_1DisconnectCallback.html">00124</a>   <span class="keyword">class </span><a class="code" href="classRTC_1_1DisconnectCallback.html" title="disconnect/notify_disconnect() 時のコールバック抽象クラス">DisconnectCallback</a>
+<a name="l00125"></a>00125   {
+<a name="l00126"></a>00126   <span class="keyword">public</span>:
+<a name="l00140"></a><a class="code" href="classRTC_1_1DisconnectCallback.html#aee020344969e3996b91d6bf3873c9aab">00140</a>     <span class="keyword">virtual</span> <a class="code" href="classRTC_1_1DisconnectCallback.html#aee020344969e3996b91d6bf3873c9aab">~DisconnectCallback</a>(<span class="keywordtype">void</span>){}
+<a name="l00162"></a>00162     <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classRTC_1_1DisconnectCallback.html#a2b4b524ad261d6da63e6649434015dab" title="コールバック関数">operator()</a>(<span class="keyword">const</span> <span class="keywordtype">char</span>* connector_id) = 0;
+<a name="l00163"></a>00163   };
+<a name="l00164"></a>00164 
+<a name="l00165"></a>00165 
+<a name="l00191"></a>00191   <span class="keyword">template</span> &lt;<span class="keyword">class</span> DataType&gt;
+<a name="l00192"></a><a class="code" href="classRTC_1_1OnWrite.html">00192</a>   <span class="keyword">class </span><a class="code" href="classRTC_1_1OnWrite.html" title="write() 時のコールバック抽象クラス">OnWrite</a>
+<a name="l00193"></a>00193   {
+<a name="l00194"></a>00194   <span class="keyword">public</span>:
+<a name="l00208"></a><a class="code" href="classRTC_1_1OnWrite.html#a2d933024e730be0535ecf38efe40aede">00208</a>     <span class="keyword">virtual</span> <a class="code" href="classRTC_1_1OnWrite.html#a2d933024e730be0535ecf38efe40aede">~OnWrite</a>(<span class="keywordtype">void</span>){}
+<a name="l00209"></a>00209     
+<a name="l00230"></a>00230     <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classRTC_1_1OnWrite.html#a21dbf5431532045a4c953d7c8ed09777" title="コールバック関数">operator()</a>(<span class="keyword">const</span> DataType&amp; value) = 0;
+<a name="l00231"></a>00231   };
+<a name="l00232"></a>00232   
+<a name="l00233"></a>00233 
+<a name="l00257"></a>00257   <span class="keyword">template</span> &lt;<span class="keyword">class</span> DataType&gt;
+<a name="l00258"></a><a class="code" href="structRTC_1_1OnWriteConvert.html">00258</a>   <span class="keyword">struct </span><a class="code" href="structRTC_1_1OnWriteConvert.html" title="write() 時のデータ変換コールバック抽象クラス">OnWriteConvert</a>
+<a name="l00259"></a>00259   {
+<a name="l00273"></a><a class="code" href="structRTC_1_1OnWriteConvert.html#a3ac98bc92ec58ac5c51a685958563829">00273</a>     <span class="keyword">virtual</span> <a class="code" href="structRTC_1_1OnWriteConvert.html#a3ac98bc92ec58ac5c51a685958563829">~OnWriteConvert</a>(<span class="keywordtype">void</span>){}
+<a name="l00274"></a>00274     
+<a name="l00297"></a>00297     <span class="keyword">virtual</span> DataType <a class="code" href="structRTC_1_1OnWriteConvert.html#a977a309e15012a5f7c30497b1c20341c" title="コールバック関数">operator()</a>(<span class="keyword">const</span> DataType&amp; value) = 0;
+<a name="l00298"></a>00298   };
+<a name="l00299"></a>00299   
+<a name="l00300"></a>00300 
+<a name="l00322"></a>00322   <span class="keyword">template</span> &lt;<span class="keyword">class</span> DataType&gt;
+<a name="l00323"></a><a class="code" href="structRTC_1_1OnRead.html">00323</a>   <span class="keyword">struct </span><a class="code" href="structRTC_1_1OnRead.html" title="read() 時のコールバック抽象クラス">OnRead</a>
+<a name="l00324"></a>00324   {
+<a name="l00340"></a><a class="code" href="structRTC_1_1OnRead.html#a20a17e2f2e297cef090ae6694535aa4f">00340</a>     <span class="keyword">virtual</span> <a class="code" href="structRTC_1_1OnRead.html#a20a17e2f2e297cef090ae6694535aa4f">~OnRead</a>(<span class="keywordtype">void</span>){}
+<a name="l00341"></a>00341     
+<a name="l00358"></a>00358     <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="structRTC_1_1OnRead.html#abf996b7db051b969ac4a02882f4e0962" title="コールバックメソッド">operator()</a>() = 0;
+<a name="l00359"></a>00359   };
+<a name="l00360"></a>00360   
+<a name="l00384"></a>00384   <span class="keyword">template</span> &lt;<span class="keyword">class</span> DataType&gt;
+<a name="l00385"></a><a class="code" href="structRTC_1_1OnReadConvert.html">00385</a>   <span class="keyword">struct </span><a class="code" href="structRTC_1_1OnReadConvert.html" title="read() 時のデータ変換コールバック抽象クラス">OnReadConvert</a>
+<a name="l00386"></a>00386   {
+<a name="l00402"></a><a class="code" href="structRTC_1_1OnReadConvert.html#a353b1f01856a3887105218eeec33a154">00402</a>     <span class="keyword">virtual</span> <a class="code" href="structRTC_1_1OnReadConvert.html#a353b1f01856a3887105218eeec33a154">~OnReadConvert</a>(<span class="keywordtype">void</span>){}
+<a name="l00403"></a>00403     
+<a name="l00430"></a>00430     <span class="keyword">virtual</span> DataType <a class="code" href="structRTC_1_1OnReadConvert.html#a5eebe441c1646765633a38e44b901582" title="コールバックメソッド">operator()</a>(<span class="keyword">const</span> DataType&amp; value) = 0;
+<a name="l00431"></a>00431   };
+<a name="l00432"></a>00432   
+<a name="l00433"></a>00433 
+<a name="l00434"></a>00434 };
+<a name="l00435"></a>00435 <span class="preprocessor">#endif // RTC_PORTCALLBACK_H</span>
+</pre></div></div>
+<hr class="footer"/><address style="text-align: right;"><small>OpenRTMに対してThu May 24 23:25:18 2012に生成されました。&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.6.3 </small></address>
+</body>
+</html>

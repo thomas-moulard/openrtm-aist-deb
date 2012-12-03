@@ -1,0 +1,190 @@
+\section{ObjectManager$<$ Identifier, Object, Predicate $>$ Class Template Reference}
+\label{classObjectManager}\index{ObjectManager@{ObjectManager}}
+
+
+Class for managing objects.  
+
+
+
+
+{\ttfamily \#include $<$ObjectManager.h$>$}
+
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct {\bf Objects}
+\begin{DoxyCompactList}\small\item\em The structure for object management. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef std::vector$<$ Object $\ast$ $>$ {\bf ObjectVector}
+\item 
+typedef ObjectVector::iterator {\bf ObjectVectorItr}
+\item 
+typedef ObjectVector::const\_\-iterator {\bf ObjectVectorConstItr}
+\item 
+typedef {\bf coil::Mutex} {\bf Mutex}
+\item 
+typedef {\bf coil::Guard}$<$ {\bf coil::Mutex} $>$ {\bf Guard}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf ObjectManager} ()
+\begin{DoxyCompactList}\small\item\em Constructor. \item\end{DoxyCompactList}\item 
+{\bf $\sim$ObjectManager} (void)
+\begin{DoxyCompactList}\small\item\em Destructor. \item\end{DoxyCompactList}\item 
+bool {\bf registerObject} (Object $\ast$obj)
+\begin{DoxyCompactList}\small\item\em Register the specified object. \item\end{DoxyCompactList}\item 
+Object $\ast$ {\bf unregisterObject} (const Identifier \&id)
+\begin{DoxyCompactList}\small\item\em Unregister the specified object. \item\end{DoxyCompactList}\item 
+Object $\ast$ {\bf find} (const Identifier \&id) const 
+\begin{DoxyCompactList}\small\item\em Find the object. \item\end{DoxyCompactList}\item 
+std::vector$<$ Object $\ast$ $>$ {\bf getObjects} () const 
+\begin{DoxyCompactList}\small\item\em Get a list of obejects that are registerd. \item\end{DoxyCompactList}\item 
+{\footnotesize template$<$class Pred $>$ }\\Pred {\bf for\_\-each} (Pred p)
+\begin{DoxyCompactList}\small\item\em Functor for searching object. \item\end{DoxyCompactList}\item 
+{\footnotesize template$<$class Pred $>$ }\\Pred {\bf for\_\-each} (Pred p) const 
+\begin{DoxyCompactList}\small\item\em Functor for searching object. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Objects} {\bf m\_\-objects}
+\begin{DoxyCompactList}\small\item\em The list of registered objects. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$typename Identifier, typename Object, typename Predicate$>$ class ObjectManager$<$ Identifier, Object, Predicate $>$}
+
+Class for managing objects. This is a class for managing various objects.
+
+\begin{DoxySince}{Since}
+0.4.0 
+\end{DoxySince}
+
+
+\subsection{Member Typedef Documentation}
+\index{ObjectManager@{ObjectManager}!Guard@{Guard}}
+\index{Guard@{Guard}!ObjectManager@{ObjectManager}}
+\subsubsection[{Guard}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Identifier, typename Object, typename Predicate$>$ typedef {\bf coil::Guard}$<${\bf coil::Mutex}$>$ {\bf ObjectManager}$<$ Identifier, Object, Predicate $>$::{\bf Guard}}\label{classObjectManager_a269f7c04878a5ad6759d2ff21a21c4d1}
+\index{ObjectManager@{ObjectManager}!Mutex@{Mutex}}
+\index{Mutex@{Mutex}!ObjectManager@{ObjectManager}}
+\subsubsection[{Mutex}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Identifier, typename Object, typename Predicate$>$ typedef {\bf coil::Mutex} {\bf ObjectManager}$<$ Identifier, Object, Predicate $>$::{\bf Mutex}}\label{classObjectManager_aace44eee2c2a6ddfec63ac42b7bf601c}
+\index{ObjectManager@{ObjectManager}!ObjectVector@{ObjectVector}}
+\index{ObjectVector@{ObjectVector}!ObjectManager@{ObjectManager}}
+\subsubsection[{ObjectVector}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Identifier, typename Object, typename Predicate$>$ typedef std::vector$<$Object$\ast$$>$ {\bf ObjectManager}$<$ Identifier, Object, Predicate $>$::{\bf ObjectVector}}\label{classObjectManager_aa4fcbaee3d2516a6334f08fff837c7be}
+\index{ObjectManager@{ObjectManager}!ObjectVectorConstItr@{ObjectVectorConstItr}}
+\index{ObjectVectorConstItr@{ObjectVectorConstItr}!ObjectManager@{ObjectManager}}
+\subsubsection[{ObjectVectorConstItr}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Identifier, typename Object, typename Predicate$>$ typedef ObjectVector::const\_\-iterator {\bf ObjectManager}$<$ Identifier, Object, Predicate $>$::{\bf ObjectVectorConstItr}}\label{classObjectManager_acff0ec2b138b2dc0a2ad6b80c7dc1482}
+\index{ObjectManager@{ObjectManager}!ObjectVectorItr@{ObjectVectorItr}}
+\index{ObjectVectorItr@{ObjectVectorItr}!ObjectManager@{ObjectManager}}
+\subsubsection[{ObjectVectorItr}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Identifier, typename Object, typename Predicate$>$ typedef ObjectVector::iterator {\bf ObjectManager}$<$ Identifier, Object, Predicate $>$::{\bf ObjectVectorItr}}\label{classObjectManager_a64d7341e2e8152cd114ab2fbd66a237e}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{ObjectManager@{ObjectManager}!ObjectManager@{ObjectManager}}
+\index{ObjectManager@{ObjectManager}!ObjectManager@{ObjectManager}}
+\subsubsection[{ObjectManager}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Identifier, typename Object, typename Predicate$>$ {\bf ObjectManager}$<$ Identifier, Object, Predicate $>$::{\bf ObjectManager} ()\hspace{0.3cm}{\ttfamily  [inline]}}\label{classObjectManager_af32caa02e21da2fba152097615c00e60}
+
+
+Constructor. 
+
+Constructor \index{ObjectManager@{ObjectManager}!$\sim$ObjectManager@{$\sim$ObjectManager}}
+\index{$\sim$ObjectManager@{$\sim$ObjectManager}!ObjectManager@{ObjectManager}}
+\subsubsection[{$\sim$ObjectManager}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Identifier, typename Object, typename Predicate$>$ {\bf ObjectManager}$<$ Identifier, Object, Predicate $>$::$\sim${\bf ObjectManager} (void)\hspace{0.3cm}{\ttfamily  [inline]}}\label{classObjectManager_a38ef0a5005c4a54bda07e0fa1755566a}
+
+
+Destructor. 
+
+Destructor 
+
+\subsection{Member Function Documentation}
+\index{ObjectManager@{ObjectManager}!find@{find}}
+\index{find@{find}!ObjectManager@{ObjectManager}}
+\subsubsection[{find}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Identifier, typename Object, typename Predicate$>$ Object$\ast$ {\bf ObjectManager}$<$ Identifier, Object, Predicate $>$::find (const Identifier \& {\em id}) const\hspace{0.3cm}{\ttfamily  [inline]}}\label{classObjectManager_a3f4cd060f97d7c74bc91d23e42df50de}
+
+
+Find the object. 
+
+Find the object that matches the specified condition among the registered objects and get it. This operation returns NULL if the object that does matches the specified condition is not registered.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em id}]ID of the target object for finding\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Result of finding object 
+\end{DoxyReturn}
+\index{ObjectManager@{ObjectManager}!for\_\-each@{for\_\-each}}
+\index{for\_\-each@{for\_\-each}!ObjectManager@{ObjectManager}}
+\subsubsection[{for\_\-each}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Identifier, typename Object, typename Predicate$>$ template$<$class Pred $>$ Pred {\bf ObjectManager}$<$ Identifier, Object, Predicate $>$::for\_\-each (Pred {\em p}) const\hspace{0.3cm}{\ttfamily  [inline]}}\label{classObjectManager_a84fa687e172f25f6facb497396683bb4}
+
+
+Functor for searching object. 
+
+\index{ObjectManager@{ObjectManager}!for\_\-each@{for\_\-each}}
+\index{for\_\-each@{for\_\-each}!ObjectManager@{ObjectManager}}
+\subsubsection[{for\_\-each}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Identifier, typename Object, typename Predicate$>$ template$<$class Pred $>$ Pred {\bf ObjectManager}$<$ Identifier, Object, Predicate $>$::for\_\-each (Pred {\em p})\hspace{0.3cm}{\ttfamily  [inline]}}\label{classObjectManager_a179e86f4b3548f17ac88ac2e2679d541}
+
+
+Functor for searching object. 
+
+
+
+Referenced by ObjectManager$<$ const char $\ast$, DLLEntity, DllPred $>$::for\_\-each().
+
+\index{ObjectManager@{ObjectManager}!getObjects@{getObjects}}
+\index{getObjects@{getObjects}!ObjectManager@{ObjectManager}}
+\subsubsection[{getObjects}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Identifier, typename Object, typename Predicate$>$ std::vector$<$Object$\ast$$>$ {\bf ObjectManager}$<$ Identifier, Object, Predicate $>$::getObjects () const\hspace{0.3cm}{\ttfamily  [inline]}}\label{classObjectManager_ab60972d0240a0a1098ed5cec63f0fca2}
+
+
+Get a list of obejects that are registerd. 
+
+Get a list of objects that are registerd.
+
+\begin{DoxyReturn}{Returns}
+List of registerd objects. 
+\end{DoxyReturn}
+\index{ObjectManager@{ObjectManager}!registerObject@{registerObject}}
+\index{registerObject@{registerObject}!ObjectManager@{ObjectManager}}
+\subsubsection[{registerObject}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Identifier, typename Object, typename Predicate$>$ bool {\bf ObjectManager}$<$ Identifier, Object, Predicate $>$::registerObject (Object $\ast$ {\em obj})\hspace{0.3cm}{\ttfamily  [inline]}}\label{classObjectManager_a43de06b277f07a24088b46f640de8221}
+
+
+Register the specified object. 
+
+Register the object that was specified. If the same object is already registered, this does not anything.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em obj}]The target object for the registration\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Registration result (True if object was registerd) 
+\end{DoxyReturn}
+\index{ObjectManager@{ObjectManager}!unregisterObject@{unregisterObject}}
+\index{unregisterObject@{unregisterObject}!ObjectManager@{ObjectManager}}
+\subsubsection[{unregisterObject}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Identifier, typename Object, typename Predicate$>$ Object$\ast$ {\bf ObjectManager}$<$ Identifier, Object, Predicate $>$::unregisterObject (const Identifier \& {\em id})\hspace{0.3cm}{\ttfamily  [inline]}}\label{classObjectManager_a082eb0fcf17aeb833a8e0d80c077229a}
+
+
+Unregister the specified object. 
+
+Unregister the object that was specified and get it. This operation returns NULL if the specified object is not registered.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em id}]ID of the target object for the unregistration\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Unregistered object 
+\end{DoxyReturn}
+
+
+\subsection{Member Data Documentation}
+\index{ObjectManager@{ObjectManager}!m\_\-objects@{m\_\-objects}}
+\index{m\_\-objects@{m\_\-objects}!ObjectManager@{ObjectManager}}
+\subsubsection[{m\_\-objects}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Identifier, typename Object, typename Predicate$>$ {\bf Objects} {\bf ObjectManager}$<$ Identifier, Object, Predicate $>$::{\bf m\_\-objects}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classObjectManager_ae0c7be9ecce476a588ffb884d663b3e8}
+
+
+The list of registered objects. 
+
+
+
+Referenced by ObjectManager$<$ const char $\ast$, DLLEntity, DllPred $>$::find(), ObjectManager$<$ const char $\ast$, DLLEntity, DllPred $>$::for\_\-each(), ObjectManager$<$ const char $\ast$, DLLEntity, DllPred $>$::getObjects(), ObjectManager$<$ const char $\ast$, DLLEntity, DllPred $>$::registerObject(), and ObjectManager$<$ const char $\ast$, DLLEntity, DllPred $>$::unregisterObject().
+

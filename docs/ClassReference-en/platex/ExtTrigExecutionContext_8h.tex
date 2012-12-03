@@ -1,0 +1,62 @@
+\section{ExtTrigExecutionContext.h File Reference}
+\label{ExtTrigExecutionContext_8h}\index{ExtTrigExecutionContext.h@{ExtTrigExecutionContext.h}}
+
+
+ExtTrigExecutionContext class.  
+
+
+{\ttfamily \#include $<$rtm/RTC.h$>$}\par
+{\ttfamily \#include $<$coil/Mutex.h$>$}\par
+{\ttfamily \#include $<$coil/Condition.h$>$}\par
+{\ttfamily \#include $<$coil/Task.h$>$}\par
+{\ttfamily \#include $<$rtm/Manager.h$>$}\par
+{\ttfamily \#include $<$rtm/PeriodicExecutionContext.h$>$}\par
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class {\bf RTC::ExtTrigExecutionContext}
+\begin{DoxyCompactList}\small\item\em ExecutionContext class that enables one step execution. \item\end{DoxyCompactList}\item 
+struct {\bfseries RTC::ExtTrigExecutionContext::Worker}
+\end{DoxyCompactItemize}
+\subsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace {\bf RTC}
+
+
+\begin{DoxyCompactList}\small\item\em RT-\/Component. \item\end{DoxyCompactList}
+
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bf ExtTrigExecutionContextInit} ({\bf RTC::Manager} $\ast$manager)
+\begin{DoxyCompactList}\small\item\em Register Factory class for this ExecutionContext. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+ExtTrigExecutionContext class. \begin{DoxyDate}{Date}
+
+\end{DoxyDate}
+\begin{DoxyParagraph}{Date}
+2008-\/01-\/14 07:49:16 
+\end{DoxyParagraph}
+\begin{DoxyAuthor}{Author}
+Noriaki Ando $<${\tt n-\/ando@aist.go.jp}$>$
+\end{DoxyAuthor}
+Copyright (C) 2007 Task-\/intelligence Research Group, Intelligent Systems Research Institute, National Institute of Advanced Industrial Science and Technology (AIST), Japan All rights reserved.
+
+\begin{DoxyParagraph}{Id}
+\doxyref{ExtTrigExecutionContext.h}{p.}{ExtTrigExecutionContext_8h} 1569 2009-\/11-\/12 14:36:47Z n-\/ando 
+\end{DoxyParagraph}
+
+
+\subsection{Function Documentation}
+\index{ExtTrigExecutionContext.h@{ExtTrigExecutionContext.h}!ExtTrigExecutionContextInit@{ExtTrigExecutionContextInit}}
+\index{ExtTrigExecutionContextInit@{ExtTrigExecutionContextInit}!ExtTrigExecutionContext.h@{ExtTrigExecutionContext.h}}
+\subsubsection[{ExtTrigExecutionContextInit}]{\setlength{\rightskip}{0pt plus 5cm}void ExtTrigExecutionContextInit ({\bf RTC::Manager} $\ast$ {\em manager})}\label{ExtTrigExecutionContext_8h_a4dc892f86d2509bee47d3b1b2ee7e635}
+
+
+Register Factory class for this ExecutionContext. 
+
+Register the Factory class to create this ExecutionContext to the \doxyref{ObjectManager}{p.}{classObjectManager} for management ExecutionContext 

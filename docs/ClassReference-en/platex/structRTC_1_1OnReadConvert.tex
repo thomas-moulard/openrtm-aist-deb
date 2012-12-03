@@ -1,0 +1,56 @@
+\section{RTC::OnReadConvert$<$ DataType $>$ Class Template Reference}
+\label{structRTC_1_1OnReadConvert}\index{RTC::OnReadConvert@{RTC::OnReadConvert}}
+
+
+Data convert callback abstract class on read().  
+
+
+
+
+{\ttfamily \#include $<$PortCallback.h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual {\bf $\sim$OnReadConvert} (void)
+\begin{DoxyCompactList}\small\item\em Destructor. \item\end{DoxyCompactList}\item 
+virtual DataType {\bf operator()} (const DataType \&value)=0
+\begin{DoxyCompactList}\small\item\em Callback method. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$class DataType$>$ class RTC::OnReadConvert$<$ DataType $>$}
+
+Data convert callback abstract class on read(). This is the interface for callback invoked when data is done read() from the InPort/OutPort's buffer. The return value of this callback will be the return value of read().
+
+\begin{DoxySince}{Since}
+0.4.0 
+\end{DoxySince}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{RTC::OnReadConvert@{RTC::OnReadConvert}!$\sim$OnReadConvert@{$\sim$OnReadConvert}}
+\index{$\sim$OnReadConvert@{$\sim$OnReadConvert}!RTC::OnReadConvert@{RTC::OnReadConvert}}
+\subsubsection[{$\sim$OnReadConvert}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class DataType$>$ virtual {\bf RTC::OnReadConvert}$<$ DataType $>$::$\sim${\bf OnReadConvert} (void)\hspace{0.3cm}{\ttfamily  [inline, virtual]}}\label{structRTC_1_1OnReadConvert_a353b1f01856a3887105218eeec33a154}
+
+
+Destructor. 
+
+Destructor 
+
+\subsection{Member Function Documentation}
+\index{RTC::OnReadConvert@{RTC::OnReadConvert}!operator()@{operator()}}
+\index{operator()@{operator()}!RTC::OnReadConvert@{RTC::OnReadConvert}}
+\subsubsection[{operator()}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class DataType$>$ virtual DataType {\bf RTC::OnReadConvert}$<$ DataType $>$::operator() (const DataType \& {\em value})\hspace{0.3cm}{\ttfamily  [pure virtual]}}\label{structRTC_1_1OnReadConvert_a5eebe441c1646765633a38e44b901582}
+
+
+Callback method. 
+
+This function is the callback function invoked when data is readout from the buffer, and the return value of \doxyref{operator()()}{p.}{structRTC_1_1OnReadConvert_a5eebe441c1646765633a38e44b901582} is used as return value of InPort's read() or it is stored in the \doxyref{InPort}{p.}{classRTC_1_1InPort} data variable.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em value}]Data that is readout from buffer \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Converted data. These data are stored in the port's variable. 
+\end{DoxyReturn}

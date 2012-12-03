@@ -1,0 +1,79 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<title>OpenRTM: OS.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<!-- 作成： Doxygen 1.6.3 -->
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="index.html"><span>メインページ</span></a></li>
+      <li><a href="namespaces.html"><span>ネームスペース</span></a></li>
+      <li><a href="annotated.html"><span>クラス</span></a></li>
+      <li class="current"><a href="files.html"><span>ファイル</span></a></li>
+    </ul>
+  </div>
+  <div class="tabs">
+    <ul>
+      <li><a href="files.html"><span>ファイル一覧</span></a></li>
+      <li><a href="globals.html"><span>ファイルメンバ</span></a></li>
+    </ul>
+  </div>
+</div>
+<div class="contents">
+<h1>OS.h</h1><code>#include &lt;string&gt;</code><br/>
+<code>#include &lt;sys/utsname.h&gt;</code><br/>
+<code>#include &lt;sys/types.h&gt;</code><br/>
+<code>#include &lt;unistd.h&gt;</code><br/>
+<code>#include &lt;stdlib.h&gt;</code><br/>
+
+<p><a href="OS_8h_source.html">ソースコードを見る。</a></p>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr><td colspan="2"><h2>構成</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">class &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcoil_1_1GetOpt.html">coil::GetOpt</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight"><a class="el" href="classcoil_1_1GetOpt.html" title="GetOpt クラス.">GetOpt</a> クラス.  <a href="classcoil_1_1GetOpt.html#_details">[詳細]</a><br/></td></tr>
+<tr><td colspan="2"><h2>ネームスペース</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">namespace &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecoil.html">coil</a></td></tr>
+
+<p><tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight"><p>Common Object Interface Layer. </p>
+<br/></td></tr>
+</p>
+<tr><td colspan="2"><h2>型定義</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">typedef ::utsname&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecoil.html#adc6b0c76f612cf80e2df3f37b5ed6f76">coil::utsname</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">システム情報取得  <a href="#adc6b0c76f612cf80e2df3f37b5ed6f76"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">typedef ::pid_t&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecoil.html#a9b4fff7de7d767eb84a2ebef6d35d024">coil::pid_t</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">呼び出し元プロセスのプロセスID取得  <a href="#a9b4fff7de7d767eb84a2ebef6d35d024"></a><br/></td></tr>
+<tr><td colspan="2"><h2>関数</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecoil.html#ac70d645ba9aefde9132a75c3b09ff011">coil::uname</a> (utsname *name)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">pid_t&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecoil.html#ab722a30c68cdaaceeb3372eb963210ff">coil::getpid</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">pid_t&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecoil.html#a178b8a9f74486e91455765bcf4a862e5">coil::getppid</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">呼び出し元プロセスの親プロセスのプロセスID取得  <a href="#a178b8a9f74486e91455765bcf4a862e5"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">char *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecoil.html#ab52b28376cab527895db8bbd21226a17">coil::getenv</a> (const char *name)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">環境変数取得  <a href="#ab52b28376cab527895db8bbd21226a17"></a><br/></td></tr>
+<tr><td colspan="2"><h2>変数</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">char *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="OS_8h.html#adb50a0eab9fed92fc3bfc7dfa4f2c410">optarg</a></td></tr>
+</table>
+<hr/><h2>変数</h2>
+<a class="anchor" id="adb50a0eab9fed92fc3bfc7dfa4f2c410"></a><!-- doxytag: member="OS.h::optarg" ref="adb50a0eab9fed92fc3bfc7dfa4f2c410" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char* <a class="el" href="OS_8h.html#adb50a0eab9fed92fc3bfc7dfa4f2c410">optarg</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+</div>
+<hr class="footer"/><address style="text-align: right;"><small>OpenRTMに対してThu May 24 23:25:19 2012に生成されました。&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.6.3 </small></address>
+</body>
+</html>

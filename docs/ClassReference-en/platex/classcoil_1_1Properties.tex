@@ -1,0 +1,681 @@
+\section{coil::Properties Class Reference}
+\label{classcoil_1_1Properties}\index{coil::Properties@{coil::Properties}}
+
+
+Class represents a set of properties.  
+
+
+
+
+{\ttfamily \#include $<$Properties.h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Properties} (const char $\ast$key=\char`\"{}\char`\"{}, const char $\ast$value=\char`\"{}\char`\"{})
+\begin{DoxyCompactList}\small\item\em Constructor(Create only root node). \item\end{DoxyCompactList}\item 
+{\bf Properties} (std::map$<$ std::string, std::string $>$ \&defaults)
+\begin{DoxyCompactList}\small\item\em Constructor(Give the default value with map). \item\end{DoxyCompactList}\item 
+{\bf Properties} (const char $\ast$defaults[$\,$], long num=LONG\_\-MAX)
+\begin{DoxyCompactList}\small\item\em Constructor(Give the default value with char$\ast$[]). \item\end{DoxyCompactList}\item 
+{\bf Properties} (const {\bf Properties} \&prop)
+\begin{DoxyCompactList}\small\item\em Copy Constructor. \item\end{DoxyCompactList}\item 
+{\bf Properties} \& {\bf operator=} (const {\bf Properties} \&prop)
+\begin{DoxyCompactList}\small\item\em Assignment operator. \item\end{DoxyCompactList}\item 
+virtual {\bf $\sim$Properties} (void)
+\begin{DoxyCompactList}\small\item\em Destructor. \item\end{DoxyCompactList}\item 
+const char $\ast$ {\bf getName} (void) const 
+\begin{DoxyCompactList}\small\item\em Get Names. \item\end{DoxyCompactList}\item 
+const char $\ast$ {\bf getValue} (void) const 
+\begin{DoxyCompactList}\small\item\em Get values. \item\end{DoxyCompactList}\item 
+const char $\ast$ {\bf getDefaultValue} (void) const 
+\begin{DoxyCompactList}\small\item\em Get default values. \item\end{DoxyCompactList}\item 
+const std::vector$<$ {\bf Properties} $\ast$ $>$ \& {\bf getLeaf} (void) const 
+\begin{DoxyCompactList}\small\item\em Get elements of leaf. \item\end{DoxyCompactList}\item 
+const {\bf Properties} $\ast$ {\bf getRoot} (void) const 
+\begin{DoxyCompactList}\small\item\em Get root element. \item\end{DoxyCompactList}\item 
+const std::string \& {\bf getProperty} (const std::string \&key) const 
+\begin{DoxyCompactList}\small\item\em Search for the property with the specified key in this property. \item\end{DoxyCompactList}\item 
+const std::string \& {\bf getProperty} (const std::string \&key, const std::string \&def) const 
+\begin{DoxyCompactList}\small\item\em Search for the property with the specified key in property list. \item\end{DoxyCompactList}\item 
+const std::string \& {\bf operator[$\,$]} (const std::string \&key) const 
+\begin{DoxyCompactList}\small\item\em Search for the property with the specified key in property list. \item\end{DoxyCompactList}\item 
+std::string \& {\bf operator[$\,$]} (const std::string \&key)
+\begin{DoxyCompactList}\small\item\em Search for the property with the specified key in property list. \item\end{DoxyCompactList}\item 
+const std::string \& {\bf getDefault} (const std::string \&key) const 
+\begin{DoxyCompactList}\small\item\em Get the default values with specified key. \item\end{DoxyCompactList}\item 
+std::string {\bf setProperty} (const std::string \&key, const std::string \&value)
+\begin{DoxyCompactList}\small\item\em Set a value associated with key in the property list. \item\end{DoxyCompactList}\item 
+std::string {\bf setDefault} (const std::string \&key, const std::string \&value)
+\begin{DoxyCompactList}\small\item\em Set a default value associated with key in the property list. \item\end{DoxyCompactList}\item 
+void {\bf setDefaults} (const char $\ast$defaults[$\,$], long num=LONG\_\-MAX)
+\begin{DoxyCompactList}\small\item\em Set a default value together in the property list. \item\end{DoxyCompactList}\item 
+void {\bf list} (std::ostream \&out)
+\begin{DoxyCompactList}\small\item\em Prints this property list out to the specified output stream. \item\end{DoxyCompactList}\item 
+void {\bf load} (std::istream \&inStream)
+\begin{DoxyCompactList}\small\item\em Loads property list that consists of key:value from input stream. \item\end{DoxyCompactList}\item 
+void {\bf save} (std::ostream \&out, const std::string \&header)
+\begin{DoxyCompactList}\small\item\em Save the property list to the specified stream. \item\end{DoxyCompactList}\item 
+void {\bf store} (std::ostream \&out, const std::string \&header)
+\begin{DoxyCompactList}\small\item\em Stores property list to the output stream. \item\end{DoxyCompactList}\item 
+std::vector$<$ std::string $>$ {\bf propertyNames} (void) const 
+\begin{DoxyCompactList}\small\item\em Return an vector of all the keys in this property. \item\end{DoxyCompactList}\item 
+int {\bf size} (void) const 
+\begin{DoxyCompactList}\small\item\em Get the number of \doxyref{Properties}{p.}{classcoil_1_1Properties}. \item\end{DoxyCompactList}\item 
+{\bf Properties} $\ast$const {\bf findNode} (const std::string \&key) const 
+\begin{DoxyCompactList}\small\item\em Get node of properties. \item\end{DoxyCompactList}\item 
+{\bf Properties} \& {\bf getNode} (const std::string \&key)
+\begin{DoxyCompactList}\small\item\em Get node of properties. \item\end{DoxyCompactList}\item 
+bool {\bf createNode} (const std::string \&key)
+\begin{DoxyCompactList}\small\item\em Create newly node of \doxyref{Properties}{p.}{classcoil_1_1Properties}. \item\end{DoxyCompactList}\item 
+{\bf Properties} $\ast$ {\bf removeNode} (const char $\ast$leaf\_\-name)
+\begin{DoxyCompactList}\small\item\em Remove node of \doxyref{Properties}{p.}{classcoil_1_1Properties}. \item\end{DoxyCompactList}\item 
+{\bf Properties} $\ast$ {\bf hasKey} (const char $\ast$key) const 
+\begin{DoxyCompactList}\small\item\em Check whether key exists in the children. \item\end{DoxyCompactList}\item 
+void {\bf clear} (void)
+\begin{DoxyCompactList}\small\item\em Clear the children. \item\end{DoxyCompactList}\item 
+{\bf Properties} \& {\bf operator$<$$<$} (const {\bf Properties} \&prop)
+\begin{DoxyCompactList}\small\item\em Merge properties. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void {\bf splitKeyValue} (const std::string \&str, std::string \&key, std::string \&value)
+\begin{DoxyCompactList}\small\item\em Split the string into a pair of the key and the value. \item\end{DoxyCompactList}\item 
+static bool {\bf split} (const std::string \&str, const char delim, std::vector$<$ std::string $>$ \&value)
+\begin{DoxyCompactList}\small\item\em Split the string. \item\end{DoxyCompactList}\item 
+static {\bf Properties} $\ast$ {\bf \_\-getNode} (std::vector$<$ std::string $>$ \&keys, std::vector$<$ {\bf Properties} $\ast$ $>$::size\_\-type index, const {\bf Properties} $\ast$curr)
+\begin{DoxyCompactList}\small\item\em Get properties. \item\end{DoxyCompactList}\item 
+static void {\bf \_\-propertiyNames} (std::vector$<$ std::string $>$ \&names, std::string curr\_\-name, const {\bf Properties} $\ast$curr)
+\begin{DoxyCompactList}\small\item\em Get property name list. \item\end{DoxyCompactList}\item 
+static void {\bf \_\-store} (std::ostream \&out, std::string curr\_\-name, {\bf Properties} $\ast$curr)
+\begin{DoxyCompactList}\small\item\em Store the property name list. \item\end{DoxyCompactList}\item 
+static std::ostream \& {\bf \_\-dump} (std::ostream \&out, const {\bf Properties} \&curr, int index)
+\begin{DoxyCompactList}\small\item\em Save property's contents. \item\end{DoxyCompactList}\item 
+static std::string {\bf indent} (int index)
+\begin{DoxyCompactList}\small\item\em Create indents. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+std::ostream \& {\bf operator$<$$<$} (std::ostream \&lhs, const {\bf Properties} \&rhs)
+\begin{DoxyCompactList}\small\item\em Output \doxyref{Properties}{p.}{classcoil_1_1Properties} to stream. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Class represents a set of properties. The \doxyref{Properties}{p.}{classcoil_1_1Properties} class represents a persistent set of properties. The \doxyref{Properties}{p.}{classcoil_1_1Properties} can be saved to a stream or loaded from a stream. Each key and its corresponding value in the property list is a string.
+
+A property list can contain another property list as its \char`\"{}defaults\char`\"{}. This second property list is searched if the property key is not found in the original property list.
+
+It is recommended to use these method; \doxyref{setProperty()}{p.}{classcoil_1_1Properties_ad0e11287725b2597aa2fd24aa164de5f} to get properties, \doxyref{setProperty()}{p.}{classcoil_1_1Properties_ad0e11287725b2597aa2fd24aa164de5f} to set properties.
+
+When propertis are stored in a stream or when they are loaded from the stream, the ISO 8859-\/1 character encoding is used. Characters that cannot be directly represented in this encoding can be used.
+
+This class has almost same methods of Java's \doxyref{Properties}{p.}{classcoil_1_1Properties} class (java.util.Properties). Also, input and output files are compatible with outputs of Java's \doxyref{Properties}{p.}{classcoil_1_1Properties} class, but Unicode encoded property file is not be supported. 
+
+\subsection{Constructor \& Destructor Documentation}
+\index{coil::Properties@{coil::Properties}!Properties@{Properties}}
+\index{Properties@{Properties}!coil::Properties@{coil::Properties}}
+\subsubsection[{Properties}]{\setlength{\rightskip}{0pt plus 5cm}coil::Properties::Properties (const char $\ast$ {\em key} = {\ttfamily \char`\"{}\char`\"{}}, \/  const char $\ast$ {\em value} = {\ttfamily \char`\"{}\char`\"{}})}\label{classcoil_1_1Properties_ac450ea6ec45f1166cc630bbc26535a00}
+
+
+Constructor(Create only root node). 
+
+Create a root node of Property with root's key and value. All values are set as default value.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em key}]Properties's keys(The default values:\char`\"{}\char`\"{}) \item[{\em value}]Properties's values(The default values:\char`\"{}\char`\"{}) \end{DoxyParams}
+\index{coil::Properties@{coil::Properties}!Properties@{Properties}}
+\index{Properties@{Properties}!coil::Properties@{coil::Properties}}
+\subsubsection[{Properties}]{\setlength{\rightskip}{0pt plus 5cm}coil::Properties::Properties (std::map$<$ std::string, std::string $>$ \& {\em defaults})}\label{classcoil_1_1Properties_a220dd189b126cb4faeea1c6849512667}
+
+
+Constructor(Give the default value with map). 
+
+Create \doxyref{Properties}{p.}{classcoil_1_1Properties} with default value of std::string map. All values are set as default value.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em defaults}]map that is spcified as the default value \end{DoxyParams}
+\index{coil::Properties@{coil::Properties}!Properties@{Properties}}
+\index{Properties@{Properties}!coil::Properties@{coil::Properties}}
+\subsubsection[{Properties}]{\setlength{\rightskip}{0pt plus 5cm}coil::Properties::Properties (const char $\ast$ {\em defaults}[$\,$], \/  long {\em num} = {\ttfamily LONG\_\-MAX})}\label{classcoil_1_1Properties_ae93d761ca0f93dfe41be33b67a2b2741}
+
+
+Constructor(Give the default value with char$\ast$[]). 
+
+Creates an empty property list with the specified defaults. All values are set as the default values. The default values are given by array of char$\ast$, which should be pairs of \char`\"{}key\char`\"{} and \char`\"{}value\char`\"{}. The end of list is specified by argument \char`\"{}num\char`\"{} which specifies number of array, or null character of key. The following is an example.
+
+
+\begin{DoxyPre}
+ const char* defaults = \{
+     "key1", "value1",
+     "key2", "value2",
+     "key3", "value3",
+     "key4", "value4",
+     "key5", "value5",
+     "" \};
+ \doxyref{Properties}{p.}{classcoil_1_1Properties} p(defaults);
+ // or
+ \doxyref{Properties}{p.}{classcoil_1_1Properties} p(defaults, 10);
+ \end{DoxyPre}
+
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em defaults}]Array that specifies the default values \item[{\em num}]Number of elements that specifies the default value (The default value:LONG\_\-MAX) \end{DoxyParams}
+\index{coil::Properties@{coil::Properties}!Properties@{Properties}}
+\index{Properties@{Properties}!coil::Properties@{coil::Properties}}
+\subsubsection[{Properties}]{\setlength{\rightskip}{0pt plus 5cm}coil::Properties::Properties (const {\bf Properties} \& {\em prop})}\label{classcoil_1_1Properties_aebf43709176e3a922290bd762544ce41}
+
+
+Copy Constructor. 
+
+All of given Properties's keys, values and default values are copied to new \doxyref{Properties}{p.}{classcoil_1_1Properties}. \index{coil::Properties@{coil::Properties}!$\sim$Properties@{$\sim$Properties}}
+\index{$\sim$Properties@{$\sim$Properties}!coil::Properties@{coil::Properties}}
+\subsubsection[{$\sim$Properties}]{\setlength{\rightskip}{0pt plus 5cm}virtual coil::Properties::$\sim$Properties (void)\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classcoil_1_1Properties_a1edb4ee99d0a187307687bf7472efe3d}
+
+
+Destructor. 
+
+
+
+\subsection{Member Function Documentation}
+\index{coil::Properties@{coil::Properties}!\_\-dump@{\_\-dump}}
+\index{\_\-dump@{\_\-dump}!coil::Properties@{coil::Properties}}
+\subsubsection[{\_\-dump}]{\setlength{\rightskip}{0pt plus 5cm}static std::ostream\& coil::Properties::\_\-dump (std::ostream \& {\em out}, \/  const {\bf Properties} \& {\em curr}, \/  int {\em index})\hspace{0.3cm}{\ttfamily  [static, protected]}}\label{classcoil_1_1Properties_ad61ec669343b61db27b721ebcd1f13a6}
+
+
+Save property's contents. 
+
+Save the contents that were set to the property. The figure represented the depth of the property hierarchy is added when saving. If property with the value that is not set, the default value will be output.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em out}]Output stream of property's contents of save destination. \item[{\em curr}]Target property \item[{\em index}]Current property hierarchy \end{DoxyParams}
+\index{coil::Properties@{coil::Properties}!\_\-getNode@{\_\-getNode}}
+\index{\_\-getNode@{\_\-getNode}!coil::Properties@{coil::Properties}}
+\subsubsection[{\_\-getNode}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf Properties}$\ast$ coil::Properties::\_\-getNode (std::vector$<$ std::string $>$ \& {\em keys}, \/  std::vector$<$ {\bf Properties} $\ast$ $>$::size\_\-type {\em index}, \/  const {\bf Properties} $\ast$ {\em curr})\hspace{0.3cm}{\ttfamily  [static, protected]}}\label{classcoil_1_1Properties_a0fc03588997dcb27fe602b4cc05f2177}
+
+
+Get properties. 
+
+Get properties specified by key list. In the key list, hierarchical relation in the properties is represented by a list format. If properties corresponding to specified key list do not exist, null will be returned.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em keys}]Target properties's key list representation for getting \item[{\em index}]Number of hierarchy of key list \item[{\em curr}]Target properties for the search\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Target properties for the search 
+\end{DoxyReturn}
+\index{coil::Properties@{coil::Properties}!\_\-propertiyNames@{\_\-propertiyNames}}
+\index{\_\-propertiyNames@{\_\-propertiyNames}!coil::Properties@{coil::Properties}}
+\subsubsection[{\_\-propertiyNames}]{\setlength{\rightskip}{0pt plus 5cm}static void coil::Properties::\_\-propertiyNames (std::vector$<$ std::string $>$ \& {\em names}, \/  std::string {\em curr\_\-name}, \/  const {\bf Properties} $\ast$ {\em curr})\hspace{0.3cm}{\ttfamily  [static, protected]}}\label{classcoil_1_1Properties_a1955392bd669df6b34d63a97343ccadb}
+
+
+Get property name list. 
+
+Get a list expressed by separating each property name with '.'.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em names}]Name list of property \item[{\em curr\_\-name}]Current property's name \item[{\em curr}]Target properties \end{DoxyParams}
+\index{coil::Properties@{coil::Properties}!\_\-store@{\_\-store}}
+\index{\_\-store@{\_\-store}!coil::Properties@{coil::Properties}}
+\subsubsection[{\_\-store}]{\setlength{\rightskip}{0pt plus 5cm}static void coil::Properties::\_\-store (std::ostream \& {\em out}, \/  std::string {\em curr\_\-name}, \/  {\bf Properties} $\ast$ {\em curr})\hspace{0.3cm}{\ttfamily  [static, protected]}}\label{classcoil_1_1Properties_a1818545c1410c07de326d202391d678d}
+
+
+Store the property name list. 
+
+Store a list expressed by separating each property name with '.'.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em out}]Output stream of property's name list of save destination. \item[{\em curr\_\-name}]Current property's name \item[{\em curr}]Target properties \end{DoxyParams}
+\index{coil::Properties@{coil::Properties}!clear@{clear}}
+\index{clear@{clear}!coil::Properties@{coil::Properties}}
+\subsubsection[{clear}]{\setlength{\rightskip}{0pt plus 5cm}void coil::Properties::clear (void)}\label{classcoil_1_1Properties_a4d9c54809d93b618fc3bcafb50ed1e5a}
+
+
+Clear the children. 
+
+\index{coil::Properties@{coil::Properties}!createNode@{createNode}}
+\index{createNode@{createNode}!coil::Properties@{coil::Properties}}
+\subsubsection[{createNode}]{\setlength{\rightskip}{0pt plus 5cm}bool coil::Properties::createNode (const std::string \& {\em key})}\label{classcoil_1_1Properties_a866607797f36b9d10a93072d62188150}
+
+
+Create newly node of \doxyref{Properties}{p.}{classcoil_1_1Properties}. 
+
+Create nowly node with specified key. If the node with the same key has been registered, error will be returned.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em key}]Newly node key\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Newly node creation result. false will be returned if the node with specified key has already existed. 
+\end{DoxyReturn}
+\index{coil::Properties@{coil::Properties}!findNode@{findNode}}
+\index{findNode@{findNode}!coil::Properties@{coil::Properties}}
+\subsubsection[{findNode}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Properties}$\ast$ const coil::Properties::findNode (const std::string \& {\em key}) const}\label{classcoil_1_1Properties_a9da22dbbf05a2115f4a8a1d4fcc8f883}
+
+
+Get node of properties. 
+
+Get node with specified key.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em key}]Target node key for getting\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Target node 
+\end{DoxyReturn}
+\index{coil::Properties@{coil::Properties}!getDefault@{getDefault}}
+\index{getDefault@{getDefault}!coil::Properties@{coil::Properties}}
+\subsubsection[{getDefault}]{\setlength{\rightskip}{0pt plus 5cm}const std::string\& coil::Properties::getDefault (const std::string \& {\em key}) const}\label{classcoil_1_1Properties_a9536505f283c0fc848cf0ab31f5b271b}
+
+
+Get the default values with specified key. 
+
+Return the default values with specified key. If the property with specified key does not exist, the method returns empty string.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em key}]The property key\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The value in this property list with the specified key value. 
+\end{DoxyReturn}
+\index{coil::Properties@{coil::Properties}!getDefaultValue@{getDefaultValue}}
+\index{getDefaultValue@{getDefaultValue}!coil::Properties@{coil::Properties}}
+\subsubsection[{getDefaultValue}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ coil::Properties::getDefaultValue (void) const\hspace{0.3cm}{\ttfamily  [inline]}}\label{classcoil_1_1Properties_a78d23bd777bb462168a1807750267d6d}
+
+
+Get default values. 
+
+Get Properties's default values.
+
+\begin{DoxyReturn}{Returns}
+Properties's default values 
+\end{DoxyReturn}
+\index{coil::Properties@{coil::Properties}!getLeaf@{getLeaf}}
+\index{getLeaf@{getLeaf}!coil::Properties@{coil::Properties}}
+\subsubsection[{getLeaf}]{\setlength{\rightskip}{0pt plus 5cm}const std::vector$<${\bf Properties}$\ast$$>$\& coil::Properties::getLeaf (void) const\hspace{0.3cm}{\ttfamily  [inline]}}\label{classcoil_1_1Properties_a51cdcfada7734595f8a58beaa4356c72}
+
+
+Get elements of leaf. 
+
+Get Properties's elements of leaf.
+
+\begin{DoxyReturn}{Returns}
+Elements of leaf 
+\end{DoxyReturn}
+\index{coil::Properties@{coil::Properties}!getName@{getName}}
+\index{getName@{getName}!coil::Properties@{coil::Properties}}
+\subsubsection[{getName}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ coil::Properties::getName (void) const\hspace{0.3cm}{\ttfamily  [inline]}}\label{classcoil_1_1Properties_a3809685330fc7d8ced176e8dbe8dd2f7}
+
+
+Get Names. 
+
+Get Properties's names.
+
+\begin{DoxyReturn}{Returns}
+Properties's names 
+\end{DoxyReturn}
+\index{coil::Properties@{coil::Properties}!getNode@{getNode}}
+\index{getNode@{getNode}!coil::Properties@{coil::Properties}}
+\subsubsection[{getNode}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Properties}\& coil::Properties::getNode (const std::string \& {\em key})}\label{classcoil_1_1Properties_a96cd29523b03679abf8ace55cb84ac36}
+
+
+Get node of properties. 
+
+Get node with specified key.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em key}]Target node key for getting\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Target node 
+\end{DoxyReturn}
+\index{coil::Properties@{coil::Properties}!getProperty@{getProperty}}
+\index{getProperty@{getProperty}!coil::Properties@{coil::Properties}}
+\subsubsection[{getProperty}]{\setlength{\rightskip}{0pt plus 5cm}const std::string\& coil::Properties::getProperty (const std::string \& {\em key}, \/  const std::string \& {\em def}) const}\label{classcoil_1_1Properties_ac79dfbccc6050fcf4631063d1090af87}
+
+
+Search for the property with the specified key in property list. 
+
+Search for the property with the specified key in this property list. The method returns the default value argument if the property is not found.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em key}]The property key \item[{\em def}]The default value.\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The value in this property list with the specified key value. 
+\end{DoxyReturn}
+\index{coil::Properties@{coil::Properties}!getProperty@{getProperty}}
+\index{getProperty@{getProperty}!coil::Properties@{coil::Properties}}
+\subsubsection[{getProperty}]{\setlength{\rightskip}{0pt plus 5cm}const std::string\& coil::Properties::getProperty (const std::string \& {\em key}) const}\label{classcoil_1_1Properties_a91ad72f8d7c41624e2258c5a9331bd2a}
+
+
+Search for the property with the specified key in this property. 
+
+Search for the property with the specified key in this property list. If the key is not found in this property list, the default property list, and its defaults, recursively, are then checked. The method returns null if the property is not found.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em key}]The property key.\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The value in this property list with the specified key value. 
+\end{DoxyReturn}
+
+
+Referenced by RTC::ModuleManager::DllPred::operator()(), RTC::Manager::ModuleFactories::operator()(), and RTC::ConnectorDataListenerT$<$ DataType $>$::operator()().
+
+\index{coil::Properties@{coil::Properties}!getRoot@{getRoot}}
+\index{getRoot@{getRoot}!coil::Properties@{coil::Properties}}
+\subsubsection[{getRoot}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf Properties}$\ast$ coil::Properties::getRoot (void) const\hspace{0.3cm}{\ttfamily  [inline]}}\label{classcoil_1_1Properties_a930c4db15600de4f49370741652221cf}
+
+
+Get root element. 
+
+Get Properties's root element.
+
+\begin{DoxyReturn}{Returns}
+Root element 
+\end{DoxyReturn}
+\index{coil::Properties@{coil::Properties}!getValue@{getValue}}
+\index{getValue@{getValue}!coil::Properties@{coil::Properties}}
+\subsubsection[{getValue}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ coil::Properties::getValue (void) const\hspace{0.3cm}{\ttfamily  [inline]}}\label{classcoil_1_1Properties_aa402bd7d600a60560782622ef7ece205}
+
+
+Get values. 
+
+Get Properties's values.
+
+\begin{DoxyReturn}{Returns}
+Properties's values 
+\end{DoxyReturn}
+\index{coil::Properties@{coil::Properties}!hasKey@{hasKey}}
+\index{hasKey@{hasKey}!coil::Properties@{coil::Properties}}
+\subsubsection[{hasKey}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Properties}$\ast$ coil::Properties::hasKey (const char $\ast$ {\em key}) const}\label{classcoil_1_1Properties_a0f290b8337860bf7fa677e7c849f30f2}
+
+
+Check whether key exists in the children. 
+
+Check whether the children with specified key exist. If the children exist, they will be returned.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em key}]Check key\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Children node 
+\end{DoxyReturn}
+\index{coil::Properties@{coil::Properties}!indent@{indent}}
+\index{indent@{indent}!coil::Properties@{coil::Properties}}
+\subsubsection[{indent}]{\setlength{\rightskip}{0pt plus 5cm}static std::string coil::Properties::indent (int {\em index})\hspace{0.3cm}{\ttfamily  [static, protected]}}\label{classcoil_1_1Properties_ad238d41d4cacaefb479f0ba35e75fa77}
+
+
+Create indents. 
+
+Return indents according to specified figure. Returned indents are specified figure x two blanks.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em index}]The specification of Number of indent\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Created indent 
+\end{DoxyReturn}
+\index{coil::Properties@{coil::Properties}!list@{list}}
+\index{list@{list}!coil::Properties@{coil::Properties}}
+\subsubsection[{list}]{\setlength{\rightskip}{0pt plus 5cm}void coil::Properties::list (std::ostream \& {\em out})}\label{classcoil_1_1Properties_afe0899928af5de6b6b6b3226e4bf228a}
+
+
+Prints this property list out to the specified output stream. 
+
+Prints this property list out to the specified output stream. This method is useful for debugging.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em out}]Output stream. \end{DoxyParams}
+\index{coil::Properties@{coil::Properties}!load@{load}}
+\index{load@{load}!coil::Properties@{coil::Properties}}
+\subsubsection[{load}]{\setlength{\rightskip}{0pt plus 5cm}void coil::Properties::load (std::istream \& {\em inStream})}\label{classcoil_1_1Properties_a3eb4ac76be20037552ec34f1ca7923b1}
+
+
+Loads property list that consists of key:value from input stream. 
+
+Reads a property list (key and element pairs) from the input stream. The stream is assumed to be using the ISO 8859-\/1 character encoding. Each property is assumed to be registered in the input stream by each line, and each line terminator is should be a line break characters ($\backslash$n or $\backslash$r or $\backslash$r$\backslash$n). Lines are read from the input stream until end of file is reached.
+
+A line that contains only white space characters or a line that its first non-\/white space character is an ASCII '\#' or '!' is ignored. In a word, '\#' or '!' represents comment lines.
+
+All lines except the blank line or comment line is described the property that added to the table. However, if the line terminator is '$\backslash$' and the next line continues, it is treated as a continuation line (See below). The key is composed of all characters. All of these key termination characters in the line starting with the first non-\/white space character and up to, but not including, the first unescaped '=', ':', or white space character other than a line terminator.
+
+Line terminator characters can be included using $\backslash$ escape sequences. Any white space after the key is skipped. If the first non-\/white space character after the key is '=' or ':', then it is ignored and any white space characters after it are also skipped. All remaining characters on the line become part of the associated element string. In element string, ASCII escape sequence such as $\backslash$t and $\backslash$n and $\backslash$r and $\backslash$$\backslash$ and $\backslash$" and $\backslash$' and $\backslash$ (backslash character and space) and $\backslash$uxxxx have affect and they will be converted into a single character. Also, if termination character in the line is $\backslash$, the next line will be treated as continuing. In that case, $\backslash$ and break character will be destroyed, and also its first space character will be destroyed, so these characters on the line will not become part of the element string.
+
+As an example, each of the following three lines specifies the key \char`\"{}Truth\char`\"{} and the associated element value \char`\"{}Beauty\char`\"{}:
+
+Truth = Beauty \par
+ Truth:Beauty \par
+ Truth$\backslash$t$\backslash$t$\backslash$t:Beauty \par
+
+
+As another example, the following three lines specify a single property:
+
+fruits$\backslash$t$\backslash$t$\backslash$t$\backslash$tapple, banana, pear, $\backslash$ \par
+ cantaloupe, watermelon, $\backslash$ \par
+ kiwi, mango \par
+ The key is \char`\"{}fruits\char`\"{} and the associated element is: \char`\"{}apple, banana, pear, cantaloupe, watermelon, kiwi, mango\char`\"{}. Note that a space appears before each $\backslash$ so that a space will each comma in the final result; the $\backslash$, line terminator, and leading white space on the continuation line are merely discarded and are not replaced by one or more other characters. As a third example, the line:
+
+cheeses \par
+ specifies that the key is \char`\"{}cheeses\char`\"{} and the associated element is the empty string \char`\"{}\char`\"{}.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em inStream}]the input stream. \end{DoxyParams}
+\index{coil::Properties@{coil::Properties}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!coil::Properties@{coil::Properties}}
+\subsubsection[{operator$<$$<$}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Properties}\& coil::Properties::operator$<$$<$ (const {\bf Properties} \& {\em prop})}\label{classcoil_1_1Properties_a74de44746be25fa0a404bd17c02cda44}
+
+
+Merge properties. 
+
+Merge properties that have set to the current properties.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em prop}]\doxyref{Properties}{p.}{classcoil_1_1Properties} for the merge\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Property merge result 
+\end{DoxyReturn}
+\index{coil::Properties@{coil::Properties}!operator=@{operator=}}
+\index{operator=@{operator=}!coil::Properties@{coil::Properties}}
+\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Properties}\& coil::Properties::operator= (const {\bf Properties} \& {\em prop})}\label{classcoil_1_1Properties_acf1a3c8e401765c285e318d6863a6e77}
+
+
+Assignment operator. 
+
+All Properties's keys, values and default values of left side are deleted, all Properties's keys, values and default values of right side are copied to new \doxyref{Properties}{p.}{classcoil_1_1Properties}. \index{coil::Properties@{coil::Properties}!operator[]@{operator[]}}
+\index{operator[]@{operator[]}!coil::Properties@{coil::Properties}}
+\subsubsection[{operator[]}]{\setlength{\rightskip}{0pt plus 5cm}std::string\& coil::Properties::operator[$\,$] (const std::string \& {\em key})}\label{classcoil_1_1Properties_a2c241eddb268f07442e1d008154b2fef}
+
+
+Search for the property with the specified key in property list. 
+
+Search for the property with the specified key in this property list. If the key is not found in this property list, the default property list, and its defaults, recursively, are then checked. The method returns empty string if the property is not found. If there is no element with the same value in the left value, insert the right value in corresponding property.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em key}]The property key\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The value in this property list with the specified key value. 
+\end{DoxyReturn}
+\index{coil::Properties@{coil::Properties}!operator[]@{operator[]}}
+\index{operator[]@{operator[]}!coil::Properties@{coil::Properties}}
+\subsubsection[{operator[]}]{\setlength{\rightskip}{0pt plus 5cm}const std::string\& coil::Properties::operator[$\,$] (const std::string \& {\em key}) const}\label{classcoil_1_1Properties_a184d704a37d9eb2052b77a0624060b34}
+
+
+Search for the property with the specified key in property list. 
+
+Search for the property with the specified key in this property list. If the key is not found in this property list, the default property list, and its defaults, recursively, are then checked. The method returns empty string if the property is not found.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em key}]The property key\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The value in this property list with the specified key value. 
+\end{DoxyReturn}
+\index{coil::Properties@{coil::Properties}!propertyNames@{propertyNames}}
+\index{propertyNames@{propertyNames}!coil::Properties@{coil::Properties}}
+\subsubsection[{propertyNames}]{\setlength{\rightskip}{0pt plus 5cm}std::vector$<$std::string$>$ coil::Properties::propertyNames (void) const}\label{classcoil_1_1Properties_a32285ad4eba53bad4f9b37d19fd2f088}
+
+
+Return an vector of all the keys in this property. 
+
+Returns an enumeration of all the keys in this property list, including distinct keys in the default property list if a key of the same name has not already been found from the main properties list.
+
+\begin{DoxyReturn}{Returns}
+A vector of all the keys in this property list, including the keys in the default property list. 
+\end{DoxyReturn}
+\index{coil::Properties@{coil::Properties}!removeNode@{removeNode}}
+\index{removeNode@{removeNode}!coil::Properties@{coil::Properties}}
+\subsubsection[{removeNode}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Properties}$\ast$ coil::Properties::removeNode (const char $\ast$ {\em leaf\_\-name})}\label{classcoil_1_1Properties_a4eb696904cc8a1c0ae9fa5bcc4a07b75}
+
+
+Remove node of \doxyref{Properties}{p.}{classcoil_1_1Properties}. 
+
+Remove properties with specified name. \doxyref{Properties}{p.}{classcoil_1_1Properties} that were deleted will be returned.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em leaf\_\-name}]Target property's name for the delete\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Deleted properties 
+\end{DoxyReturn}
+\index{coil::Properties@{coil::Properties}!save@{save}}
+\index{save@{save}!coil::Properties@{coil::Properties}}
+\subsubsection[{save}]{\setlength{\rightskip}{0pt plus 5cm}void coil::Properties::save (std::ostream \& {\em out}, \/  const std::string \& {\em header})}\label{classcoil_1_1Properties_aef5ed6f0e17adabfc46e4c5d3de2580d}
+
+
+Save the property list to the specified stream. 
+
+It is not recommended. To save the property list, the store(ostream out, string header) method is recommended. This method is defined for compatibility of Java \doxyref{Properties}{p.}{classcoil_1_1Properties}.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em out}]The output stream \item[{\em header}]A description of the property list \end{DoxyParams}
+\index{coil::Properties@{coil::Properties}!setDefault@{setDefault}}
+\index{setDefault@{setDefault}!coil::Properties@{coil::Properties}}
+\subsubsection[{setDefault}]{\setlength{\rightskip}{0pt plus 5cm}std::string coil::Properties::setDefault (const std::string \& {\em key}, \/  const std::string \& {\em value})}\label{classcoil_1_1Properties_a019205d917bb9fadfedd5d2a6143b88a}
+
+
+Set a default value associated with key in the property list. 
+
+Set the default value to element specified by \char`\"{}key\char`\"{}.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em key}]Property's key to set the default value \item[{\em value}]The default value that is set\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The specified default value 
+\end{DoxyReturn}
+\index{coil::Properties@{coil::Properties}!setDefaults@{setDefaults}}
+\index{setDefaults@{setDefaults}!coil::Properties@{coil::Properties}}
+\subsubsection[{setDefaults}]{\setlength{\rightskip}{0pt plus 5cm}void coil::Properties::setDefaults (const char $\ast$ {\em defaults}[$\,$], \/  long {\em num} = {\ttfamily LONG\_\-MAX})}\label{classcoil_1_1Properties_a66d2d6f4814a45c55d2e85a3e8f5a8c0}
+
+
+Set a default value together in the property list. 
+
+Set the default value to the element specified by array together in the property list. The default values are given by array of char$\ast$, which should be pairs of \char`\"{}key\char`\"{} and \char`\"{}value\char`\"{}. The end of list is specified by argument \char`\"{}num\char`\"{}, which specifies number of array or null character of key.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em defaults}]Array that specifies the default values \item[{\em num}]Number of elements that specifies the default value (Default value:LONG\_\-MAX) \end{DoxyParams}
+\index{coil::Properties@{coil::Properties}!setProperty@{setProperty}}
+\index{setProperty@{setProperty}!coil::Properties@{coil::Properties}}
+\subsubsection[{setProperty}]{\setlength{\rightskip}{0pt plus 5cm}std::string coil::Properties::setProperty (const std::string \& {\em key}, \/  const std::string \& {\em value})}\label{classcoil_1_1Properties_ad0e11287725b2597aa2fd24aa164de5f}
+
+
+Set a value associated with key in the property list. 
+
+This method sets the \char`\"{}value\char`\"{} associated with \char`\"{}key\char`\"{} in the property list. If the property list has a value of \char`\"{}key\char`\"{}, old value is returned.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em key}]The key to be placed into this property list. \item[{\em value}]The value corresponding to key.\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The previous value of the specified key in this property list, or null if it did not have one. 
+\end{DoxyReturn}
+\index{coil::Properties@{coil::Properties}!size@{size}}
+\index{size@{size}!coil::Properties@{coil::Properties}}
+\subsubsection[{size}]{\setlength{\rightskip}{0pt plus 5cm}int coil::Properties::size (void) const}\label{classcoil_1_1Properties_af57a98d78e63f9429d0bd656dc3c2db3}
+
+
+Get the number of \doxyref{Properties}{p.}{classcoil_1_1Properties}. 
+
+Get the number of \doxyref{Properties}{p.}{classcoil_1_1Properties} that has already set.
+
+\begin{DoxyReturn}{Returns}
+Number of \doxyref{Properties}{p.}{classcoil_1_1Properties} 
+\end{DoxyReturn}
+\index{coil::Properties@{coil::Properties}!split@{split}}
+\index{split@{split}!coil::Properties@{coil::Properties}}
+\subsubsection[{split}]{\setlength{\rightskip}{0pt plus 5cm}static bool coil::Properties::split (const std::string \& {\em str}, \/  const char {\em delim}, \/  std::vector$<$ std::string $>$ \& {\em value})\hspace{0.3cm}{\ttfamily  [static, protected]}}\label{classcoil_1_1Properties_a510ba2a11821c01d0d39c11d05dfced8}
+
+
+Split the string. 
+
+Divide given string with given delimiter. If the given string is empty, error will be returned. When the given delimiter is escaped ('$\backslash$' is set right before it) this method does not use as delimiter.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em str}]Target string for the division \item[{\em delim}]Delimiter \item[{\em value}]Division result list\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Division result 
+\end{DoxyReturn}
+\index{coil::Properties@{coil::Properties}!splitKeyValue@{splitKeyValue}}
+\index{splitKeyValue@{splitKeyValue}!coil::Properties@{coil::Properties}}
+\subsubsection[{splitKeyValue}]{\setlength{\rightskip}{0pt plus 5cm}static void coil::Properties::splitKeyValue (const std::string \& {\em str}, \/  std::string \& {\em key}, \/  std::string \& {\em value})\hspace{0.3cm}{\ttfamily  [static, protected]}}\label{classcoil_1_1Properties_a6164ce725d1349d11d6d7c349b6b8cc1}
+
+
+Split the string into a pair of the key and the value. 
+
+Split the given string into a pair of the key and the value with the set delimiter. First, search whether the fist given string includes ':' or '=', and if either character is included, it is used as delimiter. If neither is included, try to divide it with ' '(space). When all delimiter candidates are not included, set the given string as key then set empty string to the its value. If any delimiter candidate is escaped ('$\backslash$' is set right before it), this method does not use as delimiter.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em str}]Target string for the division \item[{\em key}]Division result key \item[{\em value}]Division result value \end{DoxyParams}
+\index{coil::Properties@{coil::Properties}!store@{store}}
+\index{store@{store}!coil::Properties@{coil::Properties}}
+\subsubsection[{store}]{\setlength{\rightskip}{0pt plus 5cm}void coil::Properties::store (std::ostream \& {\em out}, \/  const std::string \& {\em header})}\label{classcoil_1_1Properties_a86d929fdcba713269d59239d32dfd1b5}
+
+
+Stores property list to the output stream. 
+
+Write this property list (key and element pairs) in this \doxyref{Properties}{p.}{classcoil_1_1Properties} table to the output stream in a format suitable for loading into a \doxyref{Properties}{p.}{classcoil_1_1Properties} table using the load method. The stream is written using the ISO 8859-\/1 character encoding. \doxyref{Properties}{p.}{classcoil_1_1Properties} from the defaults table of this \doxyref{Properties}{p.}{classcoil_1_1Properties} table (if any) are not written out by this method.
+
+If the header argument is not null, then an ASCII \# character, the comments string, and a line separator are first written to the output stream. Thus, the header can serve as an identifying comment.
+
+Next, a comment line is always written, consisting of an ASCII \# character, the current date and time (as if produced by the toString method of Date for the current time), and a line separator as generated by the Writer.
+
+Then every entry in this \doxyref{Properties}{p.}{classcoil_1_1Properties} table is written out, one per line. For each entry the key string is written, then an ASCII =, then the associated element string. Each character of the key and element strings is examined to see whether it should be rendered as an escape sequence. The ASCII characters $\backslash$, tab, form feed, newline, and carriage return are written as $\backslash$$\backslash$, $\backslash$t, $\backslash$f $\backslash$n, and $\backslash$r, respectively. Characters less than $\backslash$u0020 and characters greater than $\backslash$u007E are written as $\backslash$uxxxx for the appropriate hexadecimal value xxxx. For the key, all space characters are written with a preceding $\backslash$ character. For the element, leading space characters, but not embedded or trailing space characters, are written with a preceding $\backslash$ character. The key and element characters \#, !, =, and : are written with a preceding backslash to ensure that they are properly loaded.
+
+After the entries have been written, the output stream is flushed. The output stream remains open after this method returns.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em out}]An output stream. \item[{\em header}]The description of the property list. \end{DoxyParams}
+
+
+\subsection{Friends And Related Function Documentation}
+\index{coil::Properties@{coil::Properties}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!coil::Properties@{coil::Properties}}
+\subsubsection[{operator$<$$<$}]{\setlength{\rightskip}{0pt plus 5cm}std::ostream\& operator$<$$<$ (std::ostream \& {\em lhs}, \/  const {\bf Properties} \& {\em rhs})\hspace{0.3cm}{\ttfamily  [friend]}}\label{classcoil_1_1Properties_a4cbe3c065a17f9e6119dc2f423db16da}
+
+
+Output \doxyref{Properties}{p.}{classcoil_1_1Properties} to stream. 
+
+Output \doxyref{Properties}{p.}{classcoil_1_1Properties} to stream.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em lhs}]Output stream \item[{\em rhs}]\doxyref{Properties}{p.}{classcoil_1_1Properties}\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Output stream 
+\end{DoxyReturn}

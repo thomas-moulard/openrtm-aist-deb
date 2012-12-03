@@ -1,0 +1,193 @@
+\section{クラス テンプレート coil::Factory$<$ AbstractClass, Identifier, Compare, Creator, Destructor $>$}
+\label{classcoil_1_1Factory}\index{coil::Factory@{coil::Factory}}
+
+
+\doxyref{Factory}{p.}{classcoil_1_1Factory} テンプレートクラス.  
+
+
+
+
+{\ttfamily \#include $<$Factory.h$>$}
+
+coil::Factory$<$ AbstractClass, Identifier, Compare, Creator, Destructor $>$に対する継承グラフ\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2cm]{classcoil_1_1Factory}
+\end{center}
+\end{figure}
+\subsection*{構成}
+\begin{DoxyCompactItemize}
+\item 
+class {\bfseries FactoryEntry}
+\begin{DoxyCompactList}\small\item\em FactoryEntry クラス. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public 型}
+\begin{DoxyCompactItemize}
+\item 
+enum {\bf ReturnCode} \{ \par
+{\bf FACTORY\_\-OK}, 
+{\bf FACTORY\_\-ERROR}, 
+{\bf ALREADY\_\-EXISTS}, 
+{\bf NOT\_\-FOUND}, 
+\par
+{\bf INVALID\_\-ARG}, 
+{\bf UNKNOWN\_\-ERROR}
+ \}
+\item 
+typedef std::map$<$ Identifier, FactoryEntry $>$ {\bf FactoryMap}
+\item 
+typedef FactoryMap::iterator {\bf FactoryMapIt}
+\end{DoxyCompactItemize}
+\subsection*{Public メソッド}
+\begin{DoxyCompactItemize}
+\item 
+bool {\bf hasFactory} (const Identifier \&id)
+\begin{DoxyCompactList}\small\item\em ファクトリー有無チェック \item\end{DoxyCompactList}\item 
+std::vector$<$ Identifier $>$ {\bf getIdentifiers} ()
+\begin{DoxyCompactList}\small\item\em ファクトリーIDリスト取得 \item\end{DoxyCompactList}\item 
+{\bf ReturnCode} {\bf addFactory} (const Identifier \&id, Creator creator, Destructor destructor)
+\begin{DoxyCompactList}\small\item\em ファクトリー登録 \item\end{DoxyCompactList}\item 
+{\bf ReturnCode} {\bf removeFactory} (const Identifier \&id)
+\begin{DoxyCompactList}\small\item\em ファクトリー削除 \item\end{DoxyCompactList}\item 
+AbstractClass $\ast$ {\bf createObject} (const Identifier \&id)
+\begin{DoxyCompactList}\small\item\em ファクトリーオブジェクト生成 \item\end{DoxyCompactList}\item 
+void {\bf deleteObject} (const Identifier \&id, AbstractClass $\ast$\&obj)
+\begin{DoxyCompactList}\small\item\em ファクトリーオブジェクト削除 \item\end{DoxyCompactList}\item 
+void {\bf deleteObject} (AbstractClass $\ast$\&obj)
+\begin{DoxyCompactList}\small\item\em ファクトリーオブジェクト削除 \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{説明}
+\subsubsection*{template$<$class AbstractClass, typename Identifier = std::string, typename Compare = std::less$<$Identifier$>$, typename Creator = AbstractClass$\ast$ ($\ast$)(), typename Destructor = void ($\ast$)(AbstractClass$\ast$\&)$>$ class coil::Factory$<$ AbstractClass, Identifier, Compare, Creator, Destructor $>$}
+
+\doxyref{Factory}{p.}{classcoil_1_1Factory} テンプレートクラス. 
+
+\subsection{型定義}
+\index{coil::Factory@{coil::Factory}!FactoryMap@{FactoryMap}}
+\index{FactoryMap@{FactoryMap}!coil::Factory@{coil::Factory}}
+\subsubsection[{FactoryMap}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class AbstractClass , typename Identifier  = std::string, typename Compare  = std::less$<$Identifier$>$, typename Creator  = AbstractClass$\ast$ ($\ast$)(), typename Destructor  = void ($\ast$)(AbstractClass$\ast$\&)$>$ typedef std::map$<$Identifier, FactoryEntry$>$ {\bf coil::Factory}$<$ AbstractClass, Identifier, Compare, Creator, Destructor $>$::{\bf FactoryMap}}\label{classcoil_1_1Factory_ab061a29a06208bd555d18a0cec31643e}
+\index{coil::Factory@{coil::Factory}!FactoryMapIt@{FactoryMapIt}}
+\index{FactoryMapIt@{FactoryMapIt}!coil::Factory@{coil::Factory}}
+\subsubsection[{FactoryMapIt}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class AbstractClass , typename Identifier  = std::string, typename Compare  = std::less$<$Identifier$>$, typename Creator  = AbstractClass$\ast$ ($\ast$)(), typename Destructor  = void ($\ast$)(AbstractClass$\ast$\&)$>$ typedef FactoryMap::iterator {\bf coil::Factory}$<$ AbstractClass, Identifier, Compare, Creator, Destructor $>$::{\bf FactoryMapIt}}\label{classcoil_1_1Factory_a3f166d1a15f75685bc71f26818b3742e}
+
+
+\subsection{列挙型}
+\index{coil::Factory@{coil::Factory}!ReturnCode@{ReturnCode}}
+\index{ReturnCode@{ReturnCode}!coil::Factory@{coil::Factory}}
+\subsubsection[{ReturnCode}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class AbstractClass , typename Identifier  = std::string, typename Compare  = std::less$<$Identifier$>$, typename Creator  = AbstractClass$\ast$ ($\ast$)(), typename Destructor  = void ($\ast$)(AbstractClass$\ast$\&)$>$ enum {\bf coil::Factory::ReturnCode}}\label{classcoil_1_1Factory_ad3daf45b88091bf7eded408aff26767e}
+\begin{Desc}
+\item[列挙型の値: ]\par
+\begin{description}
+\index{FACTORY\_\-OK@{FACTORY\_\-OK}!coil::Factory@{coil::Factory}}\index{coil::Factory@{coil::Factory}!FACTORY\_\-OK@{FACTORY\_\-OK}}\item[{\em 
+FACTORY\_\-OK\label{classcoil_1_1Factory_ad3daf45b88091bf7eded408aff26767ea784faadaad92a19ebdf5e46bc51797bc}
+}]\index{FACTORY\_\-ERROR@{FACTORY\_\-ERROR}!coil::Factory@{coil::Factory}}\index{coil::Factory@{coil::Factory}!FACTORY\_\-ERROR@{FACTORY\_\-ERROR}}\item[{\em 
+FACTORY\_\-ERROR\label{classcoil_1_1Factory_ad3daf45b88091bf7eded408aff26767ea83232a6633f9253871a7e394d0579af1}
+}]\index{ALREADY\_\-EXISTS@{ALREADY\_\-EXISTS}!coil::Factory@{coil::Factory}}\index{coil::Factory@{coil::Factory}!ALREADY\_\-EXISTS@{ALREADY\_\-EXISTS}}\item[{\em 
+ALREADY\_\-EXISTS\label{classcoil_1_1Factory_ad3daf45b88091bf7eded408aff26767ea775603a29140211fb2a075a8dc8c15a8}
+}]\index{NOT\_\-FOUND@{NOT\_\-FOUND}!coil::Factory@{coil::Factory}}\index{coil::Factory@{coil::Factory}!NOT\_\-FOUND@{NOT\_\-FOUND}}\item[{\em 
+NOT\_\-FOUND\label{classcoil_1_1Factory_ad3daf45b88091bf7eded408aff26767ead089df73956ca711b29d1231202c534f}
+}]\index{INVALID\_\-ARG@{INVALID\_\-ARG}!coil::Factory@{coil::Factory}}\index{coil::Factory@{coil::Factory}!INVALID\_\-ARG@{INVALID\_\-ARG}}\item[{\em 
+INVALID\_\-ARG\label{classcoil_1_1Factory_ad3daf45b88091bf7eded408aff26767ea8295bf74c563b880f6a05424192e5721}
+}]\index{UNKNOWN\_\-ERROR@{UNKNOWN\_\-ERROR}!coil::Factory@{coil::Factory}}\index{coil::Factory@{coil::Factory}!UNKNOWN\_\-ERROR@{UNKNOWN\_\-ERROR}}\item[{\em 
+UNKNOWN\_\-ERROR\label{classcoil_1_1Factory_ad3daf45b88091bf7eded408aff26767ea752306a145550a11ad7a374800b76c1f}
+}]\end{description}
+\end{Desc}
+
+
+
+\subsection{関数}
+\index{coil::Factory@{coil::Factory}!addFactory@{addFactory}}
+\index{addFactory@{addFactory}!coil::Factory@{coil::Factory}}
+\subsubsection[{addFactory}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class AbstractClass , typename Identifier  = std::string, typename Compare  = std::less$<$Identifier$>$, typename Creator  = AbstractClass$\ast$ ($\ast$)(), typename Destructor  = void ($\ast$)(AbstractClass$\ast$\&)$>$ {\bf ReturnCode} {\bf coil::Factory}$<$ AbstractClass, Identifier, Compare, Creator, Destructor $>$::addFactory (const Identifier \& {\em id}, \/  Creator {\em creator}, \/  Destructor {\em destructor})\hspace{0.3cm}{\ttfamily  [inline]}}\label{classcoil_1_1Factory_a16c7d1aa9d9b47a5047831c3d7cb8cea}
+
+
+ファクトリー登録 
+
+ファクトリーを登録する。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em id}]ファクトリーID \item[{\em creator}]クリエータ用ファンクタ \item[{\em destructor}]デストラクタ用ファンクタ\end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+FACTORY\_\-OK: 正常終了 ALREADY\_\-EXISTS: 登録済み INVALID\_\-ARG: creator か destructor が不正な値を含む 
+\end{DoxyReturn}
+\index{coil::Factory@{coil::Factory}!createObject@{createObject}}
+\index{createObject@{createObject}!coil::Factory@{coil::Factory}}
+\subsubsection[{createObject}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class AbstractClass , typename Identifier  = std::string, typename Compare  = std::less$<$Identifier$>$, typename Creator  = AbstractClass$\ast$ ($\ast$)(), typename Destructor  = void ($\ast$)(AbstractClass$\ast$\&)$>$ AbstractClass$\ast$ {\bf coil::Factory}$<$ AbstractClass, Identifier, Compare, Creator, Destructor $>$::createObject (const Identifier \& {\em id})\hspace{0.3cm}{\ttfamily  [inline]}}\label{classcoil_1_1Factory_abfe2f51244047f026f1e86bef7880220}
+
+
+ファクトリーオブジェクト生成 
+
+ファクトリーオブジェクトを生成する。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em id}]ファクトリーID\end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+AbstractClass のポインタ 
+\end{DoxyReturn}
+\index{coil::Factory@{coil::Factory}!deleteObject@{deleteObject}}
+\index{deleteObject@{deleteObject}!coil::Factory@{coil::Factory}}
+\subsubsection[{deleteObject}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class AbstractClass , typename Identifier  = std::string, typename Compare  = std::less$<$Identifier$>$, typename Creator  = AbstractClass$\ast$ ($\ast$)(), typename Destructor  = void ($\ast$)(AbstractClass$\ast$\&)$>$ void {\bf coil::Factory}$<$ AbstractClass, Identifier, Compare, Creator, Destructor $>$::deleteObject (AbstractClass $\ast$\& {\em obj})\hspace{0.3cm}{\ttfamily  [inline]}}\label{classcoil_1_1Factory_a48aaa74f2c0c36dbe7261f94450bbbc2}
+
+
+ファクトリーオブジェクト削除 
+
+ファクトリーオブジェクトを削除する。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em obj}]ファクトリーオブジェクト \end{DoxyParams}
+\index{coil::Factory@{coil::Factory}!deleteObject@{deleteObject}}
+\index{deleteObject@{deleteObject}!coil::Factory@{coil::Factory}}
+\subsubsection[{deleteObject}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class AbstractClass , typename Identifier  = std::string, typename Compare  = std::less$<$Identifier$>$, typename Creator  = AbstractClass$\ast$ ($\ast$)(), typename Destructor  = void ($\ast$)(AbstractClass$\ast$\&)$>$ void {\bf coil::Factory}$<$ AbstractClass, Identifier, Compare, Creator, Destructor $>$::deleteObject (const Identifier \& {\em id}, \/  AbstractClass $\ast$\& {\em obj})\hspace{0.3cm}{\ttfamily  [inline]}}\label{classcoil_1_1Factory_a3bc2ace6f1d5ef8d7208fdd501d5a78c}
+
+
+ファクトリーオブジェクト削除 
+
+ファクトリーオブジェクトを削除する。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em id}]ファクトリーID \item[{\em obj}]ファクトリーオブジェクト \end{DoxyParams}
+\index{coil::Factory@{coil::Factory}!getIdentifiers@{getIdentifiers}}
+\index{getIdentifiers@{getIdentifiers}!coil::Factory@{coil::Factory}}
+\subsubsection[{getIdentifiers}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class AbstractClass , typename Identifier  = std::string, typename Compare  = std::less$<$Identifier$>$, typename Creator  = AbstractClass$\ast$ ($\ast$)(), typename Destructor  = void ($\ast$)(AbstractClass$\ast$\&)$>$ std::vector$<$Identifier$>$ {\bf coil::Factory}$<$ AbstractClass, Identifier, Compare, Creator, Destructor $>$::getIdentifiers ()\hspace{0.3cm}{\ttfamily  [inline]}}\label{classcoil_1_1Factory_aa9f653dfebd545ee6af63b339b2e18b5}
+
+
+ファクトリーIDリスト取得 
+
+ファクトリーIDリストを返す。
+
+\begin{DoxyReturn}{戻り値}
+ID リスト 
+\end{DoxyReturn}
+\index{coil::Factory@{coil::Factory}!hasFactory@{hasFactory}}
+\index{hasFactory@{hasFactory}!coil::Factory@{coil::Factory}}
+\subsubsection[{hasFactory}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class AbstractClass , typename Identifier  = std::string, typename Compare  = std::less$<$Identifier$>$, typename Creator  = AbstractClass$\ast$ ($\ast$)(), typename Destructor  = void ($\ast$)(AbstractClass$\ast$\&)$>$ bool {\bf coil::Factory}$<$ AbstractClass, Identifier, Compare, Creator, Destructor $>$::hasFactory (const Identifier \& {\em id})\hspace{0.3cm}{\ttfamily  [inline]}}\label{classcoil_1_1Factory_a613021c4ef085965a978cc89bd3b51e2}
+
+
+ファクトリー有無チェック 
+
+指定IDのファクトリー有無を返す。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em id}]ファクトリーID\end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+true: 有り, false: 無し 
+\end{DoxyReturn}
+\index{coil::Factory@{coil::Factory}!removeFactory@{removeFactory}}
+\index{removeFactory@{removeFactory}!coil::Factory@{coil::Factory}}
+\subsubsection[{removeFactory}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class AbstractClass , typename Identifier  = std::string, typename Compare  = std::less$<$Identifier$>$, typename Creator  = AbstractClass$\ast$ ($\ast$)(), typename Destructor  = void ($\ast$)(AbstractClass$\ast$\&)$>$ {\bf ReturnCode} {\bf coil::Factory}$<$ AbstractClass, Identifier, Compare, Creator, Destructor $>$::removeFactory (const Identifier \& {\em id})\hspace{0.3cm}{\ttfamily  [inline]}}\label{classcoil_1_1Factory_a4c501f613299acf93d30179e91674f77}
+
+
+ファクトリー削除 
+
+ファクトリーを削除する。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em id}]ファクトリーID\end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+FACTORY\_\-OK: 正常終了 NOT\_\-FOUND: ID未登録 
+\end{DoxyReturn}

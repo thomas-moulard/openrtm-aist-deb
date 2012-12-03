@@ -1,0 +1,43 @@
+\section{クラス テンプレート coil::NonCopyableCRTP$<$ T $>$}
+\label{classcoil_1_1NonCopyableCRTP}\index{coil::NonCopyableCRTP@{coil::NonCopyableCRTP}}
+
+
+コピー禁止ミックスイン(CRTP版)  
+
+
+
+
+{\ttfamily \#include $<$NonCopyable.h$>$}
+
+\subsection*{Protected メソッド}
+\begin{DoxyCompactItemize}
+\item 
+{\bf NonCopyableCRTP} ()
+\begin{DoxyCompactList}\small\item\em コンストラクタ \item\end{DoxyCompactList}\item 
+{\bf $\sim$NonCopyableCRTP} ()
+\begin{DoxyCompactList}\small\item\em デストラクタ \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{説明}
+\subsubsection*{template$<$class T$>$ class coil::NonCopyableCRTP$<$ T $>$}
+
+コピー禁止ミックスイン(CRTP版) 対象クラスのオブジェクトのコピーを禁止する。コピーを禁止したいクラ スでは、NonCopyableをprivate継承することでオブジェクトのコピーを禁 止することができる。このCRTP (Curiously Recursive Template Pattern) 版は、空の基底クラスに対する最適化 (Empty Base Optimization) を行わせたい場合に利用する。
+
+-\/例: struct A : \doxyref{NonCopyableCRTP}{p.}{classcoil_1_1NonCopyableCRTP} \{\}; struct B : \doxyref{NonCopyableCRTP}{p.}{classcoil_1_1NonCopyableCRTP}{\bfseries  \{\}; struct C: A, B \{\}; }
+
+\subsection{コンストラクタとデストラクタ}
+\index{coil::NonCopyableCRTP@{coil::NonCopyableCRTP}!NonCopyableCRTP@{NonCopyableCRTP}}
+\index{NonCopyableCRTP@{NonCopyableCRTP}!coil::NonCopyableCRTP@{coil::NonCopyableCRTP}}
+\subsubsection[{NonCopyableCRTP}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ {\bf coil::NonCopyableCRTP}$<$ T $>$::{\bf NonCopyableCRTP} ()\hspace{0.3cm}{\ttfamily  [inline, protected]}}\label{classcoil_1_1NonCopyableCRTP_a3234df905b8bb0c1fdbff8d86c5d3933}
+
+
+コンストラクタ 
+
+コンストラクタ。 \index{coil::NonCopyableCRTP@{coil::NonCopyableCRTP}!$\sim$NonCopyableCRTP@{$\sim$NonCopyableCRTP}}
+\index{$\sim$NonCopyableCRTP@{$\sim$NonCopyableCRTP}!coil::NonCopyableCRTP@{coil::NonCopyableCRTP}}
+\subsubsection[{$\sim$NonCopyableCRTP}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ {\bf coil::NonCopyableCRTP}$<$ T $>$::$\sim${\bf NonCopyableCRTP} ()\hspace{0.3cm}{\ttfamily  [inline, protected]}}\label{classcoil_1_1NonCopyableCRTP_abf9fdd83a0a9a7d3ea13268ba12c41c6}
+
+
+デストラクタ 
+
+デストラクタ。 

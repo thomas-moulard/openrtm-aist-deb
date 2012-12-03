@@ -1,0 +1,56 @@
+\section{RTC::OnWriteConvert$<$ DataType $>$ Class Template Reference}
+\label{structRTC_1_1OnWriteConvert}\index{RTC::OnWriteConvert@{RTC::OnWriteConvert}}
+
+
+Data convert callback abstract class on write().  
+
+
+
+
+{\ttfamily \#include $<$PortCallback.h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual {\bf $\sim$OnWriteConvert} (void)
+\begin{DoxyCompactList}\small\item\em Destructor. \item\end{DoxyCompactList}\item 
+virtual DataType {\bf operator()} (const DataType \&value)=0
+\begin{DoxyCompactList}\small\item\em Callback function. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$class DataType$>$ class RTC::OnWriteConvert$<$ DataType $>$}
+
+Data convert callback abstract class on write(). This is the interface for callback invoked when data is done write() into the OutPort's buffer. The return value of this callback will be stored in the buffer.
+
+\begin{DoxySince}{Since}
+0.4.0 
+\end{DoxySince}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{RTC::OnWriteConvert@{RTC::OnWriteConvert}!$\sim$OnWriteConvert@{$\sim$OnWriteConvert}}
+\index{$\sim$OnWriteConvert@{$\sim$OnWriteConvert}!RTC::OnWriteConvert@{RTC::OnWriteConvert}}
+\subsubsection[{$\sim$OnWriteConvert}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class DataType$>$ virtual {\bf RTC::OnWriteConvert}$<$ DataType $>$::$\sim${\bf OnWriteConvert} (void)\hspace{0.3cm}{\ttfamily  [inline, virtual]}}\label{structRTC_1_1OnWriteConvert_a3ac98bc92ec58ac5c51a685958563829}
+
+
+Destructor. 
+
+Destructor 
+
+\subsection{Member Function Documentation}
+\index{RTC::OnWriteConvert@{RTC::OnWriteConvert}!operator()@{operator()}}
+\index{operator()@{operator()}!RTC::OnWriteConvert@{RTC::OnWriteConvert}}
+\subsubsection[{operator()}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class DataType$>$ virtual DataType {\bf RTC::OnWriteConvert}$<$ DataType $>$::operator() (const DataType \& {\em value})\hspace{0.3cm}{\ttfamily  [pure virtual]}}\label{structRTC_1_1OnWriteConvert_a977a309e15012a5f7c30497b1c20341c}
+
+
+Callback function. 
+
+This is the callback function invoked when data is written into the buffer.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em value}]Data to be converted \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Converted data 
+\end{DoxyReturn}

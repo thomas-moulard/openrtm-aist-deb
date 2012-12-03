@@ -1,0 +1,83 @@
+\section{atomic.h}
+\label{atomic_8h}\index{atomic.h@{atomic.h}}
+
+
+atomic add func  
+
+
+{\ttfamily \#include $<$coil/Mutex.h$>$}\par
+{\ttfamily \#include $<$coil/Guard.h$>$}\par
+\subsection*{マクロ定義}
+\begin{DoxyCompactItemize}
+\item 
+\#define {\bf COIL\_\-USES\_\-ATOMIC\_\-OP}~{\bf coil::Mutex} \_\-\_\-mutex;
+\item 
+\#define {\bf atomic\_\-add}(x, y)
+\item 
+\#define {\bf atomic\_\-incr}(x)
+\item 
+\#define {\bf atomic\_\-decr}(x)
+\item 
+\#define {\bf atomic\_\-exchange\_\-add}(x, y)~exchange\_\-add(x, y, \&\_\-\_\-mutex)
+\end{DoxyCompactItemize}
+\subsection*{関数}
+\begin{DoxyCompactItemize}
+\item 
+int {\bf exchange\_\-add} (int $\ast$x, int y, {\bf coil::Mutex} $\ast$mutex)
+\end{DoxyCompactItemize}
+
+
+\subsection{説明}
+atomic add func \begin{DoxyDate}{日付}
+\$Date\$ 
+\end{DoxyDate}
+\begin{DoxyAuthor}{作者}
+Noriaki Ando $<${\tt n-\/ando@aist.go.jp}$>$
+\end{DoxyAuthor}
+Copyright (C) 2008 Noriaki Ando Task-\/intelligence Research Group, Intelligent Systems Research Institute, National Institute of Advanced Industrial Science and Technology (AIST), Japan All rights reserved.
+
+\$Id\$ 
+
+\subsection{マクロ定義}
+\index{atomic.h@{atomic.h}!atomic\_\-add@{atomic\_\-add}}
+\index{atomic\_\-add@{atomic\_\-add}!atomic.h@{atomic.h}}
+\subsubsection[{atomic\_\-add}]{\setlength{\rightskip}{0pt plus 5cm}\#define atomic\_\-add(x, \/  y)}\label{atomic_8h_a0fe981f75849b7865467ecdbc77c7419}
+{\bfseries 値:}
+\begin{DoxyCode}
+{                                             \
+    coil::Guard<coil::Mutex> guard(__mutex);    \
+    *x = *x + y;                                \
+  }
+\end{DoxyCode}
+\index{atomic.h@{atomic.h}!atomic\_\-decr@{atomic\_\-decr}}
+\index{atomic\_\-decr@{atomic\_\-decr}!atomic.h@{atomic.h}}
+\subsubsection[{atomic\_\-decr}]{\setlength{\rightskip}{0pt plus 5cm}\#define atomic\_\-decr(x)}\label{atomic_8h_af939354fe93c9e389cb5da6dfd505bd7}
+{\bfseries 値:}
+\begin{DoxyCode}
+{                                             \
+    coil::Guard<coil::Mutex> guard(__mutex);    \
+    --(*x);                                     \
+  }
+\end{DoxyCode}
+\index{atomic.h@{atomic.h}!atomic\_\-exchange\_\-add@{atomic\_\-exchange\_\-add}}
+\index{atomic\_\-exchange\_\-add@{atomic\_\-exchange\_\-add}!atomic.h@{atomic.h}}
+\subsubsection[{atomic\_\-exchange\_\-add}]{\setlength{\rightskip}{0pt plus 5cm}\#define atomic\_\-exchange\_\-add(x, \/  y)~exchange\_\-add(x, y, \&\_\-\_\-mutex)}\label{atomic_8h_aa51b8e53a4099668fdef2ec687a3210b}
+\index{atomic.h@{atomic.h}!atomic\_\-incr@{atomic\_\-incr}}
+\index{atomic\_\-incr@{atomic\_\-incr}!atomic.h@{atomic.h}}
+\subsubsection[{atomic\_\-incr}]{\setlength{\rightskip}{0pt plus 5cm}\#define atomic\_\-incr(x)}\label{atomic_8h_a5cd66855be35253ecf82acb1907af9f2}
+{\bfseries 値:}
+\begin{DoxyCode}
+{                                             \
+    coil::Guard<coil::Mutex> guard(__mutex);    \
+    ++(*x);                                     \
+  }
+\end{DoxyCode}
+\index{atomic.h@{atomic.h}!COIL\_\-USES\_\-ATOMIC\_\-OP@{COIL\_\-USES\_\-ATOMIC\_\-OP}}
+\index{COIL\_\-USES\_\-ATOMIC\_\-OP@{COIL\_\-USES\_\-ATOMIC\_\-OP}!atomic.h@{atomic.h}}
+\subsubsection[{COIL\_\-USES\_\-ATOMIC\_\-OP}]{\setlength{\rightskip}{0pt plus 5cm}\#define COIL\_\-USES\_\-ATOMIC\_\-OP~{\bf coil::Mutex} \_\-\_\-mutex;}\label{atomic_8h_aa3a3b38e82e6515e0b984532de4ca8b6}
+
+
+\subsection{関数}
+\index{atomic.h@{atomic.h}!exchange\_\-add@{exchange\_\-add}}
+\index{exchange\_\-add@{exchange\_\-add}!atomic.h@{atomic.h}}
+\subsubsection[{exchange\_\-add}]{\setlength{\rightskip}{0pt plus 5cm}int exchange\_\-add (int $\ast$ {\em x}, \/  int {\em y}, \/  {\bf coil::Mutex} $\ast$ {\em mutex})}\label{atomic_8h_a29a8d5c103d5dae310ea72b991f6afc0}

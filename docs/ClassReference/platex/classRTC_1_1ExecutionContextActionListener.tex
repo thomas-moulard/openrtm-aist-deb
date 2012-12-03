@@ -1,0 +1,71 @@
+\section{クラス RTC::ExecutionContextActionListener}
+\label{classRTC_1_1ExecutionContextActionListener}\index{RTC::ExecutionContextActionListener@{RTC::ExecutionContextActionListener}}
+
+
+\doxyref{ExecutionContextActionListener}{p.}{classRTC_1_1ExecutionContextActionListener} クラス.  
+
+
+
+
+{\ttfamily \#include $<$ComponentActionListener.h$>$}
+
+\subsection*{Public メソッド}
+\begin{DoxyCompactItemize}
+\item 
+virtual {\bf $\sim$ExecutionContextActionListener} ()
+\begin{DoxyCompactList}\small\item\em デストラクタ \item\end{DoxyCompactList}\item 
+virtual void {\bf operator()} ({\bf UniqueId} ec\_\-id)=0
+\begin{DoxyCompactList}\small\item\em 仮想コールバック関数 \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public メソッド}
+\begin{DoxyCompactItemize}
+\item 
+static const char $\ast$ {\bf toString} ({\bf ExecutionContextActionListenerType} type)
+\begin{DoxyCompactList}\small\item\em PreComponentActionListenerType を文字列に変換. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{説明}
+\doxyref{ExecutionContextActionListener}{p.}{classRTC_1_1ExecutionContextActionListener} クラス. 各アクションに対応するユーザーコードが呼ばれる直前のタイミング でコールされるリスなクラスの基底クラス。
+
+
+\begin{DoxyItemize}
+\item ADD\_\-PORT:
+\item REMOVE\_\-PORT: 
+\end{DoxyItemize}
+
+\subsection{コンストラクタとデストラクタ}
+\index{RTC::ExecutionContextActionListener@{RTC::ExecutionContextActionListener}!$\sim$ExecutionContextActionListener@{$\sim$ExecutionContextActionListener}}
+\index{$\sim$ExecutionContextActionListener@{$\sim$ExecutionContextActionListener}!RTC::ExecutionContextActionListener@{RTC::ExecutionContextActionListener}}
+\subsubsection[{$\sim$ExecutionContextActionListener}]{\setlength{\rightskip}{0pt plus 5cm}virtual RTC::ExecutionContextActionListener::$\sim$ExecutionContextActionListener ()\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classRTC_1_1ExecutionContextActionListener_a1fb1f35df22c9154123dcb3a95f2b61a}
+
+
+デストラクタ 
+
+
+
+\subsection{関数}
+\index{RTC::ExecutionContextActionListener@{RTC::ExecutionContextActionListener}!operator()@{operator()}}
+\index{operator()@{operator()}!RTC::ExecutionContextActionListener@{RTC::ExecutionContextActionListener}}
+\subsubsection[{operator()}]{\setlength{\rightskip}{0pt plus 5cm}virtual void RTC::ExecutionContextActionListener::operator() ({\bf UniqueId} {\em ec\_\-id})\hspace{0.3cm}{\ttfamily  [pure virtual]}}\label{classRTC_1_1ExecutionContextActionListener_ad899dc2caf7982525bca5ad5c399b989}
+
+
+仮想コールバック関数 
+
+\doxyref{ExecutionContextActionListener}{p.}{classRTC_1_1ExecutionContextActionListener} のコールバック関数 \index{RTC::ExecutionContextActionListener@{RTC::ExecutionContextActionListener}!toString@{toString}}
+\index{toString@{toString}!RTC::ExecutionContextActionListener@{RTC::ExecutionContextActionListener}}
+\subsubsection[{toString}]{\setlength{\rightskip}{0pt plus 5cm}static const char$\ast$ RTC::ExecutionContextActionListener::toString ({\bf ExecutionContextActionListenerType} {\em type})\hspace{0.3cm}{\ttfamily  [inline, static]}}\label{classRTC_1_1ExecutionContextActionListener_a09d31917b4cbdcc69eec0243cafe3d61}
+
+
+PreComponentActionListenerType を文字列に変換. 
+
+PreComponentActionListenerType を文字列に変換する
+
+
+\begin{DoxyParams}{引数}
+\item[{\em type}]変換対象 PreComponentActionListenerType\end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+文字列変換結果 
+\end{DoxyReturn}
+
+
+参照先 RTC::EC\_\-ACTION\_\-LISTENER\_\-NUM.
+

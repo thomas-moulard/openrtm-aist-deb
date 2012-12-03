@@ -1,0 +1,67 @@
+\section{PortConnectListener.h}
+\label{PortConnectListener_8h}\index{PortConnectListener.h@{PortConnectListener.h}}
+
+
+port's internal action listener classes  
+
+
+{\ttfamily \#include $<$vector$>$}\par
+{\ttfamily \#include $<$utility$>$}\par
+{\ttfamily \#include $<$coil/Mutex.h$>$}\par
+{\ttfamily \#include $<$coil/Guard.h$>$}\par
+{\ttfamily \#include $<$rtm/RTC.h$>$}\par
+{\ttfamily \#include $<$rtm/idl/RTCSkel.h$>$}\par
+\subsection*{構成}
+\begin{DoxyCompactItemize}
+\item 
+class {\bf RTC::PortConnectListener}
+\begin{DoxyCompactList}\small\item\em \doxyref{PortConnectListener}{p.}{classRTC_1_1PortConnectListener} クラス. \item\end{DoxyCompactList}\item 
+class {\bf RTC::PortConnectRetListener}
+\begin{DoxyCompactList}\small\item\em \doxyref{PortConnectRetListener}{p.}{classRTC_1_1PortConnectRetListener} クラス. \item\end{DoxyCompactList}\item 
+class {\bf RTC::PortConnectListenerHolder}
+\begin{DoxyCompactList}\small\item\em \doxyref{PortConnectListener}{p.}{classRTC_1_1PortConnectListener} ホルダクラス. \item\end{DoxyCompactList}\item 
+class {\bf RTC::PortConnectRetListenerHolder}
+\begin{DoxyCompactList}\small\item\em \doxyref{PortConnectRetListener}{p.}{classRTC_1_1PortConnectRetListener} ホルダクラス. \item\end{DoxyCompactList}\item 
+class {\bf RTC::PortConnectListeners}
+\begin{DoxyCompactList}\small\item\em \doxyref{PortConnectListeners}{p.}{classRTC_1_1PortConnectListeners} クラス. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{ネームスペース}
+\begin{DoxyCompactItemize}
+\item 
+namespace {\bf RTC}
+
+
+\begin{DoxyCompactList}\small\item\em RTコンポーネント. \item\end{DoxyCompactList}
+
+\end{DoxyCompactItemize}
+\subsection*{列挙型}
+\begin{DoxyCompactItemize}
+\item 
+enum {\bf RTC::PortConnectListenerType} \{ {\bf RTC::ON\_\-NOTIFY\_\-CONNECT}, 
+{\bf RTC::ON\_\-NOTIFY\_\-DISCONNECT}, 
+{\bf RTC::ON\_\-UNSUBSCRIBE\_\-INTERFACES}, 
+{\bf RTC::PORT\_\-CONNECT\_\-LISTENER\_\-NUM}
+ \}
+\begin{DoxyCompactList}\small\item\em PortConnectListener のタイプ. \item\end{DoxyCompactList}\item 
+enum {\bf RTC::PortConnectRetListenerType} \{ \par
+{\bf RTC::ON\_\-PUBLISH\_\-INTERFACES}, 
+{\bf RTC::ON\_\-CONNECT\_\-NEXTPORT}, 
+{\bf RTC::ON\_\-SUBSCRIBE\_\-INTERFACES}, 
+{\bf RTC::ON\_\-CONNECTED}, 
+\par
+{\bf RTC::ON\_\-DISCONNECT\_\-NEXT}, 
+{\bf RTC::ON\_\-DISCONNECTED}, 
+{\bf RTC::PORT\_\-CONNECT\_\-RET\_\-LISTENER\_\-NUM}
+ \}
+\begin{DoxyCompactList}\small\item\em PortConnectRetListenerType のタイプ. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{説明}
+port's internal action listener classes \begin{DoxyDate}{日付}
+\$Date\$ 
+\end{DoxyDate}
+\begin{DoxyAuthor}{作者}
+Noriaki Ando $<${\tt n-\/ando@aist.go.jp}$>$
+\end{DoxyAuthor}
+Copyright (C) 2011 Noriaki Ando Intelligent Systems Research Institute, National Institute of Advanced Industrial Science and Technology (AIST), Japan All rights reserved.
+
+\$Id\$ 

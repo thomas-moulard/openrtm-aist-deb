@@ -1,0 +1,47 @@
+\section{Async.h}
+\label{Async_8h}\index{Async.h@{Async.h}}
+
+
+Asynchronous function invocation helper class.  
+
+
+{\ttfamily \#include $<$coil/Task.h$>$}\par
+{\ttfamily \#include $<$coil/Guard.h$>$}\par
+{\ttfamily \#include $<$iostream$>$}\par
+\subsection*{構成}
+\begin{DoxyCompactItemize}
+\item 
+class {\bf coil::Async}
+\begin{DoxyCompactList}\small\item\em \doxyref{Async}{p.}{classcoil_1_1Async} クラス. \item\end{DoxyCompactList}\item 
+class {\bf coil::Async\_\-t$<$ Object, Func $>$}
+\begin{DoxyCompactList}\small\item\em \doxyref{Async\_\-t}{p.}{classcoil_1_1Async__t} テンプレートクラス. \item\end{DoxyCompactList}\item 
+class {\bf coil::Async\_\-ref\_\-t$<$ Object, Func $>$}
+\begin{DoxyCompactList}\small\item\em \doxyref{Async\_\-ref\_\-t}{p.}{classcoil_1_1Async__ref__t} テンプレートクラス. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{ネームスペース}
+\begin{DoxyCompactItemize}
+\item 
+namespace {\bf coil}
+
+
+\begin{DoxyCompactList}\small\item\em Common Object Interface Layer. \item\end{DoxyCompactList}
+
+\end{DoxyCompactItemize}
+\subsection*{関数}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename Object , typename Func $>$ }\\Async\_\-t$<$ Object, Func $>$ $\ast$ {\bf coil::AsyncInvoker} (Object $\ast$obj, Func func, bool auto\_\-delete=false)
+\begin{DoxyCompactList}\small\item\em 非同期メンバー関数呼び出しヘルパー関数 \item\end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Object , typename Func $>$ }\\Async\_\-ref\_\-t$<$ Object, Func $>$ $\ast$ {\bf coil::AsyncInvoker} (Object $\ast$obj, Func $\ast$func, bool auto\_\-delete=false)
+\begin{DoxyCompactList}\small\item\em 非同期メンバー関数呼び出しヘルパー関数 \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{説明}
+Asynchronous function invocation helper class. \begin{DoxyDate}{日付}
+\$Date\$ 
+\end{DoxyDate}
+\begin{DoxyAuthor}{作者}
+Noriaki Ando $<${\tt n-\/ando@aist.go.jp}$>$
+\end{DoxyAuthor}
+Copyright (C) 2009 Task-\/intelligence Research Group, Intelligent Systems Research Institute, National Institute of Advanced Industrial Science and Technology (AIST), Japan All rights reserved.
+
+\$Id\$ 

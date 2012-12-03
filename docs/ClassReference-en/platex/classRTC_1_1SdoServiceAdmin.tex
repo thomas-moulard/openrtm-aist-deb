@@ -1,0 +1,144 @@
+\section{RTC::SdoServiceAdmin Class Reference}
+\label{classRTC_1_1SdoServiceAdmin}\index{RTC::SdoServiceAdmin@{RTC::SdoServiceAdmin}}
+
+
+{\ttfamily \#include $<$SdoServiceAdmin.h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf SdoServiceAdmin} (::{\bf RTC::RTObject\_\-impl} \&rtobj)
+\begin{DoxyCompactList}\small\item\em Constructor. \item\end{DoxyCompactList}\item 
+virtual {\bf $\sim$SdoServiceAdmin} ()
+\item 
+SDOPackage::ServiceProfileList $\ast$ {\bf getServiceProviderProfiles} ()
+\begin{DoxyCompactList}\small\item\em Get ServiceProfileList of \doxyref{SDO}{p.}{classSDO} Service Provider. \item\end{DoxyCompactList}\item 
+SDOPackage::ServiceProfile $\ast$ {\bf getServiceProviderProfile} (const char $\ast$id)
+\begin{DoxyCompactList}\small\item\em Get ServiceProfile of an \doxyref{SDO}{p.}{classSDO} Service Provider. \item\end{DoxyCompactList}\item 
+SDOPackage::SDOService\_\-ptr {\bf getServiceProvider} (const char $\ast$id)
+\begin{DoxyCompactList}\small\item\em Get ServiceProfile of an \doxyref{SDO}{p.}{classSDO} Service. \item\end{DoxyCompactList}\item 
+bool {\bf addSdoServiceProvider} (const SDOPackage::ServiceProfile \&prof, {\bf SdoServiceProviderBase} $\ast$provider)
+\begin{DoxyCompactList}\small\item\em Set a \doxyref{SDO}{p.}{classSDO} service provider. \item\end{DoxyCompactList}\item 
+bool {\bf removeSdoServiceProvider} (const char $\ast$id)
+\begin{DoxyCompactList}\small\item\em Remove a \doxyref{SDO}{p.}{classSDO} service provider. \item\end{DoxyCompactList}\item 
+bool {\bf addSdoServiceConsumer} (const SDOPackage::ServiceProfile \&sProfile)
+\begin{DoxyCompactList}\small\item\em Add Service \doxyref{Consumer}{p.}{classConsumer}. \item\end{DoxyCompactList}\item 
+bool {\bf removeSdoServiceConsumer} (const char $\ast$id)
+\begin{DoxyCompactList}\small\item\em Remove Service \doxyref{Consumer}{p.}{classConsumer}. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool {\bf isEnabledConsumerType} (const SDOPackage::ServiceProfile \&sProfile)
+\begin{DoxyCompactList}\small\item\em If it is enabled service type. \item\end{DoxyCompactList}\item 
+bool {\bf isExistingConsumerType} (const SDOPackage::ServiceProfile \&sProfile)
+\begin{DoxyCompactList}\small\item\em If it is existing service type. \item\end{DoxyCompactList}\item 
+const std::string {\bf getUUID} () const 
+\item 
+std::string {\bf ifrToKey} (std::string \&ifr)
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{RTC::SdoServiceAdmin@{RTC::SdoServiceAdmin}!SdoServiceAdmin@{SdoServiceAdmin}}
+\index{SdoServiceAdmin@{SdoServiceAdmin}!RTC::SdoServiceAdmin@{RTC::SdoServiceAdmin}}
+\subsubsection[{SdoServiceAdmin}]{\setlength{\rightskip}{0pt plus 5cm}RTC::SdoServiceAdmin::SdoServiceAdmin (::{\bf RTC::RTObject\_\-impl} \& {\em rtobj})}\label{classRTC_1_1SdoServiceAdmin_a45e28d8596d1bd59edf3eea77fedeb47}
+
+
+Constructor. 
+
+Constructor
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em }]\end{DoxyParams}
+\index{RTC::SdoServiceAdmin@{RTC::SdoServiceAdmin}!$\sim$SdoServiceAdmin@{$\sim$SdoServiceAdmin}}
+\index{$\sim$SdoServiceAdmin@{$\sim$SdoServiceAdmin}!RTC::SdoServiceAdmin@{RTC::SdoServiceAdmin}}
+\subsubsection[{$\sim$SdoServiceAdmin}]{\setlength{\rightskip}{0pt plus 5cm}virtual RTC::SdoServiceAdmin::$\sim$SdoServiceAdmin ()\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classRTC_1_1SdoServiceAdmin_ab700853834a24a583c59916406bb3ede}
+Virtual destractor. 
+
+\subsection{Member Function Documentation}
+\index{RTC::SdoServiceAdmin@{RTC::SdoServiceAdmin}!addSdoServiceConsumer@{addSdoServiceConsumer}}
+\index{addSdoServiceConsumer@{addSdoServiceConsumer}!RTC::SdoServiceAdmin@{RTC::SdoServiceAdmin}}
+\subsubsection[{addSdoServiceConsumer}]{\setlength{\rightskip}{0pt plus 5cm}bool RTC::SdoServiceAdmin::addSdoServiceConsumer (const SDOPackage::ServiceProfile \& {\em sProfile})}\label{classRTC_1_1SdoServiceAdmin_a4a792474027993453ae58af3e93a2f88}
+
+
+Add Service \doxyref{Consumer}{p.}{classConsumer}. 
+
+\index{RTC::SdoServiceAdmin@{RTC::SdoServiceAdmin}!addSdoServiceProvider@{addSdoServiceProvider}}
+\index{addSdoServiceProvider@{addSdoServiceProvider}!RTC::SdoServiceAdmin@{RTC::SdoServiceAdmin}}
+\subsubsection[{addSdoServiceProvider}]{\setlength{\rightskip}{0pt plus 5cm}bool RTC::SdoServiceAdmin::addSdoServiceProvider (const SDOPackage::ServiceProfile \& {\em prof}, \/  {\bf SdoServiceProviderBase} $\ast$ {\em provider})}\label{classRTC_1_1SdoServiceAdmin_af804e5e4781b50baae1b3de60f3d6496}
+
+
+Set a \doxyref{SDO}{p.}{classSDO} service provider. 
+
+\index{RTC::SdoServiceAdmin@{RTC::SdoServiceAdmin}!getServiceProvider@{getServiceProvider}}
+\index{getServiceProvider@{getServiceProvider}!RTC::SdoServiceAdmin@{RTC::SdoServiceAdmin}}
+\subsubsection[{getServiceProvider}]{\setlength{\rightskip}{0pt plus 5cm}SDOPackage::SDOService\_\-ptr RTC::SdoServiceAdmin::getServiceProvider (const char $\ast$ {\em id})}\label{classRTC_1_1SdoServiceAdmin_ad3ab043c59a1aecb426dd16d0dafe438}
+
+
+Get ServiceProfile of an \doxyref{SDO}{p.}{classSDO} Service. 
+
+This operation returnes an object reference of an \doxyref{SDO}{p.}{classSDO} Service Provider which has the specified id. If the specified id is NULL pointer or the specified id does not exist in the ServiceProfile list, InvalidParameter exception will be thrown.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em id}]IFR ID of an \doxyref{SDO}{p.}{classSDO} Service provider \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+an \doxyref{SDO}{p.}{classSDO} Service reference which has the specified id 
+\end{DoxyReturn}
+\index{RTC::SdoServiceAdmin@{RTC::SdoServiceAdmin}!getServiceProviderProfile@{getServiceProviderProfile}}
+\index{getServiceProviderProfile@{getServiceProviderProfile}!RTC::SdoServiceAdmin@{RTC::SdoServiceAdmin}}
+\subsubsection[{getServiceProviderProfile}]{\setlength{\rightskip}{0pt plus 5cm}SDOPackage::ServiceProfile$\ast$ RTC::SdoServiceAdmin::getServiceProviderProfile (const char $\ast$ {\em id})}\label{classRTC_1_1SdoServiceAdmin_ac013070205b3b5264ddb549c85af2681}
+
+
+Get ServiceProfile of an \doxyref{SDO}{p.}{classSDO} Service Provider. 
+
+This operation returnes ServiceProfile of an \doxyref{SDO}{p.}{classSDO} Service Provider which has the specified id. If the specified id is NULL pointer or the specified id does not exist in the ServiceProfile list, InvalidParameter exception will be thrown.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em id}]IFR ID of an \doxyref{SDO}{p.}{classSDO} Service provider \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+ServiceProfile which has the specified id 
+\end{DoxyReturn}
+\index{RTC::SdoServiceAdmin@{RTC::SdoServiceAdmin}!getServiceProviderProfiles@{getServiceProviderProfiles}}
+\index{getServiceProviderProfiles@{getServiceProviderProfiles}!RTC::SdoServiceAdmin@{RTC::SdoServiceAdmin}}
+\subsubsection[{getServiceProviderProfiles}]{\setlength{\rightskip}{0pt plus 5cm}SDOPackage::ServiceProfileList$\ast$ RTC::SdoServiceAdmin::getServiceProviderProfiles ()}\label{classRTC_1_1SdoServiceAdmin_aa545a020d9ac522fbeac7f76bd4e63f9}
+
+
+Get ServiceProfileList of \doxyref{SDO}{p.}{classSDO} Service Provider. 
+
+\index{RTC::SdoServiceAdmin@{RTC::SdoServiceAdmin}!getUUID@{getUUID}}
+\index{getUUID@{getUUID}!RTC::SdoServiceAdmin@{RTC::SdoServiceAdmin}}
+\subsubsection[{getUUID}]{\setlength{\rightskip}{0pt plus 5cm}const std::string RTC::SdoServiceAdmin::getUUID () const\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC_1_1SdoServiceAdmin_ad8c7185a9cfb8609efb7a56733965482}
+\index{RTC::SdoServiceAdmin@{RTC::SdoServiceAdmin}!ifrToKey@{ifrToKey}}
+\index{ifrToKey@{ifrToKey}!RTC::SdoServiceAdmin@{RTC::SdoServiceAdmin}}
+\subsubsection[{ifrToKey}]{\setlength{\rightskip}{0pt plus 5cm}std::string RTC::SdoServiceAdmin::ifrToKey (std::string \& {\em ifr})\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC_1_1SdoServiceAdmin_aff360c7ad3fcb5840ab08af69e65197f}
+\index{RTC::SdoServiceAdmin@{RTC::SdoServiceAdmin}!isEnabledConsumerType@{isEnabledConsumerType}}
+\index{isEnabledConsumerType@{isEnabledConsumerType}!RTC::SdoServiceAdmin@{RTC::SdoServiceAdmin}}
+\subsubsection[{isEnabledConsumerType}]{\setlength{\rightskip}{0pt plus 5cm}bool RTC::SdoServiceAdmin::isEnabledConsumerType (const SDOPackage::ServiceProfile \& {\em sProfile})\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC_1_1SdoServiceAdmin_ab114ba34cebe63be60b4b5a97ec24ca9}
+
+
+If it is enabled service type. 
+
+\index{RTC::SdoServiceAdmin@{RTC::SdoServiceAdmin}!isExistingConsumerType@{isExistingConsumerType}}
+\index{isExistingConsumerType@{isExistingConsumerType}!RTC::SdoServiceAdmin@{RTC::SdoServiceAdmin}}
+\subsubsection[{isExistingConsumerType}]{\setlength{\rightskip}{0pt plus 5cm}bool RTC::SdoServiceAdmin::isExistingConsumerType (const SDOPackage::ServiceProfile \& {\em sProfile})\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC_1_1SdoServiceAdmin_a14b63642645a6e1c507d9f5af103e75a}
+
+
+If it is existing service type. 
+
+\index{RTC::SdoServiceAdmin@{RTC::SdoServiceAdmin}!removeSdoServiceConsumer@{removeSdoServiceConsumer}}
+\index{removeSdoServiceConsumer@{removeSdoServiceConsumer}!RTC::SdoServiceAdmin@{RTC::SdoServiceAdmin}}
+\subsubsection[{removeSdoServiceConsumer}]{\setlength{\rightskip}{0pt plus 5cm}bool RTC::SdoServiceAdmin::removeSdoServiceConsumer (const char $\ast$ {\em id})}\label{classRTC_1_1SdoServiceAdmin_a7892dc9307816d8b328f24818d1748bd}
+
+
+Remove Service \doxyref{Consumer}{p.}{classConsumer}. 
+
+\index{RTC::SdoServiceAdmin@{RTC::SdoServiceAdmin}!removeSdoServiceProvider@{removeSdoServiceProvider}}
+\index{removeSdoServiceProvider@{removeSdoServiceProvider}!RTC::SdoServiceAdmin@{RTC::SdoServiceAdmin}}
+\subsubsection[{removeSdoServiceProvider}]{\setlength{\rightskip}{0pt plus 5cm}bool RTC::SdoServiceAdmin::removeSdoServiceProvider (const char $\ast$ {\em id})}\label{classRTC_1_1SdoServiceAdmin_a5a777143a8022bac8f993fcaeb329b18}
+
+
+Remove a \doxyref{SDO}{p.}{classSDO} service provider. 
+

@@ -1,0 +1,74 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<title>OpenRTM: InPortConnector.h ソースファイル</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<!-- 作成： Doxygen 1.6.3 -->
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="index.html"><span>メインページ</span></a></li>
+      <li><a href="namespaces.html"><span>ネームスペース</span></a></li>
+      <li><a href="annotated.html"><span>クラス</span></a></li>
+      <li class="current"><a href="files.html"><span>ファイル</span></a></li>
+    </ul>
+  </div>
+  <div class="tabs">
+    <ul>
+      <li><a href="files.html"><span>ファイル一覧</span></a></li>
+      <li><a href="globals.html"><span>ファイルメンバ</span></a></li>
+    </ul>
+  </div>
+<h1>InPortConnector.h</h1><a href="InPortConnector_8h.html">説明を見る。</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="comment">// -*- C++ -*-</span>
+<a name="l00020"></a>00020 <span class="comment"></span><span class="preprocessor">#ifndef RTC_INPORTCONNECTOR_H</span>
+<a name="l00021"></a>00021 <span class="preprocessor"></span><span class="preprocessor">#define RTC_INPORTCONNECTOR_H</span>
+<a name="l00022"></a>00022 <span class="preprocessor"></span>
+<a name="l00023"></a>00023 <span class="preprocessor">#include &lt;<a class="code" href="ConnectorBase_8h.html" title="Connector base class.">rtm/ConnectorBase.h</a>&gt;</span>
+<a name="l00024"></a>00024 
+<a name="l00025"></a>00025 <span class="keyword">namespace </span>RTC
+<a name="l00026"></a>00026 {
+<a name="l00046"></a><a class="code" href="classRTC_1_1InPortConnector.html">00046</a>   <span class="keyword">class </span><a class="code" href="classRTC_1_1InPortConnector.html" title="InPortConnector 基底クラス.">InPortConnector</a>
+<a name="l00047"></a>00047     : <span class="keyword">public</span> <a class="code" href="classRTC_1_1ConnectorBase.html" title="Connector 基底クラス.">ConnectorBase</a>
+<a name="l00048"></a>00048   {
+<a name="l00049"></a>00049   <span class="keyword">public</span>:
+<a name="l00050"></a>00050     <a class="code" href="DataPortStatus_8h.html#a71942892127d0f2995c2610b1e22ef23" title="RTC::DataPortStatus 導入">DATAPORTSTATUS_ENUM</a>
+<a name="l00066"></a>00066     <a class="code" href="classRTC_1_1InPortConnector.html#a5817248420e91c6bc5c939d0e48cd417" title="コンストラクタ">InPortConnector</a>(<a class="code" href="classRTC_1_1ConnectorInfo.html" title="ConnectorInfo クラス.">ConnectorInfo</a>&amp; info,
+<a name="l00067"></a>00067                     <a class="code" href="classRTC_1_1BufferBase.html" title="BufferBase 抽象クラス.">CdrBufferBase</a>* buffer);
+<a name="l00068"></a>00068 
+<a name="l00076"></a>00076     <span class="keyword">virtual</span> <a class="code" href="classRTC_1_1InPortConnector.html#aad8160823b8a719fd80bdfb752deddb5" title="デストラクタ">~InPortConnector</a>();
+<a name="l00077"></a>00077 
+<a name="l00095"></a>00095     <span class="keyword">virtual</span> <span class="keyword">const</span> <a class="code" href="classRTC_1_1ConnectorInfo.html" title="ConnectorInfo クラス.">ConnectorInfo</a>&amp; <a class="code" href="classRTC_1_1InPortConnector.html#ade653239f3932f5968ee818ecfd53354" title="ConnectorInfo 取得.">profile</a>();
+<a name="l00096"></a>00096 
+<a name="l00114"></a>00114     <span class="keyword">virtual</span> <span class="keyword">const</span> <span class="keywordtype">char</span>* <a class="code" href="classRTC_1_1InPortConnector.html#af497212651998eaef0c38913d4762f52" title="Connector ID 取得.">id</a>();
+<a name="l00115"></a>00115 
+<a name="l00133"></a>00133     <span class="keyword">virtual</span> <span class="keyword">const</span> <span class="keywordtype">char</span>* <a class="code" href="classRTC_1_1InPortConnector.html#abb9dd2bf3f81d132a2a3eb4f31ff461d" title="Connector 名取得.">name</a>();
+<a name="l00134"></a>00134 
+<a name="l00152"></a>00152     <span class="keyword">virtual</span> ReturnCode <a class="code" href="classRTC_1_1InPortConnector.html#a8677105bbf5ae5ed3e79dc3b057ea0b9" title="接続解除関数">disconnect</a>() = 0;
+<a name="l00153"></a>00153 
+<a name="l00171"></a>00171     <span class="keyword">virtual</span> <a class="code" href="classRTC_1_1BufferBase.html" title="BufferBase 抽象クラス.">CdrBufferBase</a>* <a class="code" href="classRTC_1_1InPortConnector.html#a7a2e6e83f1c50892632b5e23bf2f8ec6" title="Buffer を取得する.">getBuffer</a>();
+<a name="l00172"></a>00172 
+<a name="l00193"></a>00193     <span class="keyword">virtual</span> ReturnCode <a class="code" href="classRTC_1_1InPortConnector.html#a2ffc997f36cb6549029852484327bffd" title="read 関数">read</a>(cdrMemoryStream&amp; data) = 0;
+<a name="l00194"></a>00194 
+<a name="l00212"></a>00212     <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classRTC_1_1InPortConnector.html#a2349abc81262854781949e9d376cd109" title="endianタイプ設定">setEndian</a>(<span class="keyword">const</span> <span class="keywordtype">bool</span> endian_type);
+<a name="l00213"></a>00213 
+<a name="l00231"></a>00231     <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code" href="classRTC_1_1InPortConnector.html#ac7e308f77f6b5210694320ebab0e0651" title="endian 設定を返す">isLittleEndian</a>();
+<a name="l00232"></a>00232 
+<a name="l00233"></a>00233   <span class="keyword">protected</span>:
+<a name="l00241"></a><a class="code" href="classRTC_1_1InPortConnector.html#a823551eac7e254552246921cca0c4c92">00241</a>     <a class="code" href="classRTC_1_1Logger.html" title="Logger クラス.">Logger</a> <a class="code" href="classRTC_1_1InPortConnector.html#a823551eac7e254552246921cca0c4c92" title="ロガーストリーム">rtclog</a>;
+<a name="l00249"></a><a class="code" href="classRTC_1_1InPortConnector.html#a8983dceedb2ae10a2f583ab9632f4337">00249</a>     <a class="code" href="classRTC_1_1ConnectorInfo.html" title="ConnectorInfo クラス.">ConnectorInfo</a> <a class="code" href="classRTC_1_1InPortConnector.html#a8983dceedb2ae10a2f583ab9632f4337" title="ConnectorInfo.">m_profile</a>;
+<a name="l00257"></a><a class="code" href="classRTC_1_1InPortConnector.html#aef89e379b8b4045f26bb36cc3c537d70">00257</a>     <a class="code" href="classRTC_1_1BufferBase.html" title="BufferBase 抽象クラス.">CdrBufferBase</a>* <a class="code" href="classRTC_1_1InPortConnector.html#aef89e379b8b4045f26bb36cc3c537d70" title="Connector が保持している Buffer.">m_buffer</a>;
+<a name="l00265"></a><a class="code" href="classRTC_1_1InPortConnector.html#a5cb0e047a379c1d4c4ee1e1fea4e9663">00265</a>     <span class="keywordtype">bool</span> <a class="code" href="classRTC_1_1InPortConnector.html#a5cb0e047a379c1d4c4ee1e1fea4e9663" title="接続エンディアン">m_littleEndian</a>;
+<a name="l00266"></a>00266   };
+<a name="l00267"></a>00267 }; <span class="comment">// namespace RTC</span>
+<a name="l00268"></a>00268 
+<a name="l00269"></a>00269 <span class="preprocessor">#endif // RTC_INPORTCONNECTOR_H</span>
+</pre></div></div>
+<hr class="footer"/><address style="text-align: right;"><small>OpenRTMに対してThu May 24 23:25:18 2012に生成されました。&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.6.3 </small></address>
+</body>
+</html>

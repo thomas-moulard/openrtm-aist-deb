@@ -1,0 +1,60 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<title>OpenRTM: DataFlowComponentBase.h ソースファイル</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<!-- 作成： Doxygen 1.6.3 -->
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="index.html"><span>メインページ</span></a></li>
+      <li><a href="namespaces.html"><span>ネームスペース</span></a></li>
+      <li><a href="annotated.html"><span>クラス</span></a></li>
+      <li class="current"><a href="files.html"><span>ファイル</span></a></li>
+    </ul>
+  </div>
+  <div class="tabs">
+    <ul>
+      <li><a href="files.html"><span>ファイル一覧</span></a></li>
+      <li><a href="globals.html"><span>ファイルメンバ</span></a></li>
+    </ul>
+  </div>
+<h1>DataFlowComponentBase.h</h1><a href="DataFlowComponentBase_8h.html">説明を見る。</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="comment">// -*- C++ -*-</span>
+<a name="l00020"></a>00020 <span class="comment"></span><span class="preprocessor">#ifndef RTC_DATAFLOWCOMPONENTBASE_H</span>
+<a name="l00021"></a>00021 <span class="preprocessor"></span><span class="preprocessor">#define RTC_DATAFLOWCOMPONENTBASE_H</span>
+<a name="l00022"></a>00022 <span class="preprocessor"></span>
+<a name="l00023"></a>00023 <span class="preprocessor">#include &lt;rtm/idl/RTCSkel.h&gt;</span>
+<a name="l00024"></a>00024 <span class="preprocessor">#include &lt;<a class="code" href="RTObject_8h.html" title="RT component base class.">rtm/RTObject.h</a>&gt;</span>
+<a name="l00025"></a>00025 <span class="preprocessor">#include &lt;<a class="code" href="PeriodicExecutionContext_8h.html" title="PeriodicExecutionContext class.">rtm/PeriodicExecutionContext.h</a>&gt;</span>
+<a name="l00026"></a>00026 
+<a name="l00042"></a>00042 <span class="keyword">namespace </span>RTC
+<a name="l00043"></a>00043 {
+<a name="l00044"></a>00044 
+<a name="l00045"></a>00045   <span class="keyword">class </span>Manager;
+<a name="l00069"></a><a class="code" href="classRTC_1_1DataFlowComponentBase.html">00069</a>   <span class="keyword">class </span><a class="code" href="classRTC_1_1DataFlowComponentBase.html" title="DataFlowComponentBase クラス.">DataFlowComponentBase</a>
+<a name="l00070"></a>00070     : <span class="keyword">public</span> <a class="code" href="classRTC_1_1RTObject__impl.html" title="RTコンポーネントクラス.">RTObject_impl</a>
+<a name="l00071"></a>00071   {
+<a name="l00072"></a>00072   <span class="keyword">public</span>:
+<a name="l00090"></a>00090     <a class="code" href="classRTC_1_1DataFlowComponentBase.html#ac93dffa99b69b93f382aac906f8591ae" title="コンストラクタ">DataFlowComponentBase</a>(<a class="code" href="classRTC_1_1Manager.html" title="Manager クラス.">Manager</a>* manager);
+<a name="l00091"></a>00091     
+<a name="l00105"></a>00105     <span class="keyword">virtual</span> <a class="code" href="classRTC_1_1DataFlowComponentBase.html#aefcb5d65ed4ccac35e20cf8caa17c279">~DataFlowComponentBase</a>(<span class="keywordtype">void</span>);
+<a name="l00106"></a>00106     
+<a name="l00122"></a>00122     <span class="keywordtype">void</span> <a class="code" href="classRTC_1_1DataFlowComponentBase.html#aaab8d77b9eddf9fe6ccb321d5bcef4f4" title="初期化">init</a>();
+<a name="l00123"></a>00123     
+<a name="l00124"></a>00124   <span class="keyword">private</span>:
+<a name="l00125"></a>00125     <span class="comment">//    OpenRTM::DataFlowComponent_var m_ref;</span>
+<a name="l00126"></a>00126     <span class="comment">//    PeriodicExecutionContext* m_pec;</span>
+<a name="l00127"></a>00127     <span class="comment">//    ExecutionContextService_var m_ecref;</span>
+<a name="l00128"></a>00128   };
+<a name="l00129"></a>00129 }; <span class="comment">// namespace RTC</span>
+<a name="l00130"></a>00130 <span class="preprocessor">#endif // RTC_DATAFLOWCOMPONENTBASE_H</span>
+</pre></div></div>
+<hr class="footer"/><address style="text-align: right;"><small>OpenRTMに対してThu May 24 23:25:18 2012に生成されました。&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.6.3 </small></address>
+</body>
+</html>

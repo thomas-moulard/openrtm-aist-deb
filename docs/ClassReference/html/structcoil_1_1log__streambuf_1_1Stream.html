@@ -1,0 +1,226 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<title>OpenRTM: 構造体 coil::log_streambuf&lt; _CharT, _Traits &gt;::Stream</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<!-- 作成： Doxygen 1.6.3 -->
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="index.html"><span>メインページ</span></a></li>
+      <li><a href="namespaces.html"><span>ネームスペース</span></a></li>
+      <li class="current"><a href="annotated.html"><span>クラス</span></a></li>
+      <li><a href="files.html"><span>ファイル</span></a></li>
+    </ul>
+  </div>
+  <div class="tabs">
+    <ul>
+      <li><a href="annotated.html"><span>構成</span></a></li>
+      <li><a href="hierarchy.html"><span>クラス階層</span></a></li>
+      <li><a href="functions.html"><span>構成メンバ</span></a></li>
+    </ul>
+  </div>
+  <div class="navpath"><a class="el" href="namespacecoil.html">coil</a>::<a class="el" href="classcoil_1_1log__streambuf.html">log_streambuf</a>::<a class="el" href="structcoil_1_1log__streambuf_1_1Stream.html">Stream</a>
+  </div>
+</div>
+<div class="contents">
+<h1>構造体 coil::log_streambuf&lt; _CharT, _Traits &gt;::Stream</h1><!-- doxytag: class="coil::log_streambuf::Stream" -->
+<p>ストリーム管理用構造体  
+<a href="#_details">[詳細]</a></p>
+
+<p><code>#include &lt;<a class="el" href="Logger_8h_source.html">Logger.h</a>&gt;</code></p>
+
+<p><a href="structcoil_1_1log__streambuf_1_1Stream-members.html">すべてのメンバ一覧</a></p>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr><td colspan="2"><h2>Public メソッド</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcoil_1_1log__streambuf_1_1Stream.html#a8e445a1569a7c6aadb43f4fbf2562a20">Stream</a> (<a class="el" href="classcoil_1_1log__streambuf.html#a3f1122c7ac61e1e2b89033914ee85b54">streambuf_type</a> *stream, bool cleanup=false)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcoil_1_1log__streambuf_1_1Stream.html#a19ab5a6862a1dc2e20da102b744d5737">~Stream</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcoil_1_1log__streambuf_1_1Stream.html#a494575e16ffcad41ed6741f139bfef9a">Stream</a> (const <a class="el" href="structcoil_1_1log__streambuf_1_1Stream.html">Stream</a> &amp;x)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="structcoil_1_1log__streambuf_1_1Stream.html">Stream</a> &amp;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcoil_1_1log__streambuf_1_1Stream.html#a7fb53fc7cd206f99c8e251663e307323">operator=</a> (const <a class="el" href="structcoil_1_1log__streambuf_1_1Stream.html">Stream</a> &amp;x)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcoil_1_1log__streambuf_1_1Stream.html#a45057b9b7e72935f76194ffa72b395c2">swap</a> (<a class="el" href="structcoil_1_1log__streambuf_1_1Stream.html">Stream</a> &amp;x)</td></tr>
+<tr><td colspan="2"><h2>Public 変数</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classcoil_1_1Mutex.html">Mutex</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcoil_1_1log__streambuf_1_1Stream.html#aeadb126688858c2934096affbcb9721a">mutex_</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classcoil_1_1log__streambuf.html#a3f1122c7ac61e1e2b89033914ee85b54">streambuf_type</a> *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcoil_1_1log__streambuf_1_1Stream.html#a1f4114e35d655390b004ccb0cad39039">stream_</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcoil_1_1log__streambuf_1_1Stream.html#a673577f0750a576f536a5ad4572057a1">cleanup_</a></td></tr>
+</table>
+<hr/><a name="_details"></a><h2>説明</h2>
+<h3>template&lt;typename _CharT, typename _Traits = std::char_traits&lt;_CharT&gt;&gt;<br/>
+ struct coil::log_streambuf&lt; _CharT, _Traits &gt;::Stream</h3>
+
+<p>ストリーム管理用構造体 </p>
+<hr/><h2>コンストラクタとデストラクタ</h2>
+<a class="anchor" id="a8e445a1569a7c6aadb43f4fbf2562a20"></a><!-- doxytag: member="coil::log_streambuf::Stream::Stream" ref="a8e445a1569a7c6aadb43f4fbf2562a20" args="(streambuf_type *stream, bool cleanup=false)" -->
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename _CharT , typename _Traits  = std::char_traits&lt;_CharT&gt;&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classcoil_1_1log__streambuf.html">coil::log_streambuf</a>&lt; _CharT, _Traits &gt;::Stream::Stream </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classcoil_1_1log__streambuf.html#a3f1122c7ac61e1e2b89033914ee85b54">streambuf_type</a> *&nbsp;</td>
+          <td class="paramname"> <em>stream</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&nbsp;</td>
+          <td class="paramname"> <em>cleanup</em> = <code>false</code></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a19ab5a6862a1dc2e20da102b744d5737"></a><!-- doxytag: member="coil::log_streambuf::Stream::~Stream" ref="a19ab5a6862a1dc2e20da102b744d5737" args="()" -->
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename _CharT , typename _Traits  = std::char_traits&lt;_CharT&gt;&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual <a class="el" href="classcoil_1_1log__streambuf.html">coil::log_streambuf</a>&lt; _CharT, _Traits &gt;::Stream::~Stream </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [inline, virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a494575e16ffcad41ed6741f139bfef9a"></a><!-- doxytag: member="coil::log_streambuf::Stream::Stream" ref="a494575e16ffcad41ed6741f139bfef9a" args="(const Stream &amp;x)" -->
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename _CharT , typename _Traits  = std::char_traits&lt;_CharT&gt;&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classcoil_1_1log__streambuf.html">coil::log_streambuf</a>&lt; _CharT, _Traits &gt;::Stream::Stream </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structcoil_1_1log__streambuf_1_1Stream.html">Stream</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>x</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<hr/><h2>関数</h2>
+<a class="anchor" id="a7fb53fc7cd206f99c8e251663e307323"></a><!-- doxytag: member="coil::log_streambuf::Stream::operator=" ref="a7fb53fc7cd206f99c8e251663e307323" args="(const Stream &amp;x)" -->
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename _CharT , typename _Traits  = std::char_traits&lt;_CharT&gt;&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structcoil_1_1log__streambuf_1_1Stream.html">Stream</a>&amp; <a class="el" href="classcoil_1_1log__streambuf.html">coil::log_streambuf</a>&lt; _CharT, _Traits &gt;::Stream::operator= </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structcoil_1_1log__streambuf_1_1Stream.html">Stream</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>x</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>参照先 <a class="el" href="Logger_8h_source.html#l00456">coil::log_streambuf&lt; _CharT, _Traits &gt;::Stream::swap()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a45057b9b7e72935f76194ffa72b395c2"></a><!-- doxytag: member="coil::log_streambuf::Stream::swap" ref="a45057b9b7e72935f76194ffa72b395c2" args="(Stream &amp;x)" -->
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename _CharT , typename _Traits  = std::char_traits&lt;_CharT&gt;&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classcoil_1_1log__streambuf.html">coil::log_streambuf</a>&lt; _CharT, _Traits &gt;::Stream::swap </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structcoil_1_1log__streambuf_1_1Stream.html">Stream</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>x</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>参照先 <a class="el" href="Logger_8h_source.html#l00469">coil::log_streambuf&lt; _CharT, _Traits &gt;::Stream::cleanup_</a>, と <a class="el" href="Logger_8h_source.html#l00468">coil::log_streambuf&lt; _CharT, _Traits &gt;::Stream::stream_</a>.</p>
+
+<p>参照元 <a class="el" href="Logger_8h_source.html#l00449">coil::log_streambuf&lt; _CharT, _Traits &gt;::Stream::operator=()</a>.</p>
+
+</div>
+</div>
+<hr/><h2>変数</h2>
+<a class="anchor" id="a673577f0750a576f536a5ad4572057a1"></a><!-- doxytag: member="coil::log_streambuf::Stream::cleanup_" ref="a673577f0750a576f536a5ad4572057a1" args="" -->
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename _CharT , typename _Traits  = std::char_traits&lt;_CharT&gt;&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="classcoil_1_1log__streambuf.html">coil::log_streambuf</a>&lt; _CharT, _Traits &gt;::<a class="el" href="structcoil_1_1log__streambuf_1_1Stream.html#a673577f0750a576f536a5ad4572057a1">Stream::cleanup_</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>参照元 <a class="el" href="Logger_8h_source.html#l00456">coil::log_streambuf&lt; _CharT, _Traits &gt;::Stream::swap()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aeadb126688858c2934096affbcb9721a"></a><!-- doxytag: member="coil::log_streambuf::Stream::mutex_" ref="aeadb126688858c2934096affbcb9721a" args="" -->
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename _CharT , typename _Traits  = std::char_traits&lt;_CharT&gt;&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classcoil_1_1Mutex.html">Mutex</a> <a class="el" href="classcoil_1_1log__streambuf.html">coil::log_streambuf</a>&lt; _CharT, _Traits &gt;::<a class="el" href="structcoil_1_1log__streambuf_1_1Stream.html#aeadb126688858c2934096affbcb9721a">Stream::mutex_</a><code> [mutable]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a1f4114e35d655390b004ccb0cad39039"></a><!-- doxytag: member="coil::log_streambuf::Stream::stream_" ref="a1f4114e35d655390b004ccb0cad39039" args="" -->
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename _CharT , typename _Traits  = std::char_traits&lt;_CharT&gt;&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classcoil_1_1log__streambuf.html#a3f1122c7ac61e1e2b89033914ee85b54">streambuf_type</a>* <a class="el" href="classcoil_1_1log__streambuf.html">coil::log_streambuf</a>&lt; _CharT, _Traits &gt;::<a class="el" href="structcoil_1_1log__streambuf_1_1Stream.html#a1f4114e35d655390b004ccb0cad39039">Stream::stream_</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>参照元 <a class="el" href="Logger_8h_source.html#l00456">coil::log_streambuf&lt; _CharT, _Traits &gt;::Stream::swap()</a>.</p>
+
+</div>
+</div>
+</div>
+<hr class="footer"/><address style="text-align: right;"><small>OpenRTMに対してThu May 24 23:25:19 2012に生成されました。&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.6.3 </small></address>
+</body>
+</html>

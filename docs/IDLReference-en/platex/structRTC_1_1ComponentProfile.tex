@@ -1,0 +1,121 @@
+\section{RTC::ComponentProfile Struct Reference}
+\label{structRTC_1_1ComponentProfile}\index{RTC::ComponentProfile@{RTC::ComponentProfile}}
+
+
+\doxyref{ComponentProfile}{p.}{structRTC_1_1ComponentProfile}.  
+
+
+
+
+{\ttfamily import \char`\"{}RTC.idl\char`\"{};}
+
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+string {\bf instance\_\-name}
+\begin{DoxyCompactList}\small\item\em instance\_\-name \item\end{DoxyCompactList}\item 
+string {\bf type\_\-name}
+\begin{DoxyCompactList}\small\item\em type\_\-name \item\end{DoxyCompactList}\item 
+string {\bf description}
+\begin{DoxyCompactList}\small\item\em description \item\end{DoxyCompactList}\item 
+string {\bf version}
+\begin{DoxyCompactList}\small\item\em version \item\end{DoxyCompactList}\item 
+string {\bf vendor}
+\begin{DoxyCompactList}\small\item\em vendor \item\end{DoxyCompactList}\item 
+string {\bf category}
+\begin{DoxyCompactList}\small\item\em category \item\end{DoxyCompactList}\item 
+{\bf PortProfileList} {\bf port\_\-profiles}
+\begin{DoxyCompactList}\small\item\em port\_\-profiles \item\end{DoxyCompactList}\item 
+{\bf RTObject} {\bf parent}
+\begin{DoxyCompactList}\small\item\em parent \item\end{DoxyCompactList}\item 
+{\bf NVList} {\bf properties}
+\begin{DoxyCompactList}\small\item\em properties \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\doxyref{ComponentProfile}{p.}{structRTC_1_1ComponentProfile}. \subsection{Description}\label{namespaceRTC_Description}
+\doxyref{ComponentProfile}{p.}{structRTC_1_1ComponentProfile} represents the static state of an \doxyref{RTC}{p.}{namespaceRTC} that is referred to here as the \char`\"{}target\char`\"{} \doxyref{RTC}{p.}{namespaceRTC}. 
+
+\subsection{Member Data Documentation}
+\index{RTC::ComponentProfile@{RTC::ComponentProfile}!category@{category}}
+\index{category@{category}!RTC::ComponentProfile@{RTC::ComponentProfile}}
+\subsubsection[{category}]{\setlength{\rightskip}{0pt plus 5cm}string {\bf RTC::ComponentProfile::category}}\label{structRTC_1_1ComponentProfile_ac79fc17eb8db9fd42ed8e5f84f9171be}
+
+
+category 
+
+\subsection{Description}\label{namespaceRTC_Description}
+This attribute contains the name of a \char`\"{}category\char`\"{} or group to which the target \doxyref{RTC}{p.}{namespaceRTC} belongs. \index{RTC::ComponentProfile@{RTC::ComponentProfile}!description@{description}}
+\index{description@{description}!RTC::ComponentProfile@{RTC::ComponentProfile}}
+\subsubsection[{description}]{\setlength{\rightskip}{0pt plus 5cm}string {\bf RTC::ComponentProfile::description}}\label{structRTC_1_1ComponentProfile_a874f3699d88630b493e81409071fc119}
+
+
+description 
+
+\subsection{Description}\label{namespaceRTC_Description}
+This attribute shall briefly describe the target \doxyref{RTC}{p.}{namespaceRTC} for the benefit of a human operator. \index{RTC::ComponentProfile@{RTC::ComponentProfile}!instance\_\-name@{instance\_\-name}}
+\index{instance\_\-name@{instance\_\-name}!RTC::ComponentProfile@{RTC::ComponentProfile}}
+\subsubsection[{instance\_\-name}]{\setlength{\rightskip}{0pt plus 5cm}string {\bf RTC::ComponentProfile::instance\_\-name}}\label{structRTC_1_1ComponentProfile_a52fa51e07ac15e9d35b13ddb227fe991}
+
+
+instance\_\-name 
+
+\subsection{Description}\label{namespaceRTC_Description}
+This attribute shall contain the name of the target \doxyref{RTC}{p.}{namespaceRTC} instance.\subsection{Semantics}\label{namespaceRTC_Semantics}
+The instance\_\-name should be unique among \doxyref{RTC}{p.}{namespaceRTC} instances contained within the same containing component. \index{RTC::ComponentProfile@{RTC::ComponentProfile}!parent@{parent}}
+\index{parent@{parent}!RTC::ComponentProfile@{RTC::ComponentProfile}}
+\subsubsection[{parent}]{\setlength{\rightskip}{0pt plus 5cm}{\bf RTObject} {\bf RTC::ComponentProfile::parent}}\label{structRTC_1_1ComponentProfile_aad7ac4df3d915687a69409be951d1907}
+
+
+parent 
+
+\subsection{Description}\label{namespaceRTC_Description}
+This attribute contains a reference to the \doxyref{RTC}{p.}{namespaceRTC} that contains the target \doxyref{RTC}{p.}{namespaceRTC} instance. If the target \doxyref{RTC}{p.}{namespaceRTC} instance is not owned by any other \doxyref{RTC}{p.}{namespaceRTC}, this field stores a nil reference. \index{RTC::ComponentProfile@{RTC::ComponentProfile}!port\_\-profiles@{port\_\-profiles}}
+\index{port\_\-profiles@{port\_\-profiles}!RTC::ComponentProfile@{RTC::ComponentProfile}}
+\subsubsection[{port\_\-profiles}]{\setlength{\rightskip}{0pt plus 5cm}{\bf PortProfileList} {\bf RTC::ComponentProfile::port\_\-profiles}}\label{structRTC_1_1ComponentProfile_ade5f8ab4b6048f3e924f404e9937404c}
+
+
+port\_\-profiles 
+
+\subsection{Description}\label{namespaceRTC_Description}
+This attribute contains a list of PortProfiles that describe the ports of the target \doxyref{RTC}{p.}{namespaceRTC}.\subsection{Semantics}\label{namespaceRTC_Semantics}
+There shall be a one-\/to-\/one correspondence between the members of this list and the ports of the target \doxyref{RTC}{p.}{namespaceRTC}. \index{RTC::ComponentProfile@{RTC::ComponentProfile}!properties@{properties}}
+\index{properties@{properties}!RTC::ComponentProfile@{RTC::ComponentProfile}}
+\subsubsection[{properties}]{\setlength{\rightskip}{0pt plus 5cm}{\bf NVList} {\bf RTC::ComponentProfile::properties}}\label{structRTC_1_1ComponentProfile_a5403556c149d6540bd168ae33451d7d1}
+
+
+properties 
+
+\subsection{Description}\label{namespaceRTC_Description}
+This attribute contains additional properties of the target \doxyref{RTC}{p.}{namespaceRTC}.\subsection{Semantics}\label{namespaceRTC_Semantics}
+This attribute provides implementations the opportunity to describe additional characteristics of a particular \doxyref{RTC}{p.}{namespaceRTC} that are otherwise outside of the scope of this specification. \index{RTC::ComponentProfile@{RTC::ComponentProfile}!type\_\-name@{type\_\-name}}
+\index{type\_\-name@{type\_\-name}!RTC::ComponentProfile@{RTC::ComponentProfile}}
+\subsubsection[{type\_\-name}]{\setlength{\rightskip}{0pt plus 5cm}string {\bf RTC::ComponentProfile::type\_\-name}}\label{structRTC_1_1ComponentProfile_a1b44c935bf684d94ecd7866074025213}
+
+
+type\_\-name 
+
+\subsection{Description}\label{namespaceRTC_Description}
+This attribute shall contain the name of the target \doxyref{RTC}{p.}{namespaceRTC} class.\subsection{Semantics}\label{namespaceRTC_Semantics}
+Each \doxyref{RTC}{p.}{namespaceRTC} class must have a name that is unique within an application. \index{RTC::ComponentProfile@{RTC::ComponentProfile}!vendor@{vendor}}
+\index{vendor@{vendor}!RTC::ComponentProfile@{RTC::ComponentProfile}}
+\subsubsection[{vendor}]{\setlength{\rightskip}{0pt plus 5cm}string {\bf RTC::ComponentProfile::vendor}}\label{structRTC_1_1ComponentProfile_a681e9805c9ebbe5b380991aa50841b0f}
+
+
+vendor 
+
+\subsection{Description}\label{namespaceRTC_Description}
+The name of the individual or organization that produced the target \doxyref{RTC}{p.}{namespaceRTC} class. \index{RTC::ComponentProfile@{RTC::ComponentProfile}!version@{version}}
+\index{version@{version}!RTC::ComponentProfile@{RTC::ComponentProfile}}
+\subsubsection[{version}]{\setlength{\rightskip}{0pt plus 5cm}string {\bf RTC::ComponentProfile::version}}\label{structRTC_1_1ComponentProfile_a3d9684f83c019123418bb644ae23372f}
+
+
+version 
+
+\subsection{Description}\label{namespaceRTC_Description}
+This attribute shall contain the version number of the target \doxyref{RTC}{p.}{namespaceRTC} class.\subsection{Semantics}\label{namespaceRTC_Semantics}
+The format of the version number is outside of the scope of this specification. 
+
+The documentation for this struct was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+{\bf RTC.idl}\end{DoxyCompactItemize}

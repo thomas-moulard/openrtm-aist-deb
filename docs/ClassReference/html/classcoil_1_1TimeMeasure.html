@@ -1,0 +1,257 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<title>OpenRTM: クラス coil::TimeMeasure</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<!-- 作成： Doxygen 1.6.3 -->
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="index.html"><span>メインページ</span></a></li>
+      <li><a href="namespaces.html"><span>ネームスペース</span></a></li>
+      <li class="current"><a href="annotated.html"><span>クラス</span></a></li>
+      <li><a href="files.html"><span>ファイル</span></a></li>
+    </ul>
+  </div>
+  <div class="tabs">
+    <ul>
+      <li><a href="annotated.html"><span>構成</span></a></li>
+      <li><a href="hierarchy.html"><span>クラス階層</span></a></li>
+      <li><a href="functions.html"><span>構成メンバ</span></a></li>
+    </ul>
+  </div>
+  <div class="navpath"><a class="el" href="namespacecoil.html">coil</a>::<a class="el" href="classcoil_1_1TimeMeasure.html">TimeMeasure</a>
+  </div>
+</div>
+<div class="contents">
+<h1>クラス coil::TimeMeasure</h1><!-- doxytag: class="coil::TimeMeasure" -->
+<p><a class="el" href="classcoil_1_1TimeMeasure.html" title="TimeMeasure クラス.">TimeMeasure</a> クラス.  
+<a href="#_details">[詳細]</a></p>
+
+<p><code>#include &lt;<a class="el" href="TimeMeasure_8h_source.html">TimeMeasure.h</a>&gt;</code></p>
+
+<p><a href="classcoil_1_1TimeMeasure-members.html">すべてのメンバ一覧</a></p>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr><td colspan="2"><h2>構成</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">struct &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcoil_1_1TimeMeasure_1_1Statistics.html">Statistics</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">時間統計用構造体  <a href="structcoil_1_1TimeMeasure_1_1Statistics.html#_details">[詳細]</a><br/></td></tr>
+<tr><td colspan="2"><h2>Public メソッド</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcoil_1_1TimeMeasure.html#a6ac76a54625fc4cc007652fec2af09bb">TimeMeasure</a> (int buflen=100)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">コンストラクタ  <a href="#a6ac76a54625fc4cc007652fec2af09bb"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcoil_1_1TimeMeasure.html#a8353ec18533cd585d6bd1d76209e49c7">tick</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcoil_1_1TimeMeasure.html#a7bd16bccd9e7dea1debdc9f5a3cc194a">tack</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classcoil_1_1TimeValue.html">coil::TimeValue</a> &amp;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcoil_1_1TimeMeasure.html#ac6c5235ee59d14d71d39a843616c4b8e">interval</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">経過時間を取得する  <a href="#ac6c5235ee59d14d71d39a843616c4b8e"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcoil_1_1TimeMeasure.html#ad0ad98dd9d6857b65bbb0e9e1c9e438f">reset</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">unsigned long int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcoil_1_1TimeMeasure.html#a82733b3a440a7c1410832025229b40de">count</a> () const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">時間統計バッファサイズを取得する  <a href="#a82733b3a440a7c1410832025229b40de"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcoil_1_1TimeMeasure.html#ae96b0d34caa15bc909a7af01b745f0bf">getStatistics</a> (double &amp;max_interval, double &amp;min_interval, double &amp;mean_interval, double &amp;stddev)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">統計データの総計を取得する  <a href="#ae96b0d34caa15bc909a7af01b745f0bf"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="structcoil_1_1TimeMeasure_1_1Statistics.html">Statistics</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcoil_1_1TimeMeasure.html#a8cb4d1eea05aa422fa5a44dec658c6fa">getStatistics</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">統計結果を取得する  <a href="#a8cb4d1eea05aa422fa5a44dec658c6fa"></a><br/></td></tr>
+</table>
+<hr/><a name="_details"></a><h2>説明</h2>
+<p><a class="el" href="classcoil_1_1TimeMeasure.html" title="TimeMeasure クラス.">TimeMeasure</a> クラス. </p>
+<p>このクラスは、コード実行時間の統計を取る為に使用します。 get_stat を使用してコード実行の最大・最小・平均・標準偏差時間を計測できます。 </p>
+<hr/><h2>コンストラクタとデストラクタ</h2>
+<a class="anchor" id="a6ac76a54625fc4cc007652fec2af09bb"></a><!-- doxytag: member="coil::TimeMeasure::TimeMeasure" ref="a6ac76a54625fc4cc007652fec2af09bb" args="(int buflen=100)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">coil::TimeMeasure::TimeMeasure </td>
+          <td>(</td>
+          <td class="paramtype">int&nbsp;</td>
+          <td class="paramname"> <em>buflen</em> = <code>100</code></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>コンストラクタ </p>
+<p>時間統計のプロファイリング </p>
+
+</div>
+</div>
+<hr/><h2>関数</h2>
+<a class="anchor" id="a82733b3a440a7c1410832025229b40de"></a><!-- doxytag: member="coil::TimeMeasure::count" ref="a82733b3a440a7c1410832025229b40de" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned long int coil::TimeMeasure::count </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>時間統計バッファサイズを取得する </p>
+<p>時間統計バッファサイズを取得する</p>
+<dl class="return"><dt><b>戻り値:</b></dt><dd>計測件数 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a8cb4d1eea05aa422fa5a44dec658c6fa"></a><!-- doxytag: member="coil::TimeMeasure::getStatistics" ref="a8cb4d1eea05aa422fa5a44dec658c6fa" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structcoil_1_1TimeMeasure_1_1Statistics.html">Statistics</a> coil::TimeMeasure::getStatistics </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>統計結果を取得する </p>
+<p>統計結果を取得する</p>
+<dl class="return"><dt><b>戻り値:</b></dt><dd>統計結果 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ae96b0d34caa15bc909a7af01b745f0bf"></a><!-- doxytag: member="coil::TimeMeasure::getStatistics" ref="ae96b0d34caa15bc909a7af01b745f0bf" args="(double &amp;max_interval, double &amp;min_interval, double &amp;mean_interval, double &amp;stddev)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool coil::TimeMeasure::getStatistics </td>
+          <td>(</td>
+          <td class="paramtype">double &amp;&nbsp;</td>
+          <td class="paramname"> <em>max_interval</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double &amp;&nbsp;</td>
+          <td class="paramname"> <em>min_interval</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double &amp;&nbsp;</td>
+          <td class="paramname"> <em>mean_interval</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double &amp;&nbsp;</td>
+          <td class="paramname"> <em>stddev</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>統計データの総計を取得する </p>
+<p>統計データの総計を取得する</p>
+<dl><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>max_interval</em>&nbsp;</td><td>最大値 [ns] </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>min_interval</em>&nbsp;</td><td>最小値 [ns] </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>mean_interval</em>&nbsp;</td><td>平均値 [ns] </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>stddev</em>&nbsp;</td><td>標準偏差値</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>戻り値:</b></dt><dd>true: データあり, false: データなし </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ac6c5235ee59d14d71d39a843616c4b8e"></a><!-- doxytag: member="coil::TimeMeasure::interval" ref="ac6c5235ee59d14d71d39a843616c4b8e" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classcoil_1_1TimeValue.html">coil::TimeValue</a>&amp; coil::TimeMeasure::interval </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>経過時間を取得する </p>
+<p>経過時間を取得する</p>
+<dl class="return"><dt><b>戻り値:</b></dt><dd><a class="el" href="classcoil_1_1TimeValue.html" title="TimeValue クラス.">TimeValue</a> オブジェクト </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ad0ad98dd9d6857b65bbb0e9e1c9e438f"></a><!-- doxytag: member="coil::TimeMeasure::reset" ref="ad0ad98dd9d6857b65bbb0e9e1c9e438f" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void coil::TimeMeasure::reset </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>統計関連データの初期化 </p>
+
+</div>
+</div>
+<a class="anchor" id="a7bd16bccd9e7dea1debdc9f5a3cc194a"></a><!-- doxytag: member="coil::TimeMeasure::tack" ref="a7bd16bccd9e7dea1debdc9f5a3cc194a" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void coil::TimeMeasure::tack </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>時間統計の計測を終了する </p>
+
+</div>
+</div>
+<a class="anchor" id="a8353ec18533cd585d6bd1d76209e49c7"></a><!-- doxytag: member="coil::TimeMeasure::tick" ref="a8353ec18533cd585d6bd1d76209e49c7" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void coil::TimeMeasure::tick </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>時間統計の計測を開始する </p>
+
+</div>
+</div>
+</div>
+<hr class="footer"/><address style="text-align: right;"><small>OpenRTMに対してThu May 24 23:25:19 2012に生成されました。&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.6.3 </small></address>
+</body>
+</html>

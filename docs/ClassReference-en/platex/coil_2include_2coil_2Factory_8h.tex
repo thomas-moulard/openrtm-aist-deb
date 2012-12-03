@@ -1,0 +1,48 @@
+\section{Factory.h File Reference}
+\label{coil_2include_2coil_2Factory_8h}\index{Factory.h@{Factory.h}}
+{\ttfamily \#include $<$string$>$}\par
+{\ttfamily \#include $<$map$>$}\par
+{\ttfamily \#include $<$algorithm$>$}\par
+{\ttfamily \#include $<$vector$>$}\par
+{\ttfamily \#include $<$coil/Singleton.h$>$}\par
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class {\bf coil::Factory$<$ AbstractClass, Identifier, Compare, Creator, Destructor $>$}
+\begin{DoxyCompactList}\small\item\em \doxyref{Factory}{p.}{classcoil_1_1Factory} template class. \item\end{DoxyCompactList}\item 
+class {\bfseries coil::Factory$<$ AbstractClass, Identifier, Compare, Creator, Destructor $>$::FactoryEntry}
+\begin{DoxyCompactList}\small\item\em FactoryEntry class. \item\end{DoxyCompactList}\item 
+class {\bf coil::GlobalFactory$<$ AbstractClass, Identifier, Compare, Creator, Destructor $>$}
+\begin{DoxyCompactList}\small\item\em \doxyref{GlobalFactory}{p.}{classcoil_1_1GlobalFactory} template class. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace {\bf coil}
+
+
+\begin{DoxyCompactList}\small\item\em Common Object Interface Layer. \item\end{DoxyCompactList}
+
+\end{DoxyCompactItemize}
+\subsection*{Defines}
+\begin{DoxyCompactItemize}
+\item 
+\#define {\bf DLL\_\-PLUGIN}
+\item 
+\#define {\bf EXTERN}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$class AbstractClass , class ConcreteClass $>$ }\\AbstractClass $\ast$ {\bf coil::Creator} ()
+\begin{DoxyCompactList}\small\item\em Creator template. \item\end{DoxyCompactList}\item 
+{\footnotesize template$<$class AbstractClass , class ConcreteClass $>$ }\\void {\bf coil::Destructor} (AbstractClass $\ast$\&obj)
+\begin{DoxyCompactList}\small\item\em Destructor template. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Define Documentation}
+\index{coil/include/coil/Factory.h@{coil/include/coil/Factory.h}!DLL\_\-PLUGIN@{DLL\_\-PLUGIN}}
+\index{DLL\_\-PLUGIN@{DLL\_\-PLUGIN}!coil/include/coil/Factory.h@{coil/include/coil/Factory.h}}
+\subsubsection[{DLL\_\-PLUGIN}]{\setlength{\rightskip}{0pt plus 5cm}\#define DLL\_\-PLUGIN}\label{coil_2include_2coil_2Factory_8h_ad8633c87c3a52f3ade10c27307bd134d}
+\index{coil/include/coil/Factory.h@{coil/include/coil/Factory.h}!EXTERN@{EXTERN}}
+\index{EXTERN@{EXTERN}!coil/include/coil/Factory.h@{coil/include/coil/Factory.h}}
+\subsubsection[{EXTERN}]{\setlength{\rightskip}{0pt plus 5cm}\#define EXTERN}\label{coil_2include_2coil_2Factory_8h_a77366c1bd428629dc898e188bfd182a3}

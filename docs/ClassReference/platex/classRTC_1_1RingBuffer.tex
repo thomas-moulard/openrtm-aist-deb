@@ -1,0 +1,540 @@
+\section{クラス テンプレート RTC::RingBuffer$<$ DataType $>$}
+\label{classRTC_1_1RingBuffer}\index{RTC::RingBuffer@{RTC::RingBuffer}}
+
+
+リングバッファ実装クラス  
+
+
+
+
+{\ttfamily \#include $<$RingBuffer.h$>$}
+
+RTC::RingBuffer$<$ DataType $>$に対する継承グラフ\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3cm]{classRTC_1_1RingBuffer}
+\end{center}
+\end{figure}
+\subsection*{構成}
+\begin{DoxyCompactItemize}
+\item 
+struct {\bfseries condition}
+\begin{DoxyCompactList}\small\item\em 条件変数構造体 \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public メソッド}
+\begin{DoxyCompactItemize}
+\item 
+{\bf RingBuffer} (long int length=RINGBUFFER\_\-DEFAULT\_\-LENGTH)
+\begin{DoxyCompactList}\small\item\em コンストラクタ \item\end{DoxyCompactList}\item 
+virtual {\bf $\sim$RingBuffer} (void)
+\begin{DoxyCompactList}\small\item\em 仮想デストラクタ \item\end{DoxyCompactList}\item 
+virtual void {\bf init} (const {\bf coil::Properties} \&prop)
+\begin{DoxyCompactList}\small\item\em バッファの設定 \item\end{DoxyCompactList}\item 
+virtual size\_\-t {\bf length} (void) const 
+\begin{DoxyCompactList}\small\item\em バッファ長を取得する \item\end{DoxyCompactList}\item 
+virtual ReturnCode {\bf length} (size\_\-t n)
+\begin{DoxyCompactList}\small\item\em バッファの長さをセットする \item\end{DoxyCompactList}\item 
+virtual ReturnCode {\bf reset} ()
+\begin{DoxyCompactList}\small\item\em バッファの状態をリセットする \item\end{DoxyCompactList}\item 
+virtual DataType $\ast$ {\bf wptr} (long int n=0)
+\begin{DoxyCompactList}\small\item\em バッファの現在の書込み要素のポインタ \item\end{DoxyCompactList}\item 
+virtual ReturnCode {\bf advanceWptr} (long int n=1)
+\begin{DoxyCompactList}\small\item\em 書込みポインタを進める \item\end{DoxyCompactList}\item 
+virtual ReturnCode {\bf put} (const DataType \&value)
+\begin{DoxyCompactList}\small\item\em バッファにデータを書き込む \item\end{DoxyCompactList}\item 
+virtual ReturnCode {\bf write} (const DataType \&value, long int sec=-\/1, long int nsec=0)
+\begin{DoxyCompactList}\small\item\em バッファに書き込む \item\end{DoxyCompactList}\item 
+virtual size\_\-t {\bf writable} () const 
+\begin{DoxyCompactList}\small\item\em バッファに書込み可能な要素数 \item\end{DoxyCompactList}\item 
+virtual bool {\bf full} (void) const 
+\begin{DoxyCompactList}\small\item\em バッファfullチェック \item\end{DoxyCompactList}\item 
+virtual DataType $\ast$ {\bf rptr} (long int n=0)
+\begin{DoxyCompactList}\small\item\em バッファの現在の読み出し要素のポインタ \item\end{DoxyCompactList}\item 
+virtual ReturnCode {\bf advanceRptr} (long int n=1)
+\begin{DoxyCompactList}\small\item\em 読み出しポインタを進める \item\end{DoxyCompactList}\item 
+virtual ReturnCode {\bf get} (DataType \&value)
+\begin{DoxyCompactList}\small\item\em バッファからデータを読み出す \item\end{DoxyCompactList}\item 
+virtual DataType \& {\bf get} ()
+\begin{DoxyCompactList}\small\item\em バッファからデータを読み出す \item\end{DoxyCompactList}\item 
+virtual ReturnCode {\bf read} (DataType \&value, long int sec=-\/1, long int nsec=0)
+\begin{DoxyCompactList}\small\item\em バッファから読み出す \item\end{DoxyCompactList}\item 
+virtual size\_\-t {\bf readable} () const 
+\begin{DoxyCompactList}\small\item\em バッファから読み出し可能な要素数 \item\end{DoxyCompactList}\item 
+virtual bool {\bf empty} (void) const 
+\begin{DoxyCompactList}\small\item\em バッファemptyチェック \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public 変数}
+\begin{DoxyCompactItemize}
+\item 
+BUFFERSTATUS\_\-ENUM typedef {\bf coil::Guard}$<$ {\bf coil::Mutex} $>$ {\bf Guard}
+\end{DoxyCompactItemize}
+
+
+\subsection{説明}
+\subsubsection*{template$<$class DataType$>$ class RTC::RingBuffer$<$ DataType $>$}
+
+リングバッファ実装クラス 指定した長さのリング状バッファを持つバッファ実装クラス。 バッファ全体にデータが格納された場合、以降のデータは古いデータから 順次上書きされる。 従って、バッファ内には直近のバッファ長分のデータのみ保持される。
+
+注)現在の実装では、一番最後に格納したデータのみバッファから読み出し可能
+
+
+\begin{DoxyParams}{引数}
+\item[{\em DataType}]バッファに格納するデータ型\end{DoxyParams}
+\begin{DoxySince}{から}
+0.4.0 
+\end{DoxySince}
+
+
+\subsection{コンストラクタとデストラクタ}
+\index{RTC::RingBuffer@{RTC::RingBuffer}!RingBuffer@{RingBuffer}}
+\index{RingBuffer@{RingBuffer}!RTC::RingBuffer@{RTC::RingBuffer}}
+\subsubsection[{RingBuffer}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class DataType $>$ {\bf RTC::RingBuffer}$<$ DataType $>$::{\bf RingBuffer} (long int {\em length} = {\ttfamily RINGBUFFER\_\-DEFAULT\_\-LENGTH})\hspace{0.3cm}{\ttfamily  [inline]}}\label{classRTC_1_1RingBuffer_a52360492539178ddfaba389938a18426}
+
+
+コンストラクタ 
+
+コンストラクタ 指定されたバッファ長でバッファを初期化する。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em length}]バッファ長 \end{DoxyParams}
+
+
+参照先 RTC::RingBuffer$<$ DataType $>$::reset().
+
+\index{RTC::RingBuffer@{RTC::RingBuffer}!$\sim$RingBuffer@{$\sim$RingBuffer}}
+\index{$\sim$RingBuffer@{$\sim$RingBuffer}!RTC::RingBuffer@{RTC::RingBuffer}}
+\subsubsection[{$\sim$RingBuffer}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class DataType $>$ virtual {\bf RTC::RingBuffer}$<$ DataType $>$::$\sim${\bf RingBuffer} (void)\hspace{0.3cm}{\ttfamily  [inline, virtual]}}\label{classRTC_1_1RingBuffer_a04de65576d77749cb895e9d9bf65bf71}
+
+
+仮想デストラクタ 
+
+仮想デストラクタ。 
+
+\subsection{関数}
+\index{RTC::RingBuffer@{RTC::RingBuffer}!advanceRptr@{advanceRptr}}
+\index{advanceRptr@{advanceRptr}!RTC::RingBuffer@{RTC::RingBuffer}}
+\subsubsection[{advanceRptr}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class DataType $>$ virtual ReturnCode {\bf RTC::RingBuffer}$<$ DataType $>$::advanceRptr (long int {\em n} = {\ttfamily 1})\hspace{0.3cm}{\ttfamily  [inline, virtual]}}\label{classRTC_1_1RingBuffer_a329834c2988670fa5f849923e9070ed8}
+
+
+読み出しポインタを進める 
+
+現在の読み出し位置のポインタを n 個進める。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em n}]読み出しポインタ + n の位置のポインタ \end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+BUFFER\_\-OK: 正常終了 BUFFER\_\-ERROR: 異常終了 
+\end{DoxyReturn}
+
+
+{\bf RTC::BufferBase$<$ DataType $>$} \doxyref{}{p.}{classRTC_1_1BufferBase_aebc3b8b032109963dfa0e3c48f59a333}を実装しています。
+
+
+
+参照先 RTC::RingBuffer$<$ DataType $>$::Guard.
+
+
+
+参照元 RTC::RingBuffer$<$ DataType $>$::read(), と RTC::RingBuffer$<$ DataType $>$::write().
+
+\index{RTC::RingBuffer@{RTC::RingBuffer}!advanceWptr@{advanceWptr}}
+\index{advanceWptr@{advanceWptr}!RTC::RingBuffer@{RTC::RingBuffer}}
+\subsubsection[{advanceWptr}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class DataType $>$ virtual ReturnCode {\bf RTC::RingBuffer}$<$ DataType $>$::advanceWptr (long int {\em n} = {\ttfamily 1})\hspace{0.3cm}{\ttfamily  [inline, virtual]}}\label{classRTC_1_1RingBuffer_a208c5454c6466f09a6cb1cbcd1297871}
+
+
+書込みポインタを進める 
+
+現在の書き込み位置のポインタを n 個進める。 書き込み可能な要素数以上の数値を指定した場合、PRECONDITION\_\-NOT\_\-MET を返す。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em n}]書込みポインタ + n の位置のポインタ \end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+BUFFER\_\-OK: 正常終了 PRECONDITION\_\-NOT\_\-MET: n $>$ \doxyref{writable()}{p.}{classRTC_1_1RingBuffer_a7bebdef8031509955d74327ccad2ceec} 
+\end{DoxyReturn}
+
+
+{\bf RTC::BufferBase$<$ DataType $>$} \doxyref{}{p.}{classRTC_1_1BufferBase_a75c0360e0621ebfcbd08e6e937d03ed2}を実装しています。
+
+
+
+参照先 RTC::RingBuffer$<$ DataType $>$::Guard.
+
+
+
+参照元 RTC::RingBuffer$<$ DataType $>$::write().
+
+\index{RTC::RingBuffer@{RTC::RingBuffer}!empty@{empty}}
+\index{empty@{empty}!RTC::RingBuffer@{RTC::RingBuffer}}
+\subsubsection[{empty}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class DataType $>$ virtual bool {\bf RTC::RingBuffer}$<$ DataType $>$::empty (void) const\hspace{0.3cm}{\ttfamily  [inline, virtual]}}\label{classRTC_1_1RingBuffer_ace2d405ddf45929f635ed596cd62f110}
+
+
+バッファemptyチェック 
+
+バッファemptyチェック用純粋仮想関数
+
+\begin{DoxyReturn}{戻り値}
+emptyチェック結果(true:バッファempty，false:バッファデータあり) 
+\end{DoxyReturn}
+
+
+{\bf RTC::BufferBase$<$ DataType $>$} \doxyref{}{p.}{classRTC_1_1BufferBase_a00e5f836b601681073173740fdaa44d8}を実装しています。
+
+
+
+参照先 RTC::RingBuffer$<$ DataType $>$::Guard.
+
+
+
+参照元 RTC::RingBuffer$<$ DataType $>$::read(), と RTC::RingBuffer$<$ DataType $>$::write().
+
+\index{RTC::RingBuffer@{RTC::RingBuffer}!full@{full}}
+\index{full@{full}!RTC::RingBuffer@{RTC::RingBuffer}}
+\subsubsection[{full}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class DataType $>$ virtual bool {\bf RTC::RingBuffer}$<$ DataType $>$::full (void) const\hspace{0.3cm}{\ttfamily  [inline, virtual]}}\label{classRTC_1_1RingBuffer_ae7a8906ed3de0c95ffed9dd4f5f74f3b}
+
+
+バッファfullチェック 
+
+バッファfullチェック用純粋仮想関数
+
+\begin{DoxyReturn}{戻り値}
+fullチェック結果(true:バッファfull，false:バッファ空きあり) 
+\end{DoxyReturn}
+
+
+{\bf RTC::BufferBase$<$ DataType $>$} \doxyref{}{p.}{classRTC_1_1BufferBase_a66948bc482a6e127b0ed839a95d692b3}を実装しています。
+
+
+
+参照先 RTC::RingBuffer$<$ DataType $>$::Guard.
+
+
+
+参照元 RTC::RingBuffer$<$ DataType $>$::read(), と RTC::RingBuffer$<$ DataType $>$::write().
+
+\index{RTC::RingBuffer@{RTC::RingBuffer}!get@{get}}
+\index{get@{get}!RTC::RingBuffer@{RTC::RingBuffer}}
+\subsubsection[{get}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class DataType $>$ virtual DataType\& {\bf RTC::RingBuffer}$<$ DataType $>$::get (void)\hspace{0.3cm}{\ttfamily  [inline, virtual]}}\label{classRTC_1_1RingBuffer_a229d439990825b2a829daf2f747b8b1b}
+
+
+バッファからデータを読み出す 
+
+バッファからデータを読みだす。読み出しポインタの位置は変更されない。
+
+\begin{DoxyReturn}{戻り値}
+読み出しデータ 
+\end{DoxyReturn}
+
+
+{\bf RTC::BufferBase$<$ DataType $>$} \doxyref{}{p.}{classRTC_1_1BufferBase_af12dcf239b3842fe6c946cb61c3d0bd2}を実装しています。
+
+
+
+参照先 RTC::RingBuffer$<$ DataType $>$::Guard.
+
+\index{RTC::RingBuffer@{RTC::RingBuffer}!get@{get}}
+\index{get@{get}!RTC::RingBuffer@{RTC::RingBuffer}}
+\subsubsection[{get}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class DataType $>$ virtual ReturnCode {\bf RTC::RingBuffer}$<$ DataType $>$::get (DataType \& {\em value})\hspace{0.3cm}{\ttfamily  [inline, virtual]}}\label{classRTC_1_1RingBuffer_a10506341647d0f93cbea400fe9628bf0}
+
+
+バッファからデータを読み出す 
+
+バッファからデータを読みだす。読み出しポインタの位置は変更されない。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em value}]読み出しデータ\end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+BUFFER\_\-OK: 正常終了 BUFFER\_\-ERROR: 異常終了 
+\end{DoxyReturn}
+
+
+{\bf RTC::BufferBase$<$ DataType $>$} \doxyref{}{p.}{classRTC_1_1BufferBase_a82263a34b3274b316b6563ee5339a7a0}を実装しています。
+
+
+
+参照先 RTC::RingBuffer$<$ DataType $>$::Guard.
+
+\index{RTC::RingBuffer@{RTC::RingBuffer}!init@{init}}
+\index{init@{init}!RTC::RingBuffer@{RTC::RingBuffer}}
+\subsubsection[{init}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class DataType $>$ virtual void {\bf RTC::RingBuffer}$<$ DataType $>$::init (const {\bf coil::Properties} \& {\em prop})\hspace{0.3cm}{\ttfamily  [inline, virtual]}}\label{classRTC_1_1RingBuffer_a8bd57fca9d29703083c8ff0817dc0a55}
+
+
+バッファの設定 
+
+\doxyref{coil::Properties}{p.}{classcoil_1_1Properties} で与えられるプロパティにより、 バッファの設定を初期化する。 使用できるオプションと意味は以下の通り
+
+
+\begin{DoxyItemize}
+\item buffer.length: バッファの長さ。自然数以外の数値が指定されても無視される。す でにバッファが使用状態でも、長さが再設定されたのち、すべての ポインタが初期化される。
+\end{DoxyItemize}
+
+
+\begin{DoxyItemize}
+\item buffer.write.full\_\-policy: 上書きするかどうかのポリシー。 overwrite (上書き), do\_\-nothing (何もしない), block (ブロックする) block を指定した場合、次の timeout 値を指定すれば、指定時間後 書き込み不可能であればタイムアウトする。 デフォルトは overwrite (上書き)。
+\end{DoxyItemize}
+
+
+\begin{DoxyItemize}
+\item buffer.write.timeout: タイムアウト時間を [sec] で指定する。デフォルトは 1.0 [sec]。 1 sec -\/$>$ 1.0, 1 ms -\/$>$ 0.001, タイムアウトしない -\/$>$ 0.0
+\end{DoxyItemize}
+
+
+\begin{DoxyItemize}
+\item buffer.read.empty\_\-policy: バッファが空のときの読み出しポリシー。 readback (最後の要素), do\_\-nothing (何もしない), block (ブロックする) block を指定した場合、次の timeout 値を指定すれば、指定時間後 読み出し不可能であればタイムアウトする。 デフォルトは readback (最後の要素)。
+\end{DoxyItemize}
+
+
+\begin{DoxyItemize}
+\item buffer.read.timeout: タイムアウト時間 [sec] で指定する。デフォルトは 1.0 [sec]。 1sec -\/$>$ 1.0, 1ms -\/$>$ 0.001, タイムアウトしない -\/$>$ 0.0 
+\end{DoxyItemize}
+
+{\bf RTC::BufferBase$<$ DataType $>$} \doxyref{}{p.}{classRTC_1_1BufferBase_a75adf7ba27bb2e795761bce1c7d76413}を実装しています。
+
+\index{RTC::RingBuffer@{RTC::RingBuffer}!length@{length}}
+\index{length@{length}!RTC::RingBuffer@{RTC::RingBuffer}}
+\subsubsection[{length}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class DataType $>$ virtual ReturnCode {\bf RTC::RingBuffer}$<$ DataType $>$::length (size\_\-t {\em n})\hspace{0.3cm}{\ttfamily  [inline, virtual]}}\label{classRTC_1_1RingBuffer_a9584ba6385836d6936d4fda2e595136e}
+
+
+バッファの長さをセットする 
+
+バッファ長を設定する。設定不可な場合はNOT\_\-SUPPORTEDが返る。 この実装では BUFFER\_\-OK しか返さない。
+
+\begin{DoxyReturn}{戻り値}
+BUFFER\_\-OK: 正常終了 NOT\_\-SUPPORTED: バッファ長変更不可 BUFFER\_\-ERROR: 異常終了 
+\end{DoxyReturn}
+
+
+{\bf RTC::BufferBase$<$ DataType $>$} \doxyref{}{p.}{classRTC_1_1BufferBase_a9da737609dfc79b3f10f63ca7efc2203}を実装しています。
+
+
+
+参照先 RTC::RingBuffer$<$ DataType $>$::reset().
+
+\index{RTC::RingBuffer@{RTC::RingBuffer}!length@{length}}
+\index{length@{length}!RTC::RingBuffer@{RTC::RingBuffer}}
+\subsubsection[{length}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class DataType $>$ virtual size\_\-t {\bf RTC::RingBuffer}$<$ DataType $>$::length (void) const\hspace{0.3cm}{\ttfamily  [inline, virtual]}}\label{classRTC_1_1RingBuffer_a00c6d912326c1bc65aaf8bc2f0e8895f}
+
+
+バッファ長を取得する 
+
+バッファ長を取得する。
+
+\begin{DoxyReturn}{戻り値}
+バッファ長 
+\end{DoxyReturn}
+
+
+{\bf RTC::BufferBase$<$ DataType $>$} \doxyref{}{p.}{classRTC_1_1BufferBase_ad41d5476f9bce0e737115e8ab7cc615f}を実装しています。
+
+
+
+参照先 RTC::RingBuffer$<$ DataType $>$::Guard.
+
+\index{RTC::RingBuffer@{RTC::RingBuffer}!put@{put}}
+\index{put@{put}!RTC::RingBuffer@{RTC::RingBuffer}}
+\subsubsection[{put}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class DataType $>$ virtual ReturnCode {\bf RTC::RingBuffer}$<$ DataType $>$::put (const DataType \& {\em value})\hspace{0.3cm}{\ttfamily  [inline, virtual]}}\label{classRTC_1_1RingBuffer_acc983b57ac5fd73a47afdfdaab1e3845}
+
+
+バッファにデータを書き込む 
+
+バッファにデータを書き込む。書き込みポインタの位置は変更されない。 この実装では常に BUFFER\_\-OK を返す。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em value}]書き込み対象データ\end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+BUFFER\_\-OK: 正常終了 BUFFER\_\-ERROR: 異常終了 
+\end{DoxyReturn}
+
+
+{\bf RTC::BufferBase$<$ DataType $>$} \doxyref{}{p.}{classRTC_1_1BufferBase_af6274c9bc458580643560752f9150235}を実装しています。
+
+
+
+参照先 RTC::RingBuffer$<$ DataType $>$::Guard.
+
+
+
+参照元 RTC::RingBuffer$<$ DataType $>$::write().
+
+\index{RTC::RingBuffer@{RTC::RingBuffer}!read@{read}}
+\index{read@{read}!RTC::RingBuffer@{RTC::RingBuffer}}
+\subsubsection[{read}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class DataType $>$ virtual ReturnCode {\bf RTC::RingBuffer}$<$ DataType $>$::read (DataType \& {\em value}, \/  long int {\em sec} = {\ttfamily -\/1}, \/  long int {\em nsec} = {\ttfamily 0})\hspace{0.3cm}{\ttfamily  [inline, virtual]}}\label{classRTC_1_1RingBuffer_ae1b487f7b32dd15db9760b236edb0e5d}
+
+
+バッファから読み出す 
+
+バッファに格納されたデータを読み出す。
+
+第2引数(sec)、第3引数(nsec)が指定されていない場合、バッファ空状 態での読み出しモード (readback, do\_\-nothing, block) は \doxyref{init()}{p.}{classRTC_1_1RingBuffer_a8bd57fca9d29703083c8ff0817dc0a55} で設 定されたモードに従う。
+
+第2引数(sec) に引数が指定された場合は、init() で設定されたモード に関わらず、block モードとなり、バッファが空状態であれば指定時間 待ち、タイムアウトする。第3引数(nsec)は指定されない場合0として扱 われる。タイムアウト待ち中に、書込みスレッド側でバッファへ書込み があれば、ブロッキングは解除されデータが読みだされる。
+
+読み出し時にバッファが空(empty)状態で、別のスレッドがblockモード で書込み待ちをしている場合、signalを発行して書込み側のブロッキン グが解除される。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em value}]読み出し対象データ \item[{\em sec}]タイムアウト時間 sec (default -\/1: 無効) \item[{\em nsec}]タイムアウト時間 nsec (default 0) \end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+BUFFER\_\-OK 正常終了 BUFFER\_\-EMPTY バッファが空状態 TIMEOUT 書込みがタイムアウトした PRECONDITION\_\-NOT\_\-MET 設定異常 
+\end{DoxyReturn}
+
+
+{\bf RTC::BufferBase$<$ DataType $>$} \doxyref{}{p.}{classRTC_1_1BufferBase_a92f188cb4e9a92c9c1079273b1deadc0}を実装しています。
+
+
+
+参照先 RTC::RingBuffer$<$ DataType $>$::advanceRptr(), RTC::RingBuffer$<$ DataType $>$::empty(), RTC::RingBuffer$<$ DataType $>$::full(), RTC::RingBuffer$<$ DataType $>$::Guard, coil::TimeValue::sec(), と coil::TimeValue::usec().
+
+\index{RTC::RingBuffer@{RTC::RingBuffer}!readable@{readable}}
+\index{readable@{readable}!RTC::RingBuffer@{RTC::RingBuffer}}
+\subsubsection[{readable}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class DataType $>$ virtual size\_\-t {\bf RTC::RingBuffer}$<$ DataType $>$::readable () const\hspace{0.3cm}{\ttfamily  [inline, virtual]}}\label{classRTC_1_1RingBuffer_ae5c8def9186589ac7ad53239a37fe99e}
+
+
+バッファから読み出し可能な要素数 
+
+バッファから読み出し可能な要素数を返す。
+
+\begin{DoxyReturn}{戻り値}
+読み出し可能な要素数
+
+BUFFER\_\-OK: 正常終了 BUFFER\_\-ERROR: 異常終了 
+\end{DoxyReturn}
+
+
+{\bf RTC::BufferBase$<$ DataType $>$} \doxyref{}{p.}{classRTC_1_1BufferBase_a7dd8259e299a273e2fe3744e669b381a}を実装しています。
+
+
+
+参照先 RTC::RingBuffer$<$ DataType $>$::Guard.
+
+\index{RTC::RingBuffer@{RTC::RingBuffer}!reset@{reset}}
+\index{reset@{reset}!RTC::RingBuffer@{RTC::RingBuffer}}
+\subsubsection[{reset}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class DataType $>$ virtual ReturnCode {\bf RTC::RingBuffer}$<$ DataType $>$::reset ()\hspace{0.3cm}{\ttfamily  [inline, virtual]}}\label{classRTC_1_1RingBuffer_add373502f0292178296f3750d5e962a0}
+
+
+バッファの状態をリセットする 
+
+バッファの読み出しポインタと書き込みポインタの位置をリセットする。 この実装では BUFFER\_\-OK しか返さない。
+
+\begin{DoxyReturn}{戻り値}
+BUFFER\_\-OK: 正常終了 NOT\_\-SUPPORTED: リセット不可能 BUFFER\_\-ERROR: 異常終了 
+\end{DoxyReturn}
+
+
+{\bf RTC::BufferBase$<$ DataType $>$} \doxyref{}{p.}{classRTC_1_1BufferBase_a941b36c7352c76da52725a169e094e16}を実装しています。
+
+
+
+参照先 RTC::RingBuffer$<$ DataType $>$::Guard.
+
+
+
+参照元 RTC::RingBuffer$<$ DataType $>$::length(), と RTC::RingBuffer$<$ DataType $>$::RingBuffer().
+
+\index{RTC::RingBuffer@{RTC::RingBuffer}!rptr@{rptr}}
+\index{rptr@{rptr}!RTC::RingBuffer@{RTC::RingBuffer}}
+\subsubsection[{rptr}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class DataType $>$ virtual DataType$\ast$ {\bf RTC::RingBuffer}$<$ DataType $>$::rptr (long int {\em n} = {\ttfamily 0})\hspace{0.3cm}{\ttfamily  [inline, virtual]}}\label{classRTC_1_1RingBuffer_a65401c71cb216a0730f6793f5a00dd1d}
+
+
+バッファの現在の読み出し要素のポインタ 
+
+バッファの現在の読み出し要素のポインタまたは、n個先のポインタを返す
+
+
+\begin{DoxyParams}{引数}
+\item[{\em n}]読み出しポインタ + n の位置のポインタ \end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+読み出し位置のポインタ 
+\end{DoxyReturn}
+
+
+{\bf RTC::BufferBase$<$ DataType $>$} \doxyref{}{p.}{classRTC_1_1BufferBase_a854fd94174172b67034cf727e6c0a2d1}を実装しています。
+
+
+
+参照先 RTC::RingBuffer$<$ DataType $>$::Guard.
+
+\index{RTC::RingBuffer@{RTC::RingBuffer}!wptr@{wptr}}
+\index{wptr@{wptr}!RTC::RingBuffer@{RTC::RingBuffer}}
+\subsubsection[{wptr}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class DataType $>$ virtual DataType$\ast$ {\bf RTC::RingBuffer}$<$ DataType $>$::wptr (long int {\em n} = {\ttfamily 0})\hspace{0.3cm}{\ttfamily  [inline, virtual]}}\label{classRTC_1_1RingBuffer_ad9aba4e554f5fd23a1cc7b9d63b0fe07}
+
+
+バッファの現在の書込み要素のポインタ 
+
+バッファの現在の書込み要素のポインタまたは、n個先のポインタを返す
+
+
+\begin{DoxyParams}{引数}
+\item[{\em n}]書込みポインタ + n の位置のポインタ \end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+書込み位置のポインタ 
+\end{DoxyReturn}
+
+
+{\bf RTC::BufferBase$<$ DataType $>$} \doxyref{}{p.}{classRTC_1_1BufferBase_a27d6bb261714e84f16ef17e6920413ce}を実装しています。
+
+
+
+参照先 RTC::RingBuffer$<$ DataType $>$::Guard.
+
+\index{RTC::RingBuffer@{RTC::RingBuffer}!writable@{writable}}
+\index{writable@{writable}!RTC::RingBuffer@{RTC::RingBuffer}}
+\subsubsection[{writable}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class DataType $>$ virtual size\_\-t {\bf RTC::RingBuffer}$<$ DataType $>$::writable () const\hspace{0.3cm}{\ttfamily  [inline, virtual]}}\label{classRTC_1_1RingBuffer_a7bebdef8031509955d74327ccad2ceec}
+
+
+バッファに書込み可能な要素数 
+
+バッファに書込み可能な要素数を返す。
+
+\begin{DoxyReturn}{戻り値}
+書き込み可能な要素数 
+\end{DoxyReturn}
+
+
+{\bf RTC::BufferBase$<$ DataType $>$} \doxyref{}{p.}{classRTC_1_1BufferBase_a089b1c57c7d8aea9f1bdcc055e20bff0}を実装しています。
+
+
+
+参照先 RTC::RingBuffer$<$ DataType $>$::Guard.
+
+\index{RTC::RingBuffer@{RTC::RingBuffer}!write@{write}}
+\index{write@{write}!RTC::RingBuffer@{RTC::RingBuffer}}
+\subsubsection[{write}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class DataType $>$ virtual ReturnCode {\bf RTC::RingBuffer}$<$ DataType $>$::write (const DataType \& {\em value}, \/  long int {\em sec} = {\ttfamily -\/1}, \/  long int {\em nsec} = {\ttfamily 0})\hspace{0.3cm}{\ttfamily  [inline, virtual]}}\label{classRTC_1_1RingBuffer_a4b062367982f9748b3ba5891cf753040}
+
+
+バッファに書き込む 
+
+引数で与えられたデータをバッファに書き込む。
+
+第2引数(sec)、第3引数(nsec)が指定されていない場合、バッファフル 時の書込みモード (overwrite, do\_\-nothing, block) は \doxyref{init()}{p.}{classRTC_1_1RingBuffer_a8bd57fca9d29703083c8ff0817dc0a55} で設定 されたモードに従う。
+
+第2引数(sec) に引数が指定された場合は、init() で設定されたモード に関わらず、block モードとなり、バッファがフル状態であれば指定時 間まち、タイムアウトする。第3引数(nsec)は指定されない場合0として 扱われる。タイムアウト待ち中に、読み出しスレッド側でバッファから 読み出せば、ブロッキングは解除されデータが書き込まれる。
+
+書き込み時にバッファが空(empty)状態で、別のスレッドがblockモード で読み出し待ちをしている場合、signalを発行して読み出し側のブロッ キングが解除される。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em value}]書き込み対象データ \item[{\em sec}]タイムアウト時間 sec (default -\/1: 無効) \item[{\em nsec}]タイムアウト時間 nsec (default 0) \end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+BUFFER\_\-OK 正常終了 BUFFER\_\-FULL バッファがフル状態 TIMEOUT 書込みがタイムアウトした PRECONDITION\_\-NOT\_\-MET 設定異常 
+\end{DoxyReturn}
+
+
+{\bf RTC::BufferBase$<$ DataType $>$} \doxyref{}{p.}{classRTC_1_1BufferBase_ad9df647826ca2f05664aa0f53e4142f7}を実装しています。
+
+
+
+参照先 RTC::RingBuffer$<$ DataType $>$::advanceRptr(), RTC::RingBuffer$<$ DataType $>$::advanceWptr(), RTC::RingBuffer$<$ DataType $>$::empty(), RTC::RingBuffer$<$ DataType $>$::full(), RTC::RingBuffer$<$ DataType $>$::Guard, RTC::RingBuffer$<$ DataType $>$::put(), coil::TimeValue::sec(), と coil::TimeValue::usec().
+
+
+
+\subsection{変数}
+\index{RTC::RingBuffer@{RTC::RingBuffer}!Guard@{Guard}}
+\index{Guard@{Guard}!RTC::RingBuffer@{RTC::RingBuffer}}
+\subsubsection[{Guard}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class DataType $>$ BUFFERSTATUS\_\-ENUM typedef {\bf coil::Guard}$<${\bf coil::Mutex}$>$ {\bf RTC::RingBuffer}$<$ DataType $>$::{\bf Guard}}\label{classRTC_1_1RingBuffer_a760c724310a72642b606df7788f50890}
+
+
+参照元 RTC::RingBuffer$<$ DataType $>$::advanceRptr(), RTC::RingBuffer$<$ DataType $>$::advanceWptr(), RTC::RingBuffer$<$ DataType $>$::empty(), RTC::RingBuffer$<$ DataType $>$::full(), RTC::RingBuffer$<$ DataType $>$::get(), RTC::RingBuffer$<$ DataType $>$::length(), RTC::RingBuffer$<$ DataType $>$::put(), RTC::RingBuffer$<$ DataType $>$::read(), RTC::RingBuffer$<$ DataType $>$::readable(), RTC::RingBuffer$<$ DataType $>$::reset(), RTC::RingBuffer$<$ DataType $>$::rptr(), RTC::RingBuffer$<$ DataType $>$::wptr(), RTC::RingBuffer$<$ DataType $>$::writable(), と RTC::RingBuffer$<$ DataType $>$::write().
+

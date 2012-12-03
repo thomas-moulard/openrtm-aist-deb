@@ -1,0 +1,213 @@
+\section{CORBA\_\-SeqUtil Namespace Reference}
+\label{namespaceCORBA__SeqUtil}\index{CORBA\_\-SeqUtil@{CORBA\_\-SeqUtil}}
+
+
+CORBA IOR helper functions.  
+
+
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$class CorbaSequence , class Functor $>$ }\\Functor {\bf for\_\-each} (CorbaSequence \&seq, Functor f)
+\begin{DoxyCompactList}\small\item\em Apply the functor to all CORBA sequence elements. \item\end{DoxyCompactList}\item 
+{\footnotesize template$<$class CorbaSequence , class Functor $>$ }\\CORBA::Long {\bf find} (const CorbaSequence \&seq, Functor f)
+\begin{DoxyCompactList}\small\item\em Return the index of CORBA sequence element that functor matches. \item\end{DoxyCompactList}\item 
+{\footnotesize template$<$class CorbaSequence , class SequenceElement $>$ }\\void {\bf push\_\-back} (CorbaSequence \&seq, SequenceElement elem)
+\begin{DoxyCompactList}\small\item\em Push the new element back to the CORBA sequence. \item\end{DoxyCompactList}\item 
+{\footnotesize template$<$class CorbaSequence $>$ }\\void {\bf push\_\-back\_\-list} (CorbaSequence \&seq1, const CorbaSequence \&seq2)
+\begin{DoxyCompactList}\small\item\em Merge the elements of the CORBA sequence. \item\end{DoxyCompactList}\item 
+{\footnotesize template$<$class CorbaSequence , class SequenceElement $>$ }\\void {\bf insert} (CorbaSequence \&seq, SequenceElement \&elem, CORBA::ULong index)
+\begin{DoxyCompactList}\small\item\em Insert the element to the CORBA sequence. \item\end{DoxyCompactList}\item 
+{\footnotesize template$<$class CorbaSequence , class SequenceElement $>$ }\\SequenceElement \& {\bf front} (CorbaSequence \&seq)
+\begin{DoxyCompactList}\small\item\em Get the front element of the CORBA sequence. \item\end{DoxyCompactList}\item 
+{\footnotesize template$<$class CorbaSequence , class SequenceElement $>$ }\\SequenceElement \& {\bf back} (CorbaSequence \&seq)
+\begin{DoxyCompactList}\small\item\em Get the last element of the CORBA sequence. \item\end{DoxyCompactList}\item 
+{\footnotesize template$<$class CorbaSequence $>$ }\\void {\bf erase} (CorbaSequence \&seq, CORBA::ULong index)
+\begin{DoxyCompactList}\small\item\em Erase the element of the specified index. \item\end{DoxyCompactList}\item 
+{\footnotesize template$<$class CorbaSequence , class Functor $>$ }\\void {\bf erase\_\-if} (CorbaSequence \&seq, Functor f)
+\begin{DoxyCompactList}\small\item\em Remove an element of a sequence according to a predicate. \item\end{DoxyCompactList}\item 
+{\footnotesize template$<$class CorbaSequence $>$ }\\void {\bf clear} (CorbaSequence \&seq)
+\begin{DoxyCompactList}\small\item\em Erase all the elements of the CORBA sequence. \item\end{DoxyCompactList}\item 
+{\footnotesize template$<$class CorbaRefSequence $>$ }\\{\bf coil::vstring} {\bf refToVstring} (const CorbaRefSequence \&objlist)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+CORBA IOR helper functions. CORBA sequence helper template functions.
+
+This group provides the following utility function to CORBA sequence. Since these functions are not thread-\/safe operations, if the sequence would be operated in thread-\/safe, the value should be protected by mutex properly.
+
+
+\begin{DoxyItemize}
+\item \doxyref{for\_\-each()}{p.}{namespaceCORBA__SeqUtil_a9d725601baae2cbaa4acae40275b2923}
+\item \doxyref{find()}{p.}{namespaceCORBA__SeqUtil_a39f5fe8146a038c72e6fa28eb5d93094}
+\item \doxyref{push\_\-back()}{p.}{namespaceCORBA__SeqUtil_a143f1f7c4c9cddca4062cbc659df452f}
+\item \doxyref{insert()}{p.}{namespaceCORBA__SeqUtil_a3f09eebbe1583aafa13fe3a16e245c69}
+\item \doxyref{front()}{p.}{namespaceCORBA__SeqUtil_ab3a1d8141eff8007e7231ea981c03e6d}
+\item \doxyref{back()}{p.}{namespaceCORBA__SeqUtil_a0341640da347b7e3032f52a0fe9e74cc}
+\item \doxyref{erase()}{p.}{namespaceCORBA__SeqUtil_ac9f11300b2cec13710c756530e16e21a}
+\item \doxyref{clear()}{p.}{namespaceCORBA__SeqUtil_a47b903d4a28a31bed2b4aa1c6a3b300f} 
+\end{DoxyItemize}
+
+\subsection{Function Documentation}
+\index{CORBA\_\-SeqUtil@{CORBA\_\-SeqUtil}!back@{back}}
+\index{back@{back}!CORBA_SeqUtil@{CORBA\_\-SeqUtil}}
+\subsubsection[{back}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class CorbaSequence , class SequenceElement $>$ SequenceElement\& CORBA\_\-SeqUtil::back (CorbaSequence \& {\em seq})\hspace{0.3cm}{\ttfamily  [inline]}}\label{namespaceCORBA__SeqUtil_a0341640da347b7e3032f52a0fe9e74cc}
+
+
+Get the last element of the CORBA sequence. 
+
+This operation returns seq[seq.length() -\/ 1].
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em seq}]The CORBA sequence to be get the element\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+An acquisition element 
+\end{DoxyReturn}
+\index{CORBA\_\-SeqUtil@{CORBA\_\-SeqUtil}!clear@{clear}}
+\index{clear@{clear}!CORBA_SeqUtil@{CORBA\_\-SeqUtil}}
+\subsubsection[{clear}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class CorbaSequence $>$ void CORBA\_\-SeqUtil::clear (CorbaSequence \& {\em seq})\hspace{0.3cm}{\ttfamily  [inline]}}\label{namespaceCORBA__SeqUtil_a47b903d4a28a31bed2b4aa1c6a3b300f}
+
+
+Erase all the elements of the CORBA sequence. 
+
+same as seq.length(0). \index{CORBA\_\-SeqUtil@{CORBA\_\-SeqUtil}!erase@{erase}}
+\index{erase@{erase}!CORBA_SeqUtil@{CORBA\_\-SeqUtil}}
+\subsubsection[{erase}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class CorbaSequence $>$ void CORBA\_\-SeqUtil::erase (CorbaSequence \& {\em seq}, \/  CORBA::ULong {\em index})\hspace{0.3cm}{\ttfamily  [inline]}}\label{namespaceCORBA__SeqUtil_ac9f11300b2cec13710c756530e16e21a}
+
+
+Erase the element of the specified index. 
+
+This operation removes the element of the given index. The other elements are closed up around the hole.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em seq}]The CORBA sequence to be get the element \item[{\em index}]The index of the element to be removed \end{DoxyParams}
+
+
+Referenced by erase\_\-if().
+
+\index{CORBA\_\-SeqUtil@{CORBA\_\-SeqUtil}!erase\_\-if@{erase\_\-if}}
+\index{erase\_\-if@{erase\_\-if}!CORBA_SeqUtil@{CORBA\_\-SeqUtil}}
+\subsubsection[{erase\_\-if}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class CorbaSequence , class Functor $>$ void CORBA\_\-SeqUtil::erase\_\-if (CorbaSequence \& {\em seq}, \/  Functor {\em f})\hspace{0.3cm}{\ttfamily  [inline]}}\label{namespaceCORBA__SeqUtil_a6a1bb134e8e9b0af545f8ce9f7495770}
+
+
+Remove an element of a sequence according to a predicate. 
+
+This operation removes the element from sequence when a condition of a function object given as a predicate is True.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em seq}]target CORBA sequence \item[{\em f}]predicate which decides a sequence to remove \end{DoxyParams}
+
+
+References erase(), and find().
+
+\index{CORBA\_\-SeqUtil@{CORBA\_\-SeqUtil}!find@{find}}
+\index{find@{find}!CORBA_SeqUtil@{CORBA\_\-SeqUtil}}
+\subsubsection[{find}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class CorbaSequence , class Functor $>$ CORBA::Long CORBA\_\-SeqUtil::find (const CorbaSequence \& {\em seq}, \/  Functor {\em f})\hspace{0.3cm}{\ttfamily  [inline]}}\label{namespaceCORBA__SeqUtil_a39f5fe8146a038c72e6fa28eb5d93094}
+
+
+Return the index of CORBA sequence element that functor matches. 
+
+This operation applies the given functor to the given CORBA sequence, and returns the index of the sequence element that the functor matches. The functor should be bool functor(const CORBA sequence element) type, and it would return true, if the element matched the functor.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em seq}]CORBA sequence to be applied the functor \item[{\em f}]A functor to process CORBA sequence elements\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The index of the element that functor matches. If no element found, it would return -\/1. 
+\end{DoxyReturn}
+
+
+Referenced by erase\_\-if().
+
+\index{CORBA\_\-SeqUtil@{CORBA\_\-SeqUtil}!for\_\-each@{for\_\-each}}
+\index{for\_\-each@{for\_\-each}!CORBA_SeqUtil@{CORBA\_\-SeqUtil}}
+\subsubsection[{for\_\-each}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class CorbaSequence , class Functor $>$ Functor CORBA\_\-SeqUtil::for\_\-each (CorbaSequence \& {\em seq}, \/  Functor {\em f})\hspace{0.3cm}{\ttfamily  [inline]}}\label{namespaceCORBA__SeqUtil_a9d725601baae2cbaa4acae40275b2923}
+
+
+Apply the functor to all CORBA sequence elements. 
+
+Apply the given functor to the given CORBA sequence. functor should be void functor(CORBA sequence element).
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em seq}]CORBA sequence to be applied the functor \item[{\em f}]A functor to process CORBA sequence elements\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Functor that processed all CORBA sequence elements 
+\end{DoxyReturn}
+
+
+Referenced by RTC::OutPort$<$ DataType $>$::write().
+
+\index{CORBA\_\-SeqUtil@{CORBA\_\-SeqUtil}!front@{front}}
+\index{front@{front}!CORBA_SeqUtil@{CORBA\_\-SeqUtil}}
+\subsubsection[{front}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class CorbaSequence , class SequenceElement $>$ SequenceElement\& CORBA\_\-SeqUtil::front (CorbaSequence \& {\em seq})\hspace{0.3cm}{\ttfamily  [inline]}}\label{namespaceCORBA__SeqUtil_ab3a1d8141eff8007e7231ea981c03e6d}
+
+
+Get the front element of the CORBA sequence. 
+
+This operation returns seq[0].
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em seq}]CORBA sequence which acquires an element\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+An acquisition element
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em seq}]The CORBA sequence to be get the element \end{DoxyParams}
+\index{CORBA\_\-SeqUtil@{CORBA\_\-SeqUtil}!insert@{insert}}
+\index{insert@{insert}!CORBA_SeqUtil@{CORBA\_\-SeqUtil}}
+\subsubsection[{insert}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class CorbaSequence , class SequenceElement $>$ void CORBA\_\-SeqUtil::insert (CorbaSequence \& {\em seq}, \/  SequenceElement \& {\em elem}, \/  CORBA::ULong {\em index})\hspace{0.3cm}{\ttfamily  [inline]}}\label{namespaceCORBA__SeqUtil_a3f09eebbe1583aafa13fe3a16e245c69}
+
+
+Insert the element to the CORBA sequence. 
+
+Insert a new element in the given position to the CORBA sequence. If the given index is greater than the length of the sequence, the given element is pushed back to the last of the sequence. The length of the CORBA sequence will be expanded automatically.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em seq}]The CORBA sequence to be inserted a new element \item[{\em elem}]The new element to be inserted the sequence \item[{\em index}]The inserting position \end{DoxyParams}
+
+
+References push\_\-back().
+
+\index{CORBA\_\-SeqUtil@{CORBA\_\-SeqUtil}!push\_\-back@{push\_\-back}}
+\index{push\_\-back@{push\_\-back}!CORBA_SeqUtil@{CORBA\_\-SeqUtil}}
+\subsubsection[{push\_\-back}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class CorbaSequence , class SequenceElement $>$ void CORBA\_\-SeqUtil::push\_\-back (CorbaSequence \& {\em seq}, \/  SequenceElement {\em elem})\hspace{0.3cm}{\ttfamily  [inline]}}\label{namespaceCORBA__SeqUtil_a143f1f7c4c9cddca4062cbc659df452f}
+
+
+Push the new element back to the CORBA sequence. 
+
+Add the given element to the last of CORBA sequence. The length of the CORBA sequence will be expanded automatically.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em seq}]CORBA sequence to be added a new element \item[{\em elem}]The new element to be added to the CORBA sequence \end{DoxyParams}
+
+
+Referenced by RTC::PortBase::addProperty(), insert(), and RTC::RTObject\_\-impl::ec\_\-copy::operator()().
+
+\index{CORBA\_\-SeqUtil@{CORBA\_\-SeqUtil}!push\_\-back\_\-list@{push\_\-back\_\-list}}
+\index{push\_\-back\_\-list@{push\_\-back\_\-list}!CORBA_SeqUtil@{CORBA\_\-SeqUtil}}
+\subsubsection[{push\_\-back\_\-list}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class CorbaSequence $>$ void CORBA\_\-SeqUtil::push\_\-back\_\-list (CorbaSequence \& {\em seq1}, \/  const CorbaSequence \& {\em seq2})\hspace{0.3cm}{\ttfamily  [inline]}}\label{namespaceCORBA__SeqUtil_a390b6504b9fae14e99f5fb078624d0a2}
+
+
+Merge the elements of the CORBA sequence. 
+
+Merge given CORBA sequences.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em seq1}]merge target CORBA sequence \item[{\em seq2}]merge target CORBA sequence \end{DoxyParams}
+\index{CORBA\_\-SeqUtil@{CORBA\_\-SeqUtil}!refToVstring@{refToVstring}}
+\index{refToVstring@{refToVstring}!CORBA_SeqUtil@{CORBA\_\-SeqUtil}}
+\subsubsection[{refToVstring}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class CorbaRefSequence $>$ {\bf coil::vstring} CORBA\_\-SeqUtil::refToVstring (const CorbaRefSequence \& {\em objlist})\hspace{0.3cm}{\ttfamily  [inline]}}\label{namespaceCORBA__SeqUtil_a42a859b3b3afede357a20f8a3a62dc6b}
+
+
+References RTC::Manager::instance().
+

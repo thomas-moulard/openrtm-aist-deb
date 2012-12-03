@@ -1,0 +1,136 @@
+\section{RTC::DataPortStatus Class Reference}
+\label{classRTC_1_1DataPortStatus}\index{RTC::DataPortStatus@{RTC::DataPortStatus}}
+
+
+\doxyref{DataPortStatus}{p.}{classRTC_1_1DataPortStatus} mixin class.  
+
+
+
+
+{\ttfamily \#include $<$DataPortStatus.h$>$}
+
+Inheritance diagram for RTC::DataPortStatus:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=9cm]{classRTC_1_1DataPortStatus}
+\end{center}
+\end{figure}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum {\bf Enum} \{ \par
+{\bf PORT\_\-OK} =  0, 
+{\bf PORT\_\-ERROR}, 
+{\bf BUFFER\_\-ERROR}, 
+{\bf BUFFER\_\-FULL}, 
+\par
+{\bf BUFFER\_\-EMPTY}, 
+{\bf BUFFER\_\-TIMEOUT}, 
+{\bf SEND\_\-FULL}, 
+{\bf SEND\_\-TIMEOUT}, 
+\par
+{\bf RECV\_\-EMPTY}, 
+{\bf RECV\_\-TIMEOUT}, 
+{\bf INVALID\_\-ARGS}, 
+{\bf PRECONDITION\_\-NOT\_\-MET}, 
+\par
+{\bf CONNECTION\_\-LOST}, 
+{\bf UNKNOWN\_\-ERROR}
+ \}
+\begin{DoxyCompactList}\small\item\em \doxyref{DataPortStatus}{p.}{classRTC_1_1DataPortStatus} return codes. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static const char $\ast$ {\bf toString} ({\bf DataPortStatus::Enum} status)
+\begin{DoxyCompactList}\small\item\em Convert \doxyref{DataPortStatus}{p.}{classRTC_1_1DataPortStatus} into the string. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\doxyref{DataPortStatus}{p.}{classRTC_1_1DataPortStatus} mixin class. This is a mixin class to provide enumed return codes that are commonly utilised in data port related sub-\/classes. To use this class, sub-\/class should inherit this class as a public super class, and declare DATAPORTSTATUS\_\-ENUM defined below. Consequently, ReturnCode\_\-t type that is typedefed by this macro can be used in the sub-\/class, and enumed identifiers are imported to the class's namespace. 
+
+\subsection{Member Enumeration Documentation}
+\index{RTC::DataPortStatus@{RTC::DataPortStatus}!Enum@{Enum}}
+\index{Enum@{Enum}!RTC::DataPortStatus@{RTC::DataPortStatus}}
+\subsubsection[{Enum}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf RTC::DataPortStatus::Enum}}\label{classRTC_1_1DataPortStatus_ac47c3e85f39e51eb55230337c0efc64f}
+
+
+\doxyref{DataPortStatus}{p.}{classRTC_1_1DataPortStatus} return codes. 
+
+Common return codes for data ports related classes.
+
+
+\begin{DoxyItemize}
+\item PORT\_\-OK: Normal return
+\item PORT\_\-ERROR: Error return
+\item BUFFER\_\-ERROR: Buffer error
+\item BUFFER\_\-FULL: Buffer full
+\item BUFFER\_\-EMPTY: Buffer empty
+\item BUFFER\_\-TIMEOUT: Buffer timeout
+\item SEND\_\-FULL: Buffer full although \doxyref{OutPort}{p.}{classRTC_1_1OutPort} tried to send data
+\item SEND\_\-TIMEOUT: Timeout although \doxyref{OutPort}{p.}{classRTC_1_1OutPort} tried to send data
+\item RECV\_\-EMPTY: Buffer empty although \doxyref{InPort}{p.}{classRTC_1_1InPort} tried to receive data
+\item RECV\_\-TIMEOUT: Timeout although \doxyref{InPort}{p.}{classRTC_1_1InPort} tried to receive data
+\item INVALID\_\-ARGS: Invalid arguments
+\item PRECONDITION\_\-NOT\_\-MET: Precondition not met
+\item CONNECTION\_\-LOST: Connection has been lost
+\item UNKNOWN\_\-ERROR: Unknown error
+\end{DoxyItemize}
+
+This error codes might be used to propagate error status from the error occurring point to the function caller in the data stream path. It would occur in data-\/transfer path and data receiver/sender. The errors that occur in the interface of each portion of data port are shown below.
+
+(1) Push Type a) The return codes between \doxyref{InPortConsumer}{p.}{classRTC_1_1InPortConsumer} and Publisher/Activity PORT\_\-OK, PORT\_\-ERROR, SEND\_\-FULL, SEND\_\-TIMEOUT, CONNECTION\_\-LOST, UNKNOWN\_\-ERROR b) The return codes between Activity and Buffer/Connector of \doxyref{OutPort}{p.}{classRTC_1_1OutPort} PORT\_\-OK, PORT\_\-ERROR, BUFFER\_\-ERROR, BUFFER\_\-FULL, BUFFER\_\-TIMEOUT, UNKNOWN\_\-ERROR,
+
+(2) Pull Type a) The return codes between Activity and \doxyref{InPort}{p.}{classRTC_1_1InPort} PORT\_\-OK, PORT\_\-ERROR, RECV\_\-EMPTY, RECV\_\-TIMEOUT, CONNETION\_\-LOST, UNKNOWN\_\-ERROR
+
+See function references for detailed return codes for each function. \begin{Desc}
+\item[Enumerator: ]\par
+\begin{description}
+\index{PORT\_\-OK@{PORT\_\-OK}!RTC::DataPortStatus@{RTC::DataPortStatus}}\index{RTC::DataPortStatus@{RTC::DataPortStatus}!PORT\_\-OK@{PORT\_\-OK}}\item[{\em 
+PORT\_\-OK\label{classRTC_1_1DataPortStatus_ac47c3e85f39e51eb55230337c0efc64fa348f113d004fb38d3f95c1a6f0b39536}
+}]\index{PORT\_\-ERROR@{PORT\_\-ERROR}!RTC::DataPortStatus@{RTC::DataPortStatus}}\index{RTC::DataPortStatus@{RTC::DataPortStatus}!PORT\_\-ERROR@{PORT\_\-ERROR}}\item[{\em 
+PORT\_\-ERROR\label{classRTC_1_1DataPortStatus_ac47c3e85f39e51eb55230337c0efc64fa6f4b21b97192228ba0cccd1db472193f}
+}]\index{BUFFER\_\-ERROR@{BUFFER\_\-ERROR}!RTC::DataPortStatus@{RTC::DataPortStatus}}\index{RTC::DataPortStatus@{RTC::DataPortStatus}!BUFFER\_\-ERROR@{BUFFER\_\-ERROR}}\item[{\em 
+BUFFER\_\-ERROR\label{classRTC_1_1DataPortStatus_ac47c3e85f39e51eb55230337c0efc64fac15043a37b27327bd4125fe07a23ffcb}
+}]\index{BUFFER\_\-FULL@{BUFFER\_\-FULL}!RTC::DataPortStatus@{RTC::DataPortStatus}}\index{RTC::DataPortStatus@{RTC::DataPortStatus}!BUFFER\_\-FULL@{BUFFER\_\-FULL}}\item[{\em 
+BUFFER\_\-FULL\label{classRTC_1_1DataPortStatus_ac47c3e85f39e51eb55230337c0efc64fa468123dd45be6af47fc7b059d7bc408f}
+}]\index{BUFFER\_\-EMPTY@{BUFFER\_\-EMPTY}!RTC::DataPortStatus@{RTC::DataPortStatus}}\index{RTC::DataPortStatus@{RTC::DataPortStatus}!BUFFER\_\-EMPTY@{BUFFER\_\-EMPTY}}\item[{\em 
+BUFFER\_\-EMPTY\label{classRTC_1_1DataPortStatus_ac47c3e85f39e51eb55230337c0efc64fac70e9db863797db8202eb552ee380e3f}
+}]\index{BUFFER\_\-TIMEOUT@{BUFFER\_\-TIMEOUT}!RTC::DataPortStatus@{RTC::DataPortStatus}}\index{RTC::DataPortStatus@{RTC::DataPortStatus}!BUFFER\_\-TIMEOUT@{BUFFER\_\-TIMEOUT}}\item[{\em 
+BUFFER\_\-TIMEOUT\label{classRTC_1_1DataPortStatus_ac47c3e85f39e51eb55230337c0efc64fa07801b7d1af39c7e9b2fb0a0b5f103b8}
+}]\index{SEND\_\-FULL@{SEND\_\-FULL}!RTC::DataPortStatus@{RTC::DataPortStatus}}\index{RTC::DataPortStatus@{RTC::DataPortStatus}!SEND\_\-FULL@{SEND\_\-FULL}}\item[{\em 
+SEND\_\-FULL\label{classRTC_1_1DataPortStatus_ac47c3e85f39e51eb55230337c0efc64fad447808595a3ab498eaf987e4d1111ad}
+}]\index{SEND\_\-TIMEOUT@{SEND\_\-TIMEOUT}!RTC::DataPortStatus@{RTC::DataPortStatus}}\index{RTC::DataPortStatus@{RTC::DataPortStatus}!SEND\_\-TIMEOUT@{SEND\_\-TIMEOUT}}\item[{\em 
+SEND\_\-TIMEOUT\label{classRTC_1_1DataPortStatus_ac47c3e85f39e51eb55230337c0efc64fa740d85b9b7a2519c8e309bcb265c1da0}
+}]\index{RECV\_\-EMPTY@{RECV\_\-EMPTY}!RTC::DataPortStatus@{RTC::DataPortStatus}}\index{RTC::DataPortStatus@{RTC::DataPortStatus}!RECV\_\-EMPTY@{RECV\_\-EMPTY}}\item[{\em 
+RECV\_\-EMPTY\label{classRTC_1_1DataPortStatus_ac47c3e85f39e51eb55230337c0efc64fa2df59b07f60ecb05b80d76149318cd9a}
+}]\index{RECV\_\-TIMEOUT@{RECV\_\-TIMEOUT}!RTC::DataPortStatus@{RTC::DataPortStatus}}\index{RTC::DataPortStatus@{RTC::DataPortStatus}!RECV\_\-TIMEOUT@{RECV\_\-TIMEOUT}}\item[{\em 
+RECV\_\-TIMEOUT\label{classRTC_1_1DataPortStatus_ac47c3e85f39e51eb55230337c0efc64fa6890d025dc4c9eee20a90371f01d1fa7}
+}]\index{INVALID\_\-ARGS@{INVALID\_\-ARGS}!RTC::DataPortStatus@{RTC::DataPortStatus}}\index{RTC::DataPortStatus@{RTC::DataPortStatus}!INVALID\_\-ARGS@{INVALID\_\-ARGS}}\item[{\em 
+INVALID\_\-ARGS\label{classRTC_1_1DataPortStatus_ac47c3e85f39e51eb55230337c0efc64fab564856fd2ed7c6f013a2153aa69b3df}
+}]\index{PRECONDITION\_\-NOT\_\-MET@{PRECONDITION\_\-NOT\_\-MET}!RTC::DataPortStatus@{RTC::DataPortStatus}}\index{RTC::DataPortStatus@{RTC::DataPortStatus}!PRECONDITION\_\-NOT\_\-MET@{PRECONDITION\_\-NOT\_\-MET}}\item[{\em 
+PRECONDITION\_\-NOT\_\-MET\label{classRTC_1_1DataPortStatus_ac47c3e85f39e51eb55230337c0efc64fad6c26a965c1aa5b91d5c5acddcc2252f}
+}]\index{CONNECTION\_\-LOST@{CONNECTION\_\-LOST}!RTC::DataPortStatus@{RTC::DataPortStatus}}\index{RTC::DataPortStatus@{RTC::DataPortStatus}!CONNECTION\_\-LOST@{CONNECTION\_\-LOST}}\item[{\em 
+CONNECTION\_\-LOST\label{classRTC_1_1DataPortStatus_ac47c3e85f39e51eb55230337c0efc64faa3b0bd12978000bd5fdb1098d8e8b646}
+}]\index{UNKNOWN\_\-ERROR@{UNKNOWN\_\-ERROR}!RTC::DataPortStatus@{RTC::DataPortStatus}}\index{RTC::DataPortStatus@{RTC::DataPortStatus}!UNKNOWN\_\-ERROR@{UNKNOWN\_\-ERROR}}\item[{\em 
+UNKNOWN\_\-ERROR\label{classRTC_1_1DataPortStatus_ac47c3e85f39e51eb55230337c0efc64fa6397b1034ecd49218c98c7eb4e3513e6}
+}]\end{description}
+\end{Desc}
+
+
+
+\subsection{Member Function Documentation}
+\index{RTC::DataPortStatus@{RTC::DataPortStatus}!toString@{toString}}
+\index{toString@{toString}!RTC::DataPortStatus@{RTC::DataPortStatus}}
+\subsubsection[{toString}]{\setlength{\rightskip}{0pt plus 5cm}static const char$\ast$ RTC::DataPortStatus::toString ({\bf DataPortStatus::Enum} {\em status})\hspace{0.3cm}{\ttfamily  [inline, static]}}\label{classRTC_1_1DataPortStatus_a0684ea630e7b79835fd4bcc0cadac355}
+
+
+Convert \doxyref{DataPortStatus}{p.}{classRTC_1_1DataPortStatus} into the string. 
+
+Convert \doxyref{DataPortStatus}{p.}{classRTC_1_1DataPortStatus} into the string.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em status}]The target \doxyref{DataPortStatus}{p.}{classRTC_1_1DataPortStatus} for transformation\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Trnasformation result of string representation 
+\end{DoxyReturn}

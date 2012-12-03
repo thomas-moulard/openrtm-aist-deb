@@ -1,0 +1,241 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<title>OpenRTM: ModuleManager.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<!-- 作成： Doxygen 1.6.3 -->
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="index.html"><span>メインページ</span></a></li>
+      <li><a href="namespaces.html"><span>ネームスペース</span></a></li>
+      <li><a href="annotated.html"><span>クラス</span></a></li>
+      <li class="current"><a href="files.html"><span>ファイル</span></a></li>
+    </ul>
+  </div>
+  <div class="tabs">
+    <ul>
+      <li><a href="files.html"><span>ファイル一覧</span></a></li>
+      <li><a href="globals.html"><span>ファイルメンバ</span></a></li>
+    </ul>
+  </div>
+</div>
+<div class="contents">
+<h1>ModuleManager.h</h1>
+<p>Loadable modules manager class.  
+<a href="#_details">[詳細]</a></p>
+<code>#include &lt;string&gt;</code><br/>
+<code>#include &lt;vector&gt;</code><br/>
+<code>#include &lt;map&gt;</code><br/>
+<code>#include &lt;<a class="el" href="DynamicLib_8h_source.html">coil/DynamicLib.h</a>&gt;</code><br/>
+<code>#include &lt;<a class="el" href="Manager_8h_source.html">rtm/Manager.h</a>&gt;</code><br/>
+<code>#include &lt;<a class="el" href="Properties_8h_source.html">coil/Properties.h</a>&gt;</code><br/>
+<code>#include &lt;<a class="el" href="ObjectManager_8h_source.html">rtm/ObjectManager.h</a>&gt;</code><br/>
+
+<p><a href="ModuleManager_8h_source.html">ソースコードを見る。</a></p>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr><td colspan="2"><h2>構成</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">class &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1ModuleManager.html">RTC::ModuleManager</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">モジュールマネージャクラス  <a href="classRTC_1_1ModuleManager.html#_details">[詳細]</a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">struct &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structRTC_1_1ModuleManager_1_1Error.html">RTC::ModuleManager::Error</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">ファイル・オープン失敗例外処理用構造体  <a href="structRTC_1_1ModuleManager_1_1Error.html#_details">[詳細]</a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">struct &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structRTC_1_1ModuleManager_1_1NotFound.html">RTC::ModuleManager::NotFound</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">未実装部，指定モジュール不明例外処理用構造体  <a href="structRTC_1_1ModuleManager_1_1NotFound.html#_details">[詳細]</a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">struct &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structRTC_1_1ModuleManager_1_1FileNotFound.html">RTC::ModuleManager::FileNotFound</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">指定ファイル不明例外処理用構造体  <a href="structRTC_1_1ModuleManager_1_1FileNotFound.html#_details">[詳細]</a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">struct &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structRTC_1_1ModuleManager_1_1ModuleNotFound.html">RTC::ModuleManager::ModuleNotFound</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">指定モジュール不明例外処理用構造体  <a href="structRTC_1_1ModuleManager_1_1ModuleNotFound.html#_details">[詳細]</a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">struct &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structRTC_1_1ModuleManager_1_1SymbolNotFound.html">RTC::ModuleManager::SymbolNotFound</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">指定シンボル不明例外処理用構造体  <a href="structRTC_1_1ModuleManager_1_1SymbolNotFound.html#_details">[詳細]</a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">struct &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structRTC_1_1ModuleManager_1_1NotAllowedOperation.html">RTC::ModuleManager::NotAllowedOperation</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">指定操作禁止時例外処理用構造体  <a href="structRTC_1_1ModuleManager_1_1NotAllowedOperation.html#_details">[詳細]</a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">struct &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structRTC_1_1ModuleManager_1_1InvalidArguments.html">RTC::ModuleManager::InvalidArguments</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">指定引数不正時例外処理用構造体  <a href="structRTC_1_1ModuleManager_1_1InvalidArguments.html#_details">[詳細]</a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">struct &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structRTC_1_1ModuleManager_1_1InvalidOperation.html">RTC::ModuleManager::InvalidOperation</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">指定操作不正時例外処理用構造体  <a href="structRTC_1_1ModuleManager_1_1InvalidOperation.html#_details">[詳細]</a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">struct &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structRTC_1_1ModuleManager_1_1DLLEntity.html">RTC::ModuleManager::DLLEntity</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">DLL管理用構造体.  <a href="structRTC_1_1ModuleManager_1_1DLLEntity.html#_details">[詳細]</a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">class &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1ModuleManager_1_1DllPred.html">RTC::ModuleManager::DllPred</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">ロード済みモジュールリスト  <a href="classRTC_1_1ModuleManager_1_1DllPred.html#_details">[詳細]</a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">class &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1ModuleManager_1_1UnloadPred.html">RTC::ModuleManager::UnloadPred</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">モジュールアンロードファンクタ  <a href="classRTC_1_1ModuleManager_1_1UnloadPred.html#_details">[詳細]</a><br/></td></tr>
+<tr><td colspan="2"><h2>ネームスペース</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">namespace &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceRTC.html">RTC</a></td></tr>
+
+<p><tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight"><p>RTコンポーネント. </p>
+<br/></td></tr>
+</p>
+<tr><td colspan="2"><h2>マクロ定義</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="ModuleManager_8h.html#ae79c05eee3bda7e58d1baae843a4d368">CONFIG_EXT</a>&nbsp;&nbsp;&nbsp;&quot;manager.modules.config_ext&quot;</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="ModuleManager_8h.html#a863ab5d791c86f9dfff4c6e90624130c">CONFIG_PATH</a>&nbsp;&nbsp;&nbsp;&quot;manager.modules.config_path&quot;</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="ModuleManager_8h.html#a2af8d577ae5cba991976fcc2b514d5dd">DETECT_MOD</a>&nbsp;&nbsp;&nbsp;&quot;manager.modules.detect_loadable&quot;</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="ModuleManager_8h.html#a551498b5f7889ed62e89e5f6c9f4616b">MOD_LOADPTH</a>&nbsp;&nbsp;&nbsp;&quot;manager.modules.load_path&quot;</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="ModuleManager_8h.html#ae64701c8f676e9065e9e9c5c52427b81">INITFUNC_SFX</a>&nbsp;&nbsp;&nbsp;&quot;manager.modules.init_func_suffix&quot;</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="ModuleManager_8h.html#ac5cdc1f839be6c67919ba24d4f0838d3">INITFUNC_PFX</a>&nbsp;&nbsp;&nbsp;&quot;manager.modules.init_func_prefix&quot;</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="ModuleManager_8h.html#a96d839c6d1a9fade296196016534b91d">ALLOW_ABSPATH</a>&nbsp;&nbsp;&nbsp;&quot;manager.modules.abs_path_allowed&quot;</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="ModuleManager_8h.html#acdfc6ef732a678bf77f4eaeebd504bdc">ALLOW_URL</a>&nbsp;&nbsp;&nbsp;&quot;manager.modules.download_allowed&quot;</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="ModuleManager_8h.html#a556b78256c7f76a6eaa6a03a54241b51">MOD_DWNDIR</a>&nbsp;&nbsp;&nbsp;&quot;manager.modules.download_dir&quot;</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="ModuleManager_8h.html#a04e88c68018d7f86dc41f2ef58352074">MOD_DELMOD</a>&nbsp;&nbsp;&nbsp;&quot;manager.modules.download_cleanup&quot;</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="ModuleManager_8h.html#a9398d2e5227c82654be674e0149af948">MOD_PRELOAD</a>&nbsp;&nbsp;&nbsp;&quot;manager.modules.preload&quot;</td></tr>
+</table>
+<hr/><a name="_details"></a><h2>説明</h2>
+<p>Loadable modules manager class. </p>
+<dl class="date"><dt><b>日付:</b></dt><dd></dd></dl>
+<dl class="rcs"><dt><b>Date</b></dt><dd>2007-12-31 03:08:04 </dd></dl>
+<dl class="author"><dt><b>作者:</b></dt><dd>Noriaki Ando &lt;<a href="mailto:n-ando@aist.go.jp">n-ando@aist.go.jp</a>&gt;</dd></dl>
+<p>Copyright (C) 2006-2010 Noriaki Ando Task-intelligence Research Group, Intelligent Systems Research Institute, National Institute of Advanced Industrial Science and Technology (AIST), Japan All rights reserved.</p>
+<dl class="rcs"><dt><b>Id</b></dt><dd><a class="el" href="ModuleManager_8h.html" title="Loadable modules manager class.">ModuleManager.h</a> 2077 2011-04-29 12:43:34Z n-ando </dd></dl>
+<hr/><h2>マクロ定義</h2>
+<a class="anchor" id="a96d839c6d1a9fade296196016534b91d"></a><!-- doxytag: member="ModuleManager.h::ALLOW_ABSPATH" ref="a96d839c6d1a9fade296196016534b91d" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ALLOW_ABSPATH&nbsp;&nbsp;&nbsp;&quot;manager.modules.abs_path_allowed&quot;</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="acdfc6ef732a678bf77f4eaeebd504bdc"></a><!-- doxytag: member="ModuleManager.h::ALLOW_URL" ref="acdfc6ef732a678bf77f4eaeebd504bdc" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ALLOW_URL&nbsp;&nbsp;&nbsp;&quot;manager.modules.download_allowed&quot;</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ae79c05eee3bda7e58d1baae843a4d368"></a><!-- doxytag: member="ModuleManager.h::CONFIG_EXT" ref="ae79c05eee3bda7e58d1baae843a4d368" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CONFIG_EXT&nbsp;&nbsp;&nbsp;&quot;manager.modules.config_ext&quot;</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a863ab5d791c86f9dfff4c6e90624130c"></a><!-- doxytag: member="ModuleManager.h::CONFIG_PATH" ref="a863ab5d791c86f9dfff4c6e90624130c" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CONFIG_PATH&nbsp;&nbsp;&nbsp;&quot;manager.modules.config_path&quot;</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a2af8d577ae5cba991976fcc2b514d5dd"></a><!-- doxytag: member="ModuleManager.h::DETECT_MOD" ref="a2af8d577ae5cba991976fcc2b514d5dd" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define DETECT_MOD&nbsp;&nbsp;&nbsp;&quot;manager.modules.detect_loadable&quot;</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ac5cdc1f839be6c67919ba24d4f0838d3"></a><!-- doxytag: member="ModuleManager.h::INITFUNC_PFX" ref="ac5cdc1f839be6c67919ba24d4f0838d3" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define INITFUNC_PFX&nbsp;&nbsp;&nbsp;&quot;manager.modules.init_func_prefix&quot;</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ae64701c8f676e9065e9e9c5c52427b81"></a><!-- doxytag: member="ModuleManager.h::INITFUNC_SFX" ref="ae64701c8f676e9065e9e9c5c52427b81" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define INITFUNC_SFX&nbsp;&nbsp;&nbsp;&quot;manager.modules.init_func_suffix&quot;</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a04e88c68018d7f86dc41f2ef58352074"></a><!-- doxytag: member="ModuleManager.h::MOD_DELMOD" ref="a04e88c68018d7f86dc41f2ef58352074" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MOD_DELMOD&nbsp;&nbsp;&nbsp;&quot;manager.modules.download_cleanup&quot;</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a556b78256c7f76a6eaa6a03a54241b51"></a><!-- doxytag: member="ModuleManager.h::MOD_DWNDIR" ref="a556b78256c7f76a6eaa6a03a54241b51" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MOD_DWNDIR&nbsp;&nbsp;&nbsp;&quot;manager.modules.download_dir&quot;</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a551498b5f7889ed62e89e5f6c9f4616b"></a><!-- doxytag: member="ModuleManager.h::MOD_LOADPTH" ref="a551498b5f7889ed62e89e5f6c9f4616b" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MOD_LOADPTH&nbsp;&nbsp;&nbsp;&quot;manager.modules.load_path&quot;</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a9398d2e5227c82654be674e0149af948"></a><!-- doxytag: member="ModuleManager.h::MOD_PRELOAD" ref="a9398d2e5227c82654be674e0149af948" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MOD_PRELOAD&nbsp;&nbsp;&nbsp;&quot;manager.modules.preload&quot;</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+</div>
+<hr class="footer"/><address style="text-align: right;"><small>OpenRTMに対してThu May 24 23:25:18 2012に生成されました。&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.6.3 </small></address>
+</body>
+</html>

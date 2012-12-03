@@ -1,0 +1,324 @@
+\section{„Ç§„É≥„Çø„Éï„Çß„Éº„Çπ RTM::Manager}
+\label{interfaceRTM_1_1Manager}\index{RTM::Manager@{RTM::Manager}}
+
+
+{\ttfamily import \char`\"{}Manager.idl\char`\"{};}
+
+\subsection*{Public „É°„ÇΩ„ÉÉ„Éâ}
+\begin{DoxyCompactItemize}
+\item 
+{\bf RTC::ReturnCode\_\-t} {\bf load\_\-module} (in string pathname, in string initfunc)
+\begin{DoxyCompactList}\small\item\em •‚•∏•Â°º•Î§Ú•Ì°º•…§π§Î \item\end{DoxyCompactList}\item 
+{\bf RTC::ReturnCode\_\-t} {\bf unload\_\-module} (in string pathname)
+\begin{DoxyCompactList}\small\item\em •‚•∏•Â°º•Î§Ú•¢•Û•Ì°º•…§π§Î \item\end{DoxyCompactList}\item 
+{\bf ModuleProfileList} {\bf get\_\-loadable\_\-modules} ()
+\begin{DoxyCompactList}\small\item\em •Ì°º•…≤ƒ«Ω§ •‚•∏•Â°º•Î§Œ•◊•Ì•’•°•§•Î§ÚºË∆¿§π§Î \item\end{DoxyCompactList}\item 
+{\bf ModuleProfileList} {\bf get\_\-loaded\_\-modules} ()
+\begin{DoxyCompactList}\small\item\em •Ì°º•…∫—§ﬂ§Œ•‚•∏•Â°º•Î§Œ•◊•Ì•’•°•§•Î§ÚºË∆¿§π§Î \item\end{DoxyCompactList}\item 
+{\bf ModuleProfileList} {\bf get\_\-factory\_\-profiles} ()
+\begin{DoxyCompactList}\small\item\em •≥•Û•›°º•Õ•Û•»•’•°•Ø•»•Í§Œ•◊•Ì•’•°•§•Î§ÚºË∆¿§π§Î \item\end{DoxyCompactList}\item 
+{\bf RTC::RTObject} {\bf create\_\-component} (in string module\_\-name)
+\begin{DoxyCompactList}\small\item\em •≥•Û•›°º•Õ•Û•»§Ú¿∏¿Æ§π§Î \item\end{DoxyCompactList}\item 
+{\bf RTC::ReturnCode\_\-t} {\bf delete\_\-component} (in string instance\_\-name)
+\begin{DoxyCompactList}\small\item\em •≥•Û•›°º•Õ•Û•»§Ú∫ÔΩ¸§π§Î \item\end{DoxyCompactList}\item 
+{\bf RTC::RTCList} {\bf get\_\-components} ()
+\begin{DoxyCompactList}\small\item\em µØ∆∞√Ê§Œ•≥•Û•›°º•Õ•Û•»§Œ•Í•π•»§ÚºË∆¿§π§Î \item\end{DoxyCompactList}\item 
+{\bf RTC::ComponentProfileList} {\bf get\_\-component\_\-profiles} ()
+\begin{DoxyCompactList}\small\item\em µØ∆∞√Ê§Œ•≥•Û•›°º•Õ•Û•»•◊•Ì•’•°•§•Î§Œ•Í•π•»§ÚºË∆¿§π§Î \item\end{DoxyCompactList}\item 
+{\bf ManagerProfile} {\bf get\_\-profile} ()
+\begin{DoxyCompactList}\small\item\em •ﬁ•Õ°º•∏•„§Œ•◊•Ì•’•°•§•Î§ÚºË∆¿§π§Î \item\end{DoxyCompactList}\item 
+{\bf NVList} {\bf get\_\-configuration} ()
+\begin{DoxyCompactList}\small\item\em •ﬁ•Õ°º•∏•„§Œ•≥•Û•’•£•Æ•Â•Ï°º•∑•Á•Û§ÚºË∆¿§π§Î \item\end{DoxyCompactList}\item 
+{\bf RTC::ReturnCode\_\-t} {\bf set\_\-configuration} (in string name, in string value)
+\begin{DoxyCompactList}\small\item\em •ﬁ•Õ°º•∏•„§Œ•≥•Û•’•£•Æ•Â•Ï°º•∑•Á•Û§Ú¿ﬂƒÍ§π§Î \item\end{DoxyCompactList}\item 
+boolean {\bf is\_\-master} ()
+\begin{DoxyCompactList}\small\item\em •ﬁ•Õ°º•∏•„§¨•ﬁ•π•ø°º§´§…§¶§´ \item\end{DoxyCompactList}\item 
+{\bf ManagerList} {\bf get\_\-master\_\-managers} ()
+\begin{DoxyCompactList}\small\item\em •ﬁ•π•ø°º•ﬁ•Õ°º•∏•„§ŒºË∆¿ \item\end{DoxyCompactList}\item 
+{\bf RTC::ReturnCode\_\-t} {\bf add\_\-master\_\-manager} (in {\bf Manager} mgr)
+\begin{DoxyCompactList}\small\item\em •ﬁ•π•ø°º•ﬁ•Õ°º•∏•„§Œƒ…≤√ \item\end{DoxyCompactList}\item 
+{\bf RTC::ReturnCode\_\-t} {\bf remove\_\-master\_\-manager} (in {\bf Manager} mgr)
+\begin{DoxyCompactList}\small\item\em •ﬁ•π•ø°º•ﬁ•Õ°º•∏•„§Œ∫ÔΩ¸ \item\end{DoxyCompactList}\item 
+{\bf ManagerList} {\bf get\_\-slave\_\-managers} ()
+\begin{DoxyCompactList}\small\item\em •π•Ï°º•÷•ﬁ•Õ°º•∏•„§ŒºË∆¿ \item\end{DoxyCompactList}\item 
+{\bf RTC::ReturnCode\_\-t} {\bf add\_\-slave\_\-manager} (in {\bf Manager} mgr)
+\begin{DoxyCompactList}\small\item\em •π•Ï°º•÷•ﬁ•Õ°º•∏•„§Œƒ…≤√ \item\end{DoxyCompactList}\item 
+{\bf RTC::ReturnCode\_\-t} {\bf remove\_\-slave\_\-manager} (in {\bf Manager} mgr)
+\begin{DoxyCompactList}\small\item\em •π•Ï°º•÷•ﬁ•Õ°º•∏•„§Œ∫ÔΩ¸ \item\end{DoxyCompactList}\item 
+{\bf RTC::ReturnCode\_\-t} {\bf fork} ()
+\item 
+{\bf RTC::ReturnCode\_\-t} {\bf shutdown} ()
+\item 
+{\bf RTC::ReturnCode\_\-t} {\bf restart} ()
+\item 
+Object {\bf get\_\-service} (in string name)
+\end{DoxyCompactItemize}
+
+
+\subsection{Èñ¢Êï∞}
+\index{RTM::Manager@{RTM::Manager}!add\_\-master\_\-manager@{add\_\-master\_\-manager}}
+\index{add\_\-master\_\-manager@{add\_\-master\_\-manager}!RTM::Manager@{RTM::Manager}}
+\subsubsection[{add\_\-master\_\-manager}]{\setlength{\rightskip}{0pt plus 5cm}{\bf RTC::ReturnCode\_\-t} RTM::Manager::add\_\-master\_\-manager (in {\bf Manager} {\em mgr})}\label{interfaceRTM_1_1Manager_a6eecb69fab7dbea8e3377c6648356b76}
+
+
+•ﬁ•π•ø°º•ﬁ•Õ°º•∏•„§Œƒ…≤√ 
+
+§≥§Œ•ﬁ•Õ°º•∏•„§Œ•ﬁ•π•ø§»§∑§∆•ﬁ•Õ°º•∏•„§Ú∞Ï§ƒƒ…≤√§π§Î°£
+
+
+\begin{DoxyParams}{ÂºïÊï∞}
+\item[{\em mgr}]•ﬁ•π•ø°º•ﬁ•Õ°º•∏•„ \end{DoxyParams}
+\begin{DoxyReturn}{Êàª„ÇäÂÄ§}
+ReturnCode\_\-t 
+\end{DoxyReturn}
+\index{RTM::Manager@{RTM::Manager}!add\_\-slave\_\-manager@{add\_\-slave\_\-manager}}
+\index{add\_\-slave\_\-manager@{add\_\-slave\_\-manager}!RTM::Manager@{RTM::Manager}}
+\subsubsection[{add\_\-slave\_\-manager}]{\setlength{\rightskip}{0pt plus 5cm}{\bf RTC::ReturnCode\_\-t} RTM::Manager::add\_\-slave\_\-manager (in {\bf Manager} {\em mgr})}\label{interfaceRTM_1_1Manager_ad818c6d8113d723f21b2abe6a64b615c}
+
+
+•π•Ï°º•÷•ﬁ•Õ°º•∏•„§Œƒ…≤√ 
+
+§≥§Œ•ﬁ•Õ°º•∏•„§Œ•ﬁ•π•ø§»§∑§∆•ﬁ•Õ°º•∏•„§Ú∞Ï§ƒƒ…≤√§π§Î°£
+
+
+\begin{DoxyParams}{ÂºïÊï∞}
+\item[{\em mgr}]•π•Ï°º•÷•ﬁ•Õ°º•∏•„ \end{DoxyParams}
+\begin{DoxyReturn}{Êàª„ÇäÂÄ§}
+ReturnCode\_\-t 
+\end{DoxyReturn}
+\index{RTM::Manager@{RTM::Manager}!create\_\-component@{create\_\-component}}
+\index{create\_\-component@{create\_\-component}!RTM::Manager@{RTM::Manager}}
+\subsubsection[{create\_\-component}]{\setlength{\rightskip}{0pt plus 5cm}{\bf RTC::RTObject} RTM::Manager::create\_\-component (in string {\em module\_\-name})}\label{interfaceRTM_1_1Manager_aabfa3a0eb982dd87d772fcf5c9b99081}
+
+
+•≥•Û•›°º•Õ•Û•»§Ú¿∏¿Æ§π§Î 
+
+∞˙øÙ§ÀªÿƒÍ§µ§Ï§ø•≥•Û•›°º•Õ•Û•»§Ú¿∏¿Æ§π§Î°£
+
+\begin{DoxyReturn}{Êàª„ÇäÂÄ§}
+¿∏¿Æ§µ§Ï§øRT•≥•Û•›°º•Õ•Û•» 
+\end{DoxyReturn}
+\index{RTM::Manager@{RTM::Manager}!delete\_\-component@{delete\_\-component}}
+\index{delete\_\-component@{delete\_\-component}!RTM::Manager@{RTM::Manager}}
+\subsubsection[{delete\_\-component}]{\setlength{\rightskip}{0pt plus 5cm}{\bf RTC::ReturnCode\_\-t} RTM::Manager::delete\_\-component (in string {\em instance\_\-name})}\label{interfaceRTM_1_1Manager_a96bf4f72dac2f021f6a7384cdade2245}
+
+
+•≥•Û•›°º•Õ•Û•»§Ú∫ÔΩ¸§π§Î 
+
+∞˙øÙ§ÀªÿƒÍ§µ§Ï§ø•≥•Û•›°º•Õ•Û•»§Ú∫ÔΩ¸§π§Î°£
+
+\begin{DoxyReturn}{Êàª„ÇäÂÄ§}
+•Í•ø°º•Û•≥°º•… 
+\end{DoxyReturn}
+\index{RTM::Manager@{RTM::Manager}!fork@{fork}}
+\index{fork@{fork}!RTM::Manager@{RTM::Manager}}
+\subsubsection[{fork}]{\setlength{\rightskip}{0pt plus 5cm}{\bf RTC::ReturnCode\_\-t} RTM::Manager::fork ()}\label{interfaceRTM_1_1Manager_af6d4aab0145042cd0332e50a96ddc876}
+\index{RTM::Manager@{RTM::Manager}!get\_\-component\_\-profiles@{get\_\-component\_\-profiles}}
+\index{get\_\-component\_\-profiles@{get\_\-component\_\-profiles}!RTM::Manager@{RTM::Manager}}
+\subsubsection[{get\_\-component\_\-profiles}]{\setlength{\rightskip}{0pt plus 5cm}{\bf RTC::ComponentProfileList} RTM::Manager::get\_\-component\_\-profiles ()}\label{interfaceRTM_1_1Manager_abe71e5357edf11e879b21dc09bbc6dc0}
+
+
+µØ∆∞√Ê§Œ•≥•Û•›°º•Õ•Û•»•◊•Ì•’•°•§•Î§Œ•Í•π•»§ÚºË∆¿§π§Î 
+
+∏Ω∫ﬂ≈ˆ≥∫•ﬁ•Õ°º•∏•„æÂ§«µØ∆∞√Ê§Œ•≥•Û•›°º•Õ•Û•»§Œ•◊•Ì•’•°•§•Î§Œ•Í•π •»§Ú ÷§π°£
+
+\begin{DoxyReturn}{Êàª„ÇäÂÄ§}
+RT•≥•Û•›°º•Õ•Û•»•◊•Ì•’•°•§•Î§Œ•Í•π•» 
+\end{DoxyReturn}
+\index{RTM::Manager@{RTM::Manager}!get\_\-components@{get\_\-components}}
+\index{get\_\-components@{get\_\-components}!RTM::Manager@{RTM::Manager}}
+\subsubsection[{get\_\-components}]{\setlength{\rightskip}{0pt plus 5cm}{\bf RTC::RTCList} RTM::Manager::get\_\-components ()}\label{interfaceRTM_1_1Manager_a9280a086716df3139f02fde17a54c470}
+
+
+µØ∆∞√Ê§Œ•≥•Û•›°º•Õ•Û•»§Œ•Í•π•»§ÚºË∆¿§π§Î 
+
+∏Ω∫ﬂ≈ˆ≥∫•ﬁ•Õ°º•∏•„æÂ§«µØ∆∞√Ê§Œ•≥•Û•›°º•Õ•Û•»§Œ•Í•π•»§Ú ÷§π°£
+
+\begin{DoxyReturn}{Êàª„ÇäÂÄ§}
+RT•≥•Û•›°º•Õ•Û•»§Œ•Í•π•» 
+\end{DoxyReturn}
+\index{RTM::Manager@{RTM::Manager}!get\_\-configuration@{get\_\-configuration}}
+\index{get\_\-configuration@{get\_\-configuration}!RTM::Manager@{RTM::Manager}}
+\subsubsection[{get\_\-configuration}]{\setlength{\rightskip}{0pt plus 5cm}{\bf NVList} RTM::Manager::get\_\-configuration ()}\label{interfaceRTM_1_1Manager_ab84ddc9130dfeeea8c50c0f8d2a9e80f}
+
+
+•ﬁ•Õ°º•∏•„§Œ•≥•Û•’•£•Æ•Â•Ï°º•∑•Á•Û§ÚºË∆¿§π§Î 
+
+∏Ω∫ﬂ≈ˆ≥∫•ﬁ•Õ°º•∏•„§Œ•≥•Û•’•£•Æ•Â•Ï°º•∑•Á•Û§ÚºË∆¿§π§Î°£
+
+\begin{DoxyReturn}{Êàª„ÇäÂÄ§}
+•ﬁ•Õ°º•∏•„•≥•Û•’•£•Æ•Â•Ï°º•∑•Á•Û 
+\end{DoxyReturn}
+\index{RTM::Manager@{RTM::Manager}!get\_\-factory\_\-profiles@{get\_\-factory\_\-profiles}}
+\index{get\_\-factory\_\-profiles@{get\_\-factory\_\-profiles}!RTM::Manager@{RTM::Manager}}
+\subsubsection[{get\_\-factory\_\-profiles}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ModuleProfileList} RTM::Manager::get\_\-factory\_\-profiles ()}\label{interfaceRTM_1_1Manager_a39aa5af496922ef8caa786a1a0a0cf90}
+
+
+•≥•Û•›°º•Õ•Û•»•’•°•Ø•»•Í§Œ•◊•Ì•’•°•§•Î§ÚºË∆¿§π§Î 
+
+•Ì°º•…∫—§ﬂ§Œ•‚•∏•Â°º•Î§Œ§¶§¡°¢RT•≥•Û•›°º•Õ•Û•»§Œ•‚•∏•Â°º•Î§¨ª˝§ƒ •’•°•Ø•»•Í§Œ•◊•Ì•’•°•§•Î§Œ•Í•π•»§ÚºË∆¿§π§Î°£
+
+\begin{DoxyReturn}{Êàª„ÇäÂÄ§}
+•≥•Û•›°º•Õ•Û•»•’•°•Ø•»•Í§Œ•◊•Ì•’•°•§•Î•Í•π•» 
+\end{DoxyReturn}
+\index{RTM::Manager@{RTM::Manager}!get\_\-loadable\_\-modules@{get\_\-loadable\_\-modules}}
+\index{get\_\-loadable\_\-modules@{get\_\-loadable\_\-modules}!RTM::Manager@{RTM::Manager}}
+\subsubsection[{get\_\-loadable\_\-modules}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ModuleProfileList} RTM::Manager::get\_\-loadable\_\-modules ()}\label{interfaceRTM_1_1Manager_a0e5715c4cacc9e547d012b8ca0762265}
+
+
+•Ì°º•…≤ƒ«Ω§ •‚•∏•Â°º•Î§Œ•◊•Ì•’•°•§•Î§ÚºË∆¿§π§Î 
+
+•Ì°º•…≤ƒ«Ω§ •‚•∏•Â°º•Î§Œ•◊•Ì•’•°•§•Î§ÚºË∆¿§π§Î°£
+
+\begin{DoxyReturn}{Êàª„ÇäÂÄ§}
+•‚•∏•Â°º•Î•◊•Ì•’•°•§•Î 
+\end{DoxyReturn}
+\index{RTM::Manager@{RTM::Manager}!get\_\-loaded\_\-modules@{get\_\-loaded\_\-modules}}
+\index{get\_\-loaded\_\-modules@{get\_\-loaded\_\-modules}!RTM::Manager@{RTM::Manager}}
+\subsubsection[{get\_\-loaded\_\-modules}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ModuleProfileList} RTM::Manager::get\_\-loaded\_\-modules ()}\label{interfaceRTM_1_1Manager_aa2b83683a2810830c335fb547264dc01}
+
+
+•Ì°º•…∫—§ﬂ§Œ•‚•∏•Â°º•Î§Œ•◊•Ì•’•°•§•Î§ÚºË∆¿§π§Î 
+
+•Ì°º•…∫—§ﬂ§Œ•‚•∏•Â°º•Î§Œ•◊•Ì•’•°•§•Î§ÚºË∆¿§π§Î°£
+
+\begin{DoxyReturn}{Êàª„ÇäÂÄ§}
+•‚•∏•Â°º•Î•◊•Ì•’•°•§•Î 
+\end{DoxyReturn}
+\index{RTM::Manager@{RTM::Manager}!get\_\-master\_\-managers@{get\_\-master\_\-managers}}
+\index{get\_\-master\_\-managers@{get\_\-master\_\-managers}!RTM::Manager@{RTM::Manager}}
+\subsubsection[{get\_\-master\_\-managers}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ManagerList} RTM::Manager::get\_\-master\_\-managers ()}\label{interfaceRTM_1_1Manager_abca05cb20132674bf82520689479b41c}
+
+
+•ﬁ•π•ø°º•ﬁ•Õ°º•∏•„§ŒºË∆¿ 
+
+§≥§Œ•ﬁ•Õ°º•∏•„§¨•π•Ï°º•÷•ﬁ•Õ°º•∏•„§ŒæÏπÁ°¢•ﬁ•π•ø°º§»§ §√§∆§§§Î•ﬁ •Õ°º•∏•„§Œ•Í•π•»§Ú ÷§π°£§≥§Œ•ﬁ•Õ°º•∏•„§¨•ﬁ•π•ø°º§ŒæÏπÁ°¢∂ı§Œ•Í•π •»§¨ ÷§Î°£
+
+\begin{DoxyReturn}{Êàª„ÇäÂÄ§}
+•ﬁ•π•ø°º•ﬁ•Õ°º•∏•„§Œ•Í•π•» 
+\end{DoxyReturn}
+\index{RTM::Manager@{RTM::Manager}!get\_\-profile@{get\_\-profile}}
+\index{get\_\-profile@{get\_\-profile}!RTM::Manager@{RTM::Manager}}
+\subsubsection[{get\_\-profile}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ManagerProfile} RTM::Manager::get\_\-profile ()}\label{interfaceRTM_1_1Manager_a2640ab430699432e7103d777880347f3}
+
+
+•ﬁ•Õ°º•∏•„§Œ•◊•Ì•’•°•§•Î§ÚºË∆¿§π§Î 
+
+∏Ω∫ﬂ≈ˆ≥∫•ﬁ•Õ°º•∏•„§Œ•◊•Ì•’•°•§•Î§ÚºË∆¿§π§Î°£
+
+\begin{DoxyReturn}{Êàª„ÇäÂÄ§}
+•ﬁ•Õ°º•∏•„•◊•Ì•’•°•§•Î 
+\end{DoxyReturn}
+\index{RTM::Manager@{RTM::Manager}!get\_\-service@{get\_\-service}}
+\index{get\_\-service@{get\_\-service}!RTM::Manager@{RTM::Manager}}
+\subsubsection[{get\_\-service}]{\setlength{\rightskip}{0pt plus 5cm}Object RTM::Manager::get\_\-service (in string {\em name})}\label{interfaceRTM_1_1Manager_a06deb421ae0acb333ed6ef3a86b0d1b1}
+\index{RTM::Manager@{RTM::Manager}!get\_\-slave\_\-managers@{get\_\-slave\_\-managers}}
+\index{get\_\-slave\_\-managers@{get\_\-slave\_\-managers}!RTM::Manager@{RTM::Manager}}
+\subsubsection[{get\_\-slave\_\-managers}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ManagerList} RTM::Manager::get\_\-slave\_\-managers ()}\label{interfaceRTM_1_1Manager_a7fa681c86d41a463e50c40ca4e738744}
+
+
+•π•Ï°º•÷•ﬁ•Õ°º•∏•„§ŒºË∆¿ 
+
+§≥§Œ•ﬁ•Õ°º•∏•„§¨•π•Ï°º•÷•ﬁ•Õ°º•∏•„§ŒæÏπÁ°¢•π•Ï°º•÷§»§ §√§∆§§§Î•ﬁ •Õ°º•∏•„§Œ•Í•π•»§Ú ÷§π°£§≥§Œ•ﬁ•Õ°º•∏•„§¨•π•Ï°º•÷§ŒæÏπÁ°¢∂ı§Œ•Í•π •»§¨ ÷§Î°£
+
+\begin{DoxyReturn}{Êàª„ÇäÂÄ§}
+•π•Ï°º•÷•ﬁ•Õ°º•∏•„§Œ•Í•π•» 
+\end{DoxyReturn}
+\index{RTM::Manager@{RTM::Manager}!is\_\-master@{is\_\-master}}
+\index{is\_\-master@{is\_\-master}!RTM::Manager@{RTM::Manager}}
+\subsubsection[{is\_\-master}]{\setlength{\rightskip}{0pt plus 5cm}boolean RTM::Manager::is\_\-master ()}\label{interfaceRTM_1_1Manager_aebab7e3e7c75c519c76a6ff2b1c5548b}
+
+
+•ﬁ•Õ°º•∏•„§¨•ﬁ•π•ø°º§´§…§¶§´ 
+
+§≥§Œ¥ÿøÙ§œ•ﬁ•Õ°º•∏•„§¨•ﬁ•π•ø°º§´§…§¶§´§Ú ÷§π°£True§ §È§–°¢≈ˆ≥∫•ﬁ •Õ°º•∏•„§œ•ﬁ•π•ø°º§«§¢§Í°¢§Ω§Ï∞ ≥∞§œ False §Ú ÷§π°£
+
+\begin{DoxyReturn}{Êàª„ÇäÂÄ§}
+•ﬁ•π•ø°º•ﬁ•Õ°º•∏•„§´§…§¶§´§Œbool√Õ 
+\end{DoxyReturn}
+\index{RTM::Manager@{RTM::Manager}!load\_\-module@{load\_\-module}}
+\index{load\_\-module@{load\_\-module}!RTM::Manager@{RTM::Manager}}
+\subsubsection[{load\_\-module}]{\setlength{\rightskip}{0pt plus 5cm}{\bf RTC::ReturnCode\_\-t} RTM::Manager::load\_\-module (in string {\em pathname}, \/  in string {\em initfunc})}\label{interfaceRTM_1_1Manager_a46feff9b41dcc474a7498a69ec19af9a}
+
+
+•‚•∏•Â°º•Î§Ú•Ì°º•…§π§Î 
+
+≈ˆ≥∫•ﬁ•Õ°º•∏•„§ÀªÿƒÍ§µ§Ï§ø•‚•∏•Â°º•Î§Ú•Ì°º•…§∑°¢ªÿƒÍ§µ§Ï§øΩÈ¥¸≤Ω ¥ÿøÙ§«ΩÈ¥¸≤Ω§Úπ‘§¶°£
+
+
+\begin{DoxyParams}{ÂºïÊï∞}
+\item[{\em pathname}]•‚•∏•Â°º•Î§ÿ§Œ•—•π \item[{\em initfunc}]•‚•∏•Â°º•Î§ŒΩÈ¥¸≤Ω¥ÿøÙ \end{DoxyParams}
+\begin{DoxyReturn}{Êàª„ÇäÂÄ§}
+•Í•ø°º•Û•≥°º•… 
+\end{DoxyReturn}
+\index{RTM::Manager@{RTM::Manager}!remove\_\-master\_\-manager@{remove\_\-master\_\-manager}}
+\index{remove\_\-master\_\-manager@{remove\_\-master\_\-manager}!RTM::Manager@{RTM::Manager}}
+\subsubsection[{remove\_\-master\_\-manager}]{\setlength{\rightskip}{0pt plus 5cm}{\bf RTC::ReturnCode\_\-t} RTM::Manager::remove\_\-master\_\-manager (in {\bf Manager} {\em mgr})}\label{interfaceRTM_1_1Manager_a1e842aed3d5e908b9ea6551acf78bbe9}
+
+
+•ﬁ•π•ø°º•ﬁ•Õ°º•∏•„§Œ∫ÔΩ¸ 
+
+§≥§Œ•ﬁ•Õ°º•∏•„§¨ ›ª˝§π§Î•ﬁ•π•ø§Œ§¶§¡°¢ªÿƒÍ§µ§Ï§ø§‚§Œ§Ú∫ÔΩ¸§π§Î°£
+
+
+\begin{DoxyParams}{ÂºïÊï∞}
+\item[{\em mgr}]•ﬁ•π•ø°º•ﬁ•Õ°º•∏•„ \end{DoxyParams}
+\begin{DoxyReturn}{Êàª„ÇäÂÄ§}
+ReturnCode\_\-t 
+\end{DoxyReturn}
+\index{RTM::Manager@{RTM::Manager}!remove\_\-slave\_\-manager@{remove\_\-slave\_\-manager}}
+\index{remove\_\-slave\_\-manager@{remove\_\-slave\_\-manager}!RTM::Manager@{RTM::Manager}}
+\subsubsection[{remove\_\-slave\_\-manager}]{\setlength{\rightskip}{0pt plus 5cm}{\bf RTC::ReturnCode\_\-t} RTM::Manager::remove\_\-slave\_\-manager (in {\bf Manager} {\em mgr})}\label{interfaceRTM_1_1Manager_ad984d2fb3ea504dfbf8313d71098468a}
+
+
+•π•Ï°º•÷•ﬁ•Õ°º•∏•„§Œ∫ÔΩ¸ 
+
+§≥§Œ•ﬁ•Õ°º•∏•„§¨ ›ª˝§π§Î•ﬁ•π•ø§Œ§¶§¡°¢ªÿƒÍ§µ§Ï§ø§‚§Œ§Ú∫ÔΩ¸§π§Î°£
+
+
+\begin{DoxyParams}{ÂºïÊï∞}
+\item[{\em mgr}]•π•Ï°º•÷•ﬁ•Õ°º•∏•„ \end{DoxyParams}
+\begin{DoxyReturn}{Êàª„ÇäÂÄ§}
+ReturnCode\_\-t 
+\end{DoxyReturn}
+\index{RTM::Manager@{RTM::Manager}!restart@{restart}}
+\index{restart@{restart}!RTM::Manager@{RTM::Manager}}
+\subsubsection[{restart}]{\setlength{\rightskip}{0pt plus 5cm}{\bf RTC::ReturnCode\_\-t} RTM::Manager::restart ()}\label{interfaceRTM_1_1Manager_a886c97532b313bc30986c95ca1ff7cdf}
+\index{RTM::Manager@{RTM::Manager}!set\_\-configuration@{set\_\-configuration}}
+\index{set\_\-configuration@{set\_\-configuration}!RTM::Manager@{RTM::Manager}}
+\subsubsection[{set\_\-configuration}]{\setlength{\rightskip}{0pt plus 5cm}{\bf RTC::ReturnCode\_\-t} RTM::Manager::set\_\-configuration (in string {\em name}, \/  in string {\em value})}\label{interfaceRTM_1_1Manager_a8acd5729f68ca75ddfc38a1f8422a550}
+
+
+•ﬁ•Õ°º•∏•„§Œ•≥•Û•’•£•Æ•Â•Ï°º•∑•Á•Û§Ú¿ﬂƒÍ§π§Î 
+
+∏Ω∫ﬂ≈ˆ≥∫•ﬁ•Õ°º•∏•„§Œ•≥•Û•’•£•Æ•Â•Ï°º•∑•Á•Û§Ú¿ﬂƒÍ§π§Î°£
+
+
+\begin{DoxyParams}{ÂºïÊï∞}
+\item[{\em name}]•ª•√•»§π§Î•≥•Û•’•£•Æ•Â•Ï°º•∑•Á•Û§Œ•≠°ºÃæ \item[{\em value}]•ª•√•»§π§Î•≥•Û•’•£•Æ•Â•Ï°º•∑•Á•Û§Œ√Õ \end{DoxyParams}
+\begin{DoxyReturn}{Êàª„ÇäÂÄ§}
+•Í•ø°º•Û•≥°º•… 
+\end{DoxyReturn}
+\index{RTM::Manager@{RTM::Manager}!shutdown@{shutdown}}
+\index{shutdown@{shutdown}!RTM::Manager@{RTM::Manager}}
+\subsubsection[{shutdown}]{\setlength{\rightskip}{0pt plus 5cm}{\bf RTC::ReturnCode\_\-t} RTM::Manager::shutdown ()}\label{interfaceRTM_1_1Manager_a75461238281c9a84dedd1e57a07d27fb}
+\index{RTM::Manager@{RTM::Manager}!unload\_\-module@{unload\_\-module}}
+\index{unload\_\-module@{unload\_\-module}!RTM::Manager@{RTM::Manager}}
+\subsubsection[{unload\_\-module}]{\setlength{\rightskip}{0pt plus 5cm}{\bf RTC::ReturnCode\_\-t} RTM::Manager::unload\_\-module (in string {\em pathname})}\label{interfaceRTM_1_1Manager_ac780ecdb7260936b2b800e97edecd42c}
+
+
+•‚•∏•Â°º•Î§Ú•¢•Û•Ì°º•…§π§Î 
+
+≈ˆ≥∫•ﬁ•Õ°º•∏•„§ÀªÿƒÍ§µ§Ï§ø•‚•∏•Â°º•Î§Ú•¢•Û•Ì°º•…§π§Î°£
+
+
+\begin{DoxyParams}{ÂºïÊï∞}
+\item[{\em pathname}]•‚•∏•Â°º•Î§ÿ§Œ•—•π \end{DoxyParams}
+\begin{DoxyReturn}{Êàª„ÇäÂÄ§}
+•Í•ø°º•Û•≥°º•… 
+\end{DoxyReturn}
+
+
+„Åì„ÅÆ„Ç§„É≥„Çø„Éï„Çß„Éº„Çπ„ÅÆË™¨Êòé„ÅØÊ¨°„ÅÆ„Éï„Ç°„Ç§„É´„Åã„ÇâÁîüÊàê„Åï„Çå„Åæ„Åó„Åü:\begin{DoxyCompactItemize}
+\item 
+{\bf Manager.idl}\end{DoxyCompactItemize}

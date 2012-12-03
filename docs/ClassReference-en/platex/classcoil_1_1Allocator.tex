@@ -1,0 +1,100 @@
+\section{coil::Allocator Class Reference}
+\label{classcoil_1_1Allocator}\index{coil::Allocator@{coil::Allocator}}
+
+
+\doxyref{Allocator}{p.}{classcoil_1_1Allocator} class.  
+
+
+
+
+{\ttfamily \#include $<$Allocator.h$>$}
+
+Inheritance diagram for coil::Allocator:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2cm]{classcoil_1_1Allocator}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual {\bf $\sim$Allocator} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \item\end{DoxyCompactList}\item 
+virtual void $\ast$ {\bf New} (size\_\-t t)  throw (std::bad\_\-alloc)
+\begin{DoxyCompactList}\small\item\em Create of memory allocation. \item\end{DoxyCompactList}\item 
+virtual void {\bf Delete} (void $\ast$p)  throw ()
+\begin{DoxyCompactList}\small\item\em Delete of memory allocation. \item\end{DoxyCompactList}\item 
+virtual void $\ast$ {\bf NewArray} (size\_\-t t)  throw (std::bad\_\-alloc)
+\begin{DoxyCompactList}\small\item\em Create of array memory allocation. \item\end{DoxyCompactList}\item 
+virtual void {\bf DeleteArray} (void $\ast$p)  throw ()
+\begin{DoxyCompactList}\small\item\em Delete of array memory allocation. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\doxyref{Allocator}{p.}{classcoil_1_1Allocator} class. 
+
+\subsection{Constructor \& Destructor Documentation}
+\index{coil::Allocator@{coil::Allocator}!$\sim$Allocator@{$\sim$Allocator}}
+\index{$\sim$Allocator@{$\sim$Allocator}!coil::Allocator@{coil::Allocator}}
+\subsubsection[{$\sim$Allocator}]{\setlength{\rightskip}{0pt plus 5cm}virtual coil::Allocator::$\sim$Allocator ()\hspace{0.3cm}{\ttfamily  [inline, virtual]}}\label{classcoil_1_1Allocator_a4ddf0d97ba85758bc3b23227a8dd9cb6}
+
+
+Destructor. 
+
+Destructor 
+
+\subsection{Member Function Documentation}
+\index{coil::Allocator@{coil::Allocator}!Delete@{Delete}}
+\index{Delete@{Delete}!coil::Allocator@{coil::Allocator}}
+\subsubsection[{Delete}]{\setlength{\rightskip}{0pt plus 5cm}virtual void coil::Allocator::Delete (void $\ast$ {\em p})  throw ()\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classcoil_1_1Allocator_a75e74a4664cbafc49bdc9e2ed4d2d8a8}
+
+
+Delete of memory allocation. 
+
+Delete of memory allocation.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em p}]Pointer to a memory allocation. \end{DoxyParams}
+\index{coil::Allocator@{coil::Allocator}!DeleteArray@{DeleteArray}}
+\index{DeleteArray@{DeleteArray}!coil::Allocator@{coil::Allocator}}
+\subsubsection[{DeleteArray}]{\setlength{\rightskip}{0pt plus 5cm}virtual void coil::Allocator::DeleteArray (void $\ast$ {\em p})  throw ()\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classcoil_1_1Allocator_ad3239ab9cf554cfe16e93be8109d83bc}
+
+
+Delete of array memory allocation. 
+
+Delete of array memory allocation.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em p}]Pointer to a memory allocation. \end{DoxyParams}
+\index{coil::Allocator@{coil::Allocator}!New@{New}}
+\index{New@{New}!coil::Allocator@{coil::Allocator}}
+\subsubsection[{New}]{\setlength{\rightskip}{0pt plus 5cm}virtual void$\ast$ coil::Allocator::New (size\_\-t {\em t})  throw (std::bad\_\-alloc)\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classcoil_1_1Allocator_a5f57ccb211ac241c2eb9845865eedfaf}
+
+
+Create of memory allocation. 
+
+Create of memory allocation.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em t}]Allocation size.\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Pointer to a memory allocation. 
+\end{DoxyReturn}
+\index{coil::Allocator@{coil::Allocator}!NewArray@{NewArray}}
+\index{NewArray@{NewArray}!coil::Allocator@{coil::Allocator}}
+\subsubsection[{NewArray}]{\setlength{\rightskip}{0pt plus 5cm}virtual void$\ast$ coil::Allocator::NewArray (size\_\-t {\em t})  throw (std::bad\_\-alloc)\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classcoil_1_1Allocator_aa614febe55894d46ce0c319418d4cc04}
+
+
+Create of array memory allocation. 
+
+Create of array memory allocation.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em t}]Allocation size.\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Pointer to a memory allocation. 
+\end{DoxyReturn}

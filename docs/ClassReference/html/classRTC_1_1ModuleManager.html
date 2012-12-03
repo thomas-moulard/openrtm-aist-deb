@@ -1,0 +1,1000 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<title>OpenRTM: クラス RTC::ModuleManager</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<!-- 作成： Doxygen 1.6.3 -->
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="index.html"><span>メインページ</span></a></li>
+      <li><a href="namespaces.html"><span>ネームスペース</span></a></li>
+      <li class="current"><a href="annotated.html"><span>クラス</span></a></li>
+      <li><a href="files.html"><span>ファイル</span></a></li>
+    </ul>
+  </div>
+  <div class="tabs">
+    <ul>
+      <li><a href="annotated.html"><span>構成</span></a></li>
+      <li><a href="hierarchy.html"><span>クラス階層</span></a></li>
+      <li><a href="functions.html"><span>構成メンバ</span></a></li>
+    </ul>
+  </div>
+  <div class="navpath"><a class="el" href="namespaceRTC.html">RTC</a>::<a class="el" href="classRTC_1_1ModuleManager.html">ModuleManager</a>
+  </div>
+</div>
+<div class="contents">
+<h1>クラス RTC::ModuleManager</h1><!-- doxytag: class="RTC::ModuleManager" -->
+<p>モジュールマネージャクラス  
+<a href="#_details">[詳細]</a></p>
+
+<p><code>#include &lt;<a class="el" href="ModuleManager_8h_source.html">ModuleManager.h</a>&gt;</code></p>
+
+<p><a href="classRTC_1_1ModuleManager-members.html">すべてのメンバ一覧</a></p>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr><td colspan="2"><h2>構成</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">struct &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structRTC_1_1ModuleManager_1_1DLLEntity.html">DLLEntity</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">DLL管理用構造体.  <a href="structRTC_1_1ModuleManager_1_1DLLEntity.html#_details">[詳細]</a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">class &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1ModuleManager_1_1DllPred.html">DllPred</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">ロード済みモジュールリスト  <a href="classRTC_1_1ModuleManager_1_1DllPred.html#_details">[詳細]</a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">struct &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structRTC_1_1ModuleManager_1_1Error.html">Error</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">ファイル・オープン失敗例外処理用構造体  <a href="structRTC_1_1ModuleManager_1_1Error.html#_details">[詳細]</a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">struct &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structRTC_1_1ModuleManager_1_1FileNotFound.html">FileNotFound</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">指定ファイル不明例外処理用構造体  <a href="structRTC_1_1ModuleManager_1_1FileNotFound.html#_details">[詳細]</a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">struct &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structRTC_1_1ModuleManager_1_1InvalidArguments.html">InvalidArguments</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">指定引数不正時例外処理用構造体  <a href="structRTC_1_1ModuleManager_1_1InvalidArguments.html#_details">[詳細]</a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">struct &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structRTC_1_1ModuleManager_1_1InvalidOperation.html">InvalidOperation</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">指定操作不正時例外処理用構造体  <a href="structRTC_1_1ModuleManager_1_1InvalidOperation.html#_details">[詳細]</a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">struct &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structRTC_1_1ModuleManager_1_1ModuleNotFound.html">ModuleNotFound</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">指定モジュール不明例外処理用構造体  <a href="structRTC_1_1ModuleManager_1_1ModuleNotFound.html#_details">[詳細]</a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">struct &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structRTC_1_1ModuleManager_1_1NotAllowedOperation.html">NotAllowedOperation</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">指定操作禁止時例外処理用構造体  <a href="structRTC_1_1ModuleManager_1_1NotAllowedOperation.html#_details">[詳細]</a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">struct &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structRTC_1_1ModuleManager_1_1NotFound.html">NotFound</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">未実装部，指定モジュール不明例外処理用構造体  <a href="structRTC_1_1ModuleManager_1_1NotFound.html#_details">[詳細]</a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">struct &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structRTC_1_1ModuleManager_1_1SymbolNotFound.html">SymbolNotFound</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">指定シンボル不明例外処理用構造体  <a href="structRTC_1_1ModuleManager_1_1SymbolNotFound.html#_details">[詳細]</a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">class &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1ModuleManager_1_1UnloadPred.html">UnloadPred</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">モジュールアンロードファンクタ  <a href="classRTC_1_1ModuleManager_1_1UnloadPred.html#_details">[詳細]</a><br/></td></tr>
+<tr><td colspan="2"><h2>Public 型</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">typedef void(*&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1ModuleManager.html#aa5e548456f074df07906340f50cce9e7">ModuleInitFunc</a> )(<a class="el" href="classRTC_1_1Manager.html">Manager</a> *)</td></tr>
+<tr><td colspan="2"><h2>Public メソッド</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1ModuleManager.html#a51c7217718f483676b134687b5c5c2e6">ModuleManager</a> (<a class="el" href="classcoil_1_1Properties.html">coil::Properties</a> &amp;prop)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">コンストラクタ  <a href="#a51c7217718f483676b134687b5c5c2e6"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1ModuleManager.html#a8ed480b9713d43b69e4b673bdb8413a8">~ModuleManager</a> (void)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">デストラクタ  <a href="#a8ed480b9713d43b69e4b673bdb8413a8"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">std::string&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1ModuleManager.html#a0f2d840f92530ff78896bcf254696cc2">load</a> (const std::string &amp;file_name)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">モジュールのロード  <a href="#a0f2d840f92530ff78896bcf254696cc2"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">std::string&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1ModuleManager.html#a5ebaefa05371102e4b71d036d6687393">load</a> (const std::string &amp;file_name, const std::string &amp;init_func)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">モジュールのロード、初期化  <a href="#a5ebaefa05371102e4b71d036d6687393"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1ModuleManager.html#a2060494f5105da430a649b66bc2fafcf">unload</a> (const std::string &amp;file_name)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">モジュールのアンロード  <a href="#a2060494f5105da430a649b66bc2fafcf"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1ModuleManager.html#ab2c2c447932d76c261b075799d9b4cb5">unloadAll</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">全モジュールのアンロード  <a href="#ab2c2c447932d76c261b075799d9b4cb5"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1ModuleManager.html#a645591b66f8ddfcf8fd4bea4ee04b8f2">symbol</a> (const std::string &amp;file_name, const std::string &amp;func_name)  throw (ModuleNotFound, SymbolNotFound)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">モジュールのシンボルの参照  <a href="#a645591b66f8ddfcf8fd4bea4ee04b8f2"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1ModuleManager.html#ab6871cbf2121c9d026a5fa5ab2ec2ed9">setLoadpath</a> (const std::vector&lt; std::string &gt; &amp;load_path)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">モジュールロードパスを指定する  <a href="#ab6871cbf2121c9d026a5fa5ab2ec2ed9"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::string &gt;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1ModuleManager.html#a0dddd2c6436b6c9014f2c39c0a431a9a">getLoadPath</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">モジュールロードパスを取得する  <a href="#a0dddd2c6436b6c9014f2c39c0a431a9a"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1ModuleManager.html#a0efdbf53e0becea909543df403608c70">addLoadpath</a> (const std::vector&lt; std::string &gt; &amp;load_path)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">モジュールロードパスを追加する  <a href="#a0efdbf53e0becea909543df403608c70"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="classcoil_1_1Properties.html">coil::Properties</a> &gt;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1ModuleManager.html#af10aa20eaefa88ed92313e80b5ba101d">getLoadedModules</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">ロード済みのモジュールリストを取得する  <a href="#af10aa20eaefa88ed92313e80b5ba101d"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="classcoil_1_1Properties.html">coil::Properties</a> &gt;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1ModuleManager.html#aa7c345afaff2313e061d6d3000766985">getLoadableModules</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">ロード可能モジュールリストを取得する  <a href="#aa7c345afaff2313e061d6d3000766985"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1ModuleManager.html#a521ccf8d7a994b0e775fbea9bc08fa77">allowAbsolutePath</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">モジュールの絶対パス指定許可  <a href="#a521ccf8d7a994b0e775fbea9bc08fa77"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1ModuleManager.html#a16a6945a5a535660c03fad17895572b2">disallowAbsolutePath</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">モジュールの絶対パス指定禁止  <a href="#a16a6945a5a535660c03fad17895572b2"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1ModuleManager.html#aae4da48e6813c672613a6a56ab5f46fc">allowModuleDownload</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">モジュールのURL指定許可  <a href="#aae4da48e6813c672613a6a56ab5f46fc"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1ModuleManager.html#a7bd86d3dfa7dbe423e6ade7eeb9abef3">disallowModuleDownload</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">モジュールのURL指定禁止  <a href="#a7bd86d3dfa7dbe423e6ade7eeb9abef3"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">std::string&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1ModuleManager.html#a8b377a2f2cb867d42bd24398c3b56f46">findFile</a> (const std::string &amp;fname, const std::vector&lt; std::string &gt; &amp;load_path)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">LoadPath からのファイルの検索.  <a href="#a8b377a2f2cb867d42bd24398c3b56f46"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1ModuleManager.html#ae03069ed62ebf893761407fc4055c2a6">fileExist</a> (const std::string &amp;filename)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">ファイルが存在するかどうかのチェック  <a href="#ae03069ed62ebf893761407fc4055c2a6"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">std::string&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1ModuleManager.html#a9d4c81411dcefb094b917b87fdfbfa84">getInitFuncName</a> (const std::string &amp;file_path)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">初期化関数シンボルを生成する  <a href="#a9d4c81411dcefb094b917b87fdfbfa84"></a><br/></td></tr>
+<tr><td colspan="2"><h2>Protected 型</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">typedef std::vector&lt; std::string &gt;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1ModuleManager.html#a8c80c86dad3290da6fb4b129ac747912">StringVector</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">typedef StringVector::iterator&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1ModuleManager.html#adc3036fbdfd38ec02e653b152752ae36">StringVectorItr</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">typedef <br class="typebreak"/>
+StringVector::const_iterator&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1ModuleManager.html#a9ea1b817f70e2bf44c167189e02684ab">StringVectorConstItr</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">typedef std::vector&lt; <a class="el" href="structRTC_1_1ModuleManager_1_1DLLEntity.html">DLLEntity</a> &gt;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1ModuleManager.html#a4bf6eb35c8dbcddbbe69f33a13eae2e8">DllMap</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">typedef DllMap::iterator&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1ModuleManager.html#a0e1ed0036b9f54938a6ee37e63bb605a">DllMapItr</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">typedef DllMap::const_iterator&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1ModuleManager.html#a52c43ae4ff43e97ef6a45cce2de863b2">DllMapConstItr</a></td></tr>
+<tr><td colspan="2"><h2>Protected メソッド</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1ModuleManager.html#a99bb2f2703d2682555ff7daf3e7143cf">removeInvalidModules</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">無効なモジュールプロファイルを削除する  <a href="#a99bb2f2703d2682555ff7daf3e7143cf"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1ModuleManager.html#ad07e7617a2b5e36e8cb23359876a3e0f">getModuleList</a> (const std::string &amp;lang, <a class="el" href="namespacecoil.html#ac44b80f207f9471f2cc10a0e4202f9ea">coil::vstring</a> &amp;modules)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">指定言語におけるロードパス上のローダブルなファイルリストを返す  <a href="#ad07e7617a2b5e36e8cb23359876a3e0f"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1ModuleManager.html#a43db88053dcde41668134874ca96181e">addNewFile</a> (const std::string &amp;fpath, <a class="el" href="namespacecoil.html#ac44b80f207f9471f2cc10a0e4202f9ea">coil::vstring</a> &amp;modules)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">キャッシュに無いパスだけmodulesに追加する  <a href="#a43db88053dcde41668134874ca96181e"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1ModuleManager.html#a6725527644fe798d6078eb005ef337c3">getModuleProfiles</a> (const std::string &amp;lang, const <a class="el" href="namespacecoil.html#ac44b80f207f9471f2cc10a0e4202f9ea">coil::vstring</a> &amp;modules, vProperties &amp;modprops)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">指定言語、ファイルリストからモジュールのプロパティを返す  <a href="#a6725527644fe798d6078eb005ef337c3"></a><br/></td></tr>
+<tr><td colspan="2"><h2>Protected 変数</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classRTC_1_1Logger.html">Logger</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1ModuleManager.html#afce28674a05955b065052804090a8ce6">rtclog</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">ロガーストリーム  <a href="#afce28674a05955b065052804090a8ce6"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classcoil_1_1Properties.html">coil::Properties</a> &amp;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1ModuleManager.html#ab8ff4e8e442d9d96f5e9988712b85af1">m_properties</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Module <a class="el" href="classRTC_1_1Manager.html" title="Manager クラス.">Manager</a> プロパティ.  <a href="#ab8ff4e8e442d9d96f5e9988712b85af1"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classObjectManager.html">ObjectManager</a>&lt; const char <br class="typebreak"/>
+*, <a class="el" href="structRTC_1_1ModuleManager_1_1DLLEntity.html">DLLEntity</a>, <a class="el" href="classRTC_1_1ModuleManager_1_1DllPred.html">DllPred</a> &gt;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1ModuleManager.html#a3e30cca331b5146ad8ac857a9fc556d4">m_modules</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">ロード済みモジュールリスト  <a href="#a3e30cca331b5146ad8ac857a9fc556d4"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classRTC_1_1ModuleManager.html#a8c80c86dad3290da6fb4b129ac747912">StringVector</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1ModuleManager.html#a06d98081e3e75dbb1bab992d8c619b17">m_loadPath</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">モジュール・ロード・パス・リスト  <a href="#a06d98081e3e75dbb1bab992d8c619b17"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classRTC_1_1ModuleManager.html#a8c80c86dad3290da6fb4b129ac747912">StringVector</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1ModuleManager.html#ae76d0bb81f805eed81c2797d61dd9ed8">m_configPath</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">コンフィギュレーション・パス・リスト  <a href="#ae76d0bb81f805eed81c2797d61dd9ed8"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1ModuleManager.html#ad5f3be84f6dc21b34fb1781da3224879">m_downloadAllowed</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">モジュールURL指定許可フラグ  <a href="#ad5f3be84f6dc21b34fb1781da3224879"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1ModuleManager.html#a9e7a552c49cefcaf9d7ade14812b73ea">m_absoluteAllowed</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">モジュール絶対パス指定許可フラグ  <a href="#a9e7a552c49cefcaf9d7ade14812b73ea"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">std::string&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1ModuleManager.html#ae6272d2cd177c3980a9d323416b58902">m_initFuncSuffix</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">初期実行関数サフィックス  <a href="#ae6272d2cd177c3980a9d323416b58902"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">std::string&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1ModuleManager.html#a09359fd1843333b7301ea6a5b42aab02">m_initFuncPrefix</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">初期実行関数プリフィックス  <a href="#a09359fd1843333b7301ea6a5b42aab02"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">vProperties&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1ModuleManager.html#af683f9f9f2f9185a28fde8e2fe43bdec">m_modprofs</a></td></tr>
+</table>
+<hr/><a name="_details"></a><h2>説明</h2>
+<p>モジュールマネージャクラス </p>
+<p>モジュールのロード、アンロードなどを管理するクラス</p>
+<dl class="since"><dt><b>から:</b></dt><dd>0.4.0 </dd></dl>
+<hr/><h2>型定義</h2>
+<a class="anchor" id="a4bf6eb35c8dbcddbbe69f33a13eae2e8"></a><!-- doxytag: member="RTC::ModuleManager::DllMap" ref="a4bf6eb35c8dbcddbbe69f33a13eae2e8" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef std::vector&lt;<a class="el" href="structRTC_1_1ModuleManager_1_1DLLEntity.html">DLLEntity</a>&gt; <a class="el" href="classRTC_1_1ModuleManager.html#a4bf6eb35c8dbcddbbe69f33a13eae2e8">RTC::ModuleManager::DllMap</a><code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a52c43ae4ff43e97ef6a45cce2de863b2"></a><!-- doxytag: member="RTC::ModuleManager::DllMapConstItr" ref="a52c43ae4ff43e97ef6a45cce2de863b2" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef DllMap::const_iterator <a class="el" href="classRTC_1_1ModuleManager.html#a52c43ae4ff43e97ef6a45cce2de863b2">RTC::ModuleManager::DllMapConstItr</a><code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a0e1ed0036b9f54938a6ee37e63bb605a"></a><!-- doxytag: member="RTC::ModuleManager::DllMapItr" ref="a0e1ed0036b9f54938a6ee37e63bb605a" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef DllMap::iterator <a class="el" href="classRTC_1_1ModuleManager.html#a0e1ed0036b9f54938a6ee37e63bb605a">RTC::ModuleManager::DllMapItr</a><code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="aa5e548456f074df07906340f50cce9e7"></a><!-- doxytag: member="RTC::ModuleManager::ModuleInitFunc" ref="aa5e548456f074df07906340f50cce9e7" args=")(Manager *)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef void(* <a class="el" href="classRTC_1_1ModuleManager.html#aa5e548456f074df07906340f50cce9e7">RTC::ModuleManager::ModuleInitFunc</a>)(<a class="el" href="classRTC_1_1Manager.html">Manager</a> *)</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a8c80c86dad3290da6fb4b129ac747912"></a><!-- doxytag: member="RTC::ModuleManager::StringVector" ref="a8c80c86dad3290da6fb4b129ac747912" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef std::vector&lt;std::string&gt; <a class="el" href="classRTC_1_1ModuleManager.html#a8c80c86dad3290da6fb4b129ac747912">RTC::ModuleManager::StringVector</a><code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a9ea1b817f70e2bf44c167189e02684ab"></a><!-- doxytag: member="RTC::ModuleManager::StringVectorConstItr" ref="a9ea1b817f70e2bf44c167189e02684ab" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef StringVector::const_iterator <a class="el" href="classRTC_1_1ModuleManager.html#a9ea1b817f70e2bf44c167189e02684ab">RTC::ModuleManager::StringVectorConstItr</a><code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="adc3036fbdfd38ec02e653b152752ae36"></a><!-- doxytag: member="RTC::ModuleManager::StringVectorItr" ref="adc3036fbdfd38ec02e653b152752ae36" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef StringVector::iterator <a class="el" href="classRTC_1_1ModuleManager.html#adc3036fbdfd38ec02e653b152752ae36">RTC::ModuleManager::StringVectorItr</a><code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<hr/><h2>コンストラクタとデストラクタ</h2>
+<a class="anchor" id="a51c7217718f483676b134687b5c5c2e6"></a><!-- doxytag: member="RTC::ModuleManager::ModuleManager" ref="a51c7217718f483676b134687b5c5c2e6" args="(coil::Properties &amp;prop)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">RTC::ModuleManager::ModuleManager </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classcoil_1_1Properties.html">coil::Properties</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>prop</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>コンストラクタ </p>
+<p>コンストラクタ。 設定された Property オブジェクト内の情報を基に初期化を実行する。</p>
+<dl><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>prop</em>&nbsp;</td><td>初期化用プロパティ </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a8ed480b9713d43b69e4b673bdb8413a8"></a><!-- doxytag: member="RTC::ModuleManager::~ModuleManager" ref="a8ed480b9713d43b69e4b673bdb8413a8" args="(void)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">RTC::ModuleManager::~ModuleManager </td>
+          <td>(</td>
+          <td class="paramtype">void&nbsp;</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>デストラクタ </p>
+
+</div>
+</div>
+<hr/><h2>関数</h2>
+<a class="anchor" id="a0efdbf53e0becea909543df403608c70"></a><!-- doxytag: member="RTC::ModuleManager::addLoadpath" ref="a0efdbf53e0becea909543df403608c70" args="(const std::vector&lt; std::string &gt; &amp;load_path)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void RTC::ModuleManager::addLoadpath </td>
+          <td>(</td>
+          <td class="paramtype">const std::vector&lt; std::string &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>load_path</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>モジュールロードパスを追加する </p>
+<p>指定されたパスリストを検索対象パスリストに追加する。</p>
+<dl class="return"><dt><b>戻り値:</b></dt><dd>load_path 追加モジュール検索対象パスリスト </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a43db88053dcde41668134874ca96181e"></a><!-- doxytag: member="RTC::ModuleManager::addNewFile" ref="a43db88053dcde41668134874ca96181e" args="(const std::string &amp;fpath, coil::vstring &amp;modules)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void RTC::ModuleManager::addNewFile </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&nbsp;</td>
+          <td class="paramname"> <em>fpath</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespacecoil.html#ac44b80f207f9471f2cc10a0e4202f9ea">coil::vstring</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>modules</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td><code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>キャッシュに無いパスだけmodulesに追加する </p>
+
+</div>
+</div>
+<a class="anchor" id="a521ccf8d7a994b0e775fbea9bc08fa77"></a><!-- doxytag: member="RTC::ModuleManager::allowAbsolutePath" ref="a521ccf8d7a994b0e775fbea9bc08fa77" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void RTC::ModuleManager::allowAbsolutePath </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>モジュールの絶対パス指定許可 </p>
+<p>ロード対象モジュールの絶対パス指定を許可するように設定する。 </p>
+
+<p>参照先 <a class="el" href="ModuleManager_8h_source.html#l00738">m_absoluteAllowed</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aae4da48e6813c672613a6a56ab5f46fc"></a><!-- doxytag: member="RTC::ModuleManager::allowModuleDownload" ref="aae4da48e6813c672613a6a56ab5f46fc" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void RTC::ModuleManager::allowModuleDownload </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>モジュールのURL指定許可 </p>
+<p>ロード対象モジュールのURL指定を許可する。 本設定が許可されている場合、モジュールをダウンロードしてロードすることが 許可される。 </p>
+
+<p>参照先 <a class="el" href="ModuleManager_8h_source.html#l00730">m_downloadAllowed</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a16a6945a5a535660c03fad17895572b2"></a><!-- doxytag: member="RTC::ModuleManager::disallowAbsolutePath" ref="a16a6945a5a535660c03fad17895572b2" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void RTC::ModuleManager::disallowAbsolutePath </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>モジュールの絶対パス指定禁止 </p>
+<p>ロード対象モジュールの絶対パス指定を禁止するように設定する。 </p>
+
+<p>参照先 <a class="el" href="ModuleManager_8h_source.html#l00738">m_absoluteAllowed</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a7bd86d3dfa7dbe423e6ade7eeb9abef3"></a><!-- doxytag: member="RTC::ModuleManager::disallowModuleDownload" ref="a7bd86d3dfa7dbe423e6ade7eeb9abef3" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void RTC::ModuleManager::disallowModuleDownload </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>モジュールのURL指定禁止 </p>
+<p>ロード対象モジュールのURL指定を禁止する。 </p>
+
+<p>参照先 <a class="el" href="ModuleManager_8h_source.html#l00730">m_downloadAllowed</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ae03069ed62ebf893761407fc4055c2a6"></a><!-- doxytag: member="RTC::ModuleManager::fileExist" ref="ae03069ed62ebf893761407fc4055c2a6" args="(const std::string &amp;filename)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool RTC::ModuleManager::fileExist </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&nbsp;</td>
+          <td class="paramname"> <em>filename</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>ファイルが存在するかどうかのチェック </p>
+<p>指定されたファイルが存在するか確認する。</p>
+<dl><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>filename</em>&nbsp;</td><td>存在確認対象ファイル名</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>戻り値:</b></dt><dd>ファイル存在確認結果(ファイルあり:true，なし:false) </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a8b377a2f2cb867d42bd24398c3b56f46"></a><!-- doxytag: member="RTC::ModuleManager::findFile" ref="a8b377a2f2cb867d42bd24398c3b56f46" args="(const std::string &amp;fname, const std::vector&lt; std::string &gt; &amp;load_path)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string RTC::ModuleManager::findFile </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&nbsp;</td>
+          <td class="paramname"> <em>fname</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::vector&lt; std::string &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>load_path</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>LoadPath からのファイルの検索. </p>
+<p>指定されたパス内に、指定されたファイルが存在するか確認する。</p>
+<dl><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>fname</em>&nbsp;</td><td>検索対象ファイル名 </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>load_path</em>&nbsp;</td><td>検索先パスリスト</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>戻り値:</b></dt><dd>検索されたファイル名 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a9d4c81411dcefb094b917b87fdfbfa84"></a><!-- doxytag: member="RTC::ModuleManager::getInitFuncName" ref="a9d4c81411dcefb094b917b87fdfbfa84" args="(const std::string &amp;file_path)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string RTC::ModuleManager::getInitFuncName </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&nbsp;</td>
+          <td class="paramname"> <em>file_path</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>初期化関数シンボルを生成する </p>
+<p>初期化関数の名称を組み立てる。</p>
+<dl><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>file_path</em>&nbsp;</td><td>初期化対象モジュール名称</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>戻り値:</b></dt><dd>初期化関数名称組み立て結果 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="aa7c345afaff2313e061d6d3000766985"></a><!-- doxytag: member="RTC::ModuleManager::getLoadableModules" ref="aa7c345afaff2313e061d6d3000766985" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;<a class="el" href="classcoil_1_1Properties.html">coil::Properties</a>&gt; RTC::ModuleManager::getLoadableModules </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>ロード可能モジュールリストを取得する </p>
+<p>ロード可能なモジュールのリストを取得する。 (未実装)</p>
+<dl class="return"><dt><b>戻り値:</b></dt><dd>ロード可能モジュールリスト </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="af10aa20eaefa88ed92313e80b5ba101d"></a><!-- doxytag: member="RTC::ModuleManager::getLoadedModules" ref="af10aa20eaefa88ed92313e80b5ba101d" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;<a class="el" href="classcoil_1_1Properties.html">coil::Properties</a>&gt; RTC::ModuleManager::getLoadedModules </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>ロード済みのモジュールリストを取得する </p>
+<p>既にロード済みのモジュールリストを取得する。</p>
+<dl class="return"><dt><b>戻り値:</b></dt><dd>ロード済みモジュールリスト </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a0dddd2c6436b6c9014f2c39c0a431a9a"></a><!-- doxytag: member="RTC::ModuleManager::getLoadPath" ref="a0dddd2c6436b6c9014f2c39c0a431a9a" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;std::string&gt; RTC::ModuleManager::getLoadPath </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>モジュールロードパスを取得する </p>
+<p>設定されているモジュールを検索対象パスリストを取得する。</p>
+<dl class="return"><dt><b>戻り値:</b></dt><dd>load_path モジュール検索対象パスリスト </dd></dl>
+
+<p>参照先 <a class="el" href="ModuleManager_8h_source.html#l00714">m_loadPath</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ad07e7617a2b5e36e8cb23359876a3e0f"></a><!-- doxytag: member="RTC::ModuleManager::getModuleList" ref="ad07e7617a2b5e36e8cb23359876a3e0f" args="(const std::string &amp;lang, coil::vstring &amp;modules)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void RTC::ModuleManager::getModuleList </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&nbsp;</td>
+          <td class="paramname"> <em>lang</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespacecoil.html#ac44b80f207f9471f2cc10a0e4202f9ea">coil::vstring</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>modules</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td><code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>指定言語におけるロードパス上のローダブルなファイルリストを返す </p>
+
+</div>
+</div>
+<a class="anchor" id="a6725527644fe798d6078eb005ef337c3"></a><!-- doxytag: member="RTC::ModuleManager::getModuleProfiles" ref="a6725527644fe798d6078eb005ef337c3" args="(const std::string &amp;lang, const coil::vstring &amp;modules, vProperties &amp;modprops)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void RTC::ModuleManager::getModuleProfiles </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&nbsp;</td>
+          <td class="paramname"> <em>lang</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="namespacecoil.html#ac44b80f207f9471f2cc10a0e4202f9ea">coil::vstring</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>modules</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">vProperties &amp;&nbsp;</td>
+          <td class="paramname"> <em>modprops</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td><code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>指定言語、ファイルリストからモジュールのプロパティを返す </p>
+
+</div>
+</div>
+<a class="anchor" id="a5ebaefa05371102e4b71d036d6687393"></a><!-- doxytag: member="RTC::ModuleManager::load" ref="a5ebaefa05371102e4b71d036d6687393" args="(const std::string &amp;file_name, const std::string &amp;init_func)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string RTC::ModuleManager::load </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&nbsp;</td>
+          <td class="paramname"> <em>file_name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&nbsp;</td>
+          <td class="paramname"> <em>init_func</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>モジュールのロード、初期化 </p>
+<p>指定したファイルをDLL もしくは共有ライブラリとしてロードするとともに、 指定した初期化用オペレーションを実行する。</p>
+<dl><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>file_name</em>&nbsp;</td><td>ロード対象モジュール名 </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>init_func</em>&nbsp;</td><td>初期化処理用オペレーション</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>戻り値:</b></dt><dd>指定したロード対象モジュール名 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a0f2d840f92530ff78896bcf254696cc2"></a><!-- doxytag: member="RTC::ModuleManager::load" ref="a0f2d840f92530ff78896bcf254696cc2" args="(const std::string &amp;file_name)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string RTC::ModuleManager::load </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&nbsp;</td>
+          <td class="paramname"> <em>file_name</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>モジュールのロード </p>
+<p>file_name をDLL もしくは共有ライブラリとしてロードする。 file_name は既定のロードパス (manager.modules.load_path) に対する 相対パスで指定する。</p>
+<p>Property manager.modules.abs_path_allowed が yes の場合、 ロードするモジュールを絶対パスで指定することができる。<br/>
+ Property manager.modules.download_allowed が yes の場合、 ロードするモジュールをURLで指定することができる。</p>
+<p>file_name は絶対パスで指定することができる。 manager.modules.abs_path_allowd が no の場合、 既定のモジュールロードパスから、file_name のモジュールを探しロードする。</p>
+<dl><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>file_name</em>&nbsp;</td><td>ロード対象モジュール名</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>戻り値:</b></dt><dd>指定したロード対象モジュール名 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a99bb2f2703d2682555ff7daf3e7143cf"></a><!-- doxytag: member="RTC::ModuleManager::removeInvalidModules" ref="a99bb2f2703d2682555ff7daf3e7143cf" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void RTC::ModuleManager::removeInvalidModules </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>無効なモジュールプロファイルを削除する </p>
+
+</div>
+</div>
+<a class="anchor" id="ab6871cbf2121c9d026a5fa5ab2ec2ed9"></a><!-- doxytag: member="RTC::ModuleManager::setLoadpath" ref="ab6871cbf2121c9d026a5fa5ab2ec2ed9" args="(const std::vector&lt; std::string &gt; &amp;load_path)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void RTC::ModuleManager::setLoadpath </td>
+          <td>(</td>
+          <td class="paramtype">const std::vector&lt; std::string &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>load_path</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>モジュールロードパスを指定する </p>
+<p>モジュールロード時に対象モジュールを検索するパスを指定する。</p>
+<dl><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>load_path</em>&nbsp;</td><td>モジュール検索対象パスリスト </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a645591b66f8ddfcf8fd4bea4ee04b8f2"></a><!-- doxytag: member="RTC::ModuleManager::symbol" ref="a645591b66f8ddfcf8fd4bea4ee04b8f2" args="(const std::string &amp;file_name, const std::string &amp;func_name)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void* RTC::ModuleManager::symbol </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&nbsp;</td>
+          <td class="paramname"> <em>file_name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&nbsp;</td>
+          <td class="paramname"> <em>func_name</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td>  throw (<a class="el" href="structRTC_1_1ModuleManager_1_1ModuleNotFound.html">ModuleNotFound</a>, <a class="el" href="structRTC_1_1ModuleManager_1_1SymbolNotFound.html">SymbolNotFound</a>)</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>モジュールのシンボルの参照 </p>
+
+</div>
+</div>
+<a class="anchor" id="a2060494f5105da430a649b66bc2fafcf"></a><!-- doxytag: member="RTC::ModuleManager::unload" ref="a2060494f5105da430a649b66bc2fafcf" args="(const std::string &amp;file_name)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void RTC::ModuleManager::unload </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&nbsp;</td>
+          <td class="paramname"> <em>file_name</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>モジュールのアンロード </p>
+<p>指定したロード済みモジュールをクローズし、アンロードする。</p>
+<dl><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>file_name</em>&nbsp;</td><td>アンロード対象モジュール名 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="ab2c2c447932d76c261b075799d9b4cb5"></a><!-- doxytag: member="RTC::ModuleManager::unloadAll" ref="ab2c2c447932d76c261b075799d9b4cb5" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void RTC::ModuleManager::unloadAll </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>全モジュールのアンロード </p>
+<p>全てのロード済みモジュールをアンロードする。 </p>
+
+</div>
+</div>
+<hr/><h2>変数</h2>
+<a class="anchor" id="a9e7a552c49cefcaf9d7ade14812b73ea"></a><!-- doxytag: member="RTC::ModuleManager::m_absoluteAllowed" ref="a9e7a552c49cefcaf9d7ade14812b73ea" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="classRTC_1_1ModuleManager.html#a9e7a552c49cefcaf9d7ade14812b73ea">RTC::ModuleManager::m_absoluteAllowed</a><code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>モジュール絶対パス指定許可フラグ </p>
+
+<p>参照元 <a class="el" href="ModuleManager_8h_source.html#l00467">allowAbsolutePath()</a>, と <a class="el" href="ModuleManager_8h_source.html#l00485">disallowAbsolutePath()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ae76d0bb81f805eed81c2797d61dd9ed8"></a><!-- doxytag: member="RTC::ModuleManager::m_configPath" ref="ae76d0bb81f805eed81c2797d61dd9ed8" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classRTC_1_1ModuleManager.html#a8c80c86dad3290da6fb4b129ac747912">StringVector</a> <a class="el" href="classRTC_1_1ModuleManager.html#ae76d0bb81f805eed81c2797d61dd9ed8">RTC::ModuleManager::m_configPath</a><code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>コンフィギュレーション・パス・リスト </p>
+
+</div>
+</div>
+<a class="anchor" id="ad5f3be84f6dc21b34fb1781da3224879"></a><!-- doxytag: member="RTC::ModuleManager::m_downloadAllowed" ref="ad5f3be84f6dc21b34fb1781da3224879" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="classRTC_1_1ModuleManager.html#ad5f3be84f6dc21b34fb1781da3224879">RTC::ModuleManager::m_downloadAllowed</a><code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>モジュールURL指定許可フラグ </p>
+
+<p>参照元 <a class="el" href="ModuleManager_8h_source.html#l00507">allowModuleDownload()</a>, と <a class="el" href="ModuleManager_8h_source.html#l00525">disallowModuleDownload()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a09359fd1843333b7301ea6a5b42aab02"></a><!-- doxytag: member="RTC::ModuleManager::m_initFuncPrefix" ref="a09359fd1843333b7301ea6a5b42aab02" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string <a class="el" href="classRTC_1_1ModuleManager.html#a09359fd1843333b7301ea6a5b42aab02">RTC::ModuleManager::m_initFuncPrefix</a><code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>初期実行関数プリフィックス </p>
+
+</div>
+</div>
+<a class="anchor" id="ae6272d2cd177c3980a9d323416b58902"></a><!-- doxytag: member="RTC::ModuleManager::m_initFuncSuffix" ref="ae6272d2cd177c3980a9d323416b58902" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string <a class="el" href="classRTC_1_1ModuleManager.html#ae6272d2cd177c3980a9d323416b58902">RTC::ModuleManager::m_initFuncSuffix</a><code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>初期実行関数サフィックス </p>
+
+</div>
+</div>
+<a class="anchor" id="a06d98081e3e75dbb1bab992d8c619b17"></a><!-- doxytag: member="RTC::ModuleManager::m_loadPath" ref="a06d98081e3e75dbb1bab992d8c619b17" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classRTC_1_1ModuleManager.html#a8c80c86dad3290da6fb4b129ac747912">StringVector</a> <a class="el" href="classRTC_1_1ModuleManager.html#a06d98081e3e75dbb1bab992d8c619b17">RTC::ModuleManager::m_loadPath</a><code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>モジュール・ロード・パス・リスト </p>
+
+<p>参照元 <a class="el" href="ModuleManager_8h_source.html#l00391">getLoadPath()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="af683f9f9f2f9185a28fde8e2fe43bdec"></a><!-- doxytag: member="RTC::ModuleManager::m_modprofs" ref="af683f9f9f2f9185a28fde8e2fe43bdec" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">vProperties <a class="el" href="classRTC_1_1ModuleManager.html#af683f9f9f2f9185a28fde8e2fe43bdec">RTC::ModuleManager::m_modprofs</a><code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a3e30cca331b5146ad8ac857a9fc556d4"></a><!-- doxytag: member="RTC::ModuleManager::m_modules" ref="a3e30cca331b5146ad8ac857a9fc556d4" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classObjectManager.html">ObjectManager</a>&lt;const char*, <a class="el" href="structRTC_1_1ModuleManager_1_1DLLEntity.html">DLLEntity</a>, <a class="el" href="classRTC_1_1ModuleManager_1_1DllPred.html">DllPred</a>&gt; <a class="el" href="classRTC_1_1ModuleManager.html#a3e30cca331b5146ad8ac857a9fc556d4">RTC::ModuleManager::m_modules</a><code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>ロード済みモジュールリスト </p>
+
+</div>
+</div>
+<a class="anchor" id="ab8ff4e8e442d9d96f5e9988712b85af1"></a><!-- doxytag: member="RTC::ModuleManager::m_properties" ref="ab8ff4e8e442d9d96f5e9988712b85af1" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classcoil_1_1Properties.html">coil::Properties</a>&amp; <a class="el" href="classRTC_1_1ModuleManager.html#ab8ff4e8e442d9d96f5e9988712b85af1">RTC::ModuleManager::m_properties</a><code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Module <a class="el" href="classRTC_1_1Manager.html" title="Manager クラス.">Manager</a> プロパティ. </p>
+
+</div>
+</div>
+<a class="anchor" id="afce28674a05955b065052804090a8ce6"></a><!-- doxytag: member="RTC::ModuleManager::rtclog" ref="afce28674a05955b065052804090a8ce6" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classRTC_1_1Logger.html">Logger</a> <a class="el" href="classRTC_1_1ModuleManager.html#afce28674a05955b065052804090a8ce6">RTC::ModuleManager::rtclog</a><code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>ロガーストリーム </p>
+
+</div>
+</div>
+</div>
+<hr class="footer"/><address style="text-align: right;"><small>OpenRTMに対してThu May 24 23:25:19 2012に生成されました。&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.6.3 </small></address>
+</body>
+</html>

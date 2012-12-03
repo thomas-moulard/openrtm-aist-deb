@@ -1,0 +1,174 @@
+\section{coil::DynamicLib Class Reference}
+\label{classcoil_1_1DynamicLib}\index{coil::DynamicLib@{coil::DynamicLib}}
+
+
+\doxyref{DynamicLib}{p.}{classcoil_1_1DynamicLib} class.  
+
+
+
+
+{\ttfamily \#include $<$DynamicLib.h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf DynamicLib} (int close\_\-handle\_\-on\_\-destruction=1)
+\begin{DoxyCompactList}\small\item\em Constructor. \item\end{DoxyCompactList}\item 
+{\bf DynamicLib} (const char $\ast$dynlib\_\-name, int open\_\-mode=COIL\_\-DEFAULT\_\-DYNLIB\_\-MODE, int close\_\-handle\_\-on\_\-destruction=1)
+\begin{DoxyCompactList}\small\item\em Constructor. \item\end{DoxyCompactList}\item 
+virtual {\bf $\sim$DynamicLib} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \item\end{DoxyCompactList}\item 
+{\bf DynamicLib} (const {\bf DynamicLib} \&rhs)
+\begin{DoxyCompactList}\small\item\em Copy Constructor. \item\end{DoxyCompactList}\item 
+{\bf DynamicLib} \& {\bf operator=} (const {\bf DynamicLib} \&rhs)
+\begin{DoxyCompactList}\small\item\em Assignment operator. \item\end{DoxyCompactList}\item 
+virtual int {\bf open} (const char $\ast$dll\_\-name, int open\_\-mode=COIL\_\-DEFAULT\_\-DYNLIB\_\-MODE, int close\_\-handle\_\-on\_\-destruction=1)
+\begin{DoxyCompactList}\small\item\em Load of the Dynamic link library. \item\end{DoxyCompactList}\item 
+virtual int {\bf close} (void)
+\begin{DoxyCompactList}\small\item\em Unload of the Dynamic link library. \item\end{DoxyCompactList}\item 
+void $\ast$ {\bf symbol} (const char $\ast$symbol\_\-name)
+\begin{DoxyCompactList}\small\item\em Return an address of the memory where a symbol was loaded. \item\end{DoxyCompactList}\item 
+const char $\ast$ {\bf error} (void) const 
+\begin{DoxyCompactList}\small\item\em Return the explanation message about the error. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static int {\bf ForExternTest} (void)
+\begin{DoxyCompactList}\small\item\em Unit Test. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\doxyref{DynamicLib}{p.}{classcoil_1_1DynamicLib} class. 
+
+\subsection{Constructor \& Destructor Documentation}
+\index{coil::DynamicLib@{coil::DynamicLib}!DynamicLib@{DynamicLib}}
+\index{DynamicLib@{DynamicLib}!coil::DynamicLib@{coil::DynamicLib}}
+\subsubsection[{DynamicLib}]{\setlength{\rightskip}{0pt plus 5cm}coil::DynamicLib::DynamicLib (int {\em close\_\-handle\_\-on\_\-destruction} = {\ttfamily 1})}\label{classcoil_1_1DynamicLib_ad3bf31b617e31af37f210c4544e3241d}
+
+
+Constructor. 
+
+Constructor
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em close\_\-handle\_\-on\_\-destruction}]Close flag. \end{DoxyParams}
+\index{coil::DynamicLib@{coil::DynamicLib}!DynamicLib@{DynamicLib}}
+\index{DynamicLib@{DynamicLib}!coil::DynamicLib@{coil::DynamicLib}}
+\subsubsection[{DynamicLib}]{\setlength{\rightskip}{0pt plus 5cm}coil::DynamicLib::DynamicLib (const char $\ast$ {\em dynlib\_\-name}, \/  int {\em open\_\-mode} = {\ttfamily COIL\_\-DEFAULT\_\-DYNLIB\_\-MODE}, \/  int {\em close\_\-handle\_\-on\_\-destruction} = {\ttfamily 1})}\label{classcoil_1_1DynamicLib_a212c930320798b941f496df140225922}
+
+
+Constructor. 
+
+Constructor
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em dynlib\_\-name}]Dynamic link library name. \item[{\em open\_\-mode}]Open mode. \item[{\em close\_\-handle\_\-on\_\-destruction}]Close flag. \end{DoxyParams}
+\index{coil::DynamicLib@{coil::DynamicLib}!$\sim$DynamicLib@{$\sim$DynamicLib}}
+\index{$\sim$DynamicLib@{$\sim$DynamicLib}!coil::DynamicLib@{coil::DynamicLib}}
+\subsubsection[{$\sim$DynamicLib}]{\setlength{\rightskip}{0pt plus 5cm}virtual coil::DynamicLib::$\sim$DynamicLib ()\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classcoil_1_1DynamicLib_a6b18812576274720376677384301c727}
+
+
+Destructor. 
+
+Destructor \index{coil::DynamicLib@{coil::DynamicLib}!DynamicLib@{DynamicLib}}
+\index{DynamicLib@{DynamicLib}!coil::DynamicLib@{coil::DynamicLib}}
+\subsubsection[{DynamicLib}]{\setlength{\rightskip}{0pt plus 5cm}coil::DynamicLib::DynamicLib (const {\bf DynamicLib} \& {\em rhs})}\label{classcoil_1_1DynamicLib_a4ea554eef07f42e82e6c3770921e65e1}
+
+
+Copy Constructor. 
+
+Copy Constructor
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em rhs}]Dynamic link library object of copy source. \end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\index{coil::DynamicLib@{coil::DynamicLib}!close@{close}}
+\index{close@{close}!coil::DynamicLib@{coil::DynamicLib}}
+\subsubsection[{close}]{\setlength{\rightskip}{0pt plus 5cm}virtual int coil::DynamicLib::close (void)\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classcoil_1_1DynamicLib_af11efbb5c96ad4316beb166fe0683c1b}
+
+
+Unload of the Dynamic link library. 
+
+Unload of the Dynamic link library.
+
+\begin{DoxyReturn}{Returns}
+0: successful, -\/1: failed 
+\end{DoxyReturn}
+
+
+Referenced by RTC::ModuleManager::UnloadPred::operator()().
+
+\index{coil::DynamicLib@{coil::DynamicLib}!error@{error}}
+\index{error@{error}!coil::DynamicLib@{coil::DynamicLib}}
+\subsubsection[{error}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ coil::DynamicLib::error (void) const}\label{classcoil_1_1DynamicLib_a09011e9d0df8272bc55beb734d822200}
+
+
+Return the explanation message about the error. 
+
+Return the explanation message about the error.
+
+\begin{DoxyReturn}{Returns}
+Error message.(NULL: not an error) 
+\end{DoxyReturn}
+\index{coil::DynamicLib@{coil::DynamicLib}!ForExternTest@{ForExternTest}}
+\index{ForExternTest@{ForExternTest}!coil::DynamicLib@{coil::DynamicLib}}
+\subsubsection[{ForExternTest}]{\setlength{\rightskip}{0pt plus 5cm}static int coil::DynamicLib::ForExternTest (void)\hspace{0.3cm}{\ttfamily  [inline, static]}}\label{classcoil_1_1DynamicLib_aaca1bfa391e653a961c9df2cb17fdfb6}
+
+
+Unit Test. 
+
+Unit Test.
+
+\begin{DoxyReturn}{Returns}
+0xdeadbeef 
+\end{DoxyReturn}
+\index{coil::DynamicLib@{coil::DynamicLib}!open@{open}}
+\index{open@{open}!coil::DynamicLib@{coil::DynamicLib}}
+\subsubsection[{open}]{\setlength{\rightskip}{0pt plus 5cm}virtual int coil::DynamicLib::open (const char $\ast$ {\em dll\_\-name}, \/  int {\em open\_\-mode} = {\ttfamily COIL\_\-DEFAULT\_\-DYNLIB\_\-MODE}, \/  int {\em close\_\-handle\_\-on\_\-destruction} = {\ttfamily 1})\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classcoil_1_1DynamicLib_af28ba981280d9f3722ba22514120fc1a}
+
+
+Load of the Dynamic link library. 
+
+Load of the Dynamic link library.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em dll\_\-name}]Dynamic link library name. \item[{\em open\_\-mode}]Open mode. \item[{\em close\_\-handle\_\-on\_\-destruction}]Close flag.\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0: successful, -\/1: failed 
+\end{DoxyReturn}
+\index{coil::DynamicLib@{coil::DynamicLib}!operator=@{operator=}}
+\index{operator=@{operator=}!coil::DynamicLib@{coil::DynamicLib}}
+\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf DynamicLib}\& coil::DynamicLib::operator= (const {\bf DynamicLib} \& {\em rhs})}\label{classcoil_1_1DynamicLib_af2df992dff993ee120363f625c194803}
+
+
+Assignment operator. 
+
+Copy a Dynamic link library object.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em rhs}]Dynamic link library object of assignment source.\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Assignment result. 
+\end{DoxyReturn}
+\index{coil::DynamicLib@{coil::DynamicLib}!symbol@{symbol}}
+\index{symbol@{symbol}!coil::DynamicLib@{coil::DynamicLib}}
+\subsubsection[{symbol}]{\setlength{\rightskip}{0pt plus 5cm}void$\ast$ coil::DynamicLib::symbol (const char $\ast$ {\em symbol\_\-name})}\label{classcoil_1_1DynamicLib_a0e2053a55cf23ceae13aa142b6097fe8}
+
+
+Return an address of the memory where a symbol was loaded. 
+
+Return an address of the memory where a symbol was loaded.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em symbol\_\-name}]Symbol name.\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Memory address.(NULL: failed) 
+\end{DoxyReturn}

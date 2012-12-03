@@ -1,0 +1,222 @@
+\section{クラス RTC::InPortProvider}
+\label{classRTC_1_1InPortProvider}\index{RTC::InPortProvider@{RTC::InPortProvider}}
+
+
+{\ttfamily \#include $<$InPortProvider.h$>$}
+
+RTC::InPortProviderに対する継承グラフ\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3cm]{classRTC_1_1InPortProvider}
+\end{center}
+\end{figure}
+\subsection*{構成}
+\begin{DoxyCompactItemize}
+\item 
+struct {\bf publishInterfaceFunc}
+\begin{DoxyCompactList}\small\item\em インターフェースプロファイルを公開するたのファンクタ \item\end{DoxyCompactList}\item 
+struct {\bf publishInterfaceProfileFunc}
+\begin{DoxyCompactList}\small\item\em インターフェースプロファイルを公開するたのファンクタ \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public メソッド}
+\begin{DoxyCompactItemize}
+\item 
+DATAPORTSTATUS\_\-ENUM {\bf InPortProvider} ()
+\item 
+virtual {\bf $\sim$InPortProvider} (void)
+\begin{DoxyCompactList}\small\item\em デストラクタ \item\end{DoxyCompactList}\item 
+virtual void {\bf init} ({\bf coil::Properties} \&prop)=0
+\begin{DoxyCompactList}\small\item\em 設定初期化 \item\end{DoxyCompactList}\item 
+virtual void {\bf setBuffer} ({\bf BufferBase}$<$ cdrMemoryStream $>$ $\ast$buffer)=0
+\begin{DoxyCompactList}\small\item\em バッファをセットする \item\end{DoxyCompactList}\item 
+virtual void {\bf setListener} ({\bf ConnectorInfo} \&info, {\bf ConnectorListeners} $\ast$listeners)=0
+\begin{DoxyCompactList}\small\item\em リスナを設定する。 \item\end{DoxyCompactList}\item 
+virtual void {\bf setConnector} ({\bf InPortConnector} $\ast$connector)=0
+\begin{DoxyCompactList}\small\item\em Connectorを設定する。. \item\end{DoxyCompactList}\item 
+virtual void {\bf publishInterfaceProfile} (SDOPackage::NVList \&properties)
+\begin{DoxyCompactList}\small\item\em InterfaceProfile情報を公開する. \item\end{DoxyCompactList}\item 
+virtual bool {\bf publishInterface} (SDOPackage::NVList \&properties)
+\begin{DoxyCompactList}\small\item\em Interface情報を公開する. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected メソッド}
+\begin{DoxyCompactItemize}
+\item 
+void {\bf setInterfaceType} (const char $\ast$interface\_\-type)
+\begin{DoxyCompactList}\small\item\em インタフェースタイプを設定する \item\end{DoxyCompactList}\item 
+void {\bf setDataFlowType} (const char $\ast$dataflow\_\-type)
+\begin{DoxyCompactList}\small\item\em データフロータイプを設定する \item\end{DoxyCompactList}\item 
+void {\bf setSubscriptionType} (const char $\ast$subs\_\-type)
+\begin{DoxyCompactList}\small\item\em サブスクリプションタイプを設定する \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected 変数}
+\begin{DoxyCompactItemize}
+\item 
+SDOPackage::NVList {\bf m\_\-properties}
+\begin{DoxyCompactList}\small\item\em ポートプロファイルを保持するプロパティ \item\end{DoxyCompactList}\item 
+{\bf Logger} {\bf rtclog}
+\begin{DoxyCompactList}\small\item\em ロガーストリーム \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{コンストラクタとデストラクタ}
+\index{RTC::InPortProvider@{RTC::InPortProvider}!InPortProvider@{InPortProvider}}
+\index{InPortProvider@{InPortProvider}!RTC::InPortProvider@{RTC::InPortProvider}}
+\subsubsection[{InPortProvider}]{\setlength{\rightskip}{0pt plus 5cm}DATAPORTSTATUS\_\-ENUM RTC::InPortProvider::InPortProvider ()}\label{classRTC_1_1InPortProvider_ac4b54074d3e8f7b0304c3f433e396971}
+コンストラクタ \index{RTC::InPortProvider@{RTC::InPortProvider}!$\sim$InPortProvider@{$\sim$InPortProvider}}
+\index{$\sim$InPortProvider@{$\sim$InPortProvider}!RTC::InPortProvider@{RTC::InPortProvider}}
+\subsubsection[{$\sim$InPortProvider}]{\setlength{\rightskip}{0pt plus 5cm}virtual RTC::InPortProvider::$\sim$InPortProvider (void)\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classRTC_1_1InPortProvider_a2e6a01b019f1ae881ca974b58263d9af}
+
+
+デストラクタ 
+
+仮想デストラクタ 
+
+\subsection{関数}
+\index{RTC::InPortProvider@{RTC::InPortProvider}!init@{init}}
+\index{init@{init}!RTC::InPortProvider@{RTC::InPortProvider}}
+\subsubsection[{init}]{\setlength{\rightskip}{0pt plus 5cm}virtual void RTC::InPortProvider::init ({\bf coil::Properties} \& {\em prop})\hspace{0.3cm}{\ttfamily  [pure virtual]}}\label{classRTC_1_1InPortProvider_a66c64488543761e1c8874f88fc55ff00}
+
+
+設定初期化 
+
+\doxyref{OutPortProvider}{p.}{classRTC_1_1OutPortProvider} の各種設定を行う。実装クラスでは、与えられた Propertiesから必要な情報を取得して各種設定を行う。この \doxyref{init()}{p.}{classRTC_1_1InPortProvider_a66c64488543761e1c8874f88fc55ff00} 関 数は、OutPortProvider生成直後および、接続時にそれぞれ呼ばれる可 能性がある。したがって、この関数は複数回呼ばれることを想定して記 述されるべきである。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em prop}]設定情報 \end{DoxyParams}
+
+
+{\bf RTC::InPortCorbaCdrProvider} \doxyref{}{p.}{classRTC_1_1InPortCorbaCdrProvider_a745af48699ac6dff711bb67331210b58}で実装されています。
+
+\index{RTC::InPortProvider@{RTC::InPortProvider}!publishInterface@{publishInterface}}
+\index{publishInterface@{publishInterface}!RTC::InPortProvider@{RTC::InPortProvider}}
+\subsubsection[{publishInterface}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool RTC::InPortProvider::publishInterface (SDOPackage::NVList \& {\em properties})\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classRTC_1_1InPortProvider_ab70dba157e6752fbac7b82470298048f}
+
+
+Interface情報を公開する. 
+
+Interface情報を公開する。引数で指定するプロパティ情報内の NameValue オブジェクトのdataport.interface\_\-type 値を調べ、当該ポー トに設定されていなければNameValue に情報を追加する。すでに同一イ ンターフェースが登録済みの場合は何も行わない。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em properties}]Interface情報を受け取るプロパティ \end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+true: 正常終了 
+\end{DoxyReturn}
+
+
+参照元 RTC::InPortProvider::publishInterfaceFunc::operator()().
+
+\index{RTC::InPortProvider@{RTC::InPortProvider}!publishInterfaceProfile@{publishInterfaceProfile}}
+\index{publishInterfaceProfile@{publishInterfaceProfile}!RTC::InPortProvider@{RTC::InPortProvider}}
+\subsubsection[{publishInterfaceProfile}]{\setlength{\rightskip}{0pt plus 5cm}virtual void RTC::InPortProvider::publishInterfaceProfile (SDOPackage::NVList \& {\em properties})\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classRTC_1_1InPortProvider_a79c8bc1476441d787f427226b0dabe80}
+
+
+InterfaceProfile情報を公開する. 
+
+InterfaceProfile情報を公開する。 引数で指定するプロパティ情報内の NameValue オブジェクトの dataport.interface\_\-type 値を調べ、当該ポートに設定されている インターフェースタイプと一致する場合のみ情報を取得する。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em properties}]InterfaceProfile情報を受け取るプロパティ \end{DoxyParams}
+
+
+参照元 RTC::InPortProvider::publishInterfaceProfileFunc::operator()().
+
+\index{RTC::InPortProvider@{RTC::InPortProvider}!setBuffer@{setBuffer}}
+\index{setBuffer@{setBuffer}!RTC::InPortProvider@{RTC::InPortProvider}}
+\subsubsection[{setBuffer}]{\setlength{\rightskip}{0pt plus 5cm}virtual void RTC::InPortProvider::setBuffer ({\bf BufferBase}$<$ cdrMemoryStream $>$ $\ast$ {\em buffer})\hspace{0.3cm}{\ttfamily  [pure virtual]}}\label{classRTC_1_1InPortProvider_a67b305bff0ed99a997570286922aa2ea}
+
+
+バッファをセットする 
+
+OutPortProviderがデータを取り出すバッファをセットする。 すでにセットされたバッファがある場合、以前のバッファへの ポインタに対して上書きされる。 OutPortProviderはバッファの所有権を仮定していないので、 バッファの削除はユーザの責任で行わなければならない。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em buffer}]OutPortProviderがデータを取り出すバッファへのポインタ \end{DoxyParams}
+
+
+{\bf RTC::InPortCorbaCdrProvider} \doxyref{}{p.}{classRTC_1_1InPortCorbaCdrProvider_ab461b86e9a22b9418a978ba10a74ec72}で実装されています。
+
+\index{RTC::InPortProvider@{RTC::InPortProvider}!setConnector@{setConnector}}
+\index{setConnector@{setConnector}!RTC::InPortProvider@{RTC::InPortProvider}}
+\subsubsection[{setConnector}]{\setlength{\rightskip}{0pt plus 5cm}virtual void RTC::InPortProvider::setConnector ({\bf InPortConnector} $\ast$ {\em connector})\hspace{0.3cm}{\ttfamily  [pure virtual]}}\label{classRTC_1_1InPortProvider_a3f4980d48f7588d6a85c0858f9b1a37e}
+
+
+Connectorを設定する。. 
+
+\doxyref{OutPort}{p.}{classRTC_1_1OutPort} は接続確立時に \doxyref{OutPortConnector}{p.}{classRTC_1_1OutPortConnector} オブジェクトを生成し、生 成したオブジェクトのポインタと共にこの関数を呼び出す。所有権は \doxyref{OutPort}{p.}{classRTC_1_1OutPort} が保持するので \doxyref{OutPortProvider}{p.}{classRTC_1_1OutPortProvider} は \doxyref{OutPortConnector}{p.}{classRTC_1_1OutPortConnector} を削 除してはいけない。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em connector}]\doxyref{OutPortConnector}{p.}{classRTC_1_1OutPortConnector} \end{DoxyParams}
+
+
+{\bf RTC::InPortCorbaCdrProvider} \doxyref{}{p.}{classRTC_1_1InPortCorbaCdrProvider_a1f6f663d07ea5a3122410160a5a92147}で実装されています。
+
+\index{RTC::InPortProvider@{RTC::InPortProvider}!setDataFlowType@{setDataFlowType}}
+\index{setDataFlowType@{setDataFlowType}!RTC::InPortProvider@{RTC::InPortProvider}}
+\subsubsection[{setDataFlowType}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::InPortProvider::setDataFlowType (const char $\ast$ {\em dataflow\_\-type})\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC_1_1InPortProvider_a07e853bb6c21227ce67b90c1b5696b21}
+
+
+データフロータイプを設定する 
+
+データフロータイプを設定する。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em dataflow\_\-type}]設定対象データフロータイプ \end{DoxyParams}
+\index{RTC::InPortProvider@{RTC::InPortProvider}!setInterfaceType@{setInterfaceType}}
+\index{setInterfaceType@{setInterfaceType}!RTC::InPortProvider@{RTC::InPortProvider}}
+\subsubsection[{setInterfaceType}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::InPortProvider::setInterfaceType (const char $\ast$ {\em interface\_\-type})\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC_1_1InPortProvider_a480771439532bebd236fe426eabfb8cb}
+
+
+インタフェースタイプを設定する 
+
+インタフェースタイプを設定する。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em interface\_\-type}]設定対象インタフェースタイプ \end{DoxyParams}
+\index{RTC::InPortProvider@{RTC::InPortProvider}!setListener@{setListener}}
+\index{setListener@{setListener}!RTC::InPortProvider@{RTC::InPortProvider}}
+\subsubsection[{setListener}]{\setlength{\rightskip}{0pt plus 5cm}virtual void RTC::InPortProvider::setListener ({\bf ConnectorInfo} \& {\em info}, \/  {\bf ConnectorListeners} $\ast$ {\em listeners})\hspace{0.3cm}{\ttfamily  [pure virtual]}}\label{classRTC_1_1InPortProvider_ae3d3833c958440f7d053d52f42b59390}
+
+
+リスナを設定する。 
+
+\doxyref{OutPort}{p.}{classRTC_1_1OutPort} はデータ送信処理における各種イベントに対して特定のリスナ オブジェクトをコールするコールバック機構を提供する。詳細は \doxyref{ConnectorListener.h}{p.}{ConnectorListener_8h} の \doxyref{ConnectorDataListener}{p.}{classRTC_1_1ConnectorDataListener}, \doxyref{ConnectorListener}{p.}{classRTC_1_1ConnectorListener} 等を参照のこと。OutPortProvider のサブクラスでは、与えられたリス ナを適切なタイミングで呼び出すべきである。ただし、すべてのリスナ を呼び出す必要はない。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em info}]接続情報 \item[{\em listeners}]リスナオブジェクト \end{DoxyParams}
+
+
+{\bf RTC::InPortCorbaCdrProvider} \doxyref{}{p.}{classRTC_1_1InPortCorbaCdrProvider_a5319ea343145e3b14c9a107724780dff}で実装されています。
+
+\index{RTC::InPortProvider@{RTC::InPortProvider}!setSubscriptionType@{setSubscriptionType}}
+\index{setSubscriptionType@{setSubscriptionType}!RTC::InPortProvider@{RTC::InPortProvider}}
+\subsubsection[{setSubscriptionType}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::InPortProvider::setSubscriptionType (const char $\ast$ {\em subs\_\-type})\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC_1_1InPortProvider_ab953e133a82f81a2425d0d8f2aa4814e}
+
+
+サブスクリプションタイプを設定する 
+
+サブスクリプションタイプを設定する。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em subs\_\-type}]設定対象サブスクリプションタイプ \end{DoxyParams}
+
+
+\subsection{変数}
+\index{RTC::InPortProvider@{RTC::InPortProvider}!m\_\-properties@{m\_\-properties}}
+\index{m\_\-properties@{m\_\-properties}!RTC::InPortProvider@{RTC::InPortProvider}}
+\subsubsection[{m\_\-properties}]{\setlength{\rightskip}{0pt plus 5cm}SDOPackage::NVList {\bf RTC::InPortProvider::m\_\-properties}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC_1_1InPortProvider_a2f2f84bee895b51ee72832912e0d1016}
+
+
+ポートプロファイルを保持するプロパティ 
+
+\index{RTC::InPortProvider@{RTC::InPortProvider}!rtclog@{rtclog}}
+\index{rtclog@{rtclog}!RTC::InPortProvider@{RTC::InPortProvider}}
+\subsubsection[{rtclog}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Logger} {\bf RTC::InPortProvider::rtclog}\hspace{0.3cm}{\ttfamily  [mutable, protected]}}\label{classRTC_1_1InPortProvider_a706da5fd002f498b1b54dfb47a26e83d}
+
+
+ロガーストリーム 
+

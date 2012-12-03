@@ -1,0 +1,567 @@
+\section{SDOPackage::Configuration\_\-impl Class Reference}
+\label{classSDOPackage_1_1Configuration__impl}\index{SDOPackage::Configuration\_\-impl@{SDOPackage::Configuration\_\-impl}}
+
+
+Configuration implementation class.  
+
+
+
+
+{\ttfamily \#include $<$SdoConfiguration.h$>$}
+
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct {\bf config\_\-id}
+\begin{DoxyCompactList}\small\item\em Functor for ConfigurationSet. \item\end{DoxyCompactList}\item 
+struct {\bf nv\_\-name}
+\begin{DoxyCompactList}\small\item\em Functor for NVList. \item\end{DoxyCompactList}\item 
+struct {\bf org\_\-id}
+\begin{DoxyCompactList}\small\item\em Functor for Organization. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Configuration\_\-impl} ({\bf RTC::ConfigAdmin} \&configAdmin, {\bf RTC::SdoServiceAdmin} \&sdoServiceAdmin)
+\begin{DoxyCompactList}\small\item\em Constructor. \item\end{DoxyCompactList}\item 
+virtual {\bf $\sim$Configuration\_\-impl} (void)
+\item 
+virtual CORBA::Boolean {\bf set\_\-device\_\-profile} (const DeviceProfile \&dProfile)  throw (CORBA::SystemException,	     InvalidParameter, NotAvailable, InternalError)
+\begin{DoxyCompactList}\small\item\em [CORBA interface] Set DeviceProfile of \doxyref{SDO}{p.}{classSDO} \item\end{DoxyCompactList}\item 
+virtual CORBA::Boolean {\bf add\_\-service\_\-profile} (const ServiceProfile \&sProfile)  throw (CORBA::SystemException,	     InvalidParameter, NotAvailable, InternalError)
+\begin{DoxyCompactList}\small\item\em [CORBA interface] Set SDO's ServiceProfile \item\end{DoxyCompactList}\item 
+virtual CORBA::Boolean {\bf add\_\-organization} (Organization\_\-ptr org)  throw (CORBA::SystemException,	     InvalidParameter, NotAvailable, InternalError)
+\begin{DoxyCompactList}\small\item\em [CORBA interface] Add Organization \item\end{DoxyCompactList}\item 
+virtual CORBA::Boolean {\bf remove\_\-service\_\-profile} (const char $\ast$id)  throw (CORBA::SystemException,	     InvalidParameter, NotAvailable, InternalError)
+\begin{DoxyCompactList}\small\item\em [CORBA interface] Remove ServiceProfile \item\end{DoxyCompactList}\item 
+virtual CORBA::Boolean {\bf remove\_\-organization} (const char $\ast$organization\_\-id)  throw (CORBA::SystemException,	     InvalidParameter, NotAvailable, InternalError)
+\begin{DoxyCompactList}\small\item\em [CORBA interface] Remove the reference of Organization \item\end{DoxyCompactList}\item 
+virtual ParameterList $\ast$ {\bf get\_\-configuration\_\-parameters} ()  throw (CORBA::SystemException,	     NotAvailable, InternalError)
+\begin{DoxyCompactList}\small\item\em [CORBA interface] Get a list of configuration parameters \item\end{DoxyCompactList}\item 
+virtual NVList $\ast$ {\bf get\_\-configuration\_\-parameter\_\-values} ()  throw (CORBA::SystemException,	     NotAvailable, InternalError)
+\begin{DoxyCompactList}\small\item\em [CORBA interface] Get a list of the value of configuration parameters \item\end{DoxyCompactList}\item 
+virtual CORBA::Any $\ast$ {\bf get\_\-configuration\_\-parameter\_\-value} (const char $\ast$name)  throw (CORBA::SystemException,	     InvalidParameter, NotAvailable, InternalError)
+\begin{DoxyCompactList}\small\item\em [CORBA interface] Get the value of configuration parameter \item\end{DoxyCompactList}\item 
+virtual CORBA::Boolean {\bf set\_\-configuration\_\-parameter} (const char $\ast$name, const CORBA::Any \&value)  throw (CORBA::SystemException,	     InvalidParameter, NotAvailable, InternalError)
+\begin{DoxyCompactList}\small\item\em [CORBA interface] Modify the configuration parameter value \item\end{DoxyCompactList}\item 
+virtual ConfigurationSetList $\ast$ {\bf get\_\-configuration\_\-sets} ()  throw (CORBA::SystemException,	     NotAvailable, InternalError)
+\begin{DoxyCompactList}\small\item\em [CORBA interface] Get a list of ConfigurationSet \item\end{DoxyCompactList}\item 
+virtual ConfigurationSet $\ast$ {\bf get\_\-configuration\_\-set} (const char $\ast${\bf config\_\-id})  throw (CORBA::SystemException,	     NotAvailable, InternalError)
+\begin{DoxyCompactList}\small\item\em [CORBA interface] Get a ConfigurationSet \item\end{DoxyCompactList}\item 
+virtual ConfigurationSet $\ast$ {\bf get\_\-active\_\-configuration\_\-set} ()  throw (CORBA::SystemException,	     NotAvailable, InternalError)
+\begin{DoxyCompactList}\small\item\em [CORBA interface] Get active ConfigurationSet \item\end{DoxyCompactList}\item 
+virtual CORBA::Boolean {\bf add\_\-configuration\_\-set} (const ConfigurationSet \&configuration\_\-set)  throw (CORBA::SystemException,	     InvalidParameter, NotAvailable, InternalError)
+\begin{DoxyCompactList}\small\item\em [CORBA interface] Add ConfigurationSet \item\end{DoxyCompactList}\item 
+virtual CORBA::Boolean {\bf set\_\-configuration\_\-set\_\-values} (const ConfigurationSet \&configuration\_\-set)  throw (CORBA::SystemException,	     InvalidParameter, NotAvailable, InternalError)
+\begin{DoxyCompactList}\small\item\em [CORBA interface] Set ConfigurationSet \item\end{DoxyCompactList}\item 
+virtual CORBA::Boolean {\bf remove\_\-configuration\_\-set} (const char $\ast${\bf config\_\-id})  throw (CORBA::SystemException,	     InvalidParameter, NotAvailable, InternalError)
+\begin{DoxyCompactList}\small\item\em [CORBA interface] Remove ConfigurationSet \item\end{DoxyCompactList}\item 
+virtual CORBA::Boolean {\bf activate\_\-configuration\_\-set} (const char $\ast${\bf config\_\-id})  throw (CORBA::SystemException,	     InvalidParameter, NotAvailable, InternalError)
+\begin{DoxyCompactList}\small\item\em [CORBA interface] Activate ConfigurationSet \item\end{DoxyCompactList}\item 
+Configuration\_\-ptr {\bf getObjRef} ()
+\begin{DoxyCompactList}\small\item\em Get object reference. \item\end{DoxyCompactList}\item 
+const DeviceProfile {\bf getDeviceProfile} ()
+\begin{DoxyCompactList}\small\item\em Get the DeviceProfile of \doxyref{SDO}{p.}{classSDO}. \item\end{DoxyCompactList}\item 
+const OrganizationList {\bf getOrganizations} ()
+\begin{DoxyCompactList}\small\item\em Get a list of Organization of \doxyref{SDO}{p.}{classSDO}. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+const std::string {\bf getUUID} () const 
+\begin{DoxyCompactList}\small\item\em Generate UUID. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+::{\bf RTC::Logger} {\bf rtclog}
+\item 
+Configuration\_\-var {\bf m\_\-objref}
+\begin{DoxyCompactList}\small\item\em The reference to CORBA object. \item\end{DoxyCompactList}\item 
+DeviceProfile {\bf m\_\-deviceProfile}
+\begin{DoxyCompactList}\small\item\em \doxyref{SDO}{p.}{classSDO} DeviceProfile with mutex lock. \item\end{DoxyCompactList}\item 
+{\bf Mutex} {\bf m\_\-dprofile\_\-mutex}
+\item 
+ParameterList {\bf m\_\-parameters}
+\begin{DoxyCompactList}\small\item\em \doxyref{SDO}{p.}{classSDO} Parameter. \item\end{DoxyCompactList}\item 
+{\bf Mutex} {\bf m\_\-params\_\-mutex}
+\item 
+{\bf RTC::ConfigAdmin} \& {\bf m\_\-configsets}
+\begin{DoxyCompactList}\small\item\em \doxyref{SDO}{p.}{classSDO} ConfigurationSetList with mutex lock. \item\end{DoxyCompactList}\item 
+{\bf Mutex} {\bf m\_\-config\_\-mutex}
+\item 
+{\bf RTC::SdoServiceAdmin} \& {\bf m\_\-sdoservice}
+\begin{DoxyCompactList}\small\item\em \doxyref{SDO}{p.}{classSDO} Service admin object with mutex lock. \item\end{DoxyCompactList}\item 
+{\bf Mutex} {\bf m\_\-sdoservice\_\-mutex}
+\item 
+OrganizationList {\bf m\_\-organizations}
+\begin{DoxyCompactList}\small\item\em \doxyref{SDO}{p.}{classSDO} OrganizationList with mutex lock. \item\end{DoxyCompactList}\item 
+{\bf Mutex} {\bf m\_\-org\_\-mutex}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Configuration implementation class. Configuration interface provides operations to add or remove data specified in resource data model. These operations provide functions to change DeviceProfile, ServiceProfile, ConfigurationProfile, and Organization. This \doxyref{SDO}{p.}{classSDO} specification does not address access control or security aspects.
+
+Different configurations can be stored for simple and quick activation. Different predefined configurations are stored as different ConfigurationSets or configuration profile. A ConfigurationSet stores the value of all properties assigned for the particular configuration along with its unique id and description to identify and describe the configuration respectively. Operations in the configuration interface help manage these ConfigurationSets.
+
+
+\begin{DoxyItemize}
+\item ConfigurationSet: id, description, one configuration set to consist of NVList
+\item ConfigurationSetList: List of ConfigurationSet
+\item Parameter: Parameter definition consist of name, type and allowed\_\-values
+\item ActiveConfigurationSet: One set of configuration set that is valid.
+\end{DoxyItemize}
+
+The following functions do processing to ParameterList.
+\begin{DoxyItemize}
+\item \doxyref{get\_\-configuration\_\-parameters()}{p.}{classSDOPackage_1_1Configuration__impl_a719cf33d63573f2c77e76cc0bd7c95a1}
+\end{DoxyItemize}
+
+The following functions do processing to active ConfigurationSet
+\begin{DoxyItemize}
+\item \doxyref{get\_\-configuration\_\-parameter\_\-values()}{p.}{classSDOPackage_1_1Configuration__impl_a35e8b8d9af4a2b4f78e0a86244bff558}
+\item \doxyref{get\_\-configuration\_\-parameter\_\-value()}{p.}{classSDOPackage_1_1Configuration__impl_a27497be83bfe0bacde9fc4f89c861077}
+\item \doxyref{set\_\-configuration\_\-parameter()}{p.}{classSDOPackage_1_1Configuration__impl_ad8be3428eca25a151d9e0a11447828b0}
+\end{DoxyItemize}
+
+The following functions do processing to ConfigurationSetList
+\begin{DoxyItemize}
+\item \doxyref{get\_\-configuration\_\-sets()}{p.}{classSDOPackage_1_1Configuration__impl_a77844f4a7407bc48c11a455f89d32f4d}
+\item \doxyref{get\_\-configuration\_\-set()}{p.}{classSDOPackage_1_1Configuration__impl_a9053da972df19c6411b0326eb5239b39}
+\item \doxyref{set\_\-configuration\_\-set\_\-values()}{p.}{classSDOPackage_1_1Configuration__impl_a89a53c51f56795a098f3be79052413ad}
+\item \doxyref{get\_\-active\_\-configuration\_\-set()}{p.}{classSDOPackage_1_1Configuration__impl_aee57768379674404422130e0f04468e2}
+\item \doxyref{add\_\-configuration\_\-set()}{p.}{classSDOPackage_1_1Configuration__impl_a3765b45decf597811c3e0f562b914fab}
+\item \doxyref{remove\_\-configuration\_\-set()}{p.}{classSDOPackage_1_1Configuration__impl_ac82aad180dcb37a3d652abb0e368da0a}
+\item \doxyref{activate\_\-configuration\_\-set()}{p.}{classSDOPackage_1_1Configuration__impl_a7264893ed1b678fcf301a73304bf77b7}
+\end{DoxyItemize}
+
+\begin{DoxySince}{Since}
+0.4.0 
+\end{DoxySince}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{SDOPackage::Configuration\_\-impl@{SDOPackage::Configuration\_\-impl}!Configuration\_\-impl@{Configuration\_\-impl}}
+\index{Configuration\_\-impl@{Configuration\_\-impl}!SDOPackage::Configuration_impl@{SDOPackage::Configuration\_\-impl}}
+\subsubsection[{Configuration\_\-impl}]{\setlength{\rightskip}{0pt plus 5cm}SDOPackage::Configuration\_\-impl::Configuration\_\-impl ({\bf RTC::ConfigAdmin} \& {\em configAdmin}, \/  {\bf RTC::SdoServiceAdmin} \& {\em sdoServiceAdmin})}\label{classSDOPackage_1_1Configuration__impl_aa9a10c1aa6abb899a866f501ba2c4075}
+
+
+Constructor. 
+
+Constructor
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em configAdmin}]ConfigurationSetList \end{DoxyParams}
+\index{SDOPackage::Configuration\_\-impl@{SDOPackage::Configuration\_\-impl}!$\sim$Configuration\_\-impl@{$\sim$Configuration\_\-impl}}
+\index{$\sim$Configuration\_\-impl@{$\sim$Configuration\_\-impl}!SDOPackage::Configuration_impl@{SDOPackage::Configuration\_\-impl}}
+\subsubsection[{$\sim$Configuration\_\-impl}]{\setlength{\rightskip}{0pt plus 5cm}virtual SDOPackage::Configuration\_\-impl::$\sim$Configuration\_\-impl (void)\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classSDOPackage_1_1Configuration__impl_a64d2363427a77cb4b8e79e2f6d55e6d7}
+Virtual destractor. 
+
+\subsection{Member Function Documentation}
+\index{SDOPackage::Configuration\_\-impl@{SDOPackage::Configuration\_\-impl}!activate\_\-configuration\_\-set@{activate\_\-configuration\_\-set}}
+\index{activate\_\-configuration\_\-set@{activate\_\-configuration\_\-set}!SDOPackage::Configuration_impl@{SDOPackage::Configuration\_\-impl}}
+\subsubsection[{activate\_\-configuration\_\-set}]{\setlength{\rightskip}{0pt plus 5cm}virtual CORBA::Boolean SDOPackage::Configuration\_\-impl::activate\_\-configuration\_\-set (const char $\ast$ {\em config\_\-id})  throw (CORBA::SystemException,	     InvalidParameter, NotAvailable, InternalError)\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classSDOPackage_1_1Configuration__impl_a7264893ed1b678fcf301a73304bf77b7}
+
+
+[CORBA interface] Activate ConfigurationSet 
+
+This operation activates one of the stored ConfigurationSets in the ConfigurationProfile. This operation activates the specified stored ConfigurationSets. This means that the configuration properties of the \doxyref{SDO}{p.}{classSDO} are changed as the values of these properties specified in the stored ConfigurationSet. In other words, values of the specified ConfigurationSet are now copied to the active configuration.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em \doxyref{config\_\-id}{p.}{structSDOPackage_1_1Configuration__impl_1_1config__id}}]Identifier of ConfigurationSet to be activated.\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+If the operation was successfully completed.
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+\item[{\em SDONotExists}]The target \doxyref{SDO}{p.}{classSDO} does not exist.(This exception is mapped to CORBA standard system exception OBJECT\_\-NOT\_\-EXIST.) \item[{\em InvalidParameter}]The argument (\char`\"{}configID\char`\"{}) is null or there is no configuration set with identifier specified by the argument. \item[{\em NotAvailable}]The target \doxyref{SDO}{p.}{classSDO} is reachable but cannot respond. \item[{\em InternalError}]The target \doxyref{SDO}{p.}{classSDO} cannot execute the operation completely due to some internal error. \end{DoxyExceptions}
+\index{SDOPackage::Configuration\_\-impl@{SDOPackage::Configuration\_\-impl}!add\_\-configuration\_\-set@{add\_\-configuration\_\-set}}
+\index{add\_\-configuration\_\-set@{add\_\-configuration\_\-set}!SDOPackage::Configuration_impl@{SDOPackage::Configuration\_\-impl}}
+\subsubsection[{add\_\-configuration\_\-set}]{\setlength{\rightskip}{0pt plus 5cm}virtual CORBA::Boolean SDOPackage::Configuration\_\-impl::add\_\-configuration\_\-set (const ConfigurationSet \& {\em configuration\_\-set})  throw (CORBA::SystemException,	     InvalidParameter, NotAvailable, InternalError)\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classSDOPackage_1_1Configuration__impl_a3765b45decf597811c3e0f562b914fab}
+
+
+[CORBA interface] Add ConfigurationSet 
+
+This operation adds a ConfigurationSet to the ConfigurationProfile.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em configuration\_\-set}]The ConfigurationSet that is added.\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+If the operation was successfully completed.
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+\item[{\em SDONotExists}]The target \doxyref{SDO}{p.}{classSDO} does not exist.(This exception is mapped to CORBA standard system exception OBJECT\_\-NOT\_\-EXIST.) \item[{\em InvalidParameter}]The argument \char`\"{}configurationSet\char`\"{} is null, or one of the attributes defining \char`\"{}configurationSet\char`\"{} is invalid, or the specified identifier of the configuration set already exists. \item[{\em NotAvailable}]The target \doxyref{SDO}{p.}{classSDO} is reachable but cannot respond. \item[{\em InternalError}]The target \doxyref{SDO}{p.}{classSDO} cannot execute the operation completely due to some internal error. \end{DoxyExceptions}
+\index{SDOPackage::Configuration\_\-impl@{SDOPackage::Configuration\_\-impl}!add\_\-organization@{add\_\-organization}}
+\index{add\_\-organization@{add\_\-organization}!SDOPackage::Configuration_impl@{SDOPackage::Configuration\_\-impl}}
+\subsubsection[{add\_\-organization}]{\setlength{\rightskip}{0pt plus 5cm}virtual CORBA::Boolean SDOPackage::Configuration\_\-impl::add\_\-organization (Organization\_\-ptr {\em org})  throw (CORBA::SystemException,	     InvalidParameter, NotAvailable, InternalError)\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classSDOPackage_1_1Configuration__impl_a7963b66fe9bdbac8b23528ec5c7bca79}
+
+
+[CORBA interface] Add Organization 
+
+This operation adds reference of an Organization object.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em org}]Organization to be added.\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+If the operation was successfully completed.
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+\item[{\em SDONotExists}]The target \doxyref{SDO}{p.}{classSDO} does not exist.(This exception is mapped to CORBA standard system exception OBJECT\_\-NOT\_\-EXIST.) \item[{\em NotAvailable}]The target \doxyref{SDO}{p.}{classSDO} is reachable but cannot respond. \item[{\em InvalidParameter}]The argument “organization” is null. \item[{\em InternalError}]The target \doxyref{SDO}{p.}{classSDO} cannot execute the operation completely due to some internal error. \end{DoxyExceptions}
+\index{SDOPackage::Configuration\_\-impl@{SDOPackage::Configuration\_\-impl}!add\_\-service\_\-profile@{add\_\-service\_\-profile}}
+\index{add\_\-service\_\-profile@{add\_\-service\_\-profile}!SDOPackage::Configuration_impl@{SDOPackage::Configuration\_\-impl}}
+\subsubsection[{add\_\-service\_\-profile}]{\setlength{\rightskip}{0pt plus 5cm}virtual CORBA::Boolean SDOPackage::Configuration\_\-impl::add\_\-service\_\-profile (const ServiceProfile \& {\em sProfile})  throw (CORBA::SystemException,	     InvalidParameter, NotAvailable, InternalError)\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classSDOPackage_1_1Configuration__impl_a42e08f0ca92fa64b4728c499d1e4e707}
+
+
+[CORBA interface] Set SDO's ServiceProfile 
+
+This operation adds ServiceProfile to the target \doxyref{SDO}{p.}{classSDO} that navigates this Configuration interface. If the id in argument ServiceProfile is null, new id is created and the ServiceProfile is stored. If the id is not null, the target \doxyref{SDO}{p.}{classSDO} searches for ServiceProfile in it with the same id. It adds the ServiceProfile if not exist, or overwrites if exist.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em sProfile}]ServiceProfile to be added.\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+If the operation was successfully completed.
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+\item[{\em SDONotExists}]The target \doxyref{SDO}{p.}{classSDO} does not exist.(This exception is mapped to CORBA standard system exception OBJECT\_\-NOT\_\-EXIST.) \item[{\em NotAvailable}]The target \doxyref{SDO}{p.}{classSDO} is reachable but cannot respond. \item[{\em InvalidParameter}]The argument \char`\"{}sProfile\char`\"{} is null. \item[{\em InternalError}]The target \doxyref{SDO}{p.}{classSDO} cannot execute the operation completely due to some internal error. \end{DoxyExceptions}
+\index{SDOPackage::Configuration\_\-impl@{SDOPackage::Configuration\_\-impl}!get\_\-active\_\-configuration\_\-set@{get\_\-active\_\-configuration\_\-set}}
+\index{get\_\-active\_\-configuration\_\-set@{get\_\-active\_\-configuration\_\-set}!SDOPackage::Configuration_impl@{SDOPackage::Configuration\_\-impl}}
+\subsubsection[{get\_\-active\_\-configuration\_\-set}]{\setlength{\rightskip}{0pt plus 5cm}virtual ConfigurationSet$\ast$ SDOPackage::Configuration\_\-impl::get\_\-active\_\-configuration\_\-set ()  throw (CORBA::SystemException,	     NotAvailable, InternalError)\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classSDOPackage_1_1Configuration__impl_aee57768379674404422130e0f04468e2}
+
+
+[CORBA interface] Get active ConfigurationSet 
+
+This operation returns the current active ConfigurationSet of an \doxyref{SDO}{p.}{classSDO} (i.e., if the current configuration of the \doxyref{SDO}{p.}{classSDO} was set using predefined configuration set). ConfigurationSet cannot be considered active if the:
+
+
+\begin{DoxyItemize}
+\item Current configuration of the \doxyref{SDO}{p.}{classSDO} was not set using any predefined ConfigurationSet, or
+\item Configuration of the \doxyref{SDO}{p.}{classSDO} was changed after it has been active, or
+\item ConfigurationSet that was used to configure the \doxyref{SDO}{p.}{classSDO} was modified.
+\end{DoxyItemize}
+
+Empty ConfigurationSet is returned in these cases.
+
+\begin{DoxyReturn}{Returns}
+The active ConfigurationSet.
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+\item[{\em SDONotExists}]The target \doxyref{SDO}{p.}{classSDO} does not exist.(This exception is mapped to CORBA standard system exception OBJECT\_\-NOT\_\-EXIST.) \item[{\em NotAvailable}]The target \doxyref{SDO}{p.}{classSDO} is reachable but cannot respond. \item[{\em InternalError}]The target \doxyref{SDO}{p.}{classSDO} cannot execute the operation completely due to some internal error. \end{DoxyExceptions}
+\index{SDOPackage::Configuration\_\-impl@{SDOPackage::Configuration\_\-impl}!get\_\-configuration\_\-parameter\_\-value@{get\_\-configuration\_\-parameter\_\-value}}
+\index{get\_\-configuration\_\-parameter\_\-value@{get\_\-configuration\_\-parameter\_\-value}!SDOPackage::Configuration_impl@{SDOPackage::Configuration\_\-impl}}
+\subsubsection[{get\_\-configuration\_\-parameter\_\-value}]{\setlength{\rightskip}{0pt plus 5cm}virtual CORBA::Any$\ast$ SDOPackage::Configuration\_\-impl::get\_\-configuration\_\-parameter\_\-value (const char $\ast$ {\em name})  throw (CORBA::SystemException,	     InvalidParameter, NotAvailable, InternalError)\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classSDOPackage_1_1Configuration__impl_a27497be83bfe0bacde9fc4f89c861077}
+
+
+[CORBA interface] Get the value of configuration parameter 
+
+This operation returns a value of parameter that is specified by argument \char`\"{}name.\char`\"{}
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em name}]Name of the parameter whose value is requested.\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The value of the specified parameter.
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+\item[{\em SDONotExists}]The target \doxyref{SDO}{p.}{classSDO} does not exist.(This exception is mapped to CORBA standard system exception OBJECT\_\-NOT\_\-EXIST.) \item[{\em InvalidParameter}]The value of the argument \char`\"{}name\char`\"{} is empty String, or null, or the parameter that is specified by argument \char`\"{}name\char`\"{} does not exist. \item[{\em NotAvailable}]The target \doxyref{SDO}{p.}{classSDO} is reachable but cannot respond. \item[{\em InternalError}]The target \doxyref{SDO}{p.}{classSDO} cannot execute the operation completely due to some internal error. \end{DoxyExceptions}
+\index{SDOPackage::Configuration\_\-impl@{SDOPackage::Configuration\_\-impl}!get\_\-configuration\_\-parameter\_\-values@{get\_\-configuration\_\-parameter\_\-values}}
+\index{get\_\-configuration\_\-parameter\_\-values@{get\_\-configuration\_\-parameter\_\-values}!SDOPackage::Configuration_impl@{SDOPackage::Configuration\_\-impl}}
+\subsubsection[{get\_\-configuration\_\-parameter\_\-values}]{\setlength{\rightskip}{0pt plus 5cm}virtual NVList$\ast$ SDOPackage::Configuration\_\-impl::get\_\-configuration\_\-parameter\_\-values ()  throw (CORBA::SystemException,	     NotAvailable, InternalError)\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classSDOPackage_1_1Configuration__impl_a35e8b8d9af4a2b4f78e0a86244bff558}
+
+
+[CORBA interface] Get a list of the value of configuration parameters 
+
+This operation returns all configuration parameters and their values.
+
+\begin{DoxyReturn}{Returns}
+List of all configuration parameters and their values.
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+\item[{\em SDONotExists}]The target \doxyref{SDO}{p.}{classSDO} does not exist.(This exception is mapped to CORBA standard system exception OBJECT\_\-NOT\_\-EXIST.) \item[{\em NotAvailable}]The target \doxyref{SDO}{p.}{classSDO} is reachable but cannot respond. \item[{\em InternalError}]The target \doxyref{SDO}{p.}{classSDO} cannot execute the operation completely due to some internal error. \end{DoxyExceptions}
+\index{SDOPackage::Configuration\_\-impl@{SDOPackage::Configuration\_\-impl}!get\_\-configuration\_\-parameters@{get\_\-configuration\_\-parameters}}
+\index{get\_\-configuration\_\-parameters@{get\_\-configuration\_\-parameters}!SDOPackage::Configuration_impl@{SDOPackage::Configuration\_\-impl}}
+\subsubsection[{get\_\-configuration\_\-parameters}]{\setlength{\rightskip}{0pt plus 5cm}virtual ParameterList$\ast$ SDOPackage::Configuration\_\-impl::get\_\-configuration\_\-parameters ()  throw (CORBA::SystemException,	     NotAvailable, InternalError)\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classSDOPackage_1_1Configuration__impl_a719cf33d63573f2c77e76cc0bd7c95a1}
+
+
+[CORBA interface] Get a list of configuration parameters 
+
+This operation returns a list of Parameters. An empty list is returned if the \doxyref{SDO}{p.}{classSDO} does not have any configurable parameter.
+
+\begin{DoxyReturn}{Returns}
+The list with definitions of parameters characterizing the configuration.
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+\item[{\em SDONotExists}]The target \doxyref{SDO}{p.}{classSDO} does not exist.(This exception is mapped to CORBA standard system exception OBJECT\_\-NOT\_\-EXIST.) \item[{\em NotAvailable}]The target \doxyref{SDO}{p.}{classSDO} is reachable but cannot respond. \item[{\em InternalError}]The target \doxyref{SDO}{p.}{classSDO} cannot execute the operation completely due to some internal error. \end{DoxyExceptions}
+\index{SDOPackage::Configuration\_\-impl@{SDOPackage::Configuration\_\-impl}!get\_\-configuration\_\-set@{get\_\-configuration\_\-set}}
+\index{get\_\-configuration\_\-set@{get\_\-configuration\_\-set}!SDOPackage::Configuration_impl@{SDOPackage::Configuration\_\-impl}}
+\subsubsection[{get\_\-configuration\_\-set}]{\setlength{\rightskip}{0pt plus 5cm}virtual ConfigurationSet$\ast$ SDOPackage::Configuration\_\-impl::get\_\-configuration\_\-set (const char $\ast$ {\em config\_\-id})  throw (CORBA::SystemException,	     NotAvailable, InternalError)\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classSDOPackage_1_1Configuration__impl_a9053da972df19c6411b0326eb5239b39}
+
+
+[CORBA interface] Get a ConfigurationSet 
+
+This operation returns the ConfigurationSet specified by the parameter configurationSetID.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em \doxyref{config\_\-id}{p.}{structSDOPackage_1_1Configuration__impl_1_1config__id}}]Identifier of ConfigurationSet requested.\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The configuration set specified by the parameter \doxyref{config\_\-id}{p.}{structSDOPackage_1_1Configuration__impl_1_1config__id}.
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+\item[{\em SDONotExists}]The target \doxyref{SDO}{p.}{classSDO} does not exist.(This exception is mapped to CORBA standard system exception OBJECT\_\-NOT\_\-EXIST.) \item[{\em InvalidParameter}]The parameter 'config\_\-id' is null or there are no ConfigurationSets stored with such id. \item[{\em NotAvailable}]The target \doxyref{SDO}{p.}{classSDO} is reachable but cannot respond. \item[{\em InternalError}]The target \doxyref{SDO}{p.}{classSDO} cannot execute the operation completely due to some internal error. \end{DoxyExceptions}
+\index{SDOPackage::Configuration\_\-impl@{SDOPackage::Configuration\_\-impl}!get\_\-configuration\_\-sets@{get\_\-configuration\_\-sets}}
+\index{get\_\-configuration\_\-sets@{get\_\-configuration\_\-sets}!SDOPackage::Configuration_impl@{SDOPackage::Configuration\_\-impl}}
+\subsubsection[{get\_\-configuration\_\-sets}]{\setlength{\rightskip}{0pt plus 5cm}virtual ConfigurationSetList$\ast$ SDOPackage::Configuration\_\-impl::get\_\-configuration\_\-sets ()  throw (CORBA::SystemException,	     NotAvailable, InternalError)\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classSDOPackage_1_1Configuration__impl_a77844f4a7407bc48c11a455f89d32f4d}
+
+
+[CORBA interface] Get a list of ConfigurationSet 
+
+This operation returns a list of ConfigurationSets that the ConfigurationProfile has. An empty list is returned if the \doxyref{SDO}{p.}{classSDO} does not have any ConfigurationSets. This operation returns a list of all ConfigurationSets of the \doxyref{SDO}{p.}{classSDO}. If no predefined ConfigurationSets exist, then empty list is returned.
+
+\begin{DoxyReturn}{Returns}
+The list of stored configuration with their current values.
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+\item[{\em SDONotExists}]The target \doxyref{SDO}{p.}{classSDO} does not exist.(This exception is mapped to CORBA standard system exception OBJECT\_\-NOT\_\-EXIST.) \item[{\em NotAvailable}]The target \doxyref{SDO}{p.}{classSDO} is reachable but cannot respond. \item[{\em InternalError}]The target \doxyref{SDO}{p.}{classSDO} cannot execute the operation completely due to some internal error. \end{DoxyExceptions}
+\index{SDOPackage::Configuration\_\-impl@{SDOPackage::Configuration\_\-impl}!getDeviceProfile@{getDeviceProfile}}
+\index{getDeviceProfile@{getDeviceProfile}!SDOPackage::Configuration_impl@{SDOPackage::Configuration\_\-impl}}
+\subsubsection[{getDeviceProfile}]{\setlength{\rightskip}{0pt plus 5cm}const DeviceProfile SDOPackage::Configuration\_\-impl::getDeviceProfile ()}\label{classSDOPackage_1_1Configuration__impl_a68fcf4197d16a2e3207066b91f8a3b3b}
+
+
+Get the DeviceProfile of \doxyref{SDO}{p.}{classSDO}. 
+
+Get the DeviceProfile of \doxyref{SDO}{p.}{classSDO}.
+
+\begin{DoxyReturn}{Returns}
+DeviceProfile of \doxyref{SDO}{p.}{classSDO} 
+\end{DoxyReturn}
+\index{SDOPackage::Configuration\_\-impl@{SDOPackage::Configuration\_\-impl}!getObjRef@{getObjRef}}
+\index{getObjRef@{getObjRef}!SDOPackage::Configuration_impl@{SDOPackage::Configuration\_\-impl}}
+\subsubsection[{getObjRef}]{\setlength{\rightskip}{0pt plus 5cm}Configuration\_\-ptr SDOPackage::Configuration\_\-impl::getObjRef ()}\label{classSDOPackage_1_1Configuration__impl_a8d613297a107207f423427d27ea08d51}
+
+
+Get object reference. 
+
+Get the target object reference.
+
+\begin{DoxyReturn}{Returns}
+Object reference 
+\end{DoxyReturn}
+\index{SDOPackage::Configuration\_\-impl@{SDOPackage::Configuration\_\-impl}!getOrganizations@{getOrganizations}}
+\index{getOrganizations@{getOrganizations}!SDOPackage::Configuration_impl@{SDOPackage::Configuration\_\-impl}}
+\subsubsection[{getOrganizations}]{\setlength{\rightskip}{0pt plus 5cm}const OrganizationList SDOPackage::Configuration\_\-impl::getOrganizations ()}\label{classSDOPackage_1_1Configuration__impl_ae418c54724bbdd5be5e8dc78d3185666}
+
+
+Get a list of Organization of \doxyref{SDO}{p.}{classSDO}. 
+
+Get a list of Organization of \doxyref{SDO}{p.}{classSDO}.
+
+\begin{DoxyReturn}{Returns}
+List of Organization of \doxyref{SDO}{p.}{classSDO} 
+\end{DoxyReturn}
+\index{SDOPackage::Configuration\_\-impl@{SDOPackage::Configuration\_\-impl}!getUUID@{getUUID}}
+\index{getUUID@{getUUID}!SDOPackage::Configuration_impl@{SDOPackage::Configuration\_\-impl}}
+\subsubsection[{getUUID}]{\setlength{\rightskip}{0pt plus 5cm}const std::string SDOPackage::Configuration\_\-impl::getUUID () const\hspace{0.3cm}{\ttfamily  [protected]}}\label{classSDOPackage_1_1Configuration__impl_a6226cee3af7cc21745134e4a4fec5472}
+
+
+Generate UUID. 
+
+Generate UUID.
+
+\begin{DoxyReturn}{Returns}
+UUID that has been generated 
+\end{DoxyReturn}
+\index{SDOPackage::Configuration\_\-impl@{SDOPackage::Configuration\_\-impl}!remove\_\-configuration\_\-set@{remove\_\-configuration\_\-set}}
+\index{remove\_\-configuration\_\-set@{remove\_\-configuration\_\-set}!SDOPackage::Configuration_impl@{SDOPackage::Configuration\_\-impl}}
+\subsubsection[{remove\_\-configuration\_\-set}]{\setlength{\rightskip}{0pt plus 5cm}virtual CORBA::Boolean SDOPackage::Configuration\_\-impl::remove\_\-configuration\_\-set (const char $\ast$ {\em config\_\-id})  throw (CORBA::SystemException,	     InvalidParameter, NotAvailable, InternalError)\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classSDOPackage_1_1Configuration__impl_ac82aad180dcb37a3d652abb0e368da0a}
+
+
+[CORBA interface] Remove ConfigurationSet 
+
+This operation removes a ConfigurationSet from the ConfigurationProfile.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em \doxyref{config\_\-id}{p.}{structSDOPackage_1_1Configuration__impl_1_1config__id}}]The id of ConfigurationSet which is removed.\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+If the operation was successfully completed.
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+\item[{\em SDONotExists}]The target \doxyref{SDO}{p.}{classSDO} does not exist.(This exception is mapped to CORBA standard system exception OBJECT\_\-NOT\_\-EXIST.) \item[{\em InvalidParameter}]The arguments \char`\"{}configurationSetID\char`\"{} is null, or the object specified by the argument \char`\"{}configurationSetID\char`\"{} does not exist. \item[{\em NotAvailable}]The target \doxyref{SDO}{p.}{classSDO} is reachable but cannot respond. \item[{\em InternalError}]The target \doxyref{SDO}{p.}{classSDO} cannot execute the operation completely due to some internal error. \end{DoxyExceptions}
+\index{SDOPackage::Configuration\_\-impl@{SDOPackage::Configuration\_\-impl}!remove\_\-organization@{remove\_\-organization}}
+\index{remove\_\-organization@{remove\_\-organization}!SDOPackage::Configuration_impl@{SDOPackage::Configuration\_\-impl}}
+\subsubsection[{remove\_\-organization}]{\setlength{\rightskip}{0pt plus 5cm}virtual CORBA::Boolean SDOPackage::Configuration\_\-impl::remove\_\-organization (const char $\ast$ {\em organization\_\-id})  throw (CORBA::SystemException,	     InvalidParameter, NotAvailable, InternalError)\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classSDOPackage_1_1Configuration__impl_a8cc3deeb795a9b9c42c9507375660670}
+
+
+[CORBA interface] Remove the reference of Organization 
+
+This operation removes the reference of an Organization object.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em organization\_\-id}]Unique id of the organization to be removed.\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+If the operation was successfully completed.
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+\item[{\em SDONotExists}]The target \doxyref{SDO}{p.}{classSDO} does not exist.(This exception is mapped to CORBA standard system exception OBJECT\_\-NOT\_\-EXIST.) \item[{\em InvalidParameter}]The argument \char`\"{}organizationID\char`\"{} is null, or the object which is specified by argument \char`\"{}organizationID\char`\"{} does not exist. \item[{\em NotAvailable}]The target \doxyref{SDO}{p.}{classSDO} is reachable but cannot respond. \item[{\em InternalError}]The target \doxyref{SDO}{p.}{classSDO} cannot execute the operation completely due to some internal error. \end{DoxyExceptions}
+\index{SDOPackage::Configuration\_\-impl@{SDOPackage::Configuration\_\-impl}!remove\_\-service\_\-profile@{remove\_\-service\_\-profile}}
+\index{remove\_\-service\_\-profile@{remove\_\-service\_\-profile}!SDOPackage::Configuration_impl@{SDOPackage::Configuration\_\-impl}}
+\subsubsection[{remove\_\-service\_\-profile}]{\setlength{\rightskip}{0pt plus 5cm}virtual CORBA::Boolean SDOPackage::Configuration\_\-impl::remove\_\-service\_\-profile (const char $\ast$ {\em id})  throw (CORBA::SystemException,	     InvalidParameter, NotAvailable, InternalError)\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classSDOPackage_1_1Configuration__impl_ac5efa6fdefbae7f0f851fadf0fffdf48}
+
+
+[CORBA interface] Remove ServiceProfile 
+
+This operation removes ServiceProfile object to the \doxyref{SDO}{p.}{classSDO} that has this Configuration interface. The ServiceProfile object to be removed is specified by argument.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em id}]serviceID of a ServiceProfile to be removed.\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+If the operation was successfully completed.
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+\item[{\em SDONotExists}]The target \doxyref{SDO}{p.}{classSDO} does not exist.(This exception is mapped to CORBA standard system exception OBJECT\_\-NOT\_\-EXIST.) \item[{\em InvalidParameter}]The argument \char`\"{}sProfile\char`\"{} is null, or if the object that is specified by argument \char`\"{}sProfile\char`\"{} does not exist. \item[{\em NotAvailable}]The target \doxyref{SDO}{p.}{classSDO} is reachable but cannot respond. \item[{\em InternalError}]The target \doxyref{SDO}{p.}{classSDO} cannot execute the operation completely due to some internal error. \end{DoxyExceptions}
+\index{SDOPackage::Configuration\_\-impl@{SDOPackage::Configuration\_\-impl}!set\_\-configuration\_\-parameter@{set\_\-configuration\_\-parameter}}
+\index{set\_\-configuration\_\-parameter@{set\_\-configuration\_\-parameter}!SDOPackage::Configuration_impl@{SDOPackage::Configuration\_\-impl}}
+\subsubsection[{set\_\-configuration\_\-parameter}]{\setlength{\rightskip}{0pt plus 5cm}virtual CORBA::Boolean SDOPackage::Configuration\_\-impl::set\_\-configuration\_\-parameter (const char $\ast$ {\em name}, \/  const CORBA::Any \& {\em value})  throw (CORBA::SystemException,	     InvalidParameter, NotAvailable, InternalError)\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classSDOPackage_1_1Configuration__impl_ad8be3428eca25a151d9e0a11447828b0}
+
+
+[CORBA interface] Modify the configuration parameter value 
+
+This operation sets a parameter to a value that is specified by argument \char`\"{}value.\char`\"{} The parameter to be modified is specified by argument \char`\"{} name.\char`\"{}
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em name}]The name of parameter to be modified. \item[{\em value}]New value of the specified parameter.\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+If the operation was successfully completed.
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+\item[{\em SDONotExists}]The target \doxyref{SDO}{p.}{classSDO} does not exist.(This exception is mapped to CORBA standard system exception OBJECT\_\-NOT\_\-EXIST.) \item[{\em InvalidParameter}]The arguments (\char`\"{}name\char`\"{} and/or \char`\"{}value\char`\"{}) is null, or the parameter that is specified by the argument \char`\"{}name\char`\"{} does not exist. \item[{\em NotAvailable}]The target \doxyref{SDO}{p.}{classSDO} is reachable but cannot respond. \item[{\em InternalError}]The target \doxyref{SDO}{p.}{classSDO} cannot execute the operation completely due to some internal error. \end{DoxyExceptions}
+\index{SDOPackage::Configuration\_\-impl@{SDOPackage::Configuration\_\-impl}!set\_\-configuration\_\-set\_\-values@{set\_\-configuration\_\-set\_\-values}}
+\index{set\_\-configuration\_\-set\_\-values@{set\_\-configuration\_\-set\_\-values}!SDOPackage::Configuration_impl@{SDOPackage::Configuration\_\-impl}}
+\subsubsection[{set\_\-configuration\_\-set\_\-values}]{\setlength{\rightskip}{0pt plus 5cm}virtual CORBA::Boolean SDOPackage::Configuration\_\-impl::set\_\-configuration\_\-set\_\-values (const ConfigurationSet \& {\em configuration\_\-set})  throw (CORBA::SystemException,	     InvalidParameter, NotAvailable, InternalError)\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classSDOPackage_1_1Configuration__impl_a89a53c51f56795a098f3be79052413ad}
+
+
+[CORBA interface] Set ConfigurationSet 
+
+This operation modifies the specified ConfigurationSet of an \doxyref{SDO}{p.}{classSDO}.
+
+Note: The number of parameters differs between spec and IDL!!
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em \doxyref{config\_\-id}{p.}{structSDOPackage_1_1Configuration__impl_1_1config__id}}]The ID of ConfigurationSet to be modified. \item[{\em configuration\_\-set}]ConfigurationSet to be replaced.\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A flag indicating if the ConfigurationSet was modified successfully. \char`\"{}true\char`\"{} -\/ The ConfigurationSet was modified successfully. \char`\"{}false\char`\"{} -\/ The ConfigurationSet could not be modified successfully.
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+\item[{\em InvalidParameter}]The parameter 'configurationSetID' is null or there is no ConfigurationSet stored with such id. This exception is also raised if one of the attributes defining ConfigurationSet is not valid. \item[{\em SDONotExists}]The target \doxyref{SDO}{p.}{classSDO} does not exist.(This exception is mapped to CORBA standard system exception OBJECT\_\-NOT\_\-EXIST.) \item[{\em NotAvailable}]The target \doxyref{SDO}{p.}{classSDO} is reachable but cannot respond. \item[{\em InternalError}]The target \doxyref{SDO}{p.}{classSDO} cannot execute the operation completely due to some internal error. \end{DoxyExceptions}
+\index{SDOPackage::Configuration\_\-impl@{SDOPackage::Configuration\_\-impl}!set\_\-device\_\-profile@{set\_\-device\_\-profile}}
+\index{set\_\-device\_\-profile@{set\_\-device\_\-profile}!SDOPackage::Configuration_impl@{SDOPackage::Configuration\_\-impl}}
+\subsubsection[{set\_\-device\_\-profile}]{\setlength{\rightskip}{0pt plus 5cm}virtual CORBA::Boolean SDOPackage::Configuration\_\-impl::set\_\-device\_\-profile (const DeviceProfile \& {\em dProfile})  throw (CORBA::SystemException,	     InvalidParameter, NotAvailable, InternalError)\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classSDOPackage_1_1Configuration__impl_ae54b63a9474dd9a98854e186cf5ae167}
+
+
+[CORBA interface] Set DeviceProfile of \doxyref{SDO}{p.}{classSDO} 
+
+This operation sets the DeviceProfile of an \doxyref{SDO}{p.}{classSDO}. If the \doxyref{SDO}{p.}{classSDO} does not have DeviceProfile, the operation will create a new DeviceProfile, otherwise it will replace the existing DeviceProfile.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em dProfile}]The device profile that is to be assigned to this \doxyref{SDO}{p.}{classSDO}.\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+If the operation was successfully completed.
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+\item[{\em SDONotExists}]The target \doxyref{SDO}{p.}{classSDO} does not exist.(This exception is mapped to CORBA standard system exception OBJECT\_\-NOT\_\-EXIST.) \item[{\em NotAvailable}]The target \doxyref{SDO}{p.}{classSDO} is reachable but cannot respond. \item[{\em InvalidParameter}]The argument \char`\"{}dProfile\char`\"{} is null. \item[{\em InternalError}]The target \doxyref{SDO}{p.}{classSDO} cannot execute the operation completely due to some internal error. \end{DoxyExceptions}
+
+
+\subsection{Member Data Documentation}
+\index{SDOPackage::Configuration\_\-impl@{SDOPackage::Configuration\_\-impl}!m\_\-config\_\-mutex@{m\_\-config\_\-mutex}}
+\index{m\_\-config\_\-mutex@{m\_\-config\_\-mutex}!SDOPackage::Configuration_impl@{SDOPackage::Configuration\_\-impl}}
+\subsubsection[{m\_\-config\_\-mutex}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Mutex} {\bf SDOPackage::Configuration\_\-impl::m\_\-config\_\-mutex}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classSDOPackage_1_1Configuration__impl_af254d8973fdb5c36b8169a7552cc64d4}
+\index{SDOPackage::Configuration\_\-impl@{SDOPackage::Configuration\_\-impl}!m\_\-configsets@{m\_\-configsets}}
+\index{m\_\-configsets@{m\_\-configsets}!SDOPackage::Configuration_impl@{SDOPackage::Configuration\_\-impl}}
+\subsubsection[{m\_\-configsets}]{\setlength{\rightskip}{0pt plus 5cm}{\bf RTC::ConfigAdmin}\& {\bf SDOPackage::Configuration\_\-impl::m\_\-configsets}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classSDOPackage_1_1Configuration__impl_a7cd573c3000eb9242ee023fcea7b5112}
+
+
+\doxyref{SDO}{p.}{classSDO} ConfigurationSetList with mutex lock. 
+
+\index{SDOPackage::Configuration\_\-impl@{SDOPackage::Configuration\_\-impl}!m\_\-deviceProfile@{m\_\-deviceProfile}}
+\index{m\_\-deviceProfile@{m\_\-deviceProfile}!SDOPackage::Configuration_impl@{SDOPackage::Configuration\_\-impl}}
+\subsubsection[{m\_\-deviceProfile}]{\setlength{\rightskip}{0pt plus 5cm}DeviceProfile {\bf SDOPackage::Configuration\_\-impl::m\_\-deviceProfile}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classSDOPackage_1_1Configuration__impl_a66e90439d4abad6f5d82ffe3295bf7ec}
+
+
+\doxyref{SDO}{p.}{classSDO} DeviceProfile with mutex lock. 
+
+\index{SDOPackage::Configuration\_\-impl@{SDOPackage::Configuration\_\-impl}!m\_\-dprofile\_\-mutex@{m\_\-dprofile\_\-mutex}}
+\index{m\_\-dprofile\_\-mutex@{m\_\-dprofile\_\-mutex}!SDOPackage::Configuration_impl@{SDOPackage::Configuration\_\-impl}}
+\subsubsection[{m\_\-dprofile\_\-mutex}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Mutex} {\bf SDOPackage::Configuration\_\-impl::m\_\-dprofile\_\-mutex}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classSDOPackage_1_1Configuration__impl_a9689abe24b863917c2a59b6040803a1b}
+\index{SDOPackage::Configuration\_\-impl@{SDOPackage::Configuration\_\-impl}!m\_\-objref@{m\_\-objref}}
+\index{m\_\-objref@{m\_\-objref}!SDOPackage::Configuration_impl@{SDOPackage::Configuration\_\-impl}}
+\subsubsection[{m\_\-objref}]{\setlength{\rightskip}{0pt plus 5cm}Configuration\_\-var {\bf SDOPackage::Configuration\_\-impl::m\_\-objref}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classSDOPackage_1_1Configuration__impl_a36a9f12d50e566abcbd3fe236c83a350}
+
+
+The reference to CORBA object. 
+
+\index{SDOPackage::Configuration\_\-impl@{SDOPackage::Configuration\_\-impl}!m\_\-org\_\-mutex@{m\_\-org\_\-mutex}}
+\index{m\_\-org\_\-mutex@{m\_\-org\_\-mutex}!SDOPackage::Configuration_impl@{SDOPackage::Configuration\_\-impl}}
+\subsubsection[{m\_\-org\_\-mutex}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Mutex} {\bf SDOPackage::Configuration\_\-impl::m\_\-org\_\-mutex}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classSDOPackage_1_1Configuration__impl_a88038663067f3f3f5cc525ee9e2aba1d}
+\index{SDOPackage::Configuration\_\-impl@{SDOPackage::Configuration\_\-impl}!m\_\-organizations@{m\_\-organizations}}
+\index{m\_\-organizations@{m\_\-organizations}!SDOPackage::Configuration_impl@{SDOPackage::Configuration\_\-impl}}
+\subsubsection[{m\_\-organizations}]{\setlength{\rightskip}{0pt plus 5cm}OrganizationList {\bf SDOPackage::Configuration\_\-impl::m\_\-organizations}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classSDOPackage_1_1Configuration__impl_a3aedc84961dbfe19b7f6d4fe7ab1c09b}
+
+
+\doxyref{SDO}{p.}{classSDO} OrganizationList with mutex lock. 
+
+\index{SDOPackage::Configuration\_\-impl@{SDOPackage::Configuration\_\-impl}!m\_\-parameters@{m\_\-parameters}}
+\index{m\_\-parameters@{m\_\-parameters}!SDOPackage::Configuration_impl@{SDOPackage::Configuration\_\-impl}}
+\subsubsection[{m\_\-parameters}]{\setlength{\rightskip}{0pt plus 5cm}ParameterList {\bf SDOPackage::Configuration\_\-impl::m\_\-parameters}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classSDOPackage_1_1Configuration__impl_acaea00148dbf45d58a42f6d7aabfa082}
+
+
+\doxyref{SDO}{p.}{classSDO} Parameter. 
+
+Data structure to define a variable (parameter) independently of implementation technologies. The Parameter structure defines the name and type of a variable. Attributes defined in Parameter.
+\begin{DoxyItemize}
+\item name : Parameter’s name.
+\item type : Name of parameter's type. The original value scope of parameter data type can be constrained by definitions allocated in the attribute allowedValues.
+\end{DoxyItemize}
+
+allowedValues : Values that the parameter can accept. This attribute is used only when the value scope inherent to the parameter type must be constrained. For example, the values allowed for a string parameter may be constrained by an enumeration, or the values allowed for a numeric parameter may be constrained by a range. The values allowed for a parameter can be defined in enumeration, range, or interval structures. The value of attribute allowedValues is null if there is no constraint on a parameter value, that is, any value can be assigned to the parameter as far as it follows the value scope inherent to the parameter’s type.
+
+struct Parameter \{ string name; TypeCode type; AllowedValues allowed\_\-values; \};
+
+\doxyref{SDO}{p.}{classSDO} ParameterList with mutex lock \index{SDOPackage::Configuration\_\-impl@{SDOPackage::Configuration\_\-impl}!m\_\-params\_\-mutex@{m\_\-params\_\-mutex}}
+\index{m\_\-params\_\-mutex@{m\_\-params\_\-mutex}!SDOPackage::Configuration_impl@{SDOPackage::Configuration\_\-impl}}
+\subsubsection[{m\_\-params\_\-mutex}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Mutex} {\bf SDOPackage::Configuration\_\-impl::m\_\-params\_\-mutex}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classSDOPackage_1_1Configuration__impl_acc6db9158b0f0bc0b7e333ecebbb80b7}
+\index{SDOPackage::Configuration\_\-impl@{SDOPackage::Configuration\_\-impl}!m\_\-sdoservice@{m\_\-sdoservice}}
+\index{m\_\-sdoservice@{m\_\-sdoservice}!SDOPackage::Configuration_impl@{SDOPackage::Configuration\_\-impl}}
+\subsubsection[{m\_\-sdoservice}]{\setlength{\rightskip}{0pt plus 5cm}{\bf RTC::SdoServiceAdmin}\& {\bf SDOPackage::Configuration\_\-impl::m\_\-sdoservice}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classSDOPackage_1_1Configuration__impl_af667dca0114e7e41f7df5ecd304a2d39}
+
+
+\doxyref{SDO}{p.}{classSDO} Service admin object with mutex lock. 
+
+\index{SDOPackage::Configuration\_\-impl@{SDOPackage::Configuration\_\-impl}!m\_\-sdoservice\_\-mutex@{m\_\-sdoservice\_\-mutex}}
+\index{m\_\-sdoservice\_\-mutex@{m\_\-sdoservice\_\-mutex}!SDOPackage::Configuration_impl@{SDOPackage::Configuration\_\-impl}}
+\subsubsection[{m\_\-sdoservice\_\-mutex}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Mutex} {\bf SDOPackage::Configuration\_\-impl::m\_\-sdoservice\_\-mutex}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classSDOPackage_1_1Configuration__impl_ae8b2a69d6acc56f1d3291200a70ce60d}
+\index{SDOPackage::Configuration\_\-impl@{SDOPackage::Configuration\_\-impl}!rtclog@{rtclog}}
+\index{rtclog@{rtclog}!SDOPackage::Configuration_impl@{SDOPackage::Configuration\_\-impl}}
+\subsubsection[{rtclog}]{\setlength{\rightskip}{0pt plus 5cm}::{\bf RTC::Logger} {\bf SDOPackage::Configuration\_\-impl::rtclog}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classSDOPackage_1_1Configuration__impl_a9ed7b17de24aa80ee09593a98df0e4b9}

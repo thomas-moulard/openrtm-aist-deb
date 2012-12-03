@@ -1,0 +1,98 @@
+\section{クラス RTC::BufferStatus}
+\label{classRTC_1_1BufferStatus}\index{RTC::BufferStatus@{RTC::BufferStatus}}
+
+
+\doxyref{BufferStatus}{p.}{classRTC_1_1BufferStatus} mixin クラス.  
+
+
+
+
+{\ttfamily \#include $<$BufferStatus.h$>$}
+
+RTC::BufferStatusに対する継承グラフ\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3cm]{classRTC_1_1BufferStatus}
+\end{center}
+\end{figure}
+\subsection*{Public 型}
+\begin{DoxyCompactItemize}
+\item 
+enum {\bf Enum} \{ \par
+{\bf BUFFER\_\-OK} =  0, 
+{\bf BUFFER\_\-ERROR}, 
+{\bf BUFFER\_\-FULL}, 
+{\bf BUFFER\_\-EMPTY}, 
+\par
+{\bf NOT\_\-SUPPORTED}, 
+{\bf TIMEOUT}, 
+{\bf PRECONDITION\_\-NOT\_\-MET}
+ \}
+\begin{DoxyCompactList}\small\item\em \doxyref{BufferStatus}{p.}{classRTC_1_1BufferStatus} リターンコード. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public メソッド}
+\begin{DoxyCompactItemize}
+\item 
+static const char $\ast$ {\bf toString} ({\bf Enum} status)
+\begin{DoxyCompactList}\small\item\em \doxyref{BufferStatus}{p.}{classRTC_1_1BufferStatus} リターンコードを文字列に変換. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{説明}
+\doxyref{BufferStatus}{p.}{classRTC_1_1BufferStatus} mixin クラス. このクラスは、enum定義されたリターンコードを、バッファ関連サブクラ スで共通利用するための mixin クラスである。このリターンコードを使 用するクラスでは、BufferStatus クラスをpublic 継承し、下に define してある BUFFERSTATUS\_\-ENUM をクラス内に記述することで利用可能とな る。これにより、enum を ReturnCode\_\-t 型として typedef し、以後 ReturnCode\_\-t を利用できるようにするとともに、名前空間に enum 定義 された各識別子を当該クラス名前空間内に導入する。 
+
+\subsection{列挙型}
+\index{RTC::BufferStatus@{RTC::BufferStatus}!Enum@{Enum}}
+\index{Enum@{Enum}!RTC::BufferStatus@{RTC::BufferStatus}}
+\subsubsection[{Enum}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf RTC::BufferStatus::Enum}}\label{classRTC_1_1BufferStatus_ada857a5e7b898e1ad19caaaf7a0ff713}
+
+
+\doxyref{BufferStatus}{p.}{classRTC_1_1BufferStatus} リターンコード. 
+
+バッファ関連のクラスで共通のリターンコード
+
+
+\begin{DoxyItemize}
+\item BUFFER\_\-OK: 正常終了
+\item BUFFER\_\-ERROR: バッファエラー
+\item BUFFER\_\-FULL: バッファフル
+\item BUFFER\_\-EMPTY: バッファエンプティ
+\item NOT\_\-SUPPORTED: 未サポート機能
+\item TIMEOUT: タイムアウト
+\item PRECONDITION\_\-NOT\_\-MET: 事前条件を満たしていない 
+\end{DoxyItemize}\begin{Desc}
+\item[列挙型の値: ]\par
+\begin{description}
+\index{BUFFER\_\-OK@{BUFFER\_\-OK}!RTC::BufferStatus@{RTC::BufferStatus}}\index{RTC::BufferStatus@{RTC::BufferStatus}!BUFFER\_\-OK@{BUFFER\_\-OK}}\item[{\em 
+BUFFER\_\-OK\label{classRTC_1_1BufferStatus_ada857a5e7b898e1ad19caaaf7a0ff713a8f953167d31babf4fa80112461b7b388}
+}]\index{BUFFER\_\-ERROR@{BUFFER\_\-ERROR}!RTC::BufferStatus@{RTC::BufferStatus}}\index{RTC::BufferStatus@{RTC::BufferStatus}!BUFFER\_\-ERROR@{BUFFER\_\-ERROR}}\item[{\em 
+BUFFER\_\-ERROR\label{classRTC_1_1BufferStatus_ada857a5e7b898e1ad19caaaf7a0ff713a49a15bebcc2b15516a7cb9e930009c83}
+}]\index{BUFFER\_\-FULL@{BUFFER\_\-FULL}!RTC::BufferStatus@{RTC::BufferStatus}}\index{RTC::BufferStatus@{RTC::BufferStatus}!BUFFER\_\-FULL@{BUFFER\_\-FULL}}\item[{\em 
+BUFFER\_\-FULL\label{classRTC_1_1BufferStatus_ada857a5e7b898e1ad19caaaf7a0ff713acee7ab71be75d777a36e6f43450e3a96}
+}]\index{BUFFER\_\-EMPTY@{BUFFER\_\-EMPTY}!RTC::BufferStatus@{RTC::BufferStatus}}\index{RTC::BufferStatus@{RTC::BufferStatus}!BUFFER\_\-EMPTY@{BUFFER\_\-EMPTY}}\item[{\em 
+BUFFER\_\-EMPTY\label{classRTC_1_1BufferStatus_ada857a5e7b898e1ad19caaaf7a0ff713a4938f8154da3c9f7cad45f738b913580}
+}]\index{NOT\_\-SUPPORTED@{NOT\_\-SUPPORTED}!RTC::BufferStatus@{RTC::BufferStatus}}\index{RTC::BufferStatus@{RTC::BufferStatus}!NOT\_\-SUPPORTED@{NOT\_\-SUPPORTED}}\item[{\em 
+NOT\_\-SUPPORTED\label{classRTC_1_1BufferStatus_ada857a5e7b898e1ad19caaaf7a0ff713ad1f406fba36f7e517cdb68d804b861d3}
+}]\index{TIMEOUT@{TIMEOUT}!RTC::BufferStatus@{RTC::BufferStatus}}\index{RTC::BufferStatus@{RTC::BufferStatus}!TIMEOUT@{TIMEOUT}}\item[{\em 
+TIMEOUT\label{classRTC_1_1BufferStatus_ada857a5e7b898e1ad19caaaf7a0ff713a2024553338d0b9dc6edb25af7cdaced8}
+}]\index{PRECONDITION\_\-NOT\_\-MET@{PRECONDITION\_\-NOT\_\-MET}!RTC::BufferStatus@{RTC::BufferStatus}}\index{RTC::BufferStatus@{RTC::BufferStatus}!PRECONDITION\_\-NOT\_\-MET@{PRECONDITION\_\-NOT\_\-MET}}\item[{\em 
+PRECONDITION\_\-NOT\_\-MET\label{classRTC_1_1BufferStatus_ada857a5e7b898e1ad19caaaf7a0ff713aaaa1b8912b339e6f4af393294645f220}
+}]\end{description}
+\end{Desc}
+
+
+
+\subsection{関数}
+\index{RTC::BufferStatus@{RTC::BufferStatus}!toString@{toString}}
+\index{toString@{toString}!RTC::BufferStatus@{RTC::BufferStatus}}
+\subsubsection[{toString}]{\setlength{\rightskip}{0pt plus 5cm}static const char$\ast$ RTC::BufferStatus::toString ({\bf Enum} {\em status})\hspace{0.3cm}{\ttfamily  [inline, static]}}\label{classRTC_1_1BufferStatus_aa7b5d507e0b71878da0491ee39d7f1bc}
+
+
+\doxyref{BufferStatus}{p.}{classRTC_1_1BufferStatus} リターンコードを文字列に変換. 
+
+\doxyref{BufferStatus}{p.}{classRTC_1_1BufferStatus} リターンコードを文字列に変換する
+
+
+\begin{DoxyParams}{引数}
+\item[{\em status}]変換対象 \doxyref{BufferStatus}{p.}{classRTC_1_1BufferStatus} リターンコード\end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+文字列変換結果 
+\end{DoxyReturn}

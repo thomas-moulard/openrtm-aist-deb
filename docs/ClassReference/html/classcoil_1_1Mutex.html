@@ -1,0 +1,202 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<title>OpenRTM: クラス coil::Mutex</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<!-- 作成： Doxygen 1.6.3 -->
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="index.html"><span>メインページ</span></a></li>
+      <li><a href="namespaces.html"><span>ネームスペース</span></a></li>
+      <li class="current"><a href="annotated.html"><span>クラス</span></a></li>
+      <li><a href="files.html"><span>ファイル</span></a></li>
+    </ul>
+  </div>
+  <div class="tabs">
+    <ul>
+      <li><a href="annotated.html"><span>構成</span></a></li>
+      <li><a href="hierarchy.html"><span>クラス階層</span></a></li>
+      <li><a href="functions.html"><span>構成メンバ</span></a></li>
+    </ul>
+  </div>
+  <div class="navpath"><a class="el" href="namespacecoil.html">coil</a>::<a class="el" href="classcoil_1_1Mutex.html">Mutex</a>
+  </div>
+</div>
+<div class="contents">
+<h1>クラス coil::Mutex</h1><!-- doxytag: class="coil::Mutex" -->
+<p><a class="el" href="classcoil_1_1Mutex.html" title="Mutex クラス.">Mutex</a> クラス.  
+<a href="#_details">[詳細]</a></p>
+
+<p><code>#include &lt;<a class="el" href="Mutex_8h_source.html">Mutex.h</a>&gt;</code></p>
+
+<p><a href="classcoil_1_1Mutex-members.html">すべてのメンバ一覧</a></p>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr><td colspan="2"><h2>Public メソッド</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcoil_1_1Mutex.html#a45a1dccbb0d845c4668d832830b3381e">Mutex</a> (const char *const name=0)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">コンストラクタ  <a href="#a45a1dccbb0d845c4668d832830b3381e"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcoil_1_1Mutex.html#ace6ccbe6d64be438633e5fdd33642606">~Mutex</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">デストラクタ  <a href="#ace6ccbe6d64be438633e5fdd33642606"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcoil_1_1Mutex.html#abd97daab1969a6cbf0e65ddf9944f669">lock</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">排他制御のロック  <a href="#abd97daab1969a6cbf0e65ddf9944f669"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcoil_1_1Mutex.html#aaf471565209e694eb5cd308f0c0dabdd">trylock</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">排他制御のノンブロッキングロック  <a href="#aaf471565209e694eb5cd308f0c0dabdd"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcoil_1_1Mutex.html#aae9502c922762c052edafdeb53aa9baa">unlock</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">排他制御のロック解除  <a href="#aae9502c922762c052edafdeb53aa9baa"></a><br/></td></tr>
+<tr><td colspan="2"><h2>Public 変数</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">pthread_mutex_t&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcoil_1_1Mutex.html#a6ae0f7d95d947ca3a333fc5628225ab7">mutex_</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">排他制御オブジェクト  <a href="#a6ae0f7d95d947ca3a333fc5628225ab7"></a><br/></td></tr>
+</table>
+<hr/><a name="_details"></a><h2>説明</h2>
+<p><a class="el" href="classcoil_1_1Mutex.html" title="Mutex クラス.">Mutex</a> クラス. </p>
+<hr/><h2>コンストラクタとデストラクタ</h2>
+<a class="anchor" id="a45a1dccbb0d845c4668d832830b3381e"></a><!-- doxytag: member="coil::Mutex::Mutex" ref="a45a1dccbb0d845c4668d832830b3381e" args="(const char *const name=0)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">coil::Mutex::Mutex </td>
+          <td>(</td>
+          <td class="paramtype">const char *const &nbsp;</td>
+          <td class="paramname"> <em>name</em> = <code>0</code></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>コンストラクタ </p>
+<p>コンストラクタ。</p>
+<dl><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>name</em>&nbsp;</td><td>オブジェクト名 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>参照先 <a class="el" href="Mutex_8h_source.html#l00158">mutex_</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ace6ccbe6d64be438633e5fdd33642606"></a><!-- doxytag: member="coil::Mutex::~Mutex" ref="ace6ccbe6d64be438633e5fdd33642606" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">coil::Mutex::~Mutex </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>デストラクタ </p>
+<p>デストラクタ。 </p>
+
+<p>参照先 <a class="el" href="Mutex_8h_source.html#l00158">mutex_</a>.</p>
+
+</div>
+</div>
+<hr/><h2>関数</h2>
+<a class="anchor" id="abd97daab1969a6cbf0e65ddf9944f669"></a><!-- doxytag: member="coil::Mutex::lock" ref="abd97daab1969a6cbf0e65ddf9944f669" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void coil::Mutex::lock </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>排他制御のロック </p>
+<p>排他制御のロックを行う。 </p>
+
+<p>参照先 <a class="el" href="Mutex_8h_source.html#l00158">mutex_</a>.</p>
+
+<p>参照元 <a class="el" href="Logger_8h_source.html#l00787">coil::log_stream&lt; _CharT, _Traits &gt;::lock()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aaf471565209e694eb5cd308f0c0dabdd"></a><!-- doxytag: member="coil::Mutex::trylock" ref="aaf471565209e694eb5cd308f0c0dabdd" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool coil::Mutex::trylock </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>排他制御のノンブロッキングロック </p>
+<p>排他制御のロックをノンブロッキングで行う。 </p>
+
+<p>参照先 <a class="el" href="Mutex_8h_source.html#l00158">mutex_</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aae9502c922762c052edafdeb53aa9baa"></a><!-- doxytag: member="coil::Mutex::unlock" ref="aae9502c922762c052edafdeb53aa9baa" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void coil::Mutex::unlock </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>排他制御のロック解除 </p>
+<p>排他制御のロック解除を行う。 </p>
+
+<p>参照先 <a class="el" href="Mutex_8h_source.html#l00158">mutex_</a>.</p>
+
+<p>参照元 <a class="el" href="Logger_8h_source.html#l00805">coil::log_stream&lt; _CharT, _Traits &gt;::unlock()</a>.</p>
+
+</div>
+</div>
+<hr/><h2>変数</h2>
+<a class="anchor" id="a6ae0f7d95d947ca3a333fc5628225ab7"></a><!-- doxytag: member="coil::Mutex::mutex_" ref="a6ae0f7d95d947ca3a333fc5628225ab7" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">pthread_mutex_t <a class="el" href="classcoil_1_1Mutex.html#a6ae0f7d95d947ca3a333fc5628225ab7">coil::Mutex::mutex_</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>排他制御オブジェクト </p>
+
+<p>参照元 <a class="el" href="Mutex_8h_source.html#l00102">lock()</a>, <a class="el" href="Mutex_8h_source.html#l00062">Mutex()</a>, <a class="el" href="Mutex_8h_source.html#l00122">trylock()</a>, <a class="el" href="Mutex_8h_source.html#l00142">unlock()</a>, と <a class="el" href="Mutex_8h_source.html#l00082">~Mutex()</a>.</p>
+
+</div>
+</div>
+</div>
+<hr class="footer"/><address style="text-align: right;"><small>OpenRTMに対してThu May 24 23:25:19 2012に生成されました。&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.6.3 </small></address>
+</body>
+</html>

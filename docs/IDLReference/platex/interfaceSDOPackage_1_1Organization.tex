@@ -1,0 +1,87 @@
+\section{インタフェース SDOPackage::Organization}
+\label{interfaceSDOPackage_1_1Organization}\index{SDOPackage::Organization@{SDOPackage::Organization}}
+
+
+{\ttfamily import \char`\"{}SDOPackage.idl\char`\"{};}
+
+\subsection*{Public メソッド}
+\begin{DoxyCompactItemize}
+\item 
+{\bf UniqueIdentifier} {\bf get\_\-organization\_\-id} ()  raises (InvalidParameter, NotAvailable, InternalError)
+\item 
+{\bf OrganizationProperty} {\bf get\_\-organization\_\-property} ()  raises (NotAvailable, InternalError)
+\item 
+any {\bf get\_\-organization\_\-property\_\-value} (in string name)  raises (InvalidParameter, NotAvailable, InternalError)
+\item 
+boolean {\bf add\_\-organization\_\-property} (in {\bf OrganizationProperty} organization\_\-property)  raises (InvalidParameter, NotAvailable, InternalError)
+\item 
+boolean {\bf set\_\-organization\_\-property\_\-value} (in string name, in any value)  raises (InvalidParameter, NotAvailable, InternalError)
+\item 
+boolean {\bf remove\_\-organization\_\-property} (in string name)  raises (InvalidParameter, NotAvailable, InternalError)
+\item 
+{\bf SDOSystemElement} {\bf get\_\-owner} ()  raises (NotAvailable, InternalError)
+\item 
+boolean {\bf set\_\-owner} (in {\bf SDOSystemElement} sdo)  raises (InvalidParameter, NotAvailable, InternalError)
+\item 
+{\bf SDOList} {\bf get\_\-members} ()  raises (NotAvailable, InternalError)
+\item 
+boolean {\bf set\_\-members} (in {\bf SDOList} sdos)  raises (InvalidParameter, NotAvailable, InternalError)
+\item 
+boolean {\bf add\_\-members} (in {\bf SDOList} sdo\_\-list)  raises (InvalidParameter, NotAvailable, InternalError)
+\item 
+boolean {\bf remove\_\-member} (in {\bf UniqueIdentifier} id)  raises (InvalidParameter, NotAvailable, InternalError)
+\item 
+{\bf DependencyType} {\bf get\_\-dependency} ()  raises (NotAvailable, InternalError)
+\item 
+boolean {\bf set\_\-dependency} (in {\bf DependencyType} dependency)  raises (NotAvailable, InternalError)
+\end{DoxyCompactItemize}
+
+
+\subsection{関数}
+\index{SDOPackage::Organization@{SDOPackage::Organization}!add\_\-members@{add\_\-members}}
+\index{add\_\-members@{add\_\-members}!SDOPackage::Organization@{SDOPackage::Organization}}
+\subsubsection[{add\_\-members}]{\setlength{\rightskip}{0pt plus 5cm}boolean SDOPackage::Organization::add\_\-members (in {\bf SDOList} {\em sdo\_\-list})  raises (InvalidParameter, NotAvailable, InternalError)}\label{interfaceSDOPackage_1_1Organization_ac861802ce87ae4e9dfe69917a656ad83}
+\index{SDOPackage::Organization@{SDOPackage::Organization}!add\_\-organization\_\-property@{add\_\-organization\_\-property}}
+\index{add\_\-organization\_\-property@{add\_\-organization\_\-property}!SDOPackage::Organization@{SDOPackage::Organization}}
+\subsubsection[{add\_\-organization\_\-property}]{\setlength{\rightskip}{0pt plus 5cm}boolean SDOPackage::Organization::add\_\-organization\_\-property (in {\bf OrganizationProperty} {\em organization\_\-property})  raises (InvalidParameter, NotAvailable, InternalError)}\label{interfaceSDOPackage_1_1Organization_a61424d3b010679e80c2544ee52dca3b6}
+\index{SDOPackage::Organization@{SDOPackage::Organization}!get\_\-dependency@{get\_\-dependency}}
+\index{get\_\-dependency@{get\_\-dependency}!SDOPackage::Organization@{SDOPackage::Organization}}
+\subsubsection[{get\_\-dependency}]{\setlength{\rightskip}{0pt plus 5cm}{\bf DependencyType} SDOPackage::Organization::get\_\-dependency ()  raises (NotAvailable, InternalError)}\label{interfaceSDOPackage_1_1Organization_a49b9d3c850c65d27559fdc16b0f4f871}
+\index{SDOPackage::Organization@{SDOPackage::Organization}!get\_\-members@{get\_\-members}}
+\index{get\_\-members@{get\_\-members}!SDOPackage::Organization@{SDOPackage::Organization}}
+\subsubsection[{get\_\-members}]{\setlength{\rightskip}{0pt plus 5cm}{\bf SDOList} SDOPackage::Organization::get\_\-members ()  raises (NotAvailable, InternalError)}\label{interfaceSDOPackage_1_1Organization_a98cbaec8451b195fb471da4c99fbfe8b}
+\index{SDOPackage::Organization@{SDOPackage::Organization}!get\_\-organization\_\-id@{get\_\-organization\_\-id}}
+\index{get\_\-organization\_\-id@{get\_\-organization\_\-id}!SDOPackage::Organization@{SDOPackage::Organization}}
+\subsubsection[{get\_\-organization\_\-id}]{\setlength{\rightskip}{0pt plus 5cm}{\bf UniqueIdentifier} SDOPackage::Organization::get\_\-organization\_\-id ()  raises (InvalidParameter, NotAvailable, InternalError)}\label{interfaceSDOPackage_1_1Organization_adeab203a01786aeda24231e73fecd30e}
+\index{SDOPackage::Organization@{SDOPackage::Organization}!get\_\-organization\_\-property@{get\_\-organization\_\-property}}
+\index{get\_\-organization\_\-property@{get\_\-organization\_\-property}!SDOPackage::Organization@{SDOPackage::Organization}}
+\subsubsection[{get\_\-organization\_\-property}]{\setlength{\rightskip}{0pt plus 5cm}{\bf OrganizationProperty} SDOPackage::Organization::get\_\-organization\_\-property ()  raises (NotAvailable, InternalError)}\label{interfaceSDOPackage_1_1Organization_a6211ce31022a4ca5b38e28833610fc5d}
+\index{SDOPackage::Organization@{SDOPackage::Organization}!get\_\-organization\_\-property\_\-value@{get\_\-organization\_\-property\_\-value}}
+\index{get\_\-organization\_\-property\_\-value@{get\_\-organization\_\-property\_\-value}!SDOPackage::Organization@{SDOPackage::Organization}}
+\subsubsection[{get\_\-organization\_\-property\_\-value}]{\setlength{\rightskip}{0pt plus 5cm}any SDOPackage::Organization::get\_\-organization\_\-property\_\-value (in string {\em name})  raises (InvalidParameter, NotAvailable, InternalError)}\label{interfaceSDOPackage_1_1Organization_a1518d4e12866199506790ad7ec1035b1}
+\index{SDOPackage::Organization@{SDOPackage::Organization}!get\_\-owner@{get\_\-owner}}
+\index{get\_\-owner@{get\_\-owner}!SDOPackage::Organization@{SDOPackage::Organization}}
+\subsubsection[{get\_\-owner}]{\setlength{\rightskip}{0pt plus 5cm}{\bf SDOSystemElement} SDOPackage::Organization::get\_\-owner ()  raises (NotAvailable, InternalError)}\label{interfaceSDOPackage_1_1Organization_a1b1f6113332162520169d4d0ed1d8eb7}
+\index{SDOPackage::Organization@{SDOPackage::Organization}!remove\_\-member@{remove\_\-member}}
+\index{remove\_\-member@{remove\_\-member}!SDOPackage::Organization@{SDOPackage::Organization}}
+\subsubsection[{remove\_\-member}]{\setlength{\rightskip}{0pt plus 5cm}boolean SDOPackage::Organization::remove\_\-member (in {\bf UniqueIdentifier} {\em id})  raises (InvalidParameter, NotAvailable, InternalError)}\label{interfaceSDOPackage_1_1Organization_a8ba50b5da77d6354b2869e7da3bd7bfc}
+\index{SDOPackage::Organization@{SDOPackage::Organization}!remove\_\-organization\_\-property@{remove\_\-organization\_\-property}}
+\index{remove\_\-organization\_\-property@{remove\_\-organization\_\-property}!SDOPackage::Organization@{SDOPackage::Organization}}
+\subsubsection[{remove\_\-organization\_\-property}]{\setlength{\rightskip}{0pt plus 5cm}boolean SDOPackage::Organization::remove\_\-organization\_\-property (in string {\em name})  raises (InvalidParameter, NotAvailable, InternalError)}\label{interfaceSDOPackage_1_1Organization_a16712f0f6513b226cb5428f89a63c00a}
+\index{SDOPackage::Organization@{SDOPackage::Organization}!set\_\-dependency@{set\_\-dependency}}
+\index{set\_\-dependency@{set\_\-dependency}!SDOPackage::Organization@{SDOPackage::Organization}}
+\subsubsection[{set\_\-dependency}]{\setlength{\rightskip}{0pt plus 5cm}boolean SDOPackage::Organization::set\_\-dependency (in {\bf DependencyType} {\em dependency})  raises (NotAvailable, InternalError)}\label{interfaceSDOPackage_1_1Organization_ab0d8070846673145e46508640e8d36e1}
+\index{SDOPackage::Organization@{SDOPackage::Organization}!set\_\-members@{set\_\-members}}
+\index{set\_\-members@{set\_\-members}!SDOPackage::Organization@{SDOPackage::Organization}}
+\subsubsection[{set\_\-members}]{\setlength{\rightskip}{0pt plus 5cm}boolean SDOPackage::Organization::set\_\-members (in {\bf SDOList} {\em sdos})  raises (InvalidParameter, NotAvailable, InternalError)}\label{interfaceSDOPackage_1_1Organization_a4b4dc833033b64539eb3ce92485b3e41}
+\index{SDOPackage::Organization@{SDOPackage::Organization}!set\_\-organization\_\-property\_\-value@{set\_\-organization\_\-property\_\-value}}
+\index{set\_\-organization\_\-property\_\-value@{set\_\-organization\_\-property\_\-value}!SDOPackage::Organization@{SDOPackage::Organization}}
+\subsubsection[{set\_\-organization\_\-property\_\-value}]{\setlength{\rightskip}{0pt plus 5cm}boolean SDOPackage::Organization::set\_\-organization\_\-property\_\-value (in string {\em name}, \/  in any {\em value})  raises (InvalidParameter, NotAvailable, InternalError)}\label{interfaceSDOPackage_1_1Organization_a4d38682f8fdd019d229aee109f2de1f1}
+\index{SDOPackage::Organization@{SDOPackage::Organization}!set\_\-owner@{set\_\-owner}}
+\index{set\_\-owner@{set\_\-owner}!SDOPackage::Organization@{SDOPackage::Organization}}
+\subsubsection[{set\_\-owner}]{\setlength{\rightskip}{0pt plus 5cm}boolean SDOPackage::Organization::set\_\-owner (in {\bf SDOSystemElement} {\em sdo})  raises (InvalidParameter, NotAvailable, InternalError)}\label{interfaceSDOPackage_1_1Organization_a8b747ff46647c4d2e28df2e9b9de325b}
+
+
+このインタフェースの説明は次のファイルから生成されました:\begin{DoxyCompactItemize}
+\item 
+{\bf SDOPackage.idl}\end{DoxyCompactItemize}

@@ -1,0 +1,106 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<title>OpenRTM: stringutil.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<!-- 作成： Doxygen 1.6.3 -->
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="index.html"><span>メインページ</span></a></li>
+      <li><a href="namespaces.html"><span>ネームスペース</span></a></li>
+      <li><a href="annotated.html"><span>クラス</span></a></li>
+      <li class="current"><a href="files.html"><span>ファイル</span></a></li>
+    </ul>
+  </div>
+  <div class="tabs">
+    <ul>
+      <li><a href="files.html"><span>ファイル一覧</span></a></li>
+      <li><a href="globals.html"><span>ファイルメンバ</span></a></li>
+    </ul>
+  </div>
+</div>
+<div class="contents">
+<h1>stringutil.h</h1><code>#include &lt;string&gt;</code><br/>
+<code>#include &lt;vector&gt;</code><br/>
+<code>#include &lt;sstream&gt;</code><br/>
+
+<p><a href="stringutil_8h_source.html">ソースコードを見る。</a></p>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr><td colspan="2"><h2>ネームスペース</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">namespace &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecoil.html">coil</a></td></tr>
+
+<p><tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight"><p>Common Object Interface Layer. </p>
+<br/></td></tr>
+</p>
+<tr><td colspan="2"><h2>型定義</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">typedef std::vector&lt; std::string &gt;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecoil.html#ac44b80f207f9471f2cc10a0e4202f9ea">coil::vstring</a></td></tr>
+<tr><td colspan="2"><h2>関数</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">std::wstring&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecoil.html#a79371147b29c42f5e63ac13758ec7419">coil::string2wstring</a> (std::string str)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">string から wstring への変換  <a href="#a79371147b29c42f5e63ac13758ec7419"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">std::string&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecoil.html#aa0a7c4523060891f3531b25b207a252f">coil::wstring2string</a> (std::wstring wstr)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">wstring から string への変換  <a href="#aa0a7c4523060891f3531b25b207a252f"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecoil.html#a39b0287d062f66e2c22db9a65df164c8">coil::toUpper</a> (std::string &amp;str)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">大文字への変換  <a href="#a39b0287d062f66e2c22db9a65df164c8"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecoil.html#a658f635b8f64879d13b3797182e0992e">coil::toLower</a> (std::string &amp;str)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">小文字への変換  <a href="#a658f635b8f64879d13b3797182e0992e"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecoil.html#ac2fb8023ff7e12f922078ac81e3e0176">coil::getlinePortable</a> (std::istream &amp;istr, std::string &amp;line)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">入力ストリームから1行読み込む  <a href="#ac2fb8023ff7e12f922078ac81e3e0176"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecoil.html#a2145e89f3e55466d8a270b0a29e89f41">coil::isEscaped</a> (const std::string &amp;str, std::string::size_type pos)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">文字列がエスケープされているか判断する  <a href="#a2145e89f3e55466d8a270b0a29e89f41"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">std::string&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecoil.html#a5468287738f599e96bfeae77538beffa">coil::escape</a> (const std::string str)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">文字列をエスケープする  <a href="#a5468287738f599e96bfeae77538beffa"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">std::string&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecoil.html#a0052de6e322bfc6d53ceab79e1f0c944">coil::unescape</a> (const std::string str)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">文字列のエスケープを戻す  <a href="#a0052de6e322bfc6d53ceab79e1f0c944"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecoil.html#aa9311f7aa6bcc858fca2551b1541c9b5">coil::eraseBlank</a> (std::string &amp;str)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">文字列の空白文字を削除する  <a href="#aa9311f7aa6bcc858fca2551b1541c9b5"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecoil.html#a75a6f8fef55110bf753e17113956a5aa">coil::eraseHeadBlank</a> (std::string &amp;str)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">文字列の先頭の空白文字を削除する  <a href="#a75a6f8fef55110bf753e17113956a5aa"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecoil.html#aa8756a9aa018c01dc29ac995619e8aaf">coil::eraseTailBlank</a> (std::string &amp;str)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">文字列の末尾の空白文字を削除する  <a href="#aa8756a9aa018c01dc29ac995619e8aaf"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecoil.html#a56f957c879e2682aaf14235776ad9911">coil::eraseBothEndsBlank</a> (std::string &amp;str)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">文字列の先頭・末尾の空白文字を削除する  <a href="#a56f957c879e2682aaf14235776ad9911"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">std::string&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecoil.html#a6c3625d0e92edb211223d275c1c8c216">coil::normalize</a> (std::string &amp;str)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">文字列を正規化する  <a href="#a6c3625d0e92edb211223d275c1c8c216"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">unsigned int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecoil.html#a7d643c3e9ef1ae65dfe835dbc079e7c3">coil::replaceString</a> (std::string &amp;str, const std::string from, const std::string to)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">文字列を置き換える  <a href="#a7d643c3e9ef1ae65dfe835dbc079e7c3"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">vstring&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecoil.html#a7c9782e536d2701e7a444d1ab4d2a096">coil::split</a> (const std::string &amp;input, const std::string &amp;delimiter, bool ignore_empty=false)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">文字列を分割文字で分割する  <a href="#a7c9782e536d2701e7a444d1ab4d2a096"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecoil.html#ac426ffd4de27cca8bc96bffaee83e792">coil::toBool</a> (std::string str, std::string yes, std::string no, bool default_value=true)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">与えられた文字列をbool値に変換する  <a href="#ac426ffd4de27cca8bc96bffaee83e792"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecoil.html#acc30237f1b384aee8ed0302dd9066910">coil::includes</a> (const vstring &amp;list, std::string value, bool ignore_case=true)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">文字列リスト中にある文字列が含まれるかどうかを判断する  <a href="#acc30237f1b384aee8ed0302dd9066910"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecoil.html#afaa7699c27db02758a4d779caf99a04c">coil::includes</a> (const std::string &amp;list, std::string value, bool ignore_case=true)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">文字列リスト中にある文字列が含まれるかどうかを判断する  <a href="#afaa7699c27db02758a4d779caf99a04c"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecoil.html#a56fc6f04844f58dd5e5f2e2bde8e5888">coil::isAbsolutePath</a> (const std::string &amp;str)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">与えられた文字列が絶対パスかどうかを判断する  <a href="#a56fc6f04844f58dd5e5f2e2bde8e5888"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecoil.html#a23bec236aa41f7293fa2ef08d37476b0">coil::isURL</a> (const std::string &amp;str)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">与えられた文字列がURLかどうかを判断する  <a href="#a23bec236aa41f7293fa2ef08d37476b0"></a><br/></td></tr>
+<tr><td class="memTemplParams" colspan="2">template&lt;class Printable &gt; </td></tr>
+<tr><td class="memTemplItemLeft" align="right" valign="top">std::string&nbsp;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacecoil.html#aa611dae1d82bb273e80ad7890d1d471e">coil::otos</a> (Printable n)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">与えられたオブジェクトをstdstringに変換  <a href="#aa611dae1d82bb273e80ad7890d1d471e"></a><br/></td></tr>
+<tr><td class="memTemplParams" colspan="2">template&lt;typename To &gt; </td></tr>
+<tr><td class="memTemplItemLeft" align="right" valign="top">bool&nbsp;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacecoil.html#a4e20c33e8a0b6e8ce466729221f0ff38">coil::stringTo</a> (To &amp;val, const char *str)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">与えられたstdstringをオブジェクトに変換  <a href="#a4e20c33e8a0b6e8ce466729221f0ff38"></a><br/></td></tr>
+<tr><td class="memTemplParams" colspan="2">template&lt;&gt; </td></tr>
+<tr><td class="memTemplItemLeft" align="right" valign="top">bool&nbsp;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacecoil.html#aa704a18ebe2c7e32ac6272af5c2a5f43">coil::stringTo&lt; std::string &gt;</a> (std::string &amp;val, const char *str)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">与えられた文字列をstdstringに変換  <a href="#aa704a18ebe2c7e32ac6272af5c2a5f43"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">vstring&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecoil.html#afc37c252e9fb9de534b286d5a38b2b2d">coil::unique_sv</a> (vstring sv)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">与えられた文字列リストから重複を削除  <a href="#afc37c252e9fb9de534b286d5a38b2b2d"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">std::string&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecoil.html#af9c944ec4bf36843974a5866c4e70fdb">coil::flatten</a> (vstring sv)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">与えられた文字列リストからCSVを生成  <a href="#af9c944ec4bf36843974a5866c4e70fdb"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">char **&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecoil.html#afdbb5de51175e79d4e04f02fe643762b">coil::toArgv</a> (const vstring &amp;args)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">与えられた文字列リストを引数リストに変換  <a href="#afdbb5de51175e79d4e04f02fe643762b"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">std::string&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecoil.html#a104ce63c9d3aa721ef9a170bb30f2916">coil::sprintf</a> (char const *__restrict fmt,...)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">指定された書式に変換  <a href="#a104ce63c9d3aa721ef9a170bb30f2916"></a><br/></td></tr>
+</table>
+</div>
+<hr class="footer"/><address style="text-align: right;"><small>OpenRTMに対してThu May 24 23:25:19 2012に生成されました。&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.6.3 </small></address>
+</body>
+</html>

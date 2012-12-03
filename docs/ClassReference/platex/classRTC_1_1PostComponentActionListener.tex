@@ -1,0 +1,99 @@
+\section{クラス RTC::PostComponentActionListener}
+\label{classRTC_1_1PostComponentActionListener}\index{RTC::PostComponentActionListener@{RTC::PostComponentActionListener}}
+
+
+\doxyref{PostComponentActionListener}{p.}{classRTC_1_1PostComponentActionListener} クラス.  
+
+
+
+
+{\ttfamily \#include $<$ComponentActionListener.h$>$}
+
+\subsection*{Public メソッド}
+\begin{DoxyCompactItemize}
+\item 
+virtual {\bf $\sim$PostComponentActionListener} ()
+\begin{DoxyCompactList}\small\item\em デストラクタ \item\end{DoxyCompactList}\item 
+virtual void {\bf operator()} ({\bf UniqueId} ec\_\-id, ReturnCode\_\-t ret)=0
+\begin{DoxyCompactList}\small\item\em 仮想コールバック関数 \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public メソッド}
+\begin{DoxyCompactItemize}
+\item 
+static const char $\ast$ {\bf toString} ({\bf PostComponentActionListenerType} type)
+\begin{DoxyCompactList}\small\item\em PostComponentActionListenerType を文字列に変換. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{説明}
+\doxyref{PostComponentActionListener}{p.}{classRTC_1_1PostComponentActionListener} クラス. OMG RTC仕様で定義されている以下のコンポーネントアクショントについ て、
+
+
+\begin{DoxyItemize}
+\item on\_\-initialize()
+\item on\_\-finalize()
+\item on\_\-startup()
+\item on\_\-shutdown()
+\item on\_\-activated
+\item on\_\-deactivated()
+\item on\_\-aborted()
+\item on\_\-error()
+\item on\_\-reset()
+\item on\_\-execute()
+\item on\_\-state\_\-update()
+\item on\_\-rate\_\-changed()
+\end{DoxyItemize}
+
+各アクションに対応するユーザーコードが呼ばれる直前のタイミング でコールされるリスなクラスの基底クラス。
+
+
+\begin{DoxyItemize}
+\item POST\_\-ON\_\-INITIALIZE:
+\item POST\_\-ON\_\-FINALIZE:
+\item POST\_\-ON\_\-STARTUP:
+\item POST\_\-ON\_\-SHUTDOWN:
+\item POST\_\-ON\_\-ACTIVATED:
+\item POST\_\-ON\_\-DEACTIVATED:
+\item POST\_\-ON\_\-ABORTING:
+\item POST\_\-ON\_\-ERROR:
+\item POST\_\-ON\_\-RESET:
+\item POST\_\-ON\_\-EXECUTE:
+\item POST\_\-ON\_\-STATE\_\-UPDATE:
+\item POST\_\-ON\_\-RATE\_\-CHANGED: 
+\end{DoxyItemize}
+
+\subsection{コンストラクタとデストラクタ}
+\index{RTC::PostComponentActionListener@{RTC::PostComponentActionListener}!$\sim$PostComponentActionListener@{$\sim$PostComponentActionListener}}
+\index{$\sim$PostComponentActionListener@{$\sim$PostComponentActionListener}!RTC::PostComponentActionListener@{RTC::PostComponentActionListener}}
+\subsubsection[{$\sim$PostComponentActionListener}]{\setlength{\rightskip}{0pt plus 5cm}virtual RTC::PostComponentActionListener::$\sim$PostComponentActionListener ()\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classRTC_1_1PostComponentActionListener_a942c9fd8c3076c2afd99388d7e1cae61}
+
+
+デストラクタ 
+
+
+
+\subsection{関数}
+\index{RTC::PostComponentActionListener@{RTC::PostComponentActionListener}!operator()@{operator()}}
+\index{operator()@{operator()}!RTC::PostComponentActionListener@{RTC::PostComponentActionListener}}
+\subsubsection[{operator()}]{\setlength{\rightskip}{0pt plus 5cm}virtual void RTC::PostComponentActionListener::operator() ({\bf UniqueId} {\em ec\_\-id}, \/  ReturnCode\_\-t {\em ret})\hspace{0.3cm}{\ttfamily  [pure virtual]}}\label{classRTC_1_1PostComponentActionListener_aaa49c1ef998238b7e5e4ee6d4acdc9fb}
+
+
+仮想コールバック関数 
+
+\doxyref{PostComponentActionListener}{p.}{classRTC_1_1PostComponentActionListener} のコールバック関数 \index{RTC::PostComponentActionListener@{RTC::PostComponentActionListener}!toString@{toString}}
+\index{toString@{toString}!RTC::PostComponentActionListener@{RTC::PostComponentActionListener}}
+\subsubsection[{toString}]{\setlength{\rightskip}{0pt plus 5cm}static const char$\ast$ RTC::PostComponentActionListener::toString ({\bf PostComponentActionListenerType} {\em type})\hspace{0.3cm}{\ttfamily  [inline, static]}}\label{classRTC_1_1PostComponentActionListener_af1eca2deaf08e6c4abcc7e153224d49a}
+
+
+PostComponentActionListenerType を文字列に変換. 
+
+PostComponentActionListenerType を文字列に変換する
+
+
+\begin{DoxyParams}{引数}
+\item[{\em type}]変換対象 PostComponentActionListenerType\end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+文字列変換結果 
+\end{DoxyReturn}
+
+
+参照先 RTC::POST\_\-COMPONENT\_\-ACTION\_\-LISTENER\_\-NUM.
+

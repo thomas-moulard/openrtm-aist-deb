@@ -1,0 +1,67 @@
+\section{ConfigurationListener.h}
+\label{ConfigurationListener_8h}\index{ConfigurationListener.h@{ConfigurationListener.h}}
+
+
+Configuration related event listener classes.  
+
+
+{\ttfamily \#include $<$vector$>$}\par
+{\ttfamily \#include $<$coil/Properties.h$>$}\par
+{\ttfamily \#include $<$coil/Mutex.h$>$}\par
+{\ttfamily \#include $<$coil/Guard.h$>$}\par
+\subsection*{構成}
+\begin{DoxyCompactItemize}
+\item 
+class {\bf RTC::ConfigurationParamListener}
+\begin{DoxyCompactList}\small\item\em \doxyref{ConfigurationParamListener}{p.}{classRTC_1_1ConfigurationParamListener} クラス. \item\end{DoxyCompactList}\item 
+class {\bf RTC::ConfigurationSetListener}
+\begin{DoxyCompactList}\small\item\em \doxyref{ConfigurationSetListener}{p.}{classRTC_1_1ConfigurationSetListener} クラス. \item\end{DoxyCompactList}\item 
+class {\bf RTC::ConfigurationSetNameListener}
+\begin{DoxyCompactList}\small\item\em \doxyref{ConfigurationSetNameListener}{p.}{classRTC_1_1ConfigurationSetNameListener} クラス. \item\end{DoxyCompactList}\item 
+class {\bf RTC::ConfigurationParamListenerHolder}
+\begin{DoxyCompactList}\small\item\em \doxyref{ConfigurationParamListener}{p.}{classRTC_1_1ConfigurationParamListener} ホルダクラス. \item\end{DoxyCompactList}\item 
+class {\bf RTC::ConfigurationSetListenerHolder}
+\begin{DoxyCompactList}\small\item\em \doxyref{ConfigurationSetListener}{p.}{classRTC_1_1ConfigurationSetListener} ホルダクラス. \item\end{DoxyCompactList}\item 
+class {\bf RTC::ConfigurationSetNameListenerHolder}
+\begin{DoxyCompactList}\small\item\em \doxyref{ConfigurationSetNameListener}{p.}{classRTC_1_1ConfigurationSetNameListener} ホルダクラス. \item\end{DoxyCompactList}\item 
+class {\bf RTC::ConfigurationListeners}
+\end{DoxyCompactItemize}
+\subsection*{ネームスペース}
+\begin{DoxyCompactItemize}
+\item 
+namespace {\bf RTC}
+
+
+\begin{DoxyCompactList}\small\item\em RTコンポーネント. \item\end{DoxyCompactList}
+
+\end{DoxyCompactItemize}
+\subsection*{列挙型}
+\begin{DoxyCompactItemize}
+\item 
+enum {\bf RTC::ConfigurationParamListenerType} \{ {\bf RTC::ON\_\-UPDATE\_\-CONFIG\_\-PARAM}, 
+{\bf RTC::CONFIG\_\-PARAM\_\-LISTENER\_\-NUM}
+ \}
+\begin{DoxyCompactList}\small\item\em ConfigurationParamListener のタイプ. \item\end{DoxyCompactList}\item 
+enum {\bf RTC::ConfigurationSetListenerType} \{ {\bf RTC::ON\_\-SET\_\-CONFIG\_\-SET}, 
+{\bf RTC::ON\_\-ADD\_\-CONFIG\_\-SET}, 
+{\bf RTC::CONFIG\_\-SET\_\-LISTENER\_\-NUM}
+ \}
+\begin{DoxyCompactList}\small\item\em ConfigurationSetListener のタイプ. \item\end{DoxyCompactList}\item 
+enum {\bf RTC::ConfigurationSetNameListenerType} \{ {\bf RTC::ON\_\-UPDATE\_\-CONFIG\_\-SET}, 
+{\bf RTC::ON\_\-REMOVE\_\-CONFIG\_\-SET}, 
+{\bf RTC::ON\_\-ACTIVATE\_\-CONFIG\_\-SET}, 
+{\bf RTC::CONFIG\_\-SET\_\-NAME\_\-LISTENER\_\-NUM}
+ \}
+\begin{DoxyCompactList}\small\item\em ConfigurationSetNameListenerType. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{説明}
+Configuration related event listener classes. \begin{DoxyDate}{日付}
+\$Date\$ 
+\end{DoxyDate}
+\begin{DoxyAuthor}{作者}
+Noriaki Ando $<${\tt n-\/ando@aist.go.jp}$>$
+\end{DoxyAuthor}
+Copyright (C) 2011 Noriaki Ando Intelligent Systems Research Institute, National Institute of Advanced Industrial Science and Technology (AIST), Japan All rights reserved.
+
+\$Id\$ 

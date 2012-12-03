@@ -1,0 +1,143 @@
+\section{クラス RTC::OutPortCorbaCdrProvider}
+\label{classRTC_1_1OutPortCorbaCdrProvider}\index{RTC::OutPortCorbaCdrProvider@{RTC::OutPortCorbaCdrProvider}}
+
+
+\doxyref{OutPortCorbaCdrProvider}{p.}{classRTC_1_1OutPortCorbaCdrProvider} クラス.  
+
+
+
+
+{\ttfamily \#include $<$OutPortCorbaCdrProvider.h$>$}
+
+RTC::OutPortCorbaCdrProviderに対する継承グラフ\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3cm]{classRTC_1_1OutPortCorbaCdrProvider}
+\end{center}
+\end{figure}
+\subsection*{Public メソッド}
+\begin{DoxyCompactItemize}
+\item 
+{\bf OutPortCorbaCdrProvider} (void)
+\item 
+virtual {\bf $\sim$OutPortCorbaCdrProvider} (void)
+\item 
+virtual void {\bf init} ({\bf coil::Properties} \&prop)
+\begin{DoxyCompactList}\small\item\em 設定初期化 \item\end{DoxyCompactList}\item 
+virtual void {\bf setBuffer} ({\bf CdrBufferBase} $\ast$buffer)
+\begin{DoxyCompactList}\small\item\em バッファをセットする \item\end{DoxyCompactList}\item 
+virtual void {\bf setListener} ({\bf ConnectorInfo} \&info, {\bf ConnectorListeners} $\ast$listeners)
+\begin{DoxyCompactList}\small\item\em リスナを設定する。 \item\end{DoxyCompactList}\item 
+virtual void {\bf setConnector} ({\bf OutPortConnector} $\ast$connector)
+\begin{DoxyCompactList}\small\item\em Connectorを設定する。. \item\end{DoxyCompactList}\item 
+virtual ::OpenRTM::PortStatus {\bf get} (::OpenRTM::CdrData\_\-out data)  throw (CORBA::SystemException)
+\begin{DoxyCompactList}\small\item\em [CORBA interface] バッファからデータを取得する \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{説明}
+\doxyref{OutPortCorbaCdrProvider}{p.}{classRTC_1_1OutPortCorbaCdrProvider} クラス. \doxyref{OutPortProvider}{p.}{classRTC_1_1OutPortProvider}
+
+データ転送に CORBA の OpenRTM::OutPortCdr インターフェースを利用し た、pull 型データフロー型を実現する \doxyref{OutPort}{p.}{classRTC_1_1OutPort} プロバイダクラス。
+
+\begin{DoxySince}{から}
+0.4.0 
+\end{DoxySince}
+
+
+\subsection{コンストラクタとデストラクタ}
+\index{RTC::OutPortCorbaCdrProvider@{RTC::OutPortCorbaCdrProvider}!OutPortCorbaCdrProvider@{OutPortCorbaCdrProvider}}
+\index{OutPortCorbaCdrProvider@{OutPortCorbaCdrProvider}!RTC::OutPortCorbaCdrProvider@{RTC::OutPortCorbaCdrProvider}}
+\subsubsection[{OutPortCorbaCdrProvider}]{\setlength{\rightskip}{0pt plus 5cm}RTC::OutPortCorbaCdrProvider::OutPortCorbaCdrProvider (void)}\label{classRTC_1_1OutPortCorbaCdrProvider_a6ae410b91af0d248adc5bf6498c4e815}
+コンストラクタ \index{RTC::OutPortCorbaCdrProvider@{RTC::OutPortCorbaCdrProvider}!$\sim$OutPortCorbaCdrProvider@{$\sim$OutPortCorbaCdrProvider}}
+\index{$\sim$OutPortCorbaCdrProvider@{$\sim$OutPortCorbaCdrProvider}!RTC::OutPortCorbaCdrProvider@{RTC::OutPortCorbaCdrProvider}}
+\subsubsection[{$\sim$OutPortCorbaCdrProvider}]{\setlength{\rightskip}{0pt plus 5cm}virtual RTC::OutPortCorbaCdrProvider::$\sim$OutPortCorbaCdrProvider (void)\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classRTC_1_1OutPortCorbaCdrProvider_a5e0c31bdf52a13601a3a66b0a40ffe0a}
+デストラクタ 
+
+\subsection{関数}
+\index{RTC::OutPortCorbaCdrProvider@{RTC::OutPortCorbaCdrProvider}!get@{get}}
+\index{get@{get}!RTC::OutPortCorbaCdrProvider@{RTC::OutPortCorbaCdrProvider}}
+\subsubsection[{get}]{\setlength{\rightskip}{0pt plus 5cm}virtual ::OpenRTM::PortStatus RTC::OutPortCorbaCdrProvider::get (::OpenRTM::CdrData\_\-out {\em data})  throw (CORBA::SystemException)}\label{classRTC_1_1OutPortCorbaCdrProvider_a6719eca2d225d82d45b838859f0e3c09}
+
+
+[CORBA interface] バッファからデータを取得する 
+
+設定された内部バッファからデータを取得する。
+
+\begin{DoxyReturn}{戻り値}
+取得データ 
+\end{DoxyReturn}
+\index{RTC::OutPortCorbaCdrProvider@{RTC::OutPortCorbaCdrProvider}!init@{init}}
+\index{init@{init}!RTC::OutPortCorbaCdrProvider@{RTC::OutPortCorbaCdrProvider}}
+\subsubsection[{init}]{\setlength{\rightskip}{0pt plus 5cm}virtual void RTC::OutPortCorbaCdrProvider::init ({\bf coil::Properties} \& {\em prop})\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classRTC_1_1OutPortCorbaCdrProvider_adcd8c23040d9924f17b8da1b146b9b0f}
+
+
+設定初期化 
+
+\doxyref{OutPortCorbaCdrProvider}{p.}{classRTC_1_1OutPortCorbaCdrProvider} の各種設定を行う。与えられた Propertiesから必要な情報を取得して各種設定を行う。この \doxyref{init()}{p.}{classRTC_1_1OutPortCorbaCdrProvider_adcd8c23040d9924f17b8da1b146b9b0f} 関 数は、OutPortProvider生成直後および、接続時にそれぞれ呼ばれる可 能性がある。したがって、この関数は複数回呼ばれることを想定して記 述されるべきである。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em prop}]設定情報 \end{DoxyParams}
+
+
+{\bf RTC::OutPortProvider} \doxyref{}{p.}{classRTC_1_1OutPortProvider_a8b0d9b4a0c892a952017c552dc79f307}を再定義しています。
+
+\index{RTC::OutPortCorbaCdrProvider@{RTC::OutPortCorbaCdrProvider}!setBuffer@{setBuffer}}
+\index{setBuffer@{setBuffer}!RTC::OutPortCorbaCdrProvider@{RTC::OutPortCorbaCdrProvider}}
+\subsubsection[{setBuffer}]{\setlength{\rightskip}{0pt plus 5cm}virtual void RTC::OutPortCorbaCdrProvider::setBuffer ({\bf CdrBufferBase} $\ast$ {\em buffer})\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classRTC_1_1OutPortCorbaCdrProvider_ae2bb838e78395398c40b61d22cf6bfc3}
+
+
+バッファをセットする 
+
+\doxyref{OutPortProvider}{p.}{classRTC_1_1OutPortProvider} がデータを取り出すバッファをセットする。 すでにセットされたバッファがある場合、以前のバッファへの ポインタに対して上書きされる。 OutPortProviderはバッファの所有権を仮定していないので、 バッファの削除はユーザの責任で行わなければならない。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em buffer}]OutPortProviderがデータを取り出すバッファへのポインタ \end{DoxyParams}
+
+
+{\bf RTC::OutPortProvider} \doxyref{}{p.}{classRTC_1_1OutPortProvider_af929cbafd60ad99d5f78f1a9e373ddcd}を実装しています。
+
+\index{RTC::OutPortCorbaCdrProvider@{RTC::OutPortCorbaCdrProvider}!setConnector@{setConnector}}
+\index{setConnector@{setConnector}!RTC::OutPortCorbaCdrProvider@{RTC::OutPortCorbaCdrProvider}}
+\subsubsection[{setConnector}]{\setlength{\rightskip}{0pt plus 5cm}virtual void RTC::OutPortCorbaCdrProvider::setConnector ({\bf OutPortConnector} $\ast$ {\em connector})\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classRTC_1_1OutPortCorbaCdrProvider_a9c123a084fed1934967664c54a9e586e}
+
+
+Connectorを設定する。. 
+
+\doxyref{OutPort}{p.}{classRTC_1_1OutPort} は接続確立時に \doxyref{OutPortConnector}{p.}{classRTC_1_1OutPortConnector} オブジェクトを生成し、生 成したオブジェクトのポインタと共にこの関数を呼び出す。所有権は \doxyref{OutPort}{p.}{classRTC_1_1OutPort} が保持するので \doxyref{OutPortProvider}{p.}{classRTC_1_1OutPortProvider} は \doxyref{OutPortConnector}{p.}{classRTC_1_1OutPortConnector} を削 除してはいけない。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em connector}]\doxyref{OutPortConnector}{p.}{classRTC_1_1OutPortConnector} \end{DoxyParams}
+
+
+{\bf RTC::OutPortProvider} \doxyref{}{p.}{classRTC_1_1OutPortProvider_aa7c4eb96da64ea33a3136cfa496a6ecc}を実装しています。
+
+\index{RTC::OutPortCorbaCdrProvider@{RTC::OutPortCorbaCdrProvider}!setListener@{setListener}}
+\index{setListener@{setListener}!RTC::OutPortCorbaCdrProvider@{RTC::OutPortCorbaCdrProvider}}
+\subsubsection[{setListener}]{\setlength{\rightskip}{0pt plus 5cm}virtual void RTC::OutPortCorbaCdrProvider::setListener ({\bf ConnectorInfo} \& {\em info}, \/  {\bf ConnectorListeners} $\ast$ {\em listeners})\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classRTC_1_1OutPortCorbaCdrProvider_ad3f9c75e0390d1a619fa25b71e333281}
+
+
+リスナを設定する。 
+
+\doxyref{OutPort}{p.}{classRTC_1_1OutPort} はデータ送信処理における各種イベントに対して特定のリスナ オブジェクトをコールするコールバック機構を提供する。詳細は \doxyref{ConnectorListener.h}{p.}{ConnectorListener_8h} の \doxyref{ConnectorDataListener}{p.}{classRTC_1_1ConnectorDataListener}, \doxyref{ConnectorListener}{p.}{classRTC_1_1ConnectorListener} 等を参照のこと。OutPortCorbaCdrProvider では、以下のコールバック が提供される。
+
+
+\begin{DoxyItemize}
+\item ON\_\-BUFFER\_\-READ
+\item ON\_\-SEND
+\item ON\_\-BUFFER\_\-EMPTY
+\item ON\_\-BUFFER\_\-READ\_\-TIMEOUT
+\item ON\_\-SENDER\_\-EMPTY
+\item ON\_\-SENDER\_\-TIMEOUT
+\item ON\_\-SENDER\_\-ERROR
+\end{DoxyItemize}
+
+
+\begin{DoxyParams}{引数}
+\item[{\em info}]接続情報 \item[{\em listeners}]リスナオブジェクト \end{DoxyParams}
+
+
+{\bf RTC::OutPortProvider} \doxyref{}{p.}{classRTC_1_1OutPortProvider_a85ba5a46d8793c16a21e423acbc81a00}を実装しています。
+

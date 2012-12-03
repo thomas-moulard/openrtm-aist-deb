@@ -1,0 +1,214 @@
+\section{„Ç§„É≥„Çø„Éï„Çß„Éº„Çπ OpenRTM::DataFlowComponent}
+\label{interfaceOpenRTM_1_1DataFlowComponent}\index{OpenRTM::DataFlowComponent@{OpenRTM::DataFlowComponent}}
+
+
+{\ttfamily import \char`\"{}OpenRTM.idl\char`\"{};}
+
+OpenRTM::DataFlowComponent„Å´ÂØæ„Åô„ÇãÁ∂ôÊâø„Ç∞„É©„Éï\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.62911cm]{interfaceOpenRTM_1_1DataFlowComponent}
+\end{center}
+\end{figure}
+\subsection*{Public „É°„ÇΩ„ÉÉ„Éâ}
+\begin{DoxyCompactItemize}
+\item 
+ComponentProfile {\bf get\_\-component\_\-profile} ()
+\item 
+PortServiceList {\bf get\_\-ports} ()
+\item 
+ReturnCode\_\-t {\bf initialize} ()
+\item 
+ReturnCode\_\-t {\bf finalize} ()
+\item 
+boolean {\bf is\_\-alive} (in ExecutionContext exec\_\-context)
+\item 
+ReturnCode\_\-t {\bf exit} ()
+\item 
+ExecutionContextHandle\_\-t {\bf attach\_\-context} (in ExecutionContext exec\_\-context)
+\item 
+ReturnCode\_\-t {\bf detach\_\-context} (in ExecutionContextHandle\_\-t exec\_\-handle)
+\item 
+ExecutionContext {\bf get\_\-context} (in ExecutionContextHandle\_\-t exec\_\-handle)
+\item 
+ExecutionContextList {\bf get\_\-owned\_\-contexts} ()
+\begin{DoxyCompactList}\small\item\em get\_\-owned\_\-contexts \item\end{DoxyCompactList}\item 
+ExecutionContextList {\bf get\_\-participating\_\-contexts} ()
+\begin{DoxyCompactList}\small\item\em get\_\-participating\_\-contexts \item\end{DoxyCompactList}\item 
+ExecutionContextHandle\_\-t {\bf get\_\-context\_\-handle} (in ExecutionContext cxt)
+\item 
+ReturnCode\_\-t {\bf on\_\-initialize} ()
+\item 
+ReturnCode\_\-t {\bf on\_\-finalize} ()
+\item 
+ReturnCode\_\-t {\bf on\_\-startup} (in ExecutionContextHandle\_\-t exec\_\-handle)
+\item 
+ReturnCode\_\-t {\bf on\_\-shutdown} (in ExecutionContextHandle\_\-t exec\_\-handle)
+\item 
+ReturnCode\_\-t {\bf on\_\-activated} (in ExecutionContextHandle\_\-t exec\_\-handle)
+\item 
+ReturnCode\_\-t {\bf on\_\-deactivated} (in ExecutionContextHandle\_\-t exec\_\-handle)
+\item 
+ReturnCode\_\-t {\bf on\_\-aborting} (in ExecutionContextHandle\_\-t exec\_\-handle)
+\item 
+ReturnCode\_\-t {\bf on\_\-error} (in ExecutionContextHandle\_\-t exec\_\-handle)
+\item 
+ReturnCode\_\-t {\bf on\_\-reset} (in ExecutionContextHandle\_\-t exec\_\-handle)
+\item 
+UniqueIdentifier {\bf get\_\-sdo\_\-id} ()  raises (NotAvailable, InternalError)
+\item 
+string {\bf get\_\-sdo\_\-type} ()  raises (NotAvailable, InternalError)
+\item 
+DeviceProfile {\bf get\_\-device\_\-profile} ()  raises (NotAvailable, InternalError)
+\item 
+ServiceProfileList {\bf get\_\-service\_\-profiles} ()  raises (NotAvailable, InternalError)
+\item 
+ServiceProfile {\bf get\_\-service\_\-profile} (in UniqueIdentifier id)  raises (InvalidParameter, NotAvailable, InternalError)
+\item 
+SDOService {\bf get\_\-sdo\_\-service} (in UniqueIdentifier id)  raises (InvalidParameter, NotAvailable, InternalError)
+\item 
+Configuration {\bf get\_\-configuration} ()  raises (InterfaceNotImplemented, NotAvailable, InternalError)
+\item 
+Monitoring {\bf get\_\-monitoring} ()  raises (InterfaceNotImplemented, NotAvailable, InternalError)
+\item 
+OrganizationList {\bf get\_\-organizations} ()  raises (NotAvailable, InternalError)
+\item 
+NVList {\bf get\_\-status\_\-list} ()  raises (NotAvailable, InternalError)
+\item 
+any {\bf get\_\-status} (in string nme)  raises (InvalidParameter, NotAvailable, InternalError)
+\item 
+OrganizationList {\bf get\_\-owned\_\-organizations} ()  raises (NotAvailable,InternalError)
+\item 
+ReturnCode\_\-t {\bf on\_\-execute} (in ExecutionContextHandle\_\-t exec\_\-handle)
+\item 
+ReturnCode\_\-t {\bf on\_\-state\_\-update} (in ExecutionContextHandle\_\-t exec\_\-handle)
+\item 
+ReturnCode\_\-t {\bf on\_\-rate\_\-changed} (in ExecutionContextHandle\_\-t exec\_\-handle)
+\end{DoxyCompactItemize}
+
+
+\subsection{Èñ¢Êï∞}
+\index{OpenRTM::DataFlowComponent@{OpenRTM::DataFlowComponent}!attach\_\-context@{attach\_\-context}}
+\index{attach\_\-context@{attach\_\-context}!OpenRTM::DataFlowComponent@{OpenRTM::DataFlowComponent}}
+\subsubsection[{attach\_\-context}]{\setlength{\rightskip}{0pt plus 5cm}ExecutionContextHandle\_\-t RTC::LightweightRTObject::attach\_\-context (in {\bf ExecutionContext} {\em exec\_\-context})\hspace{0.3cm}{\ttfamily  [inherited]}}\label{interfaceRTC_1_1LightweightRTObject_a48dbdbcac3254c29ad01d43a4ee5a00c}
+\index{OpenRTM::DataFlowComponent@{OpenRTM::DataFlowComponent}!detach\_\-context@{detach\_\-context}}
+\index{detach\_\-context@{detach\_\-context}!OpenRTM::DataFlowComponent@{OpenRTM::DataFlowComponent}}
+\subsubsection[{detach\_\-context}]{\setlength{\rightskip}{0pt plus 5cm}ReturnCode\_\-t RTC::LightweightRTObject::detach\_\-context (in {\bf ExecutionContextHandle\_\-t} {\em exec\_\-handle})\hspace{0.3cm}{\ttfamily  [inherited]}}\label{interfaceRTC_1_1LightweightRTObject_a8eb94420ca08e8f7acaa778ed883b9a4}
+\index{OpenRTM::DataFlowComponent@{OpenRTM::DataFlowComponent}!exit@{exit}}
+\index{exit@{exit}!OpenRTM::DataFlowComponent@{OpenRTM::DataFlowComponent}}
+\subsubsection[{exit}]{\setlength{\rightskip}{0pt plus 5cm}ReturnCode\_\-t RTC::LightweightRTObject::exit ()\hspace{0.3cm}{\ttfamily  [inherited]}}\label{interfaceRTC_1_1LightweightRTObject_a49bd940b6964fa80d696db15b45c2f87}
+\index{OpenRTM::DataFlowComponent@{OpenRTM::DataFlowComponent}!finalize@{finalize}}
+\index{finalize@{finalize}!OpenRTM::DataFlowComponent@{OpenRTM::DataFlowComponent}}
+\subsubsection[{finalize}]{\setlength{\rightskip}{0pt plus 5cm}ReturnCode\_\-t RTC::LightweightRTObject::finalize ()\hspace{0.3cm}{\ttfamily  [inherited]}}\label{interfaceRTC_1_1LightweightRTObject_a23466f177b4289662ea035be831426ad}
+\index{OpenRTM::DataFlowComponent@{OpenRTM::DataFlowComponent}!get\_\-component\_\-profile@{get\_\-component\_\-profile}}
+\index{get\_\-component\_\-profile@{get\_\-component\_\-profile}!OpenRTM::DataFlowComponent@{OpenRTM::DataFlowComponent}}
+\subsubsection[{get\_\-component\_\-profile}]{\setlength{\rightskip}{0pt plus 5cm}ComponentProfile RTC::RTObject::get\_\-component\_\-profile ()\hspace{0.3cm}{\ttfamily  [inherited]}}\label{interfaceRTC_1_1RTObject_aa75c245c8e7e0dd19148bbe5cefe4dcc}
+\index{OpenRTM::DataFlowComponent@{OpenRTM::DataFlowComponent}!get\_\-configuration@{get\_\-configuration}}
+\index{get\_\-configuration@{get\_\-configuration}!OpenRTM::DataFlowComponent@{OpenRTM::DataFlowComponent}}
+\subsubsection[{get\_\-configuration}]{\setlength{\rightskip}{0pt plus 5cm}Configuration SDOPackage::SDO::get\_\-configuration ()  raises (InterfaceNotImplemented, NotAvailable, InternalError)\hspace{0.3cm}{\ttfamily  [inherited]}}\label{interfaceSDOPackage_1_1SDO_a89b6ff35b88f6212355e439a3a47c60a}
+\index{OpenRTM::DataFlowComponent@{OpenRTM::DataFlowComponent}!get\_\-context@{get\_\-context}}
+\index{get\_\-context@{get\_\-context}!OpenRTM::DataFlowComponent@{OpenRTM::DataFlowComponent}}
+\subsubsection[{get\_\-context}]{\setlength{\rightskip}{0pt plus 5cm}ExecutionContext RTC::LightweightRTObject::get\_\-context (in {\bf ExecutionContextHandle\_\-t} {\em exec\_\-handle})\hspace{0.3cm}{\ttfamily  [inherited]}}\label{interfaceRTC_1_1LightweightRTObject_a7bb123faf81bcb57542c3a17f10948d6}
+\index{OpenRTM::DataFlowComponent@{OpenRTM::DataFlowComponent}!get\_\-context\_\-handle@{get\_\-context\_\-handle}}
+\index{get\_\-context\_\-handle@{get\_\-context\_\-handle}!OpenRTM::DataFlowComponent@{OpenRTM::DataFlowComponent}}
+\subsubsection[{get\_\-context\_\-handle}]{\setlength{\rightskip}{0pt plus 5cm}ExecutionContextHandle\_\-t RTC::LightweightRTObject::get\_\-context\_\-handle (in {\bf ExecutionContext} {\em cxt})\hspace{0.3cm}{\ttfamily  [inherited]}}\label{interfaceRTC_1_1LightweightRTObject_af54041744c01d68026aa200276e12f45}
+\#\#\# [∏Ìø¢] \doxyref{RTC.idl}{p.}{RTC_8idl} §À§œ¥ﬁ§ﬁ§Ï§∆§§§ §§§¨PIM§À§œ¥ﬁ§ﬁ§Ï§∆§§§Î°£ \#\#\# PIM§¨¿µ§∑§§°£ \index{OpenRTM::DataFlowComponent@{OpenRTM::DataFlowComponent}!get\_\-device\_\-profile@{get\_\-device\_\-profile}}
+\index{get\_\-device\_\-profile@{get\_\-device\_\-profile}!OpenRTM::DataFlowComponent@{OpenRTM::DataFlowComponent}}
+\subsubsection[{get\_\-device\_\-profile}]{\setlength{\rightskip}{0pt plus 5cm}DeviceProfile SDOPackage::SDO::get\_\-device\_\-profile ()  raises (NotAvailable, InternalError)\hspace{0.3cm}{\ttfamily  [inherited]}}\label{interfaceSDOPackage_1_1SDO_af96303b2025ea3e340303365b7ad9f0f}
+\index{OpenRTM::DataFlowComponent@{OpenRTM::DataFlowComponent}!get\_\-monitoring@{get\_\-monitoring}}
+\index{get\_\-monitoring@{get\_\-monitoring}!OpenRTM::DataFlowComponent@{OpenRTM::DataFlowComponent}}
+\subsubsection[{get\_\-monitoring}]{\setlength{\rightskip}{0pt plus 5cm}Monitoring SDOPackage::SDO::get\_\-monitoring ()  raises (InterfaceNotImplemented, NotAvailable, InternalError)\hspace{0.3cm}{\ttfamily  [inherited]}}\label{interfaceSDOPackage_1_1SDO_a7db6dded91e964ec26085d1fa8f540c9}
+\index{OpenRTM::DataFlowComponent@{OpenRTM::DataFlowComponent}!get\_\-organizations@{get\_\-organizations}}
+\index{get\_\-organizations@{get\_\-organizations}!OpenRTM::DataFlowComponent@{OpenRTM::DataFlowComponent}}
+\subsubsection[{get\_\-organizations}]{\setlength{\rightskip}{0pt plus 5cm}OrganizationList SDOPackage::SDO::get\_\-organizations ()  raises (NotAvailable, InternalError)\hspace{0.3cm}{\ttfamily  [inherited]}}\label{interfaceSDOPackage_1_1SDO_aadb5f8bb6eb2529189d3779940607edd}
+\index{OpenRTM::DataFlowComponent@{OpenRTM::DataFlowComponent}!get\_\-owned\_\-contexts@{get\_\-owned\_\-contexts}}
+\index{get\_\-owned\_\-contexts@{get\_\-owned\_\-contexts}!OpenRTM::DataFlowComponent@{OpenRTM::DataFlowComponent}}
+\subsubsection[{get\_\-owned\_\-contexts}]{\setlength{\rightskip}{0pt plus 5cm}ExecutionContextList RTC::LightweightRTObject::get\_\-owned\_\-contexts ()\hspace{0.3cm}{\ttfamily  [inherited]}}\label{interfaceRTC_1_1LightweightRTObject_aea9dd2a447cc3ddc55f20aab698da408}
+
+
+get\_\-owned\_\-contexts 
+
+\subsection{Description}\label{interfaceRTC_1_1LightweightRTObject_Description}
+§≥§Œ \doxyref{RTC}{p.}{namespaceRTC} §¨ΩÍÕ≠§π§Î \doxyref{ExecutionContext}{p.}{interfaceRTC_1_1ExecutionContext} §Œ•Í•π•»§ÚºË∆¿§π§Î°£ \index{OpenRTM::DataFlowComponent@{OpenRTM::DataFlowComponent}!get\_\-owned\_\-organizations@{get\_\-owned\_\-organizations}}
+\index{get\_\-owned\_\-organizations@{get\_\-owned\_\-organizations}!OpenRTM::DataFlowComponent@{OpenRTM::DataFlowComponent}}
+\subsubsection[{get\_\-owned\_\-organizations}]{\setlength{\rightskip}{0pt plus 5cm}OrganizationList SDOPackage::SDOSystemElement::get\_\-owned\_\-organizations ()  raises (NotAvailable,InternalError)\hspace{0.3cm}{\ttfamily  [inherited]}}\label{interfaceSDOPackage_1_1SDOSystemElement_a81238047c5dfa47d2cf3ebce1b78b240}
+\index{OpenRTM::DataFlowComponent@{OpenRTM::DataFlowComponent}!get\_\-participating\_\-contexts@{get\_\-participating\_\-contexts}}
+\index{get\_\-participating\_\-contexts@{get\_\-participating\_\-contexts}!OpenRTM::DataFlowComponent@{OpenRTM::DataFlowComponent}}
+\subsubsection[{get\_\-participating\_\-contexts}]{\setlength{\rightskip}{0pt plus 5cm}ExecutionContextList RTC::LightweightRTObject::get\_\-participating\_\-contexts ()\hspace{0.3cm}{\ttfamily  [inherited]}}\label{interfaceRTC_1_1LightweightRTObject_af2224880b89275ecf82efad0999b022a}
+
+
+get\_\-participating\_\-contexts 
+
+\subsection{Description}\label{interfaceRTC_1_1LightweightRTObject_Description}
+§≥§Œ \doxyref{RTC}{p.}{namespaceRTC} §¨ª≤≤√§∑§∆§§§Î§π§Ÿ§∆§Œ \doxyref{ExecutionContext}{p.}{interfaceRTC_1_1ExecutionContext} §Œ•Í•π•»§ÚºË∆¿§π§Î°£\subsection{Semantics}\label{interfaceRTC_1_1LightweightRTObject_Semantics}
+§≥§Œ•Í•π•»§À¥ﬁ§ﬁ§Ï§Îº¬π‘•≥•Û•∆•≠•π•»§œ°¢attach\_\-context §¨∏∆§”Ω– §µ§Ï§Î§¥§»§À°¢•Í•π•»§Àƒ…≤√§µ§Ï°¢detach\_\-context §¨∏∆§”Ω–§µ§Ï§Î§¥ §»§À°¢•Í•π•»§´§È∫ÔΩ¸§µ§Ï§Î°£ \index{OpenRTM::DataFlowComponent@{OpenRTM::DataFlowComponent}!get\_\-ports@{get\_\-ports}}
+\index{get\_\-ports@{get\_\-ports}!OpenRTM::DataFlowComponent@{OpenRTM::DataFlowComponent}}
+\subsubsection[{get\_\-ports}]{\setlength{\rightskip}{0pt plus 5cm}PortServiceList RTC::RTObject::get\_\-ports ()\hspace{0.3cm}{\ttfamily  [inherited]}}\label{interfaceRTC_1_1RTObject_a4e21edb9c244ed8469cb1fb2de48e158}
+\index{OpenRTM::DataFlowComponent@{OpenRTM::DataFlowComponent}!get\_\-sdo\_\-id@{get\_\-sdo\_\-id}}
+\index{get\_\-sdo\_\-id@{get\_\-sdo\_\-id}!OpenRTM::DataFlowComponent@{OpenRTM::DataFlowComponent}}
+\subsubsection[{get\_\-sdo\_\-id}]{\setlength{\rightskip}{0pt plus 5cm}UniqueIdentifier SDOPackage::SDO::get\_\-sdo\_\-id ()  raises (NotAvailable, InternalError)\hspace{0.3cm}{\ttfamily  [inherited]}}\label{interfaceSDOPackage_1_1SDO_a08ccbbb1855dff27c598c38ce0c5aab1}
+\index{OpenRTM::DataFlowComponent@{OpenRTM::DataFlowComponent}!get\_\-sdo\_\-service@{get\_\-sdo\_\-service}}
+\index{get\_\-sdo\_\-service@{get\_\-sdo\_\-service}!OpenRTM::DataFlowComponent@{OpenRTM::DataFlowComponent}}
+\subsubsection[{get\_\-sdo\_\-service}]{\setlength{\rightskip}{0pt plus 5cm}SDOService SDOPackage::SDO::get\_\-sdo\_\-service (in {\bf UniqueIdentifier} {\em id})  raises (InvalidParameter, NotAvailable, InternalError)\hspace{0.3cm}{\ttfamily  [inherited]}}\label{interfaceSDOPackage_1_1SDO_a7d612d97207fecaf134959b93c6b3e60}
+\index{OpenRTM::DataFlowComponent@{OpenRTM::DataFlowComponent}!get\_\-sdo\_\-type@{get\_\-sdo\_\-type}}
+\index{get\_\-sdo\_\-type@{get\_\-sdo\_\-type}!OpenRTM::DataFlowComponent@{OpenRTM::DataFlowComponent}}
+\subsubsection[{get\_\-sdo\_\-type}]{\setlength{\rightskip}{0pt plus 5cm}string SDOPackage::SDO::get\_\-sdo\_\-type ()  raises (NotAvailable, InternalError)\hspace{0.3cm}{\ttfamily  [inherited]}}\label{interfaceSDOPackage_1_1SDO_a2b4141376be89eb90fd4904643476320}
+\index{OpenRTM::DataFlowComponent@{OpenRTM::DataFlowComponent}!get\_\-service\_\-profile@{get\_\-service\_\-profile}}
+\index{get\_\-service\_\-profile@{get\_\-service\_\-profile}!OpenRTM::DataFlowComponent@{OpenRTM::DataFlowComponent}}
+\subsubsection[{get\_\-service\_\-profile}]{\setlength{\rightskip}{0pt plus 5cm}ServiceProfile SDOPackage::SDO::get\_\-service\_\-profile (in {\bf UniqueIdentifier} {\em id})  raises (InvalidParameter, NotAvailable, InternalError)\hspace{0.3cm}{\ttfamily  [inherited]}}\label{interfaceSDOPackage_1_1SDO_a5ea1929e10ccc5e8b5896c4b0fbee635}
+\index{OpenRTM::DataFlowComponent@{OpenRTM::DataFlowComponent}!get\_\-service\_\-profiles@{get\_\-service\_\-profiles}}
+\index{get\_\-service\_\-profiles@{get\_\-service\_\-profiles}!OpenRTM::DataFlowComponent@{OpenRTM::DataFlowComponent}}
+\subsubsection[{get\_\-service\_\-profiles}]{\setlength{\rightskip}{0pt plus 5cm}ServiceProfileList SDOPackage::SDO::get\_\-service\_\-profiles ()  raises (NotAvailable, InternalError)\hspace{0.3cm}{\ttfamily  [inherited]}}\label{interfaceSDOPackage_1_1SDO_af455c384fa54ab6872d28db1baec3a1d}
+\index{OpenRTM::DataFlowComponent@{OpenRTM::DataFlowComponent}!get\_\-status@{get\_\-status}}
+\index{get\_\-status@{get\_\-status}!OpenRTM::DataFlowComponent@{OpenRTM::DataFlowComponent}}
+\subsubsection[{get\_\-status}]{\setlength{\rightskip}{0pt plus 5cm}any SDOPackage::SDO::get\_\-status (in string {\em nme})  raises (InvalidParameter, NotAvailable, InternalError)\hspace{0.3cm}{\ttfamily  [inherited]}}\label{interfaceSDOPackage_1_1SDO_a2655f624a38b590593154c8a8c11e6e8}
+\index{OpenRTM::DataFlowComponent@{OpenRTM::DataFlowComponent}!get\_\-status\_\-list@{get\_\-status\_\-list}}
+\index{get\_\-status\_\-list@{get\_\-status\_\-list}!OpenRTM::DataFlowComponent@{OpenRTM::DataFlowComponent}}
+\subsubsection[{get\_\-status\_\-list}]{\setlength{\rightskip}{0pt plus 5cm}NVList SDOPackage::SDO::get\_\-status\_\-list ()  raises (NotAvailable, InternalError)\hspace{0.3cm}{\ttfamily  [inherited]}}\label{interfaceSDOPackage_1_1SDO_ae019ba73a5675a871701153bc56db14c}
+\index{OpenRTM::DataFlowComponent@{OpenRTM::DataFlowComponent}!initialize@{initialize}}
+\index{initialize@{initialize}!OpenRTM::DataFlowComponent@{OpenRTM::DataFlowComponent}}
+\subsubsection[{initialize}]{\setlength{\rightskip}{0pt plus 5cm}ReturnCode\_\-t RTC::LightweightRTObject::initialize ()\hspace{0.3cm}{\ttfamily  [inherited]}}\label{interfaceRTC_1_1LightweightRTObject_afb28c4d97677804da09488578b840eb5}
+\index{OpenRTM::DataFlowComponent@{OpenRTM::DataFlowComponent}!is\_\-alive@{is\_\-alive}}
+\index{is\_\-alive@{is\_\-alive}!OpenRTM::DataFlowComponent@{OpenRTM::DataFlowComponent}}
+\subsubsection[{is\_\-alive}]{\setlength{\rightskip}{0pt plus 5cm}boolean RTC::LightweightRTObject::is\_\-alive (in {\bf ExecutionContext} {\em exec\_\-context})\hspace{0.3cm}{\ttfamily  [inherited]}}\label{interfaceRTC_1_1LightweightRTObject_aa07c8c299b0addc49887508c1ee7be27}
+\index{OpenRTM::DataFlowComponent@{OpenRTM::DataFlowComponent}!on\_\-aborting@{on\_\-aborting}}
+\index{on\_\-aborting@{on\_\-aborting}!OpenRTM::DataFlowComponent@{OpenRTM::DataFlowComponent}}
+\subsubsection[{on\_\-aborting}]{\setlength{\rightskip}{0pt plus 5cm}ReturnCode\_\-t RTC::ComponentAction::on\_\-aborting (in {\bf ExecutionContextHandle\_\-t} {\em exec\_\-handle})\hspace{0.3cm}{\ttfamily  [inherited]}}\label{interfaceRTC_1_1ComponentAction_a876e58ebcea16c307e131b3e6a58ddbe}
+\index{OpenRTM::DataFlowComponent@{OpenRTM::DataFlowComponent}!on\_\-activated@{on\_\-activated}}
+\index{on\_\-activated@{on\_\-activated}!OpenRTM::DataFlowComponent@{OpenRTM::DataFlowComponent}}
+\subsubsection[{on\_\-activated}]{\setlength{\rightskip}{0pt plus 5cm}ReturnCode\_\-t RTC::ComponentAction::on\_\-activated (in {\bf ExecutionContextHandle\_\-t} {\em exec\_\-handle})\hspace{0.3cm}{\ttfamily  [inherited]}}\label{interfaceRTC_1_1ComponentAction_a4f51f627067d0c54e89c4c0827fa6432}
+\index{OpenRTM::DataFlowComponent@{OpenRTM::DataFlowComponent}!on\_\-deactivated@{on\_\-deactivated}}
+\index{on\_\-deactivated@{on\_\-deactivated}!OpenRTM::DataFlowComponent@{OpenRTM::DataFlowComponent}}
+\subsubsection[{on\_\-deactivated}]{\setlength{\rightskip}{0pt plus 5cm}ReturnCode\_\-t RTC::ComponentAction::on\_\-deactivated (in {\bf ExecutionContextHandle\_\-t} {\em exec\_\-handle})\hspace{0.3cm}{\ttfamily  [inherited]}}\label{interfaceRTC_1_1ComponentAction_aa5f9cfb9677ba685be333ad666c87f88}
+\index{OpenRTM::DataFlowComponent@{OpenRTM::DataFlowComponent}!on\_\-error@{on\_\-error}}
+\index{on\_\-error@{on\_\-error}!OpenRTM::DataFlowComponent@{OpenRTM::DataFlowComponent}}
+\subsubsection[{on\_\-error}]{\setlength{\rightskip}{0pt plus 5cm}ReturnCode\_\-t RTC::ComponentAction::on\_\-error (in {\bf ExecutionContextHandle\_\-t} {\em exec\_\-handle})\hspace{0.3cm}{\ttfamily  [inherited]}}\label{interfaceRTC_1_1ComponentAction_a110fdde803e9b13f27308b897439962a}
+\index{OpenRTM::DataFlowComponent@{OpenRTM::DataFlowComponent}!on\_\-execute@{on\_\-execute}}
+\index{on\_\-execute@{on\_\-execute}!OpenRTM::DataFlowComponent@{OpenRTM::DataFlowComponent}}
+\subsubsection[{on\_\-execute}]{\setlength{\rightskip}{0pt plus 5cm}ReturnCode\_\-t RTC::DataFlowComponentAction::on\_\-execute (in {\bf ExecutionContextHandle\_\-t} {\em exec\_\-handle})\hspace{0.3cm}{\ttfamily  [inherited]}}\label{interfaceRTC_1_1DataFlowComponentAction_a70a1d7f32e03c719dd8949ea5d0be214}
+\index{OpenRTM::DataFlowComponent@{OpenRTM::DataFlowComponent}!on\_\-finalize@{on\_\-finalize}}
+\index{on\_\-finalize@{on\_\-finalize}!OpenRTM::DataFlowComponent@{OpenRTM::DataFlowComponent}}
+\subsubsection[{on\_\-finalize}]{\setlength{\rightskip}{0pt plus 5cm}ReturnCode\_\-t RTC::ComponentAction::on\_\-finalize ()\hspace{0.3cm}{\ttfamily  [inherited]}}\label{interfaceRTC_1_1ComponentAction_a9c9e2d638cd2b748609be8a23410aedc}
+\index{OpenRTM::DataFlowComponent@{OpenRTM::DataFlowComponent}!on\_\-initialize@{on\_\-initialize}}
+\index{on\_\-initialize@{on\_\-initialize}!OpenRTM::DataFlowComponent@{OpenRTM::DataFlowComponent}}
+\subsubsection[{on\_\-initialize}]{\setlength{\rightskip}{0pt plus 5cm}ReturnCode\_\-t RTC::ComponentAction::on\_\-initialize ()\hspace{0.3cm}{\ttfamily  [inherited]}}\label{interfaceRTC_1_1ComponentAction_a8703b183bc1bed9e2fd3ecac126cb231}
+\index{OpenRTM::DataFlowComponent@{OpenRTM::DataFlowComponent}!on\_\-rate\_\-changed@{on\_\-rate\_\-changed}}
+\index{on\_\-rate\_\-changed@{on\_\-rate\_\-changed}!OpenRTM::DataFlowComponent@{OpenRTM::DataFlowComponent}}
+\subsubsection[{on\_\-rate\_\-changed}]{\setlength{\rightskip}{0pt plus 5cm}ReturnCode\_\-t RTC::DataFlowComponentAction::on\_\-rate\_\-changed (in {\bf ExecutionContextHandle\_\-t} {\em exec\_\-handle})\hspace{0.3cm}{\ttfamily  [inherited]}}\label{interfaceRTC_1_1DataFlowComponentAction_a6d010e52880cb1e4228817041a6ac518}
+\index{OpenRTM::DataFlowComponent@{OpenRTM::DataFlowComponent}!on\_\-reset@{on\_\-reset}}
+\index{on\_\-reset@{on\_\-reset}!OpenRTM::DataFlowComponent@{OpenRTM::DataFlowComponent}}
+\subsubsection[{on\_\-reset}]{\setlength{\rightskip}{0pt plus 5cm}ReturnCode\_\-t RTC::ComponentAction::on\_\-reset (in {\bf ExecutionContextHandle\_\-t} {\em exec\_\-handle})\hspace{0.3cm}{\ttfamily  [inherited]}}\label{interfaceRTC_1_1ComponentAction_adb0e61bff251337d79c7c7d050d8304e}
+\index{OpenRTM::DataFlowComponent@{OpenRTM::DataFlowComponent}!on\_\-shutdown@{on\_\-shutdown}}
+\index{on\_\-shutdown@{on\_\-shutdown}!OpenRTM::DataFlowComponent@{OpenRTM::DataFlowComponent}}
+\subsubsection[{on\_\-shutdown}]{\setlength{\rightskip}{0pt plus 5cm}ReturnCode\_\-t RTC::ComponentAction::on\_\-shutdown (in {\bf ExecutionContextHandle\_\-t} {\em exec\_\-handle})\hspace{0.3cm}{\ttfamily  [inherited]}}\label{interfaceRTC_1_1ComponentAction_accc47711344c811c9bdba0d66a3048f2}
+\index{OpenRTM::DataFlowComponent@{OpenRTM::DataFlowComponent}!on\_\-startup@{on\_\-startup}}
+\index{on\_\-startup@{on\_\-startup}!OpenRTM::DataFlowComponent@{OpenRTM::DataFlowComponent}}
+\subsubsection[{on\_\-startup}]{\setlength{\rightskip}{0pt plus 5cm}ReturnCode\_\-t RTC::ComponentAction::on\_\-startup (in {\bf ExecutionContextHandle\_\-t} {\em exec\_\-handle})\hspace{0.3cm}{\ttfamily  [inherited]}}\label{interfaceRTC_1_1ComponentAction_ac305f00c92f4650cf4fc798aac37eef2}
+\index{OpenRTM::DataFlowComponent@{OpenRTM::DataFlowComponent}!on\_\-state\_\-update@{on\_\-state\_\-update}}
+\index{on\_\-state\_\-update@{on\_\-state\_\-update}!OpenRTM::DataFlowComponent@{OpenRTM::DataFlowComponent}}
+\subsubsection[{on\_\-state\_\-update}]{\setlength{\rightskip}{0pt plus 5cm}ReturnCode\_\-t RTC::DataFlowComponentAction::on\_\-state\_\-update (in {\bf ExecutionContextHandle\_\-t} {\em exec\_\-handle})\hspace{0.3cm}{\ttfamily  [inherited]}}\label{interfaceRTC_1_1DataFlowComponentAction_a10aed288388578b108c9766f67997668}
+
+
+„Åì„ÅÆ„Ç§„É≥„Çø„Éï„Çß„Éº„Çπ„ÅÆË™¨Êòé„ÅØÊ¨°„ÅÆ„Éï„Ç°„Ç§„É´„Åã„ÇâÁîüÊàê„Åï„Çå„Åæ„Åó„Åü:\begin{DoxyCompactItemize}
+\item 
+{\bf OpenRTM.idl}\end{DoxyCompactItemize}

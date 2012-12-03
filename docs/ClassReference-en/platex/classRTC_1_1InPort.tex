@@ -1,0 +1,202 @@
+\section{RTC::InPort$<$ DataType $>$ Class Template Reference}
+\label{classRTC_1_1InPort}\index{RTC::InPort@{RTC::InPort}}
+
+
+\doxyref{InPort}{p.}{classRTC_1_1InPort} template class.  
+
+
+
+
+{\ttfamily \#include $<$InPort.h$>$}
+
+Inheritance diagram for RTC::InPort$<$ DataType $>$:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3cm]{classRTC_1_1InPort}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+DATAPORTSTATUS\_\-ENUM {\bf InPort} (const char $\ast$name, DataType \&value, int bufsize=64, bool read\_\-block=false, bool write\_\-block=false, int read\_\-timeout=0, int write\_\-timeout=0)
+\begin{DoxyCompactList}\small\item\em A constructor. \item\end{DoxyCompactList}\item 
+virtual {\bf $\sim$InPort} (void)
+\begin{DoxyCompactList}\small\item\em Destructor. \item\end{DoxyCompactList}\item 
+virtual const char $\ast$ {\bf name} ()
+\begin{DoxyCompactList}\small\item\em Get port name. \item\end{DoxyCompactList}\item 
+virtual bool {\bf isNew} ()
+\begin{DoxyCompactList}\small\item\em Check whether the data is newest. \item\end{DoxyCompactList}\item 
+virtual bool {\bf isEmpty} ()
+\begin{DoxyCompactList}\small\item\em Check whether the data is newest. \item\end{DoxyCompactList}\item 
+bool {\bf read} ()
+\begin{DoxyCompactList}\small\item\em Readout the value from DataPort. \item\end{DoxyCompactList}\item 
+virtual void {\bf update} ()
+\begin{DoxyCompactList}\small\item\em Read the newly value to type-\/T variable which is bound to InPort's buffer. \item\end{DoxyCompactList}\item 
+void {\bf operator$>$$>$} (DataType \&rhs)
+\begin{DoxyCompactList}\small\item\em Read the newly value data in \doxyref{InPort}{p.}{classRTC_1_1InPort} to type-\/T variable. \item\end{DoxyCompactList}\item 
+void {\bf setOnRead} ({\bf OnRead}$<$ DataType $>$ $\ast$on\_\-read)
+\begin{DoxyCompactList}\small\item\em Set callback when data is read from the \doxyref{InPort}{p.}{classRTC_1_1InPort} buffer. \item\end{DoxyCompactList}\item 
+void {\bf setOnReadConvert} ({\bf OnReadConvert}$<$ DataType $>$ $\ast$on\_\-rconvert)
+\begin{DoxyCompactList}\small\item\em Set callback when data is readout to the \doxyref{InPort}{p.}{classRTC_1_1InPort} buffer. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$class DataType$>$ class RTC::InPort$<$ DataType $>$}
+
+\doxyref{InPort}{p.}{classRTC_1_1InPort} template class. This is a template class that implements \doxyref{InPort}{p.}{classRTC_1_1InPort}. $<$T$>$ is the type defined in BasicDataType.idl and must be the structure which has both Time type tm and type-\/T data as a member. \doxyref{InPort}{p.}{classRTC_1_1InPort} has a ring buffer internally, and stores the received data externally in this buffer one by one. The size of ring buffer can be specified according to the argument of constructor, though the default size is 64. Unread data and data which is already read are managed with the flag, and the data can be handled by the \doxyref{isNew()}{p.}{classRTC_1_1InPort_af3030dcf08e4951924407df3e71fc123}, write(), \doxyref{read()}{p.}{classRTC_1_1InPort_a1b6e58e0c821b46148266ddfd0b9bd54}, isFull() and \doxyref{isEmpty()}{p.}{classRTC_1_1InPort_a0bf0a0b180a60961fa7559aa54af57ca} method etc.
+
+\begin{DoxySince}{Since}
+0.2.0 
+\end{DoxySince}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{RTC::InPort@{RTC::InPort}!InPort@{InPort}}
+\index{InPort@{InPort}!RTC::InPort@{RTC::InPort}}
+\subsubsection[{InPort}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class DataType $>$ DATAPORTSTATUS\_\-ENUM {\bf RTC::InPort}$<$ DataType $>$::{\bf InPort} (const char $\ast$ {\em name}, \/  DataType \& {\em value}, \/  int {\em bufsize} = {\ttfamily 64}, \/  bool {\em read\_\-block} = {\ttfamily false}, \/  bool {\em write\_\-block} = {\ttfamily false}, \/  int {\em read\_\-timeout} = {\ttfamily 0}, \/  int {\em write\_\-timeout} = {\ttfamily 0})\hspace{0.3cm}{\ttfamily  [inline]}}\label{classRTC_1_1InPort_a8450177baa07f202144fbba039f4b827}
+
+
+A constructor. 
+
+constructor. This is bound to type-\/T variable given as a parameter.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em name}]A name of the \doxyref{InPort}{p.}{classRTC_1_1InPort}. This name is referred by InPortBase::name(). \item[{\em value}]type-\/T variable that is bound to this \doxyref{InPort}{p.}{classRTC_1_1InPort}. \item[{\em bufsize}]Buffer length of internal ring buffer of \doxyref{InPort}{p.}{classRTC_1_1InPort} (The default value:64) \item[{\em read\_\-block}]Flag of reading block. When there are not unread data at reading data, set whether to block data until receiving the next data. (The default value:false) \item[{\em write\_\-block}]Flag of writing block. If the buffer was full at writing data, set whether to block data until the buffer has space. (The default value:false) \item[{\em read\_\-timeout}]Data reading timeout time (millisecond) when not specifying read blocking. (The default value:0) \item[{\em write\_\-timeout}]Data writing timeout time (millisecond) when not specifying writing block. (The default value:0) \end{DoxyParams}
+\index{RTC::InPort@{RTC::InPort}!$\sim$InPort@{$\sim$InPort}}
+\index{$\sim$InPort@{$\sim$InPort}!RTC::InPort@{RTC::InPort}}
+\subsubsection[{$\sim$InPort}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class DataType $>$ virtual {\bf RTC::InPort}$<$ DataType $>$::$\sim${\bf InPort} (void)\hspace{0.3cm}{\ttfamily  [inline, virtual]}}\label{classRTC_1_1InPort_a42532e8164d15bbb92cdce9ff5f3baf8}
+
+
+Destructor. 
+
+Destructor 
+
+\subsection{Member Function Documentation}
+\index{RTC::InPort@{RTC::InPort}!isEmpty@{isEmpty}}
+\index{isEmpty@{isEmpty}!RTC::InPort@{RTC::InPort}}
+\subsubsection[{isEmpty}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class DataType $>$ virtual bool {\bf RTC::InPort}$<$ DataType $>$::isEmpty (void)\hspace{0.3cm}{\ttfamily  [inline, virtual]}}\label{classRTC_1_1InPort_a0bf0a0b180a60961fa7559aa54af57ca}
+
+
+Check whether the data is newest. 
+
+Check whether the data stored at a current buffer position is newest.
+
+\begin{DoxyReturn}{Returns}
+Newest data check result ( true:Newest data. Data has not been readout yet. false:Past data．Data has already been readout.) 
+\end{DoxyReturn}
+
+
+References RTC::InPortBase::m\_\-connectors, RTC::PortBase::m\_\-connectorsMutex, RTC\_\-DEBUG, and RTC\_\-TRACE.
+
+\index{RTC::InPort@{RTC::InPort}!isNew@{isNew}}
+\index{isNew@{isNew}!RTC::InPort@{RTC::InPort}}
+\subsubsection[{isNew}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class DataType $>$ virtual bool {\bf RTC::InPort}$<$ DataType $>$::isNew ()\hspace{0.3cm}{\ttfamily  [inline, virtual]}}\label{classRTC_1_1InPort_af3030dcf08e4951924407df3e71fc123}
+
+
+Check whether the data is newest. 
+
+Check whether the data stored at a current buffer position is newest.
+
+\begin{DoxyReturn}{Returns}
+Newest data check result ( true:Newest data. Data has not been readout yet. false:Past data．Data has already been readout.) 
+\end{DoxyReturn}
+
+
+References RTC::InPortBase::m\_\-connectors, RTC::PortBase::m\_\-connectorsMutex, RTC\_\-DEBUG, and RTC\_\-TRACE.
+
+\index{RTC::InPort@{RTC::InPort}!name@{name}}
+\index{name@{name}!RTC::InPort@{RTC::InPort}}
+\subsubsection[{name}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class DataType $>$ virtual const char$\ast$ {\bf RTC::InPort}$<$ DataType $>$::name ()\hspace{0.3cm}{\ttfamily  [inline, virtual]}}\label{classRTC_1_1InPort_ae8e026ff3e775a211022e2a108d8a672}
+
+
+Get port name. 
+
+Get port name.
+
+\begin{DoxyReturn}{Returns}
+The port name 
+\end{DoxyReturn}
+\index{RTC::InPort@{RTC::InPort}!operator$>$$>$@{operator$>$$>$}}
+\index{operator$>$$>$@{operator$>$$>$}!RTC::InPort@{RTC::InPort}}
+\subsubsection[{operator$>$$>$}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class DataType $>$ void {\bf RTC::InPort}$<$ DataType $>$::operator$>$$>$ (DataType \& {\em rhs})\hspace{0.3cm}{\ttfamily  [inline]}}\label{classRTC_1_1InPort_a44cc1bb1cf583f7b88578e39c04b5ea5}
+
+
+Read the newly value data in \doxyref{InPort}{p.}{classRTC_1_1InPort} to type-\/T variable. 
+
+Read the newly data set in \doxyref{InPort}{p.}{classRTC_1_1InPort} and set to specified data variable.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em rhs}]The type-\/T variable to read from InPort's buffer \end{DoxyParams}
+
+
+References RTC::InPort$<$ DataType $>$::read().
+
+\index{RTC::InPort@{RTC::InPort}!read@{read}}
+\index{read@{read}!RTC::InPort@{RTC::InPort}}
+\subsubsection[{read}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class DataType $>$ bool {\bf RTC::InPort}$<$ DataType $>$::read ()\hspace{0.3cm}{\ttfamily  [inline, virtual]}}\label{classRTC_1_1InPort_a1b6e58e0c821b46148266ddfd0b9bd54}
+
+
+Readout the value from DataPort. 
+
+Readout the value from DataPort
+
+
+\begin{DoxyItemize}
+\item When Callback functor \doxyref{OnRead}{p.}{structRTC_1_1OnRead} is already set, \doxyref{OnRead}{p.}{structRTC_1_1OnRead} will be invoked before reading from the buffer held by DataPort.
+\item When the buffer held by DataPort can detect the underflow, and when it detected the underflow at reading, callback functor OnUnderflow will be invoked.
+\item When callback functor \doxyref{OnReadConvert}{p.}{structRTC_1_1OnReadConvert} is already set, the return value of operator() of \doxyref{OnReadConvert}{p.}{structRTC_1_1OnReadConvert} will be the return value of \doxyref{read()}{p.}{classRTC_1_1InPort_a1b6e58e0c821b46148266ddfd0b9bd54}.
+\item When timeout of reading is already set by setReadTimeout(), it waits for only timeout time until the state of the buffer underflow is reset, and if OnUnderflow is already set, this will be invoked to return.
+\end{DoxyItemize}
+
+\begin{DoxyReturn}{Returns}
+Readout result (Successful:true, Failed:false) 
+\end{DoxyReturn}
+
+
+Implements {\bf RTC::InPortBase} \doxyref{}{p.}{classRTC_1_1InPortBase_a448e72f4d6d7890c4fb6add7d86d04b5}.
+
+
+
+References RTC::DataPortStatus::BUFFER\_\-EMPTY, RTC::DataPortStatus::BUFFER\_\-TIMEOUT, RTC::InPortBase::m\_\-connectors, RTC::PortBase::m\_\-connectorsMutex, RTC::DataPortStatus::PORT\_\-OK, RTC\_\-DEBUG, RTC\_\-ERROR, RTC\_\-TRACE, and RTC\_\-WARN.
+
+
+
+Referenced by RTC::InPort$<$ DataType $>$::operator$>$$>$(), and RTC::InPort$<$ DataType $>$::update().
+
+\index{RTC::InPort@{RTC::InPort}!setOnRead@{setOnRead}}
+\index{setOnRead@{setOnRead}!RTC::InPort@{RTC::InPort}}
+\subsubsection[{setOnRead}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class DataType $>$ void {\bf RTC::InPort}$<$ DataType $>$::setOnRead ({\bf OnRead}$<$ DataType $>$ $\ast$ {\em on\_\-read})\hspace{0.3cm}{\ttfamily  [inline]}}\label{classRTC_1_1InPort_a93fe41858e1e8dd7dee71b64703b7343}
+
+
+Set callback when data is read from the \doxyref{InPort}{p.}{classRTC_1_1InPort} buffer. 
+
+Set the callback object that is invoked right before data is read from the InPort's buffer
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em on\_\-read}]\doxyref{OnRead}{p.}{structRTC_1_1OnRead}$<$DataType$>$ type object \end{DoxyParams}
+\index{RTC::InPort@{RTC::InPort}!setOnReadConvert@{setOnReadConvert}}
+\index{setOnReadConvert@{setOnReadConvert}!RTC::InPort@{RTC::InPort}}
+\subsubsection[{setOnReadConvert}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class DataType $>$ void {\bf RTC::InPort}$<$ DataType $>$::setOnReadConvert ({\bf OnReadConvert}$<$ DataType $>$ $\ast$ {\em on\_\-rconvert})\hspace{0.3cm}{\ttfamily  [inline]}}\label{classRTC_1_1InPort_af799d52ed11a670ef56da9a2b2a9e7ff}
+
+
+Set callback when data is readout to the \doxyref{InPort}{p.}{classRTC_1_1InPort} buffer. 
+
+Set the callback object that is invoked when data is readout to the InPort's buffer. The return value of callback object is the return result of the \doxyref{read()}{p.}{classRTC_1_1InPort_a1b6e58e0c821b46148266ddfd0b9bd54} method.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em on\_\-rconvert}]\doxyref{OnReadConvert}{p.}{structRTC_1_1OnReadConvert}$<$DataType$>$ type object \end{DoxyParams}
+\index{RTC::InPort@{RTC::InPort}!update@{update}}
+\index{update@{update}!RTC::InPort@{RTC::InPort}}
+\subsubsection[{update}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class DataType $>$ virtual void {\bf RTC::InPort}$<$ DataType $>$::update (void)\hspace{0.3cm}{\ttfamily  [inline, virtual]}}\label{classRTC_1_1InPort_ad1efc0019d9a62030106552ad4f4436d}
+
+
+Read the newly value to type-\/T variable which is bound to InPort's buffer. 
+
+Read the newly value to type-\/T data which is bound to InPort's buffer. The type-\/T variable must be bound to \doxyref{InPort}{p.}{classRTC_1_1InPort} in constructor. Since this method assumes to be used for polymorphic, its argument and the return value do not depend on type. 
+
+References RTC::InPort$<$ DataType $>$::read().
+

@@ -1,0 +1,107 @@
+\section{クラス DefaultNumberingPolicy}
+\label{classDefaultNumberingPolicy}\index{DefaultNumberingPolicy@{DefaultNumberingPolicy}}
+
+
+オブジェクト生成時ネーミング・ポリシー(命名規則)管理用クラス  
+
+
+
+
+{\ttfamily \#include $<$NumberingPolicy.h$>$}
+
+DefaultNumberingPolicyに対する継承グラフ\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2cm]{classDefaultNumberingPolicy}
+\end{center}
+\end{figure}
+\subsection*{Public メソッド}
+\begin{DoxyCompactItemize}
+\item 
+{\bf DefaultNumberingPolicy} ()
+\item 
+virtual {\bf $\sim$DefaultNumberingPolicy} (void)
+\begin{DoxyCompactList}\small\item\em デストラクタ \item\end{DoxyCompactList}\item 
+virtual std::string {\bf onCreate} (void $\ast$obj)
+\begin{DoxyCompactList}\small\item\em オブジェクト生成時の名称作成 \item\end{DoxyCompactList}\item 
+virtual void {\bf onDelete} (void $\ast$obj)
+\begin{DoxyCompactList}\small\item\em オブジェクト削除時の名称解放 \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected メソッド}
+\begin{DoxyCompactItemize}
+\item 
+long int {\bf find} (void $\ast$obj)
+\begin{DoxyCompactList}\small\item\em オブジェクトの検索 \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{説明}
+オブジェクト生成時ネーミング・ポリシー(命名規則)管理用クラス オブジェクトを生成する際のネーミング・ポリシー(命名規則)を管理するための クラス。
+
+\begin{DoxySince}{から}
+0.4.0 
+\end{DoxySince}
+
+
+\subsection{コンストラクタとデストラクタ}
+\index{DefaultNumberingPolicy@{DefaultNumberingPolicy}!DefaultNumberingPolicy@{DefaultNumberingPolicy}}
+\index{DefaultNumberingPolicy@{DefaultNumberingPolicy}!DefaultNumberingPolicy@{DefaultNumberingPolicy}}
+\subsubsection[{DefaultNumberingPolicy}]{\setlength{\rightskip}{0pt plus 5cm}DefaultNumberingPolicy::DefaultNumberingPolicy ()\hspace{0.3cm}{\ttfamily  [inline]}}\label{classDefaultNumberingPolicy_a23d721393d786e7abb7cb08c1763c44a}
+コンストラクタ \index{DefaultNumberingPolicy@{DefaultNumberingPolicy}!$\sim$DefaultNumberingPolicy@{$\sim$DefaultNumberingPolicy}}
+\index{$\sim$DefaultNumberingPolicy@{$\sim$DefaultNumberingPolicy}!DefaultNumberingPolicy@{DefaultNumberingPolicy}}
+\subsubsection[{$\sim$DefaultNumberingPolicy}]{\setlength{\rightskip}{0pt plus 5cm}virtual DefaultNumberingPolicy::$\sim$DefaultNumberingPolicy (void)\hspace{0.3cm}{\ttfamily  [inline, virtual]}}\label{classDefaultNumberingPolicy_aeb44191706cd96bd89968b969e8ea9b4}
+
+
+デストラクタ 
+
+
+
+\subsection{関数}
+\index{DefaultNumberingPolicy@{DefaultNumberingPolicy}!find@{find}}
+\index{find@{find}!DefaultNumberingPolicy@{DefaultNumberingPolicy}}
+\subsubsection[{find}]{\setlength{\rightskip}{0pt plus 5cm}long int DefaultNumberingPolicy::find (void $\ast$ {\em obj})\hspace{0.3cm}{\ttfamily  [protected]}}\label{classDefaultNumberingPolicy_a1b8f6103327b51c80aeed0e1c0683797}
+
+
+オブジェクトの検索 
+
+オブジェクトリストから指定されたオブジェクトを検索し、 該当するオブジェクトが格納されている場合にはインデックスを返す。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em obj}]検索対象オブジェクト\end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+オブジェクト格納インデックス 
+\end{DoxyReturn}
+\index{DefaultNumberingPolicy@{DefaultNumberingPolicy}!onCreate@{onCreate}}
+\index{onCreate@{onCreate}!DefaultNumberingPolicy@{DefaultNumberingPolicy}}
+\subsubsection[{onCreate}]{\setlength{\rightskip}{0pt plus 5cm}virtual std::string DefaultNumberingPolicy::onCreate (void $\ast$ {\em obj})\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classDefaultNumberingPolicy_ad446abe9c24085dc3676a316e0d5da0c}
+
+
+オブジェクト生成時の名称作成 
+
+オブジェクト生成時の名称を生成する。 生成済みインスタンスの数に応じた名称を生成する。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em obj}]名称生成対象オブジェクト\end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+生成したオブジェクト名称 
+\end{DoxyReturn}
+
+
+{\bf NumberingPolicy} \doxyref{}{p.}{classNumberingPolicy_a5a24d7cdf2cff8c97b1c798114504c31}を実装しています。
+
+\index{DefaultNumberingPolicy@{DefaultNumberingPolicy}!onDelete@{onDelete}}
+\index{onDelete@{onDelete}!DefaultNumberingPolicy@{DefaultNumberingPolicy}}
+\subsubsection[{onDelete}]{\setlength{\rightskip}{0pt plus 5cm}virtual void DefaultNumberingPolicy::onDelete (void $\ast$ {\em obj})\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classDefaultNumberingPolicy_a216be8d1b29ecf328f04f98516364182}
+
+
+オブジェクト削除時の名称解放 
+
+オブジェクト削除時に名称を解放する。 オブジェクト削除時に生成済みインスタンス数を減算する。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em obj}]名称解放対象オブジェクト \end{DoxyParams}
+
+
+{\bf NumberingPolicy} \doxyref{}{p.}{classNumberingPolicy_a0bc5ddc2193e6415142327b4a5814d86}を実装しています。
+

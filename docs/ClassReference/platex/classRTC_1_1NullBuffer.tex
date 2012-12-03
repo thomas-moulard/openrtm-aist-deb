@@ -1,0 +1,195 @@
+\section{クラス テンプレート RTC::NullBuffer$<$ DataType $>$}
+\label{classRTC_1_1NullBuffer}\index{RTC::NullBuffer@{RTC::NullBuffer}}
+
+
+ダミーバッファ実装クラス  
+
+
+
+
+{\ttfamily \#include $<$BufferBase.h$>$}
+
+RTC::NullBuffer$<$ DataType $>$に対する継承グラフ\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3cm]{classRTC_1_1NullBuffer}
+\end{center}
+\end{figure}
+\subsection*{Public メソッド}
+\begin{DoxyCompactItemize}
+\item 
+{\bf NullBuffer} (long int size=1)
+\begin{DoxyCompactList}\small\item\em コンストラクタ \item\end{DoxyCompactList}\item 
+virtual {\bf $\sim$NullBuffer} (void)
+\begin{DoxyCompactList}\small\item\em デストラクタ \item\end{DoxyCompactList}\item 
+virtual long int {\bf length} (void) const 
+\begin{DoxyCompactList}\small\item\em バッファ長(1固定)を取得する \item\end{DoxyCompactList}\item 
+virtual bool {\bf write} (const DataType \&value)
+\begin{DoxyCompactList}\small\item\em バッファにデータを書き込む \item\end{DoxyCompactList}\item 
+virtual bool {\bf read} (DataType \&value)
+\begin{DoxyCompactList}\small\item\em バッファからデータを読み出す \item\end{DoxyCompactList}\item 
+virtual bool {\bf isFull} (void) const 
+\begin{DoxyCompactList}\small\item\em バッファfullチェック \item\end{DoxyCompactList}\item 
+virtual bool {\bf isEmpty} (void) const 
+\begin{DoxyCompactList}\small\item\em バッファemptyチェック \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected メソッド}
+\begin{DoxyCompactItemize}
+\item 
+virtual void {\bf put} (const DataType \&data)
+\begin{DoxyCompactList}\small\item\em バッファにデータを格納 \item\end{DoxyCompactList}\item 
+virtual const DataType \& {\bf get} (void)
+\begin{DoxyCompactList}\small\item\em バッファからデータを取得する \item\end{DoxyCompactList}\item 
+virtual DataType \& {\bf getRef} (void)
+\begin{DoxyCompactList}\small\item\em 次に書き込むバッファへの参照を取得する \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{説明}
+\subsubsection*{template$<$class DataType$>$ class RTC::NullBuffer$<$ DataType $>$}
+
+ダミーバッファ実装クラス バッファ長が１固定のダミーバッファ実装クラス。 $<$DataType$>$としてバッファ内で保持するデータ型を指定する。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em DataType}]バッファに格納するデータ型\end{DoxyParams}
+\begin{DoxySince}{から}
+0.4.0 
+\end{DoxySince}
+
+
+\subsection{コンストラクタとデストラクタ}
+\index{RTC::NullBuffer@{RTC::NullBuffer}!NullBuffer@{NullBuffer}}
+\index{NullBuffer@{NullBuffer}!RTC::NullBuffer@{RTC::NullBuffer}}
+\subsubsection[{NullBuffer}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class DataType $>$ {\bf RTC::NullBuffer}$<$ DataType $>$::{\bf NullBuffer} (long int {\em size} = {\ttfamily 1})\hspace{0.3cm}{\ttfamily  [inline]}}\label{classRTC_1_1NullBuffer_a77ef32c2911444bcc2cce77c66ae3e00}
+
+
+コンストラクタ 
+
+コンストラクタ バッファ長を1(固定)で初期化する。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em size}]バッファ長(ただし無効) \end{DoxyParams}
+\index{RTC::NullBuffer@{RTC::NullBuffer}!$\sim$NullBuffer@{$\sim$NullBuffer}}
+\index{$\sim$NullBuffer@{$\sim$NullBuffer}!RTC::NullBuffer@{RTC::NullBuffer}}
+\subsubsection[{$\sim$NullBuffer}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class DataType $>$ virtual {\bf RTC::NullBuffer}$<$ DataType $>$::$\sim${\bf NullBuffer} (void)\hspace{0.3cm}{\ttfamily  [inline, virtual]}}\label{classRTC_1_1NullBuffer_a95ff13580dbab77a497c1838a9bf03c1}
+
+
+デストラクタ 
+
+デストラクタ。 
+
+\subsection{関数}
+\index{RTC::NullBuffer@{RTC::NullBuffer}!get@{get}}
+\index{get@{get}!RTC::NullBuffer@{RTC::NullBuffer}}
+\subsubsection[{get}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class DataType $>$ virtual const DataType\& {\bf RTC::NullBuffer}$<$ DataType $>$::get (void)\hspace{0.3cm}{\ttfamily  [inline, protected, virtual]}}\label{classRTC_1_1NullBuffer_a5acb245659e61424bda0080b44d7b6d1}
+
+
+バッファからデータを取得する 
+
+バッファに格納されたデータを取得する。
+
+\begin{DoxyReturn}{戻り値}
+取得データ 
+\end{DoxyReturn}
+
+
+{\bf RTC::BufferBase$<$ DataType $>$} \doxyref{}{p.}{classRTC_1_1BufferBase_af12dcf239b3842fe6c946cb61c3d0bd2}を実装しています。
+
+\index{RTC::NullBuffer@{RTC::NullBuffer}!getRef@{getRef}}
+\index{getRef@{getRef}!RTC::NullBuffer@{RTC::NullBuffer}}
+\subsubsection[{getRef}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class DataType $>$ virtual DataType\& {\bf RTC::NullBuffer}$<$ DataType $>$::getRef (void)\hspace{0.3cm}{\ttfamily  [inline, protected, virtual]}}\label{classRTC_1_1NullBuffer_a5447a6f2d9022baf5394c5afdb4b227e}
+
+
+次に書き込むバッファへの参照を取得する 
+
+書き込みバッファへの参照を取得する。 本バッファ実装ではバッファ長は固定で１であるため， 常に同じ位置への参照を返す。
+
+\begin{DoxyReturn}{戻り値}
+次の書き込み対象バッファへの参照(固定) 
+\end{DoxyReturn}
+\index{RTC::NullBuffer@{RTC::NullBuffer}!isEmpty@{isEmpty}}
+\index{isEmpty@{isEmpty}!RTC::NullBuffer@{RTC::NullBuffer}}
+\subsubsection[{isEmpty}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class DataType $>$ virtual bool {\bf RTC::NullBuffer}$<$ DataType $>$::isEmpty (void) const\hspace{0.3cm}{\ttfamily  [inline, virtual]}}\label{classRTC_1_1NullBuffer_a29726dbdb85caaf69229105718f15dc1}
+
+
+バッファemptyチェック 
+
+バッファemptyをチェックする。(常にfalseを返す。)
+
+\begin{DoxyReturn}{戻り値}
+emptyチェック結果(常にfalse) 
+\end{DoxyReturn}
+\index{RTC::NullBuffer@{RTC::NullBuffer}!isFull@{isFull}}
+\index{isFull@{isFull}!RTC::NullBuffer@{RTC::NullBuffer}}
+\subsubsection[{isFull}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class DataType $>$ virtual bool {\bf RTC::NullBuffer}$<$ DataType $>$::isFull (void) const\hspace{0.3cm}{\ttfamily  [inline, virtual]}}\label{classRTC_1_1NullBuffer_a32bf047061497e79daded3ce2f558ccb}
+
+
+バッファfullチェック 
+
+バッファfullをチェックする。(常にfalseを返す。)
+
+\begin{DoxyReturn}{戻り値}
+fullチェック結果(常にfalse) 
+\end{DoxyReturn}
+\index{RTC::NullBuffer@{RTC::NullBuffer}!length@{length}}
+\index{length@{length}!RTC::NullBuffer@{RTC::NullBuffer}}
+\subsubsection[{length}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class DataType $>$ virtual long int {\bf RTC::NullBuffer}$<$ DataType $>$::length (void) const\hspace{0.3cm}{\ttfamily  [inline, virtual]}}\label{classRTC_1_1NullBuffer_a10b3ecbf48ec0987e321465f21887030}
+
+
+バッファ長(1固定)を取得する 
+
+バッファ長を取得する。(常に1を返す。)
+
+\begin{DoxyReturn}{戻り値}
+バッファ長(1固定) 
+\end{DoxyReturn}
+
+
+{\bf RTC::BufferBase$<$ DataType $>$} \doxyref{}{p.}{classRTC_1_1BufferBase_ad41d5476f9bce0e737115e8ab7cc615f}を実装しています。
+
+\index{RTC::NullBuffer@{RTC::NullBuffer}!put@{put}}
+\index{put@{put}!RTC::NullBuffer@{RTC::NullBuffer}}
+\subsubsection[{put}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class DataType $>$ virtual void {\bf RTC::NullBuffer}$<$ DataType $>$::put (const DataType \& {\em data})\hspace{0.3cm}{\ttfamily  [inline, protected, virtual]}}\label{classRTC_1_1NullBuffer_a0704a4190bd82c637635528ea4c28416}
+
+
+バッファにデータを格納 
+
+引数で与えられたデータをバッファに格納する。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em data}]対象データ \end{DoxyParams}
+
+
+{\bf RTC::BufferBase$<$ DataType $>$} \doxyref{}{p.}{classRTC_1_1BufferBase_af6274c9bc458580643560752f9150235}を実装しています。
+
+\index{RTC::NullBuffer@{RTC::NullBuffer}!read@{read}}
+\index{read@{read}!RTC::NullBuffer@{RTC::NullBuffer}}
+\subsubsection[{read}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class DataType $>$ virtual bool {\bf RTC::NullBuffer}$<$ DataType $>$::read (DataType \& {\em value})\hspace{0.3cm}{\ttfamily  [inline, virtual]}}\label{classRTC_1_1NullBuffer_a8aca824119c1579a6dceb42a7e5833f7}
+
+
+バッファからデータを読み出す 
+
+バッファに格納されたデータを読み出す。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em value}]読み出したデータ\end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+データ読み出し結果(true:読み出し成功，false:読み出し失敗) 
+\end{DoxyReturn}
+\index{RTC::NullBuffer@{RTC::NullBuffer}!write@{write}}
+\index{write@{write}!RTC::NullBuffer@{RTC::NullBuffer}}
+\subsubsection[{write}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class DataType $>$ virtual bool {\bf RTC::NullBuffer}$<$ DataType $>$::write (const DataType \& {\em value})\hspace{0.3cm}{\ttfamily  [inline, virtual]}}\label{classRTC_1_1NullBuffer_aa5b727d115e44544be3a7997a5be2e19}
+
+
+バッファにデータを書き込む 
+
+引数で与えられたデータをバッファに書き込む。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em value}]書き込み対象データ\end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+データ書き込み結果(true:書き込み成功，false:書き込み失敗) 
+\end{DoxyReturn}

@@ -1,0 +1,156 @@
+\section{RTC::InPortCorbaCdrConsumer Class Reference}
+\label{classRTC_1_1InPortCorbaCdrConsumer}\index{RTC::InPortCorbaCdrConsumer@{RTC::InPortCorbaCdrConsumer}}
+
+
+\doxyref{InPortCorbaCdrConsumer}{p.}{classRTC_1_1InPortCorbaCdrConsumer} class.  
+
+
+
+
+{\ttfamily \#include $<$InPortCorbaCdrConsumer.h$>$}
+
+Inheritance diagram for RTC::InPortCorbaCdrConsumer:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.90657cm]{classRTC_1_1InPortCorbaCdrConsumer}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+DATAPORTSTATUS\_\-ENUM {\bf InPortCorbaCdrConsumer} (void)
+\begin{DoxyCompactList}\small\item\em Constructor. \item\end{DoxyCompactList}\item 
+virtual {\bf $\sim$InPortCorbaCdrConsumer} (void)
+\begin{DoxyCompactList}\small\item\em Destructor. \item\end{DoxyCompactList}\item 
+virtual void {\bf init} ({\bf coil::Properties} \&prop)
+\begin{DoxyCompactList}\small\item\em Initializing configuration. \item\end{DoxyCompactList}\item 
+virtual ReturnCode {\bf put} (const cdrMemoryStream \&data)
+\begin{DoxyCompactList}\small\item\em Send data to the destination port. \item\end{DoxyCompactList}\item 
+virtual void {\bf publishInterfaceProfile} (SDOPackage::NVList \&properties)
+\begin{DoxyCompactList}\small\item\em Publish InterfaceProfile information. \item\end{DoxyCompactList}\item 
+virtual bool {\bf subscribeInterface} (const SDOPackage::NVList \&properties)
+\begin{DoxyCompactList}\small\item\em Subscribe to the data sending notification. \item\end{DoxyCompactList}\item 
+virtual void {\bf unsubscribeInterface} (const SDOPackage::NVList \&properties)
+\begin{DoxyCompactList}\small\item\em Unsubscribe the data send notification. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\doxyref{InPortCorbaCdrConsumer}{p.}{classRTC_1_1InPortCorbaCdrConsumer} class. The \doxyref{InPort}{p.}{classRTC_1_1InPort} consumer class which uses the OpenRTM::InPortCdr interface in CORBA for data transfer and realizes a push-\/type dataflow.
+
+\begin{DoxySince}{Since}
+0.4.0 
+\end{DoxySince}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{RTC::InPortCorbaCdrConsumer@{RTC::InPortCorbaCdrConsumer}!InPortCorbaCdrConsumer@{InPortCorbaCdrConsumer}}
+\index{InPortCorbaCdrConsumer@{InPortCorbaCdrConsumer}!RTC::InPortCorbaCdrConsumer@{RTC::InPortCorbaCdrConsumer}}
+\subsubsection[{InPortCorbaCdrConsumer}]{\setlength{\rightskip}{0pt plus 5cm}DATAPORTSTATUS\_\-ENUM RTC::InPortCorbaCdrConsumer::InPortCorbaCdrConsumer (void)}\label{classRTC_1_1InPortCorbaCdrConsumer_a23aa65c030756eac8f28edb006d2a2ab}
+
+
+Constructor. 
+
+Constructor
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em buffer}]The buffer object that is attached to this \doxyref{Consumer}{p.}{classConsumer} \end{DoxyParams}
+\index{RTC::InPortCorbaCdrConsumer@{RTC::InPortCorbaCdrConsumer}!$\sim$InPortCorbaCdrConsumer@{$\sim$InPortCorbaCdrConsumer}}
+\index{$\sim$InPortCorbaCdrConsumer@{$\sim$InPortCorbaCdrConsumer}!RTC::InPortCorbaCdrConsumer@{RTC::InPortCorbaCdrConsumer}}
+\subsubsection[{$\sim$InPortCorbaCdrConsumer}]{\setlength{\rightskip}{0pt plus 5cm}virtual RTC::InPortCorbaCdrConsumer::$\sim$InPortCorbaCdrConsumer (void)\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classRTC_1_1InPortCorbaCdrConsumer_a8822e5bb854e1936fc1f8f19517a8bd3}
+
+
+Destructor. 
+
+Destructor 
+
+\subsection{Member Function Documentation}
+\index{RTC::InPortCorbaCdrConsumer@{RTC::InPortCorbaCdrConsumer}!init@{init}}
+\index{init@{init}!RTC::InPortCorbaCdrConsumer@{RTC::InPortCorbaCdrConsumer}}
+\subsubsection[{init}]{\setlength{\rightskip}{0pt plus 5cm}virtual void RTC::InPortCorbaCdrConsumer::init ({\bf coil::Properties} \& {\em prop})\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classRTC_1_1InPortCorbaCdrConsumer_a5682cf80be88cfbb6ab238e7b3733686}
+
+
+Initializing configuration. 
+
+This operation would be called to configure in initialization. In the concrete class, configuration should be performed getting appropriate information from the given Properties data. This function might be called right after instantiation and connection sequence respectivly. Therefore, this function should be implemented assuming multiple call.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em prop}]Configuration information \end{DoxyParams}
+
+
+Implements {\bf RTC::InPortConsumer} \doxyref{}{p.}{classRTC_1_1InPortConsumer_a70772c84fa42d6108e30c0f52a9674d5}.
+
+\index{RTC::InPortCorbaCdrConsumer@{RTC::InPortCorbaCdrConsumer}!publishInterfaceProfile@{publishInterfaceProfile}}
+\index{publishInterfaceProfile@{publishInterfaceProfile}!RTC::InPortCorbaCdrConsumer@{RTC::InPortCorbaCdrConsumer}}
+\subsubsection[{publishInterfaceProfile}]{\setlength{\rightskip}{0pt plus 5cm}virtual void RTC::InPortCorbaCdrConsumer::publishInterfaceProfile (SDOPackage::NVList \& {\em properties})\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classRTC_1_1InPortCorbaCdrConsumer_aa71ca4621080b782a09a640f18daa2e9}
+
+
+Publish InterfaceProfile information. 
+
+Publish interfaceProfile information. Check the dataport.interface\_\-type value of the NameValue object specified by an argument in property information and get information only when the interface type of the specified port is matched.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em properties}]Properties to get InterfaceProfile information \end{DoxyParams}
+
+
+Implements {\bf RTC::InPortConsumer} \doxyref{}{p.}{classRTC_1_1InPortConsumer_a1bb34ea50047ecf1b2642fc61192d40b}.
+
+\index{RTC::InPortCorbaCdrConsumer@{RTC::InPortCorbaCdrConsumer}!put@{put}}
+\index{put@{put}!RTC::InPortCorbaCdrConsumer@{RTC::InPortCorbaCdrConsumer}}
+\subsubsection[{put}]{\setlength{\rightskip}{0pt plus 5cm}virtual ReturnCode RTC::InPortCorbaCdrConsumer::put (const cdrMemoryStream \& {\em data})\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classRTC_1_1InPortCorbaCdrConsumer_ab910b2bf2a841c2c11bce50e75d36abb}
+
+
+Send data to the destination port. 
+
+Pure virtual function to send data to the destination port.
+
+This function might the following return codes
+
+
+\begin{DoxyItemize}
+\item PORT\_\-OK: Normal return
+\item PORT\_\-ERROR: Error occurred in data transfer process
+\item SEND\_\-FULL: Buffer full although \doxyref{OutPort}{p.}{classRTC_1_1OutPort} tried to send data
+\item SEND\_\-TIMEOUT: Timeout although \doxyref{OutPort}{p.}{classRTC_1_1OutPort} tried to send data
+\item UNKNOWN\_\-ERROR: Unknown error 
+\end{DoxyItemize}
+
+Implements {\bf RTC::InPortConsumer} \doxyref{}{p.}{classRTC_1_1InPortConsumer_a7868875b611a5dde0db3d0fcdf5703e5}.
+
+\index{RTC::InPortCorbaCdrConsumer@{RTC::InPortCorbaCdrConsumer}!subscribeInterface@{subscribeInterface}}
+\index{subscribeInterface@{subscribeInterface}!RTC::InPortCorbaCdrConsumer@{RTC::InPortCorbaCdrConsumer}}
+\subsubsection[{subscribeInterface}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool RTC::InPortCorbaCdrConsumer::subscribeInterface (const SDOPackage::NVList \& {\em properties})\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classRTC_1_1InPortCorbaCdrConsumer_a6ca9cba69e9bc1015d79330ed9a56b71}
+
+
+Subscribe to the data sending notification. 
+
+Subscribe to the data sending notification based on specified property information.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em properties}]Information for subscription\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Subscription result (Successful:true, Failed:false) 
+\end{DoxyReturn}
+
+
+Implements {\bf RTC::InPortConsumer} \doxyref{}{p.}{classRTC_1_1InPortConsumer_a63073caab2216e2686b34d2c8901c591}.
+
+\index{RTC::InPortCorbaCdrConsumer@{RTC::InPortCorbaCdrConsumer}!unsubscribeInterface@{unsubscribeInterface}}
+\index{unsubscribeInterface@{unsubscribeInterface}!RTC::InPortCorbaCdrConsumer@{RTC::InPortCorbaCdrConsumer}}
+\subsubsection[{unsubscribeInterface}]{\setlength{\rightskip}{0pt plus 5cm}virtual void RTC::InPortCorbaCdrConsumer::unsubscribeInterface (const SDOPackage::NVList \& {\em properties})\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classRTC_1_1InPortCorbaCdrConsumer_a6e297f6ebc3dae7b547e1ec8af06ee9f}
+
+
+Unsubscribe the data send notification. 
+
+Unsubscribe the data send notification.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em properties}]Information for unsubscription \end{DoxyParams}
+
+
+Implements {\bf RTC::InPortConsumer} \doxyref{}{p.}{classRTC_1_1InPortConsumer_a59530bf39fca610e2c7136700a214aab}.
+

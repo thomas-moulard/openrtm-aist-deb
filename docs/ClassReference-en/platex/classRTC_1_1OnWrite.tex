@@ -1,0 +1,56 @@
+\section{RTC::OnWrite$<$ DataType $>$ Class Template Reference}
+\label{classRTC_1_1OnWrite}\index{RTC::OnWrite@{RTC::OnWrite}}
+
+
+Callback abstract class on write().  
+
+
+
+
+{\ttfamily \#include $<$PortCallback.h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual {\bf $\sim$OnWrite} (void)
+\begin{DoxyCompactList}\small\item\em Destructor. \item\end{DoxyCompactList}\item 
+virtual void {\bf operator()} (const DataType \&value)=0
+\begin{DoxyCompactList}\small\item\em Callback function. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$class DataType$>$ class RTC::OnWrite$<$ DataType $>$}
+
+Callback abstract class on write(). This is the interface for callback invoked immediately before data is done write() into the DataPort's buffer.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em DataType}]Data type to write into the buffer\end{DoxyParams}
+\begin{DoxySince}{Since}
+0.4.0 
+\end{DoxySince}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{RTC::OnWrite@{RTC::OnWrite}!$\sim$OnWrite@{$\sim$OnWrite}}
+\index{$\sim$OnWrite@{$\sim$OnWrite}!RTC::OnWrite@{RTC::OnWrite}}
+\subsubsection[{$\sim$OnWrite}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class DataType$>$ virtual {\bf RTC::OnWrite}$<$ DataType $>$::$\sim${\bf OnWrite} (void)\hspace{0.3cm}{\ttfamily  [inline, virtual]}}\label{classRTC_1_1OnWrite_a2d933024e730be0535ecf38efe40aede}
+
+
+Destructor. 
+
+Destructor 
+
+\subsection{Member Function Documentation}
+\index{RTC::OnWrite@{RTC::OnWrite}!operator()@{operator()}}
+\index{operator()@{operator()}!RTC::OnWrite@{RTC::OnWrite}}
+\subsubsection[{operator()}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class DataType$>$ virtual void {\bf RTC::OnWrite}$<$ DataType $>$::operator() (const DataType \& {\em value})\hspace{0.3cm}{\ttfamily  [pure virtual]}}\label{classRTC_1_1OnWrite_a21dbf5431532045a4c953d7c8ed09777}
+
+
+Callback function. 
+
+This is the callback method invoked immediately before data is written into the buffer.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em value}]Data that is written into the buffer \end{DoxyParams}

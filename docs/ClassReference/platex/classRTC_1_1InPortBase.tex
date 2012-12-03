@@ -1,0 +1,604 @@
+\section{クラス RTC::InPortBase}
+\label{classRTC_1_1InPortBase}\index{RTC::InPortBase@{RTC::InPortBase}}
+
+
+\doxyref{InPort}{p.}{classRTC_1_1InPort} 用 Port.  
+
+
+
+
+{\ttfamily \#include $<$InPortBase.h$>$}
+
+RTC::InPortBaseに対する継承グラフ\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3cm]{classRTC_1_1InPortBase}
+\end{center}
+\end{figure}
+\subsection*{Public メソッド}
+\begin{DoxyCompactItemize}
+\item 
+{\bf InPortBase} (const char $\ast$name, const char $\ast$data\_\-type)
+\begin{DoxyCompactList}\small\item\em コンストラクタ \item\end{DoxyCompactList}\item 
+virtual {\bf $\sim$InPortBase} (void)
+\item 
+void {\bf init} ({\bf coil::Properties} \&prop)
+\begin{DoxyCompactList}\small\item\em プロパティの初期化 \item\end{DoxyCompactList}\item 
+virtual bool {\bf read} ()=0
+\begin{DoxyCompactList}\small\item\em \doxyref{RTObject\_\-impl::readAll()}{p.}{classRTC_1_1RTObject__impl_a69b50eea5bc7f862114602963cca84ca}から呼ばれる仮想関数. \item\end{DoxyCompactList}\item 
+{\bf coil::Properties} \& {\bf properties} ()
+\begin{DoxyCompactList}\small\item\em プロパティを取得する \item\end{DoxyCompactList}\item 
+const std::vector$<$ {\bf InPortConnector} $\ast$ $>$ \& {\bf connectors} ()
+\begin{DoxyCompactList}\small\item\em Connector を取得. \item\end{DoxyCompactList}\item 
+{\bf ConnectorInfoList} {\bf getConnectorProfiles} ()
+\begin{DoxyCompactList}\small\item\em ConnectorProfile を取得. \item\end{DoxyCompactList}\item 
+{\bf coil::vstring} {\bf getConnectorIds} ()
+\begin{DoxyCompactList}\small\item\em ConnectorId を取得. \item\end{DoxyCompactList}\item 
+{\bf coil::vstring} {\bf getConnectorNames} ()
+\begin{DoxyCompactList}\small\item\em Connectorの名前を取得. \item\end{DoxyCompactList}\item 
+{\bf InPortConnector} $\ast$ {\bf getConnectorById} (const char $\ast$id)
+\begin{DoxyCompactList}\small\item\em ConnectorProfileをIDで取得. \item\end{DoxyCompactList}\item 
+{\bf InPortConnector} $\ast$ {\bf getConnectorByName} (const char $\ast$name)
+\begin{DoxyCompactList}\small\item\em ConnectorProfileを名前で取得. \item\end{DoxyCompactList}\item 
+bool {\bf getConnectorProfileById} (const char $\ast$id, {\bf ConnectorInfo} \&prof)
+\begin{DoxyCompactList}\small\item\em ConnectorProfileをIDで取得. \item\end{DoxyCompactList}\item 
+bool {\bf getConnectorProfileByName} (const char $\ast$name, {\bf ConnectorInfo} \&prof)
+\begin{DoxyCompactList}\small\item\em ConnectorProfileを名前で取得. \item\end{DoxyCompactList}\item 
+virtual void {\bf activateInterfaces} ()
+\begin{DoxyCompactList}\small\item\em InPortを activates する. \item\end{DoxyCompactList}\item 
+virtual void {\bf deactivateInterfaces} ()
+\begin{DoxyCompactList}\small\item\em 全ての Port のインターフェースを deactivates する \item\end{DoxyCompactList}\item 
+void {\bf addConnectorDataListener} ({\bf ConnectorDataListenerType} listener\_\-type, {\bf ConnectorDataListener} $\ast$listener, bool autoclean=true)
+\begin{DoxyCompactList}\small\item\em \doxyref{ConnectorDataListener}{p.}{classRTC_1_1ConnectorDataListener} リスナを追加する. \item\end{DoxyCompactList}\item 
+void {\bf removeConnectorDataListener} ({\bf ConnectorDataListenerType} listener\_\-type, {\bf ConnectorDataListener} $\ast$listener)
+\begin{DoxyCompactList}\small\item\em \doxyref{ConnectorDataListener}{p.}{classRTC_1_1ConnectorDataListener} リスナを削除する. \item\end{DoxyCompactList}\item 
+void {\bf addConnectorListener} ({\bf ConnectorListenerType} callback\_\-type, {\bf ConnectorListener} $\ast$listener, bool autoclean=true)
+\begin{DoxyCompactList}\small\item\em \doxyref{ConnectorListener}{p.}{classRTC_1_1ConnectorListener} リスナを追加する. \item\end{DoxyCompactList}\item 
+void {\bf removeConnectorListener} ({\bf ConnectorListenerType} callback\_\-type, {\bf ConnectorListener} $\ast$listener)
+\begin{DoxyCompactList}\small\item\em \doxyref{ConnectorDataListener}{p.}{classRTC_1_1ConnectorDataListener} リスナを削除する. \item\end{DoxyCompactList}\item 
+bool {\bf isLittleEndian} ()
+\begin{DoxyCompactList}\small\item\em endian 設定を返す \item\end{DoxyCompactList}\item 
+virtual ReturnCode\_\-t {\bf connect} (ConnectorProfile \&connector\_\-profile)  throw (CORBA::SystemException)
+\begin{DoxyCompactList}\small\item\em [CORBA interface] Port の接続を行う \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public 変数}
+\begin{DoxyCompactItemize}
+\item 
+DATAPORTSTATUS\_\-ENUM typedef std::vector$<$ {\bf InPortConnector} $\ast$ $>$ {\bf ConnectorList}
+\end{DoxyCompactItemize}
+\subsection*{Protected メソッド}
+\begin{DoxyCompactItemize}
+\item 
+virtual ReturnCode\_\-t {\bf publishInterfaces} (ConnectorProfile \&connector\_\-profile)
+\begin{DoxyCompactList}\small\item\em Interface情報を公開する. \item\end{DoxyCompactList}\item 
+virtual ReturnCode\_\-t {\bf subscribeInterfaces} (const ConnectorProfile \&connector\_\-profile)
+\begin{DoxyCompactList}\small\item\em Interfaceに接続する. \item\end{DoxyCompactList}\item 
+virtual void {\bf unsubscribeInterfaces} (const ConnectorProfile \&connector\_\-profile)
+\begin{DoxyCompactList}\small\item\em Interfaceへの接続を解除する. \item\end{DoxyCompactList}\item 
+void {\bf initProviders} ()
+\begin{DoxyCompactList}\small\item\em \doxyref{InPort}{p.}{classRTC_1_1InPort} provider の初期化. \item\end{DoxyCompactList}\item 
+void {\bf initConsumers} ()
+\begin{DoxyCompactList}\small\item\em \doxyref{OutPort}{p.}{classRTC_1_1OutPort} consumer の初期化. \item\end{DoxyCompactList}\item 
+bool {\bf checkEndian} (const {\bf coil::Properties} \&prop, bool \&littleEndian)
+\begin{DoxyCompactList}\small\item\em シリアライザのエンディアンをチェックする \item\end{DoxyCompactList}\item 
+{\bf InPortProvider} $\ast$ {\bf createProvider} (ConnectorProfile \&cprof, {\bf coil::Properties} \&prop)
+\begin{DoxyCompactList}\small\item\em \doxyref{InPort}{p.}{classRTC_1_1InPort} provider の生成. \item\end{DoxyCompactList}\item 
+{\bf OutPortConsumer} $\ast$ {\bf createConsumer} (const ConnectorProfile \&cprof, {\bf coil::Properties} \&prop)
+\begin{DoxyCompactList}\small\item\em \doxyref{OutPort}{p.}{classRTC_1_1OutPort} consumer の生成. \item\end{DoxyCompactList}\item 
+{\bf InPortConnector} $\ast$ {\bf createConnector} (ConnectorProfile \&cprof, {\bf coil::Properties} \&prop, {\bf InPortProvider} $\ast$provider)
+\begin{DoxyCompactList}\small\item\em \doxyref{InPortPushConnector}{p.}{classRTC_1_1InPortPushConnector} の生成. \item\end{DoxyCompactList}\item 
+{\bf InPortConnector} $\ast$ {\bf createConnector} (const ConnectorProfile \&cprof, {\bf coil::Properties} \&prop, {\bf OutPortConsumer} $\ast$consumer)
+\begin{DoxyCompactList}\small\item\em \doxyref{InPortPullConnector}{p.}{classRTC_1_1InPortPullConnector} の生成. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected 変数}
+\begin{DoxyCompactItemize}
+\item 
+bool {\bf m\_\-singlebuffer}
+\begin{DoxyCompactList}\small\item\em バッファモード \item\end{DoxyCompactList}\item 
+{\bf CdrBufferBase} $\ast$ {\bf m\_\-thebuffer}
+\begin{DoxyCompactList}\small\item\em バッファ \item\end{DoxyCompactList}\item 
+{\bf coil::Properties} {\bf m\_\-properties}
+\begin{DoxyCompactList}\small\item\em プロパティ \item\end{DoxyCompactList}\item 
+{\bf coil::vstring} {\bf m\_\-providerTypes}
+\begin{DoxyCompactList}\small\item\em 利用可能provider \item\end{DoxyCompactList}\item 
+{\bf coil::vstring} {\bf m\_\-consumerTypes}
+\begin{DoxyCompactList}\small\item\em 利用可能consumer \item\end{DoxyCompactList}\item 
+{\bf ConnectorList} {\bf m\_\-connectors}
+\begin{DoxyCompactList}\small\item\em 接続リスト \item\end{DoxyCompactList}\item 
+bool {\bf m\_\-littleEndian}
+\begin{DoxyCompactList}\small\item\em 接続エンディアン \item\end{DoxyCompactList}\item 
+{\bf ConnectorListeners} {\bf m\_\-listeners}
+\begin{DoxyCompactList}\small\item\em \doxyref{ConnectorDataListener}{p.}{classRTC_1_1ConnectorDataListener} リスナ. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{説明}
+\doxyref{InPort}{p.}{classRTC_1_1InPort} 用 Port. データ入力ポートの実装クラス。
+
+\begin{DoxySince}{から}
+0.4.0 
+\end{DoxySince}
+
+
+\subsection{コンストラクタとデストラクタ}
+\index{RTC::InPortBase@{RTC::InPortBase}!InPortBase@{InPortBase}}
+\index{InPortBase@{InPortBase}!RTC::InPortBase@{RTC::InPortBase}}
+\subsubsection[{InPortBase}]{\setlength{\rightskip}{0pt plus 5cm}RTC::InPortBase::InPortBase (const char $\ast$ {\em name}, \/  const char $\ast$ {\em data\_\-type})}\label{classRTC_1_1InPortBase_acf7e8f976e2d5c40132a02fe309b1f1e}
+
+
+コンストラクタ 
+
+コンストラクタ
+
+
+\begin{DoxyParams}{引数}
+\item[{\em name}]ポート名称 \item[{\em data\_\-type}]データタイプ \end{DoxyParams}
+\index{RTC::InPortBase@{RTC::InPortBase}!$\sim$InPortBase@{$\sim$InPortBase}}
+\index{$\sim$InPortBase@{$\sim$InPortBase}!RTC::InPortBase@{RTC::InPortBase}}
+\subsubsection[{$\sim$InPortBase}]{\setlength{\rightskip}{0pt plus 5cm}virtual RTC::InPortBase::$\sim$InPortBase (void)\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classRTC_1_1InPortBase_a32e533d6c608f0d6125440b7366c857c}
+デストラクタ 
+
+\subsection{関数}
+\index{RTC::InPortBase@{RTC::InPortBase}!activateInterfaces@{activateInterfaces}}
+\index{activateInterfaces@{activateInterfaces}!RTC::InPortBase@{RTC::InPortBase}}
+\subsubsection[{activateInterfaces}]{\setlength{\rightskip}{0pt plus 5cm}virtual void RTC::InPortBase::activateInterfaces ()\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classRTC_1_1InPortBase_a4188e629df750498e0d3b100f51133ff}
+
+
+InPortを activates する. 
+
+Port に登録されている全てのインターフェースを activate する。 
+
+{\bf RTC::PortBase} \doxyref{}{p.}{classRTC_1_1PortBase_ad779347bae007555968dda9e78004e34}を実装しています。
+
+\index{RTC::InPortBase@{RTC::InPortBase}!addConnectorDataListener@{addConnectorDataListener}}
+\index{addConnectorDataListener@{addConnectorDataListener}!RTC::InPortBase@{RTC::InPortBase}}
+\subsubsection[{addConnectorDataListener}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::InPortBase::addConnectorDataListener ({\bf ConnectorDataListenerType} {\em listener\_\-type}, \/  {\bf ConnectorDataListener} $\ast$ {\em listener}, \/  bool {\em autoclean} = {\ttfamily true})}\label{classRTC_1_1InPortBase_a87108f42506a526d05dd72d67a1654af}
+
+
+\doxyref{ConnectorDataListener}{p.}{classRTC_1_1ConnectorDataListener} リスナを追加する. 
+
+バッファ書き込みまたは読み出しイベントに関連する各種リスナを設定する。
+
+設定できるリスナのタイプとコールバックイベントは以下の通り
+
+
+\begin{DoxyItemize}
+\item ON\_\-BUFFER\_\-WRITE: バッファ書き込み時
+\item ON\_\-BUFFER\_\-FULL: バッファフル時
+\item ON\_\-BUFFER\_\-WRITE\_\-TIMEOUT: バッファ書き込みタイムアウト時
+\item ON\_\-BUFFER\_\-OVERWRITE: バッファ上書き時
+\item ON\_\-BUFFER\_\-READ: バッファ読み出し時
+\item ON\_\-SEND: InProtへの送信時
+\item ON\_\-RECEIVED: InProtへの送信完了時
+\item ON\_\-SEND\_\-ERTIMEOUT: OutPort側タイムアウト時
+\item ON\_\-SEND\_\-ERERROR: OutPort側エラー時
+\item ON\_\-RECEIVER\_\-FULL: InProt側バッファフル時
+\item ON\_\-RECEIVER\_\-TIMEOUT: InProt側バッファタイムアウト時
+\item ON\_\-RECEIVER\_\-ERROR: InProt側エラー時
+\end{DoxyItemize}
+
+リスナは \doxyref{ConnectorDataListener}{p.}{classRTC_1_1ConnectorDataListener} を継承し、以下のシグニチャを持つ operator() を実装している必要がある。
+
+\doxyref{ConnectorDataListener}{p.}{classRTC_1_1ConnectorDataListener}:: operator()(const ConnectorProfile\&, const cdrStream\&)
+
+デフォルトでは、この関数に与えたリスナオブジェクトの所有権は OutPortに移り、OutPort解体時もしくは、 \doxyref{removeConnectorDataListener()}{p.}{classRTC_1_1InPortBase_ad371ba04fc81e381ff74751bc2f400c9} により削除時に自動的に解体される。 リスナオブジェクトの所有権を呼び出し側で維持したい場合は、第3引 数に false を指定し、自動的な解体を抑制することができる。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em listener\_\-type}]リスナタイプ \item[{\em listener}]リスナオブジェクトへのポインタ \item[{\em autoclean}]リスナオブジェクトの自動的解体を行うかどうかのフラグ \end{DoxyParams}
+\index{RTC::InPortBase@{RTC::InPortBase}!addConnectorListener@{addConnectorListener}}
+\index{addConnectorListener@{addConnectorListener}!RTC::InPortBase@{RTC::InPortBase}}
+\subsubsection[{addConnectorListener}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::InPortBase::addConnectorListener ({\bf ConnectorListenerType} {\em callback\_\-type}, \/  {\bf ConnectorListener} $\ast$ {\em listener}, \/  bool {\em autoclean} = {\ttfamily true})}\label{classRTC_1_1InPortBase_af3f78ee20e085969a55854b6bcacb0f0}
+
+
+\doxyref{ConnectorListener}{p.}{classRTC_1_1ConnectorListener} リスナを追加する. 
+
+バッファ書き込みまたは読み出しイベントに関連する各種リスナを設定する。
+
+設定できるリスナのタイプは
+
+
+\begin{DoxyItemize}
+\item ON\_\-BUFFER\_\-EMPTY: バッファが空の場合
+\item ON\_\-BUFFER\_\-READTIMEOUT: バッファが空でタイムアウトした場合
+\end{DoxyItemize}
+
+リスナは以下のシグニチャを持つ operator() を実装している必要がある。
+
+ConnectorListener::operator()(const ConnectorProfile\&)
+
+デフォルトでは、この関数に与えたリスナオブジェクトの所有権は OutPortに移り、OutPort解体時もしくは、 \doxyref{removeConnectorListener()}{p.}{classRTC_1_1InPortBase_a28f441f50e37fd06c7cf7c4c5b02e321} により削除時に自動的に解体される。 リスナオブジェクトの所有権を呼び出し側で維持したい場合は、第3引 数に false を指定し、自動的な解体を抑制することができる。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em listener\_\-type}]リスナタイプ \item[{\em listener}]リスナオブジェクトへのポインタ \item[{\em autoclean}]リスナオブジェクトの自動的解体を行うかどうかのフラグ \end{DoxyParams}
+\index{RTC::InPortBase@{RTC::InPortBase}!checkEndian@{checkEndian}}
+\index{checkEndian@{checkEndian}!RTC::InPortBase@{RTC::InPortBase}}
+\subsubsection[{checkEndian}]{\setlength{\rightskip}{0pt plus 5cm}bool RTC::InPortBase::checkEndian (const {\bf coil::Properties} \& {\em prop}, \/  bool \& {\em littleEndian})\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC_1_1InPortBase_ae32b6fb379655aeaf86db44db06e6d77}
+
+
+シリアライザのエンディアンをチェックする 
+
+与えられたプロパティに設定されている、データのシリアライザのエン ディアン指定をチェックする。正しいエンディアン指定がなされていれ ば、true を返し、引数 littleEndian に、設定値がリトルエンディア ンであれば true が、ビッグエンディアンであれば false が返される。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em prop}]チェックするプロパティ \item[{\em littleEndian}]エンディアン情報（true:little,false:big） \end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+true:\char`\"{}serializer\char`\"{}キーが存在しない または 存在していて内容がある。 ,false:\char`\"{}serializer\char`\"{}キーが存在しているが内容が空 または 存在しているが内容が\char`\"{}little\char`\"{},\char`\"{}big\char`\"{} 以外。 
+\end{DoxyReturn}
+\index{RTC::InPortBase@{RTC::InPortBase}!connect@{connect}}
+\index{connect@{connect}!RTC::InPortBase@{RTC::InPortBase}}
+\subsubsection[{connect}]{\setlength{\rightskip}{0pt plus 5cm}virtual ReturnCode\_\-t RTC::InPortBase::connect (ConnectorProfile \& {\em connector\_\-profile})  throw (CORBA::SystemException)\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classRTC_1_1InPortBase_ab37ad76d4270c20133b52b1bbdf3b529}
+
+
+[CORBA interface] Port の接続を行う 
+
+与えられた ConnectoionProfile の情報に基づき、Port間の接続を確立 する。この関数は主にアプリケーションプログラムやツールから呼び出 すことを前提としている。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em connector\_\-profile}]ConnectorProfile \end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+ReturnCode\_\-t 型のリターンコード 
+\end{DoxyReturn}
+
+
+{\bf RTC::PortBase} \doxyref{}{p.}{classRTC_1_1PortBase_a139d07d2e94f7e793aedf4aa24b92462}を再定義しています。
+
+\index{RTC::InPortBase@{RTC::InPortBase}!connectors@{connectors}}
+\index{connectors@{connectors}!RTC::InPortBase@{RTC::InPortBase}}
+\subsubsection[{connectors}]{\setlength{\rightskip}{0pt plus 5cm}const std::vector$<${\bf InPortConnector}$\ast$$>$\& RTC::InPortBase::connectors ()}\label{classRTC_1_1InPortBase_a5e247ce406f48bd4cd40ce25d98764d4}
+
+
+Connector を取得. 
+
+現在所有しているコネクタを取得する。
+
+\begin{DoxyReturn}{戻り値}
+connector のリスト 
+\end{DoxyReturn}
+\index{RTC::InPortBase@{RTC::InPortBase}!createConnector@{createConnector}}
+\index{createConnector@{createConnector}!RTC::InPortBase@{RTC::InPortBase}}
+\subsubsection[{createConnector}]{\setlength{\rightskip}{0pt plus 5cm}{\bf InPortConnector}$\ast$ RTC::InPortBase::createConnector (const ConnectorProfile \& {\em cprof}, \/  {\bf coil::Properties} \& {\em prop}, \/  {\bf OutPortConsumer} $\ast$ {\em consumer})\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC_1_1InPortBase_ac7be351658bb18c655b7fea9a2dac68b}
+
+
+\doxyref{InPortPullConnector}{p.}{classRTC_1_1InPortPullConnector} の生成. 
+
+Connector を生成し、生成が成功すれば m\_\-connectors に保存する。 生成に失敗した場合 0 を返す。 \index{RTC::InPortBase@{RTC::InPortBase}!createConnector@{createConnector}}
+\index{createConnector@{createConnector}!RTC::InPortBase@{RTC::InPortBase}}
+\subsubsection[{createConnector}]{\setlength{\rightskip}{0pt plus 5cm}{\bf InPortConnector}$\ast$ RTC::InPortBase::createConnector (ConnectorProfile \& {\em cprof}, \/  {\bf coil::Properties} \& {\em prop}, \/  {\bf InPortProvider} $\ast$ {\em provider})\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC_1_1InPortBase_aa6fe75ede17566f7847394f56700ba6d}
+
+
+\doxyref{InPortPushConnector}{p.}{classRTC_1_1InPortPushConnector} の生成. 
+
+Connector を生成し、生成が成功すれば m\_\-connectors に保存する。 生成に失敗した場合 0 を返す。 \index{RTC::InPortBase@{RTC::InPortBase}!createConsumer@{createConsumer}}
+\index{createConsumer@{createConsumer}!RTC::InPortBase@{RTC::InPortBase}}
+\subsubsection[{createConsumer}]{\setlength{\rightskip}{0pt plus 5cm}{\bf OutPortConsumer}$\ast$ RTC::InPortBase::createConsumer (const ConnectorProfile \& {\em cprof}, \/  {\bf coil::Properties} \& {\em prop})\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC_1_1InPortBase_a48146d910456ba7b1ebca68e96f77db4}
+
+
+\doxyref{OutPort}{p.}{classRTC_1_1OutPort} consumer の生成. 
+
+\doxyref{OutPortConsumer}{p.}{classRTC_1_1OutPortConsumer} を生成する。 生成に失敗した場合 0 を返す。 \index{RTC::InPortBase@{RTC::InPortBase}!createProvider@{createProvider}}
+\index{createProvider@{createProvider}!RTC::InPortBase@{RTC::InPortBase}}
+\subsubsection[{createProvider}]{\setlength{\rightskip}{0pt plus 5cm}{\bf InPortProvider}$\ast$ RTC::InPortBase::createProvider (ConnectorProfile \& {\em cprof}, \/  {\bf coil::Properties} \& {\em prop})\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC_1_1InPortBase_a4f82e38b34bd3fd392d53f1543da3b58}
+
+
+\doxyref{InPort}{p.}{classRTC_1_1InPort} provider の生成. 
+
+\doxyref{InPortProvider}{p.}{classRTC_1_1InPortProvider} を生成し、情報を ConnectorProfile に公開する。 生成に失敗した場合 0 を返す。 \index{RTC::InPortBase@{RTC::InPortBase}!deactivateInterfaces@{deactivateInterfaces}}
+\index{deactivateInterfaces@{deactivateInterfaces}!RTC::InPortBase@{RTC::InPortBase}}
+\subsubsection[{deactivateInterfaces}]{\setlength{\rightskip}{0pt plus 5cm}virtual void RTC::InPortBase::deactivateInterfaces ()\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classRTC_1_1InPortBase_a4d8bba26fce07c092ebffbab6b1aa881}
+
+
+全ての Port のインターフェースを deactivates する 
+
+Port に登録されている全てのインターフェースを deactivate する。 
+
+{\bf RTC::PortBase} \doxyref{}{p.}{classRTC_1_1PortBase_a8dfb8a33b92b9fc9b6c070df2def633f}を実装しています。
+
+\index{RTC::InPortBase@{RTC::InPortBase}!getConnectorById@{getConnectorById}}
+\index{getConnectorById@{getConnectorById}!RTC::InPortBase@{RTC::InPortBase}}
+\subsubsection[{getConnectorById}]{\setlength{\rightskip}{0pt plus 5cm}{\bf InPortConnector}$\ast$ RTC::InPortBase::getConnectorById (const char $\ast$ {\em id})}\label{classRTC_1_1InPortBase_aea583e55d4d025245afd712300230f4f}
+
+
+ConnectorProfileをIDで取得. 
+
+現在所有しているコネクタをIDで取得する。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em id}]Connector ID \end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+コネクタへのポインタ 
+\end{DoxyReturn}
+\index{RTC::InPortBase@{RTC::InPortBase}!getConnectorByName@{getConnectorByName}}
+\index{getConnectorByName@{getConnectorByName}!RTC::InPortBase@{RTC::InPortBase}}
+\subsubsection[{getConnectorByName}]{\setlength{\rightskip}{0pt plus 5cm}{\bf InPortConnector}$\ast$ RTC::InPortBase::getConnectorByName (const char $\ast$ {\em name})}\label{classRTC_1_1InPortBase_a322f9c5319fd7102202289b394893bf7}
+
+
+ConnectorProfileを名前で取得. 
+
+現在所有しているコネクタを名前で取得する。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em name}]Connector name \end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+コネクタへのポインタ 
+\end{DoxyReturn}
+\index{RTC::InPortBase@{RTC::InPortBase}!getConnectorIds@{getConnectorIds}}
+\index{getConnectorIds@{getConnectorIds}!RTC::InPortBase@{RTC::InPortBase}}
+\subsubsection[{getConnectorIds}]{\setlength{\rightskip}{0pt plus 5cm}{\bf coil::vstring} RTC::InPortBase::getConnectorIds ()}\label{classRTC_1_1InPortBase_a93477a719d89b0da08b23f4da5f48fae}
+
+
+ConnectorId を取得. 
+
+現在所有しているコネクタのIDを取得する。
+
+\begin{DoxyReturn}{戻り値}
+ConnectorId のリスト 
+\end{DoxyReturn}
+\index{RTC::InPortBase@{RTC::InPortBase}!getConnectorNames@{getConnectorNames}}
+\index{getConnectorNames@{getConnectorNames}!RTC::InPortBase@{RTC::InPortBase}}
+\subsubsection[{getConnectorNames}]{\setlength{\rightskip}{0pt plus 5cm}{\bf coil::vstring} RTC::InPortBase::getConnectorNames ()}\label{classRTC_1_1InPortBase_aa722937ee4e9be0d531db5e207bf0853}
+
+
+Connectorの名前を取得. 
+
+現在所有しているコネクタの名前を取得する。
+
+\begin{DoxyReturn}{戻り値}
+Connector名のリスト 
+\end{DoxyReturn}
+\index{RTC::InPortBase@{RTC::InPortBase}!getConnectorProfileById@{getConnectorProfileById}}
+\index{getConnectorProfileById@{getConnectorProfileById}!RTC::InPortBase@{RTC::InPortBase}}
+\subsubsection[{getConnectorProfileById}]{\setlength{\rightskip}{0pt plus 5cm}bool RTC::InPortBase::getConnectorProfileById (const char $\ast$ {\em id}, \/  {\bf ConnectorInfo} \& {\em prof})}\label{classRTC_1_1InPortBase_adffe2b716bbf5ce808010c26ff9cb453}
+
+
+ConnectorProfileをIDで取得. 
+
+現在所有しているコネクタをIDで取得する。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em id}]Connector ID \item[{\em prof}]ConnectorProfile \end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+false 指定したIDがない 
+\end{DoxyReturn}
+\index{RTC::InPortBase@{RTC::InPortBase}!getConnectorProfileByName@{getConnectorProfileByName}}
+\index{getConnectorProfileByName@{getConnectorProfileByName}!RTC::InPortBase@{RTC::InPortBase}}
+\subsubsection[{getConnectorProfileByName}]{\setlength{\rightskip}{0pt plus 5cm}bool RTC::InPortBase::getConnectorProfileByName (const char $\ast$ {\em name}, \/  {\bf ConnectorInfo} \& {\em prof})}\label{classRTC_1_1InPortBase_ae8ba538d6c318a9ddfb9242a72a6c26b}
+
+
+ConnectorProfileを名前で取得. 
+
+現在所有しているコネクタを名前で取得する。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em name}]Connector name \item[{\em prof}]ConnectorProfile \end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+false 指定した名前がない 
+\end{DoxyReturn}
+\index{RTC::InPortBase@{RTC::InPortBase}!getConnectorProfiles@{getConnectorProfiles}}
+\index{getConnectorProfiles@{getConnectorProfiles}!RTC::InPortBase@{RTC::InPortBase}}
+\subsubsection[{getConnectorProfiles}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ConnectorInfoList} RTC::InPortBase::getConnectorProfiles ()}\label{classRTC_1_1InPortBase_aa79b490a1fae07ca9a0ed5a99267b608}
+
+
+ConnectorProfile を取得. 
+
+現在所有しているコネクタのProfileを取得する。
+
+\begin{DoxyReturn}{戻り値}
+ConnectorProfile のリスト 
+\end{DoxyReturn}
+\index{RTC::InPortBase@{RTC::InPortBase}!init@{init}}
+\index{init@{init}!RTC::InPortBase@{RTC::InPortBase}}
+\subsubsection[{init}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::InPortBase::init ({\bf coil::Properties} \& {\em prop})}\label{classRTC_1_1InPortBase_adeeb77472583af68e16c1b6ac6aee118}
+
+
+プロパティの初期化 
+
+指定されたプロパティで初期化する。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em prop}]設定するプロパティ \end{DoxyParams}
+\index{RTC::InPortBase@{RTC::InPortBase}!initConsumers@{initConsumers}}
+\index{initConsumers@{initConsumers}!RTC::InPortBase@{RTC::InPortBase}}
+\subsubsection[{initConsumers}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::InPortBase::initConsumers ()\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC_1_1InPortBase_aea0abf42128b7f945c3f5787ee19581a}
+
+
+\doxyref{OutPort}{p.}{classRTC_1_1OutPort} consumer の初期化. 
+
+\index{RTC::InPortBase@{RTC::InPortBase}!initProviders@{initProviders}}
+\index{initProviders@{initProviders}!RTC::InPortBase@{RTC::InPortBase}}
+\subsubsection[{initProviders}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::InPortBase::initProviders ()\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC_1_1InPortBase_ac3195cece5da04b052b6d60a99f7c0fa}
+
+
+\doxyref{InPort}{p.}{classRTC_1_1InPort} provider の初期化. 
+
+\index{RTC::InPortBase@{RTC::InPortBase}!isLittleEndian@{isLittleEndian}}
+\index{isLittleEndian@{isLittleEndian}!RTC::InPortBase@{RTC::InPortBase}}
+\subsubsection[{isLittleEndian}]{\setlength{\rightskip}{0pt plus 5cm}bool RTC::InPortBase::isLittleEndian ()}\label{classRTC_1_1InPortBase_afb766071f5b6f5f7d783a02fbe30ab61}
+
+
+endian 設定を返す 
+
+endian 設定のbool値を返す。
+
+\begin{DoxyReturn}{戻り値}
+m\_\-littleEndian がlittleの場合true、bigの場合false を返す。 
+\end{DoxyReturn}
+\index{RTC::InPortBase@{RTC::InPortBase}!properties@{properties}}
+\index{properties@{properties}!RTC::InPortBase@{RTC::InPortBase}}
+\subsubsection[{properties}]{\setlength{\rightskip}{0pt plus 5cm}{\bf coil::Properties}\& RTC::InPortBase::properties ()}\label{classRTC_1_1InPortBase_a86cfb64b99b76f6ae34288704fdf4ed4}
+
+
+プロパティを取得する 
+
+ポートのプロパティを取得する。
+
+\begin{DoxyReturn}{戻り値}
+プロパティ 
+\end{DoxyReturn}
+\index{RTC::InPortBase@{RTC::InPortBase}!publishInterfaces@{publishInterfaces}}
+\index{publishInterfaces@{publishInterfaces}!RTC::InPortBase@{RTC::InPortBase}}
+\subsubsection[{publishInterfaces}]{\setlength{\rightskip}{0pt plus 5cm}virtual ReturnCode\_\-t RTC::InPortBase::publishInterfaces (ConnectorProfile \& {\em connector\_\-profile})\hspace{0.3cm}{\ttfamily  [protected, virtual]}}\label{classRTC_1_1InPortBase_ad836b599b157efb1a31ec61999015986}
+
+
+Interface情報を公開する. 
+
+Interface情報を公開する。 引数の ConnectorProfile に格納されている dataflow\_\-type が push 型 の場合は、指定された interface\_\-type の \doxyref{InPortProvider}{p.}{classRTC_1_1InPortProvider} に関する情報 を ConnectorProfile::properties に書込み呼び出し側に戻す。
+
+dataport.dataflow\_\-type
+
+
+\begin{DoxyParams}{引数}
+\item[{\em connector\_\-profile}]コネクタプロファイル\end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+ReturnCode\_\-t 型のリターンコード 
+\end{DoxyReturn}
+
+
+{\bf RTC::PortBase} \doxyref{}{p.}{classRTC_1_1PortBase_acf31878c5912f56c122aaa2310e182de}を実装しています。
+
+\index{RTC::InPortBase@{RTC::InPortBase}!read@{read}}
+\index{read@{read}!RTC::InPortBase@{RTC::InPortBase}}
+\subsubsection[{read}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool RTC::InPortBase::read ()\hspace{0.3cm}{\ttfamily  [pure virtual]}}\label{classRTC_1_1InPortBase_a448e72f4d6d7890c4fb6add7d86d04b5}
+
+
+\doxyref{RTObject\_\-impl::readAll()}{p.}{classRTC_1_1RTObject__impl_a69b50eea5bc7f862114602963cca84ca}から呼ばれる仮想関数. 
+
+DataPort からデータを読み出す
+
+\begin{DoxyReturn}{戻り値}
+true:成功,false:失敗 
+\end{DoxyReturn}
+
+
+{\bf RTC::InPort$<$ DataType $>$} \doxyref{}{p.}{classRTC_1_1InPort_a1b6e58e0c821b46148266ddfd0b9bd54}で実装されています。
+
+\index{RTC::InPortBase@{RTC::InPortBase}!removeConnectorDataListener@{removeConnectorDataListener}}
+\index{removeConnectorDataListener@{removeConnectorDataListener}!RTC::InPortBase@{RTC::InPortBase}}
+\subsubsection[{removeConnectorDataListener}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::InPortBase::removeConnectorDataListener ({\bf ConnectorDataListenerType} {\em listener\_\-type}, \/  {\bf ConnectorDataListener} $\ast$ {\em listener})}\label{classRTC_1_1InPortBase_ad371ba04fc81e381ff74751bc2f400c9}
+
+
+\doxyref{ConnectorDataListener}{p.}{classRTC_1_1ConnectorDataListener} リスナを削除する. 
+
+設定した各種リスナを削除する。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em listener\_\-type}]リスナタイプ \item[{\em listener}]リスナオブジェクトへのポインタ \end{DoxyParams}
+\index{RTC::InPortBase@{RTC::InPortBase}!removeConnectorListener@{removeConnectorListener}}
+\index{removeConnectorListener@{removeConnectorListener}!RTC::InPortBase@{RTC::InPortBase}}
+\subsubsection[{removeConnectorListener}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::InPortBase::removeConnectorListener ({\bf ConnectorListenerType} {\em callback\_\-type}, \/  {\bf ConnectorListener} $\ast$ {\em listener})}\label{classRTC_1_1InPortBase_a28f441f50e37fd06c7cf7c4c5b02e321}
+
+
+\doxyref{ConnectorDataListener}{p.}{classRTC_1_1ConnectorDataListener} リスナを削除する. 
+
+設定した各種リスナを削除する。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em listener\_\-type}]リスナタイプ \item[{\em listener}]リスナオブジェクトへのポインタ \end{DoxyParams}
+\index{RTC::InPortBase@{RTC::InPortBase}!subscribeInterfaces@{subscribeInterfaces}}
+\index{subscribeInterfaces@{subscribeInterfaces}!RTC::InPortBase@{RTC::InPortBase}}
+\subsubsection[{subscribeInterfaces}]{\setlength{\rightskip}{0pt plus 5cm}virtual ReturnCode\_\-t RTC::InPortBase::subscribeInterfaces (const ConnectorProfile \& {\em connector\_\-profile})\hspace{0.3cm}{\ttfamily  [protected, virtual]}}\label{classRTC_1_1InPortBase_adf648c377e5730a2de6dc48fc47543fb}
+
+
+Interfaceに接続する. 
+
+Interfaceに接続する。 Portが所有するConsumerに適合するProviderに関する情報を ConnectorProfile::properties から抽出し、 ConsumerにCORBAオブジェクト参照を設定する。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em connector\_\-profile}]コネクタ・プロファイル\end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+ReturnCode\_\-t 型のリターンコード 
+\end{DoxyReturn}
+
+
+{\bf RTC::PortBase} \doxyref{}{p.}{classRTC_1_1PortBase_afce755069836c1ee637784e2a9e5a02b}を実装しています。
+
+\index{RTC::InPortBase@{RTC::InPortBase}!unsubscribeInterfaces@{unsubscribeInterfaces}}
+\index{unsubscribeInterfaces@{unsubscribeInterfaces}!RTC::InPortBase@{RTC::InPortBase}}
+\subsubsection[{unsubscribeInterfaces}]{\setlength{\rightskip}{0pt plus 5cm}virtual void RTC::InPortBase::unsubscribeInterfaces (const ConnectorProfile \& {\em connector\_\-profile})\hspace{0.3cm}{\ttfamily  [protected, virtual]}}\label{classRTC_1_1InPortBase_a118932439dce0dc96571b0123615c36e}
+
+
+Interfaceへの接続を解除する. 
+
+Interfaceへの接続を解除する。 与えられたConnectorProfileに関連するConsumerに設定された全てのObjectを 解放し接続を解除する。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em connector\_\-profile}]コネクタ・プロファイル \end{DoxyParams}
+
+
+{\bf RTC::PortBase} \doxyref{}{p.}{classRTC_1_1PortBase_a8a843a387e99d4d4daa6e829eb1db569}を実装しています。
+
+
+
+\subsection{変数}
+\index{RTC::InPortBase@{RTC::InPortBase}!ConnectorList@{ConnectorList}}
+\index{ConnectorList@{ConnectorList}!RTC::InPortBase@{RTC::InPortBase}}
+\subsubsection[{ConnectorList}]{\setlength{\rightskip}{0pt plus 5cm}DATAPORTSTATUS\_\-ENUM typedef std::vector$<${\bf InPortConnector}$\ast$$>$ {\bf RTC::InPortBase::ConnectorList}}\label{classRTC_1_1InPortBase_a0b1bc541de27728a4a1758d9b2c8b667}
+\index{RTC::InPortBase@{RTC::InPortBase}!m\_\-connectors@{m\_\-connectors}}
+\index{m\_\-connectors@{m\_\-connectors}!RTC::InPortBase@{RTC::InPortBase}}
+\subsubsection[{m\_\-connectors}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ConnectorList} {\bf RTC::InPortBase::m\_\-connectors}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC_1_1InPortBase_a65d955701137db34a6df824ad0f6e9b9}
+
+
+接続リスト 
+
+
+
+参照元 RTC::InPort$<$ DataType $>$::isEmpty(), RTC::InPort$<$ DataType $>$::isNew(), と RTC::InPort$<$ DataType $>$::read().
+
+\index{RTC::InPortBase@{RTC::InPortBase}!m\_\-consumerTypes@{m\_\-consumerTypes}}
+\index{m\_\-consumerTypes@{m\_\-consumerTypes}!RTC::InPortBase@{RTC::InPortBase}}
+\subsubsection[{m\_\-consumerTypes}]{\setlength{\rightskip}{0pt plus 5cm}{\bf coil::vstring} {\bf RTC::InPortBase::m\_\-consumerTypes}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC_1_1InPortBase_ac97601d0996bf6305b97b3262612f6ea}
+
+
+利用可能consumer 
+
+\index{RTC::InPortBase@{RTC::InPortBase}!m\_\-listeners@{m\_\-listeners}}
+\index{m\_\-listeners@{m\_\-listeners}!RTC::InPortBase@{RTC::InPortBase}}
+\subsubsection[{m\_\-listeners}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ConnectorListeners} {\bf RTC::InPortBase::m\_\-listeners}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC_1_1InPortBase_a5f89fa0e14e3085813752095a2fb22d0}
+
+
+\doxyref{ConnectorDataListener}{p.}{classRTC_1_1ConnectorDataListener} リスナ. 
+
+\index{RTC::InPortBase@{RTC::InPortBase}!m\_\-littleEndian@{m\_\-littleEndian}}
+\index{m\_\-littleEndian@{m\_\-littleEndian}!RTC::InPortBase@{RTC::InPortBase}}
+\subsubsection[{m\_\-littleEndian}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf RTC::InPortBase::m\_\-littleEndian}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC_1_1InPortBase_a09f80d55c9f6d5eff1b7087d9fd966a1}
+
+
+接続エンディアン 
+
+\index{RTC::InPortBase@{RTC::InPortBase}!m\_\-properties@{m\_\-properties}}
+\index{m\_\-properties@{m\_\-properties}!RTC::InPortBase@{RTC::InPortBase}}
+\subsubsection[{m\_\-properties}]{\setlength{\rightskip}{0pt plus 5cm}{\bf coil::Properties} {\bf RTC::InPortBase::m\_\-properties}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC_1_1InPortBase_a0698919a5564d63513141f21140f0502}
+
+
+プロパティ 
+
+\index{RTC::InPortBase@{RTC::InPortBase}!m\_\-providerTypes@{m\_\-providerTypes}}
+\index{m\_\-providerTypes@{m\_\-providerTypes}!RTC::InPortBase@{RTC::InPortBase}}
+\subsubsection[{m\_\-providerTypes}]{\setlength{\rightskip}{0pt plus 5cm}{\bf coil::vstring} {\bf RTC::InPortBase::m\_\-providerTypes}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC_1_1InPortBase_a2c75bbef4ccdb0874560f0197c0fc13b}
+
+
+利用可能provider 
+
+\index{RTC::InPortBase@{RTC::InPortBase}!m\_\-singlebuffer@{m\_\-singlebuffer}}
+\index{m\_\-singlebuffer@{m\_\-singlebuffer}!RTC::InPortBase@{RTC::InPortBase}}
+\subsubsection[{m\_\-singlebuffer}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf RTC::InPortBase::m\_\-singlebuffer}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC_1_1InPortBase_a5fd4766bd238d2ab34762c31dd540207}
+
+
+バッファモード 
+
+true:single buffer mode. false:multi buffer mode. \index{RTC::InPortBase@{RTC::InPortBase}!m\_\-thebuffer@{m\_\-thebuffer}}
+\index{m\_\-thebuffer@{m\_\-thebuffer}!RTC::InPortBase@{RTC::InPortBase}}
+\subsubsection[{m\_\-thebuffer}]{\setlength{\rightskip}{0pt plus 5cm}{\bf CdrBufferBase}$\ast$ {\bf RTC::InPortBase::m\_\-thebuffer}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC_1_1InPortBase_a7f1256c1d2997346096eeb37d7432c12}
+
+
+バッファ 
+

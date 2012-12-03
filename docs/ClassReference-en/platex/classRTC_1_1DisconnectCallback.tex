@@ -1,0 +1,54 @@
+\section{RTC::DisconnectCallback Class Reference}
+\label{classRTC_1_1DisconnectCallback}\index{RTC::DisconnectCallback@{RTC::DisconnectCallback}}
+
+
+Callback functor abstract for disconnect/notify\_\-disconnect() funcs.  
+
+
+
+
+{\ttfamily \#include $<$PortCallback.h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual {\bf $\sim$DisconnectCallback} (void)
+\begin{DoxyCompactList}\small\item\em Destructor. \item\end{DoxyCompactList}\item 
+virtual void {\bf operator()} (const char $\ast$connector\_\-id)=0
+\begin{DoxyCompactList}\small\item\em Callback method. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Callback functor abstract for disconnect/notify\_\-disconnect() funcs. This is the interface for callback functor for disconnect/notify\_\-disconnect() invocation in Port. Argument is connector ID is given these functions.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em connector\_\-id}]Connector ID\end{DoxyParams}
+\begin{DoxySince}{Since}
+1.0.0 
+\end{DoxySince}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{RTC::DisconnectCallback@{RTC::DisconnectCallback}!$\sim$DisconnectCallback@{$\sim$DisconnectCallback}}
+\index{$\sim$DisconnectCallback@{$\sim$DisconnectCallback}!RTC::DisconnectCallback@{RTC::DisconnectCallback}}
+\subsubsection[{$\sim$DisconnectCallback}]{\setlength{\rightskip}{0pt plus 5cm}virtual RTC::DisconnectCallback::$\sim$DisconnectCallback (void)\hspace{0.3cm}{\ttfamily  [inline, virtual]}}\label{classRTC_1_1DisconnectCallback_aee020344969e3996b91d6bf3873c9aab}
+
+
+Destructor. 
+
+Destructor 
+
+\subsection{Member Function Documentation}
+\index{RTC::DisconnectCallback@{RTC::DisconnectCallback}!operator()@{operator()}}
+\index{operator()@{operator()}!RTC::DisconnectCallback@{RTC::DisconnectCallback}}
+\subsubsection[{operator()}]{\setlength{\rightskip}{0pt plus 5cm}virtual void RTC::DisconnectCallback::operator() (const char $\ast$ {\em connector\_\-id})\hspace{0.3cm}{\ttfamily  [pure virtual]}}\label{classRTC_1_1DisconnectCallback_a2b4b524ad261d6da63e6649434015dab}
+
+
+Callback method. 
+
+This is the callback method invoked when disconnect/notify\_\-disconnect() invocation in Port.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em connector\_\-id}]Connector ID \end{DoxyParams}

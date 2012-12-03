@@ -1,0 +1,162 @@
+\section{RTC::InPortPullConnector Class Reference}
+\label{classRTC_1_1InPortPullConnector}\index{RTC::InPortPullConnector@{RTC::InPortPullConnector}}
+
+
+\doxyref{InPortPullConnector}{p.}{classRTC_1_1InPortPullConnector} class.  
+
+
+
+
+{\ttfamily \#include $<$InPortPullConnector.h$>$}
+
+Inheritance diagram for RTC::InPortPullConnector:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4cm]{classRTC_1_1InPortPullConnector}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+DATAPORTSTATUS\_\-ENUM {\bf InPortPullConnector} ({\bf ConnectorInfo} info, {\bf OutPortConsumer} $\ast$consumer, {\bf ConnectorListeners} \&listeners, {\bf CdrBufferBase} $\ast$buffer=0)
+\begin{DoxyCompactList}\small\item\em Constructor. \item\end{DoxyCompactList}\item 
+virtual {\bf $\sim$InPortPullConnector} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \item\end{DoxyCompactList}\item 
+virtual ReturnCode {\bf read} (cdrMemoryStream \&data)
+\begin{DoxyCompactList}\small\item\em Destructor. \item\end{DoxyCompactList}\item 
+virtual ReturnCode {\bf disconnect} ()
+\begin{DoxyCompactList}\small\item\em Disconnect connection. \item\end{DoxyCompactList}\item 
+virtual void {\bf activate} ()
+\begin{DoxyCompactList}\small\item\em Connector activation. \item\end{DoxyCompactList}\item 
+virtual void {\bf deactivate} ()
+\begin{DoxyCompactList}\small\item\em Connector deactivation. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf CdrBufferBase} $\ast$ {\bf createBuffer} ({\bf ConnectorInfo} \&info)
+\begin{DoxyCompactList}\small\item\em create buffer \item\end{DoxyCompactList}\item 
+void {\bf onConnect} ()
+\begin{DoxyCompactList}\small\item\em Invoke callback when connection is established. \item\end{DoxyCompactList}\item 
+void {\bf onDisconnect} ()
+\begin{DoxyCompactList}\small\item\em Invoke callback when connection is destroied. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\doxyref{InPortPullConnector}{p.}{classRTC_1_1InPortPullConnector} class. Connector class of \doxyref{InPort}{p.}{classRTC_1_1InPort} for pull type dataflow. When \char`\"{}pull\char`\"{} is specified as dataflow\_\-type at the time of establishing connection, this object is generated and owned by the \doxyref{InPort}{p.}{classRTC_1_1InPort}. This connector and \doxyref{InPortPullConnector}{p.}{classRTC_1_1InPortPullConnector} make a pair and realize pull type dataflow of data ports. One connector corresponds to one connection which provides a data stream. Connector is distinguished by ID of the UUID that is generated at establishing connection.
+
+\doxyref{InPortPullConnector}{p.}{classRTC_1_1InPortPullConnector} owns and manages the following objects.
+
+
+\begin{DoxyItemize}
+\item \doxyref{InPortConsumer}{p.}{classRTC_1_1InPortConsumer}
+\item Buffer
+\end{DoxyItemize}
+
+Data written into the \doxyref{OutPort}{p.}{classRTC_1_1OutPort} is passed to the \doxyref{OutPortPullConnector::write()}{p.}{classRTC_1_1OutPortPullConnector_a9fbb676086061d99ce808818b6ddc316}, and is written into the buffer. Consequently, \doxyref{InPort::read()}{p.}{classRTC_1_1InPort_a1b6e58e0c821b46148266ddfd0b9bd54} and \doxyref{InPortPullConnector::read()}{p.}{classRTC_1_1InPortPullConnector_ac2bfcf970c6c0422e279af7d3b638efd} call \doxyref{OutPortConsumer::get()}{p.}{classRTC_1_1OutPortConsumer_acd8302e6ded9e796afb047aff0bc1c0e}, and it reads data from the buffer of \doxyref{OutPortPullConnector}{p.}{classRTC_1_1OutPortPullConnector}. Finally data would be written into the InPortPullConnector's buffer.
+
+\begin{DoxySince}{Since}
+1.0.0 
+\end{DoxySince}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{RTC::InPortPullConnector@{RTC::InPortPullConnector}!InPortPullConnector@{InPortPullConnector}}
+\index{InPortPullConnector@{InPortPullConnector}!RTC::InPortPullConnector@{RTC::InPortPullConnector}}
+\subsubsection[{InPortPullConnector}]{\setlength{\rightskip}{0pt plus 5cm}DATAPORTSTATUS\_\-ENUM RTC::InPortPullConnector::InPortPullConnector ({\bf ConnectorInfo} {\em info}, \/  {\bf OutPortConsumer} $\ast$ {\em consumer}, \/  {\bf ConnectorListeners} \& {\em listeners}, \/  {\bf CdrBufferBase} $\ast$ {\em buffer} = {\ttfamily 0})}\label{classRTC_1_1InPortPullConnector_af6b3d5b96862a4569ff3d25a24d591d6}
+
+
+Constructor. 
+
+InPortPullConnector's constructor is given the following arguments. According to \doxyref{ConnectorInfo}{p.}{classRTC_1_1ConnectorInfo} which includes connection information, a buffer is created. It is also given a pointer to the consumer object for the \doxyref{OutPort}{p.}{classRTC_1_1OutPort} interface. The owner-\/ship of the pointer is owned by this \doxyref{OutPortPullConnector}{p.}{classRTC_1_1OutPortPullConnector}, it has responsibility to destruct the \doxyref{OutPortConsumer}{p.}{classRTC_1_1OutPortConsumer}. \doxyref{OutPortPullConnector}{p.}{classRTC_1_1OutPortPullConnector} also has \doxyref{ConnectorListeners}{p.}{classRTC_1_1ConnectorListeners} to provide event callback mechanisms, and they would be called at the proper timing. If data buffer is given by \doxyref{OutPortBase}{p.}{classRTC_1_1OutPortBase}, the pointer to the buffer is also given as arguments.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em info}]\doxyref{ConnectorInfo}{p.}{classRTC_1_1ConnectorInfo} \item[{\em consumer}]\doxyref{OutPortConsumer}{p.}{classRTC_1_1OutPortConsumer} \item[{\em listeners}]\doxyref{ConnectorListeners}{p.}{classRTC_1_1ConnectorListeners} type lsitener object list \item[{\em buffer}]CdrBufferBase type buffer \end{DoxyParams}
+\index{RTC::InPortPullConnector@{RTC::InPortPullConnector}!$\sim$InPortPullConnector@{$\sim$InPortPullConnector}}
+\index{$\sim$InPortPullConnector@{$\sim$InPortPullConnector}!RTC::InPortPullConnector@{RTC::InPortPullConnector}}
+\subsubsection[{$\sim$InPortPullConnector}]{\setlength{\rightskip}{0pt plus 5cm}virtual RTC::InPortPullConnector::$\sim$InPortPullConnector ()\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classRTC_1_1InPortPullConnector_abfc40c54105ad4cce78489b97ad91620}
+
+
+Destructor. 
+
+This operation calls \doxyref{disconnect()}{p.}{classRTC_1_1InPortPullConnector_a74e8c2fbfdbbacd1d3a67b4017b993df}, which destructs and deletes the consumer, the publisher and the buffer. 
+
+\subsection{Member Function Documentation}
+\index{RTC::InPortPullConnector@{RTC::InPortPullConnector}!activate@{activate}}
+\index{activate@{activate}!RTC::InPortPullConnector@{RTC::InPortPullConnector}}
+\subsubsection[{activate}]{\setlength{\rightskip}{0pt plus 5cm}virtual void RTC::InPortPullConnector::activate ()\hspace{0.3cm}{\ttfamily  [inline, virtual]}}\label{classRTC_1_1InPortPullConnector_a0caf7d4d08dec18fd2973b39d2bc497d}
+
+
+Connector activation. 
+
+This operation activates this connector 
+
+Implements {\bf RTC::ConnectorBase} \doxyref{}{p.}{classRTC_1_1ConnectorBase_a6f7f9ddd882546044f911d66aefee665}.
+
+\index{RTC::InPortPullConnector@{RTC::InPortPullConnector}!createBuffer@{createBuffer}}
+\index{createBuffer@{createBuffer}!RTC::InPortPullConnector@{RTC::InPortPullConnector}}
+\subsubsection[{createBuffer}]{\setlength{\rightskip}{0pt plus 5cm}{\bf CdrBufferBase}$\ast$ RTC::InPortPullConnector::createBuffer ({\bf ConnectorInfo} \& {\em info})\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC_1_1InPortPullConnector_a92a27d869ccda93ba355c55b8a99172c}
+
+
+create buffer 
+
+This function creates a buffer based on given information.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em info}]Connector information \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The poitner to the buffer 
+\end{DoxyReturn}
+\index{RTC::InPortPullConnector@{RTC::InPortPullConnector}!deactivate@{deactivate}}
+\index{deactivate@{deactivate}!RTC::InPortPullConnector@{RTC::InPortPullConnector}}
+\subsubsection[{deactivate}]{\setlength{\rightskip}{0pt plus 5cm}virtual void RTC::InPortPullConnector::deactivate ()\hspace{0.3cm}{\ttfamily  [inline, virtual]}}\label{classRTC_1_1InPortPullConnector_a1dcb7d9c9c4eb8e4667180f1da142788}
+
+
+Connector deactivation. 
+
+This operation deactivates this connector 
+
+Implements {\bf RTC::ConnectorBase} \doxyref{}{p.}{classRTC_1_1ConnectorBase_a8fe6a1bfe8d5ee586d51293b2bcf36d1}.
+
+\index{RTC::InPortPullConnector@{RTC::InPortPullConnector}!disconnect@{disconnect}}
+\index{disconnect@{disconnect}!RTC::InPortPullConnector@{RTC::InPortPullConnector}}
+\subsubsection[{disconnect}]{\setlength{\rightskip}{0pt plus 5cm}virtual ReturnCode RTC::InPortPullConnector::disconnect ()\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classRTC_1_1InPortPullConnector_a74e8c2fbfdbbacd1d3a67b4017b993df}
+
+
+Disconnect connection. 
+
+This operation disconnect this connection 
+
+Implements {\bf RTC::InPortConnector} \doxyref{}{p.}{classRTC_1_1InPortConnector_a8677105bbf5ae5ed3e79dc3b057ea0b9}.
+
+\index{RTC::InPortPullConnector@{RTC::InPortPullConnector}!onConnect@{onConnect}}
+\index{onConnect@{onConnect}!RTC::InPortPullConnector@{RTC::InPortPullConnector}}
+\subsubsection[{onConnect}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::InPortPullConnector::onConnect ()\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC_1_1InPortPullConnector_af1d4497434d7a0dbc8be49d92b163ad7}
+
+
+Invoke callback when connection is established. 
+
+\index{RTC::InPortPullConnector@{RTC::InPortPullConnector}!onDisconnect@{onDisconnect}}
+\index{onDisconnect@{onDisconnect}!RTC::InPortPullConnector@{RTC::InPortPullConnector}}
+\subsubsection[{onDisconnect}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::InPortPullConnector::onDisconnect ()\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC_1_1InPortPullConnector_a81a833e06ac3ea9a690825b404c48b3a}
+
+
+Invoke callback when connection is destroied. 
+
+\index{RTC::InPortPullConnector@{RTC::InPortPullConnector}!read@{read}}
+\index{read@{read}!RTC::InPortPullConnector@{RTC::InPortPullConnector}}
+\subsubsection[{read}]{\setlength{\rightskip}{0pt plus 5cm}virtual ReturnCode RTC::InPortPullConnector::read (cdrMemoryStream \& {\em data})\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classRTC_1_1InPortPullConnector_ac2bfcf970c6c0422e279af7d3b638efd}
+
+
+Destructor. 
+
+This function get data from \doxyref{OutPortConsumer}{p.}{classRTC_1_1OutPortConsumer}. If data is read properly, this function will return PORT\_\-OK return code. Except normal return, BUFFER\_\-EMPTY, TIMEOUT, PRECONDITION\_\-NOT\_\-MET and PORT\_\-ERROR will be returned as error codes.
+
+\begin{DoxyReturn}{Returns}
+PORT\_\-OK Normal return BUFFER\_\-EMPTY Buffer empty TIMEOUT Timeout PRECONDITION\_\-NOT\_\-MET Preconditin not met PORT\_\-ERROR Other error 
+\end{DoxyReturn}
+
+
+Implements {\bf RTC::InPortConnector} \doxyref{}{p.}{classRTC_1_1InPortConnector_a2ffc997f36cb6549029852484327bffd}.
+

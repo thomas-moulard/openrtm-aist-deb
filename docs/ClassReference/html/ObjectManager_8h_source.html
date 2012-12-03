@@ -1,0 +1,130 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<title>OpenRTM: ObjectManager.h ソースファイル</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<!-- 作成： Doxygen 1.6.3 -->
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="index.html"><span>メインページ</span></a></li>
+      <li><a href="namespaces.html"><span>ネームスペース</span></a></li>
+      <li><a href="annotated.html"><span>クラス</span></a></li>
+      <li class="current"><a href="files.html"><span>ファイル</span></a></li>
+    </ul>
+  </div>
+  <div class="tabs">
+    <ul>
+      <li><a href="files.html"><span>ファイル一覧</span></a></li>
+      <li><a href="globals.html"><span>ファイルメンバ</span></a></li>
+    </ul>
+  </div>
+<h1>ObjectManager.h</h1><a href="ObjectManager_8h.html">説明を見る。</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="comment">// -*- C++ -*-</span>
+<a name="l00019"></a>00019 <span class="comment"></span><span class="preprocessor">#ifndef RTC_OBJECTMANAGER_H</span>
+<a name="l00020"></a>00020 <span class="preprocessor"></span><span class="preprocessor">#define RTC_OBJECTMANAGER_H</span>
+<a name="l00021"></a>00021 <span class="preprocessor"></span>
+<a name="l00022"></a>00022 <span class="preprocessor">#include &lt;<a class="code" href="RTC_8h.html" title="RTComponent header.">rtm/RTC.h</a>&gt;</span>
+<a name="l00023"></a>00023 
+<a name="l00024"></a>00024 <span class="preprocessor">#include &lt;vector&gt;</span>
+<a name="l00025"></a>00025 <span class="preprocessor">#include &lt;string&gt;</span>
+<a name="l00026"></a>00026 <span class="preprocessor">#include &lt;algorithm&gt;</span>
+<a name="l00027"></a>00027 
+<a name="l00028"></a>00028 <span class="preprocessor">#include &lt;<a class="code" href="Mutex_8h.html">coil/Mutex.h</a>&gt;</span>
+<a name="l00029"></a>00029 <span class="preprocessor">#include &lt;<a class="code" href="Guard_8h.html" title="Guard template class.">coil/Guard.h</a>&gt;</span>
+<a name="l00030"></a>00030 
+<a name="l00050"></a>00050 <span class="keyword">template</span> &lt;<span class="keyword">typename</span> Identifier, <span class="keyword">typename</span> Object, <span class="keyword">typename</span> Predicate&gt;
+<a name="l00051"></a><a class="code" href="classObjectManager.html">00051</a> <span class="keyword">class </span><a class="code" href="classObjectManager.html" title="オブジェクト管理用クラス">ObjectManager</a>
+<a name="l00052"></a>00052 {
+<a name="l00053"></a>00053 <span class="keyword">public</span>:
+<a name="l00054"></a><a class="code" href="classObjectManager.html#aa4fcbaee3d2516a6334f08fff837c7be">00054</a>   <span class="keyword">typedef</span> std::vector&lt;Object*&gt;                  <a class="code" href="classObjectManager.html#aa4fcbaee3d2516a6334f08fff837c7be">ObjectVector</a>;
+<a name="l00055"></a><a class="code" href="classObjectManager.html#a64d7341e2e8152cd114ab2fbd66a237e">00055</a>   <span class="keyword">typedef</span> <span class="keyword">typename</span> ObjectVector::iterator       <a class="code" href="classObjectManager.html#a64d7341e2e8152cd114ab2fbd66a237e">ObjectVectorItr</a>;
+<a name="l00056"></a><a class="code" href="classObjectManager.html#acff0ec2b138b2dc0a2ad6b80c7dc1482">00056</a>   <span class="keyword">typedef</span> <span class="keyword">typename</span> ObjectVector::const_iterator <a class="code" href="classObjectManager.html#acff0ec2b138b2dc0a2ad6b80c7dc1482">ObjectVectorConstItr</a>;
+<a name="l00057"></a><a class="code" href="classObjectManager.html#aace44eee2c2a6ddfec63ac42b7bf601c">00057</a>   <span class="keyword">typedef</span> <a class="code" href="classcoil_1_1Mutex.html" title="Mutex クラス.">coil::Mutex</a> <a class="code" href="classcoil_1_1Mutex.html" title="Mutex クラス.">Mutex</a>;
+<a name="l00058"></a><a class="code" href="classObjectManager.html#a269f7c04878a5ad6759d2ff21a21c4d1">00058</a>   <span class="keyword">typedef</span> <a class="code" href="classcoil_1_1Guard.html">coil::Guard&lt;coil::Mutex&gt;</a> <a class="code" href="classcoil_1_1Guard.html">Guard</a>;
+<a name="l00074"></a><a class="code" href="classObjectManager.html#af32caa02e21da2fba152097615c00e60">00074</a>   <a class="code" href="classObjectManager.html#af32caa02e21da2fba152097615c00e60">ObjectManager</a>(){};
+<a name="l00075"></a>00075   
+<a name="l00091"></a><a class="code" href="classObjectManager.html#a38ef0a5005c4a54bda07e0fa1755566a">00091</a>   <a class="code" href="classObjectManager.html#a38ef0a5005c4a54bda07e0fa1755566a">~ObjectManager</a>(<span class="keywordtype">void</span>){};
+<a name="l00092"></a>00092   
+<a name="l00118"></a><a class="code" href="classObjectManager.html#a43de06b277f07a24088b46f640de8221">00118</a>   <span class="keywordtype">bool</span> <a class="code" href="classObjectManager.html#a43de06b277f07a24088b46f640de8221" title="指定したオブジェクトを登録する">registerObject</a>(Object* obj)
+<a name="l00119"></a>00119   {
+<a name="l00120"></a>00120     <a class="code" href="classObjectManager.html#a64d7341e2e8152cd114ab2fbd66a237e">ObjectVectorItr</a> it;
+<a name="l00121"></a>00121     <a class="code" href="classcoil_1_1Guard.html">Guard</a> guard(<a class="code" href="classObjectManager.html#ae0c7be9ecce476a588ffb884d663b3e8" title="登録済みオブジェクト・リスト">m_objects</a>.<a class="code" href="structObjectManager_1_1Objects.html#a4ba7fb259cc6ebca1a253b366a079f64">_mutex</a>);
+<a name="l00122"></a>00122     
+<a name="l00123"></a>00123     it = std::find_if(<a class="code" href="classObjectManager.html#ae0c7be9ecce476a588ffb884d663b3e8" title="登録済みオブジェクト・リスト">m_objects</a>.<a class="code" href="structObjectManager_1_1Objects.html#a74ee31f4dee7742b10865096f5b23bc7">_obj</a>.begin(), <a class="code" href="classObjectManager.html#ae0c7be9ecce476a588ffb884d663b3e8" title="登録済みオブジェクト・リスト">m_objects</a>.<a class="code" href="structObjectManager_1_1Objects.html#a74ee31f4dee7742b10865096f5b23bc7">_obj</a>.end(),
+<a name="l00124"></a>00124                       Predicate(obj));
+<a name="l00125"></a>00125     <span class="keywordflow">if</span> (it == <a class="code" href="classObjectManager.html#ae0c7be9ecce476a588ffb884d663b3e8" title="登録済みオブジェクト・リスト">m_objects</a>.<a class="code" href="structObjectManager_1_1Objects.html#a74ee31f4dee7742b10865096f5b23bc7">_obj</a>.end())
+<a name="l00126"></a>00126       {
+<a name="l00127"></a>00127         <a class="code" href="classObjectManager.html#ae0c7be9ecce476a588ffb884d663b3e8" title="登録済みオブジェクト・リスト">m_objects</a>.<a class="code" href="structObjectManager_1_1Objects.html#a74ee31f4dee7742b10865096f5b23bc7">_obj</a>.push_back(obj);
+<a name="l00128"></a>00128         <span class="keywordflow">return</span> <span class="keyword">true</span>;
+<a name="l00129"></a>00129       }
+<a name="l00130"></a>00130     <span class="keywordflow">return</span> <span class="keyword">false</span>;
+<a name="l00131"></a>00131   }
+<a name="l00132"></a>00132   
+<a name="l00158"></a><a class="code" href="classObjectManager.html#a082eb0fcf17aeb833a8e0d80c077229a">00158</a>   Object* <a class="code" href="classObjectManager.html#a082eb0fcf17aeb833a8e0d80c077229a" title="指定したオブジェクトを登録解除する">unregisterObject</a>(<span class="keyword">const</span> Identifier&amp; <span class="keywordtype">id</span>)
+<a name="l00159"></a>00159   {
+<a name="l00160"></a>00160     <a class="code" href="classObjectManager.html#a64d7341e2e8152cd114ab2fbd66a237e">ObjectVectorItr</a> it;
+<a name="l00161"></a>00161     <a class="code" href="classcoil_1_1Guard.html">Guard</a> guard(<a class="code" href="classObjectManager.html#ae0c7be9ecce476a588ffb884d663b3e8" title="登録済みオブジェクト・リスト">m_objects</a>.<a class="code" href="structObjectManager_1_1Objects.html#a4ba7fb259cc6ebca1a253b366a079f64">_mutex</a>);
+<a name="l00162"></a>00162     
+<a name="l00163"></a>00163     it = std::find_if(<a class="code" href="classObjectManager.html#ae0c7be9ecce476a588ffb884d663b3e8" title="登録済みオブジェクト・リスト">m_objects</a>.<a class="code" href="structObjectManager_1_1Objects.html#a74ee31f4dee7742b10865096f5b23bc7">_obj</a>.begin(), <a class="code" href="classObjectManager.html#ae0c7be9ecce476a588ffb884d663b3e8" title="登録済みオブジェクト・リスト">m_objects</a>.<a class="code" href="structObjectManager_1_1Objects.html#a74ee31f4dee7742b10865096f5b23bc7">_obj</a>.end(),
+<a name="l00164"></a>00164                       Predicate(<span class="keywordtype">id</span>));
+<a name="l00165"></a>00165     <span class="keywordflow">if</span> (it != <a class="code" href="classObjectManager.html#ae0c7be9ecce476a588ffb884d663b3e8" title="登録済みオブジェクト・リスト">m_objects</a>.<a class="code" href="structObjectManager_1_1Objects.html#a74ee31f4dee7742b10865096f5b23bc7">_obj</a>.end())
+<a name="l00166"></a>00166       {
+<a name="l00167"></a>00167         Object* obj(*it);
+<a name="l00168"></a>00168         <a class="code" href="classObjectManager.html#ae0c7be9ecce476a588ffb884d663b3e8" title="登録済みオブジェクト・リスト">m_objects</a>.<a class="code" href="structObjectManager_1_1Objects.html#a74ee31f4dee7742b10865096f5b23bc7">_obj</a>.erase(it);
+<a name="l00169"></a>00169         <span class="keywordflow">return</span> obj;
+<a name="l00170"></a>00170       }
+<a name="l00171"></a>00171     <span class="keywordflow">return</span> NULL;;
+<a name="l00172"></a>00172   }
+<a name="l00173"></a>00173   
+<a name="l00202"></a><a class="code" href="classObjectManager.html#a3f4cd060f97d7c74bc91d23e42df50de">00202</a>   Object* <a class="code" href="classObjectManager.html#a3f4cd060f97d7c74bc91d23e42df50de" title="オブジェクトを検索する">find</a>(<span class="keyword">const</span> Identifier&amp; <span class="keywordtype">id</span>)<span class="keyword"> const</span>
+<a name="l00203"></a>00203 <span class="keyword">  </span>{
+<a name="l00204"></a>00204     <a class="code" href="classObjectManager.html#acff0ec2b138b2dc0a2ad6b80c7dc1482">ObjectVectorConstItr</a> it;
+<a name="l00205"></a>00205     <a class="code" href="classcoil_1_1Guard.html">Guard</a> guard(<a class="code" href="classObjectManager.html#ae0c7be9ecce476a588ffb884d663b3e8" title="登録済みオブジェクト・リスト">m_objects</a>.<a class="code" href="structObjectManager_1_1Objects.html#a4ba7fb259cc6ebca1a253b366a079f64">_mutex</a>);
+<a name="l00206"></a>00206     it = std::find_if(<a class="code" href="classObjectManager.html#ae0c7be9ecce476a588ffb884d663b3e8" title="登録済みオブジェクト・リスト">m_objects</a>.<a class="code" href="structObjectManager_1_1Objects.html#a74ee31f4dee7742b10865096f5b23bc7">_obj</a>.begin(), <a class="code" href="classObjectManager.html#ae0c7be9ecce476a588ffb884d663b3e8" title="登録済みオブジェクト・リスト">m_objects</a>.<a class="code" href="structObjectManager_1_1Objects.html#a74ee31f4dee7742b10865096f5b23bc7">_obj</a>.end(),
+<a name="l00207"></a>00207                       Predicate(<span class="keywordtype">id</span>));
+<a name="l00208"></a>00208     <span class="keywordflow">if</span> (it != <a class="code" href="classObjectManager.html#ae0c7be9ecce476a588ffb884d663b3e8" title="登録済みオブジェクト・リスト">m_objects</a>.<a class="code" href="structObjectManager_1_1Objects.html#a74ee31f4dee7742b10865096f5b23bc7">_obj</a>.end())
+<a name="l00209"></a>00209       {
+<a name="l00210"></a>00210         <span class="keywordflow">return</span> *it;
+<a name="l00211"></a>00211       }
+<a name="l00212"></a>00212     <span class="keywordflow">return</span> NULL;
+<a name="l00213"></a>00213   }
+<a name="l00214"></a>00214   
+<a name="l00234"></a><a class="code" href="classObjectManager.html#ab60972d0240a0a1098ed5cec63f0fca2">00234</a>   std::vector&lt;Object*&gt; <a class="code" href="classObjectManager.html#ab60972d0240a0a1098ed5cec63f0fca2" title="登録されているオブジェクトのリストを取得する">getObjects</a>()<span class="keyword"> const</span>
+<a name="l00235"></a>00235 <span class="keyword">  </span>{
+<a name="l00236"></a>00236     <a class="code" href="classcoil_1_1Guard.html">Guard</a> guard(<a class="code" href="classObjectManager.html#ae0c7be9ecce476a588ffb884d663b3e8" title="登録済みオブジェクト・リスト">m_objects</a>.<a class="code" href="structObjectManager_1_1Objects.html#a4ba7fb259cc6ebca1a253b366a079f64">_mutex</a>);
+<a name="l00237"></a>00237     <span class="keywordflow">return</span> <a class="code" href="classObjectManager.html#ae0c7be9ecce476a588ffb884d663b3e8" title="登録済みオブジェクト・リスト">m_objects</a>.<a class="code" href="structObjectManager_1_1Objects.html#a74ee31f4dee7742b10865096f5b23bc7">_obj</a>;
+<a name="l00238"></a>00238   }
+<a name="l00239"></a>00239   
+<a name="l00247"></a>00247   <span class="keyword">template</span> &lt;<span class="keyword">class</span> Pred&gt;
+<a name="l00248"></a><a class="code" href="classObjectManager.html#a179e86f4b3548f17ac88ac2e2679d541">00248</a>   Pred <a class="code" href="classObjectManager.html#a179e86f4b3548f17ac88ac2e2679d541" title="オブジェクト検索用ファンクタ">for_each</a>(Pred p)
+<a name="l00249"></a>00249   {
+<a name="l00250"></a>00250     <a class="code" href="classcoil_1_1Guard.html">Guard</a> guard(<a class="code" href="classObjectManager.html#ae0c7be9ecce476a588ffb884d663b3e8" title="登録済みオブジェクト・リスト">m_objects</a>.<a class="code" href="structObjectManager_1_1Objects.html#a4ba7fb259cc6ebca1a253b366a079f64">_mutex</a>);
+<a name="l00251"></a>00251     <span class="keywordflow">return</span> <a class="code" href="classObjectManager.html#a179e86f4b3548f17ac88ac2e2679d541" title="オブジェクト検索用ファンクタ">std::for_each</a>(<a class="code" href="classObjectManager.html#ae0c7be9ecce476a588ffb884d663b3e8" title="登録済みオブジェクト・リスト">m_objects</a>.<a class="code" href="structObjectManager_1_1Objects.html#a74ee31f4dee7742b10865096f5b23bc7">_obj</a>.begin(), <a class="code" href="classObjectManager.html#ae0c7be9ecce476a588ffb884d663b3e8" title="登録済みオブジェクト・リスト">m_objects</a>.<a class="code" href="structObjectManager_1_1Objects.html#a74ee31f4dee7742b10865096f5b23bc7">_obj</a>.end(), p);
+<a name="l00252"></a>00252   }
+<a name="l00253"></a>00253   
+<a name="l00261"></a>00261   <span class="keyword">template</span> &lt;<span class="keyword">class</span> Pred&gt;
+<a name="l00262"></a><a class="code" href="classObjectManager.html#a84fa687e172f25f6facb497396683bb4">00262</a>   Pred <a class="code" href="classObjectManager.html#a179e86f4b3548f17ac88ac2e2679d541" title="オブジェクト検索用ファンクタ">for_each</a>(Pred p)<span class="keyword"> const</span>
+<a name="l00263"></a>00263 <span class="keyword">  </span>{
+<a name="l00264"></a>00264     <a class="code" href="classcoil_1_1Guard.html">Guard</a> guard(<a class="code" href="classObjectManager.html#ae0c7be9ecce476a588ffb884d663b3e8" title="登録済みオブジェクト・リスト">m_objects</a>.<a class="code" href="structObjectManager_1_1Objects.html#a4ba7fb259cc6ebca1a253b366a079f64">_mutex</a>);
+<a name="l00265"></a>00265     <span class="keywordflow">return</span> <a class="code" href="classObjectManager.html#a179e86f4b3548f17ac88ac2e2679d541" title="オブジェクト検索用ファンクタ">std::for_each</a>(<a class="code" href="classObjectManager.html#ae0c7be9ecce476a588ffb884d663b3e8" title="登録済みオブジェクト・リスト">m_objects</a>.<a class="code" href="structObjectManager_1_1Objects.html#a74ee31f4dee7742b10865096f5b23bc7">_obj</a>.begin(), <a class="code" href="classObjectManager.html#ae0c7be9ecce476a588ffb884d663b3e8" title="登録済みオブジェクト・リスト">m_objects</a>.<a class="code" href="structObjectManager_1_1Objects.html#a74ee31f4dee7742b10865096f5b23bc7">_obj</a>.end(), p);
+<a name="l00266"></a>00266   }
+<a name="l00267"></a>00267   
+<a name="l00268"></a>00268 <span class="keyword">protected</span>:
+<a name="l00276"></a><a class="code" href="structObjectManager_1_1Objects.html">00276</a>   <span class="keyword">struct </span><a class="code" href="structObjectManager_1_1Objects.html" title="オブジェクト管理用構造体">Objects</a>
+<a name="l00277"></a>00277   {
+<a name="l00278"></a><a class="code" href="structObjectManager_1_1Objects.html#a4ba7fb259cc6ebca1a253b366a079f64">00278</a>     <span class="keyword">mutable</span> <a class="code" href="classcoil_1_1Mutex.html" title="Mutex クラス.">Mutex</a> <a class="code" href="structObjectManager_1_1Objects.html#a4ba7fb259cc6ebca1a253b366a079f64">_mutex</a>;
+<a name="l00279"></a><a class="code" href="structObjectManager_1_1Objects.html#a74ee31f4dee7742b10865096f5b23bc7">00279</a>     <a class="code" href="classObjectManager.html#aa4fcbaee3d2516a6334f08fff837c7be">ObjectVector</a> <a class="code" href="structObjectManager_1_1Objects.html#a74ee31f4dee7742b10865096f5b23bc7">_obj</a>;
+<a name="l00280"></a>00280   };
+<a name="l00288"></a><a class="code" href="classObjectManager.html#ae0c7be9ecce476a588ffb884d663b3e8">00288</a>   Objects <a class="code" href="classObjectManager.html#ae0c7be9ecce476a588ffb884d663b3e8" title="登録済みオブジェクト・リスト">m_objects</a>;
+<a name="l00289"></a>00289 };
+<a name="l00290"></a>00290 <span class="preprocessor">#endif // RTC_OBJECTMANAGER_H</span>
+</pre></div></div>
+<hr class="footer"/><address style="text-align: right;"><small>OpenRTMに対してThu May 24 23:25:18 2012に生成されました。&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.6.3 </small></address>
+</body>
+</html>

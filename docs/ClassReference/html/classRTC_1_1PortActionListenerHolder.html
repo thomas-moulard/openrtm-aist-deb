@@ -1,0 +1,193 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<title>OpenRTM: クラス RTC::PortActionListenerHolder</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<!-- 作成： Doxygen 1.6.3 -->
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="index.html"><span>メインページ</span></a></li>
+      <li><a href="namespaces.html"><span>ネームスペース</span></a></li>
+      <li class="current"><a href="annotated.html"><span>クラス</span></a></li>
+      <li><a href="files.html"><span>ファイル</span></a></li>
+    </ul>
+  </div>
+  <div class="tabs">
+    <ul>
+      <li><a href="annotated.html"><span>構成</span></a></li>
+      <li><a href="hierarchy.html"><span>クラス階層</span></a></li>
+      <li><a href="functions.html"><span>構成メンバ</span></a></li>
+    </ul>
+  </div>
+  <div class="navpath"><a class="el" href="namespaceRTC.html">RTC</a>::<a class="el" href="classRTC_1_1PortActionListenerHolder.html">PortActionListenerHolder</a>
+  </div>
+</div>
+<div class="contents">
+<h1>クラス RTC::PortActionListenerHolder</h1><!-- doxytag: class="RTC::PortActionListenerHolder" -->
+<p><a class="el" href="classRTC_1_1PortActionListener.html" title="PortActionListener クラス.">PortActionListener</a> ホルダクラス.  
+<a href="#_details">[詳細]</a></p>
+
+<p><code>#include &lt;<a class="el" href="ComponentActionListener_8h_source.html">ComponentActionListener.h</a>&gt;</code></p>
+
+<p><a href="classRTC_1_1PortActionListenerHolder-members.html">すべてのメンバ一覧</a></p>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr><td colspan="2"><h2>Public メソッド</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1PortActionListenerHolder.html#a3eb2d1ca0735a9bdc26802b13c26abb7">PortActionListenerHolder</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">コンストラクタ  <a href="#a3eb2d1ca0735a9bdc26802b13c26abb7"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1PortActionListenerHolder.html#a3ee09471ebcc5fd3901cd46d2106bbe6">~PortActionListenerHolder</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">デストラクタ  <a href="#a3ee09471ebcc5fd3901cd46d2106bbe6"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1PortActionListenerHolder.html#afd3e84c3b66dc72adcbc915f9184125b">addListener</a> (<a class="el" href="classRTC_1_1PortActionListener.html">PortActionListener</a> *listener, bool autoclean)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">リスナーの追加  <a href="#afd3e84c3b66dc72adcbc915f9184125b"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1PortActionListenerHolder.html#a58466bf6de961756fa515e107b1a6168">removeListener</a> (<a class="el" href="classRTC_1_1PortActionListener.html">PortActionListener</a> *listener)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">リスナーの削除  <a href="#a58466bf6de961756fa515e107b1a6168"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1PortActionListenerHolder.html#ac541f48e46c5a4fc3f240c4c9e9a3a20">notify</a> (const RTC::PortProfile &amp;pprofile)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">リスナーへ通知する  <a href="#ac541f48e46c5a4fc3f240c4c9e9a3a20"></a><br/></td></tr>
+</table>
+<hr/><a name="_details"></a><h2>説明</h2>
+<p><a class="el" href="classRTC_1_1PortActionListener.html" title="PortActionListener クラス.">PortActionListener</a> ホルダクラス. </p>
+<p>複数の <a class="el" href="classRTC_1_1PortActionListener.html" title="PortActionListener クラス.">PortActionListener</a> を保持し管理するクラス。 </p>
+<hr/><h2>コンストラクタとデストラクタ</h2>
+<a class="anchor" id="a3eb2d1ca0735a9bdc26802b13c26abb7"></a><!-- doxytag: member="RTC::PortActionListenerHolder::PortActionListenerHolder" ref="a3eb2d1ca0735a9bdc26802b13c26abb7" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">RTC::PortActionListenerHolder::PortActionListenerHolder </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>コンストラクタ </p>
+
+</div>
+</div>
+<a class="anchor" id="a3ee09471ebcc5fd3901cd46d2106bbe6"></a><!-- doxytag: member="RTC::PortActionListenerHolder::~PortActionListenerHolder" ref="a3ee09471ebcc5fd3901cd46d2106bbe6" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual RTC::PortActionListenerHolder::~PortActionListenerHolder </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>デストラクタ </p>
+
+</div>
+</div>
+<hr/><h2>関数</h2>
+<a class="anchor" id="afd3e84c3b66dc72adcbc915f9184125b"></a><!-- doxytag: member="RTC::PortActionListenerHolder::addListener" ref="afd3e84c3b66dc72adcbc915f9184125b" args="(PortActionListener *listener, bool autoclean)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void RTC::PortActionListenerHolder::addListener </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classRTC_1_1PortActionListener.html">PortActionListener</a> *&nbsp;</td>
+          <td class="paramname"> <em>listener</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&nbsp;</td>
+          <td class="paramname"> <em>autoclean</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>リスナーの追加 </p>
+<p>リスナーを追加する。</p>
+<dl><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>listener</em>&nbsp;</td><td>追加するリスナ </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>autoclean</em>&nbsp;</td><td>true:デストラクタで削除する, false:デストラクタで削除しない </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="ac541f48e46c5a4fc3f240c4c9e9a3a20"></a><!-- doxytag: member="RTC::PortActionListenerHolder::notify" ref="ac541f48e46c5a4fc3f240c4c9e9a3a20" args="(const RTC::PortProfile &amp;pprofile)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void RTC::PortActionListenerHolder::notify </td>
+          <td>(</td>
+          <td class="paramtype">const RTC::PortProfile &amp;&nbsp;</td>
+          <td class="paramname"> <em>pprofile</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>リスナーへ通知する </p>
+<p>登録されているリスナのコールバックメソッドを呼び出す。</p>
+<dl><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>info</em>&nbsp;</td><td><a class="el" href="classRTC_1_1ConnectorInfo.html" title="ConnectorInfo クラス.">ConnectorInfo</a> </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>cdrdata</em>&nbsp;</td><td>データ </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>参照元 <a class="el" href="RTObject_8h_source.html#l04457">RTC::RTObject_impl::onAddPort()</a>, と <a class="el" href="RTObject_8h_source.html#l04462">RTC::RTObject_impl::onRemovePort()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a58466bf6de961756fa515e107b1a6168"></a><!-- doxytag: member="RTC::PortActionListenerHolder::removeListener" ref="a58466bf6de961756fa515e107b1a6168" args="(PortActionListener *listener)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void RTC::PortActionListenerHolder::removeListener </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classRTC_1_1PortActionListener.html">PortActionListener</a> *&nbsp;</td>
+          <td class="paramname"> <em>listener</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>リスナーの削除 </p>
+<p>リスナを削除する。</p>
+<dl><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>listener</em>&nbsp;</td><td>削除するリスナ </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+</div>
+<hr class="footer"/><address style="text-align: right;"><small>OpenRTMに対してThu May 24 23:25:19 2012に生成されました。&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.6.3 </small></address>
+</body>
+</html>

@@ -1,0 +1,134 @@
+\section{„Ç§„É≥„Çø„Éï„Çß„Éº„Çπ RTC::FsmParticipant}
+\label{interfaceRTC_1_1FsmParticipant}\index{RTC::FsmParticipant@{RTC::FsmParticipant}}
+
+
+{\ttfamily import \char`\"{}RTC.idl\char`\"{};}
+
+RTC::FsmParticipant„Å´ÂØæ„Åô„ÇãÁ∂ôÊâø„Ç∞„É©„Éï\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3cm]{interfaceRTC_1_1FsmParticipant}
+\end{center}
+\end{figure}
+\subsection*{Public „É°„ÇΩ„ÉÉ„Éâ}
+\begin{DoxyCompactItemize}
+\item 
+{\bf ReturnCode\_\-t} {\bf initialize} ()
+\item 
+{\bf ReturnCode\_\-t} {\bf finalize} ()
+\item 
+boolean {\bf is\_\-alive} (in {\bf ExecutionContext} exec\_\-context)
+\item 
+{\bf ReturnCode\_\-t} {\bf exit} ()
+\item 
+{\bf ExecutionContextHandle\_\-t} {\bf attach\_\-context} (in {\bf ExecutionContext} exec\_\-context)
+\item 
+{\bf ReturnCode\_\-t} {\bf detach\_\-context} (in {\bf ExecutionContextHandle\_\-t} exec\_\-handle)
+\item 
+{\bf ExecutionContext} {\bf get\_\-context} (in {\bf ExecutionContextHandle\_\-t} exec\_\-handle)
+\item 
+{\bf ExecutionContextList} {\bf get\_\-owned\_\-contexts} ()
+\begin{DoxyCompactList}\small\item\em get\_\-owned\_\-contexts \item\end{DoxyCompactList}\item 
+{\bf ExecutionContextList} {\bf get\_\-participating\_\-contexts} ()
+\begin{DoxyCompactList}\small\item\em get\_\-participating\_\-contexts \item\end{DoxyCompactList}\item 
+{\bf ExecutionContextHandle\_\-t} {\bf get\_\-context\_\-handle} (in {\bf ExecutionContext} cxt)
+\item 
+{\bf ReturnCode\_\-t} {\bf on\_\-initialize} ()
+\item 
+{\bf ReturnCode\_\-t} {\bf on\_\-finalize} ()
+\item 
+{\bf ReturnCode\_\-t} {\bf on\_\-startup} (in {\bf ExecutionContextHandle\_\-t} exec\_\-handle)
+\item 
+{\bf ReturnCode\_\-t} {\bf on\_\-shutdown} (in {\bf ExecutionContextHandle\_\-t} exec\_\-handle)
+\item 
+{\bf ReturnCode\_\-t} {\bf on\_\-activated} (in {\bf ExecutionContextHandle\_\-t} exec\_\-handle)
+\item 
+{\bf ReturnCode\_\-t} {\bf on\_\-deactivated} (in {\bf ExecutionContextHandle\_\-t} exec\_\-handle)
+\item 
+{\bf ReturnCode\_\-t} {\bf on\_\-aborting} (in {\bf ExecutionContextHandle\_\-t} exec\_\-handle)
+\item 
+{\bf ReturnCode\_\-t} {\bf on\_\-error} (in {\bf ExecutionContextHandle\_\-t} exec\_\-handle)
+\item 
+{\bf ReturnCode\_\-t} {\bf on\_\-reset} (in {\bf ExecutionContextHandle\_\-t} exec\_\-handle)
+\item 
+{\bf ReturnCode\_\-t} {\bf on\_\-action} (in {\bf ExecutionContextHandle\_\-t} exec\_\-handle)
+\end{DoxyCompactItemize}
+
+
+\subsection{Èñ¢Êï∞}
+\index{RTC::FsmParticipant@{RTC::FsmParticipant}!attach\_\-context@{attach\_\-context}}
+\index{attach\_\-context@{attach\_\-context}!RTC::FsmParticipant@{RTC::FsmParticipant}}
+\subsubsection[{attach\_\-context}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ExecutionContextHandle\_\-t} RTC::LightweightRTObject::attach\_\-context (in {\bf ExecutionContext} {\em exec\_\-context})\hspace{0.3cm}{\ttfamily  [inherited]}}\label{interfaceRTC_1_1LightweightRTObject_a48dbdbcac3254c29ad01d43a4ee5a00c}
+\index{RTC::FsmParticipant@{RTC::FsmParticipant}!detach\_\-context@{detach\_\-context}}
+\index{detach\_\-context@{detach\_\-context}!RTC::FsmParticipant@{RTC::FsmParticipant}}
+\subsubsection[{detach\_\-context}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ReturnCode\_\-t} RTC::LightweightRTObject::detach\_\-context (in {\bf ExecutionContextHandle\_\-t} {\em exec\_\-handle})\hspace{0.3cm}{\ttfamily  [inherited]}}\label{interfaceRTC_1_1LightweightRTObject_a8eb94420ca08e8f7acaa778ed883b9a4}
+\index{RTC::FsmParticipant@{RTC::FsmParticipant}!exit@{exit}}
+\index{exit@{exit}!RTC::FsmParticipant@{RTC::FsmParticipant}}
+\subsubsection[{exit}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ReturnCode\_\-t} RTC::LightweightRTObject::exit ()\hspace{0.3cm}{\ttfamily  [inherited]}}\label{interfaceRTC_1_1LightweightRTObject_a49bd940b6964fa80d696db15b45c2f87}
+\index{RTC::FsmParticipant@{RTC::FsmParticipant}!finalize@{finalize}}
+\index{finalize@{finalize}!RTC::FsmParticipant@{RTC::FsmParticipant}}
+\subsubsection[{finalize}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ReturnCode\_\-t} RTC::LightweightRTObject::finalize ()\hspace{0.3cm}{\ttfamily  [inherited]}}\label{interfaceRTC_1_1LightweightRTObject_a23466f177b4289662ea035be831426ad}
+\index{RTC::FsmParticipant@{RTC::FsmParticipant}!get\_\-context@{get\_\-context}}
+\index{get\_\-context@{get\_\-context}!RTC::FsmParticipant@{RTC::FsmParticipant}}
+\subsubsection[{get\_\-context}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ExecutionContext} RTC::LightweightRTObject::get\_\-context (in {\bf ExecutionContextHandle\_\-t} {\em exec\_\-handle})\hspace{0.3cm}{\ttfamily  [inherited]}}\label{interfaceRTC_1_1LightweightRTObject_a7bb123faf81bcb57542c3a17f10948d6}
+\index{RTC::FsmParticipant@{RTC::FsmParticipant}!get\_\-context\_\-handle@{get\_\-context\_\-handle}}
+\index{get\_\-context\_\-handle@{get\_\-context\_\-handle}!RTC::FsmParticipant@{RTC::FsmParticipant}}
+\subsubsection[{get\_\-context\_\-handle}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ExecutionContextHandle\_\-t} RTC::LightweightRTObject::get\_\-context\_\-handle (in {\bf ExecutionContext} {\em cxt})\hspace{0.3cm}{\ttfamily  [inherited]}}\label{interfaceRTC_1_1LightweightRTObject_af54041744c01d68026aa200276e12f45}
+\#\#\# [∏Ìø¢] \doxyref{RTC.idl}{p.}{RTC_8idl} §À§œ¥ﬁ§ﬁ§Ï§∆§§§ §§§¨PIM§À§œ¥ﬁ§ﬁ§Ï§∆§§§Î°£ \#\#\# PIM§¨¿µ§∑§§°£ \index{RTC::FsmParticipant@{RTC::FsmParticipant}!get\_\-owned\_\-contexts@{get\_\-owned\_\-contexts}}
+\index{get\_\-owned\_\-contexts@{get\_\-owned\_\-contexts}!RTC::FsmParticipant@{RTC::FsmParticipant}}
+\subsubsection[{get\_\-owned\_\-contexts}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ExecutionContextList} RTC::LightweightRTObject::get\_\-owned\_\-contexts ()\hspace{0.3cm}{\ttfamily  [inherited]}}\label{interfaceRTC_1_1LightweightRTObject_aea9dd2a447cc3ddc55f20aab698da408}
+
+
+get\_\-owned\_\-contexts 
+
+\subsection{Description}\label{interfaceRTC_1_1LightweightRTObject_Description}
+§≥§Œ \doxyref{RTC}{p.}{namespaceRTC} §¨ΩÍÕ≠§π§Î \doxyref{ExecutionContext}{p.}{interfaceRTC_1_1ExecutionContext} §Œ•Í•π•»§ÚºË∆¿§π§Î°£ \index{RTC::FsmParticipant@{RTC::FsmParticipant}!get\_\-participating\_\-contexts@{get\_\-participating\_\-contexts}}
+\index{get\_\-participating\_\-contexts@{get\_\-participating\_\-contexts}!RTC::FsmParticipant@{RTC::FsmParticipant}}
+\subsubsection[{get\_\-participating\_\-contexts}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ExecutionContextList} RTC::LightweightRTObject::get\_\-participating\_\-contexts ()\hspace{0.3cm}{\ttfamily  [inherited]}}\label{interfaceRTC_1_1LightweightRTObject_af2224880b89275ecf82efad0999b022a}
+
+
+get\_\-participating\_\-contexts 
+
+\subsection{Description}\label{interfaceRTC_1_1LightweightRTObject_Description}
+§≥§Œ \doxyref{RTC}{p.}{namespaceRTC} §¨ª≤≤√§∑§∆§§§Î§π§Ÿ§∆§Œ \doxyref{ExecutionContext}{p.}{interfaceRTC_1_1ExecutionContext} §Œ•Í•π•»§ÚºË∆¿§π§Î°£\subsection{Semantics}\label{interfaceRTC_1_1LightweightRTObject_Semantics}
+§≥§Œ•Í•π•»§À¥ﬁ§ﬁ§Ï§Îº¬π‘•≥•Û•∆•≠•π•»§œ°¢attach\_\-context §¨∏∆§”Ω– §µ§Ï§Î§¥§»§À°¢•Í•π•»§Àƒ…≤√§µ§Ï°¢detach\_\-context §¨∏∆§”Ω–§µ§Ï§Î§¥ §»§À°¢•Í•π•»§´§È∫ÔΩ¸§µ§Ï§Î°£ \index{RTC::FsmParticipant@{RTC::FsmParticipant}!initialize@{initialize}}
+\index{initialize@{initialize}!RTC::FsmParticipant@{RTC::FsmParticipant}}
+\subsubsection[{initialize}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ReturnCode\_\-t} RTC::LightweightRTObject::initialize ()\hspace{0.3cm}{\ttfamily  [inherited]}}\label{interfaceRTC_1_1LightweightRTObject_afb28c4d97677804da09488578b840eb5}
+\index{RTC::FsmParticipant@{RTC::FsmParticipant}!is\_\-alive@{is\_\-alive}}
+\index{is\_\-alive@{is\_\-alive}!RTC::FsmParticipant@{RTC::FsmParticipant}}
+\subsubsection[{is\_\-alive}]{\setlength{\rightskip}{0pt plus 5cm}boolean RTC::LightweightRTObject::is\_\-alive (in {\bf ExecutionContext} {\em exec\_\-context})\hspace{0.3cm}{\ttfamily  [inherited]}}\label{interfaceRTC_1_1LightweightRTObject_aa07c8c299b0addc49887508c1ee7be27}
+\index{RTC::FsmParticipant@{RTC::FsmParticipant}!on\_\-aborting@{on\_\-aborting}}
+\index{on\_\-aborting@{on\_\-aborting}!RTC::FsmParticipant@{RTC::FsmParticipant}}
+\subsubsection[{on\_\-aborting}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ReturnCode\_\-t} RTC::ComponentAction::on\_\-aborting (in {\bf ExecutionContextHandle\_\-t} {\em exec\_\-handle})\hspace{0.3cm}{\ttfamily  [inherited]}}\label{interfaceRTC_1_1ComponentAction_a876e58ebcea16c307e131b3e6a58ddbe}
+\index{RTC::FsmParticipant@{RTC::FsmParticipant}!on\_\-action@{on\_\-action}}
+\index{on\_\-action@{on\_\-action}!RTC::FsmParticipant@{RTC::FsmParticipant}}
+\subsubsection[{on\_\-action}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ReturnCode\_\-t} RTC::FsmParticipantAction::on\_\-action (in {\bf ExecutionContextHandle\_\-t} {\em exec\_\-handle})\hspace{0.3cm}{\ttfamily  [inherited]}}\label{interfaceRTC_1_1FsmParticipantAction_ae627f5cdc59f586246bb2174797c7864}
+\index{RTC::FsmParticipant@{RTC::FsmParticipant}!on\_\-activated@{on\_\-activated}}
+\index{on\_\-activated@{on\_\-activated}!RTC::FsmParticipant@{RTC::FsmParticipant}}
+\subsubsection[{on\_\-activated}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ReturnCode\_\-t} RTC::ComponentAction::on\_\-activated (in {\bf ExecutionContextHandle\_\-t} {\em exec\_\-handle})\hspace{0.3cm}{\ttfamily  [inherited]}}\label{interfaceRTC_1_1ComponentAction_a4f51f627067d0c54e89c4c0827fa6432}
+\index{RTC::FsmParticipant@{RTC::FsmParticipant}!on\_\-deactivated@{on\_\-deactivated}}
+\index{on\_\-deactivated@{on\_\-deactivated}!RTC::FsmParticipant@{RTC::FsmParticipant}}
+\subsubsection[{on\_\-deactivated}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ReturnCode\_\-t} RTC::ComponentAction::on\_\-deactivated (in {\bf ExecutionContextHandle\_\-t} {\em exec\_\-handle})\hspace{0.3cm}{\ttfamily  [inherited]}}\label{interfaceRTC_1_1ComponentAction_aa5f9cfb9677ba685be333ad666c87f88}
+\index{RTC::FsmParticipant@{RTC::FsmParticipant}!on\_\-error@{on\_\-error}}
+\index{on\_\-error@{on\_\-error}!RTC::FsmParticipant@{RTC::FsmParticipant}}
+\subsubsection[{on\_\-error}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ReturnCode\_\-t} RTC::ComponentAction::on\_\-error (in {\bf ExecutionContextHandle\_\-t} {\em exec\_\-handle})\hspace{0.3cm}{\ttfamily  [inherited]}}\label{interfaceRTC_1_1ComponentAction_a110fdde803e9b13f27308b897439962a}
+\index{RTC::FsmParticipant@{RTC::FsmParticipant}!on\_\-finalize@{on\_\-finalize}}
+\index{on\_\-finalize@{on\_\-finalize}!RTC::FsmParticipant@{RTC::FsmParticipant}}
+\subsubsection[{on\_\-finalize}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ReturnCode\_\-t} RTC::ComponentAction::on\_\-finalize ()\hspace{0.3cm}{\ttfamily  [inherited]}}\label{interfaceRTC_1_1ComponentAction_a9c9e2d638cd2b748609be8a23410aedc}
+\index{RTC::FsmParticipant@{RTC::FsmParticipant}!on\_\-initialize@{on\_\-initialize}}
+\index{on\_\-initialize@{on\_\-initialize}!RTC::FsmParticipant@{RTC::FsmParticipant}}
+\subsubsection[{on\_\-initialize}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ReturnCode\_\-t} RTC::ComponentAction::on\_\-initialize ()\hspace{0.3cm}{\ttfamily  [inherited]}}\label{interfaceRTC_1_1ComponentAction_a8703b183bc1bed9e2fd3ecac126cb231}
+\index{RTC::FsmParticipant@{RTC::FsmParticipant}!on\_\-reset@{on\_\-reset}}
+\index{on\_\-reset@{on\_\-reset}!RTC::FsmParticipant@{RTC::FsmParticipant}}
+\subsubsection[{on\_\-reset}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ReturnCode\_\-t} RTC::ComponentAction::on\_\-reset (in {\bf ExecutionContextHandle\_\-t} {\em exec\_\-handle})\hspace{0.3cm}{\ttfamily  [inherited]}}\label{interfaceRTC_1_1ComponentAction_adb0e61bff251337d79c7c7d050d8304e}
+\index{RTC::FsmParticipant@{RTC::FsmParticipant}!on\_\-shutdown@{on\_\-shutdown}}
+\index{on\_\-shutdown@{on\_\-shutdown}!RTC::FsmParticipant@{RTC::FsmParticipant}}
+\subsubsection[{on\_\-shutdown}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ReturnCode\_\-t} RTC::ComponentAction::on\_\-shutdown (in {\bf ExecutionContextHandle\_\-t} {\em exec\_\-handle})\hspace{0.3cm}{\ttfamily  [inherited]}}\label{interfaceRTC_1_1ComponentAction_accc47711344c811c9bdba0d66a3048f2}
+\index{RTC::FsmParticipant@{RTC::FsmParticipant}!on\_\-startup@{on\_\-startup}}
+\index{on\_\-startup@{on\_\-startup}!RTC::FsmParticipant@{RTC::FsmParticipant}}
+\subsubsection[{on\_\-startup}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ReturnCode\_\-t} RTC::ComponentAction::on\_\-startup (in {\bf ExecutionContextHandle\_\-t} {\em exec\_\-handle})\hspace{0.3cm}{\ttfamily  [inherited]}}\label{interfaceRTC_1_1ComponentAction_ac305f00c92f4650cf4fc798aac37eef2}
+
+
+„Åì„ÅÆ„Ç§„É≥„Çø„Éï„Çß„Éº„Çπ„ÅÆË™¨Êòé„ÅØÊ¨°„ÅÆ„Éï„Ç°„Ç§„É´„Åã„ÇâÁîüÊàê„Åï„Çå„Åæ„Åó„Åü:\begin{DoxyCompactItemize}
+\item 
+{\bf RTC.idl}\end{DoxyCompactItemize}

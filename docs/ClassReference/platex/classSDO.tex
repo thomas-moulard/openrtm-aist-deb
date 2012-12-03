@@ -1,0 +1,38 @@
+\section{クラス SDO}
+\label{classSDO}\index{SDO@{SDO}}
+
+
+\doxyref{SDO}{p.}{classSDO} service 管理クラス.  
+
+
+
+
+\subsection{説明}
+\doxyref{SDO}{p.}{classSDO} service 管理クラス. class このクラスは、SDO Service を管理するためのクラスである。SDO Service は OMG \doxyref{SDO}{p.}{classSDO} Specification において定義されている、SDOが特定 の機能のために提供また要求するサービスの一つである。詳細は仕様にお いて定義されていないが、本クラスでは以下のように振る舞うサービスで あるものとし、これらを管理するためのクラスが本クラスである。
+
+\doxyref{SDO}{p.}{classSDO} Service においては、SDO/RTCに所有され、ある種のサービスを提供 するものを \doxyref{SDO}{p.}{classSDO} Service Provider、他のSDO/RTCやアプリケーションが提 供するサービスオブジェクトの参照を受け取り、それらの機能を利用する ものを、SDO Service Consumer と呼ぶ。
+
+\doxyref{SDO}{p.}{classSDO} Service Provider は他のアプリケーションから呼ばれ、SDO/RTC内部 の機能にアクセスするために用いられる。他のSDO/RTCまたはアプリケー ションは、
+
+
+\begin{DoxyItemize}
+\item SDO::get\_\-service\_\-profiles ()
+\item SDO::get\_\-service\_\-profile (in UniqueIdentifier id)
+\item SDO::get\_\-sdo\_\-service (in UniqueIdentifier id)
+\end{DoxyItemize}
+
+のいずれかのオペレーションにより、ServiceProfile または \doxyref{SDO}{p.}{classSDO} Service の参照を取得し、機能を利用するためのオペレーションを呼び出 す。他のSDO/RTCまたはアプリケーション上での参照の破棄は任意のタイ ミングで行われ、サービス提供側では、どこからどれだけ参照されている かは知ることはできない。一方で、SDO/RTC側も、任意のタイミングでサー ビスの提供を停止することもできるため、サービスの利用側では、常にい サービスが利用できるとは限らないものとしてサービスオペレーションを 呼び出す必要がある。
+
+一方、SDO Service Consumer は当該SDO/RTC以外のSDO/RTCまたはアプリ ケーションがサービスの実体を持ち、当該SDO/RTCにオブジェクト参照を 含むプロファイルを与えることで、SDO/RTC側からサービスオペレーショ ンが呼ばれ外部のSDO/RTCまたはアプリケーションが提供する機能を利用 できる。また、オブザーバ的なオブジェクトを与えることで、SDO/RTC側 からのコールバックを実現するためにも利用することができる。コンシュー マは、プロバイダとは異なり、SDO Configurationインターフェースから 追加、削除が行われる。関連するオペレーションは以下のとおりである。
+
+
+\begin{DoxyItemize}
+\item Configuration::add\_\-service\_\-profile (in ServiceProfile sProfile)
+\item Configuration::remove\_\-service\_\-profile (in UniqueIdentifier id)
+\end{DoxyItemize}
+
+外部のSDO/RTCまたはアプリケーションは、自身が持つSDO Servcie Provider の参照をIDおよびinterface type、プロパティとともに ServcieProfile にセットしたうえで、add\_\-service\_\-profile() の引数と して与えることで、当該SDO/RTCにサービスを与える。この際、IDはUUID など一意なIDでなければならない。また、削除する際にはIDにより対象と するServiceProfileを探索するため、サービス提供側では削除時までIDを 保持しておかなければならない。
+
+\begin{DoxySince}{から}
+1.1.0 
+\end{DoxySince}

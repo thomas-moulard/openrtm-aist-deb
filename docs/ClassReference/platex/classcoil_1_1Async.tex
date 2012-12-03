@@ -1,0 +1,78 @@
+\section{クラス coil::Async}
+\label{classcoil_1_1Async}\index{coil::Async@{coil::Async}}
+
+
+\doxyref{Async}{p.}{classcoil_1_1Async} クラス.  
+
+
+
+
+{\ttfamily \#include $<$Async.h$>$}
+
+coil::Asyncに対する継承グラフ\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3cm]{classcoil_1_1Async}
+\end{center}
+\end{figure}
+\subsection*{Public メソッド}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Async} ()
+\begin{DoxyCompactList}\small\item\em コンストラクタ \item\end{DoxyCompactList}\item 
+virtual {\bf $\sim$Async} ()
+\begin{DoxyCompactList}\small\item\em デストラクタ \item\end{DoxyCompactList}\item 
+virtual void {\bf invoke} ()=0
+\begin{DoxyCompactList}\small\item\em 非同期実行用純粋仮想関数 \item\end{DoxyCompactList}\item 
+virtual bool {\bf finished} ()=0
+\begin{DoxyCompactList}\small\item\em 完了状態チェック用純粋仮想関数 \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{説明}
+\doxyref{Async}{p.}{classcoil_1_1Async} クラス. 
+
+\subsection{コンストラクタとデストラクタ}
+\index{coil::Async@{coil::Async}!Async@{Async}}
+\index{Async@{Async}!coil::Async@{coil::Async}}
+\subsubsection[{Async}]{\setlength{\rightskip}{0pt plus 5cm}coil::Async::Async ()\hspace{0.3cm}{\ttfamily  [inline]}}\label{classcoil_1_1Async_a91ae54f017184f8a59920f5264561072}
+
+
+コンストラクタ 
+
+コンストラクタ。 \index{coil::Async@{coil::Async}!$\sim$Async@{$\sim$Async}}
+\index{$\sim$Async@{$\sim$Async}!coil::Async@{coil::Async}}
+\subsubsection[{$\sim$Async}]{\setlength{\rightskip}{0pt plus 5cm}virtual coil::Async::$\sim$Async ()\hspace{0.3cm}{\ttfamily  [inline, virtual]}}\label{classcoil_1_1Async_ac38f68a3d5cb896cc0ae40a1bdc5a5e6}
+
+
+デストラクタ 
+
+デストラクタ。 
+
+\subsection{関数}
+\index{coil::Async@{coil::Async}!finished@{finished}}
+\index{finished@{finished}!coil::Async@{coil::Async}}
+\subsubsection[{finished}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool coil::Async::finished ()\hspace{0.3cm}{\ttfamily  [pure virtual]}}\label{classcoil_1_1Async_a791b91a66a98acec44e63b0c5fae8b20}
+
+
+完了状態チェック用純粋仮想関数 
+
+完了状態チェック用純粋仮想関数。
+
+\begin{DoxyReturn}{戻り値}
+true: 完了, false: 未完了 
+\end{DoxyReturn}
+
+
+{\bf coil::Async\_\-t$<$ Object, Func $>$} \doxyref{}{p.}{classcoil_1_1Async__t_af7c59952bc29131e36ee456d23bdf746}, と {\bf coil::Async\_\-ref\_\-t$<$ Object, Func $>$} \doxyref{}{p.}{classcoil_1_1Async__ref__t_a9f47a1903293a0f6f53041f42b30368b}で実装されています。
+
+\index{coil::Async@{coil::Async}!invoke@{invoke}}
+\index{invoke@{invoke}!coil::Async@{coil::Async}}
+\subsubsection[{invoke}]{\setlength{\rightskip}{0pt plus 5cm}virtual void coil::Async::invoke ()\hspace{0.3cm}{\ttfamily  [pure virtual]}}\label{classcoil_1_1Async_ada31d64682effe5daa79212d07c02b65}
+
+
+非同期実行用純粋仮想関数 
+
+非同期実行用純粋仮想関数。 
+
+{\bf coil::Async\_\-t$<$ Object, Func $>$} \doxyref{}{p.}{classcoil_1_1Async__t_aa6b4d79bed3225128f3e5cbde7d0fef8}, と {\bf coil::Async\_\-ref\_\-t$<$ Object, Func $>$} \doxyref{}{p.}{classcoil_1_1Async__ref__t_a6be7d1b1d810323d89e8bf9c00f5874a}で実装されています。
+

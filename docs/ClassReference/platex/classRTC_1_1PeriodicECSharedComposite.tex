@@ -1,0 +1,183 @@
+\section{クラス RTC::PeriodicECSharedComposite}
+\label{classRTC_1_1PeriodicECSharedComposite}\index{RTC::PeriodicECSharedComposite@{RTC::PeriodicECSharedComposite}}
+
+
+\doxyref{PeriodicECSharedComposite}{p.}{classRTC_1_1PeriodicECSharedComposite} クラス.  
+
+
+
+
+{\ttfamily \#include $<$PeriodicECSharedComposite.h$>$}
+
+RTC::PeriodicECSharedCompositeに対する継承グラフ\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2cm]{classRTC_1_1PeriodicECSharedComposite}
+\end{center}
+\end{figure}
+\subsection*{Public メソッド}
+\begin{DoxyCompactItemize}
+\item 
+{\bf PeriodicECSharedComposite} ({\bf Manager} $\ast$manager)
+\begin{DoxyCompactList}\small\item\em コンストラクタ \item\end{DoxyCompactList}\item 
+virtual {\bf $\sim$PeriodicECSharedComposite} (void)
+\item 
+virtual ReturnCode\_\-t {\bf onInitialize} (void)
+\begin{DoxyCompactList}\small\item\em 初期化 \item\end{DoxyCompactList}\item 
+virtual ReturnCode\_\-t {\bf onActivated} ({\bf RTC::UniqueId} exec\_\-handle)
+\begin{DoxyCompactList}\small\item\em 活性化処理用コールバック関数 \item\end{DoxyCompactList}\item 
+virtual ReturnCode\_\-t {\bf onDeactivated} ({\bf RTC::UniqueId} exec\_\-handle)
+\begin{DoxyCompactList}\small\item\em 非活性化処理用コールバック関数 \item\end{DoxyCompactList}\item 
+virtual ReturnCode\_\-t {\bf onReset} ({\bf RTC::UniqueId} exec\_\-handle)
+\begin{DoxyCompactList}\small\item\em リセット処理用コールバック関数 \item\end{DoxyCompactList}\item 
+virtual ReturnCode\_\-t {\bf onFinalize} (void)
+\begin{DoxyCompactList}\small\item\em [ComponentAction CORBA interface] \doxyref{RTC}{p.}{namespaceRTC} の終了 \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected 変数}
+\begin{DoxyCompactItemize}
+\item 
+std::vector$<$ std::string $>$ {\bf m\_\-members}
+\begin{DoxyCompactList}\small\item\em コンポーネント \item\end{DoxyCompactList}\item 
+OpenRTM::DataFlowComponent\_\-var {\bf m\_\-ref}
+\begin{DoxyCompactList}\small\item\em オブジェクトのリファレンス \item\end{DoxyCompactList}\item 
+{\bf SDOPackage::PeriodicECOrganization} $\ast$ {\bf m\_\-org}
+\begin{DoxyCompactList}\small\item\em Organizationのリファレンス. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{説明}
+\doxyref{PeriodicECSharedComposite}{p.}{classRTC_1_1PeriodicECSharedComposite} クラス. データフロー型RTComponentの基底クラス。 各種データフロー型RTComponentを実装する場合は、本クラスを継承する形で実装 する。
+
+\begin{DoxySince}{から}
+0.4.0 
+\end{DoxySince}
+
+
+\subsection{コンストラクタとデストラクタ}
+\index{RTC::PeriodicECSharedComposite@{RTC::PeriodicECSharedComposite}!PeriodicECSharedComposite@{PeriodicECSharedComposite}}
+\index{PeriodicECSharedComposite@{PeriodicECSharedComposite}!RTC::PeriodicECSharedComposite@{RTC::PeriodicECSharedComposite}}
+\subsubsection[{PeriodicECSharedComposite}]{\setlength{\rightskip}{0pt plus 5cm}RTC::PeriodicECSharedComposite::PeriodicECSharedComposite ({\bf Manager} $\ast$ {\em manager})}\label{classRTC_1_1PeriodicECSharedComposite_ae7e24b70eb71a55520c0dc3c33b14ac9}
+
+
+コンストラクタ 
+
+コンストラクタ
+
+
+\begin{DoxyParams}{引数}
+\item[{\em manager}]マネージャオブジェクト \end{DoxyParams}
+\index{RTC::PeriodicECSharedComposite@{RTC::PeriodicECSharedComposite}!$\sim$PeriodicECSharedComposite@{$\sim$PeriodicECSharedComposite}}
+\index{$\sim$PeriodicECSharedComposite@{$\sim$PeriodicECSharedComposite}!RTC::PeriodicECSharedComposite@{RTC::PeriodicECSharedComposite}}
+\subsubsection[{$\sim$PeriodicECSharedComposite}]{\setlength{\rightskip}{0pt plus 5cm}virtual RTC::PeriodicECSharedComposite::$\sim$PeriodicECSharedComposite (void)\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classRTC_1_1PeriodicECSharedComposite_a1ddd153f7ef2512abbd2613058fde0f4}
+デストラクタ 
+
+\subsection{関数}
+\index{RTC::PeriodicECSharedComposite@{RTC::PeriodicECSharedComposite}!onActivated@{onActivated}}
+\index{onActivated@{onActivated}!RTC::PeriodicECSharedComposite@{RTC::PeriodicECSharedComposite}}
+\subsubsection[{onActivated}]{\setlength{\rightskip}{0pt plus 5cm}virtual ReturnCode\_\-t RTC::PeriodicECSharedComposite::onActivated ({\bf RTC::UniqueId} {\em exec\_\-handle})\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classRTC_1_1PeriodicECSharedComposite_a8d14176829861b061cfbb07ad0874856}
+
+
+活性化処理用コールバック関数 
+
+ComponentAction::on\_\-activated が呼ばれた際に実行されるコールバック 関数。\par
+ 本関数は無条件に RTC::RTC\_\-OK を返すようにダミー実装されているので、 各コンポーネントの実際の活性化処理は、本関数をオーバーライドして実装する 必要がある。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em exec\_\-handle}]参加している ExecutionContext の ID\end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+ReturnCode\_\-t 型のリターンコード 
+\end{DoxyReturn}
+
+
+{\bf RTC::RTObject\_\-impl} \doxyref{}{p.}{classRTC_1_1RTObject__impl_a8f5ab867b59f72634b2e19afac941be4}を再定義しています。
+
+\index{RTC::PeriodicECSharedComposite@{RTC::PeriodicECSharedComposite}!onDeactivated@{onDeactivated}}
+\index{onDeactivated@{onDeactivated}!RTC::PeriodicECSharedComposite@{RTC::PeriodicECSharedComposite}}
+\subsubsection[{onDeactivated}]{\setlength{\rightskip}{0pt plus 5cm}virtual ReturnCode\_\-t RTC::PeriodicECSharedComposite::onDeactivated ({\bf RTC::UniqueId} {\em exec\_\-handle})\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classRTC_1_1PeriodicECSharedComposite_a3e0dcca8ec43176ecea64a68f6496b99}
+
+
+非活性化処理用コールバック関数 
+
+ComponentAction::on\_\-deactivated が呼ばれた際に実行されるコールバック 関数。\par
+ 本関数は無条件に RTC::RTC\_\-OK を返すようにダミー実装されているので、 各コンポーネントの実際の非活性化処理は、本関数をオーバーライドして実装する 必要がある。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em exec\_\-handle}]参加している ExecutionContext の ID\end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+ReturnCode\_\-t 型のリターンコード 
+\end{DoxyReturn}
+
+
+{\bf RTC::RTObject\_\-impl} \doxyref{}{p.}{classRTC_1_1RTObject__impl_a55a81b783612a34523af2677eb9d72bd}を再定義しています。
+
+\index{RTC::PeriodicECSharedComposite@{RTC::PeriodicECSharedComposite}!onFinalize@{onFinalize}}
+\index{onFinalize@{onFinalize}!RTC::PeriodicECSharedComposite@{RTC::PeriodicECSharedComposite}}
+\subsubsection[{onFinalize}]{\setlength{\rightskip}{0pt plus 5cm}virtual ReturnCode\_\-t RTC::PeriodicECSharedComposite::onFinalize (void)\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classRTC_1_1PeriodicECSharedComposite_ac95f6324faef90dbe1af768e4da9d1c8}
+
+
+[ComponentAction CORBA interface] \doxyref{RTC}{p.}{namespaceRTC} の終了 
+
+\doxyref{RTC}{p.}{namespaceRTC} が破棄される。 \doxyref{RTC}{p.}{namespaceRTC} 固有の終了処理はここで実行する。 このオペレーション呼び出しの結果として \doxyref{onFinalize()}{p.}{classRTC_1_1PeriodicECSharedComposite_ac95f6324faef90dbe1af768e4da9d1c8} コールバック関数が 呼び出される。
+
+\begin{DoxyReturn}{戻り値}
+ReturnCode\_\-t 型のリターンコード 
+\end{DoxyReturn}
+
+
+{\bf RTC::RTObject\_\-impl} \doxyref{}{p.}{classRTC_1_1RTObject__impl_ae255034d04d2797a594f908b58a17971}を再定義しています。
+
+\index{RTC::PeriodicECSharedComposite@{RTC::PeriodicECSharedComposite}!onInitialize@{onInitialize}}
+\index{onInitialize@{onInitialize}!RTC::PeriodicECSharedComposite@{RTC::PeriodicECSharedComposite}}
+\subsubsection[{onInitialize}]{\setlength{\rightskip}{0pt plus 5cm}virtual ReturnCode\_\-t RTC::PeriodicECSharedComposite::onInitialize (void)\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classRTC_1_1PeriodicECSharedComposite_a71c8ed52c564c0c1f8a38379ab3bdcd2}
+
+
+初期化 
+
+データフロー型 RTComponent の初期化を実行する。 実際の初期化処理は、各具象クラス内に記述する。 
+
+{\bf RTC::RTObject\_\-impl} \doxyref{}{p.}{classRTC_1_1RTObject__impl_ad98483b34aebe913fc7e73d4efa156f3}を再定義しています。
+
+\index{RTC::PeriodicECSharedComposite@{RTC::PeriodicECSharedComposite}!onReset@{onReset}}
+\index{onReset@{onReset}!RTC::PeriodicECSharedComposite@{RTC::PeriodicECSharedComposite}}
+\subsubsection[{onReset}]{\setlength{\rightskip}{0pt plus 5cm}virtual ReturnCode\_\-t RTC::PeriodicECSharedComposite::onReset ({\bf RTC::UniqueId} {\em exec\_\-handle})\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classRTC_1_1PeriodicECSharedComposite_af71130d5e46cd7d6659c6e516508262e}
+
+
+リセット処理用コールバック関数 
+
+ComponentAction::on\_\-reset が呼ばれた際に実行されるコールバック関数。\par
+ 本関数は無条件に RTC::RTC\_\-OK を返すようにダミー実装されているので、 各コンポーネントの実際のリセット処理は、本関数をオーバーライドして実装する 必要がある。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em exec\_\-handle}]参加している ExecutionContext の ID\end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+ReturnCode\_\-t 型のリターンコード 
+\end{DoxyReturn}
+
+
+{\bf RTC::RTObject\_\-impl} \doxyref{}{p.}{classRTC_1_1RTObject__impl_ab1bd11e5c23b1d21d7d4489bda4cd245}を再定義しています。
+
+
+
+\subsection{変数}
+\index{RTC::PeriodicECSharedComposite@{RTC::PeriodicECSharedComposite}!m\_\-members@{m\_\-members}}
+\index{m\_\-members@{m\_\-members}!RTC::PeriodicECSharedComposite@{RTC::PeriodicECSharedComposite}}
+\subsubsection[{m\_\-members}]{\setlength{\rightskip}{0pt plus 5cm}std::vector$<$std::string$>$ {\bf RTC::PeriodicECSharedComposite::m\_\-members}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC_1_1PeriodicECSharedComposite_ac33066866dceedf503156f4dcdf93aa5}
+
+
+コンポーネント 
+
+\index{RTC::PeriodicECSharedComposite@{RTC::PeriodicECSharedComposite}!m\_\-org@{m\_\-org}}
+\index{m\_\-org@{m\_\-org}!RTC::PeriodicECSharedComposite@{RTC::PeriodicECSharedComposite}}
+\subsubsection[{m\_\-org}]{\setlength{\rightskip}{0pt plus 5cm}{\bf SDOPackage::PeriodicECOrganization}$\ast$ {\bf RTC::PeriodicECSharedComposite::m\_\-org}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC_1_1PeriodicECSharedComposite_a61022d09e05fd6faafb54bc845a02c26}
+
+
+Organizationのリファレンス. 
+
+\index{RTC::PeriodicECSharedComposite@{RTC::PeriodicECSharedComposite}!m\_\-ref@{m\_\-ref}}
+\index{m\_\-ref@{m\_\-ref}!RTC::PeriodicECSharedComposite@{RTC::PeriodicECSharedComposite}}
+\subsubsection[{m\_\-ref}]{\setlength{\rightskip}{0pt plus 5cm}OpenRTM::DataFlowComponent\_\-var {\bf RTC::PeriodicECSharedComposite::m\_\-ref}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC_1_1PeriodicECSharedComposite_a726b062abb5343f935857c05a816b6c5}
+
+
+オブジェクトのリファレンス 
+

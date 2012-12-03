@@ -1,0 +1,179 @@
+\section{クラス テンプレート RTC::CorbaConsumer$<$ ObjectType, ObjectTypePtr, ObjectTypeVar $>$}
+\label{classRTC_1_1CorbaConsumer}\index{RTC::CorbaConsumer@{RTC::CorbaConsumer}}
+
+
+オブジェクトリファレンスを保持するプレースホルダテンプレートクラス  
+
+
+
+
+{\ttfamily \#include $<$CorbaConsumer.h$>$}
+
+RTC::CorbaConsumer$<$ ObjectType, ObjectTypePtr, ObjectTypeVar $>$に対する継承グラフ\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2cm]{classRTC_1_1CorbaConsumer}
+\end{center}
+\end{figure}
+\subsection*{Public メソッド}
+\begin{DoxyCompactItemize}
+\item 
+{\bf CorbaConsumer} ()
+\begin{DoxyCompactList}\small\item\em コンストラクタ \item\end{DoxyCompactList}\item 
+{\bf CorbaConsumer} (const {\bf CorbaConsumer} \&x)
+\begin{DoxyCompactList}\small\item\em コピーコンストラクタ \item\end{DoxyCompactList}\item 
+{\bf CorbaConsumer} \& {\bf operator=} (const {\bf CorbaConsumer} \&x)
+\begin{DoxyCompactList}\small\item\em 代入演算子 \item\end{DoxyCompactList}\item 
+void {\bf swap} ({\bf CorbaConsumer} \&x)
+\item 
+virtual {\bf $\sim$CorbaConsumer} (void)
+\begin{DoxyCompactList}\small\item\em 仮想デストラクタ \item\end{DoxyCompactList}\item 
+virtual bool {\bf setObject} (CORBA::Object\_\-ptr obj)
+\begin{DoxyCompactList}\small\item\em オブジェクトをセットする \item\end{DoxyCompactList}\item 
+ObjectTypePtr {\bf \_\-ptr} ()
+\begin{DoxyCompactList}\small\item\em ObjectType 型のオブジェクトのリファレンスを取得. \item\end{DoxyCompactList}\item 
+ObjectTypePtr {\bf operator-\/$>$} ()
+\begin{DoxyCompactList}\small\item\em ObjectType 型のオブジェクトのリファレンスを取得. \item\end{DoxyCompactList}\item 
+virtual void {\bf releaseObject} ()
+\begin{DoxyCompactList}\small\item\em CORBAオブジェクトの設定をクリアする. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected 変数}
+\begin{DoxyCompactItemize}
+\item 
+ObjectTypeVar {\bf m\_\-var}
+\begin{DoxyCompactList}\small\item\em 設定された CORBA オブジェクト \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{説明}
+\subsubsection*{template$<$class ObjectType, typename ObjectTypePtr = typename ObjectType::\_\-ptr\_\-type, typename ObjectTypeVar = typename ObjectType::\_\-var\_\-type$>$ class RTC::CorbaConsumer$<$ ObjectType, ObjectTypePtr, ObjectTypeVar $>$}
+
+オブジェクトリファレンスを保持するプレースホルダテンプレートクラス テンプレート引数で与えられた型のCORBAオブジェクトを保持する。 オブジェクトがセットされたときに、与えられた型で narrow されるので、 \doxyref{\_\-ptr()}{p.}{classRTC_1_1CorbaConsumer_ac3a5849614fa03ad5cf1822cc0f4b144} で取得するリファレンスは、narrow 済みのリファレンスである。 内部的な使用のために、\_\-ptr 型, \_\-var型も同時にテンプレート引数として 与える必要がある。(下記注意事項参照) \par
+ 注意: ObjectTypePtr = ObjectType::\_\-ptr\_\-type としているか、 \_\-ptr\_\-type は標準では規定されていない。 ただし、omniORB, TAO, MICO では、プロキシクラス内部で、 Type\_\-ptr 型を \_\-ptr\_\-type に typedef しているので、 テンプレートの第2引数を指定しなくてもコンパイルは通る。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em ObjectType}]このホルダが保持するオブジェクトの型 \item[{\em ObjectTypePtr}]このホルダが保持する \_\-ptr 型 \item[{\em ObjectTypeVar}]このホルダが保持する \_\-var 型\end{DoxyParams}
+\begin{DoxySince}{から}
+0.4.0 
+\end{DoxySince}
+
+
+\subsection{コンストラクタとデストラクタ}
+\index{RTC::CorbaConsumer@{RTC::CorbaConsumer}!CorbaConsumer@{CorbaConsumer}}
+\index{CorbaConsumer@{CorbaConsumer}!RTC::CorbaConsumer@{RTC::CorbaConsumer}}
+\subsubsection[{CorbaConsumer}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class ObjectType, typename ObjectTypePtr = typename ObjectType::\_\-ptr\_\-type, typename ObjectTypeVar = typename ObjectType::\_\-var\_\-type$>$ {\bf RTC::CorbaConsumer}$<$ ObjectType, ObjectTypePtr, ObjectTypeVar $>$::{\bf CorbaConsumer} ()\hspace{0.3cm}{\ttfamily  [inline]}}\label{classRTC_1_1CorbaConsumer_ac39b07e1bd3e2cc58ef1096e6282eaf0}
+
+
+コンストラクタ 
+
+\index{RTC::CorbaConsumer@{RTC::CorbaConsumer}!CorbaConsumer@{CorbaConsumer}}
+\index{CorbaConsumer@{CorbaConsumer}!RTC::CorbaConsumer@{RTC::CorbaConsumer}}
+\subsubsection[{CorbaConsumer}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class ObjectType, typename ObjectTypePtr = typename ObjectType::\_\-ptr\_\-type, typename ObjectTypeVar = typename ObjectType::\_\-var\_\-type$>$ {\bf RTC::CorbaConsumer}$<$ ObjectType, ObjectTypePtr, ObjectTypeVar $>$::{\bf CorbaConsumer} (const {\bf CorbaConsumer}$<$ ObjectType, ObjectTypePtr, ObjectTypeVar $>$ \& {\em x})\hspace{0.3cm}{\ttfamily  [inline]}}\label{classRTC_1_1CorbaConsumer_a354892b07ff51fac179912008eb0814f}
+
+
+コピーコンストラクタ 
+
+
+\begin{DoxyParams}{引数}
+\item[{\em x}]コピー元 \end{DoxyParams}
+\index{RTC::CorbaConsumer@{RTC::CorbaConsumer}!$\sim$CorbaConsumer@{$\sim$CorbaConsumer}}
+\index{$\sim$CorbaConsumer@{$\sim$CorbaConsumer}!RTC::CorbaConsumer@{RTC::CorbaConsumer}}
+\subsubsection[{$\sim$CorbaConsumer}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class ObjectType, typename ObjectTypePtr = typename ObjectType::\_\-ptr\_\-type, typename ObjectTypeVar = typename ObjectType::\_\-var\_\-type$>$ virtual {\bf RTC::CorbaConsumer}$<$ ObjectType, ObjectTypePtr, ObjectTypeVar $>$::$\sim${\bf CorbaConsumer} (void)\hspace{0.3cm}{\ttfamily  [inline, virtual]}}\label{classRTC_1_1CorbaConsumer_ae99db7e281bc3216fb298b9da307548f}
+
+
+仮想デストラクタ 
+
+
+
+\subsection{関数}
+\index{RTC::CorbaConsumer@{RTC::CorbaConsumer}!\_\-ptr@{\_\-ptr}}
+\index{\_\-ptr@{\_\-ptr}!RTC::CorbaConsumer@{RTC::CorbaConsumer}}
+\subsubsection[{\_\-ptr}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class ObjectType, typename ObjectTypePtr = typename ObjectType::\_\-ptr\_\-type, typename ObjectTypeVar = typename ObjectType::\_\-var\_\-type$>$ ObjectTypePtr {\bf RTC::CorbaConsumer}$<$ ObjectType, ObjectTypePtr, ObjectTypeVar $>$::\_\-ptr ()\hspace{0.3cm}{\ttfamily  [inline]}}\label{classRTC_1_1CorbaConsumer_ac3a5849614fa03ad5cf1822cc0f4b144}
+
+
+ObjectType 型のオブジェクトのリファレンスを取得. 
+
+ObjectType に narrow済みのオブジェクトのリファレンスを取得する。 オブジェクトリファレンスを使用するには、setObject() でセット済みで なければならない。 オブジェクトがセットされていなければ　nil オブジェクトリファレンスが 返される。
+
+\begin{DoxyReturn}{戻り値}
+ObjectType に narrow 済みのオブジェクトのリファレンス 
+\end{DoxyReturn}
+\index{RTC::CorbaConsumer@{RTC::CorbaConsumer}!operator-\/$>$@{operator-\/$>$}}
+\index{operator-\/$>$@{operator-\/$>$}!RTC::CorbaConsumer@{RTC::CorbaConsumer}}
+\subsubsection[{operator-\/$>$}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class ObjectType, typename ObjectTypePtr = typename ObjectType::\_\-ptr\_\-type, typename ObjectTypeVar = typename ObjectType::\_\-var\_\-type$>$ ObjectTypePtr {\bf RTC::CorbaConsumer}$<$ ObjectType, ObjectTypePtr, ObjectTypeVar $>$::operator-\/$>$ ()\hspace{0.3cm}{\ttfamily  [inline]}}\label{classRTC_1_1CorbaConsumer_ad05c547a2896f087fa7ad24c323e14f5}
+
+
+ObjectType 型のオブジェクトのリファレンスを取得. 
+
+ObjectType に narrow済みのオブジェクトのリファレンスを取得する。 オブジェクトリファレンスを使用するには、setObject() でセット済みで なければならない。 オブジェクトがセットされていなければ　nil オブジェクトリファレンスが 返される。
+
+\begin{DoxyReturn}{戻り値}
+ObjectType に narrow 済みのオブジェクトのリファレンス 
+\end{DoxyReturn}
+\index{RTC::CorbaConsumer@{RTC::CorbaConsumer}!operator=@{operator=}}
+\index{operator=@{operator=}!RTC::CorbaConsumer@{RTC::CorbaConsumer}}
+\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class ObjectType, typename ObjectTypePtr = typename ObjectType::\_\-ptr\_\-type, typename ObjectTypeVar = typename ObjectType::\_\-var\_\-type$>$ {\bf CorbaConsumer}\& {\bf RTC::CorbaConsumer}$<$ ObjectType, ObjectTypePtr, ObjectTypeVar $>$::operator= (const {\bf CorbaConsumer}$<$ ObjectType, ObjectTypePtr, ObjectTypeVar $>$ \& {\em x})\hspace{0.3cm}{\ttfamily  [inline]}}\label{classRTC_1_1CorbaConsumer_aa61a46fd2808e8b66f3b2d4df1ca001c}
+
+
+代入演算子 
+
+
+\begin{DoxyParams}{引数}
+\item[{\em x}]代入元\end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+代入結果 
+\end{DoxyReturn}
+\index{RTC::CorbaConsumer@{RTC::CorbaConsumer}!releaseObject@{releaseObject}}
+\index{releaseObject@{releaseObject}!RTC::CorbaConsumer@{RTC::CorbaConsumer}}
+\subsubsection[{releaseObject}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class ObjectType, typename ObjectTypePtr = typename ObjectType::\_\-ptr\_\-type, typename ObjectTypeVar = typename ObjectType::\_\-var\_\-type$>$ virtual void {\bf RTC::CorbaConsumer}$<$ ObjectType, ObjectTypePtr, ObjectTypeVar $>$::releaseObject ()\hspace{0.3cm}{\ttfamily  [inline, virtual]}}\label{classRTC_1_1CorbaConsumer_aaebca7bff42ba840684cf51fb8577290}
+
+
+CORBAオブジェクトの設定をクリアする. 
+
+設定されている CORBA オブジェクトをクリアする。 CORBAオブジェクトそのものに対しては何も操作しない。 
+
+{\bf RTC::CorbaConsumerBase} \doxyref{}{p.}{classRTC_1_1CorbaConsumerBase_aafdaaab4a66319fe5ab1486b1001dfb9}を再定義しています。
+
+
+
+参照元 RTC::CorbaConsumer$<$ ::OpenRTM::OutPortCdr $>$::releaseObject(), RTC::CorbaConsumer$<$ ::OpenRTM::OutPortCdr $>$::setObject(), と RTC::CorbaConsumer$<$ ::OpenRTM::OutPortCdr $>$::$\sim$CorbaConsumer().
+
+\index{RTC::CorbaConsumer@{RTC::CorbaConsumer}!setObject@{setObject}}
+\index{setObject@{setObject}!RTC::CorbaConsumer@{RTC::CorbaConsumer}}
+\subsubsection[{setObject}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class ObjectType, typename ObjectTypePtr = typename ObjectType::\_\-ptr\_\-type, typename ObjectTypeVar = typename ObjectType::\_\-var\_\-type$>$ virtual bool {\bf RTC::CorbaConsumer}$<$ ObjectType, ObjectTypePtr, ObjectTypeVar $>$::setObject (CORBA::Object\_\-ptr {\em obj})\hspace{0.3cm}{\ttfamily  [inline, virtual]}}\label{classRTC_1_1CorbaConsumer_a8e5db22a71b01b1a8178d9966eb6499d}
+
+
+オブジェクトをセットする 
+
+ConsumerBase のオーバーライド。CORBAObject\_\-var にオブジェクトをセット するとともに、templateパラメータの型で narrow したオブジェクトを メンバ変数に保持する。 \_\-var 型変数を引数に渡す場合は var.in() を渡すこと。
+
+
+\begin{DoxyParams}{引数}
+\item[\mbox{$\leftarrow$} {\em obj}]CORBA Objecct\end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+オブジェクト設定結果 設定対象オブジェクトが null の場合は false が返ってくる 
+\end{DoxyReturn}
+
+
+{\bf RTC::CorbaConsumerBase} \doxyref{}{p.}{classRTC_1_1CorbaConsumerBase_aa91cc706b62c6782f79bfc76663f3dcc}を再定義しています。
+
+\index{RTC::CorbaConsumer@{RTC::CorbaConsumer}!swap@{swap}}
+\index{swap@{swap}!RTC::CorbaConsumer@{RTC::CorbaConsumer}}
+\subsubsection[{swap}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class ObjectType, typename ObjectTypePtr = typename ObjectType::\_\-ptr\_\-type, typename ObjectTypeVar = typename ObjectType::\_\-var\_\-type$>$ void {\bf RTC::CorbaConsumer}$<$ ObjectType, ObjectTypePtr, ObjectTypeVar $>$::swap ({\bf CorbaConsumer}$<$ ObjectType, ObjectTypePtr, ObjectTypeVar $>$ \& {\em x})\hspace{0.3cm}{\ttfamily  [inline]}}\label{classRTC_1_1CorbaConsumer_a6d15ea38a83646af6e5ed91c73791f94}
+
+
+参照元 RTC::CorbaConsumer$<$ ::OpenRTM::OutPortCdr $>$::operator=(), と RTC::CorbaConsumer$<$ ::OpenRTM::OutPortCdr $>$::swap().
+
+
+
+\subsection{変数}
+\index{RTC::CorbaConsumer@{RTC::CorbaConsumer}!m\_\-var@{m\_\-var}}
+\index{m\_\-var@{m\_\-var}!RTC::CorbaConsumer@{RTC::CorbaConsumer}}
+\subsubsection[{m\_\-var}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class ObjectType, typename ObjectTypePtr = typename ObjectType::\_\-ptr\_\-type, typename ObjectTypeVar = typename ObjectType::\_\-var\_\-type$>$ ObjectTypeVar {\bf RTC::CorbaConsumer}$<$ ObjectType, ObjectTypePtr, ObjectTypeVar $>$::{\bf m\_\-var}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC_1_1CorbaConsumer_ac3d6f44c6fa4b9cf4f5be7ca6656e070}
+
+
+設定された CORBA オブジェクト 
+
+
+
+参照元 RTC::CorbaConsumer$<$ ::OpenRTM::OutPortCdr $>$::\_\-ptr(), RTC::CorbaConsumer$<$ ::OpenRTM::OutPortCdr $>$::operator-\/$>$(), RTC::CorbaConsumer$<$ ::OpenRTM::OutPortCdr $>$::releaseObject(), RTC::CorbaConsumer$<$ ::OpenRTM::OutPortCdr $>$::setObject(), と RTC::CorbaConsumer$<$ ::OpenRTM::OutPortCdr $>$::swap().
+

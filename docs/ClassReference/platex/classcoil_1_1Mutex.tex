@@ -1,0 +1,120 @@
+\section{クラス coil::Mutex}
+\label{classcoil_1_1Mutex}\index{coil::Mutex@{coil::Mutex}}
+
+
+\doxyref{Mutex}{p.}{classcoil_1_1Mutex} クラス.  
+
+
+
+
+{\ttfamily \#include $<$Mutex.h$>$}
+
+\subsection*{Public メソッド}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Mutex} (const char $\ast$const name=0)
+\begin{DoxyCompactList}\small\item\em コンストラクタ \item\end{DoxyCompactList}\item 
+{\bf $\sim$Mutex} ()
+\begin{DoxyCompactList}\small\item\em デストラクタ \item\end{DoxyCompactList}\item 
+void {\bf lock} ()
+\begin{DoxyCompactList}\small\item\em 排他制御のロック \item\end{DoxyCompactList}\item 
+bool {\bf trylock} ()
+\begin{DoxyCompactList}\small\item\em 排他制御のノンブロッキングロック \item\end{DoxyCompactList}\item 
+void {\bf unlock} ()
+\begin{DoxyCompactList}\small\item\em 排他制御のロック解除 \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public 変数}
+\begin{DoxyCompactItemize}
+\item 
+pthread\_\-mutex\_\-t {\bf mutex\_\-}
+\begin{DoxyCompactList}\small\item\em 排他制御オブジェクト \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{説明}
+\doxyref{Mutex}{p.}{classcoil_1_1Mutex} クラス. 
+
+\subsection{コンストラクタとデストラクタ}
+\index{coil::Mutex@{coil::Mutex}!Mutex@{Mutex}}
+\index{Mutex@{Mutex}!coil::Mutex@{coil::Mutex}}
+\subsubsection[{Mutex}]{\setlength{\rightskip}{0pt plus 5cm}coil::Mutex::Mutex (const char $\ast$const  {\em name} = {\ttfamily 0})\hspace{0.3cm}{\ttfamily  [inline]}}\label{classcoil_1_1Mutex_a45a1dccbb0d845c4668d832830b3381e}
+
+
+コンストラクタ 
+
+コンストラクタ。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em name}]オブジェクト名 \end{DoxyParams}
+
+
+参照先 mutex\_\-.
+
+\index{coil::Mutex@{coil::Mutex}!$\sim$Mutex@{$\sim$Mutex}}
+\index{$\sim$Mutex@{$\sim$Mutex}!coil::Mutex@{coil::Mutex}}
+\subsubsection[{$\sim$Mutex}]{\setlength{\rightskip}{0pt plus 5cm}coil::Mutex::$\sim$Mutex ()\hspace{0.3cm}{\ttfamily  [inline]}}\label{classcoil_1_1Mutex_ace6ccbe6d64be438633e5fdd33642606}
+
+
+デストラクタ 
+
+デストラクタ。 
+
+参照先 mutex\_\-.
+
+
+
+\subsection{関数}
+\index{coil::Mutex@{coil::Mutex}!lock@{lock}}
+\index{lock@{lock}!coil::Mutex@{coil::Mutex}}
+\subsubsection[{lock}]{\setlength{\rightskip}{0pt plus 5cm}void coil::Mutex::lock ()\hspace{0.3cm}{\ttfamily  [inline]}}\label{classcoil_1_1Mutex_abd97daab1969a6cbf0e65ddf9944f669}
+
+
+排他制御のロック 
+
+排他制御のロックを行う。 
+
+参照先 mutex\_\-.
+
+
+
+参照元 coil::log\_\-stream$<$ \_\-CharT, \_\-Traits $>$::lock().
+
+\index{coil::Mutex@{coil::Mutex}!trylock@{trylock}}
+\index{trylock@{trylock}!coil::Mutex@{coil::Mutex}}
+\subsubsection[{trylock}]{\setlength{\rightskip}{0pt plus 5cm}bool coil::Mutex::trylock ()\hspace{0.3cm}{\ttfamily  [inline]}}\label{classcoil_1_1Mutex_aaf471565209e694eb5cd308f0c0dabdd}
+
+
+排他制御のノンブロッキングロック 
+
+排他制御のロックをノンブロッキングで行う。 
+
+参照先 mutex\_\-.
+
+\index{coil::Mutex@{coil::Mutex}!unlock@{unlock}}
+\index{unlock@{unlock}!coil::Mutex@{coil::Mutex}}
+\subsubsection[{unlock}]{\setlength{\rightskip}{0pt plus 5cm}void coil::Mutex::unlock ()\hspace{0.3cm}{\ttfamily  [inline]}}\label{classcoil_1_1Mutex_aae9502c922762c052edafdeb53aa9baa}
+
+
+排他制御のロック解除 
+
+排他制御のロック解除を行う。 
+
+参照先 mutex\_\-.
+
+
+
+参照元 coil::log\_\-stream$<$ \_\-CharT, \_\-Traits $>$::unlock().
+
+
+
+\subsection{変数}
+\index{coil::Mutex@{coil::Mutex}!mutex\_\-@{mutex\_\-}}
+\index{mutex\_\-@{mutex\_\-}!coil::Mutex@{coil::Mutex}}
+\subsubsection[{mutex\_\-}]{\setlength{\rightskip}{0pt plus 5cm}pthread\_\-mutex\_\-t {\bf coil::Mutex::mutex\_\-}}\label{classcoil_1_1Mutex_a6ae0f7d95d947ca3a333fc5628225ab7}
+
+
+排他制御オブジェクト 
+
+
+
+参照元 lock(), Mutex(), trylock(), unlock(), と $\sim$Mutex().
+

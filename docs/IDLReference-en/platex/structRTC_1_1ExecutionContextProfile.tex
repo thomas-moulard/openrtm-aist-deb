@@ -1,0 +1,69 @@
+\section{RTC::ExecutionContextProfile Struct Reference}
+\label{structRTC_1_1ExecutionContextProfile}\index{RTC::ExecutionContextProfile@{RTC::ExecutionContextProfile}}
+
+
+{\ttfamily import \char`\"{}RTC.idl\char`\"{};}
+
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+{\bf ExecutionKind} {\bf kind}
+\begin{DoxyCompactList}\small\item\em kind \item\end{DoxyCompactList}\item 
+double {\bf rate}
+\begin{DoxyCompactList}\small\item\em rate \item\end{DoxyCompactList}\item 
+{\bf RTObject} {\bf owner}
+\begin{DoxyCompactList}\small\item\em owner \item\end{DoxyCompactList}\item 
+{\bf RTCList} {\bf participants}
+\begin{DoxyCompactList}\small\item\em participants \item\end{DoxyCompactList}\item 
+{\bf NVList} {\bf properties}
+\begin{DoxyCompactList}\small\item\em properties \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Member Data Documentation}
+\index{RTC::ExecutionContextProfile@{RTC::ExecutionContextProfile}!kind@{kind}}
+\index{kind@{kind}!RTC::ExecutionContextProfile@{RTC::ExecutionContextProfile}}
+\subsubsection[{kind}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ExecutionKind} {\bf RTC::ExecutionContextProfile::kind}}\label{structRTC_1_1ExecutionContextProfile_af2b553b126a5e1a2513f4027a106d8fb}
+
+
+kind 
+
+\subsection{Description}\label{namespaceRTC_Description}
+This attribute stores the context¡Çs ExecutionKind. \index{RTC::ExecutionContextProfile@{RTC::ExecutionContextProfile}!owner@{owner}}
+\index{owner@{owner}!RTC::ExecutionContextProfile@{RTC::ExecutionContextProfile}}
+\subsubsection[{owner}]{\setlength{\rightskip}{0pt plus 5cm}{\bf RTObject} {\bf RTC::ExecutionContextProfile::owner}}\label{structRTC_1_1ExecutionContextProfile_a2a15098a9cb4f5986f620ad716c40176}
+
+
+owner 
+
+\subsection{Description}\label{namespaceRTC_Description}
+This attribute stores a reference to the \doxyref{RTC}{p.}{namespaceRTC} that owns the context. \index{RTC::ExecutionContextProfile@{RTC::ExecutionContextProfile}!participants@{participants}}
+\index{participants@{participants}!RTC::ExecutionContextProfile@{RTC::ExecutionContextProfile}}
+\subsubsection[{participants}]{\setlength{\rightskip}{0pt plus 5cm}{\bf RTCList} {\bf RTC::ExecutionContextProfile::participants}}\label{structRTC_1_1ExecutionContextProfile_a072fa9a4e6e23e252b7ee1ea2a84226a}
+
+
+participants 
+
+\subsection{Description}\label{namespaceRTC_Description}
+This attribute stores references to the context¡Çs participant RTCs. \index{RTC::ExecutionContextProfile@{RTC::ExecutionContextProfile}!properties@{properties}}
+\index{properties@{properties}!RTC::ExecutionContextProfile@{RTC::ExecutionContextProfile}}
+\subsubsection[{properties}]{\setlength{\rightskip}{0pt plus 5cm}{\bf NVList} {\bf RTC::ExecutionContextProfile::properties}}\label{structRTC_1_1ExecutionContextProfile_aeb613f6da4b2289ac3a3e89ef973f19b}
+
+
+properties 
+
+\subsection{Description}\label{namespaceRTC_Description}
+This attribute contains additional properties of the execution context.\subsection{Semantics}\label{namespaceRTC_Semantics}
+This attribute provides implementations the opportunity to describe additional characteristics of a particular execution context that are outside the scope of this specification. \index{RTC::ExecutionContextProfile@{RTC::ExecutionContextProfile}!rate@{rate}}
+\index{rate@{rate}!RTC::ExecutionContextProfile@{RTC::ExecutionContextProfile}}
+\subsubsection[{rate}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf RTC::ExecutionContextProfile::rate}}\label{structRTC_1_1ExecutionContextProfile_af6009ee3292a68761c00ed02c93c5c8c}
+
+
+rate 
+
+\subsection{Description}\label{namespaceRTC_Description}
+This attribute stores execution rate.\subsection{Semantics}\label{namespaceRTC_Semantics}
+If the execution kind is not PERIODIC, the value here may not be valid (and should be negative in that case). See \doxyref{ExecutionContext::get\_\-rate}{p.}{interfaceRTC_1_1ExecutionContext_ad9c05f6e738c310f4ad5c686770fa5cc} (see Section 5.2.2.6.4) and set\_\-rate (see Section 5.2.2.6.5) for more information. 
+
+The documentation for this struct was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+{\bf RTC.idl}\end{DoxyCompactItemize}

@@ -1,0 +1,94 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<title>OpenRTM: ECFactory.h ソースファイル</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<!-- 作成： Doxygen 1.6.3 -->
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="index.html"><span>メインページ</span></a></li>
+      <li><a href="namespaces.html"><span>ネームスペース</span></a></li>
+      <li><a href="annotated.html"><span>クラス</span></a></li>
+      <li class="current"><a href="files.html"><span>ファイル</span></a></li>
+    </ul>
+  </div>
+  <div class="tabs">
+    <ul>
+      <li><a href="files.html"><span>ファイル一覧</span></a></li>
+      <li><a href="globals.html"><span>ファイルメンバ</span></a></li>
+    </ul>
+  </div>
+<h1>ECFactory.h</h1><a href="ECFactory_8h.html">説明を見る。</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="comment">// -*- C++ -*-</span>
+<a name="l00020"></a>00020 <span class="comment"></span><span class="preprocessor">#ifndef RTC_ECFACTORY_H</span>
+<a name="l00021"></a>00021 <span class="preprocessor"></span><span class="preprocessor">#define RTC_ECFACTORY_H</span>
+<a name="l00022"></a>00022 <span class="preprocessor"></span>
+<a name="l00023"></a>00023 <span class="preprocessor">#include &lt;<a class="code" href="ExecutionContextBase_8h.html" title="ExecutionContext base class.">rtm/ExecutionContextBase.h</a>&gt;</span>
+<a name="l00024"></a>00024 <span class="preprocessor">#include &lt;string&gt;</span>
+<a name="l00025"></a>00025 
+<a name="l00026"></a>00026 <span class="keyword">namespace </span>RTC 
+<a name="l00027"></a>00027 {
+<a name="l00028"></a>00028   
+<a name="l00029"></a><a class="code" href="namespaceRTC.html#a11c49c98229f8f9717a24ce241ef0598">00029</a>   <span class="keyword">typedef</span> <a class="code" href="classRTC_1_1ExecutionContextBase.html" title="ExecutionContext用基底クラス.">ExecutionContextBase</a>* (*ECNewFunc)();
+<a name="l00030"></a><a class="code" href="namespaceRTC.html#a9baf2cfe88ef900d0680b3b85817f966">00030</a>   <span class="keyword">typedef</span> void (*<a class="code" href="namespaceRTC.html#a9baf2cfe88ef900d0680b3b85817f966">ECDeleteFunc</a>)(<a class="code" href="classRTC_1_1ExecutionContextBase.html" title="ExecutionContext用基底クラス.">ExecutionContextBase</a>* ec);
+<a name="l00031"></a>00031   
+<a name="l00051"></a>00051   <span class="keyword">template</span> &lt;<span class="keyword">class</span> _New&gt;
+<a name="l00052"></a><a class="code" href="namespaceRTC.html#a6631076f9ff31497d8cc81ed6121c60d">00052</a>   <a class="code" href="classRTC_1_1ExecutionContextBase.html" title="ExecutionContext用基底クラス.">ExecutionContextBase</a>* <a class="code" href="namespaceRTC.html#a6631076f9ff31497d8cc81ed6121c60d" title="ExecutionContext生成用テンプレート関数.">ECCreate</a>()
+<a name="l00053"></a>00053   {
+<a name="l00054"></a>00054     <span class="keywordflow">return</span> <span class="keyword">new</span> _New();
+<a name="l00055"></a>00055   }
+<a name="l00056"></a>00056   
+<a name="l00076"></a>00076   <span class="keyword">template</span> &lt;<span class="keyword">class</span> _Delete&gt;
+<a name="l00077"></a><a class="code" href="namespaceRTC.html#a1eb781fd5262f8bbafb58e5322f6e2a8">00077</a>   <span class="keywordtype">void</span> <a class="code" href="namespaceRTC.html#a1eb781fd5262f8bbafb58e5322f6e2a8" title="ExecutionContext破棄用テンプレート関数.">ECDelete</a>(<a class="code" href="classRTC_1_1ExecutionContextBase.html" title="ExecutionContext用基底クラス.">ExecutionContextBase</a>* ec)
+<a name="l00078"></a>00078   {
+<a name="l00079"></a>00079     <span class="keyword">delete</span> ec;
+<a name="l00080"></a>00080   }
+<a name="l00081"></a>00081   
+<a name="l00115"></a><a class="code" href="classRTC_1_1ECFactoryBase.html">00115</a>   <span class="keyword">class </span><a class="code" href="classRTC_1_1ECFactoryBase.html" title="ECFactoryBase 抽象クラス.">ECFactoryBase</a>
+<a name="l00116"></a>00116   {
+<a name="l00117"></a>00117   <span class="keyword">public</span>:
+<a name="l00133"></a><a class="code" href="classRTC_1_1ECFactoryBase.html#ab80a647333b628435c91c63982f5498c">00133</a>     <span class="keyword">virtual</span> <a class="code" href="classRTC_1_1ECFactoryBase.html#ab80a647333b628435c91c63982f5498c" title="仮想デストラクタ">~ECFactoryBase</a>(<span class="keywordtype">void</span>){};
+<a name="l00134"></a>00134     
+<a name="l00156"></a>00156     <span class="keyword">virtual</span> <span class="keyword">const</span> <span class="keywordtype">char</span>* <a class="code" href="classRTC_1_1ECFactoryBase.html#a521d5c350bf08586034dc034c46f5c70" title="生成対象ExecutionContext名称取得用純粋仮想関数">name</a>() = 0;
+<a name="l00157"></a>00157     
+<a name="l00177"></a>00177     <span class="keyword">virtual</span> <a class="code" href="classRTC_1_1ExecutionContextBase.html" title="ExecutionContext用基底クラス.">ExecutionContextBase</a>* <a class="code" href="classRTC_1_1ECFactoryBase.html#a3a69009a302cb67881576fc407a6cb57" title="ExecutionContext生成用純粋仮想関数.">create</a>() = 0;
+<a name="l00178"></a>00178     
+<a name="l00198"></a>00198     <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classRTC_1_1ECFactoryBase.html#ad9eeff1fd2bdece6e696bc23eb6e9bcc" title="ExecutionContext破棄用純粋仮想関数.">destroy</a>(<a class="code" href="classRTC_1_1ExecutionContextBase.html" title="ExecutionContext用基底クラス.">ExecutionContextBase</a>* comp) = 0;
+<a name="l00199"></a>00199   <span class="keyword">protected</span>:
+<a name="l00200"></a>00200   };
+<a name="l00201"></a>00201   
+<a name="l00221"></a><a class="code" href="classRTC_1_1ECFactoryCXX.html">00221</a>   <span class="keyword">class </span><a class="code" href="classRTC_1_1ECFactoryCXX.html" title="ECFactoryCXX クラス.">ECFactoryCXX</a>
+<a name="l00222"></a>00222     : <span class="keyword">public</span> <a class="code" href="classRTC_1_1ECFactoryBase.html" title="ECFactoryBase 抽象クラス.">ECFactoryBase</a>
+<a name="l00223"></a>00223   {
+<a name="l00224"></a>00224   <span class="keyword">public</span>:
+<a name="l00248"></a>00248     <a class="code" href="classRTC_1_1ECFactoryCXX.html#a2e7a2762ae32cea607e448b64b71db4f" title="コンストラクタ">ECFactoryCXX</a>(<span class="keyword">const</span> <span class="keywordtype">char</span>* <a class="code" href="classRTC_1_1ECFactoryCXX.html#a7de52069a2c215b6fb4757b4cbe378ec" title="生成対象ExecutionContext名称を取得">name</a>,
+<a name="l00249"></a>00249                  <a class="code" href="namespaceRTC.html#a11c49c98229f8f9717a24ce241ef0598">ECNewFunc</a> new_func,
+<a name="l00250"></a>00250                  <a class="code" href="namespaceRTC.html#a9baf2cfe88ef900d0680b3b85817f966">ECDeleteFunc</a> delete_func);
+<a name="l00251"></a>00251     
+<a name="l00267"></a>00267     <a class="code" href="classRTC_1_1ECFactoryCXX.html#a590418963cdbd6bcf38e75b61b9ddaee" title="仮想デストラクタ">~ECFactoryCXX</a>(<span class="keywordtype">void</span>);
+<a name="l00268"></a>00268     
+<a name="l00288"></a>00288     <span class="keyword">virtual</span> <span class="keyword">const</span> <span class="keywordtype">char</span>* <a class="code" href="classRTC_1_1ECFactoryCXX.html#a7de52069a2c215b6fb4757b4cbe378ec" title="生成対象ExecutionContext名称を取得">name</a>();
+<a name="l00289"></a>00289     
+<a name="l00309"></a>00309     <span class="keyword">virtual</span> <a class="code" href="classRTC_1_1ExecutionContextBase.html" title="ExecutionContext用基底クラス.">ExecutionContextBase</a>* <a class="code" href="classRTC_1_1ECFactoryCXX.html#a3b9c612725a509f21908105334f2bc36" title="生成対象ExecutionContextインスタンスを生成">create</a>();
+<a name="l00310"></a>00310     
+<a name="l00330"></a>00330     <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classRTC_1_1ECFactoryCXX.html#a57dbab7164220dd469c3d23cf36ff721" title="対象ExecutionContextインスタンスを破棄">destroy</a>(<a class="code" href="classRTC_1_1ExecutionContextBase.html" title="ExecutionContext用基底クラス.">ExecutionContextBase</a>* comp);
+<a name="l00331"></a>00331     
+<a name="l00332"></a>00332   <span class="keyword">protected</span>:
+<a name="l00340"></a><a class="code" href="classRTC_1_1ECFactoryCXX.html#adf4b96999d4f3bec518ffb3dfd27a57e">00340</a>     std::string <a class="code" href="classRTC_1_1ECFactoryCXX.html#adf4b96999d4f3bec518ffb3dfd27a57e" title="生成対象ExecutionContext名称">m_name</a>;
+<a name="l00341"></a>00341     
+<a name="l00349"></a><a class="code" href="classRTC_1_1ECFactoryCXX.html#a0665c1d3150e57bb2373fa9bac7e1b06">00349</a>     <a class="code" href="namespaceRTC.html#a11c49c98229f8f9717a24ce241ef0598">ECNewFunc</a> <a class="code" href="classRTC_1_1ECFactoryCXX.html#a0665c1d3150e57bb2373fa9bac7e1b06" title="対象ExecutionContext生成用関数">m_New</a>;
+<a name="l00350"></a>00350     
+<a name="l00358"></a><a class="code" href="classRTC_1_1ECFactoryCXX.html#a74a87e7532e5693799961389f6c397c8">00358</a>     <a class="code" href="namespaceRTC.html#a9baf2cfe88ef900d0680b3b85817f966">ECDeleteFunc</a> <a class="code" href="classRTC_1_1ECFactoryCXX.html#a74a87e7532e5693799961389f6c397c8" title="対象ExecutionContext破棄用関数">m_Delete</a>;
+<a name="l00359"></a>00359   };
+<a name="l00360"></a>00360 };
+<a name="l00361"></a>00361 <span class="preprocessor">#endif // RTC_ECFACTORY_H</span>
+</pre></div></div>
+<hr class="footer"/><address style="text-align: right;"><small>OpenRTMに対してThu May 24 23:25:18 2012に生成されました。&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.6.3 </small></address>
+</body>
+</html>

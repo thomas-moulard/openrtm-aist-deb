@@ -1,0 +1,135 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<title>OpenRTM: ComponentActionListener.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<!-- 作成： Doxygen 1.6.3 -->
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="index.html"><span>メインページ</span></a></li>
+      <li><a href="namespaces.html"><span>ネームスペース</span></a></li>
+      <li><a href="annotated.html"><span>クラス</span></a></li>
+      <li class="current"><a href="files.html"><span>ファイル</span></a></li>
+    </ul>
+  </div>
+  <div class="tabs">
+    <ul>
+      <li><a href="files.html"><span>ファイル一覧</span></a></li>
+      <li><a href="globals.html"><span>ファイルメンバ</span></a></li>
+    </ul>
+  </div>
+</div>
+<div class="contents">
+<h1>ComponentActionListener.h</h1>
+<p>component action listener class  
+<a href="#_details">[詳細]</a></p>
+<code>#include &lt;vector&gt;</code><br/>
+<code>#include &lt;utility&gt;</code><br/>
+<code>#include &lt;<a class="el" href="Mutex_8h_source.html">coil/Mutex.h</a>&gt;</code><br/>
+<code>#include &lt;<a class="el" href="Guard_8h_source.html">coil/Guard.h</a>&gt;</code><br/>
+<code>#include &lt;<a class="el" href="RTC_8h_source.html">rtm/RTC.h</a>&gt;</code><br/>
+<code>#include &lt;rtm/idl/RTCSkel.h&gt;</code><br/>
+<code>#include &lt;<a class="el" href="ConnectorBase_8h_source.html">rtm/ConnectorBase.h</a>&gt;</code><br/>
+
+<p><a href="ComponentActionListener_8h_source.html">ソースコードを見る。</a></p>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr><td colspan="2"><h2>構成</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">class &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1PreComponentActionListener.html">RTC::PreComponentActionListener</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight"><a class="el" href="classRTC_1_1PreComponentActionListener.html" title="PreComponentActionListener クラス.">PreComponentActionListener</a> クラス.  <a href="classRTC_1_1PreComponentActionListener.html#_details">[詳細]</a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">class &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1PostComponentActionListener.html">RTC::PostComponentActionListener</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight"><a class="el" href="classRTC_1_1PostComponentActionListener.html" title="PostComponentActionListener クラス.">PostComponentActionListener</a> クラス.  <a href="classRTC_1_1PostComponentActionListener.html#_details">[詳細]</a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">class &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1PortActionListener.html">RTC::PortActionListener</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight"><a class="el" href="classRTC_1_1PortActionListener.html" title="PortActionListener クラス.">PortActionListener</a> クラス.  <a href="classRTC_1_1PortActionListener.html#_details">[詳細]</a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">class &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1ExecutionContextActionListener.html">RTC::ExecutionContextActionListener</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight"><a class="el" href="classRTC_1_1ExecutionContextActionListener.html" title="ExecutionContextActionListener クラス.">ExecutionContextActionListener</a> クラス.  <a href="classRTC_1_1ExecutionContextActionListener.html#_details">[詳細]</a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">class &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1PreComponentActionListenerHolder.html">RTC::PreComponentActionListenerHolder</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight"><a class="el" href="classRTC_1_1PreComponentActionListener.html" title="PreComponentActionListener クラス.">PreComponentActionListener</a> ホルダクラス.  <a href="classRTC_1_1PreComponentActionListenerHolder.html#_details">[詳細]</a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">class &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1PostComponentActionListenerHolder.html">RTC::PostComponentActionListenerHolder</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight"><a class="el" href="classRTC_1_1PostComponentActionListener.html" title="PostComponentActionListener クラス.">PostComponentActionListener</a> ホルダクラス.  <a href="classRTC_1_1PostComponentActionListenerHolder.html#_details">[詳細]</a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">class &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1PortActionListenerHolder.html">RTC::PortActionListenerHolder</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight"><a class="el" href="classRTC_1_1PortActionListener.html" title="PortActionListener クラス.">PortActionListener</a> ホルダクラス.  <a href="classRTC_1_1PortActionListenerHolder.html#_details">[詳細]</a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">class &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1ExecutionContextActionListenerHolder.html">RTC::ExecutionContextActionListenerHolder</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight"><a class="el" href="classRTC_1_1ExecutionContextActionListener.html" title="ExecutionContextActionListener クラス.">ExecutionContextActionListener</a> ホルダクラス.  <a href="classRTC_1_1ExecutionContextActionListenerHolder.html#_details">[詳細]</a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">class &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1ComponentActionListeners.html">RTC::ComponentActionListeners</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight"><a class="el" href="classRTC_1_1ComponentActionListeners.html" title="ComponentActionListeners クラス.">ComponentActionListeners</a> クラス.  <a href="classRTC_1_1ComponentActionListeners.html#_details">[詳細]</a><br/></td></tr>
+<tr><td colspan="2"><h2>ネームスペース</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">namespace &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceRTC.html">RTC</a></td></tr>
+
+<p><tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight"><p>RTコンポーネント. </p>
+<br/></td></tr>
+</p>
+<tr><td colspan="2"><h2>型定義</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">typedef ExecutionContextHandle_t&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceRTC.html#a5f80c9a89cc4531af60cfe488cbfa3fb">RTC::UniqueId</a></td></tr>
+<tr><td colspan="2"><h2>列挙型</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">enum &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceRTC.html#ae67e560916e39a0291473d00b348e312">RTC::PreComponentActionListenerType</a> { <br/>
+&nbsp;&nbsp;<a class="el" href="namespaceRTC.html#ae67e560916e39a0291473d00b348e312a9b27bb9a008dc3446a163ce7dd2a32a1">RTC::PRE_ON_INITIALIZE</a>, 
+<a class="el" href="namespaceRTC.html#ae67e560916e39a0291473d00b348e312a6050e26e505280863e6027b79d386060">RTC::PRE_ON_FINALIZE</a>, 
+<a class="el" href="namespaceRTC.html#ae67e560916e39a0291473d00b348e312ae4c08979d8e7bffc688a9e6455730009">RTC::PRE_ON_STARTUP</a>, 
+<a class="el" href="namespaceRTC.html#ae67e560916e39a0291473d00b348e312a92b3e1b8496559041d610926829d1152">RTC::PRE_ON_SHUTDOWN</a>, 
+<br/>
+&nbsp;&nbsp;<a class="el" href="namespaceRTC.html#ae67e560916e39a0291473d00b348e312a36d8fe1cec8259b75a8b6eba5846cfa7">RTC::PRE_ON_ACTIVATED</a>, 
+<a class="el" href="namespaceRTC.html#ae67e560916e39a0291473d00b348e312a0c18d511f6590ddbf227ba5eb3e8113d">RTC::PRE_ON_DEACTIVATED</a>, 
+<a class="el" href="namespaceRTC.html#ae67e560916e39a0291473d00b348e312ae04d2266b6cf916481fc12405afd6782">RTC::PRE_ON_ABORTING</a>, 
+<a class="el" href="namespaceRTC.html#ae67e560916e39a0291473d00b348e312a216873bfc9d36dfd105d8ae6fc01d997">RTC::PRE_ON_ERROR</a>, 
+<br/>
+&nbsp;&nbsp;<a class="el" href="namespaceRTC.html#ae67e560916e39a0291473d00b348e312ad3bbc4ae8ab3d648399b240d644d4f2f">RTC::PRE_ON_RESET</a>, 
+<a class="el" href="namespaceRTC.html#ae67e560916e39a0291473d00b348e312ab467e48bec26d7dd700cc69d83cb6487">RTC::PRE_ON_EXECUTE</a>, 
+<a class="el" href="namespaceRTC.html#ae67e560916e39a0291473d00b348e312ae4bdcaf5e533289c39cb0e2c42c3deae">RTC::PRE_ON_STATE_UPDATE</a>, 
+<a class="el" href="namespaceRTC.html#ae67e560916e39a0291473d00b348e312a2e43cb94fdc28541af66570a90dd5c59">RTC::PRE_ON_RATE_CHANGED</a>, 
+<br/>
+&nbsp;&nbsp;<a class="el" href="namespaceRTC.html#ae67e560916e39a0291473d00b348e312a6a219ca955d6ec9da45f9cb931400472">RTC::PRE_COMPONENT_ACTION_LISTENER_NUM</a>
+<br/>
+ }</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight"><p>PreComponentActionListener のタイプ. </p>
+ <a href="namespaceRTC.html#ae67e560916e39a0291473d00b348e312">[詳細]</a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">enum &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceRTC.html#a89ffcbf944a84c981ce0617a1876ac9d">RTC::PostComponentActionListenerType</a> { <br/>
+&nbsp;&nbsp;<a class="el" href="namespaceRTC.html#a89ffcbf944a84c981ce0617a1876ac9da1f9042cc0e4227c2a2d9b4d3f9e7b04a">RTC::POST_ON_INITIALIZE</a>, 
+<a class="el" href="namespaceRTC.html#a89ffcbf944a84c981ce0617a1876ac9da90951bdaa42064c0ba0258bc990be808">RTC::POST_ON_FINALIZE</a>, 
+<a class="el" href="namespaceRTC.html#a89ffcbf944a84c981ce0617a1876ac9da04be169ef206f7c75d734a53d5ce58c9">RTC::POST_ON_STARTUP</a>, 
+<a class="el" href="namespaceRTC.html#a89ffcbf944a84c981ce0617a1876ac9da9a6e0902a3aee5375bfa4031349aaeb4">RTC::POST_ON_SHUTDOWN</a>, 
+<br/>
+&nbsp;&nbsp;<a class="el" href="namespaceRTC.html#a89ffcbf944a84c981ce0617a1876ac9da491a9ee281fb53e8d3e65ca019a04c24">RTC::POST_ON_ACTIVATED</a>, 
+<a class="el" href="namespaceRTC.html#a89ffcbf944a84c981ce0617a1876ac9da985424959cdfc6777eb80c512f70cb95">RTC::POST_ON_DEACTIVATED</a>, 
+<a class="el" href="namespaceRTC.html#a89ffcbf944a84c981ce0617a1876ac9da5eae90fb351bfbd195b443aa76bb6a27">RTC::POST_ON_ABORTING</a>, 
+<a class="el" href="namespaceRTC.html#a89ffcbf944a84c981ce0617a1876ac9da7103a8f9b0580784dbc158b801b165e7">RTC::POST_ON_ERROR</a>, 
+<br/>
+&nbsp;&nbsp;<a class="el" href="namespaceRTC.html#a89ffcbf944a84c981ce0617a1876ac9da529d3f9f1298efc861b78a70fc67f62b">RTC::POST_ON_RESET</a>, 
+<a class="el" href="namespaceRTC.html#a89ffcbf944a84c981ce0617a1876ac9da1a86ec8b245363b197234191c1864a5d">RTC::POST_ON_EXECUTE</a>, 
+<a class="el" href="namespaceRTC.html#a89ffcbf944a84c981ce0617a1876ac9da0f61a7e93db80427b31d68d7460ec687">RTC::POST_ON_STATE_UPDATE</a>, 
+<a class="el" href="namespaceRTC.html#a89ffcbf944a84c981ce0617a1876ac9da161a73e4122060770f19e454f411b341">RTC::POST_ON_RATE_CHANGED</a>, 
+<br/>
+&nbsp;&nbsp;<a class="el" href="namespaceRTC.html#a89ffcbf944a84c981ce0617a1876ac9daca9e8dd9a43aff581a99559eedb3bb82">RTC::POST_COMPONENT_ACTION_LISTENER_NUM</a>
+<br/>
+ }</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight"><p>PostCompoenntActionListener のタイプ. </p>
+ <a href="namespaceRTC.html#a89ffcbf944a84c981ce0617a1876ac9d">[詳細]</a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">enum &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceRTC.html#aa43d6bf8eeed614009fd88c3bc2c1a4f">RTC::PortActionListenerType</a> { <a class="el" href="namespaceRTC.html#aa43d6bf8eeed614009fd88c3bc2c1a4fa07bfd569f4bba10532b7075fb42b62a9">RTC::ADD_PORT</a>, 
+<a class="el" href="namespaceRTC.html#aa43d6bf8eeed614009fd88c3bc2c1a4faad485079281001d8790751c753ea027e">RTC::REMOVE_PORT</a>, 
+<a class="el" href="namespaceRTC.html#aa43d6bf8eeed614009fd88c3bc2c1a4fa9f194a71b756be4d2e52cc492b8eb2aa">RTC::PORT_ACTION_LISTENER_NUM</a>
+ }</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight"><p>PortActionListener のタイプ. </p>
+ <a href="namespaceRTC.html#aa43d6bf8eeed614009fd88c3bc2c1a4f">[詳細]</a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">enum &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceRTC.html#ae5bb47b5be1cc6bce19888dd1c0e2e87">RTC::ExecutionContextActionListenerType</a> { <a class="el" href="namespaceRTC.html#ae5bb47b5be1cc6bce19888dd1c0e2e87a150e42b3a3ac47698a6aad14ddf95702">RTC::EC_ATTACHED</a>, 
+<a class="el" href="namespaceRTC.html#ae5bb47b5be1cc6bce19888dd1c0e2e87ae99fe6c83930e2f730949f7c8a475be8">RTC::EC_DETACHED</a>, 
+<a class="el" href="namespaceRTC.html#ae5bb47b5be1cc6bce19888dd1c0e2e87aeca84d933efb0bf9d8991266f378d1d1">RTC::EC_ACTION_LISTENER_NUM</a>
+ }</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight"><p>ExecutionContextActionListener のタイプ. </p>
+ <a href="namespaceRTC.html#ae5bb47b5be1cc6bce19888dd1c0e2e87">[詳細]</a><br/></td></tr>
+</table>
+<hr/><a name="_details"></a><h2>説明</h2>
+<p>component action listener class </p>
+<dl class="date"><dt><b>日付:</b></dt><dd>$Date$ </dd></dl>
+<dl class="author"><dt><b>作者:</b></dt><dd>Noriaki Ando &lt;<a href="mailto:n-ando@aist.go.jp">n-ando@aist.go.jp</a>&gt;</dd></dl>
+<p>Copyright (C) 2011 Noriaki Ando Intelligent Systems Research Institute, National Institute of Advanced Industrial Science and Technology (AIST), Japan All rights reserved.</p>
+<p>$Id$ </p>
+</div>
+<hr class="footer"/><address style="text-align: right;"><small>OpenRTMに対してThu May 24 23:25:18 2012に生成されました。&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.6.3 </small></address>
+</body>
+</html>

@@ -1,0 +1,125 @@
+\section{クラス RTC::NamingOnCorba}
+\label{classRTC_1_1NamingOnCorba}\index{RTC::NamingOnCorba@{RTC::NamingOnCorba}}
+
+
+CORBA 用 NamingServer 管理クラス.  
+
+
+
+
+{\ttfamily \#include $<$NamingManager.h$>$}
+
+RTC::NamingOnCorbaに対する継承グラフ\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2cm]{classRTC_1_1NamingOnCorba}
+\end{center}
+\end{figure}
+\subsection*{Public メソッド}
+\begin{DoxyCompactItemize}
+\item 
+{\bf NamingOnCorba} (CORBA::ORB\_\-ptr orb, const char $\ast$names)
+\begin{DoxyCompactList}\small\item\em コンストラクタ \item\end{DoxyCompactList}\item 
+virtual {\bf $\sim$NamingOnCorba} (void)
+\begin{DoxyCompactList}\small\item\em デストラクタ \item\end{DoxyCompactList}\item 
+virtual void {\bf bindObject} (const char $\ast$name, const {\bf RTObject\_\-impl} $\ast$rtobj)
+\begin{DoxyCompactList}\small\item\em 指定した CORBA オブジェクトのNamingServiceへバインド \item\end{DoxyCompactList}\item 
+virtual void {\bf bindObject} (const char $\ast$name, const {\bf RTM::ManagerServant} $\ast$mgr)
+\begin{DoxyCompactList}\small\item\em 指定したManagerServantをNamingServiceへバインド \item\end{DoxyCompactList}\item 
+virtual void {\bf unbindObject} (const char $\ast$name)
+\begin{DoxyCompactList}\small\item\em 指定した CORBA オブジェクトをNamingServiceからアンバインド \item\end{DoxyCompactList}\item 
+virtual bool {\bf isAlive} ()
+\begin{DoxyCompactList}\small\item\em ネームサーバの生存を確認する。 \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{説明}
+CORBA 用 NamingServer 管理クラス. CORBA 用 NamingServer 管理用クラス。 CORBA コンポーネントの NamingService への登録、解除などを管理する。
+
+\begin{DoxySince}{から}
+0.4.0 
+\end{DoxySince}
+
+
+\subsection{コンストラクタとデストラクタ}
+\index{RTC::NamingOnCorba@{RTC::NamingOnCorba}!NamingOnCorba@{NamingOnCorba}}
+\index{NamingOnCorba@{NamingOnCorba}!RTC::NamingOnCorba@{RTC::NamingOnCorba}}
+\subsubsection[{NamingOnCorba}]{\setlength{\rightskip}{0pt plus 5cm}RTC::NamingOnCorba::NamingOnCorba (CORBA::ORB\_\-ptr {\em orb}, \/  const char $\ast$ {\em names})}\label{classRTC_1_1NamingOnCorba_ad2cbf61138259ef8717839e906ef1b9e}
+
+
+コンストラクタ 
+
+コンストラクタ。第2引数に与えるネームサービス名は、ネームサービ スのホスト名とポート番号を \char`\"{}:\char`\"{} で区切ったものである。ポート番号 が省略された場合、2809番ポートが使用される。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em orb}]ORB \item[{\em names}]NamingServer 名称 \end{DoxyParams}
+\index{RTC::NamingOnCorba@{RTC::NamingOnCorba}!$\sim$NamingOnCorba@{$\sim$NamingOnCorba}}
+\index{$\sim$NamingOnCorba@{$\sim$NamingOnCorba}!RTC::NamingOnCorba@{RTC::NamingOnCorba}}
+\subsubsection[{$\sim$NamingOnCorba}]{\setlength{\rightskip}{0pt plus 5cm}virtual RTC::NamingOnCorba::$\sim$NamingOnCorba (void)\hspace{0.3cm}{\ttfamily  [inline, virtual]}}\label{classRTC_1_1NamingOnCorba_ad52223d47212b6fc1b1196b0294eb0a9}
+
+
+デストラクタ 
+
+
+
+\subsection{関数}
+\index{RTC::NamingOnCorba@{RTC::NamingOnCorba}!bindObject@{bindObject}}
+\index{bindObject@{bindObject}!RTC::NamingOnCorba@{RTC::NamingOnCorba}}
+\subsubsection[{bindObject}]{\setlength{\rightskip}{0pt plus 5cm}virtual void RTC::NamingOnCorba::bindObject (const char $\ast$ {\em name}, \/  const {\bf RTM::ManagerServant} $\ast$ {\em mgr})\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classRTC_1_1NamingOnCorba_a539b34abf7968f2ad2c2a8af46bfe509}
+
+
+指定したManagerServantをNamingServiceへバインド 
+
+
+\begin{DoxyParams}{引数}
+\item[{\em name}]バインド時の名称 \item[{\em rtobj}]バインド対象ManagerServant \end{DoxyParams}
+
+
+{\bf RTC::NamingBase} \doxyref{}{p.}{classRTC_1_1NamingBase_a46494e91f57881e0b19faad01f7ea675}を実装しています。
+
+\index{RTC::NamingOnCorba@{RTC::NamingOnCorba}!bindObject@{bindObject}}
+\index{bindObject@{bindObject}!RTC::NamingOnCorba@{RTC::NamingOnCorba}}
+\subsubsection[{bindObject}]{\setlength{\rightskip}{0pt plus 5cm}virtual void RTC::NamingOnCorba::bindObject (const char $\ast$ {\em name}, \/  const {\bf RTObject\_\-impl} $\ast$ {\em rtobj})\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classRTC_1_1NamingOnCorba_a6361ae7eac2cf8788bbc0ad98b4440b3}
+
+
+指定した CORBA オブジェクトのNamingServiceへバインド 
+
+指定した CORBA オブジェクトを指定した名称で CORBA NamingService へ バインドする。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em name}]バインド時の名称 \item[{\em rtobj}]バインド対象オブジェクト \end{DoxyParams}
+
+
+{\bf RTC::NamingBase} \doxyref{}{p.}{classRTC_1_1NamingBase_ac8b6c5670ae869ba80b9407169cc7928}を実装しています。
+
+\index{RTC::NamingOnCorba@{RTC::NamingOnCorba}!isAlive@{isAlive}}
+\index{isAlive@{isAlive}!RTC::NamingOnCorba@{RTC::NamingOnCorba}}
+\subsubsection[{isAlive}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool RTC::NamingOnCorba::isAlive ()\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classRTC_1_1NamingOnCorba_af48e8a29fce37cb045a14ea452c4031d}
+
+
+ネームサーバの生存を確認する。 
+
+\begin{DoxyReturn}{戻り値}
+true:生存している, false:生存していない 
+\end{DoxyReturn}
+
+
+{\bf RTC::NamingBase} \doxyref{}{p.}{classRTC_1_1NamingBase_af2e5abca5e0f91fb1ed6f830b1837318}を実装しています。
+
+\index{RTC::NamingOnCorba@{RTC::NamingOnCorba}!unbindObject@{unbindObject}}
+\index{unbindObject@{unbindObject}!RTC::NamingOnCorba@{RTC::NamingOnCorba}}
+\subsubsection[{unbindObject}]{\setlength{\rightskip}{0pt plus 5cm}virtual void RTC::NamingOnCorba::unbindObject (const char $\ast$ {\em name})\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classRTC_1_1NamingOnCorba_ac9f33dd6f2f4df81640d720057da98da}
+
+
+指定した CORBA オブジェクトをNamingServiceからアンバインド 
+
+指定した CORBA オブジェクトを CORBA NamingService からアンバインドする。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em name}]アンバインド対象オブジェクト \end{DoxyParams}
+
+
+{\bf RTC::NamingBase} \doxyref{}{p.}{classRTC_1_1NamingBase_a78700b13ec16ffadfc80c13461db3832}を実装しています。
+

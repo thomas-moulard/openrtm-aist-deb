@@ -1,0 +1,83 @@
+\section{クラス RTC::ConnectorListenerHolder}
+\label{classRTC_1_1ConnectorListenerHolder}\index{RTC::ConnectorListenerHolder@{RTC::ConnectorListenerHolder}}
+
+
+\doxyref{ConnectorListener}{p.}{classRTC_1_1ConnectorListener} ホルダクラス.  
+
+
+
+
+{\ttfamily \#include $<$ConnectorListener.h$>$}
+
+\subsection*{Public メソッド}
+\begin{DoxyCompactItemize}
+\item 
+{\bf ConnectorListenerHolder} ()
+\begin{DoxyCompactList}\small\item\em コンストラクタ \item\end{DoxyCompactList}\item 
+virtual {\bf $\sim$ConnectorListenerHolder} ()
+\begin{DoxyCompactList}\small\item\em デストラクタ \item\end{DoxyCompactList}\item 
+void {\bf addListener} ({\bf ConnectorListener} $\ast$listener, bool autoclean)
+\begin{DoxyCompactList}\small\item\em リスナーの追加 \item\end{DoxyCompactList}\item 
+void {\bf removeListener} ({\bf ConnectorListener} $\ast$listener)
+\begin{DoxyCompactList}\small\item\em リスナーの削除 \item\end{DoxyCompactList}\item 
+void {\bf notify} (const {\bf ConnectorInfo} \&info)
+\begin{DoxyCompactList}\small\item\em リスナーへ通知する \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{説明}
+\doxyref{ConnectorListener}{p.}{classRTC_1_1ConnectorListener} ホルダクラス. 複数の \doxyref{ConnectorListener}{p.}{classRTC_1_1ConnectorListener} を保持し管理するクラス。 
+
+\subsection{コンストラクタとデストラクタ}
+\index{RTC::ConnectorListenerHolder@{RTC::ConnectorListenerHolder}!ConnectorListenerHolder@{ConnectorListenerHolder}}
+\index{ConnectorListenerHolder@{ConnectorListenerHolder}!RTC::ConnectorListenerHolder@{RTC::ConnectorListenerHolder}}
+\subsubsection[{ConnectorListenerHolder}]{\setlength{\rightskip}{0pt plus 5cm}RTC::ConnectorListenerHolder::ConnectorListenerHolder ()}\label{classRTC_1_1ConnectorListenerHolder_ab62f009d890220d946a8c5f1da16ba1d}
+
+
+コンストラクタ 
+
+\index{RTC::ConnectorListenerHolder@{RTC::ConnectorListenerHolder}!$\sim$ConnectorListenerHolder@{$\sim$ConnectorListenerHolder}}
+\index{$\sim$ConnectorListenerHolder@{$\sim$ConnectorListenerHolder}!RTC::ConnectorListenerHolder@{RTC::ConnectorListenerHolder}}
+\subsubsection[{$\sim$ConnectorListenerHolder}]{\setlength{\rightskip}{0pt plus 5cm}virtual RTC::ConnectorListenerHolder::$\sim$ConnectorListenerHolder ()\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classRTC_1_1ConnectorListenerHolder_aab740e6b9f132c8cec547b377a38afa5}
+
+
+デストラクタ 
+
+
+
+\subsection{関数}
+\index{RTC::ConnectorListenerHolder@{RTC::ConnectorListenerHolder}!addListener@{addListener}}
+\index{addListener@{addListener}!RTC::ConnectorListenerHolder@{RTC::ConnectorListenerHolder}}
+\subsubsection[{addListener}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::ConnectorListenerHolder::addListener ({\bf ConnectorListener} $\ast$ {\em listener}, \/  bool {\em autoclean})}\label{classRTC_1_1ConnectorListenerHolder_a4a864412484c141ee173fa2840b1cfa1}
+
+
+リスナーの追加 
+
+リスナーを追加する。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em listener}]追加するリスナ \item[{\em autoclean}]true:デストラクタで削除する, false:デストラクタで削除しない \end{DoxyParams}
+\index{RTC::ConnectorListenerHolder@{RTC::ConnectorListenerHolder}!notify@{notify}}
+\index{notify@{notify}!RTC::ConnectorListenerHolder@{RTC::ConnectorListenerHolder}}
+\subsubsection[{notify}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::ConnectorListenerHolder::notify (const {\bf ConnectorInfo} \& {\em info})}\label{classRTC_1_1ConnectorListenerHolder_a4c1522a804f3bdcab7dafeb0cca1e859}
+
+
+リスナーへ通知する 
+
+登録されているリスナのコールバックメソッドを呼び出す。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em info}]\doxyref{ConnectorInfo}{p.}{classRTC_1_1ConnectorInfo} \end{DoxyParams}
+\index{RTC::ConnectorListenerHolder@{RTC::ConnectorListenerHolder}!removeListener@{removeListener}}
+\index{removeListener@{removeListener}!RTC::ConnectorListenerHolder@{RTC::ConnectorListenerHolder}}
+\subsubsection[{removeListener}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::ConnectorListenerHolder::removeListener ({\bf ConnectorListener} $\ast$ {\em listener})}\label{classRTC_1_1ConnectorListenerHolder_abd64fdf79758520c8b65f303225b27aa}
+
+
+リスナーの削除 
+
+リスナを削除する。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em listener}]削除するリスナ \end{DoxyParams}

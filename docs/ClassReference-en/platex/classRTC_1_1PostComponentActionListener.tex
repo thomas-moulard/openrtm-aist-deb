@@ -1,0 +1,65 @@
+\section{RTC::PostComponentActionListener Class Reference}
+\label{classRTC_1_1PostComponentActionListener}\index{RTC::PostComponentActionListener@{RTC::PostComponentActionListener}}
+
+
+\doxyref{PostComponentActionListener}{p.}{classRTC_1_1PostComponentActionListener} class.  
+
+
+
+
+{\ttfamily \#include $<$ComponentActionListener.h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual {\bf $\sim$PostComponentActionListener} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \item\end{DoxyCompactList}\item 
+virtual void {\bf operator()} ({\bf UniqueId} ec\_\-id, ReturnCode\_\-t ret)=0
+\begin{DoxyCompactList}\small\item\em Virtual Callback function. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static const char $\ast$ {\bf toString} ({\bf PostComponentActionListenerType} type)
+\begin{DoxyCompactList}\small\item\em Convert PostComponentActionListenerType into the string. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\doxyref{PostComponentActionListener}{p.}{classRTC_1_1PostComponentActionListener} class. This class is abstract base class for listener classes that provides callbacks for various events in rtobject. 
+
+\subsection{Constructor \& Destructor Documentation}
+\index{RTC::PostComponentActionListener@{RTC::PostComponentActionListener}!$\sim$PostComponentActionListener@{$\sim$PostComponentActionListener}}
+\index{$\sim$PostComponentActionListener@{$\sim$PostComponentActionListener}!RTC::PostComponentActionListener@{RTC::PostComponentActionListener}}
+\subsubsection[{$\sim$PostComponentActionListener}]{\setlength{\rightskip}{0pt plus 5cm}virtual RTC::PostComponentActionListener::$\sim$PostComponentActionListener ()\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classRTC_1_1PostComponentActionListener_a942c9fd8c3076c2afd99388d7e1cae61}
+
+
+Destructor. 
+
+
+
+\subsection{Member Function Documentation}
+\index{RTC::PostComponentActionListener@{RTC::PostComponentActionListener}!operator()@{operator()}}
+\index{operator()@{operator()}!RTC::PostComponentActionListener@{RTC::PostComponentActionListener}}
+\subsubsection[{operator()}]{\setlength{\rightskip}{0pt plus 5cm}virtual void RTC::PostComponentActionListener::operator() ({\bf UniqueId} {\em ec\_\-id}, \/  ReturnCode\_\-t {\em ret})\hspace{0.3cm}{\ttfamily  [pure virtual]}}\label{classRTC_1_1PostComponentActionListener_aaa49c1ef998238b7e5e4ee6d4acdc9fb}
+
+
+Virtual Callback function. 
+
+This is a the Callback function for \doxyref{PostComponentActionListener}{p.}{classRTC_1_1PostComponentActionListener}. \index{RTC::PostComponentActionListener@{RTC::PostComponentActionListener}!toString@{toString}}
+\index{toString@{toString}!RTC::PostComponentActionListener@{RTC::PostComponentActionListener}}
+\subsubsection[{toString}]{\setlength{\rightskip}{0pt plus 5cm}static const char$\ast$ RTC::PostComponentActionListener::toString ({\bf PostComponentActionListenerType} {\em type})\hspace{0.3cm}{\ttfamily  [inline, static]}}\label{classRTC_1_1PostComponentActionListener_af1eca2deaf08e6c4abcc7e153224d49a}
+
+
+Convert PostComponentActionListenerType into the string. 
+
+Convert PostComponentActionListenerType into the string.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em type}]The target PostComponentActionListenerType for transformation\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Trnasformation result of string representation 
+\end{DoxyReturn}
+
+
+References RTC::POST\_\-COMPONENT\_\-ACTION\_\-LISTENER\_\-NUM.
+

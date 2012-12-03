@@ -1,0 +1,111 @@
+\section{RTC\_\-Utils Namespace Reference}
+\label{namespaceRTC__Utils}\index{RTC\_\-Utils@{RTC\_\-Utils}}
+
+
+Utility functions for RT-\/Component.  
+
+
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class {\bf StateHolder}
+\begin{DoxyCompactList}\small\item\em State holder class. \item\end{DoxyCompactList}\item 
+class {\bf StateMachine}
+\begin{DoxyCompactList}\small\item\em State machine class. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool {\bf isDataFlowComponent} (CORBA::Object\_\-ptr obj)
+\begin{DoxyCompactList}\small\item\em Confirm whether specified RT-\/Component is DataFlowComponent. \item\end{DoxyCompactList}\item 
+bool {\bf isFsmParticipant} (CORBA::Object\_\-ptr obj)
+\begin{DoxyCompactList}\small\item\em Confirm whether specified RT-\/Component is FsmParticipant. \item\end{DoxyCompactList}\item 
+bool {\bf isFsmObject} (CORBA::Object\_\-ptr obj)
+\begin{DoxyCompactList}\small\item\em Confirm whether specified RT-\/Component is Fsm. \item\end{DoxyCompactList}\item 
+bool {\bf isMultiModeObject} (CORBA::Object\_\-ptr obj)
+\begin{DoxyCompactList}\small\item\em Confirm whether specified RT-\/Component is multiModeComponent. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Utility functions for RT-\/Component. This provides the following utility functions to RT-\/Component.
+
+
+\begin{DoxyItemize}
+\item isDataFlowParticipant
+\item isFsmParticipant
+\item isFsmObject
+\item isMultiModeObject 
+\end{DoxyItemize}
+
+\subsection{Function Documentation}
+\index{RTC\_\-Utils@{RTC\_\-Utils}!isDataFlowComponent@{isDataFlowComponent}}
+\index{isDataFlowComponent@{isDataFlowComponent}!RTC_Utils@{RTC\_\-Utils}}
+\subsubsection[{isDataFlowComponent}]{\setlength{\rightskip}{0pt plus 5cm}bool RTC\_\-Utils::isDataFlowComponent (CORBA::Object\_\-ptr {\em obj})}\label{namespaceRTC__Utils_a7615b39670d055183b4dba9a8166c868}
+
+
+Confirm whether specified RT-\/Component is DataFlowComponent. 
+
+Confirm whether specified RT-\/Component is DataFlowComponent. DataFlowComponent is a type of the RT-\/Component which is used when Semantics of ExecutionContext is Periodic Sampled Data Processing.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em obj}]The target CORBA object for the investigation\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Investigation result of DataFlowComponent
+\end{DoxyReturn}
+\begin{DoxySince}{Since}
+0.4.0 
+\end{DoxySince}
+\index{RTC\_\-Utils@{RTC\_\-Utils}!isFsmObject@{isFsmObject}}
+\index{isFsmObject@{isFsmObject}!RTC_Utils@{RTC\_\-Utils}}
+\subsubsection[{isFsmObject}]{\setlength{\rightskip}{0pt plus 5cm}bool RTC\_\-Utils::isFsmObject (CORBA::Object\_\-ptr {\em obj})}\label{namespaceRTC__Utils_a467f15e404ab93c70887d0d0e003a67d}
+
+
+Confirm whether specified RT-\/Component is Fsm. 
+
+Confirm whether specified RT-\/Component is Fsm. Fsm is a type of the RT-\/Component that is used when Semantics of ExecutionContext is Stimulus Response Processing. It is uset to define the state transition.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em obj}]The target CORBA object for the investigation\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Investigation result of Fsm
+\end{DoxyReturn}
+\begin{DoxySince}{Since}
+0.4.0 
+\end{DoxySince}
+\index{RTC\_\-Utils@{RTC\_\-Utils}!isFsmParticipant@{isFsmParticipant}}
+\index{isFsmParticipant@{isFsmParticipant}!RTC_Utils@{RTC\_\-Utils}}
+\subsubsection[{isFsmParticipant}]{\setlength{\rightskip}{0pt plus 5cm}bool RTC\_\-Utils::isFsmParticipant (CORBA::Object\_\-ptr {\em obj})}\label{namespaceRTC__Utils_a52ff8d6e964922f9673ca78830650e3e}
+
+
+Confirm whether specified RT-\/Component is FsmParticipant. 
+
+Confirm whether specified RT-\/Component is FsmParticipant. FsmParticipant is a type of the RT-\/Component which is used when Semantics of ExecutionContext is Stimulus Response Processing. It is used to define the actions in the state.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em obj}]The target CORBA object for the investigation\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Investigation result of FsmParticipant
+\end{DoxyReturn}
+\begin{DoxySince}{Since}
+0.4.0 
+\end{DoxySince}
+\index{RTC\_\-Utils@{RTC\_\-Utils}!isMultiModeObject@{isMultiModeObject}}
+\index{isMultiModeObject@{isMultiModeObject}!RTC_Utils@{RTC\_\-Utils}}
+\subsubsection[{isMultiModeObject}]{\setlength{\rightskip}{0pt plus 5cm}bool RTC\_\-Utils::isMultiModeObject (CORBA::Object\_\-ptr {\em obj})}\label{namespaceRTC__Utils_ae4b1334407be2113a145ee2cf06e3775}
+
+
+Confirm whether specified RT-\/Component is multiModeComponent. 
+
+Confirm whether specified RT-\/Component is multiModeComponent. multiModeComponent is a type of the RT-\/Component which is used when Semantics of ExecutionContext is Modes of Operation. It is used to define Mode.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em obj}]The target CORBA object for the investigation\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Investigation result of multiModeComponent
+\end{DoxyReturn}
+\begin{DoxySince}{Since}
+0.4.0 
+\end{DoxySince}

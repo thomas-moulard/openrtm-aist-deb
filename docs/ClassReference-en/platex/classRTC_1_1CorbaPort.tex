@@ -1,0 +1,493 @@
+\section{RTC::CorbaPort Class Reference}
+\label{classRTC_1_1CorbaPort}\index{RTC::CorbaPort@{RTC::CorbaPort}}
+
+
+RT Conponent CORBA service/consumer Port.  
+
+
+
+
+{\ttfamily \#include $<$CorbaPort.h$>$}
+
+Inheritance diagram for RTC::CorbaPort:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2cm]{classRTC_1_1CorbaPort}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class {\bfseries CorbaConsumerHolder}
+\begin{DoxyCompactList}\small\item\em The structure to be stored \doxyref{Consumer}{p.}{classConsumer} information. \item\end{DoxyCompactList}\item 
+class {\bfseries CorbaProviderHolder}
+\begin{DoxyCompactList}\small\item\em The structure to be stored Provider information. \item\end{DoxyCompactList}\item 
+struct {\bfseries unsubscribe}
+\begin{DoxyCompactList}\small\item\em Functor to release Consumer's object. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf CorbaPort} (const char $\ast$name)
+\begin{DoxyCompactList}\small\item\em Constructor. \item\end{DoxyCompactList}\item 
+virtual {\bf $\sim$CorbaPort} (void)
+\begin{DoxyCompactList}\small\item\em Virtual destructor. \item\end{DoxyCompactList}\item 
+void {\bf init} ({\bf coil::Properties} \&prop)
+\begin{DoxyCompactList}\small\item\em Initializing properties. \item\end{DoxyCompactList}\item 
+bool {\bf registerProvider} (const char $\ast$instance\_\-name, const char $\ast$type\_\-name, PortableServer::RefCountServantBase \&provider)
+\begin{DoxyCompactList}\small\item\em Register the provider. \item\end{DoxyCompactList}\item 
+bool {\bf registerConsumer} (const char $\ast$instance\_\-name, const char $\ast$type\_\-name, {\bf CorbaConsumerBase} \&consumer)
+\begin{DoxyCompactList}\small\item\em Register the consumer. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual ReturnCode\_\-t {\bf publishInterfaces} (ConnectorProfile \&connector\_\-profile)
+\begin{DoxyCompactList}\small\item\em Publish information about interfaces. \item\end{DoxyCompactList}\item 
+virtual ReturnCode\_\-t {\bf subscribeInterfaces} (const ConnectorProfile \&connector\_\-profile)
+\begin{DoxyCompactList}\small\item\em Subscribe to interface. \item\end{DoxyCompactList}\item 
+virtual void {\bf unsubscribeInterfaces} (const ConnectorProfile \&connector\_\-profile)
+\begin{DoxyCompactList}\small\item\em Unsubscribe interfaces. \item\end{DoxyCompactList}\item 
+virtual void {\bf activateInterfaces} ()
+\begin{DoxyCompactList}\small\item\em Activate all Port interfaces. \item\end{DoxyCompactList}\item 
+virtual void {\bf deactivateInterfaces} ()
+\begin{DoxyCompactList}\small\item\em Deactivate all Port interfaces. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+{\bf coil::Properties} {\bf m\_\-properties}
+\begin{DoxyCompactList}\small\item\em Properties. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+RT Conponent CORBA service/consumer Port. \doxyref{CorbaPort}{p.}{classRTC_1_1CorbaPort} is an implementation of the Port of RT-\/Component's that provides user-\/defined CORBA Object Service and \doxyref{Consumer}{p.}{classConsumer}. 
+
+RT-\/Component can provide user-\/defined CORBA serivces, which is called RT-\/Serivce (Provider), through the Ports. RT-\/Component can also provide place-\/holder, which is called RT-\/Serivce \doxyref{Consumer}{p.}{classConsumer}, to use other RT-\/Component's service. 
+
+The \doxyref{CorbaPort}{p.}{classRTC_1_1CorbaPort} can manage any number of Providers and Consumers, can associate Consumers with correspondent Providers when establishing connection among Ports. 
+
+Usually, \doxyref{CorbaPort}{p.}{classRTC_1_1CorbaPort} is used like the following.
+
+
+\begin{DoxyPre}
+ \doxyref{RTC::CorbaPort}{p.}{classRTC_1_1CorbaPort} m\_port0; // declaration of Port\end{DoxyPre}
+
+
+
+\begin{DoxyPre} MyService\_impl m\_mysvc0; // Serivce Provider that is provided by the Port
+ RTC::CorbaConsumer<YourService> m\_cons0; // \doxyref{Consumer}{p.}{classConsumer} of the Port\end{DoxyPre}
+
+
+
+\begin{DoxyPre} // register Service Provider to the Port
+ m\_port0.registerProvider("MyService0", "Generic", m\_mysvc0);
+ // register Service \doxyref{Consumer}{p.}{classConsumer} to the Port
+ m\_port0.registerConsumer("YourService0", "Generic", m\_cons0 );\end{DoxyPre}
+
+
+
+\begin{DoxyPre} // after connect established\end{DoxyPre}
+
+
+
+\begin{DoxyPre} m\_cons0->your\_service\_function(); // call a YourService's function\end{DoxyPre}
+
+
+
+\begin{DoxyPre} // in another component that is connected with the Port
+ m\_cons1->my\_service\_function(); // call a MyService's function
+ \end{DoxyPre}
+
+
+Registering Service Provider by \doxyref{registerProvider()}{p.}{classRTC_1_1CorbaPort_af9de5f6a90d3b0f6bfc07317e6a0d44f}, it can be used from other RT-\/Components. Registering Service \doxyref{Consumer}{p.}{classConsumer} by \doxyref{registerConsumer()}{p.}{classRTC_1_1CorbaPort_a70d4b49921c82916181aa681eea2ab2b}, other RT-\/Component's services can be used through the consumer object.
+
+PortInterfaceProfile is a one of the profile information to store Provider interface and \doxyref{Consumer}{p.}{classConsumer} interface information. Tools or other RTCs should call one of the Port::connect() with an appropriate ConnectorProfile.
+
+In addition, the instance name \char`\"{}$\ast$\char`\"{} declares a special type of instance.
+
+When the name of the PROVIDED type interface that is the provider interface is \char`\"{}$\ast$\char`\"{}, Provider interface's instance does not exist at the beginning of connection sequence. The instances will be created dynamically according to the consumer interface requirement at the connection sequence. Although the instance name does not exist at the beginning of connection sequence, the created providers shall publish its references to the ConnectorProfile with interface descriptor adequately in the interface publisher phase of the connection sequence.
+
+If REQUIRED interface name that is \doxyref{Consumer}{p.}{classConsumer} interface name is \char`\"{}$\ast$\char`\"{}, it shows that one \doxyref{Consumer}{p.}{classConsumer} interface is able to connect with multiple Provider interfaces. (This feature is not implemented.)
+
+The following describes the rules that specify interface connection between ports.
+
+The descriptor format of interfaces associated with Ports is declared as follows. Now some of interface properties are assumed as the followings.
+
+
+\begin{DoxyItemize}
+\item \doxyref{RTC}{p.}{namespaceRTC} instance name: rtc\_\-iname
+\item Port name: port\_\-name
+\item Interface polarity: if\_\-polarity
+\item Interface type name: if\_\-tname
+\item INterface instance name: if\_\-iname
+\end{DoxyItemize}
+
+The interface descriptors shall be declared as follows.
+
+$<$rtc\_\-iname$>$.port.$<$port\_\-name$>$.$<$if\_\-polarity$>$.$<$if\_\-tname$>$.$<$if\_\-iname$>$
+
+When PROVIDED that is Provider interface properties are the followings,
+
+
+\begin{DoxyItemize}
+\item rtc\_\-iname = MyComp0
+\item port\_\-name = myservice
+\item if\_\-polarity = provided
+\item if\_\-tname = echo\_\-interface
+\item if\_\-iname = echo\_\-interface2 the interface descriptor is here.
+\end{DoxyItemize}
+
+MyComp0.port.myservice.provided.echo\_\-interface.echo\_\-interface2
+
+And, when REQUIRED that is \doxyref{Consumer}{p.}{classConsumer} interfaces properties are the followings,
+
+
+\begin{DoxyItemize}
+\item rtc\_\-iname = YourComp0
+\item port\_\-name = yourservice
+\item if\_\-polarity = required
+\item if\_\-tname = hoge\_\-interface
+\item if\_\-iname = hoge\_\-interface1
+\end{DoxyItemize}
+
+interface descriptor is as follows.
+
+YourComp0.port.myservice.required.hoge\_\-interface.hoge\_\-inteface1
+
+Specific instance name descriptors that are dynamically generated at the connection time are defined here.
+
+
+\begin{DoxyItemize}
+\item $<$type\_\-name$>$$\ast$: \char`\"{}Dynamically generated\char`\"{} instance descriptor.
+\item $<$type\_\-name$>$+: \char`\"{}Incrementally generated\char`\"{} instance descriptor.
+\end{DoxyItemize}
+
+When the \char`\"{}Dynamically generated\char`\"{} instance descriptor: \char`\"{}$<$type\_\-name$>$$\ast$\char`\"{} is specified as interface descriptor that is required by consumers, the provider will generate a instance. If n consumers who demand a provider by the \char`\"{}$<$type\_\-name$>$\char`\"{} descriptor exist, the following relation which processes the call from these consumers by one provider will be established.
+
+
+\begin{DoxyPre}
+ consumer0 ]---<
+ consumer1 ]---<  O----[ provider0
+ consumer2 ]---<
+ \end{DoxyPre}
+
+
+On the other hand, when incremental generated type instance name descriptor \char`\"{}$<$type\_\-name$>$+\char`\"{} is specified as the provider interface descriptor whom consumers demand, provider's instances are dynamically generated for the number of the descriptors \char`\"{}$<$type\_\-name$>$+\char`\"{}. When n consumers who demand a provider by the descriptor \char`\"{}$<$type\_\-name$>$+\char`\"{} exist the following relations in which n providers process each call from the consumers will be established.
+
+
+\begin{DoxyPre}
+ consumer0 ]---<  O----[ provider0
+ consumer1 ]---<  O----[ provider1
+ consumer2 ]---<  O----[ provider2
+ \end{DoxyPre}
+
+
+Describing the appropriate interface mapping specification in the ConnectorProfile::properties, selective connections between providers/consumers interface can be established at the time of connection. However, when different \doxyref{RTC}{p.}{namespaceRTC} instances of the same instance name exist in a connection, since an interface descriptor uniqueness cannot be guaranteed, this connection mapping rules cannot be used.
+
+Here, assume that an interface descriptor is given as $<$if\_\-desc0$>$, $<$if\_\-desc1$>$, .... And assume that the key and the value of NVList in ConnectorProfile::properties are given as \char`\"{}key: value\char`\"{}.
+
+Now the case where the service ports of two components are connected is considered. When the service port of each component is the following,
+
+
+\begin{DoxyItemize}
+\item rtc\_\-iname: MyComp0 \par
+ port\_\-name: mycomp\_\-service \par
+ interfaces:
+\begin{DoxyItemize}
+\item if\_\-polarity: provided \par
+ if\_\-iname: echo0 \par
+ if\_\-tname: Echo
+\item if\_\-polarity: required \par
+ if\_\-iname: add0 \par
+ if\_\-tname: add
+\end{DoxyItemize}
+\end{DoxyItemize}
+
+
+\begin{DoxyItemize}
+\item rtc\_\-iname: YourComp0 \par
+ port\_\-name: yourcomp\_\-service \par
+ interfaces:
+\begin{DoxyItemize}
+\item if\_\-polarity: required \par
+ if\_\-iname: echo9 \par
+ if\_\-tname: Echo
+\item if\_\-polarity: provided \par
+ if\_\-iname: add9 \par
+ if\_\-tname: add
+\end{DoxyItemize}
+\end{DoxyItemize}
+
+
+\begin{DoxyPre}
+      MyComp0                                 YourComp0
+     \_\_\_\_\_\_\_ mycomp\_service   yourcomp\_service \_\_\_\_\_\_
+            |                                 |
+          |~~~|---O echo0         echo9 >---|~~~|
+          |   |---< add0          add9  O---|   |
+           ~T~                               ~T~
+            |                                 |
+ \end{DoxyPre}
+
+
+Assume that connection between echo0 (provider) of MyComp0 component and echo9 (consumer) of YourComp0 component, and add0 (consumer) of MyComp0 and add0 (provider) of YourComp0 is established. In this case, ConnectorProfile is set up as follows.
+
+
+\begin{DoxyPre}
+ ConnectorProfile:
+   name: any connector name
+   connector\_id: empty string
+   ports[]: mycomp\_service's reference, yourcomp\_service's reference
+   properties:
+     <add0>: <add9>
+     <echo9>: <echo0>
+ \end{DoxyPre}
+
+
+Please note that $<$add0$>$, $<$add9$>$, $<$echo0$>$ and $<$echo9$>$ are the following.
+
+
+\begin{DoxyPre}
+ <add0> is MyComp0.port.mycomp\_service.required.add.add0
+ <add9> is YourComp0.port.yourcomp\_service.provided.add.add9
+ <echo0> is MyComp0.port.mycomp\_service.provided.echo.echo0
+ <echo9> is YourComp0.port.yourcomp\_service.required.echo.echo9
+ \end{DoxyPre}
+
+
+In the connection process, the provider and the consumer of each port carries out the following process respectively in the virtual functions such as \doxyref{CorbaPort::publishInterfaces()}{p.}{classRTC_1_1CorbaPort_a71aa316c3324369c4462193d10a5d098} and CorbaPort::subscribeInerfaces().
+
+A provider sets its IOR string as a value and its interface descriptor as a key in the ConnectorProfile::properties in a \doxyref{publishInterfaces()}{p.}{classRTC_1_1CorbaPort_a71aa316c3324369c4462193d10a5d098} function. Since this interface descriptor's uniqueness is guaranteed in the current connector, the key of NameValue in the ConnectorProfile::properties is unique.
+
+[This functionalities are not implemented] The dynamically generated provider is processed according to the following procedure. The publishInterface() function scans dynamic instance descriptors such as \char`\"{}$<$type\_\-name$>$$\ast$\char`\"{} and \char`\"{}$<$type\_\-name$>$+\char`\"{} in the ConnectorProfile::properties. When the dynamic generation instance descriptor \char`\"{}$<$tupe\_\-name$>$$\ast$\char`\"{} exists, one instance of provider is generated, and its descriptor and its IOR string are set to ConnectorProfile::properties as the key and the value respectively. Simultaneously, in the ConnectorProfile::properties, all the instance descriptor with the dynamic generation instance name \char`\"{}$<$type\_\-name$>$$\ast$\char`\"{} will be replaced with newly generated instance descriptor.
+
+When the incremental dynamic generation instance descriptor exists, providers are generated for the number of the descriptors, and its descriptor and its IOR string are set to ConnectorProfile::properties as the key and the value respectively. Simultaneously, in the ConnectorProfile::properties, all the instance descriptor with the dynamic generation instance name \char`\"{}$<$type\_\-name$>$+\char`\"{} will be replaced with newly generated instance descriptor.
+
+The providers do not perform particular operation in \doxyref{subscribeInterfaces()}{p.}{classRTC_1_1CorbaPort_ad9a122cbe2f9892cc9555e805571742e} function.
+
+The consumers do not perform particular operation in publisherInterfaces() function.
+
+On the other hand, a consumer searches a key-\/value pair with the key of consumer interface descriptor, and if the pair exists, it obtains provider's descriptor from the value. The consumer searches again a key-\/value pair with the key of provider interface descriptor, and it obtains provider's reference and the reference is set as the consumer's service object. In addition, reserved string \char`\"{}nil\char`\"{} or \char`\"{}null\char`\"{} are used not to set specific provider.
+
+If consumer's interface descriptors does not exists in the ConnectorProfile::properties, the consumer searches a provider with same type name and instance name, and its reference is set to the consumer. This rule is for only backward compatibility, and it is not recommended from version 1.0.
+
+The correspondence of a provider versus a consumer does not need to be one to one, and the case of one provider to n-\/consumers and the case of m-\/providers to one consumer are allowed. The one provider to n-\/consumers case can be realized by the above mentioned methods. The one consumer to m-\/provider case can be specified to set the consumer descriptor and comma-\/separated provider descriptors into the key and the value respectively.
+
+The following option is available to specify the strictness of interfaces connection.
+
+port.connection.strictness: strict, best\_\-effort
+
+strict: The connection is established, if only all the specified consumers are set appropriate references and narrowed successfully.
+
+best\_\-effort: The connection is established without any errors, even if appropriate reference does not exist or reference narrowing fails.
+
+\begin{DoxySince}{Since}
+0.4.0 
+\end{DoxySince}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{RTC::CorbaPort@{RTC::CorbaPort}!CorbaPort@{CorbaPort}}
+\index{CorbaPort@{CorbaPort}!RTC::CorbaPort@{RTC::CorbaPort}}
+\subsubsection[{CorbaPort}]{\setlength{\rightskip}{0pt plus 5cm}RTC::CorbaPort::CorbaPort (const char $\ast$ {\em name})}\label{classRTC_1_1CorbaPort_a2bbb2b39d9df5f82c61315fe3fa5cf7a}
+
+
+Constructor. 
+
+In the ctor, a given name is set into \doxyref{PortBase}{p.}{classRTC_1_1PortBase}, and the following property is added to the PortProfile::properties,
+
+
+\begin{DoxyItemize}
+\item port.port\_\-type: \char`\"{}CorbaPort\char`\"{}
+\end{DoxyItemize}
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em name}]The name of Port \end{DoxyParams}
+\index{RTC::CorbaPort@{RTC::CorbaPort}!$\sim$CorbaPort@{$\sim$CorbaPort}}
+\index{$\sim$CorbaPort@{$\sim$CorbaPort}!RTC::CorbaPort@{RTC::CorbaPort}}
+\subsubsection[{$\sim$CorbaPort}]{\setlength{\rightskip}{0pt plus 5cm}virtual RTC::CorbaPort::$\sim$CorbaPort (void)\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classRTC_1_1CorbaPort_a7aa53f50989ea68ca419b9f6d5a8cfcc}
+
+
+Virtual destructor. 
+
+
+
+\subsection{Member Function Documentation}
+\index{RTC::CorbaPort@{RTC::CorbaPort}!activateInterfaces@{activateInterfaces}}
+\index{activateInterfaces@{activateInterfaces}!RTC::CorbaPort@{RTC::CorbaPort}}
+\subsubsection[{activateInterfaces}]{\setlength{\rightskip}{0pt plus 5cm}virtual void RTC::CorbaPort::activateInterfaces ()\hspace{0.3cm}{\ttfamily  [protected, virtual]}}\label{classRTC_1_1CorbaPort_a1b9efe804a293b2c38a9cbe3b5ba54a0}
+
+
+Activate all Port interfaces. 
+
+This operation activate all interfaces that is registered in the ports. 
+
+Implements {\bf RTC::PortBase} \doxyref{}{p.}{classRTC_1_1PortBase_ad779347bae007555968dda9e78004e34}.
+
+\index{RTC::CorbaPort@{RTC::CorbaPort}!deactivateInterfaces@{deactivateInterfaces}}
+\index{deactivateInterfaces@{deactivateInterfaces}!RTC::CorbaPort@{RTC::CorbaPort}}
+\subsubsection[{deactivateInterfaces}]{\setlength{\rightskip}{0pt plus 5cm}virtual void RTC::CorbaPort::deactivateInterfaces ()\hspace{0.3cm}{\ttfamily  [protected, virtual]}}\label{classRTC_1_1CorbaPort_a4c25f8e04aa9cceff24c31ea3fec4e5b}
+
+
+Deactivate all Port interfaces. 
+
+This operation deactivate all interfaces that is registered in the ports. 
+
+Implements {\bf RTC::PortBase} \doxyref{}{p.}{classRTC_1_1PortBase_a8dfb8a33b92b9fc9b6c070df2def633f}.
+
+\index{RTC::CorbaPort@{RTC::CorbaPort}!init@{init}}
+\index{init@{init}!RTC::CorbaPort@{RTC::CorbaPort}}
+\subsubsection[{init}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::CorbaPort::init ({\bf coil::Properties} \& {\em prop})}\label{classRTC_1_1CorbaPort_a5e62ee7818cafc02a3e7002a3742daab}
+
+
+Initializing properties. 
+
+This operation initializes outport's properties. If a property \char`\"{}connection\_\-limit\char`\"{} is set and appropriate value is set to this property value, the number of maximum connection is set as this value. If the property does not exist or invalid value is set to this property, the maximum number of connection will be set unlimited.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em prop}]properties of the \doxyref{CorbaPort}{p.}{classRTC_1_1CorbaPort} \end{DoxyParams}
+\index{RTC::CorbaPort@{RTC::CorbaPort}!publishInterfaces@{publishInterfaces}}
+\index{publishInterfaces@{publishInterfaces}!RTC::CorbaPort@{RTC::CorbaPort}}
+\subsubsection[{publishInterfaces}]{\setlength{\rightskip}{0pt plus 5cm}virtual ReturnCode\_\-t RTC::CorbaPort::publishInterfaces (ConnectorProfile \& {\em connector\_\-profile})\hspace{0.3cm}{\ttfamily  [protected, virtual]}}\label{classRTC_1_1CorbaPort_a71aa316c3324369c4462193d10a5d098}
+
+
+Publish information about interfaces. 
+
+This operation publishes Provider interfaces information, which is owned by this port, to the other Ports via ConnectorProfile::properties. Now it is assumed \doxyref{RTC}{p.}{namespaceRTC} instance name and other information is as follows,
+
+
+\begin{DoxyItemize}
+\item \doxyref{RTC}{p.}{namespaceRTC} instance name: rtc\_\-iname
+\item Port name: port\_\-name
+\item Interface polarity: if\_\-polarity
+\item Interface type name: if\_\-tname
+\item Interface instance name: if\_\-iname
+\end{DoxyItemize}
+
+the following values are stored as the \char`\"{}name\char`\"{} and the \char`\"{}value\char`\"{} of the NameValue typee element in ConnectorProfile::properties.
+
+
+\begin{DoxyItemize}
+\item name $<$rtc\_\-iname$>$.port.$<$port\_\-name$>$.provided.$<$if\_\-tname$>$.$<$if\_\-iname$>$
+\item value IOR string value of interface reference
+\end{DoxyItemize}
+
+In addition, although the following NameValue values are also stored for the backward compatibility, this will be deleted in the future version.
+
+
+\begin{DoxyItemize}
+\item name port.$<$if\_\-tname$>$.$<$if\_\-iname$>$
+\item value IOR string value of interface reference
+\end{DoxyItemize}
+
+These values are stored in the ConnectorProfile::properties and are propagated to the other Ports. If the \doxyref{Consumer}{p.}{classConsumer} interface exists that requires this Provider interface, it will retrieve reference from the ConnectorProfile and utilize it.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em connector\_\-profile}]Connector profile \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The return code of ReturnCode\_\-t type 
+\end{DoxyReturn}
+
+
+Implements {\bf RTC::PortBase} \doxyref{}{p.}{classRTC_1_1PortBase_acf31878c5912f56c122aaa2310e182de}.
+
+\index{RTC::CorbaPort@{RTC::CorbaPort}!registerConsumer@{registerConsumer}}
+\index{registerConsumer@{registerConsumer}!RTC::CorbaPort@{RTC::CorbaPort}}
+\subsubsection[{registerConsumer}]{\setlength{\rightskip}{0pt plus 5cm}bool RTC::CorbaPort::registerConsumer (const char $\ast$ {\em instance\_\-name}, \/  const char $\ast$ {\em type\_\-name}, \/  {\bf CorbaConsumerBase} \& {\em consumer})}\label{classRTC_1_1CorbaPort_a70d4b49921c82916181aa681eea2ab2b}
+
+
+Register the consumer. 
+
+This operation registers a consumer, which is a service placeholder this port requires. These are associated internally with specified instance\_\-name, type\_\-name and \doxyref{Consumer}{p.}{classConsumer} itself to the argument as service's instance name and its type name associated with \doxyref{Consumer}{p.}{classConsumer}. The service Provider interface' references will be set automatically to the \doxyref{Consumer}{p.}{classConsumer} Interface object when connections are established, according to the rules that are described at the subscribeInterface() function's documentation.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em instance\_\-name}]Instance name of the service \doxyref{Consumer}{p.}{classConsumer} requires \item[{\em type\_\-name}]Type name of the service \doxyref{Consumer}{p.}{classConsumer} requires \item[{\em consumer}]CORBA service consumer\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+False would be returned if the same instance\_\-name was registered 
+\end{DoxyReturn}
+\index{RTC::CorbaPort@{RTC::CorbaPort}!registerProvider@{registerProvider}}
+\index{registerProvider@{registerProvider}!RTC::CorbaPort@{RTC::CorbaPort}}
+\subsubsection[{registerProvider}]{\setlength{\rightskip}{0pt plus 5cm}bool RTC::CorbaPort::registerProvider (const char $\ast$ {\em instance\_\-name}, \/  const char $\ast$ {\em type\_\-name}, \/  PortableServer::RefCountServantBase \& {\em provider})}\label{classRTC_1_1CorbaPort_af9de5f6a90d3b0f6bfc07317e6a0d44f}
+
+
+Register the provider. 
+
+This operation registers a servant, which is provided in this Port, to the Port. The servant is associated with \char`\"{}instance\_\-name\char`\"{} and \char`\"{}type\_\-name\char`\"{} as the instance name of the servant and as the type name of the servant. A given servant will be stored in the \doxyref{CorbaPort}{p.}{classRTC_1_1CorbaPort}, and this is registered as RTC::PROVIDED interface into the PortInterfaceProfile.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em instance\_\-name}]Instance name of servant \item[{\em type\_\-name}]Type name of the servant \item[{\em provider}]CORBA servant\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Return false if the same name of instance\_\-name is already registered. 
+\end{DoxyReturn}
+\index{RTC::CorbaPort@{RTC::CorbaPort}!subscribeInterfaces@{subscribeInterfaces}}
+\index{subscribeInterfaces@{subscribeInterfaces}!RTC::CorbaPort@{RTC::CorbaPort}}
+\subsubsection[{subscribeInterfaces}]{\setlength{\rightskip}{0pt plus 5cm}virtual ReturnCode\_\-t RTC::CorbaPort::subscribeInterfaces (const ConnectorProfile \& {\em connector\_\-profile})\hspace{0.3cm}{\ttfamily  [protected, virtual]}}\label{classRTC_1_1CorbaPort_ad9a122cbe2f9892cc9555e805571742e}
+
+
+Subscribe to interface. 
+
+Retrieve information associated with Provider matches \doxyref{Consumer}{p.}{classConsumer} owned by this port and set the object reference to \doxyref{Consumer}{p.}{classConsumer}.
+
+Now, \doxyref{Consumer}{p.}{classConsumer} is registered as the following: 
+\begin{DoxyPre}
+  PortInterfaceProfile
+  \{
+    instance\_name = "PA10\_0";
+    type\_name     = "Manipulator";
+    polarity      = REQUIRED;
+  \}
+ \end{DoxyPre}
+ Find the object reference of Serivce Provider that is registered as the following of other ports: 
+\begin{DoxyPre}
+  PortInterfaceProfile
+  \{
+    instance\_name = "PA10\_0";
+    type\_name     = "Manipulator";
+    polarity      = PROVIDED;
+  \}
+ \end{DoxyPre}
+ and set to \doxyref{Consumer}{p.}{classConsumer}. In fact, find NameValue that is registered as the following to ConnectorProfile::properties: 
+\begin{DoxyPre}
+ NameValue = \{ "port.Manipulator.PA10\_0": <Object reference>=""> \}
+ \end{DoxyPre}
+ and set the object reference to \doxyref{Consumer}{p.}{classConsumer}.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em connector\_\-profile}]Connector profile\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The return code of ReturnCode\_\-t type 
+\end{DoxyReturn}
+
+
+Implements {\bf RTC::PortBase} \doxyref{}{p.}{classRTC_1_1PortBase_afce755069836c1ee637784e2a9e5a02b}.
+
+\index{RTC::CorbaPort@{RTC::CorbaPort}!unsubscribeInterfaces@{unsubscribeInterfaces}}
+\index{unsubscribeInterfaces@{unsubscribeInterfaces}!RTC::CorbaPort@{RTC::CorbaPort}}
+\subsubsection[{unsubscribeInterfaces}]{\setlength{\rightskip}{0pt plus 5cm}virtual void RTC::CorbaPort::unsubscribeInterfaces (const ConnectorProfile \& {\em connector\_\-profile})\hspace{0.3cm}{\ttfamily  [protected, virtual]}}\label{classRTC_1_1CorbaPort_a4776e122a3066d9e3a3e5d1e5da45b98}
+
+
+Unsubscribe interfaces. 
+
+Release all Objects that was set in \doxyref{Consumer}{p.}{classConsumer} associated with the given ConnectorProfile.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em connector\_\-profile}]Connector profile \end{DoxyParams}
+
+
+Implements {\bf RTC::PortBase} \doxyref{}{p.}{classRTC_1_1PortBase_a8a843a387e99d4d4daa6e829eb1db569}.
+
+
+
+\subsection{Member Data Documentation}
+\index{RTC::CorbaPort@{RTC::CorbaPort}!m\_\-properties@{m\_\-properties}}
+\index{m\_\-properties@{m\_\-properties}!RTC::CorbaPort@{RTC::CorbaPort}}
+\subsubsection[{m\_\-properties}]{\setlength{\rightskip}{0pt plus 5cm}{\bf coil::Properties} {\bf RTC::CorbaPort::m\_\-properties}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC_1_1CorbaPort_afb24858ffd644ff6d52bb422cfb442da}
+
+
+Properties. 
+

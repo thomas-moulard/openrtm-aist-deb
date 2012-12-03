@@ -1,0 +1,120 @@
+\section{coil::Mutex Class Reference}
+\label{classcoil_1_1Mutex}\index{coil::Mutex@{coil::Mutex}}
+
+
+\doxyref{Mutex}{p.}{classcoil_1_1Mutex} class.  
+
+
+
+
+{\ttfamily \#include $<$Mutex.h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Mutex} (const char $\ast$const name=0)
+\begin{DoxyCompactList}\small\item\em Constructor. \item\end{DoxyCompactList}\item 
+{\bf $\sim$Mutex} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \item\end{DoxyCompactList}\item 
+void {\bf lock} ()
+\begin{DoxyCompactList}\small\item\em Mutual exclusion lock. \item\end{DoxyCompactList}\item 
+bool {\bf trylock} ()
+\begin{DoxyCompactList}\small\item\em Mutual exclusion non-\/blocking lock. \item\end{DoxyCompactList}\item 
+void {\bf unlock} ()
+\begin{DoxyCompactList}\small\item\em Mutual exclusion unlock. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+pthread\_\-mutex\_\-t {\bf mutex\_\-}
+\begin{DoxyCompactList}\small\item\em Mutual exclusion object. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\doxyref{Mutex}{p.}{classcoil_1_1Mutex} class. 
+
+\subsection{Constructor \& Destructor Documentation}
+\index{coil::Mutex@{coil::Mutex}!Mutex@{Mutex}}
+\index{Mutex@{Mutex}!coil::Mutex@{coil::Mutex}}
+\subsubsection[{Mutex}]{\setlength{\rightskip}{0pt plus 5cm}coil::Mutex::Mutex (const char $\ast$const  {\em name} = {\ttfamily 0})\hspace{0.3cm}{\ttfamily  [inline]}}\label{classcoil_1_1Mutex_a45a1dccbb0d845c4668d832830b3381e}
+
+
+Constructor. 
+
+Constructor
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em name}]Object name \end{DoxyParams}
+
+
+References mutex\_\-.
+
+\index{coil::Mutex@{coil::Mutex}!$\sim$Mutex@{$\sim$Mutex}}
+\index{$\sim$Mutex@{$\sim$Mutex}!coil::Mutex@{coil::Mutex}}
+\subsubsection[{$\sim$Mutex}]{\setlength{\rightskip}{0pt plus 5cm}coil::Mutex::$\sim$Mutex ()\hspace{0.3cm}{\ttfamily  [inline]}}\label{classcoil_1_1Mutex_ace6ccbe6d64be438633e5fdd33642606}
+
+
+Destructor. 
+
+Destructor 
+
+References mutex\_\-.
+
+
+
+\subsection{Member Function Documentation}
+\index{coil::Mutex@{coil::Mutex}!lock@{lock}}
+\index{lock@{lock}!coil::Mutex@{coil::Mutex}}
+\subsubsection[{lock}]{\setlength{\rightskip}{0pt plus 5cm}void coil::Mutex::lock ()\hspace{0.3cm}{\ttfamily  [inline]}}\label{classcoil_1_1Mutex_abd97daab1969a6cbf0e65ddf9944f669}
+
+
+Mutual exclusion lock. 
+
+Lock the Mutual exclusion. 
+
+References mutex\_\-.
+
+
+
+Referenced by coil::log\_\-stream$<$ \_\-CharT, \_\-Traits $>$::lock().
+
+\index{coil::Mutex@{coil::Mutex}!trylock@{trylock}}
+\index{trylock@{trylock}!coil::Mutex@{coil::Mutex}}
+\subsubsection[{trylock}]{\setlength{\rightskip}{0pt plus 5cm}bool coil::Mutex::trylock ()\hspace{0.3cm}{\ttfamily  [inline]}}\label{classcoil_1_1Mutex_aaf471565209e694eb5cd308f0c0dabdd}
+
+
+Mutual exclusion non-\/blocking lock. 
+
+Lock the Mutual exclusion by non-\/blocking. 
+
+References mutex\_\-.
+
+\index{coil::Mutex@{coil::Mutex}!unlock@{unlock}}
+\index{unlock@{unlock}!coil::Mutex@{coil::Mutex}}
+\subsubsection[{unlock}]{\setlength{\rightskip}{0pt plus 5cm}void coil::Mutex::unlock ()\hspace{0.3cm}{\ttfamily  [inline]}}\label{classcoil_1_1Mutex_aae9502c922762c052edafdeb53aa9baa}
+
+
+Mutual exclusion unlock. 
+
+Unlock the Mutual exclusion. 
+
+References mutex\_\-.
+
+
+
+Referenced by coil::log\_\-stream$<$ \_\-CharT, \_\-Traits $>$::unlock().
+
+
+
+\subsection{Member Data Documentation}
+\index{coil::Mutex@{coil::Mutex}!mutex\_\-@{mutex\_\-}}
+\index{mutex\_\-@{mutex\_\-}!coil::Mutex@{coil::Mutex}}
+\subsubsection[{mutex\_\-}]{\setlength{\rightskip}{0pt plus 5cm}pthread\_\-mutex\_\-t {\bf coil::Mutex::mutex\_\-}}\label{classcoil_1_1Mutex_a6ae0f7d95d947ca3a333fc5628225ab7}
+
+
+Mutual exclusion object. 
+
+
+
+Referenced by lock(), Mutex(), trylock(), unlock(), and $\sim$Mutex().
+

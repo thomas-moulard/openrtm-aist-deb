@@ -1,0 +1,211 @@
+\section{ネームスペース CORBA\_\-SeqUtil}
+\label{namespaceCORBA__SeqUtil}\index{CORBA\_\-SeqUtil@{CORBA\_\-SeqUtil}}
+
+
+CORBA sequence ヘルパーテンプレート関数.  
+
+
+\subsection*{関数}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$class CorbaSequence , class Functor $>$ }\\Functor {\bf for\_\-each} (CorbaSequence \&seq, Functor f)
+\begin{DoxyCompactList}\small\item\em CORBA sequence に対して functor を適用する. \item\end{DoxyCompactList}\item 
+{\footnotesize template$<$class CorbaSequence , class Functor $>$ }\\CORBA::Long {\bf find} (const CorbaSequence \&seq, Functor f)
+\begin{DoxyCompactList}\small\item\em CORBA sequence の中から functor に適合する要素のインデックスを返す. \item\end{DoxyCompactList}\item 
+{\footnotesize template$<$class CorbaSequence , class SequenceElement $>$ }\\void {\bf push\_\-back} (CorbaSequence \&seq, SequenceElement elem)
+\begin{DoxyCompactList}\small\item\em CORBA sequence の最後に要素を追加する. \item\end{DoxyCompactList}\item 
+{\footnotesize template$<$class CorbaSequence $>$ }\\void {\bf push\_\-back\_\-list} (CorbaSequence \&seq1, const CorbaSequence \&seq2)
+\begin{DoxyCompactList}\small\item\em CORBA sequence をマージする. \item\end{DoxyCompactList}\item 
+{\footnotesize template$<$class CorbaSequence , class SequenceElement $>$ }\\void {\bf insert} (CorbaSequence \&seq, SequenceElement \&elem, CORBA::ULong index)
+\begin{DoxyCompactList}\small\item\em CORBA sequence に要素を挿入する. \item\end{DoxyCompactList}\item 
+{\footnotesize template$<$class CorbaSequence , class SequenceElement $>$ }\\SequenceElement \& {\bf front} (CorbaSequence \&seq)
+\begin{DoxyCompactList}\small\item\em CORBA sequence の先頭要素を取得する. \item\end{DoxyCompactList}\item 
+{\footnotesize template$<$class CorbaSequence , class SequenceElement $>$ }\\SequenceElement \& {\bf back} (CorbaSequence \&seq)
+\begin{DoxyCompactList}\small\item\em CORBA sequence の末尾要素を取得する. \item\end{DoxyCompactList}\item 
+{\footnotesize template$<$class CorbaSequence $>$ }\\void {\bf erase} (CorbaSequence \&seq, CORBA::ULong index)
+\begin{DoxyCompactList}\small\item\em CORBA sequence の指定された位置の要素を削除する. \item\end{DoxyCompactList}\item 
+{\footnotesize template$<$class CorbaSequence , class Functor $>$ }\\void {\bf erase\_\-if} (CorbaSequence \&seq, Functor f)
+\begin{DoxyCompactList}\small\item\em シーケンスの要素を述語にしたがって削除する \item\end{DoxyCompactList}\item 
+{\footnotesize template$<$class CorbaSequence $>$ }\\void {\bf clear} (CorbaSequence \&seq)
+\begin{DoxyCompactList}\small\item\em CORBA sequence の全要素を削除. \item\end{DoxyCompactList}\item 
+{\footnotesize template$<$class CorbaRefSequence $>$ }\\{\bf coil::vstring} {\bf refToVstring} (const CorbaRefSequence \&objlist)
+\end{DoxyCompactItemize}
+
+
+\subsection{説明}
+CORBA sequence ヘルパーテンプレート関数. CORBA sequence に対して以下のユーティリティテンプレート関数を提供する。 操作はスレッドセーフではないので、スレッドセーフに操作したい場合は、 対象となるシーケンス値を適切にmutex等で保護する必要がある。
+
+
+\begin{DoxyItemize}
+\item \doxyref{for\_\-each()}{p.}{namespaceCORBA__SeqUtil_a9d725601baae2cbaa4acae40275b2923}
+\item \doxyref{find()}{p.}{namespaceCORBA__SeqUtil_a39f5fe8146a038c72e6fa28eb5d93094}
+\item \doxyref{push\_\-back()}{p.}{namespaceCORBA__SeqUtil_a143f1f7c4c9cddca4062cbc659df452f}
+\item \doxyref{insert()}{p.}{namespaceCORBA__SeqUtil_a3f09eebbe1583aafa13fe3a16e245c69}
+\item \doxyref{front()}{p.}{namespaceCORBA__SeqUtil_ab3a1d8141eff8007e7231ea981c03e6d}
+\item \doxyref{back()}{p.}{namespaceCORBA__SeqUtil_a0341640da347b7e3032f52a0fe9e74cc}
+\item \doxyref{erase()}{p.}{namespaceCORBA__SeqUtil_ac9f11300b2cec13710c756530e16e21a}
+\item \doxyref{clear()}{p.}{namespaceCORBA__SeqUtil_a47b903d4a28a31bed2b4aa1c6a3b300f} 
+\end{DoxyItemize}
+
+\subsection{関数}
+\index{CORBA\_\-SeqUtil@{CORBA\_\-SeqUtil}!back@{back}}
+\index{back@{back}!CORBA_SeqUtil@{CORBA\_\-SeqUtil}}
+\subsubsection[{back}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class CorbaSequence , class SequenceElement $>$ SequenceElement\& CORBA\_\-SeqUtil::back (CorbaSequence \& {\em seq})\hspace{0.3cm}{\ttfamily  [inline]}}\label{namespaceCORBA__SeqUtil_a0341640da347b7e3032f52a0fe9e74cc}
+
+
+CORBA sequence の末尾要素を取得する. 
+
+CORBA sequence の末尾要素を取得する。 seq[seq.length() -\/ 1] と同じ。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em seq}]要素を取得する CORBA sequence\end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+取得した要素 
+\end{DoxyReturn}
+\index{CORBA\_\-SeqUtil@{CORBA\_\-SeqUtil}!clear@{clear}}
+\index{clear@{clear}!CORBA_SeqUtil@{CORBA\_\-SeqUtil}}
+\subsubsection[{clear}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class CorbaSequence $>$ void CORBA\_\-SeqUtil::clear (CorbaSequence \& {\em seq})\hspace{0.3cm}{\ttfamily  [inline]}}\label{namespaceCORBA__SeqUtil_a47b903d4a28a31bed2b4aa1c6a3b300f}
+
+
+CORBA sequence の全要素を削除. 
+
+CORBA sequence の全要素を削除する。 seq.length(0) と同じ。 \index{CORBA\_\-SeqUtil@{CORBA\_\-SeqUtil}!erase@{erase}}
+\index{erase@{erase}!CORBA_SeqUtil@{CORBA\_\-SeqUtil}}
+\subsubsection[{erase}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class CorbaSequence $>$ void CORBA\_\-SeqUtil::erase (CorbaSequence \& {\em seq}, \/  CORBA::ULong {\em index})\hspace{0.3cm}{\ttfamily  [inline]}}\label{namespaceCORBA__SeqUtil_ac9f11300b2cec13710c756530e16e21a}
+
+
+CORBA sequence の指定された位置の要素を削除する. 
+
+指定されたインデックスの要素を削除する。 削除された要素は詰められ、sequence の長さは1減る。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em seq}]要素を削除する CORBA sequence \item[{\em index}]削除する要素のインデックス \end{DoxyParams}
+
+
+参照元 erase\_\-if().
+
+\index{CORBA\_\-SeqUtil@{CORBA\_\-SeqUtil}!erase\_\-if@{erase\_\-if}}
+\index{erase\_\-if@{erase\_\-if}!CORBA_SeqUtil@{CORBA\_\-SeqUtil}}
+\subsubsection[{erase\_\-if}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class CorbaSequence , class Functor $>$ void CORBA\_\-SeqUtil::erase\_\-if (CorbaSequence \& {\em seq}, \/  Functor {\em f})\hspace{0.3cm}{\ttfamily  [inline]}}\label{namespaceCORBA__SeqUtil_a6a1bb134e8e9b0af545f8ce9f7495770}
+
+
+シーケンスの要素を述語にしたがって削除する 
+
+このオペレーションは述語として与えられた関数オブジェクトの 条件が真のとき、そのシーケンスの要素を削除する。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em seq}]要素検索対象の CORBA sequence \item[{\em f}]削除するシーケンスを決定する術語 \end{DoxyParams}
+
+
+参照先 erase(), と find().
+
+\index{CORBA\_\-SeqUtil@{CORBA\_\-SeqUtil}!find@{find}}
+\index{find@{find}!CORBA_SeqUtil@{CORBA\_\-SeqUtil}}
+\subsubsection[{find}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class CorbaSequence , class Functor $>$ CORBA::Long CORBA\_\-SeqUtil::find (const CorbaSequence \& {\em seq}, \/  Functor {\em f})\hspace{0.3cm}{\ttfamily  [inline]}}\label{namespaceCORBA__SeqUtil_a39f5fe8146a038c72e6fa28eb5d93094}
+
+
+CORBA sequence の中から functor に適合する要素のインデックスを返す. 
+
+CORBA sequence 全ての要素に対して、与えられた functor を適用し、 functor が true を返すようそのインデックスを返す。 functor は bool functor(const CORBA sequence の要素) の形式をとり、 適合する要素に対して true を返す必要がある。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em seq}]Functor を適用する CORBA sequence \item[{\em f}]CORBA sequence から要素を見つける Functor\end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+Functor に適合する要素のインデックス。 見つからないときは -\/1 を返す。 
+\end{DoxyReturn}
+
+
+参照元 erase\_\-if().
+
+\index{CORBA\_\-SeqUtil@{CORBA\_\-SeqUtil}!for\_\-each@{for\_\-each}}
+\index{for\_\-each@{for\_\-each}!CORBA_SeqUtil@{CORBA\_\-SeqUtil}}
+\subsubsection[{for\_\-each}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class CorbaSequence , class Functor $>$ Functor CORBA\_\-SeqUtil::for\_\-each (CorbaSequence \& {\em seq}, \/  Functor {\em f})\hspace{0.3cm}{\ttfamily  [inline]}}\label{namespaceCORBA__SeqUtil_a9d725601baae2cbaa4acae40275b2923}
+
+
+CORBA sequence に対して functor を適用する. 
+
+CORBA sequence 全ての要素に対して、与えられた functor を適用する。 functor は void functor(CORBA sequence の要素) の形式をとる必要がある。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em seq}]Functor を適用する CORBA sequence \item[{\em f}]CORBA sequence の要素を処理する Functor\end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+全ての要素を処理した Functor
+\end{DoxyReturn}
+\begin{DoxySince}{から}
+0.4.0 
+\end{DoxySince}
+
+
+参照元 RTC::OutPort$<$ DataType $>$::write().
+
+\index{CORBA\_\-SeqUtil@{CORBA\_\-SeqUtil}!front@{front}}
+\index{front@{front}!CORBA_SeqUtil@{CORBA\_\-SeqUtil}}
+\subsubsection[{front}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class CorbaSequence , class SequenceElement $>$ SequenceElement\& CORBA\_\-SeqUtil::front (CorbaSequence \& {\em seq})\hspace{0.3cm}{\ttfamily  [inline]}}\label{namespaceCORBA__SeqUtil_ab3a1d8141eff8007e7231ea981c03e6d}
+
+
+CORBA sequence の先頭要素を取得する. 
+
+CORBA sequence の先頭要素を取得する。 seq[0] と同じ。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em seq}]要素を取得する CORBA sequence\end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+取得した要素 
+\end{DoxyReturn}
+\index{CORBA\_\-SeqUtil@{CORBA\_\-SeqUtil}!insert@{insert}}
+\index{insert@{insert}!CORBA_SeqUtil@{CORBA\_\-SeqUtil}}
+\subsubsection[{insert}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class CorbaSequence , class SequenceElement $>$ void CORBA\_\-SeqUtil::insert (CorbaSequence \& {\em seq}, \/  SequenceElement \& {\em elem}, \/  CORBA::ULong {\em index})\hspace{0.3cm}{\ttfamily  [inline]}}\label{namespaceCORBA__SeqUtil_a3f09eebbe1583aafa13fe3a16e245c69}
+
+
+CORBA sequence に要素を挿入する. 
+
+CORBA sequence の index の位置に要素を加える。 index が 与えられた　CORBA sequence の最大の index より大きい場合 最後の要素として加えられる。 CORBA sequence の長さは自動的に拡張される。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em seq}]要素を追加する CORBA sequence \item[{\em elem}]追加する要素 \item[{\em index}]要素を追加する位置 \end{DoxyParams}
+
+
+参照先 push\_\-back().
+
+\index{CORBA\_\-SeqUtil@{CORBA\_\-SeqUtil}!push\_\-back@{push\_\-back}}
+\index{push\_\-back@{push\_\-back}!CORBA_SeqUtil@{CORBA\_\-SeqUtil}}
+\subsubsection[{push\_\-back}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class CorbaSequence , class SequenceElement $>$ void CORBA\_\-SeqUtil::push\_\-back (CorbaSequence \& {\em seq}, \/  SequenceElement {\em elem})\hspace{0.3cm}{\ttfamily  [inline]}}\label{namespaceCORBA__SeqUtil_a143f1f7c4c9cddca4062cbc659df452f}
+
+
+CORBA sequence の最後に要素を追加する. 
+
+CORBA sequence の最後に与えられた要素を追加する。 CORBA sequence の長さは自動的に拡張される。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em seq}]要素を追加する CORBA sequence \item[{\em elem}]追加する要素 \end{DoxyParams}
+
+
+参照元 RTC::PortBase::addProperty(), insert(), と RTC::RTObject\_\-impl::ec\_\-copy::operator()().
+
+\index{CORBA\_\-SeqUtil@{CORBA\_\-SeqUtil}!push\_\-back\_\-list@{push\_\-back\_\-list}}
+\index{push\_\-back\_\-list@{push\_\-back\_\-list}!CORBA_SeqUtil@{CORBA\_\-SeqUtil}}
+\subsubsection[{push\_\-back\_\-list}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class CorbaSequence $>$ void CORBA\_\-SeqUtil::push\_\-back\_\-list (CorbaSequence \& {\em seq1}, \/  const CorbaSequence \& {\em seq2})\hspace{0.3cm}{\ttfamily  [inline]}}\label{namespaceCORBA__SeqUtil_a390b6504b9fae14e99f5fb078624d0a2}
+
+
+CORBA sequence をマージする. 
+
+与えられた CORBA sequence をマージする。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em seq1}]マージされる CORBA sequence \item[{\em seq2}]マージされる CORBA sequence \end{DoxyParams}
+\index{CORBA\_\-SeqUtil@{CORBA\_\-SeqUtil}!refToVstring@{refToVstring}}
+\index{refToVstring@{refToVstring}!CORBA_SeqUtil@{CORBA\_\-SeqUtil}}
+\subsubsection[{refToVstring}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class CorbaRefSequence $>$ {\bf coil::vstring} CORBA\_\-SeqUtil::refToVstring (const CorbaRefSequence \& {\em objlist})\hspace{0.3cm}{\ttfamily  [inline]}}\label{namespaceCORBA__SeqUtil_a42a859b3b3afede357a20f8a3a62dc6b}
+
+
+参照先 RTC::Manager::instance().
+

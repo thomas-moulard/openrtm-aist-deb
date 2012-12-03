@@ -1,0 +1,198 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<title>OpenRTM: atomic.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<!-- 作成： Doxygen 1.6.3 -->
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="index.html"><span>メインページ</span></a></li>
+      <li><a href="namespaces.html"><span>ネームスペース</span></a></li>
+      <li><a href="annotated.html"><span>クラス</span></a></li>
+      <li class="current"><a href="files.html"><span>ファイル</span></a></li>
+    </ul>
+  </div>
+  <div class="tabs">
+    <ul>
+      <li><a href="files.html"><span>ファイル一覧</span></a></li>
+      <li><a href="globals.html"><span>ファイルメンバ</span></a></li>
+    </ul>
+  </div>
+</div>
+<div class="contents">
+<h1>atomic.h</h1>
+<p>atomic add func  
+<a href="#_details">[詳細]</a></p>
+<code>#include &lt;<a class="el" href="Mutex_8h_source.html">coil/Mutex.h</a>&gt;</code><br/>
+<code>#include &lt;<a class="el" href="Guard_8h_source.html">coil/Guard.h</a>&gt;</code><br/>
+
+<p><a href="atomic_8h_source.html">ソースコードを見る。</a></p>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr><td colspan="2"><h2>マクロ定義</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="atomic_8h.html#aa3a3b38e82e6515e0b984532de4ca8b6">COIL_USES_ATOMIC_OP</a>&nbsp;&nbsp;&nbsp;<a class="el" href="classcoil_1_1Mutex.html">coil::Mutex</a> __mutex;</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="atomic_8h.html#a0fe981f75849b7865467ecdbc77c7419">atomic_add</a>(x, y)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="atomic_8h.html#a5cd66855be35253ecf82acb1907af9f2">atomic_incr</a>(x)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="atomic_8h.html#af939354fe93c9e389cb5da6dfd505bd7">atomic_decr</a>(x)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="atomic_8h.html#aa51b8e53a4099668fdef2ec687a3210b">atomic_exchange_add</a>(x, y)&nbsp;&nbsp;&nbsp;exchange_add(x, y, &amp;__mutex)</td></tr>
+<tr><td colspan="2"><h2>関数</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="atomic_8h.html#a29a8d5c103d5dae310ea72b991f6afc0">exchange_add</a> (int *x, int y, <a class="el" href="classcoil_1_1Mutex.html">coil::Mutex</a> *mutex)</td></tr>
+</table>
+<hr/><a name="_details"></a><h2>説明</h2>
+<p>atomic add func </p>
+<dl class="date"><dt><b>日付:</b></dt><dd>$Date$ </dd></dl>
+<dl class="author"><dt><b>作者:</b></dt><dd>Noriaki Ando &lt;<a href="mailto:n-ando@aist.go.jp">n-ando@aist.go.jp</a>&gt;</dd></dl>
+<p>Copyright (C) 2008 Noriaki Ando Task-intelligence Research Group, Intelligent Systems Research Institute, National Institute of Advanced Industrial Science and Technology (AIST), Japan All rights reserved.</p>
+<p>$Id$ </p>
+<hr/><h2>マクロ定義</h2>
+<a class="anchor" id="a0fe981f75849b7865467ecdbc77c7419"></a><!-- doxytag: member="atomic.h::atomic_add" ref="a0fe981f75849b7865467ecdbc77c7419" args="(x, y)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define atomic_add</td>
+          <td>(</td>
+          <td class="paramtype">x, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">y&nbsp;</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<b>値:</b><div class="fragment"><pre class="fragment">{                                             \
+    <a class="code" href="classcoil_1_1Guard.html">coil::Guard&lt;coil::Mutex&gt;</a> guard(__mutex);    \
+    *x = *x + y;                                \
+  }
+</pre></div>
+</div>
+</div>
+<a class="anchor" id="af939354fe93c9e389cb5da6dfd505bd7"></a><!-- doxytag: member="atomic.h::atomic_decr" ref="af939354fe93c9e389cb5da6dfd505bd7" args="(x)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define atomic_decr</td>
+          <td>(</td>
+          <td class="paramtype">x&nbsp;</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<b>値:</b><div class="fragment"><pre class="fragment">{                                             \
+    <a class="code" href="classcoil_1_1Guard.html">coil::Guard&lt;coil::Mutex&gt;</a> guard(__mutex);    \
+    --(*x);                                     \
+  }
+</pre></div>
+</div>
+</div>
+<a class="anchor" id="aa51b8e53a4099668fdef2ec687a3210b"></a><!-- doxytag: member="atomic.h::atomic_exchange_add" ref="aa51b8e53a4099668fdef2ec687a3210b" args="(x, y)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define atomic_exchange_add</td>
+          <td>(</td>
+          <td class="paramtype">x, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">y&nbsp;</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td>&nbsp;&nbsp;&nbsp;exchange_add(x, y, &amp;__mutex)</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a5cd66855be35253ecf82acb1907af9f2"></a><!-- doxytag: member="atomic.h::atomic_incr" ref="a5cd66855be35253ecf82acb1907af9f2" args="(x)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define atomic_incr</td>
+          <td>(</td>
+          <td class="paramtype">x&nbsp;</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<b>値:</b><div class="fragment"><pre class="fragment">{                                             \
+    <a class="code" href="classcoil_1_1Guard.html">coil::Guard&lt;coil::Mutex&gt;</a> guard(__mutex);    \
+    ++(*x);                                     \
+  }
+</pre></div>
+</div>
+</div>
+<a class="anchor" id="aa3a3b38e82e6515e0b984532de4ca8b6"></a><!-- doxytag: member="atomic.h::COIL_USES_ATOMIC_OP" ref="aa3a3b38e82e6515e0b984532de4ca8b6" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define COIL_USES_ATOMIC_OP&nbsp;&nbsp;&nbsp;<a class="el" href="classcoil_1_1Mutex.html">coil::Mutex</a> __mutex;</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<hr/><h2>関数</h2>
+<a class="anchor" id="a29a8d5c103d5dae310ea72b991f6afc0"></a><!-- doxytag: member="atomic.h::exchange_add" ref="a29a8d5c103d5dae310ea72b991f6afc0" args="(int *x, int y, coil::Mutex *mutex)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int exchange_add </td>
+          <td>(</td>
+          <td class="paramtype">int *&nbsp;</td>
+          <td class="paramname"> <em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&nbsp;</td>
+          <td class="paramname"> <em>y</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classcoil_1_1Mutex.html">coil::Mutex</a> *&nbsp;</td>
+          <td class="paramname"> <em>mutex</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+</div>
+<hr class="footer"/><address style="text-align: right;"><small>OpenRTMに対してThu May 24 23:25:18 2012に生成されました。&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.6.3 </small></address>
+</body>
+</html>

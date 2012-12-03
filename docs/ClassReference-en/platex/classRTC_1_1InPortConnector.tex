@@ -1,0 +1,240 @@
+\section{RTC::InPortConnector Class Reference}
+\label{classRTC_1_1InPortConnector}\index{RTC::InPortConnector@{RTC::InPortConnector}}
+
+
+\doxyref{InPortConnector}{p.}{classRTC_1_1InPortConnector} base class.  
+
+
+
+
+{\ttfamily \#include $<$InPortConnector.h$>$}
+
+Inheritance diagram for RTC::InPortConnector:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4cm]{classRTC_1_1InPortConnector}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+DATAPORTSTATUS\_\-ENUM {\bf InPortConnector} ({\bf ConnectorInfo} \&info, {\bf CdrBufferBase} $\ast$buffer)
+\begin{DoxyCompactList}\small\item\em Constructor. \item\end{DoxyCompactList}\item 
+virtual {\bf $\sim$InPortConnector} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \item\end{DoxyCompactList}\item 
+virtual const {\bf ConnectorInfo} \& {\bf profile} ()
+\begin{DoxyCompactList}\small\item\em Getting \doxyref{ConnectorInfo}{p.}{classRTC_1_1ConnectorInfo}. \item\end{DoxyCompactList}\item 
+virtual const char $\ast$ {\bf id} ()
+\begin{DoxyCompactList}\small\item\em Getting Connector ID. \item\end{DoxyCompactList}\item 
+virtual const char $\ast$ {\bf name} ()
+\begin{DoxyCompactList}\small\item\em Getting Connector name. \item\end{DoxyCompactList}\item 
+virtual ReturnCode {\bf disconnect} ()=0
+\begin{DoxyCompactList}\small\item\em Disconnect connection. \item\end{DoxyCompactList}\item 
+virtual {\bf CdrBufferBase} $\ast$ {\bf getBuffer} ()
+\begin{DoxyCompactList}\small\item\em Getting Buffer. \item\end{DoxyCompactList}\item 
+virtual ReturnCode {\bf read} (cdrMemoryStream \&data)=0
+\begin{DoxyCompactList}\small\item\em Destructor. \item\end{DoxyCompactList}\item 
+virtual void {\bf setEndian} (const bool endian\_\-type)
+\begin{DoxyCompactList}\small\item\em Setting an endian type. \item\end{DoxyCompactList}\item 
+virtual bool {\bf isLittleEndian} ()
+\begin{DoxyCompactList}\small\item\em Whether this connector's endian is little. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Logger} {\bf rtclog}
+\begin{DoxyCompactList}\small\item\em \doxyref{Logger}{p.}{classRTC_1_1Logger} stream. \item\end{DoxyCompactList}\item 
+{\bf ConnectorInfo} {\bf m\_\-profile}
+\begin{DoxyCompactList}\small\item\em \doxyref{ConnectorInfo}{p.}{classRTC_1_1ConnectorInfo}. \item\end{DoxyCompactList}\item 
+{\bf CdrBufferBase} $\ast$ {\bf m\_\-buffer}
+\begin{DoxyCompactList}\small\item\em Connector's buffer. \item\end{DoxyCompactList}\item 
+bool {\bf m\_\-littleEndian}
+\begin{DoxyCompactList}\small\item\em Connected Endian. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\doxyref{InPortConnector}{p.}{classRTC_1_1InPortConnector} base class. The base class to derive subclasses for InPort's Push/Pull Connectors
+
+\begin{DoxySince}{Since}
+1.0.0 
+\end{DoxySince}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{RTC::InPortConnector@{RTC::InPortConnector}!InPortConnector@{InPortConnector}}
+\index{InPortConnector@{InPortConnector}!RTC::InPortConnector@{RTC::InPortConnector}}
+\subsubsection[{InPortConnector}]{\setlength{\rightskip}{0pt plus 5cm}DATAPORTSTATUS\_\-ENUM RTC::InPortConnector::InPortConnector ({\bf ConnectorInfo} \& {\em info}, \/  {\bf CdrBufferBase} $\ast$ {\em buffer})}\label{classRTC_1_1InPortConnector_a5817248420e91c6bc5c939d0e48cd417}
+
+
+Constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em info}]\doxyref{ConnectorInfo}{p.}{classRTC_1_1ConnectorInfo} object which includes connection information \item[{\em buffer}]A pointer to the buffer of the connector \end{DoxyParams}
+\index{RTC::InPortConnector@{RTC::InPortConnector}!$\sim$InPortConnector@{$\sim$InPortConnector}}
+\index{$\sim$InPortConnector@{$\sim$InPortConnector}!RTC::InPortConnector@{RTC::InPortConnector}}
+\subsubsection[{$\sim$InPortConnector}]{\setlength{\rightskip}{0pt plus 5cm}virtual RTC::InPortConnector::$\sim$InPortConnector ()\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classRTC_1_1InPortConnector_aad8160823b8a719fd80bdfb752deddb5}
+
+
+Destructor. 
+
+
+
+\subsection{Member Function Documentation}
+\index{RTC::InPortConnector@{RTC::InPortConnector}!disconnect@{disconnect}}
+\index{disconnect@{disconnect}!RTC::InPortConnector@{RTC::InPortConnector}}
+\subsubsection[{disconnect}]{\setlength{\rightskip}{0pt plus 5cm}virtual ReturnCode RTC::InPortConnector::disconnect ()\hspace{0.3cm}{\ttfamily  [pure virtual]}}\label{classRTC_1_1InPortConnector_a8677105bbf5ae5ed3e79dc3b057ea0b9}
+
+
+Disconnect connection. 
+
+This operation disconnect this connection
+
+\begin{DoxyReturn}{Returns}
+ReturnCode 
+\end{DoxyReturn}
+
+
+Implements {\bf RTC::ConnectorBase} \doxyref{}{p.}{classRTC_1_1ConnectorBase_a17b1e3bb26ccb844ef2952661977768c}.
+
+
+
+Implemented in {\bf RTC::InPortPullConnector} \doxyref{}{p.}{classRTC_1_1InPortPullConnector_a74e8c2fbfdbbacd1d3a67b4017b993df}, and {\bf RTC::InPortPushConnector} \doxyref{}{p.}{classRTC_1_1InPortPushConnector_afb5920eabaa874b43bc900348a2fb2ad}.
+
+\index{RTC::InPortConnector@{RTC::InPortConnector}!getBuffer@{getBuffer}}
+\index{getBuffer@{getBuffer}!RTC::InPortConnector@{RTC::InPortConnector}}
+\subsubsection[{getBuffer}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf CdrBufferBase}$\ast$ RTC::InPortConnector::getBuffer ()\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classRTC_1_1InPortConnector_a7a2e6e83f1c50892632b5e23bf2f8ec6}
+
+
+Getting Buffer. 
+
+This operation returns this connector's buffer
+
+\begin{DoxyReturn}{Returns}
+A pointer to the buffer owned by this connector 
+\end{DoxyReturn}
+
+
+Implements {\bf RTC::ConnectorBase} \doxyref{}{p.}{classRTC_1_1ConnectorBase_ad06710a5e9e1862ed50d4a4411c2927d}.
+
+\index{RTC::InPortConnector@{RTC::InPortConnector}!id@{id}}
+\index{id@{id}!RTC::InPortConnector@{RTC::InPortConnector}}
+\subsubsection[{id}]{\setlength{\rightskip}{0pt plus 5cm}virtual const char$\ast$ RTC::InPortConnector::id ()\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classRTC_1_1InPortConnector_af497212651998eaef0c38913d4762f52}
+
+
+Getting Connector ID. 
+
+This operation returns Connector ID
+
+\begin{DoxyReturn}{Returns}
+A pointer to the connector id string 
+\end{DoxyReturn}
+
+
+Implements {\bf RTC::ConnectorBase} \doxyref{}{p.}{classRTC_1_1ConnectorBase_ae2cc57833a7e28f0e605222ecb63e219}.
+
+\index{RTC::InPortConnector@{RTC::InPortConnector}!isLittleEndian@{isLittleEndian}}
+\index{isLittleEndian@{isLittleEndian}!RTC::InPortConnector@{RTC::InPortConnector}}
+\subsubsection[{isLittleEndian}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool RTC::InPortConnector::isLittleEndian ()\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classRTC_1_1InPortConnector_ac7e308f77f6b5210694320ebab0e0651}
+
+
+Whether this connector's endian is little. 
+
+This operation returns whether the connector's endian is little or not.
+
+\begin{DoxyReturn}{Returns}
+true: little endian, false: big endian 
+\end{DoxyReturn}
+\index{RTC::InPortConnector@{RTC::InPortConnector}!name@{name}}
+\index{name@{name}!RTC::InPortConnector@{RTC::InPortConnector}}
+\subsubsection[{name}]{\setlength{\rightskip}{0pt plus 5cm}virtual const char$\ast$ RTC::InPortConnector::name ()\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classRTC_1_1InPortConnector_abb9dd2bf3f81d132a2a3eb4f31ff461d}
+
+
+Getting Connector name. 
+
+This operation returns Connector name
+
+\begin{DoxyReturn}{Returns}
+A pointer to the connector's name string 
+\end{DoxyReturn}
+
+
+Implements {\bf RTC::ConnectorBase} \doxyref{}{p.}{classRTC_1_1ConnectorBase_a73e002174dc02ec4830c624e7fd96b43}.
+
+\index{RTC::InPortConnector@{RTC::InPortConnector}!profile@{profile}}
+\index{profile@{profile}!RTC::InPortConnector@{RTC::InPortConnector}}
+\subsubsection[{profile}]{\setlength{\rightskip}{0pt plus 5cm}virtual const {\bf ConnectorInfo}\& RTC::InPortConnector::profile ()\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classRTC_1_1InPortConnector_ade653239f3932f5968ee818ecfd53354}
+
+
+Getting \doxyref{ConnectorInfo}{p.}{classRTC_1_1ConnectorInfo}. 
+
+This operation returns \doxyref{ConnectorInfo}{p.}{classRTC_1_1ConnectorInfo}
+
+\begin{DoxyReturn}{Returns}
+\doxyref{ConnectorInfo}{p.}{classRTC_1_1ConnectorInfo} object which is owned by this connector 
+\end{DoxyReturn}
+
+
+Implements {\bf RTC::ConnectorBase} \doxyref{}{p.}{classRTC_1_1ConnectorBase_a8bd2e9cbd6a9341ec4c97416dcf981c7}.
+
+\index{RTC::InPortConnector@{RTC::InPortConnector}!read@{read}}
+\index{read@{read}!RTC::InPortConnector@{RTC::InPortConnector}}
+\subsubsection[{read}]{\setlength{\rightskip}{0pt plus 5cm}virtual ReturnCode RTC::InPortConnector::read (cdrMemoryStream \& {\em data})\hspace{0.3cm}{\ttfamily  [pure virtual]}}\label{classRTC_1_1InPortConnector_a2ffc997f36cb6549029852484327bffd}
+
+
+Destructor. 
+
+The read function to read data from buffer to \doxyref{InPort}{p.}{classRTC_1_1InPort}
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em data}]A reference to a variable to which data from this connector is stored. \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+ReturnCode 
+\end{DoxyReturn}
+
+
+Implemented in {\bf RTC::InPortPullConnector} \doxyref{}{p.}{classRTC_1_1InPortPullConnector_ac2bfcf970c6c0422e279af7d3b638efd}, and {\bf RTC::InPortPushConnector} \doxyref{}{p.}{classRTC_1_1InPortPushConnector_a1403a79f0e0ce7d6c34b4385db6ed8ef}.
+
+\index{RTC::InPortConnector@{RTC::InPortConnector}!setEndian@{setEndian}}
+\index{setEndian@{setEndian}!RTC::InPortConnector@{RTC::InPortConnector}}
+\subsubsection[{setEndian}]{\setlength{\rightskip}{0pt plus 5cm}virtual void RTC::InPortConnector::setEndian (const bool {\em endian\_\-type})\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classRTC_1_1InPortConnector_a2349abc81262854781949e9d376cd109}
+
+
+Setting an endian type. 
+
+This operation set this connector's endian type
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em endian\_\-type}]true: little, false: big \end{DoxyParams}
+
+
+\subsection{Member Data Documentation}
+\index{RTC::InPortConnector@{RTC::InPortConnector}!m\_\-buffer@{m\_\-buffer}}
+\index{m\_\-buffer@{m\_\-buffer}!RTC::InPortConnector@{RTC::InPortConnector}}
+\subsubsection[{m\_\-buffer}]{\setlength{\rightskip}{0pt plus 5cm}{\bf CdrBufferBase}$\ast$ {\bf RTC::InPortConnector::m\_\-buffer}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC_1_1InPortConnector_aef89e379b8b4045f26bb36cc3c537d70}
+
+
+Connector's buffer. 
+
+\index{RTC::InPortConnector@{RTC::InPortConnector}!m\_\-littleEndian@{m\_\-littleEndian}}
+\index{m\_\-littleEndian@{m\_\-littleEndian}!RTC::InPortConnector@{RTC::InPortConnector}}
+\subsubsection[{m\_\-littleEndian}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf RTC::InPortConnector::m\_\-littleEndian}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC_1_1InPortConnector_a5cb0e047a379c1d4c4ee1e1fea4e9663}
+
+
+Connected Endian. 
+
+\index{RTC::InPortConnector@{RTC::InPortConnector}!m\_\-profile@{m\_\-profile}}
+\index{m\_\-profile@{m\_\-profile}!RTC::InPortConnector@{RTC::InPortConnector}}
+\subsubsection[{m\_\-profile}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ConnectorInfo} {\bf RTC::InPortConnector::m\_\-profile}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC_1_1InPortConnector_a8983dceedb2ae10a2f583ab9632f4337}
+
+
+\doxyref{ConnectorInfo}{p.}{classRTC_1_1ConnectorInfo}. 
+
+\index{RTC::InPortConnector@{RTC::InPortConnector}!rtclog@{rtclog}}
+\index{rtclog@{rtclog}!RTC::InPortConnector@{RTC::InPortConnector}}
+\subsubsection[{rtclog}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Logger} {\bf RTC::InPortConnector::rtclog}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC_1_1InPortConnector_a823551eac7e254552246921cca0c4c92}
+
+
+\doxyref{Logger}{p.}{classRTC_1_1Logger} stream. 
+

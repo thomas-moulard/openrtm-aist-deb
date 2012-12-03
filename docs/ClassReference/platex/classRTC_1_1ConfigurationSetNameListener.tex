@@ -1,0 +1,72 @@
+\section{クラス RTC::ConfigurationSetNameListener}
+\label{classRTC_1_1ConfigurationSetNameListener}\index{RTC::ConfigurationSetNameListener@{RTC::ConfigurationSetNameListener}}
+
+
+\doxyref{ConfigurationSetNameListener}{p.}{classRTC_1_1ConfigurationSetNameListener} クラス.  
+
+
+
+
+{\ttfamily \#include $<$ConfigurationListener.h$>$}
+
+\subsection*{Public メソッド}
+\begin{DoxyCompactItemize}
+\item 
+virtual {\bf $\sim$ConfigurationSetNameListener} ()
+\begin{DoxyCompactList}\small\item\em デストラクタ \item\end{DoxyCompactList}\item 
+virtual void {\bf operator()} (const char $\ast$config\_\-set\_\-name)=0
+\begin{DoxyCompactList}\small\item\em 仮想コールバック関数 \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public メソッド}
+\begin{DoxyCompactItemize}
+\item 
+static const char $\ast$ {\bf toString} ({\bf ConfigurationSetNameListenerType} type)
+\begin{DoxyCompactList}\small\item\em ConfigurationSetNameListenerType を文字列に変換. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{説明}
+\doxyref{ConfigurationSetNameListener}{p.}{classRTC_1_1ConfigurationSetNameListener} クラス. ConfigurationSetに関するイベントに関するリスナークラス。
+
+
+\begin{DoxyItemize}
+\item ON\_\-UPDATE\_\-CONFIG\_\-SET:
+\item ON\_\-REMOVE\_\-CONFIG\_\-SET:
+\item ON\_\-ACTIVATE\_\-CONFIG\_\-SET: 
+\end{DoxyItemize}
+
+\subsection{コンストラクタとデストラクタ}
+\index{RTC::ConfigurationSetNameListener@{RTC::ConfigurationSetNameListener}!$\sim$ConfigurationSetNameListener@{$\sim$ConfigurationSetNameListener}}
+\index{$\sim$ConfigurationSetNameListener@{$\sim$ConfigurationSetNameListener}!RTC::ConfigurationSetNameListener@{RTC::ConfigurationSetNameListener}}
+\subsubsection[{$\sim$ConfigurationSetNameListener}]{\setlength{\rightskip}{0pt plus 5cm}virtual RTC::ConfigurationSetNameListener::$\sim$ConfigurationSetNameListener ()\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classRTC_1_1ConfigurationSetNameListener_affbd649610f0f92fc7d67ca0326cdab4}
+
+
+デストラクタ 
+
+
+
+\subsection{関数}
+\index{RTC::ConfigurationSetNameListener@{RTC::ConfigurationSetNameListener}!operator()@{operator()}}
+\index{operator()@{operator()}!RTC::ConfigurationSetNameListener@{RTC::ConfigurationSetNameListener}}
+\subsubsection[{operator()}]{\setlength{\rightskip}{0pt plus 5cm}virtual void RTC::ConfigurationSetNameListener::operator() (const char $\ast$ {\em config\_\-set\_\-name})\hspace{0.3cm}{\ttfamily  [pure virtual]}}\label{classRTC_1_1ConfigurationSetNameListener_a6c6c1aad210408a9ca302363f8f652b7}
+
+
+仮想コールバック関数 
+
+\doxyref{ConfigurationSetNameListener}{p.}{classRTC_1_1ConfigurationSetNameListener} のコールバック関数 \index{RTC::ConfigurationSetNameListener@{RTC::ConfigurationSetNameListener}!toString@{toString}}
+\index{toString@{toString}!RTC::ConfigurationSetNameListener@{RTC::ConfigurationSetNameListener}}
+\subsubsection[{toString}]{\setlength{\rightskip}{0pt plus 5cm}static const char$\ast$ RTC::ConfigurationSetNameListener::toString ({\bf ConfigurationSetNameListenerType} {\em type})\hspace{0.3cm}{\ttfamily  [inline, static]}}\label{classRTC_1_1ConfigurationSetNameListener_ade79a962e7a15ddae7ef638157f3c429}
+
+
+ConfigurationSetNameListenerType を文字列に変換. 
+
+ConfigurationSetNameListenerType を文字列に変換する
+
+
+\begin{DoxyParams}{引数}
+\item[{\em type}]変換対象 ConfigurationSetNameListenerType\end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+文字列変換結果 
+\end{DoxyReturn}
+
+
+参照先 RTC::CONFIG\_\-SET\_\-NAME\_\-LISTENER\_\-NUM.
+

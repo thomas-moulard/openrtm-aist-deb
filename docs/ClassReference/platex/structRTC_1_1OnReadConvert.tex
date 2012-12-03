@@ -1,0 +1,52 @@
+\section{クラス テンプレート RTC::OnReadConvert$<$ DataType $>$}
+\label{structRTC_1_1OnReadConvert}\index{RTC::OnReadConvert@{RTC::OnReadConvert}}
+
+
+read() 時のデータ変換コールバック抽象クラス  
+
+
+
+
+{\ttfamily \#include $<$PortCallback.h$>$}
+
+\subsection*{Public メソッド}
+\begin{DoxyCompactItemize}
+\item 
+virtual {\bf $\sim$OnReadConvert} (void)
+\item 
+virtual DataType {\bf operator()} (const DataType \&value)=0
+\begin{DoxyCompactList}\small\item\em コールバックメソッド \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{説明}
+\subsubsection*{template$<$class DataType$>$ class RTC::OnReadConvert$<$ DataType $>$}
+
+read() 時のデータ変換コールバック抽象クラス \doxyref{InPort}{p.}{classRTC_1_1InPort} のバッファからデータが read()される際に呼び出される コールバック用インターフェース。 このコールバックの戻り値がread()の戻り値となる。
+
+\begin{DoxySince}{から}
+0.4.0 
+\end{DoxySince}
+
+
+\subsection{コンストラクタとデストラクタ}
+\index{RTC::OnReadConvert@{RTC::OnReadConvert}!$\sim$OnReadConvert@{$\sim$OnReadConvert}}
+\index{$\sim$OnReadConvert@{$\sim$OnReadConvert}!RTC::OnReadConvert@{RTC::OnReadConvert}}
+\subsubsection[{$\sim$OnReadConvert}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class DataType$>$ virtual {\bf RTC::OnReadConvert}$<$ DataType $>$::$\sim${\bf OnReadConvert} (void)\hspace{0.3cm}{\ttfamily  [inline, virtual]}}\label{structRTC_1_1OnReadConvert_a353b1f01856a3887105218eeec33a154}
+デストラクタ 
+
+\subsection{関数}
+\index{RTC::OnReadConvert@{RTC::OnReadConvert}!operator()@{operator()}}
+\index{operator()@{operator()}!RTC::OnReadConvert@{RTC::OnReadConvert}}
+\subsubsection[{operator()}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class DataType$>$ virtual DataType {\bf RTC::OnReadConvert}$<$ DataType $>$::operator() (const DataType \& {\em value})\hspace{0.3cm}{\ttfamily  [pure virtual]}}\label{structRTC_1_1OnReadConvert_a5eebe441c1646765633a38e44b901582}
+
+
+コールバックメソッド 
+
+バッファからデータが読み出される際に呼び出されるコールバック関数 であり、operator()() の戻り値は \doxyref{InPort}{p.}{classRTC_1_1InPort} の read() の戻り値となる、 またはデータ変数に格納される。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em value}]バッファから読みだされたデータ \end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+変換後のデータ。データポート変数にはこの値が格納される。 
+\end{DoxyReturn}

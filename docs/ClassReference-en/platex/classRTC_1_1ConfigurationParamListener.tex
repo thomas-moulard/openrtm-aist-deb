@@ -1,0 +1,70 @@
+\section{RTC::ConfigurationParamListener Class Reference}
+\label{classRTC_1_1ConfigurationParamListener}\index{RTC::ConfigurationParamListener@{RTC::ConfigurationParamListener}}
+
+
+\doxyref{ConfigurationParamListener}{p.}{classRTC_1_1ConfigurationParamListener} class.  
+
+
+
+
+{\ttfamily \#include $<$ConfigurationListener.h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual {\bf $\sim$ConfigurationParamListener} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \item\end{DoxyCompactList}\item 
+virtual void {\bf operator()} (const char $\ast$config\_\-set\_\-name, const char $\ast$config\_\-param\_\-name)=0
+\begin{DoxyCompactList}\small\item\em Virtual Callback function. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static const char $\ast$ {\bf toString} ({\bf ConfigurationParamListenerType} type)
+\begin{DoxyCompactList}\small\item\em Convert ConfigurationParamListenerType into the string. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\doxyref{ConfigurationParamListener}{p.}{classRTC_1_1ConfigurationParamListener} class. This class is abstract base class for listener classes that provides callbacks for various events for Configuration parameter. The listener will be called on the following event.
+
+
+\begin{DoxyItemize}
+\item ON\_\-UPDATE\_\-CONFIG\_\-PARAM 
+\end{DoxyItemize}
+
+\subsection{Constructor \& Destructor Documentation}
+\index{RTC::ConfigurationParamListener@{RTC::ConfigurationParamListener}!$\sim$ConfigurationParamListener@{$\sim$ConfigurationParamListener}}
+\index{$\sim$ConfigurationParamListener@{$\sim$ConfigurationParamListener}!RTC::ConfigurationParamListener@{RTC::ConfigurationParamListener}}
+\subsubsection[{$\sim$ConfigurationParamListener}]{\setlength{\rightskip}{0pt plus 5cm}virtual RTC::ConfigurationParamListener::$\sim$ConfigurationParamListener ()\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classRTC_1_1ConfigurationParamListener_acca022948f8f80a7022be9e2f8b3e8bf}
+
+
+Destructor. 
+
+
+
+\subsection{Member Function Documentation}
+\index{RTC::ConfigurationParamListener@{RTC::ConfigurationParamListener}!operator()@{operator()}}
+\index{operator()@{operator()}!RTC::ConfigurationParamListener@{RTC::ConfigurationParamListener}}
+\subsubsection[{operator()}]{\setlength{\rightskip}{0pt plus 5cm}virtual void RTC::ConfigurationParamListener::operator() (const char $\ast$ {\em config\_\-set\_\-name}, \/  const char $\ast$ {\em config\_\-param\_\-name})\hspace{0.3cm}{\ttfamily  [pure virtual]}}\label{classRTC_1_1ConfigurationParamListener_aafb27a6f518e30eacff76b2d0ece8a6e}
+
+
+Virtual Callback function. 
+
+This is a the Callback function for \doxyref{ConfigurationParamListener}{p.}{classRTC_1_1ConfigurationParamListener}. \index{RTC::ConfigurationParamListener@{RTC::ConfigurationParamListener}!toString@{toString}}
+\index{toString@{toString}!RTC::ConfigurationParamListener@{RTC::ConfigurationParamListener}}
+\subsubsection[{toString}]{\setlength{\rightskip}{0pt plus 5cm}static const char$\ast$ RTC::ConfigurationParamListener::toString ({\bf ConfigurationParamListenerType} {\em type})\hspace{0.3cm}{\ttfamily  [inline, static]}}\label{classRTC_1_1ConfigurationParamListener_a3dc13e72ed397bc961494266e6e856ca}
+
+
+Convert ConfigurationParamListenerType into the string. 
+
+Convert ConfigurationParamListenerType into the string.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em type}]The target ConfigurationParamListenerType for transformation\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Trnasformation result of string representation 
+\end{DoxyReturn}
+
+
+References RTC::CONFIG\_\-PARAM\_\-LISTENER\_\-NUM.
+

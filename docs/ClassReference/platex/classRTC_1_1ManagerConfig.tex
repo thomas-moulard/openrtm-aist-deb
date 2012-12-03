@@ -1,0 +1,258 @@
+\section{クラス RTC::ManagerConfig}
+\label{classRTC_1_1ManagerConfig}\index{RTC::ManagerConfig@{RTC::ManagerConfig}}
+
+
+\doxyref{Manager}{p.}{classRTC_1_1Manager} configuration クラス.  
+
+
+
+
+{\ttfamily \#include $<$ManagerConfig.h$>$}
+
+\subsection*{Public メソッド}
+\begin{DoxyCompactItemize}
+\item 
+{\bf ManagerConfig} ()
+\begin{DoxyCompactList}\small\item\em コンストラクタ \item\end{DoxyCompactList}\item 
+{\bf ManagerConfig} (int argc, char $\ast$$\ast$argv)
+\begin{DoxyCompactList}\small\item\em コンストラクタ \item\end{DoxyCompactList}\item 
+virtual {\bf $\sim$ManagerConfig} (void)
+\begin{DoxyCompactList}\small\item\em デストラクタ \item\end{DoxyCompactList}\item 
+void {\bf init} (int argc, char $\ast$$\ast$argv)
+\begin{DoxyCompactList}\small\item\em 初期化 \item\end{DoxyCompactList}\item 
+void {\bf configure} ({\bf coil::Properties} \&prop)
+\begin{DoxyCompactList}\small\item\em Configuration 情報を Property に設定する. \item\end{DoxyCompactList}\item 
+{\bf coil::Properties} {\bf getConfig} () const 
+\begin{DoxyCompactList}\small\item\em コンフィギュレーションを取得する \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public 変数}
+\begin{DoxyCompactItemize}
+\item 
+static const char $\ast$ {\bf config\_\-file\_\-path} [$\,$]
+\begin{DoxyCompactList}\small\item\em \doxyref{Manager}{p.}{classRTC_1_1Manager} コンフィギュレーションのデフォルト・ファイル・パス. \item\end{DoxyCompactList}\item 
+static const char $\ast$ {\bf config\_\-file\_\-env}
+\begin{DoxyCompactList}\small\item\em デフォルト・コンフィギュレーションのファイル・パスを識別する 環境変数 \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected メソッド}
+\begin{DoxyCompactItemize}
+\item 
+void {\bf parseArgs} (int argc, char $\ast$$\ast$argv)
+\begin{DoxyCompactList}\small\item\em コマンド引数をパースする \item\end{DoxyCompactList}\item 
+bool {\bf findConfigFile} ()
+\begin{DoxyCompactList}\small\item\em Configuration file の検索. \item\end{DoxyCompactList}\item 
+void {\bf setSystemInformation} ({\bf coil::Properties} \&prop)
+\begin{DoxyCompactList}\small\item\em システム情報を設定する \item\end{DoxyCompactList}\item 
+bool {\bf fileExist} (const std::string \&filename)
+\begin{DoxyCompactList}\small\item\em ファイルの存在確認 \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected 変数}
+\begin{DoxyCompactItemize}
+\item 
+{\bf coil::Properties} {\bf m\_\-argprop}
+\begin{DoxyCompactList}\small\item\em 引数から渡されるプロパティ \item\end{DoxyCompactList}\item 
+std::string {\bf m\_\-configFile}
+\begin{DoxyCompactList}\small\item\em \doxyref{Manager}{p.}{classRTC_1_1Manager} コンフィギュレーション・ファイルのパス. \item\end{DoxyCompactList}\item 
+bool {\bf m\_\-isMaster}
+\begin{DoxyCompactList}\small\item\em \doxyref{Manager}{p.}{classRTC_1_1Manager} マスタフラグ. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{説明}
+\doxyref{Manager}{p.}{classRTC_1_1Manager} configuration クラス. \doxyref{Manager}{p.}{classRTC_1_1Manager} のコンフィギュレーションを行う、コマンドライン引数を受け取り、 (あるいは引数なしで)インスタンス化される。 コマンドライン引数で指定された設定ファイル、環境変数などから \doxyref{Manager}{p.}{classRTC_1_1Manager} の プロパティ情報を設定する。
+
+各設定の優先度は以下のとおりである。 
+\begin{DoxyEnumerate}
+\item コマンドラインオプション \char`\"{}-\/f\char`\"{} 
+\item 環境変数 \char`\"{}RTC\_\-MANAGER\_\-CONFIG\char`\"{} 
+\item デフォルト設定ファイル \char`\"{}./rtc.conf\char`\"{} 
+\item デフォルト設定ファイル \char`\"{}/etc/rtc.conf\char`\"{} 
+\item デフォルト設定ファイル \char`\"{}/etc/rtc/rtc.conf\char`\"{} 
+\item デフォルト設定ファイル \char`\"{}/usr/local/etc/rtc.conf\char`\"{} 
+\item デフォルト設定ファイル \char`\"{}/usr/local/etc/rtc/rtc.conf\char`\"{} 
+\item 埋め込みコンフィギュレーション値 
+\end{DoxyEnumerate}ただし、コマンドラインオプション \char`\"{}-\/d\char`\"{} が指定された場合は、 (たとえ -\/f で設定ファイルを指定しても)埋め込みコンフィギュレーション値 が使用される。
+
+\begin{DoxySince}{から}
+0.4.0 
+\end{DoxySince}
+
+
+\subsection{コンストラクタとデストラクタ}
+\index{RTC::ManagerConfig@{RTC::ManagerConfig}!ManagerConfig@{ManagerConfig}}
+\index{ManagerConfig@{ManagerConfig}!RTC::ManagerConfig@{RTC::ManagerConfig}}
+\subsubsection[{ManagerConfig}]{\setlength{\rightskip}{0pt plus 5cm}RTC::ManagerConfig::ManagerConfig ()}\label{classRTC_1_1ManagerConfig_a0d34fe8f50baaa055f67d7c692b89002}
+
+
+コンストラクタ 
+
+コンストラクタ。(何もしない) \index{RTC::ManagerConfig@{RTC::ManagerConfig}!ManagerConfig@{ManagerConfig}}
+\index{ManagerConfig@{ManagerConfig}!RTC::ManagerConfig@{RTC::ManagerConfig}}
+\subsubsection[{ManagerConfig}]{\setlength{\rightskip}{0pt plus 5cm}RTC::ManagerConfig::ManagerConfig (int {\em argc}, \/  char $\ast$$\ast$ {\em argv})}\label{classRTC_1_1ManagerConfig_afaeed8704f198cf2d4de92b676ee5e8f}
+
+
+コンストラクタ 
+
+与えられた引数によりコンフィギュレーション情報の初期化を行う。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em argc}]コマンドライン引数の数 \item[{\em argv}]コマンドライン引数 \end{DoxyParams}
+\index{RTC::ManagerConfig@{RTC::ManagerConfig}!$\sim$ManagerConfig@{$\sim$ManagerConfig}}
+\index{$\sim$ManagerConfig@{$\sim$ManagerConfig}!RTC::ManagerConfig@{RTC::ManagerConfig}}
+\subsubsection[{$\sim$ManagerConfig}]{\setlength{\rightskip}{0pt plus 5cm}virtual RTC::ManagerConfig::$\sim$ManagerConfig (void)\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classRTC_1_1ManagerConfig_aab8bd71e6d890eedb66731e202580e79}
+
+
+デストラクタ 
+
+
+
+\subsection{関数}
+\index{RTC::ManagerConfig@{RTC::ManagerConfig}!configure@{configure}}
+\index{configure@{configure}!RTC::ManagerConfig@{RTC::ManagerConfig}}
+\subsubsection[{configure}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::ManagerConfig::configure ({\bf coil::Properties} \& {\em prop})}\label{classRTC_1_1ManagerConfig_a23e48a97e8eb898999f0540a4bf8f008}
+
+
+Configuration 情報を Property に設定する. 
+
+\doxyref{Manager}{p.}{classRTC_1_1Manager} のConfiguration 情報を指定された Property に設定する。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em prop}]Configuration 設定対象 Property \end{DoxyParams}
+\index{RTC::ManagerConfig@{RTC::ManagerConfig}!fileExist@{fileExist}}
+\index{fileExist@{fileExist}!RTC::ManagerConfig@{RTC::ManagerConfig}}
+\subsubsection[{fileExist}]{\setlength{\rightskip}{0pt plus 5cm}bool RTC::ManagerConfig::fileExist (const std::string \& {\em filename})\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC_1_1ManagerConfig_ab7d6b686e80fa4b30f2e8419b7100e83}
+
+
+ファイルの存在確認 
+
+指定されたファイルが存在するか確認する。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em filename}]確認対象ファイル名称\end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+対象ファイル確認結果(存在する場合にtrue) 
+\end{DoxyReturn}
+\index{RTC::ManagerConfig@{RTC::ManagerConfig}!findConfigFile@{findConfigFile}}
+\index{findConfigFile@{findConfigFile}!RTC::ManagerConfig@{RTC::ManagerConfig}}
+\subsubsection[{findConfigFile}]{\setlength{\rightskip}{0pt plus 5cm}bool RTC::ManagerConfig::findConfigFile ()\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC_1_1ManagerConfig_ac3dda27b40a84eca68e360f607f89c14}
+
+
+Configuration file の検索. 
+
+Configuration file を検索し、設定する。 既に Configuration file が設定済みの場合は、ファイルの存在確認を行う。
+
+Configuration file の優先順位\par
+ コマンドオプション指定＞環境変数＞デフォルトファイル＞デフォルト設定
+
+デフォルト強制オプション(-\/d): デフォルトファイルがあっても無視して デフォルト設定を使う
+
+\begin{DoxyReturn}{戻り値}
+Configuration file 検索結果 
+\end{DoxyReturn}
+\index{RTC::ManagerConfig@{RTC::ManagerConfig}!getConfig@{getConfig}}
+\index{getConfig@{getConfig}!RTC::ManagerConfig@{RTC::ManagerConfig}}
+\subsubsection[{getConfig}]{\setlength{\rightskip}{0pt plus 5cm}{\bf coil::Properties} RTC::ManagerConfig::getConfig () const}\label{classRTC_1_1ManagerConfig_ad198c2d3a978aaa876ca84cbbc790160}
+
+
+コンフィギュレーションを取得する 
+
+コンフィギュレーションを取得する。init()呼び出し前に呼ぶと、 静的に定義されたデフォルトのコンフィギュレーションを返す。 \doxyref{init()}{p.}{classRTC_1_1ManagerConfig_a110e1592d6c111d957665adc851b4204} 呼び出し後に呼ぶと、コマンドライン引数、環境変数等に 基づいた初期化されたコンフィギュレーションを返す。 (未実装)
+
+\begin{DoxyReturn}{戻り値}
+\doxyref{Manager}{p.}{classRTC_1_1Manager} のコンフィギュレーション情報 
+\end{DoxyReturn}
+\index{RTC::ManagerConfig@{RTC::ManagerConfig}!init@{init}}
+\index{init@{init}!RTC::ManagerConfig@{RTC::ManagerConfig}}
+\subsubsection[{init}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::ManagerConfig::init (int {\em argc}, \/  char $\ast$$\ast$ {\em argv})}\label{classRTC_1_1ManagerConfig_a110e1592d6c111d957665adc851b4204}
+
+
+初期化 
+
+コマンドライン引数に応じて初期化を実行する。コマンドラインオプションは 以下のものが使用可能である。
+
+
+\begin{DoxyItemize}
+\item -\/f file : コンフィギュレーションファイルを指定する。
+\item -\/l module : ロードするモジュールを指定する。(未実装)
+\item -\/o options: その他オプションを指定する。(未実装)
+\item -\/d : デフォルトのコンフィギュレーションを使う。(未実装)
+\end{DoxyItemize}
+
+
+\begin{DoxyParams}{引数}
+\item[{\em argc}]コマンドライン引数の数 \item[{\em argv}]コマンドライン引数 \end{DoxyParams}
+\index{RTC::ManagerConfig@{RTC::ManagerConfig}!parseArgs@{parseArgs}}
+\index{parseArgs@{parseArgs}!RTC::ManagerConfig@{RTC::ManagerConfig}}
+\subsubsection[{parseArgs}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::ManagerConfig::parseArgs (int {\em argc}, \/  char $\ast$$\ast$ {\em argv})\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC_1_1ManagerConfig_ad9588168bc6ca5ae18f862ad8956f022}
+
+
+コマンド引数をパースする 
+
+
+\begin{DoxyItemize}
+\item -\/f file : コンフィギュレーションファイルを指定する。
+\item -\/l module : ロードするモジュールを指定する。(未実装)
+\item -\/o options: その他オプションを指定する。(未実装)
+\item -\/d : デフォルトのコンフィギュレーションを使う。(未実装)
+\end{DoxyItemize}
+
+
+\begin{DoxyParams}{引数}
+\item[{\em argc}]コマンドライン引数の数 \item[{\em argv}]コマンドライン引数 \end{DoxyParams}
+\index{RTC::ManagerConfig@{RTC::ManagerConfig}!setSystemInformation@{setSystemInformation}}
+\index{setSystemInformation@{setSystemInformation}!RTC::ManagerConfig@{RTC::ManagerConfig}}
+\subsubsection[{setSystemInformation}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::ManagerConfig::setSystemInformation ({\bf coil::Properties} \& {\em prop})\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC_1_1ManagerConfig_adfda1a2771c13c29c2779fbf5c96430d}
+
+
+システム情報を設定する 
+
+システム情報を取得しプロパティにセットする。設定されるキーは以下の通り。
+\begin{DoxyItemize}
+\item os.name : OS名
+\item os.release : OSリリース名
+\item os.version : OSバージョン名
+\item os.arch : OSアーキテクチャ
+\item os.hostname: ホスト名
+\item manager.pid : プロセスID
+\end{DoxyItemize}
+
+
+\begin{DoxyParams}{引数}
+\item[{\em prop}]システム情報を設定したプロパティ \end{DoxyParams}
+
+
+\subsection{変数}
+\index{RTC::ManagerConfig@{RTC::ManagerConfig}!config\_\-file\_\-env@{config\_\-file\_\-env}}
+\index{config\_\-file\_\-env@{config\_\-file\_\-env}!RTC::ManagerConfig@{RTC::ManagerConfig}}
+\subsubsection[{config\_\-file\_\-env}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ {\bf RTC::ManagerConfig::config\_\-file\_\-env}\hspace{0.3cm}{\ttfamily  [static]}}\label{classRTC_1_1ManagerConfig_ab41a069aea168b2dcc4900c595ca9f4d}
+
+
+デフォルト・コンフィギュレーションのファイル・パスを識別する 環境変数 
+
+\index{RTC::ManagerConfig@{RTC::ManagerConfig}!config\_\-file\_\-path@{config\_\-file\_\-path}}
+\index{config\_\-file\_\-path@{config\_\-file\_\-path}!RTC::ManagerConfig@{RTC::ManagerConfig}}
+\subsubsection[{config\_\-file\_\-path}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ {\bf RTC::ManagerConfig::config\_\-file\_\-path}[$\,$]\hspace{0.3cm}{\ttfamily  [static]}}\label{classRTC_1_1ManagerConfig_a817fc33a278ed8675d3530cf5d94edf5}
+
+
+\doxyref{Manager}{p.}{classRTC_1_1Manager} コンフィギュレーションのデフォルト・ファイル・パス. 
+
+\index{RTC::ManagerConfig@{RTC::ManagerConfig}!m\_\-argprop@{m\_\-argprop}}
+\index{m\_\-argprop@{m\_\-argprop}!RTC::ManagerConfig@{RTC::ManagerConfig}}
+\subsubsection[{m\_\-argprop}]{\setlength{\rightskip}{0pt plus 5cm}{\bf coil::Properties} {\bf RTC::ManagerConfig::m\_\-argprop}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC_1_1ManagerConfig_aa846aac98c963fef5c84ad1f4c2429ec}
+
+
+引数から渡されるプロパティ 
+
+\index{RTC::ManagerConfig@{RTC::ManagerConfig}!m\_\-configFile@{m\_\-configFile}}
+\index{m\_\-configFile@{m\_\-configFile}!RTC::ManagerConfig@{RTC::ManagerConfig}}
+\subsubsection[{m\_\-configFile}]{\setlength{\rightskip}{0pt plus 5cm}std::string {\bf RTC::ManagerConfig::m\_\-configFile}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC_1_1ManagerConfig_a9723c278fa4b1db9a8d9a45898fad64d}
+
+
+\doxyref{Manager}{p.}{classRTC_1_1Manager} コンフィギュレーション・ファイルのパス. 
+
+\index{RTC::ManagerConfig@{RTC::ManagerConfig}!m\_\-isMaster@{m\_\-isMaster}}
+\index{m\_\-isMaster@{m\_\-isMaster}!RTC::ManagerConfig@{RTC::ManagerConfig}}
+\subsubsection[{m\_\-isMaster}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf RTC::ManagerConfig::m\_\-isMaster}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC_1_1ManagerConfig_afdb5fe98635b4324a0d73bbb9e945b92}
+
+
+\doxyref{Manager}{p.}{classRTC_1_1Manager} マスタフラグ. 
+
+true:マスタ,false:スレーブ 

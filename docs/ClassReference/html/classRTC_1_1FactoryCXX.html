@@ -1,0 +1,253 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<title>OpenRTM: クラス RTC::FactoryCXX</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<!-- 作成： Doxygen 1.6.3 -->
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="index.html"><span>メインページ</span></a></li>
+      <li><a href="namespaces.html"><span>ネームスペース</span></a></li>
+      <li class="current"><a href="annotated.html"><span>クラス</span></a></li>
+      <li><a href="files.html"><span>ファイル</span></a></li>
+    </ul>
+  </div>
+  <div class="tabs">
+    <ul>
+      <li><a href="annotated.html"><span>構成</span></a></li>
+      <li><a href="hierarchy.html"><span>クラス階層</span></a></li>
+      <li><a href="functions.html"><span>構成メンバ</span></a></li>
+    </ul>
+  </div>
+  <div class="navpath"><a class="el" href="namespaceRTC.html">RTC</a>::<a class="el" href="classRTC_1_1FactoryCXX.html">FactoryCXX</a>
+  </div>
+</div>
+<div class="contents">
+<h1>クラス RTC::FactoryCXX</h1><!-- doxytag: class="RTC::FactoryCXX" --><!-- doxytag: inherits="RTC::FactoryBase" -->
+<p><a class="el" href="classRTC_1_1FactoryCXX.html" title="FactoryCXX クラス.">FactoryCXX</a> クラス.  
+<a href="#_details">[詳細]</a></p>
+
+<p><code>#include &lt;<a class="el" href="rtm_2Factory_8h_source.html">Factory.h</a>&gt;</code></p>
+<div class="dynheader">
+RTC::FactoryCXXに対する継承グラフ</div>
+<div class="dynsection">
+ <div class="center">
+  <img src="classRTC_1_1FactoryCXX.png" usemap="#RTC::FactoryCXX_map" alt=""/>
+  <map id="RTC::FactoryCXX_map" name="RTC::FactoryCXX_map">
+<area href="classRTC_1_1FactoryBase.html" alt="RTC::FactoryBase" shape="rect" coords="0,0,114,24"/>
+</map>
+ </div>
+</div>
+
+<p><a href="classRTC_1_1FactoryCXX-members.html">すべてのメンバ一覧</a></p>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr><td colspan="2"><h2>Public メソッド</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1FactoryCXX.html#a899ed96d9e5525f8dbd21e6306dd2311">FactoryCXX</a> (const <a class="el" href="classcoil_1_1Properties.html">coil::Properties</a> &amp;profile, <a class="el" href="namespaceRTC.html#add1e6bc1bf2da60fb3853aeb87914d9b">RtcNewFunc</a> new_func, <a class="el" href="namespaceRTC.html#a100eb77101ade8d0302384c348d55bfa">RtcDeleteFunc</a> delete_func, <a class="el" href="classNumberingPolicy.html">NumberingPolicy</a> *policy=new <a class="el" href="classDefaultNumberingPolicy.html">DefaultNumberingPolicy</a>())</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">コンストラクタ  <a href="#a899ed96d9e5525f8dbd21e6306dd2311"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1FactoryCXX.html#aac5ae8d77d40e9be05e5b1706e4a0137">~FactoryCXX</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classRTC_1_1RTObject__impl.html">RTObject_impl</a> *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1FactoryCXX.html#adf709b76b21aefe81338d9b885dcdcbe">create</a> (<a class="el" href="classRTC_1_1Manager.html">Manager</a> *mgr)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">コンポーネントの生成  <a href="#adf709b76b21aefe81338d9b885dcdcbe"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1FactoryCXX.html#a627c4dd3b5686d4df13a39c2a481c8e4">destroy</a> (<a class="el" href="classRTC_1_1RTObject__impl.html">RTObject_impl</a> *comp)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">コンポーネントの破棄  <a href="#a627c4dd3b5686d4df13a39c2a481c8e4"></a><br/></td></tr>
+<tr><td colspan="2"><h2>Protected 変数</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceRTC.html#add1e6bc1bf2da60fb3853aeb87914d9b">RtcNewFunc</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1FactoryCXX.html#a2f437b41029d2a66893b3d49db0a0808">m_New</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">コンポーネントオブジェクト生成関数へのポインタ  <a href="#a2f437b41029d2a66893b3d49db0a0808"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceRTC.html#a100eb77101ade8d0302384c348d55bfa">RtcDeleteFunc</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1FactoryCXX.html#abb2914e846bc84a822189bdd290ddbab">m_Delete</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">コンポーネントオブジェクト破棄関数へのポインタ  <a href="#abb2914e846bc84a822189bdd290ddbab"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classNumberingPolicy.html">NumberingPolicy</a> *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1FactoryCXX.html#a5114c456980db9cd6645353628fb20bd">m_policy</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">コンポーネント生成時の命名ポリシー  <a href="#a5114c456980db9cd6645353628fb20bd"></a><br/></td></tr>
+</table>
+<hr/><a name="_details"></a><h2>説明</h2>
+<p><a class="el" href="classRTC_1_1FactoryCXX.html" title="FactoryCXX クラス.">FactoryCXX</a> クラス. </p>
+<p>C++用コンポーネントファクトリクラス。</p>
+<dl class="since"><dt><b>から:</b></dt><dd>0.2.0 </dd></dl>
+<hr/><h2>コンストラクタとデストラクタ</h2>
+<a class="anchor" id="a899ed96d9e5525f8dbd21e6306dd2311"></a><!-- doxytag: member="RTC::FactoryCXX::FactoryCXX" ref="a899ed96d9e5525f8dbd21e6306dd2311" args="(const coil::Properties &amp;profile, RtcNewFunc new_func, RtcDeleteFunc delete_func, NumberingPolicy *policy=new DefaultNumberingPolicy())" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">RTC::FactoryCXX::FactoryCXX </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classcoil_1_1Properties.html">coil::Properties</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>profile</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespaceRTC.html#add1e6bc1bf2da60fb3853aeb87914d9b">RtcNewFunc</a>&nbsp;</td>
+          <td class="paramname"> <em>new_func</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespaceRTC.html#a100eb77101ade8d0302384c348d55bfa">RtcDeleteFunc</a>&nbsp;</td>
+          <td class="paramname"> <em>delete_func</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classNumberingPolicy.html">NumberingPolicy</a> *&nbsp;</td>
+          <td class="paramname"> <em>policy</em> = <code>new&nbsp;<a class="el" href="classDefaultNumberingPolicy.html">DefaultNumberingPolicy</a>()</code></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>コンストラクタ </p>
+<p>コンストラクタ。 プロファイル、生成関数へのポインタ、破棄関数へのポインタ、 コンポーネント生成時の命名ポリシーを引数に取り、 C++ で実装されたコンポーネントのファクトリクラスを生成する。</p>
+<dl><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>profile</em>&nbsp;</td><td>コンポーネントのプロファイル </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>new_func</em>&nbsp;</td><td>コンポーネントの生成関数へのポインタ </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>delete_func</em>&nbsp;</td><td>コンポーネントの破棄関数へのポインタ </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>policy</em>&nbsp;</td><td>コンポーネント生成時の命名ポリシー (デフォルト値:<a class="el" href="classDefaultNumberingPolicy.html" title="オブジェクト生成時ネーミング・ポリシー(命名規則)管理用クラス...">DefaultNumberingPolicy</a>) </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="aac5ae8d77d40e9be05e5b1706e4a0137"></a><!-- doxytag: member="RTC::FactoryCXX::~FactoryCXX" ref="aac5ae8d77d40e9be05e5b1706e4a0137" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual RTC::FactoryCXX::~FactoryCXX </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [inline, virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>参照先 <a class="el" href="rtm_2Factory_8h_source.html#l00405">m_policy</a>.</p>
+
+</div>
+</div>
+<hr/><h2>関数</h2>
+<a class="anchor" id="adf709b76b21aefe81338d9b885dcdcbe"></a><!-- doxytag: member="RTC::FactoryCXX::create" ref="adf709b76b21aefe81338d9b885dcdcbe" args="(Manager *mgr)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual <a class="el" href="classRTC_1_1RTObject__impl.html">RTObject_impl</a>* RTC::FactoryCXX::create </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classRTC_1_1Manager.html">Manager</a> *&nbsp;</td>
+          <td class="paramname"> <em>mgr</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>コンポーネントの生成 </p>
+<p>RT-Component のインスタンスを生成する。</p>
+<dl><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>mgr</em>&nbsp;</td><td>マネージャオブジェクト</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>戻り値:</b></dt><dd>生成したコンポーネント </dd></dl>
+
+<p><a class="el" href="classRTC_1_1FactoryBase.html#a08c22a5849ae192e442ce11754fb0be7">RTC::FactoryBase</a>を実装しています。</p>
+
+</div>
+</div>
+<a class="anchor" id="a627c4dd3b5686d4df13a39c2a481c8e4"></a><!-- doxytag: member="RTC::FactoryCXX::destroy" ref="a627c4dd3b5686d4df13a39c2a481c8e4" args="(RTObject_impl *comp)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void RTC::FactoryCXX::destroy </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classRTC_1_1RTObject__impl.html">RTObject_impl</a> *&nbsp;</td>
+          <td class="paramname"> <em>comp</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>コンポーネントの破棄 </p>
+<p>RT-Component のインスタンスを破棄する。</p>
+<dl><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>comp</em>&nbsp;</td><td>破棄対象 RT-Component </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p><a class="el" href="classRTC_1_1FactoryBase.html#aa7cb36bdcc0c8debba468b064ce03e7e">RTC::FactoryBase</a>を実装しています。</p>
+
+</div>
+</div>
+<hr/><h2>変数</h2>
+<a class="anchor" id="abb2914e846bc84a822189bdd290ddbab"></a><!-- doxytag: member="RTC::FactoryCXX::m_Delete" ref="abb2914e846bc84a822189bdd290ddbab" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespaceRTC.html#a100eb77101ade8d0302384c348d55bfa">RtcDeleteFunc</a> <a class="el" href="classRTC_1_1FactoryCXX.html#abb2914e846bc84a822189bdd290ddbab">RTC::FactoryCXX::m_Delete</a><code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>コンポーネントオブジェクト破棄関数へのポインタ </p>
+
+</div>
+</div>
+<a class="anchor" id="a2f437b41029d2a66893b3d49db0a0808"></a><!-- doxytag: member="RTC::FactoryCXX::m_New" ref="a2f437b41029d2a66893b3d49db0a0808" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespaceRTC.html#add1e6bc1bf2da60fb3853aeb87914d9b">RtcNewFunc</a> <a class="el" href="classRTC_1_1FactoryCXX.html#a2f437b41029d2a66893b3d49db0a0808">RTC::FactoryCXX::m_New</a><code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>コンポーネントオブジェクト生成関数へのポインタ </p>
+
+</div>
+</div>
+<a class="anchor" id="a5114c456980db9cd6645353628fb20bd"></a><!-- doxytag: member="RTC::FactoryCXX::m_policy" ref="a5114c456980db9cd6645353628fb20bd" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classNumberingPolicy.html">NumberingPolicy</a>* <a class="el" href="classRTC_1_1FactoryCXX.html#a5114c456980db9cd6645353628fb20bd">RTC::FactoryCXX::m_policy</a><code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>コンポーネント生成時の命名ポリシー </p>
+
+<p>参照元 <a class="el" href="rtm_2Factory_8h_source.html#l00328">~FactoryCXX()</a>.</p>
+
+</div>
+</div>
+</div>
+<hr class="footer"/><address style="text-align: right;"><small>OpenRTMに対してThu May 24 23:25:19 2012に生成されました。&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.6.3 </small></address>
+</body>
+</html>

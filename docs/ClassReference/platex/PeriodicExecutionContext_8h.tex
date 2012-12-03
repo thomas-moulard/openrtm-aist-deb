@@ -1,0 +1,95 @@
+\section{PeriodicExecutionContext.h}
+\label{PeriodicExecutionContext_8h}\index{PeriodicExecutionContext.h@{PeriodicExecutionContext.h}}
+
+
+PeriodicExecutionContext class.  
+
+
+{\ttfamily \#include $<$coil/Task.h$>$}\par
+{\ttfamily \#include $<$coil/Mutex.h$>$}\par
+{\ttfamily \#include $<$coil/Condition.h$>$}\par
+{\ttfamily \#include $<$vector$>$}\par
+{\ttfamily \#include $<$iostream$>$}\par
+{\ttfamily \#include $<$rtm/RTC.h$>$}\par
+{\ttfamily \#include $<$rtm/idl/RTCSkel.h$>$}\par
+{\ttfamily \#include $<$rtm/idl/OpenRTMSkel.h$>$}\par
+{\ttfamily \#include $<$rtm/Manager.h$>$}\par
+{\ttfamily \#include $<$rtm/StateMachine.h$>$}\par
+{\ttfamily \#include $<$rtm/ExecutionContextBase.h$>$}\par
+\subsection*{構成}
+\begin{DoxyCompactItemize}
+\item 
+class {\bf RTC::PeriodicExecutionContext}
+\begin{DoxyCompactList}\small\item\em \doxyref{PeriodicExecutionContext}{p.}{classRTC_1_1PeriodicExecutionContext} クラス. \item\end{DoxyCompactList}\item 
+class {\bf RTC::PeriodicExecutionContext::DFPBase}
+\begin{DoxyCompactList}\small\item\em \doxyref{DFPBase}{p.}{classRTC_1_1PeriodicExecutionContext_1_1DFPBase} クラス. \item\end{DoxyCompactList}\item 
+class {\bf RTC::PeriodicExecutionContext::DFP$<$ Object $>$}
+\begin{DoxyCompactList}\small\item\em \doxyref{DFP}{p.}{classRTC_1_1PeriodicExecutionContext_1_1DFP} クラス. \item\end{DoxyCompactList}\item 
+struct {\bf RTC::PeriodicExecutionContext::Comp}
+\begin{DoxyCompactList}\small\item\em コンポーネント管理用構造体 \item\end{DoxyCompactList}\item 
+struct {\bf RTC::PeriodicExecutionContext::find\_\-comp}
+\begin{DoxyCompactList}\small\item\em コンポーネント検索用ファンクタ \item\end{DoxyCompactList}\item 
+struct {\bf RTC::PeriodicExecutionContext::invoke\_\-on\_\-startup}
+\begin{DoxyCompactList}\small\item\em on\_\-startup 起動用ファンクタ \item\end{DoxyCompactList}\item 
+struct {\bf RTC::PeriodicExecutionContext::invoke\_\-on\_\-shutdown}
+\begin{DoxyCompactList}\small\item\em on\_\-shutdown 起動用ファンクタ \item\end{DoxyCompactList}\item 
+struct {\bf RTC::PeriodicExecutionContext::invoke\_\-on\_\-rate\_\-changed}
+\begin{DoxyCompactList}\small\item\em on\_\-rate\_\-changed 起動用ファンクタ \item\end{DoxyCompactList}\item 
+struct {\bf RTC::PeriodicExecutionContext::invoke\_\-worker}
+\begin{DoxyCompactList}\small\item\em ワーカー実行用ファンクタ \item\end{DoxyCompactList}\item 
+struct {\bf RTC::PeriodicExecutionContext::Worker}
+\begin{DoxyCompactList}\small\item\em worker 用状態変数クラス \item\end{DoxyCompactList}\item 
+class {\bf RTC::PeriodicExecutionContext::find\_\-participant}
+\end{DoxyCompactItemize}
+\subsection*{ネームスペース}
+\begin{DoxyCompactItemize}
+\item 
+namespace {\bf RTC}
+
+
+\begin{DoxyCompactList}\small\item\em RTコンポーネント. \item\end{DoxyCompactList}
+
+\end{DoxyCompactItemize}
+\subsection*{マクロ定義}
+\begin{DoxyCompactItemize}
+\item 
+\#define {\bf NUM\_\-OF\_\-LIFECYCLESTATE}~4
+\end{DoxyCompactItemize}
+\subsection*{関数}
+\begin{DoxyCompactItemize}
+\item 
+void {\bf PeriodicExecutionContextInit} ({\bf RTC::Manager} $\ast$manager)
+\begin{DoxyCompactList}\small\item\em ECFactoryへの登録のための初期化関数. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{説明}
+PeriodicExecutionContext class. \begin{DoxyDate}{日付}
+
+\end{DoxyDate}
+\begin{DoxyParagraph}{Date}
+2008-\/01-\/14 07:53:05 
+\end{DoxyParagraph}
+\begin{DoxyAuthor}{作者}
+Noriaki Ando $<${\tt n-\/ando@aist.go.jp}$>$
+\end{DoxyAuthor}
+Copyright (C) 2006-\/2008 Noriaki Ando Task-\/intelligence Research Group, Intelligent Systems Research Institute, National Institute of Advanced Industrial Science and Technology (AIST), Japan All rights reserved.
+
+\begin{DoxyParagraph}{Id}
+\doxyref{PeriodicExecutionContext.h}{p.}{PeriodicExecutionContext_8h} 2063 2011-\/03-\/10 13:55:48Z n-\/ando 
+\end{DoxyParagraph}
+
+
+\subsection{マクロ定義}
+\index{PeriodicExecutionContext.h@{PeriodicExecutionContext.h}!NUM\_\-OF\_\-LIFECYCLESTATE@{NUM\_\-OF\_\-LIFECYCLESTATE}}
+\index{NUM\_\-OF\_\-LIFECYCLESTATE@{NUM\_\-OF\_\-LIFECYCLESTATE}!PeriodicExecutionContext.h@{PeriodicExecutionContext.h}}
+\subsubsection[{NUM\_\-OF\_\-LIFECYCLESTATE}]{\setlength{\rightskip}{0pt plus 5cm}\#define NUM\_\-OF\_\-LIFECYCLESTATE~4}\label{PeriodicExecutionContext_8h_a6c0256aab3b98fed6c87175c03712b0d}
+
+
+\subsection{関数}
+\index{PeriodicExecutionContext.h@{PeriodicExecutionContext.h}!PeriodicExecutionContextInit@{PeriodicExecutionContextInit}}
+\index{PeriodicExecutionContextInit@{PeriodicExecutionContextInit}!PeriodicExecutionContext.h@{PeriodicExecutionContext.h}}
+\subsubsection[{PeriodicExecutionContextInit}]{\setlength{\rightskip}{0pt plus 5cm}void PeriodicExecutionContextInit ({\bf RTC::Manager} $\ast$ {\em manager})}\label{PeriodicExecutionContext_8h_a3f39429a80f578366b6014b2bef09c90}
+
+
+ECFactoryへの登録のための初期化関数. 
+

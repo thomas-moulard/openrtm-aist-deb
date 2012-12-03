@@ -1,0 +1,107 @@
+\section{クラス RTC::ConfigBase}
+\label{structRTC_1_1ConfigBase}\index{RTC::ConfigBase@{RTC::ConfigBase}}
+
+
+\doxyref{ConfigBase}{p.}{structRTC_1_1ConfigBase} 抽象クラス.  
+
+
+
+
+{\ttfamily \#include $<$ConfigAdmin.h$>$}
+
+RTC::ConfigBaseに対する継承グラフ\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2cm]{structRTC_1_1ConfigBase}
+\end{center}
+\end{figure}
+\subsection*{Public メソッド}
+\begin{DoxyCompactItemize}
+\item 
+{\bf ConfigBase} (const char $\ast$name\_\-, const char $\ast$def\_\-val)
+\begin{DoxyCompactList}\small\item\em コンストラクタ \item\end{DoxyCompactList}\item 
+virtual {\bf $\sim$ConfigBase} (void)
+\begin{DoxyCompactList}\small\item\em 仮想デストラクタ \item\end{DoxyCompactList}\item 
+virtual bool {\bf update} (const char $\ast$val)=0
+\begin{DoxyCompactList}\small\item\em コンフィギュレーションパラメータ値更新用純粋仮想関数 \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public 変数}
+\begin{DoxyCompactItemize}
+\item 
+const char $\ast$ {\bf name}
+\begin{DoxyCompactList}\small\item\em コンフィギュレーション名 \item\end{DoxyCompactList}\item 
+const char $\ast$ {\bf default\_\-value}
+\begin{DoxyCompactList}\small\item\em 文字列形式のデフォルト値 \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{説明}
+\doxyref{ConfigBase}{p.}{structRTC_1_1ConfigBase} 抽象クラス. 各種コンフィギュレーション情報を保持するための抽象クラス。具象コン フィギュレーションクラスは、以下の純粋仮想関数の実装を提供しなけれ ばならない。
+
+publicインターフェースとして以下のものを提供する。
+\begin{DoxyItemize}
+\item \doxyref{update()}{p.}{structRTC_1_1ConfigBase_a353307f47fe534865db2a9173380e38c}: コンフィギュレーションパラメータ値の更新
+\end{DoxyItemize}
+
+\begin{DoxySince}{から}
+0.4.0 
+\end{DoxySince}
+
+
+\subsection{コンストラクタとデストラクタ}
+\index{RTC::ConfigBase@{RTC::ConfigBase}!ConfigBase@{ConfigBase}}
+\index{ConfigBase@{ConfigBase}!RTC::ConfigBase@{RTC::ConfigBase}}
+\subsubsection[{ConfigBase}]{\setlength{\rightskip}{0pt plus 5cm}RTC::ConfigBase::ConfigBase (const char $\ast$ {\em name\_\-}, \/  const char $\ast$ {\em def\_\-val})\hspace{0.3cm}{\ttfamily  [inline]}}\label{structRTC_1_1ConfigBase_a3bc7089cfd7b148209890abb2cb2b9cd}
+
+
+コンストラクタ 
+
+コンストラクタ
+
+
+\begin{DoxyParams}{引数}
+\item[{\em name\_\-}]コンフィギュレーション名 \item[{\em def\_\-val}]文字列形式のデフォルト値 \end{DoxyParams}
+\index{RTC::ConfigBase@{RTC::ConfigBase}!$\sim$ConfigBase@{$\sim$ConfigBase}}
+\index{$\sim$ConfigBase@{$\sim$ConfigBase}!RTC::ConfigBase@{RTC::ConfigBase}}
+\subsubsection[{$\sim$ConfigBase}]{\setlength{\rightskip}{0pt plus 5cm}virtual RTC::ConfigBase::$\sim$ConfigBase (void)\hspace{0.3cm}{\ttfamily  [inline, virtual]}}\label{structRTC_1_1ConfigBase_a305aec103d2c6693f632cc0c8ca3ceba}
+
+
+仮想デストラクタ 
+
+仮想デストラクタ。 
+
+\subsection{関数}
+\index{RTC::ConfigBase@{RTC::ConfigBase}!update@{update}}
+\index{update@{update}!RTC::ConfigBase@{RTC::ConfigBase}}
+\subsubsection[{update}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool RTC::ConfigBase::update (const char $\ast$ {\em val})\hspace{0.3cm}{\ttfamily  [pure virtual]}}\label{structRTC_1_1ConfigBase_a353307f47fe534865db2a9173380e38c}
+
+
+コンフィギュレーションパラメータ値更新用純粋仮想関数 
+
+コンフィギュレーション設定値でコンフィギュレーションパラメータを 更新するための純粋仮想関数。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em val}]パラメータ値の文字列表現\end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+設定結果 
+\end{DoxyReturn}
+
+
+{\bf RTC::Config$<$ VarType, TransFunc $>$} \doxyref{}{p.}{classRTC_1_1Config_ae62b81ad2d80a5f40f594f473f9556fa}で実装されています。
+
+
+
+\subsection{変数}
+\index{RTC::ConfigBase@{RTC::ConfigBase}!default\_\-value@{default\_\-value}}
+\index{default\_\-value@{default\_\-value}!RTC::ConfigBase@{RTC::ConfigBase}}
+\subsubsection[{default\_\-value}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ {\bf RTC::ConfigBase::default\_\-value}}\label{structRTC_1_1ConfigBase_a160ecb767e940bfd30f46d95032588d1}
+
+
+文字列形式のデフォルト値 
+
+\index{RTC::ConfigBase@{RTC::ConfigBase}!name@{name}}
+\index{name@{name}!RTC::ConfigBase@{RTC::ConfigBase}}
+\subsubsection[{name}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ {\bf RTC::ConfigBase::name}}\label{structRTC_1_1ConfigBase_a110474d849e54c4b91625763d04a2335}
+
+
+コンフィギュレーション名 
+

@@ -1,0 +1,1400 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<title>OpenRTM: クラス coil::Properties</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<!-- 作成： Doxygen 1.6.3 -->
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="index.html"><span>メインページ</span></a></li>
+      <li><a href="namespaces.html"><span>ネームスペース</span></a></li>
+      <li class="current"><a href="annotated.html"><span>クラス</span></a></li>
+      <li><a href="files.html"><span>ファイル</span></a></li>
+    </ul>
+  </div>
+  <div class="tabs">
+    <ul>
+      <li><a href="annotated.html"><span>構成</span></a></li>
+      <li><a href="hierarchy.html"><span>クラス階層</span></a></li>
+      <li><a href="functions.html"><span>構成メンバ</span></a></li>
+    </ul>
+  </div>
+  <div class="navpath"><a class="el" href="namespacecoil.html">coil</a>::<a class="el" href="classcoil_1_1Properties.html">Properties</a>
+  </div>
+</div>
+<div class="contents">
+<h1>クラス coil::Properties</h1><!-- doxytag: class="coil::Properties" -->
+<p>プロパティセットを表現するクラス  
+<a href="#_details">[詳細]</a></p>
+
+<p><code>#include &lt;<a class="el" href="Properties_8h_source.html">Properties.h</a>&gt;</code></p>
+
+<p><a href="classcoil_1_1Properties-members.html">すべてのメンバ一覧</a></p>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr><td colspan="2"><h2>Public メソッド</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcoil_1_1Properties.html#ac450ea6ec45f1166cc630bbc26535a00">Properties</a> (const char *key=&quot;&quot;, const char *value=&quot;&quot;)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">コンストラクタ(rootノードのみ作成)  <a href="#ac450ea6ec45f1166cc630bbc26535a00"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcoil_1_1Properties.html#a220dd189b126cb4faeea1c6849512667">Properties</a> (std::map&lt; std::string, std::string &gt; &amp;defaults)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">コンストラクタ(mapでデフォルト値を与える)  <a href="#a220dd189b126cb4faeea1c6849512667"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcoil_1_1Properties.html#ae93d761ca0f93dfe41be33b67a2b2741">Properties</a> (const char *defaults[], long num=LONG_MAX)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">コンストラクタ(char*[] でデフォルト値を与える)  <a href="#ae93d761ca0f93dfe41be33b67a2b2741"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcoil_1_1Properties.html#aebf43709176e3a922290bd762544ce41">Properties</a> (const <a class="el" href="classcoil_1_1Properties.html">Properties</a> &amp;prop)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">コピーコンストラクタ  <a href="#aebf43709176e3a922290bd762544ce41"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classcoil_1_1Properties.html">Properties</a> &amp;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcoil_1_1Properties.html#acf1a3c8e401765c285e318d6863a6e77">operator=</a> (const <a class="el" href="classcoil_1_1Properties.html">Properties</a> &amp;prop)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">代入演算子  <a href="#acf1a3c8e401765c285e318d6863a6e77"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcoil_1_1Properties.html#a1edb4ee99d0a187307687bf7472efe3d">~Properties</a> (void)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">デストラクタ  <a href="#a1edb4ee99d0a187307687bf7472efe3d"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">const char *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcoil_1_1Properties.html#a3809685330fc7d8ced176e8dbe8dd2f7">getName</a> (void) const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Name の取得.  <a href="#a3809685330fc7d8ced176e8dbe8dd2f7"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">const char *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcoil_1_1Properties.html#aa402bd7d600a60560782622ef7ece205">getValue</a> (void) const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">値の取得  <a href="#aa402bd7d600a60560782622ef7ece205"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">const char *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcoil_1_1Properties.html#a78d23bd777bb462168a1807750267d6d">getDefaultValue</a> (void) const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">デフォルト値の取得  <a href="#a78d23bd777bb462168a1807750267d6d"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">const std::vector&lt; <a class="el" href="classcoil_1_1Properties.html">Properties</a> * &gt; &amp;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcoil_1_1Properties.html#a51cdcfada7734595f8a58beaa4356c72">getLeaf</a> (void) const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">子要素の取得  <a href="#a51cdcfada7734595f8a58beaa4356c72"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classcoil_1_1Properties.html">Properties</a> *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcoil_1_1Properties.html#a930c4db15600de4f49370741652221cf">getRoot</a> (void) const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">ルート要素の取得  <a href="#a930c4db15600de4f49370741652221cf"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">const std::string &amp;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcoil_1_1Properties.html#a91ad72f8d7c41624e2258c5a9331bd2a">getProperty</a> (const std::string &amp;key) const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">指定されたキーを持つプロパティを、プロパティリストから探す  <a href="#a91ad72f8d7c41624e2258c5a9331bd2a"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">const std::string &amp;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcoil_1_1Properties.html#ac79dfbccc6050fcf4631063d1090af87">getProperty</a> (const std::string &amp;key, const std::string &amp;def) const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">指定されたキーを持つプロパティを、プロパティリストから探す  <a href="#ac79dfbccc6050fcf4631063d1090af87"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">const std::string &amp;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcoil_1_1Properties.html#a184d704a37d9eb2052b77a0624060b34">operator[]</a> (const std::string &amp;key) const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">指定されたキーを持つプロパティを、プロパティリストから探す  <a href="#a184d704a37d9eb2052b77a0624060b34"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">std::string &amp;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcoil_1_1Properties.html#a2c241eddb268f07442e1d008154b2fef">operator[]</a> (const std::string &amp;key)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">指定されたキーを持つプロパティを、プロパティリストから探す  <a href="#a2c241eddb268f07442e1d008154b2fef"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">const std::string &amp;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcoil_1_1Properties.html#a9536505f283c0fc848cf0ab31f5b271b">getDefault</a> (const std::string &amp;key) const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">指定されたキーに対してデフォルト値を取得する  <a href="#a9536505f283c0fc848cf0ab31f5b271b"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">std::string&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcoil_1_1Properties.html#ad0e11287725b2597aa2fd24aa164de5f">setProperty</a> (const std::string &amp;key, const std::string &amp;value)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight"><a class="el" href="classcoil_1_1Properties.html" title="プロパティセットを表現するクラス">Properties</a> に value を key について登録する.  <a href="#ad0e11287725b2597aa2fd24aa164de5f"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">std::string&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcoil_1_1Properties.html#a019205d917bb9fadfedd5d2a6143b88a">setDefault</a> (const std::string &amp;key, const std::string &amp;value)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">デフォルト値を登録する  <a href="#a019205d917bb9fadfedd5d2a6143b88a"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcoil_1_1Properties.html#a66d2d6f4814a45c55d2e85a3e8f5a8c0">setDefaults</a> (const char *defaults[], long num=LONG_MAX)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight"><a class="el" href="classcoil_1_1Properties.html" title="プロパティセットを表現するクラス">Properties</a> にデフォルト値をまとめて登録する.  <a href="#a66d2d6f4814a45c55d2e85a3e8f5a8c0"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcoil_1_1Properties.html#afe0899928af5de6b6b6b3226e4bf228a">list</a> (std::ostream &amp;out)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">指定された出力ストリームに、プロパティリストを出力する  <a href="#afe0899928af5de6b6b6b3226e4bf228a"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcoil_1_1Properties.html#a3eb4ac76be20037552ec34f1ca7923b1">load</a> (std::istream &amp;inStream)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">入力ストリームからキーと要素が対になったプロパティリストを読み込む  <a href="#a3eb4ac76be20037552ec34f1ca7923b1"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcoil_1_1Properties.html#aef5ed6f0e17adabfc46e4c5d3de2580d">save</a> (std::ostream &amp;out, const std::string &amp;header)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">プロパティリストを指定されたストリームに保存する  <a href="#aef5ed6f0e17adabfc46e4c5d3de2580d"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcoil_1_1Properties.html#a86d929fdcba713269d59239d32dfd1b5">store</a> (std::ostream &amp;out, const std::string &amp;header)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">プロパティリストを出力ストリームへ保存する  <a href="#a86d929fdcba713269d59239d32dfd1b5"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::string &gt;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcoil_1_1Properties.html#a32285ad4eba53bad4f9b37d19fd2f088">propertyNames</a> (void) const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">プロパティのキーのリストを vector で返す  <a href="#a32285ad4eba53bad4f9b37d19fd2f088"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcoil_1_1Properties.html#af57a98d78e63f9429d0bd656dc3c2db3">size</a> (void) const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">プロパティの数を取得する  <a href="#af57a98d78e63f9429d0bd656dc3c2db3"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classcoil_1_1Properties.html">Properties</a> *const&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcoil_1_1Properties.html#a9da22dbbf05a2115f4a8a1d4fcc8f883">findNode</a> (const std::string &amp;key) const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">ノードを取得する  <a href="#a9da22dbbf05a2115f4a8a1d4fcc8f883"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classcoil_1_1Properties.html">Properties</a> &amp;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcoil_1_1Properties.html#a96cd29523b03679abf8ace55cb84ac36">getNode</a> (const std::string &amp;key)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">ノードを取得する  <a href="#a96cd29523b03679abf8ace55cb84ac36"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcoil_1_1Properties.html#a866607797f36b9d10a93072d62188150">createNode</a> (const std::string &amp;key)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">新規ノードを生成する  <a href="#a866607797f36b9d10a93072d62188150"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classcoil_1_1Properties.html">Properties</a> *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcoil_1_1Properties.html#a4eb696904cc8a1c0ae9fa5bcc4a07b75">removeNode</a> (const char *leaf_name)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">ノードを削除する  <a href="#a4eb696904cc8a1c0ae9fa5bcc4a07b75"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classcoil_1_1Properties.html">Properties</a> *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcoil_1_1Properties.html#a0f290b8337860bf7fa677e7c849f30f2">hasKey</a> (const char *key) const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">子ノードにkeyがあるかどうか  <a href="#a0f290b8337860bf7fa677e7c849f30f2"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcoil_1_1Properties.html#a4d9c54809d93b618fc3bcafb50ed1e5a">clear</a> (void)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">子ノードを全て削除する  <a href="#a4d9c54809d93b618fc3bcafb50ed1e5a"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classcoil_1_1Properties.html">Properties</a> &amp;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcoil_1_1Properties.html#a74de44746be25fa0a404bd17c02cda44">operator&lt;&lt;</a> (const <a class="el" href="classcoil_1_1Properties.html">Properties</a> &amp;prop)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Propertyをマージする.  <a href="#a74de44746be25fa0a404bd17c02cda44"></a><br/></td></tr>
+<tr><td colspan="2"><h2>Static Protected メソッド</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcoil_1_1Properties.html#a6164ce725d1349d11d6d7c349b6b8cc1">splitKeyValue</a> (const std::string &amp;str, std::string &amp;key, std::string &amp;value)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">文字列をキーと値のペアに分割する  <a href="#a6164ce725d1349d11d6d7c349b6b8cc1"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcoil_1_1Properties.html#a510ba2a11821c01d0d39c11d05dfced8">split</a> (const std::string &amp;str, const char delim, std::vector&lt; std::string &gt; &amp;value)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">文字列を分割する  <a href="#a510ba2a11821c01d0d39c11d05dfced8"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classcoil_1_1Properties.html">Properties</a> *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcoil_1_1Properties.html#a0fc03588997dcb27fe602b4cc05f2177">_getNode</a> (std::vector&lt; std::string &gt; &amp;keys, std::vector&lt; <a class="el" href="classcoil_1_1Properties.html">Properties</a> * &gt;::size_type index, const <a class="el" href="classcoil_1_1Properties.html">Properties</a> *curr)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">プロパティを取得する  <a href="#a0fc03588997dcb27fe602b4cc05f2177"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcoil_1_1Properties.html#a1955392bd669df6b34d63a97343ccadb">_propertiyNames</a> (std::vector&lt; std::string &gt; &amp;names, std::string curr_name, const <a class="el" href="classcoil_1_1Properties.html">Properties</a> *curr)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">プロパティの名称リストを取得する  <a href="#a1955392bd669df6b34d63a97343ccadb"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcoil_1_1Properties.html#a1818545c1410c07de326d202391d678d">_store</a> (std::ostream &amp;out, std::string curr_name, <a class="el" href="classcoil_1_1Properties.html">Properties</a> *curr)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">プロパティの名称リストを保存する  <a href="#a1818545c1410c07de326d202391d678d"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static std::ostream &amp;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcoil_1_1Properties.html#ad61ec669343b61db27b721ebcd1f13a6">_dump</a> (std::ostream &amp;out, const <a class="el" href="classcoil_1_1Properties.html">Properties</a> &amp;curr, int index)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">プロパティの内容を保存する  <a href="#ad61ec669343b61db27b721ebcd1f13a6"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static std::string&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcoil_1_1Properties.html#ad238d41d4cacaefb479f0ba35e75fa77">indent</a> (int index)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">インデントを生成する  <a href="#ad238d41d4cacaefb479f0ba35e75fa77"></a><br/></td></tr>
+<tr><td colspan="2"><h2>フレンド</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">std::ostream &amp;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcoil_1_1Properties.html#a4cbe3c065a17f9e6119dc2f423db16da">operator&lt;&lt;</a> (std::ostream &amp;lhs, const <a class="el" href="classcoil_1_1Properties.html">Properties</a> &amp;rhs)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Propertyをストリームに出力する.  <a href="#a4cbe3c065a17f9e6119dc2f423db16da"></a><br/></td></tr>
+</table>
+<hr/><a name="_details"></a><h2>説明</h2>
+<p>プロパティセットを表現するクラス </p>
+<p><a class="el" href="classcoil_1_1Properties.html" title="プロパティセットを表現するクラス">Properties</a> クラスは、不変のプロパティセットを表す。 <a class="el" href="classcoil_1_1Properties.html" title="プロパティセットを表現するクラス">Properties</a> をストリーム に保管したり、ストリームからロードしたりすることができる。 プロパティリストの各キー、およびそれに対応する値は文字列となっている。</p>
+<p>プロパティリストには、その「デフォルト値」として別のプロパティリストを持つ ことができる。元のプロパティリストでプロパティキーが見つからないと、この 2番目のプロパティリストが検索される。</p>
+<p>プロパティの取得には <a class="el" href="classcoil_1_1Properties.html#a91ad72f8d7c41624e2258c5a9331bd2a" title="指定されたキーを持つプロパティを、プロパティリストから探す...">getProperty()</a> 、プロパティのセットには <a class="el" href="classcoil_1_1Properties.html#ad0e11287725b2597aa2fd24aa164de5f" title="Properties に value を key について登録する.">setProperty()</a> と いったメソッドを使用することが推奨される。</p>
+<p>プロパティをストリームに保存するとき、またはストリームからロードするとき に、ISO 8859-1 文字エンコーディングが使用される。このエンコーディングに 直接表示できない文字は、扱うことができない。</p>
+<p>このクラスは、Java の <a class="el" href="classcoil_1_1Properties.html" title="プロパティセットを表現するクラス">Properties</a> クラス (java.util.Properties) とほぼ同様の メソッドを持つ。また、入出力されるファイルは Java の <a class="el" href="classcoil_1_1Properties.html" title="プロパティセットを表現するクラス">Properties</a> クラスが 出力するものと互換性があるが、Unicode を含むものは扱うことができない。</p>
+<dl class="since"><dt><b>から:</b></dt><dd>0.4.0 </dd></dl>
+<hr/><h2>コンストラクタとデストラクタ</h2>
+<a class="anchor" id="ac450ea6ec45f1166cc630bbc26535a00"></a><!-- doxytag: member="coil::Properties::Properties" ref="ac450ea6ec45f1166cc630bbc26535a00" args="(const char *key=&quot;&quot;, const char *value=&quot;&quot;)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">coil::Properties::Properties </td>
+          <td>(</td>
+          <td class="paramtype">const char *&nbsp;</td>
+          <td class="paramname"> <em>key</em> = <code>&quot;&quot;</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&nbsp;</td>
+          <td class="paramname"> <em>value</em> = <code>&quot;&quot;</code></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>コンストラクタ(rootノードのみ作成) </p>
+<p>key と value のみを与えて Property のルートノードを作成する。 値は全てデフォルト値として設定される。</p>
+<dl><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>key</em>&nbsp;</td><td>プロパティのキー(デフォルト値:"") </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>value</em>&nbsp;</td><td>プロパティの値(デフォルト値:"") </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a220dd189b126cb4faeea1c6849512667"></a><!-- doxytag: member="coil::Properties::Properties" ref="a220dd189b126cb4faeea1c6849512667" args="(std::map&lt; std::string, std::string &gt; &amp;defaults)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">coil::Properties::Properties </td>
+          <td>(</td>
+          <td class="paramtype">std::map&lt; std::string, std::string &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>defaults</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>コンストラクタ(mapでデフォルト値を与える) </p>
+<p>std::string の std::map をデフォルト値にもつ <a class="el" href="classcoil_1_1Properties.html" title="プロパティセットを表現するクラス">Properties</a> を作成する。 値は全てデフォルト値として設定される。</p>
+<dl><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>defaults</em>&nbsp;</td><td>デフォルト値として指定されるmap </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="ae93d761ca0f93dfe41be33b67a2b2741"></a><!-- doxytag: member="coil::Properties::Properties" ref="ae93d761ca0f93dfe41be33b67a2b2741" args="(const char *defaults[], long num=LONG_MAX)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">coil::Properties::Properties </td>
+          <td>(</td>
+          <td class="paramtype">const char *&nbsp;</td>
+          <td class="paramname"> <em>defaults</em>[], </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">long&nbsp;</td>
+          <td class="paramname"> <em>num</em> = <code>LONG_MAX</code></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>コンストラクタ(char*[] でデフォルト値を与える) </p>
+<p>指定されたデフォルト値を持つ空のプロパティリストを作成する。 値は全てデフォルト値として設定される。 デフォルト値は char* の配列により与えられ、key と value の対になって おり、リストの終端は配列の数を表す引数 num か、空文字の key で与えらられ なければならない。 以下に例を示す。</p>
+<pre>
+ const char* defaults = {
+     "key1", "value1",
+     "key2", "value2",
+     "key3", "value3",
+     "key4", "value4",
+     "key5", "value5",
+     "" };
+ <a class="el" href="classcoil_1_1Properties.html" title="プロパティセットを表現するクラス">Properties</a> p(defaults);
+ // もしくは
+ <a class="el" href="classcoil_1_1Properties.html" title="プロパティセットを表現するクラス">Properties</a> p(defaults, 10);
+ </pre><dl><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>defaults</em>&nbsp;</td><td>デフォルト値を指定する配列 </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>num</em>&nbsp;</td><td>デフォルト値を設定する要素数(デフォルト値:LONG_MAX) </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="aebf43709176e3a922290bd762544ce41"></a><!-- doxytag: member="coil::Properties::Properties" ref="aebf43709176e3a922290bd762544ce41" args="(const Properties &amp;prop)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">coil::Properties::Properties </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classcoil_1_1Properties.html">Properties</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>prop</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>コピーコンストラクタ </p>
+<p>引数に与えられた <a class="el" href="classcoil_1_1Properties.html" title="プロパティセットを表現するクラス">Properties</a> のキー、値およびデフォルト値が 全てそのままコピーされる。 </p>
+
+</div>
+</div>
+<a class="anchor" id="a1edb4ee99d0a187307687bf7472efe3d"></a><!-- doxytag: member="coil::Properties::~Properties" ref="a1edb4ee99d0a187307687bf7472efe3d" args="(void)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual coil::Properties::~Properties </td>
+          <td>(</td>
+          <td class="paramtype">void&nbsp;</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>デストラクタ </p>
+
+</div>
+</div>
+<hr/><h2>関数</h2>
+<a class="anchor" id="ad61ec669343b61db27b721ebcd1f13a6"></a><!-- doxytag: member="coil::Properties::_dump" ref="ad61ec669343b61db27b721ebcd1f13a6" args="(std::ostream &amp;out, const Properties &amp;curr, int index)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">static std::ostream&amp; coil::Properties::_dump </td>
+          <td>(</td>
+          <td class="paramtype">std::ostream &amp;&nbsp;</td>
+          <td class="paramname"> <em>out</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classcoil_1_1Properties.html">Properties</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>curr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&nbsp;</td>
+          <td class="paramname"> <em>index</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td><code> [static, protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>プロパティの内容を保存する </p>
+<p>プロパティに設定された内容を保存する。 保存時にはプロパティ階層の深さを表す数字が付加される。 値が設定されていないプロパティについては、デフォルト値が出力される。</p>
+<dl><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>out</em>&nbsp;</td><td>プロパティ内容保存先の出力ストリーム </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>curr</em>&nbsp;</td><td>対象プロパティ </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>index</em>&nbsp;</td><td>現在のプロパティ階層 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a0fc03588997dcb27fe602b4cc05f2177"></a><!-- doxytag: member="coil::Properties::_getNode" ref="a0fc03588997dcb27fe602b4cc05f2177" args="(std::vector&lt; std::string &gt; &amp;keys, std::vector&lt; Properties * &gt;::size_type index, const Properties *curr)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="classcoil_1_1Properties.html">Properties</a>* coil::Properties::_getNode </td>
+          <td>(</td>
+          <td class="paramtype">std::vector&lt; std::string &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>keys</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::vector&lt; <a class="el" href="classcoil_1_1Properties.html">Properties</a> * &gt;::size_type&nbsp;</td>
+          <td class="paramname"> <em>index</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classcoil_1_1Properties.html">Properties</a> *&nbsp;</td>
+          <td class="paramname"> <em>curr</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td><code> [static, protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>プロパティを取得する </p>
+<p>キーリストで指定されたプロパティを取得する。 キーリストでは、指定するキーのプロパティでの階層関係をリスト形式で表現 する。 指定したキーリストに該当するプロパティが存在しない場合はNULLを返す。</p>
+<dl><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>keys</em>&nbsp;</td><td>取得対象プロパティのキーのリスト表現 </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>index</em>&nbsp;</td><td>キーリストの階層数 </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>curr</em>&nbsp;</td><td>検索対象プロパティ</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>戻り値:</b></dt><dd>検索対象プロパティ </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a1955392bd669df6b34d63a97343ccadb"></a><!-- doxytag: member="coil::Properties::_propertiyNames" ref="a1955392bd669df6b34d63a97343ccadb" args="(std::vector&lt; std::string &gt; &amp;names, std::string curr_name, const Properties *curr)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void coil::Properties::_propertiyNames </td>
+          <td>(</td>
+          <td class="paramtype">std::vector&lt; std::string &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>names</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::string&nbsp;</td>
+          <td class="paramname"> <em>curr_name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classcoil_1_1Properties.html">Properties</a> *&nbsp;</td>
+          <td class="paramname"> <em>curr</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td><code> [static, protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>プロパティの名称リストを取得する </p>
+<p>プロパティの名称を'.'区切りで表現したリストを取得する。</p>
+<dl><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>names</em>&nbsp;</td><td>プロパティの名称リスト </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>curr_name</em>&nbsp;</td><td>現在のプロパティ名 </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>curr</em>&nbsp;</td><td>対象プロパティ </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a1818545c1410c07de326d202391d678d"></a><!-- doxytag: member="coil::Properties::_store" ref="a1818545c1410c07de326d202391d678d" args="(std::ostream &amp;out, std::string curr_name, Properties *curr)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void coil::Properties::_store </td>
+          <td>(</td>
+          <td class="paramtype">std::ostream &amp;&nbsp;</td>
+          <td class="paramname"> <em>out</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::string&nbsp;</td>
+          <td class="paramname"> <em>curr_name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classcoil_1_1Properties.html">Properties</a> *&nbsp;</td>
+          <td class="paramname"> <em>curr</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td><code> [static, protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>プロパティの名称リストを保存する </p>
+<p>プロパティの名称を'.'区切りで表現したリストを保存する。</p>
+<dl><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>out</em>&nbsp;</td><td>プロパティの名称リスト保存先の出力ストリーム </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>curr_name</em>&nbsp;</td><td>現在のプロパティ名 </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>curr</em>&nbsp;</td><td>対象プロパティ </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a4d9c54809d93b618fc3bcafb50ed1e5a"></a><!-- doxytag: member="coil::Properties::clear" ref="a4d9c54809d93b618fc3bcafb50ed1e5a" args="(void)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void coil::Properties::clear </td>
+          <td>(</td>
+          <td class="paramtype">void&nbsp;</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>子ノードを全て削除する </p>
+
+</div>
+</div>
+<a class="anchor" id="a866607797f36b9d10a93072d62188150"></a><!-- doxytag: member="coil::Properties::createNode" ref="a866607797f36b9d10a93072d62188150" args="(const std::string &amp;key)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool coil::Properties::createNode </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&nbsp;</td>
+          <td class="paramname"> <em>key</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>新規ノードを生成する </p>
+<p>指定したキーを持つ新規ノードを生成する。 既に同一キーを持つノードが登録済みの場合にはエラーを返す。</p>
+<dl><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>key</em>&nbsp;</td><td>新規ノードのキー</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>戻り値:</b></dt><dd>新規ノード生成結果 指定したキーを持つノードが既に存在する場合にはfalse </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a9da22dbbf05a2115f4a8a1d4fcc8f883"></a><!-- doxytag: member="coil::Properties::findNode" ref="a9da22dbbf05a2115f4a8a1d4fcc8f883" args="(const std::string &amp;key) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classcoil_1_1Properties.html">Properties</a>* const coil::Properties::findNode </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&nbsp;</td>
+          <td class="paramname"> <em>key</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>ノードを取得する </p>
+<p>指定したキーを持つノードを取得する。 存在しないキー、および空文字の場合 0 を返す。</p>
+<dl><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>key</em>&nbsp;</td><td>取得対象ノードのキー</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>戻り値:</b></dt><dd>対象ノード </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a9536505f283c0fc848cf0ab31f5b271b"></a><!-- doxytag: member="coil::Properties::getDefault" ref="a9536505f283c0fc848cf0ab31f5b271b" args="(const std::string &amp;key) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const std::string&amp; coil::Properties::getDefault </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&nbsp;</td>
+          <td class="paramname"> <em>key</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>指定されたキーに対してデフォルト値を取得する </p>
+<p>指定されたキーを持つプロパティのデフォルト値を返す。 指定されたキーを持つプロパティが存在しない場合には空文字を返す。</p>
+<dl><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>key</em>&nbsp;</td><td>プロパティキー</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>戻り値:</b></dt><dd>指定されたキー値を持つプロパティのデフォルト値 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a78d23bd777bb462168a1807750267d6d"></a><!-- doxytag: member="coil::Properties::getDefaultValue" ref="a78d23bd777bb462168a1807750267d6d" args="(void) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const char* coil::Properties::getDefaultValue </td>
+          <td>(</td>
+          <td class="paramtype">void&nbsp;</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const<code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>デフォルト値の取得 </p>
+<p>プロパティのデフォルト値を取得する。</p>
+<dl class="return"><dt><b>戻り値:</b></dt><dd>プロパティデフォルト値 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a51cdcfada7734595f8a58beaa4356c72"></a><!-- doxytag: member="coil::Properties::getLeaf" ref="a51cdcfada7734595f8a58beaa4356c72" args="(void) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const std::vector&lt;<a class="el" href="classcoil_1_1Properties.html">Properties</a>*&gt;&amp; coil::Properties::getLeaf </td>
+          <td>(</td>
+          <td class="paramtype">void&nbsp;</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const<code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>子要素の取得 </p>
+<p>プロパティの子要素を取得する。</p>
+<dl class="return"><dt><b>戻り値:</b></dt><dd>子要素 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a3809685330fc7d8ced176e8dbe8dd2f7"></a><!-- doxytag: member="coil::Properties::getName" ref="a3809685330fc7d8ced176e8dbe8dd2f7" args="(void) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const char* coil::Properties::getName </td>
+          <td>(</td>
+          <td class="paramtype">void&nbsp;</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const<code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Name の取得. </p>
+<p>プロパティの名称を取得する。</p>
+<dl class="return"><dt><b>戻り値:</b></dt><dd>プロパティ名 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a96cd29523b03679abf8ace55cb84ac36"></a><!-- doxytag: member="coil::Properties::getNode" ref="a96cd29523b03679abf8ace55cb84ac36" args="(const std::string &amp;key)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classcoil_1_1Properties.html">Properties</a>&amp; coil::Properties::getNode </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&nbsp;</td>
+          <td class="paramname"> <em>key</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>ノードを取得する </p>
+<p>指定したキーを持つノードを取得する。 存在しないキー、および空文字の場合 0 を返す。</p>
+<dl><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>key</em>&nbsp;</td><td>取得対象ノードのキー</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>戻り値:</b></dt><dd>対象ノード </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ac79dfbccc6050fcf4631063d1090af87"></a><!-- doxytag: member="coil::Properties::getProperty" ref="ac79dfbccc6050fcf4631063d1090af87" args="(const std::string &amp;key, const std::string &amp;def) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const std::string&amp; coil::Properties::getProperty </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&nbsp;</td>
+          <td class="paramname"> <em>key</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&nbsp;</td>
+          <td class="paramname"> <em>def</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>指定されたキーを持つプロパティを、プロパティリストから探す </p>
+<p>指定されたキーを持つプロパティを、プロパティリストから探す。 そのキーがプロパティリストにない場合は、デフォルト値の引数が返される。</p>
+<dl><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>key</em>&nbsp;</td><td>プロパティキー </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>def</em>&nbsp;</td><td>デフォルト値</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>戻り値:</b></dt><dd>指定されたキー値を持つこのプロパティリストの値 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a91ad72f8d7c41624e2258c5a9331bd2a"></a><!-- doxytag: member="coil::Properties::getProperty" ref="a91ad72f8d7c41624e2258c5a9331bd2a" args="(const std::string &amp;key) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const std::string&amp; coil::Properties::getProperty </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&nbsp;</td>
+          <td class="paramname"> <em>key</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>指定されたキーを持つプロパティを、プロパティリストから探す </p>
+<p>指定されたキーを持つプロパティを、プロパティリストから探す。 そのキーがプロパティリストにないと、デフォルトのプロパティリスト、 さらにそのデフォルト値が繰り返し調べられる。 そのプロパティが見つからない場合は、null が返される。</p>
+<dl><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>key</em>&nbsp;</td><td>プロパティキー</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>戻り値:</b></dt><dd>指定されたキー値を持つこのプロパティリストの値 </dd></dl>
+
+<p>参照元 <a class="el" href="ModuleManager_8h_source.html#l00693">RTC::ModuleManager::DllPred::operator()()</a>, <a class="el" href="Manager_8h_source.html#l01822">RTC::Manager::ModuleFactories::operator()()</a>, と <a class="el" href="ConnectorListener_8h_source.html#l00326">RTC::ConnectorDataListenerT&lt; DataType &gt;::operator()()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a930c4db15600de4f49370741652221cf"></a><!-- doxytag: member="coil::Properties::getRoot" ref="a930c4db15600de4f49370741652221cf" args="(void) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="classcoil_1_1Properties.html">Properties</a>* coil::Properties::getRoot </td>
+          <td>(</td>
+          <td class="paramtype">void&nbsp;</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const<code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>ルート要素の取得 </p>
+<p>プロパティのルート要素を取得する。</p>
+<dl class="return"><dt><b>戻り値:</b></dt><dd>ルート要素 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="aa402bd7d600a60560782622ef7ece205"></a><!-- doxytag: member="coil::Properties::getValue" ref="aa402bd7d600a60560782622ef7ece205" args="(void) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const char* coil::Properties::getValue </td>
+          <td>(</td>
+          <td class="paramtype">void&nbsp;</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const<code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>値の取得 </p>
+<p>プロパティの値を取得する。</p>
+<dl class="return"><dt><b>戻り値:</b></dt><dd>プロパティ値 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a0f290b8337860bf7fa677e7c849f30f2"></a><!-- doxytag: member="coil::Properties::hasKey" ref="a0f290b8337860bf7fa677e7c849f30f2" args="(const char *key) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classcoil_1_1Properties.html">Properties</a>* coil::Properties::hasKey </td>
+          <td>(</td>
+          <td class="paramtype">const char *&nbsp;</td>
+          <td class="paramname"> <em>key</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>子ノードにkeyがあるかどうか </p>
+<p>指定したキーを持つ子ノードが存在するかどうか確認する。 存在する場合、子ノードを返す。</p>
+<dl><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>key</em>&nbsp;</td><td>確認対象のキー</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>戻り値:</b></dt><dd>子ノード </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ad238d41d4cacaefb479f0ba35e75fa77"></a><!-- doxytag: member="coil::Properties::indent" ref="ad238d41d4cacaefb479f0ba35e75fa77" args="(int index)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">static std::string coil::Properties::indent </td>
+          <td>(</td>
+          <td class="paramtype">int&nbsp;</td>
+          <td class="paramname"> <em>index</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [static, protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>インデントを生成する </p>
+<p>指定された数字に従って生成したインデントを返す。 返されるインデントは、指定数字×2つの空白。</p>
+<dl><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>index</em>&nbsp;</td><td>インデント数の指定</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>戻り値:</b></dt><dd>生成されたインデント </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="afe0899928af5de6b6b6b3226e4bf228a"></a><!-- doxytag: member="coil::Properties::list" ref="afe0899928af5de6b6b6b3226e4bf228a" args="(std::ostream &amp;out)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void coil::Properties::list </td>
+          <td>(</td>
+          <td class="paramtype">std::ostream &amp;&nbsp;</td>
+          <td class="paramname"> <em>out</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>指定された出力ストリームに、プロパティリストを出力する </p>
+<p>指定された出力ストリームに、プロパティリストを出力する。 このメソッドは主にデバッグに用いられる。</p>
+<dl><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>out</em>&nbsp;</td><td>出力ストリーム </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a3eb4ac76be20037552ec34f1ca7923b1"></a><!-- doxytag: member="coil::Properties::load" ref="a3eb4ac76be20037552ec34f1ca7923b1" args="(std::istream &amp;inStream)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void coil::Properties::load </td>
+          <td>(</td>
+          <td class="paramtype">std::istream &amp;&nbsp;</td>
+          <td class="paramname"> <em>inStream</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>入力ストリームからキーと要素が対になったプロパティリストを読み込む </p>
+<p>入力ストリームからキーと要素が対になったプロパティリストを読み込む。 ストリームは、ISO 8859-1 文字エンコーディングを使用しているとみなされる。 各プロパティは、入力ストリームに行単位で登録されているものとみなされ、 各行は行区切り文字 (\n、\r、または \r\n) で終わる。 入力ストリームから読み込んだ行は、入力ストリームでファイルの終わりに 達するまで処理される。</p>
+<p>空白文字だけの行、または最初の非空白文字が ASCII 文字 # または ! である 行は無視される。つまり、# または ! はコメント行を示す。</p>
+<p>空白行またはコメント行以外のすべての行は、テーブルに追加されるプロパティ を記述する。ただし、行の終わりが \ の場合は、次の行があれば継続行として 扱われる (下記を参照)。 キーは、最初の非空白文字から、最初の ASCII 文字 =、:、または空白文字の直前までの、行内のすべての文字から構成される。</p>
+<p>キーの終わりを示す文字は、前に \ を付けることによりキーに含めることも できる。キーの後ろの空白はすべてスキップされる。 キーの後ろの最初の非空白文字が = または : である場合は、これらのキーは 無視され、そのあとの空白文字もすべてスキップされる。 行内のそれ以外の文字はすべて、関連した要素文字列の一部となる。 要素文字列内では、ASCII エスケープシーケンス \t、\n、\r、\\、\"、 \'、\ (円記号とスペース)、および \uxxxx は認識され、単独の文字に変換 される。 また、行の最後の文字が \ である場合は、次の行は現在の行の継続として 扱われる。その場合、\ と行区切り文字が破棄され、継続行の先頭に空白が あればそれもすべて破棄され、要素文字列の一部にはならない。</p>
+<p>たとえば、次の 3 行はそれぞれキー Truth と関連した要素値 Beauty を表す。</p>
+<p>Truth = Beauty <br/>
+ Truth:Beauty <br/>
+ Truth\t\t\t:Beauty <br/>
+</p>
+<p>また、次の 3 行は 1 つのプロパティを表す。</p>
+<p>fruits\t\t\t\tapple, banana, pear, \ <br/>
+ cantaloupe, watermelon, \ <br/>
+ kiwi, mango <br/>
+ キーは fruits で、次の要素に関連付けれられる。 "apple, banana, pear, cantaloupe, watermelon, kiwi, mango" 最終的な結果でコンマのあとに必ずスペースが表示されるように、 各 \ の前にスペースがある。行の終わりを示す \ と、継続行の先頭にある 空白は破棄され、他の文字に置換されない。 また、次の 3 番目の例では、キーが cheeses で、関連した要素が空の文字列 であることを表す。</p>
+<p>cheeses <br/>
+ キーは、cheeses で、関連要素は空の文字列であることを指定している。</p>
+<dl><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>inStream</em>&nbsp;</td><td>入力ストリーム </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a74de44746be25fa0a404bd17c02cda44"></a><!-- doxytag: member="coil::Properties::operator&lt;&lt;" ref="a74de44746be25fa0a404bd17c02cda44" args="(const Properties &amp;prop)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classcoil_1_1Properties.html">Properties</a>&amp; coil::Properties::operator&lt;&lt; </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classcoil_1_1Properties.html">Properties</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>prop</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Propertyをマージする. </p>
+<p>現在のプロパティに設定したプロパティをマージする。</p>
+<dl><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>prop</em>&nbsp;</td><td>マージするプロパティ</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>戻り値:</b></dt><dd>プロパティマージ結果 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="acf1a3c8e401765c285e318d6863a6e77"></a><!-- doxytag: member="coil::Properties::operator=" ref="acf1a3c8e401765c285e318d6863a6e77" args="(const Properties &amp;prop)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classcoil_1_1Properties.html">Properties</a>&amp; coil::Properties::operator= </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classcoil_1_1Properties.html">Properties</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>prop</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>代入演算子 </p>
+<p>左辺値の <a class="el" href="classcoil_1_1Properties.html" title="プロパティセットを表現するクラス">Properties</a> のキー、値およびデフォルト値は全て削除され、 右辺値の <a class="el" href="classcoil_1_1Properties.html" title="プロパティセットを表現するクラス">Properties</a> のキー、値およびデフォルト値が全てそのまま コピーされる。 </p>
+
+</div>
+</div>
+<a class="anchor" id="a2c241eddb268f07442e1d008154b2fef"></a><!-- doxytag: member="coil::Properties::operator[]" ref="a2c241eddb268f07442e1d008154b2fef" args="(const std::string &amp;key)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string&amp; coil::Properties::operator[] </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&nbsp;</td>
+          <td class="paramname"> <em>key</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>指定されたキーを持つプロパティを、プロパティリストから探す </p>
+<p>指定されたキーを持つプロパティを返す。 そのキーの値がプロパティリストになければデフォルト値を返す。 さらに見つからなければ、空文字を返す。 左辺値になる場合に、同じ値を持つ要素がないときは与えられたキー に対応するプロパティに右辺値を挿入。</p>
+<dl><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>key</em>&nbsp;</td><td>プロパティキー</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>戻り値:</b></dt><dd>指定されたキー値を持つこのプロパティリストの値 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a184d704a37d9eb2052b77a0624060b34"></a><!-- doxytag: member="coil::Properties::operator[]" ref="a184d704a37d9eb2052b77a0624060b34" args="(const std::string &amp;key) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const std::string&amp; coil::Properties::operator[] </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&nbsp;</td>
+          <td class="paramname"> <em>key</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>指定されたキーを持つプロパティを、プロパティリストから探す </p>
+<p>指定されたキーを持つプロパティを返す。 そのキーがプロパティリストになければデフォルト値を返す。 さらに見つからなければ、空文字を返す。</p>
+<dl><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>key</em>&nbsp;</td><td>プロパティキー</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>戻り値:</b></dt><dd>指定されたキー値を持つこのプロパティリストの値 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a32285ad4eba53bad4f9b37d19fd2f088"></a><!-- doxytag: member="coil::Properties::propertyNames" ref="a32285ad4eba53bad4f9b37d19fd2f088" args="(void) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;std::string&gt; coil::Properties::propertyNames </td>
+          <td>(</td>
+          <td class="paramtype">void&nbsp;</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>プロパティのキーのリストを vector で返す </p>
+<p>メインプロパティリストに同じ名前のキーが見つからない場合は、デフォルトの プロパティリストにある個別のキーを含む、このプロパティリストにあるすべて のキーのリストを返す。</p>
+<dl class="return"><dt><b>戻り値:</b></dt><dd>プロパティリストにあるすべてのキーのリスト。 デフォルトのプロパティリストにあるキーを含む </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a4eb696904cc8a1c0ae9fa5bcc4a07b75"></a><!-- doxytag: member="coil::Properties::removeNode" ref="a4eb696904cc8a1c0ae9fa5bcc4a07b75" args="(const char *leaf_name)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classcoil_1_1Properties.html">Properties</a>* coil::Properties::removeNode </td>
+          <td>(</td>
+          <td class="paramtype">const char *&nbsp;</td>
+          <td class="paramname"> <em>leaf_name</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>ノードを削除する </p>
+<p>指定した名称を持つプロパティを削除する。 削除したプロパティを返す。</p>
+<dl><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>leaf_name</em>&nbsp;</td><td>削除対象プロパティ名称</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>戻り値:</b></dt><dd>削除したプロパティ </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="aef5ed6f0e17adabfc46e4c5d3de2580d"></a><!-- doxytag: member="coil::Properties::save" ref="aef5ed6f0e17adabfc46e4c5d3de2580d" args="(std::ostream &amp;out, const std::string &amp;header)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void coil::Properties::save </td>
+          <td>(</td>
+          <td class="paramtype">std::ostream &amp;&nbsp;</td>
+          <td class="paramname"> <em>out</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&nbsp;</td>
+          <td class="paramname"> <em>header</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>プロパティリストを指定されたストリームに保存する </p>
+<p>推奨されていません。プロパティリストの保存方法としては、 store(ostream out, string header) メソッドの使用が推奨される。 このメソッドは Java <a class="el" href="classcoil_1_1Properties.html" title="プロパティセットを表現するクラス">Properties</a> との互換性のために定義されている。</p>
+<dl><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>out</em>&nbsp;</td><td>出力ストリーム </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>header</em>&nbsp;</td><td>プロパティリストの記述 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a019205d917bb9fadfedd5d2a6143b88a"></a><!-- doxytag: member="coil::Properties::setDefault" ref="a019205d917bb9fadfedd5d2a6143b88a" args="(const std::string &amp;key, const std::string &amp;value)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string coil::Properties::setDefault </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&nbsp;</td>
+          <td class="paramname"> <em>key</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&nbsp;</td>
+          <td class="paramname"> <em>value</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>デフォルト値を登録する </p>
+<p>key で指定される要素にデフォルト値を登録する。</p>
+<dl><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>key</em>&nbsp;</td><td>デフォルト値を登録するプロパティのキー </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>value</em>&nbsp;</td><td>登録されるデフォルト値</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>戻り値:</b></dt><dd>指定されたデフォルト値 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a66d2d6f4814a45c55d2e85a3e8f5a8c0"></a><!-- doxytag: member="coil::Properties::setDefaults" ref="a66d2d6f4814a45c55d2e85a3e8f5a8c0" args="(const char *defaults[], long num=LONG_MAX)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void coil::Properties::setDefaults </td>
+          <td>(</td>
+          <td class="paramtype">const char *&nbsp;</td>
+          <td class="paramname"> <em>defaults</em>[], </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">long&nbsp;</td>
+          <td class="paramname"> <em>num</em> = <code>LONG_MAX</code></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p><a class="el" href="classcoil_1_1Properties.html" title="プロパティセットを表現するクラス">Properties</a> にデフォルト値をまとめて登録する. </p>
+<p>配列で指定された要素にデフォルト値をまとめて登録する。 デフォルト値は char* の配列により与えられ、key と value の対になって おり、リストの終端は配列の数を表す引数 num か、空文字の key で与えらられ なければならない。</p>
+<dl><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>defaults</em>&nbsp;</td><td>デフォルト値を指定する配列 </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>num</em>&nbsp;</td><td>デフォルト値を設定する要素数(デフォルト値:LONG_MAX) </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="ad0e11287725b2597aa2fd24aa164de5f"></a><!-- doxytag: member="coil::Properties::setProperty" ref="ad0e11287725b2597aa2fd24aa164de5f" args="(const std::string &amp;key, const std::string &amp;value)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string coil::Properties::setProperty </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&nbsp;</td>
+          <td class="paramname"> <em>key</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&nbsp;</td>
+          <td class="paramname"> <em>value</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p><a class="el" href="classcoil_1_1Properties.html" title="プロパティセットを表現するクラス">Properties</a> に value を key について登録する. </p>
+<p><a class="el" href="classcoil_1_1Properties.html" title="プロパティセットを表現するクラス">Properties</a> に value を key について登録する。 すでに key に対する値を持っている場合、戻り値に古い値を返す。</p>
+<dl><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>key</em>&nbsp;</td><td>プロパティリストに配置されるキー </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>value</em>&nbsp;</td><td>key に対応する値</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>戻り値:</b></dt><dd>プロパティリストの指定されたキーの前の値。それがない場合は null </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="af57a98d78e63f9429d0bd656dc3c2db3"></a><!-- doxytag: member="coil::Properties::size" ref="af57a98d78e63f9429d0bd656dc3c2db3" args="(void) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int coil::Properties::size </td>
+          <td>(</td>
+          <td class="paramtype">void&nbsp;</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>プロパティの数を取得する </p>
+<p>設定済みのプロパティ数を取得する。</p>
+<dl class="return"><dt><b>戻り値:</b></dt><dd>プロパティ数 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a510ba2a11821c01d0d39c11d05dfced8"></a><!-- doxytag: member="coil::Properties::split" ref="a510ba2a11821c01d0d39c11d05dfced8" args="(const std::string &amp;str, const char delim, std::vector&lt; std::string &gt; &amp;value)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">static bool coil::Properties::split </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&nbsp;</td>
+          <td class="paramname"> <em>str</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char&nbsp;</td>
+          <td class="paramname"> <em>delim</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::vector&lt; std::string &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>value</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td><code> [static, protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>文字列を分割する </p>
+<p>与えられた文字列を、与えられたデリミタで分割する。 与えられた文字列が空の場合は、エラーを返す。 与えられたデリミタがエスケープされている(直前に'\'が設定されている)場合 には、デリミタとして使用しない。</p>
+<dl><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>str</em>&nbsp;</td><td>分割対象文字列 </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>delim</em>&nbsp;</td><td>デリミタ </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>value</em>&nbsp;</td><td>分割結果値リスト</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>戻り値:</b></dt><dd>分割処理結果 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a6164ce725d1349d11d6d7c349b6b8cc1"></a><!-- doxytag: member="coil::Properties::splitKeyValue" ref="a6164ce725d1349d11d6d7c349b6b8cc1" args="(const std::string &amp;str, std::string &amp;key, std::string &amp;value)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void coil::Properties::splitKeyValue </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&nbsp;</td>
+          <td class="paramname"> <em>str</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::string &amp;&nbsp;</td>
+          <td class="paramname"> <em>key</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::string &amp;&nbsp;</td>
+          <td class="paramname"> <em>value</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td><code> [static, protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>文字列をキーと値のペアに分割する </p>
+<p>与えられた文字列を、設定されたデリミタでキーと値のペアに分割する。 まず最初に与えられた文字列に':'もしくは'='が含まれるかを検索し、 どちらかの文字が含まれている場合にはそれをデリミタとして使用する。 両方とも含まれていない場合には、' '(スペース)を用いて分割を試みる。 全てのデリミタ候補が含まれていない場合には、与えられた文字列をキーとして 設定し、値に空の文字列を設定する。 どのデリミタ候補についてもエスケープされている(直前に'\'が設定されている) 場合には、デリミタとして使用しない。</p>
+<dl><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>str</em>&nbsp;</td><td>分割対象文字列 </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>key</em>&nbsp;</td><td>分割結果キー </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>value</em>&nbsp;</td><td>分割結果値 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a86d929fdcba713269d59239d32dfd1b5"></a><!-- doxytag: member="coil::Properties::store" ref="a86d929fdcba713269d59239d32dfd1b5" args="(std::ostream &amp;out, const std::string &amp;header)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void coil::Properties::store </td>
+          <td>(</td>
+          <td class="paramtype">std::ostream &amp;&nbsp;</td>
+          <td class="paramname"> <em>out</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&nbsp;</td>
+          <td class="paramname"> <em>header</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>プロパティリストを出力ストリームへ保存する </p>
+<p><a class="el" href="classcoil_1_1Properties.html" title="プロパティセットを表現するクラス">Properties</a> テーブル内のプロパティリスト (キーと要素のペア) を、load メソッドを使って <a class="el" href="classcoil_1_1Properties.html" title="プロパティセットを表現するクラス">Properties</a> テーブルにロードするのに適切なフォーマットで 出力ストリームに書き込む。</p>
+<p><a class="el" href="classcoil_1_1Properties.html" title="プロパティセットを表現するクラス">Properties</a> テーブル内のプロパティリスト (キーと要素のペア) を、load メソッドを使って <a class="el" href="classcoil_1_1Properties.html" title="プロパティセットを表現するクラス">Properties</a> テーブルにロードするのに適切なフォーマットで 出力ストリームに書き込む。ストリームは、ISO 8859-1 文字 エンコーディングを使用して書き込まれる。 <a class="el" href="classcoil_1_1Properties.html" title="プロパティセットを表現するクラス">Properties</a> テーブル (存在する場合) のデフォルトテーブルからの プロパティは、このメソッドによっては書き込まれない。</p>
+<p>header 引数が null でない場合は、ASCII 文字の #、header の文字列、 および行区切り文字が最初に出力ストリームに書き込まれます。このため、 header は識別コメントとして使うことができる。</p>
+<p>次に、ASCII 文字の #、現在の日時 (Date の toString メソッドによって 現在時刻が生成されるのと同様)、および Writer によって生成される行区切り からなるコメント行が書き込まれる。</p>
+<p>続いて、 <a class="el" href="classcoil_1_1Properties.html" title="プロパティセットを表現するクラス">Properties</a> テーブル内のすべてのエントリが 1 行ずつ書き出される。 各エントリのキー文字列、ASCII 文字の=、関連した要素文字列が書き込まれる。 要素文字列の各文字は、エスケープシーケンスとして描画する必要があるか どうか確認される。ASCII 文字の \、タブ、改行、および復帰はそれぞれ \\、 \t、\n、および \r として書き込まれる。\u0020 より小さい文字および \u007E より大きい文字は、対応する 16 進値 xxxx を使って \uxxxx として 書き込まれる。埋め込み空白文字でも後書き空白文字でもない先行空白文字は、 前に \ を付けて書き込まれる。キーと値の文字 #、!、=、および : は、 必ず正しくロードされるように、前にスラッシュを付けて書き込まれる。</p>
+<p>エントリが書き込まれたあとで、出力ストリームがフラッシュされる。 出力ストリームはこのメソッドから復帰したあとも開いたままとなる。</p>
+<dl><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>out</em>&nbsp;</td><td>出力ストリーム </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>header</em>&nbsp;</td><td>プロパティリストの記述 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<hr/><h2>フレンドと関連する関数</h2>
+<a class="anchor" id="a4cbe3c065a17f9e6119dc2f423db16da"></a><!-- doxytag: member="coil::Properties::operator&lt;&lt;" ref="a4cbe3c065a17f9e6119dc2f423db16da" args="(std::ostream &amp;lhs, const Properties &amp;rhs)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::ostream&amp; operator&lt;&lt; </td>
+          <td>(</td>
+          <td class="paramtype">std::ostream &amp;&nbsp;</td>
+          <td class="paramname"> <em>lhs</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classcoil_1_1Properties.html">Properties</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>rhs</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td><code> [friend]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Propertyをストリームに出力する. </p>
+<p>Propertyをストリームに出力する。</p>
+<dl><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>lhs</em>&nbsp;</td><td>出力ストリーム </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>rhs</em>&nbsp;</td><td>プロパティ</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>戻り値:</b></dt><dd>出力ストリーム </dd></dl>
+
+</div>
+</div>
+</div>
+<hr class="footer"/><address style="text-align: right;"><small>OpenRTMに対してThu May 24 23:25:19 2012に生成されました。&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.6.3 </small></address>
+</body>
+</html>

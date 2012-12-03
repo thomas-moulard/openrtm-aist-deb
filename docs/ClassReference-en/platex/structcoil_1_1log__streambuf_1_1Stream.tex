@@ -1,0 +1,91 @@
+\section{coil::log\_\-streambuf$<$ \_\-CharT, \_\-Traits $>$::Stream Struct Reference}
+\label{structcoil_1_1log__streambuf_1_1Stream}\index{coil::log\_\-streambuf::Stream@{coil::log\_\-streambuf::Stream}}
+
+
+Structure for stream management.  
+
+
+
+
+{\ttfamily \#include $<$Logger.h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Stream} ({\bf streambuf\_\-type} $\ast$stream, bool cleanup=false)
+\item 
+virtual {\bf $\sim$Stream} ()
+\item 
+{\bf Stream} (const {\bf Stream} \&x)
+\item 
+{\bf Stream} \& {\bf operator=} (const {\bf Stream} \&x)
+\item 
+void {\bf swap} ({\bf Stream} \&x)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Mutex} {\bf mutex\_\-}
+\item 
+{\bf streambuf\_\-type} $\ast$ {\bf stream\_\-}
+\item 
+bool {\bf cleanup\_\-}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$typename \_\-CharT, typename \_\-Traits = std::char\_\-traits$<$\_\-CharT$>$$>$ struct coil::log\_\-streambuf$<$ \_\-CharT, \_\-Traits $>$::Stream}
+
+Structure for stream management. 
+
+\subsection{Constructor \& Destructor Documentation}
+\index{coil::log\_\-streambuf::Stream@{coil::log\_\-streambuf::Stream}!Stream@{Stream}}
+\index{Stream@{Stream}!coil::log_streambuf::Stream@{coil::log\_\-streambuf::Stream}}
+\subsubsection[{Stream}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename \_\-CharT , typename \_\-Traits  = std::char\_\-traits$<$\_\-CharT$>$$>$ {\bf coil::log\_\-streambuf}$<$ \_\-CharT, \_\-Traits $>$::Stream::Stream ({\bf streambuf\_\-type} $\ast$ {\em stream}, \/  bool {\em cleanup} = {\ttfamily false})\hspace{0.3cm}{\ttfamily  [inline]}}\label{structcoil_1_1log__streambuf_1_1Stream_a8e445a1569a7c6aadb43f4fbf2562a20}
+\index{coil::log\_\-streambuf::Stream@{coil::log\_\-streambuf::Stream}!$\sim$Stream@{$\sim$Stream}}
+\index{$\sim$Stream@{$\sim$Stream}!coil::log_streambuf::Stream@{coil::log\_\-streambuf::Stream}}
+\subsubsection[{$\sim$Stream}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename \_\-CharT , typename \_\-Traits  = std::char\_\-traits$<$\_\-CharT$>$$>$ virtual {\bf coil::log\_\-streambuf}$<$ \_\-CharT, \_\-Traits $>$::Stream::$\sim$Stream ()\hspace{0.3cm}{\ttfamily  [inline, virtual]}}\label{structcoil_1_1log__streambuf_1_1Stream_a19ab5a6862a1dc2e20da102b744d5737}
+\index{coil::log\_\-streambuf::Stream@{coil::log\_\-streambuf::Stream}!Stream@{Stream}}
+\index{Stream@{Stream}!coil::log_streambuf::Stream@{coil::log\_\-streambuf::Stream}}
+\subsubsection[{Stream}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename \_\-CharT , typename \_\-Traits  = std::char\_\-traits$<$\_\-CharT$>$$>$ {\bf coil::log\_\-streambuf}$<$ \_\-CharT, \_\-Traits $>$::Stream::Stream (const {\bf Stream} \& {\em x})\hspace{0.3cm}{\ttfamily  [inline]}}\label{structcoil_1_1log__streambuf_1_1Stream_a494575e16ffcad41ed6741f139bfef9a}
+
+
+\subsection{Member Function Documentation}
+\index{coil::log\_\-streambuf::Stream@{coil::log\_\-streambuf::Stream}!operator=@{operator=}}
+\index{operator=@{operator=}!coil::log_streambuf::Stream@{coil::log\_\-streambuf::Stream}}
+\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename \_\-CharT , typename \_\-Traits  = std::char\_\-traits$<$\_\-CharT$>$$>$ {\bf Stream}\& {\bf coil::log\_\-streambuf}$<$ \_\-CharT, \_\-Traits $>$::Stream::operator= (const {\bf Stream} \& {\em x})\hspace{0.3cm}{\ttfamily  [inline]}}\label{structcoil_1_1log__streambuf_1_1Stream_a7fb53fc7cd206f99c8e251663e307323}
+
+
+References coil::log\_\-streambuf$<$ \_\-CharT, \_\-Traits $>$::Stream::swap().
+
+\index{coil::log\_\-streambuf::Stream@{coil::log\_\-streambuf::Stream}!swap@{swap}}
+\index{swap@{swap}!coil::log_streambuf::Stream@{coil::log\_\-streambuf::Stream}}
+\subsubsection[{swap}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename \_\-CharT , typename \_\-Traits  = std::char\_\-traits$<$\_\-CharT$>$$>$ void {\bf coil::log\_\-streambuf}$<$ \_\-CharT, \_\-Traits $>$::Stream::swap ({\bf Stream} \& {\em x})\hspace{0.3cm}{\ttfamily  [inline]}}\label{structcoil_1_1log__streambuf_1_1Stream_a45057b9b7e72935f76194ffa72b395c2}
+
+
+References coil::log\_\-streambuf$<$ \_\-CharT, \_\-Traits $>$::Stream::cleanup\_\-, and coil::log\_\-streambuf$<$ \_\-CharT, \_\-Traits $>$::Stream::stream\_\-.
+
+
+
+Referenced by coil::log\_\-streambuf$<$ \_\-CharT, \_\-Traits $>$::Stream::operator=().
+
+
+
+\subsection{Member Data Documentation}
+\index{coil::log\_\-streambuf::Stream@{coil::log\_\-streambuf::Stream}!cleanup\_\-@{cleanup\_\-}}
+\index{cleanup\_\-@{cleanup\_\-}!coil::log_streambuf::Stream@{coil::log\_\-streambuf::Stream}}
+\subsubsection[{cleanup\_\-}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename \_\-CharT , typename \_\-Traits  = std::char\_\-traits$<$\_\-CharT$>$$>$ bool {\bf coil::log\_\-streambuf}$<$ \_\-CharT, \_\-Traits $>$::{\bf Stream::cleanup\_\-}}\label{structcoil_1_1log__streambuf_1_1Stream_a673577f0750a576f536a5ad4572057a1}
+
+
+Referenced by coil::log\_\-streambuf$<$ \_\-CharT, \_\-Traits $>$::Stream::swap().
+
+\index{coil::log\_\-streambuf::Stream@{coil::log\_\-streambuf::Stream}!mutex\_\-@{mutex\_\-}}
+\index{mutex\_\-@{mutex\_\-}!coil::log_streambuf::Stream@{coil::log\_\-streambuf::Stream}}
+\subsubsection[{mutex\_\-}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename \_\-CharT , typename \_\-Traits  = std::char\_\-traits$<$\_\-CharT$>$$>$ {\bf Mutex} {\bf coil::log\_\-streambuf}$<$ \_\-CharT, \_\-Traits $>$::{\bf Stream::mutex\_\-}\hspace{0.3cm}{\ttfamily  [mutable]}}\label{structcoil_1_1log__streambuf_1_1Stream_aeadb126688858c2934096affbcb9721a}
+\index{coil::log\_\-streambuf::Stream@{coil::log\_\-streambuf::Stream}!stream\_\-@{stream\_\-}}
+\index{stream\_\-@{stream\_\-}!coil::log_streambuf::Stream@{coil::log\_\-streambuf::Stream}}
+\subsubsection[{stream\_\-}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename \_\-CharT , typename \_\-Traits  = std::char\_\-traits$<$\_\-CharT$>$$>$ {\bf streambuf\_\-type}$\ast$ {\bf coil::log\_\-streambuf}$<$ \_\-CharT, \_\-Traits $>$::{\bf Stream::stream\_\-}}\label{structcoil_1_1log__streambuf_1_1Stream_a1f4114e35d655390b004ccb0cad39039}
+
+
+Referenced by coil::log\_\-streambuf$<$ \_\-CharT, \_\-Traits $>$::Stream::swap().
+

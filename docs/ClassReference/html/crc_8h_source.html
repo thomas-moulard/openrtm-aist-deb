@@ -1,0 +1,82 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<title>OpenRTM: crc.h ソースファイル</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<!-- 作成： Doxygen 1.6.3 -->
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="index.html"><span>メインページ</span></a></li>
+      <li><a href="namespaces.html"><span>ネームスペース</span></a></li>
+      <li><a href="annotated.html"><span>クラス</span></a></li>
+      <li class="current"><a href="files.html"><span>ファイル</span></a></li>
+    </ul>
+  </div>
+  <div class="tabs">
+    <ul>
+      <li><a href="files.html"><span>ファイル一覧</span></a></li>
+      <li><a href="globals.html"><span>ファイルメンバ</span></a></li>
+    </ul>
+  </div>
+<h1>crc.h</h1><a href="crc_8h.html">説明を見る。</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="comment">// -*- C++ -*-</span>
+<a name="l00018"></a>00018 <span class="comment"></span><span class="preprocessor">#ifndef COIL_CRC_H</span>
+<a name="l00019"></a>00019 <span class="preprocessor"></span><span class="preprocessor">#define COIL_CRC_H</span>
+<a name="l00020"></a>00020 <span class="preprocessor"></span>
+<a name="l00021"></a>00021 <span class="preprocessor">#include &lt;sys/types.h&gt;</span>
+<a name="l00022"></a>00022 
+<a name="l00023"></a>00023 <span class="keyword">namespace </span>coil
+<a name="l00024"></a>00024 {
+<a name="l00025"></a>00025   <span class="comment">/*</span>
+<a name="l00026"></a>00026 <span class="comment">   * @if jp</span>
+<a name="l00027"></a>00027 <span class="comment">   *</span>
+<a name="l00028"></a>00028 <span class="comment">   * @brief CRC-16 計算関数</span>
+<a name="l00029"></a>00029 <span class="comment">   *</span>
+<a name="l00030"></a>00030 <span class="comment">   * CRC種類: CRC-CCITT</span>
+<a name="l00031"></a>00031 <span class="comment">   * CRC多項式:  x^16 + x^12 + x^5 + 1 (0x1021)</span>
+<a name="l00032"></a>00032 <span class="comment">   * 初期値:  0xFFFF</span>
+<a name="l00033"></a>00033 <span class="comment">   * 出力XOR: 0x0000</span>
+<a name="l00034"></a>00034 <span class="comment">   * 入力ビット反転: なし</span>
+<a name="l00035"></a>00035 <span class="comment">   * 出力ビット反転: なし</span>
+<a name="l00036"></a>00036 <span class="comment">   * ビットシフト: 左</span>
+<a name="l00037"></a>00037 <span class="comment">   *</span>
+<a name="l00038"></a>00038 <span class="comment">   * @param str データストリーム</span>
+<a name="l00039"></a>00039 <span class="comment">   * @param len データ長</span>
+<a name="l00040"></a>00040 <span class="comment">   *</span>
+<a name="l00041"></a>00041 <span class="comment">   * @return 計算結果</span>
+<a name="l00042"></a>00042 <span class="comment">   *</span>
+<a name="l00043"></a>00043 <span class="comment">   * @else</span>
+<a name="l00044"></a>00044 <span class="comment">   *</span>
+<a name="l00045"></a>00045 <span class="comment">   * @brief CRC-16 calculation function</span>
+<a name="l00046"></a>00046 <span class="comment">   *</span>
+<a name="l00047"></a>00047 <span class="comment">   * CRC type: CRC-CCITT</span>
+<a name="l00048"></a>00048 <span class="comment">   * CRC generator polynomial:  x^16 + x^12 + x^5 + 1 (0x1021)</span>
+<a name="l00049"></a>00049 <span class="comment">   * Initial value: 0xFFFF</span>
+<a name="l00050"></a>00050 <span class="comment">   * Output XOR: 0x0000</span>
+<a name="l00051"></a>00051 <span class="comment">   * Input bit inversion: None</span>
+<a name="l00052"></a>00052 <span class="comment">   * Output bit inversion: None</span>
+<a name="l00053"></a>00053 <span class="comment">   * Bit shift: left</span>
+<a name="l00054"></a>00054 <span class="comment">   *</span>
+<a name="l00055"></a>00055 <span class="comment">   * @param str Data stream</span>
+<a name="l00056"></a>00056 <span class="comment">   * @param len Data length</span>
+<a name="l00057"></a>00057 <span class="comment">   *</span>
+<a name="l00058"></a>00058 <span class="comment">   * @return Result calculation</span>
+<a name="l00059"></a>00059 <span class="comment">   *</span>
+<a name="l00060"></a>00060 <span class="comment">   * @endif</span>
+<a name="l00061"></a>00061 <span class="comment">   */</span>
+<a name="l00062"></a>00062   <span class="keywordtype">unsigned</span> <span class="keywordtype">short</span> <a class="code" href="namespacecoil.html#a810e5279eee44c4bfd70261cd51dcd8c">crc16</a>(<span class="keyword">const</span> <span class="keywordtype">char</span>* str, <span class="keywordtype">size_t</span> len);
+<a name="l00063"></a>00063   
+<a name="l00103"></a>00103   <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> <a class="code" href="namespacecoil.html#a6c3973b2c232b1b7608ad97cc3de7323" title="CRC-32 計算関数.">crc32</a>(<span class="keyword">const</span> <span class="keywordtype">char</span>* str, <span class="keywordtype">size_t</span> len);
+<a name="l00104"></a>00104 }; <span class="comment">//namespace coil</span>
+<a name="l00105"></a>00105 
+<a name="l00106"></a>00106 <span class="preprocessor">#endif // COIL_CRC_H</span>
+</pre></div></div>
+<hr class="footer"/><address style="text-align: right;"><small>OpenRTMに対してThu May 24 23:25:18 2012に生成されました。&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.6.3 </small></address>
+</body>
+</html>

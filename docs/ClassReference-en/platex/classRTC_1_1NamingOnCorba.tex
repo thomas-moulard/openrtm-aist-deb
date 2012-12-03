@@ -1,0 +1,125 @@
+\section{RTC::NamingOnCorba Class Reference}
+\label{classRTC_1_1NamingOnCorba}\index{RTC::NamingOnCorba@{RTC::NamingOnCorba}}
+
+
+NamingServer management class for CORBA.  
+
+
+
+
+{\ttfamily \#include $<$NamingManager.h$>$}
+
+Inheritance diagram for RTC::NamingOnCorba:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2cm]{classRTC_1_1NamingOnCorba}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf NamingOnCorba} (CORBA::ORB\_\-ptr orb, const char $\ast$names)
+\begin{DoxyCompactList}\small\item\em Constructor. \item\end{DoxyCompactList}\item 
+virtual {\bf $\sim$NamingOnCorba} (void)
+\begin{DoxyCompactList}\small\item\em Destructor. \item\end{DoxyCompactList}\item 
+virtual void {\bf bindObject} (const char $\ast$name, const {\bf RTObject\_\-impl} $\ast$rtobj)
+\begin{DoxyCompactList}\small\item\em Bind the specified CORBA objects to NamingService. \item\end{DoxyCompactList}\item 
+virtual void {\bf bindObject} (const char $\ast$name, const {\bf RTM::ManagerServant} $\ast$mgr)
+\begin{DoxyCompactList}\small\item\em Bind the specified ManagerServants to NamingService. \item\end{DoxyCompactList}\item 
+virtual void {\bf unbindObject} (const char $\ast$name)
+\begin{DoxyCompactList}\small\item\em Unbind the specified CORBA objects from NamingService. \item\end{DoxyCompactList}\item 
+virtual bool {\bf isAlive} ()
+\begin{DoxyCompactList}\small\item\em Check if the name service is alive. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+NamingServer management class for CORBA. NamingServer management class for CORBA. Manage to register and unregister CORBA components to NamingService.
+
+\begin{DoxySince}{Since}
+0.4.0 
+\end{DoxySince}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{RTC::NamingOnCorba@{RTC::NamingOnCorba}!NamingOnCorba@{NamingOnCorba}}
+\index{NamingOnCorba@{NamingOnCorba}!RTC::NamingOnCorba@{RTC::NamingOnCorba}}
+\subsubsection[{NamingOnCorba}]{\setlength{\rightskip}{0pt plus 5cm}RTC::NamingOnCorba::NamingOnCorba (CORBA::ORB\_\-ptr {\em orb}, \/  const char $\ast$ {\em names})}\label{classRTC_1_1NamingOnCorba_ad2cbf61138259ef8717839e906ef1b9e}
+
+
+Constructor. 
+
+Constructor. Naming service name that is given at the second argument is host name and port number hoined with \char`\"{}:\char`\"{}. If the port number is abbreviated, the default port number 2809 is used.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em orb}]ORB \item[{\em names}]Name of NamingServer \end{DoxyParams}
+\index{RTC::NamingOnCorba@{RTC::NamingOnCorba}!$\sim$NamingOnCorba@{$\sim$NamingOnCorba}}
+\index{$\sim$NamingOnCorba@{$\sim$NamingOnCorba}!RTC::NamingOnCorba@{RTC::NamingOnCorba}}
+\subsubsection[{$\sim$NamingOnCorba}]{\setlength{\rightskip}{0pt plus 5cm}virtual RTC::NamingOnCorba::$\sim$NamingOnCorba (void)\hspace{0.3cm}{\ttfamily  [inline, virtual]}}\label{classRTC_1_1NamingOnCorba_ad52223d47212b6fc1b1196b0294eb0a9}
+
+
+Destructor. 
+
+
+
+\subsection{Member Function Documentation}
+\index{RTC::NamingOnCorba@{RTC::NamingOnCorba}!bindObject@{bindObject}}
+\index{bindObject@{bindObject}!RTC::NamingOnCorba@{RTC::NamingOnCorba}}
+\subsubsection[{bindObject}]{\setlength{\rightskip}{0pt plus 5cm}virtual void RTC::NamingOnCorba::bindObject (const char $\ast$ {\em name}, \/  const {\bf RTM::ManagerServant} $\ast$ {\em mgr})\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classRTC_1_1NamingOnCorba_a539b34abf7968f2ad2c2a8af46bfe509}
+
+
+Bind the specified ManagerServants to NamingService. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em name}]Names at the binding \item[{\em mgr}]The target ManagerServants for the binding \end{DoxyParams}
+
+
+Implements {\bf RTC::NamingBase} \doxyref{}{p.}{classRTC_1_1NamingBase_a46494e91f57881e0b19faad01f7ea675}.
+
+\index{RTC::NamingOnCorba@{RTC::NamingOnCorba}!bindObject@{bindObject}}
+\index{bindObject@{bindObject}!RTC::NamingOnCorba@{RTC::NamingOnCorba}}
+\subsubsection[{bindObject}]{\setlength{\rightskip}{0pt plus 5cm}virtual void RTC::NamingOnCorba::bindObject (const char $\ast$ {\em name}, \/  const {\bf RTObject\_\-impl} $\ast$ {\em rtobj})\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classRTC_1_1NamingOnCorba_a6361ae7eac2cf8788bbc0ad98b4440b3}
+
+
+Bind the specified CORBA objects to NamingService. 
+
+Bind the specified CORBA objects to CORBA NamingService by specified names.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em name}]Names at the binding \item[{\em rtobj}]The target objects for the binding \end{DoxyParams}
+
+
+Implements {\bf RTC::NamingBase} \doxyref{}{p.}{classRTC_1_1NamingBase_ac8b6c5670ae869ba80b9407169cc7928}.
+
+\index{RTC::NamingOnCorba@{RTC::NamingOnCorba}!isAlive@{isAlive}}
+\index{isAlive@{isAlive}!RTC::NamingOnCorba@{RTC::NamingOnCorba}}
+\subsubsection[{isAlive}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool RTC::NamingOnCorba::isAlive ()\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classRTC_1_1NamingOnCorba_af48e8a29fce37cb045a14ea452c4031d}
+
+
+Check if the name service is alive. 
+
+\begin{DoxyReturn}{Returns}
+true: alive, false:non not alive 
+\end{DoxyReturn}
+
+
+Implements {\bf RTC::NamingBase} \doxyref{}{p.}{classRTC_1_1NamingBase_af2e5abca5e0f91fb1ed6f830b1837318}.
+
+\index{RTC::NamingOnCorba@{RTC::NamingOnCorba}!unbindObject@{unbindObject}}
+\index{unbindObject@{unbindObject}!RTC::NamingOnCorba@{RTC::NamingOnCorba}}
+\subsubsection[{unbindObject}]{\setlength{\rightskip}{0pt plus 5cm}virtual void RTC::NamingOnCorba::unbindObject (const char $\ast$ {\em name})\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classRTC_1_1NamingOnCorba_ac9f33dd6f2f4df81640d720057da98da}
+
+
+Unbind the specified CORBA objects from NamingService. 
+
+Unbind the specified CORBA objects from CORBA NamingService.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em name}]The target objects for the unbinding \end{DoxyParams}
+
+
+Implements {\bf RTC::NamingBase} \doxyref{}{p.}{classRTC_1_1NamingBase_a78700b13ec16ffadfc80c13461db3832}.
+

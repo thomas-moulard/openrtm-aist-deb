@@ -1,0 +1,54 @@
+\section{RTC::ConnectionCallback Class Reference}
+\label{classRTC_1_1ConnectionCallback}\index{RTC::ConnectionCallback@{RTC::ConnectionCallback}}
+
+
+Callback functor abstract for connect/notify\_\-connect() funcs.  
+
+
+
+
+{\ttfamily \#include $<$PortCallback.h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual {\bf $\sim$ConnectionCallback} (void)
+\begin{DoxyCompactList}\small\item\em Destructor. \item\end{DoxyCompactList}\item 
+virtual void {\bf operator()} (RTC::ConnectorProfile \&profile)=0
+\begin{DoxyCompactList}\small\item\em Callback method. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Callback functor abstract for connect/notify\_\-connect() funcs. This is the interface for callback functor for connect/notify\_\-connect() invocation in Port. Argument is RTC::ConnectorProfile that is given these functions.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em profile}]ConnectorProfile\end{DoxyParams}
+\begin{DoxySince}{Since}
+1.0.0 
+\end{DoxySince}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{RTC::ConnectionCallback@{RTC::ConnectionCallback}!$\sim$ConnectionCallback@{$\sim$ConnectionCallback}}
+\index{$\sim$ConnectionCallback@{$\sim$ConnectionCallback}!RTC::ConnectionCallback@{RTC::ConnectionCallback}}
+\subsubsection[{$\sim$ConnectionCallback}]{\setlength{\rightskip}{0pt plus 5cm}virtual RTC::ConnectionCallback::$\sim$ConnectionCallback (void)\hspace{0.3cm}{\ttfamily  [inline, virtual]}}\label{classRTC_1_1ConnectionCallback_a8ce9ddf57298521257e45003717763df}
+
+
+Destructor. 
+
+Destructor 
+
+\subsection{Member Function Documentation}
+\index{RTC::ConnectionCallback@{RTC::ConnectionCallback}!operator()@{operator()}}
+\index{operator()@{operator()}!RTC::ConnectionCallback@{RTC::ConnectionCallback}}
+\subsubsection[{operator()}]{\setlength{\rightskip}{0pt plus 5cm}virtual void RTC::ConnectionCallback::operator() (RTC::ConnectorProfile \& {\em profile})\hspace{0.3cm}{\ttfamily  [pure virtual]}}\label{classRTC_1_1ConnectionCallback_ab28717e4f965c2ddbf89eb4d5f27b0ac}
+
+
+Callback method. 
+
+This is the callback method invoked when connect/notify\_\-connect() invocation in Port.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em profile}]ConnectorProfile \end{DoxyParams}

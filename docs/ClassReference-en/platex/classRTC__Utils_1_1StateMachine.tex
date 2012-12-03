@@ -1,0 +1,461 @@
+\section{RTC\_\-Utils::StateMachine$<$ State, Listener, States, Callback $>$ Class Template Reference}
+\label{classRTC__Utils_1_1StateMachine}\index{RTC\_\-Utils::StateMachine@{RTC\_\-Utils::StateMachine}}
+
+
+State machine class.  
+
+
+
+
+{\ttfamily \#include $<$StateMachine.h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf StateMachine} (int num\_\-of\_\-state)
+\begin{DoxyCompactList}\small\item\em Constructor. \item\end{DoxyCompactList}\item 
+virtual {\bf $\sim$StateMachine} ()
+\item 
+void {\bf setNOP} (Callback call\_\-back)
+\begin{DoxyCompactList}\small\item\em Set NOP function. \item\end{DoxyCompactList}\item 
+void {\bf setListener} (Listener $\ast$listener)
+\begin{DoxyCompactList}\small\item\em Set Listener Object. \item\end{DoxyCompactList}\item 
+bool {\bf setEntryAction} (State state, Callback call\_\-back)
+\begin{DoxyCompactList}\small\item\em Set Entry action function. \item\end{DoxyCompactList}\item 
+bool {\bf setPreDoAction} (State state, Callback call\_\-back)
+\begin{DoxyCompactList}\small\item\em Set PreDo action function. \item\end{DoxyCompactList}\item 
+bool {\bf setDoAction} (State state, Callback call\_\-back)
+\begin{DoxyCompactList}\small\item\em Set Do action function. \item\end{DoxyCompactList}\item 
+bool {\bf setPostDoAction} (State state, Callback call\_\-back)
+\begin{DoxyCompactList}\small\item\em Set PostDo action function. \item\end{DoxyCompactList}\item 
+bool {\bf setExitAction} (State state, Callback call\_\-back)
+\begin{DoxyCompactList}\small\item\em Set Exit action function. \item\end{DoxyCompactList}\item 
+bool {\bf setTransitionAction} (Callback call\_\-back)
+\begin{DoxyCompactList}\small\item\em Set state transition action function. \item\end{DoxyCompactList}\item 
+void {\bf setStartState} (States states)
+\begin{DoxyCompactList}\small\item\em Set the initial state. \item\end{DoxyCompactList}\item 
+States {\bf getStates} ()
+\begin{DoxyCompactList}\small\item\em Get states. \item\end{DoxyCompactList}\item 
+State {\bf getState} ()
+\begin{DoxyCompactList}\small\item\em Get current state. \item\end{DoxyCompactList}\item 
+bool {\bf isIn} (State state)
+\begin{DoxyCompactList}\small\item\em Check current state. \item\end{DoxyCompactList}\item 
+void {\bf goTo} (State state)
+\begin{DoxyCompactList}\small\item\em Transit State. \item\end{DoxyCompactList}\item 
+void {\bf worker} ()
+\begin{DoxyCompactList}\small\item\em Worker function. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bf setNullFunc} (Callback $\ast$s, Callback nullfunc)
+\begin{DoxyCompactList}\small\item\em Set NOP function. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int {\bf m\_\-num}
+\begin{DoxyCompactList}\small\item\em Number of state. \item\end{DoxyCompactList}\item 
+Listener $\ast$ {\bf m\_\-listener}
+\begin{DoxyCompactList}\small\item\em Callback function for listener. \item\end{DoxyCompactList}\item 
+Callback $\ast$ {\bf m\_\-entry}
+\begin{DoxyCompactList}\small\item\em Callback function for Entry action. \item\end{DoxyCompactList}\item 
+Callback $\ast$ {\bf m\_\-predo}
+\begin{DoxyCompactList}\small\item\em Callback function for PreDo action. \item\end{DoxyCompactList}\item 
+Callback $\ast$ {\bf m\_\-do}
+\begin{DoxyCompactList}\small\item\em Callback function for Do action. \item\end{DoxyCompactList}\item 
+Callback $\ast$ {\bf m\_\-postdo}
+\begin{DoxyCompactList}\small\item\em Callback function for PostDo action. \item\end{DoxyCompactList}\item 
+Callback $\ast$ {\bf m\_\-exit}
+\begin{DoxyCompactList}\small\item\em Callback function for Exit action. \item\end{DoxyCompactList}\item 
+Callback {\bf m\_\-transit}
+\begin{DoxyCompactList}\small\item\em Callback function for State transition action. \item\end{DoxyCompactList}\item 
+States {\bf m\_\-states}
+\begin{DoxyCompactList}\small\item\em Current state information. \item\end{DoxyCompactList}\item 
+bool {\bf m\_\-selftrans}
+\item 
+{\bf Mutex} {\bf m\_\-mutex}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$class State, class Listener, class States = StateHolder$<$State$>$, class Callback = void (Listener::$\ast$)(const States\& states)$>$ class RTC\_\-Utils::StateMachine$<$ State, Listener, States, Callback $>$}
+
+State machine class. \doxyref{StateMachine}{p.}{classRTC__Utils_1_1StateMachine} class is a class to realize a state machine.
+
+Example: ActiveObject assumes to be an active object that has the state machine. There are three states such as INACTIVE, ACTIVE and ERROR state, and if you want to define Entry or Exit action, this class will realize as follows: 
+\begin{DoxyPre}
+ class ActiveObject 
+ \{  
+ public: 
+   enum MyState \{ INACTIVE, ACTIVE, ERROR \}; 
+   typedef States<MyState> MyStates;\end{DoxyPre}
+
+
+
+\begin{DoxyPre}   ActiveObject() 
+     : m\_sm(3) 
+   \{ 
+     m\_sm.setNOP(&ActiveObject::nullAction); 
+     m\_sm.setListener(this);\end{DoxyPre}
+
+
+
+\begin{DoxyPre}     m\_sm.setExitAction(INACTIVE, &ActiveObject::inactiveExit); 
+       : 
+     m\_sm.setPostDoAction(ERROR, &ActiveObject::errorPostDo); 
+     m\_sm.setTransitionAction(&ActiveObject:transition); 
+   \};\end{DoxyPre}
+
+
+
+\begin{DoxyPre}   bool nullAction(MyStates st) \{\}; 
+   bool inactiveExit(MyStates st) \{\}; 
+     : 
+   bool errorPostDo(MyStates st) \{\}; 
+   bool transition(MyStates st) \{\};\end{DoxyPre}
+
+
+
+\begin{DoxyPre} private: 
+   StateMachine<MyState, bool, ActiveObject> m\_sm; 
+ \}; 
+ \end{DoxyPre}
+ If you want to give a class to some states, you must implement the class to satisfy the following conditions: 
+\begin{DoxyEnumerate}
+\item You must define states by enum. 
+\item Template arguments of \doxyref{StateMachine}{p.}{classRTC__Utils_1_1StateMachine} must be $<$type of state(MyState), listener object, state holder，callback function$>$ 
+\item Constructor arguments of \doxyref{StateMachine}{p.}{classRTC__Utils_1_1StateMachine} must be the number of the states. 
+\item You must set the following action functions as a function of (Return \_\-function\_\-name\_\-(States)) 
+\begin{DoxyEnumerate}
+\item You must define a function that does not do anything and give with setNOP. 
+\item You must set actions to each state by set(Entry$|$PreDo$|$Do$|$PostDo$|$Exit)Action. 
+\item You should set actions at the state transition by \doxyref{setTransitionAction()}{p.}{classRTC__Utils_1_1StateMachine_a1b18262bc0c7fa8cae25dffd567a0806}. 
+\end{DoxyEnumerate}
+\item You must implement action at the transition based on given states, such as current state, next state and previous state. 
+\item You should change states by \doxyref{goTo()}{p.}{classRTC__Utils_1_1StateMachine_a43b923b77e7e4d3562a83880c488197d} and check the state by isIn(state). 
+\item \doxyref{goTo()}{p.}{classRTC__Utils_1_1StateMachine_a43b923b77e7e4d3562a83880c488197d} is a function that sets next state forcibly, therefore, to determine the next state, you must get current state and implement that logic. 
+\end{DoxyEnumerate}
+
+In this class, you can define the following five actions for one state: 
+\begin{DoxyItemize}
+\item Entry action 
+\item PreDo action 
+\item Do action 
+\item PostDo action 
+\item Exit action 
+\end{DoxyItemize}Transition action is an action invoked at the transition between any states, and you must define its behavior.
+
+This class executes each action according to the following timing.
+
+
+\begin{DoxyItemize}
+\item If the state is changed and transits(A-\/$>$B) state,\par
+ (A:Exit)-\/$>$$|$(state update:A-\/$>$B)-\/$>$(B:Entry)-\/$>$(B:PreDo)-\/$>$(B:Do)-\/$>$(B:PostDo)
+
+
+\item If the state is not changed and remains B state, ($|$ shows a step's break) (B(n-\/1):PostDo)-\/$>$$|$(B(n):PreDo)-\/$>$(B(n):Do)-\/$>$(B(n):PostDo)-\/$>$$|$(B(n+1):PreDo) PreDo, Do and PostDo are executed over and over again.
+
+
+\item If the state transits to itself\par
+ (B(n-\/1):PostDo)-\/$>$(B(n-\/1):Exit)-\/$>$$|$(B(n):Entry)-\/$>$(B(n):PreDo) \par
+ Once Exit is invoked, Entry is executed, and then the same operation described above will be done from here on. 
+\end{DoxyItemize}
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em State}]Type of the state \item[{\em Listener}]Listener object for action \item[{\em States}]State holder \item[{\em Callback}]Callback function for action\end{DoxyParams}
+\begin{DoxySince}{Since}
+0.4.0 
+\end{DoxySince}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{RTC\_\-Utils::StateMachine@{RTC\_\-Utils::StateMachine}!StateMachine@{StateMachine}}
+\index{StateMachine@{StateMachine}!RTC_Utils::StateMachine@{RTC\_\-Utils::StateMachine}}
+\subsubsection[{StateMachine}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class State, class Listener, class States = StateHolder$<$State$>$, class Callback = void (Listener::$\ast$)(const States\& states)$>$ {\bf RTC\_\-Utils::StateMachine}$<$ State, Listener, States, Callback $>$::{\bf StateMachine} (int {\em num\_\-of\_\-state})\hspace{0.3cm}{\ttfamily  [inline]}}\label{classRTC__Utils_1_1StateMachine_acca3c5b3e35ae468bde803fd0975f074}
+
+
+Constructor. 
+
+Constructor
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em num\_\-of\_\-state}]Number of states in the state machine \end{DoxyParams}
+\index{RTC\_\-Utils::StateMachine@{RTC\_\-Utils::StateMachine}!$\sim$StateMachine@{$\sim$StateMachine}}
+\index{$\sim$StateMachine@{$\sim$StateMachine}!RTC_Utils::StateMachine@{RTC\_\-Utils::StateMachine}}
+\subsubsection[{$\sim$StateMachine}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class State, class Listener, class States = StateHolder$<$State$>$, class Callback = void (Listener::$\ast$)(const States\& states)$>$ virtual {\bf RTC\_\-Utils::StateMachine}$<$ State, Listener, States, Callback $>$::$\sim${\bf StateMachine} ()\hspace{0.3cm}{\ttfamily  [inline, virtual]}}\label{classRTC__Utils_1_1StateMachine_a26c9f468d0188e47d891b984f8cd761d}
+
+
+\subsection{Member Function Documentation}
+\index{RTC\_\-Utils::StateMachine@{RTC\_\-Utils::StateMachine}!getState@{getState}}
+\index{getState@{getState}!RTC_Utils::StateMachine@{RTC\_\-Utils::StateMachine}}
+\subsubsection[{getState}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class State, class Listener, class States = StateHolder$<$State$>$, class Callback = void (Listener::$\ast$)(const States\& states)$>$ State {\bf RTC\_\-Utils::StateMachine}$<$ State, Listener, States, Callback $>$::getState ()\hspace{0.3cm}{\ttfamily  [inline]}}\label{classRTC__Utils_1_1StateMachine_a1a768beb5bc5ec5a0e828d0e006d8003}
+
+
+Get current state. 
+
+Get current state.
+
+\begin{DoxyReturn}{Returns}
+Current state 
+\end{DoxyReturn}
+\index{RTC\_\-Utils::StateMachine@{RTC\_\-Utils::StateMachine}!getStates@{getStates}}
+\index{getStates@{getStates}!RTC_Utils::StateMachine@{RTC\_\-Utils::StateMachine}}
+\subsubsection[{getStates}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class State, class Listener, class States = StateHolder$<$State$>$, class Callback = void (Listener::$\ast$)(const States\& states)$>$ States {\bf RTC\_\-Utils::StateMachine}$<$ State, Listener, States, Callback $>$::getStates ()\hspace{0.3cm}{\ttfamily  [inline]}}\label{classRTC__Utils_1_1StateMachine_af665f3b667caa54e29dc59a6d5b16d4c}
+
+
+Get states. 
+
+Get state information. Get the current state, the previous state and the next state to be expected to transfer.
+
+\begin{DoxyReturn}{Returns}
+State information 
+\end{DoxyReturn}
+\index{RTC\_\-Utils::StateMachine@{RTC\_\-Utils::StateMachine}!goTo@{goTo}}
+\index{goTo@{goTo}!RTC_Utils::StateMachine@{RTC\_\-Utils::StateMachine}}
+\subsubsection[{goTo}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class State, class Listener, class States = StateHolder$<$State$>$, class Callback = void (Listener::$\ast$)(const States\& states)$>$ void {\bf RTC\_\-Utils::StateMachine}$<$ State, Listener, States, Callback $>$::goTo (State {\em state})\hspace{0.3cm}{\ttfamily  [inline]}}\label{classRTC__Utils_1_1StateMachine_a43b923b77e7e4d3562a83880c488197d}
+
+
+Transit State. 
+
+Transit to the specified state. This function sets the next state forcibly. Therefore, to determine the next state, users must get current state and implement that logic. If transit destination is the same as the current state, flag of self-\/transition will be set.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em state}]State of the transition destination \end{DoxyParams}
+
+
+Referenced by RTC::PeriodicExecutionContext::DFP$<$ OpenRTM::DataFlowComponent\_\-var $>$::on\_\-activated(), RTC::PeriodicExecutionContext::DFP$<$ OpenRTM::DataFlowComponent\_\-var $>$::on\_\-execute(), RTC::PeriodicExecutionContext::DFP$<$ OpenRTM::DataFlowComponent\_\-var $>$::on\_\-reset(), and RTC::PeriodicExecutionContext::DFP$<$ OpenRTM::DataFlowComponent\_\-var $>$::on\_\-state\_\-update().
+
+\index{RTC\_\-Utils::StateMachine@{RTC\_\-Utils::StateMachine}!isIn@{isIn}}
+\index{isIn@{isIn}!RTC_Utils::StateMachine@{RTC\_\-Utils::StateMachine}}
+\subsubsection[{isIn}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class State, class Listener, class States = StateHolder$<$State$>$, class Callback = void (Listener::$\ast$)(const States\& states)$>$ bool {\bf RTC\_\-Utils::StateMachine}$<$ State, Listener, States, Callback $>$::isIn (State {\em state})\hspace{0.3cm}{\ttfamily  [inline]}}\label{classRTC__Utils_1_1StateMachine_a6338403cf745c61423e310a8b481b9df}
+
+
+Check current state. 
+
+Check whether current state matches the state specified by argument.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em state}]Target state for the check\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Check state result 
+\end{DoxyReturn}
+\index{RTC\_\-Utils::StateMachine@{RTC\_\-Utils::StateMachine}!setDoAction@{setDoAction}}
+\index{setDoAction@{setDoAction}!RTC_Utils::StateMachine@{RTC\_\-Utils::StateMachine}}
+\subsubsection[{setDoAction}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class State, class Listener, class States = StateHolder$<$State$>$, class Callback = void (Listener::$\ast$)(const States\& states)$>$ bool {\bf RTC\_\-Utils::StateMachine}$<$ State, Listener, States, Callback $>$::setDoAction (State {\em state}, \/  Callback {\em call\_\-back})\hspace{0.3cm}{\ttfamily  [inline]}}\label{classRTC__Utils_1_1StateMachine_a40da53fd17393b10e4b89b9a63ba1332}
+
+
+Set Do action function. 
+
+Set callback function for Do action that is executed in each state.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em state}]Target state for the set \item[{\em call\_\-back}]Callback function for Do action\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Action execution result 
+\end{DoxyReturn}
+\index{RTC\_\-Utils::StateMachine@{RTC\_\-Utils::StateMachine}!setEntryAction@{setEntryAction}}
+\index{setEntryAction@{setEntryAction}!RTC_Utils::StateMachine@{RTC\_\-Utils::StateMachine}}
+\subsubsection[{setEntryAction}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class State, class Listener, class States = StateHolder$<$State$>$, class Callback = void (Listener::$\ast$)(const States\& states)$>$ bool {\bf RTC\_\-Utils::StateMachine}$<$ State, Listener, States, Callback $>$::setEntryAction (State {\em state}, \/  Callback {\em call\_\-back})\hspace{0.3cm}{\ttfamily  [inline]}}\label{classRTC__Utils_1_1StateMachine_a611cd79fa4c9257159de08011e7e6509}
+
+
+Set Entry action function. 
+
+Set callback function for Entry action that is executed when entering in each state.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em state}]Target state for the set \item[{\em call\_\-back}]Callback function for Entry action\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Action execution result 
+\end{DoxyReturn}
+\index{RTC\_\-Utils::StateMachine@{RTC\_\-Utils::StateMachine}!setExitAction@{setExitAction}}
+\index{setExitAction@{setExitAction}!RTC_Utils::StateMachine@{RTC\_\-Utils::StateMachine}}
+\subsubsection[{setExitAction}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class State, class Listener, class States = StateHolder$<$State$>$, class Callback = void (Listener::$\ast$)(const States\& states)$>$ bool {\bf RTC\_\-Utils::StateMachine}$<$ State, Listener, States, Callback $>$::setExitAction (State {\em state}, \/  Callback {\em call\_\-back})\hspace{0.3cm}{\ttfamily  [inline]}}\label{classRTC__Utils_1_1StateMachine_ac308579215117b100ba31c38c31d580a}
+
+
+Set Exit action function. 
+
+Set callback function for Exit action that is executed in each state.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em state}]Target state for the set \item[{\em call\_\-back}]Callback function for Exit action\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Action execution result 
+\end{DoxyReturn}
+\index{RTC\_\-Utils::StateMachine@{RTC\_\-Utils::StateMachine}!setListener@{setListener}}
+\index{setListener@{setListener}!RTC_Utils::StateMachine@{RTC\_\-Utils::StateMachine}}
+\subsubsection[{setListener}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class State, class Listener, class States = StateHolder$<$State$>$, class Callback = void (Listener::$\ast$)(const States\& states)$>$ void {\bf RTC\_\-Utils::StateMachine}$<$ State, Listener, States, Callback $>$::setListener (Listener $\ast$ {\em listener})\hspace{0.3cm}{\ttfamily  [inline]}}\label{classRTC__Utils_1_1StateMachine_afa4701917d4d6ec2a70f78397519f1f9}
+
+
+Set Listener Object. 
+
+Set Listener Object invoked when various actions are executed.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em listener}]Listener object \end{DoxyParams}
+\index{RTC\_\-Utils::StateMachine@{RTC\_\-Utils::StateMachine}!setNOP@{setNOP}}
+\index{setNOP@{setNOP}!RTC_Utils::StateMachine@{RTC\_\-Utils::StateMachine}}
+\subsubsection[{setNOP}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class State, class Listener, class States = StateHolder$<$State$>$, class Callback = void (Listener::$\ast$)(const States\& states)$>$ void {\bf RTC\_\-Utils::StateMachine}$<$ State, Listener, States, Callback $>$::setNOP (Callback {\em call\_\-back})\hspace{0.3cm}{\ttfamily  [inline]}}\label{classRTC__Utils_1_1StateMachine_a0d232546cd076ffbb0860a612e582416}
+
+
+Set NOP function. 
+
+Set NOP function that does not do anything
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em call\_\-back}]Callback function \end{DoxyParams}
+\index{RTC\_\-Utils::StateMachine@{RTC\_\-Utils::StateMachine}!setNullFunc@{setNullFunc}}
+\index{setNullFunc@{setNullFunc}!RTC_Utils::StateMachine@{RTC\_\-Utils::StateMachine}}
+\subsubsection[{setNullFunc}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class State, class Listener, class States = StateHolder$<$State$>$, class Callback = void (Listener::$\ast$)(const States\& states)$>$ void {\bf RTC\_\-Utils::StateMachine}$<$ State, Listener, States, Callback $>$::setNullFunc (Callback $\ast$ {\em s}, \/  Callback {\em nullfunc})\hspace{0.3cm}{\ttfamily  [inline, protected]}}\label{classRTC__Utils_1_1StateMachine_a99b23364ce99c4473f3a149383e7230f}
+
+
+Set NOP function. 
+
+Set NOP function (function to do nothing).
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em s}]Callback function for setting \item[{\em nullfunc}]Callback function (NOP function) \end{DoxyParams}
+\index{RTC\_\-Utils::StateMachine@{RTC\_\-Utils::StateMachine}!setPostDoAction@{setPostDoAction}}
+\index{setPostDoAction@{setPostDoAction}!RTC_Utils::StateMachine@{RTC\_\-Utils::StateMachine}}
+\subsubsection[{setPostDoAction}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class State, class Listener, class States = StateHolder$<$State$>$, class Callback = void (Listener::$\ast$)(const States\& states)$>$ bool {\bf RTC\_\-Utils::StateMachine}$<$ State, Listener, States, Callback $>$::setPostDoAction (State {\em state}, \/  Callback {\em call\_\-back})\hspace{0.3cm}{\ttfamily  [inline]}}\label{classRTC__Utils_1_1StateMachine_aad4ee723ecbd2f5c97b358336574c26c}
+
+
+Set PostDo action function. 
+
+Set callback function for PostDo action that is executed in each state.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em state}]Target state for the set \item[{\em call\_\-back}]Callback function for PostDo action\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Action execution result 
+\end{DoxyReturn}
+\index{RTC\_\-Utils::StateMachine@{RTC\_\-Utils::StateMachine}!setPreDoAction@{setPreDoAction}}
+\index{setPreDoAction@{setPreDoAction}!RTC_Utils::StateMachine@{RTC\_\-Utils::StateMachine}}
+\subsubsection[{setPreDoAction}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class State, class Listener, class States = StateHolder$<$State$>$, class Callback = void (Listener::$\ast$)(const States\& states)$>$ bool {\bf RTC\_\-Utils::StateMachine}$<$ State, Listener, States, Callback $>$::setPreDoAction (State {\em state}, \/  Callback {\em call\_\-back})\hspace{0.3cm}{\ttfamily  [inline]}}\label{classRTC__Utils_1_1StateMachine_a7bdcc53df08ccb0fa7fb31472613b2fe}
+
+
+Set PreDo action function. 
+
+Set callback function for PreDo action that is executed in each state.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em state}]Target state for the set \item[{\em call\_\-back}]Callback function for PreDo action\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Action execution result 
+\end{DoxyReturn}
+\index{RTC\_\-Utils::StateMachine@{RTC\_\-Utils::StateMachine}!setStartState@{setStartState}}
+\index{setStartState@{setStartState}!RTC_Utils::StateMachine@{RTC\_\-Utils::StateMachine}}
+\subsubsection[{setStartState}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class State, class Listener, class States = StateHolder$<$State$>$, class Callback = void (Listener::$\ast$)(const States\& states)$>$ void {\bf RTC\_\-Utils::StateMachine}$<$ State, Listener, States, Callback $>$::setStartState (States {\em states})\hspace{0.3cm}{\ttfamily  [inline]}}\label{classRTC__Utils_1_1StateMachine_a5501ddabd4b93f4e7043708e2de26781}
+
+
+Set the initial state. 
+
+Set the initial state of the state machine.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em states}]Initial state \end{DoxyParams}
+\index{RTC\_\-Utils::StateMachine@{RTC\_\-Utils::StateMachine}!setTransitionAction@{setTransitionAction}}
+\index{setTransitionAction@{setTransitionAction}!RTC_Utils::StateMachine@{RTC\_\-Utils::StateMachine}}
+\subsubsection[{setTransitionAction}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class State, class Listener, class States = StateHolder$<$State$>$, class Callback = void (Listener::$\ast$)(const States\& states)$>$ bool {\bf RTC\_\-Utils::StateMachine}$<$ State, Listener, States, Callback $>$::setTransitionAction (Callback {\em call\_\-back})\hspace{0.3cm}{\ttfamily  [inline]}}\label{classRTC__Utils_1_1StateMachine_a1b18262bc0c7fa8cae25dffd567a0806}
+
+
+Set state transition action function. 
+
+Set callback function for State transition action that is executed when transiting to the state.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em call\_\-back}]Callback function for State transition\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Action execution result 
+\end{DoxyReturn}
+\index{RTC\_\-Utils::StateMachine@{RTC\_\-Utils::StateMachine}!worker@{worker}}
+\index{worker@{worker}!RTC_Utils::StateMachine@{RTC\_\-Utils::StateMachine}}
+\subsubsection[{worker}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class State, class Listener, class States = StateHolder$<$State$>$, class Callback = void (Listener::$\ast$)(const States\& states)$>$ void {\bf RTC\_\-Utils::StateMachine}$<$ State, Listener, States, Callback $>$::worker ()\hspace{0.3cm}{\ttfamily  [inline]}}\label{classRTC__Utils_1_1StateMachine_af979deaf6160e247a6a6e3027f31c83b}
+
+
+Worker function. 
+
+This is a worker function of the state machine. Execute the invocation of each action at actual state transition and the state transition occurrence. 
+
+\subsection{Member Data Documentation}
+\index{RTC\_\-Utils::StateMachine@{RTC\_\-Utils::StateMachine}!m\_\-do@{m\_\-do}}
+\index{m\_\-do@{m\_\-do}!RTC_Utils::StateMachine@{RTC\_\-Utils::StateMachine}}
+\subsubsection[{m\_\-do}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class State, class Listener, class States = StateHolder$<$State$>$, class Callback = void (Listener::$\ast$)(const States\& states)$>$ Callback$\ast$ {\bf RTC\_\-Utils::StateMachine}$<$ State, Listener, States, Callback $>$::{\bf m\_\-do}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC__Utils_1_1StateMachine_a86145d8ddee737f186fe019dc84de243}
+
+
+Callback function for Do action. 
+
+\index{RTC\_\-Utils::StateMachine@{RTC\_\-Utils::StateMachine}!m\_\-entry@{m\_\-entry}}
+\index{m\_\-entry@{m\_\-entry}!RTC_Utils::StateMachine@{RTC\_\-Utils::StateMachine}}
+\subsubsection[{m\_\-entry}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class State, class Listener, class States = StateHolder$<$State$>$, class Callback = void (Listener::$\ast$)(const States\& states)$>$ Callback$\ast$ {\bf RTC\_\-Utils::StateMachine}$<$ State, Listener, States, Callback $>$::{\bf m\_\-entry}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC__Utils_1_1StateMachine_a728fe8f596c77e326bc356b274144bb5}
+
+
+Callback function for Entry action. 
+
+\index{RTC\_\-Utils::StateMachine@{RTC\_\-Utils::StateMachine}!m\_\-exit@{m\_\-exit}}
+\index{m\_\-exit@{m\_\-exit}!RTC_Utils::StateMachine@{RTC\_\-Utils::StateMachine}}
+\subsubsection[{m\_\-exit}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class State, class Listener, class States = StateHolder$<$State$>$, class Callback = void (Listener::$\ast$)(const States\& states)$>$ Callback$\ast$ {\bf RTC\_\-Utils::StateMachine}$<$ State, Listener, States, Callback $>$::{\bf m\_\-exit}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC__Utils_1_1StateMachine_a75fb6776bd228a8005eda56e49a33373}
+
+
+Callback function for Exit action. 
+
+\index{RTC\_\-Utils::StateMachine@{RTC\_\-Utils::StateMachine}!m\_\-listener@{m\_\-listener}}
+\index{m\_\-listener@{m\_\-listener}!RTC_Utils::StateMachine@{RTC\_\-Utils::StateMachine}}
+\subsubsection[{m\_\-listener}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class State, class Listener, class States = StateHolder$<$State$>$, class Callback = void (Listener::$\ast$)(const States\& states)$>$ Listener$\ast$ {\bf RTC\_\-Utils::StateMachine}$<$ State, Listener, States, Callback $>$::{\bf m\_\-listener}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC__Utils_1_1StateMachine_a25f2e293e773fe5c4ffdd49fb343f734}
+
+
+Callback function for listener. 
+
+\index{RTC\_\-Utils::StateMachine@{RTC\_\-Utils::StateMachine}!m\_\-mutex@{m\_\-mutex}}
+\index{m\_\-mutex@{m\_\-mutex}!RTC_Utils::StateMachine@{RTC\_\-Utils::StateMachine}}
+\subsubsection[{m\_\-mutex}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class State, class Listener, class States = StateHolder$<$State$>$, class Callback = void (Listener::$\ast$)(const States\& states)$>$ {\bf Mutex} {\bf RTC\_\-Utils::StateMachine}$<$ State, Listener, States, Callback $>$::{\bf m\_\-mutex}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC__Utils_1_1StateMachine_aedd1306b007958b49a248d07578214b3}
+\index{RTC\_\-Utils::StateMachine@{RTC\_\-Utils::StateMachine}!m\_\-num@{m\_\-num}}
+\index{m\_\-num@{m\_\-num}!RTC_Utils::StateMachine@{RTC\_\-Utils::StateMachine}}
+\subsubsection[{m\_\-num}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class State, class Listener, class States = StateHolder$<$State$>$, class Callback = void (Listener::$\ast$)(const States\& states)$>$ int {\bf RTC\_\-Utils::StateMachine}$<$ State, Listener, States, Callback $>$::{\bf m\_\-num}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC__Utils_1_1StateMachine_a2503583562749e18c43ca48c6066d9f4}
+
+
+Number of state. 
+
+\index{RTC\_\-Utils::StateMachine@{RTC\_\-Utils::StateMachine}!m\_\-postdo@{m\_\-postdo}}
+\index{m\_\-postdo@{m\_\-postdo}!RTC_Utils::StateMachine@{RTC\_\-Utils::StateMachine}}
+\subsubsection[{m\_\-postdo}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class State, class Listener, class States = StateHolder$<$State$>$, class Callback = void (Listener::$\ast$)(const States\& states)$>$ Callback$\ast$ {\bf RTC\_\-Utils::StateMachine}$<$ State, Listener, States, Callback $>$::{\bf m\_\-postdo}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC__Utils_1_1StateMachine_ac90335d93cc0c173335b130dd91a33e4}
+
+
+Callback function for PostDo action. 
+
+\index{RTC\_\-Utils::StateMachine@{RTC\_\-Utils::StateMachine}!m\_\-predo@{m\_\-predo}}
+\index{m\_\-predo@{m\_\-predo}!RTC_Utils::StateMachine@{RTC\_\-Utils::StateMachine}}
+\subsubsection[{m\_\-predo}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class State, class Listener, class States = StateHolder$<$State$>$, class Callback = void (Listener::$\ast$)(const States\& states)$>$ Callback$\ast$ {\bf RTC\_\-Utils::StateMachine}$<$ State, Listener, States, Callback $>$::{\bf m\_\-predo}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC__Utils_1_1StateMachine_a687b8b8abab11fb696555fa861240f30}
+
+
+Callback function for PreDo action. 
+
+\index{RTC\_\-Utils::StateMachine@{RTC\_\-Utils::StateMachine}!m\_\-selftrans@{m\_\-selftrans}}
+\index{m\_\-selftrans@{m\_\-selftrans}!RTC_Utils::StateMachine@{RTC\_\-Utils::StateMachine}}
+\subsubsection[{m\_\-selftrans}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class State, class Listener, class States = StateHolder$<$State$>$, class Callback = void (Listener::$\ast$)(const States\& states)$>$ bool {\bf RTC\_\-Utils::StateMachine}$<$ State, Listener, States, Callback $>$::{\bf m\_\-selftrans}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC__Utils_1_1StateMachine_aa02af266af8b8e0abf6609abede2a323}
+\index{RTC\_\-Utils::StateMachine@{RTC\_\-Utils::StateMachine}!m\_\-states@{m\_\-states}}
+\index{m\_\-states@{m\_\-states}!RTC_Utils::StateMachine@{RTC\_\-Utils::StateMachine}}
+\subsubsection[{m\_\-states}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class State, class Listener, class States = StateHolder$<$State$>$, class Callback = void (Listener::$\ast$)(const States\& states)$>$ States {\bf RTC\_\-Utils::StateMachine}$<$ State, Listener, States, Callback $>$::{\bf m\_\-states}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC__Utils_1_1StateMachine_a29e2692dc448060388da12e0a029cfad}
+
+
+Current state information. 
+
+\index{RTC\_\-Utils::StateMachine@{RTC\_\-Utils::StateMachine}!m\_\-transit@{m\_\-transit}}
+\index{m\_\-transit@{m\_\-transit}!RTC_Utils::StateMachine@{RTC\_\-Utils::StateMachine}}
+\subsubsection[{m\_\-transit}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class State, class Listener, class States = StateHolder$<$State$>$, class Callback = void (Listener::$\ast$)(const States\& states)$>$ Callback {\bf RTC\_\-Utils::StateMachine}$<$ State, Listener, States, Callback $>$::{\bf m\_\-transit}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC__Utils_1_1StateMachine_aa292b9b27cf14ea9b82b2ad8b8ddc49d}
+
+
+Callback function for State transition action. 
+

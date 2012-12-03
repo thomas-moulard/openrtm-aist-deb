@@ -1,0 +1,38 @@
+\section{SDO Class Reference}
+\label{classSDO}\index{SDO@{SDO}}
+
+
+\doxyref{SDO}{p.}{classSDO} service administration class.  
+
+
+
+
+\subsection{Detailed Description}
+\doxyref{SDO}{p.}{classSDO} service administration class. class This class is the administration class for \doxyref{SDO}{p.}{classSDO} Services. The \doxyref{SDO}{p.}{classSDO} Service, which is defined in the OMG \doxyref{SDO}{p.}{classSDO} Specification, is a kind of service for certain functionalities which is provided and/or consumed by \doxyref{SDO}{p.}{classSDO}. The specification does not define details. However, in this implementation, the following behaviors of \doxyref{SDO}{p.}{classSDO} services are assumed and this class manages these \doxyref{SDO}{p.}{classSDO} services.
+
+In this context, the \doxyref{SDO}{p.}{classSDO} Services that are owned by SDO/RTC is called \doxyref{SDO}{p.}{classSDO} Service Provider, and the \doxyref{SDO}{p.}{classSDO} Services that receive references to provided services by other SDOs/RTCs or applications is called \doxyref{SDO}{p.}{classSDO} Serivce \doxyref{Consumer}{p.}{classConsumer}.
+
+\doxyref{SDO}{p.}{classSDO} Service Provider is called from other applications, and it is used to access to internal functionality of an SDO/RTC. Other SDO/RTC or applications would get a ServiceProfiles or a reference to the \doxyref{SDO}{p.}{classSDO} serivce through the following operations, and then they call operations of the service.
+
+
+\begin{DoxyItemize}
+\item SDO::get\_\-service\_\-profiles ()
+\item SDO::get\_\-service\_\-profile (in UniqueIdentifier id)
+\item SDO::get\_\-sdo\_\-service (in UniqueIdentifier id)
+\end{DoxyItemize}
+
+Since references of services in other SDOs/RTCs or applications could be released anytime, service providers cannot know where and how many consumers refer them. On the other hand, since SDO/RTC which provides services can stop and delete them anytime, consumers have to call operations by assuming that the reference cannot be accessed always.
+
+\doxyref{SDO}{p.}{classSDO} Service \doxyref{Consumer}{p.}{classConsumer}, which is a reference to the service entity in the other SDOs/RTCs or other applications, is given with ServiceProfile, and SDO/RTC would call operation to access some functionality to the service object. And giving certain observer object, it will work as callback from SDO/RTC. \doxyref{SDO}{p.}{classSDO} service consumer, which is defferent from \doxyref{SDO}{p.}{classSDO} service provider, is added and deleted through \doxyref{SDO}{p.}{classSDO} Configuration interface shown as follows.
+
+
+\begin{DoxyItemize}
+\item Configuration::add\_\-service\_\-profile (in ServiceProfile sProfile)
+\item Configuration::remove\_\-service\_\-profile (in UniqueIdentifier id)
+\end{DoxyItemize}
+
+To set a \doxyref{SDO}{p.}{classSDO} service to the target SDO/RTC, other SDOs/RTCs and applications have to give their service references with ServiceProfile including ID, interface type and properties to the add\_\-service\_\-profile() operation. The ID has to be unique such as UUID. Since ID is used when the service is removed from the target SDO/RTC, SDOs/RTCs and applications of service provider side have to keep the ID until removing the service.
+
+\begin{DoxySince}{Since}
+1.1.0 
+\end{DoxySince}

@@ -1,0 +1,127 @@
+\section{RTC.idl}
+\label{RTC_8idl}\index{RTC.idl@{RTC.idl}}
+{\ttfamily import \char`\"{}SDOPackage.idl\char`\"{};}\par
+\subsection*{構成}
+\begin{DoxyCompactItemize}
+\item 
+interface {\bf RTC::ComponentAction}
+\item 
+interface {\bf RTC::LightweightRTObject}
+\item 
+interface {\bf RTC::ExecutionContext}
+\item 
+interface {\bf RTC::DataFlowComponentAction}
+\item 
+interface {\bf RTC::DataFlowComponent}
+\item 
+interface {\bf RTC::Fsm}
+\item 
+interface {\bf RTC::FsmParticipantAction}
+\item 
+interface {\bf RTC::FsmParticipant}
+\item 
+interface {\bf RTC::Mode}
+\item 
+interface {\bf RTC::ModeCapable}
+\item 
+interface {\bf RTC::MultiModeComponentAction}
+\item 
+interface {\bf RTC::MultiModeObject}
+\item 
+struct {\bf RTC::PortInterfaceProfile}
+\item 
+struct {\bf RTC::ConnectorProfile}
+\item 
+struct {\bf RTC::PortProfile}
+\item 
+struct {\bf RTC::ExecutionContextProfile}
+\item 
+interface {\bf RTC::FsmObject}
+\item 
+struct {\bf RTC::FsmBehaviorProfile}
+\item 
+struct {\bf RTC::FsmProfile}
+\item 
+interface {\bf RTC::FsmService}
+\item 
+struct {\bf RTC::ComponentProfile}
+\item 
+interface {\bf RTC::PortService}
+\item 
+interface {\bf RTC::ExecutionContextService}
+\item 
+interface {\bf RTC::RTObject}
+\end{DoxyCompactItemize}
+\subsection*{ネームスペース}
+\begin{DoxyCompactItemize}
+\item 
+namespace {\bf RTC}
+\end{DoxyCompactItemize}
+\subsection*{マクロ定義}
+\begin{DoxyCompactItemize}
+\item 
+\#define {\bf EXECUTION\_\-HANDLE\_\-TYPE\_\-NATIVE}~long
+\end{DoxyCompactItemize}
+\subsection*{型定義}
+\begin{DoxyCompactItemize}
+\item 
+typedef EXECUTION\_\-HANDLE\_\-TYPE\_\-NATIVE {\bf RTC::ExecutionContextHandle\_\-t}
+\item 
+typedef {\bf SDOPackage::UniqueIdentifier} {\bf RTC::UniqueIdentifier}
+\item 
+typedef {\bf SDOPackage::NVList} {\bf RTC::NVList}
+\item 
+typedef sequence$<$ ExecutionContext $>$ {\bf RTC::ExecutionContextList}
+\item 
+typedef sequence$<$ PortInterfaceProfile $>$ {\bf RTC::PortInterfaceProfileList}
+\item 
+typedef sequence$<$ PortService $>$ {\bf RTC::PortServiceList}
+\item 
+typedef sequence$<$ RTObject $>$ {\bf RTC::RTCList}
+\item 
+typedef sequence$<$ ConnectorProfile $>$ {\bf RTC::ConnectorProfileList}
+\item 
+typedef sequence$<$ PortProfile $>$ {\bf RTC::PortProfileList}
+\item 
+typedef sequence$<$ ExecutionContextProfile $>$ {\bf RTC::ExecutionContextProfileList}
+\item 
+typedef sequence$<$ FsmBehaviorProfile $>$ {\bf RTC::FsmBehaviorProfileList}
+\item 
+typedef sequence$<$ ComponentProfile $>$ {\bf RTC::ComponentProfileList}
+\item 
+typedef sequence$<$ ExecutionContextService $>$ {\bf RTC::ExecutionContextServiceList}
+\end{DoxyCompactItemize}
+\subsection*{列挙型}
+\begin{DoxyCompactItemize}
+\item 
+enum {\bf RTC::ReturnCode\_\-t} \{ \par
+{\bf RTC::RTC\_\-OK}, 
+{\bf RTC::RTC\_\-ERROR}, 
+{\bf RTC::BAD\_\-PARAMETER}, 
+{\bf RTC::UNSUPPORTED}, 
+\par
+{\bf RTC::OUT\_\-OF\_\-RESOURCES}, 
+{\bf RTC::PRECONDITION\_\-NOT\_\-MET}
+ \}
+\begin{DoxyCompactList}\small\item\em ReturnCode\_\-t. \item\end{DoxyCompactList}\item 
+enum {\bf RTC::LifeCycleState} \{ {\bf RTC::CREATED\_\-STATE}, 
+{\bf RTC::INACTIVE\_\-STATE}, 
+{\bf RTC::ACTIVE\_\-STATE}, 
+{\bf RTC::ERROR\_\-STATE}
+ \}
+\item 
+enum {\bf RTC::ExecutionKind} \{ {\bf RTC::PERIODIC}, 
+{\bf RTC::EVENT\_\-DRIVEN}, 
+{\bf RTC::OTHER}
+ \}
+\item 
+enum {\bf RTC::PortInterfacePolarity} \{ {\bf RTC::PROVIDED}, 
+{\bf RTC::REQUIRED}
+ \}
+\end{DoxyCompactItemize}
+
+
+\subsection{マクロ定義}
+\index{RTC.idl@{RTC.idl}!EXECUTION\_\-HANDLE\_\-TYPE\_\-NATIVE@{EXECUTION\_\-HANDLE\_\-TYPE\_\-NATIVE}}
+\index{EXECUTION\_\-HANDLE\_\-TYPE\_\-NATIVE@{EXECUTION\_\-HANDLE\_\-TYPE\_\-NATIVE}!RTC.idl@{RTC.idl}}
+\subsubsection[{EXECUTION\_\-HANDLE\_\-TYPE\_\-NATIVE}]{\setlength{\rightskip}{0pt plus 5cm}\#define EXECUTION\_\-HANDLE\_\-TYPE\_\-NATIVE~long}\label{RTC_8idl_aeffb3a05d02a2be4851f4c1c59f000c3}

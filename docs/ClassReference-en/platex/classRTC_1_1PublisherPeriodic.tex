@@ -1,0 +1,585 @@
+\section{RTC::PublisherPeriodic Class Reference}
+\label{classRTC_1_1PublisherPeriodic}\index{RTC::PublisherPeriodic@{RTC::PublisherPeriodic}}
+
+
+\doxyref{PublisherPeriodic}{p.}{classRTC_1_1PublisherPeriodic} class.  
+
+
+
+
+{\ttfamily \#include $<$PublisherPeriodic.h$>$}
+
+Inheritance diagram for RTC::PublisherPeriodic:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3cm]{classRTC_1_1PublisherPeriodic}
+\end{center}
+\end{figure}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef {\bf coil::Mutex} {\bf Mutex}
+\item 
+typedef {\bf coil::Condition}$<$ {\bf Mutex} $>$ {\bf Condition}
+\item 
+typedef {\bf coil::Guard}$<$ {\bf coil::Mutex} $>$ {\bf Guard}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+DATAPORTSTATUS\_\-ENUM {\bf PublisherPeriodic} (void)
+\begin{DoxyCompactList}\small\item\em Constructor. \item\end{DoxyCompactList}\item 
+virtual {\bf $\sim$PublisherPeriodic} (void)
+\begin{DoxyCompactList}\small\item\em Destructor. \item\end{DoxyCompactList}\item 
+virtual ReturnCode {\bf init} ({\bf coil::Properties} \&prop)
+\begin{DoxyCompactList}\small\item\em Initialization. \item\end{DoxyCompactList}\item 
+virtual ReturnCode {\bf setConsumer} ({\bf InPortConsumer} $\ast$consumer)
+\begin{DoxyCompactList}\small\item\em Store \doxyref{InPort}{p.}{classRTC_1_1InPort} consumer. \item\end{DoxyCompactList}\item 
+virtual ReturnCode {\bf setBuffer} ({\bf CdrBufferBase} $\ast$buffer)
+\begin{DoxyCompactList}\small\item\em Setting buffer pointer. \item\end{DoxyCompactList}\item 
+virtual ReturnCode {\bf setListener} ({\bf ConnectorInfo} \&info, {\bf ConnectorListeners} $\ast$listeners)
+\begin{DoxyCompactList}\small\item\em Set the listener. \item\end{DoxyCompactList}\item 
+virtual ReturnCode {\bf write} (const cdrMemoryStream \&data, unsigned long sec, unsigned long usec)
+\begin{DoxyCompactList}\small\item\em Write data. \item\end{DoxyCompactList}\item 
+virtual bool {\bf isActive} ()
+\begin{DoxyCompactList}\small\item\em If publisher is active state. \item\end{DoxyCompactList}\item 
+virtual ReturnCode {\bf activate} ()
+\begin{DoxyCompactList}\small\item\em activation \item\end{DoxyCompactList}\item 
+virtual ReturnCode {\bf deactivate} ()
+\begin{DoxyCompactList}\small\item\em deactivation \item\end{DoxyCompactList}\item 
+virtual int {\bf svc} (void)
+\begin{DoxyCompactList}\small\item\em Thread execution function. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Types}
+\begin{DoxyCompactItemize}
+\item 
+enum {\bf Policy} \{ {\bf ALL}, 
+{\bf FIFO}, 
+{\bf SKIP}, 
+{\bf NEW}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bf setPushPolicy} (const {\bf coil::Properties} \&prop)
+\begin{DoxyCompactList}\small\item\em Setting PushPolicy. \item\end{DoxyCompactList}\item 
+bool {\bf createTask} (const {\bf coil::Properties} \&prop)
+\begin{DoxyCompactList}\small\item\em Setting Task. \item\end{DoxyCompactList}\item 
+ReturnCode {\bf pushAll} ()
+\begin{DoxyCompactList}\small\item\em push \char`\"{}all\char`\"{} policy \item\end{DoxyCompactList}\item 
+ReturnCode {\bf pushFifo} ()
+\begin{DoxyCompactList}\small\item\em push \char`\"{}fifo\char`\"{} policy \item\end{DoxyCompactList}\item 
+ReturnCode {\bf pushSkip} ()
+\begin{DoxyCompactList}\small\item\em push \char`\"{}skip\char`\"{} policy \item\end{DoxyCompactList}\item 
+ReturnCode {\bf pushNew} ()
+\begin{DoxyCompactList}\small\item\em push \char`\"{}new\char`\"{} policy \item\end{DoxyCompactList}\item 
+ReturnCode {\bf convertReturn} ({\bf BufferStatus::Enum} status, const cdrMemoryStream \&data)
+\begin{DoxyCompactList}\small\item\em Convertion from \doxyref{BufferStatus}{p.}{classRTC_1_1BufferStatus} to \doxyref{DataPortStatus}{p.}{classRTC_1_1DataPortStatus}. \item\end{DoxyCompactList}\item 
+ReturnCode {\bf invokeListener} ({\bf DataPortStatus::Enum} status, const cdrMemoryStream \&data)
+\begin{DoxyCompactList}\small\item\em Call listeners according to the \doxyref{DataPortStatus}{p.}{classRTC_1_1DataPortStatus}. \item\end{DoxyCompactList}\item 
+void {\bf onBufferWrite} (const cdrMemoryStream \&data)
+\begin{DoxyCompactList}\small\item\em Notify an ON\_\-BUFFER\_\-WRITE event to listeners. \item\end{DoxyCompactList}\item 
+void {\bf onBufferFull} (const cdrMemoryStream \&data)
+\begin{DoxyCompactList}\small\item\em Notify an ON\_\-BUFFER\_\-FULL event to listeners. \item\end{DoxyCompactList}\item 
+void {\bf onBufferWriteTimeout} (const cdrMemoryStream \&data)
+\begin{DoxyCompactList}\small\item\em Notify an ON\_\-BUFFER\_\-WRITE\_\-TIMEOUT event to listeners. \item\end{DoxyCompactList}\item 
+void {\bf onBufferRead} (const cdrMemoryStream \&data)
+\begin{DoxyCompactList}\small\item\em Notify an ON\_\-BUFFER\_\-READ event to listeners. \item\end{DoxyCompactList}\item 
+void {\bf onSend} (const cdrMemoryStream \&data)
+\begin{DoxyCompactList}\small\item\em Notify an ON\_\-SEND event to listners. \item\end{DoxyCompactList}\item 
+void {\bf onReceived} (const cdrMemoryStream \&data)
+\begin{DoxyCompactList}\small\item\em Notify an ON\_\-RECEIVED event to listeners. \item\end{DoxyCompactList}\item 
+void {\bf onReceiverFull} (const cdrMemoryStream \&data)
+\begin{DoxyCompactList}\small\item\em Notify an ON\_\-RECEIVER\_\-FULL event to listeners. \item\end{DoxyCompactList}\item 
+void {\bf onReceiverTimeout} (const cdrMemoryStream \&data)
+\begin{DoxyCompactList}\small\item\em Notify an ON\_\-RECEIVER\_\-TIMEOUT event to listeners. \item\end{DoxyCompactList}\item 
+void {\bf onReceiverError} (const cdrMemoryStream \&data)
+\begin{DoxyCompactList}\small\item\em Notify an ON\_\-RECEIVER\_\-ERROR event to listeners. \item\end{DoxyCompactList}\item 
+void {\bf onBufferEmpty} ()
+\begin{DoxyCompactList}\small\item\em Notify an ON\_\-BUFFER\_\-EMPTY event to listeners. \item\end{DoxyCompactList}\item 
+void {\bf onSenderEmpty} ()
+\begin{DoxyCompactList}\small\item\em Notify an ON\_\-SENDER\_\-EMPTY event to listeners. \item\end{DoxyCompactList}\item 
+void {\bf onSenderError} ()
+\begin{DoxyCompactList}\small\item\em Notify an ON\_\-SENDER\_\-ERROR event to listeners. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\doxyref{PublisherPeriodic}{p.}{classRTC_1_1PublisherPeriodic} class. Publisher for periodic data transmitting. Usually this class object exists in a Connector object, and it is associated with a buffer and a consumer. This publisher periodically gets data from the buffer and publish it into the consumer. 
+
+\subsection{Member Typedef Documentation}
+\index{RTC::PublisherPeriodic@{RTC::PublisherPeriodic}!Condition@{Condition}}
+\index{Condition@{Condition}!RTC::PublisherPeriodic@{RTC::PublisherPeriodic}}
+\subsubsection[{Condition}]{\setlength{\rightskip}{0pt plus 5cm}typedef {\bf coil::Condition}$<${\bf Mutex}$>$ {\bf RTC::PublisherPeriodic::Condition}}\label{classRTC_1_1PublisherPeriodic_add318b8379afdba98ebeffc9945a969c}
+\index{RTC::PublisherPeriodic@{RTC::PublisherPeriodic}!Guard@{Guard}}
+\index{Guard@{Guard}!RTC::PublisherPeriodic@{RTC::PublisherPeriodic}}
+\subsubsection[{Guard}]{\setlength{\rightskip}{0pt plus 5cm}typedef {\bf coil::Guard}$<${\bf coil::Mutex}$>$ {\bf RTC::PublisherPeriodic::Guard}}\label{classRTC_1_1PublisherPeriodic_a6779f4e5398b3b2a15285f91b745e8a5}
+\index{RTC::PublisherPeriodic@{RTC::PublisherPeriodic}!Mutex@{Mutex}}
+\index{Mutex@{Mutex}!RTC::PublisherPeriodic@{RTC::PublisherPeriodic}}
+\subsubsection[{Mutex}]{\setlength{\rightskip}{0pt plus 5cm}typedef {\bf coil::Mutex} {\bf RTC::PublisherPeriodic::Mutex}}\label{classRTC_1_1PublisherPeriodic_ad77819dcc43d600a9b97b24a9cc3afae}
+
+
+\subsection{Member Enumeration Documentation}
+\index{RTC::PublisherPeriodic@{RTC::PublisherPeriodic}!Policy@{Policy}}
+\index{Policy@{Policy}!RTC::PublisherPeriodic@{RTC::PublisherPeriodic}}
+\subsubsection[{Policy}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf RTC::PublisherPeriodic::Policy}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC_1_1PublisherPeriodic_abed26f7fbce71157daa30a28a81b17cc}
+\begin{Desc}
+\item[Enumerator: ]\par
+\begin{description}
+\index{ALL@{ALL}!RTC::PublisherPeriodic@{RTC::PublisherPeriodic}}\index{RTC::PublisherPeriodic@{RTC::PublisherPeriodic}!ALL@{ALL}}\item[{\em 
+ALL\label{classRTC_1_1PublisherPeriodic_abed26f7fbce71157daa30a28a81b17cca79cb5cf73c1a0e2e9ccb2ecccc7f0983}
+}]\index{FIFO@{FIFO}!RTC::PublisherPeriodic@{RTC::PublisherPeriodic}}\index{RTC::PublisherPeriodic@{RTC::PublisherPeriodic}!FIFO@{FIFO}}\item[{\em 
+FIFO\label{classRTC_1_1PublisherPeriodic_abed26f7fbce71157daa30a28a81b17ccaca8c8e86fc2942dc96979af15dca6690}
+}]\index{SKIP@{SKIP}!RTC::PublisherPeriodic@{RTC::PublisherPeriodic}}\index{RTC::PublisherPeriodic@{RTC::PublisherPeriodic}!SKIP@{SKIP}}\item[{\em 
+SKIP\label{classRTC_1_1PublisherPeriodic_abed26f7fbce71157daa30a28a81b17cca6badf67db0f8387814b05bd70bf1300d}
+}]\index{NEW@{NEW}!RTC::PublisherPeriodic@{RTC::PublisherPeriodic}}\index{RTC::PublisherPeriodic@{RTC::PublisherPeriodic}!NEW@{NEW}}\item[{\em 
+NEW\label{classRTC_1_1PublisherPeriodic_abed26f7fbce71157daa30a28a81b17ccad1f24a4a798e6c9e398d199ff0e81063}
+}]\end{description}
+\end{Desc}
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{RTC::PublisherPeriodic@{RTC::PublisherPeriodic}!PublisherPeriodic@{PublisherPeriodic}}
+\index{PublisherPeriodic@{PublisherPeriodic}!RTC::PublisherPeriodic@{RTC::PublisherPeriodic}}
+\subsubsection[{PublisherPeriodic}]{\setlength{\rightskip}{0pt plus 5cm}DATAPORTSTATUS\_\-ENUM RTC::PublisherPeriodic::PublisherPeriodic (void)}\label{classRTC_1_1PublisherPeriodic_a0d279439e0dd16c078db9917d61ca5c5}
+
+
+Constructor. 
+
+\index{RTC::PublisherPeriodic@{RTC::PublisherPeriodic}!$\sim$PublisherPeriodic@{$\sim$PublisherPeriodic}}
+\index{$\sim$PublisherPeriodic@{$\sim$PublisherPeriodic}!RTC::PublisherPeriodic@{RTC::PublisherPeriodic}}
+\subsubsection[{$\sim$PublisherPeriodic}]{\setlength{\rightskip}{0pt plus 5cm}virtual RTC::PublisherPeriodic::$\sim$PublisherPeriodic (void)\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classRTC_1_1PublisherPeriodic_aba531e39e1898da25b1c6a780ccf7851}
+
+
+Destructor. 
+
+Destructor 
+
+\subsection{Member Function Documentation}
+\index{RTC::PublisherPeriodic@{RTC::PublisherPeriodic}!activate@{activate}}
+\index{activate@{activate}!RTC::PublisherPeriodic@{RTC::PublisherPeriodic}}
+\subsubsection[{activate}]{\setlength{\rightskip}{0pt plus 5cm}virtual ReturnCode RTC::PublisherPeriodic::activate ()\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classRTC_1_1PublisherPeriodic_a9150a94418d36a413af5edf83a4aef4a}
+
+
+activation 
+
+This function activates the publisher. By calling this function, this publisher starts the thread that pushes data to \doxyref{InPort}{p.}{classRTC_1_1InPort}. If precondition such as initialization process and so on is not met, the error code PRECONDITION\_\-NOT\_\-MET is returned.
+
+\begin{DoxyReturn}{Returns}
+PORT\_\-OK normal return PRECONDITION\_\-NOT\_\-MET precondition is not met 
+\end{DoxyReturn}
+
+
+Implements {\bf RTC::PublisherBase} \doxyref{}{p.}{classRTC_1_1PublisherBase_a4f0e0ca91e07a25481ffa83ef027feb6}.
+
+\index{RTC::PublisherPeriodic@{RTC::PublisherPeriodic}!convertReturn@{convertReturn}}
+\index{convertReturn@{convertReturn}!RTC::PublisherPeriodic@{RTC::PublisherPeriodic}}
+\subsubsection[{convertReturn}]{\setlength{\rightskip}{0pt plus 5cm}ReturnCode RTC::PublisherPeriodic::convertReturn ({\bf BufferStatus::Enum} {\em status}, \/  const cdrMemoryStream \& {\em data})\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC_1_1PublisherPeriodic_ae27f86878cd6230c3dc61f7bc1964916}
+
+
+Convertion from \doxyref{BufferStatus}{p.}{classRTC_1_1BufferStatus} to \doxyref{DataPortStatus}{p.}{classRTC_1_1DataPortStatus}. 
+
+This function converts return value from the buffer to \doxyref{DataPortStatus::Enum}{p.}{classRTC_1_1DataPortStatus_ac47c3e85f39e51eb55230337c0efc64f} typed return value. The conversion rule is as follows. Callback functions are also shown, if it exists.
+
+
+\begin{DoxyItemize}
+\item BUFFER\_\-OK: PORT\_\-OK
+\begin{DoxyItemize}
+\item None
+\end{DoxyItemize}
+\item BUFFER\_\-ERROR: BUFFER\_\-ERROR
+\begin{DoxyItemize}
+\item None
+\end{DoxyItemize}
+\item BUFFER\_\-FULL: BUFFER\_\-FULL
+\begin{DoxyItemize}
+\item \doxyref{onBufferFull()}{p.}{classRTC_1_1PublisherPeriodic_a43303d9801891aee527fa64c584c73f6}
+\end{DoxyItemize}
+\item NOT\_\-SUPPORTED: PORT\_\-ERROR
+\begin{DoxyItemize}
+\item None
+\end{DoxyItemize}
+\item TIMEOUT: BUFFER\_\-TIMEOUT
+\begin{DoxyItemize}
+\item \doxyref{onBufferWriteTimeout()}{p.}{classRTC_1_1PublisherPeriodic_a392e2e524963931c96834bff4bd73885}
+\end{DoxyItemize}
+\item PRECONDITION\_\-NOT\_\-MET: PRECONDITION\_\-NOT\_\-MET
+\begin{DoxyItemize}
+\item None
+\end{DoxyItemize}
+\item other: PORT\_\-ERROR
+\begin{DoxyItemize}
+\item None
+\end{DoxyItemize}
+\end{DoxyItemize}
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em status}]\doxyref{BufferStatus}{p.}{classRTC_1_1BufferStatus} \item[{\em data}]cdrMemoryStream \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\doxyref{DataPortStatus}{p.}{classRTC_1_1DataPortStatus} typed return code 
+\end{DoxyReturn}
+\index{RTC::PublisherPeriodic@{RTC::PublisherPeriodic}!createTask@{createTask}}
+\index{createTask@{createTask}!RTC::PublisherPeriodic@{RTC::PublisherPeriodic}}
+\subsubsection[{createTask}]{\setlength{\rightskip}{0pt plus 5cm}bool RTC::PublisherPeriodic::createTask (const {\bf coil::Properties} \& {\em prop})\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC_1_1PublisherPeriodic_a15227ee45582f1b596288e4006739d92}
+
+
+Setting Task. 
+
+\index{RTC::PublisherPeriodic@{RTC::PublisherPeriodic}!deactivate@{deactivate}}
+\index{deactivate@{deactivate}!RTC::PublisherPeriodic@{RTC::PublisherPeriodic}}
+\subsubsection[{deactivate}]{\setlength{\rightskip}{0pt plus 5cm}virtual ReturnCode RTC::PublisherPeriodic::deactivate ()\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classRTC_1_1PublisherPeriodic_abaa6ffa1931e0b654827606e0c756c8e}
+
+
+deactivation 
+
+This function deactivates the publisher. By calling this function, this publisher stops the thread that pushes data to \doxyref{InPort}{p.}{classRTC_1_1InPort}. If precondition such as initialization process and so on is not met, the error code PRECONDITION\_\-NOT\_\-MET is returned.
+
+\begin{DoxyReturn}{Returns}
+PORT\_\-OK normal return PRECONDITION\_\-NOT\_\-MET precondition is not met 
+\end{DoxyReturn}
+
+
+Implements {\bf RTC::PublisherBase} \doxyref{}{p.}{classRTC_1_1PublisherBase_ace68807ed92a38af8ca49ece25db0d8a}.
+
+\index{RTC::PublisherPeriodic@{RTC::PublisherPeriodic}!init@{init}}
+\index{init@{init}!RTC::PublisherPeriodic@{RTC::PublisherPeriodic}}
+\subsubsection[{init}]{\setlength{\rightskip}{0pt plus 5cm}virtual ReturnCode RTC::PublisherPeriodic::init ({\bf coil::Properties} \& {\em prop})\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classRTC_1_1PublisherPeriodic_a4be180578218cc6f04d4fb409e28c5df}
+
+
+Initialization. 
+
+This function have to be called before using this class object. Properties object that includes certain configuration information should be given as an argument. At least, a numerical value of unit of Hz with the key of \char`\"{}dataport.publisher.push\_\-rate\char`\"{} has to be set to the Properties object of argument. The value is the invocation cycle of data sending process. In case of 5 ms period or 200 Hz, the value should be set as 200.0. False will be returned, if there is no value with the key of \char`\"{}dataport.publisher.push\_\-rate\char`\"{}.
+
+The following options are available.
+
+
+\begin{DoxyItemize}
+\item publisher.thread\_\-type: Thread type (string, default: default)
+\item publisher.push\_\-rate: Publisher sending period (numberical)
+\item publisher.push\_\-policy: Push policy (all, fifo, skip, new)
+\item publisher.skip\_\-count: The number of skip count in the \char`\"{}skip\char`\"{} policy
+\item measurement.exec\_\-time: Task execution time measurement (enable/disable)
+\item measurement.exec\_\-count: Task execution time measurement count (numerical, number of times)
+\item measurement.period\_\-time: Task period time measurement (enable/disable)
+\item measurement.period\_\-count: Task period time measurement count (number, count)
+\end{DoxyItemize}
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em property}]Property objects that includes the control information of this Publisher \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+ReturnCode PORT\_\-OK normal return INVALID\_\-ARGS Properties with invalid values. 
+\end{DoxyReturn}
+
+
+Implements {\bf RTC::PublisherBase} \doxyref{}{p.}{classRTC_1_1PublisherBase_a9915af3afab216e2b39fa8702b54b0b7}.
+
+\index{RTC::PublisherPeriodic@{RTC::PublisherPeriodic}!invokeListener@{invokeListener}}
+\index{invokeListener@{invokeListener}!RTC::PublisherPeriodic@{RTC::PublisherPeriodic}}
+\subsubsection[{invokeListener}]{\setlength{\rightskip}{0pt plus 5cm}ReturnCode RTC::PublisherPeriodic::invokeListener ({\bf DataPortStatus::Enum} {\em status}, \/  const cdrMemoryStream \& {\em data})\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC_1_1PublisherPeriodic_a4ca308761197e4b336bef18d94e5e4a4}
+
+
+Call listeners according to the \doxyref{DataPortStatus}{p.}{classRTC_1_1DataPortStatus}. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em status}]\doxyref{DataPortStatus}{p.}{classRTC_1_1DataPortStatus} \item[{\em data}]cdrMemoryStream \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Return code 
+\end{DoxyReturn}
+\index{RTC::PublisherPeriodic@{RTC::PublisherPeriodic}!isActive@{isActive}}
+\index{isActive@{isActive}!RTC::PublisherPeriodic@{RTC::PublisherPeriodic}}
+\subsubsection[{isActive}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool RTC::PublisherPeriodic::isActive ()\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classRTC_1_1PublisherPeriodic_abd214f80d5ace7ebbf50f72f474de34a}
+
+
+If publisher is active state. 
+
+A Publisher can be activated/deactivated synchronized with the data port. The active state and the non-\/active state are made transition by the \char`\"{}activate()\char`\"{} and the \char`\"{}deactivate()\char`\"{} functions respectively. This function confirms if the publisher is in active state.
+
+\begin{DoxyReturn}{Returns}
+Result of state confirmation (Active state:true, Inactive state:false) 
+\end{DoxyReturn}
+
+
+Implements {\bf RTC::PublisherBase} \doxyref{}{p.}{classRTC_1_1PublisherBase_aed0e118b4a1bda091ba38066cc8e4c7b}.
+
+\index{RTC::PublisherPeriodic@{RTC::PublisherPeriodic}!onBufferEmpty@{onBufferEmpty}}
+\index{onBufferEmpty@{onBufferEmpty}!RTC::PublisherPeriodic@{RTC::PublisherPeriodic}}
+\subsubsection[{onBufferEmpty}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::PublisherPeriodic::onBufferEmpty ()\hspace{0.3cm}{\ttfamily  [inline, protected]}}\label{classRTC_1_1PublisherPeriodic_a4dd25d1f4754d7453332a5a9edb3b40f}
+
+
+Notify an ON\_\-BUFFER\_\-EMPTY event to listeners. 
+
+
+
+References RTC::ON\_\-BUFFER\_\-EMPTY.
+
+\index{RTC::PublisherPeriodic@{RTC::PublisherPeriodic}!onBufferFull@{onBufferFull}}
+\index{onBufferFull@{onBufferFull}!RTC::PublisherPeriodic@{RTC::PublisherPeriodic}}
+\subsubsection[{onBufferFull}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::PublisherPeriodic::onBufferFull (const cdrMemoryStream \& {\em data})\hspace{0.3cm}{\ttfamily  [inline, protected]}}\label{classRTC_1_1PublisherPeriodic_a43303d9801891aee527fa64c584c73f6}
+
+
+Notify an ON\_\-BUFFER\_\-FULL event to listeners. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em data}]cdrMemoryStream \end{DoxyParams}
+
+
+References RTC::ON\_\-BUFFER\_\-FULL.
+
+\index{RTC::PublisherPeriodic@{RTC::PublisherPeriodic}!onBufferRead@{onBufferRead}}
+\index{onBufferRead@{onBufferRead}!RTC::PublisherPeriodic@{RTC::PublisherPeriodic}}
+\subsubsection[{onBufferRead}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::PublisherPeriodic::onBufferRead (const cdrMemoryStream \& {\em data})\hspace{0.3cm}{\ttfamily  [inline, protected]}}\label{classRTC_1_1PublisherPeriodic_af2e54aed581040cb98edb9ae524ec5ac}
+
+
+Notify an ON\_\-BUFFER\_\-READ event to listeners. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em data}]cdrMemoryStream \end{DoxyParams}
+
+
+References RTC::ON\_\-BUFFER\_\-READ.
+
+\index{RTC::PublisherPeriodic@{RTC::PublisherPeriodic}!onBufferWrite@{onBufferWrite}}
+\index{onBufferWrite@{onBufferWrite}!RTC::PublisherPeriodic@{RTC::PublisherPeriodic}}
+\subsubsection[{onBufferWrite}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::PublisherPeriodic::onBufferWrite (const cdrMemoryStream \& {\em data})\hspace{0.3cm}{\ttfamily  [inline, protected]}}\label{classRTC_1_1PublisherPeriodic_a40f950094cf50ed12c89d7a61ed6ec72}
+
+
+Notify an ON\_\-BUFFER\_\-WRITE event to listeners. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em data}]cdrMemoryStream \end{DoxyParams}
+
+
+References RTC::ON\_\-BUFFER\_\-WRITE.
+
+\index{RTC::PublisherPeriodic@{RTC::PublisherPeriodic}!onBufferWriteTimeout@{onBufferWriteTimeout}}
+\index{onBufferWriteTimeout@{onBufferWriteTimeout}!RTC::PublisherPeriodic@{RTC::PublisherPeriodic}}
+\subsubsection[{onBufferWriteTimeout}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::PublisherPeriodic::onBufferWriteTimeout (const cdrMemoryStream \& {\em data})\hspace{0.3cm}{\ttfamily  [inline, protected]}}\label{classRTC_1_1PublisherPeriodic_a392e2e524963931c96834bff4bd73885}
+
+
+Notify an ON\_\-BUFFER\_\-WRITE\_\-TIMEOUT event to listeners. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em data}]cdrMemoryStream \end{DoxyParams}
+
+
+References RTC::ON\_\-BUFFER\_\-WRITE\_\-TIMEOUT.
+
+\index{RTC::PublisherPeriodic@{RTC::PublisherPeriodic}!onReceived@{onReceived}}
+\index{onReceived@{onReceived}!RTC::PublisherPeriodic@{RTC::PublisherPeriodic}}
+\subsubsection[{onReceived}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::PublisherPeriodic::onReceived (const cdrMemoryStream \& {\em data})\hspace{0.3cm}{\ttfamily  [inline, protected]}}\label{classRTC_1_1PublisherPeriodic_a6c5a89dcaea321c01729c086f2febce5}
+
+
+Notify an ON\_\-RECEIVED event to listeners. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em data}]cdrMemoryStream \end{DoxyParams}
+
+
+References RTC::ON\_\-RECEIVED.
+
+\index{RTC::PublisherPeriodic@{RTC::PublisherPeriodic}!onReceiverError@{onReceiverError}}
+\index{onReceiverError@{onReceiverError}!RTC::PublisherPeriodic@{RTC::PublisherPeriodic}}
+\subsubsection[{onReceiverError}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::PublisherPeriodic::onReceiverError (const cdrMemoryStream \& {\em data})\hspace{0.3cm}{\ttfamily  [inline, protected]}}\label{classRTC_1_1PublisherPeriodic_a879fb08e749007f8b3160cf7c602fd5d}
+
+
+Notify an ON\_\-RECEIVER\_\-ERROR event to listeners. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em data}]cdrMemoryStream \end{DoxyParams}
+
+
+References RTC::ON\_\-RECEIVER\_\-ERROR.
+
+\index{RTC::PublisherPeriodic@{RTC::PublisherPeriodic}!onReceiverFull@{onReceiverFull}}
+\index{onReceiverFull@{onReceiverFull}!RTC::PublisherPeriodic@{RTC::PublisherPeriodic}}
+\subsubsection[{onReceiverFull}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::PublisherPeriodic::onReceiverFull (const cdrMemoryStream \& {\em data})\hspace{0.3cm}{\ttfamily  [inline, protected]}}\label{classRTC_1_1PublisherPeriodic_adb2114ae9612f809d285aaed25f3a141}
+
+
+Notify an ON\_\-RECEIVER\_\-FULL event to listeners. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em data}]cdrMemoryStream \end{DoxyParams}
+
+
+References RTC::ON\_\-RECEIVER\_\-FULL.
+
+\index{RTC::PublisherPeriodic@{RTC::PublisherPeriodic}!onReceiverTimeout@{onReceiverTimeout}}
+\index{onReceiverTimeout@{onReceiverTimeout}!RTC::PublisherPeriodic@{RTC::PublisherPeriodic}}
+\subsubsection[{onReceiverTimeout}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::PublisherPeriodic::onReceiverTimeout (const cdrMemoryStream \& {\em data})\hspace{0.3cm}{\ttfamily  [inline, protected]}}\label{classRTC_1_1PublisherPeriodic_abf96b8f2cc9b3445d9d9f1f03b57420f}
+
+
+Notify an ON\_\-RECEIVER\_\-TIMEOUT event to listeners. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em data}]cdrMemoryStream \end{DoxyParams}
+
+
+References RTC::ON\_\-RECEIVER\_\-TIMEOUT.
+
+\index{RTC::PublisherPeriodic@{RTC::PublisherPeriodic}!onSend@{onSend}}
+\index{onSend@{onSend}!RTC::PublisherPeriodic@{RTC::PublisherPeriodic}}
+\subsubsection[{onSend}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::PublisherPeriodic::onSend (const cdrMemoryStream \& {\em data})\hspace{0.3cm}{\ttfamily  [inline, protected]}}\label{classRTC_1_1PublisherPeriodic_a1c49320cc01bb74f29a3113718ec7048}
+
+
+Notify an ON\_\-SEND event to listners. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em data}]cdrMemoryStream \end{DoxyParams}
+
+
+References RTC::ON\_\-SEND.
+
+\index{RTC::PublisherPeriodic@{RTC::PublisherPeriodic}!onSenderEmpty@{onSenderEmpty}}
+\index{onSenderEmpty@{onSenderEmpty}!RTC::PublisherPeriodic@{RTC::PublisherPeriodic}}
+\subsubsection[{onSenderEmpty}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::PublisherPeriodic::onSenderEmpty ()\hspace{0.3cm}{\ttfamily  [inline, protected]}}\label{classRTC_1_1PublisherPeriodic_ad08f767c66bcebde8e7d104903a04da1}
+
+
+Notify an ON\_\-SENDER\_\-EMPTY event to listeners. 
+
+
+
+References RTC::ON\_\-SENDER\_\-EMPTY.
+
+\index{RTC::PublisherPeriodic@{RTC::PublisherPeriodic}!onSenderError@{onSenderError}}
+\index{onSenderError@{onSenderError}!RTC::PublisherPeriodic@{RTC::PublisherPeriodic}}
+\subsubsection[{onSenderError}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::PublisherPeriodic::onSenderError ()\hspace{0.3cm}{\ttfamily  [inline, protected]}}\label{classRTC_1_1PublisherPeriodic_a97cef0019cf2405cdc371cae477d32e2}
+
+
+Notify an ON\_\-SENDER\_\-ERROR event to listeners. 
+
+
+
+References RTC::ON\_\-SENDER\_\-ERROR.
+
+\index{RTC::PublisherPeriodic@{RTC::PublisherPeriodic}!pushAll@{pushAll}}
+\index{pushAll@{pushAll}!RTC::PublisherPeriodic@{RTC::PublisherPeriodic}}
+\subsubsection[{pushAll}]{\setlength{\rightskip}{0pt plus 5cm}ReturnCode RTC::PublisherPeriodic::pushAll ()\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC_1_1PublisherPeriodic_a38069a3f21faa8ae849b82467d983892}
+
+
+push \char`\"{}all\char`\"{} policy 
+
+\index{RTC::PublisherPeriodic@{RTC::PublisherPeriodic}!pushFifo@{pushFifo}}
+\index{pushFifo@{pushFifo}!RTC::PublisherPeriodic@{RTC::PublisherPeriodic}}
+\subsubsection[{pushFifo}]{\setlength{\rightskip}{0pt plus 5cm}ReturnCode RTC::PublisherPeriodic::pushFifo ()\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC_1_1PublisherPeriodic_a140c3c158238e6264da3092f922fad22}
+
+
+push \char`\"{}fifo\char`\"{} policy 
+
+\index{RTC::PublisherPeriodic@{RTC::PublisherPeriodic}!pushNew@{pushNew}}
+\index{pushNew@{pushNew}!RTC::PublisherPeriodic@{RTC::PublisherPeriodic}}
+\subsubsection[{pushNew}]{\setlength{\rightskip}{0pt plus 5cm}ReturnCode RTC::PublisherPeriodic::pushNew ()\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC_1_1PublisherPeriodic_a8879160fe6ec5b10fbcb01a2a239e3c6}
+
+
+push \char`\"{}new\char`\"{} policy 
+
+\index{RTC::PublisherPeriodic@{RTC::PublisherPeriodic}!pushSkip@{pushSkip}}
+\index{pushSkip@{pushSkip}!RTC::PublisherPeriodic@{RTC::PublisherPeriodic}}
+\subsubsection[{pushSkip}]{\setlength{\rightskip}{0pt plus 5cm}ReturnCode RTC::PublisherPeriodic::pushSkip ()\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC_1_1PublisherPeriodic_a17ab3f1f9ac21649864e47f1c5517df9}
+
+
+push \char`\"{}skip\char`\"{} policy 
+
+\index{RTC::PublisherPeriodic@{RTC::PublisherPeriodic}!setBuffer@{setBuffer}}
+\index{setBuffer@{setBuffer}!RTC::PublisherPeriodic@{RTC::PublisherPeriodic}}
+\subsubsection[{setBuffer}]{\setlength{\rightskip}{0pt plus 5cm}virtual ReturnCode RTC::PublisherPeriodic::setBuffer ({\bf CdrBufferBase} $\ast$ {\em buffer})\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classRTC_1_1PublisherPeriodic_a407560267480434ba8b55e0a8d781776}
+
+
+Setting buffer pointer. 
+
+This operation sets a buffer that is associated with this object. If the buffer object is NULL, INVALID\_\-ARGS will be returned.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em buffer}]A pointer to a CDR buffer object. \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+ReturnCode PORT\_\-OK normal return INVALID\_\-ARGS given argument has invalid value 
+\end{DoxyReturn}
+\index{RTC::PublisherPeriodic@{RTC::PublisherPeriodic}!setConsumer@{setConsumer}}
+\index{setConsumer@{setConsumer}!RTC::PublisherPeriodic@{RTC::PublisherPeriodic}}
+\subsubsection[{setConsumer}]{\setlength{\rightskip}{0pt plus 5cm}virtual ReturnCode RTC::PublisherPeriodic::setConsumer ({\bf InPortConsumer} $\ast$ {\em consumer})\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classRTC_1_1PublisherPeriodic_a853af9b51af9c3d76aff407695a1e697}
+
+
+Store \doxyref{InPort}{p.}{classRTC_1_1InPort} consumer. 
+
+This operation sets a consumer that is associated with this object. If the consumer object is NULL, INVALID\_\-ARGS will be returned.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em consumer}]A pointer to a consumer object. \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+ReturnCode PORT\_\-OK normal return INVALID\_\-ARGS given argument has invalid value 
+\end{DoxyReturn}
+
+
+Implements {\bf RTC::PublisherBase} \doxyref{}{p.}{classRTC_1_1PublisherBase_a7ff8bf60fa9d713402572404b3dc922c}.
+
+\index{RTC::PublisherPeriodic@{RTC::PublisherPeriodic}!setListener@{setListener}}
+\index{setListener@{setListener}!RTC::PublisherPeriodic@{RTC::PublisherPeriodic}}
+\subsubsection[{setListener}]{\setlength{\rightskip}{0pt plus 5cm}virtual ReturnCode RTC::PublisherPeriodic::setListener ({\bf ConnectorInfo} \& {\em info}, \/  {\bf ConnectorListeners} $\ast$ {\em listeners})\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classRTC_1_1PublisherPeriodic_a89a8c02590eda932df803278f0cc65bb}
+
+
+Set the listener. 
+
+This function sets \doxyref{ConnectorListeners}{p.}{classRTC_1_1ConnectorListeners} listener object to the Publisher. By setting \doxyref{ConnectorListeners}{p.}{classRTC_1_1ConnectorListeners} containing various listeners objects, these listeners are called at the time of reading and writing of a buffer, and transmission of data etc. Since the ownership of the \doxyref{ConnectorListeners}{p.}{classRTC_1_1ConnectorListeners} object is owned by Port or RTObject, the Publisher never deletes the \doxyref{ConnectorListeners}{p.}{classRTC_1_1ConnectorListeners} object. If the given ConnectorListeners' pointer is NULL, this function returns INVALID\_\-ARGS.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em info}]\doxyref{ConnectorInfo}{p.}{classRTC_1_1ConnectorInfo} that is localized object of ConnectorProfile \item[{\em listeners}]\doxyref{ConnectorListeners}{p.}{classRTC_1_1ConnectorListeners} that holds various listeners \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+PORT\_\-OK Normal return INVALID\_\-ARGS Invalid arguments 
+\end{DoxyReturn}
+
+
+Implements {\bf RTC::PublisherBase} \doxyref{}{p.}{classRTC_1_1PublisherBase_a9d12db1358f8b70a5ee761d905170bc2}.
+
+\index{RTC::PublisherPeriodic@{RTC::PublisherPeriodic}!setPushPolicy@{setPushPolicy}}
+\index{setPushPolicy@{setPushPolicy}!RTC::PublisherPeriodic@{RTC::PublisherPeriodic}}
+\subsubsection[{setPushPolicy}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::PublisherPeriodic::setPushPolicy (const {\bf coil::Properties} \& {\em prop})\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC_1_1PublisherPeriodic_a87491fc053004fc4c457a71b35aa05d5}
+
+
+Setting PushPolicy. 
+
+\index{RTC::PublisherPeriodic@{RTC::PublisherPeriodic}!svc@{svc}}
+\index{svc@{svc}!RTC::PublisherPeriodic@{RTC::PublisherPeriodic}}
+\subsubsection[{svc}]{\setlength{\rightskip}{0pt plus 5cm}virtual int RTC::PublisherPeriodic::svc (void)\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classRTC_1_1PublisherPeriodic_acaaf9c2c91d64fa49633465e072323f7}
+
+
+Thread execution function. 
+
+A task execution function to be executed by \doxyref{coil::PeriodicTask}{p.}{classcoil_1_1PeriodicTask}. \index{RTC::PublisherPeriodic@{RTC::PublisherPeriodic}!write@{write}}
+\index{write@{write}!RTC::PublisherPeriodic@{RTC::PublisherPeriodic}}
+\subsubsection[{write}]{\setlength{\rightskip}{0pt plus 5cm}virtual ReturnCode RTC::PublisherPeriodic::write (const cdrMemoryStream \& {\em data}, \/  unsigned long {\em sec}, \/  unsigned long {\em usec})\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classRTC_1_1PublisherPeriodic_ae5954cbc4b8b4f9839535d3bd7763e13}
+
+
+Write data. 
+
+This function writes data into the buffer associated with this Publisher. If a Publisher object calls this function, without initializing correctly such as a consumer, a buffer, listeners, etc., error code PRECONDITION\_\-NOT\_\-MET will be returned and no operation of the writing to a buffer etc. will be performed.
+
+Since writing into the buffer and sending data to \doxyref{InPort}{p.}{classRTC_1_1InPort} are performed asynchronously, occasionally this function returns return-\/codes such as CONNECTION\_\-LOST and BUFFER\_\-FULL that indicate the result of sending data to \doxyref{InPort}{p.}{classRTC_1_1InPort}. In this case, writing data into buffer will not be performed.
+
+When publisher writes data to the buffer, if the buffer is filled, returns error, is returned with timeout and returns precondition error, error codes BUFFER\_\-FULL, BUFFER\_\-ERROR, BUFFER\_\-TIMEOUT and PRECONDITION\_\-NOT\_\-MET will be returned respectively.
+
+In other cases, PROT\_\-ERROR will be returned.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em data}]Data to be wrote to the buffer \item[{\em sec}]Timeout time in unit seconds \item[{\em nsec}]Timeout time in unit nano-\/seconds \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+PORT\_\-OK Normal return PRECONDITION\_\-NO\_\-MET Precondition does not met. A consumer, a buffer, listenes are not set properly. CONNECTION\_\-LOST detected that the connection has been lost BUFFER\_\-FULL The buffer is full status. BUFFER\_\-ERROR Some kind of error occurred in the buffer. NOT\_\-SUPPORTED Some kind of operation that is not supported has been performed. TIMEOUT Timeout occurred when writing to the buffer. 
+\end{DoxyReturn}
+
+
+Implements {\bf RTC::PublisherBase} \doxyref{}{p.}{classRTC_1_1PublisherBase_abd693b65ffe07276683facfd710be537}.
+

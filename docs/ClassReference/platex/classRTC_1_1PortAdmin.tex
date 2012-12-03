@@ -1,0 +1,283 @@
+\section{クラス RTC::PortAdmin}
+\label{classRTC_1_1PortAdmin}\index{RTC::PortAdmin@{RTC::PortAdmin}}
+
+
+\doxyref{PortAdmin}{p.}{classRTC_1_1PortAdmin} クラス.  
+
+
+
+
+{\ttfamily \#include $<$PortAdmin.h$>$}
+
+\subsection*{構成}
+\begin{DoxyCompactItemize}
+\item 
+class {\bfseries comp\_\-op}
+\begin{DoxyCompactList}\small\item\em comp\_\-op ファンクタ (未使用?) \item\end{DoxyCompactList}\item 
+class {\bfseries port\_\-prof\_\-collect}
+\begin{DoxyCompactList}\small\item\em PortProfileList 収集ファンクタ (未使用?). \item\end{DoxyCompactList}\item 
+class {\bfseries port\_\-prof\_\-collect2}
+\begin{DoxyCompactList}\small\item\em PortProfileList 収集ファンクタ. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public メソッド}
+\begin{DoxyCompactItemize}
+\item 
+{\bf PortAdmin} (CORBA::ORB\_\-ptr orb, PortableServer::POA\_\-ptr poa)
+\begin{DoxyCompactList}\small\item\em コンストラクタ \item\end{DoxyCompactList}\item 
+virtual {\bf $\sim$PortAdmin} (void)
+\item 
+PortServiceList $\ast$ {\bf getPortServiceList} () const 
+\begin{DoxyCompactList}\small\item\em Port リストの取得. \item\end{DoxyCompactList}\item 
+PortProfileList {\bf getPortProfileList} () const 
+\begin{DoxyCompactList}\small\item\em PorProfile リストの取得. \item\end{DoxyCompactList}\item 
+PortService\_\-ptr {\bf getPortRef} (const char $\ast$port\_\-name) const 
+\begin{DoxyCompactList}\small\item\em Port のオブジェクト参照の取得. \item\end{DoxyCompactList}\item 
+{\bf PortBase} $\ast$ {\bf getPort} (const char $\ast$port\_\-name) const 
+\begin{DoxyCompactList}\small\item\em Port のサーバントのポインタの取得. \item\end{DoxyCompactList}\item 
+bool {\bf addPort} ({\bf PortBase} \&port)
+\begin{DoxyCompactList}\small\item\em Port を登録する. \item\end{DoxyCompactList}\item 
+bool {\bf addPort} (PortService\_\-ptr port)
+\begin{DoxyCompactList}\small\item\em Port を登録する. \item\end{DoxyCompactList}\item 
+void {\bf registerPort} ({\bf PortBase} \&port)
+\begin{DoxyCompactList}\small\item\em Port を登録する. \item\end{DoxyCompactList}\item 
+void {\bf registerPort} (PortService\_\-ptr port)
+\begin{DoxyCompactList}\small\item\em Port を登録する. \item\end{DoxyCompactList}\item 
+bool {\bf removePort} ({\bf PortBase} \&port)
+\begin{DoxyCompactList}\small\item\em Port の登録を解除する. \item\end{DoxyCompactList}\item 
+bool {\bf removePort} (PortService\_\-ptr port)
+\begin{DoxyCompactList}\small\item\em Port の登録を解除する. \item\end{DoxyCompactList}\item 
+void {\bf deletePort} ({\bf PortBase} \&port)
+\begin{DoxyCompactList}\small\item\em Port の登録を解除する. \item\end{DoxyCompactList}\item 
+void {\bf deletePort} (PortService\_\-ptr port)
+\begin{DoxyCompactList}\small\item\em Port の登録を解除する. \item\end{DoxyCompactList}\item 
+void {\bf deletePortByName} (const char $\ast$port\_\-name)
+\begin{DoxyCompactList}\small\item\em 名称指定によりPort の登録を解除する \item\end{DoxyCompactList}\item 
+void {\bf activatePorts} ()
+\begin{DoxyCompactList}\small\item\em 全ての Port のインターフェースを activates する \item\end{DoxyCompactList}\item 
+void {\bf deactivatePorts} ()
+\begin{DoxyCompactList}\small\item\em 全ての Port のインターフェースを deactivates する \item\end{DoxyCompactList}\item 
+void {\bf finalizePorts} ()
+\begin{DoxyCompactList}\small\item\em 全ての Port をdeactivateし登録を削除する \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{説明}
+\doxyref{PortAdmin}{p.}{classRTC_1_1PortAdmin} クラス. 各種 Port の管理を行うクラス。Port の登録/登録解除など各種管理操作 を実行するとともに、登録されている Port Port の管理を行うクラス。
+
+\begin{DoxySince}{から}
+0.4.0 
+\end{DoxySince}
+
+
+\subsection{コンストラクタとデストラクタ}
+\index{RTC::PortAdmin@{RTC::PortAdmin}!PortAdmin@{PortAdmin}}
+\index{PortAdmin@{PortAdmin}!RTC::PortAdmin@{RTC::PortAdmin}}
+\subsubsection[{PortAdmin}]{\setlength{\rightskip}{0pt plus 5cm}RTC::PortAdmin::PortAdmin (CORBA::ORB\_\-ptr {\em orb}, \/  PortableServer::POA\_\-ptr {\em poa})}\label{classRTC_1_1PortAdmin_ab70dd6f7371a224a6a44caf8cfdb81d9}
+
+
+コンストラクタ 
+
+コンストラクタ
+
+
+\begin{DoxyParams}{引数}
+\item[{\em orb}]ORB \item[{\em poa}]POA \end{DoxyParams}
+\index{RTC::PortAdmin@{RTC::PortAdmin}!$\sim$PortAdmin@{$\sim$PortAdmin}}
+\index{$\sim$PortAdmin@{$\sim$PortAdmin}!RTC::PortAdmin@{RTC::PortAdmin}}
+\subsubsection[{$\sim$PortAdmin}]{\setlength{\rightskip}{0pt plus 5cm}virtual RTC::PortAdmin::$\sim$PortAdmin (void)\hspace{0.3cm}{\ttfamily  [inline, virtual]}}\label{classRTC_1_1PortAdmin_a435aaaa0ef266144e7f3988a688d7a06}
+デストラクタ 
+
+\subsection{関数}
+\index{RTC::PortAdmin@{RTC::PortAdmin}!activatePorts@{activatePorts}}
+\index{activatePorts@{activatePorts}!RTC::PortAdmin@{RTC::PortAdmin}}
+\subsubsection[{activatePorts}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::PortAdmin::activatePorts ()}\label{classRTC_1_1PortAdmin_ab1a5651c4ab2bebf7b33da1fa627eddf}
+
+
+全ての Port のインターフェースを activates する 
+
+登録されている全ての Port のインターフェースに対して、 activate する。 この関数は、ComponentAction の on\_\-activate() 内で呼ばれる。 \index{RTC::PortAdmin@{RTC::PortAdmin}!addPort@{addPort}}
+\index{addPort@{addPort}!RTC::PortAdmin@{RTC::PortAdmin}}
+\subsubsection[{addPort}]{\setlength{\rightskip}{0pt plus 5cm}bool RTC::PortAdmin::addPort (PortService\_\-ptr {\em port})}\label{classRTC_1_1PortAdmin_ae4183866c1783de924ea8cdd1c1433e7}
+
+
+Port を登録する. 
+
+引数 port で指定された Port のサーバントを登録する。 登録された Port のサーバントはコンストラクタで与えられたPOA 上で activate され、そのオブジェクト参照はPortのProfileにセットされる。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em port}]Port サーバント \end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+登録結果(登録成功:true，登録失敗:false) 
+\end{DoxyReturn}
+\index{RTC::PortAdmin@{RTC::PortAdmin}!addPort@{addPort}}
+\index{addPort@{addPort}!RTC::PortAdmin@{RTC::PortAdmin}}
+\subsubsection[{addPort}]{\setlength{\rightskip}{0pt plus 5cm}bool RTC::PortAdmin::addPort ({\bf PortBase} \& {\em port})}\label{classRTC_1_1PortAdmin_a53a07df246a641d118bc08ab7d12ac50}
+
+
+Port を登録する. 
+
+引数 port で指定された Port のサーバントを登録する。 登録された Port のサーバントはコンストラクタで与えられたPOA 上で activate され、そのオブジェクト参照はPortのProfileにセットされる。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em port}]Port サーバント \end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+登録結果(登録成功:true，登録失敗:false) 
+\end{DoxyReturn}
+\index{RTC::PortAdmin@{RTC::PortAdmin}!deactivatePorts@{deactivatePorts}}
+\index{deactivatePorts@{deactivatePorts}!RTC::PortAdmin@{RTC::PortAdmin}}
+\subsubsection[{deactivatePorts}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::PortAdmin::deactivatePorts ()}\label{classRTC_1_1PortAdmin_ace7994ceed8a8cf261a63ae6bafc97db}
+
+
+全ての Port のインターフェースを deactivates する 
+
+登録されている全ての Port のインターフェースに対して、 deactivate する。 この関数は、ComponentAction の on\_\-deactivate() 内で呼ばれる。 \index{RTC::PortAdmin@{RTC::PortAdmin}!deletePort@{deletePort}}
+\index{deletePort@{deletePort}!RTC::PortAdmin@{RTC::PortAdmin}}
+\subsubsection[{deletePort}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::PortAdmin::deletePort (PortService\_\-ptr {\em port})}\label{classRTC_1_1PortAdmin_a04355f96b28ca99823a991621e947fc0}
+
+
+Port の登録を解除する. 
+
+引数 port で指定された Port の登録を解除する。 削除時に Port は deactivate され、PortのProfileのリファレンスには、 nil値が代入される。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em port}]Port サーバント \end{DoxyParams}
+\index{RTC::PortAdmin@{RTC::PortAdmin}!deletePort@{deletePort}}
+\index{deletePort@{deletePort}!RTC::PortAdmin@{RTC::PortAdmin}}
+\subsubsection[{deletePort}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::PortAdmin::deletePort ({\bf PortBase} \& {\em port})}\label{classRTC_1_1PortAdmin_ac0050a4e0717a69f0d847f2376d76e5f}
+
+
+Port の登録を解除する. 
+
+引数 port で指定された Port の登録を解除する。 削除時に Port は deactivate され、PortのProfileのリファレンスには、 nil値が代入される。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em port}]Port サーバント \end{DoxyParams}
+\index{RTC::PortAdmin@{RTC::PortAdmin}!deletePortByName@{deletePortByName}}
+\index{deletePortByName@{deletePortByName}!RTC::PortAdmin@{RTC::PortAdmin}}
+\subsubsection[{deletePortByName}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::PortAdmin::deletePortByName (const char $\ast$ {\em port\_\-name})}\label{classRTC_1_1PortAdmin_a19dddbe864f258cc0d6274a2eca1d72e}
+
+
+名称指定によりPort の登録を解除する 
+
+引数で指定された名前を持つ Port の登録を削除する。 削除時に Port は deactivate され、PortのProfileのリファレンスには、 nil値が代入される。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em port\_\-name}]Port の名前 \end{DoxyParams}
+\index{RTC::PortAdmin@{RTC::PortAdmin}!finalizePorts@{finalizePorts}}
+\index{finalizePorts@{finalizePorts}!RTC::PortAdmin@{RTC::PortAdmin}}
+\subsubsection[{finalizePorts}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::PortAdmin::finalizePorts ()}\label{classRTC_1_1PortAdmin_a3d5da08a2156a638b33d80feaf39d979}
+
+
+全ての Port をdeactivateし登録を削除する 
+
+登録されている全てのPortに対して、サーバントのdeactivateを行い、 登録リストから削除する。 \index{RTC::PortAdmin@{RTC::PortAdmin}!getPort@{getPort}}
+\index{getPort@{getPort}!RTC::PortAdmin@{RTC::PortAdmin}}
+\subsubsection[{getPort}]{\setlength{\rightskip}{0pt plus 5cm}{\bf PortBase}$\ast$ RTC::PortAdmin::getPort (const char $\ast$ {\em port\_\-name}) const}\label{classRTC_1_1PortAdmin_af6ff5fc507a3b489942c3d823243c664}
+
+
+Port のサーバントのポインタの取得. 
+
+port\_\-name で指定した Port のサーバントのポインタを返す。 port\_\-name で指定する Port はあらかじめ \doxyref{addPort()}{p.}{classRTC_1_1PortAdmin_a53a07df246a641d118bc08ab7d12ac50} で登録されてい なければならない。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em port\_\-name}]参照を返すPortの名前 \end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+PortBase$\ast$ Portサーバント基底クラスのポインタ 
+\end{DoxyReturn}
+\index{RTC::PortAdmin@{RTC::PortAdmin}!getPortProfileList@{getPortProfileList}}
+\index{getPortProfileList@{getPortProfileList}!RTC::PortAdmin@{RTC::PortAdmin}}
+\subsubsection[{getPortProfileList}]{\setlength{\rightskip}{0pt plus 5cm}PortProfileList RTC::PortAdmin::getPortProfileList () const}\label{classRTC_1_1PortAdmin_aa0b32752b29b1bb7ffa827ebb11f9877}
+
+
+PorProfile リストの取得. 
+
+\doxyref{addPort()}{p.}{classRTC_1_1PortAdmin_a53a07df246a641d118bc08ab7d12ac50} により登録された Port の \doxyref{Profile}{p.}{classProfile} リストを取得する。
+
+\begin{DoxyReturn}{戻り値}
+PortProfile リスト 
+\end{DoxyReturn}
+\index{RTC::PortAdmin@{RTC::PortAdmin}!getPortRef@{getPortRef}}
+\index{getPortRef@{getPortRef}!RTC::PortAdmin@{RTC::PortAdmin}}
+\subsubsection[{getPortRef}]{\setlength{\rightskip}{0pt plus 5cm}PortService\_\-ptr RTC::PortAdmin::getPortRef (const char $\ast$ {\em port\_\-name}) const}\label{classRTC_1_1PortAdmin_a632aca3e9093b1bddfd68213eb8eeb5b}
+
+
+Port のオブジェクト参照の取得. 
+
+port\_\-name で指定した Port のオブジェクト参照を返す。 port\_\-name で指定する Port はあらかじめ \doxyref{addPort()}{p.}{classRTC_1_1PortAdmin_a53a07df246a641d118bc08ab7d12ac50} で登録されてい なければならない。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em port\_\-name}]参照を返すPortの名前 \end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+PortService\_\-ptr Portのオブジェクト参照 
+\end{DoxyReturn}
+\index{RTC::PortAdmin@{RTC::PortAdmin}!getPortServiceList@{getPortServiceList}}
+\index{getPortServiceList@{getPortServiceList}!RTC::PortAdmin@{RTC::PortAdmin}}
+\subsubsection[{getPortServiceList}]{\setlength{\rightskip}{0pt plus 5cm}PortServiceList$\ast$ RTC::PortAdmin::getPortServiceList () const}\label{classRTC_1_1PortAdmin_a91ab285dbda2344e11c114392831c59e}
+
+
+Port リストの取得. 
+
+\doxyref{addPort()}{p.}{classRTC_1_1PortAdmin_a53a07df246a641d118bc08ab7d12ac50} により登録された Port の リストを取得する。
+
+\begin{DoxyReturn}{戻り値}
+Port リスト 
+\end{DoxyReturn}
+\index{RTC::PortAdmin@{RTC::PortAdmin}!registerPort@{registerPort}}
+\index{registerPort@{registerPort}!RTC::PortAdmin@{RTC::PortAdmin}}
+\subsubsection[{registerPort}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::PortAdmin::registerPort (PortService\_\-ptr {\em port})}\label{classRTC_1_1PortAdmin_ab8f7b2a90718d46606e2734514dd90db}
+
+
+Port を登録する. 
+
+引数 port で指定された Port のサーバントを登録する。 登録された Port のサーバントはコンストラクタで与えられたPOA 上で activate され、そのオブジェクト参照はPortのProfileにセットされる。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em port}]Port サーバント \end{DoxyParams}
+\index{RTC::PortAdmin@{RTC::PortAdmin}!registerPort@{registerPort}}
+\index{registerPort@{registerPort}!RTC::PortAdmin@{RTC::PortAdmin}}
+\subsubsection[{registerPort}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::PortAdmin::registerPort ({\bf PortBase} \& {\em port})}\label{classRTC_1_1PortAdmin_a6bccc0ed704420864145a2bf4385e4fb}
+
+
+Port を登録する. 
+
+引数 port で指定された Port のサーバントを登録する。 登録された Port のサーバントはコンストラクタで与えられたPOA 上で activate され、そのオブジェクト参照はPortのProfileにセットされる。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em port}]Port サーバント \end{DoxyParams}
+\index{RTC::PortAdmin@{RTC::PortAdmin}!removePort@{removePort}}
+\index{removePort@{removePort}!RTC::PortAdmin@{RTC::PortAdmin}}
+\subsubsection[{removePort}]{\setlength{\rightskip}{0pt plus 5cm}bool RTC::PortAdmin::removePort (PortService\_\-ptr {\em port})}\label{classRTC_1_1PortAdmin_a2ac3dcb939551b5a5f5e7f02244f25cb}
+
+
+Port の登録を解除する. 
+
+引数 port で指定された Port の登録を解除する。 削除時に Port は deactivate され、PortのProfileのリファレンスには、 nil値が代入される。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em port}]Port サーバント \end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+削除結果(削除成功:true，削除失敗:false) 
+\end{DoxyReturn}
+\index{RTC::PortAdmin@{RTC::PortAdmin}!removePort@{removePort}}
+\index{removePort@{removePort}!RTC::PortAdmin@{RTC::PortAdmin}}
+\subsubsection[{removePort}]{\setlength{\rightskip}{0pt plus 5cm}bool RTC::PortAdmin::removePort ({\bf PortBase} \& {\em port})}\label{classRTC_1_1PortAdmin_a9d4f260015610f8146e4565cfad6a271}
+
+
+Port の登録を解除する. 
+
+引数 port で指定された Port の登録を解除する。 削除時に Port は deactivate され、PortのProfileのリファレンスには、 nil値が代入される。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em port}]Port サーバント \end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+削除結果(削除成功:true，削除失敗:false) 
+\end{DoxyReturn}

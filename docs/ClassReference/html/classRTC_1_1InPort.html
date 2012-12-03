@@ -1,0 +1,447 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<title>OpenRTM: クラス テンプレート RTC::InPort&lt; DataType &gt;</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<!-- 作成： Doxygen 1.6.3 -->
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="index.html"><span>メインページ</span></a></li>
+      <li><a href="namespaces.html"><span>ネームスペース</span></a></li>
+      <li class="current"><a href="annotated.html"><span>クラス</span></a></li>
+      <li><a href="files.html"><span>ファイル</span></a></li>
+    </ul>
+  </div>
+  <div class="tabs">
+    <ul>
+      <li><a href="annotated.html"><span>構成</span></a></li>
+      <li><a href="hierarchy.html"><span>クラス階層</span></a></li>
+      <li><a href="functions.html"><span>構成メンバ</span></a></li>
+    </ul>
+  </div>
+  <div class="navpath"><a class="el" href="namespaceRTC.html">RTC</a>::<a class="el" href="classRTC_1_1InPort.html">InPort</a>
+  </div>
+</div>
+<div class="contents">
+<h1>クラス テンプレート RTC::InPort&lt; DataType &gt;</h1><!-- doxytag: class="RTC::InPort" --><!-- doxytag: inherits="RTC::InPortBase" -->
+<p><a class="el" href="classRTC_1_1InPort.html" title="InPort テンプレートクラス.">InPort</a> テンプレートクラス.  
+<a href="#_details">[詳細]</a></p>
+
+<p><code>#include &lt;<a class="el" href="InPort_8h_source.html">InPort.h</a>&gt;</code></p>
+<div class="dynheader">
+RTC::InPort&lt; DataType &gt;に対する継承グラフ</div>
+<div class="dynsection">
+ <div class="center">
+  <img src="classRTC_1_1InPort.png" usemap="#RTC::InPort&lt; DataType &gt;_map" alt=""/>
+  <map id="RTC::InPort&lt; DataType &gt;_map" name="RTC::InPort&lt; DataType &gt;_map">
+<area href="classRTC_1_1InPortBase.html" alt="RTC::InPortBase" shape="rect" coords="81,56,234,80"/>
+<area href="classRTC_1_1PortBase.html" alt="RTC::PortBase" shape="rect" coords="0,0,153,24"/>
+<area href="classRTC_1_1DataPortStatus.html" alt="RTC::DataPortStatus" shape="rect" coords="163,0,316,24"/>
+</map>
+ </div>
+</div>
+
+<p><a href="classRTC_1_1InPort-members.html">すべてのメンバ一覧</a></p>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr><td colspan="2"><h2>Public メソッド</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">DATAPORTSTATUS_ENUM&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1InPort.html#a8450177baa07f202144fbba039f4b827">InPort</a> (const char *name, DataType &amp;value, int bufsize=64, bool read_block=false, bool write_block=false, int read_timeout=0, int write_timeout=0)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">コンストラクタ  <a href="#a8450177baa07f202144fbba039f4b827"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1InPort.html#a42532e8164d15bbb92cdce9ff5f3baf8">~InPort</a> (void)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">デストラクタ  <a href="#a42532e8164d15bbb92cdce9ff5f3baf8"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual const char *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1InPort.html#ae8e026ff3e775a211022e2a108d8a672">name</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">ポート名称を取得する。  <a href="#ae8e026ff3e775a211022e2a108d8a672"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1InPort.html#af3030dcf08e4951924407df3e71fc123">isNew</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">最新データが存在するか確認する  <a href="#af3030dcf08e4951924407df3e71fc123"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1InPort.html#a0bf0a0b180a60961fa7559aa54af57ca">isEmpty</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">バッファが空かどうか確認する  <a href="#a0bf0a0b180a60961fa7559aa54af57ca"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1InPort.html#a1b6e58e0c821b46148266ddfd0b9bd54">read</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">DataPort から値を読み出す.  <a href="#a1b6e58e0c821b46148266ddfd0b9bd54"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1InPort.html#ad1efc0019d9a62030106552ad4f4436d">update</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">バインドされた T 型の変数に <a class="el" href="classRTC_1_1InPort.html" title="InPort テンプレートクラス.">InPort</a> バッファの最新値を読み込む  <a href="#ad1efc0019d9a62030106552ad4f4436d"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1InPort.html#a44cc1bb1cf583f7b88578e39c04b5ea5">operator&gt;&gt;</a> (DataType &amp;rhs)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">T 型のデータへ <a class="el" href="classRTC_1_1InPort.html" title="InPort テンプレートクラス.">InPort</a> の最新値データを読み込む.  <a href="#a44cc1bb1cf583f7b88578e39c04b5ea5"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1InPort.html#a93fe41858e1e8dd7dee71b64703b7343">setOnRead</a> (<a class="el" href="structRTC_1_1OnRead.html">OnRead</a>&lt; DataType &gt; *on_read)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight"><a class="el" href="classRTC_1_1InPort.html" title="InPort テンプレートクラス.">InPort</a> バッファへデータ読み込み時のコールバックの設定.  <a href="#a93fe41858e1e8dd7dee71b64703b7343"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1InPort.html#af799d52ed11a670ef56da9a2b2a9e7ff">setOnReadConvert</a> (<a class="el" href="structRTC_1_1OnReadConvert.html">OnReadConvert</a>&lt; DataType &gt; *on_rconvert)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight"><a class="el" href="classRTC_1_1InPort.html" title="InPort テンプレートクラス.">InPort</a> バッファへデータ読み出し時のコールバックの設定.  <a href="#af799d52ed11a670ef56da9a2b2a9e7ff"></a><br/></td></tr>
+</table>
+<hr/><a name="_details"></a><h2>説明</h2>
+<h3>template&lt;class DataType&gt;<br/>
+ class RTC::InPort&lt; DataType &gt;</h3>
+
+<p><a class="el" href="classRTC_1_1InPort.html" title="InPort テンプレートクラス.">InPort</a> テンプレートクラス. </p>
+<p><a class="el" href="classRTC_1_1InPort.html" title="InPort テンプレートクラス.">InPort</a> の実装である InPort&lt;T&gt; のテンプレートクラス。 &lt;T&gt; はBasicDataType.idl にて定義されている型で、メンバとして Time 型の tm , および T型の data を持つ構造体でなくてはならない。 <a class="el" href="classRTC_1_1InPort.html" title="InPort テンプレートクラス.">InPort</a> は内部にリングバッファを持ち、外部から送信されたデータを順次 このリングバッファに格納する。リングバッファのサイズはデフォルトで64と なっているが、コンストラクタ引数によりサイズを指定することができる。 データはフラグによって未読、既読状態が管理され、isNew(), write(), <a class="el" href="classRTC_1_1InPort.html#a1b6e58e0c821b46148266ddfd0b9bd54" title="DataPort から値を読み出す.">read()</a>, isFull(), <a class="el" href="classRTC_1_1InPort.html#a0bf0a0b180a60961fa7559aa54af57ca" title="バッファが空かどうか確認する">isEmpty()</a> 等のメソッドによりハンドリングすることができる。</p>
+<p>OnRead系コールバック (読み出しに起因するイベントによりコールされる)</p>
+<ul>
+<li>void OnRead::operator(): <a class="el" href="classRTC_1_1InPort.html#a1b6e58e0c821b46148266ddfd0b9bd54" title="DataPort から値を読み出す.">InPort::read()</a> を呼び出し読み出しを行う際にコールされる。</li>
+</ul>
+<ul>
+<li>DataType OnReadConvert::operator(DataType): <a class="el" href="classRTC_1_1InPort.html#a1b6e58e0c821b46148266ddfd0b9bd54" title="DataPort から値を読み出す.">InPort::read()</a> を呼び出し、データをバッファから読みだす際に呼ばれ データの変換を行う。引数にはバッファから読み出された値が与えられ、 変換後のデータを戻り値として返す。この値がread()の返す値となる。</li>
+</ul>
+<dl class="since"><dt><b>から:</b></dt><dd>0.2.0 </dd></dl>
+<hr/><h2>コンストラクタとデストラクタ</h2>
+<a class="anchor" id="a8450177baa07f202144fbba039f4b827"></a><!-- doxytag: member="RTC::InPort::InPort" ref="a8450177baa07f202144fbba039f4b827" args="(const char *name, DataType &amp;value, int bufsize=64, bool read_block=false, bool write_block=false, int read_timeout=0, int write_timeout=0)" -->
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class DataType &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">DATAPORTSTATUS_ENUM <a class="el" href="classRTC_1_1InPort.html">RTC::InPort</a>&lt; DataType &gt;::<a class="el" href="classRTC_1_1InPort.html">InPort</a> </td>
+          <td>(</td>
+          <td class="paramtype">const char *&nbsp;</td>
+          <td class="paramname"> <em>name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">DataType &amp;&nbsp;</td>
+          <td class="paramname"> <em>value</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&nbsp;</td>
+          <td class="paramname"> <em>bufsize</em> = <code>64</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&nbsp;</td>
+          <td class="paramname"> <em>read_block</em> = <code>false</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&nbsp;</td>
+          <td class="paramname"> <em>write_block</em> = <code>false</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&nbsp;</td>
+          <td class="paramname"> <em>read_timeout</em> = <code>0</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&nbsp;</td>
+          <td class="paramname"> <em>write_timeout</em> = <code>0</code></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>コンストラクタ </p>
+<p>コンストラクタ。 パラメータとして与えられる T 型の変数にバインドされる。</p>
+<dl><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>name</em>&nbsp;</td><td><a class="el" href="classRTC_1_1InPort.html" title="InPort テンプレートクラス.">InPort</a> 名。InPortBase:<a class="el" href="classRTC_1_1InPort.html#ae8e026ff3e775a211022e2a108d8a672" title="ポート名称を取得する。">name()</a> により参照される。 </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>value</em>&nbsp;</td><td>この <a class="el" href="classRTC_1_1InPort.html" title="InPort テンプレートクラス.">InPort</a> にバインドされる T 型の変数 </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>bufsize</em>&nbsp;</td><td><a class="el" href="classRTC_1_1InPort.html" title="InPort テンプレートクラス.">InPort</a> 内部のリングバッファのバッファ長(デフォルト値:64) </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>read_block</em>&nbsp;</td><td>読込ブロックフラグ。 データ読込時に未読データがない場合、次のデータ受信までブロックする かどうかを設定(デフォルト値:false) </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>write_block</em>&nbsp;</td><td>書込ブロックフラグ。 データ書込時にバッファがフルであった場合、バッファに空きができる までブロックするかどうかを設定(デフォルト値:false) </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>read_timeout</em>&nbsp;</td><td>読込ブロックを指定していない場合の、データ読取タイム アウト時間(ミリ秒)(デフォルト値:0) </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>write_timeout</em>&nbsp;</td><td>書込ブロックを指定していない場合の、データ書込タイム アウト時間(ミリ秒)(デフォルト値:0) </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a42532e8164d15bbb92cdce9ff5f3baf8"></a><!-- doxytag: member="RTC::InPort::~InPort" ref="a42532e8164d15bbb92cdce9ff5f3baf8" args="(void)" -->
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class DataType &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual <a class="el" href="classRTC_1_1InPort.html">RTC::InPort</a>&lt; DataType &gt;::~<a class="el" href="classRTC_1_1InPort.html">InPort</a> </td>
+          <td>(</td>
+          <td class="paramtype">void&nbsp;</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [inline, virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>デストラクタ </p>
+<p>デストラクタ。 </p>
+
+</div>
+</div>
+<hr/><h2>関数</h2>
+<a class="anchor" id="a0bf0a0b180a60961fa7559aa54af57ca"></a><!-- doxytag: member="RTC::InPort::isEmpty" ref="a0bf0a0b180a60961fa7559aa54af57ca" args="()" -->
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class DataType &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual bool <a class="el" href="classRTC_1_1InPort.html">RTC::InPort</a>&lt; DataType &gt;::isEmpty </td>
+          <td>(</td>
+          <td class="paramtype">void&nbsp;</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [inline, virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>バッファが空かどうか確認する </p>
+<p>InPortのバッファが空かどうかを bool 値で返す。 空の場合は true, 未読データがある場合は false を返す。</p>
+<dl class="return"><dt><b>戻り値:</b></dt><dd>true バッファは空 false バッファに未読データがある </dd></dl>
+
+<p>参照先 <a class="el" href="InPortBase_8h_source.html#l00853">RTC::InPortBase::m_connectors</a>, <a class="el" href="PortBase_8h_source.html#l02088">RTC::PortBase::m_connectorsMutex</a>, <a class="el" href="SystemLogger_8h_source.html#l00488">RTC_DEBUG</a>, と <a class="el" href="SystemLogger_8h_source.html#l00510">RTC_TRACE</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="af3030dcf08e4951924407df3e71fc123"></a><!-- doxytag: member="RTC::InPort::isNew" ref="af3030dcf08e4951924407df3e71fc123" args="()" -->
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class DataType &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual bool <a class="el" href="classRTC_1_1InPort.html">RTC::InPort</a>&lt; DataType &gt;::isNew </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [inline, virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>最新データが存在するか確認する </p>
+<p>InPortに未読の最新データが到着しているかをbool値で返す。 InPortが未接続の場合、および接続コネクタのバッファがEmpty の場合にはfalseを返す。</p>
+<dl class="return"><dt><b>戻り値:</b></dt><dd>true 未読の最新データが存在する false 未接続またはバッファにデータが存在しない。 </dd></dl>
+
+<p>参照先 <a class="el" href="InPortBase_8h_source.html#l00853">RTC::InPortBase::m_connectors</a>, <a class="el" href="PortBase_8h_source.html#l02088">RTC::PortBase::m_connectorsMutex</a>, <a class="el" href="SystemLogger_8h_source.html#l00488">RTC_DEBUG</a>, と <a class="el" href="SystemLogger_8h_source.html#l00510">RTC_TRACE</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ae8e026ff3e775a211022e2a108d8a672"></a><!-- doxytag: member="RTC::InPort::name" ref="ae8e026ff3e775a211022e2a108d8a672" args="()" -->
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class DataType &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual const char* <a class="el" href="classRTC_1_1InPort.html">RTC::InPort</a>&lt; DataType &gt;::name </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [inline, virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>ポート名称を取得する。 </p>
+<p>ポート名称を取得する。</p>
+<dl class="return"><dt><b>戻り値:</b></dt><dd>ポート名称 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a44cc1bb1cf583f7b88578e39c04b5ea5"></a><!-- doxytag: member="RTC::InPort::operator&gt;&gt;" ref="a44cc1bb1cf583f7b88578e39c04b5ea5" args="(DataType &amp;rhs)" -->
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class DataType &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classRTC_1_1InPort.html">RTC::InPort</a>&lt; DataType &gt;::operator&gt;&gt; </td>
+          <td>(</td>
+          <td class="paramtype">DataType &amp;&nbsp;</td>
+          <td class="paramname"> <em>rhs</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>T 型のデータへ <a class="el" href="classRTC_1_1InPort.html" title="InPort テンプレートクラス.">InPort</a> の最新値データを読み込む. </p>
+<p><a class="el" href="classRTC_1_1InPort.html" title="InPort テンプレートクラス.">InPort</a> に設定されている最新データを読み込み、 指定されたデータ変数に設定する。</p>
+<dl><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>rhs</em>&nbsp;</td><td><a class="el" href="classRTC_1_1InPort.html" title="InPort テンプレートクラス.">InPort</a> バッファから値を読み込む T 型変数 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>参照先 <a class="el" href="InPort_8h_source.html#l00378">RTC::InPort&lt; DataType &gt;::read()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a1b6e58e0c821b46148266ddfd0b9bd54"></a><!-- doxytag: member="RTC::InPort::read" ref="a1b6e58e0c821b46148266ddfd0b9bd54" args="()" -->
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class DataType &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="classRTC_1_1InPort.html">RTC::InPort</a>&lt; DataType &gt;::read </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [inline, virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>DataPort から値を読み出す. </p>
+<p>InPortに書き込まれたデータを読みだす。接続数が0、またはバッファに データが書き込まれていない状態で読みだした場合の戻り値は不定である。 バッファが空の状態のとき、 事前に設定されたモード (readback, do_nothing, block) に応じて、 以下のような動作をする。</p>
+<ul>
+<li>readback: 最後の値を読みなおす。</li>
+</ul>
+<ul>
+<li>do_nothing: 何もしない</li>
+</ul>
+<ul>
+<li>block: ブロックする。タイムアウトが設定されている場合は、 タイムアウトするまで待つ。</li>
+</ul>
+<p>バッファが空の状態では、InPortにバインドされた変数の値が返される。 したがって、初回読み出し時には不定値を返す可能性がある。 この関数を利用する際には、</p>
+<ul>
+<li><a class="el" href="classRTC_1_1InPort.html#af3030dcf08e4951924407df3e71fc123" title="最新データが存在するか確認する">isNew()</a>, <a class="el" href="classRTC_1_1InPort.html#a0bf0a0b180a60961fa7559aa54af57ca" title="バッファが空かどうか確認する">isEmpty()</a> と併用し、事前にバッファ状態をチェックする。</li>
+</ul>
+<ul>
+<li>初回読み出し時に不定値を返さないようにバインド変数を事前に初期化する</li>
+</ul>
+<ul>
+<li>ReturnCode read(DataType&amp; data) 関数の利用を検討する。</li>
+</ul>
+<p>ことが望ましい。</p>
+<p>各コールバック関数は以下のように呼び出される。</p>
+<ul>
+<li><a class="el" href="structRTC_1_1OnRead.html" title="read() 時のコールバック抽象クラス">OnRead</a>: <a class="el" href="classRTC_1_1InPort.html#a1b6e58e0c821b46148266ddfd0b9bd54" title="DataPort から値を読み出す.">read()</a> 関数が呼ばれる際に必ず呼ばれる。</li>
+</ul>
+<ul>
+<li><a class="el" href="structRTC_1_1OnReadConvert.html" title="read() 時のデータ変換コールバック抽象クラス">OnReadConvert</a>: データの読み出しが成功した場合、読みだしたデータを 引数としてOnReadConvertが呼び出され、戻り値をread()が戻り値 として返す。</li>
+</ul>
+<ul>
+<li>OnEmpty: バッファが空のためデータの読み出しに失敗した場合呼び出される。 OnEmpty の戻り値を <a class="el" href="classRTC_1_1InPort.html#a1b6e58e0c821b46148266ddfd0b9bd54" title="DataPort から値を読み出す.">read()</a> の戻り値として返す。</li>
+</ul>
+<ul>
+<li>OnBufferTimeout: データフロー型がPush型の場合に、読み出し タイムアウトのためにデータの読み出しに失敗した場合に呼ばれる。</li>
+</ul>
+<ul>
+<li>OnRecvTimeout: データフロー型がPull型の場合に、読み出しタイムアウト のためにデータ読み出しに失敗した場合に呼ばれる。</li>
+</ul>
+<ul>
+<li>OnReadError: 上記以外の理由で読みだしに失敗した場合に呼ばれる。 理由としては、バッファ設定の不整合、例外の発生などが考えられる が通常は起こりえないためバグの可能性がある。</li>
+</ul>
+<dl class="return"><dt><b>戻り値:</b></dt><dd>読み出し結果(読み出し成功:true, 読み出し失敗:false) </dd></dl>
+
+<p><a class="el" href="classRTC_1_1InPortBase.html#a448e72f4d6d7890c4fb6add7d86d04b5">RTC::InPortBase</a>を実装しています。</p>
+
+<p>参照先 <a class="el" href="DataPortStatus_8h_source.html#l00149">RTC::DataPortStatus::BUFFER_EMPTY</a>, <a class="el" href="DataPortStatus_8h_source.html#l00150">RTC::DataPortStatus::BUFFER_TIMEOUT</a>, <a class="el" href="InPortBase_8h_source.html#l00853">RTC::InPortBase::m_connectors</a>, <a class="el" href="PortBase_8h_source.html#l02088">RTC::PortBase::m_connectorsMutex</a>, <a class="el" href="DataPortStatus_8h_source.html#l00145">RTC::DataPortStatus::PORT_OK</a>, <a class="el" href="SystemLogger_8h_source.html#l00488">RTC_DEBUG</a>, <a class="el" href="SystemLogger_8h_source.html#l00422">RTC_ERROR</a>, <a class="el" href="SystemLogger_8h_source.html#l00510">RTC_TRACE</a>, と <a class="el" href="SystemLogger_8h_source.html#l00444">RTC_WARN</a>.</p>
+
+<p>参照元 <a class="el" href="InPort_8h_source.html#l00477">RTC::InPort&lt; DataType &gt;::operator&gt;&gt;()</a>, と <a class="el" href="InPort_8h_source.html#l00452">RTC::InPort&lt; DataType &gt;::update()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a93fe41858e1e8dd7dee71b64703b7343"></a><!-- doxytag: member="RTC::InPort::setOnRead" ref="a93fe41858e1e8dd7dee71b64703b7343" args="(OnRead&lt; DataType &gt; *on_read)" -->
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class DataType &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classRTC_1_1InPort.html">RTC::InPort</a>&lt; DataType &gt;::setOnRead </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structRTC_1_1OnRead.html">OnRead</a>&lt; DataType &gt; *&nbsp;</td>
+          <td class="paramname"> <em>on_read</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p><a class="el" href="classRTC_1_1InPort.html" title="InPort テンプレートクラス.">InPort</a> バッファへデータ読み込み時のコールバックの設定. </p>
+<p><a class="el" href="classRTC_1_1InPort.html" title="InPort テンプレートクラス.">InPort</a> が持つバッファからデータが読み込まれる直前に呼ばれるコールバック オブジェクトを設定する。</p>
+<dl><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>on_read</em>&nbsp;</td><td><a class="el" href="structRTC_1_1OnRead.html" title="read() 時のコールバック抽象クラス">OnRead</a>&lt;DataType&gt;型のオブジェクト </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="af799d52ed11a670ef56da9a2b2a9e7ff"></a><!-- doxytag: member="RTC::InPort::setOnReadConvert" ref="af799d52ed11a670ef56da9a2b2a9e7ff" args="(OnReadConvert&lt; DataType &gt; *on_rconvert)" -->
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class DataType &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classRTC_1_1InPort.html">RTC::InPort</a>&lt; DataType &gt;::setOnReadConvert </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structRTC_1_1OnReadConvert.html">OnReadConvert</a>&lt; DataType &gt; *&nbsp;</td>
+          <td class="paramname"> <em>on_rconvert</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p><a class="el" href="classRTC_1_1InPort.html" title="InPort テンプレートクラス.">InPort</a> バッファへデータ読み出し時のコールバックの設定. </p>
+<p><a class="el" href="classRTC_1_1InPort.html" title="InPort テンプレートクラス.">InPort</a> が持つバッファからデータが読み出される際に呼ばれるコールバック オブジェクトを設定する。コールバックオブジェクトの戻り値がread()メソッド の呼出結果となる。</p>
+<dl><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>on_rconvert</em>&nbsp;</td><td><a class="el" href="structRTC_1_1OnReadConvert.html" title="read() 時のデータ変換コールバック抽象クラス">OnReadConvert</a>&lt;DataType&gt;型のオブジェクト </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="ad1efc0019d9a62030106552ad4f4436d"></a><!-- doxytag: member="RTC::InPort::update" ref="ad1efc0019d9a62030106552ad4f4436d" args="()" -->
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class DataType &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void <a class="el" href="classRTC_1_1InPort.html">RTC::InPort</a>&lt; DataType &gt;::update </td>
+          <td>(</td>
+          <td class="paramtype">void&nbsp;</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [inline, virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>バインドされた T 型の変数に <a class="el" href="classRTC_1_1InPort.html" title="InPort テンプレートクラス.">InPort</a> バッファの最新値を読み込む </p>
+<p>バインドされた T 型のデータに <a class="el" href="classRTC_1_1InPort.html" title="InPort テンプレートクラス.">InPort</a> の最新値を読み込む。 コンストラクタで T 型の変数と <a class="el" href="classRTC_1_1InPort.html" title="InPort テンプレートクラス.">InPort</a> がバインドされていなければならない。 このメソッドはポリモーフィックに使用される事を前提としているため、 型に依存しない引数、戻り値となっている。 </p>
+
+<p>参照先 <a class="el" href="InPort_8h_source.html#l00378">RTC::InPort&lt; DataType &gt;::read()</a>.</p>
+
+</div>
+</div>
+</div>
+<hr class="footer"/><address style="text-align: right;"><small>OpenRTMに対してThu May 24 23:25:19 2012に生成されました。&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.6.3 </small></address>
+</body>
+</html>

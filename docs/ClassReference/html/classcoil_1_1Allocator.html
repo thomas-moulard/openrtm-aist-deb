@@ -1,0 +1,200 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<title>OpenRTM: クラス coil::Allocator</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<!-- 作成： Doxygen 1.6.3 -->
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="index.html"><span>メインページ</span></a></li>
+      <li><a href="namespaces.html"><span>ネームスペース</span></a></li>
+      <li class="current"><a href="annotated.html"><span>クラス</span></a></li>
+      <li><a href="files.html"><span>ファイル</span></a></li>
+    </ul>
+  </div>
+  <div class="tabs">
+    <ul>
+      <li><a href="annotated.html"><span>構成</span></a></li>
+      <li><a href="hierarchy.html"><span>クラス階層</span></a></li>
+      <li><a href="functions.html"><span>構成メンバ</span></a></li>
+    </ul>
+  </div>
+  <div class="navpath"><a class="el" href="namespacecoil.html">coil</a>::<a class="el" href="classcoil_1_1Allocator.html">Allocator</a>
+  </div>
+</div>
+<div class="contents">
+<h1>クラス coil::Allocator</h1><!-- doxytag: class="coil::Allocator" --><!-- doxytag: inherits="Singleton&lt; Allocator &gt;" -->
+<p><a class="el" href="classcoil_1_1Allocator.html" title="Allocator クラス.">Allocator</a> クラス.  
+<a href="#_details">[詳細]</a></p>
+
+<p><code>#include &lt;<a class="el" href="Allocator_8h_source.html">Allocator.h</a>&gt;</code></p>
+<div class="dynheader">
+coil::Allocatorに対する継承グラフ</div>
+<div class="dynsection">
+ <div class="center">
+  <img src="classcoil_1_1Allocator.png" usemap="#coil::Allocator_map" alt=""/>
+  <map id="coil::Allocator_map" name="coil::Allocator_map">
+<area href="classcoil_1_1Singleton.html" alt="coil::Singleton&lt; Allocator &gt;" shape="rect" coords="0,0,165,24"/>
+</map>
+ </div>
+</div>
+
+<p><a href="classcoil_1_1Allocator-members.html">すべてのメンバ一覧</a></p>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr><td colspan="2"><h2>Public メソッド</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcoil_1_1Allocator.html#a4ddf0d97ba85758bc3b23227a8dd9cb6">~Allocator</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">デストラクタ  <a href="#a4ddf0d97ba85758bc3b23227a8dd9cb6"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual void *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcoil_1_1Allocator.html#a5f57ccb211ac241c2eb9845865eedfaf">New</a> (size_t t)  throw (std::bad_alloc)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">メモリ領域確保  <a href="#a5f57ccb211ac241c2eb9845865eedfaf"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcoil_1_1Allocator.html#a75e74a4664cbafc49bdc9e2ed4d2d8a8">Delete</a> (void *p)  throw ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">メモリ領域解放  <a href="#a75e74a4664cbafc49bdc9e2ed4d2d8a8"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual void *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcoil_1_1Allocator.html#aa614febe55894d46ce0c319418d4cc04">NewArray</a> (size_t t)  throw (std::bad_alloc)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">配列用メモリ領域確保  <a href="#aa614febe55894d46ce0c319418d4cc04"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcoil_1_1Allocator.html#ad3239ab9cf554cfe16e93be8109d83bc">DeleteArray</a> (void *p)  throw ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">配列用メモリ領域解放  <a href="#ad3239ab9cf554cfe16e93be8109d83bc"></a><br/></td></tr>
+</table>
+<hr/><a name="_details"></a><h2>説明</h2>
+<p><a class="el" href="classcoil_1_1Allocator.html" title="Allocator クラス.">Allocator</a> クラス. </p>
+<hr/><h2>コンストラクタとデストラクタ</h2>
+<a class="anchor" id="a4ddf0d97ba85758bc3b23227a8dd9cb6"></a><!-- doxytag: member="coil::Allocator::~Allocator" ref="a4ddf0d97ba85758bc3b23227a8dd9cb6" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual coil::Allocator::~Allocator </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [inline, virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>デストラクタ </p>
+<p>デストラクタ。 </p>
+
+</div>
+</div>
+<hr/><h2>関数</h2>
+<a class="anchor" id="a75e74a4664cbafc49bdc9e2ed4d2d8a8"></a><!-- doxytag: member="coil::Allocator::Delete" ref="a75e74a4664cbafc49bdc9e2ed4d2d8a8" args="(void *p)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void coil::Allocator::Delete </td>
+          <td>(</td>
+          <td class="paramtype">void *&nbsp;</td>
+          <td class="paramname"> <em>p</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td>  throw ()<code> [virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>メモリ領域解放 </p>
+<p>メモリ領域を解放する。</p>
+<dl><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>p</em>&nbsp;</td><td>メモリ領域へのポインタ </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="ad3239ab9cf554cfe16e93be8109d83bc"></a><!-- doxytag: member="coil::Allocator::DeleteArray" ref="ad3239ab9cf554cfe16e93be8109d83bc" args="(void *p)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void coil::Allocator::DeleteArray </td>
+          <td>(</td>
+          <td class="paramtype">void *&nbsp;</td>
+          <td class="paramname"> <em>p</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td>  throw ()<code> [virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>配列用メモリ領域解放 </p>
+<p>配列用メモリ領域を解放する。</p>
+<dl><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>p</em>&nbsp;</td><td>メモリ領域へのポインタ </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a5f57ccb211ac241c2eb9845865eedfaf"></a><!-- doxytag: member="coil::Allocator::New" ref="a5f57ccb211ac241c2eb9845865eedfaf" args="(size_t t)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void* coil::Allocator::New </td>
+          <td>(</td>
+          <td class="paramtype">size_t&nbsp;</td>
+          <td class="paramname"> <em>t</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td>  throw (std::bad_alloc)<code> [virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>メモリ領域確保 </p>
+<p>メモリ領域を確保する。</p>
+<dl><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>t</em>&nbsp;</td><td>割り当てサイズ</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>戻り値:</b></dt><dd>メモリ領域へのポインタ </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="aa614febe55894d46ce0c319418d4cc04"></a><!-- doxytag: member="coil::Allocator::NewArray" ref="aa614febe55894d46ce0c319418d4cc04" args="(size_t t)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void* coil::Allocator::NewArray </td>
+          <td>(</td>
+          <td class="paramtype">size_t&nbsp;</td>
+          <td class="paramname"> <em>t</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td>  throw (std::bad_alloc)<code> [virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>配列用メモリ領域確保 </p>
+<p>配列用メモリ領域を確保する。</p>
+<dl><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>t</em>&nbsp;</td><td>割り当てサイズ</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>戻り値:</b></dt><dd>メモリ領域へのポインタ </dd></dl>
+
+</div>
+</div>
+</div>
+<hr class="footer"/><address style="text-align: right;"><small>OpenRTMに対してThu May 24 23:25:19 2012に生成されました。&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.6.3 </small></address>
+</body>
+</html>

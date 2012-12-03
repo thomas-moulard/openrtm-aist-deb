@@ -1,0 +1,52 @@
+\section{クラス テンプレート RTC::OnWrite$<$ DataType $>$}
+\label{classRTC_1_1OnWrite}\index{RTC::OnWrite@{RTC::OnWrite}}
+
+
+write() 時のコールバック抽象クラス  
+
+
+
+
+{\ttfamily \#include $<$PortCallback.h$>$}
+
+\subsection*{Public メソッド}
+\begin{DoxyCompactItemize}
+\item 
+virtual {\bf $\sim$OnWrite} (void)
+\item 
+virtual void {\bf operator()} (const DataType \&value)=0
+\begin{DoxyCompactList}\small\item\em コールバック関数 \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{説明}
+\subsubsection*{template$<$class DataType$>$ class RTC::OnWrite$<$ DataType $>$}
+
+write() 時のコールバック抽象クラス OutPortに対してデータがwrite()される直前に呼び出されるコールバック用 ファンクタ。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em DataType}]バッファに書き込むデータ型\end{DoxyParams}
+\begin{DoxySince}{から}
+0.4.0 
+\end{DoxySince}
+
+
+\subsection{コンストラクタとデストラクタ}
+\index{RTC::OnWrite@{RTC::OnWrite}!$\sim$OnWrite@{$\sim$OnWrite}}
+\index{$\sim$OnWrite@{$\sim$OnWrite}!RTC::OnWrite@{RTC::OnWrite}}
+\subsubsection[{$\sim$OnWrite}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class DataType$>$ virtual {\bf RTC::OnWrite}$<$ DataType $>$::$\sim${\bf OnWrite} (void)\hspace{0.3cm}{\ttfamily  [inline, virtual]}}\label{classRTC_1_1OnWrite_a2d933024e730be0535ecf38efe40aede}
+デストラクタ 
+
+\subsection{関数}
+\index{RTC::OnWrite@{RTC::OnWrite}!operator()@{operator()}}
+\index{operator()@{operator()}!RTC::OnWrite@{RTC::OnWrite}}
+\subsubsection[{operator()}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class DataType$>$ virtual void {\bf RTC::OnWrite}$<$ DataType $>$::operator() (const DataType \& {\em value})\hspace{0.3cm}{\ttfamily  [pure virtual]}}\label{classRTC_1_1OnWrite_a21dbf5431532045a4c953d7c8ed09777}
+
+
+コールバック関数 
+
+バッファにデータが書き込まれる直前に呼び出されるコールバック関数
+
+
+\begin{DoxyParams}{引数}
+\item[{\em value}]バッファに書き込まれるデータ \end{DoxyParams}

@@ -1,0 +1,141 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<title>OpenRTM: ManagerServant.h ソースファイル</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<!-- 作成： Doxygen 1.6.3 -->
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="index.html"><span>メインページ</span></a></li>
+      <li><a href="namespaces.html"><span>ネームスペース</span></a></li>
+      <li><a href="annotated.html"><span>クラス</span></a></li>
+      <li class="current"><a href="files.html"><span>ファイル</span></a></li>
+    </ul>
+  </div>
+  <div class="tabs">
+    <ul>
+      <li><a href="files.html"><span>ファイル一覧</span></a></li>
+      <li><a href="globals.html"><span>ファイルメンバ</span></a></li>
+    </ul>
+  </div>
+<h1>ManagerServant.h</h1><a href="ManagerServant_8h.html">説明を見る。</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="comment">// -*- C++ -*-</span>
+<a name="l00020"></a>00020 <span class="comment"></span><span class="preprocessor">#ifndef RTM_MANAGERSERVANT_H</span>
+<a name="l00021"></a>00021 <span class="preprocessor"></span><span class="preprocessor">#define RTM_MANAGERSERVANT_H</span>
+<a name="l00022"></a>00022 <span class="preprocessor"></span>
+<a name="l00023"></a>00023 <span class="preprocessor">#include &lt;iostream&gt;</span>
+<a name="l00024"></a>00024 <span class="preprocessor">#include &lt;<a class="code" href="Mutex_8h.html">coil/Mutex.h</a>&gt;</span>
+<a name="l00025"></a>00025 <span class="preprocessor">#include &lt;<a class="code" href="Guard_8h.html" title="Guard template class.">coil/Guard.h</a>&gt;</span>
+<a name="l00026"></a>00026 <span class="preprocessor">#include &lt;rtm/idl/ManagerSkel.h&gt;</span>
+<a name="l00027"></a>00027 <span class="preprocessor">#include &lt;<a class="code" href="Manager_8h.html" title="RTComponent manager class.">rtm/Manager.h</a>&gt;</span>
+<a name="l00028"></a>00028 <span class="preprocessor">#include &lt;<a class="code" href="SystemLogger_8h.html" title="RT component logger class.">rtm/SystemLogger.h</a>&gt;</span>
+<a name="l00029"></a>00029 
+<a name="l00045"></a>00045 <span class="keyword">namespace </span>RTM
+<a name="l00046"></a>00046 {
+<a name="l00063"></a><a class="code" href="classRTM_1_1ManagerServant.html">00063</a>   <span class="keyword">class </span><a class="code" href="classRTM_1_1ManagerServant.html" title="ManagerのCORBA化クラス.">ManagerServant</a>
+<a name="l00064"></a>00064     : <span class="keyword">public</span> <span class="keyword">virtual</span> POA_RTM::Manager,
+<a name="l00065"></a>00065       <span class="keyword">public</span> <span class="keyword">virtual</span> PortableServer::<a class="code" href="RTC_8h.html#a4e6e58270671e9109809d6c77137ee89">RefCountServantBase</a>
+<a name="l00066"></a>00066   {
+<a name="l00067"></a>00067   <span class="keyword">public</span>:
+<a name="l00081"></a>00081     <span class="comment">// standard constructor</span>
+<a name="l00082"></a>00082     <a class="code" href="classRTM_1_1ManagerServant.html#aada9f52af552ed6d2e7de04f9b196a25">ManagerServant</a>();
+<a name="l00083"></a>00083 
+<a name="l00095"></a>00095     <span class="keyword">virtual</span> <a class="code" href="classRTM_1_1ManagerServant.html#ad4bb0182c1b1e2f2223155a37bbabb7e" title="仮想デストラクタ">~ManagerServant</a>(<span class="keywordtype">void</span>);
+<a name="l00096"></a>00096 
+<a name="l00121"></a>00121     RTC::ReturnCode_t <a class="code" href="classRTM_1_1ManagerServant.html#ac1d69225890ad440d2d75f665bd31ac6" title="モジュールをロードする">load_module</a>(<span class="keyword">const</span> <span class="keywordtype">char</span>* pathname, <span class="keyword">const</span> <span class="keywordtype">char</span>* initfunc);
+<a name="l00122"></a>00122 
+<a name="l00142"></a>00142     RTC::ReturnCode_t <a class="code" href="classRTM_1_1ManagerServant.html#acf76f20459885fbb6a83f607bf9cff35" title="モジュールをアンロードする">unload_module</a>(<span class="keyword">const</span> <span class="keywordtype">char</span>* pathname);
+<a name="l00143"></a>00143 
+<a name="l00161"></a>00161     RTM::ModuleProfileList* <a class="code" href="classRTM_1_1ManagerServant.html#a9e0582a658b194f91a80129fea351d8a" title="ロード可能なモジュールのプロファイルを取得する">get_loadable_modules</a>();
+<a name="l00162"></a>00162 
+<a name="l00180"></a>00180     RTM::ModuleProfileList* <a class="code" href="classRTM_1_1ManagerServant.html#a2ccfbcb809e519451a0c04feaba2919e" title="ロード済みのモジュールのプロファイルを取得する">get_loaded_modules</a>();
+<a name="l00181"></a>00181 
+<a name="l00182"></a>00182     <span class="comment">// component 関連</span>
+<a name="l00202"></a>00202 <span class="comment"></span>    RTM::ModuleProfileList* <a class="code" href="classRTM_1_1ManagerServant.html#ab6c4c8b57aa03f4bc69a6f7ec30b233d" title="コンポーネントファクトリのプロファイルを取得する">get_factory_profiles</a>();
+<a name="l00203"></a>00203 
+<a name="l00222"></a>00222     RTC::RTObject_ptr <a class="code" href="classRTM_1_1ManagerServant.html#a7c46e44473f1a792f9b9f47cb7fc08a4" title="コンポーネントを生成する">create_component</a>(<span class="keyword">const</span> <span class="keywordtype">char</span>* module_name);
+<a name="l00223"></a>00223 
+<a name="l00242"></a>00242     RTC::ReturnCode_t <a class="code" href="classRTM_1_1ManagerServant.html#a30cc0c1da9580f412aafef08e7f0d74d" title="コンポーネントを削除する">delete_component</a>(<span class="keyword">const</span> <span class="keywordtype">char</span>* instance_name);
+<a name="l00243"></a>00243 
+<a name="l00261"></a>00261     RTC::RTCList* <a class="code" href="classRTM_1_1ManagerServant.html#a827ff4bcb8c4c8278dbbe2293700c7be" title="起動中のコンポーネントのリストを取得する">get_components</a>();
+<a name="l00262"></a>00262 
+<a name="l00282"></a>00282     RTC::ComponentProfileList* <a class="code" href="classRTM_1_1ManagerServant.html#a3fac7c58f63f3f879c014ab7f77efd93" title="起動中のコンポーネントプロファイルのリストを取得する">get_component_profiles</a>();
+<a name="l00283"></a>00283 
+<a name="l00284"></a>00284     <span class="comment">// manager 基本</span>
+<a name="l00302"></a>00302 <span class="comment"></span>    RTM::ManagerProfile* <a class="code" href="classRTM_1_1ManagerServant.html#ac6f6020bcb7291afdba9c4104c5a25fb" title="マネージャのプロファイルを取得する">get_profile</a>();
+<a name="l00303"></a>00303 
+<a name="l00321"></a>00321     RTM::NVList* <a class="code" href="classRTM_1_1ManagerServant.html#a07ddc50aa1af52666260baf98e98a3f8" title="マネージャのコンフィギュレーションを取得する">get_configuration</a>();
+<a name="l00322"></a>00322 
+<a name="l00344"></a>00344     RTC::ReturnCode_t <a class="code" href="classRTM_1_1ManagerServant.html#a085a32d8ad1124a277d10c50e3bc99d9" title="マネージャのコンフィギュレーションを設定する">set_configuration</a>(<span class="keyword">const</span> <span class="keywordtype">char</span>* name, <span class="keyword">const</span> <span class="keywordtype">char</span>* value);
+<a name="l00345"></a>00345 
+<a name="l00365"></a>00365     ::CORBA::Boolean <a class="code" href="classRTM_1_1ManagerServant.html#af3962cce6ec2cfbb7dbd7e4e985ac5f3" title="マネージャがマスターかどうか">is_master</a>();
+<a name="l00366"></a>00366 
+<a name="l00388"></a>00388     RTM::ManagerList* <a class="code" href="classRTM_1_1ManagerServant.html#a0e5f79790b6e0a66bb83568d1e98c58f" title="マスターマネージャの取得">get_master_managers</a>();
+<a name="l00389"></a>00389 
+<a name="l00413"></a>00413     RTC::ReturnCode_t <a class="code" href="classRTM_1_1ManagerServant.html#a129cd02f5e6d8a68eea578e5ad57cd81" title="マスターマネージャの追加">add_master_manager</a>(RTM::Manager_ptr mgr);
+<a name="l00414"></a>00414 
+<a name="l00434"></a>00434     RTC::ReturnCode_t <a class="code" href="classRTM_1_1ManagerServant.html#a20453d7ef15894bf7965d858cb90a66f" title="マスターマネージャの削除">remove_master_manager</a>(RTM::Manager_ptr mgr);
+<a name="l00435"></a>00435 
+<a name="l00457"></a>00457     RTM::ManagerList* <a class="code" href="classRTM_1_1ManagerServant.html#ae4ccbc651be158f1ce221128bef598fd" title="スレーブマネージャの取得">get_slave_managers</a>();
+<a name="l00458"></a>00458 
+<a name="l00478"></a>00478     RTC::ReturnCode_t <a class="code" href="classRTM_1_1ManagerServant.html#a7f3cd417fe64ae217719776634cdabb8" title="スレーブマネージャの追加">add_slave_manager</a>(RTM::Manager_ptr mgr);
+<a name="l00479"></a>00479 
+<a name="l00499"></a>00499     RTC::ReturnCode_t <a class="code" href="classRTM_1_1ManagerServant.html#acc95f96d5e15c4379af297eb32559ab8" title="スレーブマネージャの削除">remove_slave_manager</a>(RTM::Manager_ptr mgr);
+<a name="l00500"></a>00500 
+<a name="l00501"></a>00501 
+<a name="l00502"></a>00502 
+<a name="l00512"></a>00512     RTC::ReturnCode_t <a class="code" href="classRTM_1_1ManagerServant.html#a4b78fb03a5989eb1c4f6de722603bca5" title="プロセスのコピーを生成する">fork</a>();
+<a name="l00522"></a>00522     RTC::ReturnCode_t <a class="code" href="classRTM_1_1ManagerServant.html#a98f5d973b85551ddc88094c34a3df1c7" title="shutdownする">shutdown</a>();
+<a name="l00532"></a>00532     RTC::ReturnCode_t <a class="code" href="classRTM_1_1ManagerServant.html#aad40967cb7c29e2466c8dde7e2dad25f" title="再起動する。">restart</a>();
+<a name="l00533"></a>00533 
+<a name="l00543"></a>00543     CORBA::Object_ptr <a class="code" href="classRTM_1_1ManagerServant.html#a0b0f618d18c13dc8a7a31bae56027f84" title="RTCのリファレンスを取得する。.">get_service</a>(<span class="keyword">const</span> <span class="keywordtype">char</span>* name);
+<a name="l00544"></a>00544 
+<a name="l00554"></a>00554     RTM::Manager_ptr <a class="code" href="classRTM_1_1ManagerServant.html#a592b15c210062c1d64c3c696652e6613" title="Managerのリファレンスを取得する。.">getObjRef</a>() <span class="keyword">const</span>;
+<a name="l00555"></a>00555 
+<a name="l00565"></a>00565     <span class="keywordtype">bool</span> <a class="code" href="classRTM_1_1ManagerServant.html#a824001f679a58c1bb965a17b4533981c" title="INSManagerの生成.">createINSManager</a>();
+<a name="l00566"></a>00566 
+<a name="l00576"></a>00576     RTM::Manager_ptr <a class="code" href="classRTM_1_1ManagerServant.html#aee3038a2250ec62f224c7df2f8edffd9" title="Managerのリファレンスを検索する。.">findManager</a>(<span class="keyword">const</span> <span class="keywordtype">char</span>* host_port);
+<a name="l00577"></a>00577 
+<a name="l00578"></a>00578   <span class="keyword">private</span>:
+<a name="l00579"></a>00579     <span class="keyword">typedef</span> <a class="code" href="classcoil_1_1Guard.html">coil::Guard&lt;coil::Mutex&gt;</a> <a class="code" href="classcoil_1_1Guard.html">Guard</a>;
+<a name="l00587"></a>00587 <a class="code" href="classRTC_1_1Logger.html" title="Logger クラス.">    ::RTC::Logger</a> rtclog;
+<a name="l00588"></a>00588 
+<a name="l00596"></a>00596 <a class="code" href="classRTC_1_1Manager.html" title="Manager クラス.">    ::RTC::Manager</a>&amp; m_mgr;
+<a name="l00597"></a>00597 
+<a name="l00605"></a>00605     ::RTM::Manager_var m_objref;
+<a name="l00606"></a>00606 
+<a name="l00614"></a>00614     ::RTM::ManagerList m_masters;
+<a name="l00615"></a>00615 
+<a name="l00623"></a>00623 <a class="code" href="classcoil_1_1Mutex.html" title="Mutex クラス.">    ::coil::Mutex</a> m_masterMutex;
+<a name="l00624"></a>00624 
+<a name="l00632"></a>00632     ::RTM::ManagerList m_slaves;
+<a name="l00633"></a>00633 
+<a name="l00641"></a>00641 <a class="code" href="classcoil_1_1Mutex.html" title="Mutex クラス.">    ::coil::Mutex</a> m_slaveMutex;
+<a name="l00642"></a>00642 
+<a name="l00650"></a>00650     CORBA::Boolean m_isMaster;
+<a name="l00651"></a>00651 
+<a name="l00659"></a>00659     <span class="keyword">class </span>is_equiv
+<a name="l00660"></a>00660     {
+<a name="l00661"></a>00661       RTM::Manager_var m_mgr;
+<a name="l00662"></a>00662     <span class="keyword">public</span>:
+<a name="l00663"></a>00663       is_equiv(RTM::Manager_ptr mgr)
+<a name="l00664"></a>00664         : m_mgr(RTM::Manager::_duplicate(mgr)) {}
+<a name="l00665"></a>00665       <span class="keywordtype">bool</span> operator()(RTM::Manager_ptr mgr)
+<a name="l00666"></a>00666       {
+<a name="l00667"></a>00667         <span class="keywordflow">return</span> m_mgr-&gt;_is_equivalent(mgr);
+<a name="l00668"></a>00668       }
+<a name="l00669"></a>00669     };
+<a name="l00670"></a>00670 
+<a name="l00671"></a>00671   };
+<a name="l00672"></a>00672 }; <span class="comment">// namespace RTM</span>
+<a name="l00673"></a>00673 <span class="preprocessor">#endif // RTM_MANAGERSERVANT_H</span>
+</pre></div></div>
+<hr class="footer"/><address style="text-align: right;"><small>OpenRTMに対してThu May 24 23:25:18 2012に生成されました。&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.6.3 </small></address>
+</body>
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<title>OpenRTM: NVUtil.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<!-- 作成： Doxygen 1.6.3 -->
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="index.html"><span>メインページ</span></a></li>
+      <li><a href="namespaces.html"><span>ネームスペース</span></a></li>
+      <li><a href="annotated.html"><span>クラス</span></a></li>
+      <li class="current"><a href="files.html"><span>ファイル</span></a></li>
+    </ul>
+  </div>
+  <div class="tabs">
+    <ul>
+      <li><a href="files.html"><span>ファイル一覧</span></a></li>
+      <li><a href="globals.html"><span>ファイルメンバ</span></a></li>
+    </ul>
+  </div>
+</div>
+<div class="contents">
+<h1>NVUtil.h</h1>
+<p>NameValue and NVList utility functions.  
+<a href="#_details">[詳細]</a></p>
+<code>#include &lt;string&gt;</code><br/>
+<code>#include &lt;iostream&gt;</code><br/>
+<code>#include &lt;<a class="el" href="Properties_8h_source.html">coil/Properties.h</a>&gt;</code><br/>
+<code>#include &lt;rtm/idl/SDOPackageSkel.h&gt;</code><br/>
+
+<p><a href="NVUtil_8h_source.html">ソースコードを見る。</a></p>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr><td colspan="2"><h2>ネームスペース</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">namespace &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceNVUtil.html">NVUtil</a></td></tr>
+
+<p><tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight"><p>NameValue 用ユーティリティ. </p>
+<br/></td></tr>
+</p>
+<tr><td colspan="2"><h2>関数</h2></td></tr>
+<tr><td class="memTemplParams" colspan="2">template&lt;class Value &gt; </td></tr>
+<tr><td class="memTemplItemLeft" align="right" valign="top">SDOPackage::NameValue&nbsp;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceNVUtil.html#a3f3d50eb508dfe6cac1042f5a5df74ab">NVUtil::newNV</a> (const char *name, Value value)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">NameValue を生成する.  <a href="#a3f3d50eb508dfe6cac1042f5a5df74ab"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">SDOPackage::NameValue&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceNVUtil.html#aaa45f65aa4afd401cc00b5e1199a9712">NVUtil::newNVChar</a> (const char *name, const CORBA::Char value)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">value が CORBA::Char の NameValue を生成する  <a href="#aaa45f65aa4afd401cc00b5e1199a9712"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">SDOPackage::NameValue&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceNVUtil.html#ad6b493327abebff005646cac19705c0d">NVUtil::newNVBool</a> (const char *name, const CORBA::Boolean value)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">value が CORBA::Boolean の NameValue を生成する  <a href="#ad6b493327abebff005646cac19705c0d"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">SDOPackage::NameValue&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceNVUtil.html#a56d45efda0465728f4aaab7baeeb6bd8">NVUtil::newNVOctet</a> (const char *name, const CORBA::Octet value)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">value が CORBA::Octet の NameValue を生成する  <a href="#a56d45efda0465728f4aaab7baeeb6bd8"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">SDOPackage::NameValue&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceNVUtil.html#a6dd6358e923d48f6925e930402e2ebea">NVUtil::newNVAny</a> (const char *name, const CORBA::Any &amp;value)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">value が CORBA::Any の NameValue を生成する  <a href="#a6dd6358e923d48f6925e930402e2ebea"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceNVUtil.html#a91f16d79c724193c112e6107a61c309c">NVUtil::copyFromProperties</a> (SDOPackage::NVList &amp;nv, const <a class="el" href="classcoil_1_1Properties.html">coil::Properties</a> &amp;prop)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Properties を NVList へコピーする.  <a href="#a91f16d79c724193c112e6107a61c309c"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceNVUtil.html#a14b08fd8bdfde87e4846c5afced928dc">NVUtil::copyToProperties</a> (<a class="el" href="classcoil_1_1Properties.html">coil::Properties</a> &amp;prop, const SDOPackage::NVList &amp;nv)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">NVList を Properties へコピーする.  <a href="#a14b08fd8bdfde87e4846c5afced928dc"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classcoil_1_1Properties.html">coil::Properties</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceNVUtil.html#a2796020be72c783b298c8c0d196d53fb">NVUtil::toProperties</a> (const SDOPackage::NVList &amp;nv)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">NVList を Properties へ変換する.  <a href="#a2796020be72c783b298c8c0d196d53fb"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">const CORBA::Any &amp;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceNVUtil.html#a8efde48c92cd13ff1457fcb73cd026fe">NVUtil::find</a> (const SDOPackage::NVList &amp;nv, const char *name)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">NVList から name で指定された value を返す.  <a href="#a8efde48c92cd13ff1457fcb73cd026fe"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">const CORBA::Long&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceNVUtil.html#add5039cbee9e74bc4da747b249db558a">NVUtil::find_index</a> (const SDOPackage::NVList &amp;nv, const char *name)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">name で指定された要素のインデックスを返す  <a href="#add5039cbee9e74bc4da747b249db558a"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceNVUtil.html#a57b3c3b163059364182832d569efb60a">NVUtil::isString</a> (const SDOPackage::NVList &amp;nv, const char *name)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">指定された name の value の型が string であるか検証する  <a href="#a57b3c3b163059364182832d569efb60a"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceNVUtil.html#acf19e7f6c570ca8b1369ba049d7c8e53">NVUtil::isStringValue</a> (const SDOPackage::NVList &amp;nv, const char *name, const char *value)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">指定された name の value の値が指定した文字列と一致するか検証する  <a href="#acf19e7f6c570ca8b1369ba049d7c8e53"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">std::string&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceNVUtil.html#a80e98f1be3213008577a8547a4c1c1e5">NVUtil::toString</a> (const SDOPackage::NVList &amp;nv, const char *name)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">指定された name の NVList を string として返す。  <a href="#a80e98f1be3213008577a8547a4c1c1e5"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceNVUtil.html#aa481ca6c5c584b9da26d56fc2c4be67c">NVUtil::appendStringValue</a> (SDOPackage::NVList &amp;nv, const char *name, const char *value)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">指定された文字列を NVList の要素に追加する。  <a href="#aa481ca6c5c584b9da26d56fc2c4be67c"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceNVUtil.html#a8421ff038960d9d3ca4e9342474979a5">NVUtil::append</a> (SDOPackage::NVList &amp;dest, const SDOPackage::NVList &amp;src)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">NVList に要素を追加する。.  <a href="#a8421ff038960d9d3ca4e9342474979a5"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">std::ostream &amp;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceNVUtil.html#ad68a7fd2f0fcf941456ea377ba49c477">NVUtil::dump</a> (std::ostream &amp;out, const SDOPackage::NVList &amp;nv)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">NVList に設定されている内容を文字列として出力する。.  <a href="#ad68a7fd2f0fcf941456ea377ba49c477"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceNVUtil.html#a68fbd2feae5af9cd35f3483f4c1362f6">NVUtil::dump</a> (const SDOPackage::NVList &amp;nv)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">NVList に設定されている内容を文字列として標準出力する。.  <a href="#a68fbd2feae5af9cd35f3483f4c1362f6"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">std::string&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceNVUtil.html#a99f4fb8a6a68d0ba8d5ec7ba02f520a7">NVUtil::toString</a> (const SDOPackage::NVList &amp;nv)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">NVList に設定されている内容を文字列にする.  <a href="#a99f4fb8a6a68d0ba8d5ec7ba02f520a7"></a><br/></td></tr>
+</table>
+<hr/><a name="_details"></a><h2>説明</h2>
+<p>NameValue and NVList utility functions. </p>
+<dl class="date"><dt><b>日付:</b></dt><dd></dd></dl>
+<dl class="rcs"><dt><b>Date</b></dt><dd>2007-12-31 03:08:04 </dd></dl>
+<dl class="author"><dt><b>作者:</b></dt><dd>Noriaki Ando &lt;<a href="mailto:n-ando@aist.go.jp">n-ando@aist.go.jp</a>&gt;</dd></dl>
+<p>Copyright (C) 2006-2010 Noriaki Ando Task-intelligence Research Group, Intelligent Systems Research Institute, National Institute of Advanced Industrial Science and Technology (AIST), Japan All rights reserved.</p>
+<dl class="rcs"><dt><b>Id</b></dt><dd><a class="el" href="NVUtil_8h.html" title="NameValue and NVList utility functions.">NVUtil.h</a> 2019 2011-01-06 17:02:23Z n-ando </dd></dl>
+</div>
+<hr class="footer"/><address style="text-align: right;"><small>OpenRTMに対してThu May 24 23:25:19 2012に生成されました。&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.6.3 </small></address>
+</body>
+</html>

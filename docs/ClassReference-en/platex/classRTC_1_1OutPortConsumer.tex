@@ -1,0 +1,226 @@
+\section{RTC::OutPortConsumer Class Reference}
+\label{classRTC_1_1OutPortConsumer}\index{RTC::OutPortConsumer@{RTC::OutPortConsumer}}
+
+
+\doxyref{OutPortConsumer}{p.}{classRTC_1_1OutPortConsumer} abstract class.  
+
+
+
+
+{\ttfamily \#include $<$OutPortConsumer.h$>$}
+
+Inheritance diagram for RTC::OutPortConsumer:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3cm]{classRTC_1_1OutPortConsumer}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct {\bf subscribe}
+\begin{DoxyCompactList}\small\item\em Functor to subscribe the interface. \item\end{DoxyCompactList}\item 
+struct {\bf unsubscribe}
+\begin{DoxyCompactList}\small\item\em Functor to unsubscribe the interface. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual DATAPORTSTATUS\_\-ENUM {\bf $\sim$OutPortConsumer} (void)
+\begin{DoxyCompactList}\small\item\em Destructor. \item\end{DoxyCompactList}\item 
+virtual void {\bf init} ({\bf coil::Properties} \&prop)=0
+\begin{DoxyCompactList}\small\item\em Initializing configuration. \item\end{DoxyCompactList}\item 
+virtual void {\bf setBuffer} ({\bf CdrBufferBase} $\ast$buffer)=0
+\begin{DoxyCompactList}\small\item\em Setting outside buffer's pointer. \item\end{DoxyCompactList}\item 
+virtual void {\bf setListener} ({\bf ConnectorInfo} \&info, {\bf ConnectorListeners} $\ast$listeners)=0
+\begin{DoxyCompactList}\small\item\em Set the listener. \item\end{DoxyCompactList}\item 
+virtual ReturnCode {\bf get} (cdrMemoryStream \&data)=0
+\begin{DoxyCompactList}\small\item\em Receive data. \item\end{DoxyCompactList}\item 
+virtual bool {\bf subscribeInterface} (const SDOPackage::NVList \&properties)=0
+\begin{DoxyCompactList}\small\item\em Subscribe the data receive notification. \item\end{DoxyCompactList}\item 
+virtual void {\bf unsubscribeInterface} (const SDOPackage::NVList \&properties)=0
+\begin{DoxyCompactList}\small\item\em Unsubscribe the data receive notification. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Logger} {\bf rtclog}
+\begin{DoxyCompactList}\small\item\em \doxyref{Logger}{p.}{classRTC_1_1Logger} stream. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\doxyref{OutPortConsumer}{p.}{classRTC_1_1OutPortConsumer} abstract class. The virtual class for OutPort's PROVIDED interface implementation. New interface for \doxyref{OutPort}{p.}{classRTC_1_1OutPort} have to inherit this class, and have to implement the following functions.
+
+
+\begin{DoxyItemize}
+\item \doxyref{init()}{p.}{classRTC_1_1OutPortConsumer_ab746873de12fd0fb1d8bf37e79192e54}
+\item \doxyref{setBuffer()}{p.}{classRTC_1_1OutPortConsumer_a78e11b4a34b7de7a11efd06809a38c1a}
+\item \doxyref{setListener()}{p.}{classRTC_1_1OutPortConsumer_a19b78db46c31332782bf122f5e12e09b}
+\item \doxyref{get()}{p.}{classRTC_1_1OutPortConsumer_acd8302e6ded9e796afb047aff0bc1c0e}
+\end{DoxyItemize}
+
+Furthermore, connecting or disconnecting processes, such as obtaining some information from ConnectorProfile or releasing some resources, should be implemented in the following virtual functions.
+
+
+\begin{DoxyItemize}
+\item \doxyref{subscribeInterface()}{p.}{classRTC_1_1OutPortConsumer_a84bc467a9540b1eef126feec41551328}
+\item \doxyref{unsubscribeInterface()}{p.}{classRTC_1_1OutPortConsumer_a81f847f4cc94889811ad5638764c8a24}
+\end{DoxyItemize}
+
+\doxyref{InPort}{p.}{classRTC_1_1InPort} inquires available OutPortConsumers to the factory class of \doxyref{OutPortConsumer}{p.}{classRTC_1_1OutPortConsumer}, and publishes available interfaces to others. Therefore, sub-\/classes of \doxyref{OutPortConsumer}{p.}{classRTC_1_1OutPortConsumer} that provides PROVIDED interface to \doxyref{OutPort}{p.}{classRTC_1_1OutPort} should register its factory to OutPortConsumerFactory.
+
+\doxyref{RTC::OutPortConsumerFactory::instance()}{p.}{classcoil_1_1Singleton_aea119e0534a0de4b63a8f84c7d68b223}.addFactory() would be called with the following arguments.
+
+1st arg: The name of provider. ex. \char`\"{}corba\_\-cdr\char`\"{} 2nd arg: Factory function. \doxyref{coil::Creator$<$B, T$>$}{p.}{namespacecoil_a7f96c97693a425d037804baac00e095a} 3rd arg: Destruction function. \doxyref{coil::Destructor$<$B, T$>$}{p.}{namespacecoil_a3d92b40c32da6da798031e58bb1c2cf0}
+
+The following example shows how to register factory function. And it is also declared as a initialization function.
+
+
+\begin{DoxyPre}
+ extern "C"
+ \{
+   void \doxyref{OutPortCorbaCdrConsumerInit(void)}{p.}{OutPortCorbaCdrConsumer_8h_a5f77e05ce32d3ac8ae8cd0a99f003347}
+   \{
+     \doxyref{RTC::OutPortConsumerFactory}{p.}{namespaceRTC_a3348783eadec0be081480ddb03a27328}\&
+                         factory(\doxyref{RTC::OutPortConsumerFactory::instance()}{p.}{classcoil_1_1Singleton_aea119e0534a0de4b63a8f84c7d68b223});
+     factory.addFactory("corba\_cdr",
+                        coil::Creator<\doxyref{RTC::OutPortConsumer}{p.}{classRTC_1_1OutPortConsumer},
+                                        \doxyref{RTC::OutPortCorbaCdrConsumer}{p.}{classRTC_1_1OutPortCorbaCdrConsumer}>,
+                        coil::Destructor<\doxyref{RTC::OutPortConsumer}{p.}{classRTC_1_1OutPortConsumer},
+                                           \doxyref{RTC::OutPortCorbaCdrConsumer}{p.}{classRTC_1_1OutPortCorbaCdrConsumer}>);
+   \}
+ \};
+ \end{DoxyPre}
+
+
+It is recommended that the registration process is declared as a initialization function with \char`\"{}extern C\char`\"{} to be accessed from the outside of module. If the OutPortConsumers are compiled as a shared object or DLL for dynamic loading, new \doxyref{OutPortConsumer}{p.}{classRTC_1_1OutPortConsumer} types can be added dynamically.
+
+\begin{DoxySince}{Since}
+0.4.0 
+\end{DoxySince}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{RTC::OutPortConsumer@{RTC::OutPortConsumer}!$\sim$OutPortConsumer@{$\sim$OutPortConsumer}}
+\index{$\sim$OutPortConsumer@{$\sim$OutPortConsumer}!RTC::OutPortConsumer@{RTC::OutPortConsumer}}
+\subsubsection[{$\sim$OutPortConsumer}]{\setlength{\rightskip}{0pt plus 5cm}virtual DATAPORTSTATUS\_\-ENUM RTC::OutPortConsumer::$\sim$OutPortConsumer (void)\hspace{0.3cm}{\ttfamily  [inline, virtual]}}\label{classRTC_1_1OutPortConsumer_a0d56439ce5cf056bb09ad5de4631d4b4}
+
+
+Destructor. 
+
+Virtual destructor 
+
+\subsection{Member Function Documentation}
+\index{RTC::OutPortConsumer@{RTC::OutPortConsumer}!get@{get}}
+\index{get@{get}!RTC::OutPortConsumer@{RTC::OutPortConsumer}}
+\subsubsection[{get}]{\setlength{\rightskip}{0pt plus 5cm}virtual ReturnCode RTC::OutPortConsumer::get (cdrMemoryStream \& {\em data})\hspace{0.3cm}{\ttfamily  [pure virtual]}}\label{classRTC_1_1OutPortConsumer_acd8302e6ded9e796afb047aff0bc1c0e}
+
+
+Receive data. 
+
+Pure virtual function to receive data. 
+
+Implemented in {\bf RTC::OutPortCorbaCdrConsumer} \doxyref{}{p.}{classRTC_1_1OutPortCorbaCdrConsumer_a72889a36a5359ed449f569a9f9c64762}.
+
+\index{RTC::OutPortConsumer@{RTC::OutPortConsumer}!init@{init}}
+\index{init@{init}!RTC::OutPortConsumer@{RTC::OutPortConsumer}}
+\subsubsection[{init}]{\setlength{\rightskip}{0pt plus 5cm}virtual void RTC::OutPortConsumer::init ({\bf coil::Properties} \& {\em prop})\hspace{0.3cm}{\ttfamily  [pure virtual]}}\label{classRTC_1_1OutPortConsumer_ab746873de12fd0fb1d8bf37e79192e54}
+
+
+Initializing configuration. 
+
+This operation would be called to configure in initialization. In the concrete class, configuration should be performed getting appropriate information from the given Properties data. This function might be called right after instantiation and connection sequence respectivly. Therefore, this function should be implemented assuming multiple call.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em prop}]Configuration information \end{DoxyParams}
+
+
+Implemented in {\bf RTC::OutPortCorbaCdrConsumer} \doxyref{}{p.}{classRTC_1_1OutPortCorbaCdrConsumer_a2370f34a0600da08bdb57074dc9af5e7}.
+
+\index{RTC::OutPortConsumer@{RTC::OutPortConsumer}!setBuffer@{setBuffer}}
+\index{setBuffer@{setBuffer}!RTC::OutPortConsumer@{RTC::OutPortConsumer}}
+\subsubsection[{setBuffer}]{\setlength{\rightskip}{0pt plus 5cm}virtual void RTC::OutPortConsumer::setBuffer ({\bf CdrBufferBase} $\ast$ {\em buffer})\hspace{0.3cm}{\ttfamily  [pure virtual]}}\label{classRTC_1_1OutPortConsumer_a78e11b4a34b7de7a11efd06809a38c1a}
+
+
+Setting outside buffer's pointer. 
+
+A pointer to a buffer from which \doxyref{OutPortProvider}{p.}{classRTC_1_1OutPortProvider} retrieve data. If already buffer is set, previous buffer's pointer will be overwritten by the given pointer to a buffer. Since \doxyref{OutPortProvider}{p.}{classRTC_1_1OutPortProvider} does not assume ownership of the buffer pointer, destructor of the buffer should be done by user.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em buffer}]A pointer to a data buffer to be used by \doxyref{OutPortProvider}{p.}{classRTC_1_1OutPortProvider} \end{DoxyParams}
+
+
+Implemented in {\bf RTC::OutPortCorbaCdrConsumer} \doxyref{}{p.}{classRTC_1_1OutPortCorbaCdrConsumer_a0ce5797c8fbdeded604b75cbfc7022a1}.
+
+\index{RTC::OutPortConsumer@{RTC::OutPortConsumer}!setListener@{setListener}}
+\index{setListener@{setListener}!RTC::OutPortConsumer@{RTC::OutPortConsumer}}
+\subsubsection[{setListener}]{\setlength{\rightskip}{0pt plus 5cm}virtual void RTC::OutPortConsumer::setListener ({\bf ConnectorInfo} \& {\em info}, \/  {\bf ConnectorListeners} $\ast$ {\em listeners})\hspace{0.3cm}{\ttfamily  [pure virtual]}}\label{classRTC_1_1OutPortConsumer_a19b78db46c31332782bf122f5e12e09b}
+
+
+Set the listener. 
+
+\doxyref{OutPort}{p.}{classRTC_1_1OutPort} provides callback functionality that calls specific listener objects according to the events in the data publishing process. For details, see documentation of \doxyref{ConnectorDataListener}{p.}{classRTC_1_1ConnectorDataListener} class and \doxyref{ConnectorListener}{p.}{classRTC_1_1ConnectorListener} class in \doxyref{ConnectorListener.h}{p.}{ConnectorListener_8h}. In the sub-\/classes of \doxyref{OutPortProvider}{p.}{classRTC_1_1OutPortProvider}, the given listeners should be called in the proper timing. However, it is not necessary to call all the listeners.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em info}]Connector information \item[{\em listeners}]Listener objects \end{DoxyParams}
+
+
+Implemented in {\bf RTC::OutPortCorbaCdrConsumer} \doxyref{}{p.}{classRTC_1_1OutPortCorbaCdrConsumer_a2e9d1d58f46f1c8c286fbd244251e1c8}.
+
+\index{RTC::OutPortConsumer@{RTC::OutPortConsumer}!subscribeInterface@{subscribeInterface}}
+\index{subscribeInterface@{subscribeInterface}!RTC::OutPortConsumer@{RTC::OutPortConsumer}}
+\subsubsection[{subscribeInterface}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool RTC::OutPortConsumer::subscribeInterface (const SDOPackage::NVList \& {\em properties})\hspace{0.3cm}{\ttfamily  [pure virtual]}}\label{classRTC_1_1OutPortConsumer_a84bc467a9540b1eef126feec41551328}
+
+
+Subscribe the data receive notification. 
+
+Pure virtual function to subscribe the data receive notification based on specified property information.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em properties}]Properties for subscription\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Subscription result (Successful:true, Failed:false) 
+\end{DoxyReturn}
+
+
+Implemented in {\bf RTC::OutPortCorbaCdrConsumer} \doxyref{}{p.}{classRTC_1_1OutPortCorbaCdrConsumer_ac0173f06be09ffc9059bda6295d47d4b}.
+
+
+
+Referenced by RTC::OutPortConsumer::subscribe::operator()().
+
+\index{RTC::OutPortConsumer@{RTC::OutPortConsumer}!unsubscribeInterface@{unsubscribeInterface}}
+\index{unsubscribeInterface@{unsubscribeInterface}!RTC::OutPortConsumer@{RTC::OutPortConsumer}}
+\subsubsection[{unsubscribeInterface}]{\setlength{\rightskip}{0pt plus 5cm}virtual void RTC::OutPortConsumer::unsubscribeInterface (const SDOPackage::NVList \& {\em properties})\hspace{0.3cm}{\ttfamily  [pure virtual]}}\label{classRTC_1_1OutPortConsumer_a81f847f4cc94889811ad5638764c8a24}
+
+
+Unsubscribe the data receive notification. 
+
+Pure virtual function to unsubscribe the data receive notification.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em properties}]Properties for unsubscription\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Unsubscription result (Successful:true, Failed:false) 
+\end{DoxyReturn}
+
+
+Implemented in {\bf RTC::OutPortCorbaCdrConsumer} \doxyref{}{p.}{classRTC_1_1OutPortCorbaCdrConsumer_a2191f5b9443c7941a197007b95964d0e}.
+
+
+
+Referenced by RTC::OutPortConsumer::unsubscribe::operator()().
+
+
+
+\subsection{Member Data Documentation}
+\index{RTC::OutPortConsumer@{RTC::OutPortConsumer}!rtclog@{rtclog}}
+\index{rtclog@{rtclog}!RTC::OutPortConsumer@{RTC::OutPortConsumer}}
+\subsubsection[{rtclog}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Logger} {\bf RTC::OutPortConsumer::rtclog}\hspace{0.3cm}{\ttfamily  [mutable, protected]}}\label{classRTC_1_1OutPortConsumer_a7ea8593f77acf37f7a249fed53528d99}
+
+
+\doxyref{Logger}{p.}{classRTC_1_1Logger} stream. 
+

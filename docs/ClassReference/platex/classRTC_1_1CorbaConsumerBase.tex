@@ -1,0 +1,194 @@
+\section{クラス RTC::CorbaConsumerBase}
+\label{classRTC_1_1CorbaConsumerBase}\index{RTC::CorbaConsumerBase@{RTC::CorbaConsumerBase}}
+
+
+オブジェクトリファレンスを保持するプレースホルダ基底クラス  
+
+
+
+
+{\ttfamily \#include $<$CorbaConsumer.h$>$}
+
+RTC::CorbaConsumerBaseに対する継承グラフ\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=1.34615cm]{classRTC_1_1CorbaConsumerBase}
+\end{center}
+\end{figure}
+\subsection*{Public メソッド}
+\begin{DoxyCompactItemize}
+\item 
+{\bf CorbaConsumerBase} ()
+\begin{DoxyCompactList}\small\item\em コンストラクタ \item\end{DoxyCompactList}\item 
+{\bf CorbaConsumerBase} (const {\bf CorbaConsumerBase} \&x)
+\begin{DoxyCompactList}\small\item\em コピーコンストラクタ \item\end{DoxyCompactList}\item 
+{\bf CorbaConsumerBase} \& {\bf operator=} (const {\bf CorbaConsumerBase} \&x)
+\begin{DoxyCompactList}\small\item\em 代入演算子 \item\end{DoxyCompactList}\item 
+void {\bf swap} ({\bf CorbaConsumerBase} \&x)
+\begin{DoxyCompactList}\small\item\em swap関数 \item\end{DoxyCompactList}\item 
+virtual {\bf $\sim$CorbaConsumerBase} (void)
+\begin{DoxyCompactList}\small\item\em 仮想デストラクタ \item\end{DoxyCompactList}\item 
+virtual bool {\bf setObject} (CORBA::Object\_\-ptr obj)
+\begin{DoxyCompactList}\small\item\em CORBAオブジェクトをセットする. \item\end{DoxyCompactList}\item 
+virtual CORBA::Object\_\-ptr {\bf getObject} ()
+\begin{DoxyCompactList}\small\item\em CORBAオブジェクトを取得する. \item\end{DoxyCompactList}\item 
+virtual void {\bf releaseObject} ()
+\begin{DoxyCompactList}\small\item\em CORBAオブジェクトの設定をクリアする. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected 変数}
+\begin{DoxyCompactItemize}
+\item 
+CORBA::Object\_\-var {\bf m\_\-objref}
+\begin{DoxyCompactList}\small\item\em 設定された CORBA オブジェクト \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{説明}
+オブジェクトリファレンスを保持するプレースホルダ基底クラス 通信手段として CORBA を選択した場合のコンシューマ実装のための基底クラス
+
+\begin{DoxySince}{から}
+0.4.0 
+\end{DoxySince}
+
+
+\subsection{コンストラクタとデストラクタ}
+\index{RTC::CorbaConsumerBase@{RTC::CorbaConsumerBase}!CorbaConsumerBase@{CorbaConsumerBase}}
+\index{CorbaConsumerBase@{CorbaConsumerBase}!RTC::CorbaConsumerBase@{RTC::CorbaConsumerBase}}
+\subsubsection[{CorbaConsumerBase}]{\setlength{\rightskip}{0pt plus 5cm}RTC::CorbaConsumerBase::CorbaConsumerBase ()\hspace{0.3cm}{\ttfamily  [inline]}}\label{classRTC_1_1CorbaConsumerBase_a95aebe603aca268718c13e37f1700603}
+
+
+コンストラクタ 
+
+\index{RTC::CorbaConsumerBase@{RTC::CorbaConsumerBase}!CorbaConsumerBase@{CorbaConsumerBase}}
+\index{CorbaConsumerBase@{CorbaConsumerBase}!RTC::CorbaConsumerBase@{RTC::CorbaConsumerBase}}
+\subsubsection[{CorbaConsumerBase}]{\setlength{\rightskip}{0pt plus 5cm}RTC::CorbaConsumerBase::CorbaConsumerBase (const {\bf CorbaConsumerBase} \& {\em x})\hspace{0.3cm}{\ttfamily  [inline]}}\label{classRTC_1_1CorbaConsumerBase_a0cef39f613583313f8b335259b78cdd2}
+
+
+コピーコンストラクタ 
+
+
+\begin{DoxyParams}{引数}
+\item[{\em x}]コピー元のCorbaConsumerBaseオブジェクト \end{DoxyParams}
+\index{RTC::CorbaConsumerBase@{RTC::CorbaConsumerBase}!$\sim$CorbaConsumerBase@{$\sim$CorbaConsumerBase}}
+\index{$\sim$CorbaConsumerBase@{$\sim$CorbaConsumerBase}!RTC::CorbaConsumerBase@{RTC::CorbaConsumerBase}}
+\subsubsection[{$\sim$CorbaConsumerBase}]{\setlength{\rightskip}{0pt plus 5cm}virtual RTC::CorbaConsumerBase::$\sim$CorbaConsumerBase (void)\hspace{0.3cm}{\ttfamily  [inline, virtual]}}\label{classRTC_1_1CorbaConsumerBase_aa6b7667e37b137f3af8c6668da48f01d}
+
+
+仮想デストラクタ 
+
+
+
+参照先 releaseObject().
+
+
+
+\subsection{関数}
+\index{RTC::CorbaConsumerBase@{RTC::CorbaConsumerBase}!getObject@{getObject}}
+\index{getObject@{getObject}!RTC::CorbaConsumerBase@{RTC::CorbaConsumerBase}}
+\subsubsection[{getObject}]{\setlength{\rightskip}{0pt plus 5cm}virtual CORBA::Object\_\-ptr RTC::CorbaConsumerBase::getObject ()\hspace{0.3cm}{\ttfamily  [inline, virtual]}}\label{classRTC_1_1CorbaConsumerBase_af1d1c9413bf9f017c4bc605ca3a08bd3}
+
+
+CORBAオブジェクトを取得する. 
+
+ConsumerBase オブジェクト内に CORBA::Object\_\-var 型として保持されている オブジェクトリファレンスを取得する。 呼び出し側はvar型変数で受けるか、使用後CORBArelease()を呼び出して 参照カウントをデクリメントすること。
+
+\begin{DoxyReturn}{戻り値}
+obj CORBA オブジェクトのリファレンス 
+\end{DoxyReturn}
+
+
+参照先 m\_\-objref.
+
+\index{RTC::CorbaConsumerBase@{RTC::CorbaConsumerBase}!operator=@{operator=}}
+\index{operator=@{operator=}!RTC::CorbaConsumerBase@{RTC::CorbaConsumerBase}}
+\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf CorbaConsumerBase}\& RTC::CorbaConsumerBase::operator= (const {\bf CorbaConsumerBase} \& {\em x})\hspace{0.3cm}{\ttfamily  [inline]}}\label{classRTC_1_1CorbaConsumerBase_af070cffba7981a1c42b7be15b01c8543}
+
+
+代入演算子 
+
+
+\begin{DoxyParams}{引数}
+\item[{\em x}]代入元\end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+代入結果 
+\end{DoxyReturn}
+
+
+参照先 swap().
+
+\index{RTC::CorbaConsumerBase@{RTC::CorbaConsumerBase}!releaseObject@{releaseObject}}
+\index{releaseObject@{releaseObject}!RTC::CorbaConsumerBase@{RTC::CorbaConsumerBase}}
+\subsubsection[{releaseObject}]{\setlength{\rightskip}{0pt plus 5cm}virtual void RTC::CorbaConsumerBase::releaseObject ()\hspace{0.3cm}{\ttfamily  [inline, virtual]}}\label{classRTC_1_1CorbaConsumerBase_aafdaaab4a66319fe5ab1486b1001dfb9}
+
+
+CORBAオブジェクトの設定をクリアする. 
+
+設定されている CORBA オブジェクトをクリアする。 CORBAオブジェクトそのものに対しては何も操作しない。 
+
+{\bf RTC::CorbaConsumer$<$ ObjectType, ObjectTypePtr, ObjectTypeVar $>$} \doxyref{}{p.}{classRTC_1_1CorbaConsumer_aaebca7bff42ba840684cf51fb8577290}, {\bf RTC::CorbaConsumer$<$ ::OpenRTM::InPortCdr $>$} \doxyref{}{p.}{classRTC_1_1CorbaConsumer_aaebca7bff42ba840684cf51fb8577290}, と {\bf RTC::CorbaConsumer$<$ ::OpenRTM::OutPortCdr $>$} \doxyref{}{p.}{classRTC_1_1CorbaConsumer_aaebca7bff42ba840684cf51fb8577290}で再定義されています。
+
+
+
+参照先 m\_\-objref.
+
+
+
+参照元 $\sim$CorbaConsumerBase().
+
+\index{RTC::CorbaConsumerBase@{RTC::CorbaConsumerBase}!setObject@{setObject}}
+\index{setObject@{setObject}!RTC::CorbaConsumerBase@{RTC::CorbaConsumerBase}}
+\subsubsection[{setObject}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool RTC::CorbaConsumerBase::setObject (CORBA::Object\_\-ptr {\em obj})\hspace{0.3cm}{\ttfamily  [inline, virtual]}}\label{classRTC_1_1CorbaConsumerBase_aa91cc706b62c6782f79bfc76663f3dcc}
+
+
+CORBAオブジェクトをセットする. 
+
+与えられたオブジェクトリファレンスは、ConsumerBase オブジェクト内に CORBA::Object\_\-var 型として保持される。 \_\-var 型変数を引数に渡す場合は var.in() を渡すこと。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em obj}]CORBA オブジェクトのリファレンス\end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+obj が nil リファレンスの場合 false を返す。 
+\end{DoxyReturn}
+
+
+{\bf RTC::CorbaConsumer$<$ ObjectType, ObjectTypePtr, ObjectTypeVar $>$} \doxyref{}{p.}{classRTC_1_1CorbaConsumer_a8e5db22a71b01b1a8178d9966eb6499d}, {\bf RTC::CorbaConsumer$<$ ::OpenRTM::InPortCdr $>$} \doxyref{}{p.}{classRTC_1_1CorbaConsumer_a8e5db22a71b01b1a8178d9966eb6499d}, と {\bf RTC::CorbaConsumer$<$ ::OpenRTM::OutPortCdr $>$} \doxyref{}{p.}{classRTC_1_1CorbaConsumer_a8e5db22a71b01b1a8178d9966eb6499d}で再定義されています。
+
+
+
+参照先 m\_\-objref.
+
+
+
+参照元 RTC::CorbaConsumer$<$ ::OpenRTM::OutPortCdr $>$::setObject().
+
+\index{RTC::CorbaConsumerBase@{RTC::CorbaConsumerBase}!swap@{swap}}
+\index{swap@{swap}!RTC::CorbaConsumerBase@{RTC::CorbaConsumerBase}}
+\subsubsection[{swap}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::CorbaConsumerBase::swap ({\bf CorbaConsumerBase} \& {\em x})\hspace{0.3cm}{\ttfamily  [inline]}}\label{classRTC_1_1CorbaConsumerBase_a7dd51f4e04ab755dcd7d5e01fd6aca2f}
+
+
+swap関数 
+
+
+\begin{DoxyParams}{引数}
+\item[{\em x}]代入元 \end{DoxyParams}
+
+
+参照先 m\_\-objref.
+
+
+
+参照元 operator=().
+
+
+
+\subsection{変数}
+\index{RTC::CorbaConsumerBase@{RTC::CorbaConsumerBase}!m\_\-objref@{m\_\-objref}}
+\index{m\_\-objref@{m\_\-objref}!RTC::CorbaConsumerBase@{RTC::CorbaConsumerBase}}
+\subsubsection[{m\_\-objref}]{\setlength{\rightskip}{0pt plus 5cm}CORBA::Object\_\-var {\bf RTC::CorbaConsumerBase::m\_\-objref}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC_1_1CorbaConsumerBase_a08aa594ab325d7ee84fecba104c41478}
+
+
+設定された CORBA オブジェクト 
+
+
+
+参照元 getObject(), releaseObject(), RTC::CorbaConsumer$<$ ::OpenRTM::OutPortCdr $>$::setObject(), setObject(), と swap().
+

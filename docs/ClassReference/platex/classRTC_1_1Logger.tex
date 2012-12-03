@@ -1,0 +1,258 @@
+\section{クラス RTC::Logger}
+\label{classRTC_1_1Logger}\index{RTC::Logger@{RTC::Logger}}
+
+
+\doxyref{Logger}{p.}{classRTC_1_1Logger} クラス.  
+
+
+
+
+{\ttfamily \#include $<$SystemLogger.h$>$}
+
+RTC::Loggerに対する継承グラフ\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2cm]{classRTC_1_1Logger}
+\end{center}
+\end{figure}
+\subsection*{Public 型}
+\begin{DoxyCompactItemize}
+\item 
+enum \{ \par
+{\bf RTL\_\-SILENT}, 
+{\bf RTL\_\-FATAL}, 
+{\bf RTL\_\-ERROR}, 
+{\bf RTL\_\-WARN}, 
+\par
+{\bf RTL\_\-INFO}, 
+{\bf RTL\_\-DEBUG}, 
+{\bf RTL\_\-TRACE}, 
+{\bf RTL\_\-VERBOSE}, 
+\par
+{\bf RTL\_\-PARANOID}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Public メソッド}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Logger} (const char $\ast$name=\char`\"{}\char`\"{})
+\begin{DoxyCompactList}\small\item\em コンストラクタ \item\end{DoxyCompactList}\item 
+{\bf Logger} ({\bf LogStreamBuf} $\ast$streambuf)
+\begin{DoxyCompactList}\small\item\em コンストラクタ \item\end{DoxyCompactList}\item 
+virtual {\bf $\sim$Logger} (void)
+\begin{DoxyCompactList}\small\item\em 仮想デストラクタ \item\end{DoxyCompactList}\item 
+bool {\bf setLevel} (const char $\ast$level)
+\begin{DoxyCompactList}\small\item\em ログレベルを文字列で設定する \item\end{DoxyCompactList}\item 
+void {\bf setDateFormat} (const char $\ast$format)
+\begin{DoxyCompactList}\small\item\em ヘッダに付加する日時フォーマットを指定する。 \item\end{DoxyCompactList}\item 
+void {\bf setName} (const char $\ast$name)
+\begin{DoxyCompactList}\small\item\em ヘッダの日時の後に付加する文字列を設定する。 \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected メソッド}
+\begin{DoxyCompactItemize}
+\item 
+virtual void {\bf header} (int level)
+\begin{DoxyCompactList}\small\item\em メッセージのプリフィックス追加関数 \item\end{DoxyCompactList}\item 
+std::string {\bf getDate} (void)
+\begin{DoxyCompactList}\small\item\em フォーマットされた現在日時文字列を取得する。 指定された書式で記述した現在日時を取得する。 \item\end{DoxyCompactList}\item 
+int {\bf strToLevel} (const char $\ast$level)
+\begin{DoxyCompactList}\small\item\em ログレベル設定 与えられた文字列に対応したログレベルを設定する。 \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{説明}
+\doxyref{Logger}{p.}{classRTC_1_1Logger} クラス. 
+\begin{DoxyItemize}
+\item ログ出力をシリアライズしかつ分配するバッファクラス
+\item ログをフォーマットするフォーマットクラス で構成されるロガークラス
+\end{DoxyItemize}
+
+
+\begin{DoxyItemize}
+\item バッファクラス
+\begin{DoxyItemize}
+\item マルチスレッド書き込みに対してシリアライズしてバッファリングする
+\item 複数の出力先にログを出力できる
+\item 出力先の例としては、ファイル、標準出力、リモートのログサーバ等
+\item バッファに対してaddStreamで出力先を追加できる
+\end{DoxyItemize}
+\item フォーマットクラス
+\begin{DoxyItemize}
+\item ログレベルを指定して出力できる
+\item 書式は、[時間] [ログレベル] [サフィックス] [メッセージ]
+\item [時間] [ログレベル] [サフィックス]は自動付加
+\item [サフィックス] を指定できる関数を用意
+\item ログレベルは以下のとおり
+\begin{DoxyItemize}
+\item RTL\_\-SILENT
+\item RTL\_\-FATAL
+\item RTL\_\-ERROR
+\item RTL\_\-WARN
+\item RTL\_\-INFO
+\item RTL\_\-DEBUG
+\item RTL\_\-TRACE
+\item RTL\_\-VERBOSE
+\item RTL\_\-PARANOID
+\end{DoxyItemize}
+\item このフォーマットオブジェクトに対するロック・アンロック機能 
+\end{DoxyItemize}
+\end{DoxyItemize}
+
+\subsection{列挙型}
+\subsubsection[{"@0}]{\setlength{\rightskip}{0pt plus 5cm}anonymous enum}\label{classRTC_1_1Logger_a26c3dbf0a4c0fa3c4cc5e3a472636879}
+\begin{Desc}
+\item[列挙型の値: ]\par
+\begin{description}
+\index{RTL\_\-SILENT@{RTL\_\-SILENT}!RTC::Logger@{RTC::Logger}}\index{RTC::Logger@{RTC::Logger}!RTL\_\-SILENT@{RTL\_\-SILENT}}\item[{\em 
+RTL\_\-SILENT\label{classRTC_1_1Logger_a26c3dbf0a4c0fa3c4cc5e3a472636879a3367cbfc4e33871c5fa76fd1cd36756a}
+}]\index{RTL\_\-FATAL@{RTL\_\-FATAL}!RTC::Logger@{RTC::Logger}}\index{RTC::Logger@{RTC::Logger}!RTL\_\-FATAL@{RTL\_\-FATAL}}\item[{\em 
+RTL\_\-FATAL\label{classRTC_1_1Logger_a26c3dbf0a4c0fa3c4cc5e3a472636879a7fe2f71dc262f90d320099edb7c16087}
+}]\index{RTL\_\-ERROR@{RTL\_\-ERROR}!RTC::Logger@{RTC::Logger}}\index{RTC::Logger@{RTC::Logger}!RTL\_\-ERROR@{RTL\_\-ERROR}}\item[{\em 
+RTL\_\-ERROR\label{classRTC_1_1Logger_a26c3dbf0a4c0fa3c4cc5e3a472636879ac99eb1601f28452bc182c2d86a1029a0}
+}]\index{RTL\_\-WARN@{RTL\_\-WARN}!RTC::Logger@{RTC::Logger}}\index{RTC::Logger@{RTC::Logger}!RTL\_\-WARN@{RTL\_\-WARN}}\item[{\em 
+RTL\_\-WARN\label{classRTC_1_1Logger_a26c3dbf0a4c0fa3c4cc5e3a472636879a519a7175117c1fe1e4d37950f56437ba}
+}]\index{RTL\_\-INFO@{RTL\_\-INFO}!RTC::Logger@{RTC::Logger}}\index{RTC::Logger@{RTC::Logger}!RTL\_\-INFO@{RTL\_\-INFO}}\item[{\em 
+RTL\_\-INFO\label{classRTC_1_1Logger_a26c3dbf0a4c0fa3c4cc5e3a472636879a14e025e496dafbec620acc01f3df9ef5}
+}]\index{RTL\_\-DEBUG@{RTL\_\-DEBUG}!RTC::Logger@{RTC::Logger}}\index{RTC::Logger@{RTC::Logger}!RTL\_\-DEBUG@{RTL\_\-DEBUG}}\item[{\em 
+RTL\_\-DEBUG\label{classRTC_1_1Logger_a26c3dbf0a4c0fa3c4cc5e3a472636879a1d7ef00333c4c80a9a726d9d33b428e0}
+}]\index{RTL\_\-TRACE@{RTL\_\-TRACE}!RTC::Logger@{RTC::Logger}}\index{RTC::Logger@{RTC::Logger}!RTL\_\-TRACE@{RTL\_\-TRACE}}\item[{\em 
+RTL\_\-TRACE\label{classRTC_1_1Logger_a26c3dbf0a4c0fa3c4cc5e3a472636879af6a89134b5b95f2f4b4fb6cf2c631b54}
+}]\index{RTL\_\-VERBOSE@{RTL\_\-VERBOSE}!RTC::Logger@{RTC::Logger}}\index{RTC::Logger@{RTC::Logger}!RTL\_\-VERBOSE@{RTL\_\-VERBOSE}}\item[{\em 
+RTL\_\-VERBOSE\label{classRTC_1_1Logger_a26c3dbf0a4c0fa3c4cc5e3a472636879abdbd3de57d4b10ba4e8f19f601619378}
+}]\index{RTL\_\-PARANOID@{RTL\_\-PARANOID}!RTC::Logger@{RTC::Logger}}\index{RTC::Logger@{RTC::Logger}!RTL\_\-PARANOID@{RTL\_\-PARANOID}}\item[{\em 
+RTL\_\-PARANOID\label{classRTC_1_1Logger_a26c3dbf0a4c0fa3c4cc5e3a472636879ac9bd2a83ac9b45acba1e71b2cd3b9fad}
+}]\end{description}
+\end{Desc}
+
+
+
+\subsection{コンストラクタとデストラクタ}
+\index{RTC::Logger@{RTC::Logger}!Logger@{Logger}}
+\index{Logger@{Logger}!RTC::Logger@{RTC::Logger}}
+\subsubsection[{Logger}]{\setlength{\rightskip}{0pt plus 5cm}RTC::Logger::Logger (const char $\ast$ {\em name} = {\ttfamily \char`\"{}\char`\"{}})}\label{classRTC_1_1Logger_ab2e8e5300567b89edc7586f41e184c5b}
+
+
+コンストラクタ 
+
+コンストラクタ
+
+
+\begin{DoxyParams}{引数}
+\item[{\em name}]ヘッダの日時の後に付加する文字列 \end{DoxyParams}
+\index{RTC::Logger@{RTC::Logger}!Logger@{Logger}}
+\index{Logger@{Logger}!RTC::Logger@{RTC::Logger}}
+\subsubsection[{Logger}]{\setlength{\rightskip}{0pt plus 5cm}RTC::Logger::Logger ({\bf LogStreamBuf} $\ast$ {\em streambuf})}\label{classRTC_1_1Logger_a201ebea93493a822bef5397b0666c1f3}
+
+
+コンストラクタ 
+
+コンストラクタ
+
+
+\begin{DoxyParams}{引数}
+\item[{\em streambuf}]LogStream オブジェクト \end{DoxyParams}
+\index{RTC::Logger@{RTC::Logger}!$\sim$Logger@{$\sim$Logger}}
+\index{$\sim$Logger@{$\sim$Logger}!RTC::Logger@{RTC::Logger}}
+\subsubsection[{$\sim$Logger}]{\setlength{\rightskip}{0pt plus 5cm}virtual RTC::Logger::$\sim$Logger (void)\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classRTC_1_1Logger_a4cc391947ae2c203773216049b6a658d}
+
+
+仮想デストラクタ 
+
+
+
+\subsection{関数}
+\index{RTC::Logger@{RTC::Logger}!getDate@{getDate}}
+\index{getDate@{getDate}!RTC::Logger@{RTC::Logger}}
+\subsubsection[{getDate}]{\setlength{\rightskip}{0pt plus 5cm}std::string RTC::Logger::getDate (void)\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC_1_1Logger_afd3ce56caeea1d4cb12725b4c0905aec}
+
+
+フォーマットされた現在日時文字列を取得する。 指定された書式で記述した現在日時を取得する。 
+
+\begin{DoxyReturn}{戻り値}
+書式指定現在日時 
+\end{DoxyReturn}
+\index{RTC::Logger@{RTC::Logger}!header@{header}}
+\index{header@{header}!RTC::Logger@{RTC::Logger}}
+\subsubsection[{header}]{\setlength{\rightskip}{0pt plus 5cm}virtual void RTC::Logger::header (int {\em level})\hspace{0.3cm}{\ttfamily  [protected, virtual]}}\label{classRTC_1_1Logger_a8361781fa7f52ab330c4522bcdd3068b}
+
+
+メッセージのプリフィックス追加関数 
+
+サブクラスにおいてこの関数をオーバーライドし、 ログメッセージに適当なプリフィックスるを追加する。 
+
+{\bf coil::log\_\-stream$<$ \_\-CharT, \_\-Traits $>$} \doxyref{}{p.}{classcoil_1_1log__stream_acef16b17dc52f988d7f3b28afde3e960}を再定義しています。
+
+\index{RTC::Logger@{RTC::Logger}!setDateFormat@{setDateFormat}}
+\index{setDateFormat@{setDateFormat}!RTC::Logger@{RTC::Logger}}
+\subsubsection[{setDateFormat}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::Logger::setDateFormat (const char $\ast$ {\em format})}\label{classRTC_1_1Logger_a5479637be023b33f41a75894806887b7}
+
+
+ヘッダに付加する日時フォーマットを指定する。 
+
+フォーマット指定文字列は以下のとおり。 
+\begin{DoxyPre}
+ \%a abbreviated weekday name 
+ \%A full weekday name 
+ \%b abbreviated month name 
+ \%B full month name 
+ \%c the standard date and time string 
+ \%d day of the month, as a number (1-31) 
+ \%H hour, 24 hour format (0-23) 
+ \%I hour, 12 hour format (1-12) 
+ \%j day of the year, as a number (1-366) 
+ \%m month as a number (1-12).
+    Note: some versions of Microsoft Visual C++ may use values that range
+    from 0-11. 
+ \%M minute as a number (0-59) 
+ \%p locale's equivalent of AM or PM 
+ \%Q millisecond as a number (0-999) from ver 1.1
+ \%q microsecond as a number (0-999) from ver 1.1
+ \%S second as a number (0-59) 
+ \%U week of the year, sunday as the first day 
+ \%w weekday as a decimal (0-6, sunday=0) 
+ \%W week of the year, monday as the first day 
+ \%x standard date string 
+ \%X standard time string 
+ \%y year in decimal, without the century (0-99) 
+ \%Y year in decimal, with the century 
+ \%Z time zone name 
+ \%\% a percent sign 
+ \end{DoxyPre}
+
+
+
+\begin{DoxyParams}{引数}
+\item[{\em fmt}]日時フォーマット \end{DoxyParams}
+\index{RTC::Logger@{RTC::Logger}!setLevel@{setLevel}}
+\index{setLevel@{setLevel}!RTC::Logger@{RTC::Logger}}
+\subsubsection[{setLevel}]{\setlength{\rightskip}{0pt plus 5cm}bool RTC::Logger::setLevel (const char $\ast$ {\em level})}\label{classRTC_1_1Logger_abfc5decf1819d5e5fbd9d4f755c6d9a3}
+
+
+ログレベルを文字列で設定する 
+
+
+\begin{DoxyParams}{引数}
+\item[{\em level}]ログレベル \end{DoxyParams}
+\index{RTC::Logger@{RTC::Logger}!setName@{setName}}
+\index{setName@{setName}!RTC::Logger@{RTC::Logger}}
+\subsubsection[{setName}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::Logger::setName (const char $\ast$ {\em name})}\label{classRTC_1_1Logger_a4a7b805b7d950cdc4eed64565a7a62d3}
+
+
+ヘッダの日時の後に付加する文字列を設定する。 
+
+ヘッダの日時の後に付加する接頭語文字列を設定する。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em suffix}]接頭語文字列 \end{DoxyParams}
+\index{RTC::Logger@{RTC::Logger}!strToLevel@{strToLevel}}
+\index{strToLevel@{strToLevel}!RTC::Logger@{RTC::Logger}}
+\subsubsection[{strToLevel}]{\setlength{\rightskip}{0pt plus 5cm}int RTC::Logger::strToLevel (const char $\ast$ {\em level})\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC_1_1Logger_a684f47d977da5a696021137583852407}
+
+
+ログレベル設定 与えられた文字列に対応したログレベルを設定する。 
+
+
+\begin{DoxyParams}{引数}
+\item[{\em lv}]ログレベル文字列 \end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+設定したログレベル 
+\end{DoxyReturn}

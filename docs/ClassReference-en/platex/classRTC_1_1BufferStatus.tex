@@ -1,0 +1,98 @@
+\section{RTC::BufferStatus Class Reference}
+\label{classRTC_1_1BufferStatus}\index{RTC::BufferStatus@{RTC::BufferStatus}}
+
+
+\doxyref{BufferStatus}{p.}{classRTC_1_1BufferStatus} mixin class.  
+
+
+
+
+{\ttfamily \#include $<$BufferStatus.h$>$}
+
+Inheritance diagram for RTC::BufferStatus:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3cm]{classRTC_1_1BufferStatus}
+\end{center}
+\end{figure}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum {\bf Enum} \{ \par
+{\bf BUFFER\_\-OK} =  0, 
+{\bf BUFFER\_\-ERROR}, 
+{\bf BUFFER\_\-FULL}, 
+{\bf BUFFER\_\-EMPTY}, 
+\par
+{\bf NOT\_\-SUPPORTED}, 
+{\bf TIMEOUT}, 
+{\bf PRECONDITION\_\-NOT\_\-MET}
+ \}
+\begin{DoxyCompactList}\small\item\em \doxyref{DataPortStatus}{p.}{classRTC_1_1DataPortStatus} return codes. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static const char $\ast$ {\bf toString} ({\bf Enum} status)
+\begin{DoxyCompactList}\small\item\em Convert \doxyref{BufferStatus}{p.}{classRTC_1_1BufferStatus} into the string. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\doxyref{BufferStatus}{p.}{classRTC_1_1BufferStatus} mixin class. This is a mixin class to provide enumed return codes that are commonly utilised in buffer realted sub-\/classes. To use this class, sub-\/class should inherit this class as a public super class, and declare BUFFERSTATUS\_\-ENUM defined below. Consequently, ReturnCode\_\-t type that is typedefed by this macro can be used in the sub-\/class, and enumed identifiers are imported to the class's namespace. 
+
+\subsection{Member Enumeration Documentation}
+\index{RTC::BufferStatus@{RTC::BufferStatus}!Enum@{Enum}}
+\index{Enum@{Enum}!RTC::BufferStatus@{RTC::BufferStatus}}
+\subsubsection[{Enum}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf RTC::BufferStatus::Enum}}\label{classRTC_1_1BufferStatus_ada857a5e7b898e1ad19caaaf7a0ff713}
+
+
+\doxyref{DataPortStatus}{p.}{classRTC_1_1DataPortStatus} return codes. 
+
+Common return codes for buffer classes.
+
+
+\begin{DoxyItemize}
+\item BUFFER\_\-OK: Normal return
+\item BUFFER\_\-ERROR: Buffer error
+\item BUFFER\_\-FULL: Buffer full
+\item BUFFER\_\-EMPTY: Buffer empty
+\item NOT\_\-SUPPORTED: Not supported function
+\item TIMEOUT: Timeout
+\item PRECONDITION\_\-NOT\_\-MET: Precodition not met 
+\end{DoxyItemize}\begin{Desc}
+\item[Enumerator: ]\par
+\begin{description}
+\index{BUFFER\_\-OK@{BUFFER\_\-OK}!RTC::BufferStatus@{RTC::BufferStatus}}\index{RTC::BufferStatus@{RTC::BufferStatus}!BUFFER\_\-OK@{BUFFER\_\-OK}}\item[{\em 
+BUFFER\_\-OK\label{classRTC_1_1BufferStatus_ada857a5e7b898e1ad19caaaf7a0ff713a8f953167d31babf4fa80112461b7b388}
+}]\index{BUFFER\_\-ERROR@{BUFFER\_\-ERROR}!RTC::BufferStatus@{RTC::BufferStatus}}\index{RTC::BufferStatus@{RTC::BufferStatus}!BUFFER\_\-ERROR@{BUFFER\_\-ERROR}}\item[{\em 
+BUFFER\_\-ERROR\label{classRTC_1_1BufferStatus_ada857a5e7b898e1ad19caaaf7a0ff713a49a15bebcc2b15516a7cb9e930009c83}
+}]\index{BUFFER\_\-FULL@{BUFFER\_\-FULL}!RTC::BufferStatus@{RTC::BufferStatus}}\index{RTC::BufferStatus@{RTC::BufferStatus}!BUFFER\_\-FULL@{BUFFER\_\-FULL}}\item[{\em 
+BUFFER\_\-FULL\label{classRTC_1_1BufferStatus_ada857a5e7b898e1ad19caaaf7a0ff713acee7ab71be75d777a36e6f43450e3a96}
+}]\index{BUFFER\_\-EMPTY@{BUFFER\_\-EMPTY}!RTC::BufferStatus@{RTC::BufferStatus}}\index{RTC::BufferStatus@{RTC::BufferStatus}!BUFFER\_\-EMPTY@{BUFFER\_\-EMPTY}}\item[{\em 
+BUFFER\_\-EMPTY\label{classRTC_1_1BufferStatus_ada857a5e7b898e1ad19caaaf7a0ff713a4938f8154da3c9f7cad45f738b913580}
+}]\index{NOT\_\-SUPPORTED@{NOT\_\-SUPPORTED}!RTC::BufferStatus@{RTC::BufferStatus}}\index{RTC::BufferStatus@{RTC::BufferStatus}!NOT\_\-SUPPORTED@{NOT\_\-SUPPORTED}}\item[{\em 
+NOT\_\-SUPPORTED\label{classRTC_1_1BufferStatus_ada857a5e7b898e1ad19caaaf7a0ff713ad1f406fba36f7e517cdb68d804b861d3}
+}]\index{TIMEOUT@{TIMEOUT}!RTC::BufferStatus@{RTC::BufferStatus}}\index{RTC::BufferStatus@{RTC::BufferStatus}!TIMEOUT@{TIMEOUT}}\item[{\em 
+TIMEOUT\label{classRTC_1_1BufferStatus_ada857a5e7b898e1ad19caaaf7a0ff713a2024553338d0b9dc6edb25af7cdaced8}
+}]\index{PRECONDITION\_\-NOT\_\-MET@{PRECONDITION\_\-NOT\_\-MET}!RTC::BufferStatus@{RTC::BufferStatus}}\index{RTC::BufferStatus@{RTC::BufferStatus}!PRECONDITION\_\-NOT\_\-MET@{PRECONDITION\_\-NOT\_\-MET}}\item[{\em 
+PRECONDITION\_\-NOT\_\-MET\label{classRTC_1_1BufferStatus_ada857a5e7b898e1ad19caaaf7a0ff713aaaa1b8912b339e6f4af393294645f220}
+}]\end{description}
+\end{Desc}
+
+
+
+\subsection{Member Function Documentation}
+\index{RTC::BufferStatus@{RTC::BufferStatus}!toString@{toString}}
+\index{toString@{toString}!RTC::BufferStatus@{RTC::BufferStatus}}
+\subsubsection[{toString}]{\setlength{\rightskip}{0pt plus 5cm}static const char$\ast$ RTC::BufferStatus::toString ({\bf Enum} {\em status})\hspace{0.3cm}{\ttfamily  [inline, static]}}\label{classRTC_1_1BufferStatus_aa7b5d507e0b71878da0491ee39d7f1bc}
+
+
+Convert \doxyref{BufferStatus}{p.}{classRTC_1_1BufferStatus} into the string. 
+
+Convert \doxyref{BufferStatus}{p.}{classRTC_1_1BufferStatus} into the string.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em status}]The target \doxyref{BufferStatus}{p.}{classRTC_1_1BufferStatus} for transformation\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Trnasformation result of string representation 
+\end{DoxyReturn}

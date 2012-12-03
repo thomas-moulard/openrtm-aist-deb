@@ -1,0 +1,57 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<title>OpenRTM: クラス SDO</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<!-- 作成： Doxygen 1.6.3 -->
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="index.html"><span>メインページ</span></a></li>
+      <li><a href="namespaces.html"><span>ネームスペース</span></a></li>
+      <li class="current"><a href="annotated.html"><span>クラス</span></a></li>
+      <li><a href="files.html"><span>ファイル</span></a></li>
+    </ul>
+  </div>
+  <div class="tabs">
+    <ul>
+      <li><a href="annotated.html"><span>構成</span></a></li>
+      <li><a href="hierarchy.html"><span>クラス階層</span></a></li>
+      <li><a href="functions.html"><span>構成メンバ</span></a></li>
+    </ul>
+  </div>
+</div>
+<div class="contents">
+<h1>クラス SDO</h1><!-- doxytag: class="SDO" -->
+<p><a class="el" href="classSDO.html" title="SDO service 管理クラス.">SDO</a> service 管理クラス.  
+<a href="#_details">[詳細]</a></p>
+<table border="0" cellpadding="0" cellspacing="0">
+</table>
+<hr/><a name="_details"></a><h2>説明</h2>
+<p><a class="el" href="classSDO.html" title="SDO service 管理クラス.">SDO</a> service 管理クラス. </p>
+<p>class このクラスは、SDO Service を管理するためのクラスである。SDO Service は OMG <a class="el" href="classSDO.html" title="SDO service 管理クラス.">SDO</a> Specification において定義されている、SDOが特定 の機能のために提供また要求するサービスの一つである。詳細は仕様にお いて定義されていないが、本クラスでは以下のように振る舞うサービスで あるものとし、これらを管理するためのクラスが本クラスである。</p>
+<p><a class="el" href="classSDO.html" title="SDO service 管理クラス.">SDO</a> Service においては、SDO/RTCに所有され、ある種のサービスを提供 するものを <a class="el" href="classSDO.html" title="SDO service 管理クラス.">SDO</a> Service Provider、他のSDO/RTCやアプリケーションが提 供するサービスオブジェクトの参照を受け取り、それらの機能を利用する ものを、SDO Service Consumer と呼ぶ。</p>
+<p><a class="el" href="classSDO.html" title="SDO service 管理クラス.">SDO</a> Service Provider は他のアプリケーションから呼ばれ、SDO/RTC内部 の機能にアクセスするために用いられる。他のSDO/RTCまたはアプリケー ションは、</p>
+<ul>
+<li>SDO::get_service_profiles ()</li>
+<li>SDO::get_service_profile (in UniqueIdentifier id)</li>
+<li>SDO::get_sdo_service (in UniqueIdentifier id)</li>
+</ul>
+<p>のいずれかのオペレーションにより、ServiceProfile または <a class="el" href="classSDO.html" title="SDO service 管理クラス.">SDO</a> Service の参照を取得し、機能を利用するためのオペレーションを呼び出 す。他のSDO/RTCまたはアプリケーション上での参照の破棄は任意のタイ ミングで行われ、サービス提供側では、どこからどれだけ参照されている かは知ることはできない。一方で、SDO/RTC側も、任意のタイミングでサー ビスの提供を停止することもできるため、サービスの利用側では、常にい サービスが利用できるとは限らないものとしてサービスオペレーションを 呼び出す必要がある。</p>
+<p>一方、SDO Service Consumer は当該SDO/RTC以外のSDO/RTCまたはアプリ ケーションがサービスの実体を持ち、当該SDO/RTCにオブジェクト参照を 含むプロファイルを与えることで、SDO/RTC側からサービスオペレーショ ンが呼ばれ外部のSDO/RTCまたはアプリケーションが提供する機能を利用 できる。また、オブザーバ的なオブジェクトを与えることで、SDO/RTC側 からのコールバックを実現するためにも利用することができる。コンシュー マは、プロバイダとは異なり、SDO Configurationインターフェースから 追加、削除が行われる。関連するオペレーションは以下のとおりである。</p>
+<ul>
+<li>Configuration::add_service_profile (in ServiceProfile sProfile)</li>
+<li>Configuration::remove_service_profile (in UniqueIdentifier id)</li>
+</ul>
+<p>外部のSDO/RTCまたはアプリケーションは、自身が持つSDO Servcie Provider の参照をIDおよびinterface type、プロパティとともに ServcieProfile にセットしたうえで、add_service_profile() の引数と して与えることで、当該SDO/RTCにサービスを与える。この際、IDはUUID など一意なIDでなければならない。また、削除する際にはIDにより対象と するServiceProfileを探索するため、サービス提供側では削除時までIDを 保持しておかなければならない。</p>
+<dl class="since"><dt><b>から:</b></dt><dd>1.1.0 </dd></dl>
+</div>
+<hr class="footer"/><address style="text-align: right;"><small>OpenRTMに対してThu May 24 23:25:19 2012に生成されました。&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.6.3 </small></address>
+</body>
+</html>

@@ -1,0 +1,312 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<title>OpenRTM: クラス RTC::OutPortCorbaCdrConsumer</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<!-- 作成： Doxygen 1.6.3 -->
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="index.html"><span>メインページ</span></a></li>
+      <li><a href="namespaces.html"><span>ネームスペース</span></a></li>
+      <li class="current"><a href="annotated.html"><span>クラス</span></a></li>
+      <li><a href="files.html"><span>ファイル</span></a></li>
+    </ul>
+  </div>
+  <div class="tabs">
+    <ul>
+      <li><a href="annotated.html"><span>構成</span></a></li>
+      <li><a href="hierarchy.html"><span>クラス階層</span></a></li>
+      <li><a href="functions.html"><span>構成メンバ</span></a></li>
+    </ul>
+  </div>
+  <div class="navpath"><a class="el" href="namespaceRTC.html">RTC</a>::<a class="el" href="classRTC_1_1OutPortCorbaCdrConsumer.html">OutPortCorbaCdrConsumer</a>
+  </div>
+</div>
+<div class="contents">
+<h1>クラス RTC::OutPortCorbaCdrConsumer</h1><!-- doxytag: class="RTC::OutPortCorbaCdrConsumer" --><!-- doxytag: inherits="RTC::OutPortConsumer,CorbaConsumer&lt; ::OpenRTM::OutPortCdr &gt;" -->
+<p><a class="el" href="classRTC_1_1OutPortCorbaCdrConsumer.html" title="OutPortCorbaCdrConsumer クラス.">OutPortCorbaCdrConsumer</a> クラス.  
+<a href="#_details">[詳細]</a></p>
+
+<p><code>#include &lt;<a class="el" href="OutPortCorbaCdrConsumer_8h_source.html">OutPortCorbaCdrConsumer.h</a>&gt;</code></p>
+<div class="dynheader">
+RTC::OutPortCorbaCdrConsumerに対する継承グラフ</div>
+<div class="dynsection">
+ <div class="center">
+  <img src="classRTC_1_1OutPortCorbaCdrConsumer.png" usemap="#RTC::OutPortCorbaCdrConsumer_map" alt=""/>
+  <map id="RTC::OutPortCorbaCdrConsumer_map" name="RTC::OutPortCorbaCdrConsumer_map">
+<area href="classRTC_1_1OutPortConsumer.html" alt="RTC::OutPortConsumer" shape="rect" coords="0,56,291,80"/>
+<area href="classRTC_1_1CorbaConsumer.html" alt="RTC::CorbaConsumer&lt; ::OpenRTM::OutPortCdr &gt;" shape="rect" coords="301,56,592,80"/>
+<area href="classRTC_1_1DataPortStatus.html" alt="RTC::DataPortStatus" shape="rect" coords="0,0,291,24"/>
+<area href="classRTC_1_1CorbaConsumerBase.html" alt="RTC::CorbaConsumerBase" shape="rect" coords="301,0,592,24"/>
+</map>
+ </div>
+</div>
+
+<p><a href="classRTC_1_1OutPortCorbaCdrConsumer-members.html">すべてのメンバ一覧</a></p>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr><td colspan="2"><h2>Public メソッド</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">DATAPORTSTATUS_ENUM&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1OutPortCorbaCdrConsumer.html#a0126f5206a8ba0eaba011977a511db30">OutPortCorbaCdrConsumer</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1OutPortCorbaCdrConsumer.html#a4289608c8e3e4e0de4a1f2b9e9e18f28">~OutPortCorbaCdrConsumer</a> (void)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1OutPortCorbaCdrConsumer.html#a2370f34a0600da08bdb57074dc9af5e7">init</a> (<a class="el" href="classcoil_1_1Properties.html">coil::Properties</a> &amp;prop)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">設定初期化  <a href="#a2370f34a0600da08bdb57074dc9af5e7"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1OutPortCorbaCdrConsumer.html#a0ce5797c8fbdeded604b75cbfc7022a1">setBuffer</a> (<a class="el" href="classRTC_1_1BufferBase.html">CdrBufferBase</a> *buffer)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">バッファをセットする  <a href="#a0ce5797c8fbdeded604b75cbfc7022a1"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1OutPortCorbaCdrConsumer.html#a2e9d1d58f46f1c8c286fbd244251e1c8">setListener</a> (<a class="el" href="classRTC_1_1ConnectorInfo.html">ConnectorInfo</a> &amp;info, <a class="el" href="classRTC_1_1ConnectorListeners.html">ConnectorListeners</a> *listeners)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">リスナを設定する。  <a href="#a2e9d1d58f46f1c8c286fbd244251e1c8"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual ReturnCode&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1OutPortCorbaCdrConsumer.html#a72889a36a5359ed449f569a9f9c64762">get</a> (cdrMemoryStream &amp;data)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">データを読み出す  <a href="#a72889a36a5359ed449f569a9f9c64762"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1OutPortCorbaCdrConsumer.html#ac0173f06be09ffc9059bda6295d47d4b">subscribeInterface</a> (const SDOPackage::NVList &amp;properties)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">データ受信通知への登録  <a href="#ac0173f06be09ffc9059bda6295d47d4b"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1OutPortCorbaCdrConsumer.html#a2191f5b9443c7941a197007b95964d0e">unsubscribeInterface</a> (const SDOPackage::NVList &amp;properties)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">データ受信通知からの登録解除  <a href="#a2191f5b9443c7941a197007b95964d0e"></a><br/></td></tr>
+</table>
+<hr/><a name="_details"></a><h2>説明</h2>
+<p><a class="el" href="classRTC_1_1OutPortCorbaCdrConsumer.html" title="OutPortCorbaCdrConsumer クラス.">OutPortCorbaCdrConsumer</a> クラス. </p>
+<p><a class="el" href="classRTC_1_1OutPortConsumer.html" title="OutPortConsumer 抽象クラス.">OutPortConsumer</a></p>
+<p>データ転送に CORBA の OpenRTM::OutPortCdr インターフェースを利用し た、pull 型データフロー型を実現する <a class="el" href="classRTC_1_1OutPort.html" title="OutPort テンプレートクラス.">OutPort</a> コンシューマクラス。</p>
+<dl class="since"><dt><b>から:</b></dt><dd>0.4.0 </dd></dl>
+<hr/><h2>コンストラクタとデストラクタ</h2>
+<a class="anchor" id="a0126f5206a8ba0eaba011977a511db30"></a><!-- doxytag: member="RTC::OutPortCorbaCdrConsumer::OutPortCorbaCdrConsumer" ref="a0126f5206a8ba0eaba011977a511db30" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">DATAPORTSTATUS_ENUM RTC::OutPortCorbaCdrConsumer::OutPortCorbaCdrConsumer </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>コンストラクタ </p>
+
+</div>
+</div>
+<a class="anchor" id="a4289608c8e3e4e0de4a1f2b9e9e18f28"></a><!-- doxytag: member="RTC::OutPortCorbaCdrConsumer::~OutPortCorbaCdrConsumer" ref="a4289608c8e3e4e0de4a1f2b9e9e18f28" args="(void)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual RTC::OutPortCorbaCdrConsumer::~OutPortCorbaCdrConsumer </td>
+          <td>(</td>
+          <td class="paramtype">void&nbsp;</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>デストラクタ </p>
+
+</div>
+</div>
+<hr/><h2>関数</h2>
+<a class="anchor" id="a72889a36a5359ed449f569a9f9c64762"></a><!-- doxytag: member="RTC::OutPortCorbaCdrConsumer::get" ref="a72889a36a5359ed449f569a9f9c64762" args="(cdrMemoryStream &amp;data)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual ReturnCode RTC::OutPortCorbaCdrConsumer::get </td>
+          <td>(</td>
+          <td class="paramtype">cdrMemoryStream &amp;&nbsp;</td>
+          <td class="paramname"> <em>data</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>データを読み出す </p>
+<p>設定されたデータを読み出す。</p>
+<dl><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>data</em>&nbsp;</td><td>読み出したデータを受け取るオブジェクト</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>戻り値:</b></dt><dd>データ読み出し処理結果(読み出し成功:true、読み出し失敗:false) </dd></dl>
+
+<p><a class="el" href="classRTC_1_1OutPortConsumer.html#acd8302e6ded9e796afb047aff0bc1c0e">RTC::OutPortConsumer</a>を実装しています。</p>
+
+</div>
+</div>
+<a class="anchor" id="a2370f34a0600da08bdb57074dc9af5e7"></a><!-- doxytag: member="RTC::OutPortCorbaCdrConsumer::init" ref="a2370f34a0600da08bdb57074dc9af5e7" args="(coil::Properties &amp;prop)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void RTC::OutPortCorbaCdrConsumer::init </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classcoil_1_1Properties.html">coil::Properties</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>prop</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>設定初期化 </p>
+<p>OutPortConsumerの各種設定を行う。実装クラスでは、与えられた Propertiesから必要な情報を取得して各種設定を行う。この <a class="el" href="classRTC_1_1OutPortCorbaCdrConsumer.html#a2370f34a0600da08bdb57074dc9af5e7" title="設定初期化">init()</a> 関 数は、OutPortProvider生成直後および、接続時にそれぞれ呼ばれる可 能性がある。したがって、この関数は複数回呼ばれることを想定して記 述されるべきである。</p>
+<dl><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>prop</em>&nbsp;</td><td>設定情報 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p><a class="el" href="classRTC_1_1OutPortConsumer.html#ab746873de12fd0fb1d8bf37e79192e54">RTC::OutPortConsumer</a>を実装しています。</p>
+
+</div>
+</div>
+<a class="anchor" id="a0ce5797c8fbdeded604b75cbfc7022a1"></a><!-- doxytag: member="RTC::OutPortCorbaCdrConsumer::setBuffer" ref="a0ce5797c8fbdeded604b75cbfc7022a1" args="(CdrBufferBase *buffer)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void RTC::OutPortCorbaCdrConsumer::setBuffer </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classRTC_1_1BufferBase.html">CdrBufferBase</a> *&nbsp;</td>
+          <td class="paramname"> <em>buffer</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>バッファをセットする </p>
+<p>OutPortConsumerがデータを取り出すバッファをセットする。 すでにセットされたバッファがある場合、以前のバッファへの ポインタに対して上書きされる。 OutPortProviderはバッファの所有権を仮定していないので、 バッファの削除はユーザの責任で行わなければならない。</p>
+<dl><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>buffer</em>&nbsp;</td><td>OutPortProviderがデータを取り出すバッファへのポインタ </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p><a class="el" href="classRTC_1_1OutPortConsumer.html#a78e11b4a34b7de7a11efd06809a38c1a">RTC::OutPortConsumer</a>を実装しています。</p>
+
+</div>
+</div>
+<a class="anchor" id="a2e9d1d58f46f1c8c286fbd244251e1c8"></a><!-- doxytag: member="RTC::OutPortCorbaCdrConsumer::setListener" ref="a2e9d1d58f46f1c8c286fbd244251e1c8" args="(ConnectorInfo &amp;info, ConnectorListeners *listeners)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void RTC::OutPortCorbaCdrConsumer::setListener </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classRTC_1_1ConnectorInfo.html">ConnectorInfo</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>info</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classRTC_1_1ConnectorListeners.html">ConnectorListeners</a> *&nbsp;</td>
+          <td class="paramname"> <em>listeners</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td><code> [virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>リスナを設定する。 </p>
+<p><a class="el" href="classRTC_1_1InPort.html" title="InPort テンプレートクラス.">InPort</a> はデータ送信処理における各種イベントに対して特定のリスナ オブジェクトをコールするコールバック機構を提供する。詳細は <a class="el" href="ConnectorListener_8h.html" title="connector listener class">ConnectorListener.h</a> の <a class="el" href="classRTC_1_1ConnectorDataListener.html" title="ConnectorDataListener クラス.">ConnectorDataListener</a>, <a class="el" href="classRTC_1_1ConnectorListener.html" title="ConnectorListener クラス.">ConnectorListener</a> 等を参照のこと。OutPortCorbaCdrProvider では、以下のコールバック が提供される。</p>
+<ul>
+<li>ON_BUFFER_WRITE</li>
+<li>ON_BUFFER_FULL</li>
+<li>ON_RECEIVED</li>
+<li>ON_RECEIVER_FULL</li>
+<li>ON_SENDER_EMPTY</li>
+<li>ON_SENDER_TIMEOUT</li>
+<li>ON_SENDER_ERROR</li>
+</ul>
+<dl><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>info</em>&nbsp;</td><td>接続情報 </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>listeners</em>&nbsp;</td><td>リスナオブジェクト </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p><a class="el" href="classRTC_1_1OutPortConsumer.html#a19b78db46c31332782bf122f5e12e09b">RTC::OutPortConsumer</a>を実装しています。</p>
+
+</div>
+</div>
+<a class="anchor" id="ac0173f06be09ffc9059bda6295d47d4b"></a><!-- doxytag: member="RTC::OutPortCorbaCdrConsumer::subscribeInterface" ref="ac0173f06be09ffc9059bda6295d47d4b" args="(const SDOPackage::NVList &amp;properties)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual bool RTC::OutPortCorbaCdrConsumer::subscribeInterface </td>
+          <td>(</td>
+          <td class="paramtype">const SDOPackage::NVList &amp;&nbsp;</td>
+          <td class="paramname"> <em>properties</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>データ受信通知への登録 </p>
+<p>指定されたプロパティに基づいて、データ受信通知の受け取りに登録する。</p>
+<dl><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>properties</em>&nbsp;</td><td>登録情報</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>戻り値:</b></dt><dd>登録処理結果(登録成功:true、登録失敗:false) </dd></dl>
+
+<p><a class="el" href="classRTC_1_1OutPortConsumer.html#a84bc467a9540b1eef126feec41551328">RTC::OutPortConsumer</a>を実装しています。</p>
+
+</div>
+</div>
+<a class="anchor" id="a2191f5b9443c7941a197007b95964d0e"></a><!-- doxytag: member="RTC::OutPortCorbaCdrConsumer::unsubscribeInterface" ref="a2191f5b9443c7941a197007b95964d0e" args="(const SDOPackage::NVList &amp;properties)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void RTC::OutPortCorbaCdrConsumer::unsubscribeInterface </td>
+          <td>(</td>
+          <td class="paramtype">const SDOPackage::NVList &amp;&nbsp;</td>
+          <td class="paramname"> <em>properties</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>データ受信通知からの登録解除 </p>
+<p>データ受信通知の受け取りから登録を解除する。</p>
+<dl><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>properties</em>&nbsp;</td><td>登録解除情報 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p><a class="el" href="classRTC_1_1OutPortConsumer.html#a81f847f4cc94889811ad5638764c8a24">RTC::OutPortConsumer</a>を実装しています。</p>
+
+</div>
+</div>
+</div>
+<hr class="footer"/><address style="text-align: right;"><small>OpenRTMに対してThu May 24 23:25:20 2012に生成されました。&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.6.3 </small></address>
+</body>
+</html>

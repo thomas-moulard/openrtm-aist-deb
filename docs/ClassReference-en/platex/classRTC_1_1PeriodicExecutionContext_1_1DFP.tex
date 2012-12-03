@@ -1,0 +1,258 @@
+\section{RTC::PeriodicExecutionContext::DFP$<$ Object $>$ Class Template Reference}
+\label{classRTC_1_1PeriodicExecutionContext_1_1DFP}\index{RTC::PeriodicExecutionContext::DFP@{RTC::PeriodicExecutionContext::DFP}}
+
+
+\doxyref{DFP}{p.}{classRTC_1_1PeriodicExecutionContext_1_1DFP} class.  
+
+
+
+
+{\ttfamily \#include $<$PeriodicExecutionContext.h$>$}
+
+Inheritance diagram for RTC::PeriodicExecutionContext::DFP$<$ Object $>$:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2cm]{classRTC_1_1PeriodicExecutionContext_1_1DFP}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf DFP} (Object obj, ExecutionContextHandle\_\-t id)
+\begin{DoxyCompactList}\small\item\em Default constructor. \item\end{DoxyCompactList}\item 
+void {\bf on\_\-startup} (void)
+\begin{DoxyCompactList}\small\item\em Function to be invoked when ExecutionContext starts. \item\end{DoxyCompactList}\item 
+void {\bf on\_\-shutdown} (void)
+\begin{DoxyCompactList}\small\item\em Function to be invoked when ExecutionContext stops. \item\end{DoxyCompactList}\item 
+void {\bf on\_\-activated} (const {\bf ECStates} \&st)
+\begin{DoxyCompactList}\small\item\em Function to be invoked when RT-\/Component was activated. \item\end{DoxyCompactList}\item 
+void {\bf on\_\-deactivated} (const {\bf ECStates} \&st)
+\begin{DoxyCompactList}\small\item\em Function to be invoked when RT-\/Component was deactivated. \item\end{DoxyCompactList}\item 
+void {\bf on\_\-aborting} (const {\bf ECStates} \&st)
+\begin{DoxyCompactList}\small\item\em Function to be invoked when RT-\/Component occured error. \item\end{DoxyCompactList}\item 
+void {\bf on\_\-error} (const {\bf ECStates} \&st)
+\begin{DoxyCompactList}\small\item\em Function to be invoked while RT-\/Component is in the error state. \item\end{DoxyCompactList}\item 
+void {\bf on\_\-reset} (const {\bf ECStates} \&st)
+\begin{DoxyCompactList}\small\item\em Function to be invoked when RT-\/Component is reset. \item\end{DoxyCompactList}\item 
+void {\bf on\_\-execute} (const {\bf ECStates} \&st)
+\begin{DoxyCompactList}\small\item\em Periodic exection function while running RT-\/Component. \item\end{DoxyCompactList}\item 
+void {\bf on\_\-state\_\-update} (const {\bf ECStates} \&st)
+\begin{DoxyCompactList}\small\item\em Function to be invoked periodically while RT-\/Component executes. \item\end{DoxyCompactList}\item 
+void {\bf on\_\-rate\_\-changed} (void)
+\begin{DoxyCompactList}\small\item\em Function to be invoked when the execution cycles of ExecutionContext is changed. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Object {\bf m\_\-obj}
+\begin{DoxyCompactList}\small\item\em The target component to manage. \item\end{DoxyCompactList}\item 
+bool {\bf m\_\-active}
+\begin{DoxyCompactList}\small\item\em State flag of the target component to manage. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$class Object$>$ class RTC::PeriodicExecutionContext::DFP$<$ Object $>$}
+
+\doxyref{DFP}{p.}{classRTC_1_1PeriodicExecutionContext_1_1DFP} class. Template class to invoke DataFlowParticipant registered in the participant list.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em Object}]Type of the target component to manage\end{DoxyParams}
+\begin{DoxySince}{Since}
+0.4.0 
+\end{DoxySince}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{RTC::PeriodicExecutionContext::DFP@{RTC::PeriodicExecutionContext::DFP}!DFP@{DFP}}
+\index{DFP@{DFP}!RTC::PeriodicExecutionContext::DFP@{RTC::PeriodicExecutionContext::DFP}}
+\subsubsection[{DFP}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Object$>$ {\bf RTC::PeriodicExecutionContext::DFP}$<$ Object $>$::{\bf DFP} (Object {\em obj}, \/  ExecutionContextHandle\_\-t {\em id})\hspace{0.3cm}{\ttfamily  [inline]}}\label{classRTC_1_1PeriodicExecutionContext_1_1DFP_a3a9221720e97918631cb49268e16058b}
+
+
+Default constructor. 
+
+Default constructor
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em obj}]The target component to manage \item[{\em id}]ID of participating ExecutionContext \end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\index{RTC::PeriodicExecutionContext::DFP@{RTC::PeriodicExecutionContext::DFP}!on\_\-aborting@{on\_\-aborting}}
+\index{on\_\-aborting@{on\_\-aborting}!RTC::PeriodicExecutionContext::DFP@{RTC::PeriodicExecutionContext::DFP}}
+\subsubsection[{on\_\-aborting}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Object$>$ void {\bf RTC::PeriodicExecutionContext::DFP}$<$ Object $>$::on\_\-aborting (const {\bf ECStates} \& {\em st})\hspace{0.3cm}{\ttfamily  [inline, virtual]}}\label{classRTC_1_1PeriodicExecutionContext_1_1DFP_a56b2f4893a7fd424fc744892581057d7}
+
+
+Function to be invoked when RT-\/Component occured error. 
+
+When the given ExecutionContext transits the Error state, on\_\-aborting of the participation component will be invoked.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em st}]The current state of the target RT-\/Component \end{DoxyParams}
+
+
+Implements {\bf RTC::PeriodicExecutionContext::DFPBase} \doxyref{}{p.}{classRTC_1_1PeriodicExecutionContext_1_1DFPBase_a4326e1e3a6fd23cd534c37016a9d6ff6}.
+
+\index{RTC::PeriodicExecutionContext::DFP@{RTC::PeriodicExecutionContext::DFP}!on\_\-activated@{on\_\-activated}}
+\index{on\_\-activated@{on\_\-activated}!RTC::PeriodicExecutionContext::DFP@{RTC::PeriodicExecutionContext::DFP}}
+\subsubsection[{on\_\-activated}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Object$>$ void {\bf RTC::PeriodicExecutionContext::DFP}$<$ Object $>$::on\_\-activated (const {\bf ECStates} \& {\em st})\hspace{0.3cm}{\ttfamily  [inline, virtual]}}\label{classRTC_1_1PeriodicExecutionContext_1_1DFP_aab354f4aec81a3de94c897d42a08814c}
+
+
+Function to be invoked when RT-\/Component was activated. 
+
+When the given ExecutionContext transits to the Active state, on\_\-activated of the participation component will be invoked. If it fails, the state machine transits to the Errot state.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em st}]The current state of the target RT-\/Component \end{DoxyParams}
+
+
+Implements {\bf RTC::PeriodicExecutionContext::DFPBase} \doxyref{}{p.}{classRTC_1_1PeriodicExecutionContext_1_1DFPBase_a7617ab4164f5516ee411a23273577148}.
+
+\index{RTC::PeriodicExecutionContext::DFP@{RTC::PeriodicExecutionContext::DFP}!on\_\-deactivated@{on\_\-deactivated}}
+\index{on\_\-deactivated@{on\_\-deactivated}!RTC::PeriodicExecutionContext::DFP@{RTC::PeriodicExecutionContext::DFP}}
+\subsubsection[{on\_\-deactivated}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Object$>$ void {\bf RTC::PeriodicExecutionContext::DFP}$<$ Object $>$::on\_\-deactivated (const {\bf ECStates} \& {\em st})\hspace{0.3cm}{\ttfamily  [inline, virtual]}}\label{classRTC_1_1PeriodicExecutionContext_1_1DFP_aa0b4398840866335bfd3a35aa2a1378c}
+
+
+Function to be invoked when RT-\/Component was deactivated. 
+
+When the given ExecutionContext transits the Deactivate state, on\_\-deactivated of the participation component will be invoked.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em st}]The current state of the target RT-\/Component \end{DoxyParams}
+
+
+Implements {\bf RTC::PeriodicExecutionContext::DFPBase} \doxyref{}{p.}{classRTC_1_1PeriodicExecutionContext_1_1DFPBase_afdb8f5efa070e18e5aecf34e117c4916}.
+
+\index{RTC::PeriodicExecutionContext::DFP@{RTC::PeriodicExecutionContext::DFP}!on\_\-error@{on\_\-error}}
+\index{on\_\-error@{on\_\-error}!RTC::PeriodicExecutionContext::DFP@{RTC::PeriodicExecutionContext::DFP}}
+\subsubsection[{on\_\-error}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Object$>$ void {\bf RTC::PeriodicExecutionContext::DFP}$<$ Object $>$::on\_\-error (const {\bf ECStates} \& {\em st})\hspace{0.3cm}{\ttfamily  [inline, virtual]}}\label{classRTC_1_1PeriodicExecutionContext_1_1DFP_a1921bae9d427aa285566e15bd08e6500}
+
+
+Function to be invoked while RT-\/Component is in the error state. 
+
+While the given RT-\/Component is in the Error state, its on\_\-aborting will be periodically invoked.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em st}]The current state of the target RT-\/Component \end{DoxyParams}
+
+
+Implements {\bf RTC::PeriodicExecutionContext::DFPBase} \doxyref{}{p.}{classRTC_1_1PeriodicExecutionContext_1_1DFPBase_aabc82635a64722f77fa359a4f6308122}.
+
+\index{RTC::PeriodicExecutionContext::DFP@{RTC::PeriodicExecutionContext::DFP}!on\_\-execute@{on\_\-execute}}
+\index{on\_\-execute@{on\_\-execute}!RTC::PeriodicExecutionContext::DFP@{RTC::PeriodicExecutionContext::DFP}}
+\subsubsection[{on\_\-execute}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Object$>$ void {\bf RTC::PeriodicExecutionContext::DFP}$<$ Object $>$::on\_\-execute (const {\bf ECStates} \& {\em st})\hspace{0.3cm}{\ttfamily  [inline, virtual]}}\label{classRTC_1_1PeriodicExecutionContext_1_1DFP_ab44ccec81e068726d371929b0b955a25}
+
+
+Periodic exection function while running RT-\/Component. 
+
+If the given RT-\/Component is in the Active state and ExecutionContext is in the Running state, on\_\-execute of the given component will be invoked periodically at the specified execution cycle. If it fails (the return value is other than RTC\_\-OK), its state transits to the Errot state.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em st}]The current state of the target RT-\/Component \end{DoxyParams}
+
+
+Implements {\bf RTC::PeriodicExecutionContext::DFPBase} \doxyref{}{p.}{classRTC_1_1PeriodicExecutionContext_1_1DFPBase_a4ac335580091c6300144717ed1ed4555}.
+
+\index{RTC::PeriodicExecutionContext::DFP@{RTC::PeriodicExecutionContext::DFP}!on\_\-rate\_\-changed@{on\_\-rate\_\-changed}}
+\index{on\_\-rate\_\-changed@{on\_\-rate\_\-changed}!RTC::PeriodicExecutionContext::DFP@{RTC::PeriodicExecutionContext::DFP}}
+\subsubsection[{on\_\-rate\_\-changed}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Object$>$ void {\bf RTC::PeriodicExecutionContext::DFP}$<$ Object $>$::on\_\-rate\_\-changed (void)\hspace{0.3cm}{\ttfamily  [inline, virtual]}}\label{classRTC_1_1PeriodicExecutionContext_1_1DFP_a283b40d3a75a439b2a0ac4f7e2740736}
+
+
+Function to be invoked when the execution cycles of ExecutionContext is changed. 
+
+When the execution cycle of the participating ExecutionContext is changed, invoke on\_\-rate\_\-changed of the target component will be invoked. 
+
+Implements {\bf RTC::PeriodicExecutionContext::DFPBase} \doxyref{}{p.}{classRTC_1_1PeriodicExecutionContext_1_1DFPBase_a72fe285405c24be95d14f8c73ed993be}.
+
+
+
+Referenced by RTC::PeriodicExecutionContext::invoke\_\-on\_\-rate\_\-changed::operator()().
+
+\index{RTC::PeriodicExecutionContext::DFP@{RTC::PeriodicExecutionContext::DFP}!on\_\-reset@{on\_\-reset}}
+\index{on\_\-reset@{on\_\-reset}!RTC::PeriodicExecutionContext::DFP@{RTC::PeriodicExecutionContext::DFP}}
+\subsubsection[{on\_\-reset}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Object$>$ void {\bf RTC::PeriodicExecutionContext::DFP}$<$ Object $>$::on\_\-reset (const {\bf ECStates} \& {\em st})\hspace{0.3cm}{\ttfamily  [inline, virtual]}}\label{classRTC_1_1PeriodicExecutionContext_1_1DFP_adeb73de058b07b0abc6570c3e639cc5b}
+
+
+Function to be invoked when RT-\/Component is reset. 
+
+When the target RT-\/Component is reset, invoke on\_\-reset of the target component to manage.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em st}]The current state of the target RT-\/Component \end{DoxyParams}
+
+
+Implements {\bf RTC::PeriodicExecutionContext::DFPBase} \doxyref{}{p.}{classRTC_1_1PeriodicExecutionContext_1_1DFPBase_ad26d3a6118ce1f2b97527af86a8bb14d}.
+
+\index{RTC::PeriodicExecutionContext::DFP@{RTC::PeriodicExecutionContext::DFP}!on\_\-shutdown@{on\_\-shutdown}}
+\index{on\_\-shutdown@{on\_\-shutdown}!RTC::PeriodicExecutionContext::DFP@{RTC::PeriodicExecutionContext::DFP}}
+\subsubsection[{on\_\-shutdown}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Object$>$ void {\bf RTC::PeriodicExecutionContext::DFP}$<$ Object $>$::on\_\-shutdown (void)\hspace{0.3cm}{\ttfamily  [inline, virtual]}}\label{classRTC_1_1PeriodicExecutionContext_1_1DFP_a312588691ba1da141cae496d74bb2b7f}
+
+
+Function to be invoked when ExecutionContext stops. 
+
+When the given ExecutionContext transits from Running to Stopped, on\_\-shutdown of the participation component will be invoked. 
+
+Implements {\bf RTC::PeriodicExecutionContext::DFPBase} \doxyref{}{p.}{classRTC_1_1PeriodicExecutionContext_1_1DFPBase_a9acf5ba2d252539b0d853e5492177a1b}.
+
+
+
+Referenced by RTC::PeriodicExecutionContext::invoke\_\-on\_\-shutdown::operator()().
+
+\index{RTC::PeriodicExecutionContext::DFP@{RTC::PeriodicExecutionContext::DFP}!on\_\-startup@{on\_\-startup}}
+\index{on\_\-startup@{on\_\-startup}!RTC::PeriodicExecutionContext::DFP@{RTC::PeriodicExecutionContext::DFP}}
+\subsubsection[{on\_\-startup}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Object$>$ void {\bf RTC::PeriodicExecutionContext::DFP}$<$ Object $>$::on\_\-startup (void)\hspace{0.3cm}{\ttfamily  [inline, virtual]}}\label{classRTC_1_1PeriodicExecutionContext_1_1DFP_a79b7b4a99f8d2cd0dc407c1b326dcb85}
+
+
+Function to be invoked when ExecutionContext starts. 
+
+When the given ExecutionContext transits from Stopped to Running, on\_\-startup of the participation component will be invoked. 
+
+Implements {\bf RTC::PeriodicExecutionContext::DFPBase} \doxyref{}{p.}{classRTC_1_1PeriodicExecutionContext_1_1DFPBase_a761ebe484557229fe21a6b6488567d2f}.
+
+
+
+Referenced by RTC::PeriodicExecutionContext::invoke\_\-on\_\-startup::operator()().
+
+\index{RTC::PeriodicExecutionContext::DFP@{RTC::PeriodicExecutionContext::DFP}!on\_\-state\_\-update@{on\_\-state\_\-update}}
+\index{on\_\-state\_\-update@{on\_\-state\_\-update}!RTC::PeriodicExecutionContext::DFP@{RTC::PeriodicExecutionContext::DFP}}
+\subsubsection[{on\_\-state\_\-update}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Object$>$ void {\bf RTC::PeriodicExecutionContext::DFP}$<$ Object $>$::on\_\-state\_\-update (const {\bf ECStates} \& {\em st})\hspace{0.3cm}{\ttfamily  [inline, virtual]}}\label{classRTC_1_1PeriodicExecutionContext_1_1DFP_a0689e39bbc51b091833c3cf5ef070297}
+
+
+Function to be invoked periodically while RT-\/Component executes. 
+
+When the target RT-\/Component to manage is in the Active state and ExecutionContext is the Running, invoke on\_\-state\_\-update of the target component to manage periodically in specified execution cycle. If it fails (the return value is other than RTC\_\-OK), its state transits to the Errot state.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em st}]The current state of the target RT-\/Component \end{DoxyParams}
+
+
+Implements {\bf RTC::PeriodicExecutionContext::DFPBase} \doxyref{}{p.}{classRTC_1_1PeriodicExecutionContext_1_1DFPBase_a840339510d7a4d0eef17f495638bbbc3}.
+
+
+
+\subsection{Member Data Documentation}
+\index{RTC::PeriodicExecutionContext::DFP@{RTC::PeriodicExecutionContext::DFP}!m\_\-active@{m\_\-active}}
+\index{m\_\-active@{m\_\-active}!RTC::PeriodicExecutionContext::DFP@{RTC::PeriodicExecutionContext::DFP}}
+\subsubsection[{m\_\-active}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Object$>$ bool {\bf RTC::PeriodicExecutionContext::DFP}$<$ Object $>$::{\bf m\_\-active}}\label{classRTC_1_1PeriodicExecutionContext_1_1DFP_a26c3f482f8c0fc239af8b180aa8de4de}
+
+
+State flag of the target component to manage. 
+
+\index{RTC::PeriodicExecutionContext::DFP@{RTC::PeriodicExecutionContext::DFP}!m\_\-obj@{m\_\-obj}}
+\index{m\_\-obj@{m\_\-obj}!RTC::PeriodicExecutionContext::DFP@{RTC::PeriodicExecutionContext::DFP}}
+\subsubsection[{m\_\-obj}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Object$>$ Object {\bf RTC::PeriodicExecutionContext::DFP}$<$ Object $>$::{\bf m\_\-obj}}\label{classRTC_1_1PeriodicExecutionContext_1_1DFP_a12f00ab69fa3e68cb5b0ee83dbe010af}
+
+
+The target component to manage. 
+
+
+
+Referenced by RTC::PeriodicExecutionContext::DFP$<$ OpenRTM::DataFlowComponent\_\-var $>$::on\_\-aborting(), RTC::PeriodicExecutionContext::DFP$<$ OpenRTM::DataFlowComponent\_\-var $>$::on\_\-activated(), RTC::PeriodicExecutionContext::DFP$<$ OpenRTM::DataFlowComponent\_\-var $>$::on\_\-deactivated(), RTC::PeriodicExecutionContext::DFP$<$ OpenRTM::DataFlowComponent\_\-var $>$::on\_\-error(), RTC::PeriodicExecutionContext::DFP$<$ OpenRTM::DataFlowComponent\_\-var $>$::on\_\-execute(), RTC::PeriodicExecutionContext::DFP$<$ OpenRTM::DataFlowComponent\_\-var $>$::on\_\-rate\_\-changed(), RTC::PeriodicExecutionContext::DFP$<$ OpenRTM::DataFlowComponent\_\-var $>$::on\_\-reset(), RTC::PeriodicExecutionContext::DFP$<$ OpenRTM::DataFlowComponent\_\-var $>$::on\_\-shutdown(), RTC::PeriodicExecutionContext::DFP$<$ OpenRTM::DataFlowComponent\_\-var $>$::on\_\-startup(), RTC::PeriodicExecutionContext::DFP$<$ OpenRTM::DataFlowComponent\_\-var $>$::on\_\-state\_\-update(), and RTC::PeriodicExecutionContext::Comp::operator=().
+

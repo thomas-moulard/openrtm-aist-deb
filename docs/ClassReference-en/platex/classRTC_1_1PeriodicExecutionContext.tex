@@ -1,0 +1,520 @@
+\section{RTC::PeriodicExecutionContext Class Reference}
+\label{classRTC_1_1PeriodicExecutionContext}\index{RTC::PeriodicExecutionContext@{RTC::PeriodicExecutionContext}}
+
+
+\doxyref{PeriodicExecutionContext}{p.}{classRTC_1_1PeriodicExecutionContext} class.  
+
+
+
+
+{\ttfamily \#include $<$PeriodicExecutionContext.h$>$}
+
+Inheritance diagram for RTC::PeriodicExecutionContext:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3cm]{classRTC_1_1PeriodicExecutionContext}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct {\bf Comp}
+\begin{DoxyCompactList}\small\item\em The structure for the component management. \item\end{DoxyCompactList}\item 
+class {\bf DFP}
+\begin{DoxyCompactList}\small\item\em \doxyref{DFP}{p.}{classRTC_1_1PeriodicExecutionContext_1_1DFP} class. \item\end{DoxyCompactList}\item 
+class {\bf DFPBase}
+\begin{DoxyCompactList}\small\item\em \doxyref{DFPBase}{p.}{classRTC_1_1PeriodicExecutionContext_1_1DFPBase} class. \item\end{DoxyCompactList}\item 
+struct {\bf find\_\-comp}
+\begin{DoxyCompactList}\small\item\em Functor to find the component. \item\end{DoxyCompactList}\item 
+class {\bf find\_\-participant}
+\item 
+struct {\bf invoke\_\-on\_\-rate\_\-changed}
+\begin{DoxyCompactList}\small\item\em Functor to invoke on\_\-rate\_\-changed. \item\end{DoxyCompactList}\item 
+struct {\bf invoke\_\-on\_\-shutdown}
+\begin{DoxyCompactList}\small\item\em Functor to invoke on\_\-shutdown. \item\end{DoxyCompactList}\item 
+struct {\bf invoke\_\-on\_\-startup}
+\begin{DoxyCompactList}\small\item\em Functor to invoke on\_\-startup. \item\end{DoxyCompactList}\item 
+struct {\bf invoke\_\-worker}
+\begin{DoxyCompactList}\small\item\em Functor to invoke worker. \item\end{DoxyCompactList}\item 
+struct {\bf Worker}
+\begin{DoxyCompactList}\small\item\em Condition variable class for worker. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf PeriodicExecutionContext} ()
+\begin{DoxyCompactList}\small\item\em Default Constructor. \item\end{DoxyCompactList}\item 
+{\bf PeriodicExecutionContext} (OpenRTM::DataFlowComponent\_\-ptr owner, double rate=1000.0)
+\begin{DoxyCompactList}\small\item\em Constructor. \item\end{DoxyCompactList}\item 
+virtual {\bf $\sim$PeriodicExecutionContext} (void)
+\begin{DoxyCompactList}\small\item\em Destructor. \item\end{DoxyCompactList}\item 
+virtual ExecutionContextService\_\-ptr {\bf getObjRef} (void)
+\begin{DoxyCompactList}\small\item\em Get the reference to the CORBA object. \item\end{DoxyCompactList}\item 
+virtual int {\bf open} (void $\ast$args)
+\begin{DoxyCompactList}\small\item\em Generate internal activity thread for ExecutionContext. \item\end{DoxyCompactList}\item 
+virtual int {\bf svc} (void)
+\begin{DoxyCompactList}\small\item\em Thread execution function for ExecutionContext. \item\end{DoxyCompactList}\item 
+virtual int {\bf close} (unsigned long flags)
+\begin{DoxyCompactList}\small\item\em Thread execution function for ExecutionContext. \item\end{DoxyCompactList}\item 
+virtual CORBA::Boolean {\bf is\_\-running} (void)  throw (CORBA::SystemException)
+\begin{DoxyCompactList}\small\item\em Check for ExecutionContext running state. \item\end{DoxyCompactList}\item 
+virtual ReturnCode\_\-t {\bf start} (void)  throw (CORBA::SystemException)
+\begin{DoxyCompactList}\small\item\em Start the ExecutionContext. \item\end{DoxyCompactList}\item 
+virtual ReturnCode\_\-t {\bf stop} (void)  throw (CORBA::SystemException)
+\begin{DoxyCompactList}\small\item\em Stop the ExecutionContext. \item\end{DoxyCompactList}\item 
+virtual CORBA::Double {\bf get\_\-rate} (void)  throw (CORBA::SystemException)
+\begin{DoxyCompactList}\small\item\em Get execution rate(Hz) of ExecutionContext. \item\end{DoxyCompactList}\item 
+virtual ReturnCode\_\-t {\bf set\_\-rate} (CORBA::Double rate)  throw (CORBA::SystemException)
+\begin{DoxyCompactList}\small\item\em Set execution rate(Hz) of ExecutionContext. \item\end{DoxyCompactList}\item 
+virtual ReturnCode\_\-t {\bf activate\_\-component} (LightweightRTObject\_\-ptr comp)  throw (CORBA::SystemException)
+\begin{DoxyCompactList}\small\item\em Activate an RT-\/component. \item\end{DoxyCompactList}\item 
+virtual ReturnCode\_\-t {\bf deactivate\_\-component} (LightweightRTObject\_\-ptr comp)  throw (CORBA::SystemException)
+\begin{DoxyCompactList}\small\item\em Deactivate an RT-\/component. \item\end{DoxyCompactList}\item 
+virtual ReturnCode\_\-t {\bf reset\_\-component} (LightweightRTObject\_\-ptr comp)  throw (CORBA::SystemException)
+\begin{DoxyCompactList}\small\item\em Reset the RT-\/component. \item\end{DoxyCompactList}\item 
+virtual LifeCycleState {\bf get\_\-component\_\-state} (LightweightRTObject\_\-ptr comp)  throw (CORBA::SystemException)
+\begin{DoxyCompactList}\small\item\em Get RT-\/component's state. \item\end{DoxyCompactList}\item 
+virtual ExecutionKind {\bf get\_\-kind} (void)  throw (CORBA::SystemException)
+\begin{DoxyCompactList}\small\item\em Get the ExecutionKind. \item\end{DoxyCompactList}\item 
+virtual ReturnCode\_\-t {\bf add\_\-component} (LightweightRTObject\_\-ptr comp)  throw (CORBA::SystemException)
+\begin{DoxyCompactList}\small\item\em Add an RT-\/component. \item\end{DoxyCompactList}\item 
+virtual RTC::ReturnCode\_\-t {\bf bindComponent} ({\bf RTObject\_\-impl} $\ast$rtc)
+\begin{DoxyCompactList}\small\item\em Bind the component. \item\end{DoxyCompactList}\item 
+virtual ReturnCode\_\-t {\bf remove\_\-component} (LightweightRTObject\_\-ptr comp)  throw (CORBA::SystemException)
+\begin{DoxyCompactList}\small\item\em Remove the RT-\/Component from participant list. \item\end{DoxyCompactList}\item 
+virtual ExecutionContextProfile $\ast$ {\bf get\_\-profile} (void)  throw (CORBA::SystemException)
+\begin{DoxyCompactList}\small\item\em Get the ExecutionContextProfile. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef LifeCycleState {\bf ExecContextState}
+\item 
+typedef {\bf RTC\_\-Utils::StateHolder}$<$ {\bf ExecContextState} $>$ {\bf ECStates}
+\item 
+typedef std::vector$<$ {\bf Comp} $>$::iterator {\bf CompItr}
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std::vector$<$ {\bf Comp} $>$ {\bf m\_\-comps}
+\begin{DoxyCompactList}\small\item\em List of the participating component. \item\end{DoxyCompactList}\item 
+{\bf Logger} {\bf rtclog}
+\begin{DoxyCompactList}\small\item\em \doxyref{Logger}{p.}{classRTC_1_1Logger} stream. \item\end{DoxyCompactList}\item 
+bool {\bf m\_\-running}
+\begin{DoxyCompactList}\small\item\em The running state of ExecutionContext true: running, false: stopped. \item\end{DoxyCompactList}\item 
+bool {\bf m\_\-svc}
+\begin{DoxyCompactList}\small\item\em The thread running flag of ExecutionContext. \item\end{DoxyCompactList}\item 
+{\bf Worker} {\bf m\_\-worker}
+\begin{DoxyCompactList}\small\item\em A condition variable for external triggered worker. \item\end{DoxyCompactList}\item 
+ExecutionContextProfile {\bf m\_\-profile}
+\begin{DoxyCompactList}\small\item\em ExecutionContextProfile. \item\end{DoxyCompactList}\item 
+{\bf coil::Mutex} {\bf m\_\-profileMutex}
+\item 
+{\bf coil::TimeValue} {\bf m\_\-period}
+\begin{DoxyCompactList}\small\item\em Execution cycle of ExecutionContext. \item\end{DoxyCompactList}\item 
+ExecutionContextService\_\-var {\bf m\_\-ref}
+\begin{DoxyCompactList}\small\item\em Reference to ExecutionContextService object. \item\end{DoxyCompactList}\item 
+bool {\bf m\_\-nowait}
+\begin{DoxyCompactList}\small\item\em Flag of ExecutionContext to run immediately (to run without waiting). \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\doxyref{PeriodicExecutionContext}{p.}{classRTC_1_1PeriodicExecutionContext} class. Periodic Sampled Data Processing (for the execution cycles) ExecutionContext class
+
+\begin{DoxySince}{Since}
+0.4.0 
+\end{DoxySince}
+
+
+\subsection{Member Typedef Documentation}
+\index{RTC::PeriodicExecutionContext@{RTC::PeriodicExecutionContext}!CompItr@{CompItr}}
+\index{CompItr@{CompItr}!RTC::PeriodicExecutionContext@{RTC::PeriodicExecutionContext}}
+\subsubsection[{CompItr}]{\setlength{\rightskip}{0pt plus 5cm}typedef std::vector$<${\bf Comp}$>$::iterator {\bf RTC::PeriodicExecutionContext::CompItr}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC_1_1PeriodicExecutionContext_a4fadd7e24d81aa50888e2645eaaf9dcc}
+\index{RTC::PeriodicExecutionContext@{RTC::PeriodicExecutionContext}!ECStates@{ECStates}}
+\index{ECStates@{ECStates}!RTC::PeriodicExecutionContext@{RTC::PeriodicExecutionContext}}
+\subsubsection[{ECStates}]{\setlength{\rightskip}{0pt plus 5cm}typedef {\bf RTC\_\-Utils::StateHolder}$<${\bf ExecContextState}$>$ {\bf RTC::PeriodicExecutionContext::ECStates}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC_1_1PeriodicExecutionContext_abb9def031be9f01dc680c0e709adf96c}
+\index{RTC::PeriodicExecutionContext@{RTC::PeriodicExecutionContext}!ExecContextState@{ExecContextState}}
+\index{ExecContextState@{ExecContextState}!RTC::PeriodicExecutionContext@{RTC::PeriodicExecutionContext}}
+\subsubsection[{ExecContextState}]{\setlength{\rightskip}{0pt plus 5cm}typedef LifeCycleState {\bf RTC::PeriodicExecutionContext::ExecContextState}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC_1_1PeriodicExecutionContext_ab1ac4b3e0f9db41d78ac4eee5e9ca735}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{RTC::PeriodicExecutionContext@{RTC::PeriodicExecutionContext}!PeriodicExecutionContext@{PeriodicExecutionContext}}
+\index{PeriodicExecutionContext@{PeriodicExecutionContext}!RTC::PeriodicExecutionContext@{RTC::PeriodicExecutionContext}}
+\subsubsection[{PeriodicExecutionContext}]{\setlength{\rightskip}{0pt plus 5cm}RTC::PeriodicExecutionContext::PeriodicExecutionContext ()}\label{classRTC_1_1PeriodicExecutionContext_a456938dcac9dede5fc9a66c9ed8566ce}
+
+
+Default Constructor. 
+
+Default Constructor Set the following items to profile.
+\begin{DoxyItemize}
+\item kind : PERIODIC
+\item rate : 0.0 
+\end{DoxyItemize}\index{RTC::PeriodicExecutionContext@{RTC::PeriodicExecutionContext}!PeriodicExecutionContext@{PeriodicExecutionContext}}
+\index{PeriodicExecutionContext@{PeriodicExecutionContext}!RTC::PeriodicExecutionContext@{RTC::PeriodicExecutionContext}}
+\subsubsection[{PeriodicExecutionContext}]{\setlength{\rightskip}{0pt plus 5cm}RTC::PeriodicExecutionContext::PeriodicExecutionContext (OpenRTM::DataFlowComponent\_\-ptr {\em owner}, \/  double {\em rate} = {\ttfamily 1000.0})}\label{classRTC_1_1PeriodicExecutionContext_ad439b03c902fe7536e866a45979bf865}
+
+
+Constructor. 
+
+Constructor Set the configuration value to profile.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em owner}]The owner of this Executioncontext \item[{\em rate}]Execution cycle(Hz)(The default value:1000) \end{DoxyParams}
+\index{RTC::PeriodicExecutionContext@{RTC::PeriodicExecutionContext}!$\sim$PeriodicExecutionContext@{$\sim$PeriodicExecutionContext}}
+\index{$\sim$PeriodicExecutionContext@{$\sim$PeriodicExecutionContext}!RTC::PeriodicExecutionContext@{RTC::PeriodicExecutionContext}}
+\subsubsection[{$\sim$PeriodicExecutionContext}]{\setlength{\rightskip}{0pt plus 5cm}virtual RTC::PeriodicExecutionContext::$\sim$PeriodicExecutionContext (void)\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classRTC_1_1PeriodicExecutionContext_a60e57304d18adceef55e445c7076ec8d}
+
+
+Destructor. 
+
+Destructor 
+
+\subsection{Member Function Documentation}
+\index{RTC::PeriodicExecutionContext@{RTC::PeriodicExecutionContext}!activate\_\-component@{activate\_\-component}}
+\index{activate\_\-component@{activate\_\-component}!RTC::PeriodicExecutionContext@{RTC::PeriodicExecutionContext}}
+\subsubsection[{activate\_\-component}]{\setlength{\rightskip}{0pt plus 5cm}virtual ReturnCode\_\-t RTC::PeriodicExecutionContext::activate\_\-component (LightweightRTObject\_\-ptr {\em comp})  throw (CORBA::SystemException)\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classRTC_1_1PeriodicExecutionContext_af61b61f5bde7eef6aa60d349f589cd4c}
+
+
+Activate an RT-\/component. 
+
+The given participant \doxyref{RTC}{p.}{namespaceRTC} is Inactive and is therefore not being invoked according to the execution context’s execution kind. This operation shall cause the \doxyref{RTC}{p.}{namespaceRTC} to transition to the Active state such that it may subsequently be invoked in this execution context. The callback on\_\-activate shall be called as a result of calling this operation. This operation shall not return until the callback has returned, and shall result in an error if the callback does.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em comp}]The target RT-\/Component for activation\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The return code of ReturnCode\_\-t type 
+\end{DoxyReturn}
+\index{RTC::PeriodicExecutionContext@{RTC::PeriodicExecutionContext}!add\_\-component@{add\_\-component}}
+\index{add\_\-component@{add\_\-component}!RTC::PeriodicExecutionContext@{RTC::PeriodicExecutionContext}}
+\subsubsection[{add\_\-component}]{\setlength{\rightskip}{0pt plus 5cm}virtual ReturnCode\_\-t RTC::PeriodicExecutionContext::add\_\-component (LightweightRTObject\_\-ptr {\em comp})  throw (CORBA::SystemException)\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classRTC_1_1PeriodicExecutionContext_a332878d08bb328b719bf16d72291443b}
+
+
+Add an RT-\/component. 
+
+The operation causes the given \doxyref{RTC}{p.}{namespaceRTC} to begin participating in the execution context. The newly added \doxyref{RTC}{p.}{namespaceRTC} will receive a call to LightweightRTComponent::attach\_\-context and then enter the Inactive state. BAD\_\-PARAMETER will be invoked, if the given RT-\/Component is null or if the given RT-\/Component is other than DataFlowComponent.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em comp}]The target RT-\/Component for add\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The return code of ReturnCode\_\-t type 
+\end{DoxyReturn}
+\index{RTC::PeriodicExecutionContext@{RTC::PeriodicExecutionContext}!bindComponent@{bindComponent}}
+\index{bindComponent@{bindComponent}!RTC::PeriodicExecutionContext@{RTC::PeriodicExecutionContext}}
+\subsubsection[{bindComponent}]{\setlength{\rightskip}{0pt plus 5cm}virtual RTC::ReturnCode\_\-t RTC::PeriodicExecutionContext::bindComponent ({\bf RTObject\_\-impl} $\ast$ {\em rtc})\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classRTC_1_1PeriodicExecutionContext_aac9d423142bf3b8d219740a4f202b033}
+
+
+Bind the component. 
+
+Bind the component.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em rtc}]RT-\/Component's instances \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The return code of ReturnCode\_\-t type 
+\end{DoxyReturn}
+
+
+Implements {\bf RTC::ExecutionContextBase} \doxyref{}{p.}{classRTC_1_1ExecutionContextBase_a63f6427cfe69b5dbc92fa192e26bcf7e}.
+
+\index{RTC::PeriodicExecutionContext@{RTC::PeriodicExecutionContext}!close@{close}}
+\index{close@{close}!RTC::PeriodicExecutionContext@{RTC::PeriodicExecutionContext}}
+\subsubsection[{close}]{\setlength{\rightskip}{0pt plus 5cm}virtual int RTC::PeriodicExecutionContext::close (unsigned long {\em flags})\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classRTC_1_1PeriodicExecutionContext_a61e63a2d5f7aac790af5e105000df6fd}
+
+
+Thread execution function for ExecutionContext. 
+
+This function is invoked when activity thread for ExecutionContext exits. Deactivate the component object and notify it to manager. This is \doxyref{coil::Task}{p.}{classcoil_1_1Task} class method's override.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em flags}]Flag of the close\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The close result 
+\end{DoxyReturn}
+
+
+Reimplemented from {\bf coil::Task} \doxyref{}{p.}{classcoil_1_1Task_aa3bfcb01e9d162e4053a4c7312673879}.
+
+\index{RTC::PeriodicExecutionContext@{RTC::PeriodicExecutionContext}!deactivate\_\-component@{deactivate\_\-component}}
+\index{deactivate\_\-component@{deactivate\_\-component}!RTC::PeriodicExecutionContext@{RTC::PeriodicExecutionContext}}
+\subsubsection[{deactivate\_\-component}]{\setlength{\rightskip}{0pt plus 5cm}virtual ReturnCode\_\-t RTC::PeriodicExecutionContext::deactivate\_\-component (LightweightRTObject\_\-ptr {\em comp})  throw (CORBA::SystemException)\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classRTC_1_1PeriodicExecutionContext_ad7f3b97e60011ea1ac53a7025c8c50e1}
+
+
+Deactivate an RT-\/component. 
+
+The given \doxyref{RTC}{p.}{namespaceRTC} is Active in the execution context. Cause it to transition to the Inactive state such that it will not be subsequently invoked from the context unless and until it is activated again. The callback on\_\-deactivate shall be called as a result of calling this operation. This operation shall not return until the callback has returned, and shall result in an error if the callback does.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em comp}]The target RT-\/Component for deactivate\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The return code of ReturnCode\_\-t type 
+\end{DoxyReturn}
+\index{RTC::PeriodicExecutionContext@{RTC::PeriodicExecutionContext}!get\_\-component\_\-state@{get\_\-component\_\-state}}
+\index{get\_\-component\_\-state@{get\_\-component\_\-state}!RTC::PeriodicExecutionContext@{RTC::PeriodicExecutionContext}}
+\subsubsection[{get\_\-component\_\-state}]{\setlength{\rightskip}{0pt plus 5cm}virtual LifeCycleState RTC::PeriodicExecutionContext::get\_\-component\_\-state (LightweightRTObject\_\-ptr {\em comp})  throw (CORBA::SystemException)\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classRTC_1_1PeriodicExecutionContext_ade6fd73011af5ab165b85b72fd7ea708}
+
+
+Get RT-\/component's state. 
+
+This operation shall report the LifeCycleState of the given participant \doxyref{RTC}{p.}{namespaceRTC}. UNKNOWN\_\-STATE will be returned, if the given RT-\/Component is not inclued in the participant list.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em comp}]The target RT-\/Component to get the state\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The current state of the target RT-\/Component(LifeCycleState) 
+\end{DoxyReturn}
+\index{RTC::PeriodicExecutionContext@{RTC::PeriodicExecutionContext}!get\_\-kind@{get\_\-kind}}
+\index{get\_\-kind@{get\_\-kind}!RTC::PeriodicExecutionContext@{RTC::PeriodicExecutionContext}}
+\subsubsection[{get\_\-kind}]{\setlength{\rightskip}{0pt plus 5cm}virtual ExecutionKind RTC::PeriodicExecutionContext::get\_\-kind (void)  throw (CORBA::SystemException)\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classRTC_1_1PeriodicExecutionContext_a0d7d0249f13de345fad193602c45f5b3}
+
+
+Get the ExecutionKind. 
+
+This operation shall report the execution kind of the execution context.
+
+\begin{DoxyReturn}{Returns}
+ExecutionKind 
+\end{DoxyReturn}
+\index{RTC::PeriodicExecutionContext@{RTC::PeriodicExecutionContext}!get\_\-profile@{get\_\-profile}}
+\index{get\_\-profile@{get\_\-profile}!RTC::PeriodicExecutionContext@{RTC::PeriodicExecutionContext}}
+\subsubsection[{get\_\-profile}]{\setlength{\rightskip}{0pt plus 5cm}virtual ExecutionContextProfile$\ast$ RTC::PeriodicExecutionContext::get\_\-profile (void)  throw (CORBA::SystemException)\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classRTC_1_1PeriodicExecutionContext_a96fd316ca3f5e6538de4a7a5d4acc79e}
+
+
+Get the ExecutionContextProfile. 
+
+This operation provides a profile “descriptor” for the execution context.
+
+\begin{DoxyReturn}{Returns}
+ExecutionContextProfile 
+\end{DoxyReturn}
+\index{RTC::PeriodicExecutionContext@{RTC::PeriodicExecutionContext}!get\_\-rate@{get\_\-rate}}
+\index{get\_\-rate@{get\_\-rate}!RTC::PeriodicExecutionContext@{RTC::PeriodicExecutionContext}}
+\subsubsection[{get\_\-rate}]{\setlength{\rightskip}{0pt plus 5cm}virtual CORBA::Double RTC::PeriodicExecutionContext::get\_\-rate (void)  throw (CORBA::SystemException)\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classRTC_1_1PeriodicExecutionContext_a269feae5bcffbb1192ca4b179492316f}
+
+
+Get execution rate(Hz) of ExecutionContext. 
+
+This operation shall return the rate (in hertz) at which its Active participating RTCs are being invoked.
+
+\begin{DoxyReturn}{Returns}
+Execution cycle(Unit:Hz) 
+\end{DoxyReturn}
+\index{RTC::PeriodicExecutionContext@{RTC::PeriodicExecutionContext}!getObjRef@{getObjRef}}
+\index{getObjRef@{getObjRef}!RTC::PeriodicExecutionContext@{RTC::PeriodicExecutionContext}}
+\subsubsection[{getObjRef}]{\setlength{\rightskip}{0pt plus 5cm}virtual ExecutionContextService\_\-ptr RTC::PeriodicExecutionContext::getObjRef (void)\hspace{0.3cm}{\ttfamily  [inline, virtual]}}\label{classRTC_1_1PeriodicExecutionContext_a24fac023d4758a6297dab92ee8db6610}
+
+
+Get the reference to the CORBA object. 
+
+Get the reference to the CORBA object as ExecutioncontextService of this object.
+
+\begin{DoxyReturn}{Returns}
+The reference to CORBA object 
+\end{DoxyReturn}
+
+
+Implements {\bf RTC::ExecutionContextBase} \doxyref{}{p.}{classRTC_1_1ExecutionContextBase_a05d88ee228cc75ab82e2c25c3eafc7db}.
+
+
+
+References m\_\-ref.
+
+\index{RTC::PeriodicExecutionContext@{RTC::PeriodicExecutionContext}!is\_\-running@{is\_\-running}}
+\index{is\_\-running@{is\_\-running}!RTC::PeriodicExecutionContext@{RTC::PeriodicExecutionContext}}
+\subsubsection[{is\_\-running}]{\setlength{\rightskip}{0pt plus 5cm}virtual CORBA::Boolean RTC::PeriodicExecutionContext::is\_\-running (void)  throw (CORBA::SystemException)\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classRTC_1_1PeriodicExecutionContext_a3d00b4b068359718a5fa47850231bdc3}
+
+
+Check for ExecutionContext running state. 
+
+This operation shall return true if the context is in the Running state. While the context is Running, all Active RTCs participating in the context shall be executed according to the context’s execution kind.
+
+\begin{DoxyReturn}{Returns}
+Check state function (Running:true、Stopping:false) 
+\end{DoxyReturn}
+\index{RTC::PeriodicExecutionContext@{RTC::PeriodicExecutionContext}!open@{open}}
+\index{open@{open}!RTC::PeriodicExecutionContext@{RTC::PeriodicExecutionContext}}
+\subsubsection[{open}]{\setlength{\rightskip}{0pt plus 5cm}virtual int RTC::PeriodicExecutionContext::open (void $\ast$ {\em args})\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classRTC_1_1PeriodicExecutionContext_a1a8cf7148599db0ac62f76e4142df3e3}
+
+
+Generate internal activity thread for ExecutionContext. 
+
+Generate internal activity thread and run. This is \doxyref{coil::Task}{p.}{classcoil_1_1Task} class method's override.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em args}]Usually give 0\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The generation result 
+\end{DoxyReturn}
+
+
+Reimplemented from {\bf coil::Task} \doxyref{}{p.}{classcoil_1_1Task_af964d1b21ddf53987e8190cb4e5d9613}.
+
+\index{RTC::PeriodicExecutionContext@{RTC::PeriodicExecutionContext}!remove\_\-component@{remove\_\-component}}
+\index{remove\_\-component@{remove\_\-component}!RTC::PeriodicExecutionContext@{RTC::PeriodicExecutionContext}}
+\subsubsection[{remove\_\-component}]{\setlength{\rightskip}{0pt plus 5cm}virtual ReturnCode\_\-t RTC::PeriodicExecutionContext::remove\_\-component (LightweightRTObject\_\-ptr {\em comp})  throw (CORBA::SystemException)\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classRTC_1_1PeriodicExecutionContext_a30ed19381e630c4fc7865423a8b8a696}
+
+
+Remove the RT-\/Component from participant list. 
+
+This operation causes a participant \doxyref{RTC}{p.}{namespaceRTC} to stop participating in the execution context. The removed \doxyref{RTC}{p.}{namespaceRTC} will receive a call to LightweightRTComponent::detach\_\-context. BAD\_\-PARAMETER will be returned, if the given RT-\/Component is not participating in the participant list.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em comp}]The target RT-\/Component for delete\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The return code of ReturnCode\_\-t type 
+\end{DoxyReturn}
+\index{RTC::PeriodicExecutionContext@{RTC::PeriodicExecutionContext}!reset\_\-component@{reset\_\-component}}
+\index{reset\_\-component@{reset\_\-component}!RTC::PeriodicExecutionContext@{RTC::PeriodicExecutionContext}}
+\subsubsection[{reset\_\-component}]{\setlength{\rightskip}{0pt plus 5cm}virtual ReturnCode\_\-t RTC::PeriodicExecutionContext::reset\_\-component (LightweightRTObject\_\-ptr {\em comp})  throw (CORBA::SystemException)\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classRTC_1_1PeriodicExecutionContext_a474054ce75ca74a8affcb53247ed586f}
+
+
+Reset the RT-\/component. 
+
+Attempt to recover the \doxyref{RTC}{p.}{namespaceRTC} when it is in Error. The ComponentAction::on\_\-reset callback shall be invoked. This operation shall not return until the callback has returned, and shall result in an error if the callback does. If possible, the \doxyref{RTC}{p.}{namespaceRTC} developer should implement that callback such that the \doxyref{RTC}{p.}{namespaceRTC} may be returned to a valid state.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em comp}]The target RT-\/Component for reset\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The return code of ReturnCode\_\-t type 
+\end{DoxyReturn}
+\index{RTC::PeriodicExecutionContext@{RTC::PeriodicExecutionContext}!set\_\-rate@{set\_\-rate}}
+\index{set\_\-rate@{set\_\-rate}!RTC::PeriodicExecutionContext@{RTC::PeriodicExecutionContext}}
+\subsubsection[{set\_\-rate}]{\setlength{\rightskip}{0pt plus 5cm}virtual ReturnCode\_\-t RTC::PeriodicExecutionContext::set\_\-rate (CORBA::Double {\em rate})  throw (CORBA::SystemException)\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classRTC_1_1PeriodicExecutionContext_af34b60fa54e71b5665f64eb5f0ee2b4b}
+
+
+Set execution rate(Hz) of ExecutionContext. 
+
+This operation shall set the rate (in hertz) at which this context’s Active participating RTCs are being called. If the execution kind of the context is PERIODIC, a rate change shall result in the invocation of on\_\-rate\_\-changed on any RTCs realizing DataFlowComponentAction that are registered with any RTCs participating in the context.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em rate}]Execution cycle(Unit:Hz)\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The return code of ReturnCode\_\-t type 
+\end{DoxyReturn}
+\index{RTC::PeriodicExecutionContext@{RTC::PeriodicExecutionContext}!start@{start}}
+\index{start@{start}!RTC::PeriodicExecutionContext@{RTC::PeriodicExecutionContext}}
+\subsubsection[{start}]{\setlength{\rightskip}{0pt plus 5cm}virtual ReturnCode\_\-t RTC::PeriodicExecutionContext::start (void)  throw (CORBA::SystemException)\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classRTC_1_1PeriodicExecutionContext_a5b4a4b631c00a5a34183fb95d162da60}
+
+
+Start the ExecutionContext. 
+
+Request that the context enter the Running state. Once the state transition occurs, the ComponentAction::on\_\-startup operation will be invoked. An execution context may not be started until the RT-\/Components that participate in it have been initialized. An execution context may be started and stopped multiple times.
+
+\begin{DoxyReturn}{Returns}
+The return code of ReturnCode\_\-t type 
+\end{DoxyReturn}
+\index{RTC::PeriodicExecutionContext@{RTC::PeriodicExecutionContext}!stop@{stop}}
+\index{stop@{stop}!RTC::PeriodicExecutionContext@{RTC::PeriodicExecutionContext}}
+\subsubsection[{stop}]{\setlength{\rightskip}{0pt plus 5cm}virtual ReturnCode\_\-t RTC::PeriodicExecutionContext::stop (void)  throw (CORBA::SystemException)\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classRTC_1_1PeriodicExecutionContext_a13a32252fa64792890bd33f5fbc2cd27}
+
+
+Stop the ExecutionContext. 
+
+Request that the context enter the Stopped state. Once the transition occurs, the ComponentAction::on\_\-shutdown operation will be invoked. An execution context must be stopped before the RT components that participate in it are finalized. An execution context may be started and stopped multiple times.
+
+\begin{DoxyReturn}{Returns}
+The return code of ReturnCode\_\-t type 
+\end{DoxyReturn}
+\index{RTC::PeriodicExecutionContext@{RTC::PeriodicExecutionContext}!svc@{svc}}
+\index{svc@{svc}!RTC::PeriodicExecutionContext@{RTC::PeriodicExecutionContext}}
+\subsubsection[{svc}]{\setlength{\rightskip}{0pt plus 5cm}virtual int RTC::PeriodicExecutionContext::svc (void)\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classRTC_1_1PeriodicExecutionContext_acce0ee7c44366398928e688f895af60b}
+
+
+Thread execution function for ExecutionContext. 
+
+Thread execution function for ExecutionContext. Invoke the registered components operation.
+
+\begin{DoxyReturn}{Returns}
+The execution result 
+\end{DoxyReturn}
+
+
+Reimplemented from {\bf coil::Task} \doxyref{}{p.}{classcoil_1_1Task_ae68f22a4afbe8cddde1fe910bc3dd226}.
+
+
+
+Reimplemented in {\bf RTC::ExtTrigExecutionContext} \doxyref{}{p.}{classRTC_1_1ExtTrigExecutionContext_aaa5d7178bb12669324647eb702629535}, and {\bf RTC::OpenHRPExecutionContext} \doxyref{}{p.}{classRTC_1_1OpenHRPExecutionContext_a1de64d423a97b75133711ae3c32bd216}.
+
+
+
+\subsection{Member Data Documentation}
+\index{RTC::PeriodicExecutionContext@{RTC::PeriodicExecutionContext}!m\_\-comps@{m\_\-comps}}
+\index{m\_\-comps@{m\_\-comps}!RTC::PeriodicExecutionContext@{RTC::PeriodicExecutionContext}}
+\subsubsection[{m\_\-comps}]{\setlength{\rightskip}{0pt plus 5cm}std::vector$<${\bf Comp}$>$ {\bf RTC::PeriodicExecutionContext::m\_\-comps}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC_1_1PeriodicExecutionContext_a749ee2ead7610a3b9c93e8b3f58b2ac9}
+
+
+List of the participating component. 
+
+\index{RTC::PeriodicExecutionContext@{RTC::PeriodicExecutionContext}!m\_\-nowait@{m\_\-nowait}}
+\index{m\_\-nowait@{m\_\-nowait}!RTC::PeriodicExecutionContext@{RTC::PeriodicExecutionContext}}
+\subsubsection[{m\_\-nowait}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf RTC::PeriodicExecutionContext::m\_\-nowait}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC_1_1PeriodicExecutionContext_ad7395618dfd46196c457f2aaa93a88e6}
+
+
+Flag of ExecutionContext to run immediately (to run without waiting). 
+
+\index{RTC::PeriodicExecutionContext@{RTC::PeriodicExecutionContext}!m\_\-period@{m\_\-period}}
+\index{m\_\-period@{m\_\-period}!RTC::PeriodicExecutionContext@{RTC::PeriodicExecutionContext}}
+\subsubsection[{m\_\-period}]{\setlength{\rightskip}{0pt plus 5cm}{\bf coil::TimeValue} {\bf RTC::PeriodicExecutionContext::m\_\-period}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC_1_1PeriodicExecutionContext_a409aa818a65c378074f0287ed85f2e59}
+
+
+Execution cycle of ExecutionContext. 
+
+\index{RTC::PeriodicExecutionContext@{RTC::PeriodicExecutionContext}!m\_\-profile@{m\_\-profile}}
+\index{m\_\-profile@{m\_\-profile}!RTC::PeriodicExecutionContext@{RTC::PeriodicExecutionContext}}
+\subsubsection[{m\_\-profile}]{\setlength{\rightskip}{0pt plus 5cm}ExecutionContextProfile {\bf RTC::PeriodicExecutionContext::m\_\-profile}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC_1_1PeriodicExecutionContext_ac91469b3510e4abf7dba3e1728ea47f1}
+
+
+ExecutionContextProfile. 
+
+\index{RTC::PeriodicExecutionContext@{RTC::PeriodicExecutionContext}!m\_\-profileMutex@{m\_\-profileMutex}}
+\index{m\_\-profileMutex@{m\_\-profileMutex}!RTC::PeriodicExecutionContext@{RTC::PeriodicExecutionContext}}
+\subsubsection[{m\_\-profileMutex}]{\setlength{\rightskip}{0pt plus 5cm}{\bf coil::Mutex} {\bf RTC::PeriodicExecutionContext::m\_\-profileMutex}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC_1_1PeriodicExecutionContext_abdd6fb6dbdba58d365373fcfb94859ba}
+\index{RTC::PeriodicExecutionContext@{RTC::PeriodicExecutionContext}!m\_\-ref@{m\_\-ref}}
+\index{m\_\-ref@{m\_\-ref}!RTC::PeriodicExecutionContext@{RTC::PeriodicExecutionContext}}
+\subsubsection[{m\_\-ref}]{\setlength{\rightskip}{0pt plus 5cm}ExecutionContextService\_\-var {\bf RTC::PeriodicExecutionContext::m\_\-ref}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC_1_1PeriodicExecutionContext_a2ef1d86bd6e16adc658b5295e58f765e}
+
+
+Reference to ExecutionContextService object. 
+
+
+
+Referenced by getObjRef().
+
+\index{RTC::PeriodicExecutionContext@{RTC::PeriodicExecutionContext}!m\_\-running@{m\_\-running}}
+\index{m\_\-running@{m\_\-running}!RTC::PeriodicExecutionContext@{RTC::PeriodicExecutionContext}}
+\subsubsection[{m\_\-running}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf RTC::PeriodicExecutionContext::m\_\-running}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC_1_1PeriodicExecutionContext_a6328fdaee2ede82d3bda20236aa45885}
+
+
+The running state of ExecutionContext true: running, false: stopped. 
+
+\index{RTC::PeriodicExecutionContext@{RTC::PeriodicExecutionContext}!m\_\-svc@{m\_\-svc}}
+\index{m\_\-svc@{m\_\-svc}!RTC::PeriodicExecutionContext@{RTC::PeriodicExecutionContext}}
+\subsubsection[{m\_\-svc}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf RTC::PeriodicExecutionContext::m\_\-svc}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC_1_1PeriodicExecutionContext_a76ca343cf219eb0e9a4c8e6adb31574c}
+
+
+The thread running flag of ExecutionContext. 
+
+\index{RTC::PeriodicExecutionContext@{RTC::PeriodicExecutionContext}!m\_\-worker@{m\_\-worker}}
+\index{m\_\-worker@{m\_\-worker}!RTC::PeriodicExecutionContext@{RTC::PeriodicExecutionContext}}
+\subsubsection[{m\_\-worker}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Worker} {\bf RTC::PeriodicExecutionContext::m\_\-worker}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC_1_1PeriodicExecutionContext_a9fc4d615cabc69c0930fc44937d853de}
+
+
+A condition variable for external triggered worker. 
+
+\index{RTC::PeriodicExecutionContext@{RTC::PeriodicExecutionContext}!rtclog@{rtclog}}
+\index{rtclog@{rtclog}!RTC::PeriodicExecutionContext@{RTC::PeriodicExecutionContext}}
+\subsubsection[{rtclog}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Logger} {\bf RTC::PeriodicExecutionContext::rtclog}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC_1_1PeriodicExecutionContext_a284b245b3e5f7e48a27e11c5066cb0be}
+
+
+\doxyref{Logger}{p.}{classRTC_1_1Logger} stream. 
+

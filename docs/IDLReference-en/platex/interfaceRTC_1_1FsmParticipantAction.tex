@@ -1,0 +1,46 @@
+\section{RTC::FsmParticipantAction Interface Reference}
+\label{interfaceRTC_1_1FsmParticipantAction}\index{RTC::FsmParticipantAction@{RTC::FsmParticipantAction}}
+
+
+\doxyref{FsmParticipantAction}{p.}{interfaceRTC_1_1FsmParticipantAction}.  
+
+
+
+
+{\ttfamily import \char`\"{}RTC.idl\char`\"{};}
+
+Inheritance diagram for RTC::FsmParticipantAction:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2cm]{interfaceRTC_1_1FsmParticipantAction}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf ReturnCode\_\-t} {\bf on\_\-action} (in {\bf ExecutionContextHandle\_\-t} exec\_\-handle)
+\begin{DoxyCompactList}\small\item\em on\_\-action \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\doxyref{FsmParticipantAction}{p.}{interfaceRTC_1_1FsmParticipantAction}. \subsection{Description}\label{namespaceRTC_Description}
+\doxyref{FsmParticipantAction}{p.}{interfaceRTC_1_1FsmParticipantAction} is companion to \doxyref{ComponentAction}{p.}{interfaceRTC_1_1ComponentAction} (see Section 5.2.2.4) that is intended for use with FSM participant RTCs. It adds a callback for the interception of state transitions, state entries, and state exits. 
+
+\subsection{Member Function Documentation}
+\index{RTC::FsmParticipantAction@{RTC::FsmParticipantAction}!on\_\-action@{on\_\-action}}
+\index{on\_\-action@{on\_\-action}!RTC::FsmParticipantAction@{RTC::FsmParticipantAction}}
+\subsubsection[{on\_\-action}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ReturnCode\_\-t} RTC::FsmParticipantAction::on\_\-action (in {\bf ExecutionContextHandle\_\-t} {\em exec\_\-handle})}\label{interfaceRTC_1_1FsmParticipantAction_ae627f5cdc59f586246bb2174797c7864}
+
+
+on\_\-action 
+
+\subsection{Description}\label{namespaceRTC_Description}
+The indicated FSM participant \doxyref{RTC}{p.}{namespaceRTC} has been invoked as a result of a transition, state entry, or state exit in its containing FSM.\subsection{Constraints}\label{interfaceRTC_1_1LightweightRTObject_Constraints}
+
+\begin{DoxyItemize}
+\item The given execution context shall be of kind EVENT\_\-DRIVEN. 
+\end{DoxyItemize}
+
+The documentation for this interface was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+{\bf RTC.idl}\end{DoxyCompactItemize}

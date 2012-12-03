@@ -1,0 +1,1040 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<title>OpenRTM: クラス RTC::PublisherNew</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<!-- 作成： Doxygen 1.6.3 -->
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="index.html"><span>メインページ</span></a></li>
+      <li><a href="namespaces.html"><span>ネームスペース</span></a></li>
+      <li class="current"><a href="annotated.html"><span>クラス</span></a></li>
+      <li><a href="files.html"><span>ファイル</span></a></li>
+    </ul>
+  </div>
+  <div class="tabs">
+    <ul>
+      <li><a href="annotated.html"><span>構成</span></a></li>
+      <li><a href="hierarchy.html"><span>クラス階層</span></a></li>
+      <li><a href="functions.html"><span>構成メンバ</span></a></li>
+    </ul>
+  </div>
+  <div class="navpath"><a class="el" href="namespaceRTC.html">RTC</a>::<a class="el" href="classRTC_1_1PublisherNew.html">PublisherNew</a>
+  </div>
+</div>
+<div class="contents">
+<h1>クラス RTC::PublisherNew</h1><!-- doxytag: class="RTC::PublisherNew" --><!-- doxytag: inherits="RTC::PublisherBase" -->
+<p><a class="el" href="classRTC_1_1PublisherNew.html" title="PublisherNew クラス.">PublisherNew</a> クラス.  
+<a href="#_details">[詳細]</a></p>
+
+<p><code>#include &lt;<a class="el" href="PublisherNew_8h_source.html">PublisherNew.h</a>&gt;</code></p>
+<div class="dynheader">
+RTC::PublisherNewに対する継承グラフ</div>
+<div class="dynsection">
+ <div class="center">
+  <img src="classRTC_1_1PublisherNew.png" usemap="#RTC::PublisherNew_map" alt=""/>
+  <map id="RTC::PublisherNew_map" name="RTC::PublisherNew_map">
+<area href="classRTC_1_1PublisherBase.html" alt="RTC::PublisherBase" shape="rect" coords="0,56,125,80"/>
+<area href="classRTC_1_1DataPortStatus.html" alt="RTC::DataPortStatus" shape="rect" coords="0,0,125,24"/>
+</map>
+ </div>
+</div>
+
+<p><a href="classRTC_1_1PublisherNew-members.html">すべてのメンバ一覧</a></p>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr><td colspan="2"><h2>Public 型</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="classcoil_1_1Mutex.html">coil::Mutex</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1PublisherNew.html#a87c7fae781ea33f98f4ff1140208f683">Mutex</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="classcoil_1_1Condition.html">coil::Condition</a>&lt; <a class="el" href="classcoil_1_1Mutex.html">Mutex</a> &gt;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1PublisherNew.html#a609791e61ff70b68be2a41e3bda44008">Condition</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="classcoil_1_1Guard.html">coil::Guard</a>&lt; <a class="el" href="classcoil_1_1Mutex.html">coil::Mutex</a> &gt;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1PublisherNew.html#acea27418378fea75be772d70f8f66932">Guard</a></td></tr>
+<tr><td colspan="2"><h2>Public メソッド</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">DATAPORTSTATUS_ENUM&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1PublisherNew.html#afdd11e92f0bbe7e7a2b87cb7787dae73">PublisherNew</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1PublisherNew.html#ac11e4863316b95bbd6b570ee5b06af06">~PublisherNew</a> (void)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual ReturnCode&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1PublisherNew.html#a01bff99edfad7f69e9a75fb07a91d5e6">init</a> (<a class="el" href="classcoil_1_1Properties.html">coil::Properties</a> &amp;prop)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">初期化  <a href="#a01bff99edfad7f69e9a75fb07a91d5e6"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual ReturnCode&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1PublisherNew.html#a8a0485bf2d39c01c4abf3692be2f6db2">setConsumer</a> (<a class="el" href="classRTC_1_1InPortConsumer.html">InPortConsumer</a> *consumer)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">InPortコンシューマのセット.  <a href="#a8a0485bf2d39c01c4abf3692be2f6db2"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual ReturnCode&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1PublisherNew.html#a5c2ff671b335bbcff79d633cb4d50080">setBuffer</a> (<a class="el" href="classRTC_1_1BufferBase.html">CdrBufferBase</a> *buffer)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">バッファのセット  <a href="#a5c2ff671b335bbcff79d633cb4d50080"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual ReturnCode&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1PublisherNew.html#a14b2739ed8f2e756c89747b56db45161">setListener</a> (<a class="el" href="classRTC_1_1ConnectorInfo.html">ConnectorInfo</a> &amp;info, <a class="el" href="classRTC_1_1ConnectorListeners.html">ConnectorListeners</a> *listeners)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">リスナを設定する。  <a href="#a14b2739ed8f2e756c89747b56db45161"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual ReturnCode&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1PublisherNew.html#aea22c81a78df515c6fb06a227d1f3ce6">write</a> (const cdrMemoryStream &amp;data, unsigned long sec, unsigned long usec)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">データを書き込む  <a href="#aea22c81a78df515c6fb06a227d1f3ce6"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1PublisherNew.html#a05304d710c7e77dd3702422dd3cc91aa">isActive</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">アクティブ化確認  <a href="#a05304d710c7e77dd3702422dd3cc91aa"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual ReturnCode&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1PublisherNew.html#a8dccae837b6e92229a2cf7a1c8f836a5">activate</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">アクティブ化する  <a href="#a8dccae837b6e92229a2cf7a1c8f836a5"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual ReturnCode&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1PublisherNew.html#a41177856ad39e6540132e8e7f07f8406">deactivate</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">非アクティブ化する  <a href="#a41177856ad39e6540132e8e7f07f8406"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1PublisherNew.html#ac4299987e417c441fa2374f5b82b0e38">svc</a> (void)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">スレッド実行関数  <a href="#ac4299987e417c441fa2374f5b82b0e38"></a><br/></td></tr>
+<tr><td colspan="2"><h2>Protected 型</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">enum &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1PublisherNew.html#a4cf5b097a973c8bfd964ec3c303969cd">Policy</a> { <a class="el" href="classRTC_1_1PublisherNew.html#a4cf5b097a973c8bfd964ec3c303969cda9b2fe02254a4837c19d2a8c770447f51">ALL</a>, 
+<a class="el" href="classRTC_1_1PublisherNew.html#a4cf5b097a973c8bfd964ec3c303969cdaa4a5140b293366e88c777d36bb317af9">FIFO</a>, 
+<a class="el" href="classRTC_1_1PublisherNew.html#a4cf5b097a973c8bfd964ec3c303969cda159ee0245ace780587c26f8ef017a4ad">SKIP</a>, 
+<a class="el" href="classRTC_1_1PublisherNew.html#a4cf5b097a973c8bfd964ec3c303969cda808d77f43eba2fd14b98d08817588dbd">NEW</a>
+ }</td></tr>
+<tr><td colspan="2"><h2>Protected メソッド</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1PublisherNew.html#a53be97827224bc0f050caeef77e6409b">setPushPolicy</a> (const <a class="el" href="classcoil_1_1Properties.html">coil::Properties</a> &amp;prop)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">PushPolicy の設定.  <a href="#a53be97827224bc0f050caeef77e6409b"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1PublisherNew.html#ae2d000f0982b41a4f24867df55f3d3cf">createTask</a> (const <a class="el" href="classcoil_1_1Properties.html">coil::Properties</a> &amp;prop)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Task の設定.  <a href="#ae2d000f0982b41a4f24867df55f3d3cf"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">ReturnCode&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1PublisherNew.html#aa98d09ffcb5b453201008546a239a4d5">pushAll</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">push "all" policy  <a href="#aa98d09ffcb5b453201008546a239a4d5"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">ReturnCode&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1PublisherNew.html#a902b8647cef1d5d1331fed76038ae2fa">pushFifo</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">push "fifo" policy  <a href="#a902b8647cef1d5d1331fed76038ae2fa"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">ReturnCode&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1PublisherNew.html#a1defbd4b385724dd3e9ec5e9553f6288">pushSkip</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">push "skip" policy  <a href="#a1defbd4b385724dd3e9ec5e9553f6288"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">ReturnCode&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1PublisherNew.html#ae3448d8e79f726d72904ecbfebac1731">pushNew</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">push "new" policy  <a href="#ae3448d8e79f726d72904ecbfebac1731"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">ReturnCode&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1PublisherNew.html#a5de2fe2cff2dda7f62fd7627fcbaf7ca">convertReturn</a> (<a class="el" href="classRTC_1_1BufferStatus.html#ada857a5e7b898e1ad19caaaf7a0ff713">BufferStatus::Enum</a> status, const cdrMemoryStream &amp;data)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight"><a class="el" href="classRTC_1_1BufferStatus.html" title="BufferStatus mixin クラス.">BufferStatus</a> から <a class="el" href="classRTC_1_1DataPortStatus.html" title="DataPortStatus mixin クラス.">DataPortStatus</a> への変換.  <a href="#a5de2fe2cff2dda7f62fd7627fcbaf7ca"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">ReturnCode&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1PublisherNew.html#a7a643aea4632d8234630df209cd63209">invokeListener</a> (<a class="el" href="classRTC_1_1DataPortStatus.html#ac47c3e85f39e51eb55230337c0efc64f">DataPortStatus::Enum</a> status, const cdrMemoryStream &amp;data)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">DataPortStatusに従ってリスナへ通知する関数を呼び出す。.  <a href="#a7a643aea4632d8234630df209cd63209"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1PublisherNew.html#aef8f97b957d7ddbc6c14204828ad45f0">onBufferWrite</a> (const cdrMemoryStream &amp;data)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">ON_BUFFER_WRITEのリスナへ通知する。.  <a href="#aef8f97b957d7ddbc6c14204828ad45f0"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1PublisherNew.html#a81f03425de9d3ac11045dd8bb2a03bf2">onBufferFull</a> (const cdrMemoryStream &amp;data)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">ON_BUFFER_FULLリスナへイベントを通知する。.  <a href="#a81f03425de9d3ac11045dd8bb2a03bf2"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1PublisherNew.html#a396d70ed36facf14222f59e8a268368e">onBufferWriteTimeout</a> (const cdrMemoryStream &amp;data)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">ON_BUFFER_WRITE_TIMEOUTのリスナへ通知する。.  <a href="#a396d70ed36facf14222f59e8a268368e"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1PublisherNew.html#a60b6e9650f170c3dcb11bbfe0b30e336">onBufferWriteOverwrite</a> (const cdrMemoryStream &amp;data)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">ON_BUFFER_OVERWRITEのリスナへ通知する。.  <a href="#a60b6e9650f170c3dcb11bbfe0b30e336"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1PublisherNew.html#a37cbd07e2478992bbfbcb620fd60c288">onBufferRead</a> (const cdrMemoryStream &amp;data)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">ON_BUFFER_READのリスナへ通知する。.  <a href="#a37cbd07e2478992bbfbcb620fd60c288"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1PublisherNew.html#afe04d927167e9f38dc3663384f9fddb8">onSend</a> (const cdrMemoryStream &amp;data)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">ON_SENDのリスナへ通知する。.  <a href="#afe04d927167e9f38dc3663384f9fddb8"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1PublisherNew.html#a0632afa94869fa79b6c11172042860fc">onReceived</a> (const cdrMemoryStream &amp;data)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">ON_RECEIVEDのリスナへ通知する。.  <a href="#a0632afa94869fa79b6c11172042860fc"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1PublisherNew.html#a9a651513aaac510d2fbd478c1219c851">onReceiverFull</a> (const cdrMemoryStream &amp;data)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">ON_RECEIVER_FULLのリスナへ通知する。.  <a href="#a9a651513aaac510d2fbd478c1219c851"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1PublisherNew.html#a63330ba8db7c47f97d52cd147894c877">onReceiverTimeout</a> (const cdrMemoryStream &amp;data)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">ON_RECEIVER_TIMEOUTのリスナへ通知する。.  <a href="#a63330ba8db7c47f97d52cd147894c877"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1PublisherNew.html#a46cc438a770162ae5a633bbade631aad">onReceiverError</a> (const cdrMemoryStream &amp;data)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">ON_RECEIVER_ERRORのリスナへ通知する。.  <a href="#a46cc438a770162ae5a633bbade631aad"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1PublisherNew.html#a87954b599feec27478c24b337571c944">onSenderError</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">ON_SENDER_ERRORのリスナへ通知する。.  <a href="#a87954b599feec27478c24b337571c944"></a><br/></td></tr>
+</table>
+<hr/><a name="_details"></a><h2>説明</h2>
+<p><a class="el" href="classRTC_1_1PublisherNew.html" title="PublisherNew クラス.">PublisherNew</a> クラス. </p>
+<p>バッファ内に新規データが格納されたタイミングで、その新規データを送信する。 データ送出タイミングを待つコンシューマを、送出する側とは異なるスレッドで 動作させる場合に使用。 Publisherの駆動は、データ送出のタイミングになるまでブロックされ、 送出タイミングの通知を受けると、即座にコンシューマの送出処理を呼び出す。 </p>
+<hr/><h2>型定義</h2>
+<a class="anchor" id="a609791e61ff70b68be2a41e3bda44008"></a><!-- doxytag: member="RTC::PublisherNew::Condition" ref="a609791e61ff70b68be2a41e3bda44008" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef <a class="el" href="classcoil_1_1Condition.html">coil::Condition</a>&lt;<a class="el" href="classcoil_1_1Mutex.html">Mutex</a>&gt; <a class="el" href="classcoil_1_1Condition.html">RTC::PublisherNew::Condition</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="acea27418378fea75be772d70f8f66932"></a><!-- doxytag: member="RTC::PublisherNew::Guard" ref="acea27418378fea75be772d70f8f66932" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef <a class="el" href="classcoil_1_1Guard.html">coil::Guard</a>&lt;<a class="el" href="classcoil_1_1Mutex.html">coil::Mutex</a>&gt; <a class="el" href="classcoil_1_1Guard.html">RTC::PublisherNew::Guard</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a87c7fae781ea33f98f4ff1140208f683"></a><!-- doxytag: member="RTC::PublisherNew::Mutex" ref="a87c7fae781ea33f98f4ff1140208f683" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef <a class="el" href="classcoil_1_1Mutex.html">coil::Mutex</a> <a class="el" href="classcoil_1_1Mutex.html">RTC::PublisherNew::Mutex</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<hr/><h2>列挙型</h2>
+<a class="anchor" id="a4cf5b097a973c8bfd964ec3c303969cd"></a><!-- doxytag: member="RTC::PublisherNew::Policy" ref="a4cf5b097a973c8bfd964ec3c303969cd" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="classRTC_1_1PublisherNew.html#a4cf5b097a973c8bfd964ec3c303969cd">RTC::PublisherNew::Policy</a><code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<dl><dt><b>列挙型の値: </b></dt><dd><table border="0" cellspacing="2" cellpadding="0">
+<tr><td valign="top"><em><a class="anchor" id="a4cf5b097a973c8bfd964ec3c303969cda9b2fe02254a4837c19d2a8c770447f51"></a><!-- doxytag: member="ALL" ref="a4cf5b097a973c8bfd964ec3c303969cda9b2fe02254a4837c19d2a8c770447f51" args="" -->ALL</em>&nbsp;</td><td>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="a4cf5b097a973c8bfd964ec3c303969cdaa4a5140b293366e88c777d36bb317af9"></a><!-- doxytag: member="FIFO" ref="a4cf5b097a973c8bfd964ec3c303969cdaa4a5140b293366e88c777d36bb317af9" args="" -->FIFO</em>&nbsp;</td><td>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="a4cf5b097a973c8bfd964ec3c303969cda159ee0245ace780587c26f8ef017a4ad"></a><!-- doxytag: member="SKIP" ref="a4cf5b097a973c8bfd964ec3c303969cda159ee0245ace780587c26f8ef017a4ad" args="" -->SKIP</em>&nbsp;</td><td>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="a4cf5b097a973c8bfd964ec3c303969cda808d77f43eba2fd14b98d08817588dbd"></a><!-- doxytag: member="NEW" ref="a4cf5b097a973c8bfd964ec3c303969cda808d77f43eba2fd14b98d08817588dbd" args="" -->NEW</em>&nbsp;</td><td>
+</td></tr>
+</table>
+</dd>
+</dl>
+
+</div>
+</div>
+<hr/><h2>コンストラクタとデストラクタ</h2>
+<a class="anchor" id="afdd11e92f0bbe7e7a2b87cb7787dae73"></a><!-- doxytag: member="RTC::PublisherNew::PublisherNew" ref="afdd11e92f0bbe7e7a2b87cb7787dae73" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">DATAPORTSTATUS_ENUM RTC::PublisherNew::PublisherNew </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>コンストラクタ </p>
+
+</div>
+</div>
+<a class="anchor" id="ac11e4863316b95bbd6b570ee5b06af06"></a><!-- doxytag: member="RTC::PublisherNew::~PublisherNew" ref="ac11e4863316b95bbd6b570ee5b06af06" args="(void)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual RTC::PublisherNew::~PublisherNew </td>
+          <td>(</td>
+          <td class="paramtype">void&nbsp;</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>デストラクタ </p>
+
+</div>
+</div>
+<hr/><h2>関数</h2>
+<a class="anchor" id="a8dccae837b6e92229a2cf7a1c8f836a5"></a><!-- doxytag: member="RTC::PublisherNew::activate" ref="a8dccae837b6e92229a2cf7a1c8f836a5" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual ReturnCode RTC::PublisherNew::activate </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>アクティブ化する </p>
+<p>Publisher をアクティブ化する。この関数を呼び出すことにより、 Publisherが持つ、データを送信するスレッドが動作を開始する。初期 化が行われていないなどにより、事前条件を満たさない場合、エラーコー ド PRECONDITION_NOT_MET を返す。</p>
+<dl class="return"><dt><b>戻り値:</b></dt><dd>PORT_OK 正常終了 PRECONDITION_NOT_MET 事前条件を満たさない </dd></dl>
+
+<p><a class="el" href="classRTC_1_1PublisherBase.html#a4f0e0ca91e07a25481ffa83ef027feb6">RTC::PublisherBase</a>を実装しています。</p>
+
+</div>
+</div>
+<a class="anchor" id="a5de2fe2cff2dda7f62fd7627fcbaf7ca"></a><!-- doxytag: member="RTC::PublisherNew::convertReturn" ref="a5de2fe2cff2dda7f62fd7627fcbaf7ca" args="(BufferStatus::Enum status, const cdrMemoryStream &amp;data)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">ReturnCode RTC::PublisherNew::convertReturn </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classRTC_1_1BufferStatus.html#ada857a5e7b898e1ad19caaaf7a0ff713">BufferStatus::Enum</a>&nbsp;</td>
+          <td class="paramname"> <em>status</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const cdrMemoryStream &amp;&nbsp;</td>
+          <td class="paramname"> <em>data</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td><code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p><a class="el" href="classRTC_1_1BufferStatus.html" title="BufferStatus mixin クラス.">BufferStatus</a> から <a class="el" href="classRTC_1_1DataPortStatus.html" title="DataPortStatus mixin クラス.">DataPortStatus</a> への変換. </p>
+<p>バッファからの戻り値を <a class="el" href="classRTC_1_1DataPortStatus.html#ac47c3e85f39e51eb55230337c0efc64f">DataPortStatus::Enum</a> 型へ変換する関数。そ れぞれ、以下のように変換される。変換時にコールバックを呼ぶ場合、 コールバク関数も付記する。</p>
+<ul>
+<li>BUFFER_OK: PORT_OK<ul>
+<li>None</li>
+</ul>
+</li>
+<li>BUFFER_ERROR: BUFFER_ERROR<ul>
+<li>None</li>
+</ul>
+</li>
+<li>BUFFER_FULL: BUFFER_FULL<ul>
+<li><a class="el" href="classRTC_1_1PublisherNew.html#a81f03425de9d3ac11045dd8bb2a03bf2" title="ON_BUFFER_FULLリスナへイベントを通知する。.">onBufferFull()</a></li>
+</ul>
+</li>
+<li>NOT_SUPPORTED: PORT_ERROR<ul>
+<li>None</li>
+</ul>
+</li>
+<li>TIMEOUT: BUFFER_TIMEOUT<ul>
+<li><a class="el" href="classRTC_1_1PublisherNew.html#a396d70ed36facf14222f59e8a268368e" title="ON_BUFFER_WRITE_TIMEOUTのリスナへ通知する。.">onBufferWriteTimeout()</a></li>
+</ul>
+</li>
+<li>PRECONDITION_NOT_MET: PRECONDITION_NOT_MET<ul>
+<li>None</li>
+</ul>
+</li>
+<li>other: PORT_ERROR<ul>
+<li>None</li>
+</ul>
+</li>
+</ul>
+<dl><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>status</em>&nbsp;</td><td><a class="el" href="classRTC_1_1BufferStatus.html" title="BufferStatus mixin クラス.">BufferStatus</a> </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>data</em>&nbsp;</td><td>cdrMemoryStream </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>戻り値:</b></dt><dd>DataPortStatu 型のリターンコード </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ae2d000f0982b41a4f24867df55f3d3cf"></a><!-- doxytag: member="RTC::PublisherNew::createTask" ref="ae2d000f0982b41a4f24867df55f3d3cf" args="(const coil::Properties &amp;prop)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool RTC::PublisherNew::createTask </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classcoil_1_1Properties.html">coil::Properties</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>prop</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Task の設定. </p>
+
+</div>
+</div>
+<a class="anchor" id="a41177856ad39e6540132e8e7f07f8406"></a><!-- doxytag: member="RTC::PublisherNew::deactivate" ref="a41177856ad39e6540132e8e7f07f8406" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual ReturnCode RTC::PublisherNew::deactivate </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>非アクティブ化する </p>
+<p>Publisher を非アクティブ化する。この関数を呼び出すことにより、 Publisherが持つ、データを送信するスレッドが動作を停止する。初期 化が行われていないなどにより、事前条件を満たさない場合、エラーコー ド PRECONDITION_NOT_MET を返す。</p>
+<dl class="return"><dt><b>戻り値:</b></dt><dd>PORT_OK 正常終了 PRECONDITION_NOT_MET 事前条件を満たさない </dd></dl>
+
+<p><a class="el" href="classRTC_1_1PublisherBase.html#ace68807ed92a38af8ca49ece25db0d8a">RTC::PublisherBase</a>を実装しています。</p>
+
+</div>
+</div>
+<a class="anchor" id="a01bff99edfad7f69e9a75fb07a91d5e6"></a><!-- doxytag: member="RTC::PublisherNew::init" ref="a01bff99edfad7f69e9a75fb07a91d5e6" args="(coil::Properties &amp;prop)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual ReturnCode RTC::PublisherNew::init </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classcoil_1_1Properties.html">coil::Properties</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>prop</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>初期化 </p>
+<p>このクラスのオブジェクトを使用するのに先立ち、必ずこの関数を呼び 出す必要がある。引数には、このオブジェクトの各種設定情報を含む Properties を与える。データをプッシュする際のポリシーとして publisher.push_policy をキーとする値に、all, fifo, skip, new の いずれかを与えることができる。</p>
+<p>以下のオプションを与えることができる。</p>
+<ul>
+<li>thread_type: スレッドのタイプ (文字列、デフォルト: default)</li>
+<li>publisher.push_policy: Pushポリシー (all, fifo, skip, new)</li>
+<li>publisher.skip_count: 上記ポリシが skip のときのスキップ数</li>
+<li>measurement.exec_time: タスク実行時間計測 (enable/disable)</li>
+<li>measurement.exec_count: タスク関数実行時間計測周期 (数値, 回数)</li>
+<li>measurement.period_time: タスク周期時間計測 (enable/disable)</li>
+<li>measurement.period_count: タスク周期時間計測周期 (数値, 回数)</li>
+</ul>
+<dl><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>property</em>&nbsp;</td><td>本Publisherの駆動制御情報を設定したPropertyオブジェクト </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>戻り値:</b></dt><dd>ReturnCode PORT_OK 正常終了 INVALID_ARGS Properties が不正な値を含む </dd></dl>
+
+<p><a class="el" href="classRTC_1_1PublisherBase.html#a9915af3afab216e2b39fa8702b54b0b7">RTC::PublisherBase</a>を実装しています。</p>
+
+</div>
+</div>
+<a class="anchor" id="a7a643aea4632d8234630df209cd63209"></a><!-- doxytag: member="RTC::PublisherNew::invokeListener" ref="a7a643aea4632d8234630df209cd63209" args="(DataPortStatus::Enum status, const cdrMemoryStream &amp;data)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">ReturnCode RTC::PublisherNew::invokeListener </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classRTC_1_1DataPortStatus.html#ac47c3e85f39e51eb55230337c0efc64f">DataPortStatus::Enum</a>&nbsp;</td>
+          <td class="paramname"> <em>status</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const cdrMemoryStream &amp;&nbsp;</td>
+          <td class="paramname"> <em>data</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td><code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>DataPortStatusに従ってリスナへ通知する関数を呼び出す。. </p>
+<dl><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>status</em>&nbsp;</td><td><a class="el" href="classRTC_1_1DataPortStatus.html" title="DataPortStatus mixin クラス.">DataPortStatus</a> </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>data</em>&nbsp;</td><td>cdrMemoryStream </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>戻り値:</b></dt><dd>リターンコード </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a05304d710c7e77dd3702422dd3cc91aa"></a><!-- doxytag: member="RTC::PublisherNew::isActive" ref="a05304d710c7e77dd3702422dd3cc91aa" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual bool RTC::PublisherNew::isActive </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>アクティブ化確認 </p>
+<p>Publisher はデータポートと同期して activate/deactivate される。 <a class="el" href="classRTC_1_1PublisherNew.html#a8dccae837b6e92229a2cf7a1c8f836a5" title="アクティブ化する">activate()</a> / <a class="el" href="classRTC_1_1PublisherNew.html#a41177856ad39e6540132e8e7f07f8406" title="非アクティブ化する">deactivate()</a> 関数によって、アクティブ状態と非アクティ ブ状態が切り替わる。この関数により、現在アクティブ状態か、非アク ティブ状態かを確認することができる。</p>
+<dl class="return"><dt><b>戻り値:</b></dt><dd>状態確認結果(アクティブ状態:true、非アクティブ状態:false) </dd></dl>
+
+<p><a class="el" href="classRTC_1_1PublisherBase.html#aed0e118b4a1bda091ba38066cc8e4c7b">RTC::PublisherBase</a>を実装しています。</p>
+
+</div>
+</div>
+<a class="anchor" id="a81f03425de9d3ac11045dd8bb2a03bf2"></a><!-- doxytag: member="RTC::PublisherNew::onBufferFull" ref="a81f03425de9d3ac11045dd8bb2a03bf2" args="(const cdrMemoryStream &amp;data)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void RTC::PublisherNew::onBufferFull </td>
+          <td>(</td>
+          <td class="paramtype">const cdrMemoryStream &amp;&nbsp;</td>
+          <td class="paramname"> <em>data</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [inline, protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>ON_BUFFER_FULLリスナへイベントを通知する。. </p>
+<dl><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>data</em>&nbsp;</td><td>cdrMemoryStream </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>参照先 <a class="el" href="ConnectorListener_8h_source.html#l00070">RTC::ON_BUFFER_FULL</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a37cbd07e2478992bbfbcb620fd60c288"></a><!-- doxytag: member="RTC::PublisherNew::onBufferRead" ref="a37cbd07e2478992bbfbcb620fd60c288" args="(const cdrMemoryStream &amp;data)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void RTC::PublisherNew::onBufferRead </td>
+          <td>(</td>
+          <td class="paramtype">const cdrMemoryStream &amp;&nbsp;</td>
+          <td class="paramname"> <em>data</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [inline, protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>ON_BUFFER_READのリスナへ通知する。. </p>
+<dl><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>data</em>&nbsp;</td><td>cdrMemoryStream </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>参照先 <a class="el" href="ConnectorListener_8h_source.html#l00073">RTC::ON_BUFFER_READ</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aef8f97b957d7ddbc6c14204828ad45f0"></a><!-- doxytag: member="RTC::PublisherNew::onBufferWrite" ref="aef8f97b957d7ddbc6c14204828ad45f0" args="(const cdrMemoryStream &amp;data)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void RTC::PublisherNew::onBufferWrite </td>
+          <td>(</td>
+          <td class="paramtype">const cdrMemoryStream &amp;&nbsp;</td>
+          <td class="paramname"> <em>data</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [inline, protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>ON_BUFFER_WRITEのリスナへ通知する。. </p>
+<dl><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>data</em>&nbsp;</td><td>cdrMemoryStream </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>参照先 <a class="el" href="ConnectorListener_8h_source.html#l00069">RTC::ON_BUFFER_WRITE</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a60b6e9650f170c3dcb11bbfe0b30e336"></a><!-- doxytag: member="RTC::PublisherNew::onBufferWriteOverwrite" ref="a60b6e9650f170c3dcb11bbfe0b30e336" args="(const cdrMemoryStream &amp;data)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void RTC::PublisherNew::onBufferWriteOverwrite </td>
+          <td>(</td>
+          <td class="paramtype">const cdrMemoryStream &amp;&nbsp;</td>
+          <td class="paramname"> <em>data</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [inline, protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>ON_BUFFER_OVERWRITEのリスナへ通知する。. </p>
+<dl><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>data</em>&nbsp;</td><td>cdrMemoryStream </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>参照先 <a class="el" href="ConnectorListener_8h_source.html#l00072">RTC::ON_BUFFER_OVERWRITE</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a396d70ed36facf14222f59e8a268368e"></a><!-- doxytag: member="RTC::PublisherNew::onBufferWriteTimeout" ref="a396d70ed36facf14222f59e8a268368e" args="(const cdrMemoryStream &amp;data)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void RTC::PublisherNew::onBufferWriteTimeout </td>
+          <td>(</td>
+          <td class="paramtype">const cdrMemoryStream &amp;&nbsp;</td>
+          <td class="paramname"> <em>data</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [inline, protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>ON_BUFFER_WRITE_TIMEOUTのリスナへ通知する。. </p>
+<dl><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>data</em>&nbsp;</td><td>cdrMemoryStream </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>参照先 <a class="el" href="ConnectorListener_8h_source.html#l00071">RTC::ON_BUFFER_WRITE_TIMEOUT</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a0632afa94869fa79b6c11172042860fc"></a><!-- doxytag: member="RTC::PublisherNew::onReceived" ref="a0632afa94869fa79b6c11172042860fc" args="(const cdrMemoryStream &amp;data)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void RTC::PublisherNew::onReceived </td>
+          <td>(</td>
+          <td class="paramtype">const cdrMemoryStream &amp;&nbsp;</td>
+          <td class="paramname"> <em>data</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [inline, protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>ON_RECEIVEDのリスナへ通知する。. </p>
+<dl><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>data</em>&nbsp;</td><td>cdrMemoryStream </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>参照先 <a class="el" href="ConnectorListener_8h_source.html#l00075">RTC::ON_RECEIVED</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a46cc438a770162ae5a633bbade631aad"></a><!-- doxytag: member="RTC::PublisherNew::onReceiverError" ref="a46cc438a770162ae5a633bbade631aad" args="(const cdrMemoryStream &amp;data)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void RTC::PublisherNew::onReceiverError </td>
+          <td>(</td>
+          <td class="paramtype">const cdrMemoryStream &amp;&nbsp;</td>
+          <td class="paramname"> <em>data</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [inline, protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>ON_RECEIVER_ERRORのリスナへ通知する。. </p>
+<dl><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>data</em>&nbsp;</td><td>cdrMemoryStream </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>参照先 <a class="el" href="ConnectorListener_8h_source.html#l00078">RTC::ON_RECEIVER_ERROR</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a9a651513aaac510d2fbd478c1219c851"></a><!-- doxytag: member="RTC::PublisherNew::onReceiverFull" ref="a9a651513aaac510d2fbd478c1219c851" args="(const cdrMemoryStream &amp;data)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void RTC::PublisherNew::onReceiverFull </td>
+          <td>(</td>
+          <td class="paramtype">const cdrMemoryStream &amp;&nbsp;</td>
+          <td class="paramname"> <em>data</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [inline, protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>ON_RECEIVER_FULLのリスナへ通知する。. </p>
+<dl><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>data</em>&nbsp;</td><td>cdrMemoryStream </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>参照先 <a class="el" href="ConnectorListener_8h_source.html#l00076">RTC::ON_RECEIVER_FULL</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a63330ba8db7c47f97d52cd147894c877"></a><!-- doxytag: member="RTC::PublisherNew::onReceiverTimeout" ref="a63330ba8db7c47f97d52cd147894c877" args="(const cdrMemoryStream &amp;data)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void RTC::PublisherNew::onReceiverTimeout </td>
+          <td>(</td>
+          <td class="paramtype">const cdrMemoryStream &amp;&nbsp;</td>
+          <td class="paramname"> <em>data</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [inline, protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>ON_RECEIVER_TIMEOUTのリスナへ通知する。. </p>
+<dl><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>data</em>&nbsp;</td><td>cdrMemoryStream </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>参照先 <a class="el" href="ConnectorListener_8h_source.html#l00077">RTC::ON_RECEIVER_TIMEOUT</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="afe04d927167e9f38dc3663384f9fddb8"></a><!-- doxytag: member="RTC::PublisherNew::onSend" ref="afe04d927167e9f38dc3663384f9fddb8" args="(const cdrMemoryStream &amp;data)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void RTC::PublisherNew::onSend </td>
+          <td>(</td>
+          <td class="paramtype">const cdrMemoryStream &amp;&nbsp;</td>
+          <td class="paramname"> <em>data</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [inline, protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>ON_SENDのリスナへ通知する。. </p>
+<dl><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>data</em>&nbsp;</td><td>cdrMemoryStream </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>参照先 <a class="el" href="ConnectorListener_8h_source.html#l00074">RTC::ON_SEND</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a87954b599feec27478c24b337571c944"></a><!-- doxytag: member="RTC::PublisherNew::onSenderError" ref="a87954b599feec27478c24b337571c944" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void RTC::PublisherNew::onSenderError </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [inline, protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>ON_SENDER_ERRORのリスナへ通知する。. </p>
+<dl><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>data</em>&nbsp;</td><td>cdrMemoryStream </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>参照先 <a class="el" href="ConnectorListener_8h_source.html#l00404">RTC::ON_SENDER_ERROR</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aa98d09ffcb5b453201008546a239a4d5"></a><!-- doxytag: member="RTC::PublisherNew::pushAll" ref="aa98d09ffcb5b453201008546a239a4d5" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">ReturnCode RTC::PublisherNew::pushAll </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>push "all" policy </p>
+
+</div>
+</div>
+<a class="anchor" id="a902b8647cef1d5d1331fed76038ae2fa"></a><!-- doxytag: member="RTC::PublisherNew::pushFifo" ref="a902b8647cef1d5d1331fed76038ae2fa" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">ReturnCode RTC::PublisherNew::pushFifo </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>push "fifo" policy </p>
+
+</div>
+</div>
+<a class="anchor" id="ae3448d8e79f726d72904ecbfebac1731"></a><!-- doxytag: member="RTC::PublisherNew::pushNew" ref="ae3448d8e79f726d72904ecbfebac1731" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">ReturnCode RTC::PublisherNew::pushNew </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>push "new" policy </p>
+
+</div>
+</div>
+<a class="anchor" id="a1defbd4b385724dd3e9ec5e9553f6288"></a><!-- doxytag: member="RTC::PublisherNew::pushSkip" ref="a1defbd4b385724dd3e9ec5e9553f6288" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">ReturnCode RTC::PublisherNew::pushSkip </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>push "skip" policy </p>
+
+</div>
+</div>
+<a class="anchor" id="a5c2ff671b335bbcff79d633cb4d50080"></a><!-- doxytag: member="RTC::PublisherNew::setBuffer" ref="a5c2ff671b335bbcff79d633cb4d50080" args="(CdrBufferBase *buffer)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual ReturnCode RTC::PublisherNew::setBuffer </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classRTC_1_1BufferBase.html">CdrBufferBase</a> *&nbsp;</td>
+          <td class="paramname"> <em>buffer</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>バッファのセット </p>
+<p>この関数では、この Publisher に関連付けられるバッファをセットする。 バッファオブジェクトがヌルポインタの場合、INVALID_ARGSが返される。 それ以外の場合は、PORT_OK が返される。</p>
+<dl><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>buffer</em>&nbsp;</td><td>CDR buffer へのポインタ </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>戻り値:</b></dt><dd>ReturnCode PORT_OK 正常終了 INVALID_ARGS 引数に不正な値が含まれている </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a8a0485bf2d39c01c4abf3692be2f6db2"></a><!-- doxytag: member="RTC::PublisherNew::setConsumer" ref="a8a0485bf2d39c01c4abf3692be2f6db2" args="(InPortConsumer *consumer)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual ReturnCode RTC::PublisherNew::setConsumer </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classRTC_1_1InPortConsumer.html">InPortConsumer</a> *&nbsp;</td>
+          <td class="paramname"> <em>consumer</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>InPortコンシューマのセット. </p>
+<p>この関数では、この Publisher に関連付けられるコンシューマをセットする。 コンシューマオブジェクトがヌルポインタの場合、INVALID_ARGSが返される。 それ以外の場合は、PORT_OK が返される。</p>
+<dl><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>consumer</em>&nbsp;</td><td>Consumer へのポインタ </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>戻り値:</b></dt><dd>ReturnCode PORT_OK 正常終了 INVALID_ARGS 引数に不正な値が含まれている </dd></dl>
+
+<p><a class="el" href="classRTC_1_1PublisherBase.html#a7ff8bf60fa9d713402572404b3dc922c">RTC::PublisherBase</a>を実装しています。</p>
+
+</div>
+</div>
+<a class="anchor" id="a14b2739ed8f2e756c89747b56db45161"></a><!-- doxytag: member="RTC::PublisherNew::setListener" ref="a14b2739ed8f2e756c89747b56db45161" args="(ConnectorInfo &amp;info, ConnectorListeners *listeners)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual ReturnCode RTC::PublisherNew::setListener </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classRTC_1_1ConnectorInfo.html">ConnectorInfo</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>info</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classRTC_1_1ConnectorListeners.html">ConnectorListeners</a> *&nbsp;</td>
+          <td class="paramname"> <em>listeners</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td><code> [virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>リスナを設定する。 </p>
+<p>Publisher に対してリスナオブジェクト <a class="el" href="classRTC_1_1ConnectorListeners.html" title="ConnectorListeners クラス.">ConnectorListeners</a> を設定する。 各種リスナオブジェクトを含む <a class="el" href="classRTC_1_1ConnectorListeners.html" title="ConnectorListeners クラス.">ConnectorListeners</a> をセットすることで、 バッファの読み書き、データの送信時等にこれらのリスナをコールする。 <a class="el" href="classRTC_1_1ConnectorListeners.html" title="ConnectorListeners クラス.">ConnectorListeners</a> オブジェクトの所有権はポートまたは RTObject が持ち Publisher 削除時に <a class="el" href="classRTC_1_1ConnectorListeners.html" title="ConnectorListeners クラス.">ConnectorListeners</a> は削除されることはない。 <a class="el" href="classRTC_1_1ConnectorListeners.html" title="ConnectorListeners クラス.">ConnectorListeners</a> がヌルポインタの場合 INVALID_ARGS を返す。</p>
+<dl><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>info</em>&nbsp;</td><td>ConnectorProfile をローカル化したオブジェクト <a class="el" href="classRTC_1_1ConnectorInfo.html" title="ConnectorInfo クラス.">ConnectorInfo</a> </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>listeners</em>&nbsp;</td><td>リスナを多数保持する <a class="el" href="classRTC_1_1ConnectorListeners.html" title="ConnectorListeners クラス.">ConnectorListeners</a> オブジェクト </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>戻り値:</b></dt><dd>PORT_OK 正常終了 INVALID_ARGS 不正な引数 </dd></dl>
+
+<p><a class="el" href="classRTC_1_1PublisherBase.html#a9d12db1358f8b70a5ee761d905170bc2">RTC::PublisherBase</a>を実装しています。</p>
+
+</div>
+</div>
+<a class="anchor" id="a53be97827224bc0f050caeef77e6409b"></a><!-- doxytag: member="RTC::PublisherNew::setPushPolicy" ref="a53be97827224bc0f050caeef77e6409b" args="(const coil::Properties &amp;prop)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void RTC::PublisherNew::setPushPolicy </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classcoil_1_1Properties.html">coil::Properties</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>prop</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>PushPolicy の設定. </p>
+
+</div>
+</div>
+<a class="anchor" id="ac4299987e417c441fa2374f5b82b0e38"></a><!-- doxytag: member="RTC::PublisherNew::svc" ref="ac4299987e417c441fa2374f5b82b0e38" args="(void)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual int RTC::PublisherNew::svc </td>
+          <td>(</td>
+          <td class="paramtype">void&nbsp;</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>スレッド実行関数 </p>
+<p><a class="el" href="classcoil_1_1PeriodicTask.html" title="周期タスクスレッド実行クラス">coil::PeriodicTask</a> により周期実行されるタスク実行関数。 </p>
+
+</div>
+</div>
+<a class="anchor" id="aea22c81a78df515c6fb06a227d1f3ce6"></a><!-- doxytag: member="RTC::PublisherNew::write" ref="aea22c81a78df515c6fb06a227d1f3ce6" args="(const cdrMemoryStream &amp;data, unsigned long sec, unsigned long usec)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual ReturnCode RTC::PublisherNew::write </td>
+          <td>(</td>
+          <td class="paramtype">const cdrMemoryStream &amp;&nbsp;</td>
+          <td class="paramname"> <em>data</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned long&nbsp;</td>
+          <td class="paramname"> <em>sec</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned long&nbsp;</td>
+          <td class="paramname"> <em>usec</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td><code> [virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>データを書き込む </p>
+<p>Publisher が保持するバッファに対してデータを書き込む。コンシュー マ、バッファ、リスナ等が適切に設定されていない等、Publisher オブ ジェクトが正しく初期化されていない場合、この関数を呼び出すとエラー コード PRECONDITION_NOT_MET が返され、バッファへの書き込み等の操 作は一切行われない。</p>
+<p>バッファへの書き込みと、InPortへのデータの送信は非同期的に行われ るため、この関数は、InPortへのデータ送信の結果を示す、 CONNECTION_LOST, BUFFER_FULL などのリターンコードを返すことがあ る。この場合、データのバッファへの書き込みは行われない。</p>
+<p>バッファへの書き込みに対して、バッファがフル状態、バッファのエ ラー、バッファへの書き込みがタイムアウトした場合、バッファの事前 条件が満たされない場合にはそれぞれ、エラーコード BUFFER_FULL, BUFFER_ERROR, BUFFER_TIMEOUT, PRECONDITION_NOT_MET が返される。</p>
+<p>これら以外のエラーの場合、PORT_ERROR が返される。</p>
+<dl><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>data</em>&nbsp;</td><td>書き込むデータ </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>sec</em>&nbsp;</td><td>タイムアウト時間 </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>nsec</em>&nbsp;</td><td>タイムアウト時間</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>戻り値:</b></dt><dd>PORT_OK 正常終了 PRECONDITION_NO_MET consumer, buffer, listener等が適切に設定 されていない等、このオブジェクトの事前条件 を満たさない場合。 CONNECTION_LOST 接続が切断されたことを検知した。 BUFFER_FULL バッファがフル状態である。 BUFFER_ERROR バッファに何らかのエラーが生じた場合。 NOT_SUPPORTED サポートされない操作が行われた。 TIMEOUT タイムアウトした。 </dd></dl>
+
+<p><a class="el" href="classRTC_1_1PublisherBase.html#abd693b65ffe07276683facfd710be537">RTC::PublisherBase</a>を実装しています。</p>
+
+</div>
+</div>
+</div>
+<hr class="footer"/><address style="text-align: right;"><small>OpenRTMに対してThu May 24 23:25:20 2012に生成されました。&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.6.3 </small></address>
+</body>
+</html>

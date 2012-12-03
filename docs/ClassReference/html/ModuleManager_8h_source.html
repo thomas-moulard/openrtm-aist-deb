@@ -1,0 +1,256 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<title>OpenRTM: ModuleManager.h ソースファイル</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<!-- 作成： Doxygen 1.6.3 -->
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="index.html"><span>メインページ</span></a></li>
+      <li><a href="namespaces.html"><span>ネームスペース</span></a></li>
+      <li><a href="annotated.html"><span>クラス</span></a></li>
+      <li class="current"><a href="files.html"><span>ファイル</span></a></li>
+    </ul>
+  </div>
+  <div class="tabs">
+    <ul>
+      <li><a href="files.html"><span>ファイル一覧</span></a></li>
+      <li><a href="globals.html"><span>ファイルメンバ</span></a></li>
+    </ul>
+  </div>
+<h1>ModuleManager.h</h1><a href="ModuleManager_8h.html">説明を見る。</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="comment">// -*- C++ -*-</span>
+<a name="l00020"></a>00020 <span class="comment"></span><span class="preprocessor">#ifndef RTC_MODULEMANAGER_H</span>
+<a name="l00021"></a>00021 <span class="preprocessor"></span><span class="preprocessor">#define RTC_MODULEMANAGER_H</span>
+<a name="l00022"></a>00022 <span class="preprocessor"></span>
+<a name="l00023"></a>00023 <span class="comment">// STL includes</span>
+<a name="l00024"></a>00024 <span class="preprocessor">#include &lt;string&gt;</span>
+<a name="l00025"></a>00025 <span class="preprocessor">#include &lt;vector&gt;</span>
+<a name="l00026"></a>00026 <span class="preprocessor">#include &lt;map&gt;</span>
+<a name="l00027"></a>00027 
+<a name="l00028"></a>00028 <span class="comment">// ACE includes</span>
+<a name="l00029"></a>00029 <span class="preprocessor">#include &lt;<a class="code" href="DynamicLib_8h.html">coil/DynamicLib.h</a>&gt;</span>
+<a name="l00030"></a>00030 
+<a name="l00031"></a>00031 <span class="comment">// RTC includes</span>
+<a name="l00032"></a>00032 <span class="preprocessor">#include &lt;<a class="code" href="Manager_8h.html" title="RTComponent manager class.">rtm/Manager.h</a>&gt;</span>
+<a name="l00033"></a>00033 <span class="preprocessor">#include &lt;<a class="code" href="Properties_8h.html" title="Property list class (derived from Java Properties).">coil/Properties.h</a>&gt;</span>
+<a name="l00034"></a>00034 <span class="preprocessor">#include &lt;<a class="code" href="ObjectManager_8h.html" title="Object management class.">rtm/ObjectManager.h</a>&gt;</span>
+<a name="l00035"></a>00035 
+<a name="l00036"></a>00036 
+<a name="l00037"></a><a class="code" href="ModuleManager_8h.html#ae79c05eee3bda7e58d1baae843a4d368">00037</a> <span class="preprocessor">#define CONFIG_EXT    &quot;manager.modules.config_ext&quot;</span>
+<a name="l00038"></a><a class="code" href="ModuleManager_8h.html#a863ab5d791c86f9dfff4c6e90624130c">00038</a> <span class="preprocessor"></span><span class="preprocessor">#define CONFIG_PATH   &quot;manager.modules.config_path&quot;</span>
+<a name="l00039"></a><a class="code" href="ModuleManager_8h.html#a2af8d577ae5cba991976fcc2b514d5dd">00039</a> <span class="preprocessor"></span><span class="preprocessor">#define DETECT_MOD    &quot;manager.modules.detect_loadable&quot;</span>
+<a name="l00040"></a><a class="code" href="ModuleManager_8h.html#a551498b5f7889ed62e89e5f6c9f4616b">00040</a> <span class="preprocessor"></span><span class="preprocessor">#define MOD_LOADPTH   &quot;manager.modules.load_path&quot;</span>
+<a name="l00041"></a><a class="code" href="ModuleManager_8h.html#ae64701c8f676e9065e9e9c5c52427b81">00041</a> <span class="preprocessor"></span><span class="preprocessor">#define INITFUNC_SFX  &quot;manager.modules.init_func_suffix&quot;</span>
+<a name="l00042"></a><a class="code" href="ModuleManager_8h.html#ac5cdc1f839be6c67919ba24d4f0838d3">00042</a> <span class="preprocessor"></span><span class="preprocessor">#define INITFUNC_PFX  &quot;manager.modules.init_func_prefix&quot;</span>
+<a name="l00043"></a><a class="code" href="ModuleManager_8h.html#a96d839c6d1a9fade296196016534b91d">00043</a> <span class="preprocessor"></span><span class="preprocessor">#define ALLOW_ABSPATH &quot;manager.modules.abs_path_allowed&quot;</span>
+<a name="l00044"></a><a class="code" href="ModuleManager_8h.html#acdfc6ef732a678bf77f4eaeebd504bdc">00044</a> <span class="preprocessor"></span><span class="preprocessor">#define ALLOW_URL     &quot;manager.modules.download_allowed&quot;</span>
+<a name="l00045"></a><a class="code" href="ModuleManager_8h.html#a556b78256c7f76a6eaa6a03a54241b51">00045</a> <span class="preprocessor"></span><span class="preprocessor">#define MOD_DWNDIR    &quot;manager.modules.download_dir&quot;</span>
+<a name="l00046"></a><a class="code" href="ModuleManager_8h.html#a04e88c68018d7f86dc41f2ef58352074">00046</a> <span class="preprocessor"></span><span class="preprocessor">#define MOD_DELMOD    &quot;manager.modules.download_cleanup&quot;</span>
+<a name="l00047"></a><a class="code" href="ModuleManager_8h.html#a9398d2e5227c82654be674e0149af948">00047</a> <span class="preprocessor"></span><span class="preprocessor">#define MOD_PRELOAD   &quot;manager.modules.preload&quot;</span>
+<a name="l00048"></a>00048 <span class="preprocessor"></span>
+<a name="l00049"></a>00049 <span class="preprocessor">#ifdef WIN32</span>
+<a name="l00050"></a>00050 <span class="preprocessor"></span><span class="preprocessor">#pragma warning( disable : 4290 )</span>
+<a name="l00051"></a>00051 <span class="preprocessor"></span><span class="preprocessor">#endif</span>
+<a name="l00052"></a>00052 <span class="preprocessor"></span>
+<a name="l00053"></a>00053 <span class="keyword">namespace </span>RTC
+<a name="l00054"></a>00054 {
+<a name="l00074"></a><a class="code" href="classRTC_1_1ModuleManager.html">00074</a>   <span class="keyword">class </span><a class="code" href="classRTC_1_1ModuleManager.html" title="モジュールマネージャクラス">ModuleManager</a>
+<a name="l00075"></a>00075   {
+<a name="l00076"></a>00076     <span class="keyword">typedef</span> std::vector&lt;coil::Properties&gt; vProperties;
+<a name="l00077"></a>00077   <span class="keyword">public</span>:
+<a name="l00099"></a>00099     <a class="code" href="classRTC_1_1ModuleManager.html#a51c7217718f483676b134687b5c5c2e6" title="コンストラクタ">ModuleManager</a>(<a class="code" href="classcoil_1_1Properties.html" title="プロパティセットを表現するクラス">coil::Properties</a>&amp; prop);
+<a name="l00100"></a>00100     
+<a name="l00112"></a>00112     <a class="code" href="classRTC_1_1ModuleManager.html#a8ed480b9713d43b69e4b673bdb8413a8" title="デストラクタ">~ModuleManager</a>(<span class="keywordtype">void</span>);
+<a name="l00113"></a>00113     
+<a name="l00121"></a><a class="code" href="structRTC_1_1ModuleManager_1_1Error.html">00121</a>     <span class="keyword">struct </span><a class="code" href="structRTC_1_1ModuleManager_1_1Error.html" title="ファイル・オープン失敗例外処理用構造体">Error</a>
+<a name="l00122"></a>00122     {
+<a name="l00123"></a><a class="code" href="structRTC_1_1ModuleManager_1_1Error.html#a56f039f9b9dbb5917cce4e9cd99ce01b">00123</a>       <a class="code" href="structRTC_1_1ModuleManager_1_1Error.html#a56f039f9b9dbb5917cce4e9cd99ce01b">Error</a>(<span class="keyword">const</span> std::string&amp; _reason)
+<a name="l00124"></a>00124         : <a class="code" href="structRTC_1_1ModuleManager_1_1Error.html#a0061f5a32edb04ca1376b20675f96b3f">reason</a>(_reason) {}
+<a name="l00125"></a><a class="code" href="structRTC_1_1ModuleManager_1_1Error.html#a0061f5a32edb04ca1376b20675f96b3f">00125</a>       std::string <a class="code" href="structRTC_1_1ModuleManager_1_1Error.html#a0061f5a32edb04ca1376b20675f96b3f">reason</a>;
+<a name="l00126"></a>00126     };
+<a name="l00127"></a>00127     
+<a name="l00136"></a><a class="code" href="structRTC_1_1ModuleManager_1_1NotFound.html">00136</a>     <span class="keyword">struct </span><a class="code" href="structRTC_1_1ModuleManager_1_1NotFound.html" title="未実装部，指定モジュール不明例外処理用構造体">NotFound</a>
+<a name="l00137"></a>00137     {
+<a name="l00138"></a><a class="code" href="structRTC_1_1ModuleManager_1_1NotFound.html#a70e1590e2ecdedf83a59766290d47650">00138</a>       <a class="code" href="structRTC_1_1ModuleManager_1_1NotFound.html#a70e1590e2ecdedf83a59766290d47650">NotFound</a>(<span class="keyword">const</span> std::string&amp; _name)
+<a name="l00139"></a>00139         : <a class="code" href="structRTC_1_1ModuleManager_1_1NotFound.html#a6c1e71e3585e7fe3aa7a3f6905454944">name</a>(_name) {}
+<a name="l00140"></a><a class="code" href="structRTC_1_1ModuleManager_1_1NotFound.html#a6c1e71e3585e7fe3aa7a3f6905454944">00140</a>       std::string <a class="code" href="structRTC_1_1ModuleManager_1_1NotFound.html#a6c1e71e3585e7fe3aa7a3f6905454944">name</a>;
+<a name="l00141"></a>00141     };
+<a name="l00142"></a>00142     
+<a name="l00151"></a><a class="code" href="structRTC_1_1ModuleManager_1_1FileNotFound.html">00151</a>     <span class="keyword">struct </span><a class="code" href="structRTC_1_1ModuleManager_1_1FileNotFound.html" title="指定ファイル不明例外処理用構造体">FileNotFound</a>
+<a name="l00152"></a>00152       : <span class="keyword">public</span> <a class="code" href="structRTC_1_1ModuleManager_1_1NotFound.html" title="未実装部，指定モジュール不明例外処理用構造体">NotFound</a>
+<a name="l00153"></a>00153     {
+<a name="l00154"></a><a class="code" href="structRTC_1_1ModuleManager_1_1FileNotFound.html#a698b99562aac6bba9516f645d7ea4f48">00154</a>       <a class="code" href="structRTC_1_1ModuleManager_1_1FileNotFound.html#a698b99562aac6bba9516f645d7ea4f48">FileNotFound</a>(<span class="keyword">const</span> std::string&amp; _name)
+<a name="l00155"></a>00155         : <a class="code" href="structRTC_1_1ModuleManager_1_1NotFound.html" title="未実装部，指定モジュール不明例外処理用構造体">NotFound</a>(_name) {}
+<a name="l00156"></a>00156     };
+<a name="l00157"></a>00157     
+<a name="l00166"></a><a class="code" href="structRTC_1_1ModuleManager_1_1ModuleNotFound.html">00166</a>     <span class="keyword">struct </span><a class="code" href="structRTC_1_1ModuleManager_1_1ModuleNotFound.html" title="指定モジュール不明例外処理用構造体">ModuleNotFound</a>
+<a name="l00167"></a>00167       : <span class="keyword">public</span> <a class="code" href="structRTC_1_1ModuleManager_1_1NotFound.html" title="未実装部，指定モジュール不明例外処理用構造体">NotFound</a>
+<a name="l00168"></a>00168     {
+<a name="l00169"></a><a class="code" href="structRTC_1_1ModuleManager_1_1ModuleNotFound.html#a24f3fd51dff9c8835d5884d1c8e205e5">00169</a>       <a class="code" href="structRTC_1_1ModuleManager_1_1ModuleNotFound.html#a24f3fd51dff9c8835d5884d1c8e205e5">ModuleNotFound</a>(<span class="keyword">const</span> std::string&amp; _name)
+<a name="l00170"></a>00170         : <a class="code" href="structRTC_1_1ModuleManager_1_1NotFound.html" title="未実装部，指定モジュール不明例外処理用構造体">NotFound</a>(_name) {}
+<a name="l00171"></a>00171     };
+<a name="l00172"></a>00172     
+<a name="l00181"></a><a class="code" href="structRTC_1_1ModuleManager_1_1SymbolNotFound.html">00181</a>     <span class="keyword">struct </span><a class="code" href="structRTC_1_1ModuleManager_1_1SymbolNotFound.html" title="指定シンボル不明例外処理用構造体">SymbolNotFound</a>
+<a name="l00182"></a>00182       : <span class="keyword">public</span> <a class="code" href="structRTC_1_1ModuleManager_1_1NotFound.html" title="未実装部，指定モジュール不明例外処理用構造体">NotFound</a>
+<a name="l00183"></a>00183     {
+<a name="l00184"></a><a class="code" href="structRTC_1_1ModuleManager_1_1SymbolNotFound.html#a15ff5cfb15c5eb9f4bb4501752e008ef">00184</a>       <a class="code" href="structRTC_1_1ModuleManager_1_1SymbolNotFound.html#a15ff5cfb15c5eb9f4bb4501752e008ef">SymbolNotFound</a>(<span class="keyword">const</span> std::string&amp; _name)
+<a name="l00185"></a>00185         : <a class="code" href="structRTC_1_1ModuleManager_1_1NotFound.html" title="未実装部，指定モジュール不明例外処理用構造体">NotFound</a>(_name) {}
+<a name="l00186"></a>00186     };
+<a name="l00187"></a>00187     
+<a name="l00196"></a><a class="code" href="structRTC_1_1ModuleManager_1_1NotAllowedOperation.html">00196</a>     <span class="keyword">struct </span><a class="code" href="structRTC_1_1ModuleManager_1_1NotAllowedOperation.html" title="指定操作禁止時例外処理用構造体">NotAllowedOperation</a>
+<a name="l00197"></a>00197       : <span class="keyword">public</span> <a class="code" href="structRTC_1_1ModuleManager_1_1Error.html" title="ファイル・オープン失敗例外処理用構造体">Error</a>
+<a name="l00198"></a>00198     {
+<a name="l00199"></a><a class="code" href="structRTC_1_1ModuleManager_1_1NotAllowedOperation.html#ac7b43e23a013618df637bdd777c90dbc">00199</a>       <a class="code" href="structRTC_1_1ModuleManager_1_1NotAllowedOperation.html#ac7b43e23a013618df637bdd777c90dbc">NotAllowedOperation</a>(<span class="keyword">const</span> std::string&amp; _reason)
+<a name="l00200"></a>00200         : <a class="code" href="structRTC_1_1ModuleManager_1_1Error.html" title="ファイル・オープン失敗例外処理用構造体">Error</a>(_reason) {}
+<a name="l00201"></a>00201     };
+<a name="l00202"></a>00202     
+<a name="l00211"></a><a class="code" href="structRTC_1_1ModuleManager_1_1InvalidArguments.html">00211</a>     <span class="keyword">struct </span><a class="code" href="structRTC_1_1ModuleManager_1_1InvalidArguments.html" title="指定引数不正時例外処理用構造体">InvalidArguments</a>
+<a name="l00212"></a>00212       : <span class="keyword">public</span> <a class="code" href="structRTC_1_1ModuleManager_1_1Error.html" title="ファイル・オープン失敗例外処理用構造体">Error</a>
+<a name="l00213"></a>00213     {
+<a name="l00214"></a><a class="code" href="structRTC_1_1ModuleManager_1_1InvalidArguments.html#a4fc5572f3222647ebebc44121c7236ed">00214</a>       <a class="code" href="structRTC_1_1ModuleManager_1_1InvalidArguments.html#a4fc5572f3222647ebebc44121c7236ed">InvalidArguments</a>(<span class="keyword">const</span> std::string&amp; _reason)
+<a name="l00215"></a>00215         : <a class="code" href="structRTC_1_1ModuleManager_1_1Error.html" title="ファイル・オープン失敗例外処理用構造体">Error</a>(_reason) {}
+<a name="l00216"></a>00216     };
+<a name="l00217"></a>00217     
+<a name="l00226"></a><a class="code" href="structRTC_1_1ModuleManager_1_1InvalidOperation.html">00226</a>     <span class="keyword">struct </span><a class="code" href="structRTC_1_1ModuleManager_1_1InvalidOperation.html" title="指定操作不正時例外処理用構造体">InvalidOperation</a>
+<a name="l00227"></a>00227       : <span class="keyword">public</span> <a class="code" href="structRTC_1_1ModuleManager_1_1Error.html" title="ファイル・オープン失敗例外処理用構造体">Error</a>
+<a name="l00228"></a>00228     {
+<a name="l00229"></a><a class="code" href="structRTC_1_1ModuleManager_1_1InvalidOperation.html#a49b14ed508206f3f05a14bcc5811de4a">00229</a>       <a class="code" href="structRTC_1_1ModuleManager_1_1InvalidOperation.html#a49b14ed508206f3f05a14bcc5811de4a">InvalidOperation</a>(<span class="keyword">const</span> std::string&amp; _reason)
+<a name="l00230"></a>00230         : <a class="code" href="structRTC_1_1ModuleManager_1_1Error.html" title="ファイル・オープン失敗例外処理用構造体">Error</a>(_reason) {}
+<a name="l00231"></a>00231     };
+<a name="l00232"></a><a class="code" href="classRTC_1_1ModuleManager.html#aa5e548456f074df07906340f50cce9e7">00232</a>     <span class="keyword">typedef</span> void (*<a class="code" href="classRTC_1_1ModuleManager.html#aa5e548456f074df07906340f50cce9e7">ModuleInitFunc</a>)(<a class="code" href="classRTC_1_1Manager.html" title="Manager クラス.">Manager</a>*);
+<a name="l00233"></a>00233     
+<a name="l00279"></a>00279     std::string <a class="code" href="classRTC_1_1ModuleManager.html#a0f2d840f92530ff78896bcf254696cc2" title="モジュールのロード">load</a>(<span class="keyword">const</span> std::string&amp; file_name);
+<a name="l00280"></a>00280     
+<a name="l00308"></a>00308     std::string <a class="code" href="classRTC_1_1ModuleManager.html#a0f2d840f92530ff78896bcf254696cc2" title="モジュールのロード">load</a>(<span class="keyword">const</span> std::string&amp; file_name,
+<a name="l00309"></a>00309                      <span class="keyword">const</span> std::string&amp; init_func);
+<a name="l00310"></a>00310     
+<a name="l00328"></a>00328     <span class="keywordtype">void</span> <a class="code" href="classRTC_1_1ModuleManager.html#a2060494f5105da430a649b66bc2fafcf" title="モジュールのアンロード">unload</a>(<span class="keyword">const</span> std::string&amp; file_name);
+<a name="l00329"></a>00329     
+<a name="l00343"></a>00343     <span class="keywordtype">void</span> <a class="code" href="classRTC_1_1ModuleManager.html#ab2c2c447932d76c261b075799d9b4cb5" title="全モジュールのアンロード">unloadAll</a>();
+<a name="l00344"></a>00344     
+<a name="l00352"></a>00352     <span class="keywordtype">void</span>* <a class="code" href="classRTC_1_1ModuleManager.html#a645591b66f8ddfcf8fd4bea4ee04b8f2" title="モジュールのシンボルの参照">symbol</a>(<span class="keyword">const</span> std::string&amp; file_name, <span class="keyword">const</span> std::string&amp; func_name)
+<a name="l00353"></a>00353       <span class="keywordflow">throw</span> (<a class="code" href="structRTC_1_1ModuleManager_1_1ModuleNotFound.html" title="指定モジュール不明例外処理用構造体">ModuleNotFound</a>, <a class="code" href="structRTC_1_1ModuleManager_1_1SymbolNotFound.html" title="指定シンボル不明例外処理用構造体">SymbolNotFound</a>);
+<a name="l00354"></a>00354     
+<a name="l00372"></a>00372     <span class="keywordtype">void</span> <a class="code" href="classRTC_1_1ModuleManager.html#ab6871cbf2121c9d026a5fa5ab2ec2ed9" title="モジュールロードパスを指定する">setLoadpath</a>(<span class="keyword">const</span> std::vector&lt;std::string&gt;&amp; load_path);
+<a name="l00373"></a>00373     
+<a name="l00391"></a><a class="code" href="classRTC_1_1ModuleManager.html#a0dddd2c6436b6c9014f2c39c0a431a9a">00391</a>     <span class="keyword">inline</span> std::vector&lt;std::string&gt; <a class="code" href="classRTC_1_1ModuleManager.html#a0dddd2c6436b6c9014f2c39c0a431a9a" title="モジュールロードパスを取得する">getLoadPath</a>()
+<a name="l00392"></a>00392     {
+<a name="l00393"></a>00393       <span class="keywordflow">return</span> <a class="code" href="classRTC_1_1ModuleManager.html#a06d98081e3e75dbb1bab992d8c619b17" title="モジュール・ロード・パス・リスト">m_loadPath</a>;
+<a name="l00394"></a>00394     }
+<a name="l00395"></a>00395     
+<a name="l00413"></a>00413     <span class="keywordtype">void</span> <a class="code" href="classRTC_1_1ModuleManager.html#a0efdbf53e0becea909543df403608c70" title="モジュールロードパスを追加する">addLoadpath</a>(<span class="keyword">const</span> std::vector&lt;std::string&gt;&amp; load_path);
+<a name="l00414"></a>00414     
+<a name="l00432"></a>00432     std::vector&lt;coil::Properties&gt; <a class="code" href="classRTC_1_1ModuleManager.html#af10aa20eaefa88ed92313e80b5ba101d" title="ロード済みのモジュールリストを取得する">getLoadedModules</a>();
+<a name="l00433"></a>00433     
+<a name="l00452"></a>00452     std::vector&lt;coil::Properties&gt; <a class="code" href="classRTC_1_1ModuleManager.html#aa7c345afaff2313e061d6d3000766985" title="ロード可能モジュールリストを取得する">getLoadableModules</a>();
+<a name="l00453"></a>00453 
+<a name="l00467"></a><a class="code" href="classRTC_1_1ModuleManager.html#a521ccf8d7a994b0e775fbea9bc08fa77">00467</a>     <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="classRTC_1_1ModuleManager.html#a521ccf8d7a994b0e775fbea9bc08fa77" title="モジュールの絶対パス指定許可">allowAbsolutePath</a>()
+<a name="l00468"></a>00468     {
+<a name="l00469"></a>00469       <a class="code" href="classRTC_1_1ModuleManager.html#a9e7a552c49cefcaf9d7ade14812b73ea" title="モジュール絶対パス指定許可フラグ">m_absoluteAllowed</a> = <span class="keyword">true</span>;
+<a name="l00470"></a>00470     }
+<a name="l00471"></a>00471     
+<a name="l00485"></a><a class="code" href="classRTC_1_1ModuleManager.html#a16a6945a5a535660c03fad17895572b2">00485</a>     <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="classRTC_1_1ModuleManager.html#a16a6945a5a535660c03fad17895572b2" title="モジュールの絶対パス指定禁止">disallowAbsolutePath</a>()
+<a name="l00486"></a>00486     {
+<a name="l00487"></a>00487       <a class="code" href="classRTC_1_1ModuleManager.html#a9e7a552c49cefcaf9d7ade14812b73ea" title="モジュール絶対パス指定許可フラグ">m_absoluteAllowed</a> = <span class="keyword">false</span>;
+<a name="l00488"></a>00488     }
+<a name="l00489"></a>00489     
+<a name="l00507"></a><a class="code" href="classRTC_1_1ModuleManager.html#aae4da48e6813c672613a6a56ab5f46fc">00507</a>     <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="classRTC_1_1ModuleManager.html#aae4da48e6813c672613a6a56ab5f46fc" title="モジュールのURL指定許可">allowModuleDownload</a>()
+<a name="l00508"></a>00508     {
+<a name="l00509"></a>00509       <a class="code" href="classRTC_1_1ModuleManager.html#ad5f3be84f6dc21b34fb1781da3224879" title="モジュールURL指定許可フラグ">m_downloadAllowed</a> = <span class="keyword">true</span>;
+<a name="l00510"></a>00510     }
+<a name="l00511"></a>00511     
+<a name="l00525"></a><a class="code" href="classRTC_1_1ModuleManager.html#a7bd86d3dfa7dbe423e6ade7eeb9abef3">00525</a>     <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="classRTC_1_1ModuleManager.html#a7bd86d3dfa7dbe423e6ade7eeb9abef3" title="モジュールのURL指定禁止">disallowModuleDownload</a>()
+<a name="l00526"></a>00526     {
+<a name="l00527"></a>00527       <a class="code" href="classRTC_1_1ModuleManager.html#ad5f3be84f6dc21b34fb1781da3224879" title="モジュールURL指定許可フラグ">m_downloadAllowed</a> = <span class="keyword">false</span>;
+<a name="l00528"></a>00528     }
+<a name="l00529"></a>00529     
+<a name="l00553"></a>00553     std::string <a class="code" href="classRTC_1_1ModuleManager.html#a8b377a2f2cb867d42bd24398c3b56f46" title="LoadPath からのファイルの検索.">findFile</a>(<span class="keyword">const</span> std::string&amp; fname,
+<a name="l00554"></a>00554                          <span class="keyword">const</span> std::vector&lt;std::string&gt;&amp; load_path);
+<a name="l00555"></a>00555     
+<a name="l00577"></a>00577   <span class="keywordtype">bool</span> <a class="code" href="classRTC_1_1ModuleManager.html#ae03069ed62ebf893761407fc4055c2a6" title="ファイルが存在するかどうかのチェック">fileExist</a>(<span class="keyword">const</span> std::string&amp; filename);
+<a name="l00578"></a>00578     
+<a name="l00600"></a>00600     std::string <a class="code" href="classRTC_1_1ModuleManager.html#a9d4c81411dcefb094b917b87fdfbfa84" title="初期化関数シンボルを生成する">getInitFuncName</a>(<span class="keyword">const</span> std::string&amp; file_path);
+<a name="l00601"></a>00601     
+<a name="l00602"></a>00602   <span class="keyword">protected</span>:
+<a name="l00610"></a>00610     <span class="keywordtype">void</span> <a class="code" href="classRTC_1_1ModuleManager.html#a99bb2f2703d2682555ff7daf3e7143cf" title="無効なモジュールプロファイルを削除する">removeInvalidModules</a>();
+<a name="l00611"></a>00611     
+<a name="l00619"></a>00619     <span class="keywordtype">void</span> <a class="code" href="classRTC_1_1ModuleManager.html#ad07e7617a2b5e36e8cb23359876a3e0f" title="指定言語におけるロードパス上のローダブルなファイルリストを返す...">getModuleList</a>(<span class="keyword">const</span> std::string&amp; lang, <a class="code" href="namespacecoil.html#ac44b80f207f9471f2cc10a0e4202f9ea">coil::vstring</a>&amp; modules);
+<a name="l00620"></a>00620 
+<a name="l00628"></a>00628     <span class="keywordtype">void</span> <a class="code" href="classRTC_1_1ModuleManager.html#a43db88053dcde41668134874ca96181e" title="キャッシュに無いパスだけmodulesに追加する">addNewFile</a>(<span class="keyword">const</span> std::string&amp; fpath, <a class="code" href="namespacecoil.html#ac44b80f207f9471f2cc10a0e4202f9ea">coil::vstring</a>&amp; modules);
+<a name="l00629"></a>00629 
+<a name="l00637"></a>00637     <span class="keywordtype">void</span> <a class="code" href="classRTC_1_1ModuleManager.html#a6725527644fe798d6078eb005ef337c3" title="指定言語、ファイルリストからモジュールのプロパティを返す...">getModuleProfiles</a>(<span class="keyword">const</span> std::string&amp; lang,
+<a name="l00638"></a>00638                            <span class="keyword">const</span> <a class="code" href="namespacecoil.html#ac44b80f207f9471f2cc10a0e4202f9ea">coil::vstring</a>&amp; modules, vProperties&amp; modprops);
+<a name="l00639"></a>00639 
+<a name="l00647"></a><a class="code" href="classRTC_1_1ModuleManager.html#afce28674a05955b065052804090a8ce6">00647</a>     <a class="code" href="classRTC_1_1Logger.html" title="Logger クラス.">Logger</a> <a class="code" href="classRTC_1_1ModuleManager.html#afce28674a05955b065052804090a8ce6" title="ロガーストリーム">rtclog</a>;
+<a name="l00648"></a>00648 
+<a name="l00656"></a><a class="code" href="structRTC_1_1ModuleManager_1_1DLLEntity.html">00656</a>     <span class="keyword">struct </span><a class="code" href="structRTC_1_1ModuleManager_1_1DLLEntity.html" title="DLL管理用構造体.">DLLEntity</a>
+<a name="l00657"></a>00657     {
+<a name="l00658"></a><a class="code" href="structRTC_1_1ModuleManager_1_1DLLEntity.html#a9e03f69e5fef19e24e6eeaa4a4a45835">00658</a>       <a class="code" href="classcoil_1_1Properties.html" title="プロパティセットを表現するクラス">coil::Properties</a> <a class="code" href="structRTC_1_1ModuleManager_1_1DLLEntity.html#a9e03f69e5fef19e24e6eeaa4a4a45835">properties</a>;
+<a name="l00659"></a><a class="code" href="structRTC_1_1ModuleManager_1_1DLLEntity.html#afe210678e87af07ccd3d5e46d5bfaa39">00659</a>       <a class="code" href="classcoil_1_1DynamicLib.html" title="DynamicLib クラス.">coil::DynamicLib</a> <a class="code" href="structRTC_1_1ModuleManager_1_1DLLEntity.html#afe210678e87af07ccd3d5e46d5bfaa39">dll</a>;
+<a name="l00660"></a>00660     };
+<a name="l00661"></a>00661     
+<a name="l00662"></a><a class="code" href="classRTC_1_1ModuleManager.html#a8c80c86dad3290da6fb4b129ac747912">00662</a>     <span class="keyword">typedef</span> std::vector&lt;std::string&gt;     <a class="code" href="classRTC_1_1ModuleManager.html#a8c80c86dad3290da6fb4b129ac747912">StringVector</a>;
+<a name="l00663"></a><a class="code" href="classRTC_1_1ModuleManager.html#adc3036fbdfd38ec02e653b152752ae36">00663</a>     <span class="keyword">typedef</span> StringVector::iterator       <a class="code" href="classRTC_1_1ModuleManager.html#adc3036fbdfd38ec02e653b152752ae36">StringVectorItr</a>;
+<a name="l00664"></a><a class="code" href="classRTC_1_1ModuleManager.html#a9ea1b817f70e2bf44c167189e02684ab">00664</a>     <span class="keyword">typedef</span> StringVector::const_iterator <a class="code" href="classRTC_1_1ModuleManager.html#a9ea1b817f70e2bf44c167189e02684ab">StringVectorConstItr</a>;
+<a name="l00665"></a>00665     
+<a name="l00666"></a><a class="code" href="classRTC_1_1ModuleManager.html#a4bf6eb35c8dbcddbbe69f33a13eae2e8">00666</a>     <span class="keyword">typedef</span> std::vector&lt;DLLEntity&gt;    <a class="code" href="classRTC_1_1ModuleManager.html#a4bf6eb35c8dbcddbbe69f33a13eae2e8">DllMap</a>;
+<a name="l00667"></a><a class="code" href="classRTC_1_1ModuleManager.html#a0e1ed0036b9f54938a6ee37e63bb605a">00667</a>     <span class="keyword">typedef</span> DllMap::iterator           <a class="code" href="classRTC_1_1ModuleManager.html#a0e1ed0036b9f54938a6ee37e63bb605a">DllMapItr</a>;
+<a name="l00668"></a><a class="code" href="classRTC_1_1ModuleManager.html#a52c43ae4ff43e97ef6a45cce2de863b2">00668</a>     <span class="keyword">typedef</span> DllMap::const_iterator     <a class="code" href="classRTC_1_1ModuleManager.html#a52c43ae4ff43e97ef6a45cce2de863b2">DllMapConstItr</a>;
+<a name="l00669"></a>00669 
+<a name="l00670"></a>00670     
+<a name="l00678"></a><a class="code" href="classRTC_1_1ModuleManager.html#ab8ff4e8e442d9d96f5e9988712b85af1">00678</a>     <a class="code" href="classcoil_1_1Properties.html" title="プロパティセットを表現するクラス">coil::Properties</a>&amp; <a class="code" href="classRTC_1_1ModuleManager.html#ab8ff4e8e442d9d96f5e9988712b85af1" title="Module Manager プロパティ.">m_properties</a>;
+<a name="l00679"></a>00679     
+<a name="l00687"></a><a class="code" href="classRTC_1_1ModuleManager_1_1DllPred.html">00687</a>     <span class="keyword">class </span><a class="code" href="classRTC_1_1ModuleManager_1_1DllPred.html" title="ロード済みモジュールリスト">DllPred</a>
+<a name="l00688"></a>00688     {
+<a name="l00689"></a>00689       std::string m_filepath;
+<a name="l00690"></a>00690     <span class="keyword">public</span>:
+<a name="l00691"></a><a class="code" href="classRTC_1_1ModuleManager_1_1DllPred.html#a310047395705ffd885d7248607dadeba">00691</a>       <a class="code" href="classRTC_1_1ModuleManager_1_1DllPred.html#a310047395705ffd885d7248607dadeba">DllPred</a>(<span class="keyword">const</span> <span class="keywordtype">char</span>* filepath) : m_filepath(filepath) {}
+<a name="l00692"></a><a class="code" href="classRTC_1_1ModuleManager_1_1DllPred.html#a33b22d69fa04dbeafe0b8b8e207b59aa">00692</a>       <a class="code" href="classRTC_1_1ModuleManager_1_1DllPred.html#a33b22d69fa04dbeafe0b8b8e207b59aa">DllPred</a>(<span class="keyword">const</span> <a class="code" href="structRTC_1_1ModuleManager_1_1DLLEntity.html" title="DLL管理用構造体.">DLLEntity</a>* dll) : m_filepath(dll-&gt;properties[<span class="stringliteral">&quot;file_path&quot;</span>]) {}
+<a name="l00693"></a><a class="code" href="classRTC_1_1ModuleManager_1_1DllPred.html#a8f4c3819da12b3a7b4ea1c6c566c4c92">00693</a>       <span class="keywordtype">bool</span> <a class="code" href="classRTC_1_1ModuleManager_1_1DllPred.html#a8f4c3819da12b3a7b4ea1c6c566c4c92">operator()</a>(<a class="code" href="structRTC_1_1ModuleManager_1_1DLLEntity.html" title="DLL管理用構造体.">DLLEntity</a>* dllentity)
+<a name="l00694"></a>00694       {
+<a name="l00695"></a>00695         <span class="keywordflow">return</span> m_filepath == dllentity-&gt;<a class="code" href="structRTC_1_1ModuleManager_1_1DLLEntity.html#a9e03f69e5fef19e24e6eeaa4a4a45835">properties</a>.<a class="code" href="classcoil_1_1Properties.html#a91ad72f8d7c41624e2258c5a9331bd2a" title="指定されたキーを持つプロパティを、プロパティリストから探す...">getProperty</a>(<span class="stringliteral">&quot;file_path&quot;</span>);
+<a name="l00696"></a>00696       }
+<a name="l00697"></a>00697     };
+<a name="l00705"></a><a class="code" href="classRTC_1_1ModuleManager.html#a3e30cca331b5146ad8ac857a9fc556d4">00705</a>     <a class="code" href="classObjectManager.html">ObjectManager&lt;const char*, DLLEntity, DllPred&gt;</a> <a class="code" href="classRTC_1_1ModuleManager.html#a3e30cca331b5146ad8ac857a9fc556d4" title="ロード済みモジュールリスト">m_modules</a>;
+<a name="l00706"></a>00706     
+<a name="l00714"></a><a class="code" href="classRTC_1_1ModuleManager.html#a06d98081e3e75dbb1bab992d8c619b17">00714</a>     <a class="code" href="classRTC_1_1ModuleManager.html#a8c80c86dad3290da6fb4b129ac747912">StringVector</a> <a class="code" href="classRTC_1_1ModuleManager.html#a06d98081e3e75dbb1bab992d8c619b17" title="モジュール・ロード・パス・リスト">m_loadPath</a>;
+<a name="l00722"></a><a class="code" href="classRTC_1_1ModuleManager.html#ae76d0bb81f805eed81c2797d61dd9ed8">00722</a>     <a class="code" href="classRTC_1_1ModuleManager.html#a8c80c86dad3290da6fb4b129ac747912">StringVector</a> <a class="code" href="classRTC_1_1ModuleManager.html#ae76d0bb81f805eed81c2797d61dd9ed8" title="コンフィギュレーション・パス・リスト">m_configPath</a>;
+<a name="l00730"></a><a class="code" href="classRTC_1_1ModuleManager.html#ad5f3be84f6dc21b34fb1781da3224879">00730</a>     <span class="keywordtype">bool</span> <a class="code" href="classRTC_1_1ModuleManager.html#ad5f3be84f6dc21b34fb1781da3224879" title="モジュールURL指定許可フラグ">m_downloadAllowed</a>;
+<a name="l00738"></a><a class="code" href="classRTC_1_1ModuleManager.html#a9e7a552c49cefcaf9d7ade14812b73ea">00738</a>     <span class="keywordtype">bool</span> <a class="code" href="classRTC_1_1ModuleManager.html#a9e7a552c49cefcaf9d7ade14812b73ea" title="モジュール絶対パス指定許可フラグ">m_absoluteAllowed</a>;
+<a name="l00739"></a>00739     
+<a name="l00747"></a><a class="code" href="classRTC_1_1ModuleManager.html#ae6272d2cd177c3980a9d323416b58902">00747</a>     std::string <a class="code" href="classRTC_1_1ModuleManager.html#ae6272d2cd177c3980a9d323416b58902" title="初期実行関数サフィックス">m_initFuncSuffix</a>;
+<a name="l00748"></a>00748 
+<a name="l00756"></a><a class="code" href="classRTC_1_1ModuleManager.html#a09359fd1843333b7301ea6a5b42aab02">00756</a>     std::string <a class="code" href="classRTC_1_1ModuleManager.html#a09359fd1843333b7301ea6a5b42aab02" title="初期実行関数プリフィックス">m_initFuncPrefix</a>;
+<a name="l00757"></a>00757 
+<a name="l00765"></a><a class="code" href="classRTC_1_1ModuleManager_1_1UnloadPred.html">00765</a>     <span class="keyword">class </span><a class="code" href="classRTC_1_1ModuleManager_1_1UnloadPred.html" title="モジュールアンロードファンクタ">UnloadPred</a>
+<a name="l00766"></a>00766     {
+<a name="l00767"></a>00767     <span class="keyword">public</span>:
+<a name="l00768"></a><a class="code" href="classRTC_1_1ModuleManager_1_1UnloadPred.html#a15b19c95fe3ce5851e521af92260f226">00768</a>       <a class="code" href="classRTC_1_1ModuleManager_1_1UnloadPred.html#a15b19c95fe3ce5851e521af92260f226">UnloadPred</a>(){}
+<a name="l00769"></a><a class="code" href="classRTC_1_1ModuleManager_1_1UnloadPred.html#acccf2b1a74cee5b7aaaa306298b7d6c0">00769</a>       <span class="keywordtype">void</span> <a class="code" href="classRTC_1_1ModuleManager_1_1UnloadPred.html#acccf2b1a74cee5b7aaaa306298b7d6c0">operator()</a>(<a class="code" href="structRTC_1_1ModuleManager_1_1DLLEntity.html" title="DLL管理用構造体.">DLLEntity</a>* dll)
+<a name="l00770"></a>00770       {
+<a name="l00771"></a>00771         dll-&gt;<a class="code" href="structRTC_1_1ModuleManager_1_1DLLEntity.html#afe210678e87af07ccd3d5e46d5bfaa39">dll</a>.<a class="code" href="classcoil_1_1DynamicLib.html#af11efbb5c96ad4316beb166fe0683c1b" title="動的リンクライブラリのアンロード">close</a>();
+<a name="l00772"></a>00772         <span class="keyword">delete</span> dll;
+<a name="l00773"></a>00773       }
+<a name="l00774"></a>00774     };
+<a name="l00775"></a>00775 
+<a name="l00776"></a><a class="code" href="classRTC_1_1ModuleManager.html#af683f9f9f2f9185a28fde8e2fe43bdec">00776</a>     vProperties <a class="code" href="classRTC_1_1ModuleManager.html#af683f9f9f2f9185a28fde8e2fe43bdec">m_modprofs</a>;
+<a name="l00777"></a>00777 
+<a name="l00778"></a>00778   };   <span class="comment">// class ModuleManager</span>
+<a name="l00779"></a>00779 };     <span class="comment">// namespace RTC  </span>
+<a name="l00780"></a>00780 
+<a name="l00781"></a>00781 <span class="preprocessor">#ifdef WIN32</span>
+<a name="l00782"></a>00782 <span class="preprocessor"></span><span class="preprocessor">#pragma warning( default : 4290 )</span>
+<a name="l00783"></a>00783 <span class="preprocessor"></span><span class="preprocessor">#endif</span>
+<a name="l00784"></a>00784 <span class="preprocessor"></span>
+<a name="l00785"></a>00785 <span class="preprocessor">#endif // RTC_MODULEMANAGER_H</span>
+</pre></div></div>
+<hr class="footer"/><address style="text-align: right;"><small>OpenRTMに対してThu May 24 23:25:18 2012に生成されました。&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.6.3 </small></address>
+</body>
+</html>

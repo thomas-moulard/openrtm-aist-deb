@@ -1,0 +1,1171 @@
+\section{クラス RTC::Manager}
+\label{classRTC_1_1Manager}\index{RTC::Manager@{RTC::Manager}}
+
+
+\doxyref{Manager}{p.}{classRTC_1_1Manager} クラス.  
+
+
+
+
+{\ttfamily \#include $<$Manager.h$>$}
+
+\subsection*{構成}
+\begin{DoxyCompactItemize}
+\item 
+struct {\bf ECFactoryPredicate}
+\item 
+class {\bf FactoryPredicate}
+\item 
+struct {\bf Finalized}
+\item 
+struct {\bf InstanceName}
+\item 
+struct {\bf ModuleFactories}
+\item 
+class {\bf ModulePredicate}
+\item 
+class {\bf OrbRunner}
+\begin{DoxyCompactList}\small\item\em \doxyref{OrbRunner}{p.}{classRTC_1_1Manager_1_1OrbRunner} クラス. \item\end{DoxyCompactList}\item 
+struct {\bf Term}
+\item 
+class {\bf Terminator}
+\begin{DoxyCompactList}\small\item\em \doxyref{Terminator}{p.}{classRTC_1_1Manager_1_1Terminator} クラス. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public メソッド}
+\begin{DoxyCompactItemize}
+\item 
+void {\bf terminate} ()
+\begin{DoxyCompactList}\small\item\em マネージャ終了処理 \item\end{DoxyCompactList}\item 
+void {\bf shutdown} ()
+\begin{DoxyCompactList}\small\item\em マネージャ・シャットダウン \item\end{DoxyCompactList}\item 
+void {\bf join} ()
+\begin{DoxyCompactList}\small\item\em マネージャ終了処理の待ち合わせ \item\end{DoxyCompactList}\item 
+{\bf LogStreamBuf} \& {\bf getLogStreamBuf} ()
+\begin{DoxyCompactList}\small\item\em ログバッファの取得 \item\end{DoxyCompactList}\item 
+std::string \& {\bf getLogLevel} ()
+\begin{DoxyCompactList}\small\item\em コンフィグレーションのログレベルの取得 \item\end{DoxyCompactList}\item 
+{\bf coil::Properties} \& {\bf getConfig} ()
+\begin{DoxyCompactList}\small\item\em マネージャコンフィギュレーションの取得 \item\end{DoxyCompactList}\item 
+void {\bf setModuleInitProc} ({\bf ModuleInitProc} proc)
+\begin{DoxyCompactList}\small\item\em 初期化プロシージャのセット \item\end{DoxyCompactList}\item 
+bool {\bf activateManager} ()
+\begin{DoxyCompactList}\small\item\em Managerのアクティブ化. \item\end{DoxyCompactList}\item 
+void {\bf runManager} (bool no\_\-block=false)
+\begin{DoxyCompactList}\small\item\em Managerの実行. \item\end{DoxyCompactList}\item 
+void {\bf load} (const char $\ast$fname, const char $\ast$initfunc)
+\begin{DoxyCompactList}\small\item\em [CORBA interface] モジュールのロード \item\end{DoxyCompactList}\item 
+void {\bf unload} (const char $\ast$fname)
+\begin{DoxyCompactList}\small\item\em モジュールのアンロード \item\end{DoxyCompactList}\item 
+void {\bf unloadAll} ()
+\begin{DoxyCompactList}\small\item\em 全モジュールのアンロード \item\end{DoxyCompactList}\item 
+std::vector$<$ {\bf coil::Properties} $>$ {\bf getLoadedModules} ()
+\begin{DoxyCompactList}\small\item\em ロード済みのモジュールリストを取得する \item\end{DoxyCompactList}\item 
+std::vector$<$ {\bf coil::Properties} $>$ {\bf getLoadableModules} ()
+\begin{DoxyCompactList}\small\item\em ロード可能なモジュールリストを取得する \item\end{DoxyCompactList}\item 
+bool {\bf registerFactory} ({\bf coil::Properties} \&profile, {\bf RtcNewFunc} new\_\-func, {\bf RtcDeleteFunc} delete\_\-func)
+\begin{DoxyCompactList}\small\item\em RTコンポーネント用ファクトリを登録する. \item\end{DoxyCompactList}\item 
+std::vector$<$ {\bf coil::Properties} $>$ {\bf getFactoryProfiles} ()
+\begin{DoxyCompactList}\small\item\em ファクトリのプロファイルを取得 \item\end{DoxyCompactList}\item 
+bool {\bf registerECFactory} (const char $\ast$name, {\bf ECNewFunc} new\_\-func, {\bf ECDeleteFunc} delete\_\-func)
+\begin{DoxyCompactList}\small\item\em ExecutionContext用ファクトリを登録する. \item\end{DoxyCompactList}\item 
+std::vector$<$ std::string $>$ {\bf getModulesFactories} ()
+\begin{DoxyCompactList}\small\item\em ファクトリ全リストを取得する \item\end{DoxyCompactList}\item 
+{\bf RTObject\_\-impl} $\ast$ {\bf createComponent} (const char $\ast$comp\_\-args)
+\begin{DoxyCompactList}\small\item\em RTコンポーネントを生成する. \item\end{DoxyCompactList}\item 
+{\bf ExecutionContextBase} $\ast$ {\bf createContext} (const char $\ast$ec\_\-args)
+\begin{DoxyCompactList}\small\item\em Contextを生成する. \item\end{DoxyCompactList}\item 
+void {\bf cleanupComponent} ({\bf RTObject\_\-impl} $\ast$comp)
+\begin{DoxyCompactList}\small\item\em RTコンポーネントの登録解除. \item\end{DoxyCompactList}\item 
+void {\bf cleanupComponents} ()
+\begin{DoxyCompactList}\small\item\em RTコンポーネントの削除する. \item\end{DoxyCompactList}\item 
+void {\bf notifyFinalized} ({\bf RTObject\_\-impl} $\ast$comp)
+\begin{DoxyCompactList}\small\item\em RTコンポーネントの削除する. \item\end{DoxyCompactList}\item 
+bool {\bf registerComponent} ({\bf RTObject\_\-impl} $\ast$comp)
+\begin{DoxyCompactList}\small\item\em RTコンポーネントを直接 \doxyref{Manager}{p.}{classRTC_1_1Manager} に登録する. \item\end{DoxyCompactList}\item 
+bool {\bf unregisterComponent} ({\bf RTObject\_\-impl} $\ast$comp)
+\begin{DoxyCompactList}\small\item\em RTコンポーネントの登録を解除する. \item\end{DoxyCompactList}\item 
+void {\bf deleteComponent} ({\bf RTObject\_\-impl} $\ast$comp)
+\begin{DoxyCompactList}\small\item\em \doxyref{Manager}{p.}{classRTC_1_1Manager} に登録されているRTコンポーネントを削除する. \item\end{DoxyCompactList}\item 
+void {\bf deleteComponent} (const char $\ast$instance\_\-name)
+\begin{DoxyCompactList}\small\item\em \doxyref{Manager}{p.}{classRTC_1_1Manager} に登録されているRTコンポーネントを削除する. \item\end{DoxyCompactList}\item 
+{\bf RTObject\_\-impl} $\ast$ {\bf getComponent} (const char $\ast$instance\_\-name)
+\begin{DoxyCompactList}\small\item\em \doxyref{Manager}{p.}{classRTC_1_1Manager} に登録されているRTコンポーネントを検索する. \item\end{DoxyCompactList}\item 
+std::vector$<$ {\bf RTObject\_\-impl} $\ast$ $>$ {\bf getComponents} ()
+\begin{DoxyCompactList}\small\item\em \doxyref{Manager}{p.}{classRTC_1_1Manager} に登録されている全RTコンポーネントを取得する. \item\end{DoxyCompactList}\item 
+CORBA::ORB\_\-ptr {\bf getORB} ()
+\begin{DoxyCompactList}\small\item\em ORB のポインタを取得する. \item\end{DoxyCompactList}\item 
+PortableServer::POA\_\-ptr {\bf getPOA} ()
+\begin{DoxyCompactList}\small\item\em \doxyref{Manager}{p.}{classRTC_1_1Manager} が持つ RootPOA のポインタを取得する. \item\end{DoxyCompactList}\item 
+PortableServer::POAManager\_\-ptr {\bf getPOAManager} ()
+\begin{DoxyCompactList}\small\item\em \doxyref{Manager}{p.}{classRTC_1_1Manager} が持つ POAManager を取得する. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public メソッド}
+\begin{DoxyCompactItemize}
+\item 
+static {\bf Manager} $\ast$ {\bf init} (int argc, char $\ast$$\ast$argv)
+\begin{DoxyCompactList}\small\item\em マネージャの初期化 \item\end{DoxyCompactList}\item 
+static {\bf Manager} \& {\bf instance} ()
+\begin{DoxyCompactList}\small\item\em マネージャのインスタンスの取得 \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected 型}
+\begin{DoxyCompactItemize}
+\item 
+typedef {\bf ObjectManager}$<$ std::string, {\bf RTObject\_\-impl}, {\bf InstanceName} $>$ {\bf ComponentManager}
+\item 
+typedef {\bf ObjectManager}$<$ const {\bf coil::Properties}, {\bf FactoryBase}, {\bf FactoryPredicate} $>$ {\bf FactoryManager}
+\begin{DoxyCompactList}\small\item\em コンポーネントファクトリ \item\end{DoxyCompactList}\item 
+typedef {\bf ObjectManager}$<$ const char $\ast$, {\bf ECFactoryBase}, {\bf ECFactoryPredicate} $>$ {\bf ECFactoryManager}
+\end{DoxyCompactItemize}
+\subsection*{Protected メソッド}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Manager} ()
+\begin{DoxyCompactList}\small\item\em Protected コンストラクタ. \item\end{DoxyCompactList}\item 
+{\bf Manager} (const {\bf Manager} \&{\bf manager})
+\begin{DoxyCompactList}\small\item\em Protected コピーコンストラクタ. \item\end{DoxyCompactList}\item 
+void {\bf initManager} (int argc, char $\ast$$\ast$argv)
+\begin{DoxyCompactList}\small\item\em \doxyref{Manager}{p.}{classRTC_1_1Manager} の内部初期化処理. \item\end{DoxyCompactList}\item 
+void {\bf shutdownManager} ()
+\begin{DoxyCompactList}\small\item\em \doxyref{Manager}{p.}{classRTC_1_1Manager} の終了処理. \item\end{DoxyCompactList}\item 
+void {\bf shutdownOnNoRtcs} ()
+\begin{DoxyCompactList}\small\item\em \doxyref{Manager}{p.}{classRTC_1_1Manager} の終了処理. \item\end{DoxyCompactList}\item 
+bool {\bf initLogger} ()
+\begin{DoxyCompactList}\small\item\em System logger の初期化. \item\end{DoxyCompactList}\item 
+void {\bf shutdownLogger} ()
+\begin{DoxyCompactList}\small\item\em System \doxyref{Logger}{p.}{classRTC_1_1Logger} の終了処理. \item\end{DoxyCompactList}\item 
+bool {\bf initORB} ()
+\begin{DoxyCompactList}\small\item\em CORBA ORB の初期化処理. \item\end{DoxyCompactList}\item 
+std::string {\bf createORBOptions} ()
+\begin{DoxyCompactList}\small\item\em ORB のコマンドラインオプション作成. \item\end{DoxyCompactList}\item 
+void {\bf createORBEndpoints} ({\bf coil::vstring} \&endpoints)
+\begin{DoxyCompactList}\small\item\em エンドポイントの生成 \item\end{DoxyCompactList}\item 
+void {\bf createORBEndpointOption} (std::string \&opt, {\bf coil::vstring} \&endpoint)
+\begin{DoxyCompactList}\small\item\em ORB の Endpoint のコマンドラインオプション作成. \item\end{DoxyCompactList}\item 
+void {\bf shutdownORB} ()
+\begin{DoxyCompactList}\small\item\em ORB の終了処理. \item\end{DoxyCompactList}\item 
+bool {\bf initNaming} ()
+\begin{DoxyCompactList}\small\item\em \doxyref{NamingManager}{p.}{classRTC_1_1NamingManager} の初期化. \item\end{DoxyCompactList}\item 
+void {\bf shutdownNaming} ()
+\begin{DoxyCompactList}\small\item\em \doxyref{NamingManager}{p.}{classRTC_1_1NamingManager} の終了処理. \item\end{DoxyCompactList}\item 
+void {\bf shutdownComponents} ()
+\begin{DoxyCompactList}\small\item\em \doxyref{NamingManager}{p.}{classRTC_1_1NamingManager} に登録されている RTコンポーネントの終了処理. \item\end{DoxyCompactList}\item 
+bool {\bf procComponentArgs} (const char $\ast$comp\_\-arg, {\bf coil::Properties} \&comp\_\-id, {\bf coil::Properties} \&comp\_\-conf)
+\begin{DoxyCompactList}\small\item\em 引数文字列からコンポーネント型名・プロパティを抽出する \item\end{DoxyCompactList}\item 
+bool {\bf procContextArgs} (const char $\ast$ec\_\-args, std::string \&ec\_\-id, {\bf coil::Properties} \&ec\_\-conf)
+\begin{DoxyCompactList}\small\item\em 引数文字列からExecutionContext名・プロパティを抽出する \item\end{DoxyCompactList}\item 
+void {\bf configureComponent} ({\bf RTObject\_\-impl} $\ast$comp, const {\bf coil::Properties} \&prop)
+\begin{DoxyCompactList}\small\item\em RTコンポーネントのコンフィギュレーション処理. \item\end{DoxyCompactList}\item 
+bool {\bf initExecContext} ()
+\begin{DoxyCompactList}\small\item\em ExecutionContextManager の初期化. \item\end{DoxyCompactList}\item 
+bool {\bf initComposite} ()
+\begin{DoxyCompactList}\small\item\em \doxyref{PeriodicECSharedComposite}{p.}{classRTC_1_1PeriodicECSharedComposite} の初期化. \item\end{DoxyCompactList}\item 
+bool {\bf initFactories} ()
+\begin{DoxyCompactList}\small\item\em ファクトリの初期化 \item\end{DoxyCompactList}\item 
+bool {\bf initTimer} ()
+\begin{DoxyCompactList}\small\item\em Timer の初期化. \item\end{DoxyCompactList}\item 
+bool {\bf initManagerServant} ()
+\begin{DoxyCompactList}\small\item\em ManagerServant の初期化. \item\end{DoxyCompactList}\item 
+bool {\bf mergeProperty} ({\bf coil::Properties} \&prop, const char $\ast$file\_\-name)
+\begin{DoxyCompactList}\small\item\em プロパティ情報のマージ \item\end{DoxyCompactList}\item 
+std::string {\bf formatString} (const char $\ast$naming\_\-format, {\bf coil::Properties} \&prop)
+\begin{DoxyCompactList}\small\item\em NamingServer に登録する際の登録情報を組み立てる. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected 変数}
+\begin{DoxyCompactItemize}
+\item 
+{\bf RTM::ManagerServant} $\ast$ {\bf m\_\-mgrservant}
+\begin{DoxyCompactList}\small\item\em ManagerServant へのポインタ. \item\end{DoxyCompactList}\item 
+CORBA::ORB\_\-var {\bf m\_\-pORB}
+\begin{DoxyCompactList}\small\item\em ORB へのポインタ. \item\end{DoxyCompactList}\item 
+PortableServer::POA\_\-var {\bf m\_\-pPOA}
+\begin{DoxyCompactList}\small\item\em POA へのポインタ. \item\end{DoxyCompactList}\item 
+PortableServer::POAManager\_\-var {\bf m\_\-pPOAManager}
+\begin{DoxyCompactList}\small\item\em POAManager へのポインタ. \item\end{DoxyCompactList}\item 
+{\bf ModuleInitProc} {\bf m\_\-initProc}
+\begin{DoxyCompactList}\small\item\em ユーザ初期化関数へのポインタ \item\end{DoxyCompactList}\item 
+{\bf coil::Properties} {\bf m\_\-config}
+\begin{DoxyCompactList}\small\item\em \doxyref{Manager}{p.}{classRTC_1_1Manager} の configuration を格納する Properties. \item\end{DoxyCompactList}\item 
+{\bf ModuleManager} $\ast$ {\bf m\_\-module}
+\begin{DoxyCompactList}\small\item\em \doxyref{ModuleManager}{p.}{classRTC_1_1ModuleManager} へのポインタ. \item\end{DoxyCompactList}\item 
+{\bf NamingManager} $\ast$ {\bf m\_\-namingManager}
+\begin{DoxyCompactList}\small\item\em \doxyref{NamingManager}{p.}{classRTC_1_1NamingManager} へのポインタ. \item\end{DoxyCompactList}\item 
+{\bf coil::Timer} $\ast$ {\bf m\_\-timer}
+\begin{DoxyCompactList}\small\item\em Timer Object. \item\end{DoxyCompactList}\item 
+{\bf LogStreamBuf} {\bf m\_\-logStreamBuf}
+\begin{DoxyCompactList}\small\item\em ロガーバッファ \item\end{DoxyCompactList}\item 
+{\bf Logger} {\bf rtclog}
+\begin{DoxyCompactList}\small\item\em ロガーストリーム \item\end{DoxyCompactList}\item 
+std::vector$<$ std::filebuf $\ast$ $>$ {\bf m\_\-logfiles}
+\begin{DoxyCompactList}\small\item\em ログ出力ファイル \item\end{DoxyCompactList}\item 
+{\bf ComponentManager} {\bf m\_\-compManager}
+\begin{DoxyCompactList}\small\item\em コンポーネントマネージャ \item\end{DoxyCompactList}\item 
+{\bf FactoryManager} {\bf m\_\-factory}
+\begin{DoxyCompactList}\small\item\em ComponentManager. \item\end{DoxyCompactList}\item 
+{\bf ECFactoryManager} {\bf m\_\-ecfactory}
+\begin{DoxyCompactList}\small\item\em ExecutionContext マネージャ. \item\end{DoxyCompactList}\item 
+std::vector$<$ {\bf ExecutionContextBase} $\ast$ $>$ {\bf m\_\-ecs}
+\begin{DoxyCompactList}\small\item\em ExecutionContext リスト. \item\end{DoxyCompactList}\item 
+{\bf OrbRunner} $\ast$ {\bf m\_\-runner}
+\begin{DoxyCompactList}\small\item\em ORB ヘルパークラスへのポインタ. \item\end{DoxyCompactList}\item 
+{\bf Terminator} $\ast$ {\bf m\_\-terminator}
+\begin{DoxyCompactList}\small\item\em ORB 終了用ヘルパークラスへのポインタ. \item\end{DoxyCompactList}\item 
+{\bf Term} {\bf m\_\-terminate}
+\begin{DoxyCompactList}\small\item\em マネージャ終了処理用同期フラグ \item\end{DoxyCompactList}\item 
+{\bf Finalized} {\bf m\_\-finalized}
+\end{DoxyCompactItemize}
+\subsection*{Static Protected 変数}
+\begin{DoxyCompactItemize}
+\item 
+static {\bf Manager} $\ast$ {\bf manager}
+\begin{DoxyCompactList}\small\item\em 唯一の \doxyref{Manager}{p.}{classRTC_1_1Manager} へのポインタ \item\end{DoxyCompactList}\item 
+static {\bf Mutex} {\bf mutex}
+\begin{DoxyCompactList}\small\item\em 唯一の \doxyref{Manager}{p.}{classRTC_1_1Manager} へのポインタに対する mutex \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{説明}
+\doxyref{Manager}{p.}{classRTC_1_1Manager} クラス. コンポーネントなど各種の情報管理を行うマネージャクラス。
+
+\begin{DoxySince}{から}
+0.2.0 
+\end{DoxySince}
+
+
+\subsection{型定義}
+\index{RTC::Manager@{RTC::Manager}!ComponentManager@{ComponentManager}}
+\index{ComponentManager@{ComponentManager}!RTC::Manager@{RTC::Manager}}
+\subsubsection[{ComponentManager}]{\setlength{\rightskip}{0pt plus 5cm}typedef {\bf ObjectManager}$<$std::string, {\bf RTObject\_\-impl}, {\bf InstanceName}$>$ {\bf RTC::Manager::ComponentManager}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC_1_1Manager_a4459ed92d9a3049bc254b540c0e9a3f7}
+\index{RTC::Manager@{RTC::Manager}!ECFactoryManager@{ECFactoryManager}}
+\index{ECFactoryManager@{ECFactoryManager}!RTC::Manager@{RTC::Manager}}
+\subsubsection[{ECFactoryManager}]{\setlength{\rightskip}{0pt plus 5cm}typedef {\bf ObjectManager}$<$const char$\ast$, {\bf ECFactoryBase}, {\bf ECFactoryPredicate}$>$ {\bf RTC::Manager::ECFactoryManager}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC_1_1Manager_ad2eb8a10653394d60f67f1c4184683dd}
+\index{RTC::Manager@{RTC::Manager}!FactoryManager@{FactoryManager}}
+\index{FactoryManager@{FactoryManager}!RTC::Manager@{RTC::Manager}}
+\subsubsection[{FactoryManager}]{\setlength{\rightskip}{0pt plus 5cm}typedef {\bf ObjectManager}$<$const {\bf coil::Properties}, {\bf FactoryBase}, {\bf FactoryPredicate}$>$ {\bf RTC::Manager::FactoryManager}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC_1_1Manager_a3c982140bfd0318d5531c79ad1200052}
+
+
+コンポーネントファクトリ 
+
+
+
+\subsection{コンストラクタとデストラクタ}
+\index{RTC::Manager@{RTC::Manager}!Manager@{Manager}}
+\index{Manager@{Manager}!RTC::Manager@{RTC::Manager}}
+\subsubsection[{Manager}]{\setlength{\rightskip}{0pt plus 5cm}RTC::Manager::Manager ()\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC_1_1Manager_a21e0689b55b92df34680df2df6cc28bb}
+
+
+Protected コンストラクタ. 
+
+Protected コンストラクタ \index{RTC::Manager@{RTC::Manager}!Manager@{Manager}}
+\index{Manager@{Manager}!RTC::Manager@{RTC::Manager}}
+\subsubsection[{Manager}]{\setlength{\rightskip}{0pt plus 5cm}RTC::Manager::Manager (const {\bf Manager} \& {\em manager})\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC_1_1Manager_a23b0ffaa28d2f27100433e0e568c67ab}
+
+
+Protected コピーコンストラクタ. 
+
+Protected コピーコンストラクタ
+
+
+\begin{DoxyParams}{引数}
+\item[{\em manager}]コピー元マネージャオブジェクト \end{DoxyParams}
+
+
+\subsection{関数}
+\index{RTC::Manager@{RTC::Manager}!activateManager@{activateManager}}
+\index{activateManager@{activateManager}!RTC::Manager@{RTC::Manager}}
+\subsubsection[{activateManager}]{\setlength{\rightskip}{0pt plus 5cm}bool RTC::Manager::activateManager ()}\label{classRTC_1_1Manager_a7bd1a7e408fcd5035b892999a9bacfcb}
+
+
+Managerのアクティブ化. 
+
+このオペレーションは以下の処理を行う
+\begin{DoxyItemize}
+\item CORBA POAManager のアクティブ化
+\item マネージャCORBAオブジェクトのアクティブ化
+\item \doxyref{Manager}{p.}{classRTC_1_1Manager} のオブジェクト参照の登録
+\end{DoxyItemize}
+
+このオペレーションは、マネージャの初期化後、runManager() の前に呼ぶ必要がある。
+
+\begin{DoxyReturn}{戻り値}
+処理結果(アクティブ化成功:true、失敗:false) 
+\end{DoxyReturn}
+\index{RTC::Manager@{RTC::Manager}!cleanupComponent@{cleanupComponent}}
+\index{cleanupComponent@{cleanupComponent}!RTC::Manager@{RTC::Manager}}
+\subsubsection[{cleanupComponent}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::Manager::cleanupComponent ({\bf RTObject\_\-impl} $\ast$ {\em comp})}\label{classRTC_1_1Manager_a0300d06b03dd4a2329e50f5f13413ae3}
+
+
+RTコンポーネントの登録解除. 
+
+指定したRTコンポーネントのインスタンスをネーミングサービスから 登録解除する。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em comp}]登録解除対象RTコンポーネント \end{DoxyParams}
+\index{RTC::Manager@{RTC::Manager}!cleanupComponents@{cleanupComponents}}
+\index{cleanupComponents@{cleanupComponents}!RTC::Manager@{RTC::Manager}}
+\subsubsection[{cleanupComponents}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::Manager::cleanupComponents ()}\label{classRTC_1_1Manager_a469fb7f7ba0a1d2cadc22f11ff897682}
+
+
+RTコンポーネントの削除する. 
+
+\doxyref{notifyFinalized()}{p.}{classRTC_1_1Manager_a691bd01bcbf70204324ff50acf41c608}によって登録されたRTコンポーネントを削除する。 \index{RTC::Manager@{RTC::Manager}!configureComponent@{configureComponent}}
+\index{configureComponent@{configureComponent}!RTC::Manager@{RTC::Manager}}
+\subsubsection[{configureComponent}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::Manager::configureComponent ({\bf RTObject\_\-impl} $\ast$ {\em comp}, \/  const {\bf coil::Properties} \& {\em prop})\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC_1_1Manager_a7f493ba41d9361aa6446d57a7c4a1636}
+
+
+RTコンポーネントのコンフィギュレーション処理. 
+
+RTコンポーネントの型およびインスタンス毎に記載されたプロパティファイルの 情報を読み込み、コンポーネントに設定する。 また、各コンポーネントの NamingService 登録時の名称を取得し、設定する。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em comp}]コンフィギュレーション対象RTコンポーネント \end{DoxyParams}
+\index{RTC::Manager@{RTC::Manager}!createComponent@{createComponent}}
+\index{createComponent@{createComponent}!RTC::Manager@{RTC::Manager}}
+\subsubsection[{createComponent}]{\setlength{\rightskip}{0pt plus 5cm}{\bf RTObject\_\-impl}$\ast$ RTC::Manager::createComponent (const char $\ast$ {\em comp\_\-args})}\label{classRTC_1_1Manager_af8a336287c4557cf9c7b78ff26911e85}
+
+
+RTコンポーネントを生成する. 
+
+指定したRTコンポーネントのインスタンスを登録されたFactory経由 で生成する。
+
+生成されるコンポーネントの各種プロファイルは以下の優先順位で 設定される。
+
+
+\begin{DoxyEnumerate}
+\item \doxyref{createComponent()}{p.}{classRTC_1_1Manager_af8a336287c4557cf9c7b78ff26911e85} の引数で与えられたプロファイル
+\item rtc.confで指定された外部ファイルで与えられたプロファイル -\/-\/\# category.instance\_\-name.config\_\-file -\/-\/\# category.component\_\-type.config\_\-file
+\item コードに埋め込まれたプロファイル
+\end{DoxyEnumerate}
+
+インスタンス生成が成功した場合、併せて以下の処理を実行する。
+\begin{DoxyItemize}
+\item 外部ファイルで設定したコンフィギュレーション情報の読み込み，設定
+\item ExecutionContextのバインド，動作開始
+\item ネーミングサービスへの登録
+\end{DoxyItemize}
+
+
+\begin{DoxyParams}{引数}
+\item[{\em comp\_\-args}]生成対象RTコンポーネントIDおよびコンフィギュレー ション引数。フォーマットは大きく分けて \char`\"{}id\char`\"{} と \char`\"{}configuration\char`\"{} 部分が存在する。\end{DoxyParams}
+comp\_\-args: [id]?[configuration] id は必須、configurationはオプション id: \doxyref{RTC}{p.}{namespaceRTC}:[vendor]:[category]:[implementation\_\-id]:[version] \doxyref{RTC}{p.}{namespaceRTC} は固定かつ必須 vendor, category, version はオプション implementation\_\-id は必須 オプションを省略する場合でも \char`\"{}:\char`\"{} は省略不可 configuration: [key0]=[value0]\&[key1]=[value1]\&[key2]=[value2]..... RTCが持つPropertiesの値をすべて上書きすることができる。 key=value の形式で記述し、\char`\"{}\&\char`\"{} で区切る
+
+例えば、 \doxyref{RTC}{p.}{namespaceRTC}:jp.go.aist:example:ConfigSample:1.0?conf.default.str\_\-param0=munya RTC::example:ConfigSample:?conf.default.int\_\-param0=100
+
+\begin{DoxyReturn}{戻り値}
+生成したRTコンポーネントのインスタンス 
+\end{DoxyReturn}
+\index{RTC::Manager@{RTC::Manager}!createContext@{createContext}}
+\index{createContext@{createContext}!RTC::Manager@{RTC::Manager}}
+\subsubsection[{createContext}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ExecutionContextBase}$\ast$ RTC::Manager::createContext (const char $\ast$ {\em ec\_\-args})}\label{classRTC_1_1Manager_ab3d43ca24ca7ecece6646351645e7341}
+
+
+Contextを生成する. 
+
+\begin{DoxyReturn}{戻り値}
+生成したConetextのインスタンス 
+\end{DoxyReturn}
+\index{RTC::Manager@{RTC::Manager}!createORBEndpointOption@{createORBEndpointOption}}
+\index{createORBEndpointOption@{createORBEndpointOption}!RTC::Manager@{RTC::Manager}}
+\subsubsection[{createORBEndpointOption}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::Manager::createORBEndpointOption (std::string \& {\em opt}, \/  {\bf coil::vstring} \& {\em endpoint})\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC_1_1Manager_a07d2b331d4465cfa128ca7f6412985d6}
+
+
+ORB の Endpoint のコマンドラインオプション作成. 
+
+
+\begin{DoxyParams}{引数}
+\item[{\em opt}]コマンドラインオプション \item[{\em endpoint}]エンドポイントリスト \end{DoxyParams}
+\index{RTC::Manager@{RTC::Manager}!createORBEndpoints@{createORBEndpoints}}
+\index{createORBEndpoints@{createORBEndpoints}!RTC::Manager@{RTC::Manager}}
+\subsubsection[{createORBEndpoints}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::Manager::createORBEndpoints ({\bf coil::vstring} \& {\em endpoints})\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC_1_1Manager_a19c20ec82a3d642855139d66a04d1900}
+
+
+エンドポイントの生成 
+
+コンフィグレーションからエンドポイントを生成する。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em endpoints}]エンドポイントリスト \end{DoxyParams}
+\index{RTC::Manager@{RTC::Manager}!createORBOptions@{createORBOptions}}
+\index{createORBOptions@{createORBOptions}!RTC::Manager@{RTC::Manager}}
+\subsubsection[{createORBOptions}]{\setlength{\rightskip}{0pt plus 5cm}std::string RTC::Manager::createORBOptions ()\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC_1_1Manager_a4761af7b806946143f238464cf7ecb95}
+
+
+ORB のコマンドラインオプション作成. 
+
+コンフィギュレーション情報に設定された内容から ORB の起動時オプションを作成する。
+
+\begin{DoxyReturn}{戻り値}
+ORB 起動時オプション 
+\end{DoxyReturn}
+\index{RTC::Manager@{RTC::Manager}!deleteComponent@{deleteComponent}}
+\index{deleteComponent@{deleteComponent}!RTC::Manager@{RTC::Manager}}
+\subsubsection[{deleteComponent}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::Manager::deleteComponent (const char $\ast$ {\em instance\_\-name})}\label{classRTC_1_1Manager_ad9e24042c10263edb4ec732339529bf6}
+
+
+\doxyref{Manager}{p.}{classRTC_1_1Manager} に登録されているRTコンポーネントを削除する. 
+
+マネージャに登録されているRTコンポーネントを削除する。 指定されたRTコンポーネントをネーミングサービスから削除し、 RTコンポーネント自体を終了させるとともに、インスタンスを解放する。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em instance\_\-name}]削除対象RTコンポーネントのインスタンス名 \end{DoxyParams}
+\index{RTC::Manager@{RTC::Manager}!deleteComponent@{deleteComponent}}
+\index{deleteComponent@{deleteComponent}!RTC::Manager@{RTC::Manager}}
+\subsubsection[{deleteComponent}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::Manager::deleteComponent ({\bf RTObject\_\-impl} $\ast$ {\em comp})}\label{classRTC_1_1Manager_a44dc3ec5fc3800712670455ea20f9060}
+
+
+\doxyref{Manager}{p.}{classRTC_1_1Manager} に登録されているRTコンポーネントを削除する. 
+
+マネージャに登録されているRTコンポーネントを削除する。 指定されたRTコンポーネントをネーミングサービスから削除し、 RTコンポーネント自体を終了させるとともに、インスタンスを解放する。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em comp}]削除対象RTコンポーネントのインスタンス \end{DoxyParams}
+\index{RTC::Manager@{RTC::Manager}!formatString@{formatString}}
+\index{formatString@{formatString}!RTC::Manager@{RTC::Manager}}
+\subsubsection[{formatString}]{\setlength{\rightskip}{0pt plus 5cm}std::string RTC::Manager::formatString (const char $\ast$ {\em naming\_\-format}, \/  {\bf coil::Properties} \& {\em prop})\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC_1_1Manager_a015d2ff58126dcc7681d8ea0050fd69a}
+
+
+NamingServer に登録する際の登録情報を組み立てる. 
+
+指定された書式とプロパティ情報を基に NameServer に登録する際の情報を 組み立てる。 各書式指定用文字の意味は以下のとおり
+\begin{DoxyItemize}
+\item \% : コンテキストの区切り
+\item n : インスタンス名称
+\item t : 型名
+\item m : 型名
+\item v : バージョン
+\item V : ベンダー
+\item c : カテゴリ
+\item h : ホスト名
+\item M : マネージャ名
+\item p : プロセスID
+\end{DoxyItemize}
+
+
+\begin{DoxyParams}{引数}
+\item[{\em naming\_\-format}]NamingService 登録情報書式指定 \item[{\em prop}]使用するプロパティ情報\end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+指定書式変換結果 
+\end{DoxyReturn}
+\index{RTC::Manager@{RTC::Manager}!getComponent@{getComponent}}
+\index{getComponent@{getComponent}!RTC::Manager@{RTC::Manager}}
+\subsubsection[{getComponent}]{\setlength{\rightskip}{0pt plus 5cm}{\bf RTObject\_\-impl}$\ast$ RTC::Manager::getComponent (const char $\ast$ {\em instance\_\-name})}\label{classRTC_1_1Manager_a5a883dceda5443d9f624d00d907da2e9}
+
+
+\doxyref{Manager}{p.}{classRTC_1_1Manager} に登録されているRTコンポーネントを検索する. 
+
+\doxyref{Manager}{p.}{classRTC_1_1Manager} に登録されているRTコンポーネントを指定した名称で検索し、 合致するコンポーネントを取得する。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em instance\_\-name}]検索対象RTコンポーネントの名称\end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+名称が一致するRTコンポーネントのインスタンス 
+\end{DoxyReturn}
+\index{RTC::Manager@{RTC::Manager}!getComponents@{getComponents}}
+\index{getComponents@{getComponents}!RTC::Manager@{RTC::Manager}}
+\subsubsection[{getComponents}]{\setlength{\rightskip}{0pt plus 5cm}std::vector$<${\bf RTObject\_\-impl}$\ast$$>$ RTC::Manager::getComponents ()}\label{classRTC_1_1Manager_a40d88a0159d7e2d8ded11c2ba863baf0}
+
+
+\doxyref{Manager}{p.}{classRTC_1_1Manager} に登録されている全RTコンポーネントを取得する. 
+
+\doxyref{Manager}{p.}{classRTC_1_1Manager} に登録されているRTコンポーネントの全インスタンスを取得する。
+
+\begin{DoxyReturn}{戻り値}
+全RTコンポーネントのインスタンスリスト 
+\end{DoxyReturn}
+\index{RTC::Manager@{RTC::Manager}!getConfig@{getConfig}}
+\index{getConfig@{getConfig}!RTC::Manager@{RTC::Manager}}
+\subsubsection[{getConfig}]{\setlength{\rightskip}{0pt plus 5cm}{\bf coil::Properties}\& RTC::Manager::getConfig ()\hspace{0.3cm}{\ttfamily  [inline]}}\label{classRTC_1_1Manager_a1787533c37da5689c38e1ea966b774df}
+
+
+マネージャコンフィギュレーションの取得 
+
+マネージャに設定したコンフィギュレーションを取得する。
+
+\begin{DoxyReturn}{戻り値}
+マネージャのコンフィギュレーション 
+\end{DoxyReturn}
+
+
+参照先 m\_\-config.
+
+\index{RTC::Manager@{RTC::Manager}!getFactoryProfiles@{getFactoryProfiles}}
+\index{getFactoryProfiles@{getFactoryProfiles}!RTC::Manager@{RTC::Manager}}
+\subsubsection[{getFactoryProfiles}]{\setlength{\rightskip}{0pt plus 5cm}std::vector$<${\bf coil::Properties}$>$ RTC::Manager::getFactoryProfiles ()}\label{classRTC_1_1Manager_a528fbee6e433ddb79f1be9e2ffd83c2a}
+
+
+ファクトリのプロファイルを取得 
+
+ファクトリのプロファイルを取得する。
+
+\begin{DoxyReturn}{戻り値}
+ファクトリのプロファイル 
+\end{DoxyReturn}
+\index{RTC::Manager@{RTC::Manager}!getLoadableModules@{getLoadableModules}}
+\index{getLoadableModules@{getLoadableModules}!RTC::Manager@{RTC::Manager}}
+\subsubsection[{getLoadableModules}]{\setlength{\rightskip}{0pt plus 5cm}std::vector$<${\bf coil::Properties}$>$ RTC::Manager::getLoadableModules ()}\label{classRTC_1_1Manager_a5d1a934f4ede9c851d593e30f692ecbe}
+
+
+ロード可能なモジュールリストを取得する 
+
+ロード可能モジュールのリストを取得する。 (現在はModuleManager側で未実装)
+
+\begin{DoxyReturn}{戻り値}
+ロード可能モジュール　リスト 
+\end{DoxyReturn}
+\index{RTC::Manager@{RTC::Manager}!getLoadedModules@{getLoadedModules}}
+\index{getLoadedModules@{getLoadedModules}!RTC::Manager@{RTC::Manager}}
+\subsubsection[{getLoadedModules}]{\setlength{\rightskip}{0pt plus 5cm}std::vector$<${\bf coil::Properties}$>$ RTC::Manager::getLoadedModules ()}\label{classRTC_1_1Manager_a47e5298a09ce38a045d2cce64f72996a}
+
+
+ロード済みのモジュールリストを取得する 
+
+現在マネージャにロードされているモジュールのリストを取得する。
+
+\begin{DoxyReturn}{戻り値}
+ロード済みモジュールリスト 
+\end{DoxyReturn}
+\index{RTC::Manager@{RTC::Manager}!getLogLevel@{getLogLevel}}
+\index{getLogLevel@{getLogLevel}!RTC::Manager@{RTC::Manager}}
+\subsubsection[{getLogLevel}]{\setlength{\rightskip}{0pt plus 5cm}std::string\& RTC::Manager::getLogLevel ()\hspace{0.3cm}{\ttfamily  [inline]}}\label{classRTC_1_1Manager_a5201e138fd2b89e929fb1b81379f5b07}
+
+
+コンフィグレーションのログレベルの取得 
+
+コンフィグレーションのログレベルを取得する。
+
+\begin{DoxyReturn}{戻り値}
+コンフィギュレーションのログレベル 
+\end{DoxyReturn}
+
+
+参照先 m\_\-config.
+
+\index{RTC::Manager@{RTC::Manager}!getLogStreamBuf@{getLogStreamBuf}}
+\index{getLogStreamBuf@{getLogStreamBuf}!RTC::Manager@{RTC::Manager}}
+\subsubsection[{getLogStreamBuf}]{\setlength{\rightskip}{0pt plus 5cm}{\bf LogStreamBuf}\& RTC::Manager::getLogStreamBuf ()\hspace{0.3cm}{\ttfamily  [inline]}}\label{classRTC_1_1Manager_a6d7da50c68e73fe190ba3558c8183a6f}
+
+
+ログバッファの取得 
+
+マネージャに設定したログバッファを取得する。
+
+\begin{DoxyReturn}{戻り値}
+マネージャに設定したログバッファ 
+\end{DoxyReturn}
+
+
+参照先 m\_\-logStreamBuf.
+
+\index{RTC::Manager@{RTC::Manager}!getModulesFactories@{getModulesFactories}}
+\index{getModulesFactories@{getModulesFactories}!RTC::Manager@{RTC::Manager}}
+\subsubsection[{getModulesFactories}]{\setlength{\rightskip}{0pt plus 5cm}std::vector$<$std::string$>$ RTC::Manager::getModulesFactories ()}\label{classRTC_1_1Manager_ae5149411ab7e468490c72268b907da00}
+
+
+ファクトリ全リストを取得する 
+
+登録されているファクトリの全リストを取得する。
+
+\begin{DoxyReturn}{戻り値}
+登録ファクトリ リスト 
+\end{DoxyReturn}
+\index{RTC::Manager@{RTC::Manager}!getORB@{getORB}}
+\index{getORB@{getORB}!RTC::Manager@{RTC::Manager}}
+\subsubsection[{getORB}]{\setlength{\rightskip}{0pt plus 5cm}CORBA::ORB\_\-ptr RTC::Manager::getORB ()}\label{classRTC_1_1Manager_a408efa12c9bb215b2b8815cca870c376}
+
+
+ORB のポインタを取得する. 
+
+\doxyref{Manager}{p.}{classRTC_1_1Manager} に設定された ORB のポインタを取得する。
+
+\begin{DoxyReturn}{戻り値}
+ORB オブジェクト 
+\end{DoxyReturn}
+\index{RTC::Manager@{RTC::Manager}!getPOA@{getPOA}}
+\index{getPOA@{getPOA}!RTC::Manager@{RTC::Manager}}
+\subsubsection[{getPOA}]{\setlength{\rightskip}{0pt plus 5cm}PortableServer::POA\_\-ptr RTC::Manager::getPOA ()}\label{classRTC_1_1Manager_a6e529d44da8d701981662a3bae5d480c}
+
+
+\doxyref{Manager}{p.}{classRTC_1_1Manager} が持つ RootPOA のポインタを取得する. 
+
+\doxyref{Manager}{p.}{classRTC_1_1Manager} に設定された RootPOA へのポインタを取得する。
+
+\begin{DoxyReturn}{戻り値}
+RootPOAオブジェクト 
+\end{DoxyReturn}
+\index{RTC::Manager@{RTC::Manager}!getPOAManager@{getPOAManager}}
+\index{getPOAManager@{getPOAManager}!RTC::Manager@{RTC::Manager}}
+\subsubsection[{getPOAManager}]{\setlength{\rightskip}{0pt plus 5cm}PortableServer::POAManager\_\-ptr RTC::Manager::getPOAManager ()}\label{classRTC_1_1Manager_a8423f86ffd7229e9db13c7e35f4a5c0b}
+
+
+\doxyref{Manager}{p.}{classRTC_1_1Manager} が持つ POAManager を取得する. 
+
+\doxyref{Manager}{p.}{classRTC_1_1Manager} に設定された POAMAnager を取得する。
+
+\begin{DoxyReturn}{戻り値}
+POAマネージャ 
+\end{DoxyReturn}
+\index{RTC::Manager@{RTC::Manager}!init@{init}}
+\index{init@{init}!RTC::Manager@{RTC::Manager}}
+\subsubsection[{init}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf Manager}$\ast$ RTC::Manager::init (int {\em argc}, \/  char $\ast$$\ast$ {\em argv})\hspace{0.3cm}{\ttfamily  [static]}}\label{classRTC_1_1Manager_af39e7ea86ee2d06c1bdbb34e21ea35b1}
+
+
+マネージャの初期化 
+
+マネージャを初期化する static メンバ関数。 マネージャをコマンドライン引数を与えて初期化する。 マネージャを使用する場合は、必ずこの初期化メンバ関数 \doxyref{init()}{p.}{classRTC_1_1Manager_af39e7ea86ee2d06c1bdbb34e21ea35b1} を 呼ばなければならない。 マネージャのインスタンスを取得する方法として、init(), \doxyref{instance()}{p.}{classRTC_1_1Manager_a6a95fb1113fdf45bdf5c60df2fe8c4f9} の 2つの static メンバ関数が用意されているが、初期化はinit()でしか 行われないため、Manager の生存期間の一番最初にはinit()を呼ぶ必要がある。
+
+※マネージャの初期化処理
+\begin{DoxyItemize}
+\item initManager: 引数処理、configファイルの読み込み、サブシステム初期化
+\item initLogger: Logger初期化
+\item initORB: ORB 初期化
+\item initNaming: NamingService 初期化
+\item initExecutionContext: ExecutionContext factory 初期化
+\item initTimer: Timer 初期化
+\end{DoxyItemize}
+
+
+\begin{DoxyParams}{引数}
+\item[{\em argc}]コマンドライン引数の数 \item[{\em argv}]コマンドライン引数\end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+\doxyref{Manager}{p.}{classRTC_1_1Manager} の唯一のインスタンスの参照 
+\end{DoxyReturn}
+\index{RTC::Manager@{RTC::Manager}!initComposite@{initComposite}}
+\index{initComposite@{initComposite}!RTC::Manager@{RTC::Manager}}
+\subsubsection[{initComposite}]{\setlength{\rightskip}{0pt plus 5cm}bool RTC::Manager::initComposite ()\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC_1_1Manager_a0b7fa315b3c1161eb8d9c145b14d2178}
+
+
+\doxyref{PeriodicECSharedComposite}{p.}{classRTC_1_1PeriodicECSharedComposite} の初期化. 
+
+\begin{DoxyReturn}{戻り値}
+\doxyref{PeriodicECSharedComposite}{p.}{classRTC_1_1PeriodicECSharedComposite} 初期化処理実行結果 (初期化成功:true、初期化失敗:false) 
+\end{DoxyReturn}
+\index{RTC::Manager@{RTC::Manager}!initExecContext@{initExecContext}}
+\index{initExecContext@{initExecContext}!RTC::Manager@{RTC::Manager}}
+\subsubsection[{initExecContext}]{\setlength{\rightskip}{0pt plus 5cm}bool RTC::Manager::initExecContext ()\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC_1_1Manager_a131568336c544080843a8f574a89c495}
+
+
+ExecutionContextManager の初期化. 
+
+使用する各 ExecutionContext の初期化処理を実行し、各 ExecutionContext 生成用 Factory を ExecutionContextManager に登録する。
+
+\begin{DoxyReturn}{戻り値}
+ExecutionContextManager 初期化処理実行結果 (初期化成功:true、初期化失敗:false) 
+\end{DoxyReturn}
+\index{RTC::Manager@{RTC::Manager}!initFactories@{initFactories}}
+\index{initFactories@{initFactories}!RTC::Manager@{RTC::Manager}}
+\subsubsection[{initFactories}]{\setlength{\rightskip}{0pt plus 5cm}bool RTC::Manager::initFactories ()\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC_1_1Manager_a5db91c48958930846baf7c6d2aea3f6f}
+
+
+ファクトリの初期化 
+
+バッファ、スレッド、パブリッシャ、プロバイダ、コンシューマの ファクトリを初期化する。
+
+\begin{DoxyReturn}{戻り値}
+ファクトリ初期化処理実行結果 (初期化成功:true、初期化失敗:false) 
+\end{DoxyReturn}
+\index{RTC::Manager@{RTC::Manager}!initLogger@{initLogger}}
+\index{initLogger@{initLogger}!RTC::Manager@{RTC::Manager}}
+\subsubsection[{initLogger}]{\setlength{\rightskip}{0pt plus 5cm}bool RTC::Manager::initLogger ()\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC_1_1Manager_a4aec4e062a183ace5dc19df9617cfa18}
+
+
+System logger の初期化. 
+
+System logger の初期化を実行する。 コンフィギュレーションファイルに設定された情報に基づき、 ロガーの初期化，設定を実行する。
+
+\begin{DoxyReturn}{戻り値}
+初期化実行結果(初期化成功:true、初期化失敗:false) 
+\end{DoxyReturn}
+\index{RTC::Manager@{RTC::Manager}!initManager@{initManager}}
+\index{initManager@{initManager}!RTC::Manager@{RTC::Manager}}
+\subsubsection[{initManager}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::Manager::initManager (int {\em argc}, \/  char $\ast$$\ast$ {\em argv})\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC_1_1Manager_aa26e6d9fd21ea4859f6bb408fbdb8352}
+
+
+\doxyref{Manager}{p.}{classRTC_1_1Manager} の内部初期化処理. 
+
+\doxyref{Manager}{p.}{classRTC_1_1Manager} の内部初期化処理を実行する。
+\begin{DoxyItemize}
+\item \doxyref{Manager}{p.}{classRTC_1_1Manager} コンフィギュレーションの設定
+\item ログ出力ファイルの設定
+\item 終了処理用スレッドの生成
+\item タイマ用スレッドの生成(タイマ使用時)
+\end{DoxyItemize}
+
+
+\begin{DoxyParams}{引数}
+\item[{\em argc}]コマンドライン引数の数 \item[{\em argv}]コマンドライン引数 \end{DoxyParams}
+\index{RTC::Manager@{RTC::Manager}!initManagerServant@{initManagerServant}}
+\index{initManagerServant@{initManagerServant}!RTC::Manager@{RTC::Manager}}
+\subsubsection[{initManagerServant}]{\setlength{\rightskip}{0pt plus 5cm}bool RTC::Manager::initManagerServant ()\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC_1_1Manager_aa3b12e0e37a384fc2f09f6d893f84cfc}
+
+
+ManagerServant の初期化. 
+
+\begin{DoxyReturn}{戻り値}
+Timer 初期化処理実行結果(初期化成功:true、初期化失敗:false) 
+\end{DoxyReturn}
+\index{RTC::Manager@{RTC::Manager}!initNaming@{initNaming}}
+\index{initNaming@{initNaming}!RTC::Manager@{RTC::Manager}}
+\subsubsection[{initNaming}]{\setlength{\rightskip}{0pt plus 5cm}bool RTC::Manager::initNaming ()\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC_1_1Manager_ad7eb63484573314a3af51e113b83e609}
+
+
+\doxyref{NamingManager}{p.}{classRTC_1_1NamingManager} の初期化. 
+
+\doxyref{NamingManager}{p.}{classRTC_1_1NamingManager} の初期化処理を実行する。 ただし、NamingManager を使用しないようにプロパティ情報に設定されている 場合には何もしない。 \doxyref{NamingManager}{p.}{classRTC_1_1NamingManager} を使用する場合、プロパティ情報に設定されている デフォルト NamingServer を登録する。 また、定期的に情報を更新するように設定されている場合には、指定された周期 で自動更新を行うためのタイマを起動するとともに、更新用メソッドをタイマに 登録する。
+
+\begin{DoxyReturn}{戻り値}
+初期化処理結果(初期化成功:true、初期化失敗:false) 
+\end{DoxyReturn}
+\index{RTC::Manager@{RTC::Manager}!initORB@{initORB}}
+\index{initORB@{initORB}!RTC::Manager@{RTC::Manager}}
+\subsubsection[{initORB}]{\setlength{\rightskip}{0pt plus 5cm}bool RTC::Manager::initORB ()\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC_1_1Manager_a15721b748eb89ba8f19173b650b264cf}
+
+
+CORBA ORB の初期化処理. 
+
+引数により与えられた設定を元にORBを初期化する。
+
+\begin{DoxyReturn}{戻り値}
+ORB 初期化処理結果(初期化成功:true、初期化失敗:false) 
+\end{DoxyReturn}
+\index{RTC::Manager@{RTC::Manager}!initTimer@{initTimer}}
+\index{initTimer@{initTimer}!RTC::Manager@{RTC::Manager}}
+\subsubsection[{initTimer}]{\setlength{\rightskip}{0pt plus 5cm}bool RTC::Manager::initTimer ()\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC_1_1Manager_a0495caa43e094cf67938406981a950ab}
+
+
+Timer の初期化. 
+
+使用する各 Timer の初期化処理を実行する。 (現状の実装では何もしない)
+
+\begin{DoxyReturn}{戻り値}
+Timer 初期化処理実行結果(初期化成功:true、初期化失敗:false) 
+\end{DoxyReturn}
+\index{RTC::Manager@{RTC::Manager}!instance@{instance}}
+\index{instance@{instance}!RTC::Manager@{RTC::Manager}}
+\subsubsection[{instance}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf Manager}\& RTC::Manager::instance ()\hspace{0.3cm}{\ttfamily  [static]}}\label{classRTC_1_1Manager_a6a95fb1113fdf45bdf5c60df2fe8c4f9}
+
+
+マネージャのインスタンスの取得 
+
+マネージャのインスタンスを取得する static メンバ関数。 この関数を呼ぶ前に、必ずこの初期化メンバ関数 \doxyref{init()}{p.}{classRTC_1_1Manager_af39e7ea86ee2d06c1bdbb34e21ea35b1} が呼ばれている 必要がある。
+
+\begin{DoxyReturn}{戻り値}
+\doxyref{Manager}{p.}{classRTC_1_1Manager} の唯一のインスタンスの参照 
+\end{DoxyReturn}
+
+
+参照元 CORBA\_\-SeqUtil::refToVstring(), と RTC::Manager::Terminator::svc().
+
+\index{RTC::Manager@{RTC::Manager}!join@{join}}
+\index{join@{join}!RTC::Manager@{RTC::Manager}}
+\subsubsection[{join}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::Manager::join ()}\label{classRTC_1_1Manager_afca4b370ac45c27d2ba6d52281a740d8}
+
+
+マネージャ終了処理の待ち合わせ 
+
+同期を取るため、マネージャ終了処理の待ち合わせを行う。 \index{RTC::Manager@{RTC::Manager}!load@{load}}
+\index{load@{load}!RTC::Manager@{RTC::Manager}}
+\subsubsection[{load}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::Manager::load (const char $\ast$ {\em fname}, \/  const char $\ast$ {\em initfunc})}\label{classRTC_1_1Manager_a7bfbd34460b64340a8e242d4ebf045f7}
+
+
+[CORBA interface] モジュールのロード 
+
+指定したコンポーネントのモジュールをロードするとともに、 指定した初期化関数を実行する。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em fname}]モジュールファイル名 \item[{\em initfunc}]初期化関数名 \end{DoxyParams}
+\index{RTC::Manager@{RTC::Manager}!mergeProperty@{mergeProperty}}
+\index{mergeProperty@{mergeProperty}!RTC::Manager@{RTC::Manager}}
+\subsubsection[{mergeProperty}]{\setlength{\rightskip}{0pt plus 5cm}bool RTC::Manager::mergeProperty ({\bf coil::Properties} \& {\em prop}, \/  const char $\ast$ {\em file\_\-name})\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC_1_1Manager_a7484397acf59e0078817ce7349ab3de5}
+
+
+プロパティ情報のマージ 
+
+指定されたファイル内に設定されているプロパティ情報をロードし、 既存の設定済みプロパティとマージする。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em prop}]マージ対象プロパティ \item[{\em file\_\-name}]プロパティ情報が記述されているファイル名\end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+マージ処理実行結果(マージ成功:true、マージ失敗:false) 
+\end{DoxyReturn}
+\index{RTC::Manager@{RTC::Manager}!notifyFinalized@{notifyFinalized}}
+\index{notifyFinalized@{notifyFinalized}!RTC::Manager@{RTC::Manager}}
+\subsubsection[{notifyFinalized}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::Manager::notifyFinalized ({\bf RTObject\_\-impl} $\ast$ {\em comp})}\label{classRTC_1_1Manager_a691bd01bcbf70204324ff50acf41c608}
+
+
+RTコンポーネントの削除する. 
+
+削除するRTコンポーネントを登録する。 登録されたRTコンポーネントは \doxyref{cleanupComponents()}{p.}{classRTC_1_1Manager_a469fb7f7ba0a1d2cadc22f11ff897682} で削除される。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em 削除するRTコンポーネント}]\end{DoxyParams}
+\index{RTC::Manager@{RTC::Manager}!procComponentArgs@{procComponentArgs}}
+\index{procComponentArgs@{procComponentArgs}!RTC::Manager@{RTC::Manager}}
+\subsubsection[{procComponentArgs}]{\setlength{\rightskip}{0pt plus 5cm}bool RTC::Manager::procComponentArgs (const char $\ast$ {\em comp\_\-arg}, \/  {\bf coil::Properties} \& {\em comp\_\-id}, \/  {\bf coil::Properties} \& {\em comp\_\-conf})\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC_1_1Manager_adc2b1a5dec996dccc5087398927a2bdd}
+
+
+引数文字列からコンポーネント型名・プロパティを抽出する 
+
+文字列からコンポーネント型とコンポーネントのプロパティを抽出する。 与えられる文字列のフォーマットは \doxyref{RTC}{p.}{namespaceRTC} の ID とコンフィギュレーショ ンからなる
+
+[\doxyref{RTC}{p.}{namespaceRTC} type]?[key(0)]=[val(0)]\&[key(1)]=[val(1)]\&...\&[key(n)]=[val(n)]
+
+である。なお、RTC type は implementation\_\-id のみ、もしくは、下記 の \doxyref{RTC}{p.}{namespaceRTC} ID 形式
+
+\doxyref{RTC}{p.}{namespaceRTC}:[vendor]:[category]:[impl\_\-id]:[version]
+
+を受け付ける。戻り値である、comp\_\-id は、 \char`\"{}vendor\char`\"{}, \char`\"{}category\char`\"{}, \char`\"{}implementation\_\-id\char`\"{}, \char`\"{}version\char`\"{} のキーを持つ Properties 型のオブジェクトとして返される。 comp\_\-conf には \char`\"{}?\char`\"{} 以下に記述されるコンポーネントに与えるプロパティ が Properties 型のオブジェクトとして返される。
+
+\begin{DoxyReturn}{戻り値}
+comp\_\-arg にコンポーネント型が含まれていない場合false 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{引数}
+\item[{\em comp\_\-arg}]処理すべき文字列 \item[{\em comp\_\-id}]抽出されたコンポーネントの型名 \item[{\em comp\_\-conf}]抽出されたコンポーネントのプロパティ \end{DoxyParams}
+\index{RTC::Manager@{RTC::Manager}!procContextArgs@{procContextArgs}}
+\index{procContextArgs@{procContextArgs}!RTC::Manager@{RTC::Manager}}
+\subsubsection[{procContextArgs}]{\setlength{\rightskip}{0pt plus 5cm}bool RTC::Manager::procContextArgs (const char $\ast$ {\em ec\_\-args}, \/  std::string \& {\em ec\_\-id}, \/  {\bf coil::Properties} \& {\em ec\_\-conf})\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC_1_1Manager_a3b75198dc6466996ace35d08badb1bd0}
+
+
+引数文字列からExecutionContext名・プロパティを抽出する 
+
+文字列からExecutionContext名とプロパティを抽出する。 与えられる文字列のフォーマットは \doxyref{RTC}{p.}{namespaceRTC} の ID とコンフィギュレーショ ンからなる
+
+[ExecutionContext名]?[key(0)]=[val(0)]\&[key(1)]=[val(1)]\&...\&[key(n)]=[val(n)]
+
+である。
+
+ec\_\-conf には \char`\"{}?\char`\"{} 以下に記述されるコンポーネントに与えるプロパティ が Properties 型のオブジェクトとして返される。
+
+\begin{DoxyReturn}{戻り値}
+ec\_\-args にExecutionContext名が含まれていない場合false 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{引数}
+\item[{\em ec\_\-args}]処理すべき文字列 \item[{\em ec\_\-id}]抽出されたExecutionContext名 \item[{\em ec\_\-conf}]抽出されたExecutionContextのプロパティ \end{DoxyParams}
+\index{RTC::Manager@{RTC::Manager}!registerComponent@{registerComponent}}
+\index{registerComponent@{registerComponent}!RTC::Manager@{RTC::Manager}}
+\subsubsection[{registerComponent}]{\setlength{\rightskip}{0pt plus 5cm}bool RTC::Manager::registerComponent ({\bf RTObject\_\-impl} $\ast$ {\em comp})}\label{classRTC_1_1Manager_a45f1a13e7028a9ecd5424b8ebb247e0a}
+
+
+RTコンポーネントを直接 \doxyref{Manager}{p.}{classRTC_1_1Manager} に登録する. 
+
+指定したRTコンポーネントのインスタンスを ファクトリ経由ではなく直接マネージャに登録する。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em comp}]登録対象RTコンポーネントのインスタンス\end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+登録処理結果(登録成功:true、失敗:false) 
+\end{DoxyReturn}
+\index{RTC::Manager@{RTC::Manager}!registerECFactory@{registerECFactory}}
+\index{registerECFactory@{registerECFactory}!RTC::Manager@{RTC::Manager}}
+\subsubsection[{registerECFactory}]{\setlength{\rightskip}{0pt plus 5cm}bool RTC::Manager::registerECFactory (const char $\ast$ {\em name}, \/  {\bf ECNewFunc} {\em new\_\-func}, \/  {\bf ECDeleteFunc} {\em delete\_\-func})}\label{classRTC_1_1Manager_a7946201984d5f749f1702ecfffa78869}
+
+
+ExecutionContext用ファクトリを登録する. 
+
+ExecutionContextのインスタンスを生成するための Factoryを登録する。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em name}]生成対象ExecutionContext名称 \item[{\em new\_\-func}]ExecutionContext生成用関数 \item[{\em delete\_\-func}]ExecutionContext破棄用関数\end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+登録処理結果(登録成功:true、失敗:false) 
+\end{DoxyReturn}
+\index{RTC::Manager@{RTC::Manager}!registerFactory@{registerFactory}}
+\index{registerFactory@{registerFactory}!RTC::Manager@{RTC::Manager}}
+\subsubsection[{registerFactory}]{\setlength{\rightskip}{0pt plus 5cm}bool RTC::Manager::registerFactory ({\bf coil::Properties} \& {\em profile}, \/  {\bf RtcNewFunc} {\em new\_\-func}, \/  {\bf RtcDeleteFunc} {\em delete\_\-func})}\label{classRTC_1_1Manager_a26cfa0a3885c2d3fa8d7117307a6883c}
+
+
+RTコンポーネント用ファクトリを登録する. 
+
+RTコンポーネントのインスタンスを生成するための Factoryを登録する。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em profile}]RTコンポーネント プロファイル \item[{\em new\_\-func}]RTコンポーネント生成用関数 \item[{\em delete\_\-func}]RTコンポーネント破棄用関数\end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+登録処理結果(登録成功:true、失敗:false) 
+\end{DoxyReturn}
+\index{RTC::Manager@{RTC::Manager}!runManager@{runManager}}
+\index{runManager@{runManager}!RTC::Manager@{RTC::Manager}}
+\subsubsection[{runManager}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::Manager::runManager (bool {\em no\_\-block} = {\ttfamily false})}\label{classRTC_1_1Manager_a9ed639faf15b1a4fbed8969a3df21b71}
+
+
+Managerの実行. 
+
+このオペレーションはマネージャのメインループを実行する。 このメインループ内では、CORBA ORBのイベントループ等が 処理される。デフォルトでは、このオペレーションはブロックし、 Manager::destroy() が呼ばれるまで処理を戻さない。 引数 no\_\-block が true に設定されている場合は、内部でイベントループ を処理するスレッドを起動し、ブロックせずに処理を戻す。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em no\_\-block}]false: ブロッキングモード, true: ノンブロッキングモード \end{DoxyParams}
+\index{RTC::Manager@{RTC::Manager}!setModuleInitProc@{setModuleInitProc}}
+\index{setModuleInitProc@{setModuleInitProc}!RTC::Manager@{RTC::Manager}}
+\subsubsection[{setModuleInitProc}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::Manager::setModuleInitProc ({\bf ModuleInitProc} {\em proc})}\label{classRTC_1_1Manager_a6837955ce6f9e99d4ca04eade62858b3}
+
+
+初期化プロシージャのセット 
+
+このオペレーションはユーザが行うモジュール等の初期化プロシージャ を設定する。ここで設定されたプロシージャは、マネージャが初期化され、 アクティブ化された後、適切なタイミングで実行される。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em proc}]初期化プロシージャの関数ポインタ \end{DoxyParams}
+\index{RTC::Manager@{RTC::Manager}!shutdown@{shutdown}}
+\index{shutdown@{shutdown}!RTC::Manager@{RTC::Manager}}
+\subsubsection[{shutdown}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::Manager::shutdown ()}\label{classRTC_1_1Manager_aa09886d4957ee1a03862c878216461f6}
+
+
+マネージャ・シャットダウン 
+
+マネージャの終了処理を実行する。 ORB終了後、同期を取って終了する。 
+
+参照元 RTC::Manager::Terminator::svc().
+
+\index{RTC::Manager@{RTC::Manager}!shutdownComponents@{shutdownComponents}}
+\index{shutdownComponents@{shutdownComponents}!RTC::Manager@{RTC::Manager}}
+\subsubsection[{shutdownComponents}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::Manager::shutdownComponents ()\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC_1_1Manager_a2fedb8d2c04bc31553034742f4770998}
+
+
+\doxyref{NamingManager}{p.}{classRTC_1_1NamingManager} に登録されている RTコンポーネントの終了処理. 
+
+\doxyref{NamingManager}{p.}{classRTC_1_1NamingManager} に登録されているRTコンポーネントのリストを取得し、 全コンポーネントを終了する。 \index{RTC::Manager@{RTC::Manager}!shutdownLogger@{shutdownLogger}}
+\index{shutdownLogger@{shutdownLogger}!RTC::Manager@{RTC::Manager}}
+\subsubsection[{shutdownLogger}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::Manager::shutdownLogger ()\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC_1_1Manager_af47f06004ab7ebae7885623ae45c71c2}
+
+
+System \doxyref{Logger}{p.}{classRTC_1_1Logger} の終了処理. 
+
+System Loggerの終了処理を実行する。 バッファ内に保持されているログ情報が存在する場合には、 強制的にログファイルに出力し、ログファイルを閉じる。 \index{RTC::Manager@{RTC::Manager}!shutdownManager@{shutdownManager}}
+\index{shutdownManager@{shutdownManager}!RTC::Manager@{RTC::Manager}}
+\subsubsection[{shutdownManager}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::Manager::shutdownManager ()\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC_1_1Manager_a9b492cbdae060e752369ed261388b35f}
+
+
+\doxyref{Manager}{p.}{classRTC_1_1Manager} の終了処理. 
+
+\doxyref{Manager}{p.}{classRTC_1_1Manager} を終了する (ただし，現在は未実装) \index{RTC::Manager@{RTC::Manager}!shutdownNaming@{shutdownNaming}}
+\index{shutdownNaming@{shutdownNaming}!RTC::Manager@{RTC::Manager}}
+\subsubsection[{shutdownNaming}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::Manager::shutdownNaming ()\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC_1_1Manager_acaed021c8a3a54e6fb4a845acf12ddf4}
+
+
+\doxyref{NamingManager}{p.}{classRTC_1_1NamingManager} の終了処理. 
+
+\doxyref{NamingManager}{p.}{classRTC_1_1NamingManager} を終了する。 登録されている全要素をアンバインドし、終了する。 \index{RTC::Manager@{RTC::Manager}!shutdownOnNoRtcs@{shutdownOnNoRtcs}}
+\index{shutdownOnNoRtcs@{shutdownOnNoRtcs}!RTC::Manager@{RTC::Manager}}
+\subsubsection[{shutdownOnNoRtcs}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::Manager::shutdownOnNoRtcs ()\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC_1_1Manager_a5b1d0880d6710f527efdf0218a25b360}
+
+
+\doxyref{Manager}{p.}{classRTC_1_1Manager} の終了処理. 
+
+configuration の \char`\"{}manager.shutdown\_\-on\_\-nortcs\char`\"{} YES で、 コンポーネントが登録されていない場合 \doxyref{Manager}{p.}{classRTC_1_1Manager} を終了する。 \index{RTC::Manager@{RTC::Manager}!shutdownORB@{shutdownORB}}
+\index{shutdownORB@{shutdownORB}!RTC::Manager@{RTC::Manager}}
+\subsubsection[{shutdownORB}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::Manager::shutdownORB ()\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC_1_1Manager_aa40fcebfa942f28123864e155fdf59be}
+
+
+ORB の終了処理. 
+
+ORB の終了処理を実行する。 実行待ちの処理が存在する場合には、その処理が終了するまで待つ。 実際の終了処理では、POA Managerを非活性化し、 ORB のシャットダウンを実行 する。 \index{RTC::Manager@{RTC::Manager}!terminate@{terminate}}
+\index{terminate@{terminate}!RTC::Manager@{RTC::Manager}}
+\subsubsection[{terminate}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::Manager::terminate ()}\label{classRTC_1_1Manager_acece453124099e9da591983cb6f096e1}
+
+
+マネージャ終了処理 
+
+マネージャの終了処理を実行する。 \index{RTC::Manager@{RTC::Manager}!unload@{unload}}
+\index{unload@{unload}!RTC::Manager@{RTC::Manager}}
+\subsubsection[{unload}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::Manager::unload (const char $\ast$ {\em fname})}\label{classRTC_1_1Manager_a992dd3466c78f75d23276291d7a94f5b}
+
+
+モジュールのアンロード 
+
+モジュールをアンロードする
+
+
+\begin{DoxyParams}{引数}
+\item[{\em fname}]モジュールのファイル名 \end{DoxyParams}
+\index{RTC::Manager@{RTC::Manager}!unloadAll@{unloadAll}}
+\index{unloadAll@{unloadAll}!RTC::Manager@{RTC::Manager}}
+\subsubsection[{unloadAll}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::Manager::unloadAll ()}\label{classRTC_1_1Manager_abc50c48246991070c3042816e6de8e66}
+
+
+全モジュールのアンロード 
+
+モジュールをすべてアンロードする \index{RTC::Manager@{RTC::Manager}!unregisterComponent@{unregisterComponent}}
+\index{unregisterComponent@{unregisterComponent}!RTC::Manager@{RTC::Manager}}
+\subsubsection[{unregisterComponent}]{\setlength{\rightskip}{0pt plus 5cm}bool RTC::Manager::unregisterComponent ({\bf RTObject\_\-impl} $\ast$ {\em comp})}\label{classRTC_1_1Manager_a0a636d42b810a80154159347cb724f23}
+
+
+RTコンポーネントの登録を解除する. 
+
+指定したRTコンポーネントの登録を解除する。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em comp}]登録解除対象RTコンポーネントのインスタンス\end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+登録解除処理結果(解除成功:true、解除失敗:false) 
+\end{DoxyReturn}
+
+
+\subsection{変数}
+\index{RTC::Manager@{RTC::Manager}!m\_\-compManager@{m\_\-compManager}}
+\index{m\_\-compManager@{m\_\-compManager}!RTC::Manager@{RTC::Manager}}
+\subsubsection[{m\_\-compManager}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ComponentManager} {\bf RTC::Manager::m\_\-compManager}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC_1_1Manager_a7de3039b4de6d20aeae3cd2450049368}
+
+
+コンポーネントマネージャ 
+
+\index{RTC::Manager@{RTC::Manager}!m\_\-config@{m\_\-config}}
+\index{m\_\-config@{m\_\-config}!RTC::Manager@{RTC::Manager}}
+\subsubsection[{m\_\-config}]{\setlength{\rightskip}{0pt plus 5cm}{\bf coil::Properties} {\bf RTC::Manager::m\_\-config}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC_1_1Manager_a32124de432bac3083ac94901f8abf763}
+
+
+\doxyref{Manager}{p.}{classRTC_1_1Manager} の configuration を格納する Properties. 
+
+
+
+参照元 getConfig(), と getLogLevel().
+
+\index{RTC::Manager@{RTC::Manager}!m\_\-ecfactory@{m\_\-ecfactory}}
+\index{m\_\-ecfactory@{m\_\-ecfactory}!RTC::Manager@{RTC::Manager}}
+\subsubsection[{m\_\-ecfactory}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ECFactoryManager} {\bf RTC::Manager::m\_\-ecfactory}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC_1_1Manager_a21c0d43fd574fa5785be66d9afbc5c53}
+
+
+ExecutionContext マネージャ. 
+
+\index{RTC::Manager@{RTC::Manager}!m\_\-ecs@{m\_\-ecs}}
+\index{m\_\-ecs@{m\_\-ecs}!RTC::Manager@{RTC::Manager}}
+\subsubsection[{m\_\-ecs}]{\setlength{\rightskip}{0pt plus 5cm}std::vector$<${\bf ExecutionContextBase}$\ast$$>$ {\bf RTC::Manager::m\_\-ecs}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC_1_1Manager_aa692cee618ae85b70d04b77d5cf26885}
+
+
+ExecutionContext リスト. 
+
+\index{RTC::Manager@{RTC::Manager}!m\_\-factory@{m\_\-factory}}
+\index{m\_\-factory@{m\_\-factory}!RTC::Manager@{RTC::Manager}}
+\subsubsection[{m\_\-factory}]{\setlength{\rightskip}{0pt plus 5cm}{\bf FactoryManager} {\bf RTC::Manager::m\_\-factory}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC_1_1Manager_a622e7682b2f9e0f8c518849605bafa82}
+
+
+ComponentManager. 
+
+\index{RTC::Manager@{RTC::Manager}!m\_\-finalized@{m\_\-finalized}}
+\index{m\_\-finalized@{m\_\-finalized}!RTC::Manager@{RTC::Manager}}
+\subsubsection[{m\_\-finalized}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Finalized} {\bf RTC::Manager::m\_\-finalized}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC_1_1Manager_a57eca30810b013ac8ccccfdfbf26ef9b}
+\index{RTC::Manager@{RTC::Manager}!m\_\-initProc@{m\_\-initProc}}
+\index{m\_\-initProc@{m\_\-initProc}!RTC::Manager@{RTC::Manager}}
+\subsubsection[{m\_\-initProc}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ModuleInitProc} {\bf RTC::Manager::m\_\-initProc}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC_1_1Manager_a22c382f765b4e6c57d87a0242e34170e}
+
+
+ユーザ初期化関数へのポインタ 
+
+\index{RTC::Manager@{RTC::Manager}!m\_\-logfiles@{m\_\-logfiles}}
+\index{m\_\-logfiles@{m\_\-logfiles}!RTC::Manager@{RTC::Manager}}
+\subsubsection[{m\_\-logfiles}]{\setlength{\rightskip}{0pt plus 5cm}std::vector$<$std::filebuf$\ast$$>$ {\bf RTC::Manager::m\_\-logfiles}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC_1_1Manager_a3b1b87231fdcd65c18fe7387c258f978}
+
+
+ログ出力ファイル 
+
+\index{RTC::Manager@{RTC::Manager}!m\_\-logStreamBuf@{m\_\-logStreamBuf}}
+\index{m\_\-logStreamBuf@{m\_\-logStreamBuf}!RTC::Manager@{RTC::Manager}}
+\subsubsection[{m\_\-logStreamBuf}]{\setlength{\rightskip}{0pt plus 5cm}{\bf LogStreamBuf} {\bf RTC::Manager::m\_\-logStreamBuf}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC_1_1Manager_aec429e6d4b7f0a91c2a3ed98ed92e041}
+
+
+ロガーバッファ 
+
+
+
+参照元 getLogStreamBuf().
+
+\index{RTC::Manager@{RTC::Manager}!m\_\-mgrservant@{m\_\-mgrservant}}
+\index{m\_\-mgrservant@{m\_\-mgrservant}!RTC::Manager@{RTC::Manager}}
+\subsubsection[{m\_\-mgrservant}]{\setlength{\rightskip}{0pt plus 5cm}{\bf RTM::ManagerServant}$\ast$ {\bf RTC::Manager::m\_\-mgrservant}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC_1_1Manager_a35203d9a2ca5dda5866f58883bd6c591}
+
+
+ManagerServant へのポインタ. 
+
+\index{RTC::Manager@{RTC::Manager}!m\_\-module@{m\_\-module}}
+\index{m\_\-module@{m\_\-module}!RTC::Manager@{RTC::Manager}}
+\subsubsection[{m\_\-module}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ModuleManager}$\ast$ {\bf RTC::Manager::m\_\-module}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC_1_1Manager_af98a5898af2be5a7ad4d76b011687e1f}
+
+
+\doxyref{ModuleManager}{p.}{classRTC_1_1ModuleManager} へのポインタ. 
+
+\index{RTC::Manager@{RTC::Manager}!m\_\-namingManager@{m\_\-namingManager}}
+\index{m\_\-namingManager@{m\_\-namingManager}!RTC::Manager@{RTC::Manager}}
+\subsubsection[{m\_\-namingManager}]{\setlength{\rightskip}{0pt plus 5cm}{\bf NamingManager}$\ast$ {\bf RTC::Manager::m\_\-namingManager}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC_1_1Manager_a3993ae61305fd8cd5115e5a55b5c78c5}
+
+
+\doxyref{NamingManager}{p.}{classRTC_1_1NamingManager} へのポインタ. 
+
+\index{RTC::Manager@{RTC::Manager}!m\_\-pORB@{m\_\-pORB}}
+\index{m\_\-pORB@{m\_\-pORB}!RTC::Manager@{RTC::Manager}}
+\subsubsection[{m\_\-pORB}]{\setlength{\rightskip}{0pt plus 5cm}CORBA::ORB\_\-var {\bf RTC::Manager::m\_\-pORB}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC_1_1Manager_a367925d2429db42289e88ad282566547}
+
+
+ORB へのポインタ. 
+
+\index{RTC::Manager@{RTC::Manager}!m\_\-pPOA@{m\_\-pPOA}}
+\index{m\_\-pPOA@{m\_\-pPOA}!RTC::Manager@{RTC::Manager}}
+\subsubsection[{m\_\-pPOA}]{\setlength{\rightskip}{0pt plus 5cm}PortableServer::POA\_\-var {\bf RTC::Manager::m\_\-pPOA}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC_1_1Manager_a6a8793cf661491566de6befc768d2143}
+
+
+POA へのポインタ. 
+
+\index{RTC::Manager@{RTC::Manager}!m\_\-pPOAManager@{m\_\-pPOAManager}}
+\index{m\_\-pPOAManager@{m\_\-pPOAManager}!RTC::Manager@{RTC::Manager}}
+\subsubsection[{m\_\-pPOAManager}]{\setlength{\rightskip}{0pt plus 5cm}PortableServer::POAManager\_\-var {\bf RTC::Manager::m\_\-pPOAManager}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC_1_1Manager_ad000643133c1461632ab11be67980dc9}
+
+
+POAManager へのポインタ. 
+
+\index{RTC::Manager@{RTC::Manager}!m\_\-runner@{m\_\-runner}}
+\index{m\_\-runner@{m\_\-runner}!RTC::Manager@{RTC::Manager}}
+\subsubsection[{m\_\-runner}]{\setlength{\rightskip}{0pt plus 5cm}{\bf OrbRunner}$\ast$ {\bf RTC::Manager::m\_\-runner}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC_1_1Manager_a312ede4e0a38253fbd5988aeb48f93ba}
+
+
+ORB ヘルパークラスへのポインタ. 
+
+\index{RTC::Manager@{RTC::Manager}!m\_\-terminate@{m\_\-terminate}}
+\index{m\_\-terminate@{m\_\-terminate}!RTC::Manager@{RTC::Manager}}
+\subsubsection[{m\_\-terminate}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Term} {\bf RTC::Manager::m\_\-terminate}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC_1_1Manager_a0c6152567147ce6ecff3a3598c0c4582}
+
+
+マネージャ終了処理用同期フラグ 
+
+マネージャ終了の待ち合せ処理で同期を取るためのフラグ。 \index{RTC::Manager@{RTC::Manager}!m\_\-terminator@{m\_\-terminator}}
+\index{m\_\-terminator@{m\_\-terminator}!RTC::Manager@{RTC::Manager}}
+\subsubsection[{m\_\-terminator}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Terminator}$\ast$ {\bf RTC::Manager::m\_\-terminator}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC_1_1Manager_a71fdbfc2829f7d6480c89eb00b1172a7}
+
+
+ORB 終了用ヘルパークラスへのポインタ. 
+
+\index{RTC::Manager@{RTC::Manager}!m\_\-timer@{m\_\-timer}}
+\index{m\_\-timer@{m\_\-timer}!RTC::Manager@{RTC::Manager}}
+\subsubsection[{m\_\-timer}]{\setlength{\rightskip}{0pt plus 5cm}{\bf coil::Timer}$\ast$ {\bf RTC::Manager::m\_\-timer}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC_1_1Manager_a95c85c0975f90cdb49b55d627a7ee422}
+
+
+Timer Object. 
+
+\index{RTC::Manager@{RTC::Manager}!manager@{manager}}
+\index{manager@{manager}!RTC::Manager@{RTC::Manager}}
+\subsubsection[{manager}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Manager}$\ast$ {\bf RTC::Manager::manager}\hspace{0.3cm}{\ttfamily  [static, protected]}}\label{classRTC_1_1Manager_a07c481012a7bf88ea0c9aa01dffbfc19}
+
+
+唯一の \doxyref{Manager}{p.}{classRTC_1_1Manager} へのポインタ 
+
+\index{RTC::Manager@{RTC::Manager}!mutex@{mutex}}
+\index{mutex@{mutex}!RTC::Manager@{RTC::Manager}}
+\subsubsection[{mutex}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Mutex} {\bf RTC::Manager::mutex}\hspace{0.3cm}{\ttfamily  [static, protected]}}\label{classRTC_1_1Manager_aa38caecba1eeaa8a786b5763c265dfd8}
+
+
+唯一の \doxyref{Manager}{p.}{classRTC_1_1Manager} へのポインタに対する mutex 
+
+\index{RTC::Manager@{RTC::Manager}!rtclog@{rtclog}}
+\index{rtclog@{rtclog}!RTC::Manager@{RTC::Manager}}
+\subsubsection[{rtclog}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Logger} {\bf RTC::Manager::rtclog}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC_1_1Manager_a7fcf6741a809b1e339f013287b05df21}
+
+
+ロガーストリーム 
+

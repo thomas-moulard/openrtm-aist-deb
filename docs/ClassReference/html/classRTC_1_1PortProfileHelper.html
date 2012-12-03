@@ -1,0 +1,635 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<title>OpenRTM: クラス RTC::PortProfileHelper</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<!-- 作成： Doxygen 1.6.3 -->
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="index.html"><span>メインページ</span></a></li>
+      <li><a href="namespaces.html"><span>ネームスペース</span></a></li>
+      <li class="current"><a href="annotated.html"><span>クラス</span></a></li>
+      <li><a href="files.html"><span>ファイル</span></a></li>
+    </ul>
+  </div>
+  <div class="tabs">
+    <ul>
+      <li><a href="annotated.html"><span>構成</span></a></li>
+      <li><a href="hierarchy.html"><span>クラス階層</span></a></li>
+      <li><a href="functions.html"><span>構成メンバ</span></a></li>
+    </ul>
+  </div>
+  <div class="navpath"><a class="el" href="namespaceRTC.html">RTC</a>::<a class="el" href="classRTC_1_1PortProfileHelper.html">PortProfileHelper</a>
+  </div>
+</div>
+<div class="contents">
+<h1>クラス RTC::PortProfileHelper</h1><!-- doxytag: class="RTC::PortProfileHelper" -->
+<p>PortProfile ヘルパークラス.  
+<a href="#_details">[詳細]</a></p>
+
+<p><code>#include &lt;<a class="el" href="PortProfileHelper_8h_source.html">PortProfileHelper.h</a>&gt;</code></p>
+
+<p><a href="classRTC_1_1PortProfileHelper-members.html">すべてのメンバ一覧</a></p>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr><td colspan="2"><h2>構成</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">struct &nbsp;</td><td class="memItemRight" valign="bottom"><b>conn_id</b></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">struct &nbsp;</td><td class="memItemRight" valign="bottom"><b>conn_name</b></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">struct &nbsp;</td><td class="memItemRight" valign="bottom"><b>if_name</b></td></tr>
+<tr><td colspan="2"><h2>Public メソッド</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1PortProfileHelper.html#a9461fe0f4c58e4556ad8620e0f952e04">PortProfileHelper</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1PortProfileHelper.html#aa193920a7ca90f2f6f88413e37d2ddc6">~PortProfileHelper</a> (void)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1PortProfileHelper.html#acfe228eb5e5f95633c537cb00006c430">setPortProfile</a> (const PortProfile &amp;profile)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">PortProfile を設定する.  <a href="#acfe228eb5e5f95633c537cb00006c430"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">PortProfile *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1PortProfileHelper.html#a96ad86397d2fbb7cd0bd931bea2a8e8b">getPortProfile</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">PortProfile を取得する.  <a href="#a96ad86397d2fbb7cd0bd931bea2a8e8b"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1PortProfileHelper.html#ab97df83e386d84d250109bb3770eee64">setName</a> (const char *name)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">PortProfile.name を設定する.  <a href="#ab97df83e386d84d250109bb3770eee64"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">const char *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1PortProfileHelper.html#a1ea140e419f0353b2e3ba53cf2f95a55">getName</a> () const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">PortProfile.name を取得する.  <a href="#a1ea140e419f0353b2e3ba53cf2f95a55"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1PortProfileHelper.html#a3688e99bab76f91ec066d687733d8311">appendPortInterfaceProfile</a> (PortInterfaceProfile if_prof)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">PortInterfaceProfile を追加する.  <a href="#a3688e99bab76f91ec066d687733d8311"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">const PortInterfaceProfileList &amp;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1PortProfileHelper.html#acf235a771a40ccaf67b8d48fd91ce430">getPortInterfaceProfiles</a> () const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">PortInterfaceProfileList を取得する.  <a href="#acf235a771a40ccaf67b8d48fd91ce430"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">const PortInterfaceProfile&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1PortProfileHelper.html#a27dcb6af463b32a020c102492c68dd7f">getPortInterfaceProfile</a> (const char *instance_name) const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">PortInterfaceProfile を取得する.  <a href="#a27dcb6af463b32a020c102492c68dd7f"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1PortProfileHelper.html#a1fe482f149415a6695daf871b27ec7ba">erasePortInterfaceProfile</a> (const char *instance_name)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">PortInterfaceProfile を削除する.  <a href="#a1fe482f149415a6695daf871b27ec7ba"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1PortProfileHelper.html#a819b0c4f1532c14781a94329dad59962">setPortRef</a> (PortService_ptr port)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Port のオブジェクト参照をセットする.  <a href="#a819b0c4f1532c14781a94329dad59962"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">PortService_ptr&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1PortProfileHelper.html#a0ff844c3336b2ff3cb0b3dd265ac16d7">getPortRef</a> () const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Port のオブジェクト参照を取得する.  <a href="#a0ff844c3336b2ff3cb0b3dd265ac16d7"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1PortProfileHelper.html#aeb9e2b522ace6358c47b078d0d24a2df">appendConnectorProfile</a> (ConnectorProfile conn_profile)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">ConnectorProfile を追加する.  <a href="#aeb9e2b522ace6358c47b078d0d24a2df"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">const ConnectorProfileList&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1PortProfileHelper.html#a317a4707085ace828989e40a4cd9df72">getConnectorProfiles</a> () const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">ConnectorProfileList を取得する.  <a href="#a317a4707085ace828989e40a4cd9df72"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">const ConnectorProfile&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1PortProfileHelper.html#af8f4c120d1270b9f765f44f9abbcd385">getConnectorProfile</a> (const char *name) const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">ConnectorProfile を取得する.  <a href="#af8f4c120d1270b9f765f44f9abbcd385"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">const ConnectorProfile&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1PortProfileHelper.html#a6588b2165e50ba60b72919141cf77d90">getConnectorProfileById</a> (const char *id) const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">ConnectorProfile を取得する.  <a href="#a6588b2165e50ba60b72919141cf77d90"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1PortProfileHelper.html#a17027ea239a500648b2f8b5c71604a92">eraseConnectorProfile</a> (const char *name)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">ConnectorProfile を削除する.  <a href="#a17027ea239a500648b2f8b5c71604a92"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1PortProfileHelper.html#a6ce8029af5d7c1eac6a600d1392e19f8">eraseConnectorProfileById</a> (const char *id)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">ConnectorProfile を削除する.  <a href="#a6ce8029af5d7c1eac6a600d1392e19f8"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1PortProfileHelper.html#aa97f28b29ab594657a5d201854e2bb6a">setOwner</a> (RTObject_ptr owner)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">PortProfile の owner を設定する.  <a href="#aa97f28b29ab594657a5d201854e2bb6a"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">RTObject_ptr&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1PortProfileHelper.html#a3586f461074369276a5a4c2b72986dd8">getOwner</a> () const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">PortProfile の owner を取得する.  <a href="#a3586f461074369276a5a4c2b72986dd8"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1PortProfileHelper.html#adf607e508e6848e24a8b57367756e7ce">setProperties</a> (NVList &amp;prop)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">PortProfile の properties を設定する.  <a href="#adf607e508e6848e24a8b57367756e7ce"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">const NVList &amp;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1PortProfileHelper.html#a988bc4ec7976f5fd653c1dcb48bf16ec">getProperties</a> () const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">PortProfile の properties を取得する.  <a href="#a988bc4ec7976f5fd653c1dcb48bf16ec"></a><br/></td></tr>
+</table>
+<hr/><a name="_details"></a><h2>説明</h2>
+<p>PortProfile ヘルパークラス. </p>
+<p>RTC::Port の種々のプロファイルを保持する PortProfile を管理するクラス。 主として <a class="el" href="classRTC_1_1PortBase.html" title="Port の基底クラス.">PortBase</a> の内部で使用される。 </p>
+<hr/><h2>コンストラクタとデストラクタ</h2>
+<a class="anchor" id="a9461fe0f4c58e4556ad8620e0f952e04"></a><!-- doxytag: member="RTC::PortProfileHelper::PortProfileHelper" ref="a9461fe0f4c58e4556ad8620e0f952e04" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">RTC::PortProfileHelper::PortProfileHelper </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>コンストラクタ </p>
+
+</div>
+</div>
+<a class="anchor" id="aa193920a7ca90f2f6f88413e37d2ddc6"></a><!-- doxytag: member="RTC::PortProfileHelper::~PortProfileHelper" ref="aa193920a7ca90f2f6f88413e37d2ddc6" args="(void)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual RTC::PortProfileHelper::~PortProfileHelper </td>
+          <td>(</td>
+          <td class="paramtype">void&nbsp;</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>デストラクタ </p>
+
+</div>
+</div>
+<hr/><h2>関数</h2>
+<a class="anchor" id="aeb9e2b522ace6358c47b078d0d24a2df"></a><!-- doxytag: member="RTC::PortProfileHelper::appendConnectorProfile" ref="aeb9e2b522ace6358c47b078d0d24a2df" args="(ConnectorProfile conn_profile)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void RTC::PortProfileHelper::appendConnectorProfile </td>
+          <td>(</td>
+          <td class="paramtype">ConnectorProfile&nbsp;</td>
+          <td class="paramname"> <em>conn_profile</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>ConnectorProfile を追加する. </p>
+<p>このオペレーションは PortProfile に ConnectorProfile を追加する。</p>
+<dl><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>conn_profile</em>&nbsp;</td><td>ConnectorProfile </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a3688e99bab76f91ec066d687733d8311"></a><!-- doxytag: member="RTC::PortProfileHelper::appendPortInterfaceProfile" ref="a3688e99bab76f91ec066d687733d8311" args="(PortInterfaceProfile if_prof)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void RTC::PortProfileHelper::appendPortInterfaceProfile </td>
+          <td>(</td>
+          <td class="paramtype">PortInterfaceProfile&nbsp;</td>
+          <td class="paramname"> <em>if_prof</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>PortInterfaceProfile を追加する. </p>
+<p>このオペレーションは PortProfile に PortInterfaceProfile を追加する。</p>
+<dl><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>if_profile</em>&nbsp;</td><td>PortProfile に追加する PortInterfaceProfile </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a17027ea239a500648b2f8b5c71604a92"></a><!-- doxytag: member="RTC::PortProfileHelper::eraseConnectorProfile" ref="a17027ea239a500648b2f8b5c71604a92" args="(const char *name)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void RTC::PortProfileHelper::eraseConnectorProfile </td>
+          <td>(</td>
+          <td class="paramtype">const char *&nbsp;</td>
+          <td class="paramname"> <em>name</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>ConnectorProfile を削除する. </p>
+<p>このオペレーションは PortProfile の ConnectorProfile を 名前で指定して削除する。</p>
+<dl><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>naem</em>&nbsp;</td><td>ConnectorProfile の名前 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a6ce8029af5d7c1eac6a600d1392e19f8"></a><!-- doxytag: member="RTC::PortProfileHelper::eraseConnectorProfileById" ref="a6ce8029af5d7c1eac6a600d1392e19f8" args="(const char *id)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void RTC::PortProfileHelper::eraseConnectorProfileById </td>
+          <td>(</td>
+          <td class="paramtype">const char *&nbsp;</td>
+          <td class="paramname"> <em>id</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>ConnectorProfile を削除する. </p>
+<p>このオペレーションは PortProfile の ConnectorProfile を ID で指定して削除する。</p>
+<dl><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>id</em>&nbsp;</td><td>ConnectorProfile のID </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a1fe482f149415a6695daf871b27ec7ba"></a><!-- doxytag: member="RTC::PortProfileHelper::erasePortInterfaceProfile" ref="a1fe482f149415a6695daf871b27ec7ba" args="(const char *instance_name)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void RTC::PortProfileHelper::erasePortInterfaceProfile </td>
+          <td>(</td>
+          <td class="paramtype">const char *&nbsp;</td>
+          <td class="paramname"> <em>instance_name</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>PortInterfaceProfile を削除する. </p>
+<p>このオペレーションは instance_name で指定された　PortInterfaceProfile を削除する。指定した名前の PortInterfaceProfile が存在しない場合には、 NotFound exception を返す。</p>
+<dl><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>instance_name</em>&nbsp;</td><td>削除する PortInterfaceProfile の名前 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="af8f4c120d1270b9f765f44f9abbcd385"></a><!-- doxytag: member="RTC::PortProfileHelper::getConnectorProfile" ref="af8f4c120d1270b9f765f44f9abbcd385" args="(const char *name) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const ConnectorProfile RTC::PortProfileHelper::getConnectorProfile </td>
+          <td>(</td>
+          <td class="paramtype">const char *&nbsp;</td>
+          <td class="paramname"> <em>name</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>ConnectorProfile を取得する. </p>
+<p>このオペレーションは引数で指定された名前を持つ ConnectorProfile を返す。</p>
+<dl><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>name</em>&nbsp;</td><td>ConnectorProfile の名前 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>戻り値:</b></dt><dd>ConnectorProfile </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a6588b2165e50ba60b72919141cf77d90"></a><!-- doxytag: member="RTC::PortProfileHelper::getConnectorProfileById" ref="a6588b2165e50ba60b72919141cf77d90" args="(const char *id) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const ConnectorProfile RTC::PortProfileHelper::getConnectorProfileById </td>
+          <td>(</td>
+          <td class="paramtype">const char *&nbsp;</td>
+          <td class="paramname"> <em>id</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>ConnectorProfile を取得する. </p>
+<p>このオペレーションは引数で指定されたIDを持つ ConnectorProfile を返す。</p>
+<dl><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>id</em>&nbsp;</td><td>ConnectorProfile のID </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>戻り値:</b></dt><dd>ConnectorProfile </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a317a4707085ace828989e40a4cd9df72"></a><!-- doxytag: member="RTC::PortProfileHelper::getConnectorProfiles" ref="a317a4707085ace828989e40a4cd9df72" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const ConnectorProfileList RTC::PortProfileHelper::getConnectorProfiles </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>ConnectorProfileList を取得する. </p>
+<p>このオペレーションは PortProfile に関連付けられた ConnectorProfile の リスト ConnectorProfileList を返す。</p>
+<dl class="return"><dt><b>戻り値:</b></dt><dd>関連付けられた ConnectorProfileList </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a1ea140e419f0353b2e3ba53cf2f95a55"></a><!-- doxytag: member="RTC::PortProfileHelper::getName" ref="a1ea140e419f0353b2e3ba53cf2f95a55" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const char* RTC::PortProfileHelper::getName </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>PortProfile.name を取得する. </p>
+<p>このオペレーションは PortProfile.name を取得する。</p>
+<dl class="return"><dt><b>戻り値:</b></dt><dd>PortProfile.name へのポインタ </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a3586f461074369276a5a4c2b72986dd8"></a><!-- doxytag: member="RTC::PortProfileHelper::getOwner" ref="a3586f461074369276a5a4c2b72986dd8" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">RTObject_ptr RTC::PortProfileHelper::getOwner </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>PortProfile の owner を取得する. </p>
+<p>このオペレーションは PortProfile の owner のオブジェクト参照を返す。</p>
+<dl class="return"><dt><b>戻り値:</b></dt><dd>PortProfile の owner のオブジェクト参照 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a27dcb6af463b32a020c102492c68dd7f"></a><!-- doxytag: member="RTC::PortProfileHelper::getPortInterfaceProfile" ref="a27dcb6af463b32a020c102492c68dd7f" args="(const char *instance_name) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const PortInterfaceProfile RTC::PortProfileHelper::getPortInterfaceProfile </td>
+          <td>(</td>
+          <td class="paramtype">const char *&nbsp;</td>
+          <td class="paramname"> <em>instance_name</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>PortInterfaceProfile を取得する. </p>
+<p>このオペレーションは instance_name で指定された PortInterfaceProfile を返す。</p>
+<dl><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>instance_name</em>&nbsp;</td><td>PortInterfaceProfile の instance_name </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>戻り値:</b></dt><dd>PortInterfaceProfile </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="acf235a771a40ccaf67b8d48fd91ce430"></a><!-- doxytag: member="RTC::PortProfileHelper::getPortInterfaceProfiles" ref="acf235a771a40ccaf67b8d48fd91ce430" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const PortInterfaceProfileList&amp; RTC::PortProfileHelper::getPortInterfaceProfiles </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>PortInterfaceProfileList を取得する. </p>
+<p>このオペレーションは PortInterfaceProfileList を返す。</p>
+<dl class="return"><dt><b>戻り値:</b></dt><dd>PortInterfaceProfileList </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a96ad86397d2fbb7cd0bd931bea2a8e8b"></a><!-- doxytag: member="RTC::PortProfileHelper::getPortProfile" ref="a96ad86397d2fbb7cd0bd931bea2a8e8b" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">PortProfile* RTC::PortProfileHelper::getPortProfile </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>PortProfile を取得する. </p>
+<p>このオブジェクトが保持する PortProfile を返す。</p>
+<dl class="return"><dt><b>戻り値:</b></dt><dd>このオブジェクトが保持する PortProfile </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a0ff844c3336b2ff3cb0b3dd265ac16d7"></a><!-- doxytag: member="RTC::PortProfileHelper::getPortRef" ref="a0ff844c3336b2ff3cb0b3dd265ac16d7" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">PortService_ptr RTC::PortProfileHelper::getPortRef </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Port のオブジェクト参照を取得する. </p>
+<p>このオペレーションは PortProfile に関連付けられた Port の オブジェクト参照を返す。</p>
+<dl class="return"><dt><b>戻り値:</b></dt><dd>関連付けられた Port のオブジェクト参照 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a988bc4ec7976f5fd653c1dcb48bf16ec"></a><!-- doxytag: member="RTC::PortProfileHelper::getProperties" ref="a988bc4ec7976f5fd653c1dcb48bf16ec" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const NVList&amp; RTC::PortProfileHelper::getProperties </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>PortProfile の properties を取得する. </p>
+<p>このオペレーションは PortProfile の propertiesを返す。</p>
+<dl class="return"><dt><b>戻り値:</b></dt><dd>PortProfile の properties の NVList </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ab97df83e386d84d250109bb3770eee64"></a><!-- doxytag: member="RTC::PortProfileHelper::setName" ref="ab97df83e386d84d250109bb3770eee64" args="(const char *name)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void RTC::PortProfileHelper::setName </td>
+          <td>(</td>
+          <td class="paramtype">const char *&nbsp;</td>
+          <td class="paramname"> <em>name</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>PortProfile.name を設定する. </p>
+<p>このオペレーションは引数で与えられた文字列をコポーし、 PortProfile.name として保持する。</p>
+<dl><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>name</em>&nbsp;</td><td>PortProfile.name に格納する Port の名前 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="aa97f28b29ab594657a5d201854e2bb6a"></a><!-- doxytag: member="RTC::PortProfileHelper::setOwner" ref="aa97f28b29ab594657a5d201854e2bb6a" args="(RTObject_ptr owner)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void RTC::PortProfileHelper::setOwner </td>
+          <td>(</td>
+          <td class="paramtype">RTObject_ptr&nbsp;</td>
+          <td class="paramname"> <em>owner</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>PortProfile の owner を設定する. </p>
+<p>このオペレーションは PortProfile の owner を設定する。</p>
+<dl><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>owner</em>&nbsp;</td><td>PortProfile の owner のオブジェクト参照 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="acfe228eb5e5f95633c537cb00006c430"></a><!-- doxytag: member="RTC::PortProfileHelper::setPortProfile" ref="acfe228eb5e5f95633c537cb00006c430" args="(const PortProfile &amp;profile)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void RTC::PortProfileHelper::setPortProfile </td>
+          <td>(</td>
+          <td class="paramtype">const PortProfile &amp;&nbsp;</td>
+          <td class="paramname"> <em>profile</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>PortProfile を設定する. </p>
+<p>このオブジェクトが保持する PortProfile を引数で与えられた PortProfile をコピーし上書きして保存する。</p>
+<dl><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>PortProfile</em>&nbsp;</td><td>上書きする PortProfile </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a819b0c4f1532c14781a94329dad59962"></a><!-- doxytag: member="RTC::PortProfileHelper::setPortRef" ref="a819b0c4f1532c14781a94329dad59962" args="(PortService_ptr port)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void RTC::PortProfileHelper::setPortRef </td>
+          <td>(</td>
+          <td class="paramtype">PortService_ptr&nbsp;</td>
+          <td class="paramname"> <em>port</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Port のオブジェクト参照をセットする. </p>
+<p>このオペレーションは PortProfile に、関連する Port のオブジェクト参照 を設定する。</p>
+<dl><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>port</em>&nbsp;</td><td>設定する Port のオブジェクトリファレンス </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="adf607e508e6848e24a8b57367756e7ce"></a><!-- doxytag: member="RTC::PortProfileHelper::setProperties" ref="adf607e508e6848e24a8b57367756e7ce" args="(NVList &amp;prop)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void RTC::PortProfileHelper::setProperties </td>
+          <td>(</td>
+          <td class="paramtype">NVList &amp;&nbsp;</td>
+          <td class="paramname"> <em>prop</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>PortProfile の properties を設定する. </p>
+<p>このオペレーションは PortProfile に properties を設定する。</p>
+<dl><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>prop</em>&nbsp;</td><td>PortProfile の properties の NVList </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+</div>
+<hr class="footer"/><address style="text-align: right;"><small>OpenRTMに対してThu May 24 23:25:20 2012に生成されました。&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.6.3 </small></address>
+</body>
+</html>

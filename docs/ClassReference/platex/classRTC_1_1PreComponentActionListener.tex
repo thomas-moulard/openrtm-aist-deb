@@ -1,0 +1,99 @@
+\section{クラス RTC::PreComponentActionListener}
+\label{classRTC_1_1PreComponentActionListener}\index{RTC::PreComponentActionListener@{RTC::PreComponentActionListener}}
+
+
+\doxyref{PreComponentActionListener}{p.}{classRTC_1_1PreComponentActionListener} クラス.  
+
+
+
+
+{\ttfamily \#include $<$ComponentActionListener.h$>$}
+
+\subsection*{Public メソッド}
+\begin{DoxyCompactItemize}
+\item 
+virtual {\bf $\sim$PreComponentActionListener} ()
+\begin{DoxyCompactList}\small\item\em デストラクタ \item\end{DoxyCompactList}\item 
+virtual void {\bf operator()} ({\bf UniqueId} ec\_\-id)=0
+\begin{DoxyCompactList}\small\item\em 仮想コールバック関数 \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public メソッド}
+\begin{DoxyCompactItemize}
+\item 
+static const char $\ast$ {\bf toString} ({\bf PreComponentActionListenerType} type)
+\begin{DoxyCompactList}\small\item\em PreComponentActionListenerType を文字列に変換. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{説明}
+\doxyref{PreComponentActionListener}{p.}{classRTC_1_1PreComponentActionListener} クラス. OMG RTC仕様で定義されている以下のコンポーネントアクショントについ て、
+
+
+\begin{DoxyItemize}
+\item on\_\-initialize()
+\item on\_\-finalize()
+\item on\_\-startup()
+\item on\_\-shutdown()
+\item on\_\-activated
+\item on\_\-deactivated()
+\item on\_\-aborted()
+\item on\_\-error()
+\item on\_\-reset()
+\item on\_\-execute()
+\item on\_\-state\_\-update()
+\item on\_\-rate\_\-changed()
+\end{DoxyItemize}
+
+各アクションに対応するユーザーコードが呼ばれる直前のタイミング でコールされるリスナクラスの基底クラス。
+
+
+\begin{DoxyItemize}
+\item PRE\_\-ON\_\-INITIALIZE:
+\item PRE\_\-ON\_\-FINALIZE:
+\item PRE\_\-ON\_\-STARTUP:
+\item PRE\_\-ON\_\-SHUTDOWN:
+\item PRE\_\-ON\_\-ACTIVATED:
+\item PRE\_\-ON\_\-DEACTIVATED:
+\item PRE\_\-ON\_\-ABORTING:
+\item PRE\_\-ON\_\-ERROR:
+\item PRE\_\-ON\_\-RESET:
+\item PRE\_\-IN\_\-EXECUTE:
+\item PRE\_\-ON\_\-STATE\_\-UPDATE:
+\item PRE\_\-ON\_\-RATE\_\-CHANGED: 
+\end{DoxyItemize}
+
+\subsection{コンストラクタとデストラクタ}
+\index{RTC::PreComponentActionListener@{RTC::PreComponentActionListener}!$\sim$PreComponentActionListener@{$\sim$PreComponentActionListener}}
+\index{$\sim$PreComponentActionListener@{$\sim$PreComponentActionListener}!RTC::PreComponentActionListener@{RTC::PreComponentActionListener}}
+\subsubsection[{$\sim$PreComponentActionListener}]{\setlength{\rightskip}{0pt plus 5cm}virtual RTC::PreComponentActionListener::$\sim$PreComponentActionListener ()\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classRTC_1_1PreComponentActionListener_a2150e1cf96d3091af1eade01fb6c7e05}
+
+
+デストラクタ 
+
+
+
+\subsection{関数}
+\index{RTC::PreComponentActionListener@{RTC::PreComponentActionListener}!operator()@{operator()}}
+\index{operator()@{operator()}!RTC::PreComponentActionListener@{RTC::PreComponentActionListener}}
+\subsubsection[{operator()}]{\setlength{\rightskip}{0pt plus 5cm}virtual void RTC::PreComponentActionListener::operator() ({\bf UniqueId} {\em ec\_\-id})\hspace{0.3cm}{\ttfamily  [pure virtual]}}\label{classRTC_1_1PreComponentActionListener_a03350eaacaf67ce986f350959acf7a1d}
+
+
+仮想コールバック関数 
+
+\doxyref{PreComponentActionListener}{p.}{classRTC_1_1PreComponentActionListener} のコールバック関数 \index{RTC::PreComponentActionListener@{RTC::PreComponentActionListener}!toString@{toString}}
+\index{toString@{toString}!RTC::PreComponentActionListener@{RTC::PreComponentActionListener}}
+\subsubsection[{toString}]{\setlength{\rightskip}{0pt plus 5cm}static const char$\ast$ RTC::PreComponentActionListener::toString ({\bf PreComponentActionListenerType} {\em type})\hspace{0.3cm}{\ttfamily  [inline, static]}}\label{classRTC_1_1PreComponentActionListener_a697776819a3d13d8ebbf45a52808493a}
+
+
+PreComponentActionListenerType を文字列に変換. 
+
+PreComponentActionListenerType を文字列に変換する
+
+
+\begin{DoxyParams}{引数}
+\item[{\em type}]変換対象 PreComponentActionListenerType\end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+文字列変換結果 
+\end{DoxyReturn}
+
+
+参照先 RTC::PRE\_\-COMPONENT\_\-ACTION\_\-LISTENER\_\-NUM.
+

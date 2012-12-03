@@ -1,0 +1,83 @@
+\section{RTC::ConnectorDataListenerHolder Class Reference}
+\label{classRTC_1_1ConnectorDataListenerHolder}\index{RTC::ConnectorDataListenerHolder@{RTC::ConnectorDataListenerHolder}}
+
+
+\doxyref{ConnectorDataListener}{p.}{classRTC_1_1ConnectorDataListener} holder class.  
+
+
+
+
+{\ttfamily \#include $<$ConnectorListener.h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf ConnectorDataListenerHolder} ()
+\begin{DoxyCompactList}\small\item\em Constructor. \item\end{DoxyCompactList}\item 
+virtual {\bf $\sim$ConnectorDataListenerHolder} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \item\end{DoxyCompactList}\item 
+void {\bf addListener} ({\bf ConnectorDataListener} $\ast$listener, bool autoclean)
+\begin{DoxyCompactList}\small\item\em Add the listener. \item\end{DoxyCompactList}\item 
+void {\bf removeListener} ({\bf ConnectorDataListener} $\ast$listener)
+\begin{DoxyCompactList}\small\item\em Remove the listener. \item\end{DoxyCompactList}\item 
+void {\bf notify} (const {\bf ConnectorInfo} \&info, const cdrMemoryStream \&cdrdata)
+\begin{DoxyCompactList}\small\item\em Notify listeners. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\doxyref{ConnectorDataListener}{p.}{classRTC_1_1ConnectorDataListener} holder class. This class manages one ore more instances of \doxyref{ConnectorDataListener}{p.}{classRTC_1_1ConnectorDataListener} class. 
+
+\subsection{Constructor \& Destructor Documentation}
+\index{RTC::ConnectorDataListenerHolder@{RTC::ConnectorDataListenerHolder}!ConnectorDataListenerHolder@{ConnectorDataListenerHolder}}
+\index{ConnectorDataListenerHolder@{ConnectorDataListenerHolder}!RTC::ConnectorDataListenerHolder@{RTC::ConnectorDataListenerHolder}}
+\subsubsection[{ConnectorDataListenerHolder}]{\setlength{\rightskip}{0pt plus 5cm}RTC::ConnectorDataListenerHolder::ConnectorDataListenerHolder ()}\label{classRTC_1_1ConnectorDataListenerHolder_aa0c299c42ade0ce19b2ef5b70136034d}
+
+
+Constructor. 
+
+\index{RTC::ConnectorDataListenerHolder@{RTC::ConnectorDataListenerHolder}!$\sim$ConnectorDataListenerHolder@{$\sim$ConnectorDataListenerHolder}}
+\index{$\sim$ConnectorDataListenerHolder@{$\sim$ConnectorDataListenerHolder}!RTC::ConnectorDataListenerHolder@{RTC::ConnectorDataListenerHolder}}
+\subsubsection[{$\sim$ConnectorDataListenerHolder}]{\setlength{\rightskip}{0pt plus 5cm}virtual RTC::ConnectorDataListenerHolder::$\sim$ConnectorDataListenerHolder ()\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classRTC_1_1ConnectorDataListenerHolder_a50ba55ec3f0ded808616e9c79aa63ef1}
+
+
+Destructor. 
+
+
+
+\subsection{Member Function Documentation}
+\index{RTC::ConnectorDataListenerHolder@{RTC::ConnectorDataListenerHolder}!addListener@{addListener}}
+\index{addListener@{addListener}!RTC::ConnectorDataListenerHolder@{RTC::ConnectorDataListenerHolder}}
+\subsubsection[{addListener}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::ConnectorDataListenerHolder::addListener ({\bf ConnectorDataListener} $\ast$ {\em listener}, \/  bool {\em autoclean})}\label{classRTC_1_1ConnectorDataListenerHolder_a37534a08dd65b6c1bb54776d21970995}
+
+
+Add the listener. 
+
+This method adds the listener.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em listener}]Added listener \item[{\em autoclean}]true:The listener is deleted at the destructor., false:The listener is not deleted at the destructor. \end{DoxyParams}
+\index{RTC::ConnectorDataListenerHolder@{RTC::ConnectorDataListenerHolder}!notify@{notify}}
+\index{notify@{notify}!RTC::ConnectorDataListenerHolder@{RTC::ConnectorDataListenerHolder}}
+\subsubsection[{notify}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::ConnectorDataListenerHolder::notify (const {\bf ConnectorInfo} \& {\em info}, \/  const cdrMemoryStream \& {\em cdrdata})}\label{classRTC_1_1ConnectorDataListenerHolder_a44a647d9839d95c2c414a7d8737feb7b}
+
+
+Notify listeners. 
+
+This calls the Callback method of the registered listener.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em info}]\doxyref{ConnectorInfo}{p.}{classRTC_1_1ConnectorInfo} \item[{\em cdrdata}]Data \end{DoxyParams}
+\index{RTC::ConnectorDataListenerHolder@{RTC::ConnectorDataListenerHolder}!removeListener@{removeListener}}
+\index{removeListener@{removeListener}!RTC::ConnectorDataListenerHolder@{RTC::ConnectorDataListenerHolder}}
+\subsubsection[{removeListener}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::ConnectorDataListenerHolder::removeListener ({\bf ConnectorDataListener} $\ast$ {\em listener})}\label{classRTC_1_1ConnectorDataListenerHolder_a966d7887d2168f2b7a5cc2b1a721ae8d}
+
+
+Remove the listener. 
+
+This method removes the listener.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em listener}]Removed listener \end{DoxyParams}

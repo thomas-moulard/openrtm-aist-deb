@@ -1,0 +1,175 @@
+\section{クラス coil::TimeValue}
+\label{classcoil_1_1TimeValue}\index{coil::TimeValue@{coil::TimeValue}}
+
+
+\doxyref{TimeValue}{p.}{classcoil_1_1TimeValue} クラス.  
+
+
+
+
+{\ttfamily \#include $<$TimeValue.h$>$}
+
+\subsection*{Public メソッド}
+\begin{DoxyCompactItemize}
+\item 
+{\bf TimeValue} (long sec=0, long usec=0)
+\begin{DoxyCompactList}\small\item\em コンストラクタ \item\end{DoxyCompactList}\item 
+{\bf TimeValue} (double timeval)
+\begin{DoxyCompactList}\small\item\em コンストラクタ \item\end{DoxyCompactList}\item 
+long int {\bf sec} () const 
+\begin{DoxyCompactList}\small\item\em 秒単位の値を取得する \item\end{DoxyCompactList}\item 
+long int {\bf usec} () const 
+\begin{DoxyCompactList}\small\item\em マイクロ秒単位の値を取得する \item\end{DoxyCompactList}\item 
+{\bf TimeValue} {\bf operator-\/} ({\bf TimeValue} \&tm)
+\begin{DoxyCompactList}\small\item\em 時間減算 \item\end{DoxyCompactList}\item 
+{\bf TimeValue} {\bf operator+} ({\bf TimeValue} \&tm)
+\begin{DoxyCompactList}\small\item\em 時間加算 \item\end{DoxyCompactList}\item 
+{\bf TimeValue} {\bf operator=} (double time)
+\begin{DoxyCompactList}\small\item\em double型→時間型変換 \item\end{DoxyCompactList}\item 
+{\bf operator double} () const 
+\begin{DoxyCompactList}\small\item\em 時間型→double型変換 \item\end{DoxyCompactList}\item 
+int {\bf sign} () const 
+\begin{DoxyCompactList}\small\item\em 符号判定 \item\end{DoxyCompactList}\item 
+void {\bf normalize} ()
+\begin{DoxyCompactList}\small\item\em 正規化 \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{説明}
+\doxyref{TimeValue}{p.}{classcoil_1_1TimeValue} クラス. 
+
+\subsection{コンストラクタとデストラクタ}
+\index{coil::TimeValue@{coil::TimeValue}!TimeValue@{TimeValue}}
+\index{TimeValue@{TimeValue}!coil::TimeValue@{coil::TimeValue}}
+\subsubsection[{TimeValue}]{\setlength{\rightskip}{0pt plus 5cm}coil::TimeValue::TimeValue (long {\em sec} = {\ttfamily 0}, \/  long {\em usec} = {\ttfamily 0})}\label{classcoil_1_1TimeValue_ab9c6ed65e268874b3f9a11df89288001}
+
+
+コンストラクタ 
+
+コンストラクタ 指定された秒，マイクロ秒で初期化する。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em sec}]秒(デフォルト値:ゼロ) \item[{\em usec}]マイクロ秒(デフォルト値:ゼロ) \end{DoxyParams}
+\index{coil::TimeValue@{coil::TimeValue}!TimeValue@{TimeValue}}
+\index{TimeValue@{TimeValue}!coil::TimeValue@{coil::TimeValue}}
+\subsubsection[{TimeValue}]{\setlength{\rightskip}{0pt plus 5cm}coil::TimeValue::TimeValue (double {\em timeval})}\label{classcoil_1_1TimeValue_a8512fb4540192bc9d4ca72cba86e2270}
+
+
+コンストラクタ 
+
+コンストラクタ 指定された秒，マイクロ秒で初期化する。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em timeval}](秒 $\ast$ 1000000 + マイクロ秒) \end{DoxyParams}
+
+
+\subsection{関数}
+\index{coil::TimeValue@{coil::TimeValue}!normalize@{normalize}}
+\index{normalize@{normalize}!coil::TimeValue@{coil::TimeValue}}
+\subsubsection[{normalize}]{\setlength{\rightskip}{0pt plus 5cm}void coil::TimeValue::normalize ()}\label{classcoil_1_1TimeValue_a71b8ef764a717296cf917fc031a7e0e5}
+
+
+正規化 
+
+値の表現を正準形式に正規化する。 \index{coil::TimeValue@{coil::TimeValue}!operator double@{operator double}}
+\index{operator double@{operator double}!coil::TimeValue@{coil::TimeValue}}
+\subsubsection[{operator double}]{\setlength{\rightskip}{0pt plus 5cm}coil::TimeValue::operator double () const}\label{classcoil_1_1TimeValue_ae6db6e62bc386dca0a3249e8921e0972}
+
+
+時間型→double型変換 
+
+保持している内容をdouble型に変換する。
+
+\begin{DoxyReturn}{戻り値}
+double型変換結果 
+\end{DoxyReturn}
+\index{coil::TimeValue@{coil::TimeValue}!operator+@{operator+}}
+\index{operator+@{operator+}!coil::TimeValue@{coil::TimeValue}}
+\subsubsection[{operator+}]{\setlength{\rightskip}{0pt plus 5cm}{\bf TimeValue} coil::TimeValue::operator+ ({\bf TimeValue} \& {\em tm})}\label{classcoil_1_1TimeValue_a7684f9087f4ced46cbef0e5ccc311168}
+
+
+時間加算 
+
+設定された時間に引数で与えられた時間を加算する。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em tm}]加算時間\end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+加算結果 
+\end{DoxyReturn}
+\index{coil::TimeValue@{coil::TimeValue}!operator-\/@{operator-\/}}
+\index{operator-\/@{operator-\/}!coil::TimeValue@{coil::TimeValue}}
+\subsubsection[{operator-\/}]{\setlength{\rightskip}{0pt plus 5cm}{\bf TimeValue} coil::TimeValue::operator-\/ ({\bf TimeValue} \& {\em tm})}\label{classcoil_1_1TimeValue_a5aa800d47f6d38da0881dd46c0bd2c35}
+
+
+時間減算 
+
+設定された時間から引数で与えられた時間を減算する。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em tm}]減算時間\end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+減算結果 
+\end{DoxyReturn}
+\index{coil::TimeValue@{coil::TimeValue}!operator=@{operator=}}
+\index{operator=@{operator=}!coil::TimeValue@{coil::TimeValue}}
+\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf TimeValue} coil::TimeValue::operator= (double {\em time})}\label{classcoil_1_1TimeValue_a0d812b25cb2e64dca7b756185eade793}
+
+
+double型→時間型変換 
+
+引数で与えられたdouble型を時間型に変換する。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em time}]変換元値\end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+変換結果 
+\end{DoxyReturn}
+\index{coil::TimeValue@{coil::TimeValue}!sec@{sec}}
+\index{sec@{sec}!coil::TimeValue@{coil::TimeValue}}
+\subsubsection[{sec}]{\setlength{\rightskip}{0pt plus 5cm}long int coil::TimeValue::sec () const\hspace{0.3cm}{\ttfamily  [inline]}}\label{classcoil_1_1TimeValue_a44b946e975c4980b6c84a5ca90b64018}
+
+
+秒単位の値を取得する 
+
+秒単位の値を取得する
+
+\begin{DoxyReturn}{戻り値}
+値 
+\end{DoxyReturn}
+
+
+参照元 RTC::RingBuffer$<$ DataType $>$::read(), setTimestamp(), coil::sleep(), と RTC::RingBuffer$<$ DataType $>$::write().
+
+\index{coil::TimeValue@{coil::TimeValue}!sign@{sign}}
+\index{sign@{sign}!coil::TimeValue@{coil::TimeValue}}
+\subsubsection[{sign}]{\setlength{\rightskip}{0pt plus 5cm}int coil::TimeValue::sign () const}\label{classcoil_1_1TimeValue_ac391e2e9ce2146edc91cbba98a5ee1b2}
+
+
+符号判定 
+
+保持している内容の符号を判定する。
+
+\begin{DoxyReturn}{戻り値}
+正ならば1を、負ならば-\/1を、0ならば0 
+\end{DoxyReturn}
+\index{coil::TimeValue@{coil::TimeValue}!usec@{usec}}
+\index{usec@{usec}!coil::TimeValue@{coil::TimeValue}}
+\subsubsection[{usec}]{\setlength{\rightskip}{0pt plus 5cm}long int coil::TimeValue::usec () const\hspace{0.3cm}{\ttfamily  [inline]}}\label{classcoil_1_1TimeValue_ad302adbb6df64245093d6a6ecd5a7576}
+
+
+マイクロ秒単位の値を取得する 
+
+マイクロ秒単位の値を取得する
+
+\begin{DoxyReturn}{戻り値}
+値 
+\end{DoxyReturn}
+
+
+参照元 RTC::RingBuffer$<$ DataType $>$::read(), setTimestamp(), coil::sleep(), と RTC::RingBuffer$<$ DataType $>$::write().
+

@@ -1,0 +1,70 @@
+\section{クラス RTC::ConfigurationParamListener}
+\label{classRTC_1_1ConfigurationParamListener}\index{RTC::ConfigurationParamListener@{RTC::ConfigurationParamListener}}
+
+
+\doxyref{ConfigurationParamListener}{p.}{classRTC_1_1ConfigurationParamListener} クラス.  
+
+
+
+
+{\ttfamily \#include $<$ConfigurationListener.h$>$}
+
+\subsection*{Public メソッド}
+\begin{DoxyCompactItemize}
+\item 
+virtual {\bf $\sim$ConfigurationParamListener} ()
+\begin{DoxyCompactList}\small\item\em デストラクタ \item\end{DoxyCompactList}\item 
+virtual void {\bf operator()} (const char $\ast$config\_\-set\_\-name, const char $\ast$config\_\-param\_\-name)=0
+\begin{DoxyCompactList}\small\item\em 仮想コールバック関数 \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public メソッド}
+\begin{DoxyCompactItemize}
+\item 
+static const char $\ast$ {\bf toString} ({\bf ConfigurationParamListenerType} type)
+\begin{DoxyCompactList}\small\item\em ConfigurationParamListenerType を文字列に変換. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{説明}
+\doxyref{ConfigurationParamListener}{p.}{classRTC_1_1ConfigurationParamListener} クラス. Configuration パラメータの変更に関するリスナクラス。 以下のイベントに対してコールバックされる。
+
+
+\begin{DoxyItemize}
+\item ON\_\-UPDATE\_\-CONFIG\_\-PARAM 
+\end{DoxyItemize}
+
+\subsection{コンストラクタとデストラクタ}
+\index{RTC::ConfigurationParamListener@{RTC::ConfigurationParamListener}!$\sim$ConfigurationParamListener@{$\sim$ConfigurationParamListener}}
+\index{$\sim$ConfigurationParamListener@{$\sim$ConfigurationParamListener}!RTC::ConfigurationParamListener@{RTC::ConfigurationParamListener}}
+\subsubsection[{$\sim$ConfigurationParamListener}]{\setlength{\rightskip}{0pt plus 5cm}virtual RTC::ConfigurationParamListener::$\sim$ConfigurationParamListener ()\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classRTC_1_1ConfigurationParamListener_acca022948f8f80a7022be9e2f8b3e8bf}
+
+
+デストラクタ 
+
+
+
+\subsection{関数}
+\index{RTC::ConfigurationParamListener@{RTC::ConfigurationParamListener}!operator()@{operator()}}
+\index{operator()@{operator()}!RTC::ConfigurationParamListener@{RTC::ConfigurationParamListener}}
+\subsubsection[{operator()}]{\setlength{\rightskip}{0pt plus 5cm}virtual void RTC::ConfigurationParamListener::operator() (const char $\ast$ {\em config\_\-set\_\-name}, \/  const char $\ast$ {\em config\_\-param\_\-name})\hspace{0.3cm}{\ttfamily  [pure virtual]}}\label{classRTC_1_1ConfigurationParamListener_aafb27a6f518e30eacff76b2d0ece8a6e}
+
+
+仮想コールバック関数 
+
+\doxyref{ConfigurationParamListener}{p.}{classRTC_1_1ConfigurationParamListener} のコールバック関数 \index{RTC::ConfigurationParamListener@{RTC::ConfigurationParamListener}!toString@{toString}}
+\index{toString@{toString}!RTC::ConfigurationParamListener@{RTC::ConfigurationParamListener}}
+\subsubsection[{toString}]{\setlength{\rightskip}{0pt plus 5cm}static const char$\ast$ RTC::ConfigurationParamListener::toString ({\bf ConfigurationParamListenerType} {\em type})\hspace{0.3cm}{\ttfamily  [inline, static]}}\label{classRTC_1_1ConfigurationParamListener_a3dc13e72ed397bc961494266e6e856ca}
+
+
+ConfigurationParamListenerType を文字列に変換. 
+
+ConfigurationParamListenerType を文字列に変換する
+
+
+\begin{DoxyParams}{引数}
+\item[{\em type}]変換対象 ConfigurationParamListenerType\end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+文字列変換結果 
+\end{DoxyReturn}
+
+
+参照先 RTC::CONFIG\_\-PARAM\_\-LISTENER\_\-NUM.
+

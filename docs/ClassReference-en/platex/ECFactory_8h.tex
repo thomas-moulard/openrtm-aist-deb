@@ -1,0 +1,56 @@
+\section{ECFactory.h File Reference}
+\label{ECFactory_8h}\index{ECFactory.h@{ECFactory.h}}
+
+
+ExecutionContext Factory class.  
+
+
+{\ttfamily \#include $<$rtm/ExecutionContextBase.h$>$}\par
+{\ttfamily \#include $<$string$>$}\par
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class {\bf RTC::ECFactoryBase}
+\begin{DoxyCompactList}\small\item\em \doxyref{ECFactoryBase}{p.}{classRTC_1_1ECFactoryBase} abstract class. \item\end{DoxyCompactList}\item 
+class {\bf RTC::ECFactoryCXX}
+\begin{DoxyCompactList}\small\item\em \doxyref{ECFactoryCXX}{p.}{classRTC_1_1ECFactoryCXX} class. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace {\bf RTC}
+
+
+\begin{DoxyCompactList}\small\item\em RT-\/Component. \item\end{DoxyCompactList}
+
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef ExecutionContextBase $\ast$($\ast$ {\bf RTC::ECNewFunc} )()
+\item 
+typedef void($\ast$ {\bf RTC::ECDeleteFunc} )(ExecutionContextBase $\ast$ec)
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$class \_\-New $>$ }\\ExecutionContextBase $\ast$ {\bf RTC::ECCreate} ()
+\begin{DoxyCompactList}\small\item\em Template function to create ExecutionContext. \item\end{DoxyCompactList}\item 
+{\footnotesize template$<$class \_\-Delete $>$ }\\void {\bf RTC::ECDelete} (ExecutionContextBase $\ast$ec)
+\begin{DoxyCompactList}\small\item\em Template function to destroy ExecutionContext. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+ExecutionContext Factory class. \begin{DoxyDate}{Date}
+
+\end{DoxyDate}
+\begin{DoxyParagraph}{Date}
+2007-\/12-\/31 03:08:03 
+\end{DoxyParagraph}
+\begin{DoxyAuthor}{Author}
+Noriaki Ando $<${\tt n-\/ando@aist.go.jp}$>$
+\end{DoxyAuthor}
+Copyright (C) 2007-\/2008 Noriaki Ando Task-\/intelligence Research Group, Intelligent Systems Research Institute, National Institute of Advanced Industrial Science and Technology (AIST), Japan All rights reserved.
+
+\begin{DoxyParagraph}{Id}
+\doxyref{ECFactory.h}{p.}{ECFactory_8h} 1569 2009-\/11-\/12 14:36:47Z n-\/ando 
+\end{DoxyParagraph}

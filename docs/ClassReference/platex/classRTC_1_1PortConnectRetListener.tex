@@ -1,0 +1,71 @@
+\section{クラス RTC::PortConnectRetListener}
+\label{classRTC_1_1PortConnectRetListener}\index{RTC::PortConnectRetListener@{RTC::PortConnectRetListener}}
+
+
+\doxyref{PortConnectRetListener}{p.}{classRTC_1_1PortConnectRetListener} クラス.  
+
+
+
+
+{\ttfamily \#include $<$PortConnectListener.h$>$}
+
+\subsection*{Public メソッド}
+\begin{DoxyCompactItemize}
+\item 
+virtual {\bf $\sim$PortConnectRetListener} ()
+\begin{DoxyCompactList}\small\item\em デストラクタ \item\end{DoxyCompactList}\item 
+virtual void {\bf operator()} (const char $\ast$portname, RTC::ConnectorProfile \&profile, ReturnCode\_\-t ret)=0
+\begin{DoxyCompactList}\small\item\em 仮想コールバック関数 \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public メソッド}
+\begin{DoxyCompactItemize}
+\item 
+static const char $\ast$ {\bf toString} ({\bf PortConnectRetListenerType} type)
+\begin{DoxyCompactList}\small\item\em PortConnectRetListenerType を文字列に変換. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{説明}
+\doxyref{PortConnectRetListener}{p.}{classRTC_1_1PortConnectRetListener} クラス. 各アクションに対応するユーザーコードが呼ばれる直前のタイミング でコールされるリスなクラスの基底クラス。
+
+
+\begin{DoxyItemize}
+\item ON\_\-PUBLISH\_\-INTERFACES: notify\_\-connect() 中のインターフェース公開直後
+\item ON\_\-CONNECT\_\-NEXTPORT: notify\_\-connect() 中のカスケード呼び出し直後
+\item ON\_\-SUBSCRIBE\_\-INTERFACES: notify\_\-connect() 中のインターフェース購読直後
+\item ON\_\-CONNECTED: nofity\_\-connect() 接続処理完了時に呼び出される
+\item ON\_\-DISCONNECT\_\-NEXT: notify\_\-disconnect() 中にカスケード呼び出し直後
+\item ON\_\-DISCONNECTED: notify\_\-disconnect() リターン時 
+\end{DoxyItemize}
+
+\subsection{コンストラクタとデストラクタ}
+\index{RTC::PortConnectRetListener@{RTC::PortConnectRetListener}!$\sim$PortConnectRetListener@{$\sim$PortConnectRetListener}}
+\index{$\sim$PortConnectRetListener@{$\sim$PortConnectRetListener}!RTC::PortConnectRetListener@{RTC::PortConnectRetListener}}
+\subsubsection[{$\sim$PortConnectRetListener}]{\setlength{\rightskip}{0pt plus 5cm}virtual RTC::PortConnectRetListener::$\sim$PortConnectRetListener ()\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classRTC_1_1PortConnectRetListener_a11aa036c8f0f623a0f844ccdc5ca6de9}
+
+
+デストラクタ 
+
+
+
+\subsection{関数}
+\index{RTC::PortConnectRetListener@{RTC::PortConnectRetListener}!operator()@{operator()}}
+\index{operator()@{operator()}!RTC::PortConnectRetListener@{RTC::PortConnectRetListener}}
+\subsubsection[{operator()}]{\setlength{\rightskip}{0pt plus 5cm}virtual void RTC::PortConnectRetListener::operator() (const char $\ast$ {\em portname}, \/  RTC::ConnectorProfile \& {\em profile}, \/  ReturnCode\_\-t {\em ret})\hspace{0.3cm}{\ttfamily  [pure virtual]}}\label{classRTC_1_1PortConnectRetListener_a72a1c966ec78ecf40f912ff10157f978}
+
+
+仮想コールバック関数 
+
+\doxyref{PortConnectRetListener}{p.}{classRTC_1_1PortConnectRetListener} のコールバック関数 \index{RTC::PortConnectRetListener@{RTC::PortConnectRetListener}!toString@{toString}}
+\index{toString@{toString}!RTC::PortConnectRetListener@{RTC::PortConnectRetListener}}
+\subsubsection[{toString}]{\setlength{\rightskip}{0pt plus 5cm}static const char$\ast$ RTC::PortConnectRetListener::toString ({\bf PortConnectRetListenerType} {\em type})\hspace{0.3cm}{\ttfamily  [static]}}\label{classRTC_1_1PortConnectRetListener_a94d6da928d397e42fb744952afb30e66}
+
+
+PortConnectRetListenerType を文字列に変換. 
+
+PortConnectRetListenerType を文字列に変換する
+
+
+\begin{DoxyParams}{引数}
+\item[{\em type}]変換対象 PortConnectRetListenerType\end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+文字列変換結果 
+\end{DoxyReturn}

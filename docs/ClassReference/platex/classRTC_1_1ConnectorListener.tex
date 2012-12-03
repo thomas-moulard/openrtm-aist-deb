@@ -1,0 +1,153 @@
+\section{クラス RTC::ConnectorListener}
+\label{classRTC_1_1ConnectorListener}\index{RTC::ConnectorListener@{RTC::ConnectorListener}}
+
+
+\doxyref{ConnectorListener}{p.}{classRTC_1_1ConnectorListener} クラス.  
+
+
+
+
+{\ttfamily \#include $<$ConnectorListener.h$>$}
+
+\subsection*{Public メソッド}
+\begin{DoxyCompactItemize}
+\item 
+virtual {\bf $\sim$ConnectorListener} ()
+\begin{DoxyCompactList}\small\item\em デストラクタ \item\end{DoxyCompactList}\item 
+virtual void {\bf operator()} (const {\bf ConnectorInfo} \&info)=0
+\begin{DoxyCompactList}\small\item\em 仮想コールバックメソッド \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public メソッド}
+\begin{DoxyCompactItemize}
+\item 
+static const char $\ast$ {\bf toString} ({\bf ConnectorListenerType} type)
+\begin{DoxyCompactList}\small\item\em ConnectorListenerType を文字列に変換. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{説明}
+\doxyref{ConnectorListener}{p.}{classRTC_1_1ConnectorListener} クラス. データポートの Connector において発生する各種イベントに対するコー ルバックを実現するリスナクラスの基底クラス。
+
+コアロジックがOutPortに対してデータ書き込み、InPort側でデータが取 得されるまでの間で発生する各種イベントをフックするコールバックを設 定することができる。なお、リスナークラスは2種類存在し、バッファフ ルや送信時のコールバックで、その時点で有効なデータをファンクタの引 数として受け取る \doxyref{ConnectorDataListener}{p.}{classRTC_1_1ConnectorDataListener} であり、もう一方はデータエ ンプティやバッファ読み込み時のタイムアウトなどデータが取得できない 場合などにコールされるファンクタの引数に何もとらならい ConnecotorListener がある。
+
+データポートには、接続時にデータの送受信方法についてデータフロー型、 サブスクリプション型等を設定することができる。 ConnectorDaataListener/ConnectorListener は共にに、様々なイベント に対するコールバックを設定することができるが、これらデータフロー型 およびサブスクリプション型の設定に応じて、利用できるもの、できない もの、また呼び出されるタイミングが異なる。以下に、インターフェース がCORBA CDR型の場合のコールバック一覧を示す。
+
+\doxyref{OutPort}{p.}{classRTC_1_1OutPort}:
+\begin{DoxyItemize}
+\item Push型: Subscription Typeによりさらにイベントの種類が分かれる。
+\begin{DoxyItemize}
+\item Flush: Flush型にはバッファがないため ON\_\-BUFFER 系のイベントは発生しない
+\begin{DoxyItemize}
+\item ON\_\-SEND
+\item ON\_\-RECEIVED
+\item ON\_\-RECEIVER\_\-FULL
+\item ON\_\-RECEIVER\_\-TIMEOUT
+\item ON\_\-RECEIVER\_\-ERROR
+\item ON\_\-CONNECT
+\item ON\_\-DISCONNECT
+\end{DoxyItemize}
+\item New型
+\begin{DoxyItemize}
+\item ON\_\-BUFFER\_\-WRITE
+\item ON\_\-BUFFER\_\-FULL
+\item ON\_\-BUFFER\_\-WRITE\_\-TIMEOUT
+\item ON\_\-BUFFER\_\-OVERWRITE
+\item ON\_\-BUFFER\_\-READ
+\item ON\_\-SEND
+\item ON\_\-RECEIVED
+\item ON\_\-RECEIVER\_\-FULL
+\item ON\_\-RECEIVER\_\-TIMEOUT
+\item ON\_\-RECEIVER\_\-ERROR
+\item ON\_\-SENDER\_\-ERROR
+\item ON\_\-CONNECT
+\item ON\_\-DISCONNECT
+\end{DoxyItemize}
+\item Periodic型
+\begin{DoxyItemize}
+\item ON\_\-BUFFER\_\-WRITE
+\item ON\_\-BUFFER\_\-FULL
+\item ON\_\-BUFFER\_\-WRITE\_\-TIMEOUT
+\item ON\_\-BUFFER\_\-READ
+\item ON\_\-SEND
+\item ON\_\-RECEIVED
+\item ON\_\-RECEIVER\_\-FULL
+\item ON\_\-RECEIVER\_\-TIMEOUT
+\item ON\_\-RECEIVER\_\-ERROR
+\item ON\_\-BUFFER\_\-EMPTY
+\item ON\_\-SENDER\_\-EMPTY
+\item ON\_\-SENDER\_\-ERROR
+\item ON\_\-CONNECT
+\item ON\_\-DISCONNECT
+\end{DoxyItemize}
+\end{DoxyItemize}
+\item Pull型
+\begin{DoxyItemize}
+\item ON\_\-BUFFER\_\-READ
+\item ON\_\-SEND
+\item ON\_\-BUFFER\_\-EMPTY
+\item ON\_\-BUFFER\_\-READ\_\-TIMEOUT
+\item ON\_\-SENDER\_\-EMPTY
+\item ON\_\-SENDER\_\-TIMEOUT
+\item ON\_\-SENDER\_\-ERROR
+\item ON\_\-CONNECT
+\item ON\_\-DISCONNECT
+\end{DoxyItemize}
+\end{DoxyItemize}
+
+\doxyref{InPort}{p.}{classRTC_1_1InPort}:
+\begin{DoxyItemize}
+\item Push型:
+\begin{DoxyItemize}
+\item ON\_\-BUFFER\_\-WRITE
+\item ON\_\-BUFFER\_\-FULL
+\item ON\_\-BUFFER\_\-WRITE\_\-TIMEOUT
+\item ON\_\-BUFFER\_\-WRITE\_\-OVERWRITE
+\item ON\_\-RECEIVED
+\item ON\_\-RECEIVER\_\-FULL
+\item ON\_\-RECEIVER\_\-TIMEOUT
+\item ON\_\-RECEIVER\_\-ERROR
+\item ON\_\-CONNECT
+\item ON\_\-DISCONNECT
+\end{DoxyItemize}
+\item Pull型
+\begin{DoxyItemize}
+\item ON\_\-CONNECT
+\item ON\_\-DISCONNECT 
+\end{DoxyItemize}
+\end{DoxyItemize}
+
+\subsection{コンストラクタとデストラクタ}
+\index{RTC::ConnectorListener@{RTC::ConnectorListener}!$\sim$ConnectorListener@{$\sim$ConnectorListener}}
+\index{$\sim$ConnectorListener@{$\sim$ConnectorListener}!RTC::ConnectorListener@{RTC::ConnectorListener}}
+\subsubsection[{$\sim$ConnectorListener}]{\setlength{\rightskip}{0pt plus 5cm}virtual RTC::ConnectorListener::$\sim$ConnectorListener ()\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classRTC_1_1ConnectorListener_a023c28d2f4ce8fd10ac1990c914bb0e3}
+
+
+デストラクタ 
+
+
+
+\subsection{関数}
+\index{RTC::ConnectorListener@{RTC::ConnectorListener}!operator()@{operator()}}
+\index{operator()@{operator()}!RTC::ConnectorListener@{RTC::ConnectorListener}}
+\subsubsection[{operator()}]{\setlength{\rightskip}{0pt plus 5cm}virtual void RTC::ConnectorListener::operator() (const {\bf ConnectorInfo} \& {\em info})\hspace{0.3cm}{\ttfamily  [pure virtual]}}\label{classRTC_1_1ConnectorListener_a4ad75b245ee498d3b4e037f6acbf9f75}
+
+
+仮想コールバックメソッド 
+
+データポートの Connector において発生する各種イベントに対するコー ルバックメソッド \index{RTC::ConnectorListener@{RTC::ConnectorListener}!toString@{toString}}
+\index{toString@{toString}!RTC::ConnectorListener@{RTC::ConnectorListener}}
+\subsubsection[{toString}]{\setlength{\rightskip}{0pt plus 5cm}static const char$\ast$ RTC::ConnectorListener::toString ({\bf ConnectorListenerType} {\em type})\hspace{0.3cm}{\ttfamily  [inline, static]}}\label{classRTC_1_1ConnectorListener_a3e0396e710d6450413672e6eb232a386}
+
+
+ConnectorListenerType を文字列に変換. 
+
+ConnectorListenerType を文字列に変換する
+
+
+\begin{DoxyParams}{引数}
+\item[{\em type}]変換対象 ConnectorListenerType\end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+文字列変換結果 
+\end{DoxyReturn}
+
+
+参照先 RTC::CONNECTOR\_\-LISTENER\_\-NUM.
+

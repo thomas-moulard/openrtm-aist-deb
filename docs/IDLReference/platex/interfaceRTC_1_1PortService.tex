@@ -1,0 +1,63 @@
+\section{インタフェース RTC::PortService}
+\label{interfaceRTC_1_1PortService}\index{RTC::PortService@{RTC::PortService}}
+
+
+{\ttfamily import \char`\"{}RTC.idl\char`\"{};}
+
+RTC::PortServiceに対する継承グラフ\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2cm]{interfaceRTC_1_1PortService}
+\end{center}
+\end{figure}
+\subsection*{Public メソッド}
+\begin{DoxyCompactItemize}
+\item 
+{\bf PortProfile} {\bf get\_\-port\_\-profile} ()
+\item 
+{\bf ConnectorProfileList} {\bf get\_\-connector\_\-profiles} ()
+\item 
+{\bf ConnectorProfile} {\bf get\_\-connector\_\-profile} (in {\bf UniqueIdentifier} connector\_\-id)
+\item 
+{\bf ReturnCode\_\-t} {\bf connect} (inout {\bf ConnectorProfile} connector\_\-profile)
+\item 
+{\bf ReturnCode\_\-t} {\bf disconnect} (in {\bf UniqueIdentifier} connector\_\-id)
+\item 
+{\bf ReturnCode\_\-t} {\bf disconnect\_\-all} ()
+\item 
+{\bf ReturnCode\_\-t} {\bf notify\_\-connect} (inout {\bf ConnectorProfile} connector\_\-profile)
+\item 
+{\bf ReturnCode\_\-t} {\bf notify\_\-disconnect} (in {\bf UniqueIdentifier} connector\_\-id)
+\end{DoxyCompactItemize}
+
+
+\subsection{関数}
+\index{RTC::PortService@{RTC::PortService}!connect@{connect}}
+\index{connect@{connect}!RTC::PortService@{RTC::PortService}}
+\subsubsection[{connect}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ReturnCode\_\-t} RTC::PortService::connect (inout {\bf ConnectorProfile} {\em connector\_\-profile})}\label{interfaceRTC_1_1PortService_a7d1a4236a839d99274f2ba0c25858996}
+\index{RTC::PortService@{RTC::PortService}!disconnect@{disconnect}}
+\index{disconnect@{disconnect}!RTC::PortService@{RTC::PortService}}
+\subsubsection[{disconnect}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ReturnCode\_\-t} RTC::PortService::disconnect (in {\bf UniqueIdentifier} {\em connector\_\-id})}\label{interfaceRTC_1_1PortService_ad6a9a46323d4c2e49131c3ec5717d9e3}
+\index{RTC::PortService@{RTC::PortService}!disconnect\_\-all@{disconnect\_\-all}}
+\index{disconnect\_\-all@{disconnect\_\-all}!RTC::PortService@{RTC::PortService}}
+\subsubsection[{disconnect\_\-all}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ReturnCode\_\-t} RTC::PortService::disconnect\_\-all ()}\label{interfaceRTC_1_1PortService_a4d1bf316f490f0cc29cc10ff4183dac5}
+\index{RTC::PortService@{RTC::PortService}!get\_\-connector\_\-profile@{get\_\-connector\_\-profile}}
+\index{get\_\-connector\_\-profile@{get\_\-connector\_\-profile}!RTC::PortService@{RTC::PortService}}
+\subsubsection[{get\_\-connector\_\-profile}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ConnectorProfile} RTC::PortService::get\_\-connector\_\-profile (in {\bf UniqueIdentifier} {\em connector\_\-id})}\label{interfaceRTC_1_1PortService_a7766a1632deded815a2a312148933057}
+\index{RTC::PortService@{RTC::PortService}!get\_\-connector\_\-profiles@{get\_\-connector\_\-profiles}}
+\index{get\_\-connector\_\-profiles@{get\_\-connector\_\-profiles}!RTC::PortService@{RTC::PortService}}
+\subsubsection[{get\_\-connector\_\-profiles}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ConnectorProfileList} RTC::PortService::get\_\-connector\_\-profiles ()}\label{interfaceRTC_1_1PortService_a2f1edec9892d8228960f3930ca18393a}
+\index{RTC::PortService@{RTC::PortService}!get\_\-port\_\-profile@{get\_\-port\_\-profile}}
+\index{get\_\-port\_\-profile@{get\_\-port\_\-profile}!RTC::PortService@{RTC::PortService}}
+\subsubsection[{get\_\-port\_\-profile}]{\setlength{\rightskip}{0pt plus 5cm}{\bf PortProfile} RTC::PortService::get\_\-port\_\-profile ()}\label{interfaceRTC_1_1PortService_a90d7e716d7c9ca13bde3767b6d138e53}
+\index{RTC::PortService@{RTC::PortService}!notify\_\-connect@{notify\_\-connect}}
+\index{notify\_\-connect@{notify\_\-connect}!RTC::PortService@{RTC::PortService}}
+\subsubsection[{notify\_\-connect}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ReturnCode\_\-t} RTC::PortService::notify\_\-connect (inout {\bf ConnectorProfile} {\em connector\_\-profile})}\label{interfaceRTC_1_1PortService_af021417d7d9c8966dd346d7193d5219b}
+\index{RTC::PortService@{RTC::PortService}!notify\_\-disconnect@{notify\_\-disconnect}}
+\index{notify\_\-disconnect@{notify\_\-disconnect}!RTC::PortService@{RTC::PortService}}
+\subsubsection[{notify\_\-disconnect}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ReturnCode\_\-t} RTC::PortService::notify\_\-disconnect (in {\bf UniqueIdentifier} {\em connector\_\-id})}\label{interfaceRTC_1_1PortService_a13b9bb81cc0772ba243697a2d8e3e63d}
+
+
+このインタフェースの説明は次のファイルから生成されました:\begin{DoxyCompactItemize}
+\item 
+{\bf RTC.idl}\end{DoxyCompactItemize}

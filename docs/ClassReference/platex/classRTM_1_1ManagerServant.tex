@@ -1,0 +1,410 @@
+\section{クラス RTM::ManagerServant}
+\label{classRTM_1_1ManagerServant}\index{RTM::ManagerServant@{RTM::ManagerServant}}
+
+
+ManagerのCORBA化クラス.  
+
+
+
+
+{\ttfamily \#include $<$ManagerServant.h$>$}
+
+\subsection*{構成}
+\begin{DoxyCompactItemize}
+\item 
+class {\bfseries is\_\-equiv}
+\begin{DoxyCompactList}\small\item\em Manager\_\-var が等価かどうかのファンクタ. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public メソッド}
+\begin{DoxyCompactItemize}
+\item 
+{\bf ManagerServant} ()
+\item 
+virtual {\bf $\sim$ManagerServant} (void)
+\begin{DoxyCompactList}\small\item\em 仮想デストラクタ \item\end{DoxyCompactList}\item 
+RTC::ReturnCode\_\-t {\bf load\_\-module} (const char $\ast$pathname, const char $\ast$initfunc)
+\begin{DoxyCompactList}\small\item\em モジュールをロードする \item\end{DoxyCompactList}\item 
+RTC::ReturnCode\_\-t {\bf unload\_\-module} (const char $\ast$pathname)
+\begin{DoxyCompactList}\small\item\em モジュールをアンロードする \item\end{DoxyCompactList}\item 
+RTM::ModuleProfileList $\ast$ {\bf get\_\-loadable\_\-modules} ()
+\begin{DoxyCompactList}\small\item\em ロード可能なモジュールのプロファイルを取得する \item\end{DoxyCompactList}\item 
+RTM::ModuleProfileList $\ast$ {\bf get\_\-loaded\_\-modules} ()
+\begin{DoxyCompactList}\small\item\em ロード済みのモジュールのプロファイルを取得する \item\end{DoxyCompactList}\item 
+RTM::ModuleProfileList $\ast$ {\bf get\_\-factory\_\-profiles} ()
+\begin{DoxyCompactList}\small\item\em コンポーネントファクトリのプロファイルを取得する \item\end{DoxyCompactList}\item 
+RTC::RTObject\_\-ptr {\bf create\_\-component} (const char $\ast$module\_\-name)
+\begin{DoxyCompactList}\small\item\em コンポーネントを生成する \item\end{DoxyCompactList}\item 
+RTC::ReturnCode\_\-t {\bf delete\_\-component} (const char $\ast$instance\_\-name)
+\begin{DoxyCompactList}\small\item\em コンポーネントを削除する \item\end{DoxyCompactList}\item 
+RTC::RTCList $\ast$ {\bf get\_\-components} ()
+\begin{DoxyCompactList}\small\item\em 起動中のコンポーネントのリストを取得する \item\end{DoxyCompactList}\item 
+RTC::ComponentProfileList $\ast$ {\bf get\_\-component\_\-profiles} ()
+\begin{DoxyCompactList}\small\item\em 起動中のコンポーネントプロファイルのリストを取得する \item\end{DoxyCompactList}\item 
+RTM::ManagerProfile $\ast$ {\bf get\_\-profile} ()
+\begin{DoxyCompactList}\small\item\em マネージャのプロファイルを取得する \item\end{DoxyCompactList}\item 
+RTM::NVList $\ast$ {\bf get\_\-configuration} ()
+\begin{DoxyCompactList}\small\item\em マネージャのコンフィギュレーションを取得する \item\end{DoxyCompactList}\item 
+RTC::ReturnCode\_\-t {\bf set\_\-configuration} (const char $\ast$name, const char $\ast$value)
+\begin{DoxyCompactList}\small\item\em マネージャのコンフィギュレーションを設定する \item\end{DoxyCompactList}\item 
+::CORBA::Boolean {\bf is\_\-master} ()
+\begin{DoxyCompactList}\small\item\em マネージャがマスターかどうか \item\end{DoxyCompactList}\item 
+RTM::ManagerList $\ast$ {\bf get\_\-master\_\-managers} ()
+\begin{DoxyCompactList}\small\item\em マスターマネージャの取得 \item\end{DoxyCompactList}\item 
+RTC::ReturnCode\_\-t {\bf add\_\-master\_\-manager} (RTM::Manager\_\-ptr mgr)
+\begin{DoxyCompactList}\small\item\em マスターマネージャの追加 \item\end{DoxyCompactList}\item 
+RTC::ReturnCode\_\-t {\bf remove\_\-master\_\-manager} (RTM::Manager\_\-ptr mgr)
+\begin{DoxyCompactList}\small\item\em マスターマネージャの削除 \item\end{DoxyCompactList}\item 
+RTM::ManagerList $\ast$ {\bf get\_\-slave\_\-managers} ()
+\begin{DoxyCompactList}\small\item\em スレーブマネージャの取得 \item\end{DoxyCompactList}\item 
+RTC::ReturnCode\_\-t {\bf add\_\-slave\_\-manager} (RTM::Manager\_\-ptr mgr)
+\begin{DoxyCompactList}\small\item\em スレーブマネージャの追加 \item\end{DoxyCompactList}\item 
+RTC::ReturnCode\_\-t {\bf remove\_\-slave\_\-manager} (RTM::Manager\_\-ptr mgr)
+\begin{DoxyCompactList}\small\item\em スレーブマネージャの削除 \item\end{DoxyCompactList}\item 
+RTC::ReturnCode\_\-t {\bf fork} ()
+\begin{DoxyCompactList}\small\item\em プロセスのコピーを生成する \item\end{DoxyCompactList}\item 
+RTC::ReturnCode\_\-t {\bf shutdown} ()
+\begin{DoxyCompactList}\small\item\em shutdownする \item\end{DoxyCompactList}\item 
+RTC::ReturnCode\_\-t {\bf restart} ()
+\begin{DoxyCompactList}\small\item\em 再起動する。 \item\end{DoxyCompactList}\item 
+CORBA::Object\_\-ptr {\bf get\_\-service} (const char $\ast$name)
+\begin{DoxyCompactList}\small\item\em RTCのリファレンスを取得する。. \item\end{DoxyCompactList}\item 
+RTM::Manager\_\-ptr {\bf getObjRef} () const 
+\begin{DoxyCompactList}\small\item\em Managerのリファレンスを取得する。. \item\end{DoxyCompactList}\item 
+bool {\bf createINSManager} ()
+\begin{DoxyCompactList}\small\item\em INSManagerの生成. \item\end{DoxyCompactList}\item 
+RTM::Manager\_\-ptr {\bf findManager} (const char $\ast$host\_\-port)
+\begin{DoxyCompactList}\small\item\em Managerのリファレンスを検索する。. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{説明}
+ManagerのCORBA化クラス. ManagerをCORBAサーバント化し、外部からコンポーネントの生成・削除、 システム状態の取得などが行える。 
+
+\subsection{コンストラクタとデストラクタ}
+\index{RTM::ManagerServant@{RTM::ManagerServant}!ManagerServant@{ManagerServant}}
+\index{ManagerServant@{ManagerServant}!RTM::ManagerServant@{RTM::ManagerServant}}
+\subsubsection[{ManagerServant}]{\setlength{\rightskip}{0pt plus 5cm}RTM::ManagerServant::ManagerServant ()}\label{classRTM_1_1ManagerServant_aada9f52af552ed6d2e7de04f9b196a25}
+コンストラクタ \index{RTM::ManagerServant@{RTM::ManagerServant}!$\sim$ManagerServant@{$\sim$ManagerServant}}
+\index{$\sim$ManagerServant@{$\sim$ManagerServant}!RTM::ManagerServant@{RTM::ManagerServant}}
+\subsubsection[{$\sim$ManagerServant}]{\setlength{\rightskip}{0pt plus 5cm}virtual RTM::ManagerServant::$\sim$ManagerServant (void)\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classRTM_1_1ManagerServant_ad4bb0182c1b1e2f2223155a37bbabb7e}
+
+
+仮想デストラクタ 
+
+
+
+\subsection{関数}
+\index{RTM::ManagerServant@{RTM::ManagerServant}!add\_\-master\_\-manager@{add\_\-master\_\-manager}}
+\index{add\_\-master\_\-manager@{add\_\-master\_\-manager}!RTM::ManagerServant@{RTM::ManagerServant}}
+\subsubsection[{add\_\-master\_\-manager}]{\setlength{\rightskip}{0pt plus 5cm}RTC::ReturnCode\_\-t RTM::ManagerServant::add\_\-master\_\-manager (RTM::Manager\_\-ptr {\em mgr})}\label{classRTM_1_1ManagerServant_a129cd02f5e6d8a68eea578e5ad57cd81}
+
+
+マスターマネージャの追加 
+
+このマネージャのマスタとしてマネージャを一つ追加する。戻り値には、 当該マネージャ上で追加されたマスターマネージャを識別するユニーク なIDが返される。このマネージャがマスタの場合、当該IDで指定された マスターマネージャを返す。IDで指定されたマスターマネージャがない 場合、nilオブジェクトが返る。
+
+\begin{DoxyReturn}{戻り値}
+マスターマネージャ 
+\end{DoxyReturn}
+\index{RTM::ManagerServant@{RTM::ManagerServant}!add\_\-slave\_\-manager@{add\_\-slave\_\-manager}}
+\index{add\_\-slave\_\-manager@{add\_\-slave\_\-manager}!RTM::ManagerServant@{RTM::ManagerServant}}
+\subsubsection[{add\_\-slave\_\-manager}]{\setlength{\rightskip}{0pt plus 5cm}RTC::ReturnCode\_\-t RTM::ManagerServant::add\_\-slave\_\-manager (RTM::Manager\_\-ptr {\em mgr})}\label{classRTM_1_1ManagerServant_a7f3cd417fe64ae217719776634cdabb8}
+
+
+スレーブマネージャの追加 
+
+このマネージャのマスタとしてマネージャを一つ追加する。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em mgr}]スレーブマネージャ \end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+ReturnCode\_\-t 
+\end{DoxyReturn}
+\index{RTM::ManagerServant@{RTM::ManagerServant}!create\_\-component@{create\_\-component}}
+\index{create\_\-component@{create\_\-component}!RTM::ManagerServant@{RTM::ManagerServant}}
+\subsubsection[{create\_\-component}]{\setlength{\rightskip}{0pt plus 5cm}RTC::RTObject\_\-ptr RTM::ManagerServant::create\_\-component (const char $\ast$ {\em module\_\-name})}\label{classRTM_1_1ManagerServant_a7c46e44473f1a792f9b9f47cb7fc08a4}
+
+
+コンポーネントを生成する 
+
+引数に指定されたコンポーネントを生成する。
+
+\begin{DoxyReturn}{戻り値}
+生成されたRTコンポーネント 
+\end{DoxyReturn}
+\index{RTM::ManagerServant@{RTM::ManagerServant}!createINSManager@{createINSManager}}
+\index{createINSManager@{createINSManager}!RTM::ManagerServant@{RTM::ManagerServant}}
+\subsubsection[{createINSManager}]{\setlength{\rightskip}{0pt plus 5cm}bool RTM::ManagerServant::createINSManager ()}\label{classRTM_1_1ManagerServant_a824001f679a58c1bb965a17b4533981c}
+
+
+INSManagerの生成. 
+
+\begin{DoxyReturn}{戻り値}
+
+\end{DoxyReturn}
+\index{RTM::ManagerServant@{RTM::ManagerServant}!delete\_\-component@{delete\_\-component}}
+\index{delete\_\-component@{delete\_\-component}!RTM::ManagerServant@{RTM::ManagerServant}}
+\subsubsection[{delete\_\-component}]{\setlength{\rightskip}{0pt plus 5cm}RTC::ReturnCode\_\-t RTM::ManagerServant::delete\_\-component (const char $\ast$ {\em instance\_\-name})}\label{classRTM_1_1ManagerServant_a30cc0c1da9580f412aafef08e7f0d74d}
+
+
+コンポーネントを削除する 
+
+引数に指定されたコンポーネントを削除する。
+
+\begin{DoxyReturn}{戻り値}
+リターンコード 
+\end{DoxyReturn}
+\index{RTM::ManagerServant@{RTM::ManagerServant}!findManager@{findManager}}
+\index{findManager@{findManager}!RTM::ManagerServant@{RTM::ManagerServant}}
+\subsubsection[{findManager}]{\setlength{\rightskip}{0pt plus 5cm}RTM::Manager\_\-ptr RTM::ManagerServant::findManager (const char $\ast$ {\em host\_\-port})}\label{classRTM_1_1ManagerServant_aee3038a2250ec62f224c7df2f8edffd9}
+
+
+Managerのリファレンスを検索する。. 
+
+\begin{DoxyReturn}{戻り値}
+Managerのリファレンス 
+\end{DoxyReturn}
+\index{RTM::ManagerServant@{RTM::ManagerServant}!fork@{fork}}
+\index{fork@{fork}!RTM::ManagerServant@{RTM::ManagerServant}}
+\subsubsection[{fork}]{\setlength{\rightskip}{0pt plus 5cm}RTC::ReturnCode\_\-t RTM::ManagerServant::fork ()}\label{classRTM_1_1ManagerServant_a4b78fb03a5989eb1c4f6de722603bca5}
+
+
+プロセスのコピーを生成する 
+
+\begin{DoxyReturn}{戻り値}
+ReturnCode\_\-t 
+\end{DoxyReturn}
+\index{RTM::ManagerServant@{RTM::ManagerServant}!get\_\-component\_\-profiles@{get\_\-component\_\-profiles}}
+\index{get\_\-component\_\-profiles@{get\_\-component\_\-profiles}!RTM::ManagerServant@{RTM::ManagerServant}}
+\subsubsection[{get\_\-component\_\-profiles}]{\setlength{\rightskip}{0pt plus 5cm}RTC::ComponentProfileList$\ast$ RTM::ManagerServant::get\_\-component\_\-profiles ()}\label{classRTM_1_1ManagerServant_a3fac7c58f63f3f879c014ab7f77efd93}
+
+
+起動中のコンポーネントプロファイルのリストを取得する 
+
+現在当該マネージャ上で起動中のコンポーネントのプロファイルのリス トを返す。
+
+\begin{DoxyReturn}{戻り値}
+RTコンポーネントプロファイルのリスト 
+\end{DoxyReturn}
+\index{RTM::ManagerServant@{RTM::ManagerServant}!get\_\-components@{get\_\-components}}
+\index{get\_\-components@{get\_\-components}!RTM::ManagerServant@{RTM::ManagerServant}}
+\subsubsection[{get\_\-components}]{\setlength{\rightskip}{0pt plus 5cm}RTC::RTCList$\ast$ RTM::ManagerServant::get\_\-components ()}\label{classRTM_1_1ManagerServant_a827ff4bcb8c4c8278dbbe2293700c7be}
+
+
+起動中のコンポーネントのリストを取得する 
+
+現在当該マネージャ上で起動中のコンポーネントのリストを返す。
+
+\begin{DoxyReturn}{戻り値}
+RTコンポーネントのリスト 
+\end{DoxyReturn}
+\index{RTM::ManagerServant@{RTM::ManagerServant}!get\_\-configuration@{get\_\-configuration}}
+\index{get\_\-configuration@{get\_\-configuration}!RTM::ManagerServant@{RTM::ManagerServant}}
+\subsubsection[{get\_\-configuration}]{\setlength{\rightskip}{0pt plus 5cm}RTM::NVList$\ast$ RTM::ManagerServant::get\_\-configuration ()}\label{classRTM_1_1ManagerServant_a07ddc50aa1af52666260baf98e98a3f8}
+
+
+マネージャのコンフィギュレーションを取得する 
+
+現在当該マネージャのコンフィギュレーションを取得する。
+
+\begin{DoxyReturn}{戻り値}
+マネージャコンフィギュレーション 
+\end{DoxyReturn}
+\index{RTM::ManagerServant@{RTM::ManagerServant}!get\_\-factory\_\-profiles@{get\_\-factory\_\-profiles}}
+\index{get\_\-factory\_\-profiles@{get\_\-factory\_\-profiles}!RTM::ManagerServant@{RTM::ManagerServant}}
+\subsubsection[{get\_\-factory\_\-profiles}]{\setlength{\rightskip}{0pt plus 5cm}RTM::ModuleProfileList$\ast$ RTM::ManagerServant::get\_\-factory\_\-profiles ()}\label{classRTM_1_1ManagerServant_ab6c4c8b57aa03f4bc69a6f7ec30b233d}
+
+
+コンポーネントファクトリのプロファイルを取得する 
+
+ロード済みのモジュールのうち、RTコンポーネントのモジュールが持つ ファクトリのプロファイルのリストを取得する。
+
+\begin{DoxyReturn}{戻り値}
+コンポーネントファクトリのプロファイルリスト 
+\end{DoxyReturn}
+\index{RTM::ManagerServant@{RTM::ManagerServant}!get\_\-loadable\_\-modules@{get\_\-loadable\_\-modules}}
+\index{get\_\-loadable\_\-modules@{get\_\-loadable\_\-modules}!RTM::ManagerServant@{RTM::ManagerServant}}
+\subsubsection[{get\_\-loadable\_\-modules}]{\setlength{\rightskip}{0pt plus 5cm}RTM::ModuleProfileList$\ast$ RTM::ManagerServant::get\_\-loadable\_\-modules ()}\label{classRTM_1_1ManagerServant_a9e0582a658b194f91a80129fea351d8a}
+
+
+ロード可能なモジュールのプロファイルを取得する 
+
+ロード可能なモジュールのプロファイルを取得する。
+
+\begin{DoxyReturn}{戻り値}
+モジュールプロファイル 
+\end{DoxyReturn}
+\index{RTM::ManagerServant@{RTM::ManagerServant}!get\_\-loaded\_\-modules@{get\_\-loaded\_\-modules}}
+\index{get\_\-loaded\_\-modules@{get\_\-loaded\_\-modules}!RTM::ManagerServant@{RTM::ManagerServant}}
+\subsubsection[{get\_\-loaded\_\-modules}]{\setlength{\rightskip}{0pt plus 5cm}RTM::ModuleProfileList$\ast$ RTM::ManagerServant::get\_\-loaded\_\-modules ()}\label{classRTM_1_1ManagerServant_a2ccfbcb809e519451a0c04feaba2919e}
+
+
+ロード済みのモジュールのプロファイルを取得する 
+
+ロード済みのモジュールのプロファイルを取得する。
+
+\begin{DoxyReturn}{戻り値}
+モジュールプロファイル 
+\end{DoxyReturn}
+\index{RTM::ManagerServant@{RTM::ManagerServant}!get\_\-master\_\-managers@{get\_\-master\_\-managers}}
+\index{get\_\-master\_\-managers@{get\_\-master\_\-managers}!RTM::ManagerServant@{RTM::ManagerServant}}
+\subsubsection[{get\_\-master\_\-managers}]{\setlength{\rightskip}{0pt plus 5cm}RTM::ManagerList$\ast$ RTM::ManagerServant::get\_\-master\_\-managers ()}\label{classRTM_1_1ManagerServant_a0e5f79790b6e0a66bb83568d1e98c58f}
+
+
+マスターマネージャの取得 
+
+このマネージャがスレーブマネージャの場合、マスターとなっているマ ネージャのリストを返す。このマネージャがマスターの場合、空のリス トが返る。
+
+\begin{DoxyReturn}{戻り値}
+マスターマネージャのリスト 
+\end{DoxyReturn}
+\index{RTM::ManagerServant@{RTM::ManagerServant}!get\_\-profile@{get\_\-profile}}
+\index{get\_\-profile@{get\_\-profile}!RTM::ManagerServant@{RTM::ManagerServant}}
+\subsubsection[{get\_\-profile}]{\setlength{\rightskip}{0pt plus 5cm}RTM::ManagerProfile$\ast$ RTM::ManagerServant::get\_\-profile ()}\label{classRTM_1_1ManagerServant_ac6f6020bcb7291afdba9c4104c5a25fb}
+
+
+マネージャのプロファイルを取得する 
+
+現在当該マネージャのプロファイルを取得する。
+
+\begin{DoxyReturn}{戻り値}
+マネージャプロファイル 
+\end{DoxyReturn}
+\index{RTM::ManagerServant@{RTM::ManagerServant}!get\_\-service@{get\_\-service}}
+\index{get\_\-service@{get\_\-service}!RTM::ManagerServant@{RTM::ManagerServant}}
+\subsubsection[{get\_\-service}]{\setlength{\rightskip}{0pt plus 5cm}CORBA::Object\_\-ptr RTM::ManagerServant::get\_\-service (const char $\ast$ {\em name})}\label{classRTM_1_1ManagerServant_a0b0f618d18c13dc8a7a31bae56027f84}
+
+
+RTCのリファレンスを取得する。. 
+
+\begin{DoxyReturn}{戻り値}
+RTCのリファレンス 
+\end{DoxyReturn}
+\index{RTM::ManagerServant@{RTM::ManagerServant}!get\_\-slave\_\-managers@{get\_\-slave\_\-managers}}
+\index{get\_\-slave\_\-managers@{get\_\-slave\_\-managers}!RTM::ManagerServant@{RTM::ManagerServant}}
+\subsubsection[{get\_\-slave\_\-managers}]{\setlength{\rightskip}{0pt plus 5cm}RTM::ManagerList$\ast$ RTM::ManagerServant::get\_\-slave\_\-managers ()}\label{classRTM_1_1ManagerServant_ae4ccbc651be158f1ce221128bef598fd}
+
+
+スレーブマネージャの取得 
+
+このマネージャがスレーブマネージャの場合、スレーブとなっているマ ネージャのリストを返す。このマネージャがスレーブの場合、空のリス トが返る。
+
+\begin{DoxyReturn}{戻り値}
+スレーブマネージャのリスト 
+\end{DoxyReturn}
+\index{RTM::ManagerServant@{RTM::ManagerServant}!getObjRef@{getObjRef}}
+\index{getObjRef@{getObjRef}!RTM::ManagerServant@{RTM::ManagerServant}}
+\subsubsection[{getObjRef}]{\setlength{\rightskip}{0pt plus 5cm}RTM::Manager\_\-ptr RTM::ManagerServant::getObjRef () const}\label{classRTM_1_1ManagerServant_a592b15c210062c1d64c3c696652e6613}
+
+
+Managerのリファレンスを取得する。. 
+
+\begin{DoxyReturn}{戻り値}
+Managerのリファレンス 
+\end{DoxyReturn}
+\index{RTM::ManagerServant@{RTM::ManagerServant}!is\_\-master@{is\_\-master}}
+\index{is\_\-master@{is\_\-master}!RTM::ManagerServant@{RTM::ManagerServant}}
+\subsubsection[{is\_\-master}]{\setlength{\rightskip}{0pt plus 5cm}::CORBA::Boolean RTM::ManagerServant::is\_\-master ()}\label{classRTM_1_1ManagerServant_af3962cce6ec2cfbb7dbd7e4e985ac5f3}
+
+
+マネージャがマスターかどうか 
+
+この関数はマネージャがマスターかどうかを返す。Trueならば、当該マ ネージャはマスターであり、それ以外は False を返す。
+
+\begin{DoxyReturn}{戻り値}
+マスターマネージャかどうかのbool値 
+\end{DoxyReturn}
+\index{RTM::ManagerServant@{RTM::ManagerServant}!load\_\-module@{load\_\-module}}
+\index{load\_\-module@{load\_\-module}!RTM::ManagerServant@{RTM::ManagerServant}}
+\subsubsection[{load\_\-module}]{\setlength{\rightskip}{0pt plus 5cm}RTC::ReturnCode\_\-t RTM::ManagerServant::load\_\-module (const char $\ast$ {\em pathname}, \/  const char $\ast$ {\em initfunc})}\label{classRTM_1_1ManagerServant_ac1d69225890ad440d2d75f665bd31ac6}
+
+
+モジュールをロードする 
+
+当該マネージャに指定されたモジュールをロードし、指定された初期化 関数で初期化を行う。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em pathname}]モジュールへのパス \item[{\em initfunc}]モジュールの初期化関数 \end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+リターンコード
+\end{DoxyReturn}
+standard constructor \index{RTM::ManagerServant@{RTM::ManagerServant}!remove\_\-master\_\-manager@{remove\_\-master\_\-manager}}
+\index{remove\_\-master\_\-manager@{remove\_\-master\_\-manager}!RTM::ManagerServant@{RTM::ManagerServant}}
+\subsubsection[{remove\_\-master\_\-manager}]{\setlength{\rightskip}{0pt plus 5cm}RTC::ReturnCode\_\-t RTM::ManagerServant::remove\_\-master\_\-manager (RTM::Manager\_\-ptr {\em mgr})}\label{classRTM_1_1ManagerServant_a20453d7ef15894bf7965d858cb90a66f}
+
+
+マスターマネージャの削除 
+
+このマネージャが保持するマスタのうち、指定されたものを削除する。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em mgr}]マスターマネージャ \end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+ReturnCode\_\-t 
+\end{DoxyReturn}
+\index{RTM::ManagerServant@{RTM::ManagerServant}!remove\_\-slave\_\-manager@{remove\_\-slave\_\-manager}}
+\index{remove\_\-slave\_\-manager@{remove\_\-slave\_\-manager}!RTM::ManagerServant@{RTM::ManagerServant}}
+\subsubsection[{remove\_\-slave\_\-manager}]{\setlength{\rightskip}{0pt plus 5cm}RTC::ReturnCode\_\-t RTM::ManagerServant::remove\_\-slave\_\-manager (RTM::Manager\_\-ptr {\em mgr})}\label{classRTM_1_1ManagerServant_acc95f96d5e15c4379af297eb32559ab8}
+
+
+スレーブマネージャの削除 
+
+このマネージャが保持するマスタのうち、指定されたものを削除する。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em mgr}]スレーブマネージャ \end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+ReturnCode\_\-t 
+\end{DoxyReturn}
+\index{RTM::ManagerServant@{RTM::ManagerServant}!restart@{restart}}
+\index{restart@{restart}!RTM::ManagerServant@{RTM::ManagerServant}}
+\subsubsection[{restart}]{\setlength{\rightskip}{0pt plus 5cm}RTC::ReturnCode\_\-t RTM::ManagerServant::restart ()}\label{classRTM_1_1ManagerServant_aad40967cb7c29e2466c8dde7e2dad25f}
+
+
+再起動する。 
+
+\begin{DoxyReturn}{戻り値}
+ReturnCode\_\-t 
+\end{DoxyReturn}
+\index{RTM::ManagerServant@{RTM::ManagerServant}!set\_\-configuration@{set\_\-configuration}}
+\index{set\_\-configuration@{set\_\-configuration}!RTM::ManagerServant@{RTM::ManagerServant}}
+\subsubsection[{set\_\-configuration}]{\setlength{\rightskip}{0pt plus 5cm}RTC::ReturnCode\_\-t RTM::ManagerServant::set\_\-configuration (const char $\ast$ {\em name}, \/  const char $\ast$ {\em value})}\label{classRTM_1_1ManagerServant_a085a32d8ad1124a277d10c50e3bc99d9}
+
+
+マネージャのコンフィギュレーションを設定する 
+
+現在当該マネージャのコンフィギュレーションを設定する。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em name}]セットするコンフィギュレーションのキー名 \item[{\em value}]セットするコンフィギュレーションの値 \end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+リターンコード 
+\end{DoxyReturn}
+\index{RTM::ManagerServant@{RTM::ManagerServant}!shutdown@{shutdown}}
+\index{shutdown@{shutdown}!RTM::ManagerServant@{RTM::ManagerServant}}
+\subsubsection[{shutdown}]{\setlength{\rightskip}{0pt plus 5cm}RTC::ReturnCode\_\-t RTM::ManagerServant::shutdown ()}\label{classRTM_1_1ManagerServant_a98f5d973b85551ddc88094c34a3df1c7}
+
+
+shutdownする 
+
+\begin{DoxyReturn}{戻り値}
+ReturnCode\_\-t 
+\end{DoxyReturn}
+\index{RTM::ManagerServant@{RTM::ManagerServant}!unload\_\-module@{unload\_\-module}}
+\index{unload\_\-module@{unload\_\-module}!RTM::ManagerServant@{RTM::ManagerServant}}
+\subsubsection[{unload\_\-module}]{\setlength{\rightskip}{0pt plus 5cm}RTC::ReturnCode\_\-t RTM::ManagerServant::unload\_\-module (const char $\ast$ {\em pathname})}\label{classRTM_1_1ManagerServant_acf76f20459885fbb6a83f607bf9cff35}
+
+
+モジュールをアンロードする 
+
+当該マネージャに指定されたモジュールをアンロードする。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em pathname}]モジュールへのパス \end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+リターンコード 
+\end{DoxyReturn}

@@ -1,0 +1,174 @@
+\section{クラス coil::DynamicLib}
+\label{classcoil_1_1DynamicLib}\index{coil::DynamicLib@{coil::DynamicLib}}
+
+
+\doxyref{DynamicLib}{p.}{classcoil_1_1DynamicLib} クラス.  
+
+
+
+
+{\ttfamily \#include $<$DynamicLib.h$>$}
+
+\subsection*{Public メソッド}
+\begin{DoxyCompactItemize}
+\item 
+{\bf DynamicLib} (int close\_\-handle\_\-on\_\-destruction=1)
+\begin{DoxyCompactList}\small\item\em コンストラクタ \item\end{DoxyCompactList}\item 
+{\bf DynamicLib} (const char $\ast$dynlib\_\-name, int open\_\-mode=COIL\_\-DEFAULT\_\-DYNLIB\_\-MODE, int close\_\-handle\_\-on\_\-destruction=1)
+\begin{DoxyCompactList}\small\item\em コンストラクタ \item\end{DoxyCompactList}\item 
+virtual {\bf $\sim$DynamicLib} ()
+\begin{DoxyCompactList}\small\item\em デストラクタ \item\end{DoxyCompactList}\item 
+{\bf DynamicLib} (const {\bf DynamicLib} \&rhs)
+\begin{DoxyCompactList}\small\item\em コピーコンストラクタ \item\end{DoxyCompactList}\item 
+{\bf DynamicLib} \& {\bf operator=} (const {\bf DynamicLib} \&rhs)
+\begin{DoxyCompactList}\small\item\em 代入演算子 \item\end{DoxyCompactList}\item 
+virtual int {\bf open} (const char $\ast$dll\_\-name, int open\_\-mode=COIL\_\-DEFAULT\_\-DYNLIB\_\-MODE, int close\_\-handle\_\-on\_\-destruction=1)
+\begin{DoxyCompactList}\small\item\em 動的リンクライブラリのロード \item\end{DoxyCompactList}\item 
+virtual int {\bf close} (void)
+\begin{DoxyCompactList}\small\item\em 動的リンクライブラリのアンロード \item\end{DoxyCompactList}\item 
+void $\ast$ {\bf symbol} (const char $\ast$symbol\_\-name)
+\begin{DoxyCompactList}\small\item\em シンボルがロードされたメモリアドレスを返す \item\end{DoxyCompactList}\item 
+const char $\ast$ {\bf error} (void) const 
+\begin{DoxyCompactList}\small\item\em エラーについての説明メッセージを返す \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public メソッド}
+\begin{DoxyCompactItemize}
+\item 
+static int {\bf ForExternTest} (void)
+\begin{DoxyCompactList}\small\item\em ユニットテスト \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{説明}
+\doxyref{DynamicLib}{p.}{classcoil_1_1DynamicLib} クラス. 
+
+\subsection{コンストラクタとデストラクタ}
+\index{coil::DynamicLib@{coil::DynamicLib}!DynamicLib@{DynamicLib}}
+\index{DynamicLib@{DynamicLib}!coil::DynamicLib@{coil::DynamicLib}}
+\subsubsection[{DynamicLib}]{\setlength{\rightskip}{0pt plus 5cm}coil::DynamicLib::DynamicLib (int {\em close\_\-handle\_\-on\_\-destruction} = {\ttfamily 1})}\label{classcoil_1_1DynamicLib_ad3bf31b617e31af37f210c4544e3241d}
+
+
+コンストラクタ 
+
+コンストラクタ。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em close\_\-handle\_\-on\_\-destruction}]クローズフラグ \end{DoxyParams}
+\index{coil::DynamicLib@{coil::DynamicLib}!DynamicLib@{DynamicLib}}
+\index{DynamicLib@{DynamicLib}!coil::DynamicLib@{coil::DynamicLib}}
+\subsubsection[{DynamicLib}]{\setlength{\rightskip}{0pt plus 5cm}coil::DynamicLib::DynamicLib (const char $\ast$ {\em dynlib\_\-name}, \/  int {\em open\_\-mode} = {\ttfamily COIL\_\-DEFAULT\_\-DYNLIB\_\-MODE}, \/  int {\em close\_\-handle\_\-on\_\-destruction} = {\ttfamily 1})}\label{classcoil_1_1DynamicLib_a212c930320798b941f496df140225922}
+
+
+コンストラクタ 
+
+コンストラクタ。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em dynlib\_\-name}]動的リンクライブラリ名称 \item[{\em open\_\-mode}]オープンモード \item[{\em close\_\-handle\_\-on\_\-destruction}]クローズフラグ \end{DoxyParams}
+\index{coil::DynamicLib@{coil::DynamicLib}!$\sim$DynamicLib@{$\sim$DynamicLib}}
+\index{$\sim$DynamicLib@{$\sim$DynamicLib}!coil::DynamicLib@{coil::DynamicLib}}
+\subsubsection[{$\sim$DynamicLib}]{\setlength{\rightskip}{0pt plus 5cm}virtual coil::DynamicLib::$\sim$DynamicLib ()\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classcoil_1_1DynamicLib_a6b18812576274720376677384301c727}
+
+
+デストラクタ 
+
+デストラクタ。 \index{coil::DynamicLib@{coil::DynamicLib}!DynamicLib@{DynamicLib}}
+\index{DynamicLib@{DynamicLib}!coil::DynamicLib@{coil::DynamicLib}}
+\subsubsection[{DynamicLib}]{\setlength{\rightskip}{0pt plus 5cm}coil::DynamicLib::DynamicLib (const {\bf DynamicLib} \& {\em rhs})}\label{classcoil_1_1DynamicLib_a4ea554eef07f42e82e6c3770921e65e1}
+
+
+コピーコンストラクタ 
+
+コピーコンストラクタ。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em rhs}]コピー元動的リンクライブラリオブジェクト \end{DoxyParams}
+
+
+\subsection{関数}
+\index{coil::DynamicLib@{coil::DynamicLib}!close@{close}}
+\index{close@{close}!coil::DynamicLib@{coil::DynamicLib}}
+\subsubsection[{close}]{\setlength{\rightskip}{0pt plus 5cm}virtual int coil::DynamicLib::close (void)\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classcoil_1_1DynamicLib_af11efbb5c96ad4316beb166fe0683c1b}
+
+
+動的リンクライブラリのアンロード 
+
+動的リンクライブラリをアンロードする。
+
+\begin{DoxyReturn}{戻り値}
+0: 成功, -\/1: 失敗 
+\end{DoxyReturn}
+
+
+参照元 RTC::ModuleManager::UnloadPred::operator()().
+
+\index{coil::DynamicLib@{coil::DynamicLib}!error@{error}}
+\index{error@{error}!coil::DynamicLib@{coil::DynamicLib}}
+\subsubsection[{error}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ coil::DynamicLib::error (void) const}\label{classcoil_1_1DynamicLib_a09011e9d0df8272bc55beb734d822200}
+
+
+エラーについての説明メッセージを返す 
+
+エラーについての説明メッセージを返す。
+
+\begin{DoxyReturn}{戻り値}
+エラーメッセージ(NULL: エラーなし) 
+\end{DoxyReturn}
+\index{coil::DynamicLib@{coil::DynamicLib}!ForExternTest@{ForExternTest}}
+\index{ForExternTest@{ForExternTest}!coil::DynamicLib@{coil::DynamicLib}}
+\subsubsection[{ForExternTest}]{\setlength{\rightskip}{0pt plus 5cm}static int coil::DynamicLib::ForExternTest (void)\hspace{0.3cm}{\ttfamily  [inline, static]}}\label{classcoil_1_1DynamicLib_aaca1bfa391e653a961c9df2cb17fdfb6}
+
+
+ユニットテスト 
+
+ユニットテストを行う。
+
+\begin{DoxyReturn}{戻り値}
+0xdeadbeef 
+\end{DoxyReturn}
+\index{coil::DynamicLib@{coil::DynamicLib}!open@{open}}
+\index{open@{open}!coil::DynamicLib@{coil::DynamicLib}}
+\subsubsection[{open}]{\setlength{\rightskip}{0pt plus 5cm}virtual int coil::DynamicLib::open (const char $\ast$ {\em dll\_\-name}, \/  int {\em open\_\-mode} = {\ttfamily COIL\_\-DEFAULT\_\-DYNLIB\_\-MODE}, \/  int {\em close\_\-handle\_\-on\_\-destruction} = {\ttfamily 1})\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classcoil_1_1DynamicLib_af28ba981280d9f3722ba22514120fc1a}
+
+
+動的リンクライブラリのロード 
+
+動的リンクライブラリをロードする。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em dll\_\-name}]動的リンクライブラリ名称 \item[{\em open\_\-mode}]オープンモード \item[{\em close\_\-handle\_\-on\_\-destruction}]クローズフラグ\end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+0: 成功, -\/1: 失敗 
+\end{DoxyReturn}
+\index{coil::DynamicLib@{coil::DynamicLib}!operator=@{operator=}}
+\index{operator=@{operator=}!coil::DynamicLib@{coil::DynamicLib}}
+\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf DynamicLib}\& coil::DynamicLib::operator= (const {\bf DynamicLib} \& {\em rhs})}\label{classcoil_1_1DynamicLib_af2df992dff993ee120363f625c194803}
+
+
+代入演算子 
+
+動的リンクライブラリオブジェクトをコピーする。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em rhs}]代入元動的リンクライブラリオブジェクト\end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+代入結果 
+\end{DoxyReturn}
+\index{coil::DynamicLib@{coil::DynamicLib}!symbol@{symbol}}
+\index{symbol@{symbol}!coil::DynamicLib@{coil::DynamicLib}}
+\subsubsection[{symbol}]{\setlength{\rightskip}{0pt plus 5cm}void$\ast$ coil::DynamicLib::symbol (const char $\ast$ {\em symbol\_\-name})}\label{classcoil_1_1DynamicLib_a0e2053a55cf23ceae13aa142b6097fe8}
+
+
+シンボルがロードされたメモリアドレスを返す 
+
+シンボルがロードされたメモリアドレスを返す。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em symbol\_\-name}]シンボル名称\end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+メモリアドレス(NULL: 失敗) 
+\end{DoxyReturn}

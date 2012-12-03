@@ -1,0 +1,602 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<title>OpenRTM: クラス RTC::CorbaPort</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<!-- 作成： Doxygen 1.6.3 -->
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="index.html"><span>メインページ</span></a></li>
+      <li><a href="namespaces.html"><span>ネームスペース</span></a></li>
+      <li class="current"><a href="annotated.html"><span>クラス</span></a></li>
+      <li><a href="files.html"><span>ファイル</span></a></li>
+    </ul>
+  </div>
+  <div class="tabs">
+    <ul>
+      <li><a href="annotated.html"><span>構成</span></a></li>
+      <li><a href="hierarchy.html"><span>クラス階層</span></a></li>
+      <li><a href="functions.html"><span>構成メンバ</span></a></li>
+    </ul>
+  </div>
+  <div class="navpath"><a class="el" href="namespaceRTC.html">RTC</a>::<a class="el" href="classRTC_1_1CorbaPort.html">CorbaPort</a>
+  </div>
+</div>
+<div class="contents">
+<h1>クラス RTC::CorbaPort</h1><!-- doxytag: class="RTC::CorbaPort" --><!-- doxytag: inherits="RTC::PortBase" -->
+<p>RT コンポーネント CORBA provider/consumer 用 Port.  
+<a href="#_details">[詳細]</a></p>
+
+<p><code>#include &lt;<a class="el" href="CorbaPort_8h_source.html">CorbaPort.h</a>&gt;</code></p>
+<div class="dynheader">
+RTC::CorbaPortに対する継承グラフ</div>
+<div class="dynsection">
+ <div class="center">
+  <img src="classRTC_1_1CorbaPort.png" usemap="#RTC::CorbaPort_map" alt=""/>
+  <map id="RTC::CorbaPort_map" name="RTC::CorbaPort_map">
+<area href="classRTC_1_1PortBase.html" alt="RTC::PortBase" shape="rect" coords="0,0,100,24"/>
+</map>
+ </div>
+</div>
+
+<p><a href="classRTC_1_1CorbaPort-members.html">すべてのメンバ一覧</a></p>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr><td colspan="2"><h2>構成</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">class &nbsp;</td><td class="memItemRight" valign="bottom"><b>CorbaConsumerHolder</b></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Consumer の情報を格納する構造体. <br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">class &nbsp;</td><td class="memItemRight" valign="bottom"><b>CorbaProviderHolder</b></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Provider の情報を格納する構造体. <br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">struct &nbsp;</td><td class="memItemRight" valign="bottom"><b>unsubscribe</b></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Consumer のオブジェクトを解放するための Functor. <br/></td></tr>
+<tr><td colspan="2"><h2>Public メソッド</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1CorbaPort.html#a2bbb2b39d9df5f82c61315fe3fa5cf7a">CorbaPort</a> (const char *name)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">コンストラクタ  <a href="#a2bbb2b39d9df5f82c61315fe3fa5cf7a"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1CorbaPort.html#a7aa53f50989ea68ca419b9f6d5a8cfcc">~CorbaPort</a> (void)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">仮想デストラクタ  <a href="#a7aa53f50989ea68ca419b9f6d5a8cfcc"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1CorbaPort.html#a5e62ee7818cafc02a3e7002a3742daab">init</a> (<a class="el" href="classcoil_1_1Properties.html">coil::Properties</a> &amp;prop)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">プロパティの初期化  <a href="#a5e62ee7818cafc02a3e7002a3742daab"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1CorbaPort.html#af9de5f6a90d3b0f6bfc07317e6a0d44f">registerProvider</a> (const char *instance_name, const char *type_name, PortableServer::RefCountServantBase &amp;provider)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Provider を登録する.  <a href="#af9de5f6a90d3b0f6bfc07317e6a0d44f"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1CorbaPort.html#a70d4b49921c82916181aa681eea2ab2b">registerConsumer</a> (const char *instance_name, const char *type_name, <a class="el" href="classRTC_1_1CorbaConsumerBase.html">CorbaConsumerBase</a> &amp;consumer)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Consumer を登録する.  <a href="#a70d4b49921c82916181aa681eea2ab2b"></a><br/></td></tr>
+<tr><td colspan="2"><h2>Protected メソッド</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual ReturnCode_t&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1CorbaPort.html#a71aa316c3324369c4462193d10a5d098">publishInterfaces</a> (ConnectorProfile &amp;connector_profile)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Provider Interface 情報を公開する.  <a href="#a71aa316c3324369c4462193d10a5d098"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual ReturnCode_t&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1CorbaPort.html#ad9a122cbe2f9892cc9555e805571742e">subscribeInterfaces</a> (const ConnectorProfile &amp;connector_profile)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Provider Interface 情報を取得する.  <a href="#ad9a122cbe2f9892cc9555e805571742e"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1CorbaPort.html#a4776e122a3066d9e3a3e5d1e5da45b98">unsubscribeInterfaces</a> (const ConnectorProfile &amp;connector_profile)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Interface への接続を解除する.  <a href="#a4776e122a3066d9e3a3e5d1e5da45b98"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1CorbaPort.html#a1b9efe804a293b2c38a9cbe3b5ba54a0">activateInterfaces</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Port の全てのインターフェースを activates する.  <a href="#a1b9efe804a293b2c38a9cbe3b5ba54a0"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1CorbaPort.html#a4c25f8e04aa9cceff24c31ea3fec4e5b">deactivateInterfaces</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">全ての Port のインターフェースを deactivates する  <a href="#a4c25f8e04aa9cceff24c31ea3fec4e5b"></a><br/></td></tr>
+<tr><td colspan="2"><h2>Protected 変数</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classcoil_1_1Properties.html">coil::Properties</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1CorbaPort.html#afb24858ffd644ff6d52bb422cfb442da">m_properties</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">プロパティ  <a href="#afb24858ffd644ff6d52bb422cfb442da"></a><br/></td></tr>
+</table>
+<hr/><a name="_details"></a><h2>説明</h2>
+<p>RT コンポーネント CORBA provider/consumer 用 Port. </p>
+<p><a class="el" href="classRTC_1_1CorbaPort.html" title="RT コンポーネント CORBA provider/consumer 用 Port.">CorbaPort</a> は RT コンポーネントにおいて、ユーザ定義の CORBA オブジェ クトサービスおよびコンシューマを提供する Port 実装である。</p>
+<p>RT コンポーネントは、Port を介してユーザが定義した CORBA サービス を提供することができ、これを RT Service (Provider) と呼ぶ。また、 他の RT コンポーネントのサービスを利用するための CORBA オブジェク トのプレースホルダを提供することができ、これを RT Service Consumer と呼ぶ。 <a class="el" href="classRTC_1_1CorbaPort.html" title="RT コンポーネント CORBA provider/consumer 用 Port.">CorbaPort</a> は任意の数の Provider および Consumer を管理することがで き、Port 同士を接続する際に対応する Provider と Consumer を適切に 関連付けることができる。 <a class="el" href="classRTC_1_1CorbaPort.html" title="RT コンポーネント CORBA provider/consumer 用 Port.">CorbaPort</a> は通常以下のように利用される。</p>
+<pre>
+ <a class="el" href="classRTC_1_1CorbaPort.html" title="RT コンポーネント CORBA provider/consumer 用 Port.">RTC::CorbaPort</a> m_port0; // Port の宣言</pre><pre> MyService_impl m_mysvc0; // この Port が提供する Serivce Provider
+ RTC::CorbaConsumer&lt;YourService&gt; m_cons0; // この Port の Consumer</pre><pre> // Service Provider を Port に登録
+ m_port0.registerProvider("MyService0", "Generic", m_mysvc0);
+ // Service Consumer を Port に登録
+ m_port0.registerConsumer("YourService0", "Generic", m_cons0 );</pre><pre> // connect が行われた後</pre><pre> m_cons0-&gt;your_service_function(); // YourService の関数をコール</pre><pre> // connect された 別のコンポーネントにおいて
+ m_cons1-&gt;my_service_function(); // MyService の関数をコール
+ </pre><p>このように、提供したい Service Provider を <a class="el" href="classRTC_1_1CorbaPort.html#af9de5f6a90d3b0f6bfc07317e6a0d44f" title="Provider を登録する.">registerProvider()</a> で登 録することにより、他のコンポーネントから利用可能にし、他方、利用し たい Service Consumer を <a class="el" href="classRTC_1_1CorbaPort.html#a70d4b49921c82916181aa681eea2ab2b" title="Consumer を登録する.">registerConsumer()</a> で登録することにより他 のコンポーネントの Service をコンポーネント内で利用可能にすること ができる。</p>
+<p>PortInterfaceProfile は Port に所属するプロバイダもしくはコンシュー マインターフェースについての情報を記述するためのプロファイルである。 接続を行うツール等は、これらの情報に基づき ConnectorProfile を適切 に生成し、接続を構成する Port のうち任意の一つに対して引数に ConnectorProfile を与えて Port::connect() を呼び出す必要がある。</p>
+<p>なお、PortInterfaceProfile のインスタンス名 "*" は特殊なインスタン スを表す。</p>
+<p>PROVIDEDすなわちプロバイダのインスタンス名が "*" の場合は、接続開 始時点ではインスタンスが存在せず、コンシューマの要求に応じて動的に インスタンスを生成するタイプのプロバイダであることを表す。したがっ て、接続開始時点ではインスタンス名は存在しないが、接続シーケンス中 のインターフェースを公開するプロセスにおいて、プロバイダは生成した インスタンスに対応した記述子を ConnectorProfile に適正に設定するも のとする。(未実装)</p>
+<p>REQUIREDすなわちコンシューマのインスタンス名が "*" の場合は、一つ のコンシューマが複数のプロバイダと接続可能なタイプのコンシューマで あることを示す。(未実装)</p>
+<p>以下は、Port間のインターフェースを接続するために ConnectorProfile に マッピングを記述するためのルールを示す。</p>
+<p>Portに付属するインターフェースの指定子のフォーマットを以下のように 定める。インターフェースに関するプロパティが以下の場合</p>
+<ul>
+<li>RTCインスタンス名: rtc_iname</li>
+<li>ポート名: port_name</li>
+<li>インターフェース極性: if_polarity</li>
+<li>インターフェース型名: if_tname</li>
+<li>インターフェースインスタンス名: if_iname</li>
+</ul>
+<p>インターフェースの指定子を以下の文字列名称で指定するものとする。</p>
+<p>&lt;rtc_iname&gt;.port.&lt;port_name&gt;.&lt;if_polarity&gt;.&lt;if_tname&gt;.&lt;if_iname&gt;</p>
+<p>PROVIDED(提供)型すなわちプロバイダのインタフェースのプロパティが以 下の場合、</p>
+<ul>
+<li>rtc_iname = MyComp0</li>
+<li>port_name = myservice</li>
+<li>if_polarity = provided</li>
+<li>if_tname = echo_interface</li>
+<li>if_iname = echo_interface2</li>
+</ul>
+<p>インターフェース指定子は</p>
+<p>MyComp0.port.myservice.provided.echo_interface.echo_interface2</p>
+<p>のように記述される。また、同様にREQUIRED(要求)型すなわちコンシュー マのインターフェースのプロパティが以下の場合、</p>
+<ul>
+<li>rtc_iname = YourComp0</li>
+<li>port_name = yourservice</li>
+<li>if_polarity = required</li>
+<li>if_tname = hoge_interface</li>
+<li>if_iname = hoge_interface1</li>
+</ul>
+<p>インターフェース指定子は、</p>
+<p>YourComp0.port.myservice.required.hoge_interface.hoge_inteface1</p>
+<p>のように記述することができる。</p>
+<p>なお、ここで動的生成インターフェースのインスタンスのための特殊なタ イプのインスタンス名記述子</p>
+<ul>
+<li>&lt;type_name&gt;*: 動的生成型インスタンス名記述子</li>
+<li>&lt;type_name&gt;+: インクリメンタル生成型インスタンス名記述子</li>
+</ul>
+<p>を定義する。動的生成インターフェースとは、接続時にインスタンスが生 成されるタイプのインターフェースである。(未実装)</p>
+<p>コンシューマが要求するプロバイダインターフェース記述子に動的生成型 インスタンス名記述子 "&lt;type_name&gt;*" が指定された場合、プロバイダは インスタンスを1つ新規に生成する。"&lt;type_name&gt;*" の記述子によりプロバ イダを要求する n 個のコンシューマが存在する場合、これらからの要求 (オペレーションコール)を1 つのプロバイダにより処理する関係を構築す る(下図)。</p>
+<pre>
+ consumer0 ]---&lt;
+ consumer1 ]---&lt;  O----[ provider0
+ consumer2 ]---&lt;
+ </pre><p>これに対し、コンシューマが要求するプロバイダインターフェース記述子 にインクリメンタル生成型インスタンス名記述子 "&lt;type_name&gt;+" が指定 された場合、記述子 "&lt;type_name&gt;+" の数だけプロバイダのインスタン スが動的に生成される。すなわち、"&lt;type_name&gt;+" の記述子によりプロバ イダを要求する n 個のコンシューマが存在する場合、n 個のプロバイダ がそれぞれの要求を処理する以下のような関係が構築される。</p>
+<pre>
+ consumer0 ]---&lt;  O----[ provider0
+ consumer1 ]---&lt;  O----[ provider1
+ consumer2 ]---&lt;  O----[ provider2
+ </pre><p>接続に際して、ツール等から ConnectorProfile::properties に適切なイ ンターフェースマッピング指定を記述することで、相互のプロバイダ/コ ンシューマインターフェースを自由に接続することができる。ただし、接 続に関わる <a class="el" href="namespaceRTC.html" title="RTコンポーネント.">RTC</a> の中に、異なるインスタンスでありながら、同一のインス タンス名が存在する場合、インターフェース記述子の一意性が保証できな いので、この方法による接続性は保証されない。</p>
+<p>ここでインターフェース記述子を簡単のために &lt;if_desc0&gt;, &lt;if_desc1&gt;, ... とする。また、ConnectorProfileproperties の NVListの key と value を key: value のように記述するものとする。</p>
+<p>いま、2つのコンポーネントのサービスポートを接続する場合を考える。 それぞれのコンポーネントのサービスポートが以下の場合、</p>
+<ul>
+<li>rtc_iname: MyComp0 <br/>
+ port_name: mycomp_service <br/>
+ interfaces:<ul>
+<li>if_polarity: provided <br/>
+ if_iname: echo0 <br/>
+ if_tname: Echo</li>
+<li>if_polarity: required <br/>
+ if_iname: add0 <br/>
+ if_tname: add</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>rtc_iname: YourComp0 <br/>
+ port_name: yourcomp_service <br/>
+ interfaces:<ul>
+<li>if_polarity: required <br/>
+ if_iname: echo9 <br/>
+ if_tname: Echo</li>
+<li>if_polarity: provided <br/>
+ if_iname: add9 <br/>
+ if_tname: add</li>
+</ul>
+</li>
+</ul>
+<pre>
+      MyComp0                                 YourComp0
+     _______ mycomp_service   yourcomp_service ______
+            |                                 |
+          |~~~|---O echo0         echo9 &gt;---|~~~|
+          |   |---&lt; add0          add9  O---|   |
+           ~T~                               ~T~
+            |                                 |
+ </pre><p>MyComp0 の echo0 (プロバイダ) と YourComp0 の echo9 (コンシューマ)、 MyComp0 の add0 (コンシューマ) と YourComp0 の echo9 (プロバイダ) をそれぞれ対にして接続させるものと仮定する。この場合、 ConnectorProfile は以下のように設定する。</p>
+<pre>
+ ConnectorProfile:
+   name: 任意のコネクタ名
+   connector_id: 空文字
+   ports[]: mycomp_service の参照, yourcomp_service の参照
+   properties:
+     &lt;add0&gt;: &lt;add9&gt;
+     &lt;echo9&gt;: &lt;echo0&gt;
+ </pre><p>ただし、それぞれ</p>
+<pre>
+ &lt;add0&gt; は MyComp0.port.mycomp_service.required.add.add0
+ &lt;add9&gt; は YourComp0.port.yourcomp_service.provided.add.add9
+ &lt;echo0&gt; は MyComp0.port.mycomp_service.provided.echo.echo0
+ &lt;echo9&gt; は YourComp0.port.yourcomp_service.required.echo.echo9
+ </pre><p>である。接続プロセスにおいて、各ポートのプロバイダおよびコンシュー マは、それぞれ以下の作業を、CorbaPortpublishInterfaces(), CorbaPort::PortsubscribeInterfaces() 仮想関数において行う。</p>
+<p>プロバイダは、publishInterfaces() 関数において、自分のインターフェー ス記述子をキーとし、値にIORの文字列表記したものを ConnectorProfile::properties に設定する。前提として、このインター フェース記述子は今行おうとしているコネクタにおいては一意であるため、 同じキーは1つしか存在してはいけない。</p>
+<p>[この部分の記述は未実装の機能] なお、動的生成インターフェースにつ いては、以下の手続きに従い処理することとなる。publishInterface() 関数において、動的生成インスタンス名記述子 "&lt;type_name&gt;*" または、 インクリメンタル生成型インスタンス名記述子 "&lt;type_name&gt;+" が存在す るかどうかを走査する。動的生成インスタンス名記述子 "&lt;type_name&gt;*" が存在する場合、プロバイダのインスタンスを1つ生成し、そのインター フェース指定子を key に、IOR文字列を value に設定するとともに、動 的生成インスタンス名記述子 "&lt;type_name&gt;*" を value に含むすべての value 上のインターフェース指定子を、ここで生成したインターフェース 指定子に置き換える。</p>
+<p>インクリメンタル生成型インスタンス名記述子"&lt;type_name&gt;+" が存在す る場合、インスタンス名記述子の数だけプロバイダのインスタンスを生成 し、それぞれのインターフェース指定子をkey に、IOR文字列を value に 設定するとともに、インクリメンタル生成型インスタンス名記述子 "&lt;type_name&gt;+" を value 含むすべての value 上のインターフェース指 定子に対して順に、ここで生成したそれぞれのインターフェース指定子に 置き換える。</p>
+<p>プロバイダは <a class="el" href="classRTC_1_1CorbaPort.html#ad9a122cbe2f9892cc9555e805571742e" title="Provider Interface 情報を取得する.">subscribeInterfaces()</a> では特に操作は行わない。</p>
+<p>コンシューマは、 <a class="el" href="classRTC_1_1CorbaPort.html#a71aa316c3324369c4462193d10a5d098" title="Provider Interface 情報を公開する.">publishInterfaces()</a> においては特に操作を行わない。</p>
+<p>一方、 <a class="el" href="classRTC_1_1CorbaPort.html#ad9a122cbe2f9892cc9555e805571742e" title="Provider Interface 情報を取得する.">subscribeInterfaces()</a> では、自分の記述子を key とする key-value ペア が存在するかどうか調べ、もし存在すれば、その value に設定されたプロバイダのインターフェース指定子で指定される参照を、 さらに ConnectorProfile::properties から探し、それをコンシューマの 接続先として設定する。なお、意図的にコンシューマにプロバイダの参照 を設定しない場合は、予約文字列 "nil" または "null" を設定するもの とする。</p>
+<p>コンシューマは、もし自分の記述子が存在しない場合、またはプロバイダ の参照が Connector::properties に存在しない場合、コンシューマは、 自分のインスタンス名および型名と同一のプロバイダを探し、その参照を 自分自身に設定する。これは、OpenRTM-aist-0.4 との互換性を保持する ためのルールであり、1.0以降では推奨されない。</p>
+<p>プロバイダ対コンシューマの対応は一対一である必要はなく、プロバイダ 1 に対して、コンシューマ n、またはコンシューマ 1 に対してプロバイ ダ n のケースも許される。プロバイダ 1 に対して、コンシューマ n の ケースでは、あるプロバイダの指定子が、複数のコンシューマに対して、 上記の方法で指定されることにより、実現される。一方、コンシューマ 1 に対してプロバイダ n のケースでは、コンシューマ指定子の key に対 して、複数のプロバイダの指定子がカンマ区切りで列挙される形式となる ものとする。</p>
+<p>なお、インターフェースの対応関係の厳密さを指定するオプションとして、 以下のオプションを指定することができる。</p>
+<p>port.connection.strictness: strict, best_effort</p>
+<p>strict: すべてのコンシューマに指定した参照が存在し、かつナローイン グにも成功しコンシューマに適切にセットできた場合にのみ Port 間の接続を確立する。</p>
+<p>best_effort: ナローイング等に失敗した場合でも、エラーを返すことな く Port 間の接続を確立する。</p>
+<dl class="since"><dt><b>から:</b></dt><dd>0.4.0 </dd></dl>
+<hr/><h2>コンストラクタとデストラクタ</h2>
+<a class="anchor" id="a2bbb2b39d9df5f82c61315fe3fa5cf7a"></a><!-- doxytag: member="RTC::CorbaPort::CorbaPort" ref="a2bbb2b39d9df5f82c61315fe3fa5cf7a" args="(const char *name)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">RTC::CorbaPort::CorbaPort </td>
+          <td>(</td>
+          <td class="paramtype">const char *&nbsp;</td>
+          <td class="paramname"> <em>name</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>コンストラクタ </p>
+<p>コンストラクタでは、引数に与えられた名前を <a class="el" href="classRTC_1_1PortBase.html" title="Port の基底クラス.">PortBase</a> に対してセッ トするとともに、PortProfileproperties に対して</p>
+<ul>
+<li>port.port_type: "CorbaPort"</li>
+</ul>
+<p>をプロパティとして追加する。</p>
+<dl><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>name</em>&nbsp;</td><td>Port の名前 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a7aa53f50989ea68ca419b9f6d5a8cfcc"></a><!-- doxytag: member="RTC::CorbaPort::~CorbaPort" ref="a7aa53f50989ea68ca419b9f6d5a8cfcc" args="(void)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual RTC::CorbaPort::~CorbaPort </td>
+          <td>(</td>
+          <td class="paramtype">void&nbsp;</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>仮想デストラクタ </p>
+
+</div>
+</div>
+<hr/><h2>関数</h2>
+<a class="anchor" id="a1b9efe804a293b2c38a9cbe3b5ba54a0"></a><!-- doxytag: member="RTC::CorbaPort::activateInterfaces" ref="a1b9efe804a293b2c38a9cbe3b5ba54a0" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void RTC::CorbaPort::activateInterfaces </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [protected, virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Port の全てのインターフェースを activates する. </p>
+<p>Port に登録されている全てのインターフェースを activate する。 </p>
+
+<p><a class="el" href="classRTC_1_1PortBase.html#ad779347bae007555968dda9e78004e34">RTC::PortBase</a>を実装しています。</p>
+
+</div>
+</div>
+<a class="anchor" id="a4c25f8e04aa9cceff24c31ea3fec4e5b"></a><!-- doxytag: member="RTC::CorbaPort::deactivateInterfaces" ref="a4c25f8e04aa9cceff24c31ea3fec4e5b" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void RTC::CorbaPort::deactivateInterfaces </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [protected, virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>全ての Port のインターフェースを deactivates する </p>
+<p>Port に登録されている全てのインターフェースを deactivate する。 </p>
+
+<p><a class="el" href="classRTC_1_1PortBase.html#a8dfb8a33b92b9fc9b6c070df2def633f">RTC::PortBase</a>を実装しています。</p>
+
+</div>
+</div>
+<a class="anchor" id="a5e62ee7818cafc02a3e7002a3742daab"></a><!-- doxytag: member="RTC::CorbaPort::init" ref="a5e62ee7818cafc02a3e7002a3742daab" args="(coil::Properties &amp;prop)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void RTC::CorbaPort::init </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classcoil_1_1Properties.html">coil::Properties</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>prop</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>プロパティの初期化 </p>
+<p>OutPortのプロパティを初期化する。このポートへの接続数を指定する プロパティ "connection_limit" が含まれ、適切な数値が設定されてい る場合、最大接続数としてその数値が設定される。プロパティが設定さ れていない場合、もしくは適切な値が設定されていない場合には、最大 接続数は無制限となる。</p>
+<dl><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>prop</em>&nbsp;</td><td><a class="el" href="classRTC_1_1CorbaPort.html" title="RT コンポーネント CORBA provider/consumer 用 Port.">CorbaPort</a> のプロパティ </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a71aa316c3324369c4462193d10a5d098"></a><!-- doxytag: member="RTC::CorbaPort::publishInterfaces" ref="a71aa316c3324369c4462193d10a5d098" args="(ConnectorProfile &amp;connector_profile)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual ReturnCode_t RTC::CorbaPort::publishInterfaces </td>
+          <td>(</td>
+          <td class="paramtype">ConnectorProfile &amp;&nbsp;</td>
+          <td class="paramname"> <em>connector_profile</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [protected, virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Provider Interface 情報を公開する. </p>
+<p>この Port が所有する Provider インターフェースに関する情報を ConnectorProfile::properties に代入し他の Port に対して公開する。 今、RTCのインスタンス名等の情報が以下の通りであるとして、</p>
+<ul>
+<li>RTCインスタンス名: rtc_iname</li>
+<li>ポート名: port_name</li>
+<li>インターフェース極性: if_polarity</li>
+<li>インターフェース型名: if_tname</li>
+<li>インターフェースインスタンス名: if_iname</li>
+</ul>
+<p>NameValue 型の ConnectorProfile::properties の name と value として 以下のものが格納される。</p>
+<ul>
+<li>name &lt;rtc_iname&gt;.port.&lt;port_name&gt;.provided.&lt;if_tname&gt;.&lt;if_iname&gt;</li>
+<li>value Provider インターフェースの IOR 文字列</li>
+</ul>
+<p>なお、旧バージョンとの互換性のため以下の表記の NameValue も同時 に格納されるが、将来のバージョンでは削除される可能性がある。</p>
+<ul>
+<li>name port.&lt;if_tname&gt;.&lt;if_iname&gt;</li>
+<li>value Provider インターフェースの IOR 文字列</li>
+</ul>
+<p>これらの値は ConnectorProfile::properties に格納され、他のポートに対して 伝達される。他の Port でこのインターフェースを使用する Consumer が 存在すれば、ConnectorProfile からこのキーからオブジェクトリファレンスを 取得し何らかの形で使用される。</p>
+<dl><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>connector_profile</em>&nbsp;</td><td>コネクタプロファイル </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>戻り値:</b></dt><dd>ReturnCode_t 型のリターンコード </dd></dl>
+
+<p><a class="el" href="classRTC_1_1PortBase.html#acf31878c5912f56c122aaa2310e182de">RTC::PortBase</a>を実装しています。</p>
+
+</div>
+</div>
+<a class="anchor" id="a70d4b49921c82916181aa681eea2ab2b"></a><!-- doxytag: member="RTC::CorbaPort::registerConsumer" ref="a70d4b49921c82916181aa681eea2ab2b" args="(const char *instance_name, const char *type_name, CorbaConsumerBase &amp;consumer)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool RTC::CorbaPort::registerConsumer </td>
+          <td>(</td>
+          <td class="paramtype">const char *&nbsp;</td>
+          <td class="paramname"> <em>instance_name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&nbsp;</td>
+          <td class="paramname"> <em>type_name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classRTC_1_1CorbaConsumerBase.html">CorbaConsumerBase</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>consumer</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Consumer を登録する. </p>
+<p>この Port が要求するサービスのプレースホルダであるコンシューマ (Consumer) を登録する。Consumer が関連付けられるサービスのインス タンス名およびタイプ名として、引数に instance_name, type_name お よび Consumer 自身を与えることにより、内部でこれらが関連付けられ る。Port 間の接続 (connect) 時 には、subscribeInterfaces() で述 べられているルールに基づき、Provider Interface の参照が自動的に Consumer にセットされる。</p>
+<dl><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>instance_name</em>&nbsp;</td><td>Consumer が要求するサービスのインスタンス名 </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>type_name</em>&nbsp;</td><td>Consumer が要求するサービスのタイプ名 </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>consumer</em>&nbsp;</td><td>CORBA サービスコンシューマ</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>戻り値:</b></dt><dd>既に同名の instance_name が登録されていれば false を返す。 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="af9de5f6a90d3b0f6bfc07317e6a0d44f"></a><!-- doxytag: member="RTC::CorbaPort::registerProvider" ref="af9de5f6a90d3b0f6bfc07317e6a0d44f" args="(const char *instance_name, const char *type_name, PortableServer::RefCountServantBase &amp;provider)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool RTC::CorbaPort::registerProvider </td>
+          <td>(</td>
+          <td class="paramtype">const char *&nbsp;</td>
+          <td class="paramname"> <em>instance_name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&nbsp;</td>
+          <td class="paramname"> <em>type_name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">PortableServer::RefCountServantBase &amp;&nbsp;</td>
+          <td class="paramname"> <em>provider</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Provider を登録する. </p>
+<p>この Port において提供したいサーバントをこの Port に対して登録す る。サーバントは、引数で与えられる instance_name, type_name を、 サーバント自身のインスタンス名およびタイプ名として、サーバントに 関連付けられる。この関数により、サーバントは <a class="el" href="classRTC_1_1CorbaPort.html" title="RT コンポーネント CORBA provider/consumer 用 Port.">CorbaPort</a> 内部に保 持されるとともに、PortInterfaceProfile にRTCPROVIDED インター フェースとして登録される。</p>
+<dl><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>instance_name</em>&nbsp;</td><td>サーバントのインスタンス名 </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>type_name</em>&nbsp;</td><td>サーバントのタイプ名 </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>provider</em>&nbsp;</td><td>CORBA サーバント</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>戻り値:</b></dt><dd>既に同名の instance_name が登録されていれば false を返す。 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ad9a122cbe2f9892cc9555e805571742e"></a><!-- doxytag: member="RTC::CorbaPort::subscribeInterfaces" ref="ad9a122cbe2f9892cc9555e805571742e" args="(const ConnectorProfile &amp;connector_profile)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual ReturnCode_t RTC::CorbaPort::subscribeInterfaces </td>
+          <td>(</td>
+          <td class="paramtype">const ConnectorProfile &amp;&nbsp;</td>
+          <td class="paramname"> <em>connector_profile</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [protected, virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Provider Interface 情報を取得する. </p>
+<p>この Portが所有する Consumer Interface に適合する Provider Interface に関する情報をConnectorProfileproperties から抽出し Consumer Interface にオブジェクト参照をセットする。</p>
+<p>今、RTC のインスタンス名や Consumer Interface 等の情報が以下のと おりであると仮定すると、</p>
+<ul>
+<li>RTCインスタンス名: rtc_iname</li>
+<li>ポート名: port_name</li>
+<li>インターフェース極性: if_polarity</li>
+<li>インターフェース型名: if_tname</li>
+<li>インターフェースインスタンス名: if_iname</li>
+</ul>
+<p>この Consumer Interface を表すインターフェース指定子は以下のよう に表される。</p>
+<p>&lt;rtc_iname&gt;.port.&lt;port_name&gt;.required.&lt;if_tname&gt;.&lt;if_iname&gt;</p>
+<p>この関数は、まず引数 ConnectorProfile::properties に上記インター フェース指定子をキーとして格納されている Provider Interface 指定 子を探し出す。さらに、その Provider Interface 指定子をキーとして 格納されている Provider Interface の参照を表す IOR 文字列を取得 し、Consumer Interface にセットする。</p>
+<p>今、仮に、Provider を prov(n), その参照をIOR(n) さらに Consumer をcons(n) のように記述し、これらすべてのインターフェースの型が同 一であり、ConnectorProfile に以下の値が設定されているとする。</p>
+<pre>
+ ConnectorProfile::properties =
+ {
+   prov0: IOR0,
+   prov1: IOR1,
+   prov2: IOR2,
+   cons0: prov2,
+   cons1: prov1,
+   cons2: prov0
+ }
+ </pre><p>このとき、cons(0..2) にはそれぞれ、参照が以下のようにセットされる。</p>
+<pre>
+   cons0 = IOR2
+   cons1 = IOR1
+   cons2 = IOR0
+ </pre><p>なお、旧バージョンとの互換性のため、 ConnectorProfile::properties に Consumer Interface をキーとした 値がセットされていない場合でも、次のルールが適用される。</p>
+<p>今、仮に Consumer Interface が</p>
+<pre>
+  PortInterfaceProfile
+  {
+    instance_name = "PA10_0";
+    type_name     = "Manipulator";
+    polarity      = REQUIRED;
+  }
+ </pre><p>として登録されていれば、他の Port の</p>
+<pre>
+  PortInterfaceProfile
+  {
+    instance_name = "PA10_0";
+    type_name     = "Manipulator";
+    polarity      = PROVIDED;
+  }
+ </pre><p>として登録されている Serivce Provider のオブジェクト参照を探し、 Consumer にセットする。実際には、ConnectorProfileproperties に</p>
+<pre>
+ NameValue = { "port.Manipulator.PA10_0": &lt;Object reference&gt;=""&gt; }
+ </pre><p>として登録されている NameValue を探し、そのオブジェクト参照を Consumer にセットする。</p>
+<dl><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>connector_profile</em>&nbsp;</td><td>コネクタプロファイル </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>戻り値:</b></dt><dd>ReturnCode_t 型のリターンコード </dd></dl>
+
+<p><a class="el" href="classRTC_1_1PortBase.html#afce755069836c1ee637784e2a9e5a02b">RTC::PortBase</a>を実装しています。</p>
+
+</div>
+</div>
+<a class="anchor" id="a4776e122a3066d9e3a3e5d1e5da45b98"></a><!-- doxytag: member="RTC::CorbaPort::unsubscribeInterfaces" ref="a4776e122a3066d9e3a3e5d1e5da45b98" args="(const ConnectorProfile &amp;connector_profile)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void RTC::CorbaPort::unsubscribeInterfaces </td>
+          <td>(</td>
+          <td class="paramtype">const ConnectorProfile &amp;&nbsp;</td>
+          <td class="paramname"> <em>connector_profile</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [protected, virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Interface への接続を解除する. </p>
+<p>与えられた ConnectorProfile に関連する Consumer にセットされた すべての Object を解放し接続を解除する。</p>
+<dl><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>connector_profile</em>&nbsp;</td><td>コネクタプロファイル </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p><a class="el" href="classRTC_1_1PortBase.html#a8a843a387e99d4d4daa6e829eb1db569">RTC::PortBase</a>を実装しています。</p>
+
+</div>
+</div>
+<hr/><h2>変数</h2>
+<a class="anchor" id="afb24858ffd644ff6d52bb422cfb442da"></a><!-- doxytag: member="RTC::CorbaPort::m_properties" ref="afb24858ffd644ff6d52bb422cfb442da" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classcoil_1_1Properties.html">coil::Properties</a> <a class="el" href="classRTC_1_1CorbaPort.html#afb24858ffd644ff6d52bb422cfb442da">RTC::CorbaPort::m_properties</a><code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>プロパティ </p>
+
+</div>
+</div>
+</div>
+<hr class="footer"/><address style="text-align: right;"><small>OpenRTMに対してThu May 24 23:25:19 2012に生成されました。&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.6.3 </small></address>
+</body>
+</html>

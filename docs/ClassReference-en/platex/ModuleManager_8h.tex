@@ -1,0 +1,128 @@
+\section{ModuleManager.h File Reference}
+\label{ModuleManager_8h}\index{ModuleManager.h@{ModuleManager.h}}
+
+
+Loadable modules manager class.  
+
+
+{\ttfamily \#include $<$string$>$}\par
+{\ttfamily \#include $<$vector$>$}\par
+{\ttfamily \#include $<$map$>$}\par
+{\ttfamily \#include $<$coil/DynamicLib.h$>$}\par
+{\ttfamily \#include $<$rtm/Manager.h$>$}\par
+{\ttfamily \#include $<$coil/Properties.h$>$}\par
+{\ttfamily \#include $<$rtm/ObjectManager.h$>$}\par
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class {\bf RTC::ModuleManager}
+\begin{DoxyCompactList}\small\item\em \doxyref{ModuleManager}{p.}{classRTC_1_1ModuleManager} class. \item\end{DoxyCompactList}\item 
+struct {\bf RTC::ModuleManager::Error}
+\begin{DoxyCompactList}\small\item\em Structure for exception handling when file open is failed. \item\end{DoxyCompactList}\item 
+struct {\bf RTC::ModuleManager::NotFound}
+\begin{DoxyCompactList}\small\item\em Structure for exception handling of unimplemented part and specified module missing. \item\end{DoxyCompactList}\item 
+struct {\bf RTC::ModuleManager::FileNotFound}
+\begin{DoxyCompactList}\small\item\em Structure for exception handling when specified file cannot be found. \item\end{DoxyCompactList}\item 
+struct {\bf RTC::ModuleManager::ModuleNotFound}
+\begin{DoxyCompactList}\small\item\em Structure for exception handling when specified module cannot be found. \item\end{DoxyCompactList}\item 
+struct {\bf RTC::ModuleManager::SymbolNotFound}
+\begin{DoxyCompactList}\small\item\em Structure for exception handling when specified symbol cannot be found. \item\end{DoxyCompactList}\item 
+struct {\bf RTC::ModuleManager::NotAllowedOperation}
+\begin{DoxyCompactList}\small\item\em Structure for exception handling when specified operation cannot be allowed. \item\end{DoxyCompactList}\item 
+struct {\bf RTC::ModuleManager::InvalidArguments}
+\begin{DoxyCompactList}\small\item\em Structure for exception handling when specified argument is invalid. \item\end{DoxyCompactList}\item 
+struct {\bf RTC::ModuleManager::InvalidOperation}
+\begin{DoxyCompactList}\small\item\em Structure for exception handling when specified operation is invalid. \item\end{DoxyCompactList}\item 
+struct {\bf RTC::ModuleManager::DLLEntity}
+\begin{DoxyCompactList}\small\item\em Structure for DLL management. \item\end{DoxyCompactList}\item 
+class {\bf RTC::ModuleManager::DllPred}
+\begin{DoxyCompactList}\small\item\em Module list that has already loaded. \item\end{DoxyCompactList}\item 
+class {\bf RTC::ModuleManager::UnloadPred}
+\begin{DoxyCompactList}\small\item\em Module unloading functor. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace {\bf RTC}
+
+
+\begin{DoxyCompactList}\small\item\em RT-\/Component. \item\end{DoxyCompactList}
+
+\end{DoxyCompactItemize}
+\subsection*{Defines}
+\begin{DoxyCompactItemize}
+\item 
+\#define {\bf CONFIG\_\-EXT}~\char`\"{}manager.modules.config\_\-ext\char`\"{}
+\item 
+\#define {\bf CONFIG\_\-PATH}~\char`\"{}manager.modules.config\_\-path\char`\"{}
+\item 
+\#define {\bf DETECT\_\-MOD}~\char`\"{}manager.modules.detect\_\-loadable\char`\"{}
+\item 
+\#define {\bf MOD\_\-LOADPTH}~\char`\"{}manager.modules.load\_\-path\char`\"{}
+\item 
+\#define {\bf INITFUNC\_\-SFX}~\char`\"{}manager.modules.init\_\-func\_\-suffix\char`\"{}
+\item 
+\#define {\bf INITFUNC\_\-PFX}~\char`\"{}manager.modules.init\_\-func\_\-prefix\char`\"{}
+\item 
+\#define {\bf ALLOW\_\-ABSPATH}~\char`\"{}manager.modules.abs\_\-path\_\-allowed\char`\"{}
+\item 
+\#define {\bf ALLOW\_\-URL}~\char`\"{}manager.modules.download\_\-allowed\char`\"{}
+\item 
+\#define {\bf MOD\_\-DWNDIR}~\char`\"{}manager.modules.download\_\-dir\char`\"{}
+\item 
+\#define {\bf MOD\_\-DELMOD}~\char`\"{}manager.modules.download\_\-cleanup\char`\"{}
+\item 
+\#define {\bf MOD\_\-PRELOAD}~\char`\"{}manager.modules.preload\char`\"{}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Loadable modules manager class. \begin{DoxyDate}{Date}
+
+\end{DoxyDate}
+\begin{DoxyParagraph}{Date}
+2007-\/12-\/31 03:08:04 
+\end{DoxyParagraph}
+\begin{DoxyAuthor}{Author}
+Noriaki Ando $<${\tt n-\/ando@aist.go.jp}$>$
+\end{DoxyAuthor}
+Copyright (C) 2006-\/2010 Noriaki Ando Task-\/intelligence Research Group, Intelligent Systems Research Institute, National Institute of Advanced Industrial Science and Technology (AIST), Japan All rights reserved.
+
+\begin{DoxyParagraph}{Id}
+\doxyref{ModuleManager.h}{p.}{ModuleManager_8h} 2077 2011-\/04-\/29 12:43:34Z n-\/ando 
+\end{DoxyParagraph}
+
+
+\subsection{Define Documentation}
+\index{ModuleManager.h@{ModuleManager.h}!ALLOW\_\-ABSPATH@{ALLOW\_\-ABSPATH}}
+\index{ALLOW\_\-ABSPATH@{ALLOW\_\-ABSPATH}!ModuleManager.h@{ModuleManager.h}}
+\subsubsection[{ALLOW\_\-ABSPATH}]{\setlength{\rightskip}{0pt plus 5cm}\#define ALLOW\_\-ABSPATH~\char`\"{}manager.modules.abs\_\-path\_\-allowed\char`\"{}}\label{ModuleManager_8h_a96d839c6d1a9fade296196016534b91d}
+\index{ModuleManager.h@{ModuleManager.h}!ALLOW\_\-URL@{ALLOW\_\-URL}}
+\index{ALLOW\_\-URL@{ALLOW\_\-URL}!ModuleManager.h@{ModuleManager.h}}
+\subsubsection[{ALLOW\_\-URL}]{\setlength{\rightskip}{0pt plus 5cm}\#define ALLOW\_\-URL~\char`\"{}manager.modules.download\_\-allowed\char`\"{}}\label{ModuleManager_8h_acdfc6ef732a678bf77f4eaeebd504bdc}
+\index{ModuleManager.h@{ModuleManager.h}!CONFIG\_\-EXT@{CONFIG\_\-EXT}}
+\index{CONFIG\_\-EXT@{CONFIG\_\-EXT}!ModuleManager.h@{ModuleManager.h}}
+\subsubsection[{CONFIG\_\-EXT}]{\setlength{\rightskip}{0pt plus 5cm}\#define CONFIG\_\-EXT~\char`\"{}manager.modules.config\_\-ext\char`\"{}}\label{ModuleManager_8h_ae79c05eee3bda7e58d1baae843a4d368}
+\index{ModuleManager.h@{ModuleManager.h}!CONFIG\_\-PATH@{CONFIG\_\-PATH}}
+\index{CONFIG\_\-PATH@{CONFIG\_\-PATH}!ModuleManager.h@{ModuleManager.h}}
+\subsubsection[{CONFIG\_\-PATH}]{\setlength{\rightskip}{0pt plus 5cm}\#define CONFIG\_\-PATH~\char`\"{}manager.modules.config\_\-path\char`\"{}}\label{ModuleManager_8h_a863ab5d791c86f9dfff4c6e90624130c}
+\index{ModuleManager.h@{ModuleManager.h}!DETECT\_\-MOD@{DETECT\_\-MOD}}
+\index{DETECT\_\-MOD@{DETECT\_\-MOD}!ModuleManager.h@{ModuleManager.h}}
+\subsubsection[{DETECT\_\-MOD}]{\setlength{\rightskip}{0pt plus 5cm}\#define DETECT\_\-MOD~\char`\"{}manager.modules.detect\_\-loadable\char`\"{}}\label{ModuleManager_8h_a2af8d577ae5cba991976fcc2b514d5dd}
+\index{ModuleManager.h@{ModuleManager.h}!INITFUNC\_\-PFX@{INITFUNC\_\-PFX}}
+\index{INITFUNC\_\-PFX@{INITFUNC\_\-PFX}!ModuleManager.h@{ModuleManager.h}}
+\subsubsection[{INITFUNC\_\-PFX}]{\setlength{\rightskip}{0pt plus 5cm}\#define INITFUNC\_\-PFX~\char`\"{}manager.modules.init\_\-func\_\-prefix\char`\"{}}\label{ModuleManager_8h_ac5cdc1f839be6c67919ba24d4f0838d3}
+\index{ModuleManager.h@{ModuleManager.h}!INITFUNC\_\-SFX@{INITFUNC\_\-SFX}}
+\index{INITFUNC\_\-SFX@{INITFUNC\_\-SFX}!ModuleManager.h@{ModuleManager.h}}
+\subsubsection[{INITFUNC\_\-SFX}]{\setlength{\rightskip}{0pt plus 5cm}\#define INITFUNC\_\-SFX~\char`\"{}manager.modules.init\_\-func\_\-suffix\char`\"{}}\label{ModuleManager_8h_ae64701c8f676e9065e9e9c5c52427b81}
+\index{ModuleManager.h@{ModuleManager.h}!MOD\_\-DELMOD@{MOD\_\-DELMOD}}
+\index{MOD\_\-DELMOD@{MOD\_\-DELMOD}!ModuleManager.h@{ModuleManager.h}}
+\subsubsection[{MOD\_\-DELMOD}]{\setlength{\rightskip}{0pt plus 5cm}\#define MOD\_\-DELMOD~\char`\"{}manager.modules.download\_\-cleanup\char`\"{}}\label{ModuleManager_8h_a04e88c68018d7f86dc41f2ef58352074}
+\index{ModuleManager.h@{ModuleManager.h}!MOD\_\-DWNDIR@{MOD\_\-DWNDIR}}
+\index{MOD\_\-DWNDIR@{MOD\_\-DWNDIR}!ModuleManager.h@{ModuleManager.h}}
+\subsubsection[{MOD\_\-DWNDIR}]{\setlength{\rightskip}{0pt plus 5cm}\#define MOD\_\-DWNDIR~\char`\"{}manager.modules.download\_\-dir\char`\"{}}\label{ModuleManager_8h_a556b78256c7f76a6eaa6a03a54241b51}
+\index{ModuleManager.h@{ModuleManager.h}!MOD\_\-LOADPTH@{MOD\_\-LOADPTH}}
+\index{MOD\_\-LOADPTH@{MOD\_\-LOADPTH}!ModuleManager.h@{ModuleManager.h}}
+\subsubsection[{MOD\_\-LOADPTH}]{\setlength{\rightskip}{0pt plus 5cm}\#define MOD\_\-LOADPTH~\char`\"{}manager.modules.load\_\-path\char`\"{}}\label{ModuleManager_8h_a551498b5f7889ed62e89e5f6c9f4616b}
+\index{ModuleManager.h@{ModuleManager.h}!MOD\_\-PRELOAD@{MOD\_\-PRELOAD}}
+\index{MOD\_\-PRELOAD@{MOD\_\-PRELOAD}!ModuleManager.h@{ModuleManager.h}}
+\subsubsection[{MOD\_\-PRELOAD}]{\setlength{\rightskip}{0pt plus 5cm}\#define MOD\_\-PRELOAD~\char`\"{}manager.modules.preload\char`\"{}}\label{ModuleManager_8h_a9398d2e5227c82654be674e0149af948}

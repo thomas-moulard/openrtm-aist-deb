@@ -1,0 +1,73 @@
+\section{クラス テンプレート RTC::ConnectorDataListenerT$<$ DataType $>$}
+\label{classRTC_1_1ConnectorDataListenerT}\index{RTC::ConnectorDataListenerT@{RTC::ConnectorDataListenerT}}
+
+
+\doxyref{ConnectorDataListenerT}{p.}{classRTC_1_1ConnectorDataListenerT} クラス.  
+
+
+
+
+{\ttfamily \#include $<$ConnectorListener.h$>$}
+
+RTC::ConnectorDataListenerT$<$ DataType $>$に対する継承グラフ\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2cm]{classRTC_1_1ConnectorDataListenerT}
+\end{center}
+\end{figure}
+\subsection*{Public メソッド}
+\begin{DoxyCompactItemize}
+\item 
+virtual {\bf $\sim$ConnectorDataListenerT} ()
+\begin{DoxyCompactList}\small\item\em デストラクタ \item\end{DoxyCompactList}\item 
+virtual void {\bf operator()} (const {\bf ConnectorInfo} \&info, const cdrMemoryStream \&cdrdata)
+\begin{DoxyCompactList}\small\item\em コールバックメソッド \item\end{DoxyCompactList}\item 
+virtual void {\bf operator()} (const {\bf ConnectorInfo} \&info, const DataType \&data)=0
+\begin{DoxyCompactList}\small\item\em 仮想コールバックメソッド \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{説明}
+\subsubsection*{template$<$class DataType$>$ class RTC::ConnectorDataListenerT$<$ DataType $>$}
+
+\doxyref{ConnectorDataListenerT}{p.}{classRTC_1_1ConnectorDataListenerT} クラス. データポートの Connector において発生する各種イベントに対するコー ルバックを実現するリスナクラスの基底クラス。
+
+このクラスは、operator()() の第2引数に cdrMemoryStream 型ではなく、 実際にデータポートで使用される変数型をテンプレート引数として 渡すことができる。 
+
+\subsection{コンストラクタとデストラクタ}
+\index{RTC::ConnectorDataListenerT@{RTC::ConnectorDataListenerT}!$\sim$ConnectorDataListenerT@{$\sim$ConnectorDataListenerT}}
+\index{$\sim$ConnectorDataListenerT@{$\sim$ConnectorDataListenerT}!RTC::ConnectorDataListenerT@{RTC::ConnectorDataListenerT}}
+\subsubsection[{$\sim$ConnectorDataListenerT}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class DataType $>$ virtual {\bf RTC::ConnectorDataListenerT}$<$ DataType $>$::$\sim${\bf ConnectorDataListenerT} ()\hspace{0.3cm}{\ttfamily  [inline, virtual]}}\label{classRTC_1_1ConnectorDataListenerT_a7e07ce2456ad559f78b24467a22ce4ab}
+
+
+デストラクタ 
+
+
+
+\subsection{関数}
+\index{RTC::ConnectorDataListenerT@{RTC::ConnectorDataListenerT}!operator()@{operator()}}
+\index{operator()@{operator()}!RTC::ConnectorDataListenerT@{RTC::ConnectorDataListenerT}}
+\subsubsection[{operator()}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class DataType $>$ virtual void {\bf RTC::ConnectorDataListenerT}$<$ DataType $>$::operator() (const {\bf ConnectorInfo} \& {\em info}, \/  const DataType \& {\em data})\hspace{0.3cm}{\ttfamily  [pure virtual]}}\label{classRTC_1_1ConnectorDataListenerT_a74a7cf49e64721834da69c82e1769d3f}
+
+
+仮想コールバックメソッド 
+
+データポートの Connector において発生する各種イベントに対するコー ルバックメソッド \index{RTC::ConnectorDataListenerT@{RTC::ConnectorDataListenerT}!operator()@{operator()}}
+\index{operator()@{operator()}!RTC::ConnectorDataListenerT@{RTC::ConnectorDataListenerT}}
+\subsubsection[{operator()}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class DataType $>$ virtual void {\bf RTC::ConnectorDataListenerT}$<$ DataType $>$::operator() (const {\bf ConnectorInfo} \& {\em info}, \/  const cdrMemoryStream \& {\em cdrdata})\hspace{0.3cm}{\ttfamily  [inline, virtual]}}\label{classRTC_1_1ConnectorDataListenerT_a6d87ccd84018b4e5437336cbe7f9c72c}
+
+
+コールバックメソッド 
+
+データをデータポートで使用される変数型に変換して \doxyref{ConnectorDataListenerT}{p.}{classRTC_1_1ConnectorDataListenerT} のコールバックメソッドを呼び出す。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em info}]\doxyref{ConnectorInfo}{p.}{classRTC_1_1ConnectorInfo} \item[{\em cdrdata}]cdrMemoryStream型のデータ \end{DoxyParams}
+
+
+{\bf RTC::ConnectorDataListener} \doxyref{}{p.}{classRTC_1_1ConnectorDataListener_a3306cb3544db5d164c5917adddbfc298}を実装しています。
+
+
+
+参照先 coil::Properties::getProperty(), coil::normalize(), RTC::ConnectorInfo::properties, と coil::split().
+

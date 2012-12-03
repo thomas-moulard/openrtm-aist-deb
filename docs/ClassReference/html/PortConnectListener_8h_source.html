@@ -1,0 +1,145 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<title>OpenRTM: PortConnectListener.h ソースファイル</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<!-- 作成： Doxygen 1.6.3 -->
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="index.html"><span>メインページ</span></a></li>
+      <li><a href="namespaces.html"><span>ネームスペース</span></a></li>
+      <li><a href="annotated.html"><span>クラス</span></a></li>
+      <li class="current"><a href="files.html"><span>ファイル</span></a></li>
+    </ul>
+  </div>
+  <div class="tabs">
+    <ul>
+      <li><a href="files.html"><span>ファイル一覧</span></a></li>
+      <li><a href="globals.html"><span>ファイルメンバ</span></a></li>
+    </ul>
+  </div>
+<h1>PortConnectListener.h</h1><a href="PortConnectListener_8h.html">説明を見る。</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="comment">// -*- C++ -*-</span>
+<a name="l00019"></a>00019 <span class="comment"></span><span class="preprocessor">#ifndef RTC_PORTCONNECTLISTENER_H</span>
+<a name="l00020"></a>00020 <span class="preprocessor"></span><span class="preprocessor">#define RTC_PORTCONNECTLISTENER_H</span>
+<a name="l00021"></a>00021 <span class="preprocessor"></span>
+<a name="l00022"></a>00022 <span class="preprocessor">#include &lt;vector&gt;</span>
+<a name="l00023"></a>00023 <span class="preprocessor">#include &lt;utility&gt;</span>
+<a name="l00024"></a>00024 <span class="preprocessor">#include &lt;<a class="code" href="Mutex_8h.html">coil/Mutex.h</a>&gt;</span>
+<a name="l00025"></a>00025 <span class="preprocessor">#include &lt;<a class="code" href="Guard_8h.html" title="Guard template class.">coil/Guard.h</a>&gt;</span>
+<a name="l00026"></a>00026 <span class="preprocessor">#include &lt;<a class="code" href="RTC_8h.html" title="RTComponent header.">rtm/RTC.h</a>&gt;</span>
+<a name="l00027"></a>00027 <span class="preprocessor">#include &lt;rtm/idl/RTCSkel.h&gt;</span>
+<a name="l00028"></a>00028 
+<a name="l00029"></a>00029 <span class="keyword">namespace </span>RTC
+<a name="l00030"></a>00030 {
+<a name="l00031"></a>00031   <span class="comment">//============================================================</span>
+<a name="l00049"></a><a class="code" href="namespaceRTC.html#ae96216f913545869292a18a555cfb3f5">00049</a> <span class="comment"></span>  <span class="keyword">enum</span> <a class="code" href="namespaceRTC.html#ae96216f913545869292a18a555cfb3f5" title="PortConnectListener のタイプ.">PortConnectListenerType</a>
+<a name="l00050"></a>00050     {
+<a name="l00051"></a><a class="code" href="namespaceRTC.html#ae96216f913545869292a18a555cfb3f5adfb11e92c59da6c4b8da0a6034959f86">00051</a>       <a class="code" href="namespaceRTC.html#ae96216f913545869292a18a555cfb3f5adfb11e92c59da6c4b8da0a6034959f86">ON_NOTIFY_CONNECT</a>,
+<a name="l00052"></a><a class="code" href="namespaceRTC.html#ae96216f913545869292a18a555cfb3f5ab588e73362437697407e364d2dee9257">00052</a>       <a class="code" href="namespaceRTC.html#ae96216f913545869292a18a555cfb3f5ab588e73362437697407e364d2dee9257">ON_NOTIFY_DISCONNECT</a>,
+<a name="l00053"></a><a class="code" href="namespaceRTC.html#ae96216f913545869292a18a555cfb3f5afde910eac13f8c03d3b68cb201a21260">00053</a>       <a class="code" href="namespaceRTC.html#ae96216f913545869292a18a555cfb3f5afde910eac13f8c03d3b68cb201a21260">ON_UNSUBSCRIBE_INTERFACES</a>,
+<a name="l00054"></a><a class="code" href="namespaceRTC.html#ae96216f913545869292a18a555cfb3f5aa7e68ffdd82d7efe1573cd4a7ac8209a">00054</a>       <a class="code" href="namespaceRTC.html#ae96216f913545869292a18a555cfb3f5aa7e68ffdd82d7efe1573cd4a7ac8209a">PORT_CONNECT_LISTENER_NUM</a>
+<a name="l00055"></a>00055     };
+<a name="l00056"></a>00056 
+<a name="l00082"></a><a class="code" href="classRTC_1_1PortConnectListener.html">00082</a>   <span class="keyword">class </span><a class="code" href="classRTC_1_1PortConnectListener.html" title="PortConnectListener クラス.">PortConnectListener</a>
+<a name="l00083"></a>00083   {
+<a name="l00084"></a>00084   <span class="keyword">public</span>:
+<a name="l00108"></a>00108     <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">char</span>* <a class="code" href="classRTC_1_1PortConnectListener.html#ac0d03a0550de7f3ca0e0aaf698826f68" title="PortConnectListenerType を文字列に変換.">toString</a>(<a class="code" href="namespaceRTC.html#ae96216f913545869292a18a555cfb3f5" title="PortConnectListener のタイプ.">PortConnectListenerType</a> type);
+<a name="l00109"></a>00109 
+<a name="l00117"></a>00117     <span class="keyword">virtual</span> <a class="code" href="classRTC_1_1PortConnectListener.html#a4e3e06533014c3e3d7f41304b42110d0" title="デストラクタ">~PortConnectListener</a>();
+<a name="l00118"></a>00118 
+<a name="l00134"></a>00134     <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classRTC_1_1PortConnectListener.html#a77a455752f26928e861c3f97120e995d" title="仮想コールバック関数">operator()</a>(<span class="keyword">const</span> <span class="keywordtype">char</span>* portname,
+<a name="l00135"></a>00135                             RTC::ConnectorProfile&amp; profile) = 0;
+<a name="l00136"></a>00136   };
+<a name="l00137"></a>00137 
+<a name="l00138"></a>00138 
+<a name="l00139"></a>00139   <span class="comment">//============================================================</span>
+<a name="l00161"></a><a class="code" href="namespaceRTC.html#a35eabe38885d06b40e489b4bee603ebf">00161</a> <span class="comment"></span>  <span class="keyword">enum</span> <a class="code" href="namespaceRTC.html#a35eabe38885d06b40e489b4bee603ebf" title="PortConnectRetListenerType のタイプ.">PortConnectRetListenerType</a>
+<a name="l00162"></a>00162     {
+<a name="l00163"></a><a class="code" href="namespaceRTC.html#a35eabe38885d06b40e489b4bee603ebfa98874b682de1a11ecfbb920b64e4c08c">00163</a>       <a class="code" href="namespaceRTC.html#a35eabe38885d06b40e489b4bee603ebfa98874b682de1a11ecfbb920b64e4c08c">ON_PUBLISH_INTERFACES</a>,
+<a name="l00164"></a><a class="code" href="namespaceRTC.html#a35eabe38885d06b40e489b4bee603ebfa0f4ef05a6b3112f42f1a5bb6e2ae5c15">00164</a>       <a class="code" href="namespaceRTC.html#a35eabe38885d06b40e489b4bee603ebfa0f4ef05a6b3112f42f1a5bb6e2ae5c15">ON_CONNECT_NEXTPORT</a>,
+<a name="l00165"></a><a class="code" href="namespaceRTC.html#a35eabe38885d06b40e489b4bee603ebfab03b361726bd1c701e9017368590e02e">00165</a>       <a class="code" href="namespaceRTC.html#a35eabe38885d06b40e489b4bee603ebfab03b361726bd1c701e9017368590e02e">ON_SUBSCRIBE_INTERFACES</a>,
+<a name="l00166"></a><a class="code" href="namespaceRTC.html#a35eabe38885d06b40e489b4bee603ebfaf7ab5dc740a3d7af1e7ebc4c9ac640d8">00166</a>       <a class="code" href="namespaceRTC.html#a35eabe38885d06b40e489b4bee603ebfaf7ab5dc740a3d7af1e7ebc4c9ac640d8">ON_CONNECTED</a>,
+<a name="l00167"></a><a class="code" href="namespaceRTC.html#a35eabe38885d06b40e489b4bee603ebfa00b3e4261867c0998711ca61cbf1ffcb">00167</a>       <a class="code" href="namespaceRTC.html#a35eabe38885d06b40e489b4bee603ebfa00b3e4261867c0998711ca61cbf1ffcb">ON_DISCONNECT_NEXT</a>,
+<a name="l00168"></a><a class="code" href="namespaceRTC.html#a35eabe38885d06b40e489b4bee603ebfaa07582adabb806ece850baebb9a8bd57">00168</a>       <a class="code" href="namespaceRTC.html#a35eabe38885d06b40e489b4bee603ebfaa07582adabb806ece850baebb9a8bd57">ON_DISCONNECTED</a>,
+<a name="l00169"></a><a class="code" href="namespaceRTC.html#a35eabe38885d06b40e489b4bee603ebfa7f47e25a79317851fbb904d8cb07f4ae">00169</a>       <a class="code" href="namespaceRTC.html#a35eabe38885d06b40e489b4bee603ebfa7f47e25a79317851fbb904d8cb07f4ae">PORT_CONNECT_RET_LISTENER_NUM</a>
+<a name="l00170"></a>00170     };
+<a name="l00171"></a>00171 
+<a name="l00202"></a><a class="code" href="classRTC_1_1PortConnectRetListener.html">00202</a>   <span class="keyword">class </span><a class="code" href="classRTC_1_1PortConnectRetListener.html" title="PortConnectRetListener クラス.">PortConnectRetListener</a>
+<a name="l00203"></a>00203   {
+<a name="l00204"></a>00204   <span class="keyword">public</span>:
+<a name="l00228"></a>00228     <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">char</span>* <a class="code" href="classRTC_1_1PortConnectRetListener.html#a94d6da928d397e42fb744952afb30e66" title="PortConnectRetListenerType を文字列に変換.">toString</a>(<a class="code" href="namespaceRTC.html#a35eabe38885d06b40e489b4bee603ebf" title="PortConnectRetListenerType のタイプ.">PortConnectRetListenerType</a> type);
+<a name="l00229"></a>00229 
+<a name="l00237"></a>00237     <span class="keyword">virtual</span> <a class="code" href="classRTC_1_1PortConnectRetListener.html#a11aa036c8f0f623a0f844ccdc5ca6de9" title="デストラクタ">~PortConnectRetListener</a>();
+<a name="l00238"></a>00238 
+<a name="l00254"></a>00254     <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classRTC_1_1PortConnectRetListener.html#a72a1c966ec78ecf40f912ff10157f978" title="仮想コールバック関数">operator()</a>(<span class="keyword">const</span> <span class="keywordtype">char</span>* portname,
+<a name="l00255"></a>00255                             RTC::ConnectorProfile&amp; profile,
+<a name="l00256"></a>00256                             ReturnCode_t ret) = 0;
+<a name="l00257"></a>00257   };
+<a name="l00258"></a>00258 
+<a name="l00259"></a>00259   <span class="comment">//============================================================</span>
+<a name="l00276"></a><a class="code" href="classRTC_1_1PortConnectListenerHolder.html">00276</a> <span class="comment"></span>  <span class="keyword">class </span><a class="code" href="classRTC_1_1PortConnectListenerHolder.html" title="PortConnectListener ホルダクラス.">PortConnectListenerHolder</a>
+<a name="l00277"></a>00277   {
+<a name="l00278"></a>00278     <span class="keyword">typedef</span> std::pair&lt;PortConnectListener*, bool&gt; Entry;
+<a name="l00279"></a>00279     <span class="keyword">typedef</span> <a class="code" href="classcoil_1_1Guard.html">coil::Guard&lt;coil::Mutex&gt;</a> <a class="code" href="classcoil_1_1Guard.html">Guard</a>;
+<a name="l00280"></a>00280   <span class="keyword">public</span>:
+<a name="l00288"></a>00288     <a class="code" href="classRTC_1_1PortConnectListenerHolder.html#a1e6f9d56ac4cd0c7f32c4bc9053ab64c" title="コンストラクタ">PortConnectListenerHolder</a>();
+<a name="l00289"></a>00289     
+<a name="l00297"></a>00297     <span class="keyword">virtual</span> <a class="code" href="classRTC_1_1PortConnectListenerHolder.html#a72d78de73416c8f0816409acb576021f" title="デストラクタ">~PortConnectListenerHolder</a>();
+<a name="l00298"></a>00298     
+<a name="l00320"></a>00320     <span class="keywordtype">void</span> <a class="code" href="classRTC_1_1PortConnectListenerHolder.html#aede9e6b87040256d64002836545057c0" title="リスナーの追加">addListener</a>(<a class="code" href="classRTC_1_1PortConnectListener.html" title="PortConnectListener クラス.">PortConnectListener</a>* listener, <span class="keywordtype">bool</span> autoclean);
+<a name="l00321"></a>00321     
+<a name="l00339"></a>00339     <span class="keywordtype">void</span> <a class="code" href="classRTC_1_1PortConnectListenerHolder.html#a682df243f73abdd99faa0311278b5993" title="リスナーの削除">removeListener</a>(<a class="code" href="classRTC_1_1PortConnectListener.html" title="PortConnectListener クラス.">PortConnectListener</a>* listener);
+<a name="l00340"></a>00340 
+<a name="l00358"></a>00358     <span class="keywordtype">void</span> <a class="code" href="classRTC_1_1PortConnectListenerHolder.html#a61b163601a4c3a77e7eae1c406d4d412" title="リスナーへ通知する">notify</a>(<span class="keyword">const</span> <span class="keywordtype">char</span>* portname, RTC::ConnectorProfile&amp; profile);
+<a name="l00359"></a>00359       
+<a name="l00360"></a>00360   <span class="keyword">private</span>:
+<a name="l00361"></a>00361     std::vector&lt;Entry&gt; m_listeners;
+<a name="l00362"></a>00362     <a class="code" href="classcoil_1_1Mutex.html" title="Mutex クラス.">coil::Mutex</a> m_mutex;
+<a name="l00363"></a>00363   };
+<a name="l00364"></a>00364 
+<a name="l00365"></a>00365 
+<a name="l00382"></a><a class="code" href="classRTC_1_1PortConnectRetListenerHolder.html">00382</a>   <span class="keyword">class </span><a class="code" href="classRTC_1_1PortConnectRetListenerHolder.html" title="PortConnectRetListener ホルダクラス.">PortConnectRetListenerHolder</a>
+<a name="l00383"></a>00383   {
+<a name="l00384"></a>00384     <span class="keyword">typedef</span> std::pair&lt;PortConnectRetListener*, bool&gt; Entry;
+<a name="l00385"></a>00385     <span class="keyword">typedef</span> <a class="code" href="classcoil_1_1Guard.html">coil::Guard&lt;coil::Mutex&gt;</a> <a class="code" href="classcoil_1_1Guard.html">Guard</a>;
+<a name="l00386"></a>00386   <span class="keyword">public</span>:
+<a name="l00394"></a>00394     <a class="code" href="classRTC_1_1PortConnectRetListenerHolder.html#a96d80ee6ed98cdc9627bb0689f2ad082" title="コンストラクタ">PortConnectRetListenerHolder</a>();
+<a name="l00395"></a>00395 
+<a name="l00403"></a>00403     <span class="keyword">virtual</span> <a class="code" href="classRTC_1_1PortConnectRetListenerHolder.html#a7492fbd2952f13c199b9f5110f4f8b0d" title="デストラクタ">~PortConnectRetListenerHolder</a>();
+<a name="l00404"></a>00404     
+<a name="l00426"></a>00426     <span class="keywordtype">void</span> <a class="code" href="classRTC_1_1PortConnectRetListenerHolder.html#a4f392f3bfd5bb0da7aeea085f87a277c" title="リスナーの追加">addListener</a>(<a class="code" href="classRTC_1_1PortConnectRetListener.html" title="PortConnectRetListener クラス.">PortConnectRetListener</a>* listener, <span class="keywordtype">bool</span> autoclean);
+<a name="l00427"></a>00427     
+<a name="l00445"></a>00445     <span class="keywordtype">void</span> <a class="code" href="classRTC_1_1PortConnectRetListenerHolder.html#a784a2e05d2c25805d2f970a9f64f3c2b" title="リスナーの削除">removeListener</a>(<a class="code" href="classRTC_1_1PortConnectRetListener.html" title="PortConnectRetListener クラス.">PortConnectRetListener</a>* listener);
+<a name="l00446"></a>00446     
+<a name="l00466"></a>00466     <span class="keywordtype">void</span> <a class="code" href="classRTC_1_1PortConnectRetListenerHolder.html#a4f16ce8fa4db364d693caf06e3b25958" title="リスナーへ通知する">notify</a>(<span class="keyword">const</span> <span class="keywordtype">char</span>* portname, RTC::ConnectorProfile&amp; profile,
+<a name="l00467"></a>00467                 ReturnCode_t ret);
+<a name="l00468"></a>00468     
+<a name="l00469"></a>00469   <span class="keyword">private</span>:
+<a name="l00470"></a>00470     std::vector&lt;Entry&gt; m_listeners;
+<a name="l00471"></a>00471     <a class="code" href="classcoil_1_1Mutex.html" title="Mutex クラス.">coil::Mutex</a> m_mutex;
+<a name="l00472"></a>00472   };
+<a name="l00473"></a>00473 
+<a name="l00487"></a><a class="code" href="classRTC_1_1PortConnectListeners.html">00487</a>   <span class="keyword">class </span><a class="code" href="classRTC_1_1PortConnectListeners.html" title="PortConnectListeners クラス.">PortConnectListeners</a>
+<a name="l00488"></a>00488   {
+<a name="l00489"></a>00489   <span class="keyword">public</span>:
+<a name="l00499"></a>00499     <a class="code" href="classRTC_1_1PortConnectListenerHolder.html" title="PortConnectListener ホルダクラス.">PortConnectListenerHolder</a> 
+<a name="l00500"></a><a class="code" href="classRTC_1_1PortConnectListeners.html#ac2924cc3f8edf2098f65df39566584fd">00500</a>     <a class="code" href="classRTC_1_1PortConnectListeners.html#ac2924cc3f8edf2098f65df39566584fd" title="PortConnectListenerType リスナ配列 PortConnectListenerType リスナを格納...">portconnect_</a>[<a class="code" href="namespaceRTC.html#ae96216f913545869292a18a555cfb3f5aa7e68ffdd82d7efe1573cd4a7ac8209a">PORT_CONNECT_LISTENER_NUM</a>];
+<a name="l00510"></a>00510     <a class="code" href="classRTC_1_1PortConnectRetListenerHolder.html" title="PortConnectRetListener ホルダクラス.">PortConnectRetListenerHolder</a> 
+<a name="l00511"></a><a class="code" href="classRTC_1_1PortConnectListeners.html#a6bc9f19b553cbdb6619260aa462b951e">00511</a>     <a class="code" href="classRTC_1_1PortConnectListeners.html#a6bc9f19b553cbdb6619260aa462b951e" title="PortConnectRetTypeリスナ配列 PortConnectRetTypeリスナを格納.">portconnret_</a>[<a class="code" href="namespaceRTC.html#a35eabe38885d06b40e489b4bee603ebfa7f47e25a79317851fbb904d8cb07f4ae">PORT_CONNECT_RET_LISTENER_NUM</a>];
+<a name="l00512"></a>00512   };
+<a name="l00513"></a>00513 
+<a name="l00514"></a>00514 
+<a name="l00515"></a>00515 }; <span class="comment">// namespace RTC</span>
+<a name="l00516"></a>00516 
+<a name="l00517"></a>00517 <span class="preprocessor">#endif // RTC_PORTCONNECTLISTENER_H</span>
+</pre></div></div>
+<hr class="footer"/><address style="text-align: right;"><small>OpenRTMに対してThu May 24 23:25:18 2012に生成されました。&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.6.3 </small></address>
+</body>
+</html>

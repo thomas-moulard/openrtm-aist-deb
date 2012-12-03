@@ -1,0 +1,79 @@
+\section{RTObject.h}
+\label{RTObject_8h}\index{RTObject.h@{RTObject.h}}
+
+
+RT component base class.  
+
+
+{\ttfamily \#include $<$coil/Properties.h$>$}\par
+{\ttfamily \#include $<$rtm/RTC.h$>$}\par
+{\ttfamily \#include $<$rtm/idl/RTCSkel.h$>$}\par
+{\ttfamily \#include $<$rtm/idl/OpenRTMSkel.h$>$}\par
+{\ttfamily \#include $<$rtm/PortBase.h$>$}\par
+{\ttfamily \#include $<$rtm/PortAdmin.h$>$}\par
+{\ttfamily \#include $<$rtm/InPortBase.h$>$}\par
+{\ttfamily \#include $<$rtm/OutPortBase.h$>$}\par
+{\ttfamily \#include $<$rtm/CorbaPort.h$>$}\par
+{\ttfamily \#include $<$rtm/ConfigAdmin.h$>$}\par
+{\ttfamily \#include $<$rtm/SystemLogger.h$>$}\par
+{\ttfamily \#include $<$rtm/ComponentActionListener.h$>$}\par
+{\ttfamily \#include $<$rtm/SdoServiceAdmin.h$>$}\par
+{\ttfamily \#include $<$rtm/PortConnectListener.h$>$}\par
+\subsection*{構成}
+\begin{DoxyCompactItemize}
+\item 
+class {\bf RTC::RTObject\_\-impl}
+\begin{DoxyCompactList}\small\item\em RTコンポーネントクラス. \item\end{DoxyCompactList}\item 
+struct {\bf RTC::RTObject\_\-impl::svc\_\-name}
+\begin{DoxyCompactList}\small\item\em SDOService のプロファイルリストからidでサーチするためのファンクタ. \item\end{DoxyCompactList}\item 
+struct {\bf RTC::RTObject\_\-impl::nv\_\-name}
+\begin{DoxyCompactList}\small\item\em NVList 検索用ファンクタ. \item\end{DoxyCompactList}\item 
+struct {\bf RTC::RTObject\_\-impl::ec\_\-copy}
+\begin{DoxyCompactList}\small\item\em ExecutionContext コピーファンクタ. \item\end{DoxyCompactList}\item 
+struct {\bf RTC::RTObject\_\-impl::ec\_\-find}
+\begin{DoxyCompactList}\small\item\em ExecutionContext 検索用ファンクタ. \item\end{DoxyCompactList}\item 
+struct {\bf RTC::RTObject\_\-impl::deactivate\_\-comps}
+\begin{DoxyCompactList}\small\item\em \doxyref{RTC}{p.}{namespaceRTC} 非活性化用ファンクタ. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{ネームスペース}
+\begin{DoxyCompactItemize}
+\item 
+namespace {\bf SDOPackage}
+
+
+\begin{DoxyCompactList}\small\item\em \doxyref{SDO}{p.}{classSDO} パッケージ. \item\end{DoxyCompactList}
+
+\item 
+namespace {\bf RTC}
+
+
+\begin{DoxyCompactList}\small\item\em RTコンポーネント. \item\end{DoxyCompactList}
+
+\end{DoxyCompactItemize}
+\subsection*{マクロ定義}
+\begin{DoxyCompactItemize}
+\item 
+\#define {\bf ECOTHER\_\-OFFSET}~1000
+\end{DoxyCompactItemize}
+
+
+\subsection{説明}
+RT component base class. \begin{DoxyDate}{日付}
+
+\end{DoxyDate}
+\begin{DoxyParagraph}{Date}
+2008-\/01-\/14 07:57:18 
+\end{DoxyParagraph}
+\begin{DoxyAuthor}{作者}
+Noriaki Ando $<${\tt n-\/ando@aist.go.jp}$>$
+\end{DoxyAuthor}
+Copyright (C) 2006-\/2010 Intelligent Systems Research Institute, National Institute of Advanced Industrial Science and Technology (AIST), Japan All rights reserved.
+
+\begin{DoxyParagraph}{Id}
+\doxyref{RTObject.h}{p.}{RTObject_8h} 2209 2011-\/07-\/27 14:02:57Z n-\/ando 
+\end{DoxyParagraph}
+
+
+\subsection{マクロ定義}
+\index{RTObject.h@{RTObject.h}!ECOTHER\_\-OFFSET@{ECOTHER\_\-OFFSET}}
+\index{ECOTHER\_\-OFFSET@{ECOTHER\_\-OFFSET}!RTObject.h@{RTObject.h}}
+\subsubsection[{ECOTHER\_\-OFFSET}]{\setlength{\rightskip}{0pt plus 5cm}\#define ECOTHER\_\-OFFSET~1000}\label{RTObject_8h_a5f00a32f5fbb917ada3f611f4a516a28}

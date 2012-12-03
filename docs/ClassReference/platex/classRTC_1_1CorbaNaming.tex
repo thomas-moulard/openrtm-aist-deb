@@ -1,0 +1,849 @@
+\section{クラス RTC::CorbaNaming}
+\label{classRTC_1_1CorbaNaming}\index{RTC::CorbaNaming@{RTC::CorbaNaming}}
+
+
+CORBA Naming Service ヘルパークラス.  
+
+
+
+
+{\ttfamily \#include $<$CorbaNaming.h$>$}
+
+\subsection*{Public 型}
+\begin{DoxyCompactItemize}
+\item 
+typedef CORBA::SystemException {\bf SystemException}
+\item 
+typedef CosNaming::NamingContext::NotFound {\bf NotFound}
+\item 
+typedef CosNaming::NamingContext::CannotProceed {\bf CannotProceed}
+\item 
+typedef CosNaming::NamingContext::InvalidName {\bf InvalidName}
+\item 
+typedef CosNaming::NamingContext::AlreadyBound {\bf AlreadyBound}
+\item 
+typedef CosNaming::NamingContext::NotEmpty {\bf NotEmpty}
+\item 
+typedef CosNaming::NamingContextExt::InvalidAddress {\bf InvalidAddress}
+\item 
+typedef std::vector$<$ CORBA::Object\_\-ptr $>$ {\bf ObjectList}
+\end{DoxyCompactItemize}
+\subsection*{Public メソッド}
+\begin{DoxyCompactItemize}
+\item 
+{\bf CorbaNaming} (CORBA::ORB\_\-ptr orb)
+\begin{DoxyCompactList}\small\item\em コンストラクタ \item\end{DoxyCompactList}\item 
+{\bf CorbaNaming} (CORBA::ORB\_\-ptr orb, const char $\ast$name\_\-server)
+\begin{DoxyCompactList}\small\item\em コンストラクタ \item\end{DoxyCompactList}\item 
+virtual {\bf $\sim$CorbaNaming} (void)
+\begin{DoxyCompactList}\small\item\em 仮想デストラクタ \item\end{DoxyCompactList}\item 
+void {\bf init} (const char $\ast$name\_\-server)
+\begin{DoxyCompactList}\small\item\em ネーミングサービスの初期化 \item\end{DoxyCompactList}\item 
+bool {\bf isAlive} ()
+\item 
+void {\bf bind} (const CosNaming::Name \&name, CORBA::Object\_\-ptr obj, const bool force=1)  throw (SystemException, NotFound, CannotProceed,             InvalidName, AlreadyBound)
+\begin{DoxyCompactList}\small\item\em Object を bind する. \item\end{DoxyCompactList}\item 
+void {\bf bindByString} (const char $\ast$string\_\-name, CORBA::Object\_\-ptr obj, const bool force=1)  throw (SystemException, NotFound, CannotProceed,             InvalidName, AlreadyBound)
+\begin{DoxyCompactList}\small\item\em Object を bind する. \item\end{DoxyCompactList}\item 
+void {\bf bindRecursive} (CosNaming::NamingContext\_\-ptr context, const CosNaming::Name \&name, CORBA::Object\_\-ptr obj)  throw (SystemException, CannotProceed, InvalidName, AlreadyBound)
+\begin{DoxyCompactList}\small\item\em 途中のコンテキストを再帰的に bind しながら Object を bind する \item\end{DoxyCompactList}\item 
+void {\bf rebind} (const CosNaming::Name \&name, CORBA::Object\_\-ptr obj, const bool force=1)  throw (SystemException, NotFound, CannotProceed, InvalidName)
+\begin{DoxyCompactList}\small\item\em Object を rebind する. \item\end{DoxyCompactList}\item 
+void {\bf rebindByString} (const char $\ast$string\_\-name, CORBA::Object\_\-ptr obj, const bool force=1)  throw (SystemException, NotFound, CannotProceed, InvalidName)
+\begin{DoxyCompactList}\small\item\em Object を rebind する. \item\end{DoxyCompactList}\item 
+void {\bf rebindRecursive} (CosNaming::NamingContext\_\-ptr context, const CosNaming::Name \&name, CORBA::Object\_\-ptr obj)  throw (SystemException, CannotProceed, InvalidName)
+\begin{DoxyCompactList}\small\item\em 途中のコンテキストを bind しながら Object を rebind する \item\end{DoxyCompactList}\item 
+void {\bf bindContext} (const CosNaming::Name \&name, CosNaming::NamingContext\_\-ptr name\_\-cxt, const bool force=1)  throw (SystemException, NotFound, CannotProceed,             InvalidName, AlreadyBound)
+\begin{DoxyCompactList}\small\item\em NamingContext を bind する. \item\end{DoxyCompactList}\item 
+void {\bf bindContext} (const char $\ast$string\_\-name, CosNaming::NamingContext\_\-ptr name\_\-cxt, const bool force=1)  throw (SystemException, NotFound, CannotProceed,             InvalidName, AlreadyBound)
+\begin{DoxyCompactList}\small\item\em NamingContext を bind する. \item\end{DoxyCompactList}\item 
+void {\bf bindContextRecursive} (CosNaming::NamingContext\_\-ptr context, const CosNaming::Name \&name, CosNaming::NamingContext\_\-ptr name\_\-cxt)
+\begin{DoxyCompactList}\small\item\em 途中のコンテキストを再帰的に bind し NamingContext を bind する \item\end{DoxyCompactList}\item 
+void {\bf rebindContext} (const CosNaming::Name \&name, CosNaming::NamingContext\_\-ptr name\_\-cxt, const bool force=1)  throw (SystemException, NotFound, CannotProceed, InvalidName)
+\begin{DoxyCompactList}\small\item\em NamingContext を rebind する. \item\end{DoxyCompactList}\item 
+void {\bf rebindContext} (const char $\ast$string\_\-name, CosNaming::NamingContext\_\-ptr name\_\-cxt, const bool force=1)  throw (SystemException, NotFound, CannotProceed, InvalidName)
+\begin{DoxyCompactList}\small\item\em NamingContext を rebind する. \item\end{DoxyCompactList}\item 
+void {\bf rebindContextRecursive} (CosNaming::NamingContext\_\-ptr context, const CosNaming::Name \&name, CosNaming::NamingContext\_\-ptr name\_\-cxt)
+\begin{DoxyCompactList}\small\item\em 途中のコンテキストを再帰的に rebind し NamingContext を rebind する \item\end{DoxyCompactList}\item 
+CORBA::Object\_\-ptr {\bf resolve} (const CosNaming::Name \&name)  throw (SystemException, NotFound, CannotProceed, InvalidName)
+\begin{DoxyCompactList}\small\item\em 与えられた NameComponent にバインドされている Object を返す \item\end{DoxyCompactList}\item 
+CORBA::Object\_\-ptr {\bf resolve} (const char $\ast$string\_\-name)  throw (SystemException, NotFound, CannotProceed, InvalidName)
+\begin{DoxyCompactList}\small\item\em 与えられた NameComponent にバインドされている Object を返す \item\end{DoxyCompactList}\item 
+void {\bf unbind} (const CosNaming::Name \&name)  throw (SystemException, NotFound, CannotProceed, InvalidName)
+\begin{DoxyCompactList}\small\item\em 与えられた NameComponent のバインディングを削除する \item\end{DoxyCompactList}\item 
+void {\bf unbind} (const char $\ast$string\_\-name)  throw (SystemException, NotFound, CannotProceed, InvalidName)
+\begin{DoxyCompactList}\small\item\em 与えられた NameComponent のバインディングを削除する \item\end{DoxyCompactList}\item 
+CosNaming::NamingContext\_\-ptr {\bf newContext} ()
+\begin{DoxyCompactList}\small\item\em 新しいコンテキストを生成する \item\end{DoxyCompactList}\item 
+CosNaming::NamingContext\_\-ptr {\bf bindNewContext} (const CosNaming::Name \&name, bool force=true)  throw (SystemException, NotFound, CannotProceed,             InvalidName, AlreadyBound)
+\begin{DoxyCompactList}\small\item\em 新しいコンテキストを bind する \item\end{DoxyCompactList}\item 
+CosNaming::NamingContext\_\-ptr {\bf bindNewContext} (const char $\ast$string\_\-name, bool force=true)  throw (SystemException, NotFound, CannotProceed,             InvalidName, AlreadyBound)
+\begin{DoxyCompactList}\small\item\em 新しいコンテキストを bind する \item\end{DoxyCompactList}\item 
+void {\bf destroy} (CosNaming::NamingContext\_\-ptr context)  throw (SystemException, NotEmpty)
+\begin{DoxyCompactList}\small\item\em NamingContext を非アクティブ化する. \item\end{DoxyCompactList}\item 
+void {\bf destroyRecursive} (CosNaming::NamingContext\_\-ptr context)  throw (SystemException, NotEmpty, NotFound, CannotProceed, InvalidName)
+\begin{DoxyCompactList}\small\item\em NamingContext を再帰的に下って非アクティブ化する. \item\end{DoxyCompactList}\item 
+void {\bf clearAll} ()
+\begin{DoxyCompactList}\small\item\em すべての Binding を削除する \item\end{DoxyCompactList}\item 
+void {\bf list} (CosNaming::NamingContext\_\-ptr name\_\-cxt, CORBA::ULong how\_\-many, CosNaming::BindingList\_\-var \&bl, CosNaming::BindingIterator\_\-var \&bi)
+\begin{DoxyCompactList}\small\item\em 与えられた NamingContext の Binding を取得する \item\end{DoxyCompactList}\item 
+char $\ast$ {\bf toString} (const CosNaming::Name \&name)  throw (SystemException, InvalidName)
+\begin{DoxyCompactList}\small\item\em 与えられた NameComponent の文字列表現を返す \item\end{DoxyCompactList}\item 
+CosNaming::Name {\bf toName} (const char $\ast$string\_\-name)  throw (SystemException, InvalidName)
+\begin{DoxyCompactList}\small\item\em 与えられた文字列表現を NameComponent に分解する \item\end{DoxyCompactList}\item 
+char $\ast$ {\bf toUrl} (char $\ast$addr, char $\ast$string\_\-name)  throw (SystemException, InvalidAddress, InvalidName)
+\begin{DoxyCompactList}\small\item\em 与えられた addre と string\_\-name から URL表現を取得する \item\end{DoxyCompactList}\item 
+CORBA::Object\_\-ptr {\bf resolveStr} (const char $\ast$string\_\-name)  throw (SystemException, NotFound, CannotProceed,             InvalidName, AlreadyBound)
+\begin{DoxyCompactList}\small\item\em 与えられた文字列表現を resolve しオブジェクトを返す \item\end{DoxyCompactList}\item 
+CORBA::Object\_\-ptr {\bf bindOrResolve} (CosNaming::NamingContext\_\-ptr context, const CosNaming::Name \&name, CORBA::Object\_\-ptr obj)
+\begin{DoxyCompactList}\small\item\em オブジェクトの名前をバインドまたは解決する \item\end{DoxyCompactList}\item 
+CosNaming::NamingContext\_\-ptr {\bf bindOrResolveContext} (CosNaming::NamingContext\_\-ptr context, const CosNaming::Name \&name, CosNaming::NamingContext\_\-ptr new\_\-context)
+\begin{DoxyCompactList}\small\item\em 名前をバインドまたは解決する \item\end{DoxyCompactList}\item 
+CosNaming::NamingContext\_\-ptr {\bf bindOrResolveContext} (CosNaming::NamingContext\_\-ptr context, const CosNaming::Name \&name)
+\begin{DoxyCompactList}\small\item\em 名前をバインドまたは解決する \item\end{DoxyCompactList}\item 
+const char $\ast$ {\bf getNameServer} ()
+\begin{DoxyCompactList}\small\item\em ネームサーバの名前を取得する \item\end{DoxyCompactList}\item 
+CosNaming::NamingContext\_\-ptr {\bf getRootContext} ()
+\begin{DoxyCompactList}\small\item\em ルートコンテキストを取得する \item\end{DoxyCompactList}\item 
+bool {\bf isNamingContext} (CORBA::Object\_\-ptr obj)
+\begin{DoxyCompactList}\small\item\em オブジェクトがネーミングコンテキストか判別する \item\end{DoxyCompactList}\item 
+bool {\bf isNamingContext} (const CosNaming::Name \&name)
+\begin{DoxyCompactList}\small\item\em 与えられた名前がネーミングコンテキストかどうか \item\end{DoxyCompactList}\item 
+bool {\bf isNamingContext} (const char $\ast$string\_\-name)
+\begin{DoxyCompactList}\small\item\em 与えられた名前がネーミングコンテキストかどうか \item\end{DoxyCompactList}\item 
+CosNaming::Name {\bf subName} (const CosNaming::Name \&name, CORBA::Long begin, CORBA::Long end=-\/1)
+\begin{DoxyCompactList}\small\item\em ネームコンポーネントの部分を返す \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected メソッド}
+\begin{DoxyCompactItemize}
+\item 
+void {\bf nameToString} (const CosNaming::Name \&name, char $\ast$string\_\-name, CORBA::ULong slen)
+\begin{DoxyCompactList}\small\item\em ネームコンポーネントの文字列表現を取得する \item\end{DoxyCompactList}\item 
+CORBA::ULong {\bf getNameLength} (const CosNaming::Name \&name)
+\begin{DoxyCompactList}\small\item\em ネームコンポーネントの文字列表現時の文字長を取得する \item\end{DoxyCompactList}\item 
+unsigned int {\bf split} (const std::string \&input, const std::string \&delimiter, std::vector$<$ std::string $>$ \&results)
+\begin{DoxyCompactList}\small\item\em 文字列の分割 \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected 変数}
+\begin{DoxyCompactItemize}
+\item 
+CORBA::ORB\_\-var {\bf m\_\-varORB}
+\begin{DoxyCompactList}\small\item\em ORB. \item\end{DoxyCompactList}\item 
+std::string {\bf m\_\-nameServer}
+\begin{DoxyCompactList}\small\item\em ネームサーバ名称 \item\end{DoxyCompactList}\item 
+CosNaming::NamingContextExt\_\-var {\bf m\_\-rootContext}
+\begin{DoxyCompactList}\small\item\em 指定したネームサーバのルートコンテキスト \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{説明}
+CORBA Naming Service ヘルパークラス. このクラスは、CosNamingNamingContext に対するラッパークラスである。 CosNaming::NamingContext が持つオペレーションとほぼ同じ機能の オペレーションを提供するとともに、ネームコンポーネント CosNaming::Name の代わりに文字列による名前表現を受け付けるオペレーションも提供する。
+
+オブジェクトは生成時、あるいは生成直後に CORBA ネームサーバに接続し 以後、このネームサーバのルートコンテキストに対して種々のオペレーション を処理する。 深い階層のネーミングコンテキストの作成やオブジェクトのバインドにおいて、 途中のコンテキストが存在しない場合でも、強制的にコンテキストをバインド し目的のコンテキストやオブジェクトのバインドを行うこともできる。
+
+\begin{DoxySince}{から}
+0.4.0 
+\end{DoxySince}
+
+
+\subsection{型定義}
+\index{RTC::CorbaNaming@{RTC::CorbaNaming}!AlreadyBound@{AlreadyBound}}
+\index{AlreadyBound@{AlreadyBound}!RTC::CorbaNaming@{RTC::CorbaNaming}}
+\subsubsection[{AlreadyBound}]{\setlength{\rightskip}{0pt plus 5cm}typedef CosNaming::NamingContext::AlreadyBound {\bf RTC::CorbaNaming::AlreadyBound}}\label{classRTC_1_1CorbaNaming_a6669a088b188bbf53d96328945db065f}
+\index{RTC::CorbaNaming@{RTC::CorbaNaming}!CannotProceed@{CannotProceed}}
+\index{CannotProceed@{CannotProceed}!RTC::CorbaNaming@{RTC::CorbaNaming}}
+\subsubsection[{CannotProceed}]{\setlength{\rightskip}{0pt plus 5cm}typedef CosNaming::NamingContext::CannotProceed {\bf RTC::CorbaNaming::CannotProceed}}\label{classRTC_1_1CorbaNaming_a77504e9d1028c3f524151edda4c5faf4}
+\index{RTC::CorbaNaming@{RTC::CorbaNaming}!InvalidAddress@{InvalidAddress}}
+\index{InvalidAddress@{InvalidAddress}!RTC::CorbaNaming@{RTC::CorbaNaming}}
+\subsubsection[{InvalidAddress}]{\setlength{\rightskip}{0pt plus 5cm}typedef CosNaming::NamingContextExt::InvalidAddress {\bf RTC::CorbaNaming::InvalidAddress}}\label{classRTC_1_1CorbaNaming_af3580312d8a2e6d00ad3dca75b3cfae3}
+\index{RTC::CorbaNaming@{RTC::CorbaNaming}!InvalidName@{InvalidName}}
+\index{InvalidName@{InvalidName}!RTC::CorbaNaming@{RTC::CorbaNaming}}
+\subsubsection[{InvalidName}]{\setlength{\rightskip}{0pt plus 5cm}typedef CosNaming::NamingContext::InvalidName {\bf RTC::CorbaNaming::InvalidName}}\label{classRTC_1_1CorbaNaming_ab79889ab5d3a28c494ee8768200e3683}
+\index{RTC::CorbaNaming@{RTC::CorbaNaming}!NotEmpty@{NotEmpty}}
+\index{NotEmpty@{NotEmpty}!RTC::CorbaNaming@{RTC::CorbaNaming}}
+\subsubsection[{NotEmpty}]{\setlength{\rightskip}{0pt plus 5cm}typedef CosNaming::NamingContext::NotEmpty {\bf RTC::CorbaNaming::NotEmpty}}\label{classRTC_1_1CorbaNaming_a223ee860ea0ffa395e688b6eb0fd3b11}
+\index{RTC::CorbaNaming@{RTC::CorbaNaming}!NotFound@{NotFound}}
+\index{NotFound@{NotFound}!RTC::CorbaNaming@{RTC::CorbaNaming}}
+\subsubsection[{NotFound}]{\setlength{\rightskip}{0pt plus 5cm}typedef CosNaming::NamingContext::NotFound {\bf RTC::CorbaNaming::NotFound}}\label{classRTC_1_1CorbaNaming_a92e7f10507946507a4e8daf126ecc409}
+\index{RTC::CorbaNaming@{RTC::CorbaNaming}!ObjectList@{ObjectList}}
+\index{ObjectList@{ObjectList}!RTC::CorbaNaming@{RTC::CorbaNaming}}
+\subsubsection[{ObjectList}]{\setlength{\rightskip}{0pt plus 5cm}typedef std::vector$<$CORBA::Object\_\-ptr$>$ {\bf RTC::CorbaNaming::ObjectList}}\label{classRTC_1_1CorbaNaming_aea8dfd52409e620da87cc1b1a7e835cc}
+\index{RTC::CorbaNaming@{RTC::CorbaNaming}!SystemException@{SystemException}}
+\index{SystemException@{SystemException}!RTC::CorbaNaming@{RTC::CorbaNaming}}
+\subsubsection[{SystemException}]{\setlength{\rightskip}{0pt plus 5cm}typedef CORBA::SystemException {\bf RTC::CorbaNaming::SystemException}}\label{classRTC_1_1CorbaNaming_adcd493bdbf96b312ce1b985b8a08c79d}
+
+
+\subsection{コンストラクタとデストラクタ}
+\index{RTC::CorbaNaming@{RTC::CorbaNaming}!CorbaNaming@{CorbaNaming}}
+\index{CorbaNaming@{CorbaNaming}!RTC::CorbaNaming@{RTC::CorbaNaming}}
+\subsubsection[{CorbaNaming}]{\setlength{\rightskip}{0pt plus 5cm}RTC::CorbaNaming::CorbaNaming (CORBA::ORB\_\-ptr {\em orb})}\label{classRTC_1_1CorbaNaming_a081d0658c45831f74dcefb3b2bccb631}
+
+
+コンストラクタ 
+
+
+\begin{DoxyParams}{引数}
+\item[{\em orb}]ORB \end{DoxyParams}
+\index{RTC::CorbaNaming@{RTC::CorbaNaming}!CorbaNaming@{CorbaNaming}}
+\index{CorbaNaming@{CorbaNaming}!RTC::CorbaNaming@{RTC::CorbaNaming}}
+\subsubsection[{CorbaNaming}]{\setlength{\rightskip}{0pt plus 5cm}RTC::CorbaNaming::CorbaNaming (CORBA::ORB\_\-ptr {\em orb}, \/  const char $\ast$ {\em name\_\-server})}\label{classRTC_1_1CorbaNaming_ae9e84d1814b4664789d2d1d88f13f97f}
+
+
+コンストラクタ 
+
+
+\begin{DoxyParams}{引数}
+\item[{\em orb}]ORB \item[{\em name\_\-server}]ネームサーバの名称 \end{DoxyParams}
+\index{RTC::CorbaNaming@{RTC::CorbaNaming}!$\sim$CorbaNaming@{$\sim$CorbaNaming}}
+\index{$\sim$CorbaNaming@{$\sim$CorbaNaming}!RTC::CorbaNaming@{RTC::CorbaNaming}}
+\subsubsection[{$\sim$CorbaNaming}]{\setlength{\rightskip}{0pt plus 5cm}virtual RTC::CorbaNaming::$\sim$CorbaNaming (void)\hspace{0.3cm}{\ttfamily  [inline, virtual]}}\label{classRTC_1_1CorbaNaming_ad929fafaa24f3360341aeb1a4e8ee826}
+
+
+仮想デストラクタ 
+
+
+
+\subsection{関数}
+\index{RTC::CorbaNaming@{RTC::CorbaNaming}!bind@{bind}}
+\index{bind@{bind}!RTC::CorbaNaming@{RTC::CorbaNaming}}
+\subsubsection[{bind}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::CorbaNaming::bind (const CosNaming::Name \& {\em name}, \/  CORBA::Object\_\-ptr {\em obj}, \/  const bool {\em force} = {\ttfamily 1})  throw ({\bf SystemException}, {\bf NotFound}, {\bf CannotProceed},             {\bf InvalidName}, {\bf AlreadyBound})}\label{classRTC_1_1CorbaNaming_ac21620f79aecc1bf989629b7aac2938f}
+
+
+Object を bind する. 
+
+CosNaming::bind() とほぼ同等の働きをするが、常に与えられたネームサーバの ルートコンテキストに対してbind()が呼び出される点が異なる。
+
+Name $<$name$>$ と Object $<$obj$>$ を当該 NamingContext 上にバインドする。 c\_\-n が n 番目の NameComponent をあらわすとすると、 name が n 個の NameComponent から成るとき、以下のように扱われる。
+
+cxt-\/$>$bind($<$c\_\-1, c\_\-2, ... c\_\-n$>$, obj) は以下の操作と同等である。 cxt-\/$>$resolve($<$c\_\-1, ... c\_\-(n-\/1)$>$)-\/$>$bind($<$c\_\-n$>$, obj)
+
+すなわち、1番目からn-\/1番目のコンテキストを解決し、n-\/1番目のコンテキスト 上に name $<$n$>$ として　obj を bind する。 名前解決に参加する $<$c\_\-1, ... c\_\-(n-\/1)$>$ の NemingContext は、 \doxyref{bindContext()}{p.}{classRTC_1_1CorbaNaming_a1eaa278d91546b514fdf361a0bfcbf87} や \doxyref{rebindContext()}{p.}{classRTC_1_1CorbaNaming_afd9649388ba4f49b53d036b50e311df0} で既にバインド済みでなければならない。 もし $<$c\_\-1, ... c\_\-(n-\/1)$>$ の NamingContext が存在しない場合には、 NotFound 例外が発生する。
+
+ただし、強制バインドフラグ force が true の時は、$<$c\_\-1, ... c\_\-(n-\/1)$>$ が存在しない場合にも、再帰的にコンテキストをバインドしながら、 最終的に obj を名前 name $<$c\_\-n$>$ にバインドする。
+
+いずれの場合でも、n-\/1番目のコンテキスト上に name$<$n$>$ のオブジェクト (Object あるいは コンテキスト) がバインドされていれば AlreadyBound 例外が発生する。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em name}]オブジェクトに付ける名前の NameComponent \item[{\em obj}]関連付けられる Object \item[{\em force}]trueの場合、途中のコンテキストを強制的にバインドする (デフォルト値:true)\end{DoxyParams}
+
+\begin{DoxyExceptions}{例外}
+\item[{\em NotFound}]途中の $<$c\_\-1, c\_\-2, ..., c\_\-(n-\/1)$>$ が存在しない。 \item[{\em CannotProceed}]何らかの理由で処理を継続できない。 \item[{\em InvalidName}]引数 name の名前が不正。 \item[{\em AlreadyBound}]name $<$c\_\-n$>$ の Object がすでにバインドされている。 \end{DoxyExceptions}
+\index{RTC::CorbaNaming@{RTC::CorbaNaming}!bindByString@{bindByString}}
+\index{bindByString@{bindByString}!RTC::CorbaNaming@{RTC::CorbaNaming}}
+\subsubsection[{bindByString}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::CorbaNaming::bindByString (const char $\ast$ {\em string\_\-name}, \/  CORBA::Object\_\-ptr {\em obj}, \/  const bool {\em force} = {\ttfamily 1})  throw ({\bf SystemException}, {\bf NotFound}, {\bf CannotProceed},             {\bf InvalidName}, {\bf AlreadyBound})}\label{classRTC_1_1CorbaNaming_a88fba8eb04bf1a2b631007d0d87ea28f}
+
+
+Object を bind する. 
+
+Object を bind する際に与える名前が文字列表現であること以外は、bind() と同じである。bind(toName(string\_\-name), obj) と等価。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em string\_\-name}]オブジェクトに付ける名前の文字列表現 \item[{\em obj}]関連付けられるオブジェクト \item[{\em force}]trueの場合、途中のコンテキストを強制的にバインドする (デフォルト値:true)\end{DoxyParams}
+
+\begin{DoxyExceptions}{例外}
+\item[{\em NotFound}]途中の $<$c\_\-1, c\_\-2, ..., c\_\-(n-\/1)$>$ が存在しない。 \item[{\em CannotProceed}]何らかの理由で処理を継続できない。 \item[{\em InvalidName}]引数 name の名前が不正。 \item[{\em AlreadyBound}]name $<$n$>$ の Object がすでにバインドされている。 \end{DoxyExceptions}
+\index{RTC::CorbaNaming@{RTC::CorbaNaming}!bindContext@{bindContext}}
+\index{bindContext@{bindContext}!RTC::CorbaNaming@{RTC::CorbaNaming}}
+\subsubsection[{bindContext}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::CorbaNaming::bindContext (const char $\ast$ {\em string\_\-name}, \/  CosNaming::NamingContext\_\-ptr {\em name\_\-cxt}, \/  const bool {\em force} = {\ttfamily 1})  throw ({\bf SystemException}, {\bf NotFound}, {\bf CannotProceed},             {\bf InvalidName}, {\bf AlreadyBound})}\label{classRTC_1_1CorbaNaming_a62c211af81e61ccc9dcbbf8c0f26eb15}
+
+
+NamingContext を bind する. 
+
+bind されるオブジェクトが NamingContext であることを除いて \doxyref{bindByString()}{p.}{classRTC_1_1CorbaNaming_a88fba8eb04bf1a2b631007d0d87ea28f} と同じである。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em string\_\-name}]オブジェクトに付ける名前の文字列表現 \item[{\em name\_\-cxt}]関連付けられる NamingContext \item[{\em force}]trueの場合、途中のコンテキストを強制的にバインドする (デフォルト値:true)\end{DoxyParams}
+
+\begin{DoxyExceptions}{例外}
+\item[{\em NotFound}]途中の $<$c\_\-1, c\_\-2, ..., c\_\-(n-\/1)$>$ が存在しない。 \item[{\em CannotProceed}]何らかの理由で処理を継続できない。 \item[{\em InvalidName}]引数 name の名前が不正。 \item[{\em AlreadyBound}]name $<$n$>$ の Object がすでにバインドされている。 \end{DoxyExceptions}
+\index{RTC::CorbaNaming@{RTC::CorbaNaming}!bindContext@{bindContext}}
+\index{bindContext@{bindContext}!RTC::CorbaNaming@{RTC::CorbaNaming}}
+\subsubsection[{bindContext}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::CorbaNaming::bindContext (const CosNaming::Name \& {\em name}, \/  CosNaming::NamingContext\_\-ptr {\em name\_\-cxt}, \/  const bool {\em force} = {\ttfamily 1})  throw ({\bf SystemException}, {\bf NotFound}, {\bf CannotProceed},             {\bf InvalidName}, {\bf AlreadyBound})}\label{classRTC_1_1CorbaNaming_a1eaa278d91546b514fdf361a0bfcbf87}
+
+
+NamingContext を bind する. 
+
+bind されるオブジェクトが NamingContext であることを除いて \doxyref{bind()}{p.}{classRTC_1_1CorbaNaming_ac21620f79aecc1bf989629b7aac2938f} と同じである。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em name}]オブジェクトに付ける名前のネームコンポーネント \item[{\em name\_\-cxt}]関連付けられる NamingContext \item[{\em force}]trueの場合、途中のコンテキストを強制的にバインドする (デフォルト値:true)\end{DoxyParams}
+
+\begin{DoxyExceptions}{例外}
+\item[{\em NotFound}]途中の $<$c\_\-1, c\_\-2, ..., c\_\-(n-\/1)$>$ が存在しない。 \item[{\em CannotProceed}]何らかの理由で処理を継続できない。 \item[{\em InvalidName}]引数 name の名前が不正。 \item[{\em AlreadyBound}]name $<$c\_\-n$>$ の Object がすでにバインドされている。 \end{DoxyExceptions}
+\index{RTC::CorbaNaming@{RTC::CorbaNaming}!bindContextRecursive@{bindContextRecursive}}
+\index{bindContextRecursive@{bindContextRecursive}!RTC::CorbaNaming@{RTC::CorbaNaming}}
+\subsubsection[{bindContextRecursive}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::CorbaNaming::bindContextRecursive (CosNaming::NamingContext\_\-ptr {\em context}, \/  const CosNaming::Name \& {\em name}, \/  CosNaming::NamingContext\_\-ptr {\em name\_\-cxt})}\label{classRTC_1_1CorbaNaming_acefcc23ad029cbf3d989ffc61adc4d35}
+
+
+途中のコンテキストを再帰的に bind し NamingContext を bind する 
+
+bind されるオブジェクトが NamingContext であることを除いて \doxyref{bindRecursive()}{p.}{classRTC_1_1CorbaNaming_a5417cf439f8efd84f9d13d212f9e62bd} と同じである。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em context}]bind を開始する　NamingContext \item[{\em name}]オブジェクトに付ける名前のネームコンポーネント \item[{\em name\_\-cxt}]関連付けられる NamingContext \end{DoxyParams}
+\index{RTC::CorbaNaming@{RTC::CorbaNaming}!bindNewContext@{bindNewContext}}
+\index{bindNewContext@{bindNewContext}!RTC::CorbaNaming@{RTC::CorbaNaming}}
+\subsubsection[{bindNewContext}]{\setlength{\rightskip}{0pt plus 5cm}CosNaming::NamingContext\_\-ptr RTC::CorbaNaming::bindNewContext (const char $\ast$ {\em string\_\-name}, \/  bool {\em force} = {\ttfamily true})  throw ({\bf SystemException}, {\bf NotFound}, {\bf CannotProceed},             {\bf InvalidName}, {\bf AlreadyBound})}\label{classRTC_1_1CorbaNaming_a7736c378704e3395532b3e05075121f5}
+
+
+新しいコンテキストを bind する 
+
+与えられた文字列に対応する新しいコンテキストをバインドする。 生成された　NamingContext はネームサーバ上で生成されたものである。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em string\_\-name}]NamingContextに付ける名前の文字列表現 \item[{\em force}]trueの場合、途中のコンテキストを強制的にバインドする (デフォルト値:true)\end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+生成された新しい NamingContext
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{例外}
+\item[{\em NotFound}]途中の $<$c\_\-1, c\_\-2, ..., c\_\-(n-\/1)$>$ が存在しない。 \item[{\em CannotProceed}]何らかの理由で処理を継続できない。 \item[{\em InvalidName}]引数 name の名前が不正。 \item[{\em AlreadyBound}]name $<$n$>$ の Object がすでにバインドされている。 \end{DoxyExceptions}
+\index{RTC::CorbaNaming@{RTC::CorbaNaming}!bindNewContext@{bindNewContext}}
+\index{bindNewContext@{bindNewContext}!RTC::CorbaNaming@{RTC::CorbaNaming}}
+\subsubsection[{bindNewContext}]{\setlength{\rightskip}{0pt plus 5cm}CosNaming::NamingContext\_\-ptr RTC::CorbaNaming::bindNewContext (const CosNaming::Name \& {\em name}, \/  bool {\em force} = {\ttfamily true})  throw ({\bf SystemException}, {\bf NotFound}, {\bf CannotProceed},             {\bf InvalidName}, {\bf AlreadyBound})}\label{classRTC_1_1CorbaNaming_a7a1bd265833e6e101ea03926f5e30c52}
+
+
+新しいコンテキストを bind する 
+
+与えられた name に対して新しいコンテキストをバインドする。 生成された　NamingContext はネームサーバ上で生成されたものである。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em name}]NamingContextに付ける名前のネームコンポーネント \item[{\em force}]trueの場合、途中のコンテキストを強制的にバインドする (デフォルト値:true)\end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+生成された新しい NamingContext
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{例外}
+\item[{\em NotFound}]途中の $<$c\_\-1, c\_\-2, ..., c\_\-(n-\/1)$>$ が存在しない。 \item[{\em CannotProceed}]何らかの理由で処理を継続できない。 \item[{\em InvalidName}]引数 name の名前が不正。 \item[{\em AlreadyBound}]name $<$n$>$ の Object がすでにバインドされている。 \end{DoxyExceptions}
+\index{RTC::CorbaNaming@{RTC::CorbaNaming}!bindOrResolve@{bindOrResolve}}
+\index{bindOrResolve@{bindOrResolve}!RTC::CorbaNaming@{RTC::CorbaNaming}}
+\subsubsection[{bindOrResolve}]{\setlength{\rightskip}{0pt plus 5cm}CORBA::Object\_\-ptr RTC::CorbaNaming::bindOrResolve (CosNaming::NamingContext\_\-ptr {\em context}, \/  const CosNaming::Name \& {\em name}, \/  CORBA::Object\_\-ptr {\em obj})}\label{classRTC_1_1CorbaNaming_a5b0474504d93dfb7c565e2d815c08df2}
+
+
+オブジェクトの名前をバインドまたは解決する 
+
+指定されたコンテキストに対してオブジェクトを NameComponent で指定された 位置にバインドする。 同一箇所に既に他の要素がバインド済みの場合は、既存のバインド済み要素を 取得する。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em context}]bind もしくは resole 対象コンテキスト \item[{\em name}]オブジェクトに付ける名前の NameComponent \item[{\em obj}]関連付けられる Object\end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+NameComponent で指定された位置にバインドされているオブジェクト 
+\end{DoxyReturn}
+\index{RTC::CorbaNaming@{RTC::CorbaNaming}!bindOrResolveContext@{bindOrResolveContext}}
+\index{bindOrResolveContext@{bindOrResolveContext}!RTC::CorbaNaming@{RTC::CorbaNaming}}
+\subsubsection[{bindOrResolveContext}]{\setlength{\rightskip}{0pt plus 5cm}CosNaming::NamingContext\_\-ptr RTC::CorbaNaming::bindOrResolveContext (CosNaming::NamingContext\_\-ptr {\em context}, \/  const CosNaming::Name \& {\em name})}\label{classRTC_1_1CorbaNaming_a5c57c1521026ea4f2e8cbfc423c1ed06}
+
+
+名前をバインドまたは解決する 
+
+指定されたコンテキストに対して NameComponent で指定された位置に 新規コンテキストをバインドする。 同一箇所に既に他の要素がバインド済みの場合は、既存のバインド済み要素を 取得する。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em context}]bind もしくは resole 対象コンテキスト \item[{\em name}]新規作成するコンテキストの位置を表す NameComponent\end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+NameComponent で指定された位置にバインドされているContext 
+\end{DoxyReturn}
+\index{RTC::CorbaNaming@{RTC::CorbaNaming}!bindOrResolveContext@{bindOrResolveContext}}
+\index{bindOrResolveContext@{bindOrResolveContext}!RTC::CorbaNaming@{RTC::CorbaNaming}}
+\subsubsection[{bindOrResolveContext}]{\setlength{\rightskip}{0pt plus 5cm}CosNaming::NamingContext\_\-ptr RTC::CorbaNaming::bindOrResolveContext (CosNaming::NamingContext\_\-ptr {\em context}, \/  const CosNaming::Name \& {\em name}, \/  CosNaming::NamingContext\_\-ptr {\em new\_\-context})}\label{classRTC_1_1CorbaNaming_a987187accb08864e9676e0663a3cc939}
+
+
+名前をバインドまたは解決する 
+
+指定されたコンテキストに対して Contextを NameComponent で指定された位置に バインドする。 同一箇所に既に他の要素がバインド済みの場合は、既存のバインド済み要素を 取得する。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em context}]bind もしくは resole 対象コンテキスト \item[{\em name}]コンテキストに付ける名前の NameComponent \item[{\em new\_\-context}]関連付けられる Context\end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+NameComponent で指定された位置にバインドされているContext 
+\end{DoxyReturn}
+\index{RTC::CorbaNaming@{RTC::CorbaNaming}!bindRecursive@{bindRecursive}}
+\index{bindRecursive@{bindRecursive}!RTC::CorbaNaming@{RTC::CorbaNaming}}
+\subsubsection[{bindRecursive}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::CorbaNaming::bindRecursive (CosNaming::NamingContext\_\-ptr {\em context}, \/  const CosNaming::Name \& {\em name}, \/  CORBA::Object\_\-ptr {\em obj})  throw ({\bf SystemException}, {\bf CannotProceed}, {\bf InvalidName}, {\bf AlreadyBound})}\label{classRTC_1_1CorbaNaming_a5417cf439f8efd84f9d13d212f9e62bd}
+
+
+途中のコンテキストを再帰的に bind しながら Object を bind する 
+
+context で与えられた NamingContext に対して、name で指定された ネームコンポーネント $<$c\_\-1, ... c\_\-(n-\/1)$>$ を NamingContext として 解決しながら、名前 $<$c\_\-n$>$ に対して obj を bind する。 もし、$<$c\_\-1, ... c\_\-(n-\/1)$>$ に対応する NamingContext がない場合には 新たな NamingContext をバインドする。
+
+最終的に $<$c\_\-1, c\_\-2, ..., c\_\-(n-\/1)$>$ に対応する NamingContext が生成 または解決された上で、CosNamingbind($<$c\_\-n$>$, object) が呼び出される。 このとき、すでにバインディングが存在すれば AlreadyBound例外が発生する。
+
+途中のコンテキストを解決する過程で、解決しようとするコンテキストと 同じ名前の NamingContext ではない Binding が存在する場合、 CannotProceed 例外が発生し処理を中止する。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em context}]bind を開始する　NamingContext \item[{\em name}]オブジェクトに付ける名前のネームコンポーネント \item[{\em obj}]関連付けられるオブジェクト\end{DoxyParams}
+
+\begin{DoxyExceptions}{例外}
+\item[{\em CannotProceed}]$<$c\_\-1, ..., c\_\-(n-\/1)$>$ に対応する NamingContext のうちひとつが、すでに NamingContext 以外の object にバインド されており、処理を継続できない。 \item[{\em InvalidName}]名前 name が不正 \item[{\em AlreadyBound}]name $<$c\_\-n$>$ にすでに何らかの object がバインド されている。 \end{DoxyExceptions}
+\index{RTC::CorbaNaming@{RTC::CorbaNaming}!clearAll@{clearAll}}
+\index{clearAll@{clearAll}!RTC::CorbaNaming@{RTC::CorbaNaming}}
+\subsubsection[{clearAll}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::CorbaNaming::clearAll ()}\label{classRTC_1_1CorbaNaming_a68877e40bf7bbc6e37137170e8212026}
+
+
+すべての Binding を削除する 
+
+登録されている全てのBinding を削除する。 \index{RTC::CorbaNaming@{RTC::CorbaNaming}!destroy@{destroy}}
+\index{destroy@{destroy}!RTC::CorbaNaming@{RTC::CorbaNaming}}
+\subsubsection[{destroy}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::CorbaNaming::destroy (CosNaming::NamingContext\_\-ptr {\em context})  throw ({\bf SystemException}, {\bf NotEmpty})}\label{classRTC_1_1CorbaNaming_a85fef1b00d8e6dc0a266daa56b218725}
+
+
+NamingContext を非アクティブ化する. 
+
+context で指定された NamingContext を非アクティブ化する。 context に他のコンテキストがバインドされている場合は NotEmpty 例外が 発生する。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em context}]非アクティブ化する NamingContext\end{DoxyParams}
+
+\begin{DoxyExceptions}{例外}
+\item[{\em NotEmpty}]対象context に他のコンテキストがバインドされている。 \end{DoxyExceptions}
+\index{RTC::CorbaNaming@{RTC::CorbaNaming}!destroyRecursive@{destroyRecursive}}
+\index{destroyRecursive@{destroyRecursive}!RTC::CorbaNaming@{RTC::CorbaNaming}}
+\subsubsection[{destroyRecursive}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::CorbaNaming::destroyRecursive (CosNaming::NamingContext\_\-ptr {\em context})  throw ({\bf SystemException}, {\bf NotEmpty}, {\bf NotFound}, {\bf CannotProceed}, {\bf InvalidName})}\label{classRTC_1_1CorbaNaming_a82c8c8a1adbe87e34778be5ad9ef1ff6}
+
+
+NamingContext を再帰的に下って非アクティブ化する. 
+
+context で与えられた NamingContext に対して、name で指定された ネームコンポーネント $<$c\_\-1, ... c\_\-(n-\/1)$>$ を NamingContext として 解決しながら、名前 $<$c\_\-n$>$ に対して 非アクティブ化を行う。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em context}]非アクティブ化する NamingContext\end{DoxyParams}
+
+\begin{DoxyExceptions}{例外}
+\item[{\em NotEmpty}]対象context に他のコンテキストがバインドされている。 \item[{\em NotFound}]途中の $<$c\_\-1, c\_\-2, ..., c\_\-(n-\/1)$>$ が存在しない。 \item[{\em CannotProceed}]何らかの理由で処理を継続できない。 \item[{\em InvalidName}]引数 name の名前が不正。 \end{DoxyExceptions}
+\index{RTC::CorbaNaming@{RTC::CorbaNaming}!getNameLength@{getNameLength}}
+\index{getNameLength@{getNameLength}!RTC::CorbaNaming@{RTC::CorbaNaming}}
+\subsubsection[{getNameLength}]{\setlength{\rightskip}{0pt plus 5cm}CORBA::ULong RTC::CorbaNaming::getNameLength (const CosNaming::Name \& {\em name})\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC_1_1CorbaNaming_ab70cb38165eaca8be4960a9886ab4b24}
+
+
+ネームコンポーネントの文字列表現時の文字長を取得する 
+
+指定したネームコンポーネントを文字列で表現した場合の長さを取得する。 文字列表現は、NameComponentの構成が\{Nc[0],Nc[1],Nc[2]...\}の場合、 Nc[0]id.Nc[0].kind/Nc[1]id.Nc[1].kind/Nc[2].id/Nc[2].kind... という形式で取得できる。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em name}]取得対象NameComponent\end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+指定したネームコンポーネントの文字列長さ 
+\end{DoxyReturn}
+\index{RTC::CorbaNaming@{RTC::CorbaNaming}!getNameServer@{getNameServer}}
+\index{getNameServer@{getNameServer}!RTC::CorbaNaming@{RTC::CorbaNaming}}
+\subsubsection[{getNameServer}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ RTC::CorbaNaming::getNameServer ()}\label{classRTC_1_1CorbaNaming_abca2ccc7a64e05822f3ea69d7c114e14}
+
+
+ネームサーバの名前を取得する 
+
+設定したネームサーバの名前を取得する。
+
+\begin{DoxyReturn}{戻り値}
+ネームサーバの名前 
+\end{DoxyReturn}
+\index{RTC::CorbaNaming@{RTC::CorbaNaming}!getRootContext@{getRootContext}}
+\index{getRootContext@{getRootContext}!RTC::CorbaNaming@{RTC::CorbaNaming}}
+\subsubsection[{getRootContext}]{\setlength{\rightskip}{0pt plus 5cm}CosNaming::NamingContext\_\-ptr RTC::CorbaNaming::getRootContext ()}\label{classRTC_1_1CorbaNaming_af5f0ff31edba062cb0858c29b38f946c}
+
+
+ルートコンテキストを取得する 
+
+設定したネームサーバのルートコンテキストを取得する。
+
+\begin{DoxyReturn}{戻り値}
+ネームサーバのルートコンテキスト 
+\end{DoxyReturn}
+\index{RTC::CorbaNaming@{RTC::CorbaNaming}!init@{init}}
+\index{init@{init}!RTC::CorbaNaming@{RTC::CorbaNaming}}
+\subsubsection[{init}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::CorbaNaming::init (const char $\ast$ {\em name\_\-server})}\label{classRTC_1_1CorbaNaming_aca3989e92a47edac443aee43479dbd96}
+
+
+ネーミングサービスの初期化 
+
+指定されたネームサーバ上のネーミングサービスを初期化します。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em name\_\-server}]ネームサーバの名称 \end{DoxyParams}
+\index{RTC::CorbaNaming@{RTC::CorbaNaming}!isAlive@{isAlive}}
+\index{isAlive@{isAlive}!RTC::CorbaNaming@{RTC::CorbaNaming}}
+\subsubsection[{isAlive}]{\setlength{\rightskip}{0pt plus 5cm}bool RTC::CorbaNaming::isAlive ()}\label{classRTC_1_1CorbaNaming_a05315f770a8c4a385d67270569c59108}
+\index{RTC::CorbaNaming@{RTC::CorbaNaming}!isNamingContext@{isNamingContext}}
+\index{isNamingContext@{isNamingContext}!RTC::CorbaNaming@{RTC::CorbaNaming}}
+\subsubsection[{isNamingContext}]{\setlength{\rightskip}{0pt plus 5cm}bool RTC::CorbaNaming::isNamingContext (const char $\ast$ {\em string\_\-name})}\label{classRTC_1_1CorbaNaming_a1b2a61b7e231a5b34274ea59e79f3f56}
+
+
+与えられた名前がネーミングコンテキストかどうか 
+
+文字列で指定した要素がネーミングコンテキストか判別する
+
+
+\begin{DoxyParams}{引数}
+\item[{\em string\_\-name}]判別対象文字列\end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+判別結果(ネーミングコンテキスト:true、それ以外:false) 
+\end{DoxyReturn}
+\index{RTC::CorbaNaming@{RTC::CorbaNaming}!isNamingContext@{isNamingContext}}
+\index{isNamingContext@{isNamingContext}!RTC::CorbaNaming@{RTC::CorbaNaming}}
+\subsubsection[{isNamingContext}]{\setlength{\rightskip}{0pt plus 5cm}bool RTC::CorbaNaming::isNamingContext (const CosNaming::Name \& {\em name})}\label{classRTC_1_1CorbaNaming_a4decaf20d4e7407e8393a2ddef4958d0}
+
+
+与えられた名前がネーミングコンテキストかどうか 
+
+NameComponentで指定した要素がネーミングコンテキストか判別する
+
+
+\begin{DoxyParams}{引数}
+\item[{\em name}]判別対象NameComponent\end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+判別結果(ネーミングコンテキスト:true、それ以外:false) 
+\end{DoxyReturn}
+\index{RTC::CorbaNaming@{RTC::CorbaNaming}!isNamingContext@{isNamingContext}}
+\index{isNamingContext@{isNamingContext}!RTC::CorbaNaming@{RTC::CorbaNaming}}
+\subsubsection[{isNamingContext}]{\setlength{\rightskip}{0pt plus 5cm}bool RTC::CorbaNaming::isNamingContext (CORBA::Object\_\-ptr {\em obj})}\label{classRTC_1_1CorbaNaming_a09ea40e547b2bf66f2a18f6f186c69d9}
+
+
+オブジェクトがネーミングコンテキストか判別する 
+
+指定した要素がネーミングコンテキストか判別する
+
+
+\begin{DoxyParams}{引数}
+\item[{\em obj}]判別対象要素\end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+判別結果(ネーミングコンテキスト:true、それ以外:false) 
+\end{DoxyReturn}
+\index{RTC::CorbaNaming@{RTC::CorbaNaming}!list@{list}}
+\index{list@{list}!RTC::CorbaNaming@{RTC::CorbaNaming}}
+\subsubsection[{list}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::CorbaNaming::list (CosNaming::NamingContext\_\-ptr {\em name\_\-cxt}, \/  CORBA::ULong {\em how\_\-many}, \/  CosNaming::BindingList\_\-var \& {\em bl}, \/  CosNaming::BindingIterator\_\-var \& {\em bi})}\label{classRTC_1_1CorbaNaming_ac05f8ec66b2e1dc41100fef4dd2c09fd}
+
+
+与えられた NamingContext の Binding を取得する 
+
+指定された NamingContext の Binding を取得する。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em name\_\-cxt}]Binding 取得対象 NamingContext \item[{\em how\_\-many}]Binding を取得する階層の深さ \item[{\em bl}]取得した Binding を保持するホルダ \item[{\em bi}]取得した Binding をたどるためのイテレータ \end{DoxyParams}
+\index{RTC::CorbaNaming@{RTC::CorbaNaming}!nameToString@{nameToString}}
+\index{nameToString@{nameToString}!RTC::CorbaNaming@{RTC::CorbaNaming}}
+\subsubsection[{nameToString}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::CorbaNaming::nameToString (const CosNaming::Name \& {\em name}, \/  char $\ast$ {\em string\_\-name}, \/  CORBA::ULong {\em slen})\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC_1_1CorbaNaming_a7d8bf6f90e7f39fbdf15d4037e9528f4}
+
+
+ネームコンポーネントの文字列表現を取得する 
+
+指定した範囲のネームコンポーネントの文字列表現を取得する。 文字列表現は、NameComponentの構成が\{Nc[0], Nc[1], Nc[2]...\}の場合、 Nc[0]id.Nc[0].kind/Nc[1]id.Nc[1].kind/Nc[2].id/Nc[2].kind... という形式で取得できる。 取得した文字列の長さが指定した長さ以上の場合は、 指定した長さで切り捨てられる。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em name}]取得対象NameComponent \item[{\em string\_\-name}]取得結果文字列 \item[{\em slen}]取得対象文字列最大値 \end{DoxyParams}
+\index{RTC::CorbaNaming@{RTC::CorbaNaming}!newContext@{newContext}}
+\index{newContext@{newContext}!RTC::CorbaNaming@{RTC::CorbaNaming}}
+\subsubsection[{newContext}]{\setlength{\rightskip}{0pt plus 5cm}CosNaming::NamingContext\_\-ptr RTC::CorbaNaming::newContext ()}\label{classRTC_1_1CorbaNaming_a919496be1e542edf68184dbe6dec3eb9}
+
+
+新しいコンテキストを生成する 
+
+与えられたネームサーバ上で生成された NamingContext を返す。 返された NamingContext は bind されていない。
+
+\begin{DoxyReturn}{戻り値}
+生成された新しい NamingContext 
+\end{DoxyReturn}
+\index{RTC::CorbaNaming@{RTC::CorbaNaming}!rebind@{rebind}}
+\index{rebind@{rebind}!RTC::CorbaNaming@{RTC::CorbaNaming}}
+\subsubsection[{rebind}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::CorbaNaming::rebind (const CosNaming::Name \& {\em name}, \/  CORBA::Object\_\-ptr {\em obj}, \/  const bool {\em force} = {\ttfamily 1})  throw ({\bf SystemException}, {\bf NotFound}, {\bf CannotProceed}, {\bf InvalidName})}\label{classRTC_1_1CorbaNaming_a45418a54e9f7dabac0aac79ca232fc76}
+
+
+Object を rebind する. 
+
+name で指定された Binding がすでに存在する場合を除いて \doxyref{bind()}{p.}{classRTC_1_1CorbaNaming_ac21620f79aecc1bf989629b7aac2938f} と同じ である。バインディングがすでに存在する場合には、新しいバインディングに 置き換えられる。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em name}]オブジェクトに付ける名前の NameComponent \item[{\em obj}]関連付けられるオブジェクト \item[{\em force}]trueの場合、途中のコンテキストを強制的にバインドする (デフォルト値:true)\end{DoxyParams}
+
+\begin{DoxyExceptions}{例外}
+\item[{\em NotFound}]途中の $<$c\_\-1, c\_\-2, ..., c\_\-(n-\/1)$>$ が存在しない。 \item[{\em CannotProceed}]何らかの理由で処理を継続できない。 \item[{\em InvalidName}]名前 name が不正 \end{DoxyExceptions}
+\index{RTC::CorbaNaming@{RTC::CorbaNaming}!rebindByString@{rebindByString}}
+\index{rebindByString@{rebindByString}!RTC::CorbaNaming@{RTC::CorbaNaming}}
+\subsubsection[{rebindByString}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::CorbaNaming::rebindByString (const char $\ast$ {\em string\_\-name}, \/  CORBA::Object\_\-ptr {\em obj}, \/  const bool {\em force} = {\ttfamily 1})  throw ({\bf SystemException}, {\bf NotFound}, {\bf CannotProceed}, {\bf InvalidName})}\label{classRTC_1_1CorbaNaming_aa33c587d4d1068bc51de94199ce978b8}
+
+
+Object を rebind する. 
+
+Object を rebind する際に与える名前が文字列表現であること以外は \doxyref{rebind()}{p.}{classRTC_1_1CorbaNaming_a45418a54e9f7dabac0aac79ca232fc76} と同じである。rebind(toName(string\_\-name), obj) と等価。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em string\_\-name}]オブジェクトに付ける名前の文字列表現 \item[{\em obj}]関連付けられるオブジェクト \item[{\em force}]trueの場合、途中のコンテキストを強制的にバインドする (デフォルト値:true)\end{DoxyParams}
+
+\begin{DoxyExceptions}{例外}
+\item[{\em NotFound}]途中の $<$c\_\-1, c\_\-2, ..., c\_\-(n-\/1)$>$ が存在しない。 \item[{\em CannotProceed}]何らかの理由で処理を継続できない。 \item[{\em InvalidName}]引数 name の名前が不正。 \end{DoxyExceptions}
+\index{RTC::CorbaNaming@{RTC::CorbaNaming}!rebindContext@{rebindContext}}
+\index{rebindContext@{rebindContext}!RTC::CorbaNaming@{RTC::CorbaNaming}}
+\subsubsection[{rebindContext}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::CorbaNaming::rebindContext (const char $\ast$ {\em string\_\-name}, \/  CosNaming::NamingContext\_\-ptr {\em name\_\-cxt}, \/  const bool {\em force} = {\ttfamily 1})  throw ({\bf SystemException}, {\bf NotFound}, {\bf CannotProceed}, {\bf InvalidName})}\label{classRTC_1_1CorbaNaming_ad21536c2439d8243ae43ec453a46501d}
+
+
+NamingContext を rebind する. 
+
+name で指定されたコンテキストがすでに存在する場合を除いて \doxyref{bindContext()}{p.}{classRTC_1_1CorbaNaming_a1eaa278d91546b514fdf361a0bfcbf87} と同じである。 バインディングがすでに存在する場合には、新しいバインディングに 置き換えられる。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em string\_\-name}]オブジェクトに付ける名前の文字列表現 \item[{\em name\_\-cxt}]関連付けられる NamingContext \item[{\em force}]trueの場合、途中のコンテキストを強制的にバインドする (デフォルト値:true)\end{DoxyParams}
+
+\begin{DoxyExceptions}{例外}
+\item[{\em NotFound}]途中の $<$c\_\-1, c\_\-2, ..., c\_\-(n-\/1)$>$ が存在しない。 \item[{\em CannotProceed}]何らかの理由で処理を継続できない。 \item[{\em InvalidName}]引数 name の名前が不正。 \end{DoxyExceptions}
+\index{RTC::CorbaNaming@{RTC::CorbaNaming}!rebindContext@{rebindContext}}
+\index{rebindContext@{rebindContext}!RTC::CorbaNaming@{RTC::CorbaNaming}}
+\subsubsection[{rebindContext}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::CorbaNaming::rebindContext (const CosNaming::Name \& {\em name}, \/  CosNaming::NamingContext\_\-ptr {\em name\_\-cxt}, \/  const bool {\em force} = {\ttfamily 1})  throw ({\bf SystemException}, {\bf NotFound}, {\bf CannotProceed}, {\bf InvalidName})}\label{classRTC_1_1CorbaNaming_afd9649388ba4f49b53d036b50e311df0}
+
+
+NamingContext を rebind する. 
+
+name で指定されたコンテキストがすでに存在する場合を除いて \doxyref{bindContext()}{p.}{classRTC_1_1CorbaNaming_a1eaa278d91546b514fdf361a0bfcbf87} と同じである。 バインディングがすでに存在する場合には、新しいバインディングに 置き換えられる。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em name}]オブジェクトに付ける名前のネームコンポーネント \item[{\em name\_\-cxt}]関連付けられる NamingContext \item[{\em force}]trueの場合、途中のコンテキストを強制的にバインドする (デフォルト値:true)\end{DoxyParams}
+
+\begin{DoxyExceptions}{例外}
+\item[{\em NotFound}]途中の $<$c\_\-1, c\_\-2, ..., c\_\-(n-\/1)$>$ が存在しない。 \item[{\em CannotProceed}]何らかの理由で処理を継続できない。 \item[{\em InvalidName}]引数 name の名前が不正。 \end{DoxyExceptions}
+\index{RTC::CorbaNaming@{RTC::CorbaNaming}!rebindContextRecursive@{rebindContextRecursive}}
+\index{rebindContextRecursive@{rebindContextRecursive}!RTC::CorbaNaming@{RTC::CorbaNaming}}
+\subsubsection[{rebindContextRecursive}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::CorbaNaming::rebindContextRecursive (CosNaming::NamingContext\_\-ptr {\em context}, \/  const CosNaming::Name \& {\em name}, \/  CosNaming::NamingContext\_\-ptr {\em name\_\-cxt})}\label{classRTC_1_1CorbaNaming_a481771ab96cc9e24339dd288216e5154}
+
+
+途中のコンテキストを再帰的に rebind し NamingContext を rebind する 
+
+bind されるオブジェクトが NamingContext であることを除いて \doxyref{rebindRecursive()}{p.}{classRTC_1_1CorbaNaming_a44d87abf8edc49237f4f9da204b0fe24} と同じである。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em context}]bind を開始する　NamingContext \item[{\em name}]オブジェクトに付ける名前の NameComponent \item[{\em name\_\-cxt}]関連付けられる NamingContext \end{DoxyParams}
+\index{RTC::CorbaNaming@{RTC::CorbaNaming}!rebindRecursive@{rebindRecursive}}
+\index{rebindRecursive@{rebindRecursive}!RTC::CorbaNaming@{RTC::CorbaNaming}}
+\subsubsection[{rebindRecursive}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::CorbaNaming::rebindRecursive (CosNaming::NamingContext\_\-ptr {\em context}, \/  const CosNaming::Name \& {\em name}, \/  CORBA::Object\_\-ptr {\em obj})  throw ({\bf SystemException}, {\bf CannotProceed}, {\bf InvalidName})}\label{classRTC_1_1CorbaNaming_a44d87abf8edc49237f4f9da204b0fe24}
+
+
+途中のコンテキストを bind しながら Object を rebind する 
+
+name $<$c\_\-n$>$ で指定された NamingContext もしくは Object がすでに存在する 場合を除いて \doxyref{bindRecursive()}{p.}{classRTC_1_1CorbaNaming_a5417cf439f8efd84f9d13d212f9e62bd} と同じである。
+
+name $<$c\_\-n$>$ で指定されたバインディングがすでに存在する場合には、 新しいバインディングに置き換えられる。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em context}]bind を開始する　NamingContext \item[{\em name}]オブジェクトに付ける名前の NameComponent \item[{\em obj}]関連付けられるオブジェクト\end{DoxyParams}
+
+\begin{DoxyExceptions}{例外}
+\item[{\em CannotProceed}]途中のコンテキストが解決できない。 \item[{\em InvalidName}]与えられた name が不正。 \end{DoxyExceptions}
+\index{RTC::CorbaNaming@{RTC::CorbaNaming}!resolve@{resolve}}
+\index{resolve@{resolve}!RTC::CorbaNaming@{RTC::CorbaNaming}}
+\subsubsection[{resolve}]{\setlength{\rightskip}{0pt plus 5cm}CORBA::Object\_\-ptr RTC::CorbaNaming::resolve (const char $\ast$ {\em string\_\-name})  throw ({\bf SystemException}, {\bf NotFound}, {\bf CannotProceed}, {\bf InvalidName})}\label{classRTC_1_1CorbaNaming_a6127eec83159c0057bc309c6d7e5d2d5}
+
+
+与えられた NameComponent にバインドされている Object を返す 
+
+name に bind されているオブジェクト参照を返す。 ネームコンポーネント $<$c\_\-1, c\_\-2, ... c\_\-n$>$ は再帰的に解決される。
+
+CosNaming::resolve() とほぼ同等の働きをするが、常に与えられた ネームサーバのルートコンテキストに対して \doxyref{resolve()}{p.}{classRTC_1_1CorbaNaming_aa5fdd805e58b5640360eecbd9ec48f9b} が呼び出される点が 異なる。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em string\_\-name}]解決すべきオブジェクトの名前の文字列表現\end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+解決されたオブジェクト参照
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{例外}
+\item[{\em NotFound}]途中の $<$c\_\-1, c\_\-2, ..., c\_\-(n-\/1)$>$ が存在しない。 \item[{\em CannotProceed}]何らかの理由で処理を継続できない。 \item[{\em InvalidName}]引数 name の名前が不正。 \end{DoxyExceptions}
+\index{RTC::CorbaNaming@{RTC::CorbaNaming}!resolve@{resolve}}
+\index{resolve@{resolve}!RTC::CorbaNaming@{RTC::CorbaNaming}}
+\subsubsection[{resolve}]{\setlength{\rightskip}{0pt plus 5cm}CORBA::Object\_\-ptr RTC::CorbaNaming::resolve (const CosNaming::Name \& {\em name})  throw ({\bf SystemException}, {\bf NotFound}, {\bf CannotProceed}, {\bf InvalidName})}\label{classRTC_1_1CorbaNaming_aa5fdd805e58b5640360eecbd9ec48f9b}
+
+
+与えられた NameComponent にバインドされている Object を返す 
+
+name に bind されているオブジェクト参照を返す。 ネームコンポーネント $<$c\_\-1, c\_\-2, ... c\_\-n$>$ は再帰的に解決される。
+
+CosNaming::resolve() とほぼ同等の働きをするが、常に与えられた ネームサーバのルートコンテキストに対して \doxyref{resolve()}{p.}{classRTC_1_1CorbaNaming_aa5fdd805e58b5640360eecbd9ec48f9b} が呼び出される点が 異なる。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em name}]解決すべきオブジェクトの名前のネームコンポーネント\end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+解決されたオブジェクト参照
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{例外}
+\item[{\em NotFound}]途中の $<$c\_\-1, c\_\-2, ..., c\_\-(n-\/1)$>$ が存在しない。 \item[{\em CannotProceed}]何らかの理由で処理を継続できない。 \item[{\em InvalidName}]引数 name の名前が不正。 \end{DoxyExceptions}
+\index{RTC::CorbaNaming@{RTC::CorbaNaming}!resolveStr@{resolveStr}}
+\index{resolveStr@{resolveStr}!RTC::CorbaNaming@{RTC::CorbaNaming}}
+\subsubsection[{resolveStr}]{\setlength{\rightskip}{0pt plus 5cm}CORBA::Object\_\-ptr RTC::CorbaNaming::resolveStr (const char $\ast$ {\em string\_\-name})  throw ({\bf SystemException}, {\bf NotFound}, {\bf CannotProceed},             {\bf InvalidName}, {\bf AlreadyBound})}\label{classRTC_1_1CorbaNaming_a0046eede262912d6da405d482f8e0153}
+
+
+与えられた文字列表現を resolve しオブジェクトを返す 
+
+指定された文字列表現をresolveし，オブジェクトを取得する。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em string\_\-name}]取得対象オブジェクト文字列表現\end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+解決されたオブジェクト
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{例外}
+\item[{\em NotFound}]途中の $<$c\_\-1, c\_\-2, ..., c\_\-(n-\/1)$>$ が存在しない。 \item[{\em CannotProceed}]何らかの理由で処理を継続できない。 \item[{\em InvalidName}]引数 name の名前が不正。 \item[{\em AlreadyBound}]name $<$n$>$ の Object がすでにバインドされている。 \end{DoxyExceptions}
+\index{RTC::CorbaNaming@{RTC::CorbaNaming}!split@{split}}
+\index{split@{split}!RTC::CorbaNaming@{RTC::CorbaNaming}}
+\subsubsection[{split}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int RTC::CorbaNaming::split (const std::string \& {\em input}, \/  const std::string \& {\em delimiter}, \/  std::vector$<$ std::string $>$ \& {\em results})\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC_1_1CorbaNaming_a9a5a03d8e244a0fa65a25337fe98a74a}
+
+
+文字列の分割 
+
+文字列を指定したデリミタで分割する。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em input}]分割対象文字列 \item[{\em delimiter}]分割用デリミタ \item[{\em results}]分割結果\end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+分割した文字列の要素数 
+\end{DoxyReturn}
+\index{RTC::CorbaNaming@{RTC::CorbaNaming}!subName@{subName}}
+\index{subName@{subName}!RTC::CorbaNaming@{RTC::CorbaNaming}}
+\subsubsection[{subName}]{\setlength{\rightskip}{0pt plus 5cm}CosNaming::Name RTC::CorbaNaming::subName (const CosNaming::Name \& {\em name}, \/  CORBA::Long {\em begin}, \/  CORBA::Long {\em end} = {\ttfamily -\/1})}\label{classRTC_1_1CorbaNaming_a28d5186a7f916a4216fe508557cafac4}
+
+
+ネームコンポーネントの部分を返す 
+
+指定された範囲のネームコンポーネントを取得する。 終了位置が指定されていない場合は、最後の要素を除いたネームコンポーネント を返す。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em name}]検索対象NameComponent \item[{\em begin}]取得範囲開始位置 \item[{\em end}]取得範囲終了位置(デフォルト値:-\/1)\end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+NameComponent 取得結果 
+\end{DoxyReturn}
+\index{RTC::CorbaNaming@{RTC::CorbaNaming}!toName@{toName}}
+\index{toName@{toName}!RTC::CorbaNaming@{RTC::CorbaNaming}}
+\subsubsection[{toName}]{\setlength{\rightskip}{0pt plus 5cm}CosNaming::Name RTC::CorbaNaming::toName (const char $\ast$ {\em string\_\-name})  throw ({\bf SystemException}, {\bf InvalidName})}\label{classRTC_1_1CorbaNaming_a145435b772577b4ab4be1c6cee39296e}
+
+
+与えられた文字列表現を NameComponent に分解する 
+
+指定された文字列を NameComponent に変換する。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em string\_\-name}]変換対象文字列\end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+NameComponent 変換結果
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{例外}
+\item[{\em InvalidName}]引数 string\_\-name が不正。 \end{DoxyExceptions}
+\index{RTC::CorbaNaming@{RTC::CorbaNaming}!toString@{toString}}
+\index{toString@{toString}!RTC::CorbaNaming@{RTC::CorbaNaming}}
+\subsubsection[{toString}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ RTC::CorbaNaming::toString (const CosNaming::Name \& {\em name})  throw ({\bf SystemException}, {\bf InvalidName})}\label{classRTC_1_1CorbaNaming_a2b6bc9675b2aa4bc36a6df7087fff86b}
+
+
+与えられた NameComponent の文字列表現を返す 
+
+指定された NameComponent を文字に変換する。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em name}]変換対象 NameComponent\end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+文字列変換結果
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{例外}
+\item[{\em InvalidName}]引数 name の名前が不正。 \end{DoxyExceptions}
+\index{RTC::CorbaNaming@{RTC::CorbaNaming}!toUrl@{toUrl}}
+\index{toUrl@{toUrl}!RTC::CorbaNaming@{RTC::CorbaNaming}}
+\subsubsection[{toUrl}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ RTC::CorbaNaming::toUrl (char $\ast$ {\em addr}, \/  char $\ast$ {\em string\_\-name})  throw ({\bf SystemException}, {\bf InvalidAddress}, {\bf InvalidName})}\label{classRTC_1_1CorbaNaming_a039f66a7b938c7d20f8a5990af2746ab}
+
+
+与えられた addre と string\_\-name から URL表現を取得する 
+
+指定されたアドレスと名称をURLに変換する。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em addr}]変換対象アドレス \item[{\em string\_\-name}]変換対象名称\end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+URL 変換結果
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{例外}
+\item[{\em InvalidAddress}]引数 addr が不正。 \item[{\em InvalidName}]引数 string\_\-name が不正。 \end{DoxyExceptions}
+\index{RTC::CorbaNaming@{RTC::CorbaNaming}!unbind@{unbind}}
+\index{unbind@{unbind}!RTC::CorbaNaming@{RTC::CorbaNaming}}
+\subsubsection[{unbind}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::CorbaNaming::unbind (const char $\ast$ {\em string\_\-name})  throw ({\bf SystemException}, {\bf NotFound}, {\bf CannotProceed}, {\bf InvalidName})}\label{classRTC_1_1CorbaNaming_a7b024033bc92afd1cf5d7cf0a75e4c3e}
+
+
+与えられた NameComponent のバインディングを削除する 
+
+name に bind されているオブジェクト参照を返す。 ネームコンポーネント $<$c\_\-1, c\_\-2, ... c\_\-n$>$ は再帰的に解決される。
+
+CosNaming::unbind() とほぼ同等の働きをするが、常に与えられた ネームサーバのルートコンテキストに対して \doxyref{unbind()}{p.}{classRTC_1_1CorbaNaming_a4b2f8435380f383834687f9253323980} が呼び出される点が 異なる。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em string\_\-name}]解決すべきオブジェクトの名前の文字列表現\end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+解決されたオブジェクト参照
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{例外}
+\item[{\em NotFound}]途中の $<$c\_\-1, c\_\-2, ..., c\_\-(n-\/1)$>$ が存在しない。 \item[{\em CannotProceed}]何らかの理由で処理を継続できない。 \item[{\em InvalidName}]引数 name の名前が不正。 \end{DoxyExceptions}
+\index{RTC::CorbaNaming@{RTC::CorbaNaming}!unbind@{unbind}}
+\index{unbind@{unbind}!RTC::CorbaNaming@{RTC::CorbaNaming}}
+\subsubsection[{unbind}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::CorbaNaming::unbind (const CosNaming::Name \& {\em name})  throw ({\bf SystemException}, {\bf NotFound}, {\bf CannotProceed}, {\bf InvalidName})}\label{classRTC_1_1CorbaNaming_a4b2f8435380f383834687f9253323980}
+
+
+与えられた NameComponent のバインディングを削除する 
+
+name に bind されているオブジェクト参照を返す。 ネームコンポーネント $<$c\_\-1, c\_\-2, ... c\_\-n$>$ は再帰的に解決される。
+
+CosNaming::unbind() とほぼ同等の働きをするが、常に与えられた ネームサーバのルートコンテキストに対して \doxyref{unbind()}{p.}{classRTC_1_1CorbaNaming_a4b2f8435380f383834687f9253323980} が呼び出される点が 異なる。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em name}]削除するオブジェクトのネームコンポーネント\end{DoxyParams}
+
+\begin{DoxyExceptions}{例外}
+\item[{\em NotFound}]途中の $<$c\_\-1, c\_\-2, ..., c\_\-(n-\/1)$>$ が存在しない。 \item[{\em CannotProceed}]何らかの理由で処理を継続できない。 \item[{\em InvalidName}]引数 name の名前が不正。 \end{DoxyExceptions}
+
+
+\subsection{変数}
+\index{RTC::CorbaNaming@{RTC::CorbaNaming}!m\_\-nameServer@{m\_\-nameServer}}
+\index{m\_\-nameServer@{m\_\-nameServer}!RTC::CorbaNaming@{RTC::CorbaNaming}}
+\subsubsection[{m\_\-nameServer}]{\setlength{\rightskip}{0pt plus 5cm}std::string {\bf RTC::CorbaNaming::m\_\-nameServer}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC_1_1CorbaNaming_a55ba13ccbb69dad6e339625bdfd1336d}
+
+
+ネームサーバ名称 
+
+\index{RTC::CorbaNaming@{RTC::CorbaNaming}!m\_\-rootContext@{m\_\-rootContext}}
+\index{m\_\-rootContext@{m\_\-rootContext}!RTC::CorbaNaming@{RTC::CorbaNaming}}
+\subsubsection[{m\_\-rootContext}]{\setlength{\rightskip}{0pt plus 5cm}CosNaming::NamingContextExt\_\-var {\bf RTC::CorbaNaming::m\_\-rootContext}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC_1_1CorbaNaming_a3655f851970b9b4f9cfa4181f6847a82}
+
+
+指定したネームサーバのルートコンテキスト 
+
+\index{RTC::CorbaNaming@{RTC::CorbaNaming}!m\_\-varORB@{m\_\-varORB}}
+\index{m\_\-varORB@{m\_\-varORB}!RTC::CorbaNaming@{RTC::CorbaNaming}}
+\subsubsection[{m\_\-varORB}]{\setlength{\rightskip}{0pt plus 5cm}CORBA::ORB\_\-var {\bf RTC::CorbaNaming::m\_\-varORB}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC_1_1CorbaNaming_a49fb01cad296636d256d52b7c4295544}
+
+
+ORB. 
+

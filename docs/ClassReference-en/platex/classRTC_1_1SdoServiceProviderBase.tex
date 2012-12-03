@@ -1,0 +1,60 @@
+\section{RTC::SdoServiceProviderBase Class Reference}
+\label{classRTC_1_1SdoServiceProviderBase}\index{RTC::SdoServiceProviderBase@{RTC::SdoServiceProviderBase}}
+
+
+{\ttfamily \#include $<$SdoServiceProviderBase.h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual {\bf $\sim$SdoServiceProviderBase} ()
+\begin{DoxyCompactList}\small\item\em virtual destructor \item\end{DoxyCompactList}\item 
+virtual bool {\bf init} ({\bf RTObject\_\-impl} \&rtobj, const SDOPackage::ServiceProfile \&profile)=0
+\begin{DoxyCompactList}\small\item\em Initialization function of the consumer class. \item\end{DoxyCompactList}\item 
+virtual bool {\bf reinit} (const SDOPackage::ServiceProfile \&profile)=0
+\begin{DoxyCompactList}\small\item\em Reinitialization function of the consumer class. \item\end{DoxyCompactList}\item 
+virtual const SDOPackage::ServiceProfile \& {\bf getProfile} () const =0
+\begin{DoxyCompactList}\small\item\em Getting ServiceProfile. \item\end{DoxyCompactList}\item 
+virtual void {\bf finalize} ()=0
+\begin{DoxyCompactList}\small\item\em Finalization. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{RTC::SdoServiceProviderBase@{RTC::SdoServiceProviderBase}!$\sim$SdoServiceProviderBase@{$\sim$SdoServiceProviderBase}}
+\index{$\sim$SdoServiceProviderBase@{$\sim$SdoServiceProviderBase}!RTC::SdoServiceProviderBase@{RTC::SdoServiceProviderBase}}
+\subsubsection[{$\sim$SdoServiceProviderBase}]{\setlength{\rightskip}{0pt plus 5cm}virtual RTC::SdoServiceProviderBase::$\sim$SdoServiceProviderBase ()\hspace{0.3cm}{\ttfamily  [inline, virtual]}}\label{classRTC_1_1SdoServiceProviderBase_ad74328fa5ae13ec24ce8bfc8851d35cf}
+
+
+virtual destructor 
+
+
+
+\subsection{Member Function Documentation}
+\index{RTC::SdoServiceProviderBase@{RTC::SdoServiceProviderBase}!finalize@{finalize}}
+\index{finalize@{finalize}!RTC::SdoServiceProviderBase@{RTC::SdoServiceProviderBase}}
+\subsubsection[{finalize}]{\setlength{\rightskip}{0pt plus 5cm}virtual void RTC::SdoServiceProviderBase::finalize ()\hspace{0.3cm}{\ttfamily  [pure virtual]}}\label{classRTC_1_1SdoServiceProviderBase_ae95e77b0ec508bdf224467498b824659}
+
+
+Finalization. 
+
+\index{RTC::SdoServiceProviderBase@{RTC::SdoServiceProviderBase}!getProfile@{getProfile}}
+\index{getProfile@{getProfile}!RTC::SdoServiceProviderBase@{RTC::SdoServiceProviderBase}}
+\subsubsection[{getProfile}]{\setlength{\rightskip}{0pt plus 5cm}virtual const SDOPackage::ServiceProfile\& RTC::SdoServiceProviderBase::getProfile () const\hspace{0.3cm}{\ttfamily  [pure virtual]}}\label{classRTC_1_1SdoServiceProviderBase_ae29ad8a716bdd57ed7c737b5f0def6c1}
+
+
+Getting ServiceProfile. 
+
+\index{RTC::SdoServiceProviderBase@{RTC::SdoServiceProviderBase}!init@{init}}
+\index{init@{init}!RTC::SdoServiceProviderBase@{RTC::SdoServiceProviderBase}}
+\subsubsection[{init}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool RTC::SdoServiceProviderBase::init ({\bf RTObject\_\-impl} \& {\em rtobj}, \/  const SDOPackage::ServiceProfile \& {\em profile})\hspace{0.3cm}{\ttfamily  [pure virtual]}}\label{classRTC_1_1SdoServiceProviderBase_aaded0e28430b3a14fa894ceb73cf4616}
+
+
+Initialization function of the consumer class. 
+
+\index{RTC::SdoServiceProviderBase@{RTC::SdoServiceProviderBase}!reinit@{reinit}}
+\index{reinit@{reinit}!RTC::SdoServiceProviderBase@{RTC::SdoServiceProviderBase}}
+\subsubsection[{reinit}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool RTC::SdoServiceProviderBase::reinit (const SDOPackage::ServiceProfile \& {\em profile})\hspace{0.3cm}{\ttfamily  [pure virtual]}}\label{classRTC_1_1SdoServiceProviderBase_a125f6f0482326ef7054e1f1cf0485c83}
+
+
+Reinitialization function of the consumer class. 
+

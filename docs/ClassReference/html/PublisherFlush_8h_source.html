@@ -1,0 +1,132 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<title>OpenRTM: PublisherFlush.h ソースファイル</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<!-- 作成： Doxygen 1.6.3 -->
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="index.html"><span>メインページ</span></a></li>
+      <li><a href="namespaces.html"><span>ネームスペース</span></a></li>
+      <li><a href="annotated.html"><span>クラス</span></a></li>
+      <li class="current"><a href="files.html"><span>ファイル</span></a></li>
+    </ul>
+  </div>
+  <div class="tabs">
+    <ul>
+      <li><a href="files.html"><span>ファイル一覧</span></a></li>
+      <li><a href="globals.html"><span>ファイルメンバ</span></a></li>
+    </ul>
+  </div>
+<h1>PublisherFlush.h</h1><a href="PublisherFlush_8h.html">説明を見る。</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="comment">// -*- C++ -*-</span>
+<a name="l00020"></a>00020 <span class="comment"></span><span class="preprocessor">#ifndef RTC_PUBLISHERFLUSH_H</span>
+<a name="l00021"></a>00021 <span class="preprocessor"></span><span class="preprocessor">#define RTC_PUBLISHERFLUSH_H</span>
+<a name="l00022"></a>00022 <span class="preprocessor"></span>
+<a name="l00023"></a>00023 <span class="preprocessor">#include &lt;<a class="code" href="Condition_8h.html">coil/Condition.h</a>&gt;</span>
+<a name="l00024"></a>00024 <span class="preprocessor">#include &lt;<a class="code" href="PublisherBase_8h.html" title="Publisher base class.">rtm/PublisherBase.h</a>&gt;</span>
+<a name="l00025"></a>00025 <span class="preprocessor">#include &lt;<a class="code" href="SystemLogger_8h.html" title="RT component logger class.">rtm/SystemLogger.h</a>&gt;</span>
+<a name="l00026"></a>00026 <span class="preprocessor">#include &lt;<a class="code" href="ConnectorBase_8h.html" title="Connector base class.">rtm/ConnectorBase.h</a>&gt;</span>
+<a name="l00027"></a>00027 <span class="preprocessor">#include &lt;<a class="code" href="ConnectorListener_8h.html" title="connector listener class">rtm/ConnectorListener.h</a>&gt;</span>
+<a name="l00028"></a>00028 
+<a name="l00029"></a>00029 <span class="keyword">namespace </span>coil
+<a name="l00030"></a>00030 {
+<a name="l00031"></a>00031   <span class="keyword">class </span><a class="code" href="namespaceRTC.html#a59713fe4d015f5d49505ff87272058a1">Properties</a>;
+<a name="l00032"></a>00032 };
+<a name="l00033"></a>00033 
+<a name="l00034"></a>00034 <span class="keyword">namespace </span>RTC
+<a name="l00035"></a>00035 {
+<a name="l00036"></a>00036   <span class="keyword">class </span>InPortConsumer;
+<a name="l00037"></a>00037 
+<a name="l00058"></a><a class="code" href="classRTC_1_1PublisherFlush.html">00058</a>   <span class="keyword">class </span><a class="code" href="classRTC_1_1PublisherFlush.html" title="PublisherFlush クラス.">PublisherFlush</a>
+<a name="l00059"></a>00059     : <span class="keyword">public</span> <a class="code" href="classRTC_1_1PublisherBase.html" title="Publisher 基底クラス.">PublisherBase</a>
+<a name="l00060"></a>00060   {
+<a name="l00061"></a>00061   <span class="keyword">public</span>:
+<a name="l00062"></a><a class="code" href="classRTC_1_1PublisherFlush.html#a0b126166c45497fbec4a9e9a9f788efe">00062</a>     <span class="keyword">typedef</span> <a class="code" href="classcoil_1_1Mutex.html" title="Mutex クラス.">coil::Mutex</a> <a class="code" href="classcoil_1_1Mutex.html" title="Mutex クラス.">Mutex</a>;
+<a name="l00063"></a><a class="code" href="classRTC_1_1PublisherFlush.html#a09b7bebb83f30e55d3cf46ceb9533d6a">00063</a>     <span class="keyword">typedef</span> <a class="code" href="classcoil_1_1Condition.html">coil::Condition&lt;Mutex&gt;</a> <a class="code" href="classcoil_1_1Condition.html">Condition</a>;
+<a name="l00064"></a><a class="code" href="classRTC_1_1PublisherFlush.html#aa7e6e2ab96bed2a30c98a83b434aac78">00064</a>     <span class="keyword">typedef</span> <a class="code" href="classcoil_1_1Guard.html">coil::Guard&lt;coil::Mutex&gt;</a> <a class="code" href="classcoil_1_1Guard.html">Guard</a>;
+<a name="l00065"></a>00065     <a class="code" href="DataPortStatus_8h.html#a71942892127d0f2995c2610b1e22ef23" title="RTC::DataPortStatus 導入">DATAPORTSTATUS_ENUM</a>
+<a name="l00066"></a>00066 
+<a name="l00080"></a>00080     <a class="code" href="classRTC_1_1PublisherFlush.html#a488eda00a5d7f0522825470d9f1ec6c2">PublisherFlush</a>();
+<a name="l00081"></a>00081     
+<a name="l00095"></a>00095     <span class="keyword">virtual</span> <a class="code" href="classRTC_1_1PublisherFlush.html#a2c95ba8d90b64c3b92dd58456af629ff">~PublisherFlush</a>(<span class="keywordtype">void</span>);
+<a name="l00096"></a>00096 
+<a name="l00121"></a>00121     <span class="keyword">virtual</span> ReturnCode <a class="code" href="classRTC_1_1PublisherFlush.html#a89931a404b169f942de90e0493d39aa9" title="初期化">init</a>(<a class="code" href="classcoil_1_1Properties.html" title="プロパティセットを表現するクラス">coil::Properties</a>&amp; prop);
+<a name="l00122"></a>00122 
+<a name="l00148"></a>00148     <span class="keyword">virtual</span> ReturnCode <a class="code" href="classRTC_1_1PublisherFlush.html#afb12f77e4557f2419f6a61b031f4798f" title="InPortコンシューマのセット.">setConsumer</a>(<a class="code" href="classRTC_1_1InPortConsumer.html" title="InPortConsumer 抽象クラス.">InPortConsumer</a>* consumer);
+<a name="l00149"></a>00149 
+<a name="l00171"></a>00171     <span class="keyword">virtual</span> ReturnCode <a class="code" href="classRTC_1_1PublisherFlush.html#a2997f6f2d80fb4e278113740a6f628dd" title="バッファのセット">setBuffer</a>(<a class="code" href="classRTC_1_1BufferBase.html" title="BufferBase 抽象クラス.">CdrBufferBase</a>* buffer);
+<a name="l00172"></a>00172 
+<a name="l00206"></a>00206     virtual ::RTC::DataPortStatus::Enum
+<a name="l00207"></a>00207     <a class="code" href="classRTC_1_1PublisherFlush.html#a6297071d496c75c969b700832f32f595" title="リスナを設定する。">setListener</a>(<a class="code" href="classRTC_1_1ConnectorInfo.html" title="ConnectorInfo クラス.">ConnectorInfo</a>&amp; profile,
+<a name="l00208"></a>00208                 <a class="code" href="classRTC_1_1ConnectorListeners.html" title="ConnectorListeners クラス.">RTC::ConnectorListeners</a>* listeners);
+<a name="l00209"></a>00209 
+<a name="l00268"></a>00268     <span class="keyword">virtual</span> ReturnCode <a class="code" href="classRTC_1_1PublisherFlush.html#ad84eb745390b45d7c23730409a017787" title="データを書き込む">write</a>(<span class="keyword">const</span> cdrMemoryStream&amp; data,
+<a name="l00269"></a>00269                              <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> sec,
+<a name="l00270"></a>00270                              <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> usec);
+<a name="l00298"></a>00298     <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code" href="classRTC_1_1PublisherFlush.html#a8e6f548411b5956b73d8c3592f15da2a" title="アクティブ化確認">isActive</a>();
+<a name="l00299"></a>00299 
+<a name="l00325"></a>00325     <span class="keyword">virtual</span> ReturnCode <a class="code" href="classRTC_1_1PublisherFlush.html#ae9797c90a29dc02d477b4ec9d9fbad1c" title="アクティブ化する">activate</a>();
+<a name="l00326"></a>00326 
+<a name="l00352"></a>00352     <span class="keyword">virtual</span> ReturnCode <a class="code" href="classRTC_1_1PublisherFlush.html#a5d288cbf168685dc2c85578b0f4485c1" title="非アクティブ化する">deactivate</a>();
+<a name="l00353"></a>00353 
+<a name="l00354"></a>00354   <span class="keyword">protected</span>:
+<a name="l00364"></a><a class="code" href="classRTC_1_1PublisherFlush.html#a88f77e8b488b3025235af926587c89a5">00364</a>     <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="classRTC_1_1PublisherFlush.html#a88f77e8b488b3025235af926587c89a5" title="ON_SENDのリスナへ通知する。.">onSend</a>(<span class="keyword">const</span> cdrMemoryStream&amp; data)
+<a name="l00365"></a>00365     {
+<a name="l00366"></a>00366       m_listeners-&gt;
+<a name="l00367"></a>00367         connectorData_[<a class="code" href="namespaceRTC.html#aecdfe03a1e91ff9522a322e4bcc9ed71ade969d56696df8c7c6a51906c4ae1ea1">ON_SEND</a>].notify(m_profile, data);
+<a name="l00368"></a>00368     }
+<a name="l00369"></a>00369 
+<a name="l00379"></a><a class="code" href="classRTC_1_1PublisherFlush.html#a03ce9f919e40c6a3b21c37d944310943">00379</a>     <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="classRTC_1_1PublisherFlush.html#a03ce9f919e40c6a3b21c37d944310943" title="ON_RECEIVEDのリスナへ通知する。.">onReceived</a>(<span class="keyword">const</span> cdrMemoryStream&amp; data)
+<a name="l00380"></a>00380     {
+<a name="l00381"></a>00381       m_listeners-&gt;
+<a name="l00382"></a>00382         connectorData_[<a class="code" href="namespaceRTC.html#aecdfe03a1e91ff9522a322e4bcc9ed71a34323d5b696fc0c210853079fec64531">ON_RECEIVED</a>].notify(m_profile, data);
+<a name="l00383"></a>00383     }
+<a name="l00384"></a>00384 
+<a name="l00394"></a><a class="code" href="classRTC_1_1PublisherFlush.html#adc8ff57907fc7a0c6ca4f625b6a7c2f2">00394</a>     <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="classRTC_1_1PublisherFlush.html#adc8ff57907fc7a0c6ca4f625b6a7c2f2" title="ON_RECEIVER_FULLのリスナへ通知する。.">onReceiverFull</a>(<span class="keyword">const</span> cdrMemoryStream&amp; data)
+<a name="l00395"></a>00395     {
+<a name="l00396"></a>00396       m_listeners-&gt;
+<a name="l00397"></a>00397         connectorData_[<a class="code" href="namespaceRTC.html#aecdfe03a1e91ff9522a322e4bcc9ed71afccba2b2ab28108db9484a9add6274d1">ON_RECEIVER_FULL</a>].notify(m_profile, data);
+<a name="l00398"></a>00398     }
+<a name="l00399"></a>00399 
+<a name="l00409"></a><a class="code" href="classRTC_1_1PublisherFlush.html#a2b568af9c0275c23cf9b5b1ec12ca392">00409</a>     <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="classRTC_1_1PublisherFlush.html#a2b568af9c0275c23cf9b5b1ec12ca392" title="ON_RECEIVER_TIMEOUTのリスナへ通知する。.">onReceiverTimeout</a>(<span class="keyword">const</span> cdrMemoryStream&amp; data)
+<a name="l00410"></a>00410     {
+<a name="l00411"></a>00411       m_listeners-&gt;
+<a name="l00412"></a>00412         connectorData_[<a class="code" href="namespaceRTC.html#aecdfe03a1e91ff9522a322e4bcc9ed71ab7cc2d421bd422c8204d0e5c416ed66d">ON_RECEIVER_TIMEOUT</a>].notify(m_profile, data);
+<a name="l00413"></a>00413     }
+<a name="l00414"></a>00414 
+<a name="l00424"></a><a class="code" href="classRTC_1_1PublisherFlush.html#a178e585fee9caa9eca408390870d0b93">00424</a>     <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="classRTC_1_1PublisherFlush.html#a178e585fee9caa9eca408390870d0b93" title="ON_RECEIVER_ERRORのリスナへ通知する。.">onReceiverError</a>(<span class="keyword">const</span> cdrMemoryStream&amp; data)
+<a name="l00425"></a>00425     {
+<a name="l00426"></a>00426       m_listeners-&gt;
+<a name="l00427"></a>00427         connectorData_[<a class="code" href="namespaceRTC.html#aecdfe03a1e91ff9522a322e4bcc9ed71af90f905d973375c8e12ffbb0e90050e1">ON_RECEIVER_ERROR</a>].notify(m_profile, data);
+<a name="l00428"></a>00428     }
+<a name="l00429"></a>00429     
+<a name="l00430"></a>00430   <span class="keyword">private</span>:
+<a name="l00431"></a>00431     <a class="code" href="classRTC_1_1Logger.html" title="Logger クラス.">Logger</a> rtclog;
+<a name="l00432"></a>00432     <a class="code" href="classRTC_1_1InPortConsumer.html" title="InPortConsumer 抽象クラス.">InPortConsumer</a>* m_consumer;
+<a name="l00433"></a>00433     <a class="code" href="classRTC_1_1ConnectorInfo.html" title="ConnectorInfo クラス.">ConnectorInfo</a> m_profile;
+<a name="l00434"></a>00434     <a class="code" href="classRTC_1_1ConnectorListeners.html" title="ConnectorListeners クラス.">ConnectorListeners</a>* m_listeners;
+<a name="l00435"></a>00435     ReturnCode m_retcode;
+<a name="l00436"></a>00436     <a class="code" href="classRTC_1_1PublisherFlush.html#a0b126166c45497fbec4a9e9a9f788efe">Mutex</a> m_retmutex;
+<a name="l00437"></a>00437     <span class="keywordtype">bool</span> m_active;
+<a name="l00438"></a>00438   };
+<a name="l00439"></a>00439 
+<a name="l00440"></a>00440 };     <span class="comment">// namespace RTC</span>
+<a name="l00441"></a>00441 
+<a name="l00442"></a>00442 <span class="keyword">extern</span> <span class="stringliteral">&quot;C&quot;</span>
+<a name="l00443"></a>00443 {
+<a name="l00444"></a>00444   <span class="keywordtype">void</span> <a class="code" href="RTC_8h.html#a1ca888bd091694c05472e1b91df1a97b">DLL_EXPORT</a> <a class="code" href="PublisherFlush_8h.html#ad447c06877d628ba2c86770600066117">PublisherFlushInit</a>();
+<a name="l00445"></a>00445 };
+<a name="l00446"></a>00446 
+<a name="l00447"></a>00447 <span class="preprocessor">#endif // RTC_PUBLISHERFLUSH_H</span>
+<a name="l00448"></a>00448 <span class="preprocessor"></span>
+</pre></div></div>
+<hr class="footer"/><address style="text-align: right;"><small>OpenRTMに対してThu May 24 23:25:18 2012に生成されました。&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.6.3 </small></address>
+</body>
+</html>

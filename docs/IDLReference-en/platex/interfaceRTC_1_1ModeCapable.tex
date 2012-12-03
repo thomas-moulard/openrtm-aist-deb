@@ -1,0 +1,121 @@
+\section{RTC::ModeCapable Interface Reference}
+\label{interfaceRTC_1_1ModeCapable}\index{RTC::ModeCapable@{RTC::ModeCapable}}
+
+
+\doxyref{ModeCapable}{p.}{interfaceRTC_1_1ModeCapable}.  
+
+
+
+
+{\ttfamily import \char`\"{}RTC.idl\char`\"{};}
+
+Inheritance diagram for RTC::ModeCapable:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2cm]{interfaceRTC_1_1ModeCapable}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Mode} {\bf get\_\-default\_\-mode} ()
+\begin{DoxyCompactList}\small\item\em get\_\-default\_\-mode \item\end{DoxyCompactList}\item 
+{\bf Mode} {\bf get\_\-current\_\-mode} ()
+\begin{DoxyCompactList}\small\item\em get\_\-current\_\-mode \item\end{DoxyCompactList}\item 
+{\bf Mode} {\bf get\_\-current\_\-mode\_\-in\_\-context} (in {\bf ExecutionContext} exec\_\-context)
+\begin{DoxyCompactList}\small\item\em get\_\-current\_\-mode\_\-in\_\-context \item\end{DoxyCompactList}\item 
+{\bf Mode} {\bf get\_\-pending\_\-mode} ()
+\begin{DoxyCompactList}\small\item\em get\_\-pending\_\-mode \item\end{DoxyCompactList}\item 
+{\bf Mode} {\bf get\_\-pending\_\-mode\_\-in\_\-context} (in {\bf ExecutionContext} exec\_\-context)
+\begin{DoxyCompactList}\small\item\em get\_\-pending\_\-mode\_\-in\_\-context \item\end{DoxyCompactList}\item 
+{\bf ReturnCode\_\-t} {\bf set\_\-mode} (in {\bf Mode} new\_\-mode, in boolean immediate)
+\begin{DoxyCompactList}\small\item\em set\_\-mode \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\doxyref{ModeCapable}{p.}{interfaceRTC_1_1ModeCapable}. \subsection{Description}\label{namespaceRTC_Description}
+The \doxyref{ModeCapable}{p.}{interfaceRTC_1_1ModeCapable} interface provides access to an object’s modes and a means to set the current mode.\subsection{Semantics}\label{namespaceRTC_Semantics}
+A given \doxyref{RTC}{p.}{namespaceRTC} may support multiple modes as well as multiple execution contexts. In such a case, a request for a mode change (e.g., from \char`\"{}cruise control on\char`\"{} to \char`\"{}cruise control off\char`\"{}) may come asynchronously with respect to one or more of those execution contexts. The mode of an \doxyref{RTC}{p.}{namespaceRTC} may therefore be observed to be different from one execution context to another. -\/ A mode is pending in a given execution context when a mode change has been requested but the new mode has not yet been observed by that context.
+
+
+\begin{DoxyItemize}
+\item The new mode has been committed in a given execution context when the context finally observes the new mode.
+\end{DoxyItemize}
+
+
+\begin{DoxyItemize}
+\item The new mode has stabilized once it has been committed in all execution contexts in which the \doxyref{RTC}{p.}{namespaceRTC} participates.
+\end{DoxyItemize}
+
+Figure 5.26 depicts a state machine that describes mode changes. Each parallel region in the composite state \doxyref{Mode}{p.}{interfaceRTC_1_1Mode} Pending represents an execution context. The trigger \char`\"{}sample\char`\"{} within that state is considered to have occurred: -\/ …just before the next call to on\_\-execute (see Section 5.3.1.2.1) in the case where immediate is false and the execution kind is PERIODIC, …
+
+
+\begin{DoxyItemize}
+\item …just before the processing of the next stimulus in the case where immediate is false and the execution kind is EVENT\_\-DRIVEN, or …-\/ …immediately in all other cases. 
+\end{DoxyItemize}
+
+\subsection{Member Function Documentation}
+\index{RTC::ModeCapable@{RTC::ModeCapable}!get\_\-current\_\-mode@{get\_\-current\_\-mode}}
+\index{get\_\-current\_\-mode@{get\_\-current\_\-mode}!RTC::ModeCapable@{RTC::ModeCapable}}
+\subsubsection[{get\_\-current\_\-mode}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Mode} RTC::ModeCapable::get\_\-current\_\-mode ()}\label{interfaceRTC_1_1ModeCapable_a2adc0d8a34dc2a166fb29fc4fdf49133}
+
+
+get\_\-current\_\-mode 
+
+\subsection{Description}\label{namespaceRTC_Description}
+This operation shall return the last mode to have stabilized. If no mode has been explicitly set, the current mode shall be the default mode.\subsection{Constraints}\label{interfaceRTC_1_1LightweightRTObject_Constraints}
+
+\begin{DoxyItemize}
+\item This operation shall never return nil. 
+\end{DoxyItemize}\index{RTC::ModeCapable@{RTC::ModeCapable}!get\_\-current\_\-mode\_\-in\_\-context@{get\_\-current\_\-mode\_\-in\_\-context}}
+\index{get\_\-current\_\-mode\_\-in\_\-context@{get\_\-current\_\-mode\_\-in\_\-context}!RTC::ModeCapable@{RTC::ModeCapable}}
+\subsubsection[{get\_\-current\_\-mode\_\-in\_\-context}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Mode} RTC::ModeCapable::get\_\-current\_\-mode\_\-in\_\-context (in {\bf ExecutionContext} {\em exec\_\-context})}\label{interfaceRTC_1_1ModeCapable_a7ac136a5b2af22d96574d794f51dd4d5}
+
+
+get\_\-current\_\-mode\_\-in\_\-context 
+
+\subsection{Description}\label{namespaceRTC_Description}
+This operation returns the current mode of the component as seen by the indicated execution context.\subsection{Semantics}\label{namespaceRTC_Semantics}
+The manner in which this property changes is described in Figure 5.26. \index{RTC::ModeCapable@{RTC::ModeCapable}!get\_\-default\_\-mode@{get\_\-default\_\-mode}}
+\index{get\_\-default\_\-mode@{get\_\-default\_\-mode}!RTC::ModeCapable@{RTC::ModeCapable}}
+\subsubsection[{get\_\-default\_\-mode}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Mode} RTC::ModeCapable::get\_\-default\_\-mode ()}\label{interfaceRTC_1_1ModeCapable_a5f086a75e4b1f22204bbb892b3062459}
+
+
+get\_\-default\_\-mode 
+
+\subsection{Description}\label{namespaceRTC_Description}
+This operation shall return the mode in which the \doxyref{RTC}{p.}{namespaceRTC} shall be when no other mode has been set.\subsection{Constraints}\label{interfaceRTC_1_1LightweightRTObject_Constraints}
+
+\begin{DoxyItemize}
+\item This operation shall not return nil. 
+\end{DoxyItemize}\index{RTC::ModeCapable@{RTC::ModeCapable}!get\_\-pending\_\-mode@{get\_\-pending\_\-mode}}
+\index{get\_\-pending\_\-mode@{get\_\-pending\_\-mode}!RTC::ModeCapable@{RTC::ModeCapable}}
+\subsubsection[{get\_\-pending\_\-mode}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Mode} RTC::ModeCapable::get\_\-pending\_\-mode ()}\label{interfaceRTC_1_1ModeCapable_a134b76f63a0f8003e983f17e9248c81b}
+
+
+get\_\-pending\_\-mode 
+
+\subsection{Description}\label{namespaceRTC_Description}
+This operation shall return the last mode to have been passed to set\_\-mode that has not yet stabilized. Once the RTC’s mode has stabilized, this operation shall return nil. \index{RTC::ModeCapable@{RTC::ModeCapable}!get\_\-pending\_\-mode\_\-in\_\-context@{get\_\-pending\_\-mode\_\-in\_\-context}}
+\index{get\_\-pending\_\-mode\_\-in\_\-context@{get\_\-pending\_\-mode\_\-in\_\-context}!RTC::ModeCapable@{RTC::ModeCapable}}
+\subsubsection[{get\_\-pending\_\-mode\_\-in\_\-context}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Mode} RTC::ModeCapable::get\_\-pending\_\-mode\_\-in\_\-context (in {\bf ExecutionContext} {\em exec\_\-context})}\label{interfaceRTC_1_1ModeCapable_a498bca5581602bc6421bfa9d3cde0f1d}
+
+
+get\_\-pending\_\-mode\_\-in\_\-context 
+
+\subsection{Description}\label{namespaceRTC_Description}
+If the last mode to be requested by a call to set\_\-mode is different than the current mode as seen by the indicated execution context (see get\_\-current\_\-mode\_\-in\_\-context), this operation returns the former. If the requested mode has already been seen in that context, it returns nil.\subsection{Semantics}\label{namespaceRTC_Semantics}
+See Figure 5.26 for a description of how the pending mode relates to the current mode within a given execution context. \index{RTC::ModeCapable@{RTC::ModeCapable}!set\_\-mode@{set\_\-mode}}
+\index{set\_\-mode@{set\_\-mode}!RTC::ModeCapable@{RTC::ModeCapable}}
+\subsubsection[{set\_\-mode}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ReturnCode\_\-t} RTC::ModeCapable::set\_\-mode (in {\bf Mode} {\em new\_\-mode}, \/  in boolean {\em immediate})}\label{interfaceRTC_1_1ModeCapable_a07a6b11c57aef34b362ebd8c3bf9a462}
+
+
+set\_\-mode 
+
+\subsection{Description}\label{namespaceRTC_Description}
+This operation shall request that the \doxyref{RTC}{p.}{namespaceRTC} change to the indicated mode.\subsection{Semantics}\label{namespaceRTC_Semantics}
+Usually, the new mode will be pending in each execution context in which the component executes until the next sample period (if the execution kind is PERIODIC); at that point it will become the current mode in that context and there will no longer be a pending mode. However, in some cases it is important for a mode change to take place immediately; for example, a serious fault has occurred and the component must enter an emergency mode to ensure fail-\/safe behavior in a safety-\/critical system. In such a case, immediate should be true and the mode change will take place in all contexts without waiting for the next sample period. 
+
+The documentation for this interface was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+{\bf RTC.idl}\end{DoxyCompactItemize}

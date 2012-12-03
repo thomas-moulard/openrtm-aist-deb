@@ -1,0 +1,138 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<title>OpenRTM: OutPortCorbaCdrProvider.h ソースファイル</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<!-- 作成： Doxygen 1.6.3 -->
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="index.html"><span>メインページ</span></a></li>
+      <li><a href="namespaces.html"><span>ネームスペース</span></a></li>
+      <li><a href="annotated.html"><span>クラス</span></a></li>
+      <li class="current"><a href="files.html"><span>ファイル</span></a></li>
+    </ul>
+  </div>
+  <div class="tabs">
+    <ul>
+      <li><a href="files.html"><span>ファイル一覧</span></a></li>
+      <li><a href="globals.html"><span>ファイルメンバ</span></a></li>
+    </ul>
+  </div>
+<h1>OutPortCorbaCdrProvider.h</h1><a href="OutPortCorbaCdrProvider_8h.html">説明を見る。</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="comment">// -*- C++ -*-</span>
+<a name="l00020"></a>00020 <span class="comment"></span><span class="preprocessor">#ifndef RTC_OUTPORTCORBACDRPROVIDER_H</span>
+<a name="l00021"></a>00021 <span class="preprocessor"></span><span class="preprocessor">#define RTC_OUTPORTCORBACDRPROVIDER_H</span>
+<a name="l00022"></a>00022 <span class="preprocessor"></span>
+<a name="l00023"></a>00023 <span class="preprocessor">#include &lt;rtm/idl/DataPortSkel.h&gt;</span>
+<a name="l00024"></a>00024 <span class="preprocessor">#include &lt;<a class="code" href="BufferBase_8h.html" title="Buffer abstract class.">rtm/BufferBase.h</a>&gt;</span>
+<a name="l00025"></a>00025 <span class="preprocessor">#include &lt;<a class="code" href="OutPortProvider_8h.html" title="OutPortProvider class.">rtm/OutPortProvider.h</a>&gt;</span>
+<a name="l00026"></a>00026 <span class="preprocessor">#include &lt;<a class="code" href="CORBA__SeqUtil_8h.html" title="CORBA sequence utility template functions.">rtm/CORBA_SeqUtil.h</a>&gt;</span>
+<a name="l00027"></a>00027 <span class="preprocessor">#include &lt;<a class="code" href="Manager_8h.html" title="RTComponent manager class.">rtm/Manager.h</a>&gt;</span>
+<a name="l00028"></a>00028 <span class="preprocessor">#include &lt;<a class="code" href="ConnectorListener_8h.html" title="connector listener class">rtm/ConnectorListener.h</a>&gt;</span>
+<a name="l00029"></a>00029 <span class="preprocessor">#include &lt;<a class="code" href="ConnectorBase_8h.html" title="Connector base class.">rtm/ConnectorBase.h</a>&gt;</span>
+<a name="l00030"></a>00030 
+<a name="l00031"></a>00031 <span class="preprocessor">#ifdef WIN32</span>
+<a name="l00032"></a>00032 <span class="preprocessor"></span><span class="preprocessor">#pragma warning( disable : 4290 )</span>
+<a name="l00033"></a>00033 <span class="preprocessor"></span><span class="preprocessor">#endif</span>
+<a name="l00034"></a>00034 <span class="preprocessor"></span>
+<a name="l00035"></a>00035 <span class="keyword">namespace </span>RTC
+<a name="l00036"></a>00036 {
+<a name="l00061"></a><a class="code" href="classRTC_1_1OutPortCorbaCdrProvider.html">00061</a>   <span class="keyword">class </span><a class="code" href="classRTC_1_1OutPortCorbaCdrProvider.html" title="OutPortCorbaCdrProvider クラス.">OutPortCorbaCdrProvider</a>
+<a name="l00062"></a>00062     : <span class="keyword">public</span> <a class="code" href="classRTC_1_1OutPortProvider.html" title="OutPortProvider.">OutPortProvider</a>,
+<a name="l00063"></a>00063       <span class="keyword">public</span> <span class="keyword">virtual</span> ::POA_OpenRTM::OutPortCdr,
+<a name="l00064"></a>00064       <span class="keyword">public</span> <span class="keyword">virtual</span> PortableServer::<a class="code" href="RTC_8h.html#a4e6e58270671e9109809d6c77137ee89">RefCountServantBase</a>
+<a name="l00065"></a>00065   {
+<a name="l00066"></a>00066   <span class="keyword">public</span>:
+<a name="l00080"></a>00080     <a class="code" href="classRTC_1_1OutPortCorbaCdrProvider.html#a6ae410b91af0d248adc5bf6498c4e815">OutPortCorbaCdrProvider</a>(<span class="keywordtype">void</span>);
+<a name="l00081"></a>00081 
+<a name="l00095"></a>00095     <span class="keyword">virtual</span> <a class="code" href="classRTC_1_1OutPortCorbaCdrProvider.html#a5e0c31bdf52a13601a3a66b0a40ffe0a">~OutPortCorbaCdrProvider</a>(<span class="keywordtype">void</span>);
+<a name="l00096"></a>00096 
+<a name="l00124"></a>00124     <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classRTC_1_1OutPortCorbaCdrProvider.html#adcd8c23040d9924f17b8da1b146b9b0f" title="設定初期化">init</a>(<a class="code" href="classcoil_1_1Properties.html" title="プロパティセットを表現するクラス">coil::Properties</a>&amp; prop);
+<a name="l00125"></a>00125 
+<a name="l00151"></a>00151     <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classRTC_1_1OutPortCorbaCdrProvider.html#ae2bb838e78395398c40b61d22cf6bfc3" title="バッファをセットする">setBuffer</a>(<a class="code" href="classRTC_1_1BufferBase.html" title="BufferBase 抽象クラス.">CdrBufferBase</a>* buffer);
+<a name="l00152"></a>00152 
+<a name="l00197"></a>00197     <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classRTC_1_1OutPortCorbaCdrProvider.html#ad3f9c75e0390d1a619fa25b71e333281" title="リスナを設定する。">setListener</a>(<a class="code" href="classRTC_1_1ConnectorInfo.html" title="ConnectorInfo クラス.">ConnectorInfo</a>&amp; info,
+<a name="l00198"></a>00198                              <a class="code" href="classRTC_1_1ConnectorListeners.html" title="ConnectorListeners クラス.">ConnectorListeners</a>* listeners);
+<a name="l00199"></a>00199 
+<a name="l00224"></a>00224     <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classRTC_1_1OutPortCorbaCdrProvider.html#a9c123a084fed1934967664c54a9e586e" title="Connectorを設定する。.">setConnector</a>(<a class="code" href="classRTC_1_1OutPortConnector.html" title="OutPortConnector 基底クラス.">OutPortConnector</a>* connector);
+<a name="l00225"></a>00225 
+<a name="l00243"></a>00243     virtual ::OpenRTM::PortStatus <span class="keyword">get</span>(::OpenRTM::CdrData_out data)
+<a name="l00244"></a>00244       <span class="keywordflow">throw</span> (CORBA::SystemException);
+<a name="l00245"></a>00245 
+<a name="l00246"></a>00246     
+<a name="l00247"></a>00247   <span class="keyword">private</span>:
+<a name="l00255"></a>00255     ::OpenRTM::PortStatus convertReturn(<a class="code" href="classRTC_1_1BufferStatus.html#ada857a5e7b898e1ad19caaaf7a0ff713" title="BufferStatus リターンコード.">BufferStatus::Enum</a> status,
+<a name="l00256"></a>00256                                         <span class="keyword">const</span> cdrMemoryStream&amp; data);
+<a name="l00257"></a>00257 
+<a name="l00258"></a>00258 
+<a name="l00268"></a>00268     <span class="keyword">inline</span> <span class="keywordtype">void</span> onBufferRead(<span class="keyword">const</span> cdrMemoryStream&amp; data)
+<a name="l00269"></a>00269     {
+<a name="l00270"></a>00270       m_listeners-&gt;
+<a name="l00271"></a>00271         connectorData_[<a class="code" href="namespaceRTC.html#aecdfe03a1e91ff9522a322e4bcc9ed71a22db789961492db411c3046cdb937d04">ON_BUFFER_READ</a>].notify(m_profile, data);
+<a name="l00272"></a>00272     }
+<a name="l00273"></a>00273 
+<a name="l00283"></a>00283     <span class="keyword">inline</span> <span class="keywordtype">void</span> onSend(<span class="keyword">const</span> cdrMemoryStream&amp; data)
+<a name="l00284"></a>00284     {
+<a name="l00285"></a>00285       m_listeners-&gt;
+<a name="l00286"></a>00286         connectorData_[<a class="code" href="namespaceRTC.html#aecdfe03a1e91ff9522a322e4bcc9ed71ade969d56696df8c7c6a51906c4ae1ea1">ON_SEND</a>].notify(m_profile, data);
+<a name="l00287"></a>00287     }
+<a name="l00288"></a>00288 
+<a name="l00296"></a>00296     <span class="keyword">inline</span> <span class="keywordtype">void</span> onBufferEmpty()
+<a name="l00297"></a>00297     {
+<a name="l00298"></a>00298       m_listeners-&gt;
+<a name="l00299"></a>00299         connector_[<a class="code" href="namespaceRTC.html#a56d51b87875a454c91b4fee8af41422caaae17909a05cc5e90b17daed478cbead">ON_BUFFER_EMPTY</a>].notify(m_profile);
+<a name="l00300"></a>00300     }
+<a name="l00301"></a>00301 
+<a name="l00309"></a>00309     <span class="keyword">inline</span> <span class="keywordtype">void</span> onBufferReadTimeout()
+<a name="l00310"></a>00310     {
+<a name="l00311"></a>00311       m_listeners-&gt;
+<a name="l00312"></a>00312         connector_[<a class="code" href="namespaceRTC.html#a56d51b87875a454c91b4fee8af41422cada9c9fc83756d8822215445d589d7fa0">ON_BUFFER_READ_TIMEOUT</a>].notify(m_profile);
+<a name="l00313"></a>00313     }
+<a name="l00314"></a>00314 
+<a name="l00322"></a>00322     <span class="keyword">inline</span> <span class="keywordtype">void</span> onSenderEmpty()
+<a name="l00323"></a>00323     {
+<a name="l00324"></a>00324       m_listeners-&gt;
+<a name="l00325"></a>00325         connector_[<a class="code" href="namespaceRTC.html#a56d51b87875a454c91b4fee8af41422ca77c67f6b0ec44d014220954fe79ecb00">ON_SENDER_EMPTY</a>].notify(m_profile);
+<a name="l00326"></a>00326     }
+<a name="l00327"></a>00327 
+<a name="l00335"></a>00335     <span class="keyword">inline</span> <span class="keywordtype">void</span> onSenderTimeout()
+<a name="l00336"></a>00336     {
+<a name="l00337"></a>00337       m_listeners-&gt;
+<a name="l00338"></a>00338         connector_[<a class="code" href="namespaceRTC.html#a56d51b87875a454c91b4fee8af41422caad9085992d237e5b0bccffdd963376d5">ON_SENDER_TIMEOUT</a>].notify(m_profile);
+<a name="l00339"></a>00339     }
+<a name="l00340"></a>00340 
+<a name="l00348"></a>00348     <span class="keyword">inline</span> <span class="keywordtype">void</span> onSenderError()
+<a name="l00349"></a>00349     {
+<a name="l00350"></a>00350       m_listeners-&gt;
+<a name="l00351"></a>00351         connector_[<a class="code" href="namespaceRTC.html#a56d51b87875a454c91b4fee8af41422ca1290605c474c0f51f73bcc3e0e72fc2a">ON_SENDER_ERROR</a>].notify(m_profile);
+<a name="l00352"></a>00352     }
+<a name="l00353"></a>00353     
+<a name="l00354"></a>00354   <span class="keyword">private</span>:
+<a name="l00355"></a>00355     <a class="code" href="classRTC_1_1BufferBase.html" title="BufferBase 抽象クラス.">CdrBufferBase</a>* m_buffer;
+<a name="l00356"></a>00356     ::OpenRTM::OutPortCdr_var m_objref;
+<a name="l00357"></a>00357     <a class="code" href="classRTC_1_1ConnectorListeners.html" title="ConnectorListeners クラス.">ConnectorListeners</a>* m_listeners;
+<a name="l00358"></a>00358     <a class="code" href="classRTC_1_1ConnectorInfo.html" title="ConnectorInfo クラス.">ConnectorInfo</a> m_profile;
+<a name="l00359"></a>00359     <a class="code" href="classRTC_1_1OutPortConnector.html" title="OutPortConnector 基底クラス.">OutPortConnector</a>* m_connector;
+<a name="l00360"></a>00360   };  <span class="comment">// class OutPortCorbaCdrProvider</span>
+<a name="l00361"></a>00361 };     <span class="comment">// namespace RTC</span>
+<a name="l00362"></a>00362 
+<a name="l00363"></a>00363 <span class="keyword">extern</span> <span class="stringliteral">&quot;C&quot;</span>
+<a name="l00364"></a>00364 {
+<a name="l00378"></a>00378   <span class="keywordtype">void</span> <a class="code" href="OutPortCorbaCdrProvider_8h.html#a3c0920b8201acfa8e6f8dada623614e3" title="モジュール初期化関数">OutPortCorbaCdrProviderInit</a>(<span class="keywordtype">void</span>);
+<a name="l00379"></a>00379 };
+<a name="l00380"></a>00380 
+<a name="l00381"></a>00381 <span class="preprocessor">#ifdef WIN32</span>
+<a name="l00382"></a>00382 <span class="preprocessor"></span><span class="preprocessor">#pragma warning( default : 4290 )</span>
+<a name="l00383"></a>00383 <span class="preprocessor"></span><span class="preprocessor">#endif</span>
+<a name="l00384"></a>00384 <span class="preprocessor"></span>
+<a name="l00385"></a>00385 <span class="preprocessor">#endif // RTC_OUTPORTCORBACDRPROVIDER_H</span>
+</pre></div></div>
+<hr class="footer"/><address style="text-align: right;"><small>OpenRTMに対してThu May 24 23:25:18 2012に生成されました。&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.6.3 </small></address>
+</body>
+</html>

@@ -1,0 +1,163 @@
+\section{クラス RTC::InPortConsumer}
+\label{classRTC_1_1InPortConsumer}\index{RTC::InPortConsumer@{RTC::InPortConsumer}}
+
+
+\doxyref{InPortConsumer}{p.}{classRTC_1_1InPortConsumer} 抽象クラス.  
+
+
+
+
+{\ttfamily \#include $<$InPortConsumer.h$>$}
+
+RTC::InPortConsumerに対する継承グラフ\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3cm]{classRTC_1_1InPortConsumer}
+\end{center}
+\end{figure}
+\subsection*{構成}
+\begin{DoxyCompactItemize}
+\item 
+struct {\bf publishInterfaceProfileFunc}
+\begin{DoxyCompactList}\small\item\em インターフェースプロファイルを公開するたのファンクタ \item\end{DoxyCompactList}\item 
+struct {\bf subscribeInterfaceFunc}
+\begin{DoxyCompactList}\small\item\em インターフェースプロファイルを公開するたのファンクタ \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public メソッド}
+\begin{DoxyCompactItemize}
+\item 
+virtual DATAPORTSTATUS\_\-ENUM {\bf $\sim$InPortConsumer} (void)
+\item 
+virtual void {\bf init} ({\bf coil::Properties} \&prop)=0
+\begin{DoxyCompactList}\small\item\em 設定初期化 \item\end{DoxyCompactList}\item 
+virtual ReturnCode {\bf put} (const cdrMemoryStream \&data)=0
+\begin{DoxyCompactList}\small\item\em 接続先へのデータ送信 \item\end{DoxyCompactList}\item 
+virtual void {\bf publishInterfaceProfile} (SDOPackage::NVList \&properties)=0
+\begin{DoxyCompactList}\small\item\em InterfaceProfile情報を公開する. \item\end{DoxyCompactList}\item 
+virtual bool {\bf subscribeInterface} (const SDOPackage::NVList \&properties)=0
+\begin{DoxyCompactList}\small\item\em データ送出通知受け取りへの登録 \item\end{DoxyCompactList}\item 
+virtual void {\bf unsubscribeInterface} (const SDOPackage::NVList \&properties)=0
+\begin{DoxyCompactList}\small\item\em データ送出通知受け取りからの登録解除 \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{説明}
+\doxyref{InPortConsumer}{p.}{classRTC_1_1InPortConsumer} 抽象クラス. 入力ポートコンシューマのための抽象インターフェースクラス 各具象クラスは、以下の純粋仮想関数の実装を提供しなければならない。
+\begin{DoxyItemize}
+\item push(): データ送信
+\item clone(): ポートのコピー
+\item \doxyref{subscribeInterface()}{p.}{classRTC_1_1InPortConsumer_a63073caab2216e2686b34d2c8901c591}: データ送出通知への登録
+\item \doxyref{unsubscribeInterface()}{p.}{classRTC_1_1InPortConsumer_a59530bf39fca610e2c7136700a214aab}: データ送出通知の登録解除
+\end{DoxyItemize}
+
+\begin{DoxySince}{から}
+0.4.0 
+\end{DoxySince}
+
+
+\subsection{コンストラクタとデストラクタ}
+\index{RTC::InPortConsumer@{RTC::InPortConsumer}!$\sim$InPortConsumer@{$\sim$InPortConsumer}}
+\index{$\sim$InPortConsumer@{$\sim$InPortConsumer}!RTC::InPortConsumer@{RTC::InPortConsumer}}
+\subsubsection[{$\sim$InPortConsumer}]{\setlength{\rightskip}{0pt plus 5cm}virtual DATAPORTSTATUS\_\-ENUM RTC::InPortConsumer::$\sim$InPortConsumer (void)\hspace{0.3cm}{\ttfamily  [inline, virtual]}}\label{classRTC_1_1InPortConsumer_a6a6d7b589839aa3d42129198f7c7e2e5}
+デストラクタ 
+
+\subsection{関数}
+\index{RTC::InPortConsumer@{RTC::InPortConsumer}!init@{init}}
+\index{init@{init}!RTC::InPortConsumer@{RTC::InPortConsumer}}
+\subsubsection[{init}]{\setlength{\rightskip}{0pt plus 5cm}virtual void RTC::InPortConsumer::init ({\bf coil::Properties} \& {\em prop})\hspace{0.3cm}{\ttfamily  [pure virtual]}}\label{classRTC_1_1InPortConsumer_a70772c84fa42d6108e30c0f52a9674d5}
+
+
+設定初期化 
+
+InPortConsumerの各種設定を行う 
+
+{\bf RTC::InPortCorbaCdrConsumer} \doxyref{}{p.}{classRTC_1_1InPortCorbaCdrConsumer_a5682cf80be88cfbb6ab238e7b3733686}で実装されています。
+
+\index{RTC::InPortConsumer@{RTC::InPortConsumer}!publishInterfaceProfile@{publishInterfaceProfile}}
+\index{publishInterfaceProfile@{publishInterfaceProfile}!RTC::InPortConsumer@{RTC::InPortConsumer}}
+\subsubsection[{publishInterfaceProfile}]{\setlength{\rightskip}{0pt plus 5cm}virtual void RTC::InPortConsumer::publishInterfaceProfile (SDOPackage::NVList \& {\em properties})\hspace{0.3cm}{\ttfamily  [pure virtual]}}\label{classRTC_1_1InPortConsumer_a1bb34ea50047ecf1b2642fc61192d40b}
+
+
+InterfaceProfile情報を公開する. 
+
+InterfaceProfile情報を公開する。 引数で指定するプロパティ情報内の NameValue オブジェクトの dataport.interface\_\-type 値を調べ、当該ポートに設定されている インターフェースタイプと一致する場合のみ情報を取得する。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em properties}]InterfaceProfile情報を受け取るプロパティ \end{DoxyParams}
+
+
+{\bf RTC::InPortCorbaCdrConsumer} \doxyref{}{p.}{classRTC_1_1InPortCorbaCdrConsumer_aa71ca4621080b782a09a640f18daa2e9}で実装されています。
+
+
+
+参照元 RTC::InPortConsumer::publishInterfaceProfileFunc::operator()().
+
+\index{RTC::InPortConsumer@{RTC::InPortConsumer}!put@{put}}
+\index{put@{put}!RTC::InPortConsumer@{RTC::InPortConsumer}}
+\subsubsection[{put}]{\setlength{\rightskip}{0pt plus 5cm}virtual ReturnCode RTC::InPortConsumer::put (const cdrMemoryStream \& {\em data})\hspace{0.3cm}{\ttfamily  [pure virtual]}}\label{classRTC_1_1InPortConsumer_a7868875b611a5dde0db3d0fcdf5703e5}
+
+
+接続先へのデータ送信 
+
+接続先のポートへデータを送信するための純粋仮想関数。
+
+この関数は、以下のリターンコードを返す。
+
+
+\begin{DoxyItemize}
+\item PORT\_\-OK: 正常終了。
+\item PORT\_\-ERROR: データ送信の過程で何らかのエラーが発生した。
+\item SEND\_\-FULL: データを送信したが、相手側バッファがフルだった。
+\item SEND\_\-TIMEOUT: データを送信したが、相手側バッファがタイムアウトした。
+\item CONNECTION\_\-LOST: 接続が切断された
+\item UNKNOWN\_\-ERROR: 原因不明のエラー
+\end{DoxyItemize}
+
+
+\begin{DoxyParams}{引数}
+\item[{\em data}]送信するデータ \end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+リターンコード 
+\end{DoxyReturn}
+
+
+{\bf RTC::InPortCorbaCdrConsumer} \doxyref{}{p.}{classRTC_1_1InPortCorbaCdrConsumer_ab910b2bf2a841c2c11bce50e75d36abb}で実装されています。
+
+\index{RTC::InPortConsumer@{RTC::InPortConsumer}!subscribeInterface@{subscribeInterface}}
+\index{subscribeInterface@{subscribeInterface}!RTC::InPortConsumer@{RTC::InPortConsumer}}
+\subsubsection[{subscribeInterface}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool RTC::InPortConsumer::subscribeInterface (const SDOPackage::NVList \& {\em properties})\hspace{0.3cm}{\ttfamily  [pure virtual]}}\label{classRTC_1_1InPortConsumer_a63073caab2216e2686b34d2c8901c591}
+
+
+データ送出通知受け取りへの登録 
+
+指定されたプロパティの内容に基づいて、データ送出通知の受け取りに登録する ための純粋仮想関数。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em properties}]登録時に参照するプロパティ\end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+登録処理結果 
+\end{DoxyReturn}
+
+
+{\bf RTC::InPortCorbaCdrConsumer} \doxyref{}{p.}{classRTC_1_1InPortCorbaCdrConsumer_a6ca9cba69e9bc1015d79330ed9a56b71}で実装されています。
+
+
+
+参照元 RTC::InPortConsumer::subscribeInterfaceFunc::operator()().
+
+\index{RTC::InPortConsumer@{RTC::InPortConsumer}!unsubscribeInterface@{unsubscribeInterface}}
+\index{unsubscribeInterface@{unsubscribeInterface}!RTC::InPortConsumer@{RTC::InPortConsumer}}
+\subsubsection[{unsubscribeInterface}]{\setlength{\rightskip}{0pt plus 5cm}virtual void RTC::InPortConsumer::unsubscribeInterface (const SDOPackage::NVList \& {\em properties})\hspace{0.3cm}{\ttfamily  [pure virtual]}}\label{classRTC_1_1InPortConsumer_a59530bf39fca610e2c7136700a214aab}
+
+
+データ送出通知受け取りからの登録解除 
+
+データ送出通知の受け取りから登録解除するための純粋仮想関数。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em properties}]登録解除時に参照するプロパティ \end{DoxyParams}
+
+
+{\bf RTC::InPortCorbaCdrConsumer} \doxyref{}{p.}{classRTC_1_1InPortCorbaCdrConsumer_a6e297f6ebc3dae7b547e1ec8af06ee9f}で実装されています。
+

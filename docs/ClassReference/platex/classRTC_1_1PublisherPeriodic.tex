@@ -1,0 +1,581 @@
+\section{クラス RTC::PublisherPeriodic}
+\label{classRTC_1_1PublisherPeriodic}\index{RTC::PublisherPeriodic@{RTC::PublisherPeriodic}}
+
+
+\doxyref{PublisherPeriodic}{p.}{classRTC_1_1PublisherPeriodic} クラス.  
+
+
+
+
+{\ttfamily \#include $<$PublisherPeriodic.h$>$}
+
+RTC::PublisherPeriodicに対する継承グラフ\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3cm]{classRTC_1_1PublisherPeriodic}
+\end{center}
+\end{figure}
+\subsection*{Public 型}
+\begin{DoxyCompactItemize}
+\item 
+typedef {\bf coil::Mutex} {\bf Mutex}
+\item 
+typedef {\bf coil::Condition}$<$ {\bf Mutex} $>$ {\bf Condition}
+\item 
+typedef {\bf coil::Guard}$<$ {\bf coil::Mutex} $>$ {\bf Guard}
+\end{DoxyCompactItemize}
+\subsection*{Public メソッド}
+\begin{DoxyCompactItemize}
+\item 
+DATAPORTSTATUS\_\-ENUM {\bf PublisherPeriodic} (void)
+\begin{DoxyCompactList}\small\item\em コンストラクタ \item\end{DoxyCompactList}\item 
+virtual {\bf $\sim$PublisherPeriodic} (void)
+\item 
+virtual ReturnCode {\bf init} ({\bf coil::Properties} \&prop)
+\begin{DoxyCompactList}\small\item\em 初期化 \item\end{DoxyCompactList}\item 
+virtual ReturnCode {\bf setConsumer} ({\bf InPortConsumer} $\ast$consumer)
+\begin{DoxyCompactList}\small\item\em InPortコンシューマのセット. \item\end{DoxyCompactList}\item 
+virtual ReturnCode {\bf setBuffer} ({\bf CdrBufferBase} $\ast$buffer)
+\begin{DoxyCompactList}\small\item\em バッファのセット \item\end{DoxyCompactList}\item 
+virtual ReturnCode {\bf setListener} ({\bf ConnectorInfo} \&info, {\bf ConnectorListeners} $\ast$listeners)
+\begin{DoxyCompactList}\small\item\em リスナを設定する。 \item\end{DoxyCompactList}\item 
+virtual ReturnCode {\bf write} (const cdrMemoryStream \&data, unsigned long sec, unsigned long usec)
+\begin{DoxyCompactList}\small\item\em データを書き込む \item\end{DoxyCompactList}\item 
+virtual bool {\bf isActive} ()
+\begin{DoxyCompactList}\small\item\em アクティブ化確認 \item\end{DoxyCompactList}\item 
+virtual ReturnCode {\bf activate} ()
+\begin{DoxyCompactList}\small\item\em アクティブ化する \item\end{DoxyCompactList}\item 
+virtual ReturnCode {\bf deactivate} ()
+\begin{DoxyCompactList}\small\item\em 非アクティブ化する \item\end{DoxyCompactList}\item 
+virtual int {\bf svc} (void)
+\begin{DoxyCompactList}\small\item\em スレッド実行関数 \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected 型}
+\begin{DoxyCompactItemize}
+\item 
+enum {\bf Policy} \{ {\bf ALL}, 
+{\bf FIFO}, 
+{\bf SKIP}, 
+{\bf NEW}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Protected メソッド}
+\begin{DoxyCompactItemize}
+\item 
+void {\bf setPushPolicy} (const {\bf coil::Properties} \&prop)
+\begin{DoxyCompactList}\small\item\em PushPolicy の設定. \item\end{DoxyCompactList}\item 
+bool {\bf createTask} (const {\bf coil::Properties} \&prop)
+\begin{DoxyCompactList}\small\item\em Task の設定. \item\end{DoxyCompactList}\item 
+ReturnCode {\bf pushAll} ()
+\begin{DoxyCompactList}\small\item\em push \char`\"{}all\char`\"{} policy \item\end{DoxyCompactList}\item 
+ReturnCode {\bf pushFifo} ()
+\begin{DoxyCompactList}\small\item\em push \char`\"{}fifo\char`\"{} policy \item\end{DoxyCompactList}\item 
+ReturnCode {\bf pushSkip} ()
+\begin{DoxyCompactList}\small\item\em push \char`\"{}skip\char`\"{} policy \item\end{DoxyCompactList}\item 
+ReturnCode {\bf pushNew} ()
+\begin{DoxyCompactList}\small\item\em push \char`\"{}new\char`\"{} policy \item\end{DoxyCompactList}\item 
+ReturnCode {\bf convertReturn} ({\bf BufferStatus::Enum} status, const cdrMemoryStream \&data)
+\begin{DoxyCompactList}\small\item\em \doxyref{BufferStatus}{p.}{classRTC_1_1BufferStatus} から \doxyref{DataPortStatus}{p.}{classRTC_1_1DataPortStatus} への変換. \item\end{DoxyCompactList}\item 
+ReturnCode {\bf invokeListener} ({\bf DataPortStatus::Enum} status, const cdrMemoryStream \&data)
+\begin{DoxyCompactList}\small\item\em DataPortStatusに従ってリスナへ通知する関数を呼び出す。. \item\end{DoxyCompactList}\item 
+void {\bf onBufferWrite} (const cdrMemoryStream \&data)
+\begin{DoxyCompactList}\small\item\em ON\_\-BUFFER\_\-WRITEのリスナへ通知する。. \item\end{DoxyCompactList}\item 
+void {\bf onBufferFull} (const cdrMemoryStream \&data)
+\begin{DoxyCompactList}\small\item\em ON\_\-BUFFER\_\-FULLリスナへイベントを通知する。. \item\end{DoxyCompactList}\item 
+void {\bf onBufferWriteTimeout} (const cdrMemoryStream \&data)
+\begin{DoxyCompactList}\small\item\em ON\_\-BUFFER\_\-WRITE\_\-TIMEOUTのリスナへ通知する。. \item\end{DoxyCompactList}\item 
+void {\bf onBufferRead} (const cdrMemoryStream \&data)
+\begin{DoxyCompactList}\small\item\em ON\_\-BUFFER\_\-READのリスナへ通知する。. \item\end{DoxyCompactList}\item 
+void {\bf onSend} (const cdrMemoryStream \&data)
+\begin{DoxyCompactList}\small\item\em ON\_\-SENDのリスナへ通知する。. \item\end{DoxyCompactList}\item 
+void {\bf onReceived} (const cdrMemoryStream \&data)
+\begin{DoxyCompactList}\small\item\em ON\_\-RECEIVEDのリスナへ通知する。. \item\end{DoxyCompactList}\item 
+void {\bf onReceiverFull} (const cdrMemoryStream \&data)
+\begin{DoxyCompactList}\small\item\em ON\_\-RECEIVER\_\-FULLのリスナへ通知する。. \item\end{DoxyCompactList}\item 
+void {\bf onReceiverTimeout} (const cdrMemoryStream \&data)
+\begin{DoxyCompactList}\small\item\em ON\_\-RECEIVER\_\-TIMEOUTのリスナへ通知する。. \item\end{DoxyCompactList}\item 
+void {\bf onReceiverError} (const cdrMemoryStream \&data)
+\begin{DoxyCompactList}\small\item\em ON\_\-RECEIVER\_\-ERRORのリスナへ通知する。. \item\end{DoxyCompactList}\item 
+void {\bf onBufferEmpty} ()
+\begin{DoxyCompactList}\small\item\em ON\_\-BUFFER\_\-EMPTYのリスナへ通知する。. \item\end{DoxyCompactList}\item 
+void {\bf onSenderEmpty} ()
+\begin{DoxyCompactList}\small\item\em ON\_\-SENDER\_\-EMPTYのリスナへ通知する。. \item\end{DoxyCompactList}\item 
+void {\bf onSenderError} ()
+\begin{DoxyCompactList}\small\item\em ON\_\-SENDER\_\-ERRORのリスナへ通知する。. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{説明}
+\doxyref{PublisherPeriodic}{p.}{classRTC_1_1PublisherPeriodic} クラス. 周期的にデータを送信するための Publisher クラス。このクラスは、通 常 Connector 内にあって、バッファおよびコンシューマに関連付けられ る。一定周期ごとにバッファからデータを取り出しコンシューマに対して データを送出する。 
+
+\subsection{型定義}
+\index{RTC::PublisherPeriodic@{RTC::PublisherPeriodic}!Condition@{Condition}}
+\index{Condition@{Condition}!RTC::PublisherPeriodic@{RTC::PublisherPeriodic}}
+\subsubsection[{Condition}]{\setlength{\rightskip}{0pt plus 5cm}typedef {\bf coil::Condition}$<${\bf Mutex}$>$ {\bf RTC::PublisherPeriodic::Condition}}\label{classRTC_1_1PublisherPeriodic_add318b8379afdba98ebeffc9945a969c}
+\index{RTC::PublisherPeriodic@{RTC::PublisherPeriodic}!Guard@{Guard}}
+\index{Guard@{Guard}!RTC::PublisherPeriodic@{RTC::PublisherPeriodic}}
+\subsubsection[{Guard}]{\setlength{\rightskip}{0pt plus 5cm}typedef {\bf coil::Guard}$<${\bf coil::Mutex}$>$ {\bf RTC::PublisherPeriodic::Guard}}\label{classRTC_1_1PublisherPeriodic_a6779f4e5398b3b2a15285f91b745e8a5}
+\index{RTC::PublisherPeriodic@{RTC::PublisherPeriodic}!Mutex@{Mutex}}
+\index{Mutex@{Mutex}!RTC::PublisherPeriodic@{RTC::PublisherPeriodic}}
+\subsubsection[{Mutex}]{\setlength{\rightskip}{0pt plus 5cm}typedef {\bf coil::Mutex} {\bf RTC::PublisherPeriodic::Mutex}}\label{classRTC_1_1PublisherPeriodic_ad77819dcc43d600a9b97b24a9cc3afae}
+
+
+\subsection{列挙型}
+\index{RTC::PublisherPeriodic@{RTC::PublisherPeriodic}!Policy@{Policy}}
+\index{Policy@{Policy}!RTC::PublisherPeriodic@{RTC::PublisherPeriodic}}
+\subsubsection[{Policy}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf RTC::PublisherPeriodic::Policy}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC_1_1PublisherPeriodic_abed26f7fbce71157daa30a28a81b17cc}
+\begin{Desc}
+\item[列挙型の値: ]\par
+\begin{description}
+\index{ALL@{ALL}!RTC::PublisherPeriodic@{RTC::PublisherPeriodic}}\index{RTC::PublisherPeriodic@{RTC::PublisherPeriodic}!ALL@{ALL}}\item[{\em 
+ALL\label{classRTC_1_1PublisherPeriodic_abed26f7fbce71157daa30a28a81b17cca79cb5cf73c1a0e2e9ccb2ecccc7f0983}
+}]\index{FIFO@{FIFO}!RTC::PublisherPeriodic@{RTC::PublisherPeriodic}}\index{RTC::PublisherPeriodic@{RTC::PublisherPeriodic}!FIFO@{FIFO}}\item[{\em 
+FIFO\label{classRTC_1_1PublisherPeriodic_abed26f7fbce71157daa30a28a81b17ccaca8c8e86fc2942dc96979af15dca6690}
+}]\index{SKIP@{SKIP}!RTC::PublisherPeriodic@{RTC::PublisherPeriodic}}\index{RTC::PublisherPeriodic@{RTC::PublisherPeriodic}!SKIP@{SKIP}}\item[{\em 
+SKIP\label{classRTC_1_1PublisherPeriodic_abed26f7fbce71157daa30a28a81b17cca6badf67db0f8387814b05bd70bf1300d}
+}]\index{NEW@{NEW}!RTC::PublisherPeriodic@{RTC::PublisherPeriodic}}\index{RTC::PublisherPeriodic@{RTC::PublisherPeriodic}!NEW@{NEW}}\item[{\em 
+NEW\label{classRTC_1_1PublisherPeriodic_abed26f7fbce71157daa30a28a81b17ccad1f24a4a798e6c9e398d199ff0e81063}
+}]\end{description}
+\end{Desc}
+
+
+
+\subsection{コンストラクタとデストラクタ}
+\index{RTC::PublisherPeriodic@{RTC::PublisherPeriodic}!PublisherPeriodic@{PublisherPeriodic}}
+\index{PublisherPeriodic@{PublisherPeriodic}!RTC::PublisherPeriodic@{RTC::PublisherPeriodic}}
+\subsubsection[{PublisherPeriodic}]{\setlength{\rightskip}{0pt plus 5cm}DATAPORTSTATUS\_\-ENUM RTC::PublisherPeriodic::PublisherPeriodic (void)}\label{classRTC_1_1PublisherPeriodic_a0d279439e0dd16c078db9917d61ca5c5}
+
+
+コンストラクタ 
+
+\index{RTC::PublisherPeriodic@{RTC::PublisherPeriodic}!$\sim$PublisherPeriodic@{$\sim$PublisherPeriodic}}
+\index{$\sim$PublisherPeriodic@{$\sim$PublisherPeriodic}!RTC::PublisherPeriodic@{RTC::PublisherPeriodic}}
+\subsubsection[{$\sim$PublisherPeriodic}]{\setlength{\rightskip}{0pt plus 5cm}virtual RTC::PublisherPeriodic::$\sim$PublisherPeriodic (void)\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classRTC_1_1PublisherPeriodic_aba531e39e1898da25b1c6a780ccf7851}
+デストラクタ 
+
+\subsection{関数}
+\index{RTC::PublisherPeriodic@{RTC::PublisherPeriodic}!activate@{activate}}
+\index{activate@{activate}!RTC::PublisherPeriodic@{RTC::PublisherPeriodic}}
+\subsubsection[{activate}]{\setlength{\rightskip}{0pt plus 5cm}virtual ReturnCode RTC::PublisherPeriodic::activate ()\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classRTC_1_1PublisherPeriodic_a9150a94418d36a413af5edf83a4aef4a}
+
+
+アクティブ化する 
+
+Publisher をアクティブ化する。この関数を呼び出すことにより、 Publisherが持つ、データを送信するスレッドが動作を開始する。初期 化が行われていないなどにより、事前条件を満たさない場合、エラーコー ド PRECONDITION\_\-NOT\_\-MET を返す。
+
+\begin{DoxyReturn}{戻り値}
+PORT\_\-OK 正常終了 PRECONDITION\_\-NOT\_\-MET 事前条件を満たさない 
+\end{DoxyReturn}
+
+
+{\bf RTC::PublisherBase} \doxyref{}{p.}{classRTC_1_1PublisherBase_a4f0e0ca91e07a25481ffa83ef027feb6}を実装しています。
+
+\index{RTC::PublisherPeriodic@{RTC::PublisherPeriodic}!convertReturn@{convertReturn}}
+\index{convertReturn@{convertReturn}!RTC::PublisherPeriodic@{RTC::PublisherPeriodic}}
+\subsubsection[{convertReturn}]{\setlength{\rightskip}{0pt plus 5cm}ReturnCode RTC::PublisherPeriodic::convertReturn ({\bf BufferStatus::Enum} {\em status}, \/  const cdrMemoryStream \& {\em data})\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC_1_1PublisherPeriodic_ae27f86878cd6230c3dc61f7bc1964916}
+
+
+\doxyref{BufferStatus}{p.}{classRTC_1_1BufferStatus} から \doxyref{DataPortStatus}{p.}{classRTC_1_1DataPortStatus} への変換. 
+
+バッファからの戻り値を \doxyref{DataPortStatus::Enum}{p.}{classRTC_1_1DataPortStatus_ac47c3e85f39e51eb55230337c0efc64f} 型へ変換する関数。そ れぞれ、以下のように変換される。変換時にコールバックを呼ぶ場合、 コールバク関数も付記する。
+
+
+\begin{DoxyItemize}
+\item BUFFER\_\-OK: PORT\_\-OK
+\begin{DoxyItemize}
+\item None
+\end{DoxyItemize}
+\item BUFFER\_\-ERROR: BUFFER\_\-ERROR
+\begin{DoxyItemize}
+\item None
+\end{DoxyItemize}
+\item BUFFER\_\-FULL: BUFFER\_\-FULL
+\begin{DoxyItemize}
+\item \doxyref{onBufferFull()}{p.}{classRTC_1_1PublisherPeriodic_a43303d9801891aee527fa64c584c73f6}
+\end{DoxyItemize}
+\item NOT\_\-SUPPORTED: PORT\_\-ERROR
+\begin{DoxyItemize}
+\item None
+\end{DoxyItemize}
+\item TIMEOUT: BUFFER\_\-TIMEOUT
+\begin{DoxyItemize}
+\item \doxyref{onBufferWriteTimeout()}{p.}{classRTC_1_1PublisherPeriodic_a392e2e524963931c96834bff4bd73885}
+\end{DoxyItemize}
+\item PRECONDITION\_\-NOT\_\-MET: PRECONDITION\_\-NOT\_\-MET
+\begin{DoxyItemize}
+\item None
+\end{DoxyItemize}
+\item other: PORT\_\-ERROR
+\begin{DoxyItemize}
+\item None
+\end{DoxyItemize}
+\end{DoxyItemize}
+
+
+\begin{DoxyParams}{引数}
+\item[{\em status}]\doxyref{BufferStatus}{p.}{classRTC_1_1BufferStatus} \item[{\em data}]cdrMemoryStream \end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+DataPortStatu 型のリターンコード 
+\end{DoxyReturn}
+\index{RTC::PublisherPeriodic@{RTC::PublisherPeriodic}!createTask@{createTask}}
+\index{createTask@{createTask}!RTC::PublisherPeriodic@{RTC::PublisherPeriodic}}
+\subsubsection[{createTask}]{\setlength{\rightskip}{0pt plus 5cm}bool RTC::PublisherPeriodic::createTask (const {\bf coil::Properties} \& {\em prop})\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC_1_1PublisherPeriodic_a15227ee45582f1b596288e4006739d92}
+
+
+Task の設定. 
+
+\index{RTC::PublisherPeriodic@{RTC::PublisherPeriodic}!deactivate@{deactivate}}
+\index{deactivate@{deactivate}!RTC::PublisherPeriodic@{RTC::PublisherPeriodic}}
+\subsubsection[{deactivate}]{\setlength{\rightskip}{0pt plus 5cm}virtual ReturnCode RTC::PublisherPeriodic::deactivate ()\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classRTC_1_1PublisherPeriodic_abaa6ffa1931e0b654827606e0c756c8e}
+
+
+非アクティブ化する 
+
+Publisher を非アクティブ化する。この関数を呼び出すことにより、 Publisherが持つ、データを送信するスレッドが動作を停止する。初期 化が行われていないなどにより、事前条件を満たさない場合、エラーコー ド PRECONDITION\_\-NOT\_\-MET を返す。
+
+\begin{DoxyReturn}{戻り値}
+PORT\_\-OK 正常終了 PRECONDITION\_\-NOT\_\-MET 事前条件を満たさない 
+\end{DoxyReturn}
+
+
+{\bf RTC::PublisherBase} \doxyref{}{p.}{classRTC_1_1PublisherBase_ace68807ed92a38af8ca49ece25db0d8a}を実装しています。
+
+\index{RTC::PublisherPeriodic@{RTC::PublisherPeriodic}!init@{init}}
+\index{init@{init}!RTC::PublisherPeriodic@{RTC::PublisherPeriodic}}
+\subsubsection[{init}]{\setlength{\rightskip}{0pt plus 5cm}virtual ReturnCode RTC::PublisherPeriodic::init ({\bf coil::Properties} \& {\em prop})\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classRTC_1_1PublisherPeriodic_a4be180578218cc6f04d4fb409e28c5df}
+
+
+初期化 
+
+このクラスのオブジェクトを使用するのに先立ち、必ずこの関数を呼び 出す必要がある。引数には、このオブジェクトの各種設定情報を含む Properties を与える。少なくとも、送出処理の呼び出し周期を単位 Hz の数値として Propertyオブジェクトの publisher.push\_\-rate をキー とする要素に設定する必要がある。周期 5ms すなわち、200Hzの場合、 200.0 を設定する。 dataport.publisher.push\_\-rate が未設定の場合、 false が返される。データをプッシュする際のポリシーとして publisher.push\_\-policy をキーとする値に、all, fifo, skip, new の いずれかを与えることができる。
+
+以下のオプションを与えることができる。
+
+
+\begin{DoxyItemize}
+\item publisher.thread\_\-type: スレッドのタイプ (文字列、デフォルト: default)
+\item publisher.push\_\-rate: Publisherの送信周期 (数値)
+\item publisher.push\_\-policy: Pushポリシー (all, fifo, skip, new)
+\item publisher.skip\_\-count: 上記ポリシが skip のときのスキップ数
+\item measurement.exec\_\-time: タスク実行時間計測 (enable/disable)
+\item measurement.exec\_\-count: タスク関数実行時間計測周期 (数値, 回数)
+\item measurement.period\_\-time: タスク周期時間計測 (enable/disable)
+\item measurement.period\_\-count: タスク周期時間計測周期 (数値, 回数)
+\end{DoxyItemize}
+
+
+\begin{DoxyParams}{引数}
+\item[{\em property}]本Publisherの駆動制御情報を設定したPropertyオブジェクト \end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+ReturnCode PORT\_\-OK 正常終了 INVALID\_\-ARGS Properties が不正な値を含む 
+\end{DoxyReturn}
+
+
+{\bf RTC::PublisherBase} \doxyref{}{p.}{classRTC_1_1PublisherBase_a9915af3afab216e2b39fa8702b54b0b7}を実装しています。
+
+\index{RTC::PublisherPeriodic@{RTC::PublisherPeriodic}!invokeListener@{invokeListener}}
+\index{invokeListener@{invokeListener}!RTC::PublisherPeriodic@{RTC::PublisherPeriodic}}
+\subsubsection[{invokeListener}]{\setlength{\rightskip}{0pt plus 5cm}ReturnCode RTC::PublisherPeriodic::invokeListener ({\bf DataPortStatus::Enum} {\em status}, \/  const cdrMemoryStream \& {\em data})\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC_1_1PublisherPeriodic_a4ca308761197e4b336bef18d94e5e4a4}
+
+
+DataPortStatusに従ってリスナへ通知する関数を呼び出す。. 
+
+
+\begin{DoxyParams}{引数}
+\item[{\em status}]\doxyref{DataPortStatus}{p.}{classRTC_1_1DataPortStatus} \item[{\em data}]cdrMemoryStream \end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+リターンコード 
+\end{DoxyReturn}
+\index{RTC::PublisherPeriodic@{RTC::PublisherPeriodic}!isActive@{isActive}}
+\index{isActive@{isActive}!RTC::PublisherPeriodic@{RTC::PublisherPeriodic}}
+\subsubsection[{isActive}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool RTC::PublisherPeriodic::isActive ()\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classRTC_1_1PublisherPeriodic_abd214f80d5ace7ebbf50f72f474de34a}
+
+
+アクティブ化確認 
+
+Publisher はデータポートと同期して activate/deactivate される。 \doxyref{activate()}{p.}{classRTC_1_1PublisherPeriodic_a9150a94418d36a413af5edf83a4aef4a} / \doxyref{deactivate()}{p.}{classRTC_1_1PublisherPeriodic_abaa6ffa1931e0b654827606e0c756c8e} 関数によって、アクティブ状態と非アクティ ブ状態が切り替わる。この関数により、現在アクティブ状態か、非アク ティブ状態かを確認することができる。
+
+\begin{DoxyReturn}{戻り値}
+状態確認結果(アクティブ状態:true、非アクティブ状態:false) 
+\end{DoxyReturn}
+
+
+{\bf RTC::PublisherBase} \doxyref{}{p.}{classRTC_1_1PublisherBase_aed0e118b4a1bda091ba38066cc8e4c7b}を実装しています。
+
+\index{RTC::PublisherPeriodic@{RTC::PublisherPeriodic}!onBufferEmpty@{onBufferEmpty}}
+\index{onBufferEmpty@{onBufferEmpty}!RTC::PublisherPeriodic@{RTC::PublisherPeriodic}}
+\subsubsection[{onBufferEmpty}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::PublisherPeriodic::onBufferEmpty ()\hspace{0.3cm}{\ttfamily  [inline, protected]}}\label{classRTC_1_1PublisherPeriodic_a4dd25d1f4754d7453332a5a9edb3b40f}
+
+
+ON\_\-BUFFER\_\-EMPTYのリスナへ通知する。. 
+
+
+
+参照先 RTC::ON\_\-BUFFER\_\-EMPTY.
+
+\index{RTC::PublisherPeriodic@{RTC::PublisherPeriodic}!onBufferFull@{onBufferFull}}
+\index{onBufferFull@{onBufferFull}!RTC::PublisherPeriodic@{RTC::PublisherPeriodic}}
+\subsubsection[{onBufferFull}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::PublisherPeriodic::onBufferFull (const cdrMemoryStream \& {\em data})\hspace{0.3cm}{\ttfamily  [inline, protected]}}\label{classRTC_1_1PublisherPeriodic_a43303d9801891aee527fa64c584c73f6}
+
+
+ON\_\-BUFFER\_\-FULLリスナへイベントを通知する。. 
+
+
+\begin{DoxyParams}{引数}
+\item[{\em data}]cdrMemoryStream \end{DoxyParams}
+
+
+参照先 RTC::ON\_\-BUFFER\_\-FULL.
+
+\index{RTC::PublisherPeriodic@{RTC::PublisherPeriodic}!onBufferRead@{onBufferRead}}
+\index{onBufferRead@{onBufferRead}!RTC::PublisherPeriodic@{RTC::PublisherPeriodic}}
+\subsubsection[{onBufferRead}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::PublisherPeriodic::onBufferRead (const cdrMemoryStream \& {\em data})\hspace{0.3cm}{\ttfamily  [inline, protected]}}\label{classRTC_1_1PublisherPeriodic_af2e54aed581040cb98edb9ae524ec5ac}
+
+
+ON\_\-BUFFER\_\-READのリスナへ通知する。. 
+
+
+\begin{DoxyParams}{引数}
+\item[{\em data}]cdrMemoryStream \end{DoxyParams}
+
+
+参照先 RTC::ON\_\-BUFFER\_\-READ.
+
+\index{RTC::PublisherPeriodic@{RTC::PublisherPeriodic}!onBufferWrite@{onBufferWrite}}
+\index{onBufferWrite@{onBufferWrite}!RTC::PublisherPeriodic@{RTC::PublisherPeriodic}}
+\subsubsection[{onBufferWrite}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::PublisherPeriodic::onBufferWrite (const cdrMemoryStream \& {\em data})\hspace{0.3cm}{\ttfamily  [inline, protected]}}\label{classRTC_1_1PublisherPeriodic_a40f950094cf50ed12c89d7a61ed6ec72}
+
+
+ON\_\-BUFFER\_\-WRITEのリスナへ通知する。. 
+
+
+\begin{DoxyParams}{引数}
+\item[{\em data}]cdrMemoryStream \end{DoxyParams}
+
+
+参照先 RTC::ON\_\-BUFFER\_\-WRITE.
+
+\index{RTC::PublisherPeriodic@{RTC::PublisherPeriodic}!onBufferWriteTimeout@{onBufferWriteTimeout}}
+\index{onBufferWriteTimeout@{onBufferWriteTimeout}!RTC::PublisherPeriodic@{RTC::PublisherPeriodic}}
+\subsubsection[{onBufferWriteTimeout}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::PublisherPeriodic::onBufferWriteTimeout (const cdrMemoryStream \& {\em data})\hspace{0.3cm}{\ttfamily  [inline, protected]}}\label{classRTC_1_1PublisherPeriodic_a392e2e524963931c96834bff4bd73885}
+
+
+ON\_\-BUFFER\_\-WRITE\_\-TIMEOUTのリスナへ通知する。. 
+
+
+\begin{DoxyParams}{引数}
+\item[{\em data}]cdrMemoryStream \end{DoxyParams}
+
+
+参照先 RTC::ON\_\-BUFFER\_\-WRITE\_\-TIMEOUT.
+
+\index{RTC::PublisherPeriodic@{RTC::PublisherPeriodic}!onReceived@{onReceived}}
+\index{onReceived@{onReceived}!RTC::PublisherPeriodic@{RTC::PublisherPeriodic}}
+\subsubsection[{onReceived}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::PublisherPeriodic::onReceived (const cdrMemoryStream \& {\em data})\hspace{0.3cm}{\ttfamily  [inline, protected]}}\label{classRTC_1_1PublisherPeriodic_a6c5a89dcaea321c01729c086f2febce5}
+
+
+ON\_\-RECEIVEDのリスナへ通知する。. 
+
+
+\begin{DoxyParams}{引数}
+\item[{\em data}]cdrMemoryStream \end{DoxyParams}
+
+
+参照先 RTC::ON\_\-RECEIVED.
+
+\index{RTC::PublisherPeriodic@{RTC::PublisherPeriodic}!onReceiverError@{onReceiverError}}
+\index{onReceiverError@{onReceiverError}!RTC::PublisherPeriodic@{RTC::PublisherPeriodic}}
+\subsubsection[{onReceiverError}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::PublisherPeriodic::onReceiverError (const cdrMemoryStream \& {\em data})\hspace{0.3cm}{\ttfamily  [inline, protected]}}\label{classRTC_1_1PublisherPeriodic_a879fb08e749007f8b3160cf7c602fd5d}
+
+
+ON\_\-RECEIVER\_\-ERRORのリスナへ通知する。. 
+
+
+\begin{DoxyParams}{引数}
+\item[{\em data}]cdrMemoryStream \end{DoxyParams}
+
+
+参照先 RTC::ON\_\-RECEIVER\_\-ERROR.
+
+\index{RTC::PublisherPeriodic@{RTC::PublisherPeriodic}!onReceiverFull@{onReceiverFull}}
+\index{onReceiverFull@{onReceiverFull}!RTC::PublisherPeriodic@{RTC::PublisherPeriodic}}
+\subsubsection[{onReceiverFull}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::PublisherPeriodic::onReceiverFull (const cdrMemoryStream \& {\em data})\hspace{0.3cm}{\ttfamily  [inline, protected]}}\label{classRTC_1_1PublisherPeriodic_adb2114ae9612f809d285aaed25f3a141}
+
+
+ON\_\-RECEIVER\_\-FULLのリスナへ通知する。. 
+
+
+\begin{DoxyParams}{引数}
+\item[{\em data}]cdrMemoryStream \end{DoxyParams}
+
+
+参照先 RTC::ON\_\-RECEIVER\_\-FULL.
+
+\index{RTC::PublisherPeriodic@{RTC::PublisherPeriodic}!onReceiverTimeout@{onReceiverTimeout}}
+\index{onReceiverTimeout@{onReceiverTimeout}!RTC::PublisherPeriodic@{RTC::PublisherPeriodic}}
+\subsubsection[{onReceiverTimeout}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::PublisherPeriodic::onReceiverTimeout (const cdrMemoryStream \& {\em data})\hspace{0.3cm}{\ttfamily  [inline, protected]}}\label{classRTC_1_1PublisherPeriodic_abf96b8f2cc9b3445d9d9f1f03b57420f}
+
+
+ON\_\-RECEIVER\_\-TIMEOUTのリスナへ通知する。. 
+
+
+\begin{DoxyParams}{引数}
+\item[{\em data}]cdrMemoryStream \end{DoxyParams}
+
+
+参照先 RTC::ON\_\-RECEIVER\_\-TIMEOUT.
+
+\index{RTC::PublisherPeriodic@{RTC::PublisherPeriodic}!onSend@{onSend}}
+\index{onSend@{onSend}!RTC::PublisherPeriodic@{RTC::PublisherPeriodic}}
+\subsubsection[{onSend}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::PublisherPeriodic::onSend (const cdrMemoryStream \& {\em data})\hspace{0.3cm}{\ttfamily  [inline, protected]}}\label{classRTC_1_1PublisherPeriodic_a1c49320cc01bb74f29a3113718ec7048}
+
+
+ON\_\-SENDのリスナへ通知する。. 
+
+
+\begin{DoxyParams}{引数}
+\item[{\em data}]cdrMemoryStream \end{DoxyParams}
+
+
+参照先 RTC::ON\_\-SEND.
+
+\index{RTC::PublisherPeriodic@{RTC::PublisherPeriodic}!onSenderEmpty@{onSenderEmpty}}
+\index{onSenderEmpty@{onSenderEmpty}!RTC::PublisherPeriodic@{RTC::PublisherPeriodic}}
+\subsubsection[{onSenderEmpty}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::PublisherPeriodic::onSenderEmpty ()\hspace{0.3cm}{\ttfamily  [inline, protected]}}\label{classRTC_1_1PublisherPeriodic_ad08f767c66bcebde8e7d104903a04da1}
+
+
+ON\_\-SENDER\_\-EMPTYのリスナへ通知する。. 
+
+
+
+参照先 RTC::ON\_\-SENDER\_\-EMPTY.
+
+\index{RTC::PublisherPeriodic@{RTC::PublisherPeriodic}!onSenderError@{onSenderError}}
+\index{onSenderError@{onSenderError}!RTC::PublisherPeriodic@{RTC::PublisherPeriodic}}
+\subsubsection[{onSenderError}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::PublisherPeriodic::onSenderError ()\hspace{0.3cm}{\ttfamily  [inline, protected]}}\label{classRTC_1_1PublisherPeriodic_a97cef0019cf2405cdc371cae477d32e2}
+
+
+ON\_\-SENDER\_\-ERRORのリスナへ通知する。. 
+
+
+
+参照先 RTC::ON\_\-SENDER\_\-ERROR.
+
+\index{RTC::PublisherPeriodic@{RTC::PublisherPeriodic}!pushAll@{pushAll}}
+\index{pushAll@{pushAll}!RTC::PublisherPeriodic@{RTC::PublisherPeriodic}}
+\subsubsection[{pushAll}]{\setlength{\rightskip}{0pt plus 5cm}ReturnCode RTC::PublisherPeriodic::pushAll ()\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC_1_1PublisherPeriodic_a38069a3f21faa8ae849b82467d983892}
+
+
+push \char`\"{}all\char`\"{} policy 
+
+\index{RTC::PublisherPeriodic@{RTC::PublisherPeriodic}!pushFifo@{pushFifo}}
+\index{pushFifo@{pushFifo}!RTC::PublisherPeriodic@{RTC::PublisherPeriodic}}
+\subsubsection[{pushFifo}]{\setlength{\rightskip}{0pt plus 5cm}ReturnCode RTC::PublisherPeriodic::pushFifo ()\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC_1_1PublisherPeriodic_a140c3c158238e6264da3092f922fad22}
+
+
+push \char`\"{}fifo\char`\"{} policy 
+
+\index{RTC::PublisherPeriodic@{RTC::PublisherPeriodic}!pushNew@{pushNew}}
+\index{pushNew@{pushNew}!RTC::PublisherPeriodic@{RTC::PublisherPeriodic}}
+\subsubsection[{pushNew}]{\setlength{\rightskip}{0pt plus 5cm}ReturnCode RTC::PublisherPeriodic::pushNew ()\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC_1_1PublisherPeriodic_a8879160fe6ec5b10fbcb01a2a239e3c6}
+
+
+push \char`\"{}new\char`\"{} policy 
+
+\index{RTC::PublisherPeriodic@{RTC::PublisherPeriodic}!pushSkip@{pushSkip}}
+\index{pushSkip@{pushSkip}!RTC::PublisherPeriodic@{RTC::PublisherPeriodic}}
+\subsubsection[{pushSkip}]{\setlength{\rightskip}{0pt plus 5cm}ReturnCode RTC::PublisherPeriodic::pushSkip ()\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC_1_1PublisherPeriodic_a17ab3f1f9ac21649864e47f1c5517df9}
+
+
+push \char`\"{}skip\char`\"{} policy 
+
+\index{RTC::PublisherPeriodic@{RTC::PublisherPeriodic}!setBuffer@{setBuffer}}
+\index{setBuffer@{setBuffer}!RTC::PublisherPeriodic@{RTC::PublisherPeriodic}}
+\subsubsection[{setBuffer}]{\setlength{\rightskip}{0pt plus 5cm}virtual ReturnCode RTC::PublisherPeriodic::setBuffer ({\bf CdrBufferBase} $\ast$ {\em buffer})\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classRTC_1_1PublisherPeriodic_a407560267480434ba8b55e0a8d781776}
+
+
+バッファのセット 
+
+この関数では、この Publisher に関連付けられるバッファをセットする。 バッファオブジェクトがヌルポインタの場合、INVALID\_\-ARGSが返される。 それ以外の場合は、PORT\_\-OK が返される。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em buffer}]CDR buffer へのポインタ \end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+ReturnCode PORT\_\-OK 正常終了 INVALID\_\-ARGS 引数に不正な値が含まれている 
+\end{DoxyReturn}
+\index{RTC::PublisherPeriodic@{RTC::PublisherPeriodic}!setConsumer@{setConsumer}}
+\index{setConsumer@{setConsumer}!RTC::PublisherPeriodic@{RTC::PublisherPeriodic}}
+\subsubsection[{setConsumer}]{\setlength{\rightskip}{0pt plus 5cm}virtual ReturnCode RTC::PublisherPeriodic::setConsumer ({\bf InPortConsumer} $\ast$ {\em consumer})\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classRTC_1_1PublisherPeriodic_a853af9b51af9c3d76aff407695a1e697}
+
+
+InPortコンシューマのセット. 
+
+この関数では、この Publisher に関連付けられるコンシューマをセットする。 コンシューマオブジェクトがヌルポインタの場合、INVALID\_\-ARGSが返される。 それ以外の場合は、PORT\_\-OK が返される。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em consumer}]Consumer へのポインタ \end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+ReturnCode PORT\_\-OK 正常終了 INVALID\_\-ARGS 引数に不正な値が含まれている 
+\end{DoxyReturn}
+
+
+{\bf RTC::PublisherBase} \doxyref{}{p.}{classRTC_1_1PublisherBase_a7ff8bf60fa9d713402572404b3dc922c}を実装しています。
+
+\index{RTC::PublisherPeriodic@{RTC::PublisherPeriodic}!setListener@{setListener}}
+\index{setListener@{setListener}!RTC::PublisherPeriodic@{RTC::PublisherPeriodic}}
+\subsubsection[{setListener}]{\setlength{\rightskip}{0pt plus 5cm}virtual ReturnCode RTC::PublisherPeriodic::setListener ({\bf ConnectorInfo} \& {\em info}, \/  {\bf ConnectorListeners} $\ast$ {\em listeners})\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classRTC_1_1PublisherPeriodic_a89a8c02590eda932df803278f0cc65bb}
+
+
+リスナを設定する。 
+
+Publisher に対してリスナオブジェクト \doxyref{ConnectorListeners}{p.}{classRTC_1_1ConnectorListeners} を設定する。 各種リスナオブジェクトを含む \doxyref{ConnectorListeners}{p.}{classRTC_1_1ConnectorListeners} をセットすることで、 バッファの読み書き、データの送信時等にこれらのリスナをコールする。 \doxyref{ConnectorListeners}{p.}{classRTC_1_1ConnectorListeners} オブジェクトの所有権はポートまたは RTObject が持ち Publisher 削除時に \doxyref{ConnectorListeners}{p.}{classRTC_1_1ConnectorListeners} は削除されることはない。 \doxyref{ConnectorListeners}{p.}{classRTC_1_1ConnectorListeners} がヌルポインタの場合 INVALID\_\-ARGS を返す。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em info}]ConnectorProfile をローカル化したオブジェクト \doxyref{ConnectorInfo}{p.}{classRTC_1_1ConnectorInfo} \item[{\em listeners}]リスナを多数保持する \doxyref{ConnectorListeners}{p.}{classRTC_1_1ConnectorListeners} オブジェクト \end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+PORT\_\-OK 正常終了 INVALID\_\-ARGS 不正な引数 
+\end{DoxyReturn}
+
+
+{\bf RTC::PublisherBase} \doxyref{}{p.}{classRTC_1_1PublisherBase_a9d12db1358f8b70a5ee761d905170bc2}を実装しています。
+
+\index{RTC::PublisherPeriodic@{RTC::PublisherPeriodic}!setPushPolicy@{setPushPolicy}}
+\index{setPushPolicy@{setPushPolicy}!RTC::PublisherPeriodic@{RTC::PublisherPeriodic}}
+\subsubsection[{setPushPolicy}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::PublisherPeriodic::setPushPolicy (const {\bf coil::Properties} \& {\em prop})\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC_1_1PublisherPeriodic_a87491fc053004fc4c457a71b35aa05d5}
+
+
+PushPolicy の設定. 
+
+\index{RTC::PublisherPeriodic@{RTC::PublisherPeriodic}!svc@{svc}}
+\index{svc@{svc}!RTC::PublisherPeriodic@{RTC::PublisherPeriodic}}
+\subsubsection[{svc}]{\setlength{\rightskip}{0pt plus 5cm}virtual int RTC::PublisherPeriodic::svc (void)\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classRTC_1_1PublisherPeriodic_acaaf9c2c91d64fa49633465e072323f7}
+
+
+スレッド実行関数 
+
+\doxyref{coil::PeriodicTask}{p.}{classcoil_1_1PeriodicTask} により周期実行されるタスク実行関数。 \index{RTC::PublisherPeriodic@{RTC::PublisherPeriodic}!write@{write}}
+\index{write@{write}!RTC::PublisherPeriodic@{RTC::PublisherPeriodic}}
+\subsubsection[{write}]{\setlength{\rightskip}{0pt plus 5cm}virtual ReturnCode RTC::PublisherPeriodic::write (const cdrMemoryStream \& {\em data}, \/  unsigned long {\em sec}, \/  unsigned long {\em usec})\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classRTC_1_1PublisherPeriodic_ae5954cbc4b8b4f9839535d3bd7763e13}
+
+
+データを書き込む 
+
+Publisher が保持するバッファに対してデータを書き込む。コンシュー マ、バッファ、リスナ等が適切に設定されていない等、Publisher オブ ジェクトが正しく初期化されていない場合、この関数を呼び出すとエラー コード PRECONDITION\_\-NOT\_\-MET が返され、バッファへの書き込み等の操 作は一切行われない。
+
+バッファへの書き込みと、InPortへのデータの送信は非同期的に行われ るため、この関数は、InPortへのデータ送信の結果を示す、 CONNECTION\_\-LOST, BUFFER\_\-FULL などのリターンコードを返すことがあ る。この場合、データのバッファへの書き込みは行われない。
+
+バッファへの書き込みに対して、バッファがフル状態、バッファのエ ラー、バッファへの書き込みがタイムアウトした場合、バッファの事前 条件が満たされない場合にはそれぞれ、エラーコード BUFFER\_\-FULL, BUFFER\_\-ERROR, BUFFER\_\-TIMEOUT, PRECONDITION\_\-NOT\_\-MET が返される。
+
+これら以外のエラーの場合、PORT\_\-ERROR が返される。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em data}]書き込むデータ \item[{\em sec}]タイムアウト時間 \item[{\em nsec}]タイムアウト時間\end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+PORT\_\-OK 正常終了 PRECONDITION\_\-NO\_\-MET consumer, buffer, listener等が適切に設定 されていない等、このオブジェクトの事前条件 を満たさない場合。 CONNECTION\_\-LOST 接続が切断されたことを検知した。 BUFFER\_\-FULL バッファがフル状態である。 BUFFER\_\-ERROR バッファに何らかのエラーが生じた場合。 NOT\_\-SUPPORTED サポートされない操作が行われた。 TIMEOUT タイムアウトした。 
+\end{DoxyReturn}
+
+
+{\bf RTC::PublisherBase} \doxyref{}{p.}{classRTC_1_1PublisherBase_abd693b65ffe07276683facfd710be537}を実装しています。
+

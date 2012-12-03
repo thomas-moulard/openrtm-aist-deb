@@ -1,0 +1,47 @@
+\section{Async.h File Reference}
+\label{Async_8h}\index{Async.h@{Async.h}}
+
+
+Asynchronous function invocation helper class.  
+
+
+{\ttfamily \#include $<$coil/Task.h$>$}\par
+{\ttfamily \#include $<$coil/Guard.h$>$}\par
+{\ttfamily \#include $<$iostream$>$}\par
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class {\bf coil::Async}
+\begin{DoxyCompactList}\small\item\em \doxyref{Async}{p.}{classcoil_1_1Async} class. \item\end{DoxyCompactList}\item 
+class {\bf coil::Async\_\-t$<$ Object, Func $>$}
+\begin{DoxyCompactList}\small\item\em \doxyref{Async\_\-t}{p.}{classcoil_1_1Async__t} template class. \item\end{DoxyCompactList}\item 
+class {\bf coil::Async\_\-ref\_\-t$<$ Object, Func $>$}
+\begin{DoxyCompactList}\small\item\em \doxyref{Async\_\-ref\_\-t}{p.}{classcoil_1_1Async__ref__t} template class. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace {\bf coil}
+
+
+\begin{DoxyCompactList}\small\item\em Common Object Interface Layer. \item\end{DoxyCompactList}
+
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename Object , typename Func $>$ }\\Async\_\-t$<$ Object, Func $>$ $\ast$ {\bf coil::AsyncInvoker} (Object $\ast$obj, Func func, bool auto\_\-delete=false)
+\begin{DoxyCompactList}\small\item\em Helper function for async member function summons. \item\end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Object , typename Func $>$ }\\Async\_\-ref\_\-t$<$ Object, Func $>$ $\ast$ {\bf coil::AsyncInvoker} (Object $\ast$obj, Func $\ast$func, bool auto\_\-delete=false)
+\begin{DoxyCompactList}\small\item\em Helper function for async member function summons. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Asynchronous function invocation helper class. \begin{DoxyDate}{Date}
+\$Date\$ 
+\end{DoxyDate}
+\begin{DoxyAuthor}{Author}
+Noriaki Ando $<${\tt n-\/ando@aist.go.jp}$>$
+\end{DoxyAuthor}
+Copyright (C) 2009 Task-\/intelligence Research Group, Intelligent Systems Research Institute, National Institute of Advanced Industrial Science and Technology (AIST), Japan All rights reserved.
+
+\$Id\$ 

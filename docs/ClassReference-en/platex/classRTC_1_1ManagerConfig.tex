@@ -1,0 +1,258 @@
+\section{RTC::ManagerConfig Class Reference}
+\label{classRTC_1_1ManagerConfig}\index{RTC::ManagerConfig@{RTC::ManagerConfig}}
+
+
+\doxyref{Manager}{p.}{classRTC_1_1Manager} configuration class.  
+
+
+
+
+{\ttfamily \#include $<$ManagerConfig.h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf ManagerConfig} ()
+\begin{DoxyCompactList}\small\item\em Constructor. \item\end{DoxyCompactList}\item 
+{\bf ManagerConfig} (int argc, char $\ast$$\ast$argv)
+\begin{DoxyCompactList}\small\item\em Constructor. \item\end{DoxyCompactList}\item 
+virtual {\bf $\sim$ManagerConfig} (void)
+\begin{DoxyCompactList}\small\item\em Destructor. \item\end{DoxyCompactList}\item 
+void {\bf init} (int argc, char $\ast$$\ast$argv)
+\begin{DoxyCompactList}\small\item\em Initialization. \item\end{DoxyCompactList}\item 
+void {\bf configure} ({\bf coil::Properties} \&prop)
+\begin{DoxyCompactList}\small\item\em Specify the configuration information to the Property. \item\end{DoxyCompactList}\item 
+{\bf coil::Properties} {\bf getConfig} () const 
+\begin{DoxyCompactList}\small\item\em Get the configuration. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static const char $\ast$ {\bf config\_\-file\_\-path} [$\,$]
+\begin{DoxyCompactList}\small\item\em The default configuration file path for manager. \item\end{DoxyCompactList}\item 
+static const char $\ast$ {\bf config\_\-file\_\-env}
+\begin{DoxyCompactList}\small\item\em The environment variable to distinguish the default configuration file path. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bf parseArgs} (int argc, char $\ast$$\ast$argv)
+\begin{DoxyCompactList}\small\item\em Parse the command arguments. \item\end{DoxyCompactList}\item 
+bool {\bf findConfigFile} ()
+\begin{DoxyCompactList}\small\item\em Find the configuration file. \item\end{DoxyCompactList}\item 
+void {\bf setSystemInformation} ({\bf coil::Properties} \&prop)
+\begin{DoxyCompactList}\small\item\em Set system information. \item\end{DoxyCompactList}\item 
+bool {\bf fileExist} (const std::string \&filename)
+\begin{DoxyCompactList}\small\item\em Check the file existence. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+{\bf coil::Properties} {\bf m\_\-argprop}
+\begin{DoxyCompactList}\small\item\em configuration properties from arguments \item\end{DoxyCompactList}\item 
+std::string {\bf m\_\-configFile}
+\begin{DoxyCompactList}\small\item\em Manager's configuration file path. \item\end{DoxyCompactList}\item 
+bool {\bf m\_\-isMaster}
+\begin{DoxyCompactList}\small\item\em \doxyref{Manager}{p.}{classRTC_1_1Manager} master flag. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\doxyref{Manager}{p.}{classRTC_1_1Manager} configuration class. Modify Manager's configuration. This class receives the command line arguments and will be instantiated. Set property information of \doxyref{Manager}{p.}{classRTC_1_1Manager} with the configuration file specified by the command line argument or the environment variable etc.
+
+The priorities of each configuration are as follows: 
+\begin{DoxyEnumerate}
+\item Command option \char`\"{}-\/f\char`\"{} 
+\item Environment variable \char`\"{}RTC\_\-MANAGER\_\-CONFIG\char`\"{} 
+\item Default configuration file \char`\"{}./rtc.conf\char`\"{} 
+\item Default configuration file \char`\"{}/etc/rtc.conf\char`\"{} 
+\item Default configuration file \char`\"{}/etc/rtc/rtc.conf\char`\"{} 
+\item Default configuration file \char`\"{}/usr/local/etc/rtc.conf\char`\"{} 
+\item Default configuration file \char`\"{}/usr/local/etc/rtc/rtc.conf\char`\"{} 
+\item Embedded configuration value 
+\end{DoxyEnumerate}If the command option \char`\"{}-\/d\char`\"{} is specified (even if specify configuration file by \char`\"{}-\/f\char`\"{} option), the embedded configuration values will be used.
+
+\begin{DoxySince}{Since}
+0.4.0 
+\end{DoxySince}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{RTC::ManagerConfig@{RTC::ManagerConfig}!ManagerConfig@{ManagerConfig}}
+\index{ManagerConfig@{ManagerConfig}!RTC::ManagerConfig@{RTC::ManagerConfig}}
+\subsubsection[{ManagerConfig}]{\setlength{\rightskip}{0pt plus 5cm}RTC::ManagerConfig::ManagerConfig ()}\label{classRTC_1_1ManagerConfig_a0d34fe8f50baaa055f67d7c692b89002}
+
+
+Constructor. 
+
+Constructor (Do nothing) \index{RTC::ManagerConfig@{RTC::ManagerConfig}!ManagerConfig@{ManagerConfig}}
+\index{ManagerConfig@{ManagerConfig}!RTC::ManagerConfig@{RTC::ManagerConfig}}
+\subsubsection[{ManagerConfig}]{\setlength{\rightskip}{0pt plus 5cm}RTC::ManagerConfig::ManagerConfig (int {\em argc}, \/  char $\ast$$\ast$ {\em argv})}\label{classRTC_1_1ManagerConfig_afaeed8704f198cf2d4de92b676ee5e8f}
+
+
+Constructor. 
+
+Initialize configuration information by given arguments.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em argc}]Number of command line arguments \item[{\em argv}]The command line arguments \end{DoxyParams}
+\index{RTC::ManagerConfig@{RTC::ManagerConfig}!$\sim$ManagerConfig@{$\sim$ManagerConfig}}
+\index{$\sim$ManagerConfig@{$\sim$ManagerConfig}!RTC::ManagerConfig@{RTC::ManagerConfig}}
+\subsubsection[{$\sim$ManagerConfig}]{\setlength{\rightskip}{0pt plus 5cm}virtual RTC::ManagerConfig::$\sim$ManagerConfig (void)\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classRTC_1_1ManagerConfig_aab8bd71e6d890eedb66731e202580e79}
+
+
+Destructor. 
+
+
+
+\subsection{Member Function Documentation}
+\index{RTC::ManagerConfig@{RTC::ManagerConfig}!configure@{configure}}
+\index{configure@{configure}!RTC::ManagerConfig@{RTC::ManagerConfig}}
+\subsubsection[{configure}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::ManagerConfig::configure ({\bf coil::Properties} \& {\em prop})}\label{classRTC_1_1ManagerConfig_a23e48a97e8eb898999f0540a4bf8f008}
+
+
+Specify the configuration information to the Property. 
+
+Configure to the properties specified by Manager's configuration
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em prop}]The target properties to configure \end{DoxyParams}
+\index{RTC::ManagerConfig@{RTC::ManagerConfig}!fileExist@{fileExist}}
+\index{fileExist@{fileExist}!RTC::ManagerConfig@{RTC::ManagerConfig}}
+\subsubsection[{fileExist}]{\setlength{\rightskip}{0pt plus 5cm}bool RTC::ManagerConfig::fileExist (const std::string \& {\em filename})\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC_1_1ManagerConfig_ab7d6b686e80fa4b30f2e8419b7100e83}
+
+
+Check the file existence. 
+
+Confirm whether the specified file exists
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em filename}]The target confirmation file\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+file existance confirmation (True if the file exists.) 
+\end{DoxyReturn}
+\index{RTC::ManagerConfig@{RTC::ManagerConfig}!findConfigFile@{findConfigFile}}
+\index{findConfigFile@{findConfigFile}!RTC::ManagerConfig@{RTC::ManagerConfig}}
+\subsubsection[{findConfigFile}]{\setlength{\rightskip}{0pt plus 5cm}bool RTC::ManagerConfig::findConfigFile ()\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC_1_1ManagerConfig_ac3dda27b40a84eca68e360f607f89c14}
+
+
+Find the configuration file. 
+
+Find the configuration file and configure it. Confirm the file existence when the configuration file has already configured.
+
+The priority of the configuration file\par
+ The command option＞the environment variable＞the default file＞ the default configuration
+
+Default force option(-\/d): Ignore any default files and use the default configuration.
+
+\begin{DoxyReturn}{Returns}
+Configuration file search result 
+\end{DoxyReturn}
+\index{RTC::ManagerConfig@{RTC::ManagerConfig}!getConfig@{getConfig}}
+\index{getConfig@{getConfig}!RTC::ManagerConfig@{RTC::ManagerConfig}}
+\subsubsection[{getConfig}]{\setlength{\rightskip}{0pt plus 5cm}{\bf coil::Properties} RTC::ManagerConfig::getConfig () const}\label{classRTC_1_1ManagerConfig_ad198c2d3a978aaa876ca84cbbc790160}
+
+
+Get the configuration. 
+
+Get the configuration. When this operation is called before calling \doxyref{init()}{p.}{classRTC_1_1ManagerConfig_a110e1592d6c111d957665adc851b4204} function, return the default configuration statically defined, When this operation is called after calling \doxyref{init()}{p.}{classRTC_1_1ManagerConfig_a110e1592d6c111d957665adc851b4204} function, return the initialized configuration according to the command line arguments, the environment variables etc. (Not implemented)
+
+\begin{DoxyReturn}{Returns}
+Manager's configuration information 
+\end{DoxyReturn}
+\index{RTC::ManagerConfig@{RTC::ManagerConfig}!init@{init}}
+\index{init@{init}!RTC::ManagerConfig@{RTC::ManagerConfig}}
+\subsubsection[{init}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::ManagerConfig::init (int {\em argc}, \/  char $\ast$$\ast$ {\em argv})}\label{classRTC_1_1ManagerConfig_a110e1592d6c111d957665adc851b4204}
+
+
+Initialization. 
+
+Initialize with command line options. The following command options are available.
+
+
+\begin{DoxyItemize}
+\item -\/f file : Specify the configuration file.
+\item -\/l module : Specify modules to be loaded. (Not implemented)
+\item -\/o options: Specify other options. (Not implemented)
+\item -\/d : Use default static configuration. (Not implemented)
+\end{DoxyItemize}
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em argc}]Number of command line arguments \item[{\em argv}]The command line arguments \end{DoxyParams}
+\index{RTC::ManagerConfig@{RTC::ManagerConfig}!parseArgs@{parseArgs}}
+\index{parseArgs@{parseArgs}!RTC::ManagerConfig@{RTC::ManagerConfig}}
+\subsubsection[{parseArgs}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::ManagerConfig::parseArgs (int {\em argc}, \/  char $\ast$$\ast$ {\em argv})\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC_1_1ManagerConfig_ad9588168bc6ca5ae18f862ad8956f022}
+
+
+Parse the command arguments. 
+
+
+\begin{DoxyItemize}
+\item -\/f file : Specify the configuration file.
+\item -\/l module : Specify modules to be loaded. (Not implemented)
+\item -\/o options: Other options. (Not implemented)
+\item -\/d : Use default static configuration. (Not implemented)
+\end{DoxyItemize}
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em argc}]Number of command line arguments \item[{\em argv}]The command line arguments \end{DoxyParams}
+\index{RTC::ManagerConfig@{RTC::ManagerConfig}!setSystemInformation@{setSystemInformation}}
+\index{setSystemInformation@{setSystemInformation}!RTC::ManagerConfig@{RTC::ManagerConfig}}
+\subsubsection[{setSystemInformation}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::ManagerConfig::setSystemInformation ({\bf coil::Properties} \& {\em prop})\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC_1_1ManagerConfig_adfda1a2771c13c29c2779fbf5c96430d}
+
+
+Set system information. 
+
+Get the following system info. and set them to Manager's properties.
+\begin{DoxyItemize}
+\item os.name : OS name
+\item os.release : OS release name
+\item os.version : OS version
+\item os.arch : OS architecture
+\item os.hostname: Hostname
+\item manager.pid : process ID
+\end{DoxyItemize}
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em prop}]Properties to set system information \end{DoxyParams}
+
+
+\subsection{Member Data Documentation}
+\index{RTC::ManagerConfig@{RTC::ManagerConfig}!config\_\-file\_\-env@{config\_\-file\_\-env}}
+\index{config\_\-file\_\-env@{config\_\-file\_\-env}!RTC::ManagerConfig@{RTC::ManagerConfig}}
+\subsubsection[{config\_\-file\_\-env}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ {\bf RTC::ManagerConfig::config\_\-file\_\-env}\hspace{0.3cm}{\ttfamily  [static]}}\label{classRTC_1_1ManagerConfig_ab41a069aea168b2dcc4900c595ca9f4d}
+
+
+The environment variable to distinguish the default configuration file path. 
+
+\index{RTC::ManagerConfig@{RTC::ManagerConfig}!config\_\-file\_\-path@{config\_\-file\_\-path}}
+\index{config\_\-file\_\-path@{config\_\-file\_\-path}!RTC::ManagerConfig@{RTC::ManagerConfig}}
+\subsubsection[{config\_\-file\_\-path}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ {\bf RTC::ManagerConfig::config\_\-file\_\-path}[$\,$]\hspace{0.3cm}{\ttfamily  [static]}}\label{classRTC_1_1ManagerConfig_a817fc33a278ed8675d3530cf5d94edf5}
+
+
+The default configuration file path for manager. 
+
+\index{RTC::ManagerConfig@{RTC::ManagerConfig}!m\_\-argprop@{m\_\-argprop}}
+\index{m\_\-argprop@{m\_\-argprop}!RTC::ManagerConfig@{RTC::ManagerConfig}}
+\subsubsection[{m\_\-argprop}]{\setlength{\rightskip}{0pt plus 5cm}{\bf coil::Properties} {\bf RTC::ManagerConfig::m\_\-argprop}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC_1_1ManagerConfig_aa846aac98c963fef5c84ad1f4c2429ec}
+
+
+configuration properties from arguments 
+
+\index{RTC::ManagerConfig@{RTC::ManagerConfig}!m\_\-configFile@{m\_\-configFile}}
+\index{m\_\-configFile@{m\_\-configFile}!RTC::ManagerConfig@{RTC::ManagerConfig}}
+\subsubsection[{m\_\-configFile}]{\setlength{\rightskip}{0pt plus 5cm}std::string {\bf RTC::ManagerConfig::m\_\-configFile}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC_1_1ManagerConfig_a9723c278fa4b1db9a8d9a45898fad64d}
+
+
+Manager's configuration file path. 
+
+\index{RTC::ManagerConfig@{RTC::ManagerConfig}!m\_\-isMaster@{m\_\-isMaster}}
+\index{m\_\-isMaster@{m\_\-isMaster}!RTC::ManagerConfig@{RTC::ManagerConfig}}
+\subsubsection[{m\_\-isMaster}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf RTC::ManagerConfig::m\_\-isMaster}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC_1_1ManagerConfig_afdb5fe98635b4324a0d73bbb9e945b92}
+
+
+\doxyref{Manager}{p.}{classRTC_1_1Manager} master flag. 
+
+true:master,false:slave 

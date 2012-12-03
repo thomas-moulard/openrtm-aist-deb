@@ -1,0 +1,44 @@
+\section{CORBA\_\-IORUtil Namespace Reference}
+\label{namespaceCORBA__IORUtil}\index{CORBA\_\-IORUtil@{CORBA\_\-IORUtil}}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool {\bf toIOR} (const char $\ast$iorstr, IOP::IOR \&ior)
+\begin{DoxyCompactList}\small\item\em Convert from IOR string to IOR structure. \item\end{DoxyCompactList}\item 
+bool {\bf toString} (IOP::IOR \&ior, std::string \&iorstr)
+\begin{DoxyCompactList}\small\item\em Convert from IOR structure to IOR string. \item\end{DoxyCompactList}\item 
+bool {\bf replaceEndpoint} (std::string \&iorstr, const std::string \&endpoint)
+\begin{DoxyCompactList}\small\item\em Replace endpoint address in IOR entry. \item\end{DoxyCompactList}\item 
+std::string {\bf formatIORinfo} (const char $\ast$iorstr)
+\begin{DoxyCompactList}\small\item\em Extracts information from IOR string and returns formatted string. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\index{CORBA\_\-IORUtil@{CORBA\_\-IORUtil}!formatIORinfo@{formatIORinfo}}
+\index{formatIORinfo@{formatIORinfo}!CORBA_IORUtil@{CORBA\_\-IORUtil}}
+\subsubsection[{formatIORinfo}]{\setlength{\rightskip}{0pt plus 5cm}std::string CORBA\_\-IORUtil::formatIORinfo (const char $\ast$ {\em iorstr})}\label{namespaceCORBA__IORUtil_a9e4dfff4103d028b8958ab7ef15c83d5}
+
+
+Extracts information from IOR string and returns formatted string. 
+
+\index{CORBA\_\-IORUtil@{CORBA\_\-IORUtil}!replaceEndpoint@{replaceEndpoint}}
+\index{replaceEndpoint@{replaceEndpoint}!CORBA_IORUtil@{CORBA\_\-IORUtil}}
+\subsubsection[{replaceEndpoint}]{\setlength{\rightskip}{0pt plus 5cm}bool CORBA\_\-IORUtil::replaceEndpoint (std::string \& {\em iorstr}, \/  const std::string \& {\em endpoint})}\label{namespaceCORBA__IORUtil_a0e12e01df775b2acfb22e1442ac69785}
+
+
+Replace endpoint address in IOR entry. 
+
+\index{CORBA\_\-IORUtil@{CORBA\_\-IORUtil}!toIOR@{toIOR}}
+\index{toIOR@{toIOR}!CORBA_IORUtil@{CORBA\_\-IORUtil}}
+\subsubsection[{toIOR}]{\setlength{\rightskip}{0pt plus 5cm}bool CORBA\_\-IORUtil::toIOR (const char $\ast$ {\em iorstr}, \/  IOP::IOR \& {\em ior})}\label{namespaceCORBA__IORUtil_a72b91b72b943dbe26800d2e75c48c736}
+
+
+Convert from IOR string to IOR structure. 
+
+\index{CORBA\_\-IORUtil@{CORBA\_\-IORUtil}!toString@{toString}}
+\index{toString@{toString}!CORBA_IORUtil@{CORBA\_\-IORUtil}}
+\subsubsection[{toString}]{\setlength{\rightskip}{0pt plus 5cm}bool CORBA\_\-IORUtil::toString (IOP::IOR \& {\em ior}, \/  std::string \& {\em iorstr})}\label{namespaceCORBA__IORUtil_a6b8cf0c6ed5a0140e249773ee2f6ceb0}
+
+
+Convert from IOR structure to IOR string. 
+

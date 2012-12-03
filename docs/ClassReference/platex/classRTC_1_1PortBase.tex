@@ -1,0 +1,1211 @@
+\section{クラス RTC::PortBase}
+\label{classRTC_1_1PortBase}\index{RTC::PortBase@{RTC::PortBase}}
+
+
+Port の基底クラス.  
+
+
+
+
+{\ttfamily \#include $<$PortBase.h$>$}
+
+RTC::PortBaseに対する継承グラフ\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3cm]{classRTC_1_1PortBase}
+\end{center}
+\end{figure}
+\subsection*{構成}
+\begin{DoxyCompactItemize}
+\item 
+struct {\bf find\_\-conn\_\-id}
+\begin{DoxyCompactList}\small\item\em id を持つ ConnectorProfile を探す Functor \item\end{DoxyCompactList}\item 
+struct {\bf find\_\-interface}
+\begin{DoxyCompactList}\small\item\em name と polarity から interface を探す Functor \item\end{DoxyCompactList}\item 
+struct {\bf find\_\-port\_\-ref}
+\begin{DoxyCompactList}\small\item\em コンストラクタ引数 port\_\-ref と同じオブジェクト参照を探す Functor \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public メソッド}
+\begin{DoxyCompactItemize}
+\item 
+{\bf PortBase} (const char $\ast$name=\char`\"{}\char`\"{})
+\begin{DoxyCompactList}\small\item\em コンストラクタ \item\end{DoxyCompactList}\item 
+virtual {\bf $\sim$PortBase} (void)
+\begin{DoxyCompactList}\small\item\em デストラクタ \item\end{DoxyCompactList}\item 
+virtual PortProfile $\ast$ {\bf get\_\-port\_\-profile} ()  throw (CORBA::SystemException)
+\begin{DoxyCompactList}\small\item\em [CORBA interface] PortProfileを取得する \item\end{DoxyCompactList}\item 
+const PortProfile \& {\bf getPortProfile} () const 
+\begin{DoxyCompactList}\small\item\em PortProfile を取得する。. \item\end{DoxyCompactList}\item 
+virtual ConnectorProfileList $\ast$ {\bf get\_\-connector\_\-profiles} ()  throw (CORBA::SystemException)
+\begin{DoxyCompactList}\small\item\em [CORBA interface] ConnectorProfileListを取得する \item\end{DoxyCompactList}\item 
+virtual ConnectorProfile $\ast$ {\bf get\_\-connector\_\-profile} (const char $\ast$connector\_\-id)  throw (CORBA::SystemException)
+\begin{DoxyCompactList}\small\item\em [CORBA interface] ConnectorProfile を取得する \item\end{DoxyCompactList}\item 
+virtual ReturnCode\_\-t {\bf connect} (ConnectorProfile \&connector\_\-profile)  throw (CORBA::SystemException)
+\begin{DoxyCompactList}\small\item\em [CORBA interface] Port の接続を行う \item\end{DoxyCompactList}\item 
+virtual ReturnCode\_\-t {\bf notify\_\-connect} (ConnectorProfile \&connector\_\-profile)  throw (CORBA::SystemException)
+\begin{DoxyCompactList}\small\item\em [CORBA interface] Port の接続通知を行う \item\end{DoxyCompactList}\item 
+virtual ReturnCode\_\-t {\bf disconnect} (const char $\ast$connector\_\-id)  throw (CORBA::SystemException)
+\begin{DoxyCompactList}\small\item\em [CORBA interface] Port の接続を解除する \item\end{DoxyCompactList}\item 
+virtual ReturnCode\_\-t {\bf notify\_\-disconnect} (const char $\ast$connector\_\-id)  throw (CORBA::SystemException)
+\begin{DoxyCompactList}\small\item\em [CORBA interface] Port の接続解除通知を行う \item\end{DoxyCompactList}\item 
+virtual ReturnCode\_\-t {\bf disconnect\_\-all} ()  throw (CORBA::SystemException)
+\begin{DoxyCompactList}\small\item\em [CORBA interface] Port の全接続を解除する \item\end{DoxyCompactList}\item 
+virtual void {\bf activateInterfaces} ()=0
+\begin{DoxyCompactList}\small\item\em Port の全てのインターフェースを activates する. \item\end{DoxyCompactList}\item 
+virtual void {\bf deactivateInterfaces} ()=0
+\begin{DoxyCompactList}\small\item\em 全ての Port のインターフェースを deactivates する \item\end{DoxyCompactList}\item 
+void {\bf setName} (const char $\ast$name)
+\begin{DoxyCompactList}\small\item\em Port の名前を設定する. \item\end{DoxyCompactList}\item 
+const char $\ast$ {\bf getName} () const 
+\begin{DoxyCompactList}\small\item\em Port の名前を取得する. \item\end{DoxyCompactList}\item 
+const PortProfile \& {\bf getProfile} () const 
+\begin{DoxyCompactList}\small\item\em PortProfileを取得する. \item\end{DoxyCompactList}\item 
+void {\bf setPortRef} (PortService\_\-ptr port\_\-ref)
+\begin{DoxyCompactList}\small\item\em Port のオブジェクト参照を設定する. \item\end{DoxyCompactList}\item 
+PortService\_\-ptr {\bf getPortRef} ()
+\begin{DoxyCompactList}\small\item\em Port のオブジェクト参照を取得する. \item\end{DoxyCompactList}\item 
+void {\bf setOwner} (RTObject\_\-ptr owner)
+\begin{DoxyCompactList}\small\item\em Port の owner の RTObject を指定する. \item\end{DoxyCompactList}\item 
+void {\bf setOnPublishInterfaces} ({\bf ConnectionCallback} $\ast$on\_\-publish)
+\begin{DoxyCompactList}\small\item\em インターフェースを公開する際に呼ばれるコールバックをセットする \item\end{DoxyCompactList}\item 
+void {\bf setOnSubscribeInterfaces} ({\bf ConnectionCallback} $\ast$on\_\-subscribe)
+\begin{DoxyCompactList}\small\item\em インターフェースを取得する際に呼ばれるコールバックをセットする \item\end{DoxyCompactList}\item 
+void {\bf setOnConnected} ({\bf ConnectionCallback} $\ast$on\_\-connected)
+\begin{DoxyCompactList}\small\item\em 接続完了時に呼ばれるコールバックをセットする \item\end{DoxyCompactList}\item 
+void {\bf setOnUnsubscribeInterfaces} ({\bf ConnectionCallback} $\ast$on\_\-subscribe)
+\begin{DoxyCompactList}\small\item\em インターフェースを解放する際に呼ばれるコールバックをセットする \item\end{DoxyCompactList}\item 
+void {\bf setOnDisconnected} ({\bf ConnectionCallback} $\ast$on\_\-disconnected)
+\begin{DoxyCompactList}\small\item\em 接続解除に呼ばれるコールバックをセットする \item\end{DoxyCompactList}\item 
+void {\bf setOnConnectionLost} ({\bf ConnectionCallback} $\ast$on\_\-connection\_\-lost)
+\begin{DoxyCompactList}\small\item\em ポートの接続がロストした場合に呼び出されるコールバックをセットする \item\end{DoxyCompactList}\item 
+void {\bf setPortConnectListenerHolder} ({\bf PortConnectListeners} $\ast$portconnListeners)
+\begin{DoxyCompactList}\small\item\em \doxyref{PortConnectListeners}{p.}{classRTC_1_1PortConnectListeners} のホルダをセットする. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected 型}
+\begin{DoxyCompactItemize}
+\item 
+typedef {\bf coil::Guard}$<$ {\bf coil::Mutex} $>$ {\bf Guard}
+\end{DoxyCompactItemize}
+\subsection*{Protected メソッド}
+\begin{DoxyCompactItemize}
+\item 
+virtual ReturnCode\_\-t {\bf publishInterfaces} (ConnectorProfile \&connector\_\-profile)=0
+\begin{DoxyCompactList}\small\item\em Interface 情報を公開する. \item\end{DoxyCompactList}\item 
+virtual ReturnCode\_\-t {\bf connectNext} (ConnectorProfile \&connector\_\-profile)
+\begin{DoxyCompactList}\small\item\em 次の Port に対して \doxyref{notify\_\-connect()}{p.}{classRTC_1_1PortBase_a9bcc3c981a6649f37f3ad7eac31e5766} をコールする \item\end{DoxyCompactList}\item 
+virtual ReturnCode\_\-t {\bf disconnectNext} (ConnectorProfile \&connector\_\-profile)
+\begin{DoxyCompactList}\small\item\em 次の Port に対して \doxyref{notify\_\-disconnect()}{p.}{classRTC_1_1PortBase_ae78bb7882d22bca794bd0faa78452aca} をコールする \item\end{DoxyCompactList}\item 
+virtual ReturnCode\_\-t {\bf subscribeInterfaces} (const ConnectorProfile \&connector\_\-profile)=0
+\begin{DoxyCompactList}\small\item\em Interface 情報を公開する. \item\end{DoxyCompactList}\item 
+virtual void {\bf unsubscribeInterfaces} (const ConnectorProfile \&connector\_\-profile)=0
+\begin{DoxyCompactList}\small\item\em Interface の接続を解除する. \item\end{DoxyCompactList}\item 
+virtual void {\bf setConnectionLimit} (int limit\_\-value)
+\begin{DoxyCompactList}\small\item\em 接続の最大数を設定する。 \item\end{DoxyCompactList}\item 
+virtual ReturnCode\_\-t {\bf \_\-publishInterfaces} (void)
+\begin{DoxyCompactList}\small\item\em Interface情報を公開する. \item\end{DoxyCompactList}\item 
+bool {\bf isEmptyId} (const ConnectorProfile \&connector\_\-profile) const 
+\begin{DoxyCompactList}\small\item\em ConnectorProfile の connector\_\-id フィールドが空かどうか判定. \item\end{DoxyCompactList}\item 
+const std::string {\bf getUUID} () const 
+\begin{DoxyCompactList}\small\item\em UUIDを生成する. \item\end{DoxyCompactList}\item 
+void {\bf setUUID} (ConnectorProfile \&connector\_\-profile) const 
+\begin{DoxyCompactList}\small\item\em UUIDを生成し ConnectorProfile にセットする. \item\end{DoxyCompactList}\item 
+bool {\bf isExistingConnId} (const char $\ast$id)
+\begin{DoxyCompactList}\small\item\em id が既存の ConnectorProfile のものかどうか判定する \item\end{DoxyCompactList}\item 
+ConnectorProfile {\bf findConnProfile} (const char $\ast$id)
+\begin{DoxyCompactList}\small\item\em id を持つ ConnectorProfile を探す \item\end{DoxyCompactList}\item 
+CORBA::Long {\bf findConnProfileIndex} (const char $\ast$id)
+\begin{DoxyCompactList}\small\item\em id を持つ ConnectorProfile を探す \item\end{DoxyCompactList}\item 
+void {\bf updateConnectorProfile} (const ConnectorProfile \&connector\_\-profile)
+\begin{DoxyCompactList}\small\item\em ConnectorProfile の追加もしくは更新. \item\end{DoxyCompactList}\item 
+bool {\bf eraseConnectorProfile} (const char $\ast$id)
+\begin{DoxyCompactList}\small\item\em ConnectorProfile を削除する. \item\end{DoxyCompactList}\item 
+bool {\bf appendInterface} (const char $\ast$name, const char $\ast$type\_\-name, PortInterfacePolarity pol)
+\begin{DoxyCompactList}\small\item\em PortInterfaceProfile に インターフェースを登録する. \item\end{DoxyCompactList}\item 
+bool {\bf deleteInterface} (const char $\ast$name, PortInterfacePolarity pol)
+\begin{DoxyCompactList}\small\item\em PortInterfaceProfile からインターフェース登録を削除する. \item\end{DoxyCompactList}\item 
+{\footnotesize template$<$class ValueType $>$ }\\void {\bf addProperty} (const char $\ast$key, ValueType value)
+\begin{DoxyCompactList}\small\item\em PortProfile の properties に NameValue 値を追加する. \item\end{DoxyCompactList}\item 
+void {\bf appendProperty} (const char $\ast$key, const char $\ast$value)
+\begin{DoxyCompactList}\small\item\em PortProfile の properties に NameValue 値を要素に追加する. \item\end{DoxyCompactList}\item 
+void {\bf updateConnectors} ()
+\begin{DoxyCompactList}\small\item\em 存在しないポートをdisconnectする。 \item\end{DoxyCompactList}\item 
+bool {\bf checkPorts} (::RTC::PortServiceList \&ports)
+\begin{DoxyCompactList}\small\item\em ポートの存在を確認する。 \item\end{DoxyCompactList}\item 
+void {\bf onNotifyConnect} (const char $\ast$portname, RTC::ConnectorProfile \&profile)
+\item 
+void {\bf onNotifyDisconnect} (const char $\ast$portname, RTC::ConnectorProfile \&profile)
+\item 
+void {\bf onUnsubscribeInterfaces} (const char $\ast$portname, RTC::ConnectorProfile \&profile)
+\item 
+void {\bf onPublishInterfaces} (const char $\ast$portname, RTC::ConnectorProfile \&profile, ReturnCode\_\-t ret)
+\item 
+void {\bf onConnectNextport} (const char $\ast$portname, RTC::ConnectorProfile \&profile, ReturnCode\_\-t ret)
+\item 
+void {\bf onSubscribeInterfaces} (const char $\ast$portname, RTC::ConnectorProfile \&profile, ReturnCode\_\-t ret)
+\item 
+void {\bf onConnected} (const char $\ast$portname, RTC::ConnectorProfile \&profile, ReturnCode\_\-t ret)
+\item 
+void {\bf onDisconnectNextport} (const char $\ast$portname, RTC::ConnectorProfile \&profile, ReturnCode\_\-t ret)
+\item 
+void {\bf onDisconnected} (const char $\ast$portname, RTC::ConnectorProfile \&profile, ReturnCode\_\-t ret)
+\end{DoxyCompactItemize}
+\subsection*{Protected 変数}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Logger} {\bf rtclog}
+\begin{DoxyCompactList}\small\item\em ロガーストリーム \item\end{DoxyCompactList}\item 
+PortProfile {\bf m\_\-profile}
+\begin{DoxyCompactList}\small\item\em Port の PortProfile. \item\end{DoxyCompactList}\item 
+RTC::PortService\_\-var {\bf m\_\-objref}
+\begin{DoxyCompactList}\small\item\em Port の オブジェクト参照. \item\end{DoxyCompactList}\item 
+{\bf coil::Mutex} {\bf m\_\-profile\_\-mutex}
+\begin{DoxyCompactList}\small\item\em PortProfile の mutex. \item\end{DoxyCompactList}\item 
+{\bf coil::Mutex} {\bf m\_\-connectorsMutex}
+\item 
+std::string {\bf m\_\-ownerInstanceName}
+\begin{DoxyCompactList}\small\item\em インスタンス名 \item\end{DoxyCompactList}\item 
+int {\bf m\_\-connectionLimit}
+\begin{DoxyCompactList}\small\item\em Port の接続の最大数. \item\end{DoxyCompactList}\item 
+{\bf ConnectionCallback} $\ast$ {\bf m\_\-onPublishInterfaces}
+\begin{DoxyCompactList}\small\item\em Callback functor オブジェクト. \item\end{DoxyCompactList}\item 
+{\bf ConnectionCallback} $\ast$ {\bf m\_\-onSubscribeInterfaces}
+\begin{DoxyCompactList}\small\item\em Callback functor オブジェクト. \item\end{DoxyCompactList}\item 
+{\bf ConnectionCallback} $\ast$ {\bf m\_\-onConnected}
+\begin{DoxyCompactList}\small\item\em Callback functor オブジェクト. \item\end{DoxyCompactList}\item 
+{\bf ConnectionCallback} $\ast$ {\bf m\_\-onUnsubscribeInterfaces}
+\begin{DoxyCompactList}\small\item\em Callback functor オブジェクト. \item\end{DoxyCompactList}\item 
+{\bf ConnectionCallback} $\ast$ {\bf m\_\-onDisconnected}
+\begin{DoxyCompactList}\small\item\em Callback functor オブジェクト. \item\end{DoxyCompactList}\item 
+{\bf ConnectionCallback} $\ast$ {\bf m\_\-onConnectionLost}
+\begin{DoxyCompactList}\small\item\em Callback functor オブジェクト. \item\end{DoxyCompactList}\item 
+{\bf PortConnectListeners} $\ast$ {\bf m\_\-portconnListeners}
+\begin{DoxyCompactList}\small\item\em PortConnectListenerホルダ. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{説明}
+Port の基底クラス. RTC::Port の基底となるクラス。 RTC::Port はほぼ UML Port の概念を継承しており、ほぼ同等のものとみなす ことができる。RT コンポーネントのコンセプトにおいては、 Port はコンポーネントに付属し、コンポーネントが他のコンポーネントと相互作用 を行う接点であり、通常幾つかのインターフェースと関連付けられる。 コンポーネントは Port を通して外部に対しインターフェースを提供または要求 することができ、Portはその接続を管理する役割を担う。 
+
+Port の具象クラスは、通常 RT コンポーネントインスタンス生成時に同時に 生成され、提供・要求インターフェースを登録した後、RT コンポーネントに 登録され、外部からアクセス可能な Port として機能することを想定している。 
+
+RTC::Port は CORBA インターフェースとして以下のオペレーションを提供する。
+
+
+\begin{DoxyItemize}
+\item \doxyref{get\_\-port\_\-profile()}{p.}{classRTC_1_1PortBase_ae38441f66c19863e383f461de846a062}
+\item \doxyref{get\_\-connector\_\-profiles()}{p.}{classRTC_1_1PortBase_a00e8e5597add78a8e8f044a98ff60cfd}
+\item \doxyref{get\_\-connector\_\-profile()}{p.}{classRTC_1_1PortBase_a66847c611f82d14894356fd122315c06}
+\item \doxyref{connect()}{p.}{classRTC_1_1PortBase_a139d07d2e94f7e793aedf4aa24b92462}
+\item \doxyref{notify\_\-connect()}{p.}{classRTC_1_1PortBase_a9bcc3c981a6649f37f3ad7eac31e5766}
+\item \doxyref{disconnect()}{p.}{classRTC_1_1PortBase_a1ac6bea826249d3b2b9cb09d475e54f8}
+\item \doxyref{notify\_\-disconnect()}{p.}{classRTC_1_1PortBase_ae78bb7882d22bca794bd0faa78452aca}
+\item \doxyref{disconnect\_\-all()}{p.}{classRTC_1_1PortBase_a2464e0184036a389c4083625d7a1435f}
+\end{DoxyItemize}
+
+このクラスでは、これらのオペレーションの実装を提供する。 
+
+これらのオペレーションのうち、get\_\-port\_\-profile(), \doxyref{get\_\-connector\_\-profiles()}{p.}{classRTC_1_1PortBase_a00e8e5597add78a8e8f044a98ff60cfd}, \doxyref{get\_\-connector\_\-profile()}{p.}{classRTC_1_1PortBase_a66847c611f82d14894356fd122315c06}, \doxyref{connect()}{p.}{classRTC_1_1PortBase_a139d07d2e94f7e793aedf4aa24b92462}, \doxyref{disconnect()}{p.}{classRTC_1_1PortBase_a1ac6bea826249d3b2b9cb09d475e54f8}, \doxyref{disconnect\_\-all()}{p.}{classRTC_1_1PortBase_a2464e0184036a389c4083625d7a1435f} は、 サブクラスにおいて特に振る舞いを変更する必要がないため、オーバーライド することは推奨されない。 
+
+\doxyref{notify\_\-connect()}{p.}{classRTC_1_1PortBase_a9bcc3c981a6649f37f3ad7eac31e5766}, \doxyref{notify\_\-disconnect()}{p.}{classRTC_1_1PortBase_ae78bb7882d22bca794bd0faa78452aca} については、サブクラスが提供・要求 するインターフェースの種類に応じて、振る舞いを変更する必要が生ずる 可能性があるが、これらを直接オーバーライドすることは推奨されず、 後述の \doxyref{notify\_\-connect()}{p.}{classRTC_1_1PortBase_a9bcc3c981a6649f37f3ad7eac31e5766}, \doxyref{notify\_\-disconnect()}{p.}{classRTC_1_1PortBase_ae78bb7882d22bca794bd0faa78452aca} の項においても述べられる通り これらの関数に関連した protected 関数をオーバーライドすることにより 振る舞いを変更することが推奨される。
+
+\begin{DoxySince}{から}
+0.4.0 
+\end{DoxySince}
+
+
+\subsection{型定義}
+\index{RTC::PortBase@{RTC::PortBase}!Guard@{Guard}}
+\index{Guard@{Guard}!RTC::PortBase@{RTC::PortBase}}
+\subsubsection[{Guard}]{\setlength{\rightskip}{0pt plus 5cm}typedef {\bf coil::Guard}$<${\bf coil::Mutex}$>$ {\bf RTC::PortBase::Guard}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC_1_1PortBase_afed27d51e39b7ad3a0cd0a7c80cc6b53}
+
+
+\subsection{コンストラクタとデストラクタ}
+\index{RTC::PortBase@{RTC::PortBase}!PortBase@{PortBase}}
+\index{PortBase@{PortBase}!RTC::PortBase@{RTC::PortBase}}
+\subsubsection[{PortBase}]{\setlength{\rightskip}{0pt plus 5cm}RTC::PortBase::PortBase (const char $\ast$ {\em name} = {\ttfamily \char`\"{}\char`\"{}})}\label{classRTC_1_1PortBase_a778ffb56398a68f1a9254773a4bbc0b7}
+
+
+コンストラクタ 
+
+\doxyref{PortBase}{p.}{classRTC_1_1PortBase} のコンストラクタは Port 名 name を引数に取り初期化を行う と同時に、自分自身を CORBA Object として活性化し、自身の PortProfile の port\_\-ref に自身のオブジェクトリファレンスを格納する。 名前には、\char`\"{}.\char`\"{} 以外の文字列を使用することができる。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em name}]Port の名前(デフォルト値:\char`\"{}\char`\"{}) \end{DoxyParams}
+\index{RTC::PortBase@{RTC::PortBase}!$\sim$PortBase@{$\sim$PortBase}}
+\index{$\sim$PortBase@{$\sim$PortBase}!RTC::PortBase@{RTC::PortBase}}
+\subsubsection[{$\sim$PortBase}]{\setlength{\rightskip}{0pt plus 5cm}virtual RTC::PortBase::$\sim$PortBase (void)\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classRTC_1_1PortBase_acc3ed2687a796b80c0b29d170e2e27aa}
+
+
+デストラクタ 
+
+デストラクタでは、PortService CORBA オブジェクトの deactivate を 行う。deactivateに際して例外を投げることはない。 
+
+\subsection{関数}
+\index{RTC::PortBase@{RTC::PortBase}!\_\-publishInterfaces@{\_\-publishInterfaces}}
+\index{\_\-publishInterfaces@{\_\-publishInterfaces}!RTC::PortBase@{RTC::PortBase}}
+\subsubsection[{\_\-publishInterfaces}]{\setlength{\rightskip}{0pt plus 5cm}virtual ReturnCode\_\-t RTC::PortBase::\_\-publishInterfaces (void)\hspace{0.3cm}{\ttfamily  [protected, virtual]}}\label{classRTC_1_1PortBase_afa9ee9900b247eb705c1dd27a6f6efe8}
+
+
+Interface情報を公開する. 
+
+Interface情報を公開する。
+
+dataport.dataflow\_\-type
+
+\begin{DoxyReturn}{戻り値}
+ReturnCode\_\-t 型のリターンコード 
+\end{DoxyReturn}
+\index{RTC::PortBase@{RTC::PortBase}!activateInterfaces@{activateInterfaces}}
+\index{activateInterfaces@{activateInterfaces}!RTC::PortBase@{RTC::PortBase}}
+\subsubsection[{activateInterfaces}]{\setlength{\rightskip}{0pt plus 5cm}virtual void RTC::PortBase::activateInterfaces ()\hspace{0.3cm}{\ttfamily  [pure virtual]}}\label{classRTC_1_1PortBase_ad779347bae007555968dda9e78004e34}
+
+
+Port の全てのインターフェースを activates する. 
+
+Port に登録されている全てのインターフェースを activate する。 
+
+{\bf RTC::CorbaPort} \doxyref{}{p.}{classRTC_1_1CorbaPort_a1b9efe804a293b2c38a9cbe3b5ba54a0}, {\bf RTC::InPortBase} \doxyref{}{p.}{classRTC_1_1InPortBase_a4188e629df750498e0d3b100f51133ff}, と {\bf RTC::OutPortBase} \doxyref{}{p.}{classRTC_1_1OutPortBase_a4741de18bb77db12a192055468eca8a8}で実装されています。
+
+\index{RTC::PortBase@{RTC::PortBase}!addProperty@{addProperty}}
+\index{addProperty@{addProperty}!RTC::PortBase@{RTC::PortBase}}
+\subsubsection[{addProperty}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class ValueType $>$ void RTC::PortBase::addProperty (const char $\ast$ {\em key}, \/  ValueType {\em value})\hspace{0.3cm}{\ttfamily  [inline, protected]}}\label{classRTC_1_1PortBase_ab6548d7c61ff22a34b418ae4964177ba}
+
+
+PortProfile の properties に NameValue 値を追加する. 
+
+PortProfile の properties に NameValue 値を追加する。 追加するデータの型をValueTypeで指定する。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em key}]properties の name \item[{\em value}]properties の value \end{DoxyParams}
+
+
+参照先 m\_\-profile, NVUtil::newNV(), と CORBA\_\-SeqUtil::push\_\-back().
+
+\index{RTC::PortBase@{RTC::PortBase}!appendInterface@{appendInterface}}
+\index{appendInterface@{appendInterface}!RTC::PortBase@{RTC::PortBase}}
+\subsubsection[{appendInterface}]{\setlength{\rightskip}{0pt plus 5cm}bool RTC::PortBase::appendInterface (const char $\ast$ {\em name}, \/  const char $\ast$ {\em type\_\-name}, \/  PortInterfacePolarity {\em pol})\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC_1_1PortBase_a91146c0cd579ad2d67b0bca8c7a437bf}
+
+
+PortInterfaceProfile に インターフェースを登録する. 
+
+このオペレーションは Port が持つ PortProfile の、PortInterfaceProfile にインターフェースの情報を追加する。 この情報は、get\_\-port\_\-profile() によって得られる PortProfile のうち PortInterfaceProfile の値を変更するのみであり、実際にインターフェースを 提供したり要求したりする場合には、サブクラスで、 publishInterface() , subscribeInterface() 等の関数を適切にオーバーライドしインターフェースの 提供、要求処理を行わなければならない。
+
+インターフェース(のインスタンス)名は Port 内で一意でなければならない。 同名のインターフェースがすでに登録されている場合、この関数は false を 返す。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em name}]インターフェースのインスタンスの名前 \item[{\em type\_\-name}]インターフェースの型の名前 \item[{\em pol}]インターフェースの属性 (RTC::PROVIDED もしくは \doxyref{RTC}{p.}{namespaceRTC}:REQUIRED)\end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+インターフェース登録処理結果。 同名のインターフェースが既に登録されていれば false を返す。 
+\end{DoxyReturn}
+\index{RTC::PortBase@{RTC::PortBase}!appendProperty@{appendProperty}}
+\index{appendProperty@{appendProperty}!RTC::PortBase@{RTC::PortBase}}
+\subsubsection[{appendProperty}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::PortBase::appendProperty (const char $\ast$ {\em key}, \/  const char $\ast$ {\em value})\hspace{0.3cm}{\ttfamily  [inline, protected]}}\label{classRTC_1_1PortBase_ac6d94d956a43f47157c2aacd0be1da4c}
+
+
+PortProfile の properties に NameValue 値を要素に追加する. 
+
+PortProfile の properties に NameValue 値を要素に追加する。この 関数により設定された properties は get\_\-prot\_\-profile() により外部 から参照される。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em key}]properties の name \item[{\em value}]properties の value \end{DoxyParams}
+
+
+参照先 NVUtil::appendStringValue(), と m\_\-profile.
+
+\index{RTC::PortBase@{RTC::PortBase}!checkPorts@{checkPorts}}
+\index{checkPorts@{checkPorts}!RTC::PortBase@{RTC::PortBase}}
+\subsubsection[{checkPorts}]{\setlength{\rightskip}{0pt plus 5cm}bool RTC::PortBase::checkPorts (::RTC::PortServiceList \& {\em ports})\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC_1_1PortBase_abfc03f49c63f915a307ce34fed244439}
+
+
+ポートの存在を確認する。 
+
+
+\begin{DoxyParams}{引数}
+\item[{\em ports}]確認するポート \end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+true:存在する,false:存在しない 
+\end{DoxyReturn}
+\index{RTC::PortBase@{RTC::PortBase}!connect@{connect}}
+\index{connect@{connect}!RTC::PortBase@{RTC::PortBase}}
+\subsubsection[{connect}]{\setlength{\rightskip}{0pt plus 5cm}virtual ReturnCode\_\-t RTC::PortBase::connect (ConnectorProfile \& {\em connector\_\-profile})  throw (CORBA::SystemException)\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classRTC_1_1PortBase_a139d07d2e94f7e793aedf4aa24b92462}
+
+
+[CORBA interface] Port の接続を行う 
+
+与えられた ConnectoionProfile の情報に基づき、Port間の接続を確立 する。この関数は主にアプリケーションプログラムやツールから呼び出 すことを前提としている。
+
+\begin{DoxyPrecond}{事前条件}
+アプリケーションプログラムは、コンポーネント間の複数の Port を接続するために、適切な値をセットした ConnectorProfile を \doxyref{connect()}{p.}{classRTC_1_1PortBase_a139d07d2e94f7e793aedf4aa24b92462} の引数として与えて呼び出さなければならない。
+
+\doxyref{connect()}{p.}{classRTC_1_1PortBase_a139d07d2e94f7e793aedf4aa24b92462} に与える ConnectorProfile のメンバーのうち、 name, ports, properties メンバーに対してデータをセットしなければ ならない。connector\_\-id には通常空文字を設定するか、適当なUUIDを 文字列で設定する必要がある。
+
+ConnectorProfile::name は接続につける名前で CORBA::string 型に格納できる任意の文字列である必要がある。
+
+ConnectorProfile::connector\_\-id はすべての接続に対して一意な ID (通常はUUID) が格納される。UUIDの設定は \doxyref{connect()}{p.}{classRTC_1_1PortBase_a139d07d2e94f7e793aedf4aa24b92462} 関数内で行 われるので、呼び出し側は空文字を設定する。既存の接続と同じUUIDを 設定し \doxyref{connect()}{p.}{classRTC_1_1PortBase_a139d07d2e94f7e793aedf4aa24b92462} を呼び出した場合には PRECONDITION\_\-NOT\_\-MET エラー を返す。ただし、将来の拡張で既存の接続プロファイルを更新するため に既存の UUID を設定して呼び出す使用法が用いられる可能性がある。
+
+ConnectorProfile::ports は RTC::PortService のシーケンスで、 接続を構成する通常2つ以上のポートのオブジェクト参照を代入する必 要がある。例外として、ポートのオブジェクト参照を1つだけ格納して \doxyref{connect()}{p.}{classRTC_1_1PortBase_a139d07d2e94f7e793aedf4aa24b92462}を呼び出すことで、ポートのインターフェース情報を取得し たり、特殊なポート(CORBAのRTCPortService以外の相手)に対して接 続を行う場合もある。
+
+ConnectorProfile::properties はポートに関連付けられたインター フェースに対するプロパティを与えるために使用する。プロパティは、 string 型をキー、Any 型を値としてもつペアのシーケンスであり、値 には任意のCORBAデータ型を格納できるが、可能な限り string 型とし て格納されることが推奨される。
+
+以上 \doxyref{connect()}{p.}{classRTC_1_1PortBase_a139d07d2e94f7e793aedf4aa24b92462} 呼び出し時に設定する ConnectorProfile のメン バをまとめると以下のようになる。
+\end{DoxyPrecond}
+
+\begin{DoxyItemize}
+\item ConnectorProfile::name: 任意の接続名
+\item ConnectorProfile::connector\_\-id: 空文字
+\item ConnectorProfile::ports: 1つ以上のポート
+\item ConnectorProfile::properties: インターフェースに対するプロパティ
+\end{DoxyItemize}
+
+\begin{DoxyPostcond}{事後条件}
+\doxyref{connect()}{p.}{classRTC_1_1PortBase_a139d07d2e94f7e793aedf4aa24b92462} 関数は、ConnectorProfileportsに格納されたポー トシーケンスの先頭のポートに対して \doxyref{notify\_\-connect()}{p.}{classRTC_1_1PortBase_a9bcc3c981a6649f37f3ad7eac31e5766} を呼ぶ。
+
+\doxyref{notify\_\-connect()}{p.}{classRTC_1_1PortBase_a9bcc3c981a6649f37f3ad7eac31e5766} は ConnectorProfile::ports に格納されたポー ト順に \doxyref{notify\_\-connect()}{p.}{classRTC_1_1PortBase_a9bcc3c981a6649f37f3ad7eac31e5766} をカスケード呼び出しする。このカスケード 呼び出しは、途中のnotify\_\-connect() でエラーが出てもポートのオブ ジェクト参照が有効である限り、必ずすべてのポートに対して行われる ことが保証される。有効でないオブジェクト参照がシーケンス中に存在 する場合、そのポートをスキップして、次のポートに対して \doxyref{notify\_\-connect()}{p.}{classRTC_1_1PortBase_a9bcc3c981a6649f37f3ad7eac31e5766} を呼び出す。
+
+\doxyref{connect()}{p.}{classRTC_1_1PortBase_a139d07d2e94f7e793aedf4aa24b92462} 関数は、notify\_\-connect()の戻り値がRTC\_\-OKであれば、 RTC\_\-OK を返す。この時点で接続は完了する。RTC\_\-OK以外 の場合は、この接続IDに対してdisconnect()を呼び出し接続を解除し、 \doxyref{notify\_\-connect()}{p.}{classRTC_1_1PortBase_a9bcc3c981a6649f37f3ad7eac31e5766} が返したエラーリターンコードをそのまま返す。
+
+\doxyref{connect()}{p.}{classRTC_1_1PortBase_a139d07d2e94f7e793aedf4aa24b92462} の引数として渡した ConnectorProfile には、 ConnectorProfile::connector\_\-id および、途中のポートが \doxyref{publishInterfaces()}{p.}{classRTC_1_1PortBase_acf31878c5912f56c122aaa2310e182de} で公開したポートインターフェースの各種情報が 格納されている。connect() および途中の \doxyref{notify\_\-connect()}{p.}{classRTC_1_1PortBase_a9bcc3c981a6649f37f3ad7eac31e5766} が ConnectorProfile::\{name, ports\} を変更することはない。
+\end{DoxyPostcond}
+
+\begin{DoxyParams}{引数}
+\item[{\em connector\_\-profile}]ConnectorProfile \end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+ReturnCode\_\-t 型のリターンコード 
+\end{DoxyReturn}
+
+
+{\bf RTC::InPortBase} \doxyref{}{p.}{classRTC_1_1InPortBase_ab37ad76d4270c20133b52b1bbdf3b529}, と {\bf RTC::OutPortBase} \doxyref{}{p.}{classRTC_1_1OutPortBase_ab6297aece321369ebc78900962627f0d}で再定義されています。
+
+\index{RTC::PortBase@{RTC::PortBase}!connectNext@{connectNext}}
+\index{connectNext@{connectNext}!RTC::PortBase@{RTC::PortBase}}
+\subsubsection[{connectNext}]{\setlength{\rightskip}{0pt plus 5cm}virtual ReturnCode\_\-t RTC::PortBase::connectNext (ConnectorProfile \& {\em connector\_\-profile})\hspace{0.3cm}{\ttfamily  [protected, virtual]}}\label{classRTC_1_1PortBase_acd7017c12c99c59c191d1269b40a7423}
+
+
+次の Port に対して \doxyref{notify\_\-connect()}{p.}{classRTC_1_1PortBase_a9bcc3c981a6649f37f3ad7eac31e5766} をコールする 
+
+ConnectorProfile の port\_\-ref 内に格納されている Port のオブジェクト リファレンスのシーケンスの中から、自身の Port の次の Port に対して \doxyref{notify\_\-connect()}{p.}{classRTC_1_1PortBase_a9bcc3c981a6649f37f3ad7eac31e5766} をコールする。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em connector\_\-profile}]接続に関するプロファイル情報\end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+ReturnCode\_\-t 型のリターンコード 
+\end{DoxyReturn}
+\index{RTC::PortBase@{RTC::PortBase}!deactivateInterfaces@{deactivateInterfaces}}
+\index{deactivateInterfaces@{deactivateInterfaces}!RTC::PortBase@{RTC::PortBase}}
+\subsubsection[{deactivateInterfaces}]{\setlength{\rightskip}{0pt plus 5cm}virtual void RTC::PortBase::deactivateInterfaces ()\hspace{0.3cm}{\ttfamily  [pure virtual]}}\label{classRTC_1_1PortBase_a8dfb8a33b92b9fc9b6c070df2def633f}
+
+
+全ての Port のインターフェースを deactivates する 
+
+Port に登録されている全てのインターフェースを deactivate する。 
+
+{\bf RTC::CorbaPort} \doxyref{}{p.}{classRTC_1_1CorbaPort_a4c25f8e04aa9cceff24c31ea3fec4e5b}, {\bf RTC::InPortBase} \doxyref{}{p.}{classRTC_1_1InPortBase_a4d8bba26fce07c092ebffbab6b1aa881}, と {\bf RTC::OutPortBase} \doxyref{}{p.}{classRTC_1_1OutPortBase_aa08d3ddfdf0b00398b40e76164622e43}で実装されています。
+
+\index{RTC::PortBase@{RTC::PortBase}!deleteInterface@{deleteInterface}}
+\index{deleteInterface@{deleteInterface}!RTC::PortBase@{RTC::PortBase}}
+\subsubsection[{deleteInterface}]{\setlength{\rightskip}{0pt plus 5cm}bool RTC::PortBase::deleteInterface (const char $\ast$ {\em name}, \/  PortInterfacePolarity {\em pol})\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC_1_1PortBase_aef670f0cfa3bafbc0207e0ea63f7a083}
+
+
+PortInterfaceProfile からインターフェース登録を削除する. 
+
+このオペレーションは Port が持つ PortProfile の、PortInterfaceProfile からインターフェースの情報を削除する。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em name}]インターフェースのインスタンスの名前 \item[{\em pol}]インターフェースの属性 (RTC::PROVIDED もしくは \doxyref{RTC}{p.}{namespaceRTC}:REQUIRED)\end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+インターフェース削除処理結果。 インターフェースが登録されていなければ false を返す。 
+\end{DoxyReturn}
+\index{RTC::PortBase@{RTC::PortBase}!disconnect@{disconnect}}
+\index{disconnect@{disconnect}!RTC::PortBase@{RTC::PortBase}}
+\subsubsection[{disconnect}]{\setlength{\rightskip}{0pt plus 5cm}virtual ReturnCode\_\-t RTC::PortBase::disconnect (const char $\ast$ {\em connector\_\-id})  throw (CORBA::SystemException)\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classRTC_1_1PortBase_a1ac6bea826249d3b2b9cb09d475e54f8}
+
+
+[CORBA interface] Port の接続を解除する 
+
+このオペレーションは与えられた connector\_\-id に対応する接続を解除 する。connector\_\-id は通常、システム全体において一意な UUID の文 字列であり、事前に \doxyref{connect()}{p.}{classRTC_1_1PortBase_a139d07d2e94f7e793aedf4aa24b92462}/notify\_\-connect() の呼び出しにより確 立された接続プロファイル ConnectorProfile::connector\_\-id に対応す る。
+
+\begin{DoxyPrecond}{事前条件}
+connector\_\-id は Port が保持する ConnectorProfile の少なくと も一つの ID に一致する文字列でなければならない。当該 Port が持つ ConnectorProfile のリスト内に connector\_\-id と同一の ID を持つ ConnectorProfile が存在しなければこの関数は BAD\_\-PARAMETER エラー を返す。
+
+connector\_\-id と同じ ID を持つ ConnectorProfile::ports には 有効な Port の参照が含まれていなければならない。
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{事後条件}
+\doxyref{disconnect()}{p.}{classRTC_1_1PortBase_a1ac6bea826249d3b2b9cb09d475e54f8} 関数は、ConnectorProfileports の Port の参 照リストの先頭に対して、notify\_\-disconnect() を呼び出す。参照が無 効であるなど、notify\_\-disconnect() の呼び出しに失敗した場合には、 参照リストの先頭から順番に成功するまで \doxyref{notify\_\-disconnect()}{p.}{classRTC_1_1PortBase_ae78bb7882d22bca794bd0faa78452aca} の呼 び出しを試す。notify\_\-disconnect() の呼び出しに一つでも成功すれば、 \doxyref{notify\_\-disconnect()}{p.}{classRTC_1_1PortBase_ae78bb7882d22bca794bd0faa78452aca} の返却値をそのまま返し、一つも成功しなかった 場合には RTC\_\-ERROR エラーを返す。
+\end{DoxyPostcond}
+
+\begin{DoxyParams}{引数}
+\item[{\em connector\_\-id}]ConnectorProfile の ID \end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+ReturnCode\_\-t 型のリターンコード 
+\end{DoxyReturn}
+
+
+参照元 RTC::OutPort$<$ DataType $>$::write().
+
+\index{RTC::PortBase@{RTC::PortBase}!disconnect\_\-all@{disconnect\_\-all}}
+\index{disconnect\_\-all@{disconnect\_\-all}!RTC::PortBase@{RTC::PortBase}}
+\subsubsection[{disconnect\_\-all}]{\setlength{\rightskip}{0pt plus 5cm}virtual ReturnCode\_\-t RTC::PortBase::disconnect\_\-all ()  throw (CORBA::SystemException)\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classRTC_1_1PortBase_a2464e0184036a389c4083625d7a1435f}
+
+
+[CORBA interface] Port の全接続を解除する 
+
+このオペレーションはこの Port に関連した全ての接続を解除する。
+
+\begin{DoxyReturn}{戻り値}
+ReturnCode\_\-t 型のリターンコード 
+\end{DoxyReturn}
+\index{RTC::PortBase@{RTC::PortBase}!disconnectNext@{disconnectNext}}
+\index{disconnectNext@{disconnectNext}!RTC::PortBase@{RTC::PortBase}}
+\subsubsection[{disconnectNext}]{\setlength{\rightskip}{0pt plus 5cm}virtual ReturnCode\_\-t RTC::PortBase::disconnectNext (ConnectorProfile \& {\em connector\_\-profile})\hspace{0.3cm}{\ttfamily  [protected, virtual]}}\label{classRTC_1_1PortBase_a4eeddc35a698e4020e7ba96627dcde3b}
+
+
+次の Port に対して \doxyref{notify\_\-disconnect()}{p.}{classRTC_1_1PortBase_ae78bb7882d22bca794bd0faa78452aca} をコールする 
+
+ConnectorProfile の port\_\-ref 内に格納されている Port のオブジェクト リファレンスのシーケンスの中から、自身の Port の次の Port に対して \doxyref{notify\_\-disconnect()}{p.}{classRTC_1_1PortBase_ae78bb7882d22bca794bd0faa78452aca} をコールする。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em connector\_\-profile}]接続に関するプロファイル情報\end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+ReturnCode\_\-t 型のリターンコード 
+\end{DoxyReturn}
+\index{RTC::PortBase@{RTC::PortBase}!eraseConnectorProfile@{eraseConnectorProfile}}
+\index{eraseConnectorProfile@{eraseConnectorProfile}!RTC::PortBase@{RTC::PortBase}}
+\subsubsection[{eraseConnectorProfile}]{\setlength{\rightskip}{0pt plus 5cm}bool RTC::PortBase::eraseConnectorProfile (const char $\ast$ {\em id})\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC_1_1PortBase_a3803219dc15de9ebb9bf096a82cfb383}
+
+
+ConnectorProfile を削除する. 
+
+このオペレーションは Port の PortProfile が保持している ConnectorProfileList のうち与えられた id を持つ ConnectorProfile を削除する。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em id}]削除する ConnectorProfile の id\end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+正常に削除できた場合は true、 指定した ConnectorProfile が見つからない場合は false を返す 
+\end{DoxyReturn}
+\index{RTC::PortBase@{RTC::PortBase}!findConnProfile@{findConnProfile}}
+\index{findConnProfile@{findConnProfile}!RTC::PortBase@{RTC::PortBase}}
+\subsubsection[{findConnProfile}]{\setlength{\rightskip}{0pt plus 5cm}ConnectorProfile RTC::PortBase::findConnProfile (const char $\ast$ {\em id})\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC_1_1PortBase_a271f7e306eec757069326b493c6838e2}
+
+
+id を持つ ConnectorProfile を探す 
+
+このオペレーションは与えられた ID を持つ ConnectorProfile を Port が もつ ConnectorProfile のリスト中から探す。 もし、同一の id を持つ ConnectorProfile がなければ、空の ConnectorProfile が返される。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em id}]検索する connector\_\-id\end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+connector\_\-id を持つ ConnectorProfile 
+\end{DoxyReturn}
+
+
+参照元 RTC::OutPort$<$ DataType $>$::write().
+
+\index{RTC::PortBase@{RTC::PortBase}!findConnProfileIndex@{findConnProfileIndex}}
+\index{findConnProfileIndex@{findConnProfileIndex}!RTC::PortBase@{RTC::PortBase}}
+\subsubsection[{findConnProfileIndex}]{\setlength{\rightskip}{0pt plus 5cm}CORBA::Long RTC::PortBase::findConnProfileIndex (const char $\ast$ {\em id})\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC_1_1PortBase_a7626d1f676704dfa3d3f173c7964cc7c}
+
+
+id を持つ ConnectorProfile を探す 
+
+このオペレーションは与えられた ID を持つ ConnectorProfile を Port が もつ ConnectorProfile のリスト中から探しインデックスを返す。 もし、同一の id を持つ ConnectorProfile がなければ、-\/1 を返す。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em id}]検索する connector\_\-id\end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+Port の ConnectorProfile リストのインデックス 
+\end{DoxyReturn}
+\index{RTC::PortBase@{RTC::PortBase}!get\_\-connector\_\-profile@{get\_\-connector\_\-profile}}
+\index{get\_\-connector\_\-profile@{get\_\-connector\_\-profile}!RTC::PortBase@{RTC::PortBase}}
+\subsubsection[{get\_\-connector\_\-profile}]{\setlength{\rightskip}{0pt plus 5cm}virtual ConnectorProfile$\ast$ RTC::PortBase::get\_\-connector\_\-profile (const char $\ast$ {\em connector\_\-id})  throw (CORBA::SystemException)\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classRTC_1_1PortBase_a66847c611f82d14894356fd122315c06}
+
+
+[CORBA interface] ConnectorProfile を取得する 
+
+connector\_\-id で指定された ConnectorProfile を返す。この関数は CORBA オペレーションであり、CORBA のメモリ管理規則に従い、呼び出 し側は返される ConnectorProfile オブジェクトを解体する責任がある。
+
+\begin{DoxyPrecond}{事前条件}
+引数に与える connector\_\-id は有効な文字列でなければならない。 空文字を指定した場合、または指定した connector\_\-id を持つ ConnectorProfile が見つからない場合は、空の ConnectorProfile を 返す。
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{事後条件}
+この関数を呼び出すことにより内部状態が変更されることはない。
+\end{DoxyPostcond}
+
+\begin{DoxyParams}{引数}
+\item[{\em connector\_\-id}]ConnectorProfile の ID \end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+connector\_\-id で指定された ConnectorProfile 
+\end{DoxyReturn}
+\index{RTC::PortBase@{RTC::PortBase}!get\_\-connector\_\-profiles@{get\_\-connector\_\-profiles}}
+\index{get\_\-connector\_\-profiles@{get\_\-connector\_\-profiles}!RTC::PortBase@{RTC::PortBase}}
+\subsubsection[{get\_\-connector\_\-profiles}]{\setlength{\rightskip}{0pt plus 5cm}virtual ConnectorProfileList$\ast$ RTC::PortBase::get\_\-connector\_\-profiles ()  throw (CORBA::SystemException)\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classRTC_1_1PortBase_a00e8e5597add78a8e8f044a98ff60cfd}
+
+
+[CORBA interface] ConnectorProfileListを取得する 
+
+Portが保持する ConnectorProfile の sequence を返す。この関数は CORBA オペレーションであり、CORBA のメモリ管理規則に従い、呼び出 し側は返される ConnectorProfileList オブジェクトを解体する責任が ある。
+
+ConnectorProfile は Port 間の接続プロファイル情報を保持する構造体であり、 接続時にPort間で情報交換を行い、関連するすべての Port で同一の値が 保持される。 ConnectorProfile は以下のメンバーを保持している。
+
+
+\begin{DoxyItemize}
+\item name [string 型] このコネクタの名前。
+\item connector\_\-id [string 型] ユニークなID
+\item ports [Port sequnce] このコネクタに関連する Port のオブジェクト リファレンスのシーケンス。
+\item properties [NVList 型] その他のプロパティ。
+\end{DoxyItemize}
+
+\begin{DoxyPostcond}{事後条件}
+この関数を呼び出すことにより内部状態が変更されることはない。
+\end{DoxyPostcond}
+\begin{DoxyReturn}{戻り値}
+この Port が保持する ConnectorProfile 
+\end{DoxyReturn}
+\index{RTC::PortBase@{RTC::PortBase}!get\_\-port\_\-profile@{get\_\-port\_\-profile}}
+\index{get\_\-port\_\-profile@{get\_\-port\_\-profile}!RTC::PortBase@{RTC::PortBase}}
+\subsubsection[{get\_\-port\_\-profile}]{\setlength{\rightskip}{0pt plus 5cm}virtual PortProfile$\ast$ RTC::PortBase::get\_\-port\_\-profile ()  throw (CORBA::SystemException)\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classRTC_1_1PortBase_ae38441f66c19863e383f461de846a062}
+
+
+[CORBA interface] PortProfileを取得する 
+
+Portが保持するPortProfileを返す。この関数は CORBA オペレーション であり、CORBA のメモリ管理規則に従い、呼び出し側は返される PortProfile オブジェクトを解体する責任がある。PortProfile 構造体 は以下のメンバーを持つ。
+
+
+\begin{DoxyItemize}
+\item name [string 型] Port の名前。
+\item interfaces [PortInterfaceProfileList 型] Port が保持する PortInterfaceProfile のシーケンス
+\item port\_\-ref [Port Object 型] Port 自身のオブジェクトリファレンス
+\item connector\_\-profile [ConnectorProfileList 型] Port が現在保持する ConnectorProfile のシーケンス
+\item owner [RTObject Object 型] この Port を所有する RTObjectのリファレンス
+\item properties [NVList 型] その他のプロパティ。
+\end{DoxyItemize}
+
+\begin{DoxyPostcond}{事後条件}
+この関数を呼び出すことにより内部状態が変更されることはない。
+\end{DoxyPostcond}
+\begin{DoxyReturn}{戻り値}
+PortProfile 
+\end{DoxyReturn}
+\index{RTC::PortBase@{RTC::PortBase}!getName@{getName}}
+\index{getName@{getName}!RTC::PortBase@{RTC::PortBase}}
+\subsubsection[{getName}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ RTC::PortBase::getName () const}\label{classRTC_1_1PortBase_a2897e7321c60684612cb286954e84653}
+
+
+Port の名前を取得する. 
+
+Port の名前を取得する。
+
+\begin{DoxyReturn}{戻り値}
+Port の名前 
+\end{DoxyReturn}
+\index{RTC::PortBase@{RTC::PortBase}!getPortProfile@{getPortProfile}}
+\index{getPortProfile@{getPortProfile}!RTC::PortBase@{RTC::PortBase}}
+\subsubsection[{getPortProfile}]{\setlength{\rightskip}{0pt plus 5cm}const PortProfile\& RTC::PortBase::getPortProfile () const}\label{classRTC_1_1PortBase_af76274dad83b880e0773c0f109c8deb8}
+
+
+PortProfile を取得する。. 
+
+この関数は、オブジェクト内部に保持されている PortProfile の const 参照を返す const 関数である。
+
+\begin{DoxyPostcond}{事後条件}
+この関数を呼び出すことにより内部状態が変更されることはない。
+\end{DoxyPostcond}
+\begin{DoxyReturn}{戻り値}
+PortProfile 
+\end{DoxyReturn}
+\index{RTC::PortBase@{RTC::PortBase}!getPortRef@{getPortRef}}
+\index{getPortRef@{getPortRef}!RTC::PortBase@{RTC::PortBase}}
+\subsubsection[{getPortRef}]{\setlength{\rightskip}{0pt plus 5cm}PortService\_\-ptr RTC::PortBase::getPortRef ()}\label{classRTC_1_1PortBase_a2b8a9dad7bcb51557471a7d034631d25}
+
+
+Port のオブジェクト参照を取得する. 
+
+このオペレーションは Port の PortProfile が保持している この Port 自身のオブジェクト参照を取得する。
+
+\begin{DoxyReturn}{戻り値}
+この Port のオブジェクト参照 
+\end{DoxyReturn}
+\index{RTC::PortBase@{RTC::PortBase}!getProfile@{getProfile}}
+\index{getProfile@{getProfile}!RTC::PortBase@{RTC::PortBase}}
+\subsubsection[{getProfile}]{\setlength{\rightskip}{0pt plus 5cm}const PortProfile\& RTC::PortBase::getProfile () const}\label{classRTC_1_1PortBase_ab5ab1328c5d5be82e5a213f6900c4eb8}
+
+
+PortProfileを取得する. 
+
+Portが保持する PortProfile の const 参照を返す。
+
+\begin{DoxyReturn}{戻り値}
+この Port の PortProfile 
+\end{DoxyReturn}
+\index{RTC::PortBase@{RTC::PortBase}!getUUID@{getUUID}}
+\index{getUUID@{getUUID}!RTC::PortBase@{RTC::PortBase}}
+\subsubsection[{getUUID}]{\setlength{\rightskip}{0pt plus 5cm}const std::string RTC::PortBase::getUUID () const\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC_1_1PortBase_a6ff52fee873d00a96b0e33880397af44}
+
+
+UUIDを生成する. 
+
+このオペレーションは UUID を生成する。
+
+\begin{DoxyReturn}{戻り値}
+uuid 
+\end{DoxyReturn}
+\index{RTC::PortBase@{RTC::PortBase}!isEmptyId@{isEmptyId}}
+\index{isEmptyId@{isEmptyId}!RTC::PortBase@{RTC::PortBase}}
+\subsubsection[{isEmptyId}]{\setlength{\rightskip}{0pt plus 5cm}bool RTC::PortBase::isEmptyId (const ConnectorProfile \& {\em connector\_\-profile}) const\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC_1_1PortBase_a9829b707373bd30160e1b6df7244f0bc}
+
+
+ConnectorProfile の connector\_\-id フィールドが空かどうか判定. 
+
+指定された ConnectorProfile の connector\_\-id が空であるかどうかの判定を 行う。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em connector\_\-profile}]判定対象コネクタプロファイル\end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+引数で与えられた ConnectorProfile の connector\_\-id が空であれば、 true、そうでなければ false を返す。 
+\end{DoxyReturn}
+\index{RTC::PortBase@{RTC::PortBase}!isExistingConnId@{isExistingConnId}}
+\index{isExistingConnId@{isExistingConnId}!RTC::PortBase@{RTC::PortBase}}
+\subsubsection[{isExistingConnId}]{\setlength{\rightskip}{0pt plus 5cm}bool RTC::PortBase::isExistingConnId (const char $\ast$ {\em id})\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC_1_1PortBase_a15653054a5bd4e0559e0c3edec3b11d3}
+
+
+id が既存の ConnectorProfile のものかどうか判定する 
+
+このオペレーションは与えられた ID が既存の ConnectorProfile のリスト中に 存在するかどうか判定する。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em id}]判定する connector\_\-id\end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+id の存在判定結果 
+\end{DoxyReturn}
+\index{RTC::PortBase@{RTC::PortBase}!notify\_\-connect@{notify\_\-connect}}
+\index{notify\_\-connect@{notify\_\-connect}!RTC::PortBase@{RTC::PortBase}}
+\subsubsection[{notify\_\-connect}]{\setlength{\rightskip}{0pt plus 5cm}virtual ReturnCode\_\-t RTC::PortBase::notify\_\-connect (ConnectorProfile \& {\em connector\_\-profile})  throw (CORBA::SystemException)\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classRTC_1_1PortBase_a9bcc3c981a6649f37f3ad7eac31e5766}
+
+
+[CORBA interface] Port の接続通知を行う 
+
+このオペレーションは、Port間の接続が行われる際に、Port間で内部的 に呼ばれるオペレーションであって、通常アプリケーションプログラム や、Port以外のRTC関連オブジェクト等から呼び出されることは想定さ れていない。
+
+\doxyref{notify\_\-connect()}{p.}{classRTC_1_1PortBase_a9bcc3c981a6649f37f3ad7eac31e5766} 自体はテンプレートメソッドパターンとして、サブ クラスで実装されることが前提の \doxyref{publishInterfaces()}{p.}{classRTC_1_1PortBase_acf31878c5912f56c122aaa2310e182de}, \doxyref{subscribeInterfaces()}{p.}{classRTC_1_1PortBase_afce755069836c1ee637784e2a9e5a02b} の2つの関数を内部で呼び出す。処理の手順は 以下の通りである。
+
+
+\begin{DoxyItemize}
+\item \doxyref{publishInterfaces()}{p.}{classRTC_1_1PortBase_acf31878c5912f56c122aaa2310e182de}: インターフェース情報の公開
+\item \doxyref{connectNext()}{p.}{classRTC_1_1PortBase_acd7017c12c99c59c191d1269b40a7423}: 次の Port の \doxyref{notify\_\-connect()}{p.}{classRTC_1_1PortBase_a9bcc3c981a6649f37f3ad7eac31e5766} の呼び出し
+\item \doxyref{subscribeInterfaces()}{p.}{classRTC_1_1PortBase_afce755069836c1ee637784e2a9e5a02b}: インターフェース情報の取得
+\item 接続情報の保存
+\end{DoxyItemize}
+
+\doxyref{notify\_\-connect()}{p.}{classRTC_1_1PortBase_a9bcc3c981a6649f37f3ad7eac31e5766} は ConnectorProfile::ports に格納されている Port の順序に従って、カスケード状に呼び出しを行うことにより、イ ンターフェース情報の公開と取得を関連すすべてのポートに対して行う。 このカスケード呼び出しは途中で中断されることはなく、必ず ConnectorProfile::ports に格納されている全ポートに対して行われる。
+
+\begin{DoxyPrecond}{事前条件}
+\doxyref{notify\_\-connect()}{p.}{classRTC_1_1PortBase_a9bcc3c981a6649f37f3ad7eac31e5766} は ConnectorProfile::ports 内に格納されて いる Port 参照リストのうち、当該 Port 自身の参照の次に格納されて いる Port に対して \doxyref{notify\_\-connect()}{p.}{classRTC_1_1PortBase_a9bcc3c981a6649f37f3ad7eac31e5766} を呼び出す。したがって ConnectorProfile::ports には当該 Port の参照が格納されている必要 がある。もし、自身の参照が格納されていない場合、その他の処理によ りエラーが上書きされなければ、BAD\_\-PARAMETER エラーが返される。
+
+呼び出し時に ConnectorProfile::connector\_\-id には一意なIDと して UUID が保持されている必要がある。通常 connector\_\-id は \doxyref{connect()}{p.}{classRTC_1_1PortBase_a139d07d2e94f7e793aedf4aa24b92462} 関数により与えられ、空文字の場合は動作は未定義である。
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{事後条件}
+ConnectorProfile::name, ConnectorProfile::connector\_\-id, ConnectorProfile::ports は \doxyref{notify\_\-connect()}{p.}{classRTC_1_1PortBase_a9bcc3c981a6649f37f3ad7eac31e5766} の呼び出しにより 書き換えられることはなく不変である。
+
+ConnectorProfile::properties は \doxyref{notify\_\-connect()}{p.}{classRTC_1_1PortBase_a9bcc3c981a6649f37f3ad7eac31e5766} の内部で、 当該 Port が持つサービスインターフェースに関する情報を他の Port に伝えるために、プロパティ情報が書き込まれる。
+
+なお、ConnectorProfileports のリストの最初 Port の notify\_\-connet() が終了した時点では、すべての関連する Port の \doxyref{notify\_\-connect()}{p.}{classRTC_1_1PortBase_a9bcc3c981a6649f37f3ad7eac31e5766} の呼び出しが完了する。publishInterfaces(), \doxyref{connectNext()}{p.}{classRTC_1_1PortBase_acd7017c12c99c59c191d1269b40a7423}, \doxyref{subscribeInterfaces()}{p.}{classRTC_1_1PortBase_afce755069836c1ee637784e2a9e5a02b} および接続情報の保存のいず れかの段階でエラーが発生した場合でも、エラーコードは内部的に保持 されており、最初に生じたエラーのエラーコードが返される。
+\end{DoxyPostcond}
+
+\begin{DoxyParams}{引数}
+\item[{\em connector\_\-profile}]ConnectorProfile \end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+ReturnCode\_\-t 型のリターンコード 
+\end{DoxyReturn}
+\index{RTC::PortBase@{RTC::PortBase}!notify\_\-disconnect@{notify\_\-disconnect}}
+\index{notify\_\-disconnect@{notify\_\-disconnect}!RTC::PortBase@{RTC::PortBase}}
+\subsubsection[{notify\_\-disconnect}]{\setlength{\rightskip}{0pt plus 5cm}virtual ReturnCode\_\-t RTC::PortBase::notify\_\-disconnect (const char $\ast$ {\em connector\_\-id})  throw (CORBA::SystemException)\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classRTC_1_1PortBase_ae78bb7882d22bca794bd0faa78452aca}
+
+
+[CORBA interface] Port の接続解除通知を行う 
+
+このオペレーションは、Port間の接続解除が行われる際に、Port間で内 部的に呼ばれるオペレーションであり、通常アプリケーションプログラ ムや、 Port 以外の \doxyref{RTC}{p.}{namespaceRTC} 関連オブジェクト等から呼び出されることは 想定されていない。
+
+\doxyref{notify\_\-disconnect()}{p.}{classRTC_1_1PortBase_ae78bb7882d22bca794bd0faa78452aca} 自体はテンプレートメソッドパターンとして、サ ブクラスで実装されることが前提の \doxyref{unsubscribeInterfaces()}{p.}{classRTC_1_1PortBase_a8a843a387e99d4d4daa6e829eb1db569} 関数を 内部で呼び出す。処理の手順は以下の通りである。
+
+
+\begin{DoxyItemize}
+\item ConnectorProfile の検索
+\item 次の Port の \doxyref{notify\_\-disconnect()}{p.}{classRTC_1_1PortBase_ae78bb7882d22bca794bd0faa78452aca} 呼び出し
+\item \doxyref{unsubscribeInterfaces()}{p.}{classRTC_1_1PortBase_a8a843a387e99d4d4daa6e829eb1db569}
+\item ConnectorProfile の削除
+\end{DoxyItemize}
+
+\doxyref{notify\_\-disconnect()}{p.}{classRTC_1_1PortBase_ae78bb7882d22bca794bd0faa78452aca} は ConnectorProfile::ports に格納されている Port の順序に従って、カスケード状に呼び出しを行うことにより、接 続の解除をすべての Port に通知する。
+
+\begin{DoxyPrecond}{事前条件}
+Port は与えられた connector\_\-id に対応する ConnectorProfile を保持していなければならない。
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{事後条件}
+connector\_\-id に対応する ConnectorProfile が見つからない場 合はBAD\_\-PARAMETER エラーを返す。
+
+カスケード呼び出しを行う際には ConnectorProfile::ports に 保持されている Port の参照リストのうち、自身の参照の次の参照に対 して \doxyref{notify\_\-disconnect()}{p.}{classRTC_1_1PortBase_ae78bb7882d22bca794bd0faa78452aca} を呼び出すが、その呼び出しで例外が発生 した場合には、呼び出しをスキップしリストの次の参照に対して \doxyref{notify\_\-disconnect()}{p.}{classRTC_1_1PortBase_ae78bb7882d22bca794bd0faa78452aca} を呼び出す。一つも呼び出しに成功しない場合、 RTC\_\-ERROR エラーコードを返す。
+
+なお、ConnectorProfileports のリストの最初 Port の notify\_\-disconnet() が終了した時点では、すべての関連する Port の \doxyref{notify\_\-disconnect()}{p.}{classRTC_1_1PortBase_ae78bb7882d22bca794bd0faa78452aca} の呼び出しが完了する。
+\end{DoxyPostcond}
+
+\begin{DoxyParams}{引数}
+\item[{\em connector\_\-id}]ConnectorProfile の ID \end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+ReturnCode\_\-t 型のリターンコード 
+\end{DoxyReturn}
+\index{RTC::PortBase@{RTC::PortBase}!onConnected@{onConnected}}
+\index{onConnected@{onConnected}!RTC::PortBase@{RTC::PortBase}}
+\subsubsection[{onConnected}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::PortBase::onConnected (const char $\ast$ {\em portname}, \/  RTC::ConnectorProfile \& {\em profile}, \/  ReturnCode\_\-t {\em ret})\hspace{0.3cm}{\ttfamily  [inline, protected]}}\label{classRTC_1_1PortBase_a454895298d71c2f046db0071a7e2b1ae}
+
+
+参照先 m\_\-portconnListeners, と RTC::ON\_\-CONNECTED.
+
+\index{RTC::PortBase@{RTC::PortBase}!onConnectNextport@{onConnectNextport}}
+\index{onConnectNextport@{onConnectNextport}!RTC::PortBase@{RTC::PortBase}}
+\subsubsection[{onConnectNextport}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::PortBase::onConnectNextport (const char $\ast$ {\em portname}, \/  RTC::ConnectorProfile \& {\em profile}, \/  ReturnCode\_\-t {\em ret})\hspace{0.3cm}{\ttfamily  [inline, protected]}}\label{classRTC_1_1PortBase_a1f1b927fc26a71d74b7f82be3c57fe54}
+
+
+参照先 m\_\-portconnListeners, と RTC::ON\_\-CONNECT\_\-NEXTPORT.
+
+\index{RTC::PortBase@{RTC::PortBase}!onDisconnected@{onDisconnected}}
+\index{onDisconnected@{onDisconnected}!RTC::PortBase@{RTC::PortBase}}
+\subsubsection[{onDisconnected}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::PortBase::onDisconnected (const char $\ast$ {\em portname}, \/  RTC::ConnectorProfile \& {\em profile}, \/  ReturnCode\_\-t {\em ret})\hspace{0.3cm}{\ttfamily  [inline, protected]}}\label{classRTC_1_1PortBase_a6c8539e8b047205a3cdf5b34c27a246e}
+
+
+参照先 m\_\-portconnListeners, と RTC::ON\_\-DISCONNECTED.
+
+\index{RTC::PortBase@{RTC::PortBase}!onDisconnectNextport@{onDisconnectNextport}}
+\index{onDisconnectNextport@{onDisconnectNextport}!RTC::PortBase@{RTC::PortBase}}
+\subsubsection[{onDisconnectNextport}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::PortBase::onDisconnectNextport (const char $\ast$ {\em portname}, \/  RTC::ConnectorProfile \& {\em profile}, \/  ReturnCode\_\-t {\em ret})\hspace{0.3cm}{\ttfamily  [inline, protected]}}\label{classRTC_1_1PortBase_a2558aed0af62dca59972bafa8be29617}
+
+
+参照先 m\_\-portconnListeners, と RTC::ON\_\-DISCONNECT\_\-NEXT.
+
+\index{RTC::PortBase@{RTC::PortBase}!onNotifyConnect@{onNotifyConnect}}
+\index{onNotifyConnect@{onNotifyConnect}!RTC::PortBase@{RTC::PortBase}}
+\subsubsection[{onNotifyConnect}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::PortBase::onNotifyConnect (const char $\ast$ {\em portname}, \/  RTC::ConnectorProfile \& {\em profile})\hspace{0.3cm}{\ttfamily  [inline, protected]}}\label{classRTC_1_1PortBase_a6c5fc09077478e84e9c26405bf7be4d1}
+
+
+参照先 m\_\-portconnListeners, と RTC::ON\_\-NOTIFY\_\-CONNECT.
+
+\index{RTC::PortBase@{RTC::PortBase}!onNotifyDisconnect@{onNotifyDisconnect}}
+\index{onNotifyDisconnect@{onNotifyDisconnect}!RTC::PortBase@{RTC::PortBase}}
+\subsubsection[{onNotifyDisconnect}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::PortBase::onNotifyDisconnect (const char $\ast$ {\em portname}, \/  RTC::ConnectorProfile \& {\em profile})\hspace{0.3cm}{\ttfamily  [inline, protected]}}\label{classRTC_1_1PortBase_a1f81e3d706c34c0ff4ad77445629c1f3}
+
+
+参照先 m\_\-portconnListeners, と RTC::ON\_\-NOTIFY\_\-DISCONNECT.
+
+\index{RTC::PortBase@{RTC::PortBase}!onPublishInterfaces@{onPublishInterfaces}}
+\index{onPublishInterfaces@{onPublishInterfaces}!RTC::PortBase@{RTC::PortBase}}
+\subsubsection[{onPublishInterfaces}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::PortBase::onPublishInterfaces (const char $\ast$ {\em portname}, \/  RTC::ConnectorProfile \& {\em profile}, \/  ReturnCode\_\-t {\em ret})\hspace{0.3cm}{\ttfamily  [inline, protected]}}\label{classRTC_1_1PortBase_a70dd82c8188309bb79d64907d638542f}
+
+
+参照先 m\_\-portconnListeners, と RTC::ON\_\-PUBLISH\_\-INTERFACES.
+
+\index{RTC::PortBase@{RTC::PortBase}!onSubscribeInterfaces@{onSubscribeInterfaces}}
+\index{onSubscribeInterfaces@{onSubscribeInterfaces}!RTC::PortBase@{RTC::PortBase}}
+\subsubsection[{onSubscribeInterfaces}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::PortBase::onSubscribeInterfaces (const char $\ast$ {\em portname}, \/  RTC::ConnectorProfile \& {\em profile}, \/  ReturnCode\_\-t {\em ret})\hspace{0.3cm}{\ttfamily  [inline, protected]}}\label{classRTC_1_1PortBase_af5c66c1f389171c0fad73e26a74a619e}
+
+
+参照先 m\_\-portconnListeners, と RTC::ON\_\-SUBSCRIBE\_\-INTERFACES.
+
+\index{RTC::PortBase@{RTC::PortBase}!onUnsubscribeInterfaces@{onUnsubscribeInterfaces}}
+\index{onUnsubscribeInterfaces@{onUnsubscribeInterfaces}!RTC::PortBase@{RTC::PortBase}}
+\subsubsection[{onUnsubscribeInterfaces}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::PortBase::onUnsubscribeInterfaces (const char $\ast$ {\em portname}, \/  RTC::ConnectorProfile \& {\em profile})\hspace{0.3cm}{\ttfamily  [inline, protected]}}\label{classRTC_1_1PortBase_af3a2ec35c3c1eb1c59dc6634069d04a0}
+
+
+参照先 m\_\-portconnListeners, と RTC::ON\_\-UNSUBSCRIBE\_\-INTERFACES.
+
+\index{RTC::PortBase@{RTC::PortBase}!publishInterfaces@{publishInterfaces}}
+\index{publishInterfaces@{publishInterfaces}!RTC::PortBase@{RTC::PortBase}}
+\subsubsection[{publishInterfaces}]{\setlength{\rightskip}{0pt plus 5cm}virtual ReturnCode\_\-t RTC::PortBase::publishInterfaces (ConnectorProfile \& {\em connector\_\-profile})\hspace{0.3cm}{\ttfamily  [protected, pure virtual]}}\label{classRTC_1_1PortBase_acf31878c5912f56c122aaa2310e182de}
+
+
+Interface 情報を公開する. 
+
+このオペレーションは、notify\_\-connect() 処理シーケンスの始めにコール される純粋仮想関数である。 \doxyref{notify\_\-connect()}{p.}{classRTC_1_1PortBase_a9bcc3c981a6649f37f3ad7eac31e5766} では、
+
+
+\begin{DoxyItemize}
+\item \doxyref{publishInterfaces()}{p.}{classRTC_1_1PortBase_acf31878c5912f56c122aaa2310e182de}
+\item \doxyref{connectNext()}{p.}{classRTC_1_1PortBase_acd7017c12c99c59c191d1269b40a7423}
+\item \doxyref{subscribeInterfaces()}{p.}{classRTC_1_1PortBase_afce755069836c1ee637784e2a9e5a02b}
+\item \doxyref{updateConnectorProfile()}{p.}{classRTC_1_1PortBase_aaaa8155f6dd891d0a4b77e6f6c55c97b}
+\end{DoxyItemize}
+
+の順に protected 関数がコールされ接続処理が行われる。 \par
+ 具象 Port ではこのオペレーションをオーバーライドし、引数として 与えられた ConnectorProfile に従い処理を行い、パラメータが不適切 であれば、RteurnCode\_\-t 型のエラーコードを返す。 通常 publishInterafaces() 内においては、この Port に属する インターフェースに関する情報を ConnectorProfile に対して適切に設定し 他の Port に通知しなければならない。 \par
+ また、この関数がコールされる段階では、他の Port の Interface に関する 情報はすべて含まれていないので、他の Port の Interface を取得する処理 は \doxyref{subscribeInterfaces()}{p.}{classRTC_1_1PortBase_afce755069836c1ee637784e2a9e5a02b} 内で行われるべきである。 \par
+ このオペレーションは、新規の connector\_\-id に対しては接続の生成、 既存の connector\_\-id に対しては更新が適切に行われる必要がある。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em connector\_\-profile}]接続に関するプロファイル情報\end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+ReturnCode\_\-t 型のリターンコード 
+\end{DoxyReturn}
+
+
+{\bf RTC::CorbaPort} \doxyref{}{p.}{classRTC_1_1CorbaPort_a71aa316c3324369c4462193d10a5d098}, {\bf RTC::InPortBase} \doxyref{}{p.}{classRTC_1_1InPortBase_ad836b599b157efb1a31ec61999015986}, と {\bf RTC::OutPortBase} \doxyref{}{p.}{classRTC_1_1OutPortBase_ab71eea8c300820c2dd21dd13a61f6e0f}で実装されています。
+
+\index{RTC::PortBase@{RTC::PortBase}!setConnectionLimit@{setConnectionLimit}}
+\index{setConnectionLimit@{setConnectionLimit}!RTC::PortBase@{RTC::PortBase}}
+\subsubsection[{setConnectionLimit}]{\setlength{\rightskip}{0pt plus 5cm}virtual void RTC::PortBase::setConnectionLimit (int {\em limit\_\-value})\hspace{0.3cm}{\ttfamily  [protected, virtual]}}\label{classRTC_1_1PortBase_a9dce68b24fdfbf13f835f6b8b83f2282}
+
+
+接続の最大数を設定する。 
+
+
+\begin{DoxyParams}{引数}
+\item[{\em limit\_\-value}]最大数 \end{DoxyParams}
+\index{RTC::PortBase@{RTC::PortBase}!setName@{setName}}
+\index{setName@{setName}!RTC::PortBase@{RTC::PortBase}}
+\subsubsection[{setName}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::PortBase::setName (const char $\ast$ {\em name})}\label{classRTC_1_1PortBase_a4429d9d48ba72f621ed446b50bdf9043}
+
+
+Port の名前を設定する. 
+
+Port の名前を設定する。この名前は Port が保持する PortProfile.name に反映される。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em name}]Port の名前 \end{DoxyParams}
+\index{RTC::PortBase@{RTC::PortBase}!setOnConnected@{setOnConnected}}
+\index{setOnConnected@{setOnConnected}!RTC::PortBase@{RTC::PortBase}}
+\subsubsection[{setOnConnected}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::PortBase::setOnConnected ({\bf ConnectionCallback} $\ast$ {\em on\_\-connected})}\label{classRTC_1_1PortBase_a7c97305b47e95f96dffaee6871db9b5d}
+
+
+接続完了時に呼ばれるコールバックをセットする 
+
+このオペレーションは、このポートが接続完了時に呼ばれる、コールバッ クファンクタをセットする。
+
+コールバックファンクタの所有権は、呼び出し側にあり、オブジェクト が必要なくなった時に解体するのは呼び出し側の責任である。
+
+このコールバックファンクタは、ポートの接続実行関数である \doxyref{notify\_\-connect()}{p.}{classRTC_1_1PortBase_a9bcc3c981a6649f37f3ad7eac31e5766} の終了直前に、接続処理が正常終了する際に限って 呼び出されるコールバックである。接続処理の過程でエラーが発生した 場合には呼び出されない。
+
+このコールバックファンクタは \doxyref{notify\_\-connect()}{p.}{classRTC_1_1PortBase_a9bcc3c981a6649f37f3ad7eac31e5766} が out パラメータ として返すのと同じ引数 ConnectorProfile とともに呼び出されるので、 この接続において公開されたすべてのインターフェース情報を得ること ができる。このコールバックを利用して、notify\_\-connect() が返す ConnectorProfile を変更することが可能であるが、接続関係の不整合 を招かないよう、ConnectorProfile の変更には注意を要する。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em on\_\-subscribe}]\doxyref{ConnectionCallback}{p.}{classRTC_1_1ConnectionCallback} のサブクラスオブジェクトのポインタ \end{DoxyParams}
+\index{RTC::PortBase@{RTC::PortBase}!setOnConnectionLost@{setOnConnectionLost}}
+\index{setOnConnectionLost@{setOnConnectionLost}!RTC::PortBase@{RTC::PortBase}}
+\subsubsection[{setOnConnectionLost}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::PortBase::setOnConnectionLost ({\bf ConnectionCallback} $\ast$ {\em on\_\-connection\_\-lost})}\label{classRTC_1_1PortBase_aa7797b53a5199aecb86ebd6e11da9a6e}
+
+
+ポートの接続がロストした場合に呼び出されるコールバックをセットする 
+
+このオペレーションは、このポートの接続がロストした場合に呼ばれる、 コールバックファンクタをセットする。
+
+InPortは、相手側OutPortとの 接続をロストした場合、接続を強制的に切断するので、 引き続き OnDisconnect コールバックが呼び出される。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em on\_\-connection\_\-lost}]\doxyref{ConnectionCallback}{p.}{classRTC_1_1ConnectionCallback} のサブクラスオブジェク トのポインタ \end{DoxyParams}
+\index{RTC::PortBase@{RTC::PortBase}!setOnDisconnected@{setOnDisconnected}}
+\index{setOnDisconnected@{setOnDisconnected}!RTC::PortBase@{RTC::PortBase}}
+\subsubsection[{setOnDisconnected}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::PortBase::setOnDisconnected ({\bf ConnectionCallback} $\ast$ {\em on\_\-disconnected})}\label{classRTC_1_1PortBase_a8f26ec4ff60e7728a09cbd34a6a2ca33}
+
+
+接続解除に呼ばれるコールバックをセットする 
+
+このオペレーションは、このポートの接続解除時に呼ばれる、コールバッ クファンクタをセットする。
+
+コールバックファンクタの所有権は、呼び出し側にあり、オブジェクト が必要なくなった時に解体するのは呼び出し側の責任である。
+
+このコールバックファンクタは、ポートの接続解除実行関数である \doxyref{notify\_\-disconnect()}{p.}{classRTC_1_1PortBase_ae78bb7882d22bca794bd0faa78452aca} の終了直前に、呼び出されるコールバックである。
+
+このコールバックファンクタは接続に対応する ConnectorProfile とと もに呼び出される。この ConnectorProfile はこのファンクタ呼出し後 に破棄されるので、変更がほかに影響を与えることはない。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em on\_\-disconnected}]\doxyref{ConnectionCallback}{p.}{classRTC_1_1ConnectionCallback} のサブクラスオブジェク トのポインタ \end{DoxyParams}
+\index{RTC::PortBase@{RTC::PortBase}!setOnPublishInterfaces@{setOnPublishInterfaces}}
+\index{setOnPublishInterfaces@{setOnPublishInterfaces}!RTC::PortBase@{RTC::PortBase}}
+\subsubsection[{setOnPublishInterfaces}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::PortBase::setOnPublishInterfaces ({\bf ConnectionCallback} $\ast$ {\em on\_\-publish})}\label{classRTC_1_1PortBase_affce1efdd04a8b66af5238ee435a5b2b}
+
+
+インターフェースを公開する際に呼ばれるコールバックをセットする 
+
+このオペレーションは、このポートが接続時に、ポート自身が持つサー ビスインターフェース情報を公開するタイミングで呼ばれるコールバッ クファンクタをセットする。
+
+コールバックファンクタの所有権は、呼び出し側にあり、オブジェクト が必要なくなった時に解体するのは呼び出し側の責任である。
+
+このコールバックファンクタは、PortBaseクラスの仮想関数である \doxyref{publishInterfaces()}{p.}{classRTC_1_1PortBase_acf31878c5912f56c122aaa2310e182de} が呼ばれたあとに、同じ引数 ConnectorProfile と ともに呼び出される。このコールバックを利用して、 \doxyref{publishInterfaces()}{p.}{classRTC_1_1PortBase_acf31878c5912f56c122aaa2310e182de} が公開した ConnectorProfile を変更することが可 能であるが、接続関係の不整合を招かないよう、ConnectorProfile の 変更には注意を要する。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em on\_\-publish}]\doxyref{ConnectionCallback}{p.}{classRTC_1_1ConnectionCallback} のサブクラスオブジェクトのポインタ \end{DoxyParams}
+\index{RTC::PortBase@{RTC::PortBase}!setOnSubscribeInterfaces@{setOnSubscribeInterfaces}}
+\index{setOnSubscribeInterfaces@{setOnSubscribeInterfaces}!RTC::PortBase@{RTC::PortBase}}
+\subsubsection[{setOnSubscribeInterfaces}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::PortBase::setOnSubscribeInterfaces ({\bf ConnectionCallback} $\ast$ {\em on\_\-subscribe})}\label{classRTC_1_1PortBase_ac9783d3edef34a7f5c5cef910b4fa33a}
+
+
+インターフェースを取得する際に呼ばれるコールバックをセットする 
+
+このオペレーションは、このポートが接続時に、相手のポートが持つサー ビスインターフェース情報を取得するタイミングで呼ばれるコールバッ クファンクタをセットする。
+
+コールバックファンクタの所有権は、呼び出し側にあり、オブジェクト が必要なくなった時に解体するのは呼び出し側の責任である。
+
+このコールバックファンクタは、PortBaseクラスの仮想関数である \doxyref{subscribeInterfaces()}{p.}{classRTC_1_1PortBase_afce755069836c1ee637784e2a9e5a02b} が呼ばれる前に、同じ引数 ConnectorProfile と ともに呼び出される。このコールバックを利用して、 \doxyref{subscribeInterfaces()}{p.}{classRTC_1_1PortBase_afce755069836c1ee637784e2a9e5a02b} に与える ConnectorProfile を変更することが可 能であるが、接続関係の不整合を招かないよう、ConnectorProfile の 変更には注意を要する。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em on\_\-subscribe}]\doxyref{ConnectionCallback}{p.}{classRTC_1_1ConnectionCallback} のサブクラスオブジェクトのポインタ \end{DoxyParams}
+\index{RTC::PortBase@{RTC::PortBase}!setOnUnsubscribeInterfaces@{setOnUnsubscribeInterfaces}}
+\index{setOnUnsubscribeInterfaces@{setOnUnsubscribeInterfaces}!RTC::PortBase@{RTC::PortBase}}
+\subsubsection[{setOnUnsubscribeInterfaces}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::PortBase::setOnUnsubscribeInterfaces ({\bf ConnectionCallback} $\ast$ {\em on\_\-subscribe})}\label{classRTC_1_1PortBase_aff023d4b2faa7d161b7c91ef9273a705}
+
+
+インターフェースを解放する際に呼ばれるコールバックをセットする 
+
+このオペレーションは、このポートが接続時に、相手のポートが持つサー ビスインターフェース情報を解放するタイミングで呼ばれるコールバッ クファンクタをセットする。
+
+コールバックファンクタの所有権は、呼び出し側にあり、オブジェクト が必要なくなった時に解体するのは呼び出し側の責任である。
+
+このコールバックファンクタは、PortBaseクラスの仮想関数である \doxyref{unsubscribeInterfaces()}{p.}{classRTC_1_1PortBase_a8a843a387e99d4d4daa6e829eb1db569} が呼ばれる前に、同じ引数 ConnectorProfile と ともに呼び出される。このコールバックを利用して、 \doxyref{unsubscribeInterfaces()}{p.}{classRTC_1_1PortBase_a8a843a387e99d4d4daa6e829eb1db569} に与える ConnectorProfile を変更することが可 能であるが、接続関係の不整合を招かないよう、ConnectorProfile の 変更には注意を要する。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em on\_\-unsubscribe}]\doxyref{ConnectionCallback}{p.}{classRTC_1_1ConnectionCallback} のサブクラスオブジェク トのポインタ \end{DoxyParams}
+\index{RTC::PortBase@{RTC::PortBase}!setOwner@{setOwner}}
+\index{setOwner@{setOwner}!RTC::PortBase@{RTC::PortBase}}
+\subsubsection[{setOwner}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::PortBase::setOwner (RTObject\_\-ptr {\em owner})}\label{classRTC_1_1PortBase_a1431e933c50b7f31df6446051ca4b3fe}
+
+
+Port の owner の RTObject を指定する. 
+
+このオペレーションは Port の PortProfile.owner を設定する。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em owner}]この Port を所有する RTObject の参照 \end{DoxyParams}
+\index{RTC::PortBase@{RTC::PortBase}!setPortConnectListenerHolder@{setPortConnectListenerHolder}}
+\index{setPortConnectListenerHolder@{setPortConnectListenerHolder}!RTC::PortBase@{RTC::PortBase}}
+\subsubsection[{setPortConnectListenerHolder}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::PortBase::setPortConnectListenerHolder ({\bf PortConnectListeners} $\ast$ {\em portconnListeners})}\label{classRTC_1_1PortBase_aa0fca5f8b8ce5503439f21c7e940227b}
+
+
+\doxyref{PortConnectListeners}{p.}{classRTC_1_1PortConnectListeners} のホルダをセットする. 
+
+ポートの接続に関するリスナ群を保持するホルダクラスへのポインタを セットする。この関数は通常親のRTObjectから呼ばれ、RTObjectが持つ ホルダクラスへのポインタがセットされる。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em portconnListeners}]\doxyref{PortConnectListeners}{p.}{classRTC_1_1PortConnectListeners} オブジェクトのポインタ \end{DoxyParams}
+\index{RTC::PortBase@{RTC::PortBase}!setPortRef@{setPortRef}}
+\index{setPortRef@{setPortRef}!RTC::PortBase@{RTC::PortBase}}
+\subsubsection[{setPortRef}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::PortBase::setPortRef (PortService\_\-ptr {\em port\_\-ref})}\label{classRTC_1_1PortBase_a710706ff630c6502e3de6cf5dd302c83}
+
+
+Port のオブジェクト参照を設定する. 
+
+このオペレーションは Port の PortProfile にこの Port 自身の オブジェクト参照を設定する。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em port\_\-ref}]この Port のオブジェクト参照 \end{DoxyParams}
+\index{RTC::PortBase@{RTC::PortBase}!setUUID@{setUUID}}
+\index{setUUID@{setUUID}!RTC::PortBase@{RTC::PortBase}}
+\subsubsection[{setUUID}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::PortBase::setUUID (ConnectorProfile \& {\em connector\_\-profile}) const\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC_1_1PortBase_a7d8fb06825e17568567786987bd00fbb}
+
+
+UUIDを生成し ConnectorProfile にセットする. 
+
+このオペレーションは UUID を生成し、ConnectorProfile にセットする。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em connector\_\-profile}]connector\_\-id をセットする ConnectorProfile \end{DoxyParams}
+\index{RTC::PortBase@{RTC::PortBase}!subscribeInterfaces@{subscribeInterfaces}}
+\index{subscribeInterfaces@{subscribeInterfaces}!RTC::PortBase@{RTC::PortBase}}
+\subsubsection[{subscribeInterfaces}]{\setlength{\rightskip}{0pt plus 5cm}virtual ReturnCode\_\-t RTC::PortBase::subscribeInterfaces (const ConnectorProfile \& {\em connector\_\-profile})\hspace{0.3cm}{\ttfamily  [protected, pure virtual]}}\label{classRTC_1_1PortBase_afce755069836c1ee637784e2a9e5a02b}
+
+
+Interface 情報を公開する. 
+
+このオペレーションは、notify\_\-connect() 処理シーケンスの中間にコール される純粋仮想関数である。 \doxyref{notify\_\-connect()}{p.}{classRTC_1_1PortBase_a9bcc3c981a6649f37f3ad7eac31e5766} では、
+
+
+\begin{DoxyItemize}
+\item \doxyref{publishInterfaces()}{p.}{classRTC_1_1PortBase_acf31878c5912f56c122aaa2310e182de}
+\item \doxyref{connectNext()}{p.}{classRTC_1_1PortBase_acd7017c12c99c59c191d1269b40a7423}
+\item \doxyref{subscribeInterfaces()}{p.}{classRTC_1_1PortBase_afce755069836c1ee637784e2a9e5a02b}
+\item \doxyref{updateConnectorProfile()}{p.}{classRTC_1_1PortBase_aaaa8155f6dd891d0a4b77e6f6c55c97b}
+\end{DoxyItemize}
+
+の順に protected 関数がコールされ接続処理が行われる。 \par
+ 具象 Port ではこのオペレーションをオーバーライドし、引数として 与えられた ConnectorProfile に従い処理を行い、パラメータが不適切 であれば、RteurnCode\_\-t 型のエラーコードを返す。 引数 ConnectorProfile には他の Port の Interface に関する情報が 全て含まれている。 通常 subscribeInterafaces() 内においては、この Port が使用する Interface に関する情報を取得し、要求側のインターフェースに対して 情報を設定しなければならない。 \par
+ このオペレーションは、新規の connector\_\-id に対しては接続の生成、 既存の connector\_\-id に対しては更新が適切に行われる必要がある。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em connector\_\-profile}]接続に関するプロファイル情報\end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+ReturnCode\_\-t 型のリターンコード 
+\end{DoxyReturn}
+
+
+{\bf RTC::CorbaPort} \doxyref{}{p.}{classRTC_1_1CorbaPort_ad9a122cbe2f9892cc9555e805571742e}, {\bf RTC::InPortBase} \doxyref{}{p.}{classRTC_1_1InPortBase_adf648c377e5730a2de6dc48fc47543fb}, と {\bf RTC::OutPortBase} \doxyref{}{p.}{classRTC_1_1OutPortBase_a76018cbaa5c13fa3363e196c442f5c49}で実装されています。
+
+\index{RTC::PortBase@{RTC::PortBase}!unsubscribeInterfaces@{unsubscribeInterfaces}}
+\index{unsubscribeInterfaces@{unsubscribeInterfaces}!RTC::PortBase@{RTC::PortBase}}
+\subsubsection[{unsubscribeInterfaces}]{\setlength{\rightskip}{0pt plus 5cm}virtual void RTC::PortBase::unsubscribeInterfaces (const ConnectorProfile \& {\em connector\_\-profile})\hspace{0.3cm}{\ttfamily  [protected, pure virtual]}}\label{classRTC_1_1PortBase_a8a843a387e99d4d4daa6e829eb1db569}
+
+
+Interface の接続を解除する. 
+
+このオペレーションは、notify\_\-disconnect() 処理シーケンスの終わりにコール される純粋仮想関数である。 \doxyref{notify\_\-disconnect()}{p.}{classRTC_1_1PortBase_ae78bb7882d22bca794bd0faa78452aca} では、
+\begin{DoxyItemize}
+\item \doxyref{disconnectNext()}{p.}{classRTC_1_1PortBase_a4eeddc35a698e4020e7ba96627dcde3b}
+\item \doxyref{unsubscribeInterfaces()}{p.}{classRTC_1_1PortBase_a8a843a387e99d4d4daa6e829eb1db569}
+\item \doxyref{eraseConnectorProfile()}{p.}{classRTC_1_1PortBase_a3803219dc15de9ebb9bf096a82cfb383} の順に protected 関数がコールされ接続解除処理が行われる。 \par
+ 具象 Port ではこのオペレーションをオーバーライドし、引数として 与えられた ConnectorProfile に従い接続解除処理を行う。
+\end{DoxyItemize}
+
+
+\begin{DoxyParams}{引数}
+\item[{\em connector\_\-profile}]接続に関するプロファイル情報 \end{DoxyParams}
+
+
+{\bf RTC::CorbaPort} \doxyref{}{p.}{classRTC_1_1CorbaPort_a4776e122a3066d9e3a3e5d1e5da45b98}, {\bf RTC::InPortBase} \doxyref{}{p.}{classRTC_1_1InPortBase_a118932439dce0dc96571b0123615c36e}, と {\bf RTC::OutPortBase} \doxyref{}{p.}{classRTC_1_1OutPortBase_ad2c373292a41c5f2eb088e7ae124b857}で実装されています。
+
+\index{RTC::PortBase@{RTC::PortBase}!updateConnectorProfile@{updateConnectorProfile}}
+\index{updateConnectorProfile@{updateConnectorProfile}!RTC::PortBase@{RTC::PortBase}}
+\subsubsection[{updateConnectorProfile}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::PortBase::updateConnectorProfile (const ConnectorProfile \& {\em connector\_\-profile})\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC_1_1PortBase_aaaa8155f6dd891d0a4b77e6f6c55c97b}
+
+
+ConnectorProfile の追加もしくは更新. 
+
+このオペレーションは与えられた ConnectorProfile を Port に追加もしくは 更新保存する。 与えられた ConnectorProfile の connector\_\-id と同じ ID を持つ ConnectorProfile がリストになければ、リストに追加し、 同じ ID が存在すれば ConnectorProfile を上書き保存する。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em connector\_\-profile}]追加もしくは更新する ConnectorProfile \end{DoxyParams}
+\index{RTC::PortBase@{RTC::PortBase}!updateConnectors@{updateConnectors}}
+\index{updateConnectors@{updateConnectors}!RTC::PortBase@{RTC::PortBase}}
+\subsubsection[{updateConnectors}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::PortBase::updateConnectors ()\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC_1_1PortBase_aa9e0697ef8a7138cdf30ab756ecc9242}
+
+
+存在しないポートをdisconnectする。 
+
+死んだPortを検出し、もし死んでいるポートがあった場合には、接続を 解除する。 
+
+\subsection{変数}
+\index{RTC::PortBase@{RTC::PortBase}!m\_\-connectionLimit@{m\_\-connectionLimit}}
+\index{m\_\-connectionLimit@{m\_\-connectionLimit}!RTC::PortBase@{RTC::PortBase}}
+\subsubsection[{m\_\-connectionLimit}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf RTC::PortBase::m\_\-connectionLimit}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC_1_1PortBase_a0c568d0d7ffd5c5dfbf7cdfbd27e22c9}
+
+
+Port の接続の最大数. 
+
+\index{RTC::PortBase@{RTC::PortBase}!m\_\-connectorsMutex@{m\_\-connectorsMutex}}
+\index{m\_\-connectorsMutex@{m\_\-connectorsMutex}!RTC::PortBase@{RTC::PortBase}}
+\subsubsection[{m\_\-connectorsMutex}]{\setlength{\rightskip}{0pt plus 5cm}{\bf coil::Mutex} {\bf RTC::PortBase::m\_\-connectorsMutex}\hspace{0.3cm}{\ttfamily  [mutable, protected]}}\label{classRTC_1_1PortBase_acbdf425104a21619d4c887e415e045c8}
+
+
+参照元 RTC::InPort$<$ DataType $>$::isEmpty(), RTC::InPort$<$ DataType $>$::isNew(), RTC::InPort$<$ DataType $>$::read(), と RTC::OutPort$<$ DataType $>$::write().
+
+\index{RTC::PortBase@{RTC::PortBase}!m\_\-objref@{m\_\-objref}}
+\index{m\_\-objref@{m\_\-objref}!RTC::PortBase@{RTC::PortBase}}
+\subsubsection[{m\_\-objref}]{\setlength{\rightskip}{0pt plus 5cm}RTC::PortService\_\-var {\bf RTC::PortBase::m\_\-objref}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC_1_1PortBase_a6add3c9750060e44acaec9e70a78ed92}
+
+
+Port の オブジェクト参照. 
+
+\index{RTC::PortBase@{RTC::PortBase}!m\_\-onConnected@{m\_\-onConnected}}
+\index{m\_\-onConnected@{m\_\-onConnected}!RTC::PortBase@{RTC::PortBase}}
+\subsubsection[{m\_\-onConnected}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ConnectionCallback}$\ast$ {\bf RTC::PortBase::m\_\-onConnected}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC_1_1PortBase_a52852f17f0978a6a639fcf6c8a8a71b6}
+
+
+Callback functor オブジェクト. 
+
+接続完了時に呼ばれるコールバックオブジェクト \index{RTC::PortBase@{RTC::PortBase}!m\_\-onConnectionLost@{m\_\-onConnectionLost}}
+\index{m\_\-onConnectionLost@{m\_\-onConnectionLost}!RTC::PortBase@{RTC::PortBase}}
+\subsubsection[{m\_\-onConnectionLost}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ConnectionCallback}$\ast$ {\bf RTC::PortBase::m\_\-onConnectionLost}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC_1_1PortBase_a2d7cfeb11e8bccae7702badef6d384f4}
+
+
+Callback functor オブジェクト. 
+
+ポートの接続がロストした場合に呼び出されるコールバックオブジェクト 
+
+参照元 RTC::OutPort$<$ DataType $>$::write().
+
+\index{RTC::PortBase@{RTC::PortBase}!m\_\-onDisconnected@{m\_\-onDisconnected}}
+\index{m\_\-onDisconnected@{m\_\-onDisconnected}!RTC::PortBase@{RTC::PortBase}}
+\subsubsection[{m\_\-onDisconnected}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ConnectionCallback}$\ast$ {\bf RTC::PortBase::m\_\-onDisconnected}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC_1_1PortBase_ac1ddf7686081da5a663f9109b7ad740f}
+
+
+Callback functor オブジェクト. 
+
+接続解除に呼ばれるコールバックオブジェクト \index{RTC::PortBase@{RTC::PortBase}!m\_\-onPublishInterfaces@{m\_\-onPublishInterfaces}}
+\index{m\_\-onPublishInterfaces@{m\_\-onPublishInterfaces}!RTC::PortBase@{RTC::PortBase}}
+\subsubsection[{m\_\-onPublishInterfaces}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ConnectionCallback}$\ast$ {\bf RTC::PortBase::m\_\-onPublishInterfaces}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC_1_1PortBase_a85b7308b6911a14bbd26f62106fa2986}
+
+
+Callback functor オブジェクト. 
+
+インターフェースを公開する際に呼ばれるコールバックオブジェクト \index{RTC::PortBase@{RTC::PortBase}!m\_\-onSubscribeInterfaces@{m\_\-onSubscribeInterfaces}}
+\index{m\_\-onSubscribeInterfaces@{m\_\-onSubscribeInterfaces}!RTC::PortBase@{RTC::PortBase}}
+\subsubsection[{m\_\-onSubscribeInterfaces}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ConnectionCallback}$\ast$ {\bf RTC::PortBase::m\_\-onSubscribeInterfaces}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC_1_1PortBase_a63ef15306f2d4d66b9570f11d8715057}
+
+
+Callback functor オブジェクト. 
+
+インターフェースを取得する際に呼ばれるコールバックオブジェクト \index{RTC::PortBase@{RTC::PortBase}!m\_\-onUnsubscribeInterfaces@{m\_\-onUnsubscribeInterfaces}}
+\index{m\_\-onUnsubscribeInterfaces@{m\_\-onUnsubscribeInterfaces}!RTC::PortBase@{RTC::PortBase}}
+\subsubsection[{m\_\-onUnsubscribeInterfaces}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ConnectionCallback}$\ast$ {\bf RTC::PortBase::m\_\-onUnsubscribeInterfaces}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC_1_1PortBase_a34d4ada2f1dfcebec2adc85e5aea484a}
+
+
+Callback functor オブジェクト. 
+
+インターフェースを解放する際に呼ばれるコールバックオブジェクト \index{RTC::PortBase@{RTC::PortBase}!m\_\-ownerInstanceName@{m\_\-ownerInstanceName}}
+\index{m\_\-ownerInstanceName@{m\_\-ownerInstanceName}!RTC::PortBase@{RTC::PortBase}}
+\subsubsection[{m\_\-ownerInstanceName}]{\setlength{\rightskip}{0pt plus 5cm}std::string {\bf RTC::PortBase::m\_\-ownerInstanceName}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC_1_1PortBase_a6f33c6161ecc2b00babcb3a18c7438df}
+
+
+インスタンス名 
+
+\index{RTC::PortBase@{RTC::PortBase}!m\_\-portconnListeners@{m\_\-portconnListeners}}
+\index{m\_\-portconnListeners@{m\_\-portconnListeners}!RTC::PortBase@{RTC::PortBase}}
+\subsubsection[{m\_\-portconnListeners}]{\setlength{\rightskip}{0pt plus 5cm}{\bf PortConnectListeners}$\ast$ {\bf RTC::PortBase::m\_\-portconnListeners}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC_1_1PortBase_a0e9ebbf6f53845b48d087240eeb8656f}
+
+
+PortConnectListenerホルダ. 
+
+PortConnectListenrを保持するホルダ 
+
+参照元 onConnected(), onConnectNextport(), onDisconnected(), onDisconnectNextport(), onNotifyConnect(), onNotifyDisconnect(), onPublishInterfaces(), onSubscribeInterfaces(), と onUnsubscribeInterfaces().
+
+\index{RTC::PortBase@{RTC::PortBase}!m\_\-profile@{m\_\-profile}}
+\index{m\_\-profile@{m\_\-profile}!RTC::PortBase@{RTC::PortBase}}
+\subsubsection[{m\_\-profile}]{\setlength{\rightskip}{0pt plus 5cm}PortProfile {\bf RTC::PortBase::m\_\-profile}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC_1_1PortBase_a02b8a89853dc64600f9301a87f50138a}
+
+
+Port の PortProfile. 
+
+
+
+参照元 addProperty(), と appendProperty().
+
+\index{RTC::PortBase@{RTC::PortBase}!m\_\-profile\_\-mutex@{m\_\-profile\_\-mutex}}
+\index{m\_\-profile\_\-mutex@{m\_\-profile\_\-mutex}!RTC::PortBase@{RTC::PortBase}}
+\subsubsection[{m\_\-profile\_\-mutex}]{\setlength{\rightskip}{0pt plus 5cm}{\bf coil::Mutex} {\bf RTC::PortBase::m\_\-profile\_\-mutex}\hspace{0.3cm}{\ttfamily  [mutable, protected]}}\label{classRTC_1_1PortBase_a2ee84ba32ff8423c318798dea9814642}
+
+
+PortProfile の mutex. 
+
+\index{RTC::PortBase@{RTC::PortBase}!rtclog@{rtclog}}
+\index{rtclog@{rtclog}!RTC::PortBase@{RTC::PortBase}}
+\subsubsection[{rtclog}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Logger} {\bf RTC::PortBase::rtclog}\hspace{0.3cm}{\ttfamily  [mutable, protected]}}\label{classRTC_1_1PortBase_ab111ca721c706fe5e93da18705ace90e}
+
+
+ロガーストリーム 
+

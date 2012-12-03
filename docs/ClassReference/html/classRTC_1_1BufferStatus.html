@@ -1,0 +1,150 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<title>OpenRTM: クラス RTC::BufferStatus</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<!-- 作成： Doxygen 1.6.3 -->
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="index.html"><span>メインページ</span></a></li>
+      <li><a href="namespaces.html"><span>ネームスペース</span></a></li>
+      <li class="current"><a href="annotated.html"><span>クラス</span></a></li>
+      <li><a href="files.html"><span>ファイル</span></a></li>
+    </ul>
+  </div>
+  <div class="tabs">
+    <ul>
+      <li><a href="annotated.html"><span>構成</span></a></li>
+      <li><a href="hierarchy.html"><span>クラス階層</span></a></li>
+      <li><a href="functions.html"><span>構成メンバ</span></a></li>
+    </ul>
+  </div>
+  <div class="navpath"><a class="el" href="namespaceRTC.html">RTC</a>::<a class="el" href="classRTC_1_1BufferStatus.html">BufferStatus</a>
+  </div>
+</div>
+<div class="contents">
+<h1>クラス RTC::BufferStatus</h1><!-- doxytag: class="RTC::BufferStatus" -->
+<p><a class="el" href="classRTC_1_1BufferStatus.html" title="BufferStatus mixin クラス.">BufferStatus</a> mixin クラス.  
+<a href="#_details">[詳細]</a></p>
+
+<p><code>#include &lt;<a class="el" href="BufferStatus_8h_source.html">BufferStatus.h</a>&gt;</code></p>
+<div class="dynheader">
+RTC::BufferStatusに対する継承グラフ</div>
+<div class="dynsection">
+ <div class="center">
+  <img src="classRTC_1_1BufferStatus.png" usemap="#RTC::BufferStatus_map" alt=""/>
+  <map id="RTC::BufferStatus_map" name="RTC::BufferStatus_map">
+<area href="classRTC_1_1BufferBase.html" alt="RTC::BufferBase&lt; DataType &gt;" shape="rect" coords="96,56,279,80"/>
+<area href="classRTC_1_1NullBuffer.html" alt="RTC::NullBuffer&lt; DataType &gt;" shape="rect" coords="0,112,183,136"/>
+<area href="classRTC_1_1RingBuffer.html" alt="RTC::RingBuffer&lt; DataType &gt;" shape="rect" coords="193,112,376,136"/>
+</map>
+ </div>
+</div>
+
+<p><a href="classRTC_1_1BufferStatus-members.html">すべてのメンバ一覧</a></p>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr><td colspan="2"><h2>Public 型</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">enum &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1BufferStatus.html#ada857a5e7b898e1ad19caaaf7a0ff713">Enum</a> { <br/>
+&nbsp;&nbsp;<a class="el" href="classRTC_1_1BufferStatus.html#ada857a5e7b898e1ad19caaaf7a0ff713a8f953167d31babf4fa80112461b7b388">BUFFER_OK</a> =  0, 
+<a class="el" href="classRTC_1_1BufferStatus.html#ada857a5e7b898e1ad19caaaf7a0ff713a49a15bebcc2b15516a7cb9e930009c83">BUFFER_ERROR</a>, 
+<a class="el" href="classRTC_1_1BufferStatus.html#ada857a5e7b898e1ad19caaaf7a0ff713acee7ab71be75d777a36e6f43450e3a96">BUFFER_FULL</a>, 
+<a class="el" href="classRTC_1_1BufferStatus.html#ada857a5e7b898e1ad19caaaf7a0ff713a4938f8154da3c9f7cad45f738b913580">BUFFER_EMPTY</a>, 
+<br/>
+&nbsp;&nbsp;<a class="el" href="classRTC_1_1BufferStatus.html#ada857a5e7b898e1ad19caaaf7a0ff713ad1f406fba36f7e517cdb68d804b861d3">NOT_SUPPORTED</a>, 
+<a class="el" href="classRTC_1_1BufferStatus.html#ada857a5e7b898e1ad19caaaf7a0ff713a2024553338d0b9dc6edb25af7cdaced8">TIMEOUT</a>, 
+<a class="el" href="classRTC_1_1BufferStatus.html#ada857a5e7b898e1ad19caaaf7a0ff713aaaa1b8912b339e6f4af393294645f220">PRECONDITION_NOT_MET</a>
+<br/>
+ }</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight"><p><a class="el" href="classRTC_1_1BufferStatus.html" title="BufferStatus mixin クラス.">BufferStatus</a> リターンコード. </p>
+ <a href="classRTC_1_1BufferStatus.html#ada857a5e7b898e1ad19caaaf7a0ff713">[詳細]</a><br/></td></tr>
+<tr><td colspan="2"><h2>Static Public メソッド</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static const char *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1BufferStatus.html#aa7b5d507e0b71878da0491ee39d7f1bc">toString</a> (<a class="el" href="classRTC_1_1BufferStatus.html#ada857a5e7b898e1ad19caaaf7a0ff713">Enum</a> status)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight"><a class="el" href="classRTC_1_1BufferStatus.html" title="BufferStatus mixin クラス.">BufferStatus</a> リターンコードを文字列に変換.  <a href="#aa7b5d507e0b71878da0491ee39d7f1bc"></a><br/></td></tr>
+</table>
+<hr/><a name="_details"></a><h2>説明</h2>
+<p><a class="el" href="classRTC_1_1BufferStatus.html" title="BufferStatus mixin クラス.">BufferStatus</a> mixin クラス. </p>
+<p>このクラスは、enum定義されたリターンコードを、バッファ関連サブクラ スで共通利用するための mixin クラスである。このリターンコードを使 用するクラスでは、BufferStatus クラスをpublic 継承し、下に define してある BUFFERSTATUS_ENUM をクラス内に記述することで利用可能とな る。これにより、enum を ReturnCode_t 型として typedef し、以後 ReturnCode_t を利用できるようにするとともに、名前空間に enum 定義 された各識別子を当該クラス名前空間内に導入する。 </p>
+<hr/><h2>列挙型</h2>
+<a class="anchor" id="ada857a5e7b898e1ad19caaaf7a0ff713"></a><!-- doxytag: member="RTC::BufferStatus::Enum" ref="ada857a5e7b898e1ad19caaaf7a0ff713" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="classRTC_1_1BufferStatus.html#ada857a5e7b898e1ad19caaaf7a0ff713">RTC::BufferStatus::Enum</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p><a class="el" href="classRTC_1_1BufferStatus.html" title="BufferStatus mixin クラス.">BufferStatus</a> リターンコード. </p>
+<p>バッファ関連のクラスで共通のリターンコード</p>
+<ul>
+<li>BUFFER_OK: 正常終了</li>
+<li>BUFFER_ERROR: バッファエラー</li>
+<li>BUFFER_FULL: バッファフル</li>
+<li>BUFFER_EMPTY: バッファエンプティ</li>
+<li>NOT_SUPPORTED: 未サポート機能</li>
+<li>TIMEOUT: タイムアウト</li>
+<li>PRECONDITION_NOT_MET: 事前条件を満たしていない </li>
+</ul>
+<dl><dt><b>列挙型の値: </b></dt><dd><table border="0" cellspacing="2" cellpadding="0">
+<tr><td valign="top"><em><a class="anchor" id="ada857a5e7b898e1ad19caaaf7a0ff713a8f953167d31babf4fa80112461b7b388"></a><!-- doxytag: member="BUFFER_OK" ref="ada857a5e7b898e1ad19caaaf7a0ff713a8f953167d31babf4fa80112461b7b388" args="" -->BUFFER_OK</em>&nbsp;</td><td>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="ada857a5e7b898e1ad19caaaf7a0ff713a49a15bebcc2b15516a7cb9e930009c83"></a><!-- doxytag: member="BUFFER_ERROR" ref="ada857a5e7b898e1ad19caaaf7a0ff713a49a15bebcc2b15516a7cb9e930009c83" args="" -->BUFFER_ERROR</em>&nbsp;</td><td>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="ada857a5e7b898e1ad19caaaf7a0ff713acee7ab71be75d777a36e6f43450e3a96"></a><!-- doxytag: member="BUFFER_FULL" ref="ada857a5e7b898e1ad19caaaf7a0ff713acee7ab71be75d777a36e6f43450e3a96" args="" -->BUFFER_FULL</em>&nbsp;</td><td>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="ada857a5e7b898e1ad19caaaf7a0ff713a4938f8154da3c9f7cad45f738b913580"></a><!-- doxytag: member="BUFFER_EMPTY" ref="ada857a5e7b898e1ad19caaaf7a0ff713a4938f8154da3c9f7cad45f738b913580" args="" -->BUFFER_EMPTY</em>&nbsp;</td><td>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="ada857a5e7b898e1ad19caaaf7a0ff713ad1f406fba36f7e517cdb68d804b861d3"></a><!-- doxytag: member="NOT_SUPPORTED" ref="ada857a5e7b898e1ad19caaaf7a0ff713ad1f406fba36f7e517cdb68d804b861d3" args="" -->NOT_SUPPORTED</em>&nbsp;</td><td>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="ada857a5e7b898e1ad19caaaf7a0ff713a2024553338d0b9dc6edb25af7cdaced8"></a><!-- doxytag: member="TIMEOUT" ref="ada857a5e7b898e1ad19caaaf7a0ff713a2024553338d0b9dc6edb25af7cdaced8" args="" -->TIMEOUT</em>&nbsp;</td><td>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="ada857a5e7b898e1ad19caaaf7a0ff713aaaa1b8912b339e6f4af393294645f220"></a><!-- doxytag: member="PRECONDITION_NOT_MET" ref="ada857a5e7b898e1ad19caaaf7a0ff713aaaa1b8912b339e6f4af393294645f220" args="" -->PRECONDITION_NOT_MET</em>&nbsp;</td><td>
+</td></tr>
+</table>
+</dd>
+</dl>
+
+</div>
+</div>
+<hr/><h2>関数</h2>
+<a class="anchor" id="aa7b5d507e0b71878da0491ee39d7f1bc"></a><!-- doxytag: member="RTC::BufferStatus::toString" ref="aa7b5d507e0b71878da0491ee39d7f1bc" args="(Enum status)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">static const char* RTC::BufferStatus::toString </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classRTC_1_1BufferStatus.html#ada857a5e7b898e1ad19caaaf7a0ff713">Enum</a>&nbsp;</td>
+          <td class="paramname"> <em>status</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [inline, static]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p><a class="el" href="classRTC_1_1BufferStatus.html" title="BufferStatus mixin クラス.">BufferStatus</a> リターンコードを文字列に変換. </p>
+<p><a class="el" href="classRTC_1_1BufferStatus.html" title="BufferStatus mixin クラス.">BufferStatus</a> リターンコードを文字列に変換する</p>
+<dl><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>status</em>&nbsp;</td><td>変換対象 <a class="el" href="classRTC_1_1BufferStatus.html" title="BufferStatus mixin クラス.">BufferStatus</a> リターンコード</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>戻り値:</b></dt><dd>文字列変換結果 </dd></dl>
+
+</div>
+</div>
+</div>
+<hr class="footer"/><address style="text-align: right;"><small>OpenRTMに対してThu May 24 23:25:19 2012に生成されました。&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.6.3 </small></address>
+</body>
+</html>

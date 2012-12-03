@@ -1,0 +1,111 @@
+\section{ネームスペース RTC\_\-Utils}
+\label{namespaceRTC__Utils}\index{RTC\_\-Utils@{RTC\_\-Utils}}
+
+
+RTコンポーネント用ユーティリティ関数.  
+
+
+\subsection*{構成}
+\begin{DoxyCompactItemize}
+\item 
+class {\bf StateHolder}
+\begin{DoxyCompactList}\small\item\em 状態保持用クラス \item\end{DoxyCompactList}\item 
+class {\bf StateMachine}
+\begin{DoxyCompactList}\small\item\em 状態マシンクラス \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{関数}
+\begin{DoxyCompactItemize}
+\item 
+bool {\bf isDataFlowComponent} (CORBA::Object\_\-ptr obj)
+\begin{DoxyCompactList}\small\item\em DataFlowComponent であるか判定する. \item\end{DoxyCompactList}\item 
+bool {\bf isFsmParticipant} (CORBA::Object\_\-ptr obj)
+\begin{DoxyCompactList}\small\item\em FsmParticipant であるか判定する. \item\end{DoxyCompactList}\item 
+bool {\bf isFsmObject} (CORBA::Object\_\-ptr obj)
+\begin{DoxyCompactList}\small\item\em Fsm であるか判定する. \item\end{DoxyCompactList}\item 
+bool {\bf isMultiModeObject} (CORBA::Object\_\-ptr obj)
+\begin{DoxyCompactList}\small\item\em multiModeComponent であるか判定する \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{説明}
+RTコンポーネント用ユーティリティ関数. RTコンポーネントに対して以下のユーティリティ関数を提供する。
+
+
+\begin{DoxyItemize}
+\item isDataFlowParticipant
+\item isFsmParticipant
+\item isFsmObject
+\item isMultiModeObject 
+\end{DoxyItemize}
+
+\subsection{関数}
+\index{RTC\_\-Utils@{RTC\_\-Utils}!isDataFlowComponent@{isDataFlowComponent}}
+\index{isDataFlowComponent@{isDataFlowComponent}!RTC_Utils@{RTC\_\-Utils}}
+\subsubsection[{isDataFlowComponent}]{\setlength{\rightskip}{0pt plus 5cm}bool RTC\_\-Utils::isDataFlowComponent (CORBA::Object\_\-ptr {\em obj})}\label{namespaceRTC__Utils_a7615b39670d055183b4dba9a8166c868}
+
+
+DataFlowComponent であるか判定する. 
+
+指定されたRTコンポーネントが DataFlowComponent であるか判定する。 DataFlowComponentは、 ExecutionContext の Semantics が Periodic Sampled Data Processing の場合に利用されるRTコンポーネントの型 である。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em obj}]判定対象の CORBA オブジェクト\end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+DataFlowComponent 判定結果
+\end{DoxyReturn}
+\begin{DoxySince}{から}
+0.4.0 
+\end{DoxySince}
+\index{RTC\_\-Utils@{RTC\_\-Utils}!isFsmObject@{isFsmObject}}
+\index{isFsmObject@{isFsmObject}!RTC_Utils@{RTC\_\-Utils}}
+\subsubsection[{isFsmObject}]{\setlength{\rightskip}{0pt plus 5cm}bool RTC\_\-Utils::isFsmObject (CORBA::Object\_\-ptr {\em obj})}\label{namespaceRTC__Utils_a467f15e404ab93c70887d0d0e003a67d}
+
+
+Fsm であるか判定する. 
+
+指定されたRTコンポーネントが Fsm であるか判定する。 Fsm は、 ExecutionContext の Semantics が Stimulus Response Processing の 場合に、状態遷移を定義するために利用されるRTコンポーネントの型である。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em obj}]判定対象の CORBA オブジェクト\end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+Fsm 判定結果
+\end{DoxyReturn}
+\begin{DoxySince}{から}
+0.4.0 
+\end{DoxySince}
+\index{RTC\_\-Utils@{RTC\_\-Utils}!isFsmParticipant@{isFsmParticipant}}
+\index{isFsmParticipant@{isFsmParticipant}!RTC_Utils@{RTC\_\-Utils}}
+\subsubsection[{isFsmParticipant}]{\setlength{\rightskip}{0pt plus 5cm}bool RTC\_\-Utils::isFsmParticipant (CORBA::Object\_\-ptr {\em obj})}\label{namespaceRTC__Utils_a52ff8d6e964922f9673ca78830650e3e}
+
+
+FsmParticipant であるか判定する. 
+
+指定されたRTコンポーネントが FsmParticipant であるか判定する。 FsmParticipant は、 ExecutionContext の Semantics が Stimulus Response Processing の場合に、状態内のアクションを定義するために 利用されるRTコンポーネントの型である。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em obj}]判定対象の CORBA オブジェクト\end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+FsmParticipant 判定結果
+\end{DoxyReturn}
+\begin{DoxySince}{から}
+0.4.0 
+\end{DoxySince}
+\index{RTC\_\-Utils@{RTC\_\-Utils}!isMultiModeObject@{isMultiModeObject}}
+\index{isMultiModeObject@{isMultiModeObject}!RTC_Utils@{RTC\_\-Utils}}
+\subsubsection[{isMultiModeObject}]{\setlength{\rightskip}{0pt plus 5cm}bool RTC\_\-Utils::isMultiModeObject (CORBA::Object\_\-ptr {\em obj})}\label{namespaceRTC__Utils_ae4b1334407be2113a145ee2cf06e3775}
+
+
+multiModeComponent であるか判定する 
+
+指定されたRTコンポーネントが multiModeComponent であるか判定する。 multiModeComponent は、 ExecutionContext の Semantics が Modes of Operation の場合に、 Mode を定義するために利用されるRTコンポーネントの型である。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em obj}]判定対象の CORBA オブジェクト\end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+multiModeComponent 判定結果
+\end{DoxyReturn}
+\begin{DoxySince}{から}
+0.4.0 
+\end{DoxySince}

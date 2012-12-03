@@ -1,0 +1,294 @@
+\section{RTC::InPortProvider Class Reference}
+\label{classRTC_1_1InPortProvider}\index{RTC::InPortProvider@{RTC::InPortProvider}}
+
+
+\doxyref{InPortProvider}{p.}{classRTC_1_1InPortProvider}.  
+
+
+
+
+{\ttfamily \#include $<$InPortProvider.h$>$}
+
+Inheritance diagram for RTC::InPortProvider:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3cm]{classRTC_1_1InPortProvider}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct {\bf publishInterfaceFunc}
+\begin{DoxyCompactList}\small\item\em Functor to publish interface profile. \item\end{DoxyCompactList}\item 
+struct {\bf publishInterfaceProfileFunc}
+\begin{DoxyCompactList}\small\item\em Functor to publish interface profile. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+DATAPORTSTATUS\_\-ENUM {\bf InPortProvider} ()
+\begin{DoxyCompactList}\small\item\em Constructor. \item\end{DoxyCompactList}\item 
+virtual {\bf $\sim$InPortProvider} (void)
+\begin{DoxyCompactList}\small\item\em Destructor. \item\end{DoxyCompactList}\item 
+virtual void {\bf init} ({\bf coil::Properties} \&prop)=0
+\begin{DoxyCompactList}\small\item\em Initializing configuration. \item\end{DoxyCompactList}\item 
+virtual void {\bf setBuffer} ({\bf BufferBase}$<$ cdrMemoryStream $>$ $\ast$buffer)=0
+\begin{DoxyCompactList}\small\item\em Setting outside buffer's pointer. \item\end{DoxyCompactList}\item 
+virtual void {\bf setListener} ({\bf ConnectorInfo} \&info, {\bf ConnectorListeners} $\ast$listeners)=0
+\begin{DoxyCompactList}\small\item\em Set the listener. \item\end{DoxyCompactList}\item 
+virtual void {\bf setConnector} ({\bf InPortConnector} $\ast$connector)=0
+\begin{DoxyCompactList}\small\item\em set Connector \item\end{DoxyCompactList}\item 
+virtual void {\bf publishInterfaceProfile} (SDOPackage::NVList \&properties)
+\begin{DoxyCompactList}\small\item\em Publish InterfaceProfile information. \item\end{DoxyCompactList}\item 
+virtual bool {\bf publishInterface} (SDOPackage::NVList \&properties)
+\begin{DoxyCompactList}\small\item\em Publish interface information. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bf setInterfaceType} (const char $\ast$interface\_\-type)
+\begin{DoxyCompactList}\small\item\em Set the interface type. \item\end{DoxyCompactList}\item 
+void {\bf setDataFlowType} (const char $\ast$dataflow\_\-type)
+\begin{DoxyCompactList}\small\item\em Set the dataflow type. \item\end{DoxyCompactList}\item 
+void {\bf setSubscriptionType} (const char $\ast$subs\_\-type)
+\begin{DoxyCompactList}\small\item\em Set the subscription type. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+SDOPackage::NVList {\bf m\_\-properties}
+\begin{DoxyCompactList}\small\item\em Properties to hold port profile. \item\end{DoxyCompactList}\item 
+{\bf Logger} {\bf rtclog}
+\begin{DoxyCompactList}\small\item\em \doxyref{Logger}{p.}{classRTC_1_1Logger} stream. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\doxyref{InPortProvider}{p.}{classRTC_1_1InPortProvider}. The virtual class for InPort's PROVIDED interface implementation. New interface for \doxyref{InPort}{p.}{classRTC_1_1InPort} have to inherit this class, and have to implement the following functions.
+
+
+\begin{DoxyItemize}
+\item \doxyref{init()}{p.}{classRTC_1_1InPortProvider_a66c64488543761e1c8874f88fc55ff00}
+\item \doxyref{setBuffer()}{p.}{classRTC_1_1InPortProvider_a67b305bff0ed99a997570286922aa2ea}
+\item \doxyref{setListener()}{p.}{classRTC_1_1InPortProvider_ae3d3833c958440f7d053d52f42b59390}
+\item \doxyref{setConnector()}{p.}{classRTC_1_1InPortProvider_a3f4980d48f7588d6a85c0858f9b1a37e}
+\end{DoxyItemize}
+
+Moreover, calling the following functions in the constructor, and properties have to be set.
+
+
+\begin{DoxyItemize}
+\item setPortType()
+\item setDataType()
+\item \doxyref{setInterfaceType()}{p.}{classRTC_1_1InPortProvider_a480771439532bebd236fe426eabfb8cb}
+\item \doxyref{setDataFlowType()}{p.}{classRTC_1_1InPortProvider_a07e853bb6c21227ce67b90c1b5696b21}
+\item \doxyref{setSubscriptionType()}{p.}{classRTC_1_1InPortProvider_ab953e133a82f81a2425d0d8f2aa4814e}
+\end{DoxyItemize}
+
+InPortProvider's properties that have to be provided to others should be set to protected variable (SDOPackage::NVList) m\_\-properties. Values that are set to the property are published as interface profile information, and it is also published to required interface when connection is established. The following virtual functions are called when port's profiles are acquired from others or connections are established. The following virtual functions are called when port's profiles are acquired from others or connections are established. Interface profile information that is reviously set is given to Port calling by these functions.
+
+
+\begin{DoxyItemize}
+\item \doxyref{publishInterfaceProfile()}{p.}{classRTC_1_1InPortProvider_a79c8bc1476441d787f427226b0dabe80}
+\item \doxyref{publishInterface()}{p.}{classRTC_1_1InPortProvider_ab70dba157e6752fbac7b82470298048f}
+\end{DoxyItemize}
+
+\doxyref{InPort}{p.}{classRTC_1_1InPort} inquires available InPortProviders to the factory class of \doxyref{InPortProvider}{p.}{classRTC_1_1InPortProvider}, and publishes available interfaces to others. Therefore, sub-\/classes of \doxyref{InPortProvider}{p.}{classRTC_1_1InPortProvider} that provides PROVIDED interface to \doxyref{InPort}{p.}{classRTC_1_1InPort} should register its factory to InPortProviderFactory.
+
+\doxyref{RTC::InPortProviderFactory::instance()}{p.}{classcoil_1_1Singleton_aea119e0534a0de4b63a8f84c7d68b223}.addFactory() would be called with the following arguments.
+
+1st arg: The name of provider. ex. \char`\"{}corba\_\-cdr\char`\"{} 2nd arg: Factory function. \doxyref{coil::Creator$<$B, T$>$}{p.}{namespacecoil_a7f96c97693a425d037804baac00e095a} 3rd arg: Destruction function. \doxyref{coil::Destructor$<$B, T$>$}{p.}{namespacecoil_a3d92b40c32da6da798031e58bb1c2cf0}
+
+The following example shows how to register factory function. And it is also declared as a initialization function.
+
+
+\begin{DoxyPre}
+ extern "C"
+ \{
+   void \doxyref{InPortCorbaCdrProviderInit(void)}{p.}{InPortCorbaCdrProvider_8h_ad7ab2d05751f0680f894817fcac9970f}
+   \{
+     \doxyref{RTC::InPortProviderFactory}{p.}{namespaceRTC_a90bc55e9804caa7c4cf625cdc8143973}\&
+                         factory(\doxyref{RTC::InPortProviderFactory::instance()}{p.}{classcoil_1_1Singleton_aea119e0534a0de4b63a8f84c7d68b223});
+     factory.addFactory("corba\_cdr",
+                        coil::Creator<\doxyref{RTC::InPortProvider}{p.}{classRTC_1_1InPortProvider},
+                                        \doxyref{RTC::InPortCorbaCdrProvider}{p.}{classRTC_1_1InPortCorbaCdrProvider}>,
+                        coil::Destructor<\doxyref{RTC::InPortProvider}{p.}{classRTC_1_1InPortProvider},
+                                           \doxyref{RTC::InPortCorbaCdrProvider}{p.}{classRTC_1_1InPortCorbaCdrProvider}>);
+   \}
+ \};
+ \end{DoxyPre}
+
+
+It is recommended that the registration process is declared as a initialization function with \char`\"{}extern C\char`\"{} to be accessed from the outside of module. If the InPortProviders are compiled as a shared object or DLL for dynamic loading, new \doxyref{InPortProvider}{p.}{classRTC_1_1InPortProvider} types can be added dynamically.
+
+\begin{DoxySince}{Since}
+0.4.0 
+\end{DoxySince}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{RTC::InPortProvider@{RTC::InPortProvider}!InPortProvider@{InPortProvider}}
+\index{InPortProvider@{InPortProvider}!RTC::InPortProvider@{RTC::InPortProvider}}
+\subsubsection[{InPortProvider}]{\setlength{\rightskip}{0pt plus 5cm}DATAPORTSTATUS\_\-ENUM RTC::InPortProvider::InPortProvider ()}\label{classRTC_1_1InPortProvider_ac4b54074d3e8f7b0304c3f433e396971}
+
+
+Constructor. 
+
+Constructor \index{RTC::InPortProvider@{RTC::InPortProvider}!$\sim$InPortProvider@{$\sim$InPortProvider}}
+\index{$\sim$InPortProvider@{$\sim$InPortProvider}!RTC::InPortProvider@{RTC::InPortProvider}}
+\subsubsection[{$\sim$InPortProvider}]{\setlength{\rightskip}{0pt plus 5cm}virtual RTC::InPortProvider::$\sim$InPortProvider (void)\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classRTC_1_1InPortProvider_a2e6a01b019f1ae881ca974b58263d9af}
+
+
+Destructor. 
+
+Virtual destructor 
+
+\subsection{Member Function Documentation}
+\index{RTC::InPortProvider@{RTC::InPortProvider}!init@{init}}
+\index{init@{init}!RTC::InPortProvider@{RTC::InPortProvider}}
+\subsubsection[{init}]{\setlength{\rightskip}{0pt plus 5cm}virtual void RTC::InPortProvider::init ({\bf coil::Properties} \& {\em prop})\hspace{0.3cm}{\ttfamily  [pure virtual]}}\label{classRTC_1_1InPortProvider_a66c64488543761e1c8874f88fc55ff00}
+
+
+Initializing configuration. 
+
+This operation would be called to configure in initialization. In the concrete class, configuration should be performed getting appropriate information from the given Properties data. This function might be called right after instantiation and connection sequence respectivly. Therefore, this function should be implemented assuming multiple call.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em prop}]Configuration information \end{DoxyParams}
+
+
+Implemented in {\bf RTC::InPortCorbaCdrProvider} \doxyref{}{p.}{classRTC_1_1InPortCorbaCdrProvider_a745af48699ac6dff711bb67331210b58}.
+
+\index{RTC::InPortProvider@{RTC::InPortProvider}!publishInterface@{publishInterface}}
+\index{publishInterface@{publishInterface}!RTC::InPortProvider@{RTC::InPortProvider}}
+\subsubsection[{publishInterface}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool RTC::InPortProvider::publishInterface (SDOPackage::NVList \& {\em properties})\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classRTC_1_1InPortProvider_ab70dba157e6752fbac7b82470298048f}
+
+
+Publish interface information. 
+
+Publish interface information. Check the dataport.interface\_\-type value of the NameValue object specified by an argument in the property information, and add the information to the NameValue if this port is not specified. This does not do anything if the same interface is already subscribed.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em properties}]Properties to receive interface information \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true: normal return 
+\end{DoxyReturn}
+
+
+Referenced by RTC::InPortProvider::publishInterfaceFunc::operator()().
+
+\index{RTC::InPortProvider@{RTC::InPortProvider}!publishInterfaceProfile@{publishInterfaceProfile}}
+\index{publishInterfaceProfile@{publishInterfaceProfile}!RTC::InPortProvider@{RTC::InPortProvider}}
+\subsubsection[{publishInterfaceProfile}]{\setlength{\rightskip}{0pt plus 5cm}virtual void RTC::InPortProvider::publishInterfaceProfile (SDOPackage::NVList \& {\em properties})\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classRTC_1_1InPortProvider_a79c8bc1476441d787f427226b0dabe80}
+
+
+Publish InterfaceProfile information. 
+
+Publish interfaceProfile information. Check the dataport.interface\_\-type value of the NameValue object specified by an argument in property information and get information only when the interface type of the specified port is matched.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em properties}]Properties to get InterfaceProfile information \end{DoxyParams}
+
+
+Referenced by RTC::InPortProvider::publishInterfaceProfileFunc::operator()().
+
+\index{RTC::InPortProvider@{RTC::InPortProvider}!setBuffer@{setBuffer}}
+\index{setBuffer@{setBuffer}!RTC::InPortProvider@{RTC::InPortProvider}}
+\subsubsection[{setBuffer}]{\setlength{\rightskip}{0pt plus 5cm}virtual void RTC::InPortProvider::setBuffer ({\bf BufferBase}$<$ cdrMemoryStream $>$ $\ast$ {\em buffer})\hspace{0.3cm}{\ttfamily  [pure virtual]}}\label{classRTC_1_1InPortProvider_a67b305bff0ed99a997570286922aa2ea}
+
+
+Setting outside buffer's pointer. 
+
+A pointer to a buffer from which \doxyref{OutPortProvider}{p.}{classRTC_1_1OutPortProvider} retrieve data. If already buffer is set, previous buffer's pointer will be overwritten by the given pointer to a buffer. Since \doxyref{OutPortProvider}{p.}{classRTC_1_1OutPortProvider} does not assume ownership of the buffer pointer, destructor of the buffer should be done by user.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em buffer}]A pointer to a data buffer to be used by \doxyref{OutPortProvider}{p.}{classRTC_1_1OutPortProvider} \end{DoxyParams}
+
+
+Implemented in {\bf RTC::InPortCorbaCdrProvider} \doxyref{}{p.}{classRTC_1_1InPortCorbaCdrProvider_ab461b86e9a22b9418a978ba10a74ec72}.
+
+\index{RTC::InPortProvider@{RTC::InPortProvider}!setConnector@{setConnector}}
+\index{setConnector@{setConnector}!RTC::InPortProvider@{RTC::InPortProvider}}
+\subsubsection[{setConnector}]{\setlength{\rightskip}{0pt plus 5cm}virtual void RTC::InPortProvider::setConnector ({\bf InPortConnector} $\ast$ {\em connector})\hspace{0.3cm}{\ttfamily  [pure virtual]}}\label{classRTC_1_1InPortProvider_a3f4980d48f7588d6a85c0858f9b1a37e}
+
+
+set Connector 
+
+\doxyref{OutPort}{p.}{classRTC_1_1OutPort} creates \doxyref{OutPortConnector}{p.}{classRTC_1_1OutPortConnector} object when it establishes connection between \doxyref{OutPort}{p.}{classRTC_1_1OutPort} and \doxyref{InPort}{p.}{classRTC_1_1InPort}, and it calls this function with a pointer to the connector object. Since the \doxyref{OutPort}{p.}{classRTC_1_1OutPort} has the ownership of this connector, \doxyref{OutPortProvider}{p.}{classRTC_1_1OutPortProvider} should not delete it.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em connector}]\doxyref{OutPortConnector}{p.}{classRTC_1_1OutPortConnector} \end{DoxyParams}
+
+
+Implemented in {\bf RTC::InPortCorbaCdrProvider} \doxyref{}{p.}{classRTC_1_1InPortCorbaCdrProvider_a1f6f663d07ea5a3122410160a5a92147}.
+
+\index{RTC::InPortProvider@{RTC::InPortProvider}!setDataFlowType@{setDataFlowType}}
+\index{setDataFlowType@{setDataFlowType}!RTC::InPortProvider@{RTC::InPortProvider}}
+\subsubsection[{setDataFlowType}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::InPortProvider::setDataFlowType (const char $\ast$ {\em dataflow\_\-type})\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC_1_1InPortProvider_a07e853bb6c21227ce67b90c1b5696b21}
+
+
+Set the dataflow type. 
+
+Set the dataflow type.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em dataflow\_\-type}]The target data flow type for set \end{DoxyParams}
+\index{RTC::InPortProvider@{RTC::InPortProvider}!setInterfaceType@{setInterfaceType}}
+\index{setInterfaceType@{setInterfaceType}!RTC::InPortProvider@{RTC::InPortProvider}}
+\subsubsection[{setInterfaceType}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::InPortProvider::setInterfaceType (const char $\ast$ {\em interface\_\-type})\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC_1_1InPortProvider_a480771439532bebd236fe426eabfb8cb}
+
+
+Set the interface type. 
+
+Set the interface type.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em interface\_\-type}]The target interface type for set \end{DoxyParams}
+\index{RTC::InPortProvider@{RTC::InPortProvider}!setListener@{setListener}}
+\index{setListener@{setListener}!RTC::InPortProvider@{RTC::InPortProvider}}
+\subsubsection[{setListener}]{\setlength{\rightskip}{0pt plus 5cm}virtual void RTC::InPortProvider::setListener ({\bf ConnectorInfo} \& {\em info}, \/  {\bf ConnectorListeners} $\ast$ {\em listeners})\hspace{0.3cm}{\ttfamily  [pure virtual]}}\label{classRTC_1_1InPortProvider_ae3d3833c958440f7d053d52f42b59390}
+
+
+Set the listener. 
+
+\doxyref{OutPort}{p.}{classRTC_1_1OutPort} provides callback functionality that calls specific listener objects according to the events in the data publishing process. For details, see documentation of \doxyref{ConnectorDataListener}{p.}{classRTC_1_1ConnectorDataListener} class and \doxyref{ConnectorListener}{p.}{classRTC_1_1ConnectorListener} class in \doxyref{ConnectorListener.h}{p.}{ConnectorListener_8h}. In the sub-\/classes of \doxyref{OutPortProvider}{p.}{classRTC_1_1OutPortProvider}, the given listeners should be called in the proper timing. However, it is not necessary to call all the listeners.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em info}]Connector information \item[{\em listeners}]Listener objects \end{DoxyParams}
+
+
+Implemented in {\bf RTC::InPortCorbaCdrProvider} \doxyref{}{p.}{classRTC_1_1InPortCorbaCdrProvider_a5319ea343145e3b14c9a107724780dff}.
+
+\index{RTC::InPortProvider@{RTC::InPortProvider}!setSubscriptionType@{setSubscriptionType}}
+\index{setSubscriptionType@{setSubscriptionType}!RTC::InPortProvider@{RTC::InPortProvider}}
+\subsubsection[{setSubscriptionType}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::InPortProvider::setSubscriptionType (const char $\ast$ {\em subs\_\-type})\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC_1_1InPortProvider_ab953e133a82f81a2425d0d8f2aa4814e}
+
+
+Set the subscription type. 
+
+Set the subscription type.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em subs\_\-type}]The target subscription type for set \end{DoxyParams}
+
+
+\subsection{Member Data Documentation}
+\index{RTC::InPortProvider@{RTC::InPortProvider}!m\_\-properties@{m\_\-properties}}
+\index{m\_\-properties@{m\_\-properties}!RTC::InPortProvider@{RTC::InPortProvider}}
+\subsubsection[{m\_\-properties}]{\setlength{\rightskip}{0pt plus 5cm}SDOPackage::NVList {\bf RTC::InPortProvider::m\_\-properties}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC_1_1InPortProvider_a2f2f84bee895b51ee72832912e0d1016}
+
+
+Properties to hold port profile. 
+
+\index{RTC::InPortProvider@{RTC::InPortProvider}!rtclog@{rtclog}}
+\index{rtclog@{rtclog}!RTC::InPortProvider@{RTC::InPortProvider}}
+\subsubsection[{rtclog}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Logger} {\bf RTC::InPortProvider::rtclog}\hspace{0.3cm}{\ttfamily  [mutable, protected]}}\label{classRTC_1_1InPortProvider_a706da5fd002f498b1b54dfb47a26e83d}
+
+
+\doxyref{Logger}{p.}{classRTC_1_1Logger} stream. 
+

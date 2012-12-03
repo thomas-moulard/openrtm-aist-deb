@@ -1,0 +1,195 @@
+\section{RTC::NullBuffer$<$ DataType $>$ Class Template Reference}
+\label{classRTC_1_1NullBuffer}\index{RTC::NullBuffer@{RTC::NullBuffer}}
+
+
+Concrete buffer class for dummy.  
+
+
+
+
+{\ttfamily \#include $<$BufferBase.h$>$}
+
+Inheritance diagram for RTC::NullBuffer$<$ DataType $>$:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3cm]{classRTC_1_1NullBuffer}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf NullBuffer} (long int size=1)
+\begin{DoxyCompactList}\small\item\em Constructer. \item\end{DoxyCompactList}\item 
+virtual {\bf $\sim$NullBuffer} (void)
+\begin{DoxyCompactList}\small\item\em Destructor. \item\end{DoxyCompactList}\item 
+virtual long int {\bf length} (void) const 
+\begin{DoxyCompactList}\small\item\em Get the buffer length (always 1). \item\end{DoxyCompactList}\item 
+virtual bool {\bf write} (const DataType \&value)
+\begin{DoxyCompactList}\small\item\em Write data into the buffer. \item\end{DoxyCompactList}\item 
+virtual bool {\bf read} (DataType \&value)
+\begin{DoxyCompactList}\small\item\em Read data from the buffer. \item\end{DoxyCompactList}\item 
+virtual bool {\bf isFull} (void) const 
+\begin{DoxyCompactList}\small\item\em Check on whether the buffer is full. \item\end{DoxyCompactList}\item 
+virtual bool {\bf isEmpty} (void) const 
+\begin{DoxyCompactList}\small\item\em Check on whether the buffer is empty. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void {\bf put} (const DataType \&data)
+\begin{DoxyCompactList}\small\item\em Store data into the buffer. \item\end{DoxyCompactList}\item 
+virtual const DataType \& {\bf get} (void)
+\begin{DoxyCompactList}\small\item\em Get data from the buffer. \item\end{DoxyCompactList}\item 
+virtual DataType \& {\bf getRef} (void)
+\begin{DoxyCompactList}\small\item\em Get the buffer's reference to be written the next. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$class DataType$>$ class RTC::NullBuffer$<$ DataType $>$}
+
+Concrete buffer class for dummy. Concrete buffer class for dummy. Buffer length is fixed to 1. The users specify data type to hold it in a buffer as $<$DataType$>$.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em DataType}]Data type to hold in a buffer\end{DoxyParams}
+\begin{DoxySince}{Since}
+0.4.0 
+\end{DoxySince}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{RTC::NullBuffer@{RTC::NullBuffer}!NullBuffer@{NullBuffer}}
+\index{NullBuffer@{NullBuffer}!RTC::NullBuffer@{RTC::NullBuffer}}
+\subsubsection[{NullBuffer}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class DataType $>$ {\bf RTC::NullBuffer}$<$ DataType $>$::{\bf NullBuffer} (long int {\em size} = {\ttfamily 1})\hspace{0.3cm}{\ttfamily  [inline]}}\label{classRTC_1_1NullBuffer_a77ef32c2911444bcc2cce77c66ae3e00}
+
+
+Constructer. 
+
+Constructer. Initialize buffer length to always 1.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em size}]Buffer length(Not use) \end{DoxyParams}
+\index{RTC::NullBuffer@{RTC::NullBuffer}!$\sim$NullBuffer@{$\sim$NullBuffer}}
+\index{$\sim$NullBuffer@{$\sim$NullBuffer}!RTC::NullBuffer@{RTC::NullBuffer}}
+\subsubsection[{$\sim$NullBuffer}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class DataType $>$ virtual {\bf RTC::NullBuffer}$<$ DataType $>$::$\sim${\bf NullBuffer} (void)\hspace{0.3cm}{\ttfamily  [inline, virtual]}}\label{classRTC_1_1NullBuffer_a95ff13580dbab77a497c1838a9bf03c1}
+
+
+Destructor. 
+
+Destractor 
+
+\subsection{Member Function Documentation}
+\index{RTC::NullBuffer@{RTC::NullBuffer}!get@{get}}
+\index{get@{get}!RTC::NullBuffer@{RTC::NullBuffer}}
+\subsubsection[{get}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class DataType $>$ virtual const DataType\& {\bf RTC::NullBuffer}$<$ DataType $>$::get (void)\hspace{0.3cm}{\ttfamily  [inline, protected, virtual]}}\label{classRTC_1_1NullBuffer_a5acb245659e61424bda0080b44d7b6d1}
+
+
+Get data from the buffer. 
+
+Get data from the buffer.
+
+\begin{DoxyReturn}{Returns}
+Data got from buffer. 
+\end{DoxyReturn}
+
+
+Implements {\bf RTC::BufferBase$<$ DataType $>$} \doxyref{}{p.}{classRTC_1_1BufferBase_af12dcf239b3842fe6c946cb61c3d0bd2}.
+
+\index{RTC::NullBuffer@{RTC::NullBuffer}!getRef@{getRef}}
+\index{getRef@{getRef}!RTC::NullBuffer@{RTC::NullBuffer}}
+\subsubsection[{getRef}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class DataType $>$ virtual DataType\& {\bf RTC::NullBuffer}$<$ DataType $>$::getRef (void)\hspace{0.3cm}{\ttfamily  [inline, protected, virtual]}}\label{classRTC_1_1NullBuffer_a5447a6f2d9022baf5394c5afdb4b227e}
+
+
+Get the buffer's reference to be written the next. 
+
+Get the reference to be written buffer. Return always same position because this buffer's length is always 1.
+
+\begin{DoxyReturn}{Returns}
+Reference to be written the next(always same) 
+\end{DoxyReturn}
+\index{RTC::NullBuffer@{RTC::NullBuffer}!isEmpty@{isEmpty}}
+\index{isEmpty@{isEmpty}!RTC::NullBuffer@{RTC::NullBuffer}}
+\subsubsection[{isEmpty}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class DataType $>$ virtual bool {\bf RTC::NullBuffer}$<$ DataType $>$::isEmpty (void) const\hspace{0.3cm}{\ttfamily  [inline, virtual]}}\label{classRTC_1_1NullBuffer_a29726dbdb85caaf69229105718f15dc1}
+
+
+Check on whether the buffer is empty. 
+
+Check on whether the buffer is empty. (Always false.)
+
+\begin{DoxyReturn}{Returns}
+Always false. 
+\end{DoxyReturn}
+\index{RTC::NullBuffer@{RTC::NullBuffer}!isFull@{isFull}}
+\index{isFull@{isFull}!RTC::NullBuffer@{RTC::NullBuffer}}
+\subsubsection[{isFull}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class DataType $>$ virtual bool {\bf RTC::NullBuffer}$<$ DataType $>$::isFull (void) const\hspace{0.3cm}{\ttfamily  [inline, virtual]}}\label{classRTC_1_1NullBuffer_a32bf047061497e79daded3ce2f558ccb}
+
+
+Check on whether the buffer is full. 
+
+Check on whether the buffer is full. (Always false.)
+
+\begin{DoxyReturn}{Returns}
+Always false. 
+\end{DoxyReturn}
+\index{RTC::NullBuffer@{RTC::NullBuffer}!length@{length}}
+\index{length@{length}!RTC::NullBuffer@{RTC::NullBuffer}}
+\subsubsection[{length}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class DataType $>$ virtual long int {\bf RTC::NullBuffer}$<$ DataType $>$::length (void) const\hspace{0.3cm}{\ttfamily  [inline, virtual]}}\label{classRTC_1_1NullBuffer_a10b3ecbf48ec0987e321465f21887030}
+
+
+Get the buffer length (always 1). 
+
+Get the buffer length. (Return always 1.)
+
+\begin{DoxyReturn}{Returns}
+buffer length(always 1) 
+\end{DoxyReturn}
+
+
+Implements {\bf RTC::BufferBase$<$ DataType $>$} \doxyref{}{p.}{classRTC_1_1BufferBase_ad41d5476f9bce0e737115e8ab7cc615f}.
+
+\index{RTC::NullBuffer@{RTC::NullBuffer}!put@{put}}
+\index{put@{put}!RTC::NullBuffer@{RTC::NullBuffer}}
+\subsubsection[{put}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class DataType $>$ virtual void {\bf RTC::NullBuffer}$<$ DataType $>$::put (const DataType \& {\em data})\hspace{0.3cm}{\ttfamily  [inline, protected, virtual]}}\label{classRTC_1_1NullBuffer_a0704a4190bd82c637635528ea4c28416}
+
+
+Store data into the buffer. 
+
+Store data which were given with an argument into the buffer.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em data}]Target data to store. \end{DoxyParams}
+
+
+Implements {\bf RTC::BufferBase$<$ DataType $>$} \doxyref{}{p.}{classRTC_1_1BufferBase_af6274c9bc458580643560752f9150235}.
+
+\index{RTC::NullBuffer@{RTC::NullBuffer}!read@{read}}
+\index{read@{read}!RTC::NullBuffer@{RTC::NullBuffer}}
+\subsubsection[{read}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class DataType $>$ virtual bool {\bf RTC::NullBuffer}$<$ DataType $>$::read (DataType \& {\em value})\hspace{0.3cm}{\ttfamily  [inline, virtual]}}\label{classRTC_1_1NullBuffer_a8aca824119c1579a6dceb42a7e5833f7}
+
+
+Read data from the buffer. 
+
+Read data stored in the buffer.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em value}]Read data.\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Result of having read (true:Successful, false:Failed) 
+\end{DoxyReturn}
+\index{RTC::NullBuffer@{RTC::NullBuffer}!write@{write}}
+\index{write@{write}!RTC::NullBuffer@{RTC::NullBuffer}}
+\subsubsection[{write}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class DataType $>$ virtual bool {\bf RTC::NullBuffer}$<$ DataType $>$::write (const DataType \& {\em value})\hspace{0.3cm}{\ttfamily  [inline, virtual]}}\label{classRTC_1_1NullBuffer_aa5b727d115e44544be3a7997a5be2e19}
+
+
+Write data into the buffer. 
+
+Write data which were given with an argument into the buffer.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em value}]Target data to write.\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Result of having written in data (true:Successful, false:Failed) 
+\end{DoxyReturn}

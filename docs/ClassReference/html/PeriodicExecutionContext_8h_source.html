@@ -1,0 +1,401 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<title>OpenRTM: PeriodicExecutionContext.h ソースファイル</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<!-- 作成： Doxygen 1.6.3 -->
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="index.html"><span>メインページ</span></a></li>
+      <li><a href="namespaces.html"><span>ネームスペース</span></a></li>
+      <li><a href="annotated.html"><span>クラス</span></a></li>
+      <li class="current"><a href="files.html"><span>ファイル</span></a></li>
+    </ul>
+  </div>
+  <div class="tabs">
+    <ul>
+      <li><a href="files.html"><span>ファイル一覧</span></a></li>
+      <li><a href="globals.html"><span>ファイルメンバ</span></a></li>
+    </ul>
+  </div>
+<h1>PeriodicExecutionContext.h</h1><a href="PeriodicExecutionContext_8h.html">説明を見る。</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="comment">// -*- C++ -*-</span>
+<a name="l00020"></a>00020 <span class="comment"></span><span class="preprocessor">#ifndef RTC_PERIODICEXECUTIONCONTEXT_H</span>
+<a name="l00021"></a>00021 <span class="preprocessor"></span><span class="preprocessor">#define RTC_PERIODICEXECUTIONCONTEXT_H</span>
+<a name="l00022"></a>00022 <span class="preprocessor"></span>
+<a name="l00023"></a>00023 <span class="preprocessor">#include &lt;<a class="code" href="Task_8h.html">coil/Task.h</a>&gt;</span>
+<a name="l00024"></a>00024 <span class="preprocessor">#include &lt;<a class="code" href="Mutex_8h.html">coil/Mutex.h</a>&gt;</span>
+<a name="l00025"></a>00025 <span class="preprocessor">#include &lt;<a class="code" href="Condition_8h.html">coil/Condition.h</a>&gt;</span>
+<a name="l00026"></a>00026 <span class="preprocessor">#include &lt;vector&gt;</span>
+<a name="l00027"></a>00027 <span class="preprocessor">#include &lt;iostream&gt;</span>
+<a name="l00028"></a>00028 
+<a name="l00029"></a>00029 <span class="preprocessor">#include &lt;<a class="code" href="RTC_8h.html" title="RTComponent header.">rtm/RTC.h</a>&gt;</span>
+<a name="l00030"></a>00030 <span class="preprocessor">#include &lt;rtm/idl/RTCSkel.h&gt;</span>
+<a name="l00031"></a>00031 <span class="preprocessor">#include &lt;rtm/idl/OpenRTMSkel.h&gt;</span>
+<a name="l00032"></a>00032 <span class="preprocessor">#include &lt;<a class="code" href="Manager_8h.html" title="RTComponent manager class.">rtm/Manager.h</a>&gt;</span>
+<a name="l00033"></a>00033 <span class="preprocessor">#include &lt;<a class="code" href="StateMachine_8h.html" title="State machine template class.">rtm/StateMachine.h</a>&gt;</span>
+<a name="l00034"></a>00034 <span class="preprocessor">#include &lt;<a class="code" href="ExecutionContextBase_8h.html" title="ExecutionContext base class.">rtm/ExecutionContextBase.h</a>&gt;</span>
+<a name="l00035"></a>00035 
+<a name="l00036"></a><a class="code" href="PeriodicExecutionContext_8h.html#a6c0256aab3b98fed6c87175c03712b0d">00036</a> <span class="preprocessor">#define NUM_OF_LIFECYCLESTATE 4</span>
+<a name="l00037"></a>00037 <span class="preprocessor"></span>
+<a name="l00038"></a>00038 <span class="preprocessor">#ifdef WIN32</span>
+<a name="l00039"></a>00039 <span class="preprocessor"></span><span class="preprocessor">#pragma warning( disable : 4290 )</span>
+<a name="l00040"></a>00040 <span class="preprocessor"></span><span class="preprocessor">#endif</span>
+<a name="l00041"></a>00041 <span class="preprocessor"></span>
+<a name="l00042"></a>00042 <span class="keyword">namespace </span>RTC
+<a name="l00043"></a>00043 {
+<a name="l00064"></a><a class="code" href="classRTC_1_1PeriodicExecutionContext.html">00064</a>   <span class="keyword">class </span><a class="code" href="classRTC_1_1PeriodicExecutionContext.html" title="PeriodicExecutionContext クラス.">PeriodicExecutionContext</a>
+<a name="l00065"></a>00065     : <span class="keyword">public</span> <span class="keyword">virtual</span> <a class="code" href="classRTC_1_1ExecutionContextBase.html" title="ExecutionContext用基底クラス.">ExecutionContextBase</a>,
+<a name="l00066"></a>00066       <span class="keyword">public</span> coil::Task
+<a name="l00067"></a>00067   {
+<a name="l00068"></a>00068     <span class="keyword">typedef</span> <a class="code" href="classcoil_1_1Guard.html">coil::Guard&lt;coil::Mutex&gt;</a> <a class="code" href="classcoil_1_1Guard.html">Guard</a>;
+<a name="l00069"></a>00069   <span class="keyword">public</span>:
+<a name="l00089"></a>00089     <a class="code" href="classRTC_1_1PeriodicExecutionContext.html#a456938dcac9dede5fc9a66c9ed8566ce" title="デフォルトコンストラクタ">PeriodicExecutionContext</a>();
+<a name="l00090"></a>00090     
+<a name="l00112"></a>00112     <a class="code" href="classRTC_1_1PeriodicExecutionContext.html#a456938dcac9dede5fc9a66c9ed8566ce" title="デフォルトコンストラクタ">PeriodicExecutionContext</a>(OpenRTM::DataFlowComponent_ptr owner,
+<a name="l00113"></a>00113                              <span class="keywordtype">double</span> rate = 1000.0);
+<a name="l00114"></a>00114     
+<a name="l00128"></a>00128     <span class="keyword">virtual</span> <a class="code" href="classRTC_1_1PeriodicExecutionContext.html#a60e57304d18adceef55e445c7076ec8d">~PeriodicExecutionContext</a>(<span class="keywordtype">void</span>);
+<a name="l00129"></a>00129     
+<a name="l00149"></a><a class="code" href="classRTC_1_1PeriodicExecutionContext.html#a24fac023d4758a6297dab92ee8db6610">00149</a>     <span class="keyword">virtual</span> ExecutionContextService_ptr <a class="code" href="classRTC_1_1PeriodicExecutionContext.html#a24fac023d4758a6297dab92ee8db6610" title="CORBA オブジェクト参照の取得.">getObjRef</a>(<span class="keywordtype">void</span>) {<span class="keywordflow">return</span> <a class="code" href="classRTC_1_1PeriodicExecutionContext.html#a2ef1d86bd6e16adc658b5295e58f765e" title="ExecutionContextService オブジェクトへの参照.">m_ref</a>;}
+<a name="l00150"></a>00150     
+<a name="l00175"></a>00175     <span class="keyword">virtual</span> <span class="keywordtype">int</span> <a class="code" href="classRTC_1_1PeriodicExecutionContext.html#a1a8cf7148599db0ac62f76e4142df3e3" title="ExecutionContext用アクティビティスレッドを生成する.">open</a>(<span class="keywordtype">void</span> *args);
+<a name="l00176"></a>00176     
+<a name="l00196"></a>00196     <span class="keyword">virtual</span> <span class="keywordtype">int</span> <a class="code" href="classRTC_1_1PeriodicExecutionContext.html#acce0ee7c44366398928e688f895af60b" title="ExecutionContext 用のスレッド実行関数.">svc</a>(<span class="keywordtype">void</span>);
+<a name="l00197"></a>00197     
+<a name="l00225"></a>00225     <span class="keyword">virtual</span> <span class="keywordtype">int</span> <a class="code" href="classRTC_1_1PeriodicExecutionContext.html#a61e63a2d5f7aac790af5e105000df6fd" title="ExecutionContext 用のスレッド実行関数.">close</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> flags);
+<a name="l00226"></a>00226     
+<a name="l00227"></a>00227     <span class="comment">//============================================================</span>
+<a name="l00228"></a>00228     <span class="comment">// ExecutionContext</span>
+<a name="l00229"></a>00229     <span class="comment">//============================================================</span>
+<a name="l00254"></a>00254 <span class="comment"></span>    <span class="keyword">virtual</span> CORBA::Boolean <a class="code" href="classRTC_1_1PeriodicExecutionContext.html#a3d00b4b068359718a5fa47850231bdc3" title="ExecutionContext 実行状態確認関数.">is_running</a>(<span class="keywordtype">void</span>)
+<a name="l00255"></a>00255       throw (CORBA::SystemException);
+<a name="l00256"></a>00256     
+<a name="l00284"></a>00284     virtual ReturnCode_t <a class="code" href="classRTC_1_1PeriodicExecutionContext.html#a5b4a4b631c00a5a34183fb95d162da60" title="ExecutionContext の実行を開始.">start</a>(<span class="keywordtype">void</span>)
+<a name="l00285"></a>00285       throw (CORBA::SystemException);
+<a name="l00286"></a>00286     
+<a name="l00313"></a>00313     virtual ReturnCode_t <a class="code" href="classRTC_1_1PeriodicExecutionContext.html#a13a32252fa64792890bd33f5fbc2cd27" title="ExecutionContext の実行を停止.">stop</a>(<span class="keywordtype">void</span>)
+<a name="l00314"></a>00314       throw (CORBA::SystemException);
+<a name="l00315"></a>00315     
+<a name="l00336"></a>00336     virtual CORBA::Double <a class="code" href="classRTC_1_1PeriodicExecutionContext.html#a269feae5bcffbb1192ca4b179492316f" title="ExecutionContext の実行周期(Hz)を取得する.">get_rate</a>(<span class="keywordtype">void</span>)
+<a name="l00337"></a>00337       throw (CORBA::SystemException);
+<a name="l00338"></a>00338     
+<a name="l00368"></a>00368     virtual ReturnCode_t  <a class="code" href="classRTC_1_1PeriodicExecutionContext.html#af34b60fa54e71b5665f64eb5f0ee2b4b" title="ExecutionContext の実行周期(Hz)を設定する.">set_rate</a>(CORBA::Double rate)
+<a name="l00369"></a>00369       throw (CORBA::SystemException);
+<a name="l00370"></a>00370     
+<a name="l00404"></a>00404     virtual ReturnCode_t <a class="code" href="classRTC_1_1PeriodicExecutionContext.html#af61b61f5bde7eef6aa60d349f589cd4c" title="RTコンポーネントをアクティブ化する.">activate_component</a>(LightweightRTObject_ptr comp)
+<a name="l00405"></a>00405       throw (CORBA::SystemException);
+<a name="l00406"></a>00406     
+<a name="l00439"></a>00439     virtual ReturnCode_t <a class="code" href="classRTC_1_1PeriodicExecutionContext.html#ad7f3b97e60011ea1ac53a7025c8c50e1" title="RTコンポーネントを非アクティブ化する.">deactivate_component</a>(LightweightRTObject_ptr comp)
+<a name="l00440"></a>00440       throw (CORBA::SystemException);
+<a name="l00441"></a>00441     
+<a name="l00473"></a>00473     virtual ReturnCode_t <a class="code" href="classRTC_1_1PeriodicExecutionContext.html#a474054ce75ca74a8affcb53247ed586f" title="RTコンポーネントをリセットする.">reset_component</a>(LightweightRTObject_ptr comp)
+<a name="l00474"></a>00474       throw (CORBA::SystemException);
+<a name="l00475"></a>00475     
+<a name="l00502"></a>00502     virtual LifeCycleState <a class="code" href="classRTC_1_1PeriodicExecutionContext.html#ade6fd73011af5ab165b85b72fd7ea708" title="RTコンポーネントの状態を取得する.">get_component_state</a>(LightweightRTObject_ptr comp)
+<a name="l00503"></a>00503       throw (CORBA::SystemException);
+<a name="l00504"></a>00504     
+<a name="l00524"></a>00524     virtual ExecutionKind <a class="code" href="classRTC_1_1PeriodicExecutionContext.html#a0d7d0249f13de345fad193602c45f5b3" title="ExecutionKind を取得する.">get_kind</a>(<span class="keywordtype">void</span>)
+<a name="l00525"></a>00525       throw (CORBA::SystemException);
+<a name="l00526"></a>00526     
+<a name="l00558"></a>00558     virtual ReturnCode_t <a class="code" href="classRTC_1_1PeriodicExecutionContext.html#a332878d08bb328b719bf16d72291443b" title="RTコンポーネントを追加する.">add_component</a>(LightweightRTObject_ptr comp)
+<a name="l00559"></a>00559       throw (CORBA::SystemException);
+<a name="l00560"></a>00560 
+<a name="l00578"></a>00578     virtual RTC::ReturnCode_t <a class="code" href="classRTC_1_1PeriodicExecutionContext.html#aac9d423142bf3b8d219740a4f202b033" title="コンポーネントをバインドする。">bindComponent</a>(<a class="code" href="classRTC_1_1RTObject__impl.html" title="RTコンポーネントクラス.">RTObject_impl</a>* rtc);
+<a name="l00579"></a>00579     
+<a name="l00610"></a>00610     virtual ReturnCode_t <a class="code" href="classRTC_1_1PeriodicExecutionContext.html#a30ed19381e630c4fc7865423a8b8a696" title="RTコンポーネントを参加者リストから削除する.">remove_component</a>(LightweightRTObject_ptr comp)
+<a name="l00611"></a>00611       throw (CORBA::SystemException);
+<a name="l00612"></a>00612     
+<a name="l00632"></a>00632     virtual ExecutionContextProfile* <a class="code" href="classRTC_1_1PeriodicExecutionContext.html#a96fd316ca3f5e6538de4a7a5d4acc79e" title="ExecutionContextProfile を取得する.">get_profile</a>(<span class="keywordtype">void</span>)
+<a name="l00633"></a>00633       throw (CORBA::SystemException);
+<a name="l00634"></a>00634     
+<a name="l00635"></a>00635   protected:
+<a name="l00636"></a>00636     <span class="comment">//============================================================</span>
+<a name="l00637"></a>00637     <span class="comment">// DFPBase</span>
+<a name="l00638"></a>00638     <span class="comment">//============================================================</span>
+<a name="l00639"></a><a class="code" href="classRTC_1_1PeriodicExecutionContext.html#ab1ac4b3e0f9db41d78ac4eee5e9ca735">00639</a>     typedef LifeCycleState <a class="code" href="classRTC_1_1PeriodicExecutionContext.html#ab1ac4b3e0f9db41d78ac4eee5e9ca735">ExecContextState</a>;
+<a name="l00640"></a>00640     <span class="comment">/*</span>
+<a name="l00641"></a>00641 <span class="comment">      enum ExecContextState</span>
+<a name="l00642"></a>00642 <span class="comment">      {</span>
+<a name="l00643"></a>00643 <span class="comment">        INACTIVE_STATE,</span>
+<a name="l00644"></a>00644 <span class="comment">        ACTIVE_STATE,</span>
+<a name="l00645"></a>00645 <span class="comment">        ERROR_STATE,</span>
+<a name="l00646"></a>00646 <span class="comment">      };</span>
+<a name="l00647"></a>00647 <span class="comment">    */</span>
+<a name="l00648"></a><a class="code" href="classRTC_1_1PeriodicExecutionContext.html#abb9def031be9f01dc680c0e709adf96c">00648</a>     typedef RTC_Utils::StateHolder&lt;ExecContextState&gt; <a class="code" href="structRTC__Utils_1_1StateHolder.html">ECStates</a>;
+<a name="l00649"></a>00649     
+<a name="l00670"></a><a class="code" href="classRTC_1_1PeriodicExecutionContext_1_1DFPBase.html">00670</a>     class <a class="code" href="classRTC_1_1PeriodicExecutionContext_1_1DFPBase.html" title="DFPBase クラス.">DFPBase</a>
+<a name="l00671"></a>00671     {
+<a name="l00672"></a>00672     <span class="keyword">public</span>:
+<a name="l00673"></a>00673       
+<a name="l00691"></a><a class="code" href="classRTC_1_1PeriodicExecutionContext_1_1DFPBase.html#a3319f153362c46e858a0fdcc0f2568d8">00691</a>       DFPBase(RTC::ExecutionContextHandle_t <span class="keywordtype">id</span>)
+<a name="l00692"></a>00692         : ec_id(id), m_sm(<a class="code" href="PeriodicExecutionContext_8h.html#a6c0256aab3b98fed6c87175c03712b0d">NUM_OF_LIFECYCLESTATE</a>)
+<a name="l00693"></a>00693       {
+<a name="l00694"></a>00694         m_sm.setListener(<span class="keyword">this</span>);
+<a name="l00695"></a>00695         m_sm.setEntryAction (ACTIVE_STATE, &amp;<a class="code" href="classRTC_1_1PeriodicExecutionContext_1_1DFPBase.html#a7617ab4164f5516ee411a23273577148" title="RTコンポーネントがアクティブ化された時に呼ばれる純粋仮想関数...">DFPBase::on_activated</a>);
+<a name="l00696"></a>00696         m_sm.setDoAction    (ACTIVE_STATE, &amp;<a class="code" href="classRTC_1_1PeriodicExecutionContext_1_1DFPBase.html#a4ac335580091c6300144717ed1ed4555" title="RTコンポーネント実行時に定期的に呼ばれる純粋仮想関数.">DFPBase::on_execute</a>);
+<a name="l00697"></a>00697         m_sm.setPostDoAction(ACTIVE_STATE, &amp;<a class="code" href="classRTC_1_1PeriodicExecutionContext_1_1DFPBase.html#a840339510d7a4d0eef17f495638bbbc3" title="RTコンポーネント実行時に定期的に呼ばれる純粋仮想関数.">DFPBase::on_state_update</a>);
+<a name="l00698"></a>00698         m_sm.setExitAction  (ACTIVE_STATE, &amp;<a class="code" href="classRTC_1_1PeriodicExecutionContext_1_1DFPBase.html#afdb8f5efa070e18e5aecf34e117c4916" title="RTコンポーネントが非アクティブ化された時に呼ばれる純粋仮想関数...">DFPBase::on_deactivated</a>);
+<a name="l00699"></a>00699         m_sm.setEntryAction (ERROR_STATE,  &amp;<a class="code" href="classRTC_1_1PeriodicExecutionContext_1_1DFPBase.html#a4326e1e3a6fd23cd534c37016a9d6ff6" title="RTコンポーネントでエラーが発生した時に呼ばれる純粋仮想関数...">DFPBase::on_aborting</a>);
+<a name="l00700"></a>00700         m_sm.setDoAction    (ERROR_STATE,  &amp;<a class="code" href="classRTC_1_1PeriodicExecutionContext_1_1DFPBase.html#aabc82635a64722f77fa359a4f6308122" title="RTコンポーネントがエラー状態の時に呼ばれる純粋仮想関数...">DFPBase::on_error</a>);
+<a name="l00701"></a>00701         m_sm.setExitAction  (ERROR_STATE,  &amp;<a class="code" href="classRTC_1_1PeriodicExecutionContext_1_1DFPBase.html#ad26d3a6118ce1f2b97527af86a8bb14d" title="RTコンポーネントをリセットする時に呼ばれる純粋仮想関数...">DFPBase::on_reset</a>);
+<a name="l00702"></a>00702         
+<a name="l00703"></a>00703         ECStates st;
+<a name="l00704"></a>00704         st.<a class="code" href="structRTC__Utils_1_1StateHolder.html#a8e1e247158f889059ba84d6428a4fd35">prev</a> = INACTIVE_STATE;
+<a name="l00705"></a>00705         st.<a class="code" href="structRTC__Utils_1_1StateHolder.html#a6d8c823054382ec53cf68d84b57e8376">curr</a> = INACTIVE_STATE;
+<a name="l00706"></a>00706         st.<a class="code" href="structRTC__Utils_1_1StateHolder.html#af7c8270e02be5f1575d4982115149713">next</a> = INACTIVE_STATE;
+<a name="l00707"></a>00707         m_sm.setStartState(st);
+<a name="l00708"></a>00708         m_sm.goTo(INACTIVE_STATE);
+<a name="l00709"></a>00709       } 
+<a name="l00710"></a>00710       
+<a name="l00724"></a><a class="code" href="classRTC_1_1PeriodicExecutionContext_1_1DFPBase.html#a382e8b3d00a1e71244e8ef63989c631c">00724</a>       <span class="keyword">virtual</span> <a class="code" href="classRTC_1_1PeriodicExecutionContext_1_1DFPBase.html#a382e8b3d00a1e71244e8ef63989c631c">~DFPBase</a>(<span class="keywordtype">void</span>){}
+<a name="l00725"></a>00725       
+<a name="l00742"></a>00742       <span class="keyword">virtual</span> <span class="keywordtype">void</span> on_startup(<span class="keywordtype">void</span>) = 0;
+<a name="l00743"></a>00743       
+<a name="l00760"></a>00760       <span class="keyword">virtual</span> <span class="keywordtype">void</span> on_shutdown(<span class="keywordtype">void</span>) = 0;
+<a name="l00761"></a>00761       
+<a name="l00783"></a>00783       <span class="keyword">virtual</span> <span class="keywordtype">void</span> on_activated(<span class="keyword">const</span> ECStates&amp; st) = 0;
+<a name="l00784"></a>00784       
+<a name="l00806"></a>00806       <span class="keyword">virtual</span> <span class="keywordtype">void</span> on_deactivated(<span class="keyword">const</span> ECStates&amp; st) = 0;
+<a name="l00807"></a>00807       
+<a name="l00829"></a>00829       <span class="keyword">virtual</span> <span class="keywordtype">void</span> on_aborting(<span class="keyword">const</span> ECStates&amp; st) = 0;
+<a name="l00830"></a>00830       
+<a name="l00856"></a>00856       <span class="keyword">virtual</span> <span class="keywordtype">void</span> on_error(<span class="keyword">const</span> ECStates&amp; st) = 0;
+<a name="l00857"></a>00857       
+<a name="l00883"></a>00883       <span class="keyword">virtual</span> <span class="keywordtype">void</span> on_reset(<span class="keyword">const</span> ECStates&amp; st) = 0;
+<a name="l00884"></a>00884       
+<a name="l00911"></a>00911       <span class="keyword">virtual</span> <span class="keywordtype">void</span> on_execute(<span class="keyword">const</span> ECStates&amp; st) = 0;
+<a name="l00912"></a>00912       
+<a name="l00939"></a>00939       <span class="keyword">virtual</span> <span class="keywordtype">void</span> on_state_update(<span class="keyword">const</span> ECStates&amp; st) = 0;
+<a name="l00940"></a>00940       
+<a name="l00958"></a>00958       <span class="keyword">virtual</span> <span class="keywordtype">void</span> on_rate_changed(<span class="keywordtype">void</span>) = 0;
+<a name="l00959"></a>00959       
+<a name="l00978"></a><a class="code" href="classRTC_1_1PeriodicExecutionContext_1_1DFPBase.html#a1b1091320b7e68b0e20ccca6ac506534">00978</a>       <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classRTC_1_1PeriodicExecutionContext_1_1DFPBase.html#a1b1091320b7e68b0e20ccca6ac506534" title="状態遷移を実行するワーカーを取得する">worker</a>(<span class="keywordtype">void</span>) {<span class="keywordflow">return</span> m_sm.worker();}
+<a name="l00979"></a>00979       
+<a name="l00997"></a><a class="code" href="classRTC_1_1PeriodicExecutionContext_1_1DFPBase.html#a9cb860e561b642df7ae8dbfb089f71e1">00997</a>       <span class="keyword">virtual</span> ExecContextState <a class="code" href="classRTC_1_1PeriodicExecutionContext_1_1DFPBase.html#a9cb860e561b642df7ae8dbfb089f71e1" title="現在の状態を取得する">get_state</a>(<span class="keywordtype">void</span>){ <span class="keywordflow">return</span> m_sm.getState();}
+<a name="l00998"></a>00998       
+<a name="l01006"></a><a class="code" href="classRTC_1_1PeriodicExecutionContext_1_1DFPBase.html#ac3e8abc57e496192d6291cc260901054">01006</a>       ExecutionContextHandle_t ec_id;
+<a name="l01007"></a>01007       
+<a name="l01015"></a><a class="code" href="classRTC_1_1PeriodicExecutionContext_1_1DFPBase.html#a0efcdc041f9f01491579acd729653a50">01015</a>       <a class="code" href="classRTC__Utils_1_1StateMachine.html">RTC_Utils::StateMachine&lt;ExecContextState, DFPBase&gt;</a> m_sm;
+<a name="l01016"></a>01016     };
+<a name="l01017"></a>01017     
+<a name="l01018"></a>01018     <span class="comment">//============================================================</span>
+<a name="l01019"></a>01019     <span class="comment">// DFP</span>
+<a name="l01020"></a>01020     <span class="comment">//============================================================</span>
+<a name="l01046"></a>01046 <span class="comment"></span>    <span class="keyword">template</span> &lt;<span class="keyword">class</span> Object&gt;
+<a name="l01047"></a><a class="code" href="classRTC_1_1PeriodicExecutionContext_1_1DFP.html">01047</a>     <span class="keyword">class </span><a class="code" href="classRTC_1_1PeriodicExecutionContext_1_1DFP.html" title="DFP クラス.">DFP</a>
+<a name="l01048"></a>01048       : <span class="keyword">public</span> <a class="code" href="classRTC_1_1PeriodicExecutionContext_1_1DFPBase.html" title="DFPBase クラス.">DFPBase</a>
+<a name="l01049"></a>01049     {
+<a name="l01050"></a>01050     <span class="keyword">public</span>:
+<a name="l01070"></a><a class="code" href="classRTC_1_1PeriodicExecutionContext_1_1DFP.html#a3a9221720e97918631cb49268e16058b">01070</a>       <a class="code" href="classRTC_1_1PeriodicExecutionContext_1_1DFP.html#a3a9221720e97918631cb49268e16058b" title="デフォルトコンストラクタ">DFP</a>(Object obj, ExecutionContextHandle_t <span class="keywordtype">id</span>)
+<a name="l01071"></a>01071         : <a class="code" href="classRTC_1_1PeriodicExecutionContext_1_1DFPBase.html" title="DFPBase クラス.">DFPBase</a>(id), <a class="code" href="classRTC_1_1PeriodicExecutionContext_1_1DFP.html#a12f00ab69fa3e68cb5b0ee83dbe010af" title="管理対象コンポーネント">m_obj</a>(obj), <a class="code" href="classRTC_1_1PeriodicExecutionContext_1_1DFP.html#a26c3f482f8c0fc239af8b180aa8de4de" title="管理対象コンポーネントの動作状態フラグ">m_active</a>(true)
+<a name="l01072"></a>01072       {
+<a name="l01073"></a>01073       }
+<a name="l01074"></a>01074       
+<a name="l01090"></a><a class="code" href="classRTC_1_1PeriodicExecutionContext_1_1DFP.html#a79b7b4a99f8d2cd0dc407c1b326dcb85">01090</a>       <span class="keywordtype">void</span> <a class="code" href="classRTC_1_1PeriodicExecutionContext_1_1DFP.html#a79b7b4a99f8d2cd0dc407c1b326dcb85" title="ExecutionContext 実行開始時に呼ばれる関数.">on_startup</a>(<span class="keywordtype">void</span>)
+<a name="l01091"></a>01091       {
+<a name="l01092"></a>01092         <a class="code" href="classRTC_1_1PeriodicExecutionContext_1_1DFP.html#a12f00ab69fa3e68cb5b0ee83dbe010af" title="管理対象コンポーネント">m_obj</a>-&gt;on_startup(<a class="code" href="classRTC_1_1PeriodicExecutionContext_1_1DFPBase.html#ac3e8abc57e496192d6291cc260901054" title="参加している ExecutionContext の ID">ec_id</a>);
+<a name="l01093"></a>01093       }
+<a name="l01094"></a>01094       
+<a name="l01110"></a><a class="code" href="classRTC_1_1PeriodicExecutionContext_1_1DFP.html#a312588691ba1da141cae496d74bb2b7f">01110</a>       <span class="keywordtype">void</span> <a class="code" href="classRTC_1_1PeriodicExecutionContext_1_1DFP.html#a312588691ba1da141cae496d74bb2b7f" title="ExecutionContext 停止時に呼ばれる関数.">on_shutdown</a>(<span class="keywordtype">void</span>)
+<a name="l01111"></a>01111       {
+<a name="l01112"></a>01112         <a class="code" href="classRTC_1_1PeriodicExecutionContext_1_1DFP.html#a12f00ab69fa3e68cb5b0ee83dbe010af" title="管理対象コンポーネント">m_obj</a>-&gt;on_shutdown(<a class="code" href="classRTC_1_1PeriodicExecutionContext_1_1DFPBase.html#ac3e8abc57e496192d6291cc260901054" title="参加している ExecutionContext の ID">ec_id</a>);
+<a name="l01113"></a>01113       }
+<a name="l01114"></a>01114       
+<a name="l01137"></a><a class="code" href="classRTC_1_1PeriodicExecutionContext_1_1DFP.html#aab354f4aec81a3de94c897d42a08814c">01137</a>       <span class="keywordtype">void</span> <a class="code" href="classRTC_1_1PeriodicExecutionContext_1_1DFP.html#aab354f4aec81a3de94c897d42a08814c" title="RTコンポーネントがアクティブ化された時に呼ばれる関数.">on_activated</a>(<span class="keyword">const</span> <a class="code" href="structRTC__Utils_1_1StateHolder.html">ECStates</a>&amp; st)
+<a name="l01138"></a>01138       {
+<a name="l01139"></a>01139         <span class="keywordflow">if</span> (<a class="code" href="classRTC_1_1PeriodicExecutionContext_1_1DFP.html#a12f00ab69fa3e68cb5b0ee83dbe010af" title="管理対象コンポーネント">m_obj</a>-&gt;on_activated(<a class="code" href="classRTC_1_1PeriodicExecutionContext_1_1DFPBase.html#ac3e8abc57e496192d6291cc260901054" title="参加している ExecutionContext の ID">ec_id</a>) != RTC::RTC_OK)
+<a name="l01140"></a>01140           {
+<a name="l01141"></a>01141             <a class="code" href="classRTC_1_1PeriodicExecutionContext_1_1DFPBase.html#a0efcdc041f9f01491579acd729653a50" title="管理対象RTコンポーネントのステートマシン">m_sm</a>.<a class="code" href="classRTC__Utils_1_1StateMachine.html#a43b923b77e7e4d3562a83880c488197d" title="状態を遷移">goTo</a>(ERROR_STATE);
+<a name="l01142"></a>01142             <span class="keywordflow">return</span>;
+<a name="l01143"></a>01143           }
+<a name="l01144"></a>01144         <span class="keywordflow">return</span>;
+<a name="l01145"></a>01145       }
+<a name="l01146"></a>01146       
+<a name="l01167"></a><a class="code" href="classRTC_1_1PeriodicExecutionContext_1_1DFP.html#aa0b4398840866335bfd3a35aa2a1378c">01167</a>       <span class="keywordtype">void</span> <a class="code" href="classRTC_1_1PeriodicExecutionContext_1_1DFP.html#aa0b4398840866335bfd3a35aa2a1378c" title="RTコンポーネントが非アクティブ化された時に呼ばれる関数...">on_deactivated</a>(<span class="keyword">const</span> <a class="code" href="structRTC__Utils_1_1StateHolder.html">ECStates</a>&amp; st)
+<a name="l01168"></a>01168       {
+<a name="l01169"></a>01169         <a class="code" href="classRTC_1_1PeriodicExecutionContext_1_1DFP.html#a12f00ab69fa3e68cb5b0ee83dbe010af" title="管理対象コンポーネント">m_obj</a>-&gt;on_deactivated(<a class="code" href="classRTC_1_1PeriodicExecutionContext_1_1DFPBase.html#ac3e8abc57e496192d6291cc260901054" title="参加している ExecutionContext の ID">ec_id</a>);
+<a name="l01170"></a>01170       }
+<a name="l01171"></a>01171       
+<a name="l01191"></a><a class="code" href="classRTC_1_1PeriodicExecutionContext_1_1DFP.html#a56b2f4893a7fd424fc744892581057d7">01191</a>       <span class="keywordtype">void</span> <a class="code" href="classRTC_1_1PeriodicExecutionContext_1_1DFP.html#a56b2f4893a7fd424fc744892581057d7" title="RTコンポーネントでエラーが発生した時に呼ばれる関数.">on_aborting</a>(<span class="keyword">const</span> <a class="code" href="structRTC__Utils_1_1StateHolder.html">ECStates</a>&amp; st)
+<a name="l01192"></a>01192       {
+<a name="l01193"></a>01193         <a class="code" href="classRTC_1_1PeriodicExecutionContext_1_1DFP.html#a12f00ab69fa3e68cb5b0ee83dbe010af" title="管理対象コンポーネント">m_obj</a>-&gt;on_aborting(<a class="code" href="classRTC_1_1PeriodicExecutionContext_1_1DFPBase.html#ac3e8abc57e496192d6291cc260901054" title="参加している ExecutionContext の ID">ec_id</a>);
+<a name="l01194"></a>01194       }
+<a name="l01195"></a>01195       
+<a name="l01215"></a><a class="code" href="classRTC_1_1PeriodicExecutionContext_1_1DFP.html#a1921bae9d427aa285566e15bd08e6500">01215</a>       <span class="keywordtype">void</span> <a class="code" href="classRTC_1_1PeriodicExecutionContext_1_1DFP.html#a1921bae9d427aa285566e15bd08e6500" title="RTコンポーネントがエラー状態の時に呼ばれる関数.">on_error</a>(<span class="keyword">const</span> <a class="code" href="structRTC__Utils_1_1StateHolder.html">ECStates</a>&amp; st)
+<a name="l01216"></a>01216       {
+<a name="l01217"></a>01217         <a class="code" href="classRTC_1_1PeriodicExecutionContext_1_1DFP.html#a12f00ab69fa3e68cb5b0ee83dbe010af" title="管理対象コンポーネント">m_obj</a>-&gt;on_error(<a class="code" href="classRTC_1_1PeriodicExecutionContext_1_1DFPBase.html#ac3e8abc57e496192d6291cc260901054" title="参加している ExecutionContext の ID">ec_id</a>);
+<a name="l01218"></a>01218       }
+<a name="l01219"></a>01219       
+<a name="l01239"></a><a class="code" href="classRTC_1_1PeriodicExecutionContext_1_1DFP.html#adeb73de058b07b0abc6570c3e639cc5b">01239</a>       <span class="keywordtype">void</span> <a class="code" href="classRTC_1_1PeriodicExecutionContext_1_1DFP.html#adeb73de058b07b0abc6570c3e639cc5b" title="RTコンポーネントをリセットする時に呼ばれる関数.">on_reset</a>(<span class="keyword">const</span> <a class="code" href="structRTC__Utils_1_1StateHolder.html">ECStates</a>&amp; st)
+<a name="l01240"></a>01240       {
+<a name="l01241"></a>01241         <span class="keywordflow">if</span> (<a class="code" href="classRTC_1_1PeriodicExecutionContext_1_1DFP.html#a12f00ab69fa3e68cb5b0ee83dbe010af" title="管理対象コンポーネント">m_obj</a>-&gt;on_reset(<a class="code" href="classRTC_1_1PeriodicExecutionContext_1_1DFPBase.html#ac3e8abc57e496192d6291cc260901054" title="参加している ExecutionContext の ID">ec_id</a>) != RTC::RTC_OK)
+<a name="l01242"></a>01242           {
+<a name="l01243"></a>01243             <a class="code" href="classRTC_1_1PeriodicExecutionContext_1_1DFPBase.html#a0efcdc041f9f01491579acd729653a50" title="管理対象RTコンポーネントのステートマシン">m_sm</a>.<a class="code" href="classRTC__Utils_1_1StateMachine.html#a43b923b77e7e4d3562a83880c488197d" title="状態を遷移">goTo</a>(ERROR_STATE);
+<a name="l01244"></a>01244             <span class="keywordflow">return</span>;
+<a name="l01245"></a>01245           }
+<a name="l01246"></a>01246         <span class="keywordflow">return</span>;
+<a name="l01247"></a>01247       }
+<a name="l01248"></a>01248       
+<a name="l01274"></a><a class="code" href="classRTC_1_1PeriodicExecutionContext_1_1DFP.html#ab44ccec81e068726d371929b0b955a25">01274</a>       <span class="keywordtype">void</span> <a class="code" href="classRTC_1_1PeriodicExecutionContext_1_1DFP.html#ab44ccec81e068726d371929b0b955a25" title="RTコンポーネント実行時に定期的に呼ばれる関数.">on_execute</a>(<span class="keyword">const</span> <a class="code" href="structRTC__Utils_1_1StateHolder.html">ECStates</a>&amp; st)
+<a name="l01275"></a>01275       {
+<a name="l01276"></a>01276         <span class="keywordflow">if</span> (<a class="code" href="classRTC_1_1PeriodicExecutionContext_1_1DFP.html#a12f00ab69fa3e68cb5b0ee83dbe010af" title="管理対象コンポーネント">m_obj</a>-&gt;on_execute(<a class="code" href="classRTC_1_1PeriodicExecutionContext_1_1DFPBase.html#ac3e8abc57e496192d6291cc260901054" title="参加している ExecutionContext の ID">ec_id</a>) != RTC::RTC_OK)
+<a name="l01277"></a>01277           {
+<a name="l01278"></a>01278             <a class="code" href="classRTC_1_1PeriodicExecutionContext_1_1DFPBase.html#a0efcdc041f9f01491579acd729653a50" title="管理対象RTコンポーネントのステートマシン">m_sm</a>.<a class="code" href="classRTC__Utils_1_1StateMachine.html#a43b923b77e7e4d3562a83880c488197d" title="状態を遷移">goTo</a>(ERROR_STATE);
+<a name="l01279"></a>01279             <span class="keywordflow">return</span>;
+<a name="l01280"></a>01280           }  
+<a name="l01281"></a>01281         <span class="keywordflow">return</span>;
+<a name="l01282"></a>01282       }
+<a name="l01283"></a>01283       
+<a name="l01309"></a><a class="code" href="classRTC_1_1PeriodicExecutionContext_1_1DFP.html#a0689e39bbc51b091833c3cf5ef070297">01309</a>       <span class="keywordtype">void</span> <a class="code" href="classRTC_1_1PeriodicExecutionContext_1_1DFP.html#a0689e39bbc51b091833c3cf5ef070297" title="RTコンポーネント実行時に定期的に呼ばれる関数.">on_state_update</a>(<span class="keyword">const</span> <a class="code" href="structRTC__Utils_1_1StateHolder.html">ECStates</a>&amp; st)
+<a name="l01310"></a>01310       {
+<a name="l01311"></a>01311         <span class="keywordflow">if</span> (<a class="code" href="classRTC_1_1PeriodicExecutionContext_1_1DFP.html#a12f00ab69fa3e68cb5b0ee83dbe010af" title="管理対象コンポーネント">m_obj</a>-&gt;on_state_update(<a class="code" href="classRTC_1_1PeriodicExecutionContext_1_1DFPBase.html#ac3e8abc57e496192d6291cc260901054" title="参加している ExecutionContext の ID">ec_id</a>) != RTC::RTC_OK)
+<a name="l01312"></a>01312           {
+<a name="l01313"></a>01313             <a class="code" href="classRTC_1_1PeriodicExecutionContext_1_1DFPBase.html#a0efcdc041f9f01491579acd729653a50" title="管理対象RTコンポーネントのステートマシン">m_sm</a>.<a class="code" href="classRTC__Utils_1_1StateMachine.html#a43b923b77e7e4d3562a83880c488197d" title="状態を遷移">goTo</a>(ERROR_STATE);
+<a name="l01314"></a>01314             <span class="keywordflow">return</span>;
+<a name="l01315"></a>01315           }
+<a name="l01316"></a>01316         <span class="keywordflow">return</span>;
+<a name="l01317"></a>01317       }
+<a name="l01318"></a>01318       
+<a name="l01336"></a><a class="code" href="classRTC_1_1PeriodicExecutionContext_1_1DFP.html#a283b40d3a75a439b2a0ac4f7e2740736">01336</a>       <span class="keywordtype">void</span> <a class="code" href="classRTC_1_1PeriodicExecutionContext_1_1DFP.html#a283b40d3a75a439b2a0ac4f7e2740736" title="ExecutionContext の実行周期変更時に呼ばれる関数.">on_rate_changed</a>(<span class="keywordtype">void</span>)
+<a name="l01337"></a>01337       {
+<a name="l01338"></a>01338         <a class="code" href="classRTC_1_1PeriodicExecutionContext_1_1DFP.html#a12f00ab69fa3e68cb5b0ee83dbe010af" title="管理対象コンポーネント">m_obj</a>-&gt;on_rate_changed(<a class="code" href="classRTC_1_1PeriodicExecutionContext_1_1DFPBase.html#ac3e8abc57e496192d6291cc260901054" title="参加している ExecutionContext の ID">ec_id</a>);
+<a name="l01339"></a>01339       }
+<a name="l01340"></a>01340       
+<a name="l01348"></a><a class="code" href="classRTC_1_1PeriodicExecutionContext_1_1DFP.html#a12f00ab69fa3e68cb5b0ee83dbe010af">01348</a>       Object <a class="code" href="classRTC_1_1PeriodicExecutionContext_1_1DFP.html#a12f00ab69fa3e68cb5b0ee83dbe010af" title="管理対象コンポーネント">m_obj</a>;
+<a name="l01349"></a>01349       
+<a name="l01357"></a><a class="code" href="classRTC_1_1PeriodicExecutionContext_1_1DFP.html#a26c3f482f8c0fc239af8b180aa8de4de">01357</a>       <span class="keywordtype">bool</span> <a class="code" href="classRTC_1_1PeriodicExecutionContext_1_1DFP.html#a26c3f482f8c0fc239af8b180aa8de4de" title="管理対象コンポーネントの動作状態フラグ">m_active</a>;
+<a name="l01358"></a>01358     };
+<a name="l01359"></a>01359     
+<a name="l01367"></a><a class="code" href="structRTC_1_1PeriodicExecutionContext_1_1Comp.html">01367</a>     <span class="keyword">struct </span><a class="code" href="structRTC_1_1PeriodicExecutionContext_1_1Comp.html" title="コンポーネント管理用構造体">Comp</a>
+<a name="l01368"></a>01368     {
+<a name="l01369"></a><a class="code" href="structRTC_1_1PeriodicExecutionContext_1_1Comp.html#a9dc4712ecec7794a3523c8982f65ce93">01369</a>       <a class="code" href="structRTC_1_1PeriodicExecutionContext_1_1Comp.html#a9dc4712ecec7794a3523c8982f65ce93">Comp</a>(LightweightRTObject_ptr ref, OpenRTM::DataFlowComponent_ptr dfp,
+<a name="l01370"></a>01370            ExecutionContextHandle_t <span class="keywordtype">id</span>)
+<a name="l01371"></a>01371         : <a class="code" href="structRTC_1_1PeriodicExecutionContext_1_1Comp.html#a89c18f8979cf0aebe1d86aa3f325e87d">_ref</a>(LightweightRTObject::_duplicate(ref)),
+<a name="l01372"></a>01372           <a class="code" href="structRTC_1_1PeriodicExecutionContext_1_1Comp.html#af6e5c9ecbc12788026b4211c6952bf6d">_sm</a>(OpenRTM::DataFlowComponent::_duplicate(dfp), id)
+<a name="l01373"></a>01373       {
+<a name="l01374"></a>01374       }
+<a name="l01375"></a><a class="code" href="structRTC_1_1PeriodicExecutionContext_1_1Comp.html#aa480b2328ec2db51a2db87303f9ddcd5">01375</a>       <a class="code" href="structRTC_1_1PeriodicExecutionContext_1_1Comp.html#aa480b2328ec2db51a2db87303f9ddcd5">~Comp</a>(<span class="keywordtype">void</span>)
+<a name="l01376"></a>01376       {
+<a name="l01377"></a>01377       }
+<a name="l01378"></a><a class="code" href="structRTC_1_1PeriodicExecutionContext_1_1Comp.html#a70c27ad2df79cc3ae2409f2ceacc53ab">01378</a>       <a class="code" href="structRTC_1_1PeriodicExecutionContext_1_1Comp.html#a9dc4712ecec7794a3523c8982f65ce93">Comp</a>(<span class="keyword">const</span> <a class="code" href="structRTC_1_1PeriodicExecutionContext_1_1Comp.html" title="コンポーネント管理用構造体">Comp</a>&amp; comp)
+<a name="l01379"></a>01379         : <a class="code" href="structRTC_1_1PeriodicExecutionContext_1_1Comp.html#a89c18f8979cf0aebe1d86aa3f325e87d">_ref</a>(comp.<a class="code" href="structRTC_1_1PeriodicExecutionContext_1_1Comp.html#a89c18f8979cf0aebe1d86aa3f325e87d">_ref</a>), <a class="code" href="structRTC_1_1PeriodicExecutionContext_1_1Comp.html#af6e5c9ecbc12788026b4211c6952bf6d">_sm</a>(comp.<a class="code" href="structRTC_1_1PeriodicExecutionContext_1_1Comp.html#af6e5c9ecbc12788026b4211c6952bf6d">_sm</a>.m_obj, comp.<a class="code" href="structRTC_1_1PeriodicExecutionContext_1_1Comp.html#af6e5c9ecbc12788026b4211c6952bf6d">_sm</a>.ec_id)
+<a name="l01380"></a>01380       {
+<a name="l01381"></a>01381       }
+<a name="l01382"></a><a class="code" href="structRTC_1_1PeriodicExecutionContext_1_1Comp.html#abfbf57719852f39dbcb81e1874330a75">01382</a>       <a class="code" href="structRTC_1_1PeriodicExecutionContext_1_1Comp.html" title="コンポーネント管理用構造体">Comp</a>&amp; <a class="code" href="structRTC_1_1PeriodicExecutionContext_1_1Comp.html#abfbf57719852f39dbcb81e1874330a75">operator=</a>(<span class="keyword">const</span> <a class="code" href="structRTC_1_1PeriodicExecutionContext_1_1Comp.html" title="コンポーネント管理用構造体">Comp</a>&amp; comp)
+<a name="l01383"></a>01383       {
+<a name="l01384"></a>01384         <a class="code" href="structRTC_1_1PeriodicExecutionContext_1_1Comp.html#a89c18f8979cf0aebe1d86aa3f325e87d">_ref</a> = comp.<a class="code" href="structRTC_1_1PeriodicExecutionContext_1_1Comp.html#a89c18f8979cf0aebe1d86aa3f325e87d">_ref</a>;
+<a name="l01385"></a>01385         <a class="code" href="structRTC_1_1PeriodicExecutionContext_1_1Comp.html#af6e5c9ecbc12788026b4211c6952bf6d">_sm</a>.<a class="code" href="classRTC_1_1PeriodicExecutionContext_1_1DFP.html#a12f00ab69fa3e68cb5b0ee83dbe010af" title="管理対象コンポーネント">m_obj</a> = comp.<a class="code" href="structRTC_1_1PeriodicExecutionContext_1_1Comp.html#af6e5c9ecbc12788026b4211c6952bf6d">_sm</a>.<a class="code" href="classRTC_1_1PeriodicExecutionContext_1_1DFP.html#a12f00ab69fa3e68cb5b0ee83dbe010af" title="管理対象コンポーネント">m_obj</a>;
+<a name="l01386"></a>01386         <a class="code" href="structRTC_1_1PeriodicExecutionContext_1_1Comp.html#af6e5c9ecbc12788026b4211c6952bf6d">_sm</a>.<a class="code" href="classRTC_1_1PeriodicExecutionContext_1_1DFPBase.html#ac3e8abc57e496192d6291cc260901054" title="参加している ExecutionContext の ID">ec_id</a> = comp.<a class="code" href="structRTC_1_1PeriodicExecutionContext_1_1Comp.html#af6e5c9ecbc12788026b4211c6952bf6d">_sm</a>.<a class="code" href="classRTC_1_1PeriodicExecutionContext_1_1DFPBase.html#ac3e8abc57e496192d6291cc260901054" title="参加している ExecutionContext の ID">ec_id</a>;
+<a name="l01387"></a>01387         <span class="keywordflow">return</span> *<span class="keyword">this</span>;
+<a name="l01388"></a>01388       }
+<a name="l01389"></a><a class="code" href="structRTC_1_1PeriodicExecutionContext_1_1Comp.html#a89c18f8979cf0aebe1d86aa3f325e87d">01389</a>       LightweightRTObject_var <a class="code" href="structRTC_1_1PeriodicExecutionContext_1_1Comp.html#a89c18f8979cf0aebe1d86aa3f325e87d">_ref</a>;
+<a name="l01390"></a><a class="code" href="structRTC_1_1PeriodicExecutionContext_1_1Comp.html#af6e5c9ecbc12788026b4211c6952bf6d">01390</a>       <a class="code" href="classRTC_1_1PeriodicExecutionContext_1_1DFP.html">DFP&lt;OpenRTM::DataFlowComponent_var&gt;</a> <a class="code" href="structRTC_1_1PeriodicExecutionContext_1_1Comp.html#af6e5c9ecbc12788026b4211c6952bf6d">_sm</a>;
+<a name="l01391"></a>01391     };
+<a name="l01392"></a>01392 
+<a name="l01400"></a><a class="code" href="structRTC_1_1PeriodicExecutionContext_1_1find__comp.html">01400</a>     <span class="keyword">struct </span><a class="code" href="structRTC_1_1PeriodicExecutionContext_1_1find__comp.html" title="コンポーネント検索用ファンクタ">find_comp</a>
+<a name="l01401"></a>01401     {
+<a name="l01402"></a><a class="code" href="structRTC_1_1PeriodicExecutionContext_1_1find__comp.html#acb89128f9276fad13db229fc5156e840">01402</a>       LightweightRTObject_var <a class="code" href="structRTC_1_1PeriodicExecutionContext_1_1find__comp.html#acb89128f9276fad13db229fc5156e840">m_comp</a>;
+<a name="l01403"></a><a class="code" href="structRTC_1_1PeriodicExecutionContext_1_1find__comp.html#ad122d50fe656d3cfa2d0a32a6a05b950">01403</a>       <a class="code" href="structRTC_1_1PeriodicExecutionContext_1_1find__comp.html#ad122d50fe656d3cfa2d0a32a6a05b950">find_comp</a>(LightweightRTObject_ptr comp)
+<a name="l01404"></a>01404         : <a class="code" href="structRTC_1_1PeriodicExecutionContext_1_1find__comp.html#acb89128f9276fad13db229fc5156e840">m_comp</a>(LightweightRTObject::_duplicate(comp)) {}
+<a name="l01405"></a><a class="code" href="structRTC_1_1PeriodicExecutionContext_1_1find__comp.html#ab415ecce5cdd2e5bb9893bcc406ecdad">01405</a>       <span class="keywordtype">bool</span> <a class="code" href="structRTC_1_1PeriodicExecutionContext_1_1find__comp.html#ab415ecce5cdd2e5bb9893bcc406ecdad">operator()</a>(<a class="code" href="structRTC_1_1PeriodicExecutionContext_1_1Comp.html" title="コンポーネント管理用構造体">Comp</a>&amp; comp)
+<a name="l01406"></a>01406       {
+<a name="l01407"></a>01407         <span class="keywordflow">return</span> comp.<a class="code" href="structRTC_1_1PeriodicExecutionContext_1_1Comp.html#a89c18f8979cf0aebe1d86aa3f325e87d">_ref</a>-&gt;_is_equivalent(<a class="code" href="structRTC_1_1PeriodicExecutionContext_1_1find__comp.html#acb89128f9276fad13db229fc5156e840">m_comp</a>);
+<a name="l01408"></a>01408       }
+<a name="l01409"></a>01409     };
+<a name="l01410"></a>01410     
+<a name="l01418"></a><a class="code" href="structRTC_1_1PeriodicExecutionContext_1_1invoke__on__startup.html">01418</a>     <span class="keyword">struct </span><a class="code" href="structRTC_1_1PeriodicExecutionContext_1_1invoke__on__startup.html" title="on_startup 起動用ファンクタ">invoke_on_startup</a>
+<a name="l01419"></a>01419     {
+<a name="l01420"></a><a class="code" href="structRTC_1_1PeriodicExecutionContext_1_1invoke__on__startup.html#adda237953995471a223c0ec6123205e1">01420</a>       <span class="keywordtype">void</span> <a class="code" href="structRTC_1_1PeriodicExecutionContext_1_1invoke__on__startup.html#adda237953995471a223c0ec6123205e1">operator()</a>(<a class="code" href="structRTC_1_1PeriodicExecutionContext_1_1Comp.html" title="コンポーネント管理用構造体">Comp</a>&amp; comp)
+<a name="l01421"></a>01421       {
+<a name="l01422"></a>01422         comp.<a class="code" href="structRTC_1_1PeriodicExecutionContext_1_1Comp.html#af6e5c9ecbc12788026b4211c6952bf6d">_sm</a>.<a class="code" href="classRTC_1_1PeriodicExecutionContext_1_1DFP.html#a79b7b4a99f8d2cd0dc407c1b326dcb85" title="ExecutionContext 実行開始時に呼ばれる関数.">on_startup</a>();
+<a name="l01423"></a>01423       }
+<a name="l01424"></a>01424     };
+<a name="l01425"></a>01425     
+<a name="l01433"></a><a class="code" href="structRTC_1_1PeriodicExecutionContext_1_1invoke__on__shutdown.html">01433</a>     <span class="keyword">struct </span><a class="code" href="structRTC_1_1PeriodicExecutionContext_1_1invoke__on__shutdown.html" title="on_shutdown 起動用ファンクタ">invoke_on_shutdown</a>
+<a name="l01434"></a>01434     {
+<a name="l01435"></a><a class="code" href="structRTC_1_1PeriodicExecutionContext_1_1invoke__on__shutdown.html#a4da104c45a5f714bcfe37ec50055305a">01435</a>       <span class="keywordtype">void</span> <a class="code" href="structRTC_1_1PeriodicExecutionContext_1_1invoke__on__shutdown.html#a4da104c45a5f714bcfe37ec50055305a">operator()</a>(<a class="code" href="structRTC_1_1PeriodicExecutionContext_1_1Comp.html" title="コンポーネント管理用構造体">Comp</a>&amp; comp)
+<a name="l01436"></a>01436       {
+<a name="l01437"></a>01437         comp.<a class="code" href="structRTC_1_1PeriodicExecutionContext_1_1Comp.html#af6e5c9ecbc12788026b4211c6952bf6d">_sm</a>.<a class="code" href="classRTC_1_1PeriodicExecutionContext_1_1DFP.html#a312588691ba1da141cae496d74bb2b7f" title="ExecutionContext 停止時に呼ばれる関数.">on_shutdown</a>();
+<a name="l01438"></a>01438       }
+<a name="l01439"></a>01439     };
+<a name="l01440"></a>01440     
+<a name="l01448"></a><a class="code" href="structRTC_1_1PeriodicExecutionContext_1_1invoke__on__rate__changed.html">01448</a>     <span class="keyword">struct </span><a class="code" href="structRTC_1_1PeriodicExecutionContext_1_1invoke__on__rate__changed.html" title="on_rate_changed 起動用ファンクタ">invoke_on_rate_changed</a>
+<a name="l01449"></a>01449     {
+<a name="l01450"></a><a class="code" href="structRTC_1_1PeriodicExecutionContext_1_1invoke__on__rate__changed.html#a374c72b2f2d5fa61d9eb6e3476731959">01450</a>       <span class="keywordtype">void</span> <a class="code" href="structRTC_1_1PeriodicExecutionContext_1_1invoke__on__rate__changed.html#a374c72b2f2d5fa61d9eb6e3476731959">operator()</a>(<a class="code" href="structRTC_1_1PeriodicExecutionContext_1_1Comp.html" title="コンポーネント管理用構造体">Comp</a>&amp; comp)
+<a name="l01451"></a>01451       {
+<a name="l01452"></a>01452         comp.<a class="code" href="structRTC_1_1PeriodicExecutionContext_1_1Comp.html#af6e5c9ecbc12788026b4211c6952bf6d">_sm</a>.<a class="code" href="classRTC_1_1PeriodicExecutionContext_1_1DFP.html#a283b40d3a75a439b2a0ac4f7e2740736" title="ExecutionContext の実行周期変更時に呼ばれる関数.">on_rate_changed</a>();
+<a name="l01453"></a>01453       }
+<a name="l01454"></a>01454     };
+<a name="l01455"></a>01455     
+<a name="l01463"></a><a class="code" href="structRTC_1_1PeriodicExecutionContext_1_1invoke__worker.html">01463</a>     <span class="keyword">struct </span><a class="code" href="structRTC_1_1PeriodicExecutionContext_1_1invoke__worker.html" title="ワーカー実行用ファンクタ">invoke_worker</a>
+<a name="l01464"></a>01464     {
+<a name="l01465"></a><a class="code" href="structRTC_1_1PeriodicExecutionContext_1_1invoke__worker.html#ab7b7faf3e55941e7829e36d1a86cc211">01465</a>       <span class="keywordtype">void</span> <a class="code" href="structRTC_1_1PeriodicExecutionContext_1_1invoke__worker.html#ab7b7faf3e55941e7829e36d1a86cc211">operator()</a>(<a class="code" href="structRTC_1_1PeriodicExecutionContext_1_1Comp.html" title="コンポーネント管理用構造体">Comp</a>&amp; comp)
+<a name="l01466"></a>01466       {
+<a name="l01467"></a>01467         comp.<a class="code" href="structRTC_1_1PeriodicExecutionContext_1_1Comp.html#af6e5c9ecbc12788026b4211c6952bf6d">_sm</a>.<a class="code" href="classRTC_1_1PeriodicExecutionContext_1_1DFPBase.html#a1b1091320b7e68b0e20ccca6ac506534" title="状態遷移を実行するワーカーを取得する">worker</a>();
+<a name="l01468"></a>01468       }
+<a name="l01469"></a>01469     };
+<a name="l01470"></a>01470     
+<a name="l01478"></a><a class="code" href="classRTC_1_1PeriodicExecutionContext.html#a749ee2ead7610a3b9c93e8b3f58b2ac9">01478</a>     std::vector&lt;Comp&gt; <a class="code" href="classRTC_1_1PeriodicExecutionContext.html#a749ee2ead7610a3b9c93e8b3f58b2ac9" title="コンポーネントの参加者リスト">m_comps</a>;
+<a name="l01479"></a><a class="code" href="classRTC_1_1PeriodicExecutionContext.html#a4fadd7e24d81aa50888e2645eaaf9dcc">01479</a>     <span class="keyword">typedef</span> std::vector&lt;Comp&gt;::iterator <a class="code" href="classRTC_1_1PeriodicExecutionContext.html#a4fadd7e24d81aa50888e2645eaaf9dcc">CompItr</a>;
+<a name="l01480"></a>01480     
+<a name="l01488"></a><a class="code" href="classRTC_1_1PeriodicExecutionContext.html#a284b245b3e5f7e48a27e11c5066cb0be">01488</a>     <a class="code" href="classRTC_1_1Logger.html" title="Logger クラス.">Logger</a> <a class="code" href="classRTC_1_1PeriodicExecutionContext.html#a284b245b3e5f7e48a27e11c5066cb0be" title="ロガーストリーム">rtclog</a>;
+<a name="l01489"></a>01489 
+<a name="l01499"></a><a class="code" href="classRTC_1_1PeriodicExecutionContext.html#a6328fdaee2ede82d3bda20236aa45885">01499</a>     <span class="keywordtype">bool</span> <a class="code" href="classRTC_1_1PeriodicExecutionContext.html#a6328fdaee2ede82d3bda20236aa45885" title="ExecutionContext の実行状態 true: running, false: stopped.">m_running</a>;
+<a name="l01500"></a>01500 
+<a name="l01508"></a><a class="code" href="classRTC_1_1PeriodicExecutionContext.html#a76ca343cf219eb0e9a4c8e6adb31574c">01508</a>     <span class="keywordtype">bool</span> <a class="code" href="classRTC_1_1PeriodicExecutionContext.html#a76ca343cf219eb0e9a4c8e6adb31574c" title="ExecutionContext のスレッド実行フラグ.">m_svc</a>;
+<a name="l01509"></a>01509 
+<a name="l01517"></a><a class="code" href="structRTC_1_1PeriodicExecutionContext_1_1Worker.html">01517</a>     <span class="keyword">struct </span><a class="code" href="structRTC_1_1PeriodicExecutionContext_1_1Worker.html" title="worker 用状態変数クラス">Worker</a>
+<a name="l01518"></a>01518     {
+<a name="l01519"></a><a class="code" href="structRTC_1_1PeriodicExecutionContext_1_1Worker.html#aac0bb41d90af7824afefa8c8e44d99a6">01519</a>       <a class="code" href="structRTC_1_1PeriodicExecutionContext_1_1Worker.html#aac0bb41d90af7824afefa8c8e44d99a6">Worker</a>() : <a class="code" href="structRTC_1_1PeriodicExecutionContext_1_1Worker.html#a25f261ec6f167031629992fbb5e00b69">cond_</a>(<a class="code" href="structRTC_1_1PeriodicExecutionContext_1_1Worker.html#ab9d79fb93b47cf9275a293f76f906492">mutex_</a>), <a class="code" href="structRTC_1_1PeriodicExecutionContext_1_1Worker.html#ad8fefce39e737c1dc4c3b22fef709faa">running_</a>(false) {};
+<a name="l01520"></a>01520       <a class="code" href="classcoil_1_1Mutex.html" title="Mutex クラス.">coil::Mutex</a> <a class="code" href="structRTC_1_1PeriodicExecutionContext_1_1Worker.html#ab9d79fb93b47cf9275a293f76f906492">mutex_</a>;
+<a name="l01521"></a><a class="code" href="structRTC_1_1PeriodicExecutionContext_1_1Worker.html#a25f261ec6f167031629992fbb5e00b69">01521</a>       <a class="code" href="classcoil_1_1Condition.html">coil::Condition&lt;coil::Mutex&gt;</a> <a class="code" href="structRTC_1_1PeriodicExecutionContext_1_1Worker.html#a25f261ec6f167031629992fbb5e00b69">cond_</a>;
+<a name="l01522"></a><a class="code" href="structRTC_1_1PeriodicExecutionContext_1_1Worker.html#ad8fefce39e737c1dc4c3b22fef709faa">01522</a>       <span class="keywordtype">bool</span> <a class="code" href="structRTC_1_1PeriodicExecutionContext_1_1Worker.html#ad8fefce39e737c1dc4c3b22fef709faa">running_</a>;
+<a name="l01523"></a>01523     };
+<a name="l01524"></a>01524 
+<a name="l01532"></a><a class="code" href="classRTC_1_1PeriodicExecutionContext.html#a9fc4d615cabc69c0930fc44937d853de">01532</a>     <a class="code" href="structRTC_1_1PeriodicExecutionContext_1_1Worker.html" title="worker 用状態変数クラス">Worker</a> <a class="code" href="classRTC_1_1PeriodicExecutionContext.html#a9fc4d615cabc69c0930fc44937d853de" title="svn用の状態変数">m_worker</a>;
+<a name="l01533"></a>01533     
+<a name="l01541"></a><a class="code" href="classRTC_1_1PeriodicExecutionContext.html#ac91469b3510e4abf7dba3e1728ea47f1">01541</a>     ExecutionContextProfile <a class="code" href="classRTC_1_1PeriodicExecutionContext.html#ac91469b3510e4abf7dba3e1728ea47f1" title="ExecutionContextProfile.">m_profile</a>;
+<a name="l01542"></a><a class="code" href="classRTC_1_1PeriodicExecutionContext.html#abdd6fb6dbdba58d365373fcfb94859ba">01542</a>     <a class="code" href="classcoil_1_1Mutex.html" title="Mutex クラス.">coil::Mutex</a> <a class="code" href="classRTC_1_1PeriodicExecutionContext.html#abdd6fb6dbdba58d365373fcfb94859ba">m_profileMutex</a>;
+<a name="l01543"></a>01543     
+<a name="l01551"></a><a class="code" href="classRTC_1_1PeriodicExecutionContext.html#a409aa818a65c378074f0287ed85f2e59">01551</a>     <a class="code" href="classcoil_1_1TimeValue.html" title="TimeValue クラス.">coil::TimeValue</a> <a class="code" href="classRTC_1_1PeriodicExecutionContext.html#a409aa818a65c378074f0287ed85f2e59" title="ExecutionContext の実行周期.">m_period</a>;
+<a name="l01552"></a>01552     
+<a name="l01560"></a><a class="code" href="classRTC_1_1PeriodicExecutionContext.html#a2ef1d86bd6e16adc658b5295e58f765e">01560</a>     ExecutionContextService_var <a class="code" href="classRTC_1_1PeriodicExecutionContext.html#a2ef1d86bd6e16adc658b5295e58f765e" title="ExecutionContextService オブジェクトへの参照.">m_ref</a>;
+<a name="l01561"></a>01561     
+<a name="l01570"></a><a class="code" href="classRTC_1_1PeriodicExecutionContext.html#ad7395618dfd46196c457f2aaa93a88e6">01570</a>     <span class="keywordtype">bool</span> <a class="code" href="classRTC_1_1PeriodicExecutionContext.html#ad7395618dfd46196c457f2aaa93a88e6" title="ExecutionContext 即時実行(wait無し実行)フラグ.">m_nowait</a>;
+<a name="l01571"></a>01571 
+<a name="l01572"></a><a class="code" href="classRTC_1_1PeriodicExecutionContext_1_1find__participant.html">01572</a>     <span class="keyword">class </span><a class="code" href="classRTC_1_1PeriodicExecutionContext_1_1find__participant.html">find_participant</a>
+<a name="l01573"></a>01573     {
+<a name="l01574"></a>01574       RTObject_var m_comp;
+<a name="l01575"></a>01575     <span class="keyword">public</span>:      
+<a name="l01576"></a><a class="code" href="classRTC_1_1PeriodicExecutionContext_1_1find__participant.html#a9a17ee3de46809d56fa740db0de63b95">01576</a>       <a class="code" href="classRTC_1_1PeriodicExecutionContext_1_1find__participant.html#a9a17ee3de46809d56fa740db0de63b95">find_participant</a>(RTObject_ptr comp)
+<a name="l01577"></a>01577         : m_comp(RTObject::_duplicate(comp)) {}
+<a name="l01578"></a><a class="code" href="classRTC_1_1PeriodicExecutionContext_1_1find__participant.html#a8ff35c40d5e9998fd9516e675486f834">01578</a>       <span class="keywordtype">bool</span> <a class="code" href="classRTC_1_1PeriodicExecutionContext_1_1find__participant.html#a8ff35c40d5e9998fd9516e675486f834">operator()</a>(RTObject_ptr comp)
+<a name="l01579"></a>01579       {
+<a name="l01580"></a>01580         <span class="keywordflow">return</span> m_comp-&gt;_is_equivalent(comp);
+<a name="l01581"></a>01581       }
+<a name="l01582"></a>01582     };
+<a name="l01583"></a>01583   }; <span class="comment">// class PeriodicExecutionContext</span>
+<a name="l01584"></a>01584 }; <span class="comment">// namespace RTC</span>
+<a name="l01585"></a>01585 
+<a name="l01586"></a>01586 <span class="preprocessor">#ifdef WIN32</span>
+<a name="l01587"></a>01587 <span class="preprocessor"></span><span class="preprocessor">#pragma warning( default : 4290 )</span>
+<a name="l01588"></a>01588 <span class="preprocessor"></span><span class="preprocessor">#endif</span>
+<a name="l01589"></a>01589 <span class="preprocessor"></span>
+<a name="l01590"></a>01590 
+<a name="l01591"></a>01591 <span class="keyword">extern</span> <span class="stringliteral">&quot;C&quot;</span>
+<a name="l01592"></a>01592 {
+<a name="l01600"></a>01600   <span class="keywordtype">void</span> <a class="code" href="PeriodicExecutionContext_8h.html#a3f39429a80f578366b6014b2bef09c90" title="ECFactoryへの登録のための初期化関数.">PeriodicExecutionContextInit</a>(<a class="code" href="classRTC_1_1Manager.html" title="Manager クラス.">RTC::Manager</a>* manager);
+<a name="l01601"></a>01601 };
+<a name="l01602"></a>01602 
+<a name="l01603"></a>01603 <span class="preprocessor">#endif // RTC_PERIODICEXECUTIONCONTEXT_H</span>
+</pre></div></div>
+<hr class="footer"/><address style="text-align: right;"><small>OpenRTMに対してThu May 24 23:25:18 2012に生成されました。&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.6.3 </small></address>
+</body>
+</html>

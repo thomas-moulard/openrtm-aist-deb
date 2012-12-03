@@ -1,0 +1,83 @@
+\section{RTC::ConfigurationSetNameListenerHolder Class Reference}
+\label{classRTC_1_1ConfigurationSetNameListenerHolder}\index{RTC::ConfigurationSetNameListenerHolder@{RTC::ConfigurationSetNameListenerHolder}}
+
+
+\doxyref{ConfigurationSetNameListener}{p.}{classRTC_1_1ConfigurationSetNameListener} holder class.  
+
+
+
+
+{\ttfamily \#include $<$ConfigurationListener.h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf ConfigurationSetNameListenerHolder} ()
+\begin{DoxyCompactList}\small\item\em Constructor. \item\end{DoxyCompactList}\item 
+virtual {\bf $\sim$ConfigurationSetNameListenerHolder} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \item\end{DoxyCompactList}\item 
+void {\bf addListener} ({\bf ConfigurationSetNameListener} $\ast$listener, bool autoclean)
+\begin{DoxyCompactList}\small\item\em Add the listener. \item\end{DoxyCompactList}\item 
+void {\bf removeListener} ({\bf ConfigurationSetNameListener} $\ast$listener)
+\begin{DoxyCompactList}\small\item\em Remove the listener. \item\end{DoxyCompactList}\item 
+void {\bf notify} (const char $\ast$config\_\-set\_\-name)
+\begin{DoxyCompactList}\small\item\em Notify listeners. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\doxyref{ConfigurationSetNameListener}{p.}{classRTC_1_1ConfigurationSetNameListener} holder class. This class manages one ore more instances of \doxyref{ConfigurationSetNameListener}{p.}{classRTC_1_1ConfigurationSetNameListener} class. 
+
+\subsection{Constructor \& Destructor Documentation}
+\index{RTC::ConfigurationSetNameListenerHolder@{RTC::ConfigurationSetNameListenerHolder}!ConfigurationSetNameListenerHolder@{ConfigurationSetNameListenerHolder}}
+\index{ConfigurationSetNameListenerHolder@{ConfigurationSetNameListenerHolder}!RTC::ConfigurationSetNameListenerHolder@{RTC::ConfigurationSetNameListenerHolder}}
+\subsubsection[{ConfigurationSetNameListenerHolder}]{\setlength{\rightskip}{0pt plus 5cm}RTC::ConfigurationSetNameListenerHolder::ConfigurationSetNameListenerHolder ()}\label{classRTC_1_1ConfigurationSetNameListenerHolder_ae884adb97d1707aa37982f3965c0a016}
+
+
+Constructor. 
+
+\index{RTC::ConfigurationSetNameListenerHolder@{RTC::ConfigurationSetNameListenerHolder}!$\sim$ConfigurationSetNameListenerHolder@{$\sim$ConfigurationSetNameListenerHolder}}
+\index{$\sim$ConfigurationSetNameListenerHolder@{$\sim$ConfigurationSetNameListenerHolder}!RTC::ConfigurationSetNameListenerHolder@{RTC::ConfigurationSetNameListenerHolder}}
+\subsubsection[{$\sim$ConfigurationSetNameListenerHolder}]{\setlength{\rightskip}{0pt plus 5cm}virtual RTC::ConfigurationSetNameListenerHolder::$\sim$ConfigurationSetNameListenerHolder ()\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classRTC_1_1ConfigurationSetNameListenerHolder_a6bfb7873dc3c71a315f9dbc965f6d365}
+
+
+Destructor. 
+
+
+
+\subsection{Member Function Documentation}
+\index{RTC::ConfigurationSetNameListenerHolder@{RTC::ConfigurationSetNameListenerHolder}!addListener@{addListener}}
+\index{addListener@{addListener}!RTC::ConfigurationSetNameListenerHolder@{RTC::ConfigurationSetNameListenerHolder}}
+\subsubsection[{addListener}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::ConfigurationSetNameListenerHolder::addListener ({\bf ConfigurationSetNameListener} $\ast$ {\em listener}, \/  bool {\em autoclean})}\label{classRTC_1_1ConfigurationSetNameListenerHolder_a237b20530dd5ba0b78c097da37885ecd}
+
+
+Add the listener. 
+
+This method adds the listener.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em listener}]Added listener \item[{\em autoclean}]true:The listener is deleted at the destructor., false:The listener is not deleted at the destructor. \end{DoxyParams}
+\index{RTC::ConfigurationSetNameListenerHolder@{RTC::ConfigurationSetNameListenerHolder}!notify@{notify}}
+\index{notify@{notify}!RTC::ConfigurationSetNameListenerHolder@{RTC::ConfigurationSetNameListenerHolder}}
+\subsubsection[{notify}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::ConfigurationSetNameListenerHolder::notify (const char $\ast$ {\em config\_\-set\_\-name})}\label{classRTC_1_1ConfigurationSetNameListenerHolder_ad2e375c34e992e429d42dac9506c78b3}
+
+
+Notify listeners. 
+
+This calls the Callback method of the registered listener.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em info}]\doxyref{ConnectorInfo}{p.}{classRTC_1_1ConnectorInfo} \end{DoxyParams}
+\index{RTC::ConfigurationSetNameListenerHolder@{RTC::ConfigurationSetNameListenerHolder}!removeListener@{removeListener}}
+\index{removeListener@{removeListener}!RTC::ConfigurationSetNameListenerHolder@{RTC::ConfigurationSetNameListenerHolder}}
+\subsubsection[{removeListener}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::ConfigurationSetNameListenerHolder::removeListener ({\bf ConfigurationSetNameListener} $\ast$ {\em listener})}\label{classRTC_1_1ConfigurationSetNameListenerHolder_a58d3c768ecc12c9e7ba2e27ff9fec193}
+
+
+Remove the listener. 
+
+This method removes the listener.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em listener}]Removed listener \end{DoxyParams}

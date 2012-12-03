@@ -1,0 +1,72 @@
+\section{クラス RTC::ComponentActionListeners}
+\label{classRTC_1_1ComponentActionListeners}\index{RTC::ComponentActionListeners@{RTC::ComponentActionListeners}}
+
+
+\doxyref{ComponentActionListeners}{p.}{classRTC_1_1ComponentActionListeners} クラス.  
+
+
+
+
+{\ttfamily \#include $<$ComponentActionListener.h$>$}
+
+\subsection*{Public 変数}
+\begin{DoxyCompactItemize}
+\item 
+{\bf PreComponentActionListenerHolder} {\bf preaction\_\-} [PRE\_\-COMPONENT\_\-ACTION\_\-LISTENER\_\-NUM]
+\begin{DoxyCompactList}\small\item\em PreComponentActionListenerTypeリスナ配列 PreComponentActionListenerTypeリスナを格納. \item\end{DoxyCompactList}\item 
+{\bf PostComponentActionListenerHolder} {\bf postaction\_\-} [POST\_\-COMPONENT\_\-ACTION\_\-LISTENER\_\-NUM]
+\begin{DoxyCompactList}\small\item\em PostComponentActionTypeリスナ配列 PostComponentActionTypeリスナを格納. \item\end{DoxyCompactList}\item 
+{\bf PortActionListenerHolder} {\bf portaction\_\-} [PORT\_\-ACTION\_\-LISTENER\_\-NUM]
+\begin{DoxyCompactList}\small\item\em PortActionTypeリスナ配列 PortActionTypeリスナを格納. \item\end{DoxyCompactList}\item 
+{\bf ExecutionContextActionListenerHolder} {\bf ecaction\_\-} [EC\_\-ACTION\_\-LISTENER\_\-NUM]
+\begin{DoxyCompactList}\small\item\em ExecutionContextActionTypeリスナ配列 ExecutionContextActionTypeリスナを格納. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{説明}
+\doxyref{ComponentActionListeners}{p.}{classRTC_1_1ComponentActionListeners} クラス. 
+
+\subsection{変数}
+\index{RTC::ComponentActionListeners@{RTC::ComponentActionListeners}!ecaction\_\-@{ecaction\_\-}}
+\index{ecaction\_\-@{ecaction\_\-}!RTC::ComponentActionListeners@{RTC::ComponentActionListeners}}
+\subsubsection[{ecaction\_\-}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ExecutionContextActionListenerHolder} {\bf RTC::ComponentActionListeners::ecaction\_\-}[EC\_\-ACTION\_\-LISTENER\_\-NUM]}\label{classRTC_1_1ComponentActionListeners_a18d4fcd9bb0878577a6c92177e36a712}
+
+
+ExecutionContextActionTypeリスナ配列 ExecutionContextActionTypeリスナを格納. 
+
+
+
+参照元 RTC::RTObject\_\-impl::onAttachExecutionContext(), と RTC::RTObject\_\-impl::onDetachExecutionContext().
+
+\index{RTC::ComponentActionListeners@{RTC::ComponentActionListeners}!portaction\_\-@{portaction\_\-}}
+\index{portaction\_\-@{portaction\_\-}!RTC::ComponentActionListeners@{RTC::ComponentActionListeners}}
+\subsubsection[{portaction\_\-}]{\setlength{\rightskip}{0pt plus 5cm}{\bf PortActionListenerHolder} {\bf RTC::ComponentActionListeners::portaction\_\-}[PORT\_\-ACTION\_\-LISTENER\_\-NUM]}\label{classRTC_1_1ComponentActionListeners_ac9ef98187ef662c15de280ae5cce9558}
+
+
+PortActionTypeリスナ配列 PortActionTypeリスナを格納. 
+
+
+
+参照元 RTC::RTObject\_\-impl::onAddPort(), と RTC::RTObject\_\-impl::onRemovePort().
+
+\index{RTC::ComponentActionListeners@{RTC::ComponentActionListeners}!postaction\_\-@{postaction\_\-}}
+\index{postaction\_\-@{postaction\_\-}!RTC::ComponentActionListeners@{RTC::ComponentActionListeners}}
+\subsubsection[{postaction\_\-}]{\setlength{\rightskip}{0pt plus 5cm}{\bf PostComponentActionListenerHolder} {\bf RTC::ComponentActionListeners::postaction\_\-}[POST\_\-COMPONENT\_\-ACTION\_\-LISTENER\_\-NUM]}\label{classRTC_1_1ComponentActionListeners_a40c05167a001843612b9e490875414cf}
+
+
+PostComponentActionTypeリスナ配列 PostComponentActionTypeリスナを格納. 
+
+
+
+参照元 RTC::RTObject\_\-impl::postOnAborting(), RTC::RTObject\_\-impl::postOnActivated(), RTC::RTObject\_\-impl::postOnDeactivated(), RTC::RTObject\_\-impl::postOnError(), RTC::RTObject\_\-impl::postOnExecute(), RTC::RTObject\_\-impl::postOnFinalize(), RTC::RTObject\_\-impl::postOnInitialize(), RTC::RTObject\_\-impl::postOnRateChanged(), RTC::RTObject\_\-impl::postOnReset(), RTC::RTObject\_\-impl::postOnShutdown(), RTC::RTObject\_\-impl::postOnStartup(), と RTC::RTObject\_\-impl::postOnStateUpdate().
+
+\index{RTC::ComponentActionListeners@{RTC::ComponentActionListeners}!preaction\_\-@{preaction\_\-}}
+\index{preaction\_\-@{preaction\_\-}!RTC::ComponentActionListeners@{RTC::ComponentActionListeners}}
+\subsubsection[{preaction\_\-}]{\setlength{\rightskip}{0pt plus 5cm}{\bf PreComponentActionListenerHolder} {\bf RTC::ComponentActionListeners::preaction\_\-}[PRE\_\-COMPONENT\_\-ACTION\_\-LISTENER\_\-NUM]}\label{classRTC_1_1ComponentActionListeners_a02ce87167152b17709ab3fd57a7af200}
+
+
+PreComponentActionListenerTypeリスナ配列 PreComponentActionListenerTypeリスナを格納. 
+
+
+
+参照元 RTC::RTObject\_\-impl::preOnAborting(), RTC::RTObject\_\-impl::preOnActivated(), RTC::RTObject\_\-impl::preOnDeactivated(), RTC::RTObject\_\-impl::preOnError(), RTC::RTObject\_\-impl::preOnExecute(), RTC::RTObject\_\-impl::preOnFinalize(), RTC::RTObject\_\-impl::preOnInitialize(), RTC::RTObject\_\-impl::preOnRateChanged(), RTC::RTObject\_\-impl::preOnReset(), RTC::RTObject\_\-impl::preOnShutdown(), RTC::RTObject\_\-impl::preOnStartup(), と RTC::RTObject\_\-impl::preOnStateUpdate().
+

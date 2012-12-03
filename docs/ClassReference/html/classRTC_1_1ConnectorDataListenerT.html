@@ -1,0 +1,167 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<title>OpenRTM: クラス テンプレート RTC::ConnectorDataListenerT&lt; DataType &gt;</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<!-- 作成： Doxygen 1.6.3 -->
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="index.html"><span>メインページ</span></a></li>
+      <li><a href="namespaces.html"><span>ネームスペース</span></a></li>
+      <li class="current"><a href="annotated.html"><span>クラス</span></a></li>
+      <li><a href="files.html"><span>ファイル</span></a></li>
+    </ul>
+  </div>
+  <div class="tabs">
+    <ul>
+      <li><a href="annotated.html"><span>構成</span></a></li>
+      <li><a href="hierarchy.html"><span>クラス階層</span></a></li>
+      <li><a href="functions.html"><span>構成メンバ</span></a></li>
+    </ul>
+  </div>
+  <div class="navpath"><a class="el" href="namespaceRTC.html">RTC</a>::<a class="el" href="classRTC_1_1ConnectorDataListenerT.html">ConnectorDataListenerT</a>
+  </div>
+</div>
+<div class="contents">
+<h1>クラス テンプレート RTC::ConnectorDataListenerT&lt; DataType &gt;</h1><!-- doxytag: class="RTC::ConnectorDataListenerT" --><!-- doxytag: inherits="RTC::ConnectorDataListener" -->
+<p><a class="el" href="classRTC_1_1ConnectorDataListenerT.html" title="ConnectorDataListenerT クラス.">ConnectorDataListenerT</a> クラス.  
+<a href="#_details">[詳細]</a></p>
+
+<p><code>#include &lt;<a class="el" href="ConnectorListener_8h_source.html">ConnectorListener.h</a>&gt;</code></p>
+<div class="dynheader">
+RTC::ConnectorDataListenerT&lt; DataType &gt;に対する継承グラフ</div>
+<div class="dynsection">
+ <div class="center">
+  <img src="classRTC_1_1ConnectorDataListenerT.png" usemap="#RTC::ConnectorDataListenerT&lt; DataType &gt;_map" alt=""/>
+  <map id="RTC::ConnectorDataListenerT&lt; DataType &gt;_map" name="RTC::ConnectorDataListenerT&lt; DataType &gt;_map">
+<area href="classRTC_1_1ConnectorDataListener.html" alt="RTC::ConnectorDataListener" shape="rect" coords="0,0,257,24"/>
+</map>
+ </div>
+</div>
+
+<p><a href="classRTC_1_1ConnectorDataListenerT-members.html">すべてのメンバ一覧</a></p>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr><td colspan="2"><h2>Public メソッド</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1ConnectorDataListenerT.html#a7e07ce2456ad559f78b24467a22ce4ab">~ConnectorDataListenerT</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">デストラクタ  <a href="#a7e07ce2456ad559f78b24467a22ce4ab"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1ConnectorDataListenerT.html#a6d87ccd84018b4e5437336cbe7f9c72c">operator()</a> (const <a class="el" href="classRTC_1_1ConnectorInfo.html">ConnectorInfo</a> &amp;info, const cdrMemoryStream &amp;cdrdata)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">コールバックメソッド  <a href="#a6d87ccd84018b4e5437336cbe7f9c72c"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1ConnectorDataListenerT.html#a74a7cf49e64721834da69c82e1769d3f">operator()</a> (const <a class="el" href="classRTC_1_1ConnectorInfo.html">ConnectorInfo</a> &amp;info, const DataType &amp;data)=0</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">仮想コールバックメソッド  <a href="#a74a7cf49e64721834da69c82e1769d3f"></a><br/></td></tr>
+</table>
+<hr/><a name="_details"></a><h2>説明</h2>
+<h3>template&lt;class DataType&gt;<br/>
+ class RTC::ConnectorDataListenerT&lt; DataType &gt;</h3>
+
+<p><a class="el" href="classRTC_1_1ConnectorDataListenerT.html" title="ConnectorDataListenerT クラス.">ConnectorDataListenerT</a> クラス. </p>
+<p>データポートの Connector において発生する各種イベントに対するコー ルバックを実現するリスナクラスの基底クラス。</p>
+<p>このクラスは、operator()() の第2引数に cdrMemoryStream 型ではなく、 実際にデータポートで使用される変数型をテンプレート引数として 渡すことができる。 </p>
+<hr/><h2>コンストラクタとデストラクタ</h2>
+<a class="anchor" id="a7e07ce2456ad559f78b24467a22ce4ab"></a><!-- doxytag: member="RTC::ConnectorDataListenerT::~ConnectorDataListenerT" ref="a7e07ce2456ad559f78b24467a22ce4ab" args="()" -->
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class DataType &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual <a class="el" href="classRTC_1_1ConnectorDataListenerT.html">RTC::ConnectorDataListenerT</a>&lt; DataType &gt;::~<a class="el" href="classRTC_1_1ConnectorDataListenerT.html">ConnectorDataListenerT</a> </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [inline, virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>デストラクタ </p>
+
+</div>
+</div>
+<hr/><h2>関数</h2>
+<a class="anchor" id="a74a7cf49e64721834da69c82e1769d3f"></a><!-- doxytag: member="RTC::ConnectorDataListenerT::operator()" ref="a74a7cf49e64721834da69c82e1769d3f" args="(const ConnectorInfo &amp;info, const DataType &amp;data)=0" -->
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class DataType &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void <a class="el" href="classRTC_1_1ConnectorDataListenerT.html">RTC::ConnectorDataListenerT</a>&lt; DataType &gt;::operator() </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classRTC_1_1ConnectorInfo.html">ConnectorInfo</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>info</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const DataType &amp;&nbsp;</td>
+          <td class="paramname"> <em>data</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td><code> [pure virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>仮想コールバックメソッド </p>
+<p>データポートの Connector において発生する各種イベントに対するコー ルバックメソッド </p>
+
+</div>
+</div>
+<a class="anchor" id="a6d87ccd84018b4e5437336cbe7f9c72c"></a><!-- doxytag: member="RTC::ConnectorDataListenerT::operator()" ref="a6d87ccd84018b4e5437336cbe7f9c72c" args="(const ConnectorInfo &amp;info, const cdrMemoryStream &amp;cdrdata)" -->
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class DataType &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void <a class="el" href="classRTC_1_1ConnectorDataListenerT.html">RTC::ConnectorDataListenerT</a>&lt; DataType &gt;::operator() </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classRTC_1_1ConnectorInfo.html">ConnectorInfo</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>info</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const cdrMemoryStream &amp;&nbsp;</td>
+          <td class="paramname"> <em>cdrdata</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td><code> [inline, virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>コールバックメソッド </p>
+<p>データをデータポートで使用される変数型に変換して <a class="el" href="classRTC_1_1ConnectorDataListenerT.html" title="ConnectorDataListenerT クラス.">ConnectorDataListenerT</a> のコールバックメソッドを呼び出す。</p>
+<dl><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>info</em>&nbsp;</td><td><a class="el" href="classRTC_1_1ConnectorInfo.html" title="ConnectorInfo クラス.">ConnectorInfo</a> </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>cdrdata</em>&nbsp;</td><td>cdrMemoryStream型のデータ </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p><a class="el" href="classRTC_1_1ConnectorDataListener.html#a3306cb3544db5d164c5917adddbfc298">RTC::ConnectorDataListener</a>を実装しています。</p>
+
+<p>参照先 <a class="el" href="classcoil_1_1Properties.html#a91ad72f8d7c41624e2258c5a9331bd2a">coil::Properties::getProperty()</a>, <a class="el" href="namespacecoil.html#a6c3625d0e92edb211223d275c1c8c216">coil::normalize()</a>, <a class="el" href="ConnectorBase_8h_source.html#l00126">RTC::ConnectorInfo::properties</a>, と <a class="el" href="namespacecoil.html#a7c9782e536d2701e7a444d1ab4d2a096">coil::split()</a>.</p>
+
+</div>
+</div>
+</div>
+<hr class="footer"/><address style="text-align: right;"><small>OpenRTMに対してThu May 24 23:25:19 2012に生成されました。&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.6.3 </small></address>
+</body>
+</html>

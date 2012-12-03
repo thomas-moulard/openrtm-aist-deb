@@ -1,0 +1,96 @@
+\section{RTC::DataFlowComponentAction Interface Reference}
+\label{interfaceRTC_1_1DataFlowComponentAction}\index{RTC::DataFlowComponentAction@{RTC::DataFlowComponentAction}}
+
+
+\doxyref{DataFlowComponentAction}{p.}{interfaceRTC_1_1DataFlowComponentAction}.  
+
+
+
+
+{\ttfamily import \char`\"{}RTC.idl\char`\"{};}
+
+Inheritance diagram for RTC::DataFlowComponentAction:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3cm]{interfaceRTC_1_1DataFlowComponentAction}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf ReturnCode\_\-t} {\bf on\_\-execute} (in {\bf ExecutionContextHandle\_\-t} exec\_\-handle)
+\begin{DoxyCompactList}\small\item\em on\_\-execute \item\end{DoxyCompactList}\item 
+{\bf ReturnCode\_\-t} {\bf on\_\-state\_\-update} (in {\bf ExecutionContextHandle\_\-t} exec\_\-handle)
+\begin{DoxyCompactList}\small\item\em on\_\-state\_\-update \item\end{DoxyCompactList}\item 
+{\bf ReturnCode\_\-t} {\bf on\_\-rate\_\-changed} (in {\bf ExecutionContextHandle\_\-t} exec\_\-handle)
+\begin{DoxyCompactList}\small\item\em on\_\-rate\_\-changed \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\doxyref{DataFlowComponentAction}{p.}{interfaceRTC_1_1DataFlowComponentAction}. \subsection{Description}\label{namespaceRTC_Description}
+\doxyref{DataFlowComponentAction}{p.}{interfaceRTC_1_1DataFlowComponentAction} is a companion to \doxyref{ComponentAction}{p.}{interfaceRTC_1_1ComponentAction} (see Section 5.2.2.4) that provides additional callbacks for intercepting the two execution passes defined in Section 5.3.1.1.2. 
+
+\subsection{Member Function Documentation}
+\index{RTC::DataFlowComponentAction@{RTC::DataFlowComponentAction}!on\_\-execute@{on\_\-execute}}
+\index{on\_\-execute@{on\_\-execute}!RTC::DataFlowComponentAction@{RTC::DataFlowComponentAction}}
+\subsubsection[{on\_\-execute}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ReturnCode\_\-t} RTC::DataFlowComponentAction::on\_\-execute (in {\bf ExecutionContextHandle\_\-t} {\em exec\_\-handle})}\label{interfaceRTC_1_1DataFlowComponentAction_a70a1d7f32e03c719dd8949ea5d0be214}
+
+
+on\_\-execute 
+
+\subsection{Description}\label{namespaceRTC_Description}
+This operation will be invoked periodically at the rate of the given execution context as long as the following conditions hold:
+
+
+\begin{DoxyItemize}
+\item The \doxyref{RTC}{p.}{namespaceRTC} is Active.
+\end{DoxyItemize}
+
+
+\begin{DoxyItemize}
+\item The given execution context is Running.
+\end{DoxyItemize}\subsection{Semantics}\label{namespaceRTC_Semantics}
+This callback occurs during the first execution pass.\subsection{Constraints}\label{interfaceRTC_1_1LightweightRTObject_Constraints}
+
+\begin{DoxyItemize}
+\item The execution context of the given context shall be PERIODIC. 
+\end{DoxyItemize}\index{RTC::DataFlowComponentAction@{RTC::DataFlowComponentAction}!on\_\-rate\_\-changed@{on\_\-rate\_\-changed}}
+\index{on\_\-rate\_\-changed@{on\_\-rate\_\-changed}!RTC::DataFlowComponentAction@{RTC::DataFlowComponentAction}}
+\subsubsection[{on\_\-rate\_\-changed}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ReturnCode\_\-t} RTC::DataFlowComponentAction::on\_\-rate\_\-changed (in {\bf ExecutionContextHandle\_\-t} {\em exec\_\-handle})}\label{interfaceRTC_1_1DataFlowComponentAction_a6d010e52880cb1e4228817041a6ac518}
+
+
+on\_\-rate\_\-changed 
+
+\subsection{Description}\label{namespaceRTC_Description}
+This operation is a notification that the rate of the indicated execution context (see Section 5.2.2.6.4) has changed.\subsection{Constraints}\label{interfaceRTC_1_1LightweightRTObject_Constraints}
+
+\begin{DoxyItemize}
+\item The execution context of the given context shall be PERIODIC. 
+\end{DoxyItemize}\index{RTC::DataFlowComponentAction@{RTC::DataFlowComponentAction}!on\_\-state\_\-update@{on\_\-state\_\-update}}
+\index{on\_\-state\_\-update@{on\_\-state\_\-update}!RTC::DataFlowComponentAction@{RTC::DataFlowComponentAction}}
+\subsubsection[{on\_\-state\_\-update}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ReturnCode\_\-t} RTC::DataFlowComponentAction::on\_\-state\_\-update (in {\bf ExecutionContextHandle\_\-t} {\em exec\_\-handle})}\label{interfaceRTC_1_1DataFlowComponentAction_a10aed288388578b108c9766f67997668}
+
+
+on\_\-state\_\-update 
+
+\subsection{Description}\label{namespaceRTC_Description}
+This operation will be invoked periodically at the rate of the given execution context as long as the following conditions hold:
+
+
+\begin{DoxyItemize}
+\item The \doxyref{RTC}{p.}{namespaceRTC} is Active.
+\end{DoxyItemize}
+
+
+\begin{DoxyItemize}
+\item The given execution context is Running.
+\end{DoxyItemize}\subsection{Semantics}\label{namespaceRTC_Semantics}
+This callback occurs during the second execution pass.\subsection{Constraints}\label{interfaceRTC_1_1LightweightRTObject_Constraints}
+
+\begin{DoxyItemize}
+\item The execution context of the given context shall be PERIODIC. 
+\end{DoxyItemize}
+
+The documentation for this interface was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+{\bf RTC.idl}\end{DoxyCompactItemize}

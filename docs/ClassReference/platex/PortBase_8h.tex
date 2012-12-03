@@ -1,0 +1,55 @@
+\section{PortBase.h}
+\label{PortBase_8h}\index{PortBase.h@{PortBase.h}}
+
+
+RTC's Port base class.  
+
+
+{\ttfamily \#include $<$rtm/RTC.h$>$}\par
+{\ttfamily \#include $<$string$>$}\par
+{\ttfamily \#include $<$vector$>$}\par
+{\ttfamily \#include $<$coil/Guard.h$>$}\par
+{\ttfamily \#include $<$coil/Mutex.h$>$}\par
+{\ttfamily \#include $<$rtm/idl/RTCSkel.h$>$}\par
+{\ttfamily \#include $<$rtm/CORBA\_\-SeqUtil.h$>$}\par
+{\ttfamily \#include $<$rtm/NVUtil.h$>$}\par
+{\ttfamily \#include $<$rtm/SystemLogger.h$>$}\par
+{\ttfamily \#include $<$rtm/PortConnectListener.h$>$}\par
+{\ttfamily \#include $<$iostream$>$}\par
+\subsection*{構成}
+\begin{DoxyCompactItemize}
+\item 
+class {\bf RTC::PortBase}
+\begin{DoxyCompactList}\small\item\em Port の基底クラス. \item\end{DoxyCompactList}\item 
+struct {\bf RTC::PortBase::find\_\-conn\_\-id}
+\begin{DoxyCompactList}\small\item\em id を持つ ConnectorProfile を探す Functor \item\end{DoxyCompactList}\item 
+struct {\bf RTC::PortBase::find\_\-port\_\-ref}
+\begin{DoxyCompactList}\small\item\em コンストラクタ引数 port\_\-ref と同じオブジェクト参照を探す Functor \item\end{DoxyCompactList}\item 
+struct {\bf RTC::PortBase::find\_\-interface}
+\begin{DoxyCompactList}\small\item\em name と polarity から interface を探す Functor \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{ネームスペース}
+\begin{DoxyCompactItemize}
+\item 
+namespace {\bf RTC}
+
+
+\begin{DoxyCompactList}\small\item\em RTコンポーネント. \item\end{DoxyCompactList}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{説明}
+RTC's Port base class. \begin{DoxyDate}{日付}
+
+\end{DoxyDate}
+\begin{DoxyParagraph}{Date}
+2008-\/01-\/14 07:56:44 
+\end{DoxyParagraph}
+\begin{DoxyAuthor}{作者}
+Noriaki Ando $<${\tt n-\/ando@aist.go.jp}$>$
+\end{DoxyAuthor}
+Copyright (C) 2006-\/2010 Noriaki Ando Task-\/intelligence Research Group, Intelligent Systems Research Institute, National Institute of Advanced Industrial Science and Technology (AIST), Japan All rights reserved.
+
+\begin{DoxyParagraph}{Id}
+\doxyref{PortBase.h}{p.}{PortBase_8h} 2048 2011-\/02-\/22 21:20:51Z n-\/ando 
+\end{DoxyParagraph}

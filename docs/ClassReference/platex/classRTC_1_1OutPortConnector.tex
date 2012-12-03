@@ -1,0 +1,228 @@
+\section{クラス RTC::OutPortConnector}
+\label{classRTC_1_1OutPortConnector}\index{RTC::OutPortConnector@{RTC::OutPortConnector}}
+
+
+\doxyref{OutPortConnector}{p.}{classRTC_1_1OutPortConnector} 基底クラス.  
+
+
+
+
+{\ttfamily \#include $<$OutPortConnector.h$>$}
+
+RTC::OutPortConnectorに対する継承グラフ\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4cm]{classRTC_1_1OutPortConnector}
+\end{center}
+\end{figure}
+\subsection*{Public メソッド}
+\begin{DoxyCompactItemize}
+\item 
+DATAPORTSTATUS\_\-ENUM {\bf OutPortConnector} ({\bf ConnectorInfo} \&info)
+\begin{DoxyCompactList}\small\item\em コンストラクタ \item\end{DoxyCompactList}\item 
+virtual {\bf $\sim$OutPortConnector} ()
+\begin{DoxyCompactList}\small\item\em デストラクタ \item\end{DoxyCompactList}\item 
+const {\bf ConnectorInfo} \& {\bf profile} ()
+\begin{DoxyCompactList}\small\item\em \doxyref{Profile}{p.}{classProfile} 取得. \item\end{DoxyCompactList}\item 
+const char $\ast$ {\bf id} ()
+\begin{DoxyCompactList}\small\item\em Connector ID 取得. \item\end{DoxyCompactList}\item 
+const char $\ast$ {\bf name} ()
+\begin{DoxyCompactList}\small\item\em Connector 名取得. \item\end{DoxyCompactList}\item 
+virtual ReturnCode {\bf disconnect} ()=0
+\begin{DoxyCompactList}\small\item\em 接続解除関数 \item\end{DoxyCompactList}\item 
+virtual {\bf CdrBufferBase} $\ast$ {\bf getBuffer} ()=0
+\begin{DoxyCompactList}\small\item\em Buffer を取得する. \item\end{DoxyCompactList}\item 
+virtual ReturnCode {\bf write} (const cdrMemoryStream \&data)=0
+\begin{DoxyCompactList}\small\item\em write 関数 \item\end{DoxyCompactList}\item 
+virtual void {\bf setEndian} (const bool endian\_\-type)
+\begin{DoxyCompactList}\small\item\em endianタイプ設定 \item\end{DoxyCompactList}\item 
+virtual bool {\bf isLittleEndian} ()
+\begin{DoxyCompactList}\small\item\em endian 設定を返す \item\end{DoxyCompactList}\item 
+{\footnotesize template$<$class DataType $>$ }\\ReturnCode {\bf write} (const DataType \&data)
+\begin{DoxyCompactList}\small\item\em データ型の変換テンプレート \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected 変数}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Logger} {\bf rtclog}
+\begin{DoxyCompactList}\small\item\em ロガーストリーム \item\end{DoxyCompactList}\item 
+{\bf ConnectorInfo} {\bf m\_\-profile}
+\begin{DoxyCompactList}\small\item\em Port の PortProfile. \item\end{DoxyCompactList}\item 
+bool {\bf m\_\-littleEndian}
+\begin{DoxyCompactList}\small\item\em 接続エンディアン \item\end{DoxyCompactList}\item 
+cdrMemoryStream {\bf m\_\-cdr}
+\begin{DoxyCompactList}\small\item\em cdrストリーム \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{説明}
+\doxyref{OutPortConnector}{p.}{classRTC_1_1OutPortConnector} 基底クラス. \doxyref{OutPort}{p.}{classRTC_1_1OutPort} の Push/Pull 各種 Connector を派生させるための 基底クラス。
+
+\begin{DoxySince}{から}
+1.0.0 
+\end{DoxySince}
+
+
+\subsection{コンストラクタとデストラクタ}
+\index{RTC::OutPortConnector@{RTC::OutPortConnector}!OutPortConnector@{OutPortConnector}}
+\index{OutPortConnector@{OutPortConnector}!RTC::OutPortConnector@{RTC::OutPortConnector}}
+\subsubsection[{OutPortConnector}]{\setlength{\rightskip}{0pt plus 5cm}DATAPORTSTATUS\_\-ENUM RTC::OutPortConnector::OutPortConnector ({\bf ConnectorInfo} \& {\em info})}\label{classRTC_1_1OutPortConnector_a941d3ff2886bfd28a0b654c8923d509a}
+
+
+コンストラクタ 
+
+\index{RTC::OutPortConnector@{RTC::OutPortConnector}!$\sim$OutPortConnector@{$\sim$OutPortConnector}}
+\index{$\sim$OutPortConnector@{$\sim$OutPortConnector}!RTC::OutPortConnector@{RTC::OutPortConnector}}
+\subsubsection[{$\sim$OutPortConnector}]{\setlength{\rightskip}{0pt plus 5cm}virtual RTC::OutPortConnector::$\sim$OutPortConnector ()\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classRTC_1_1OutPortConnector_ac3954158370810f557167468ce50bebb}
+
+
+デストラクタ 
+
+
+
+\subsection{関数}
+\index{RTC::OutPortConnector@{RTC::OutPortConnector}!disconnect@{disconnect}}
+\index{disconnect@{disconnect}!RTC::OutPortConnector@{RTC::OutPortConnector}}
+\subsubsection[{disconnect}]{\setlength{\rightskip}{0pt plus 5cm}virtual ReturnCode RTC::OutPortConnector::disconnect ()\hspace{0.3cm}{\ttfamily  [pure virtual]}}\label{classRTC_1_1OutPortConnector_a0871d3168eb72d38b598cf862f1ac799}
+
+
+接続解除関数 
+
+Connector が保持している接続を解除する 
+
+{\bf RTC::ConnectorBase} \doxyref{}{p.}{classRTC_1_1ConnectorBase_a17b1e3bb26ccb844ef2952661977768c}を実装しています。
+
+
+
+{\bf RTC::OutPortPullConnector} \doxyref{}{p.}{classRTC_1_1OutPortPullConnector_aef4713815a7140da7c65b690c3a89256}, と {\bf RTC::OutPortPushConnector} \doxyref{}{p.}{classRTC_1_1OutPortPushConnector_ace1f7f9d47a8c2a31781a8cc1da828f0}で実装されています。
+
+\index{RTC::OutPortConnector@{RTC::OutPortConnector}!getBuffer@{getBuffer}}
+\index{getBuffer@{getBuffer}!RTC::OutPortConnector@{RTC::OutPortConnector}}
+\subsubsection[{getBuffer}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf CdrBufferBase}$\ast$ RTC::OutPortConnector::getBuffer ()\hspace{0.3cm}{\ttfamily  [pure virtual]}}\label{classRTC_1_1OutPortConnector_aed38944495c634d459bb0c06618f33a1}
+
+
+Buffer を取得する. 
+
+Connector が保持している Buffer を返す 
+
+{\bf RTC::ConnectorBase} \doxyref{}{p.}{classRTC_1_1ConnectorBase_ad06710a5e9e1862ed50d4a4411c2927d}を実装しています。
+
+
+
+{\bf RTC::OutPortPullConnector} \doxyref{}{p.}{classRTC_1_1OutPortPullConnector_a8b3df65ce00c96f9c4782653948b59d3}, と {\bf RTC::OutPortPushConnector} \doxyref{}{p.}{classRTC_1_1OutPortPushConnector_a5a04e7d25e944f89cbc5a323749887fd}で実装されています。
+
+\index{RTC::OutPortConnector@{RTC::OutPortConnector}!id@{id}}
+\index{id@{id}!RTC::OutPortConnector@{RTC::OutPortConnector}}
+\subsubsection[{id}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ RTC::OutPortConnector::id ()\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classRTC_1_1OutPortConnector_ae59f1f12f25e2749c8c57db09a3b3aee}
+
+
+Connector ID 取得. 
+
+Connector ID を取得する 
+
+{\bf RTC::ConnectorBase} \doxyref{}{p.}{classRTC_1_1ConnectorBase_ae2cc57833a7e28f0e605222ecb63e219}を実装しています。
+
+\index{RTC::OutPortConnector@{RTC::OutPortConnector}!isLittleEndian@{isLittleEndian}}
+\index{isLittleEndian@{isLittleEndian}!RTC::OutPortConnector@{RTC::OutPortConnector}}
+\subsubsection[{isLittleEndian}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool RTC::OutPortConnector::isLittleEndian ()\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classRTC_1_1OutPortConnector_a090c635c6d5cddd62ba64233998d88d3}
+
+
+endian 設定を返す 
+
+endian 設定のbool値を返す。
+
+\begin{DoxyReturn}{戻り値}
+m\_\-littleEndian がlittleの場合true、bigの場合false を返す。 
+\end{DoxyReturn}
+
+
+参照元 write().
+
+\index{RTC::OutPortConnector@{RTC::OutPortConnector}!name@{name}}
+\index{name@{name}!RTC::OutPortConnector@{RTC::OutPortConnector}}
+\subsubsection[{name}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ RTC::OutPortConnector::name ()\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classRTC_1_1OutPortConnector_a5c82fa5aa785b8b8272137355025c0a8}
+
+
+Connector 名取得. 
+
+Connector 名を取得する 
+
+{\bf RTC::ConnectorBase} \doxyref{}{p.}{classRTC_1_1ConnectorBase_a73e002174dc02ec4830c624e7fd96b43}を実装しています。
+
+\index{RTC::OutPortConnector@{RTC::OutPortConnector}!profile@{profile}}
+\index{profile@{profile}!RTC::OutPortConnector@{RTC::OutPortConnector}}
+\subsubsection[{profile}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf ConnectorInfo}\& RTC::OutPortConnector::profile ()\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classRTC_1_1OutPortConnector_a1c21b81e5dd176cd5f3723a8a0783936}
+
+
+\doxyref{Profile}{p.}{classProfile} 取得. 
+
+Connector \doxyref{Profile}{p.}{classProfile} を取得する 
+
+{\bf RTC::ConnectorBase} \doxyref{}{p.}{classRTC_1_1ConnectorBase_a8bd2e9cbd6a9341ec4c97416dcf981c7}を実装しています。
+
+\index{RTC::OutPortConnector@{RTC::OutPortConnector}!setEndian@{setEndian}}
+\index{setEndian@{setEndian}!RTC::OutPortConnector@{RTC::OutPortConnector}}
+\subsubsection[{setEndian}]{\setlength{\rightskip}{0pt plus 5cm}virtual void RTC::OutPortConnector::setEndian (const bool {\em endian\_\-type})\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classRTC_1_1OutPortConnector_a30052fdaa6c1a57c1bfa3b6c81466fa2}
+
+
+endianタイプ設定 
+
+endianタイプを設定する \index{RTC::OutPortConnector@{RTC::OutPortConnector}!write@{write}}
+\index{write@{write}!RTC::OutPortConnector@{RTC::OutPortConnector}}
+\subsubsection[{write}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class DataType $>$ ReturnCode RTC::OutPortConnector::write (const DataType \& {\em data})\hspace{0.3cm}{\ttfamily  [inline]}}\label{classRTC_1_1OutPortConnector_a8a62a3d377c05b619a38c831dd8506c2}
+
+
+データ型の変換テンプレート 
+
+Timed$\ast$ から CdrMemoryStream に変換する。 
+
+参照先 isLittleEndian(), m\_\-cdr, RTC\_\-TRACE, と write().
+
+\index{RTC::OutPortConnector@{RTC::OutPortConnector}!write@{write}}
+\index{write@{write}!RTC::OutPortConnector@{RTC::OutPortConnector}}
+\subsubsection[{write}]{\setlength{\rightskip}{0pt plus 5cm}virtual ReturnCode RTC::OutPortConnector::write (const cdrMemoryStream \& {\em data})\hspace{0.3cm}{\ttfamily  [pure virtual]}}\label{classRTC_1_1OutPortConnector_af5b15d5b4346561d53b70c9040ae59a2}
+
+
+write 関数 
+
+\doxyref{OutPort}{p.}{classRTC_1_1OutPort} からデータを Buffer へ write する関数 
+
+{\bf RTC::OutPortPullConnector} \doxyref{}{p.}{classRTC_1_1OutPortPullConnector_a9fbb676086061d99ce808818b6ddc316}, と {\bf RTC::OutPortPushConnector} \doxyref{}{p.}{classRTC_1_1OutPortPushConnector_aa8d4b3864f5d7fc7e98f60e1b38864de}で実装されています。
+
+
+
+参照元 write().
+
+
+
+\subsection{変数}
+\index{RTC::OutPortConnector@{RTC::OutPortConnector}!m\_\-cdr@{m\_\-cdr}}
+\index{m\_\-cdr@{m\_\-cdr}!RTC::OutPortConnector@{RTC::OutPortConnector}}
+\subsubsection[{m\_\-cdr}]{\setlength{\rightskip}{0pt plus 5cm}cdrMemoryStream {\bf RTC::OutPortConnector::m\_\-cdr}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC_1_1OutPortConnector_af4824a80ca3fcdb148a8edd91323b7ee}
+
+
+cdrストリーム 
+
+
+
+参照元 write().
+
+\index{RTC::OutPortConnector@{RTC::OutPortConnector}!m\_\-littleEndian@{m\_\-littleEndian}}
+\index{m\_\-littleEndian@{m\_\-littleEndian}!RTC::OutPortConnector@{RTC::OutPortConnector}}
+\subsubsection[{m\_\-littleEndian}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf RTC::OutPortConnector::m\_\-littleEndian}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC_1_1OutPortConnector_a077ce88acdad63cc9e0a0353b0c31685}
+
+
+接続エンディアン 
+
+\index{RTC::OutPortConnector@{RTC::OutPortConnector}!m\_\-profile@{m\_\-profile}}
+\index{m\_\-profile@{m\_\-profile}!RTC::OutPortConnector@{RTC::OutPortConnector}}
+\subsubsection[{m\_\-profile}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ConnectorInfo} {\bf RTC::OutPortConnector::m\_\-profile}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC_1_1OutPortConnector_a82c3a40cb8544f6b6c2bd31245ae7af3}
+
+
+Port の PortProfile. 
+
+\index{RTC::OutPortConnector@{RTC::OutPortConnector}!rtclog@{rtclog}}
+\index{rtclog@{rtclog}!RTC::OutPortConnector@{RTC::OutPortConnector}}
+\subsubsection[{rtclog}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Logger} {\bf RTC::OutPortConnector::rtclog}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC_1_1OutPortConnector_ac3e0e6553b0adb733cd5ebef516c560c}
+
+
+ロガーストリーム 
+

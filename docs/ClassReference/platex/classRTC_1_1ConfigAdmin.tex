@@ -1,0 +1,597 @@
+\section{クラス RTC::ConfigAdmin}
+\label{classRTC_1_1ConfigAdmin}\index{RTC::ConfigAdmin@{RTC::ConfigAdmin}}
+
+
+\doxyref{ConfigAdmin}{p.}{classRTC_1_1ConfigAdmin} クラス.  
+
+
+
+
+{\ttfamily \#include $<$ConfigAdmin.h$>$}
+
+\subsection*{構成}
+\begin{DoxyCompactItemize}
+\item 
+struct {\bfseries find\_\-conf}
+\end{DoxyCompactItemize}
+\subsection*{Public メソッド}
+\begin{DoxyCompactItemize}
+\item 
+{\bf ConfigAdmin} ({\bf coil::Properties} \&prop)
+\begin{DoxyCompactList}\small\item\em コンストラクタ \item\end{DoxyCompactList}\item 
+{\bf $\sim$ConfigAdmin} (void)
+\begin{DoxyCompactList}\small\item\em 仮想デストラクタ \item\end{DoxyCompactList}\item 
+{\footnotesize template$<$typename VarType $>$ }\\bool {\bf bindParameter} (const char $\ast$param\_\-name, VarType \&var, const char $\ast$def\_\-val, bool($\ast$trans)(VarType \&, const char $\ast$)=coil::stringTo)
+\begin{DoxyCompactList}\small\item\em コンフィギュレーションパラメータの設定 \item\end{DoxyCompactList}\item 
+void {\bf update} (void)
+\begin{DoxyCompactList}\small\item\em コンフィギュレーションパラメータの更新 (アクティブコンフィギュレーションセット) \item\end{DoxyCompactList}\item 
+void {\bf update} (const char $\ast$config\_\-set)
+\begin{DoxyCompactList}\small\item\em コンフィギュレーションパラメータの更新(ID指定) \item\end{DoxyCompactList}\item 
+void {\bf update} (const char $\ast$config\_\-set, const char $\ast$config\_\-param)
+\begin{DoxyCompactList}\small\item\em コンフィギュレーションパラメータの更新(名称指定) \item\end{DoxyCompactList}\item 
+bool {\bf isExist} (const char $\ast$name)
+\begin{DoxyCompactList}\small\item\em コンフィギュレーションパラメータの存在確認 \item\end{DoxyCompactList}\item 
+bool {\bf isChanged} (void)
+\begin{DoxyCompactList}\small\item\em コンフィギュレーションパラメータの変更確認 \item\end{DoxyCompactList}\item 
+const char $\ast$ {\bf getActiveId} (void)
+\begin{DoxyCompactList}\small\item\em アクティブ・コンフィギュレーションセットIDの取得 \item\end{DoxyCompactList}\item 
+bool {\bf haveConfig} (const char $\ast$config\_\-id)
+\begin{DoxyCompactList}\small\item\em コンフィギュレーションセットの存在確認 \item\end{DoxyCompactList}\item 
+bool {\bf isActive} (void)
+\begin{DoxyCompactList}\small\item\em コンフィギュレーションセットのアクティブ化確認 \item\end{DoxyCompactList}\item 
+const std::vector$<$ {\bf coil::Properties} $\ast$ $>$ \& {\bf getConfigurationSets} (void)
+\begin{DoxyCompactList}\small\item\em 全コンフィギュレーションセットの取得 \item\end{DoxyCompactList}\item 
+const {\bf coil::Properties} \& {\bf getConfigurationSet} (const char $\ast$config\_\-id)
+\begin{DoxyCompactList}\small\item\em 指定したIDのコンフィギュレーションセットの取得 \item\end{DoxyCompactList}\item 
+bool {\bf setConfigurationSetValues} (const {\bf coil::Properties} \&configuration\_\-set)
+\begin{DoxyCompactList}\small\item\em 指定したプロパティのコンフィギュレーションセットへの追加 \item\end{DoxyCompactList}\item 
+const {\bf coil::Properties} \& {\bf getActiveConfigurationSet} (void)
+\begin{DoxyCompactList}\small\item\em アクティブ・コンフィギュレーションセットを取得 \item\end{DoxyCompactList}\item 
+bool {\bf addConfigurationSet} (const {\bf coil::Properties} \&configuration\_\-set)
+\begin{DoxyCompactList}\small\item\em コンフィギュレーションセットに設定値を追加 \item\end{DoxyCompactList}\item 
+bool {\bf removeConfigurationSet} (const char $\ast$config\_\-id)
+\begin{DoxyCompactList}\small\item\em コンフィギュレーションセットの削除 \item\end{DoxyCompactList}\item 
+bool {\bf activateConfigurationSet} (const char $\ast$config\_\-id)
+\begin{DoxyCompactList}\small\item\em コンフィギュレーションセットのアクティブ化 \item\end{DoxyCompactList}\item 
+void {\bf setOnUpdate} ({\bf OnUpdateCallback} $\ast$cb)
+\item 
+void {\bf setOnUpdateParam} ({\bf OnUpdateParamCallback} $\ast$cb)
+\item 
+void {\bf setOnSetConfigurationSet} ({\bf OnSetConfigurationSetCallback} $\ast$cb)
+\item 
+void {\bf setOnAddConfigurationSet} ({\bf OnAddConfigurationAddCallback} $\ast$cb)
+\item 
+void {\bf setOnRemoveConfigurationSet} ({\bf OnRemoveConfigurationSetCallback} $\ast$cb)
+\item 
+void {\bf setOnActivateSet} ({\bf OnActivateSetCallback} $\ast$cb)
+\item 
+void {\bf addConfigurationParamListener} ({\bf ConfigurationParamListenerType} type, {\bf ConfigurationParamListener} $\ast$listener, bool autoclean=true)
+\begin{DoxyCompactList}\small\item\em \doxyref{ConfigurationParamListener}{p.}{classRTC_1_1ConfigurationParamListener} を追加する. \item\end{DoxyCompactList}\item 
+void {\bf removeConfigurationParamListener} ({\bf ConfigurationParamListenerType} type, {\bf ConfigurationParamListener} $\ast$listener)
+\begin{DoxyCompactList}\small\item\em \doxyref{ConfigurationParamListener}{p.}{classRTC_1_1ConfigurationParamListener} を削除する. \item\end{DoxyCompactList}\item 
+void {\bf addConfigurationSetListener} ({\bf ConfigurationSetListenerType} type, {\bf ConfigurationSetListener} $\ast$listener, bool autoclean=true)
+\begin{DoxyCompactList}\small\item\em \doxyref{ConfigurationSetListener}{p.}{classRTC_1_1ConfigurationSetListener} を追加する. \item\end{DoxyCompactList}\item 
+void {\bf removeConfigurationSetListener} ({\bf ConfigurationSetListenerType} type, {\bf ConfigurationSetListener} $\ast$listener)
+\begin{DoxyCompactList}\small\item\em \doxyref{ConfigurationSetListener}{p.}{classRTC_1_1ConfigurationSetListener} を削除する. \item\end{DoxyCompactList}\item 
+void {\bf addConfigurationSetNameListener} ({\bf ConfigurationSetNameListenerType} type, {\bf ConfigurationSetNameListener} $\ast$listener, bool autoclean=true)
+\begin{DoxyCompactList}\small\item\em \doxyref{ConfigurationSetNameListener}{p.}{classRTC_1_1ConfigurationSetNameListener} を追加する. \item\end{DoxyCompactList}\item 
+void {\bf removeConfigurationSetNameListener} ({\bf ConfigurationSetNameListenerType} type, {\bf ConfigurationSetNameListener} $\ast$listener)
+\begin{DoxyCompactList}\small\item\em \doxyref{ConfigurationSetNameListener}{p.}{classRTC_1_1ConfigurationSetNameListener} を削除する. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected メソッド}
+\begin{DoxyCompactItemize}
+\item 
+void {\bf onUpdate} (const char $\ast$config\_\-set)
+\begin{DoxyCompactList}\small\item\em コンフィギュレーションパラメータの更新(ID指定)時にコールされる \item\end{DoxyCompactList}\item 
+void {\bf onUpdateParam} (const char $\ast$config\_\-set, const char $\ast$config\_\-param)
+\begin{DoxyCompactList}\small\item\em コンフィギュレーションパラメータの更新(名称指定)時にコールされる \item\end{DoxyCompactList}\item 
+void {\bf onSetConfigurationSet} (const {\bf coil::Properties} \&config\_\-set)
+\begin{DoxyCompactList}\small\item\em コンフィギュレーションセットへの追加時にコールされる \item\end{DoxyCompactList}\item 
+void {\bf onAddConfigurationSet} (const {\bf coil::Properties} \&config\_\-set)
+\begin{DoxyCompactList}\small\item\em 設定値が追加されたときにコールされる。 \item\end{DoxyCompactList}\item 
+void {\bf onRemoveConfigurationSet} (const char $\ast$config\_\-id)
+\begin{DoxyCompactList}\small\item\em セットが削除されてるときにコールされる。 \item\end{DoxyCompactList}\item 
+void {\bf onActivateSet} (const char $\ast$config\_\-id)
+\begin{DoxyCompactList}\small\item\em セットがアクティブ化されたときにコールされる。 \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{説明}
+\doxyref{ConfigAdmin}{p.}{classRTC_1_1ConfigAdmin} クラス. 各種コンフィギュレーション情報を管理するクラス。 用語を以下のように定義する。
+
+
+\begin{DoxyItemize}
+\item コンフィギュレーション: コンポーネントの設定情報。
+\end{DoxyItemize}
+
+
+\begin{DoxyItemize}
+\item (コンフィギュレーション)パラメータ： key-\/value からなる設定情報。 \doxyref{coil::Properties}{p.}{classcoil_1_1Properties} 変数として扱われ、key、value 共に文字列として保 持される。key をコンフィギュレーションパラメータ名、value をコン フィギュレーションパラメータ値と呼ぶ。
+\end{DoxyItemize}
+
+
+\begin{DoxyItemize}
+\item コンフィギュレーションセット： コンフィギュレーションパラメータ のリストで、名前 (ID) によって区別される。IDをコンフィギュレーショ ンセットIDと呼ぶ。
+\end{DoxyItemize}
+
+
+\begin{DoxyItemize}
+\item (コンフィギュレーション)パラメータ変数：コンフィギュレーションパ ラメータをRTCのアクティビティ内で実際に利用する際に参照される変 数。パラメータごとに固有の型を持つ。
+\end{DoxyItemize}
+
+
+\begin{DoxyItemize}
+\item アクティブ(コンフィギュレーション)セット：現在有効なコンフィギュ レーションセットのことであり、唯一つ存在する。原則として、アクティ ブコンフィギュレーションセットのパラメータがコンフィギュレーショ ンパラメータ変数に反映される。
+\end{DoxyItemize}
+
+このクラスでは、コンフィギュレーションのための以下の2つの情報を保 持している。
+
+
+\begin{DoxyEnumerate}
+\item コンフィギュレーションセットのリスト
+\item パラメータ変数のリスト
+\end{DoxyEnumerate}
+
+基本的には、(1) のコンフィギュレーションセットのリストのうち一つを、 (2) のパラメータ変数へ反映させる、のが本クラスの目的である。通常、 パラメータ変数の変更操作は、コンフィギュレーションセットの変更とパ ラメータ変数への反映の2段階で行われる。
+
+コンフィギュレーションセットのリストの操作には、以下の関数を用いる。
+
+
+\begin{DoxyItemize}
+\item \doxyref{getConfigurationSets()}{p.}{classRTC_1_1ConfigAdmin_a9367d39f878ec8d817e8aabacd27deb6}
+\item \doxyref{getConfigurationSet()}{p.}{classRTC_1_1ConfigAdmin_a51b2ad46ba5184fc1361dbd86ed2309a}
+\item \doxyref{setConfigurationSetValues()}{p.}{classRTC_1_1ConfigAdmin_a31d4e545b48aa3ea2fc03109b301586d}
+\item \doxyref{getActiveConfigurationSet()}{p.}{classRTC_1_1ConfigAdmin_a40c1de78caa9c8ff2ca02ee972f26bb9}
+\item \doxyref{addConfigurationSet()}{p.}{classRTC_1_1ConfigAdmin_a35e38434ba8b409ae1207d81f4904a4d}
+\item \doxyref{removeConfigurationSet()}{p.}{classRTC_1_1ConfigAdmin_aef99fcfb1f6ca7b09b85c10082236f71}
+\item \doxyref{activateConfigurationSet()}{p.}{classRTC_1_1ConfigAdmin_a5215efd13ca14ed67cbbbd533556c0a3}
+\end{DoxyItemize}
+
+これらの関数により、コンフィギュレーションセットの変更、追加、削除、 取得、アクティブ化を行う。これらの操作により変更されたコンフィギュ レーションセットを、RTCのアクティビティから使用するパラメータ変数 に反映させるには、以下の \doxyref{update()}{p.}{classRTC_1_1ConfigAdmin_a858c419de43392804dd934dd62c1874a} 関数を用いる。
+
+
+\begin{DoxyItemize}
+\item \doxyref{update(void)}{p.}{classRTC_1_1ConfigAdmin_a858c419de43392804dd934dd62c1874a}
+\item \doxyref{update(const char$\ast$ config\_\-set)}{p.}{classRTC_1_1ConfigAdmin_a6a183d22dfa7c58ba5d21982aac34645}
+\item \doxyref{update(const char$\ast$ config\_\-set, const char$\ast$ config\_\-param)}{p.}{classRTC_1_1ConfigAdmin_a4b1ce69c995d6a89d743cbfd38088de4}
+\end{DoxyItemize}
+
+コンフィギュレーション操作をフックするためにコールバックファンクタ を与えることができる。フックできる操作は以下の通り。
+
+
+\begin{DoxyItemize}
+\item ON\_\-UPDATE : \doxyref{update()}{p.}{classRTC_1_1ConfigAdmin_a858c419de43392804dd934dd62c1874a} コール時
+\item ON\_\-UPDATE\_\-PARAM : update(param) コール時
+\item ON\_\-SET\_\-CONFIGURATIONSET : setConfigurationSet() コール時
+\item ON\_\-ADD\_\-CONFIGURATIONSET : \doxyref{addConfigurationSet()}{p.}{classRTC_1_1ConfigAdmin_a35e38434ba8b409ae1207d81f4904a4d} コール時
+\item ON\_\-REMOVE\_\-CONFIGURATIONSET : \doxyref{removeConfigurationSet()}{p.}{classRTC_1_1ConfigAdmin_aef99fcfb1f6ca7b09b85c10082236f71} コール時
+\item ON\_\-ACTIVATE\_\-CONFIGURATIONSET: \doxyref{activateConfigurationSet()}{p.}{classRTC_1_1ConfigAdmin_a5215efd13ca14ed67cbbbd533556c0a3} コール時
+\end{DoxyItemize}
+
+\begin{DoxySince}{から}
+0.4.0 
+\end{DoxySince}
+
+
+\subsection{コンストラクタとデストラクタ}
+\index{RTC::ConfigAdmin@{RTC::ConfigAdmin}!ConfigAdmin@{ConfigAdmin}}
+\index{ConfigAdmin@{ConfigAdmin}!RTC::ConfigAdmin@{RTC::ConfigAdmin}}
+\subsubsection[{ConfigAdmin}]{\setlength{\rightskip}{0pt plus 5cm}RTC::ConfigAdmin::ConfigAdmin ({\bf coil::Properties} \& {\em prop})}\label{classRTC_1_1ConfigAdmin_a28596cf49170b6e982ffcb9d6046eb2b}
+
+
+コンストラクタ 
+
+コンストラクタ
+
+
+\begin{DoxyParams}{引数}
+\item[{\em prop}]設定対象プロパティ名 \end{DoxyParams}
+\index{RTC::ConfigAdmin@{RTC::ConfigAdmin}!$\sim$ConfigAdmin@{$\sim$ConfigAdmin}}
+\index{$\sim$ConfigAdmin@{$\sim$ConfigAdmin}!RTC::ConfigAdmin@{RTC::ConfigAdmin}}
+\subsubsection[{$\sim$ConfigAdmin}]{\setlength{\rightskip}{0pt plus 5cm}RTC::ConfigAdmin::$\sim$ConfigAdmin (void)}\label{classRTC_1_1ConfigAdmin_a95583c13525f3dde969248f1ae68624d}
+
+
+仮想デストラクタ 
+
+仮想デストラクタ。 
+
+\subsection{関数}
+\index{RTC::ConfigAdmin@{RTC::ConfigAdmin}!activateConfigurationSet@{activateConfigurationSet}}
+\index{activateConfigurationSet@{activateConfigurationSet}!RTC::ConfigAdmin@{RTC::ConfigAdmin}}
+\subsubsection[{activateConfigurationSet}]{\setlength{\rightskip}{0pt plus 5cm}bool RTC::ConfigAdmin::activateConfigurationSet (const char $\ast$ {\em config\_\-id})}\label{classRTC_1_1ConfigAdmin_a5215efd13ca14ed67cbbbd533556c0a3}
+
+
+コンフィギュレーションセットのアクティブ化 
+
+指定したIDのコンフィギュレーションセットをアクティブ化する。 指定したIDのコンフィギュレーションセットが存在しない場合は、 falseを返す。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em config\_\-id}]削除対象コンフィギュレーションセットのID\end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+アクティブ処理結果(成功:true、失敗:false) 
+\end{DoxyReturn}
+\index{RTC::ConfigAdmin@{RTC::ConfigAdmin}!addConfigurationParamListener@{addConfigurationParamListener}}
+\index{addConfigurationParamListener@{addConfigurationParamListener}!RTC::ConfigAdmin@{RTC::ConfigAdmin}}
+\subsubsection[{addConfigurationParamListener}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::ConfigAdmin::addConfigurationParamListener ({\bf ConfigurationParamListenerType} {\em type}, \/  {\bf ConfigurationParamListener} $\ast$ {\em listener}, \/  bool {\em autoclean} = {\ttfamily true})}\label{classRTC_1_1ConfigAdmin_a8cb21913dd1346a4f0780f9bd242489e}
+
+
+\doxyref{ConfigurationParamListener}{p.}{classRTC_1_1ConfigurationParamListener} を追加する. 
+
+\doxyref{update(const char$\ast$ config\_\-set, const char$\ast$ config\_\-param)}{p.}{classRTC_1_1ConfigAdmin_a4b1ce69c995d6a89d743cbfd38088de4} が呼ばれた際に コールされるリスナ \doxyref{ConfigurationParamListener}{p.}{classRTC_1_1ConfigurationParamListener} を追加する。 type には現在のところ ON\_\-UPDATE\_\-CONFIG\_\-PARAM のみが入る。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em type}]ConfigurationParamListenerType型の値。 ON\_\-UPDATE\_\-CONFIG\_\-PARAM がある。\item[{\em listener}]\doxyref{ConfigurationParamListener}{p.}{classRTC_1_1ConfigurationParamListener} 型のリスナオブジェクト。 \item[{\em autoclean}]リスナオブジェクトを自動で削除するかどうかのフラグ \end{DoxyParams}
+\index{RTC::ConfigAdmin@{RTC::ConfigAdmin}!addConfigurationSet@{addConfigurationSet}}
+\index{addConfigurationSet@{addConfigurationSet}!RTC::ConfigAdmin@{RTC::ConfigAdmin}}
+\subsubsection[{addConfigurationSet}]{\setlength{\rightskip}{0pt plus 5cm}bool RTC::ConfigAdmin::addConfigurationSet (const {\bf coil::Properties} \& {\em configuration\_\-set})}\label{classRTC_1_1ConfigAdmin_a35e38434ba8b409ae1207d81f4904a4d}
+
+
+コンフィギュレーションセットに設定値を追加 
+
+コンフィギュレーションセットに設定値を追加する。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em configuration\_\-set}]追加するプロパティ\end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+追加処理結果(追加成功:true、追加失敗:false) 
+\end{DoxyReturn}
+\index{RTC::ConfigAdmin@{RTC::ConfigAdmin}!addConfigurationSetListener@{addConfigurationSetListener}}
+\index{addConfigurationSetListener@{addConfigurationSetListener}!RTC::ConfigAdmin@{RTC::ConfigAdmin}}
+\subsubsection[{addConfigurationSetListener}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::ConfigAdmin::addConfigurationSetListener ({\bf ConfigurationSetListenerType} {\em type}, \/  {\bf ConfigurationSetListener} $\ast$ {\em listener}, \/  bool {\em autoclean} = {\ttfamily true})}\label{classRTC_1_1ConfigAdmin_ab230e41c008e759111274ba4a6002e1b}
+
+
+\doxyref{ConfigurationSetListener}{p.}{classRTC_1_1ConfigurationSetListener} を追加する. 
+
+ConfigurationSet が更新されたときなどに呼ばれるリスナ \doxyref{ConfigurationSetListener}{p.}{classRTC_1_1ConfigurationSetListener} を追加する。設定可能なイベントは以下の 2種類がある。
+
+
+\begin{DoxyItemize}
+\item ON\_\-SET\_\-CONFIG\_\-SET: \doxyref{setConfigurationSetValues()}{p.}{classRTC_1_1ConfigAdmin_a31d4e545b48aa3ea2fc03109b301586d} で ConfigurationSet に値が設定された場合。
+\item ON\_\-ADD\_\-CONFIG\_\-SET: \doxyref{addConfigurationSet()}{p.}{classRTC_1_1ConfigAdmin_a35e38434ba8b409ae1207d81f4904a4d} で新しい ConfigurationSet が追加された場合。
+\end{DoxyItemize}
+
+
+\begin{DoxyParams}{引数}
+\item[{\em type}]ConfigurationSetListenerType型の値。 \item[{\em listener}]\doxyref{ConfigurationSetListener}{p.}{classRTC_1_1ConfigurationSetListener} 型のリスナオブジェクト。 \item[{\em autoclean}]リスナオブジェクトを自動で削除するかどうかのフラグ \end{DoxyParams}
+\index{RTC::ConfigAdmin@{RTC::ConfigAdmin}!addConfigurationSetNameListener@{addConfigurationSetNameListener}}
+\index{addConfigurationSetNameListener@{addConfigurationSetNameListener}!RTC::ConfigAdmin@{RTC::ConfigAdmin}}
+\subsubsection[{addConfigurationSetNameListener}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::ConfigAdmin::addConfigurationSetNameListener ({\bf ConfigurationSetNameListenerType} {\em type}, \/  {\bf ConfigurationSetNameListener} $\ast$ {\em listener}, \/  bool {\em autoclean} = {\ttfamily true})}\label{classRTC_1_1ConfigAdmin_acb37502f739689a2a9679c4124cf7e13}
+
+
+\doxyref{ConfigurationSetNameListener}{p.}{classRTC_1_1ConfigurationSetNameListener} を追加する. 
+
+ConfigurationSetName が更新されたときなどに呼ばれるリスナ \doxyref{ConfigurationSetNameListener}{p.}{classRTC_1_1ConfigurationSetNameListener} を追加する。設定可能なイベントは以下の 3種類がある。
+
+
+\begin{DoxyItemize}
+\item ON\_\-UPDATE\_\-CONFIG\_\-SET: ある ConfigurationSet がアップデートされた
+\item ON\_\-REMOVE\_\-CONFIG\_\-SET: ある ConfigurationSet が削除された
+\item ON\_\-ACTIVATE\_\-CONFIG\_\-SET: ある ConfigurationSet がアクティブ化された
+\end{DoxyItemize}
+
+
+\begin{DoxyParams}{引数}
+\item[{\em type}]ConfigurationSetNameListenerType型の値。 \item[{\em listener}]\doxyref{ConfigurationSetNameListener}{p.}{classRTC_1_1ConfigurationSetNameListener} 型のリスナオブジェクト。 \item[{\em autoclean}]リスナオブジェクトを自動で削除するかどうかのフラグ \end{DoxyParams}
+\index{RTC::ConfigAdmin@{RTC::ConfigAdmin}!bindParameter@{bindParameter}}
+\index{bindParameter@{bindParameter}!RTC::ConfigAdmin@{RTC::ConfigAdmin}}
+\subsubsection[{bindParameter}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename VarType $>$ bool RTC::ConfigAdmin::bindParameter (const char $\ast$ {\em param\_\-name}, \/  VarType \& {\em var}, \/  const char $\ast$ {\em def\_\-val}, \/  bool($\ast$)(VarType \&, const char $\ast$) {\em trans} = {\ttfamily coil::stringTo})\hspace{0.3cm}{\ttfamily  [inline]}}\label{classRTC_1_1ConfigAdmin_a2c1674931ce1cff6815df69f2a7a3a7c}
+
+
+コンフィギュレーションパラメータの設定 
+
+コンフィギュレーションパラメータと変数をバインドする 指定した名称のコンフィギュレーションパラメータが既に存在する場合は falseを返す。 $<$VarType$>$としてコンフィギュレーションパラメータのデータ型を指定する。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em param\_\-name}]コンフィギュレーションパラメータ名 \item[{\em var}]コンフィギュレーションパラメータ格納用変数 \item[{\em def\_\-val}]コンフィギュレーションパラメータデフォルト値 \item[{\em trans}]コンフィギュレーションパラメータ文字列変換用関数\end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+設定結果(設定成功:true，設定失敗:false) 
+\end{DoxyReturn}
+
+
+参照元 RTC::RTObject\_\-impl::bindParameter().
+
+\index{RTC::ConfigAdmin@{RTC::ConfigAdmin}!getActiveConfigurationSet@{getActiveConfigurationSet}}
+\index{getActiveConfigurationSet@{getActiveConfigurationSet}!RTC::ConfigAdmin@{RTC::ConfigAdmin}}
+\subsubsection[{getActiveConfigurationSet}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf coil::Properties}\& RTC::ConfigAdmin::getActiveConfigurationSet (void)}\label{classRTC_1_1ConfigAdmin_a40c1de78caa9c8ff2ca02ee972f26bb9}
+
+
+アクティブ・コンフィギュレーションセットを取得 
+
+現在アクティブとなっているコンフィギュレーションセットを取得する。 アクティブとなっているコンフィギュレーションセットが存在しない場合は、 空のコンフィギュレーションセット を返す。
+
+\begin{DoxyReturn}{戻り値}
+アクティブ・コンフィギュレーションセット 
+\end{DoxyReturn}
+\index{RTC::ConfigAdmin@{RTC::ConfigAdmin}!getActiveId@{getActiveId}}
+\index{getActiveId@{getActiveId}!RTC::ConfigAdmin@{RTC::ConfigAdmin}}
+\subsubsection[{getActiveId}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ RTC::ConfigAdmin::getActiveId (void)\hspace{0.3cm}{\ttfamily  [inline]}}\label{classRTC_1_1ConfigAdmin_a54b5645d445e5b0670ed959f8a7d0f91}
+
+
+アクティブ・コンフィギュレーションセットIDの取得 
+
+現在アクティブなコンフィギュレーションセットのIDを取得する。
+
+\begin{DoxyReturn}{戻り値}
+アクティブ・コンフィギュレーションセットID 
+\end{DoxyReturn}
+\index{RTC::ConfigAdmin@{RTC::ConfigAdmin}!getConfigurationSet@{getConfigurationSet}}
+\index{getConfigurationSet@{getConfigurationSet}!RTC::ConfigAdmin@{RTC::ConfigAdmin}}
+\subsubsection[{getConfigurationSet}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf coil::Properties}\& RTC::ConfigAdmin::getConfigurationSet (const char $\ast$ {\em config\_\-id})}\label{classRTC_1_1ConfigAdmin_a51b2ad46ba5184fc1361dbd86ed2309a}
+
+
+指定したIDのコンフィギュレーションセットの取得 
+
+IDで指定したコンフィギュレーションセットを取得する。 指定したコンフィギュレーションセットが存在しない場合は、 空のコンフィギュレーションセットを返す。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em config\_\-id}]取得対象コンフィギュレーションセットのID\end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+コンフィギュレーションセット 
+\end{DoxyReturn}
+\index{RTC::ConfigAdmin@{RTC::ConfigAdmin}!getConfigurationSets@{getConfigurationSets}}
+\index{getConfigurationSets@{getConfigurationSets}!RTC::ConfigAdmin@{RTC::ConfigAdmin}}
+\subsubsection[{getConfigurationSets}]{\setlength{\rightskip}{0pt plus 5cm}const std::vector$<${\bf coil::Properties}$\ast$$>$\& RTC::ConfigAdmin::getConfigurationSets (void)}\label{classRTC_1_1ConfigAdmin_a9367d39f878ec8d817e8aabacd27deb6}
+
+
+全コンフィギュレーションセットの取得 
+
+設定されている全コンフィギュレーションセットを取得する。
+
+\begin{DoxyReturn}{戻り値}
+全コンフィギュレーションセット 
+\end{DoxyReturn}
+\index{RTC::ConfigAdmin@{RTC::ConfigAdmin}!haveConfig@{haveConfig}}
+\index{haveConfig@{haveConfig}!RTC::ConfigAdmin@{RTC::ConfigAdmin}}
+\subsubsection[{haveConfig}]{\setlength{\rightskip}{0pt plus 5cm}bool RTC::ConfigAdmin::haveConfig (const char $\ast$ {\em config\_\-id})\hspace{0.3cm}{\ttfamily  [inline]}}\label{classRTC_1_1ConfigAdmin_ae9f137786d647ff991566def5b5a755c}
+
+
+コンフィギュレーションセットの存在確認 
+
+指定したコンフィギュレーションセットが存在するか確認する。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em config\_\-id}]確認対象コンフィギュレーションセットID\end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+存在確認結果(指定したConfigSetあり:true、なし:false) 
+\end{DoxyReturn}
+\index{RTC::ConfigAdmin@{RTC::ConfigAdmin}!isActive@{isActive}}
+\index{isActive@{isActive}!RTC::ConfigAdmin@{RTC::ConfigAdmin}}
+\subsubsection[{isActive}]{\setlength{\rightskip}{0pt plus 5cm}bool RTC::ConfigAdmin::isActive (void)\hspace{0.3cm}{\ttfamily  [inline]}}\label{classRTC_1_1ConfigAdmin_aa040caf9bf2b2970d90e779694144cb6}
+
+
+コンフィギュレーションセットのアクティブ化確認 
+
+コンフィギュレーションセットがアクティブ化されているか確認する。
+
+\begin{DoxyReturn}{戻り値}
+状態確認結果(アクティブ状態:true、非アクティブ状態:false) 
+\end{DoxyReturn}
+\index{RTC::ConfigAdmin@{RTC::ConfigAdmin}!isChanged@{isChanged}}
+\index{isChanged@{isChanged}!RTC::ConfigAdmin@{RTC::ConfigAdmin}}
+\subsubsection[{isChanged}]{\setlength{\rightskip}{0pt plus 5cm}bool RTC::ConfigAdmin::isChanged (void)\hspace{0.3cm}{\ttfamily  [inline]}}\label{classRTC_1_1ConfigAdmin_a455bea81a5322f75b578d0f727eda59b}
+
+
+コンフィギュレーションパラメータの変更確認 
+
+コンフィギュレーションパラメータが変更されたか確認する。
+
+\begin{DoxyReturn}{戻り値}
+変更確認結果(変更あり:true、変更なし:false) 
+\end{DoxyReturn}
+\index{RTC::ConfigAdmin@{RTC::ConfigAdmin}!isExist@{isExist}}
+\index{isExist@{isExist}!RTC::ConfigAdmin@{RTC::ConfigAdmin}}
+\subsubsection[{isExist}]{\setlength{\rightskip}{0pt plus 5cm}bool RTC::ConfigAdmin::isExist (const char $\ast$ {\em name})}\label{classRTC_1_1ConfigAdmin_ab831318a81892b36a1b9ffeff5d94f52}
+
+
+コンフィギュレーションパラメータの存在確認 
+
+指定した名称を持つコンフィギュレーションパラメータ変数が存在する か確認する。ここで存在確認を行うパラメータ変数とは、 \doxyref{bindParameter()}{p.}{classRTC_1_1ConfigAdmin_a2c1674931ce1cff6815df69f2a7a3a7c} によって登録される、変数を持つパラメータである。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em name}]コンフィギュレーションパラメータ名称。\end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+存在確認結果(パラメータあり:true，パラメータなし:false) 
+\end{DoxyReturn}
+\index{RTC::ConfigAdmin@{RTC::ConfigAdmin}!onActivateSet@{onActivateSet}}
+\index{onActivateSet@{onActivateSet}!RTC::ConfigAdmin@{RTC::ConfigAdmin}}
+\subsubsection[{onActivateSet}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::ConfigAdmin::onActivateSet (const char $\ast$ {\em config\_\-id})\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC_1_1ConfigAdmin_ace61d4e3f1c644c1ffb8151807fdd76d}
+
+
+セットがアクティブ化されたときにコールされる。 
+
+設定されてるコールバックオブジェクトを呼び出す。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em config\_\-id}]プロパティ \end{DoxyParams}
+\index{RTC::ConfigAdmin@{RTC::ConfigAdmin}!onAddConfigurationSet@{onAddConfigurationSet}}
+\index{onAddConfigurationSet@{onAddConfigurationSet}!RTC::ConfigAdmin@{RTC::ConfigAdmin}}
+\subsubsection[{onAddConfigurationSet}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::ConfigAdmin::onAddConfigurationSet (const {\bf coil::Properties} \& {\em config\_\-set})\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC_1_1ConfigAdmin_aabb91b474ddf417b91b6c61c65ff06f0}
+
+
+設定値が追加されたときにコールされる。 
+
+設定されてるコールバックオブジェクトを呼び出す。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em configuration\_\-set}]プロパティ \end{DoxyParams}
+\index{RTC::ConfigAdmin@{RTC::ConfigAdmin}!onRemoveConfigurationSet@{onRemoveConfigurationSet}}
+\index{onRemoveConfigurationSet@{onRemoveConfigurationSet}!RTC::ConfigAdmin@{RTC::ConfigAdmin}}
+\subsubsection[{onRemoveConfigurationSet}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::ConfigAdmin::onRemoveConfigurationSet (const char $\ast$ {\em config\_\-id})\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC_1_1ConfigAdmin_aab440a6cf5e8562a54834aa7697007c1}
+
+
+セットが削除されてるときにコールされる。 
+
+設定されてるコールバックオブジェクトを呼び出す。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em config\_\-id}]プロパティ \end{DoxyParams}
+\index{RTC::ConfigAdmin@{RTC::ConfigAdmin}!onSetConfigurationSet@{onSetConfigurationSet}}
+\index{onSetConfigurationSet@{onSetConfigurationSet}!RTC::ConfigAdmin@{RTC::ConfigAdmin}}
+\subsubsection[{onSetConfigurationSet}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::ConfigAdmin::onSetConfigurationSet (const {\bf coil::Properties} \& {\em config\_\-set})\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC_1_1ConfigAdmin_a954735fe16a1b13c00e1b662f6c1084f}
+
+
+コンフィギュレーションセットへの追加時にコールされる 
+
+設定されてるコールバックオブジェクトを呼び出す。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em configuration\_\-set}]プロパティ \end{DoxyParams}
+\index{RTC::ConfigAdmin@{RTC::ConfigAdmin}!onUpdate@{onUpdate}}
+\index{onUpdate@{onUpdate}!RTC::ConfigAdmin@{RTC::ConfigAdmin}}
+\subsubsection[{onUpdate}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::ConfigAdmin::onUpdate (const char $\ast$ {\em config\_\-set})\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC_1_1ConfigAdmin_acfc856750b241a8443b2a0a21c011584}
+
+
+コンフィギュレーションパラメータの更新(ID指定)時にコールされる 
+
+設定されてるコールバックオブジェクトを呼び出す。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em config\_\-set}]設定対象のコンフィギュレーションセットID \end{DoxyParams}
+\index{RTC::ConfigAdmin@{RTC::ConfigAdmin}!onUpdateParam@{onUpdateParam}}
+\index{onUpdateParam@{onUpdateParam}!RTC::ConfigAdmin@{RTC::ConfigAdmin}}
+\subsubsection[{onUpdateParam}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::ConfigAdmin::onUpdateParam (const char $\ast$ {\em config\_\-set}, \/  const char $\ast$ {\em config\_\-param})\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC_1_1ConfigAdmin_a232e973f13bd1baa5cc1f24e5edbdc5a}
+
+
+コンフィギュレーションパラメータの更新(名称指定)時にコールされる 
+
+設定されてるコールバックオブジェクトを呼び出す。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em config\_\-set}]コンフィギュレーションID \item[{\em config\_\-param}]コンフィギュレーションパラメータ名 \end{DoxyParams}
+\index{RTC::ConfigAdmin@{RTC::ConfigAdmin}!removeConfigurationParamListener@{removeConfigurationParamListener}}
+\index{removeConfigurationParamListener@{removeConfigurationParamListener}!RTC::ConfigAdmin@{RTC::ConfigAdmin}}
+\subsubsection[{removeConfigurationParamListener}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::ConfigAdmin::removeConfigurationParamListener ({\bf ConfigurationParamListenerType} {\em type}, \/  {\bf ConfigurationParamListener} $\ast$ {\em listener})}\label{classRTC_1_1ConfigAdmin_a79763dcf92cdf59a2bb4e4e6c3f63c7b}
+
+
+\doxyref{ConfigurationParamListener}{p.}{classRTC_1_1ConfigurationParamListener} を削除する. 
+
+addConfigurationParamListener で追加されたリスナオブジェクトを削除する。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em type}]ConfigurationParamListenerType型の値。 ON\_\-UPDATE\_\-CONFIG\_\-PARAM がある。 \item[{\em listener}]与えたリスナオブジェクトへのポインタ \end{DoxyParams}
+\index{RTC::ConfigAdmin@{RTC::ConfigAdmin}!removeConfigurationSet@{removeConfigurationSet}}
+\index{removeConfigurationSet@{removeConfigurationSet}!RTC::ConfigAdmin@{RTC::ConfigAdmin}}
+\subsubsection[{removeConfigurationSet}]{\setlength{\rightskip}{0pt plus 5cm}bool RTC::ConfigAdmin::removeConfigurationSet (const char $\ast$ {\em config\_\-id})}\label{classRTC_1_1ConfigAdmin_aef99fcfb1f6ca7b09b85c10082236f71}
+
+
+コンフィギュレーションセットの削除 
+
+指定したIDのコンフィギュレーションセットを削除する。
+
+指定したIDのコンフィギュレーションセットが存在しない場合は、 falseを返す。削除可能なコンフィギュレーションセットは、 addConfigruationSet() によって追加したコンフィギュレーションセッ トのみであり、デフォルトコンフィギュレーションセット、コンポーネ ント起動時にファイルから読み込まれるコンフィギュレーションセット は削除することができない。
+
+また、指定したコンフィギュレーションセットが現在アクティブである 場合には、いかなるコンフィギュレーションセットでも削除できない。
+
+この関数により実際にコンフィギュレーションセットが削除された場合、 \doxyref{setOnRemoveConfigurationSet()}{p.}{classRTC_1_1ConfigAdmin_aadb495472bf829913d38becdd22b4556} でセットされたコールバック関数が呼 び出される。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em config\_\-id}]削除対象コンフィギュレーションセットのID\end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+削除処理結果(削除成功:true、削除失敗:false) 
+\end{DoxyReturn}
+\index{RTC::ConfigAdmin@{RTC::ConfigAdmin}!removeConfigurationSetListener@{removeConfigurationSetListener}}
+\index{removeConfigurationSetListener@{removeConfigurationSetListener}!RTC::ConfigAdmin@{RTC::ConfigAdmin}}
+\subsubsection[{removeConfigurationSetListener}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::ConfigAdmin::removeConfigurationSetListener ({\bf ConfigurationSetListenerType} {\em type}, \/  {\bf ConfigurationSetListener} $\ast$ {\em listener})}\label{classRTC_1_1ConfigAdmin_a6430e9e76bbfcb01b76149ed4c6a8fe6}
+
+
+\doxyref{ConfigurationSetListener}{p.}{classRTC_1_1ConfigurationSetListener} を削除する. 
+
+addConfigurationSetListener で追加されたリスナオブジェクトを削除する。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em type}]ConfigurationSetListenerType型の値。 \item[{\em listener}]与えたリスナオブジェクトへのポインタ \end{DoxyParams}
+\index{RTC::ConfigAdmin@{RTC::ConfigAdmin}!removeConfigurationSetNameListener@{removeConfigurationSetNameListener}}
+\index{removeConfigurationSetNameListener@{removeConfigurationSetNameListener}!RTC::ConfigAdmin@{RTC::ConfigAdmin}}
+\subsubsection[{removeConfigurationSetNameListener}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::ConfigAdmin::removeConfigurationSetNameListener ({\bf ConfigurationSetNameListenerType} {\em type}, \/  {\bf ConfigurationSetNameListener} $\ast$ {\em listener})}\label{classRTC_1_1ConfigAdmin_a8359cb98b8c8c46ed10cac65d11633d7}
+
+
+\doxyref{ConfigurationSetNameListener}{p.}{classRTC_1_1ConfigurationSetNameListener} を削除する. 
+
+addConfigurationSetNameListener で追加されたリスナオブジェクトを 削除する。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em type}]ConfigurationSetNameListenerType型の値。 ON\_\-UPDATE\_\-CONFIG\_\-PARAM がある。 \item[{\em listener}]与えたリスナオブジェクトへのポインタ \end{DoxyParams}
+\index{RTC::ConfigAdmin@{RTC::ConfigAdmin}!setConfigurationSetValues@{setConfigurationSetValues}}
+\index{setConfigurationSetValues@{setConfigurationSetValues}!RTC::ConfigAdmin@{RTC::ConfigAdmin}}
+\subsubsection[{setConfigurationSetValues}]{\setlength{\rightskip}{0pt plus 5cm}bool RTC::ConfigAdmin::setConfigurationSetValues (const {\bf coil::Properties} \& {\em configuration\_\-set})}\label{classRTC_1_1ConfigAdmin_a31d4e545b48aa3ea2fc03109b301586d}
+
+
+指定したプロパティのコンフィギュレーションセットへの追加 
+
+指定したプロパティをIDで指定したコンフィギュレーションセットへ追加する。 指定したIDと一致するコンフィギュレーションセットが存在しない場合は、 false を返す。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em config\_\-id}]追加対象コンフィギュレーションセットのID \item[{\em configuration\_\-set}]追加するプロパティ\end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+追加処理実行結果(追加成功:true、追加失敗:false) 
+\end{DoxyReturn}
+\index{RTC::ConfigAdmin@{RTC::ConfigAdmin}!setOnActivateSet@{setOnActivateSet}}
+\index{setOnActivateSet@{setOnActivateSet}!RTC::ConfigAdmin@{RTC::ConfigAdmin}}
+\subsubsection[{setOnActivateSet}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::ConfigAdmin::setOnActivateSet ({\bf OnActivateSetCallback} $\ast$ {\em cb})}\label{classRTC_1_1ConfigAdmin_a4753202ebd65da301020a15f926a999d}
+\index{RTC::ConfigAdmin@{RTC::ConfigAdmin}!setOnAddConfigurationSet@{setOnAddConfigurationSet}}
+\index{setOnAddConfigurationSet@{setOnAddConfigurationSet}!RTC::ConfigAdmin@{RTC::ConfigAdmin}}
+\subsubsection[{setOnAddConfigurationSet}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::ConfigAdmin::setOnAddConfigurationSet ({\bf OnAddConfigurationAddCallback} $\ast$ {\em cb})}\label{classRTC_1_1ConfigAdmin_a59eef8941b5459ba22e350698e3f6ea4}
+\index{RTC::ConfigAdmin@{RTC::ConfigAdmin}!setOnRemoveConfigurationSet@{setOnRemoveConfigurationSet}}
+\index{setOnRemoveConfigurationSet@{setOnRemoveConfigurationSet}!RTC::ConfigAdmin@{RTC::ConfigAdmin}}
+\subsubsection[{setOnRemoveConfigurationSet}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::ConfigAdmin::setOnRemoveConfigurationSet ({\bf OnRemoveConfigurationSetCallback} $\ast$ {\em cb})}\label{classRTC_1_1ConfigAdmin_aadb495472bf829913d38becdd22b4556}
+\index{RTC::ConfigAdmin@{RTC::ConfigAdmin}!setOnSetConfigurationSet@{setOnSetConfigurationSet}}
+\index{setOnSetConfigurationSet@{setOnSetConfigurationSet}!RTC::ConfigAdmin@{RTC::ConfigAdmin}}
+\subsubsection[{setOnSetConfigurationSet}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::ConfigAdmin::setOnSetConfigurationSet ({\bf OnSetConfigurationSetCallback} $\ast$ {\em cb})}\label{classRTC_1_1ConfigAdmin_a82d98e0d07b947481df6eb521f72e433}
+\index{RTC::ConfigAdmin@{RTC::ConfigAdmin}!setOnUpdate@{setOnUpdate}}
+\index{setOnUpdate@{setOnUpdate}!RTC::ConfigAdmin@{RTC::ConfigAdmin}}
+\subsubsection[{setOnUpdate}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::ConfigAdmin::setOnUpdate ({\bf OnUpdateCallback} $\ast$ {\em cb})}\label{classRTC_1_1ConfigAdmin_a8b79519d97b3ed7f3b5494e0293ce89a}
+\index{RTC::ConfigAdmin@{RTC::ConfigAdmin}!setOnUpdateParam@{setOnUpdateParam}}
+\index{setOnUpdateParam@{setOnUpdateParam}!RTC::ConfigAdmin@{RTC::ConfigAdmin}}
+\subsubsection[{setOnUpdateParam}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::ConfigAdmin::setOnUpdateParam ({\bf OnUpdateParamCallback} $\ast$ {\em cb})}\label{classRTC_1_1ConfigAdmin_a7107f4e36c971416d66a38aa6c411845}
+\index{RTC::ConfigAdmin@{RTC::ConfigAdmin}!update@{update}}
+\index{update@{update}!RTC::ConfigAdmin@{RTC::ConfigAdmin}}
+\subsubsection[{update}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::ConfigAdmin::update (const char $\ast$ {\em config\_\-set}, \/  const char $\ast$ {\em config\_\-param})}\label{classRTC_1_1ConfigAdmin_a4b1ce69c995d6a89d743cbfd38088de4}
+
+
+コンフィギュレーションパラメータの更新(名称指定) 
+
+特定のコンフィギュレーション変数の値を、指定したIDを持つコンフィ ギュレーションセットの値で更新する。これにより、アクティブなコン フィギュレーションセットは変更されない。したがって、アクティブコ ンフィギュレーションセットとパラメータ変数の間に矛盾が発生する可 能性があるので注意が必要である。
+
+指定したIDのコンフィギュレーションセットや、指定した名称のパラメー タが存在しない場合は、何もせずに終了する。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em config\_\-set}]コンフィギュレーションID \item[{\em config\_\-param}]コンフィギュレーションパラメータ名 \end{DoxyParams}
+\index{RTC::ConfigAdmin@{RTC::ConfigAdmin}!update@{update}}
+\index{update@{update}!RTC::ConfigAdmin@{RTC::ConfigAdmin}}
+\subsubsection[{update}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::ConfigAdmin::update (const char $\ast$ {\em config\_\-set})}\label{classRTC_1_1ConfigAdmin_a6a183d22dfa7c58ba5d21982aac34645}
+
+
+コンフィギュレーションパラメータの更新(ID指定) 
+
+コンフィギュレーション変数の値を、指定したIDを持つコンフィギュレー ションセットの値で更新する。これにより、アクティブなコンフィギュ レーションセットは変更されない。したがって、アクティブコンフィギュ レーションセットとパラメータ変数の間に矛盾が発生する可能性がある ので注意が必要である。
+
+指定したIDのコンフィギュレーションセットが存在しない場合は、何も せずに終了する。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em config\_\-set}]設定対象のコンフィギュレーションセットID \end{DoxyParams}
+\index{RTC::ConfigAdmin@{RTC::ConfigAdmin}!update@{update}}
+\index{update@{update}!RTC::ConfigAdmin@{RTC::ConfigAdmin}}
+\subsubsection[{update}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::ConfigAdmin::update (void)}\label{classRTC_1_1ConfigAdmin_a858c419de43392804dd934dd62c1874a}
+
+
+コンフィギュレーションパラメータの更新 (アクティブコンフィギュレーションセット) 
+
+コンフィギュレーションセットが更新されている場合に、現在アクティ ブになっているコンフィギュレーションに設定した値で、コンフィギュ レーションパラメータの値を更新する。この処理での更新は、アクティ ブとなっているコンフィギュレーションセットが存在している場合、前 回の更新からコンフィギュレーションセットの内容が更新されている場 合のみ実行される。 

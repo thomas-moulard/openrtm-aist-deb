@@ -1,0 +1,93 @@
+\section{インタフェース OpenRTM::ExtTrigExecutionContextService}
+\label{interfaceOpenRTM_1_1ExtTrigExecutionContextService}\index{OpenRTM::ExtTrigExecutionContextService@{OpenRTM::ExtTrigExecutionContextService}}
+
+
+{\ttfamily import \char`\"{}OpenRTM.idl\char`\"{};}
+
+OpenRTM::ExtTrigExecutionContextServiceに対する継承グラフ\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3cm]{interfaceOpenRTM_1_1ExtTrigExecutionContextService}
+\end{center}
+\end{figure}
+\subsection*{Public メソッド}
+\begin{DoxyCompactItemize}
+\item 
+void {\bf tick} ()
+\item 
+ExecutionContextProfile {\bf get\_\-profile} ()
+\item 
+boolean {\bf is\_\-running} ()
+\item 
+ReturnCode\_\-t {\bf start} ()
+\item 
+ReturnCode\_\-t {\bf stop} ()
+\item 
+double {\bf get\_\-rate} ()
+\item 
+ReturnCode\_\-t {\bf set\_\-rate} (in double rate)
+\item 
+ReturnCode\_\-t {\bf add\_\-component} (in LightweightRTObject comp)
+\item 
+ReturnCode\_\-t {\bf remove\_\-component} (in LightweightRTObject comp)
+\item 
+ReturnCode\_\-t {\bf activate\_\-component} (in LightweightRTObject comp)
+\item 
+ReturnCode\_\-t {\bf deactivate\_\-component} (in LightweightRTObject comp)
+\item 
+ReturnCode\_\-t {\bf reset\_\-component} (in LightweightRTObject comp)
+\item 
+LifeCycleState {\bf get\_\-component\_\-state} (in LightweightRTObject comp)
+\item 
+ExecutionKind {\bf get\_\-kind} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{関数}
+\index{OpenRTM::ExtTrigExecutionContextService@{OpenRTM::ExtTrigExecutionContextService}!activate\_\-component@{activate\_\-component}}
+\index{activate\_\-component@{activate\_\-component}!OpenRTM::ExtTrigExecutionContextService@{OpenRTM::ExtTrigExecutionContextService}}
+\subsubsection[{activate\_\-component}]{\setlength{\rightskip}{0pt plus 5cm}ReturnCode\_\-t RTC::ExecutionContext::activate\_\-component (in {\bf LightweightRTObject} {\em comp})\hspace{0.3cm}{\ttfamily  [inherited]}}\label{interfaceRTC_1_1ExecutionContext_af4a8aeab4a5e71e731b89556ef3e33e1}
+\index{OpenRTM::ExtTrigExecutionContextService@{OpenRTM::ExtTrigExecutionContextService}!add\_\-component@{add\_\-component}}
+\index{add\_\-component@{add\_\-component}!OpenRTM::ExtTrigExecutionContextService@{OpenRTM::ExtTrigExecutionContextService}}
+\subsubsection[{add\_\-component}]{\setlength{\rightskip}{0pt plus 5cm}ReturnCode\_\-t RTC::ExecutionContext::add\_\-component (in {\bf LightweightRTObject} {\em comp})\hspace{0.3cm}{\ttfamily  [inherited]}}\label{interfaceRTC_1_1ExecutionContext_a7ac1a5b9820e571153db730c9369b600}
+\index{OpenRTM::ExtTrigExecutionContextService@{OpenRTM::ExtTrigExecutionContextService}!deactivate\_\-component@{deactivate\_\-component}}
+\index{deactivate\_\-component@{deactivate\_\-component}!OpenRTM::ExtTrigExecutionContextService@{OpenRTM::ExtTrigExecutionContextService}}
+\subsubsection[{deactivate\_\-component}]{\setlength{\rightskip}{0pt plus 5cm}ReturnCode\_\-t RTC::ExecutionContext::deactivate\_\-component (in {\bf LightweightRTObject} {\em comp})\hspace{0.3cm}{\ttfamily  [inherited]}}\label{interfaceRTC_1_1ExecutionContext_a82a23124035a957f2191b520a011e870}
+\index{OpenRTM::ExtTrigExecutionContextService@{OpenRTM::ExtTrigExecutionContextService}!get\_\-component\_\-state@{get\_\-component\_\-state}}
+\index{get\_\-component\_\-state@{get\_\-component\_\-state}!OpenRTM::ExtTrigExecutionContextService@{OpenRTM::ExtTrigExecutionContextService}}
+\subsubsection[{get\_\-component\_\-state}]{\setlength{\rightskip}{0pt plus 5cm}LifeCycleState RTC::ExecutionContext::get\_\-component\_\-state (in {\bf LightweightRTObject} {\em comp})\hspace{0.3cm}{\ttfamily  [inherited]}}\label{interfaceRTC_1_1ExecutionContext_a51a0396327ec0bab96f06a246032fc84}
+\index{OpenRTM::ExtTrigExecutionContextService@{OpenRTM::ExtTrigExecutionContextService}!get\_\-kind@{get\_\-kind}}
+\index{get\_\-kind@{get\_\-kind}!OpenRTM::ExtTrigExecutionContextService@{OpenRTM::ExtTrigExecutionContextService}}
+\subsubsection[{get\_\-kind}]{\setlength{\rightskip}{0pt plus 5cm}ExecutionKind RTC::ExecutionContext::get\_\-kind ()\hspace{0.3cm}{\ttfamily  [inherited]}}\label{interfaceRTC_1_1ExecutionContext_aa7175c37b85b78b90ea5468a4f1379b0}
+\index{OpenRTM::ExtTrigExecutionContextService@{OpenRTM::ExtTrigExecutionContextService}!get\_\-profile@{get\_\-profile}}
+\index{get\_\-profile@{get\_\-profile}!OpenRTM::ExtTrigExecutionContextService@{OpenRTM::ExtTrigExecutionContextService}}
+\subsubsection[{get\_\-profile}]{\setlength{\rightskip}{0pt plus 5cm}ExecutionContextProfile RTC::ExecutionContextService::get\_\-profile ()\hspace{0.3cm}{\ttfamily  [inherited]}}\label{interfaceRTC_1_1ExecutionContextService_a5cad2c38e1f1b7c61d5f345c9c49a193}
+\index{OpenRTM::ExtTrigExecutionContextService@{OpenRTM::ExtTrigExecutionContextService}!get\_\-rate@{get\_\-rate}}
+\index{get\_\-rate@{get\_\-rate}!OpenRTM::ExtTrigExecutionContextService@{OpenRTM::ExtTrigExecutionContextService}}
+\subsubsection[{get\_\-rate}]{\setlength{\rightskip}{0pt plus 5cm}double RTC::ExecutionContext::get\_\-rate ()\hspace{0.3cm}{\ttfamily  [inherited]}}\label{interfaceRTC_1_1ExecutionContext_ad9c05f6e738c310f4ad5c686770fa5cc}
+\index{OpenRTM::ExtTrigExecutionContextService@{OpenRTM::ExtTrigExecutionContextService}!is\_\-running@{is\_\-running}}
+\index{is\_\-running@{is\_\-running}!OpenRTM::ExtTrigExecutionContextService@{OpenRTM::ExtTrigExecutionContextService}}
+\subsubsection[{is\_\-running}]{\setlength{\rightskip}{0pt plus 5cm}boolean RTC::ExecutionContext::is\_\-running ()\hspace{0.3cm}{\ttfamily  [inherited]}}\label{interfaceRTC_1_1ExecutionContext_a4aa7b4668eccb0d88befaa411cf5283e}
+\index{OpenRTM::ExtTrigExecutionContextService@{OpenRTM::ExtTrigExecutionContextService}!remove\_\-component@{remove\_\-component}}
+\index{remove\_\-component@{remove\_\-component}!OpenRTM::ExtTrigExecutionContextService@{OpenRTM::ExtTrigExecutionContextService}}
+\subsubsection[{remove\_\-component}]{\setlength{\rightskip}{0pt plus 5cm}ReturnCode\_\-t RTC::ExecutionContext::remove\_\-component (in {\bf LightweightRTObject} {\em comp})\hspace{0.3cm}{\ttfamily  [inherited]}}\label{interfaceRTC_1_1ExecutionContext_a75d5152e03f4bfcf9a905aa0f9083243}
+\index{OpenRTM::ExtTrigExecutionContextService@{OpenRTM::ExtTrigExecutionContextService}!reset\_\-component@{reset\_\-component}}
+\index{reset\_\-component@{reset\_\-component}!OpenRTM::ExtTrigExecutionContextService@{OpenRTM::ExtTrigExecutionContextService}}
+\subsubsection[{reset\_\-component}]{\setlength{\rightskip}{0pt plus 5cm}ReturnCode\_\-t RTC::ExecutionContext::reset\_\-component (in {\bf LightweightRTObject} {\em comp})\hspace{0.3cm}{\ttfamily  [inherited]}}\label{interfaceRTC_1_1ExecutionContext_a27a1ae76eb00c58ba097a96fe358980b}
+\index{OpenRTM::ExtTrigExecutionContextService@{OpenRTM::ExtTrigExecutionContextService}!set\_\-rate@{set\_\-rate}}
+\index{set\_\-rate@{set\_\-rate}!OpenRTM::ExtTrigExecutionContextService@{OpenRTM::ExtTrigExecutionContextService}}
+\subsubsection[{set\_\-rate}]{\setlength{\rightskip}{0pt plus 5cm}ReturnCode\_\-t RTC::ExecutionContext::set\_\-rate (in double {\em rate})\hspace{0.3cm}{\ttfamily  [inherited]}}\label{interfaceRTC_1_1ExecutionContext_ae6bdf760ff071970f9ed9e0a9d6fe459}
+\index{OpenRTM::ExtTrigExecutionContextService@{OpenRTM::ExtTrigExecutionContextService}!start@{start}}
+\index{start@{start}!OpenRTM::ExtTrigExecutionContextService@{OpenRTM::ExtTrigExecutionContextService}}
+\subsubsection[{start}]{\setlength{\rightskip}{0pt plus 5cm}ReturnCode\_\-t RTC::ExecutionContext::start ()\hspace{0.3cm}{\ttfamily  [inherited]}}\label{interfaceRTC_1_1ExecutionContext_ab015ee47c132e0cf223459d2db7b9f94}
+\index{OpenRTM::ExtTrigExecutionContextService@{OpenRTM::ExtTrigExecutionContextService}!stop@{stop}}
+\index{stop@{stop}!OpenRTM::ExtTrigExecutionContextService@{OpenRTM::ExtTrigExecutionContextService}}
+\subsubsection[{stop}]{\setlength{\rightskip}{0pt plus 5cm}ReturnCode\_\-t RTC::ExecutionContext::stop ()\hspace{0.3cm}{\ttfamily  [inherited]}}\label{interfaceRTC_1_1ExecutionContext_afe216bae26d5817459a67e5b7e3134ce}
+\index{OpenRTM::ExtTrigExecutionContextService@{OpenRTM::ExtTrigExecutionContextService}!tick@{tick}}
+\index{tick@{tick}!OpenRTM::ExtTrigExecutionContextService@{OpenRTM::ExtTrigExecutionContextService}}
+\subsubsection[{tick}]{\setlength{\rightskip}{0pt plus 5cm}void OpenRTM::ExtTrigExecutionContextService::tick ()}\label{interfaceOpenRTM_1_1ExtTrigExecutionContextService_a0a9227a44b63a0fc49fbc8ea9acc898d}
+
+
+このインタフェースの説明は次のファイルから生成されました:\begin{DoxyCompactItemize}
+\item 
+{\bf OpenRTM.idl}\end{DoxyCompactItemize}

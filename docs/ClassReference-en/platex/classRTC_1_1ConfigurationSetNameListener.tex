@@ -1,0 +1,72 @@
+\section{RTC::ConfigurationSetNameListener Class Reference}
+\label{classRTC_1_1ConfigurationSetNameListener}\index{RTC::ConfigurationSetNameListener@{RTC::ConfigurationSetNameListener}}
+
+
+\doxyref{ConfigurationSetNameListener}{p.}{classRTC_1_1ConfigurationSetNameListener} class.  
+
+
+
+
+{\ttfamily \#include $<$ConfigurationListener.h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual {\bf $\sim$ConfigurationSetNameListener} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \item\end{DoxyCompactList}\item 
+virtual void {\bf operator()} (const char $\ast$config\_\-set\_\-name)=0
+\begin{DoxyCompactList}\small\item\em Virtual Callback function. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static const char $\ast$ {\bf toString} ({\bf ConfigurationSetNameListenerType} type)
+\begin{DoxyCompactList}\small\item\em Convert ConfigurationSetNameListenerType into the string. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\doxyref{ConfigurationSetNameListener}{p.}{classRTC_1_1ConfigurationSetNameListener} class. This class is abstract base class for listener classes that provides callbacks for various events for ConfigurationSet.
+
+
+\begin{DoxyItemize}
+\item ON\_\-UPDATE\_\-CONFIG\_\-SET:
+\item ON\_\-REMOVE\_\-CONFIG\_\-SET:
+\item ON\_\-ACTIVATE\_\-CONFIG\_\-SET: 
+\end{DoxyItemize}
+
+\subsection{Constructor \& Destructor Documentation}
+\index{RTC::ConfigurationSetNameListener@{RTC::ConfigurationSetNameListener}!$\sim$ConfigurationSetNameListener@{$\sim$ConfigurationSetNameListener}}
+\index{$\sim$ConfigurationSetNameListener@{$\sim$ConfigurationSetNameListener}!RTC::ConfigurationSetNameListener@{RTC::ConfigurationSetNameListener}}
+\subsubsection[{$\sim$ConfigurationSetNameListener}]{\setlength{\rightskip}{0pt plus 5cm}virtual RTC::ConfigurationSetNameListener::$\sim$ConfigurationSetNameListener ()\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classRTC_1_1ConfigurationSetNameListener_affbd649610f0f92fc7d67ca0326cdab4}
+
+
+Destructor. 
+
+
+
+\subsection{Member Function Documentation}
+\index{RTC::ConfigurationSetNameListener@{RTC::ConfigurationSetNameListener}!operator()@{operator()}}
+\index{operator()@{operator()}!RTC::ConfigurationSetNameListener@{RTC::ConfigurationSetNameListener}}
+\subsubsection[{operator()}]{\setlength{\rightskip}{0pt plus 5cm}virtual void RTC::ConfigurationSetNameListener::operator() (const char $\ast$ {\em config\_\-set\_\-name})\hspace{0.3cm}{\ttfamily  [pure virtual]}}\label{classRTC_1_1ConfigurationSetNameListener_a6c6c1aad210408a9ca302363f8f652b7}
+
+
+Virtual Callback function. 
+
+This is a the Callback function for \doxyref{ConfigurationSetNameListener}{p.}{classRTC_1_1ConfigurationSetNameListener}. \index{RTC::ConfigurationSetNameListener@{RTC::ConfigurationSetNameListener}!toString@{toString}}
+\index{toString@{toString}!RTC::ConfigurationSetNameListener@{RTC::ConfigurationSetNameListener}}
+\subsubsection[{toString}]{\setlength{\rightskip}{0pt plus 5cm}static const char$\ast$ RTC::ConfigurationSetNameListener::toString ({\bf ConfigurationSetNameListenerType} {\em type})\hspace{0.3cm}{\ttfamily  [inline, static]}}\label{classRTC_1_1ConfigurationSetNameListener_ade79a962e7a15ddae7ef638157f3c429}
+
+
+Convert ConfigurationSetNameListenerType into the string. 
+
+Convert ConfigurationSetNameListenerType into the string.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em type}]The target ConfigurationSetNameListenerType for transformation\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Trnasformation result of string representation 
+\end{DoxyReturn}
+
+
+References RTC::CONFIG\_\-SET\_\-NAME\_\-LISTENER\_\-NUM.
+

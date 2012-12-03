@@ -1,0 +1,65 @@
+\section{RTC::PortActionListener Class Reference}
+\label{classRTC_1_1PortActionListener}\index{RTC::PortActionListener@{RTC::PortActionListener}}
+
+
+\doxyref{PortActionListener}{p.}{classRTC_1_1PortActionListener} class.  
+
+
+
+
+{\ttfamily \#include $<$ComponentActionListener.h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual {\bf $\sim$PortActionListener} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \item\end{DoxyCompactList}\item 
+virtual void {\bf operator()} (const ::RTC::PortProfile \&pprof)=0
+\begin{DoxyCompactList}\small\item\em Virtual Callback function. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static const char $\ast$ {\bf toString} ({\bf PortActionListenerType} type)
+\begin{DoxyCompactList}\small\item\em Convert PreComponentActionListenerType into the string. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\doxyref{PortActionListener}{p.}{classRTC_1_1PortActionListener} class. This class is abstract base class for listener classes that provides callbacks for various events in rtobject. 
+
+\subsection{Constructor \& Destructor Documentation}
+\index{RTC::PortActionListener@{RTC::PortActionListener}!$\sim$PortActionListener@{$\sim$PortActionListener}}
+\index{$\sim$PortActionListener@{$\sim$PortActionListener}!RTC::PortActionListener@{RTC::PortActionListener}}
+\subsubsection[{$\sim$PortActionListener}]{\setlength{\rightskip}{0pt plus 5cm}virtual RTC::PortActionListener::$\sim$PortActionListener ()\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classRTC_1_1PortActionListener_ac7047168ee56c6b6c38d6cf22487f162}
+
+
+Destructor. 
+
+
+
+\subsection{Member Function Documentation}
+\index{RTC::PortActionListener@{RTC::PortActionListener}!operator()@{operator()}}
+\index{operator()@{operator()}!RTC::PortActionListener@{RTC::PortActionListener}}
+\subsubsection[{operator()}]{\setlength{\rightskip}{0pt plus 5cm}virtual void RTC::PortActionListener::operator() (const ::RTC::PortProfile \& {\em pprof})\hspace{0.3cm}{\ttfamily  [pure virtual]}}\label{classRTC_1_1PortActionListener_ab64a3fa4bf5ef0d2c07295284c6bba65}
+
+
+Virtual Callback function. 
+
+This is a the Callback function for \doxyref{PortActionListener}{p.}{classRTC_1_1PortActionListener} \index{RTC::PortActionListener@{RTC::PortActionListener}!toString@{toString}}
+\index{toString@{toString}!RTC::PortActionListener@{RTC::PortActionListener}}
+\subsubsection[{toString}]{\setlength{\rightskip}{0pt plus 5cm}static const char$\ast$ RTC::PortActionListener::toString ({\bf PortActionListenerType} {\em type})\hspace{0.3cm}{\ttfamily  [inline, static]}}\label{classRTC_1_1PortActionListener_a40455f05b976a6b28df3aeb4aecb3706}
+
+
+Convert PreComponentActionListenerType into the string. 
+
+Convert PreComponentActionListenerType into the string.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em type}]The target PreComponentActionListenerType for transformation\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Trnasformation result of string representation 
+\end{DoxyReturn}
+
+
+References RTC::PORT\_\-ACTION\_\-LISTENER\_\-NUM.
+

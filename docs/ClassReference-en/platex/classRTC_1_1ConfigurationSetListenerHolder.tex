@@ -1,0 +1,83 @@
+\section{RTC::ConfigurationSetListenerHolder Class Reference}
+\label{classRTC_1_1ConfigurationSetListenerHolder}\index{RTC::ConfigurationSetListenerHolder@{RTC::ConfigurationSetListenerHolder}}
+
+
+\doxyref{ConfigurationSetListener}{p.}{classRTC_1_1ConfigurationSetListener} holder class.  
+
+
+
+
+{\ttfamily \#include $<$ConfigurationListener.h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf ConfigurationSetListenerHolder} ()
+\begin{DoxyCompactList}\small\item\em Constructor. \item\end{DoxyCompactList}\item 
+virtual {\bf $\sim$ConfigurationSetListenerHolder} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \item\end{DoxyCompactList}\item 
+void {\bf addListener} ({\bf ConfigurationSetListener} $\ast$listener, bool autoclean)
+\begin{DoxyCompactList}\small\item\em Add the listener. \item\end{DoxyCompactList}\item 
+void {\bf removeListener} ({\bf ConfigurationSetListener} $\ast$listener)
+\begin{DoxyCompactList}\small\item\em Remove the listener. \item\end{DoxyCompactList}\item 
+void {\bf notify} (const {\bf coil::Properties} \&config\_\-set)
+\begin{DoxyCompactList}\small\item\em Notify listeners. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\doxyref{ConfigurationSetListener}{p.}{classRTC_1_1ConfigurationSetListener} holder class. This class manages one ore more instances of \doxyref{ConfigurationSetListener}{p.}{classRTC_1_1ConfigurationSetListener} class. 
+
+\subsection{Constructor \& Destructor Documentation}
+\index{RTC::ConfigurationSetListenerHolder@{RTC::ConfigurationSetListenerHolder}!ConfigurationSetListenerHolder@{ConfigurationSetListenerHolder}}
+\index{ConfigurationSetListenerHolder@{ConfigurationSetListenerHolder}!RTC::ConfigurationSetListenerHolder@{RTC::ConfigurationSetListenerHolder}}
+\subsubsection[{ConfigurationSetListenerHolder}]{\setlength{\rightskip}{0pt plus 5cm}RTC::ConfigurationSetListenerHolder::ConfigurationSetListenerHolder ()}\label{classRTC_1_1ConfigurationSetListenerHolder_a81c3e9d69da6b1b744364e6af34a3698}
+
+
+Constructor. 
+
+\index{RTC::ConfigurationSetListenerHolder@{RTC::ConfigurationSetListenerHolder}!$\sim$ConfigurationSetListenerHolder@{$\sim$ConfigurationSetListenerHolder}}
+\index{$\sim$ConfigurationSetListenerHolder@{$\sim$ConfigurationSetListenerHolder}!RTC::ConfigurationSetListenerHolder@{RTC::ConfigurationSetListenerHolder}}
+\subsubsection[{$\sim$ConfigurationSetListenerHolder}]{\setlength{\rightskip}{0pt plus 5cm}virtual RTC::ConfigurationSetListenerHolder::$\sim$ConfigurationSetListenerHolder ()\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classRTC_1_1ConfigurationSetListenerHolder_a938dca2bccdd00daa1727fbd14959b46}
+
+
+Destructor. 
+
+
+
+\subsection{Member Function Documentation}
+\index{RTC::ConfigurationSetListenerHolder@{RTC::ConfigurationSetListenerHolder}!addListener@{addListener}}
+\index{addListener@{addListener}!RTC::ConfigurationSetListenerHolder@{RTC::ConfigurationSetListenerHolder}}
+\subsubsection[{addListener}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::ConfigurationSetListenerHolder::addListener ({\bf ConfigurationSetListener} $\ast$ {\em listener}, \/  bool {\em autoclean})}\label{classRTC_1_1ConfigurationSetListenerHolder_a568f4545a41cda30b1ec6f71e1868385}
+
+
+Add the listener. 
+
+This method adds the listener.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em listener}]Added listener \item[{\em autoclean}]true:The listener is deleted at the destructor., false:The listener is not deleted at the destructor. \end{DoxyParams}
+\index{RTC::ConfigurationSetListenerHolder@{RTC::ConfigurationSetListenerHolder}!notify@{notify}}
+\index{notify@{notify}!RTC::ConfigurationSetListenerHolder@{RTC::ConfigurationSetListenerHolder}}
+\subsubsection[{notify}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::ConfigurationSetListenerHolder::notify (const {\bf coil::Properties} \& {\em config\_\-set})}\label{classRTC_1_1ConfigurationSetListenerHolder_a1fc224cba3c137486999eff95c5849e7}
+
+
+Notify listeners. 
+
+This calls the Callback method of the registered listener.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em info}]\doxyref{ConnectorInfo}{p.}{classRTC_1_1ConnectorInfo} \item[{\em cdrdata}]Data \end{DoxyParams}
+\index{RTC::ConfigurationSetListenerHolder@{RTC::ConfigurationSetListenerHolder}!removeListener@{removeListener}}
+\index{removeListener@{removeListener}!RTC::ConfigurationSetListenerHolder@{RTC::ConfigurationSetListenerHolder}}
+\subsubsection[{removeListener}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::ConfigurationSetListenerHolder::removeListener ({\bf ConfigurationSetListener} $\ast$ {\em listener})}\label{classRTC_1_1ConfigurationSetListenerHolder_a4d67bf75f51935e54eef796ee8f6c252}
+
+
+Remove the listener. 
+
+This method removes the listener.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em listener}]Removed listener \end{DoxyParams}

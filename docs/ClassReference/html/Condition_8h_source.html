@@ -1,0 +1,89 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<title>OpenRTM: Condition.h ソースファイル</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<!-- 作成： Doxygen 1.6.3 -->
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="index.html"><span>メインページ</span></a></li>
+      <li><a href="namespaces.html"><span>ネームスペース</span></a></li>
+      <li><a href="annotated.html"><span>クラス</span></a></li>
+      <li class="current"><a href="files.html"><span>ファイル</span></a></li>
+    </ul>
+  </div>
+  <div class="tabs">
+    <ul>
+      <li><a href="files.html"><span>ファイル一覧</span></a></li>
+      <li><a href="globals.html"><span>ファイルメンバ</span></a></li>
+    </ul>
+  </div>
+<h1>Condition.h</h1><a href="Condition_8h.html">説明を見る。</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="comment">// -*- C++ -*-</span>
+<a name="l00020"></a>00020 <span class="comment"></span><span class="preprocessor">#ifndef COIL_CONDITION_H</span>
+<a name="l00021"></a>00021 <span class="preprocessor"></span><span class="preprocessor">#define COIL_CONDITION_H</span>
+<a name="l00022"></a>00022 <span class="preprocessor"></span>
+<a name="l00023"></a>00023 <span class="preprocessor">#include &lt;pthread.h&gt;</span>
+<a name="l00024"></a>00024 <span class="preprocessor">#include &lt;algorithm&gt;</span>
+<a name="l00025"></a>00025 <span class="preprocessor">#include &lt;ctime&gt;</span>
+<a name="l00026"></a>00026 
+<a name="l00027"></a>00027 
+<a name="l00028"></a>00028 <span class="keyword">namespace </span>coil
+<a name="l00029"></a>00029 {
+<a name="l00043"></a>00043   <span class="keyword">template</span> &lt;<span class="keyword">class</span> M&gt;
+<a name="l00044"></a><a class="code" href="classcoil_1_1Condition.html">00044</a>   <span class="keyword">class </span><a class="code" href="classcoil_1_1Condition.html" title="Condition テンプレートクラス.">Condition</a>
+<a name="l00045"></a>00045   {
+<a name="l00046"></a>00046   <span class="keyword">public</span>:
+<a name="l00047"></a>00047 
+<a name="l00063"></a><a class="code" href="classcoil_1_1Condition.html#a6ccedf39320ed80a75659f7c781f1bd0">00063</a>     <a class="code" href="classcoil_1_1Condition.html#a6ccedf39320ed80a75659f7c781f1bd0" title="コンストラクタ">Condition</a>(M&amp; mutex)
+<a name="l00064"></a>00064       : m_mutex(mutex)
+<a name="l00065"></a>00065     {
+<a name="l00066"></a>00066       ::pthread_cond_init(&amp;m_cond, 0);
+<a name="l00067"></a>00067     }
+<a name="l00068"></a>00068 
+<a name="l00084"></a><a class="code" href="classcoil_1_1Condition.html#af2186836de79b4a04096fd934dc7eb50">00084</a>     <a class="code" href="classcoil_1_1Condition.html#af2186836de79b4a04096fd934dc7eb50" title="デストラクタ">~Condition</a>()
+<a name="l00085"></a>00085     {
+<a name="l00086"></a>00086       ::pthread_cond_destroy(&amp;m_cond);
+<a name="l00087"></a>00087     }
+<a name="l00088"></a>00088 
+<a name="l00104"></a><a class="code" href="classcoil_1_1Condition.html#a2398cf2cf423f73003bdb950261be46d">00104</a>     <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="classcoil_1_1Condition.html#a2398cf2cf423f73003bdb950261be46d" title="スレッド実行の再開">signal</a>()
+<a name="l00105"></a>00105     {
+<a name="l00106"></a>00106       ::pthread_cond_signal(&amp;m_cond);
+<a name="l00107"></a>00107     }
+<a name="l00108"></a>00108 
+<a name="l00124"></a><a class="code" href="classcoil_1_1Condition.html#ab59335ec9ed423e1c60b88cbc79d2654">00124</a>     <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="classcoil_1_1Condition.html#ab59335ec9ed423e1c60b88cbc79d2654" title="全スレッド実行の再開">broadcast</a>()
+<a name="l00125"></a>00125     {
+<a name="l00126"></a>00126       ::pthread_cond_broadcast(&amp;m_cond);
+<a name="l00127"></a>00127     }
+<a name="l00128"></a>00128 
+<a name="l00148"></a><a class="code" href="classcoil_1_1Condition.html#a2b9ca2806914380fdc2a621ad2515566">00148</a>     <span class="keywordtype">bool</span> <a class="code" href="classcoil_1_1Condition.html#a2b9ca2806914380fdc2a621ad2515566" title="スレッド実行の待機">wait</a>()
+<a name="l00149"></a>00149     {
+<a name="l00150"></a>00150       <span class="keywordflow">return</span> 0 == ::pthread_cond_wait(&amp;m_cond, &amp;m_mutex.mutex_);
+<a name="l00151"></a>00151     }
+<a name="l00152"></a>00152 
+<a name="l00178"></a><a class="code" href="classcoil_1_1Condition.html#a13e391f94d6e62316413d9b1e8377a8c">00178</a>     <span class="keywordtype">bool</span> <a class="code" href="classcoil_1_1Condition.html#a2b9ca2806914380fdc2a621ad2515566" title="スレッド実行の待機">wait</a>(<span class="keywordtype">long</span> second, <span class="keywordtype">long</span> nano_second = 0)
+<a name="l00179"></a>00179     {
+<a name="l00180"></a>00180       timespec abstime;
+<a name="l00181"></a>00181       abstime.tv_sec = std::time(0) + second;
+<a name="l00182"></a>00182       abstime.tv_nsec = nano_second;
+<a name="l00183"></a>00183       <span class="keywordflow">return</span> 0 == ::pthread_cond_timedwait(&amp;m_cond, &amp;m_mutex.mutex_, &amp;abstime);
+<a name="l00184"></a>00184     }
+<a name="l00185"></a>00185 
+<a name="l00186"></a>00186   <span class="keyword">private</span>:
+<a name="l00187"></a>00187     <a class="code" href="classcoil_1_1Condition.html#a6ccedf39320ed80a75659f7c781f1bd0" title="コンストラクタ">Condition</a>(<span class="keyword">const</span> M&amp;);
+<a name="l00188"></a>00188     <a class="code" href="classcoil_1_1Condition.html" title="Condition テンプレートクラス.">Condition</a>&amp; operator=(<span class="keyword">const</span> M &amp;);
+<a name="l00189"></a>00189     pthread_cond_t m_cond;
+<a name="l00190"></a>00190     M&amp; m_mutex;
+<a name="l00191"></a>00191   };
+<a name="l00192"></a>00192 };
+<a name="l00193"></a>00193 <span class="preprocessor">#endif // COIL_CONDITION_H</span>
+</pre></div></div>
+<hr class="footer"/><address style="text-align: right;"><small>OpenRTMに対してThu May 24 23:25:18 2012に生成されました。&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.6.3 </small></address>
+</body>
+</html>

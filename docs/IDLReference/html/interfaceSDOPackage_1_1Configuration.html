@@ -1,0 +1,356 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<title>OpenRTM: インタフェース SDOPackage::Configuration</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<!-- 作成： Doxygen 1.6.3 -->
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="index.html"><span>メインページ</span></a></li>
+      <li><a href="namespaces.html"><span>ネームスペース</span></a></li>
+      <li class="current"><a href="annotated.html"><span>クラス</span></a></li>
+      <li><a href="files.html"><span>ファイル</span></a></li>
+    </ul>
+  </div>
+  <div class="tabs">
+    <ul>
+      <li><a href="annotated.html"><span>構成</span></a></li>
+      <li><a href="hierarchy.html"><span>クラス階層</span></a></li>
+      <li><a href="functions.html"><span>構成メンバ</span></a></li>
+    </ul>
+  </div>
+  <div class="navpath"><a class="el" href="namespaceSDOPackage.html">SDOPackage</a>::<a class="el" href="interfaceSDOPackage_1_1Configuration.html">Configuration</a>
+  </div>
+</div>
+<div class="contents">
+<h1>インタフェース SDOPackage::Configuration</h1><!-- doxytag: class="SDOPackage::Configuration" -->
+<p><code>import &quot;<a class="el" href="SDOPackage_8idl_source.html">SDOPackage.idl</a>&quot;;</code></p>
+
+<p><a href="interfaceSDOPackage_1_1Configuration-members.html">すべてのメンバ一覧</a></p>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr><td colspan="2"><h2>Public メソッド</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">boolean&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="interfaceSDOPackage_1_1Configuration.html#a9bc9b647255e601b692eed2410e43927">set_device_profile</a> (in <a class="el" href="structSDOPackage_1_1DeviceProfile.html">DeviceProfile</a> dProfile)  raises (InvalidParameter, NotAvailable, InternalError)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">boolean&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="interfaceSDOPackage_1_1Configuration.html#a406b04eabcfed65c4f9b0396a89ccc4d">add_service_profile</a> (in <a class="el" href="structSDOPackage_1_1ServiceProfile.html">ServiceProfile</a> sProfile)  raises (InvalidParameter, NotAvailable, InternalError)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">boolean&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="interfaceSDOPackage_1_1Configuration.html#ac29fc4106db1df64eb105aa38604b738">add_organization</a> (in <a class="el" href="interfaceSDOPackage_1_1Organization.html">Organization</a> organization_object)  raises (InvalidParameter, NotAvailable, InternalError)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">boolean&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="interfaceSDOPackage_1_1Configuration.html#a9d80d9a2a1ab5cb4bfa670d8b648e3fc">remove_service_profile</a> (in <a class="el" href="namespaceSDOPackage.html#a05a058395bb070fc59e9d81d4b1f9f98">UniqueIdentifier</a> id)  raises (InvalidParameter, NotAvailable, InternalError)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">boolean&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="interfaceSDOPackage_1_1Configuration.html#a3b891d4f199c83a774643beda3a25d76">remove_organization</a> (in <a class="el" href="namespaceSDOPackage.html#a05a058395bb070fc59e9d81d4b1f9f98">UniqueIdentifier</a> organization_id)  raises (InvalidParameter, NotAvailable, InternalError)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceSDOPackage.html#ac7ed6ef96e20edd9db20df029d1d46d2">ParameterList</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="interfaceSDOPackage_1_1Configuration.html#a8b0db85c0fb5ed92c1664686f649298c">get_configuration_parameters</a> ()  raises (NotAvailable, InternalError)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceSDOPackage.html#a51e72be2b0d7e550db7782ddb1d58e9d">NVList</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="interfaceSDOPackage_1_1Configuration.html#ac59b71044e697ae6d7184437340ccff2">get_configuration_parameter_values</a> ()  raises (NotAvailable, InternalError)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">any&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="interfaceSDOPackage_1_1Configuration.html#affd15445c9c4b0ea3a510a9551c29409">get_configuration_parameter_value</a> (in string name)  raises (InvalidParameter, NotAvailable, InternalError)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">boolean&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="interfaceSDOPackage_1_1Configuration.html#ae9314a2cc5743932d9cc44c41393bf35">set_configuration_parameter</a> (in string name, in any value)  raises (InvalidParameter, NotAvailable, InternalError)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceSDOPackage.html#ad9d3f3e4436d5ae8aa92fd71fa85e034">ConfigurationSetList</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="interfaceSDOPackage_1_1Configuration.html#aca0fc0ab3c00a1c386883be766f77a9e">get_configuration_sets</a> ()  raises (NotAvailable, InternalError)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="structSDOPackage_1_1ConfigurationSet.html">ConfigurationSet</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="interfaceSDOPackage_1_1Configuration.html#af41445e0bcc9ea6241f77d3f687ad535">get_configuration_set</a> (in <a class="el" href="namespaceSDOPackage.html#a05a058395bb070fc59e9d81d4b1f9f98">UniqueIdentifier</a> config_id)  raises (NotAvailable, InternalError)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">boolean&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="interfaceSDOPackage_1_1Configuration.html#a82d62dcfce26a9cf41bfa79a26a79fa5">set_configuration_set_values</a> (in <a class="el" href="structSDOPackage_1_1ConfigurationSet.html">ConfigurationSet</a> configuration_set)  raises (InvalidParameter, NotAvailable, InternalError)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="structSDOPackage_1_1ConfigurationSet.html">ConfigurationSet</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="interfaceSDOPackage_1_1Configuration.html#a7f89d399b04ce71804c27c623df61cbc">get_active_configuration_set</a> ()  raises (NotAvailable, InternalError)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">boolean&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="interfaceSDOPackage_1_1Configuration.html#a04a066acc0585d940c058a6fc34f5023">add_configuration_set</a> (in <a class="el" href="structSDOPackage_1_1ConfigurationSet.html">ConfigurationSet</a> configuration_set)  raises (InvalidParameter, NotAvailable, InternalError)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">boolean&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="interfaceSDOPackage_1_1Configuration.html#a2b8fee9e3106cb08c72590f3716d809e">remove_configuration_set</a> (in <a class="el" href="namespaceSDOPackage.html#a05a058395bb070fc59e9d81d4b1f9f98">UniqueIdentifier</a> config_id)  raises (InvalidParameter, NotAvailable, InternalError)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">boolean&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="interfaceSDOPackage_1_1Configuration.html#a328e38e1fa5acd4fb27b1a99912a4923">activate_configuration_set</a> (in <a class="el" href="namespaceSDOPackage.html#a05a058395bb070fc59e9d81d4b1f9f98">UniqueIdentifier</a> config_id)  raises (InvalidParameter, NotAvailable, InternalError)</td></tr>
+</table>
+<hr/><h2>関数</h2>
+<a class="anchor" id="a328e38e1fa5acd4fb27b1a99912a4923"></a><!-- doxytag: member="SDOPackage::Configuration::activate_configuration_set" ref="a328e38e1fa5acd4fb27b1a99912a4923" args="(in UniqueIdentifier config_id)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">boolean SDOPackage::Configuration::activate_configuration_set </td>
+          <td>(</td>
+          <td class="paramtype">in <a class="el" href="namespaceSDOPackage.html#a05a058395bb070fc59e9d81d4b1f9f98">UniqueIdentifier</a>&nbsp;</td>
+          <td class="paramname"> <em>config_id</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td>  raises (InvalidParameter, NotAvailable, InternalError)</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a04a066acc0585d940c058a6fc34f5023"></a><!-- doxytag: member="SDOPackage::Configuration::add_configuration_set" ref="a04a066acc0585d940c058a6fc34f5023" args="(in ConfigurationSet configuration_set)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">boolean SDOPackage::Configuration::add_configuration_set </td>
+          <td>(</td>
+          <td class="paramtype">in <a class="el" href="structSDOPackage_1_1ConfigurationSet.html">ConfigurationSet</a>&nbsp;</td>
+          <td class="paramname"> <em>configuration_set</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td>  raises (InvalidParameter, NotAvailable, InternalError)</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ac29fc4106db1df64eb105aa38604b738"></a><!-- doxytag: member="SDOPackage::Configuration::add_organization" ref="ac29fc4106db1df64eb105aa38604b738" args="(in Organization organization_object)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">boolean SDOPackage::Configuration::add_organization </td>
+          <td>(</td>
+          <td class="paramtype">in <a class="el" href="interfaceSDOPackage_1_1Organization.html">Organization</a>&nbsp;</td>
+          <td class="paramname"> <em>organization_object</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td>  raises (InvalidParameter, NotAvailable, InternalError)</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a406b04eabcfed65c4f9b0396a89ccc4d"></a><!-- doxytag: member="SDOPackage::Configuration::add_service_profile" ref="a406b04eabcfed65c4f9b0396a89ccc4d" args="(in ServiceProfile sProfile)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">boolean SDOPackage::Configuration::add_service_profile </td>
+          <td>(</td>
+          <td class="paramtype">in <a class="el" href="structSDOPackage_1_1ServiceProfile.html">ServiceProfile</a>&nbsp;</td>
+          <td class="paramname"> <em>sProfile</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td>  raises (InvalidParameter, NotAvailable, InternalError)</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a7f89d399b04ce71804c27c623df61cbc"></a><!-- doxytag: member="SDOPackage::Configuration::get_active_configuration_set" ref="a7f89d399b04ce71804c27c623df61cbc" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structSDOPackage_1_1ConfigurationSet.html">ConfigurationSet</a> SDOPackage::Configuration::get_active_configuration_set </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td>  raises (NotAvailable, InternalError)</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="affd15445c9c4b0ea3a510a9551c29409"></a><!-- doxytag: member="SDOPackage::Configuration::get_configuration_parameter_value" ref="affd15445c9c4b0ea3a510a9551c29409" args="(in string name)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">any SDOPackage::Configuration::get_configuration_parameter_value </td>
+          <td>(</td>
+          <td class="paramtype">in string&nbsp;</td>
+          <td class="paramname"> <em>name</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td>  raises (InvalidParameter, NotAvailable, InternalError)</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ac59b71044e697ae6d7184437340ccff2"></a><!-- doxytag: member="SDOPackage::Configuration::get_configuration_parameter_values" ref="ac59b71044e697ae6d7184437340ccff2" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespaceSDOPackage.html#a51e72be2b0d7e550db7782ddb1d58e9d">NVList</a> SDOPackage::Configuration::get_configuration_parameter_values </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td>  raises (NotAvailable, InternalError)</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a8b0db85c0fb5ed92c1664686f649298c"></a><!-- doxytag: member="SDOPackage::Configuration::get_configuration_parameters" ref="a8b0db85c0fb5ed92c1664686f649298c" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespaceSDOPackage.html#ac7ed6ef96e20edd9db20df029d1d46d2">ParameterList</a> SDOPackage::Configuration::get_configuration_parameters </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td>  raises (NotAvailable, InternalError)</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="af41445e0bcc9ea6241f77d3f687ad535"></a><!-- doxytag: member="SDOPackage::Configuration::get_configuration_set" ref="af41445e0bcc9ea6241f77d3f687ad535" args="(in UniqueIdentifier config_id)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structSDOPackage_1_1ConfigurationSet.html">ConfigurationSet</a> SDOPackage::Configuration::get_configuration_set </td>
+          <td>(</td>
+          <td class="paramtype">in <a class="el" href="namespaceSDOPackage.html#a05a058395bb070fc59e9d81d4b1f9f98">UniqueIdentifier</a>&nbsp;</td>
+          <td class="paramname"> <em>config_id</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td>  raises (NotAvailable, InternalError)</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="aca0fc0ab3c00a1c386883be766f77a9e"></a><!-- doxytag: member="SDOPackage::Configuration::get_configuration_sets" ref="aca0fc0ab3c00a1c386883be766f77a9e" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespaceSDOPackage.html#ad9d3f3e4436d5ae8aa92fd71fa85e034">ConfigurationSetList</a> SDOPackage::Configuration::get_configuration_sets </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td>  raises (NotAvailable, InternalError)</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a2b8fee9e3106cb08c72590f3716d809e"></a><!-- doxytag: member="SDOPackage::Configuration::remove_configuration_set" ref="a2b8fee9e3106cb08c72590f3716d809e" args="(in UniqueIdentifier config_id)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">boolean SDOPackage::Configuration::remove_configuration_set </td>
+          <td>(</td>
+          <td class="paramtype">in <a class="el" href="namespaceSDOPackage.html#a05a058395bb070fc59e9d81d4b1f9f98">UniqueIdentifier</a>&nbsp;</td>
+          <td class="paramname"> <em>config_id</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td>  raises (InvalidParameter, NotAvailable, InternalError)</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a3b891d4f199c83a774643beda3a25d76"></a><!-- doxytag: member="SDOPackage::Configuration::remove_organization" ref="a3b891d4f199c83a774643beda3a25d76" args="(in UniqueIdentifier organization_id)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">boolean SDOPackage::Configuration::remove_organization </td>
+          <td>(</td>
+          <td class="paramtype">in <a class="el" href="namespaceSDOPackage.html#a05a058395bb070fc59e9d81d4b1f9f98">UniqueIdentifier</a>&nbsp;</td>
+          <td class="paramname"> <em>organization_id</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td>  raises (InvalidParameter, NotAvailable, InternalError)</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a9d80d9a2a1ab5cb4bfa670d8b648e3fc"></a><!-- doxytag: member="SDOPackage::Configuration::remove_service_profile" ref="a9d80d9a2a1ab5cb4bfa670d8b648e3fc" args="(in UniqueIdentifier id)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">boolean SDOPackage::Configuration::remove_service_profile </td>
+          <td>(</td>
+          <td class="paramtype">in <a class="el" href="namespaceSDOPackage.html#a05a058395bb070fc59e9d81d4b1f9f98">UniqueIdentifier</a>&nbsp;</td>
+          <td class="paramname"> <em>id</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td>  raises (InvalidParameter, NotAvailable, InternalError)</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ae9314a2cc5743932d9cc44c41393bf35"></a><!-- doxytag: member="SDOPackage::Configuration::set_configuration_parameter" ref="ae9314a2cc5743932d9cc44c41393bf35" args="(in string name, in any value)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">boolean SDOPackage::Configuration::set_configuration_parameter </td>
+          <td>(</td>
+          <td class="paramtype">in string&nbsp;</td>
+          <td class="paramname"> <em>name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">in any&nbsp;</td>
+          <td class="paramname"> <em>value</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td>  raises (InvalidParameter, NotAvailable, InternalError)</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a82d62dcfce26a9cf41bfa79a26a79fa5"></a><!-- doxytag: member="SDOPackage::Configuration::set_configuration_set_values" ref="a82d62dcfce26a9cf41bfa79a26a79fa5" args="(in ConfigurationSet configuration_set)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">boolean SDOPackage::Configuration::set_configuration_set_values </td>
+          <td>(</td>
+          <td class="paramtype">in <a class="el" href="structSDOPackage_1_1ConfigurationSet.html">ConfigurationSet</a>&nbsp;</td>
+          <td class="paramname"> <em>configuration_set</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td>  raises (InvalidParameter, NotAvailable, InternalError)</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a9bc9b647255e601b692eed2410e43927"></a><!-- doxytag: member="SDOPackage::Configuration::set_device_profile" ref="a9bc9b647255e601b692eed2410e43927" args="(in DeviceProfile dProfile)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">boolean SDOPackage::Configuration::set_device_profile </td>
+          <td>(</td>
+          <td class="paramtype">in <a class="el" href="structSDOPackage_1_1DeviceProfile.html">DeviceProfile</a>&nbsp;</td>
+          <td class="paramname"> <em>dProfile</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td>  raises (InvalidParameter, NotAvailable, InternalError)</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<hr/>このインタフェースの説明は次のファイルから生成されました:<ul>
+<li><a class="el" href="SDOPackage_8idl_source.html">SDOPackage.idl</a></li>
+</ul>
+</div>
+<hr class="footer"/><address style="text-align: right;"><small>OpenRTMに対してThu May 24 23:25:23 2012に生成されました。&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.6.3 </small></address>
+</body>
+</html>

@@ -1,0 +1,87 @@
+\section{RTC::ExecutionContextActionListenerHolder Class Reference}
+\label{classRTC_1_1ExecutionContextActionListenerHolder}\index{RTC::ExecutionContextActionListenerHolder@{RTC::ExecutionContextActionListenerHolder}}
+
+
+\doxyref{ExecutionContextActionListener}{p.}{classRTC_1_1ExecutionContextActionListener} holder class.  
+
+
+
+
+{\ttfamily \#include $<$ComponentActionListener.h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf ExecutionContextActionListenerHolder} ()
+\begin{DoxyCompactList}\small\item\em Constructor. \item\end{DoxyCompactList}\item 
+virtual {\bf $\sim$ExecutionContextActionListenerHolder} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \item\end{DoxyCompactList}\item 
+void {\bf addListener} ({\bf ExecutionContextActionListener} $\ast$listener, bool autoclean)
+\begin{DoxyCompactList}\small\item\em Add the listener. \item\end{DoxyCompactList}\item 
+void {\bf removeListener} ({\bf ExecutionContextActionListener} $\ast$listener)
+\begin{DoxyCompactList}\small\item\em Remove the listener. \item\end{DoxyCompactList}\item 
+void {\bf notify} ({\bf UniqueId} ec\_\-id)
+\begin{DoxyCompactList}\small\item\em Notify listeners. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\doxyref{ExecutionContextActionListener}{p.}{classRTC_1_1ExecutionContextActionListener} holder class. This class manages one ore more instances of \doxyref{ExecutionContextActionListener}{p.}{classRTC_1_1ExecutionContextActionListener} class. 
+
+\subsection{Constructor \& Destructor Documentation}
+\index{RTC::ExecutionContextActionListenerHolder@{RTC::ExecutionContextActionListenerHolder}!ExecutionContextActionListenerHolder@{ExecutionContextActionListenerHolder}}
+\index{ExecutionContextActionListenerHolder@{ExecutionContextActionListenerHolder}!RTC::ExecutionContextActionListenerHolder@{RTC::ExecutionContextActionListenerHolder}}
+\subsubsection[{ExecutionContextActionListenerHolder}]{\setlength{\rightskip}{0pt plus 5cm}RTC::ExecutionContextActionListenerHolder::ExecutionContextActionListenerHolder ()}\label{classRTC_1_1ExecutionContextActionListenerHolder_a422303d2192c9ee6643c202b793311fa}
+
+
+Constructor. 
+
+\index{RTC::ExecutionContextActionListenerHolder@{RTC::ExecutionContextActionListenerHolder}!$\sim$ExecutionContextActionListenerHolder@{$\sim$ExecutionContextActionListenerHolder}}
+\index{$\sim$ExecutionContextActionListenerHolder@{$\sim$ExecutionContextActionListenerHolder}!RTC::ExecutionContextActionListenerHolder@{RTC::ExecutionContextActionListenerHolder}}
+\subsubsection[{$\sim$ExecutionContextActionListenerHolder}]{\setlength{\rightskip}{0pt plus 5cm}virtual RTC::ExecutionContextActionListenerHolder::$\sim$ExecutionContextActionListenerHolder ()\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classRTC_1_1ExecutionContextActionListenerHolder_ade639d3634de5b385c318decc43f4a57}
+
+
+Destructor. 
+
+
+
+\subsection{Member Function Documentation}
+\index{RTC::ExecutionContextActionListenerHolder@{RTC::ExecutionContextActionListenerHolder}!addListener@{addListener}}
+\index{addListener@{addListener}!RTC::ExecutionContextActionListenerHolder@{RTC::ExecutionContextActionListenerHolder}}
+\subsubsection[{addListener}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::ExecutionContextActionListenerHolder::addListener ({\bf ExecutionContextActionListener} $\ast$ {\em listener}, \/  bool {\em autoclean})}\label{classRTC_1_1ExecutionContextActionListenerHolder_ad6455f4d2a22c5bdd185294929177286}
+
+
+Add the listener. 
+
+This method adds the listener.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em listener}]Added listener \item[{\em autoclean}]true:The listener is deleted at the destructor., false:The listener is not deleted at the destructor. \end{DoxyParams}
+\index{RTC::ExecutionContextActionListenerHolder@{RTC::ExecutionContextActionListenerHolder}!notify@{notify}}
+\index{notify@{notify}!RTC::ExecutionContextActionListenerHolder@{RTC::ExecutionContextActionListenerHolder}}
+\subsubsection[{notify}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::ExecutionContextActionListenerHolder::notify ({\bf UniqueId} {\em ec\_\-id})}\label{classRTC_1_1ExecutionContextActionListenerHolder_afe7d95ed2fb7934e57f6e3b38f041188}
+
+
+Notify listeners. 
+
+This calls the Callback method of the registered listener.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em info}]\doxyref{ConnectorInfo}{p.}{classRTC_1_1ConnectorInfo} \item[{\em cdrdata}]Data \end{DoxyParams}
+
+
+Referenced by RTC::RTObject\_\-impl::onAttachExecutionContext(), and RTC::RTObject\_\-impl::onDetachExecutionContext().
+
+\index{RTC::ExecutionContextActionListenerHolder@{RTC::ExecutionContextActionListenerHolder}!removeListener@{removeListener}}
+\index{removeListener@{removeListener}!RTC::ExecutionContextActionListenerHolder@{RTC::ExecutionContextActionListenerHolder}}
+\subsubsection[{removeListener}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::ExecutionContextActionListenerHolder::removeListener ({\bf ExecutionContextActionListener} $\ast$ {\em listener})}\label{classRTC_1_1ExecutionContextActionListenerHolder_acc2999c9555847e2cec937ac9b89ec56}
+
+
+Remove the listener. 
+
+This method removes the listener.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em listener}]Removed listener \end{DoxyParams}

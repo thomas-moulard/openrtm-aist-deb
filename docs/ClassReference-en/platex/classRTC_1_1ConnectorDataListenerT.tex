@@ -1,0 +1,73 @@
+\section{RTC::ConnectorDataListenerT$<$ DataType $>$ Class Template Reference}
+\label{classRTC_1_1ConnectorDataListenerT}\index{RTC::ConnectorDataListenerT@{RTC::ConnectorDataListenerT}}
+
+
+\doxyref{ConnectorDataListenerT}{p.}{classRTC_1_1ConnectorDataListenerT} class.  
+
+
+
+
+{\ttfamily \#include $<$ConnectorListener.h$>$}
+
+Inheritance diagram for RTC::ConnectorDataListenerT$<$ DataType $>$:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2cm]{classRTC_1_1ConnectorDataListenerT}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual {\bf $\sim$ConnectorDataListenerT} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \item\end{DoxyCompactList}\item 
+virtual void {\bf operator()} (const {\bf ConnectorInfo} \&info, const cdrMemoryStream \&cdrdata)
+\begin{DoxyCompactList}\small\item\em Callback method. \item\end{DoxyCompactList}\item 
+virtual void {\bf operator()} (const {\bf ConnectorInfo} \&info, const DataType \&data)=0
+\begin{DoxyCompactList}\small\item\em Virtual Callback method. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$class DataType$>$ class RTC::ConnectorDataListenerT$<$ DataType $>$}
+
+\doxyref{ConnectorDataListenerT}{p.}{classRTC_1_1ConnectorDataListenerT} class. This class is abstract base class for listener classes that provides callbacks for various events in the data port's connectors.
+
+This class template can have practical data types that are used as typed variable for DataPort as an argument of template instead of cdrMemoryStream. 
+
+\subsection{Constructor \& Destructor Documentation}
+\index{RTC::ConnectorDataListenerT@{RTC::ConnectorDataListenerT}!$\sim$ConnectorDataListenerT@{$\sim$ConnectorDataListenerT}}
+\index{$\sim$ConnectorDataListenerT@{$\sim$ConnectorDataListenerT}!RTC::ConnectorDataListenerT@{RTC::ConnectorDataListenerT}}
+\subsubsection[{$\sim$ConnectorDataListenerT}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class DataType $>$ virtual {\bf RTC::ConnectorDataListenerT}$<$ DataType $>$::$\sim${\bf ConnectorDataListenerT} ()\hspace{0.3cm}{\ttfamily  [inline, virtual]}}\label{classRTC_1_1ConnectorDataListenerT_a7e07ce2456ad559f78b24467a22ce4ab}
+
+
+Destructor. 
+
+
+
+\subsection{Member Function Documentation}
+\index{RTC::ConnectorDataListenerT@{RTC::ConnectorDataListenerT}!operator()@{operator()}}
+\index{operator()@{operator()}!RTC::ConnectorDataListenerT@{RTC::ConnectorDataListenerT}}
+\subsubsection[{operator()}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class DataType $>$ virtual void {\bf RTC::ConnectorDataListenerT}$<$ DataType $>$::operator() (const {\bf ConnectorInfo} \& {\em info}, \/  const DataType \& {\em data})\hspace{0.3cm}{\ttfamily  [pure virtual]}}\label{classRTC_1_1ConnectorDataListenerT_a74a7cf49e64721834da69c82e1769d3f}
+
+
+Virtual Callback method. 
+
+This method invokes the callback method of \doxyref{ConnectorDataListenerT}{p.}{classRTC_1_1ConnectorDataListenerT}. Data is converted into the variable type used in DataPort. \index{RTC::ConnectorDataListenerT@{RTC::ConnectorDataListenerT}!operator()@{operator()}}
+\index{operator()@{operator()}!RTC::ConnectorDataListenerT@{RTC::ConnectorDataListenerT}}
+\subsubsection[{operator()}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class DataType $>$ virtual void {\bf RTC::ConnectorDataListenerT}$<$ DataType $>$::operator() (const {\bf ConnectorInfo} \& {\em info}, \/  const cdrMemoryStream \& {\em cdrdata})\hspace{0.3cm}{\ttfamily  [inline, virtual]}}\label{classRTC_1_1ConnectorDataListenerT_a6d87ccd84018b4e5437336cbe7f9c72c}
+
+
+Callback method. 
+
+This method invokes the callback method of \doxyref{ConnectorDataListenerT}{p.}{classRTC_1_1ConnectorDataListenerT}. Data is converted into the variable type used in DataPort.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em info}]\doxyref{ConnectorInfo}{p.}{classRTC_1_1ConnectorInfo} \item[{\em cdrdata}]Data of cdrMemoryStream type \end{DoxyParams}
+
+
+Implements {\bf RTC::ConnectorDataListener} \doxyref{}{p.}{classRTC_1_1ConnectorDataListener_a3306cb3544db5d164c5917adddbfc298}.
+
+
+
+References coil::Properties::getProperty(), coil::normalize(), RTC::ConnectorInfo::properties, and coil::split().
+

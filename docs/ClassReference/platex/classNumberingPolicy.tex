@@ -1,0 +1,91 @@
+\section{クラス NumberingPolicy}
+\label{classNumberingPolicy}\index{NumberingPolicy@{NumberingPolicy}}
+
+
+オブジェクト生成時ネーミング・ポリシー(命名規則)管理用抽象クラス  
+
+
+
+
+{\ttfamily \#include $<$NumberingPolicy.h$>$}
+
+NumberingPolicyに対する継承グラフ\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2cm]{classNumberingPolicy}
+\end{center}
+\end{figure}
+\subsection*{構成}
+\begin{DoxyCompactItemize}
+\item 
+struct {\bf ObjectNotFound}
+\begin{DoxyCompactList}\small\item\em オブジェクト未発見例外処理用構造体 \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public メソッド}
+\begin{DoxyCompactItemize}
+\item 
+virtual {\bf $\sim$NumberingPolicy} (void)
+\begin{DoxyCompactList}\small\item\em 仮想デストラクタ \item\end{DoxyCompactList}\item 
+virtual std::string {\bf onCreate} (void $\ast$obj)=0
+\begin{DoxyCompactList}\small\item\em オブジェクト生成時の名称作成 \item\end{DoxyCompactList}\item 
+virtual void {\bf onDelete} (void $\ast$obj)=0
+\begin{DoxyCompactList}\small\item\em オブジェクト削除時の名称解放 \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{説明}
+オブジェクト生成時ネーミング・ポリシー(命名規則)管理用抽象クラス オブジェクトを生成する際のネーミング・ポリシー(命名規則)を管理するための 抽象インターフェースクラス。 具象クラスは、以下の純粋仮想関数の実装を提供しなければならない。
+\begin{DoxyItemize}
+\item \doxyref{onCreate()}{p.}{classNumberingPolicy_a5a24d7cdf2cff8c97b1c798114504c31} : オブジェクト生成時の名称作成
+\item \doxyref{onDelete()}{p.}{classNumberingPolicy_a0bc5ddc2193e6415142327b4a5814d86} : オブジェクト削除時の名称解放
+\end{DoxyItemize}
+
+\begin{DoxySince}{から}
+0.4.0 
+\end{DoxySince}
+
+
+\subsection{コンストラクタとデストラクタ}
+\index{NumberingPolicy@{NumberingPolicy}!$\sim$NumberingPolicy@{$\sim$NumberingPolicy}}
+\index{$\sim$NumberingPolicy@{$\sim$NumberingPolicy}!NumberingPolicy@{NumberingPolicy}}
+\subsubsection[{$\sim$NumberingPolicy}]{\setlength{\rightskip}{0pt plus 5cm}virtual NumberingPolicy::$\sim$NumberingPolicy (void)\hspace{0.3cm}{\ttfamily  [inline, virtual]}}\label{classNumberingPolicy_a07bd719848068793ca84f4ce87f57db7}
+
+
+仮想デストラクタ 
+
+
+
+\subsection{関数}
+\index{NumberingPolicy@{NumberingPolicy}!onCreate@{onCreate}}
+\index{onCreate@{onCreate}!NumberingPolicy@{NumberingPolicy}}
+\subsubsection[{onCreate}]{\setlength{\rightskip}{0pt plus 5cm}virtual std::string NumberingPolicy::onCreate (void $\ast$ {\em obj})\hspace{0.3cm}{\ttfamily  [pure virtual]}}\label{classNumberingPolicy_a5a24d7cdf2cff8c97b1c798114504c31}
+
+
+オブジェクト生成時の名称作成 
+
+オブジェクト生成時の名称を生成するための純粋仮想関数
+
+
+\begin{DoxyParams}{引数}
+\item[{\em obj}]名称生成対象オブジェクト\end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+生成したオブジェクト名称 
+\end{DoxyReturn}
+
+
+{\bf DefaultNumberingPolicy} \doxyref{}{p.}{classDefaultNumberingPolicy_ad446abe9c24085dc3676a316e0d5da0c}で実装されています。
+
+\index{NumberingPolicy@{NumberingPolicy}!onDelete@{onDelete}}
+\index{onDelete@{onDelete}!NumberingPolicy@{NumberingPolicy}}
+\subsubsection[{onDelete}]{\setlength{\rightskip}{0pt plus 5cm}virtual void NumberingPolicy::onDelete (void $\ast$ {\em obj})\hspace{0.3cm}{\ttfamily  [pure virtual]}}\label{classNumberingPolicy_a0bc5ddc2193e6415142327b4a5814d86}
+
+
+オブジェクト削除時の名称解放 
+
+オブジェクト削除時に名称を解放するための純粋仮想関数
+
+
+\begin{DoxyParams}{引数}
+\item[{\em obj}]名称解放対象オブジェクト \end{DoxyParams}
+
+
+{\bf DefaultNumberingPolicy} \doxyref{}{p.}{classDefaultNumberingPolicy_a216be8d1b29ecf328f04f98516364182}で実装されています。
+

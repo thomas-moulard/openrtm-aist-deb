@@ -1,0 +1,123 @@
+\section{クラス RTC::Manager::Terminator}
+\label{classRTC_1_1Manager_1_1Terminator}\index{RTC::Manager::Terminator@{RTC::Manager::Terminator}}
+
+
+\doxyref{Terminator}{p.}{classRTC_1_1Manager_1_1Terminator} クラス.  
+
+
+
+
+{\ttfamily \#include $<$Manager.h$>$}
+
+RTC::Manager::Terminatorに対する継承グラフ\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2cm]{classRTC_1_1Manager_1_1Terminator}
+\end{center}
+\end{figure}
+\subsection*{Public メソッド}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Terminator} ({\bf Manager} $\ast${\bf manager})
+\begin{DoxyCompactList}\small\item\em コンストラクタ \item\end{DoxyCompactList}\item 
+void {\bf terminate} ()
+\begin{DoxyCompactList}\small\item\em 終了処理 \item\end{DoxyCompactList}\item 
+virtual int {\bf open} (void $\ast$args)
+\begin{DoxyCompactList}\small\item\em 終了処理活性化処理 \item\end{DoxyCompactList}\item 
+virtual int {\bf svc} (void)
+\begin{DoxyCompactList}\small\item\em ORB，マネージャ終了処理. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public 変数}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Manager} $\ast$ {\bf m\_\-manager}
+\end{DoxyCompactItemize}
+
+
+\subsection{説明}
+\doxyref{Terminator}{p.}{classRTC_1_1Manager_1_1Terminator} クラス. ORB 終了用ヘルパークラス。
+
+\begin{DoxySince}{から}
+0.4.0 
+\end{DoxySince}
+
+
+\subsection{コンストラクタとデストラクタ}
+\index{RTC::Manager::Terminator@{RTC::Manager::Terminator}!Terminator@{Terminator}}
+\index{Terminator@{Terminator}!RTC::Manager::Terminator@{RTC::Manager::Terminator}}
+\subsubsection[{Terminator}]{\setlength{\rightskip}{0pt plus 5cm}RTC::Manager::Terminator::Terminator ({\bf Manager} $\ast$ {\em manager})\hspace{0.3cm}{\ttfamily  [inline]}}\label{classRTC_1_1Manager_1_1Terminator_a126722e8ffa8ff7a0e72cd8b6ad573a8}
+
+
+コンストラクタ 
+
+コンストラクタ
+
+
+\begin{DoxyParams}{引数}
+\item[{\em manager}]マネージャ・オブジェクト \end{DoxyParams}
+
+
+\subsection{関数}
+\index{RTC::Manager::Terminator@{RTC::Manager::Terminator}!open@{open}}
+\index{open@{open}!RTC::Manager::Terminator@{RTC::Manager::Terminator}}
+\subsubsection[{open}]{\setlength{\rightskip}{0pt plus 5cm}virtual int RTC::Manager::Terminator::open (void $\ast$ {\em args})\hspace{0.3cm}{\ttfamily  [inline, virtual]}}\label{classRTC_1_1Manager_1_1Terminator_ae6fb66641a477fc91a7aca38e49eb0fa}
+
+
+終了処理活性化処理 
+
+終了処理活性化処理
+
+
+\begin{DoxyParams}{引数}
+\item[{\em args}]活性化時引数\end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+活性化結果 
+\end{DoxyReturn}
+
+
+{\bf coil::Task} \doxyref{}{p.}{classcoil_1_1Task_af964d1b21ddf53987e8190cb4e5d9613}を再定義しています。
+
+
+
+参照先 coil::Task::activate().
+
+
+
+参照元 terminate().
+
+\index{RTC::Manager::Terminator@{RTC::Manager::Terminator}!svc@{svc}}
+\index{svc@{svc}!RTC::Manager::Terminator@{RTC::Manager::Terminator}}
+\subsubsection[{svc}]{\setlength{\rightskip}{0pt plus 5cm}virtual int RTC::Manager::Terminator::svc (void)\hspace{0.3cm}{\ttfamily  [inline, virtual]}}\label{classRTC_1_1Manager_1_1Terminator_a7b02960ecfb120c5531278607c1cac64}
+
+
+ORB，マネージャ終了処理. 
+
+ORB，マネージャ終了処理
+
+\begin{DoxyReturn}{戻り値}
+終了処理結果 
+\end{DoxyReturn}
+
+
+{\bf coil::Task} \doxyref{}{p.}{classcoil_1_1Task_ae68f22a4afbe8cddde1fe910bc3dd226}を再定義しています。
+
+
+
+参照先 RTC::Manager::instance(), と RTC::Manager::shutdown().
+
+\index{RTC::Manager::Terminator@{RTC::Manager::Terminator}!terminate@{terminate}}
+\index{terminate@{terminate}!RTC::Manager::Terminator@{RTC::Manager::Terminator}}
+\subsubsection[{terminate}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::Manager::Terminator::terminate ()\hspace{0.3cm}{\ttfamily  [inline]}}\label{classRTC_1_1Manager_1_1Terminator_a6a77d32903875b3e8e0534ee91de8063}
+
+
+終了処理 
+
+ORB，マネージャ終了処理を開始する。 
+
+参照先 open().
+
+
+
+\subsection{変数}
+\index{RTC::Manager::Terminator@{RTC::Manager::Terminator}!m\_\-manager@{m\_\-manager}}
+\index{m\_\-manager@{m\_\-manager}!RTC::Manager::Terminator@{RTC::Manager::Terminator}}
+\subsubsection[{m\_\-manager}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Manager}$\ast$ {\bf RTC::Manager::Terminator::m\_\-manager}}\label{classRTC_1_1Manager_1_1Terminator_aabdddfd3a89c4f91c32fc422db1fd14f}

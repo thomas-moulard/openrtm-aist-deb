@@ -1,0 +1,99 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<title>OpenRTM: ConnectorBase.h ソースファイル</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<!-- 作成： Doxygen 1.6.3 -->
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="index.html"><span>メインページ</span></a></li>
+      <li><a href="namespaces.html"><span>ネームスペース</span></a></li>
+      <li><a href="annotated.html"><span>クラス</span></a></li>
+      <li class="current"><a href="files.html"><span>ファイル</span></a></li>
+    </ul>
+  </div>
+  <div class="tabs">
+    <ul>
+      <li><a href="files.html"><span>ファイル一覧</span></a></li>
+      <li><a href="globals.html"><span>ファイルメンバ</span></a></li>
+    </ul>
+  </div>
+<h1>ConnectorBase.h</h1><a href="ConnectorBase_8h.html">説明を見る。</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="comment">// -*- C++ -*-</span>
+<a name="l00020"></a>00020 <span class="comment"></span><span class="preprocessor">#ifndef RTC_CONNECTORBASE_H</span>
+<a name="l00021"></a>00021 <span class="preprocessor"></span><span class="preprocessor">#define RTC_CONNECTORBASE_H</span>
+<a name="l00022"></a>00022 <span class="preprocessor"></span>
+<a name="l00023"></a>00023 <span class="preprocessor">#include &lt;<a class="code" href="stringutil_8h.html">coil/stringutil.h</a>&gt;</span>
+<a name="l00024"></a>00024 <span class="preprocessor">#include &lt;<a class="code" href="Properties_8h.html" title="Property list class (derived from Java Properties).">coil/Properties.h</a>&gt;</span>
+<a name="l00025"></a>00025 
+<a name="l00026"></a>00026 <span class="preprocessor">#include &lt;<a class="code" href="RTC_8h.html" title="RTComponent header.">rtm/RTC.h</a>&gt;</span>
+<a name="l00027"></a>00027 <span class="preprocessor">#include &lt;<a class="code" href="CdrBufferBase_8h.html">rtm/CdrBufferBase.h</a>&gt;</span>
+<a name="l00028"></a>00028 <span class="preprocessor">#include &lt;<a class="code" href="DataPortStatus_8h.html" title="DataPortStatus class.">rtm/DataPortStatus.h</a>&gt;</span>
+<a name="l00029"></a>00029 <span class="preprocessor">#include &lt;<a class="code" href="SystemLogger_8h.html" title="RT component logger class.">rtm/SystemLogger.h</a>&gt;</span>
+<a name="l00030"></a>00030 
+<a name="l00031"></a>00031 <span class="keyword">namespace </span>RTC
+<a name="l00032"></a>00032 {
+<a name="l00043"></a><a class="code" href="classRTC_1_1ConnectorInfo.html">00043</a>   <span class="keyword">class </span><a class="code" href="classRTC_1_1ConnectorInfo.html" title="ConnectorInfo クラス.">ConnectorInfo</a>
+<a name="l00044"></a>00044   {
+<a name="l00045"></a>00045   <span class="keyword">public</span>:
+<a name="l00071"></a><a class="code" href="classRTC_1_1ConnectorInfo.html#af4d6c063f07b31ee3ee79028cffdf1f8">00071</a>     <a class="code" href="classRTC_1_1ConnectorInfo.html#a35326894f5367b961eadccf0e8da98c3">ConnectorInfo</a>(<span class="keyword">const</span> <span class="keywordtype">char</span>* name_, <span class="keyword">const</span> <span class="keywordtype">char</span>* id_,
+<a name="l00072"></a>00072                   <a class="code" href="namespacecoil.html#ac44b80f207f9471f2cc10a0e4202f9ea">coil::vstring</a> ports_, <a class="code" href="classcoil_1_1Properties.html" title="プロパティセットを表現するクラス">coil::Properties</a> properties_)
+<a name="l00073"></a>00073       : <a class="code" href="classRTC_1_1ConnectorInfo.html#a7cf9f73a6b055dc52f62d6b7cd92e97d" title="接続名前">name</a>(name_), <a class="code" href="classRTC_1_1ConnectorInfo.html#ab5bef6c4b11d73cc51d8949950a4e969" title="接続ID">id</a>(id_)
+<a name="l00074"></a>00074       , <a class="code" href="classRTC_1_1ConnectorInfo.html#a2424113611e0cdd498f526ac58f67fba" title="接続ポートIOR">ports</a>(ports_), <a class="code" href="classRTC_1_1ConnectorInfo.html#a480039d0964d885b3cac8e6d1ec64584" title="プロパティ">properties</a>(properties_)
+<a name="l00075"></a>00075     {
+<a name="l00076"></a>00076     }
+<a name="l00092"></a><a class="code" href="classRTC_1_1ConnectorInfo.html#a35326894f5367b961eadccf0e8da98c3">00092</a>     <a class="code" href="classRTC_1_1ConnectorInfo.html#a35326894f5367b961eadccf0e8da98c3">ConnectorInfo</a>()
+<a name="l00093"></a>00093     {
+<a name="l00094"></a>00094     }
+<a name="l00102"></a><a class="code" href="classRTC_1_1ConnectorInfo.html#a7cf9f73a6b055dc52f62d6b7cd92e97d">00102</a>     std::string <a class="code" href="classRTC_1_1ConnectorInfo.html#a7cf9f73a6b055dc52f62d6b7cd92e97d" title="接続名前">name</a>;
+<a name="l00110"></a><a class="code" href="classRTC_1_1ConnectorInfo.html#ab5bef6c4b11d73cc51d8949950a4e969">00110</a>     std::string <a class="code" href="classRTC_1_1ConnectorInfo.html#ab5bef6c4b11d73cc51d8949950a4e969" title="接続ID">id</a>;
+<a name="l00118"></a><a class="code" href="classRTC_1_1ConnectorInfo.html#a2424113611e0cdd498f526ac58f67fba">00118</a>     <a class="code" href="namespacecoil.html#ac44b80f207f9471f2cc10a0e4202f9ea">coil::vstring</a> <a class="code" href="classRTC_1_1ConnectorInfo.html#a2424113611e0cdd498f526ac58f67fba" title="接続ポートIOR">ports</a>;
+<a name="l00126"></a><a class="code" href="classRTC_1_1ConnectorInfo.html#a480039d0964d885b3cac8e6d1ec64584">00126</a>     <a class="code" href="classcoil_1_1Properties.html" title="プロパティセットを表現するクラス">coil::Properties</a> <a class="code" href="classRTC_1_1ConnectorInfo.html#a480039d0964d885b3cac8e6d1ec64584" title="プロパティ">properties</a>;
+<a name="l00127"></a>00127   };
+<a name="l00128"></a>00128 
+<a name="l00129"></a><a class="code" href="namespaceRTC.html#afeb55822b3bb685ea943cf95c6320bdc">00129</a>   <span class="keyword">typedef</span> std::vector&lt;ConnectorInfo&gt; <a class="code" href="namespaceRTC.html#afeb55822b3bb685ea943cf95c6320bdc">ConnectorInfoList</a>;
+<a name="l00130"></a>00130 
+<a name="l00131"></a><a class="code" href="namespaceRTC.html#a53b269298489f7c383a74df05e71bc04">00131</a>   <span class="keyword">class </span><a class="code" href="classRTC_1_1ConnectorBase.html" title="Connector 基底クラス.">ConnectorBase</a>;
+<a name="l00132"></a>00132   <span class="keyword">typedef</span> std::vector&lt;ConnectorBase*&gt; <a class="code" href="namespaceRTC.html#a53b269298489f7c383a74df05e71bc04">ConnectorList</a>;
+<a name="l00133"></a>00133   
+<a name="l00134"></a>00134 
+<a name="l00156"></a><a class="code" href="classRTC_1_1ConnectorBase.html">00156</a>   <span class="keyword">class </span><a class="code" href="classRTC_1_1ConnectorBase.html" title="Connector 基底クラス.">ConnectorBase</a>
+<a name="l00157"></a>00157     : <span class="keyword">public</span> <a class="code" href="classRTC_1_1DataPortStatus.html" title="DataPortStatus mixin クラス.">DataPortStatus</a>
+<a name="l00158"></a>00158   {
+<a name="l00159"></a>00159   <span class="keyword">public</span>:
+<a name="l00160"></a>00160     <a class="code" href="DataPortStatus_8h.html#a71942892127d0f2995c2610b1e22ef23" title="RTC::DataPortStatus 導入">DATAPORTSTATUS_ENUM</a>
+<a name="l00161"></a>00161 
+<a name="l00191"></a><a class="code" href="classRTC_1_1ConnectorBase.html#afa5e1e6f1924c4f6e90b1e7a2efd869e">00191</a>     <span class="keyword">virtual</span> <a class="code" href="classRTC_1_1ConnectorBase.html#afa5e1e6f1924c4f6e90b1e7a2efd869e" title="デストラクタ">~ConnectorBase</a>(){};
+<a name="l00192"></a>00192 
+<a name="l00206"></a>00206     <span class="keyword">virtual</span> <span class="keyword">const</span> <a class="code" href="classRTC_1_1ConnectorInfo.html" title="ConnectorInfo クラス.">ConnectorInfo</a>&amp; <a class="code" href="classRTC_1_1ConnectorBase.html#a8bd2e9cbd6a9341ec4c97416dcf981c7" title="Profile 取得.">profile</a>() = 0;
+<a name="l00207"></a>00207 
+<a name="l00221"></a>00221     <span class="keyword">virtual</span> <span class="keyword">const</span> <span class="keywordtype">char</span>* <a class="code" href="classRTC_1_1ConnectorBase.html#ae2cc57833a7e28f0e605222ecb63e219" title="Connector ID 取得.">id</a>() = 0;
+<a name="l00222"></a>00222 
+<a name="l00236"></a>00236     <span class="keyword">virtual</span> <span class="keyword">const</span> <span class="keywordtype">char</span>* <a class="code" href="classRTC_1_1ConnectorBase.html#a73e002174dc02ec4830c624e7fd96b43" title="Connector 名取得.">name</a>() = 0;
+<a name="l00237"></a>00237 
+<a name="l00251"></a>00251     <span class="keyword">virtual</span> ReturnCode <a class="code" href="classRTC_1_1ConnectorBase.html#a17b1e3bb26ccb844ef2952661977768c" title="接続解除関数">disconnect</a>() = 0;
+<a name="l00252"></a>00252 
+<a name="l00266"></a>00266     <span class="keyword">virtual</span> <a class="code" href="classRTC_1_1BufferBase.html" title="BufferBase 抽象クラス.">CdrBufferBase</a>* <a class="code" href="classRTC_1_1ConnectorBase.html#ad06710a5e9e1862ed50d4a4411c2927d" title="Buffer を取得する.">getBuffer</a>() = 0;
+<a name="l00267"></a>00267 
+<a name="l00282"></a>00282     <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classRTC_1_1ConnectorBase.html#a6f7f9ddd882546044f911d66aefee665" title="アクティブ化">activate</a>() = 0;
+<a name="l00283"></a>00283 
+<a name="l00298"></a>00298     <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classRTC_1_1ConnectorBase.html#a8fe6a1bfe8d5ee586d51293b2bcf36d1" title="非アクティブ化">deactivate</a>() = 0;
+<a name="l00299"></a>00299 
+<a name="l00300"></a>00300   <span class="keyword">private</span>:
+<a name="l00301"></a>00301     <span class="comment">// non-copyable class</span>
+<a name="l00302"></a>00302     <span class="comment">//    ConnectorBase(const ConnectorBase&amp; x);</span>
+<a name="l00303"></a>00303     <span class="comment">//    ConnectorBase&amp; operator=(const ConnectorBase&amp; x);</span>
+<a name="l00304"></a>00304   };
+<a name="l00305"></a>00305 }; <span class="comment">// namespace RTC</span>
+<a name="l00306"></a>00306 
+<a name="l00307"></a>00307 <span class="preprocessor">#endif // RTC_CONNECTORBASE_H</span>
+</pre></div></div>
+<hr class="footer"/><address style="text-align: right;"><small>OpenRTMに対してThu May 24 23:25:18 2012に生成されました。&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.6.3 </small></address>
+</body>
+</html>

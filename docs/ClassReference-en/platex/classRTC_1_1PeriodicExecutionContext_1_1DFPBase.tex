@@ -1,0 +1,326 @@
+\section{RTC::PeriodicExecutionContext::DFPBase Class Reference}
+\label{classRTC_1_1PeriodicExecutionContext_1_1DFPBase}\index{RTC::PeriodicExecutionContext::DFPBase@{RTC::PeriodicExecutionContext::DFPBase}}
+
+
+\doxyref{DFPBase}{p.}{classRTC_1_1PeriodicExecutionContext_1_1DFPBase} class.  
+
+
+
+
+{\ttfamily \#include $<$PeriodicExecutionContext.h$>$}
+
+Inheritance diagram for RTC::PeriodicExecutionContext::DFPBase:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2cm]{classRTC_1_1PeriodicExecutionContext_1_1DFPBase}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf DFPBase} (RTC::ExecutionContextHandle\_\-t id)
+\begin{DoxyCompactList}\small\item\em Constructor. \item\end{DoxyCompactList}\item 
+virtual {\bf $\sim$DFPBase} (void)
+\begin{DoxyCompactList}\small\item\em Destructor. \item\end{DoxyCompactList}\item 
+virtual void {\bf on\_\-startup} (void)=0
+\begin{DoxyCompactList}\small\item\em Pure virtual function to be invoked when ExecutionContext starts. \item\end{DoxyCompactList}\item 
+virtual void {\bf on\_\-shutdown} (void)=0
+\begin{DoxyCompactList}\small\item\em Pure virtual function to be invoked when ExecutionContext stops. \item\end{DoxyCompactList}\item 
+virtual void {\bf on\_\-activated} (const {\bf ECStates} \&st)=0
+\begin{DoxyCompactList}\small\item\em Pure virtual function to be invoked when RT-\/Component is activated. \item\end{DoxyCompactList}\item 
+virtual void {\bf on\_\-deactivated} (const {\bf ECStates} \&st)=0
+\begin{DoxyCompactList}\small\item\em Pure virtual function to be invoked when RT-\/Component is deactivated. \item\end{DoxyCompactList}\item 
+virtual void {\bf on\_\-aborting} (const {\bf ECStates} \&st)=0
+\begin{DoxyCompactList}\small\item\em Pure virtual function to be invoked when RT-\/Component occurs error. \item\end{DoxyCompactList}\item 
+virtual void {\bf on\_\-error} (const {\bf ECStates} \&st)=0
+\begin{DoxyCompactList}\small\item\em Pure virtual function to be invoked while RT-\/Component is in the error state. \item\end{DoxyCompactList}\item 
+virtual void {\bf on\_\-reset} (const {\bf ECStates} \&st)=0
+\begin{DoxyCompactList}\small\item\em Pure virtual function to be invoked when RT-\/Component resets. \item\end{DoxyCompactList}\item 
+virtual void {\bf on\_\-execute} (const {\bf ECStates} \&st)=0
+\begin{DoxyCompactList}\small\item\em Pure virtual function to be periodically invoked while RT-\/Component is running. \item\end{DoxyCompactList}\item 
+virtual void {\bf on\_\-state\_\-update} (const {\bf ECStates} \&st)=0
+\begin{DoxyCompactList}\small\item\em Pure virtual function to be periodically invoked while RT-\/Component is running. \item\end{DoxyCompactList}\item 
+virtual void {\bf on\_\-rate\_\-changed} (void)=0
+\begin{DoxyCompactList}\small\item\em Pure virtual function to be invoked when when the execution cycles of ExecutionContext is changed. \item\end{DoxyCompactList}\item 
+virtual void {\bf worker} (void)
+\begin{DoxyCompactList}\small\item\em Get the worker to execute the state transition. \item\end{DoxyCompactList}\item 
+virtual {\bf ExecContextState} {\bf get\_\-state} (void)
+\begin{DoxyCompactList}\small\item\em Get the current state of the target component. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+ExecutionContextHandle\_\-t {\bf ec\_\-id}
+\begin{DoxyCompactList}\small\item\em ID of participating ExecutionContext. \item\end{DoxyCompactList}\item 
+{\bf RTC\_\-Utils::StateMachine}$<$ {\bf ExecContextState}, {\bf DFPBase} $>$ {\bf m\_\-sm}
+\begin{DoxyCompactList}\small\item\em The state machine of the target RT-\/Component to manage. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\doxyref{DFPBase}{p.}{classRTC_1_1PeriodicExecutionContext_1_1DFPBase} class. The abstract class to manage DataFlowParticipant registered in tha participant list.
+
+\begin{DoxySince}{Since}
+0.4.0 
+\end{DoxySince}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{RTC::PeriodicExecutionContext::DFPBase@{RTC::PeriodicExecutionContext::DFPBase}!DFPBase@{DFPBase}}
+\index{DFPBase@{DFPBase}!RTC::PeriodicExecutionContext::DFPBase@{RTC::PeriodicExecutionContext::DFPBase}}
+\subsubsection[{DFPBase}]{\setlength{\rightskip}{0pt plus 5cm}RTC::PeriodicExecutionContext::DFPBase::DFPBase (RTC::ExecutionContextHandle\_\-t {\em id})\hspace{0.3cm}{\ttfamily  [inline]}}\label{classRTC_1_1PeriodicExecutionContext_1_1DFPBase_a3319f153362c46e858a0fdcc0f2568d8}
+
+
+Constructor. 
+
+Constructor
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em id}]ID of participating ExecutionContext \end{DoxyParams}
+
+
+References RTC\_\-Utils::StateHolder$<$ State $>$::curr, RTC\_\-Utils::StateHolder$<$ State $>$::next, on\_\-aborting(), on\_\-activated(), on\_\-deactivated(), on\_\-error(), on\_\-execute(), on\_\-reset(), on\_\-state\_\-update(), and RTC\_\-Utils::StateHolder$<$ State $>$::prev.
+
+\index{RTC::PeriodicExecutionContext::DFPBase@{RTC::PeriodicExecutionContext::DFPBase}!$\sim$DFPBase@{$\sim$DFPBase}}
+\index{$\sim$DFPBase@{$\sim$DFPBase}!RTC::PeriodicExecutionContext::DFPBase@{RTC::PeriodicExecutionContext::DFPBase}}
+\subsubsection[{$\sim$DFPBase}]{\setlength{\rightskip}{0pt plus 5cm}virtual RTC::PeriodicExecutionContext::DFPBase::$\sim$DFPBase (void)\hspace{0.3cm}{\ttfamily  [inline, virtual]}}\label{classRTC_1_1PeriodicExecutionContext_1_1DFPBase_a382e8b3d00a1e71244e8ef63989c631c}
+
+
+Destructor. 
+
+Destructor 
+
+\subsection{Member Function Documentation}
+\index{RTC::PeriodicExecutionContext::DFPBase@{RTC::PeriodicExecutionContext::DFPBase}!get\_\-state@{get\_\-state}}
+\index{get\_\-state@{get\_\-state}!RTC::PeriodicExecutionContext::DFPBase@{RTC::PeriodicExecutionContext::DFPBase}}
+\subsubsection[{get\_\-state}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf ExecContextState} RTC::PeriodicExecutionContext::DFPBase::get\_\-state (void)\hspace{0.3cm}{\ttfamily  [inline, virtual]}}\label{classRTC_1_1PeriodicExecutionContext_1_1DFPBase_a9cb860e561b642df7ae8dbfb089f71e1}
+
+
+Get the current state of the target component. 
+
+Get the current state of the target component to manage
+
+\begin{DoxyReturn}{Returns}
+The current state of the target RT-\/Component 
+\end{DoxyReturn}
+\index{RTC::PeriodicExecutionContext::DFPBase@{RTC::PeriodicExecutionContext::DFPBase}!on\_\-aborting@{on\_\-aborting}}
+\index{on\_\-aborting@{on\_\-aborting}!RTC::PeriodicExecutionContext::DFPBase@{RTC::PeriodicExecutionContext::DFPBase}}
+\subsubsection[{on\_\-aborting}]{\setlength{\rightskip}{0pt plus 5cm}virtual void RTC::PeriodicExecutionContext::DFPBase::on\_\-aborting (const {\bf ECStates} \& {\em st})\hspace{0.3cm}{\ttfamily  [pure virtual]}}\label{classRTC_1_1PeriodicExecutionContext_1_1DFPBase_a4326e1e3a6fd23cd534c37016a9d6ff6}
+
+
+Pure virtual function to be invoked when RT-\/Component occurs error. 
+
+Pure virtual function to be invoked when the \doxyref{RTC}{p.}{namespaceRTC} is transiting from the Active state to the Error state in some execution context.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em st}]The current state of the target RT-\/Component \end{DoxyParams}
+
+
+Implemented in {\bf RTC::PeriodicExecutionContext::DFP$<$ Object $>$} \doxyref{}{p.}{classRTC_1_1PeriodicExecutionContext_1_1DFP_a56b2f4893a7fd424fc744892581057d7}, and {\bf RTC::PeriodicExecutionContext::DFP$<$ OpenRTM::DataFlowComponent\_\-var $>$} \doxyref{}{p.}{classRTC_1_1PeriodicExecutionContext_1_1DFP_a56b2f4893a7fd424fc744892581057d7}.
+
+
+
+Referenced by DFPBase().
+
+\index{RTC::PeriodicExecutionContext::DFPBase@{RTC::PeriodicExecutionContext::DFPBase}!on\_\-activated@{on\_\-activated}}
+\index{on\_\-activated@{on\_\-activated}!RTC::PeriodicExecutionContext::DFPBase@{RTC::PeriodicExecutionContext::DFPBase}}
+\subsubsection[{on\_\-activated}]{\setlength{\rightskip}{0pt plus 5cm}virtual void RTC::PeriodicExecutionContext::DFPBase::on\_\-activated (const {\bf ECStates} \& {\em st})\hspace{0.3cm}{\ttfamily  [pure virtual]}}\label{classRTC_1_1PeriodicExecutionContext_1_1DFPBase_a7617ab4164f5516ee411a23273577148}
+
+
+Pure virtual function to be invoked when RT-\/Component is activated. 
+
+Pure virtual function to be invoked when the \doxyref{RTC}{p.}{namespaceRTC} has been activated in the given execution context.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em st}]The current state of the target RT-\/Component \end{DoxyParams}
+
+
+Implemented in {\bf RTC::PeriodicExecutionContext::DFP$<$ Object $>$} \doxyref{}{p.}{classRTC_1_1PeriodicExecutionContext_1_1DFP_aab354f4aec81a3de94c897d42a08814c}, and {\bf RTC::PeriodicExecutionContext::DFP$<$ OpenRTM::DataFlowComponent\_\-var $>$} \doxyref{}{p.}{classRTC_1_1PeriodicExecutionContext_1_1DFP_aab354f4aec81a3de94c897d42a08814c}.
+
+
+
+Referenced by DFPBase().
+
+\index{RTC::PeriodicExecutionContext::DFPBase@{RTC::PeriodicExecutionContext::DFPBase}!on\_\-deactivated@{on\_\-deactivated}}
+\index{on\_\-deactivated@{on\_\-deactivated}!RTC::PeriodicExecutionContext::DFPBase@{RTC::PeriodicExecutionContext::DFPBase}}
+\subsubsection[{on\_\-deactivated}]{\setlength{\rightskip}{0pt plus 5cm}virtual void RTC::PeriodicExecutionContext::DFPBase::on\_\-deactivated (const {\bf ECStates} \& {\em st})\hspace{0.3cm}{\ttfamily  [pure virtual]}}\label{classRTC_1_1PeriodicExecutionContext_1_1DFPBase_afdb8f5efa070e18e5aecf34e117c4916}
+
+
+Pure virtual function to be invoked when RT-\/Component is deactivated. 
+
+Pure virtual function to be invoked when the \doxyref{RTC}{p.}{namespaceRTC} has been deactivated in the given execution context.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em st}]The current state of the target RT-\/Component \end{DoxyParams}
+
+
+Implemented in {\bf RTC::PeriodicExecutionContext::DFP$<$ Object $>$} \doxyref{}{p.}{classRTC_1_1PeriodicExecutionContext_1_1DFP_aa0b4398840866335bfd3a35aa2a1378c}, and {\bf RTC::PeriodicExecutionContext::DFP$<$ OpenRTM::DataFlowComponent\_\-var $>$} \doxyref{}{p.}{classRTC_1_1PeriodicExecutionContext_1_1DFP_aa0b4398840866335bfd3a35aa2a1378c}.
+
+
+
+Referenced by DFPBase().
+
+\index{RTC::PeriodicExecutionContext::DFPBase@{RTC::PeriodicExecutionContext::DFPBase}!on\_\-error@{on\_\-error}}
+\index{on\_\-error@{on\_\-error}!RTC::PeriodicExecutionContext::DFPBase@{RTC::PeriodicExecutionContext::DFPBase}}
+\subsubsection[{on\_\-error}]{\setlength{\rightskip}{0pt plus 5cm}virtual void RTC::PeriodicExecutionContext::DFPBase::on\_\-error (const {\bf ECStates} \& {\em st})\hspace{0.3cm}{\ttfamily  [pure virtual]}}\label{classRTC_1_1PeriodicExecutionContext_1_1DFPBase_aabc82635a64722f77fa359a4f6308122}
+
+
+Pure virtual function to be invoked while RT-\/Component is in the error state. 
+
+If the \doxyref{RTC}{p.}{namespaceRTC} is in the Error state relative to some execution context when it would otherwise be invoked from that context. This operation shall be invoked in sorted order at the rate of the context instead of DataFlowComponentAction::on\_\-execute and on\_\-state\_\-update.The \doxyref{RTC}{p.}{namespaceRTC} is transitioning from the Active state to the Error state in some execution context.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em st}]The current state of the target RT-\/Component \end{DoxyParams}
+
+
+Implemented in {\bf RTC::PeriodicExecutionContext::DFP$<$ Object $>$} \doxyref{}{p.}{classRTC_1_1PeriodicExecutionContext_1_1DFP_a1921bae9d427aa285566e15bd08e6500}, and {\bf RTC::PeriodicExecutionContext::DFP$<$ OpenRTM::DataFlowComponent\_\-var $>$} \doxyref{}{p.}{classRTC_1_1PeriodicExecutionContext_1_1DFP_a1921bae9d427aa285566e15bd08e6500}.
+
+
+
+Referenced by DFPBase().
+
+\index{RTC::PeriodicExecutionContext::DFPBase@{RTC::PeriodicExecutionContext::DFPBase}!on\_\-execute@{on\_\-execute}}
+\index{on\_\-execute@{on\_\-execute}!RTC::PeriodicExecutionContext::DFPBase@{RTC::PeriodicExecutionContext::DFPBase}}
+\subsubsection[{on\_\-execute}]{\setlength{\rightskip}{0pt plus 5cm}virtual void RTC::PeriodicExecutionContext::DFPBase::on\_\-execute (const {\bf ECStates} \& {\em st})\hspace{0.3cm}{\ttfamily  [pure virtual]}}\label{classRTC_1_1PeriodicExecutionContext_1_1DFPBase_a4ac335580091c6300144717ed1ed4555}
+
+
+Pure virtual function to be periodically invoked while RT-\/Component is running. 
+
+This operation will be invoked periodically at the rate of the given execution context as long as the following conditions hold:
+\begin{DoxyItemize}
+\item The \doxyref{RTC}{p.}{namespaceRTC} is Active.
+\item The given execution context is Running. This callback occurs during the first execution pass.
+\end{DoxyItemize}
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em st}]The current state of the target RT-\/Component \end{DoxyParams}
+
+
+Implemented in {\bf RTC::PeriodicExecutionContext::DFP$<$ Object $>$} \doxyref{}{p.}{classRTC_1_1PeriodicExecutionContext_1_1DFP_ab44ccec81e068726d371929b0b955a25}, and {\bf RTC::PeriodicExecutionContext::DFP$<$ OpenRTM::DataFlowComponent\_\-var $>$} \doxyref{}{p.}{classRTC_1_1PeriodicExecutionContext_1_1DFP_ab44ccec81e068726d371929b0b955a25}.
+
+
+
+Referenced by DFPBase().
+
+\index{RTC::PeriodicExecutionContext::DFPBase@{RTC::PeriodicExecutionContext::DFPBase}!on\_\-rate\_\-changed@{on\_\-rate\_\-changed}}
+\index{on\_\-rate\_\-changed@{on\_\-rate\_\-changed}!RTC::PeriodicExecutionContext::DFPBase@{RTC::PeriodicExecutionContext::DFPBase}}
+\subsubsection[{on\_\-rate\_\-changed}]{\setlength{\rightskip}{0pt plus 5cm}virtual void RTC::PeriodicExecutionContext::DFPBase::on\_\-rate\_\-changed (void)\hspace{0.3cm}{\ttfamily  [pure virtual]}}\label{classRTC_1_1PeriodicExecutionContext_1_1DFPBase_a72fe285405c24be95d14f8c73ed993be}
+
+
+Pure virtual function to be invoked when when the execution cycles of ExecutionContext is changed. 
+
+This operation is a notification that the rate of the indicated execution context has changed. 
+
+Implemented in {\bf RTC::PeriodicExecutionContext::DFP$<$ Object $>$} \doxyref{}{p.}{classRTC_1_1PeriodicExecutionContext_1_1DFP_a283b40d3a75a439b2a0ac4f7e2740736}, and {\bf RTC::PeriodicExecutionContext::DFP$<$ OpenRTM::DataFlowComponent\_\-var $>$} \doxyref{}{p.}{classRTC_1_1PeriodicExecutionContext_1_1DFP_a283b40d3a75a439b2a0ac4f7e2740736}.
+
+\index{RTC::PeriodicExecutionContext::DFPBase@{RTC::PeriodicExecutionContext::DFPBase}!on\_\-reset@{on\_\-reset}}
+\index{on\_\-reset@{on\_\-reset}!RTC::PeriodicExecutionContext::DFPBase@{RTC::PeriodicExecutionContext::DFPBase}}
+\subsubsection[{on\_\-reset}]{\setlength{\rightskip}{0pt plus 5cm}virtual void RTC::PeriodicExecutionContext::DFPBase::on\_\-reset (const {\bf ECStates} \& {\em st})\hspace{0.3cm}{\ttfamily  [pure virtual]}}\label{classRTC_1_1PeriodicExecutionContext_1_1DFPBase_ad26d3a6118ce1f2b97527af86a8bb14d}
+
+
+Pure virtual function to be invoked when RT-\/Component resets. 
+
+The \doxyref{RTC}{p.}{namespaceRTC} is in the Error state. An attempt is being made to recover it such that it can return to the Inactive state. If the \doxyref{RTC}{p.}{namespaceRTC} was successfully recovered and can safely return to the Inactive state, this method shall complete with ReturnCode\_\-t::OK. Any other result shall indicate that the \doxyref{RTC}{p.}{namespaceRTC} should remain in the Error state.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em st}]The current state of the target RT-\/Component \end{DoxyParams}
+
+
+Implemented in {\bf RTC::PeriodicExecutionContext::DFP$<$ Object $>$} \doxyref{}{p.}{classRTC_1_1PeriodicExecutionContext_1_1DFP_adeb73de058b07b0abc6570c3e639cc5b}, and {\bf RTC::PeriodicExecutionContext::DFP$<$ OpenRTM::DataFlowComponent\_\-var $>$} \doxyref{}{p.}{classRTC_1_1PeriodicExecutionContext_1_1DFP_adeb73de058b07b0abc6570c3e639cc5b}.
+
+
+
+Referenced by DFPBase().
+
+\index{RTC::PeriodicExecutionContext::DFPBase@{RTC::PeriodicExecutionContext::DFPBase}!on\_\-shutdown@{on\_\-shutdown}}
+\index{on\_\-shutdown@{on\_\-shutdown}!RTC::PeriodicExecutionContext::DFPBase@{RTC::PeriodicExecutionContext::DFPBase}}
+\subsubsection[{on\_\-shutdown}]{\setlength{\rightskip}{0pt plus 5cm}virtual void RTC::PeriodicExecutionContext::DFPBase::on\_\-shutdown (void)\hspace{0.3cm}{\ttfamily  [pure virtual]}}\label{classRTC_1_1PeriodicExecutionContext_1_1DFPBase_a9acf5ba2d252539b0d853e5492177a1b}
+
+
+Pure virtual function to be invoked when ExecutionContext stops. 
+
+Pure virtual function to be invoked when given execution context, in which the \doxyref{RTC}{p.}{namespaceRTC} is participating, has transited from Running to Stopped. 
+
+Implemented in {\bf RTC::PeriodicExecutionContext::DFP$<$ Object $>$} \doxyref{}{p.}{classRTC_1_1PeriodicExecutionContext_1_1DFP_a312588691ba1da141cae496d74bb2b7f}, and {\bf RTC::PeriodicExecutionContext::DFP$<$ OpenRTM::DataFlowComponent\_\-var $>$} \doxyref{}{p.}{classRTC_1_1PeriodicExecutionContext_1_1DFP_a312588691ba1da141cae496d74bb2b7f}.
+
+\index{RTC::PeriodicExecutionContext::DFPBase@{RTC::PeriodicExecutionContext::DFPBase}!on\_\-startup@{on\_\-startup}}
+\index{on\_\-startup@{on\_\-startup}!RTC::PeriodicExecutionContext::DFPBase@{RTC::PeriodicExecutionContext::DFPBase}}
+\subsubsection[{on\_\-startup}]{\setlength{\rightskip}{0pt plus 5cm}virtual void RTC::PeriodicExecutionContext::DFPBase::on\_\-startup (void)\hspace{0.3cm}{\ttfamily  [pure virtual]}}\label{classRTC_1_1PeriodicExecutionContext_1_1DFPBase_a761ebe484557229fe21a6b6488567d2f}
+
+
+Pure virtual function to be invoked when ExecutionContext starts. 
+
+Pure virtual function to be invoked when given execution context, in which the \doxyref{RTC}{p.}{namespaceRTC} is participating, has transited from Stopped to Running. 
+
+Implemented in {\bf RTC::PeriodicExecutionContext::DFP$<$ Object $>$} \doxyref{}{p.}{classRTC_1_1PeriodicExecutionContext_1_1DFP_a79b7b4a99f8d2cd0dc407c1b326dcb85}, and {\bf RTC::PeriodicExecutionContext::DFP$<$ OpenRTM::DataFlowComponent\_\-var $>$} \doxyref{}{p.}{classRTC_1_1PeriodicExecutionContext_1_1DFP_a79b7b4a99f8d2cd0dc407c1b326dcb85}.
+
+\index{RTC::PeriodicExecutionContext::DFPBase@{RTC::PeriodicExecutionContext::DFPBase}!on\_\-state\_\-update@{on\_\-state\_\-update}}
+\index{on\_\-state\_\-update@{on\_\-state\_\-update}!RTC::PeriodicExecutionContext::DFPBase@{RTC::PeriodicExecutionContext::DFPBase}}
+\subsubsection[{on\_\-state\_\-update}]{\setlength{\rightskip}{0pt plus 5cm}virtual void RTC::PeriodicExecutionContext::DFPBase::on\_\-state\_\-update (const {\bf ECStates} \& {\em st})\hspace{0.3cm}{\ttfamily  [pure virtual]}}\label{classRTC_1_1PeriodicExecutionContext_1_1DFPBase_a840339510d7a4d0eef17f495638bbbc3}
+
+
+Pure virtual function to be periodically invoked while RT-\/Component is running. 
+
+This operation will be invoked periodically at the rate of the given execution context as long as the following conditions hold:
+\begin{DoxyItemize}
+\item The \doxyref{RTC}{p.}{namespaceRTC} is Active.
+\item The given execution context is Running. This callback occurs during the second execution pass.
+\end{DoxyItemize}
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em st}]The current state of the target RT-\/Component \end{DoxyParams}
+
+
+Implemented in {\bf RTC::PeriodicExecutionContext::DFP$<$ Object $>$} \doxyref{}{p.}{classRTC_1_1PeriodicExecutionContext_1_1DFP_a0689e39bbc51b091833c3cf5ef070297}, and {\bf RTC::PeriodicExecutionContext::DFP$<$ OpenRTM::DataFlowComponent\_\-var $>$} \doxyref{}{p.}{classRTC_1_1PeriodicExecutionContext_1_1DFP_a0689e39bbc51b091833c3cf5ef070297}.
+
+
+
+Referenced by DFPBase().
+
+\index{RTC::PeriodicExecutionContext::DFPBase@{RTC::PeriodicExecutionContext::DFPBase}!worker@{worker}}
+\index{worker@{worker}!RTC::PeriodicExecutionContext::DFPBase@{RTC::PeriodicExecutionContext::DFPBase}}
+\subsubsection[{worker}]{\setlength{\rightskip}{0pt plus 5cm}virtual void RTC::PeriodicExecutionContext::DFPBase::worker (void)\hspace{0.3cm}{\ttfamily  [inline, virtual]}}\label{classRTC_1_1PeriodicExecutionContext_1_1DFPBase_a1b1091320b7e68b0e20ccca6ac506534}
+
+
+Get the worker to execute the state transition. 
+
+Get the worker that executes the state transition of the target component to manage.
+
+\begin{DoxyReturn}{Returns}
+The worker 
+\end{DoxyReturn}
+
+
+Referenced by RTC::PeriodicExecutionContext::invoke\_\-worker::operator()().
+
+
+
+\subsection{Member Data Documentation}
+\index{RTC::PeriodicExecutionContext::DFPBase@{RTC::PeriodicExecutionContext::DFPBase}!ec\_\-id@{ec\_\-id}}
+\index{ec\_\-id@{ec\_\-id}!RTC::PeriodicExecutionContext::DFPBase@{RTC::PeriodicExecutionContext::DFPBase}}
+\subsubsection[{ec\_\-id}]{\setlength{\rightskip}{0pt plus 5cm}ExecutionContextHandle\_\-t {\bf RTC::PeriodicExecutionContext::DFPBase::ec\_\-id}}\label{classRTC_1_1PeriodicExecutionContext_1_1DFPBase_ac3e8abc57e496192d6291cc260901054}
+
+
+ID of participating ExecutionContext. 
+
+
+
+Referenced by RTC::PeriodicExecutionContext::DFP$<$ OpenRTM::DataFlowComponent\_\-var $>$::on\_\-aborting(), RTC::PeriodicExecutionContext::DFP$<$ OpenRTM::DataFlowComponent\_\-var $>$::on\_\-activated(), RTC::PeriodicExecutionContext::DFP$<$ OpenRTM::DataFlowComponent\_\-var $>$::on\_\-deactivated(), RTC::PeriodicExecutionContext::DFP$<$ OpenRTM::DataFlowComponent\_\-var $>$::on\_\-error(), RTC::PeriodicExecutionContext::DFP$<$ OpenRTM::DataFlowComponent\_\-var $>$::on\_\-execute(), RTC::PeriodicExecutionContext::DFP$<$ OpenRTM::DataFlowComponent\_\-var $>$::on\_\-rate\_\-changed(), RTC::PeriodicExecutionContext::DFP$<$ OpenRTM::DataFlowComponent\_\-var $>$::on\_\-reset(), RTC::PeriodicExecutionContext::DFP$<$ OpenRTM::DataFlowComponent\_\-var $>$::on\_\-shutdown(), RTC::PeriodicExecutionContext::DFP$<$ OpenRTM::DataFlowComponent\_\-var $>$::on\_\-startup(), RTC::PeriodicExecutionContext::DFP$<$ OpenRTM::DataFlowComponent\_\-var $>$::on\_\-state\_\-update(), and RTC::PeriodicExecutionContext::Comp::operator=().
+
+\index{RTC::PeriodicExecutionContext::DFPBase@{RTC::PeriodicExecutionContext::DFPBase}!m\_\-sm@{m\_\-sm}}
+\index{m\_\-sm@{m\_\-sm}!RTC::PeriodicExecutionContext::DFPBase@{RTC::PeriodicExecutionContext::DFPBase}}
+\subsubsection[{m\_\-sm}]{\setlength{\rightskip}{0pt plus 5cm}{\bf RTC\_\-Utils::StateMachine}$<${\bf ExecContextState}, {\bf DFPBase}$>$ {\bf RTC::PeriodicExecutionContext::DFPBase::m\_\-sm}}\label{classRTC_1_1PeriodicExecutionContext_1_1DFPBase_a0efcdc041f9f01491579acd729653a50}
+
+
+The state machine of the target RT-\/Component to manage. 
+
+
+
+Referenced by RTC::PeriodicExecutionContext::DFP$<$ OpenRTM::DataFlowComponent\_\-var $>$::on\_\-activated(), RTC::PeriodicExecutionContext::DFP$<$ OpenRTM::DataFlowComponent\_\-var $>$::on\_\-execute(), RTC::PeriodicExecutionContext::DFP$<$ OpenRTM::DataFlowComponent\_\-var $>$::on\_\-reset(), and RTC::PeriodicExecutionContext::DFP$<$ OpenRTM::DataFlowComponent\_\-var $>$::on\_\-state\_\-update().
+

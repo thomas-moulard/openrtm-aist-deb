@@ -1,0 +1,1206 @@
+\section{RTC::PortBase Class Reference}
+\label{classRTC_1_1PortBase}\index{RTC::PortBase@{RTC::PortBase}}
+
+
+Port base class.  
+
+
+
+
+{\ttfamily \#include $<$PortBase.h$>$}
+
+Inheritance diagram for RTC::PortBase:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3cm]{classRTC_1_1PortBase}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct {\bf find\_\-conn\_\-id}
+\begin{DoxyCompactList}\small\item\em Functor to find a ConnectorProfile named id. \item\end{DoxyCompactList}\item 
+struct {\bf find\_\-interface}
+\begin{DoxyCompactList}\small\item\em Functor to find interface from name and polarity. \item\end{DoxyCompactList}\item 
+struct {\bf find\_\-port\_\-ref}
+\begin{DoxyCompactList}\small\item\em Functor to find the object reference that is identical port\_\-ref. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf PortBase} (const char $\ast$name=\char`\"{}\char`\"{})
+\begin{DoxyCompactList}\small\item\em Constructor. \item\end{DoxyCompactList}\item 
+virtual {\bf $\sim$PortBase} (void)
+\begin{DoxyCompactList}\small\item\em Destructor. \item\end{DoxyCompactList}\item 
+virtual PortProfile $\ast$ {\bf get\_\-port\_\-profile} ()  throw (CORBA::SystemException)
+\begin{DoxyCompactList}\small\item\em [CORBA interface] Get the PortProfile of the Port \item\end{DoxyCompactList}\item 
+const PortProfile \& {\bf getPortProfile} () const 
+\begin{DoxyCompactList}\small\item\em Get the PortProfile of the Port. \item\end{DoxyCompactList}\item 
+virtual ConnectorProfileList $\ast$ {\bf get\_\-connector\_\-profiles} ()  throw (CORBA::SystemException)
+\begin{DoxyCompactList}\small\item\em [CORBA interface] Get the ConnectorProfileList of the Port \item\end{DoxyCompactList}\item 
+virtual ConnectorProfile $\ast$ {\bf get\_\-connector\_\-profile} (const char $\ast$connector\_\-id)  throw (CORBA::SystemException)
+\begin{DoxyCompactList}\small\item\em [CORBA interface] Get the ConnectorProfile \item\end{DoxyCompactList}\item 
+virtual ReturnCode\_\-t {\bf connect} (ConnectorProfile \&connector\_\-profile)  throw (CORBA::SystemException)
+\begin{DoxyCompactList}\small\item\em [CORBA interface] Connect the Port \item\end{DoxyCompactList}\item 
+virtual ReturnCode\_\-t {\bf notify\_\-connect} (ConnectorProfile \&connector\_\-profile)  throw (CORBA::SystemException)
+\begin{DoxyCompactList}\small\item\em [CORBA interface] Notify the Ports connection \item\end{DoxyCompactList}\item 
+virtual ReturnCode\_\-t {\bf disconnect} (const char $\ast$connector\_\-id)  throw (CORBA::SystemException)
+\begin{DoxyCompactList}\small\item\em [CORBA interface] Disconnect the Port \item\end{DoxyCompactList}\item 
+virtual ReturnCode\_\-t {\bf notify\_\-disconnect} (const char $\ast$connector\_\-id)  throw (CORBA::SystemException)
+\begin{DoxyCompactList}\small\item\em [CORBA interface] Notify the Ports disconnection \item\end{DoxyCompactList}\item 
+virtual ReturnCode\_\-t {\bf disconnect\_\-all} ()  throw (CORBA::SystemException)
+\begin{DoxyCompactList}\small\item\em [CORBA interface] Disconnect the All Ports \item\end{DoxyCompactList}\item 
+virtual void {\bf activateInterfaces} ()=0
+\begin{DoxyCompactList}\small\item\em Activate all Port interfaces. \item\end{DoxyCompactList}\item 
+virtual void {\bf deactivateInterfaces} ()=0
+\begin{DoxyCompactList}\small\item\em Deactivate all Port interfaces. \item\end{DoxyCompactList}\item 
+void {\bf setName} (const char $\ast$name)
+\begin{DoxyCompactList}\small\item\em Set the name of this Port. \item\end{DoxyCompactList}\item 
+const char $\ast$ {\bf getName} () const 
+\begin{DoxyCompactList}\small\item\em Get the name of this Port. \item\end{DoxyCompactList}\item 
+const PortProfile \& {\bf getProfile} () const 
+\begin{DoxyCompactList}\small\item\em Get the PortProfile of the Port. \item\end{DoxyCompactList}\item 
+void {\bf setPortRef} (PortService\_\-ptr port\_\-ref)
+\begin{DoxyCompactList}\small\item\em Set the object reference of this Port. \item\end{DoxyCompactList}\item 
+PortService\_\-ptr {\bf getPortRef} ()
+\begin{DoxyCompactList}\small\item\em Get the object reference of this Port. \item\end{DoxyCompactList}\item 
+void {\bf setOwner} (RTObject\_\-ptr owner)
+\begin{DoxyCompactList}\small\item\em Set the owner RTObject of the Port. \item\end{DoxyCompactList}\item 
+void {\bf setOnPublishInterfaces} ({\bf ConnectionCallback} $\ast$on\_\-publish)
+\begin{DoxyCompactList}\small\item\em Setting callback called on publish interfaces. \item\end{DoxyCompactList}\item 
+void {\bf setOnSubscribeInterfaces} ({\bf ConnectionCallback} $\ast$on\_\-subscribe)
+\begin{DoxyCompactList}\small\item\em Setting callback called on publish interfaces. \item\end{DoxyCompactList}\item 
+void {\bf setOnConnected} ({\bf ConnectionCallback} $\ast$on\_\-connected)
+\begin{DoxyCompactList}\small\item\em Setting callback called on connection established. \item\end{DoxyCompactList}\item 
+void {\bf setOnUnsubscribeInterfaces} ({\bf ConnectionCallback} $\ast$on\_\-subscribe)
+\begin{DoxyCompactList}\small\item\em Setting callback called on unsubscribe interfaces. \item\end{DoxyCompactList}\item 
+void {\bf setOnDisconnected} ({\bf ConnectionCallback} $\ast$on\_\-disconnected)
+\begin{DoxyCompactList}\small\item\em Setting callback called on disconnected. \item\end{DoxyCompactList}\item 
+void {\bf setOnConnectionLost} ({\bf ConnectionCallback} $\ast$on\_\-connection\_\-lost)
+\begin{DoxyCompactList}\small\item\em Setting callback called on connection lost. \item\end{DoxyCompactList}\item 
+void {\bf setPortConnectListenerHolder} ({\bf PortConnectListeners} $\ast$portconnListeners)
+\begin{DoxyCompactList}\small\item\em Setting \doxyref{PortConnectListener}{p.}{classRTC_1_1PortConnectListener} holder. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef {\bf coil::Guard}$<$ {\bf coil::Mutex} $>$ {\bf Guard}
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual ReturnCode\_\-t {\bf publishInterfaces} (ConnectorProfile \&connector\_\-profile)=0
+\begin{DoxyCompactList}\small\item\em Publish interface information. \item\end{DoxyCompactList}\item 
+virtual ReturnCode\_\-t {\bf connectNext} (ConnectorProfile \&connector\_\-profile)
+\begin{DoxyCompactList}\small\item\em Call \doxyref{notify\_\-connect()}{p.}{classRTC_1_1PortBase_a9bcc3c981a6649f37f3ad7eac31e5766} of the next Port. \item\end{DoxyCompactList}\item 
+virtual ReturnCode\_\-t {\bf disconnectNext} (ConnectorProfile \&connector\_\-profile)
+\begin{DoxyCompactList}\small\item\em Call \doxyref{notify\_\-disconnect()}{p.}{classRTC_1_1PortBase_ae78bb7882d22bca794bd0faa78452aca} of the next Port. \item\end{DoxyCompactList}\item 
+virtual ReturnCode\_\-t {\bf subscribeInterfaces} (const ConnectorProfile \&connector\_\-profile)=0
+\begin{DoxyCompactList}\small\item\em Publish interface information. \item\end{DoxyCompactList}\item 
+virtual void {\bf unsubscribeInterfaces} (const ConnectorProfile \&connector\_\-profile)=0
+\begin{DoxyCompactList}\small\item\em Disconnect interface connection. \item\end{DoxyCompactList}\item 
+virtual void {\bf setConnectionLimit} (int limit\_\-value)
+\begin{DoxyCompactList}\small\item\em Set the maximum number of connections. \item\end{DoxyCompactList}\item 
+virtual ReturnCode\_\-t {\bf \_\-publishInterfaces} (void)
+\begin{DoxyCompactList}\small\item\em Publish interface information. \item\end{DoxyCompactList}\item 
+bool {\bf isEmptyId} (const ConnectorProfile \&connector\_\-profile) const 
+\begin{DoxyCompactList}\small\item\em Check whether connector\_\-id of ConnectorProfile is empty. \item\end{DoxyCompactList}\item 
+const std::string {\bf getUUID} () const 
+\begin{DoxyCompactList}\small\item\em Generate the UUID. \item\end{DoxyCompactList}\item 
+void {\bf setUUID} (ConnectorProfile \&connector\_\-profile) const 
+\begin{DoxyCompactList}\small\item\em Generate and set the UUID to the ConnectorProfile. \item\end{DoxyCompactList}\item 
+bool {\bf isExistingConnId} (const char $\ast$id)
+\begin{DoxyCompactList}\small\item\em Check whether the given id exists in stored ConnectorProfiles. \item\end{DoxyCompactList}\item 
+ConnectorProfile {\bf findConnProfile} (const char $\ast$id)
+\begin{DoxyCompactList}\small\item\em Find ConnectorProfile with id. \item\end{DoxyCompactList}\item 
+CORBA::Long {\bf findConnProfileIndex} (const char $\ast$id)
+\begin{DoxyCompactList}\small\item\em Find ConnectorProfile with id. \item\end{DoxyCompactList}\item 
+void {\bf updateConnectorProfile} (const ConnectorProfile \&connector\_\-profile)
+\begin{DoxyCompactList}\small\item\em Append or update the ConnectorProfile list. \item\end{DoxyCompactList}\item 
+bool {\bf eraseConnectorProfile} (const char $\ast$id)
+\begin{DoxyCompactList}\small\item\em Delete the ConnectorProfile. \item\end{DoxyCompactList}\item 
+bool {\bf appendInterface} (const char $\ast$name, const char $\ast$type\_\-name, PortInterfacePolarity pol)
+\begin{DoxyCompactList}\small\item\em Append an interface to the PortInterfaceProfile. \item\end{DoxyCompactList}\item 
+bool {\bf deleteInterface} (const char $\ast$name, PortInterfacePolarity pol)
+\begin{DoxyCompactList}\small\item\em Delete the interface registration from the PortInterfaceProfile. \item\end{DoxyCompactList}\item 
+{\footnotesize template$<$class ValueType $>$ }\\void {\bf addProperty} (const char $\ast$key, ValueType value)
+\begin{DoxyCompactList}\small\item\em Add NameValue data to PortProfile's properties. \item\end{DoxyCompactList}\item 
+void {\bf appendProperty} (const char $\ast$key, const char $\ast$value)
+\begin{DoxyCompactList}\small\item\em Append NameValue data to PortProfile's properties. \item\end{DoxyCompactList}\item 
+void {\bf updateConnectors} ()
+\begin{DoxyCompactList}\small\item\em Disconnect ports that doesn't exist. \item\end{DoxyCompactList}\item 
+bool {\bf checkPorts} (::RTC::PortServiceList \&ports)
+\begin{DoxyCompactList}\small\item\em Existence of ports. \item\end{DoxyCompactList}\item 
+void {\bf onNotifyConnect} (const char $\ast$portname, RTC::ConnectorProfile \&profile)
+\item 
+void {\bf onNotifyDisconnect} (const char $\ast$portname, RTC::ConnectorProfile \&profile)
+\item 
+void {\bf onUnsubscribeInterfaces} (const char $\ast$portname, RTC::ConnectorProfile \&profile)
+\item 
+void {\bf onPublishInterfaces} (const char $\ast$portname, RTC::ConnectorProfile \&profile, ReturnCode\_\-t ret)
+\item 
+void {\bf onConnectNextport} (const char $\ast$portname, RTC::ConnectorProfile \&profile, ReturnCode\_\-t ret)
+\item 
+void {\bf onSubscribeInterfaces} (const char $\ast$portname, RTC::ConnectorProfile \&profile, ReturnCode\_\-t ret)
+\item 
+void {\bf onConnected} (const char $\ast$portname, RTC::ConnectorProfile \&profile, ReturnCode\_\-t ret)
+\item 
+void {\bf onDisconnectNextport} (const char $\ast$portname, RTC::ConnectorProfile \&profile, ReturnCode\_\-t ret)
+\item 
+void {\bf onDisconnected} (const char $\ast$portname, RTC::ConnectorProfile \&profile, ReturnCode\_\-t ret)
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Logger} {\bf rtclog}
+\begin{DoxyCompactList}\small\item\em \doxyref{Logger}{p.}{classRTC_1_1Logger} stream. \item\end{DoxyCompactList}\item 
+PortProfile {\bf m\_\-profile}
+\begin{DoxyCompactList}\small\item\em PortProfile of the Port. \item\end{DoxyCompactList}\item 
+RTC::PortService\_\-var {\bf m\_\-objref}
+\begin{DoxyCompactList}\small\item\em Object Reference of the Port. \item\end{DoxyCompactList}\item 
+{\bf coil::Mutex} {\bf m\_\-profile\_\-mutex}
+\begin{DoxyCompactList}\small\item\em Mutex of PortProfile. \item\end{DoxyCompactList}\item 
+{\bf coil::Mutex} {\bf m\_\-connectorsMutex}
+\item 
+std::string {\bf m\_\-ownerInstanceName}
+\begin{DoxyCompactList}\small\item\em Instance name. \item\end{DoxyCompactList}\item 
+int {\bf m\_\-connectionLimit}
+\begin{DoxyCompactList}\small\item\em The maximum number of connections. \item\end{DoxyCompactList}\item 
+{\bf ConnectionCallback} $\ast$ {\bf m\_\-onPublishInterfaces}
+\begin{DoxyCompactList}\small\item\em Callback functor objects. \item\end{DoxyCompactList}\item 
+{\bf ConnectionCallback} $\ast$ {\bf m\_\-onSubscribeInterfaces}
+\begin{DoxyCompactList}\small\item\em Callback functor objects. \item\end{DoxyCompactList}\item 
+{\bf ConnectionCallback} $\ast$ {\bf m\_\-onConnected}
+\begin{DoxyCompactList}\small\item\em Callback functor objects. \item\end{DoxyCompactList}\item 
+{\bf ConnectionCallback} $\ast$ {\bf m\_\-onUnsubscribeInterfaces}
+\begin{DoxyCompactList}\small\item\em Callback functor objects. \item\end{DoxyCompactList}\item 
+{\bf ConnectionCallback} $\ast$ {\bf m\_\-onDisconnected}
+\begin{DoxyCompactList}\small\item\em Callback functor objects. \item\end{DoxyCompactList}\item 
+{\bf ConnectionCallback} $\ast$ {\bf m\_\-onConnectionLost}
+\begin{DoxyCompactList}\small\item\em Callback functor objects. \item\end{DoxyCompactList}\item 
+{\bf PortConnectListeners} $\ast$ {\bf m\_\-portconnListeners}
+\begin{DoxyCompactList}\small\item\em \doxyref{PortConnectListener}{p.}{classRTC_1_1PortConnectListener} holder. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Port base class. This class is a base class of RTC::Port. RTC::Port inherits a concept of RT-\/Component, and can be regarded as almost the same as it. In the concept of RT-\/Component, Port is attached to the component, can mediate interaction between other components and usually is associated with some interfaces. Component can provide or require interface for outside via Port, and the Port plays a role to manage the connection. 
+
+Concrete class of Port assumes to be usually created at the same time that RT-\/Component's instance is created, be registerd to RT-\/Component after provided and required interfaces are registerd, and function as accessible Port from outside. 
+
+RTC::Port provides the following operations as CORBA interface:
+
+
+\begin{DoxyItemize}
+\item \doxyref{get\_\-port\_\-profile()}{p.}{classRTC_1_1PortBase_ae38441f66c19863e383f461de846a062}
+\item \doxyref{get\_\-connector\_\-profiles()}{p.}{classRTC_1_1PortBase_a00e8e5597add78a8e8f044a98ff60cfd}
+\item \doxyref{get\_\-connector\_\-profile()}{p.}{classRTC_1_1PortBase_a66847c611f82d14894356fd122315c06}
+\item \doxyref{connect()}{p.}{classRTC_1_1PortBase_a139d07d2e94f7e793aedf4aa24b92462}
+\item \doxyref{notify\_\-connect()}{p.}{classRTC_1_1PortBase_a9bcc3c981a6649f37f3ad7eac31e5766}
+\item \doxyref{disconnect()}{p.}{classRTC_1_1PortBase_a1ac6bea826249d3b2b9cb09d475e54f8}
+\item \doxyref{notify\_\-disconnect()}{p.}{classRTC_1_1PortBase_ae78bb7882d22bca794bd0faa78452aca}
+\item \doxyref{disconnect\_\-all()}{p.}{classRTC_1_1PortBase_a2464e0184036a389c4083625d7a1435f}
+\end{DoxyItemize}
+
+This class provides implementations of these operations. 
+
+In these operations, as for \doxyref{get\_\-port\_\-profile()}{p.}{classRTC_1_1PortBase_ae38441f66c19863e383f461de846a062}, \doxyref{get\_\-connector\_\-profiles()}{p.}{classRTC_1_1PortBase_a00e8e5597add78a8e8f044a98ff60cfd}, \doxyref{get\_\-connector\_\-profile()}{p.}{classRTC_1_1PortBase_a66847c611f82d14894356fd122315c06}, \doxyref{connect()}{p.}{classRTC_1_1PortBase_a139d07d2e94f7e793aedf4aa24b92462}, \doxyref{disconnect()}{p.}{classRTC_1_1PortBase_a1ac6bea826249d3b2b9cb09d475e54f8} and \doxyref{disconnect\_\-all()}{p.}{classRTC_1_1PortBase_a2464e0184036a389c4083625d7a1435f}, since their behaviors especially need not to be change in subclass, overriding is not recommended. 
+
+As for \doxyref{notify\_\-connect()}{p.}{classRTC_1_1PortBase_a9bcc3c981a6649f37f3ad7eac31e5766} and \doxyref{notify\_\-disconnect()}{p.}{classRTC_1_1PortBase_ae78bb7882d22bca794bd0faa78452aca}, you may have to modify behavior according to the kind of interfaces that subclass provides and requires, however it is not recommended these are overriden directly. In the section of \doxyref{notify\_\-connect()}{p.}{classRTC_1_1PortBase_a9bcc3c981a6649f37f3ad7eac31e5766} and \doxyref{notify\_\-disconnect()}{p.}{classRTC_1_1PortBase_ae78bb7882d22bca794bd0faa78452aca} as described below, it is recommended that you modify behavior by overriding the protected function related to these functions.
+
+\begin{DoxySince}{Since}
+0.4.0 
+\end{DoxySince}
+
+
+\subsection{Member Typedef Documentation}
+\index{RTC::PortBase@{RTC::PortBase}!Guard@{Guard}}
+\index{Guard@{Guard}!RTC::PortBase@{RTC::PortBase}}
+\subsubsection[{Guard}]{\setlength{\rightskip}{0pt plus 5cm}typedef {\bf coil::Guard}$<${\bf coil::Mutex}$>$ {\bf RTC::PortBase::Guard}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC_1_1PortBase_afed27d51e39b7ad3a0cd0a7c80cc6b53}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{RTC::PortBase@{RTC::PortBase}!PortBase@{PortBase}}
+\index{PortBase@{PortBase}!RTC::PortBase@{RTC::PortBase}}
+\subsubsection[{PortBase}]{\setlength{\rightskip}{0pt plus 5cm}RTC::PortBase::PortBase (const char $\ast$ {\em name} = {\ttfamily \char`\"{}\char`\"{}})}\label{classRTC_1_1PortBase_a778ffb56398a68f1a9254773a4bbc0b7}
+
+
+Constructor. 
+
+The constructor of the ProtBase class is given the name of this Port and initialized. At the same time, the \doxyref{PortBase}{p.}{classRTC_1_1PortBase} activates itself as CORBA object and stores its object reference to the PortProfile's port\_\-ref member. Characters except \char`\"{}.\char`\"{} can be used for the name of the port.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em name}]The name of Port (The default value:\char`\"{}\char`\"{}) \end{DoxyParams}
+\index{RTC::PortBase@{RTC::PortBase}!$\sim$PortBase@{$\sim$PortBase}}
+\index{$\sim$PortBase@{$\sim$PortBase}!RTC::PortBase@{RTC::PortBase}}
+\subsubsection[{$\sim$PortBase}]{\setlength{\rightskip}{0pt plus 5cm}virtual RTC::PortBase::$\sim$PortBase (void)\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classRTC_1_1PortBase_acc3ed2687a796b80c0b29d170e2e27aa}
+
+
+Destructor. 
+
+In the destructor, PortService CORBA object is deactivated. This function never throws exception. 
+
+\subsection{Member Function Documentation}
+\index{RTC::PortBase@{RTC::PortBase}!\_\-publishInterfaces@{\_\-publishInterfaces}}
+\index{\_\-publishInterfaces@{\_\-publishInterfaces}!RTC::PortBase@{RTC::PortBase}}
+\subsubsection[{\_\-publishInterfaces}]{\setlength{\rightskip}{0pt plus 5cm}virtual ReturnCode\_\-t RTC::PortBase::\_\-publishInterfaces (void)\hspace{0.3cm}{\ttfamily  [protected, virtual]}}\label{classRTC_1_1PortBase_afa9ee9900b247eb705c1dd27a6f6efe8}
+
+
+Publish interface information. 
+
+Publish interface information.
+
+\begin{DoxyReturn}{Returns}
+The return code of ReturnCode\_\-t type 
+\end{DoxyReturn}
+\index{RTC::PortBase@{RTC::PortBase}!activateInterfaces@{activateInterfaces}}
+\index{activateInterfaces@{activateInterfaces}!RTC::PortBase@{RTC::PortBase}}
+\subsubsection[{activateInterfaces}]{\setlength{\rightskip}{0pt plus 5cm}virtual void RTC::PortBase::activateInterfaces ()\hspace{0.3cm}{\ttfamily  [pure virtual]}}\label{classRTC_1_1PortBase_ad779347bae007555968dda9e78004e34}
+
+
+Activate all Port interfaces. 
+
+This operation activate all interfaces that is registered in the ports. 
+
+Implemented in {\bf RTC::CorbaPort} \doxyref{}{p.}{classRTC_1_1CorbaPort_a1b9efe804a293b2c38a9cbe3b5ba54a0}, {\bf RTC::InPortBase} \doxyref{}{p.}{classRTC_1_1InPortBase_a4188e629df750498e0d3b100f51133ff}, and {\bf RTC::OutPortBase} \doxyref{}{p.}{classRTC_1_1OutPortBase_a4741de18bb77db12a192055468eca8a8}.
+
+\index{RTC::PortBase@{RTC::PortBase}!addProperty@{addProperty}}
+\index{addProperty@{addProperty}!RTC::PortBase@{RTC::PortBase}}
+\subsubsection[{addProperty}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class ValueType $>$ void RTC::PortBase::addProperty (const char $\ast$ {\em key}, \/  ValueType {\em value})\hspace{0.3cm}{\ttfamily  [inline, protected]}}\label{classRTC_1_1PortBase_ab6548d7c61ff22a34b418ae4964177ba}
+
+
+Add NameValue data to PortProfile's properties. 
+
+Add NameValue data to PortProfile's properties. Type of additional data is specified by ValueType.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em key}]The name of properties \item[{\em value}]The value of properties \end{DoxyParams}
+
+
+References m\_\-profile, NVUtil::newNV(), and CORBA\_\-SeqUtil::push\_\-back().
+
+\index{RTC::PortBase@{RTC::PortBase}!appendInterface@{appendInterface}}
+\index{appendInterface@{appendInterface}!RTC::PortBase@{RTC::PortBase}}
+\subsubsection[{appendInterface}]{\setlength{\rightskip}{0pt plus 5cm}bool RTC::PortBase::appendInterface (const char $\ast$ {\em name}, \/  const char $\ast$ {\em type\_\-name}, \/  PortInterfacePolarity {\em pol})\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC_1_1PortBase_a91146c0cd579ad2d67b0bca8c7a437bf}
+
+
+Append an interface to the PortInterfaceProfile. 
+
+This operation appends interface information to the PortInterfaceProfile that is owned by the Port. The given interfaces information only updates PortInterfaceProfile of PortProfile that is obtained through \doxyref{get\_\-port\_\-profile()}{p.}{classRTC_1_1PortBase_ae38441f66c19863e383f461de846a062}. In order to provide and require interfaces, proper functions (for example publishInterface(), subscribeInterface() and so on) should be overridden in subclasses, and these functions provide concrete interface connection and disconnection functionality.
+
+The interface (instance) name have to be unique in the Port. If the given interface name is identical with stored interface name, this function returns false.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em name}]The instance name of the interface. \item[{\em type\_\-name}]The type name of the interface. \item[{\em pol}]The interface's polarity (RTC::PROVIDED or \doxyref{RTC}{p.}{namespaceRTC}:REQUIRED)\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+false would be returned if the same name is already registered. 
+\end{DoxyReturn}
+\index{RTC::PortBase@{RTC::PortBase}!appendProperty@{appendProperty}}
+\index{appendProperty@{appendProperty}!RTC::PortBase@{RTC::PortBase}}
+\subsubsection[{appendProperty}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::PortBase::appendProperty (const char $\ast$ {\em key}, \/  const char $\ast$ {\em value})\hspace{0.3cm}{\ttfamily  [inline, protected]}}\label{classRTC_1_1PortBase_ac6d94d956a43f47157c2aacd0be1da4c}
+
+
+Append NameValue data to PortProfile's properties. 
+
+Append NameValue data to PortProfile's properties. The properties which are set by this function would be referred through \doxyref{get\_\-port\_\-profile()}{p.}{classRTC_1_1PortBase_ae38441f66c19863e383f461de846a062} from outsides.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em key}]The name of properties \item[{\em value}]The value of properties \end{DoxyParams}
+
+
+References NVUtil::appendStringValue(), and m\_\-profile.
+
+\index{RTC::PortBase@{RTC::PortBase}!checkPorts@{checkPorts}}
+\index{checkPorts@{checkPorts}!RTC::PortBase@{RTC::PortBase}}
+\subsubsection[{checkPorts}]{\setlength{\rightskip}{0pt plus 5cm}bool RTC::PortBase::checkPorts (::RTC::PortServiceList \& {\em ports})\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC_1_1PortBase_abfc03f49c63f915a307ce34fed244439}
+
+
+Existence of ports. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em ports}]Checked ports \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true:existent,false:non existent 
+\end{DoxyReturn}
+\index{RTC::PortBase@{RTC::PortBase}!connect@{connect}}
+\index{connect@{connect}!RTC::PortBase@{RTC::PortBase}}
+\subsubsection[{connect}]{\setlength{\rightskip}{0pt plus 5cm}virtual ReturnCode\_\-t RTC::PortBase::connect (ConnectorProfile \& {\em connector\_\-profile})  throw (CORBA::SystemException)\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classRTC_1_1PortBase_a139d07d2e94f7e793aedf4aa24b92462}
+
+
+[CORBA interface] Connect the Port 
+
+This operation establishes connection according to the given ConnectionProfile inforamtion. This function is premised on calling from mainly application program or tools.
+
+\begin{DoxyPrecond}{Precondition}
+To establish the connection among Ports of RT-\/Components, application programs must call this operation giving ConnectorProfile with valid values as an argument.
+
+Out of ConnectorProfile member variables, \char`\"{}name\char`\"{}, \char`\"{}ports\char`\"{} and \char`\"{}properties\char`\"{} members shall be set valid data. \char`\"{}connector\_\-id\char`\"{} shall be set as empty string value or valid string UUID value.
+
+ConnectorProfile::name that is connection identifier shall be any valid CORBA::string.
+
+ConnectorProfile::connector\_\-id shall be set unique identifier (usually UUID is used) for all connections. Since UUID string value is usually set in the \doxyref{connect()}{p.}{classRTC_1_1PortBase_a139d07d2e94f7e793aedf4aa24b92462} function, caller should just set empty string. If the \doxyref{connect()}{p.}{classRTC_1_1PortBase_a139d07d2e94f7e793aedf4aa24b92462} is called with the same UUID as existing connection, this function returns PRECONDITION\_\-NOT\_\-MET error. However, in order to update the existing connection profile, the \char`\"{}connect()\char`\"{} operation with existing connector ID might be used as valid method by future extension
+
+ConnectorProfile::ports, which is sequence of RTC::PortService references, shall store usually two or more ports' references. As exceptions, the \char`\"{}connect()\char`\"{} operation might be called with only one reference in ConnectorProfile, in case of just getting interfaces information from the port, or connecting a special port (i.e. the peer port except RTC::PortService on CORBA).
+
+ConnectorProfile::properties might be used to give certain properties to the service interfaces associated with the port. The properties is a sequence variable with a pair of key string and Any type value. Although the A variable can store any type of values, it is not recommended except string.
+
+The following is the summary of the ConnectorProfile member to be set when this operation is called.
+\end{DoxyPrecond}
+
+\begin{DoxyItemize}
+\item ConnectorProfile::name: The any name of connection
+\item ConnectorProfile::connector\_\-id: Empty string
+\item ConnectorProfile::ports: One or more port references
+\item ConnectorProfile::properties: Properties for the interfaces
+\end{DoxyItemize}
+
+\begin{DoxyPostcond}{Postcondition}
+\doxyref{connect()}{p.}{classRTC_1_1PortBase_a139d07d2e94f7e793aedf4aa24b92462} operation will call the first port in the sequence of the ConnectorProfile.
+
+\char`\"{}noify\_\-connect()\char`\"{}s perform cascaded call to the ports stored in the ConnectorProfile::ports by order. Even if errors are raised by intermediate \doxyref{notify\_\-connect()}{p.}{classRTC_1_1PortBase_a9bcc3c981a6649f37f3ad7eac31e5766} operation, as long as ports' object references are valid, it is guaranteed that this cascaded call is completed in all the ports. If invalid or dead ports exist in the port's sequence, the ports are skipped and \doxyref{notify\_\-connect()}{p.}{classRTC_1_1PortBase_a9bcc3c981a6649f37f3ad7eac31e5766} is called for the next valid port.
+
+\doxyref{connect()}{p.}{classRTC_1_1PortBase_a139d07d2e94f7e793aedf4aa24b92462} function returns RTC\_\-OK if all the \doxyref{notify\_\-connect()}{p.}{classRTC_1_1PortBase_a9bcc3c981a6649f37f3ad7eac31e5766} return RTC\_\-OK. At this time the connection is completed. If \doxyref{notify\_\-connect()}{p.}{classRTC_1_1PortBase_a9bcc3c981a6649f37f3ad7eac31e5766}s return except RTC\_\-OK, \doxyref{connect()}{p.}{classRTC_1_1PortBase_a139d07d2e94f7e793aedf4aa24b92462} calls \doxyref{disconnect()}{p.}{classRTC_1_1PortBase_a1ac6bea826249d3b2b9cb09d475e54f8} operation with the connector\_\-id to destruct the connection, and then it returns error code from \doxyref{notify\_\-connect()}{p.}{classRTC_1_1PortBase_a9bcc3c981a6649f37f3ad7eac31e5766}.
+
+The ConnectorProfile argument of the \doxyref{connect()}{p.}{classRTC_1_1PortBase_a139d07d2e94f7e793aedf4aa24b92462} operation returns ConnectorProfile::connector\_\-id and various information about service interfaces that is published by \doxyref{publishInterfaces()}{p.}{classRTC_1_1PortBase_acf31878c5912f56c122aaa2310e182de} in the halfway ports. The \doxyref{connect()}{p.}{classRTC_1_1PortBase_a139d07d2e94f7e793aedf4aa24b92462} and halfway \doxyref{notify\_\-connect()}{p.}{classRTC_1_1PortBase_a9bcc3c981a6649f37f3ad7eac31e5766} functions never change ConnectorProfile::\{name, ports\}.
+\end{DoxyPostcond}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em connector\_\-profile}]The ConnectorProfile. \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+ReturnCode\_\-t The return code of ReturnCode\_\-t type. 
+\end{DoxyReturn}
+
+
+Reimplemented in {\bf RTC::InPortBase} \doxyref{}{p.}{classRTC_1_1InPortBase_ab37ad76d4270c20133b52b1bbdf3b529}, and {\bf RTC::OutPortBase} \doxyref{}{p.}{classRTC_1_1OutPortBase_ab6297aece321369ebc78900962627f0d}.
+
+\index{RTC::PortBase@{RTC::PortBase}!connectNext@{connectNext}}
+\index{connectNext@{connectNext}!RTC::PortBase@{RTC::PortBase}}
+\subsubsection[{connectNext}]{\setlength{\rightskip}{0pt plus 5cm}virtual ReturnCode\_\-t RTC::PortBase::connectNext (ConnectorProfile \& {\em connector\_\-profile})\hspace{0.3cm}{\ttfamily  [protected, virtual]}}\label{classRTC_1_1PortBase_acd7017c12c99c59c191d1269b40a7423}
+
+
+Call \doxyref{notify\_\-connect()}{p.}{classRTC_1_1PortBase_a9bcc3c981a6649f37f3ad7eac31e5766} of the next Port. 
+
+This operation calls the \doxyref{notify\_\-connect()}{p.}{classRTC_1_1PortBase_a9bcc3c981a6649f37f3ad7eac31e5766} of the next Port's that stored in ConnectorProfile's port\_\-ref sequence.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em connector\_\-profile}]The connection profile information\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The return code of ReturnCode\_\-t type. 
+\end{DoxyReturn}
+\index{RTC::PortBase@{RTC::PortBase}!deactivateInterfaces@{deactivateInterfaces}}
+\index{deactivateInterfaces@{deactivateInterfaces}!RTC::PortBase@{RTC::PortBase}}
+\subsubsection[{deactivateInterfaces}]{\setlength{\rightskip}{0pt plus 5cm}virtual void RTC::PortBase::deactivateInterfaces ()\hspace{0.3cm}{\ttfamily  [pure virtual]}}\label{classRTC_1_1PortBase_a8dfb8a33b92b9fc9b6c070df2def633f}
+
+
+Deactivate all Port interfaces. 
+
+This operation deactivate all interfaces that is registered in the ports. 
+
+Implemented in {\bf RTC::CorbaPort} \doxyref{}{p.}{classRTC_1_1CorbaPort_a4c25f8e04aa9cceff24c31ea3fec4e5b}, {\bf RTC::InPortBase} \doxyref{}{p.}{classRTC_1_1InPortBase_a4d8bba26fce07c092ebffbab6b1aa881}, and {\bf RTC::OutPortBase} \doxyref{}{p.}{classRTC_1_1OutPortBase_aa08d3ddfdf0b00398b40e76164622e43}.
+
+\index{RTC::PortBase@{RTC::PortBase}!deleteInterface@{deleteInterface}}
+\index{deleteInterface@{deleteInterface}!RTC::PortBase@{RTC::PortBase}}
+\subsubsection[{deleteInterface}]{\setlength{\rightskip}{0pt plus 5cm}bool RTC::PortBase::deleteInterface (const char $\ast$ {\em name}, \/  PortInterfacePolarity {\em pol})\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC_1_1PortBase_aef670f0cfa3bafbc0207e0ea63f7a083}
+
+
+Delete the interface registration from the PortInterfaceProfile. 
+
+This operation deletes interface information from the PortInterfaceProfile that is owned by the Port.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em name}]The instance name of the interface. \item[{\em pol}]The interface's polarity (RTC::PROVIDED or \doxyref{RTC}{p.}{namespaceRTC}:REQUIRED)\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Delete processing result of interface. false would be returned if the given name is not registered. 
+\end{DoxyReturn}
+\index{RTC::PortBase@{RTC::PortBase}!disconnect@{disconnect}}
+\index{disconnect@{disconnect}!RTC::PortBase@{RTC::PortBase}}
+\subsubsection[{disconnect}]{\setlength{\rightskip}{0pt plus 5cm}virtual ReturnCode\_\-t RTC::PortBase::disconnect (const char $\ast$ {\em connector\_\-id})  throw (CORBA::SystemException)\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classRTC_1_1PortBase_a1ac6bea826249d3b2b9cb09d475e54f8}
+
+
+[CORBA interface] Disconnect the Port 
+
+This operation destroys connection between this port and the peer port according to given connector\_\-id. Usually connector\_\-id should be a UUID string that is unique in the system. And the connection, which is established by \doxyref{connect()}{p.}{classRTC_1_1PortBase_a139d07d2e94f7e793aedf4aa24b92462}/notify\_\-connect() functions, is identified by the ConnectorProfile::connector\_\-id.
+
+\begin{DoxyPrecond}{Precondition}
+connector\_\-id shall be a character string which is same with ID of at least one of the ConnectorProfiles stored in this port. If ConnectorProfile that has same ID with the given connector\_\-id does not exist in the list of ConnectorProfile, this operation returns BAD\_\-PARAMTER error.
+
+ConnectorProfile::ports that is same ID with given connector\_\-id shall store the valid ports' references.
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+\doxyref{disconnect()}{p.}{classRTC_1_1PortBase_a1ac6bea826249d3b2b9cb09d475e54f8} function invokes the \doxyref{notify\_\-disconnect()}{p.}{classRTC_1_1PortBase_ae78bb7882d22bca794bd0faa78452aca} for the port that is stored in the first of the ConnectorProfile::ports. If \doxyref{notify\_\-disconnect()}{p.}{classRTC_1_1PortBase_ae78bb7882d22bca794bd0faa78452aca} call fails for the first port, It tries on calling \char`\"{}notify\_\-disconnect()\char`\"{} in order for ports stored in ConnectorProfile::ports until the operation call is succeeded. If \doxyref{notify\_\-disconnect()}{p.}{classRTC_1_1PortBase_ae78bb7882d22bca794bd0faa78452aca} succeeded for at least one port, it returns return code from \doxyref{notify\_\-disconnect()}{p.}{classRTC_1_1PortBase_ae78bb7882d22bca794bd0faa78452aca}. If none of \doxyref{notify\_\-connect()}{p.}{classRTC_1_1PortBase_a9bcc3c981a6649f37f3ad7eac31e5766} call succeeded, it returns RTC\_\-ERROR error.
+\end{DoxyPostcond}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em connector\_\-id}]The ID of the ConnectorProfile. \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+ReturnCode\_\-t The return code of ReturnCode\_\-t type. 
+\end{DoxyReturn}
+
+
+Referenced by RTC::OutPort$<$ DataType $>$::write().
+
+\index{RTC::PortBase@{RTC::PortBase}!disconnect\_\-all@{disconnect\_\-all}}
+\index{disconnect\_\-all@{disconnect\_\-all}!RTC::PortBase@{RTC::PortBase}}
+\subsubsection[{disconnect\_\-all}]{\setlength{\rightskip}{0pt plus 5cm}virtual ReturnCode\_\-t RTC::PortBase::disconnect\_\-all ()  throw (CORBA::SystemException)\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classRTC_1_1PortBase_a2464e0184036a389c4083625d7a1435f}
+
+
+[CORBA interface] Disconnect the All Ports 
+
+This operation destroys all connections associated with this Port.
+
+\begin{DoxyReturn}{Returns}
+ReturnCode\_\-t The return code of ReturnCode\_\-t type. 
+\end{DoxyReturn}
+\index{RTC::PortBase@{RTC::PortBase}!disconnectNext@{disconnectNext}}
+\index{disconnectNext@{disconnectNext}!RTC::PortBase@{RTC::PortBase}}
+\subsubsection[{disconnectNext}]{\setlength{\rightskip}{0pt plus 5cm}virtual ReturnCode\_\-t RTC::PortBase::disconnectNext (ConnectorProfile \& {\em connector\_\-profile})\hspace{0.3cm}{\ttfamily  [protected, virtual]}}\label{classRTC_1_1PortBase_a4eeddc35a698e4020e7ba96627dcde3b}
+
+
+Call \doxyref{notify\_\-disconnect()}{p.}{classRTC_1_1PortBase_ae78bb7882d22bca794bd0faa78452aca} of the next Port. 
+
+This operation calls the \doxyref{notify\_\-disconnect()}{p.}{classRTC_1_1PortBase_ae78bb7882d22bca794bd0faa78452aca} of the next Port's that stored in ConnectorProfile's port\_\-ref sequence.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em connector\_\-profile}]The connection profile information\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The return code of ReturnCode\_\-t type. 
+\end{DoxyReturn}
+\index{RTC::PortBase@{RTC::PortBase}!eraseConnectorProfile@{eraseConnectorProfile}}
+\index{eraseConnectorProfile@{eraseConnectorProfile}!RTC::PortBase@{RTC::PortBase}}
+\subsubsection[{eraseConnectorProfile}]{\setlength{\rightskip}{0pt plus 5cm}bool RTC::PortBase::eraseConnectorProfile (const char $\ast$ {\em id})\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC_1_1PortBase_a3803219dc15de9ebb9bf096a82cfb383}
+
+
+Delete the ConnectorProfile. 
+
+This operation deletes a ConnectorProfile specified by id from ConnectorProfileList owned by PortProfile of this Port.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em id}]The id of the ConnectorProfile to be deleted.\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true would be returned if it deleted correctly. false woluld be returned if specified ConnectorProfile cannot be found. 
+\end{DoxyReturn}
+\index{RTC::PortBase@{RTC::PortBase}!findConnProfile@{findConnProfile}}
+\index{findConnProfile@{findConnProfile}!RTC::PortBase@{RTC::PortBase}}
+\subsubsection[{findConnProfile}]{\setlength{\rightskip}{0pt plus 5cm}ConnectorProfile RTC::PortBase::findConnProfile (const char $\ast$ {\em id})\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC_1_1PortBase_a271f7e306eec757069326b493c6838e2}
+
+
+Find ConnectorProfile with id. 
+
+This operation returns ConnectorProfile with the given id from Port's ConnectorProfiles' list. If the ConnectorProfile with connector id that is identical with the given id does not exist, empty ConnectorProfile is returned.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em id}]the connector\_\-id to be searched in Port's ConnectorProfiles\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+CoonectorProfile with connector\_\-id 
+\end{DoxyReturn}
+
+
+Referenced by RTC::OutPort$<$ DataType $>$::write().
+
+\index{RTC::PortBase@{RTC::PortBase}!findConnProfileIndex@{findConnProfileIndex}}
+\index{findConnProfileIndex@{findConnProfileIndex}!RTC::PortBase@{RTC::PortBase}}
+\subsubsection[{findConnProfileIndex}]{\setlength{\rightskip}{0pt plus 5cm}CORBA::Long RTC::PortBase::findConnProfileIndex (const char $\ast$ {\em id})\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC_1_1PortBase_a7626d1f676704dfa3d3f173c7964cc7c}
+
+
+Find ConnectorProfile with id. 
+
+This operation returns ConnectorProfile with the given id from Port's ConnectorProfiles' list. If the ConnectorProfile with connector id that is identical with the given id does not exist, -\/1 is returned.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em id}]the connector\_\-id to be searched\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The index of ConnectorProfile of the Port 
+\end{DoxyReturn}
+\index{RTC::PortBase@{RTC::PortBase}!get\_\-connector\_\-profile@{get\_\-connector\_\-profile}}
+\index{get\_\-connector\_\-profile@{get\_\-connector\_\-profile}!RTC::PortBase@{RTC::PortBase}}
+\subsubsection[{get\_\-connector\_\-profile}]{\setlength{\rightskip}{0pt plus 5cm}virtual ConnectorProfile$\ast$ RTC::PortBase::get\_\-connector\_\-profile (const char $\ast$ {\em connector\_\-id})  throw (CORBA::SystemException)\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classRTC_1_1PortBase_a66847c611f82d14894356fd122315c06}
+
+
+[CORBA interface] Get the ConnectorProfile 
+
+This operation returns the ConnectorProfiles specified connector\_\-id. Since this function is CORBA operation, callers have responsibility to destruction of the returned ConnectorProfile object according to the CORBA memory management rules.
+
+If ConnectorProfile with specified connector\_\-id is not included, empty ConnectorProfile is returned.
+
+\begin{DoxyPostcond}{Postcondition}
+This function never changes the state of the object.
+\end{DoxyPostcond}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em connector\_\-id}]ID of the ConnectorProfile \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the ConnectorProfile identified by the connector\_\-id 
+\end{DoxyReturn}
+\index{RTC::PortBase@{RTC::PortBase}!get\_\-connector\_\-profiles@{get\_\-connector\_\-profiles}}
+\index{get\_\-connector\_\-profiles@{get\_\-connector\_\-profiles}!RTC::PortBase@{RTC::PortBase}}
+\subsubsection[{get\_\-connector\_\-profiles}]{\setlength{\rightskip}{0pt plus 5cm}virtual ConnectorProfileList$\ast$ RTC::PortBase::get\_\-connector\_\-profiles ()  throw (CORBA::SystemException)\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classRTC_1_1PortBase_a00e8e5597add78a8e8f044a98ff60cfd}
+
+
+[CORBA interface] Get the ConnectorProfileList of the Port 
+
+This operation returns a list of the ConnectorProfiles of the Port. Since this function is CORBA operation, callers have responsibility to destruction of the returned ConnectorProfileList object according to the CORBA memory management rules.
+
+ConnectorProfile includes the connection information that describes relation between (among) Ports, and Ports exchange the ConnectionProfile on connection process and hold the same information in every Port. ConnectionProfile has the following members:
+
+
+\begin{DoxyItemize}
+\item name [string type] The name of the connection.
+\item connector\_\-id [string type] Unique identifier.
+\item ports [Port sequnce] The sequence of Port's object reference that are related the connection.
+\item properties [NVList type] The other properties.
+\end{DoxyItemize}
+
+\begin{DoxyPostcond}{Postcondition}
+This function never changes the state of the object.
+\end{DoxyPostcond}
+\begin{DoxyReturn}{Returns}
+ConnectorProfileList of the Port 
+\end{DoxyReturn}
+\index{RTC::PortBase@{RTC::PortBase}!get\_\-port\_\-profile@{get\_\-port\_\-profile}}
+\index{get\_\-port\_\-profile@{get\_\-port\_\-profile}!RTC::PortBase@{RTC::PortBase}}
+\subsubsection[{get\_\-port\_\-profile}]{\setlength{\rightskip}{0pt plus 5cm}virtual PortProfile$\ast$ RTC::PortBase::get\_\-port\_\-profile ()  throw (CORBA::SystemException)\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classRTC_1_1PortBase_ae38441f66c19863e383f461de846a062}
+
+
+[CORBA interface] Get the PortProfile of the Port 
+
+This operation returns the PortProfile of the Port. Since this function is CORBA operation, callers have responsibility to destruction of the returned PortProfile object according to the CORBA memory management rules.
+
+PortProfile struct has the following members:
+
+
+\begin{DoxyItemize}
+\item name [string type] The name of the Port.
+\item interfaces [PortInterfaceProfileList type] The sequence of PortInterfaceProfile owned by the Port
+\item port\_\-ref [Port Object type] The object reference of the Port.
+\item connector\_\-profile [ConnectorProfileList type] The sequence of ConnectorProfile owned by the Port.
+\item owner [RTObject Object type] The object reference of RTObject that is owner of the Port.
+\item properties [NVList type] The other properties.
+\end{DoxyItemize}
+
+\begin{DoxyPostcond}{Postcondition}
+This function never changes the state of the object.
+\end{DoxyPostcond}
+\begin{DoxyReturn}{Returns}
+PortProfile of the Port 
+\end{DoxyReturn}
+\index{RTC::PortBase@{RTC::PortBase}!getName@{getName}}
+\index{getName@{getName}!RTC::PortBase@{RTC::PortBase}}
+\subsubsection[{getName}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ RTC::PortBase::getName () const}\label{classRTC_1_1PortBase_a2897e7321c60684612cb286954e84653}
+
+
+Get the name of this Port. 
+
+This operation returns the name of this Port.
+
+\begin{DoxyReturn}{Returns}
+The name of this Port. 
+\end{DoxyReturn}
+\index{RTC::PortBase@{RTC::PortBase}!getPortProfile@{getPortProfile}}
+\index{getPortProfile@{getPortProfile}!RTC::PortBase@{RTC::PortBase}}
+\subsubsection[{getPortProfile}]{\setlength{\rightskip}{0pt plus 5cm}const PortProfile\& RTC::PortBase::getPortProfile () const}\label{classRTC_1_1PortBase_af76274dad83b880e0773c0f109c8deb8}
+
+
+Get the PortProfile of the Port. 
+
+This function is a const function that returns a const reference of the PortProfile stored in this Port.
+
+\begin{DoxyPostcond}{Postcondition}
+This function never changes the state of the object.
+\end{DoxyPostcond}
+\begin{DoxyReturn}{Returns}
+PortProfile 
+\end{DoxyReturn}
+\index{RTC::PortBase@{RTC::PortBase}!getPortRef@{getPortRef}}
+\index{getPortRef@{getPortRef}!RTC::PortBase@{RTC::PortBase}}
+\subsubsection[{getPortRef}]{\setlength{\rightskip}{0pt plus 5cm}PortService\_\-ptr RTC::PortBase::getPortRef ()}\label{classRTC_1_1PortBase_a2b8a9dad7bcb51557471a7d034631d25}
+
+
+Get the object reference of this Port. 
+
+This operation returns the object reference that is stored in the Port's PortProfile.
+
+\begin{DoxyReturn}{Returns}
+The object reference of this Port. 
+\end{DoxyReturn}
+\index{RTC::PortBase@{RTC::PortBase}!getProfile@{getProfile}}
+\index{getProfile@{getProfile}!RTC::PortBase@{RTC::PortBase}}
+\subsubsection[{getProfile}]{\setlength{\rightskip}{0pt plus 5cm}const PortProfile\& RTC::PortBase::getProfile () const}\label{classRTC_1_1PortBase_ab5ab1328c5d5be82e5a213f6900c4eb8}
+
+
+Get the PortProfile of the Port. 
+
+This operation returns const reference of the PortProfile.
+
+\begin{DoxyReturn}{Returns}
+PortProfile of the Port 
+\end{DoxyReturn}
+\index{RTC::PortBase@{RTC::PortBase}!getUUID@{getUUID}}
+\index{getUUID@{getUUID}!RTC::PortBase@{RTC::PortBase}}
+\subsubsection[{getUUID}]{\setlength{\rightskip}{0pt plus 5cm}const std::string RTC::PortBase::getUUID () const\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC_1_1PortBase_a6ff52fee873d00a96b0e33880397af44}
+
+
+Generate the UUID. 
+
+This operation generates UUID.
+
+\begin{DoxyReturn}{Returns}
+uuid 
+\end{DoxyReturn}
+\index{RTC::PortBase@{RTC::PortBase}!isEmptyId@{isEmptyId}}
+\index{isEmptyId@{isEmptyId}!RTC::PortBase@{RTC::PortBase}}
+\subsubsection[{isEmptyId}]{\setlength{\rightskip}{0pt plus 5cm}bool RTC::PortBase::isEmptyId (const ConnectorProfile \& {\em connector\_\-profile}) const\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC_1_1PortBase_a9829b707373bd30160e1b6df7244f0bc}
+
+
+Check whether connector\_\-id of ConnectorProfile is empty. 
+
+Check whether connector\_\-id of specified ConnectorProfile is empty.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em connector\_\-profile}]Target ConnectorProfile for the check\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+If the given ConnectorProfile's connector\_\-id is empty string, it returns true. 
+\end{DoxyReturn}
+\index{RTC::PortBase@{RTC::PortBase}!isExistingConnId@{isExistingConnId}}
+\index{isExistingConnId@{isExistingConnId}!RTC::PortBase@{RTC::PortBase}}
+\subsubsection[{isExistingConnId}]{\setlength{\rightskip}{0pt plus 5cm}bool RTC::PortBase::isExistingConnId (const char $\ast$ {\em id})\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC_1_1PortBase_a15653054a5bd4e0559e0c3edec3b11d3}
+
+
+Check whether the given id exists in stored ConnectorProfiles. 
+
+This operation returns boolean whether the given id exists in the Port's ConnectorProfiles.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em id}]connector\_\-id to be find in Port's ConnectorProfiles\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+id exestance resutl 
+\end{DoxyReturn}
+\index{RTC::PortBase@{RTC::PortBase}!notify\_\-connect@{notify\_\-connect}}
+\index{notify\_\-connect@{notify\_\-connect}!RTC::PortBase@{RTC::PortBase}}
+\subsubsection[{notify\_\-connect}]{\setlength{\rightskip}{0pt plus 5cm}virtual ReturnCode\_\-t RTC::PortBase::notify\_\-connect (ConnectorProfile \& {\em connector\_\-profile})  throw (CORBA::SystemException)\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classRTC_1_1PortBase_a9bcc3c981a6649f37f3ad7eac31e5766}
+
+
+[CORBA interface] Notify the Ports connection 
+
+This operation is usually called from other ports' \doxyref{connect()}{p.}{classRTC_1_1PortBase_a139d07d2e94f7e793aedf4aa24b92462} or \doxyref{notify\_\-connect()}{p.}{classRTC_1_1PortBase_a9bcc3c981a6649f37f3ad7eac31e5766} operations when connection between ports is established. This function is not premised on calling from other functions or application programs.
+
+According to the template method pattern, the \doxyref{notify\_\-connect()}{p.}{classRTC_1_1PortBase_a9bcc3c981a6649f37f3ad7eac31e5766} calls \char`\"{}publishInterfaces()\char`\"{} and \char`\"{}subsctiveInterfaces()\char`\"{} functions, which are premised on implementing in the subclasses. The processing sequence is as follows.
+
+
+\begin{DoxyItemize}
+\item \doxyref{publishInterfaces()}{p.}{classRTC_1_1PortBase_acf31878c5912f56c122aaa2310e182de}: Publishing interface information
+\item \doxyref{connectNext()}{p.}{classRTC_1_1PortBase_acd7017c12c99c59c191d1269b40a7423}: Calling \doxyref{notify\_\-connect()}{p.}{classRTC_1_1PortBase_a9bcc3c981a6649f37f3ad7eac31e5766} of the next port
+\item \doxyref{subscribeInterfaces()}{p.}{classRTC_1_1PortBase_afce755069836c1ee637784e2a9e5a02b}: Subscribing interface information
+\item Storing connection profile
+\end{DoxyItemize}
+
+According to the order of port's references stored in the ConnectorProfile::ports, publishing interface information to all the ports and subscription interface information from all the ports is performed by \char`\"{}notify\_\-connect()\char`\"{}s. This cascaded call never aborts in the halfway operations, and calling sequence shall be completed for all the ports.
+
+\begin{DoxyPrecond}{Precondition}
+\doxyref{notify\_\-connect()}{p.}{classRTC_1_1PortBase_a9bcc3c981a6649f37f3ad7eac31e5766} calls \doxyref{notify\_\-connect()}{p.}{classRTC_1_1PortBase_a9bcc3c981a6649f37f3ad7eac31e5766} for the port's reference that is stored in next of this port's reference in the sequence of the ConnectorProfile::ports. Therefore the reference of this port shall be stored in the ConnectorProfile::ports. If this port's reference is not stored in the sequence, BAD\_\-PARAMETER error will be returned, except the return code is overwritten by other operations.
+
+UUID shall be set to ConnectorProfile::connector\_\-id as a unique identifier when this operation is called. Usually, connector\_\-id is given by a \doxyref{connect()}{p.}{classRTC_1_1PortBase_a139d07d2e94f7e793aedf4aa24b92462} function and, the behavior is undefined in the case of a null character.
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+ConnectorProfile::name, ConnectorProfile::connector\_\-id, ConnectorProfile::ports are invariant, and they are never rewritten by \doxyref{notify\_\-connect()}{p.}{classRTC_1_1PortBase_a9bcc3c981a6649f37f3ad7eac31e5766} operations.
+
+In order to transfer interface information to other ports, interface property information is stored into the ConnectorProfile::properties.
+
+At the end of \doxyref{notify\_\-connect()}{p.}{classRTC_1_1PortBase_a9bcc3c981a6649f37f3ad7eac31e5766} operation for the first port stored in the ConnectorProfile::ports sequence, the related ports' \doxyref{notify\_\-connect()}{p.}{classRTC_1_1PortBase_a9bcc3c981a6649f37f3ad7eac31e5766} invocations complete. Even if errors are raised at the halfway of \doxyref{publishInterfaces()}{p.}{classRTC_1_1PortBase_acf31878c5912f56c122aaa2310e182de}, \doxyref{connectNext()}{p.}{classRTC_1_1PortBase_acd7017c12c99c59c191d1269b40a7423}, \doxyref{subscribeInterfaces()}{p.}{classRTC_1_1PortBase_afce755069836c1ee637784e2a9e5a02b} and storing process of ConnectorProfile, error codes are saved and the first error is returned.
+\end{DoxyPostcond}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em connector\_\-profile}]The ConnectorProfile. \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+ReturnCode\_\-t The return code of ReturnCode\_\-t type. 
+\end{DoxyReturn}
+\index{RTC::PortBase@{RTC::PortBase}!notify\_\-disconnect@{notify\_\-disconnect}}
+\index{notify\_\-disconnect@{notify\_\-disconnect}!RTC::PortBase@{RTC::PortBase}}
+\subsubsection[{notify\_\-disconnect}]{\setlength{\rightskip}{0pt plus 5cm}virtual ReturnCode\_\-t RTC::PortBase::notify\_\-disconnect (const char $\ast$ {\em connector\_\-id})  throw (CORBA::SystemException)\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classRTC_1_1PortBase_ae78bb7882d22bca794bd0faa78452aca}
+
+
+[CORBA interface] Notify the Ports disconnection 
+
+This operation is invoked between Ports internally when the connection is destroied. Generally it is not premised on calling from application programs or \doxyref{RTC}{p.}{namespaceRTC} objects except Port object.
+
+According to the template method pattern, the \doxyref{notify\_\-disconnect()}{p.}{classRTC_1_1PortBase_ae78bb7882d22bca794bd0faa78452aca} calls unsubsctiveInterfaces() function, which are premised on implementing in the subclasses. The processing sequence is as follows.
+
+
+\begin{DoxyItemize}
+\item Searching ConnectorProfile
+\item Calling \doxyref{notify\_\-disconnect()}{p.}{classRTC_1_1PortBase_ae78bb7882d22bca794bd0faa78452aca} for the next port
+\item Unsubscribing interfaces
+\item Deleting ConnectorProfile
+\end{DoxyItemize}
+
+\doxyref{notify\_\-disconnect()}{p.}{classRTC_1_1PortBase_ae78bb7882d22bca794bd0faa78452aca} notifies disconnection to all the ports by cascaded call to the stored ports in the ConnectorProfile::ports in order.
+
+\begin{DoxyPrecond}{Precondition}
+The port shall store the ConnectorProfile having same id with connector\_\-id.
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+If ConnectorProfile of same ID with connector\_\-id does not exist, it returns BAD\_\-PARAMETER error.
+
+For the cascaded call, this operation calls noify\_\-disconnect() for the port that is stored in the next of this port in the ConnectorProfile::ports. If the operation call raises exception for some failure, it tries to call \doxyref{notify\_\-disconnect()}{p.}{classRTC_1_1PortBase_ae78bb7882d22bca794bd0faa78452aca} and skips until the operation succeeded. If none of operation call succeeded, it returns RTC\_\-ERROR.
+
+At the end of \doxyref{notify\_\-disconnect()}{p.}{classRTC_1_1PortBase_ae78bb7882d22bca794bd0faa78452aca} operation for the first port stored in the ConnectorProfile::ports sequence, the related ports' \doxyref{notify\_\-disconnect()}{p.}{classRTC_1_1PortBase_ae78bb7882d22bca794bd0faa78452aca} invocations complete.
+\end{DoxyPostcond}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em connector\_\-id}]The ID of the ConnectorProfile. \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+ReturnCode\_\-t The return code of ReturnCode\_\-t type. 
+\end{DoxyReturn}
+\index{RTC::PortBase@{RTC::PortBase}!onConnected@{onConnected}}
+\index{onConnected@{onConnected}!RTC::PortBase@{RTC::PortBase}}
+\subsubsection[{onConnected}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::PortBase::onConnected (const char $\ast$ {\em portname}, \/  RTC::ConnectorProfile \& {\em profile}, \/  ReturnCode\_\-t {\em ret})\hspace{0.3cm}{\ttfamily  [inline, protected]}}\label{classRTC_1_1PortBase_a454895298d71c2f046db0071a7e2b1ae}
+
+
+References m\_\-portconnListeners, and RTC::ON\_\-CONNECTED.
+
+\index{RTC::PortBase@{RTC::PortBase}!onConnectNextport@{onConnectNextport}}
+\index{onConnectNextport@{onConnectNextport}!RTC::PortBase@{RTC::PortBase}}
+\subsubsection[{onConnectNextport}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::PortBase::onConnectNextport (const char $\ast$ {\em portname}, \/  RTC::ConnectorProfile \& {\em profile}, \/  ReturnCode\_\-t {\em ret})\hspace{0.3cm}{\ttfamily  [inline, protected]}}\label{classRTC_1_1PortBase_a1f1b927fc26a71d74b7f82be3c57fe54}
+
+
+References m\_\-portconnListeners, and RTC::ON\_\-CONNECT\_\-NEXTPORT.
+
+\index{RTC::PortBase@{RTC::PortBase}!onDisconnected@{onDisconnected}}
+\index{onDisconnected@{onDisconnected}!RTC::PortBase@{RTC::PortBase}}
+\subsubsection[{onDisconnected}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::PortBase::onDisconnected (const char $\ast$ {\em portname}, \/  RTC::ConnectorProfile \& {\em profile}, \/  ReturnCode\_\-t {\em ret})\hspace{0.3cm}{\ttfamily  [inline, protected]}}\label{classRTC_1_1PortBase_a6c8539e8b047205a3cdf5b34c27a246e}
+
+
+References m\_\-portconnListeners, and RTC::ON\_\-DISCONNECTED.
+
+\index{RTC::PortBase@{RTC::PortBase}!onDisconnectNextport@{onDisconnectNextport}}
+\index{onDisconnectNextport@{onDisconnectNextport}!RTC::PortBase@{RTC::PortBase}}
+\subsubsection[{onDisconnectNextport}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::PortBase::onDisconnectNextport (const char $\ast$ {\em portname}, \/  RTC::ConnectorProfile \& {\em profile}, \/  ReturnCode\_\-t {\em ret})\hspace{0.3cm}{\ttfamily  [inline, protected]}}\label{classRTC_1_1PortBase_a2558aed0af62dca59972bafa8be29617}
+
+
+References m\_\-portconnListeners, and RTC::ON\_\-DISCONNECT\_\-NEXT.
+
+\index{RTC::PortBase@{RTC::PortBase}!onNotifyConnect@{onNotifyConnect}}
+\index{onNotifyConnect@{onNotifyConnect}!RTC::PortBase@{RTC::PortBase}}
+\subsubsection[{onNotifyConnect}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::PortBase::onNotifyConnect (const char $\ast$ {\em portname}, \/  RTC::ConnectorProfile \& {\em profile})\hspace{0.3cm}{\ttfamily  [inline, protected]}}\label{classRTC_1_1PortBase_a6c5fc09077478e84e9c26405bf7be4d1}
+
+
+References m\_\-portconnListeners, and RTC::ON\_\-NOTIFY\_\-CONNECT.
+
+\index{RTC::PortBase@{RTC::PortBase}!onNotifyDisconnect@{onNotifyDisconnect}}
+\index{onNotifyDisconnect@{onNotifyDisconnect}!RTC::PortBase@{RTC::PortBase}}
+\subsubsection[{onNotifyDisconnect}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::PortBase::onNotifyDisconnect (const char $\ast$ {\em portname}, \/  RTC::ConnectorProfile \& {\em profile})\hspace{0.3cm}{\ttfamily  [inline, protected]}}\label{classRTC_1_1PortBase_a1f81e3d706c34c0ff4ad77445629c1f3}
+
+
+References m\_\-portconnListeners, and RTC::ON\_\-NOTIFY\_\-DISCONNECT.
+
+\index{RTC::PortBase@{RTC::PortBase}!onPublishInterfaces@{onPublishInterfaces}}
+\index{onPublishInterfaces@{onPublishInterfaces}!RTC::PortBase@{RTC::PortBase}}
+\subsubsection[{onPublishInterfaces}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::PortBase::onPublishInterfaces (const char $\ast$ {\em portname}, \/  RTC::ConnectorProfile \& {\em profile}, \/  ReturnCode\_\-t {\em ret})\hspace{0.3cm}{\ttfamily  [inline, protected]}}\label{classRTC_1_1PortBase_a70dd82c8188309bb79d64907d638542f}
+
+
+References m\_\-portconnListeners, and RTC::ON\_\-PUBLISH\_\-INTERFACES.
+
+\index{RTC::PortBase@{RTC::PortBase}!onSubscribeInterfaces@{onSubscribeInterfaces}}
+\index{onSubscribeInterfaces@{onSubscribeInterfaces}!RTC::PortBase@{RTC::PortBase}}
+\subsubsection[{onSubscribeInterfaces}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::PortBase::onSubscribeInterfaces (const char $\ast$ {\em portname}, \/  RTC::ConnectorProfile \& {\em profile}, \/  ReturnCode\_\-t {\em ret})\hspace{0.3cm}{\ttfamily  [inline, protected]}}\label{classRTC_1_1PortBase_af5c66c1f389171c0fad73e26a74a619e}
+
+
+References m\_\-portconnListeners, and RTC::ON\_\-SUBSCRIBE\_\-INTERFACES.
+
+\index{RTC::PortBase@{RTC::PortBase}!onUnsubscribeInterfaces@{onUnsubscribeInterfaces}}
+\index{onUnsubscribeInterfaces@{onUnsubscribeInterfaces}!RTC::PortBase@{RTC::PortBase}}
+\subsubsection[{onUnsubscribeInterfaces}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::PortBase::onUnsubscribeInterfaces (const char $\ast$ {\em portname}, \/  RTC::ConnectorProfile \& {\em profile})\hspace{0.3cm}{\ttfamily  [inline, protected]}}\label{classRTC_1_1PortBase_af3a2ec35c3c1eb1c59dc6634069d04a0}
+
+
+References m\_\-portconnListeners, and RTC::ON\_\-UNSUBSCRIBE\_\-INTERFACES.
+
+\index{RTC::PortBase@{RTC::PortBase}!publishInterfaces@{publishInterfaces}}
+\index{publishInterfaces@{publishInterfaces}!RTC::PortBase@{RTC::PortBase}}
+\subsubsection[{publishInterfaces}]{\setlength{\rightskip}{0pt plus 5cm}virtual ReturnCode\_\-t RTC::PortBase::publishInterfaces (ConnectorProfile \& {\em connector\_\-profile})\hspace{0.3cm}{\ttfamily  [protected, pure virtual]}}\label{classRTC_1_1PortBase_acf31878c5912f56c122aaa2310e182de}
+
+
+Publish interface information. 
+
+This operation is pure virutal function that would be called at the beginning of the \doxyref{notify\_\-connect()}{p.}{classRTC_1_1PortBase_a9bcc3c981a6649f37f3ad7eac31e5766} process sequence. In the \doxyref{notify\_\-connect()}{p.}{classRTC_1_1PortBase_a9bcc3c981a6649f37f3ad7eac31e5766}, the following methods would be called in order.
+
+
+\begin{DoxyItemize}
+\item \doxyref{publishInterfaces()}{p.}{classRTC_1_1PortBase_acf31878c5912f56c122aaa2310e182de}
+\item \doxyref{connectNext()}{p.}{classRTC_1_1PortBase_acd7017c12c99c59c191d1269b40a7423}
+\item \doxyref{subscribeInterfaces()}{p.}{classRTC_1_1PortBase_afce755069836c1ee637784e2a9e5a02b}
+\item \doxyref{updateConnectorProfile()}{p.}{classRTC_1_1PortBase_aaaa8155f6dd891d0a4b77e6f6c55c97b}
+\end{DoxyItemize}
+
+In the concrete Port, this method should be overridden. This method processes the given ConnectorProfile argument and if the given parameter is invalid, it would return error code of ReturnCode\_\-t. Usually, \doxyref{publishInterfaces()}{p.}{classRTC_1_1PortBase_acf31878c5912f56c122aaa2310e182de} method should set interfaces information owned by this Port, and publish it to the other Ports. \par
+ When this method is called, other Ports' interfaces information may not be completed. Therefore, the process to obtain other Port's interfaces information should be done in the \doxyref{subscribeInterfaces()}{p.}{classRTC_1_1PortBase_afce755069836c1ee637784e2a9e5a02b} method. \par
+ This operation should create the new connection for the new connector\_\-id, and should update the connection for the existing connection\_\-id.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em connector\_\-profile}]The connection profile information\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The return code of ReturnCode\_\-t type. 
+\end{DoxyReturn}
+
+
+Implemented in {\bf RTC::CorbaPort} \doxyref{}{p.}{classRTC_1_1CorbaPort_a71aa316c3324369c4462193d10a5d098}, {\bf RTC::InPortBase} \doxyref{}{p.}{classRTC_1_1InPortBase_ad836b599b157efb1a31ec61999015986}, and {\bf RTC::OutPortBase} \doxyref{}{p.}{classRTC_1_1OutPortBase_ab71eea8c300820c2dd21dd13a61f6e0f}.
+
+\index{RTC::PortBase@{RTC::PortBase}!setConnectionLimit@{setConnectionLimit}}
+\index{setConnectionLimit@{setConnectionLimit}!RTC::PortBase@{RTC::PortBase}}
+\subsubsection[{setConnectionLimit}]{\setlength{\rightskip}{0pt plus 5cm}virtual void RTC::PortBase::setConnectionLimit (int {\em limit\_\-value})\hspace{0.3cm}{\ttfamily  [protected, virtual]}}\label{classRTC_1_1PortBase_a9dce68b24fdfbf13f835f6b8b83f2282}
+
+
+Set the maximum number of connections. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em limit\_\-value}]The maximum number of connections \end{DoxyParams}
+\index{RTC::PortBase@{RTC::PortBase}!setName@{setName}}
+\index{setName@{setName}!RTC::PortBase@{RTC::PortBase}}
+\subsubsection[{setName}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::PortBase::setName (const char $\ast$ {\em name})}\label{classRTC_1_1PortBase_a4429d9d48ba72f621ed446b50bdf9043}
+
+
+Set the name of this Port. 
+
+This operation sets the name of this Port. The given Port's name is applied to Port's PortProfile.name.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em name}]The name of this Port. \end{DoxyParams}
+\index{RTC::PortBase@{RTC::PortBase}!setOnConnected@{setOnConnected}}
+\index{setOnConnected@{setOnConnected}!RTC::PortBase@{RTC::PortBase}}
+\subsubsection[{setOnConnected}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::PortBase::setOnConnected ({\bf ConnectionCallback} $\ast$ {\em on\_\-connected})}\label{classRTC_1_1PortBase_a7c97305b47e95f96dffaee6871db9b5d}
+
+
+Setting callback called on connection established. 
+
+This operation sets a functor that is called when connection between ports established.
+
+Since the ownership of the callback functor object is owned by the caller, it has the responsibility of object destruction.
+
+The callback functor is called only when \doxyref{notify\_\-connect()}{p.}{classRTC_1_1PortBase_a9bcc3c981a6649f37f3ad7eac31e5766} function successfully returns. In case of error, the functor will not be called.
+
+Since this functor is called with ConnectorProfile argument that is same as out-\/parameter of \doxyref{notify\_\-connect()}{p.}{classRTC_1_1PortBase_a9bcc3c981a6649f37f3ad7eac31e5766} function, you can get all the information of published interfaces of related ports in the connection. Although by using this functor, you can modify ConnectorProfile argument for out-\/paramter of \doxyref{notify\_\-connect()}{p.}{classRTC_1_1PortBase_a9bcc3c981a6649f37f3ad7eac31e5766}, the modification should be done carefully for fear of causing connection inconsistency.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em on\_\-subscribe}]a pointer to ConnectionCallback's subclasses \end{DoxyParams}
+\index{RTC::PortBase@{RTC::PortBase}!setOnConnectionLost@{setOnConnectionLost}}
+\index{setOnConnectionLost@{setOnConnectionLost}!RTC::PortBase@{RTC::PortBase}}
+\subsubsection[{setOnConnectionLost}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::PortBase::setOnConnectionLost ({\bf ConnectionCallback} $\ast$ {\em on\_\-connection\_\-lost})}\label{classRTC_1_1PortBase_aa7797b53a5199aecb86ebd6e11da9a6e}
+
+
+Setting callback called on connection lost. 
+
+This operation sets a functor that is called when connection of this port does lost.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em on\_\-connection\_\-lost}]a pointer to ConnectionCallback's subclasses \end{DoxyParams}
+\index{RTC::PortBase@{RTC::PortBase}!setOnDisconnected@{setOnDisconnected}}
+\index{setOnDisconnected@{setOnDisconnected}!RTC::PortBase@{RTC::PortBase}}
+\subsubsection[{setOnDisconnected}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::PortBase::setOnDisconnected ({\bf ConnectionCallback} $\ast$ {\em on\_\-disconnected})}\label{classRTC_1_1PortBase_a8f26ec4ff60e7728a09cbd34a6a2ca33}
+
+
+Setting callback called on disconnected. 
+
+This operation sets a functor that is called when connection between ports is destructed.
+
+Since the ownership of the callback functor object is owned by the caller, it has the responsibility of object destruction.
+
+The callback functor is called just before \doxyref{notify\_\-disconnect()}{p.}{classRTC_1_1PortBase_ae78bb7882d22bca794bd0faa78452aca} that is disconnection execution function returns.
+
+This functor is called with argument of corresponding ConnectorProfile. Since this ConnectorProfile will be destructed after calling this functor, modifications never affect others.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em on\_\-disconnected}]a pointer to ConnectionCallback's subclasses \end{DoxyParams}
+\index{RTC::PortBase@{RTC::PortBase}!setOnPublishInterfaces@{setOnPublishInterfaces}}
+\index{setOnPublishInterfaces@{setOnPublishInterfaces}!RTC::PortBase@{RTC::PortBase}}
+\subsubsection[{setOnPublishInterfaces}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::PortBase::setOnPublishInterfaces ({\bf ConnectionCallback} $\ast$ {\em on\_\-publish})}\label{classRTC_1_1PortBase_affce1efdd04a8b66af5238ee435a5b2b}
+
+
+Setting callback called on publish interfaces. 
+
+This operation sets a functor that is called after publishing interfaces process when connecting between ports.
+
+Since the ownership of the callback functor object is owned by the caller, it has the responsibility of object destruction.
+
+The callback functor is called after calling \doxyref{publishInterfaces()}{p.}{classRTC_1_1PortBase_acf31878c5912f56c122aaa2310e182de} that is virtual member function of the \doxyref{PortBase}{p.}{classRTC_1_1PortBase} class with an argument of ConnectorProfile type that is same as the argument of \doxyref{publishInterfaces()}{p.}{classRTC_1_1PortBase_acf31878c5912f56c122aaa2310e182de} function. Although by using this functor, you can modify the ConnectorProfile published by \doxyref{publishInterfaces()}{p.}{classRTC_1_1PortBase_acf31878c5912f56c122aaa2310e182de} function, the modification should be done carefully for fear of causing connection inconsistency.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em on\_\-publish}]a pointer to ConnectionCallback's subclasses \end{DoxyParams}
+\index{RTC::PortBase@{RTC::PortBase}!setOnSubscribeInterfaces@{setOnSubscribeInterfaces}}
+\index{setOnSubscribeInterfaces@{setOnSubscribeInterfaces}!RTC::PortBase@{RTC::PortBase}}
+\subsubsection[{setOnSubscribeInterfaces}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::PortBase::setOnSubscribeInterfaces ({\bf ConnectionCallback} $\ast$ {\em on\_\-subscribe})}\label{classRTC_1_1PortBase_ac9783d3edef34a7f5c5cef910b4fa33a}
+
+
+Setting callback called on publish interfaces. 
+
+This operation sets a functor that is called before subscribing interfaces process when connecting between ports.
+
+Since the ownership of the callback functor object is owned by the caller, it has the responsibility of object destruction.
+
+The callback functor is called before calling \doxyref{subscribeInterfaces()}{p.}{classRTC_1_1PortBase_afce755069836c1ee637784e2a9e5a02b} that is virtual member function of the \doxyref{PortBase}{p.}{classRTC_1_1PortBase} class with an argument of ConnectorProfile type that is same as the argument of \doxyref{subscribeInterfaces()}{p.}{classRTC_1_1PortBase_afce755069836c1ee637784e2a9e5a02b} function. Although by using this functor, you can modify ConnectorProfile argument for \doxyref{subscribeInterfaces()}{p.}{classRTC_1_1PortBase_afce755069836c1ee637784e2a9e5a02b} function, the modification should be done carefully for fear of causing connection inconsistency.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em on\_\-subscribe}]a pointer to ConnectionCallback's subclasses \end{DoxyParams}
+\index{RTC::PortBase@{RTC::PortBase}!setOnUnsubscribeInterfaces@{setOnUnsubscribeInterfaces}}
+\index{setOnUnsubscribeInterfaces@{setOnUnsubscribeInterfaces}!RTC::PortBase@{RTC::PortBase}}
+\subsubsection[{setOnUnsubscribeInterfaces}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::PortBase::setOnUnsubscribeInterfaces ({\bf ConnectionCallback} $\ast$ {\em on\_\-subscribe})}\label{classRTC_1_1PortBase_aff023d4b2faa7d161b7c91ef9273a705}
+
+
+Setting callback called on unsubscribe interfaces. 
+
+This operation sets a functor that is called before unsubscribing interfaces process when disconnecting between ports.
+
+Since the ownership of the callback functor object is owned by the caller, it has the responsibility of object destruction.
+
+The callback functor is called before calling \doxyref{unsubscribeInterfaces()}{p.}{classRTC_1_1PortBase_a8a843a387e99d4d4daa6e829eb1db569} that is virtual member function of the \doxyref{PortBase}{p.}{classRTC_1_1PortBase} class with an argument of ConnectorProfile type that is same as the argument of \doxyref{unsubscribeInterfaces()}{p.}{classRTC_1_1PortBase_a8a843a387e99d4d4daa6e829eb1db569} function. Although by using this functor, you can modify ConnectorProfile argument for \doxyref{unsubscribeInterfaces()}{p.}{classRTC_1_1PortBase_a8a843a387e99d4d4daa6e829eb1db569} function, the modification should be done carefully for fear of causing connection inconsistency.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em on\_\-unsubscribe}]a pointer to ConnectionCallback's subclasses \end{DoxyParams}
+\index{RTC::PortBase@{RTC::PortBase}!setOwner@{setOwner}}
+\index{setOwner@{setOwner}!RTC::PortBase@{RTC::PortBase}}
+\subsubsection[{setOwner}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::PortBase::setOwner (RTObject\_\-ptr {\em owner})}\label{classRTC_1_1PortBase_a1431e933c50b7f31df6446051ca4b3fe}
+
+
+Set the owner RTObject of the Port. 
+
+This operation sets the owner RTObject of this Port.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em owner}]The owner RTObject's reference of this Port \end{DoxyParams}
+\index{RTC::PortBase@{RTC::PortBase}!setPortConnectListenerHolder@{setPortConnectListenerHolder}}
+\index{setPortConnectListenerHolder@{setPortConnectListenerHolder}!RTC::PortBase@{RTC::PortBase}}
+\subsubsection[{setPortConnectListenerHolder}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::PortBase::setPortConnectListenerHolder ({\bf PortConnectListeners} $\ast$ {\em portconnListeners})}\label{classRTC_1_1PortBase_aa0fca5f8b8ce5503439f21c7e940227b}
+
+
+Setting \doxyref{PortConnectListener}{p.}{classRTC_1_1PortConnectListener} holder. 
+
+This operation sets a functor that is called when connection of this port does lost.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em on\_\-connection\_\-lost}]a pointer to ConnectionCallback's subclasses \end{DoxyParams}
+\index{RTC::PortBase@{RTC::PortBase}!setPortRef@{setPortRef}}
+\index{setPortRef@{setPortRef}!RTC::PortBase@{RTC::PortBase}}
+\subsubsection[{setPortRef}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::PortBase::setPortRef (PortService\_\-ptr {\em port\_\-ref})}\label{classRTC_1_1PortBase_a710706ff630c6502e3de6cf5dd302c83}
+
+
+Set the object reference of this Port. 
+
+This operation sets the object reference itself to the Port's PortProfile.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em port\_\-ref}]The object reference of this Port. \end{DoxyParams}
+\index{RTC::PortBase@{RTC::PortBase}!setUUID@{setUUID}}
+\index{setUUID@{setUUID}!RTC::PortBase@{RTC::PortBase}}
+\subsubsection[{setUUID}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::PortBase::setUUID (ConnectorProfile \& {\em connector\_\-profile}) const\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC_1_1PortBase_a7d8fb06825e17568567786987bd00fbb}
+
+
+Generate and set the UUID to the ConnectorProfile. 
+
+This operation generates and set UUID to the ConnectorProfile.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em connector\_\-profile}]ConnectorProfile to be set connector\_\-id \end{DoxyParams}
+\index{RTC::PortBase@{RTC::PortBase}!subscribeInterfaces@{subscribeInterfaces}}
+\index{subscribeInterfaces@{subscribeInterfaces}!RTC::PortBase@{RTC::PortBase}}
+\subsubsection[{subscribeInterfaces}]{\setlength{\rightskip}{0pt plus 5cm}virtual ReturnCode\_\-t RTC::PortBase::subscribeInterfaces (const ConnectorProfile \& {\em connector\_\-profile})\hspace{0.3cm}{\ttfamily  [protected, pure virtual]}}\label{classRTC_1_1PortBase_afce755069836c1ee637784e2a9e5a02b}
+
+
+Publish interface information. 
+
+This operation is pure virutal function that would be called at the mid-\/flow of the \doxyref{notify\_\-connect()}{p.}{classRTC_1_1PortBase_a9bcc3c981a6649f37f3ad7eac31e5766} process sequence. In the \doxyref{notify\_\-connect()}{p.}{classRTC_1_1PortBase_a9bcc3c981a6649f37f3ad7eac31e5766}, the following methods would be called in order.
+
+
+\begin{DoxyItemize}
+\item \doxyref{publishInterfaces()}{p.}{classRTC_1_1PortBase_acf31878c5912f56c122aaa2310e182de}
+\item \doxyref{connectNext()}{p.}{classRTC_1_1PortBase_acd7017c12c99c59c191d1269b40a7423}
+\item \doxyref{subscribeInterfaces()}{p.}{classRTC_1_1PortBase_afce755069836c1ee637784e2a9e5a02b}
+\item \doxyref{updateConnectorProfile()}{p.}{classRTC_1_1PortBase_aaaa8155f6dd891d0a4b77e6f6c55c97b}
+\end{DoxyItemize}
+
+In the concrete Port, this method should be overridden. This method processes the given ConnectorProfile argument and if the given parameter is invalid, it would return error code of ReturnCode\_\-t. The given argument ConnectorProfile includes all the interfaces information in it. Usually, subscribeInterafaces() method obtains information of interfaces from ConnectorProfile, and should set it to the interfaces that require them. \par
+ This operation should create the new connection for the new connector\_\-id, and should update the connection for the existing connection\_\-id.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em connector\_\-profile}]The connection profile information\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The return code of ReturnCode\_\-t type. 
+\end{DoxyReturn}
+
+
+Implemented in {\bf RTC::CorbaPort} \doxyref{}{p.}{classRTC_1_1CorbaPort_ad9a122cbe2f9892cc9555e805571742e}, {\bf RTC::InPortBase} \doxyref{}{p.}{classRTC_1_1InPortBase_adf648c377e5730a2de6dc48fc47543fb}, and {\bf RTC::OutPortBase} \doxyref{}{p.}{classRTC_1_1OutPortBase_a76018cbaa5c13fa3363e196c442f5c49}.
+
+\index{RTC::PortBase@{RTC::PortBase}!unsubscribeInterfaces@{unsubscribeInterfaces}}
+\index{unsubscribeInterfaces@{unsubscribeInterfaces}!RTC::PortBase@{RTC::PortBase}}
+\subsubsection[{unsubscribeInterfaces}]{\setlength{\rightskip}{0pt plus 5cm}virtual void RTC::PortBase::unsubscribeInterfaces (const ConnectorProfile \& {\em connector\_\-profile})\hspace{0.3cm}{\ttfamily  [protected, pure virtual]}}\label{classRTC_1_1PortBase_a8a843a387e99d4d4daa6e829eb1db569}
+
+
+Disconnect interface connection. 
+
+This operation is pure virutal function that would be called at the end of the \doxyref{notify\_\-disconnect()}{p.}{classRTC_1_1PortBase_ae78bb7882d22bca794bd0faa78452aca} process sequence. In the \doxyref{notify\_\-disconnect()}{p.}{classRTC_1_1PortBase_ae78bb7882d22bca794bd0faa78452aca}, the following methods would be called in order to disconnect.
+\begin{DoxyItemize}
+\item \doxyref{disconnectNext()}{p.}{classRTC_1_1PortBase_a4eeddc35a698e4020e7ba96627dcde3b}
+\item \doxyref{unsubscribeInterfaces()}{p.}{classRTC_1_1PortBase_a8a843a387e99d4d4daa6e829eb1db569}
+\item \doxyref{eraseConnectorProfile()}{p.}{classRTC_1_1PortBase_a3803219dc15de9ebb9bf096a82cfb383} \par
+ In the concrete Port, this method should be overridden. This method processes the given ConnectorProfile argument and disconnect interface connection.
+\end{DoxyItemize}
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em connector\_\-profile}]The connection profile information \end{DoxyParams}
+
+
+Implemented in {\bf RTC::CorbaPort} \doxyref{}{p.}{classRTC_1_1CorbaPort_a4776e122a3066d9e3a3e5d1e5da45b98}, {\bf RTC::InPortBase} \doxyref{}{p.}{classRTC_1_1InPortBase_a118932439dce0dc96571b0123615c36e}, and {\bf RTC::OutPortBase} \doxyref{}{p.}{classRTC_1_1OutPortBase_ad2c373292a41c5f2eb088e7ae124b857}.
+
+\index{RTC::PortBase@{RTC::PortBase}!updateConnectorProfile@{updateConnectorProfile}}
+\index{updateConnectorProfile@{updateConnectorProfile}!RTC::PortBase@{RTC::PortBase}}
+\subsubsection[{updateConnectorProfile}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::PortBase::updateConnectorProfile (const ConnectorProfile \& {\em connector\_\-profile})\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC_1_1PortBase_aaaa8155f6dd891d0a4b77e6f6c55c97b}
+
+
+Append or update the ConnectorProfile list. 
+
+This operation appends or updates ConnectorProfile of the Port by the given ConnectorProfile. If the connector\_\-id of the given ConnectorProfile does not exist in the Port's ConnectorProfile list, the given ConnectorProfile would be append to the list. If the same id exists, the list would be updated.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em connector\_\-profile}]the ConnectorProfile to be appended or updated \end{DoxyParams}
+\index{RTC::PortBase@{RTC::PortBase}!updateConnectors@{updateConnectors}}
+\index{updateConnectors@{updateConnectors}!RTC::PortBase@{RTC::PortBase}}
+\subsubsection[{updateConnectors}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::PortBase::updateConnectors ()\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC_1_1PortBase_aa9e0697ef8a7138cdf30ab756ecc9242}
+
+
+Disconnect ports that doesn't exist. 
+
+This function detects dead-\/port, and if dead ports are found in the connection list, disconnects them. 
+
+\subsection{Member Data Documentation}
+\index{RTC::PortBase@{RTC::PortBase}!m\_\-connectionLimit@{m\_\-connectionLimit}}
+\index{m\_\-connectionLimit@{m\_\-connectionLimit}!RTC::PortBase@{RTC::PortBase}}
+\subsubsection[{m\_\-connectionLimit}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf RTC::PortBase::m\_\-connectionLimit}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC_1_1PortBase_a0c568d0d7ffd5c5dfbf7cdfbd27e22c9}
+
+
+The maximum number of connections. 
+
+\index{RTC::PortBase@{RTC::PortBase}!m\_\-connectorsMutex@{m\_\-connectorsMutex}}
+\index{m\_\-connectorsMutex@{m\_\-connectorsMutex}!RTC::PortBase@{RTC::PortBase}}
+\subsubsection[{m\_\-connectorsMutex}]{\setlength{\rightskip}{0pt plus 5cm}{\bf coil::Mutex} {\bf RTC::PortBase::m\_\-connectorsMutex}\hspace{0.3cm}{\ttfamily  [mutable, protected]}}\label{classRTC_1_1PortBase_acbdf425104a21619d4c887e415e045c8}
+
+
+Referenced by RTC::InPort$<$ DataType $>$::isEmpty(), RTC::InPort$<$ DataType $>$::isNew(), RTC::InPort$<$ DataType $>$::read(), and RTC::OutPort$<$ DataType $>$::write().
+
+\index{RTC::PortBase@{RTC::PortBase}!m\_\-objref@{m\_\-objref}}
+\index{m\_\-objref@{m\_\-objref}!RTC::PortBase@{RTC::PortBase}}
+\subsubsection[{m\_\-objref}]{\setlength{\rightskip}{0pt plus 5cm}RTC::PortService\_\-var {\bf RTC::PortBase::m\_\-objref}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC_1_1PortBase_a6add3c9750060e44acaec9e70a78ed92}
+
+
+Object Reference of the Port. 
+
+\index{RTC::PortBase@{RTC::PortBase}!m\_\-onConnected@{m\_\-onConnected}}
+\index{m\_\-onConnected@{m\_\-onConnected}!RTC::PortBase@{RTC::PortBase}}
+\subsubsection[{m\_\-onConnected}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ConnectionCallback}$\ast$ {\bf RTC::PortBase::m\_\-onConnected}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC_1_1PortBase_a52852f17f0978a6a639fcf6c8a8a71b6}
+
+
+Callback functor objects. 
+
+This is a callback object that is called when the connection is completed. \index{RTC::PortBase@{RTC::PortBase}!m\_\-onConnectionLost@{m\_\-onConnectionLost}}
+\index{m\_\-onConnectionLost@{m\_\-onConnectionLost}!RTC::PortBase@{RTC::PortBase}}
+\subsubsection[{m\_\-onConnectionLost}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ConnectionCallback}$\ast$ {\bf RTC::PortBase::m\_\-onConnectionLost}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC_1_1PortBase_a2d7cfeb11e8bccae7702badef6d384f4}
+
+
+Callback functor objects. 
+
+This is a callback object called when the connection of the port does lost. 
+
+Referenced by RTC::OutPort$<$ DataType $>$::write().
+
+\index{RTC::PortBase@{RTC::PortBase}!m\_\-onDisconnected@{m\_\-onDisconnected}}
+\index{m\_\-onDisconnected@{m\_\-onDisconnected}!RTC::PortBase@{RTC::PortBase}}
+\subsubsection[{m\_\-onDisconnected}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ConnectionCallback}$\ast$ {\bf RTC::PortBase::m\_\-onDisconnected}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC_1_1PortBase_ac1ddf7686081da5a663f9109b7ad740f}
+
+
+Callback functor objects. 
+
+This is a callback object that is called in connected release. \index{RTC::PortBase@{RTC::PortBase}!m\_\-onPublishInterfaces@{m\_\-onPublishInterfaces}}
+\index{m\_\-onPublishInterfaces@{m\_\-onPublishInterfaces}!RTC::PortBase@{RTC::PortBase}}
+\subsubsection[{m\_\-onPublishInterfaces}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ConnectionCallback}$\ast$ {\bf RTC::PortBase::m\_\-onPublishInterfaces}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC_1_1PortBase_a85b7308b6911a14bbd26f62106fa2986}
+
+
+Callback functor objects. 
+
+This is callback objedct that is called when the interface is opened to the public. \index{RTC::PortBase@{RTC::PortBase}!m\_\-onSubscribeInterfaces@{m\_\-onSubscribeInterfaces}}
+\index{m\_\-onSubscribeInterfaces@{m\_\-onSubscribeInterfaces}!RTC::PortBase@{RTC::PortBase}}
+\subsubsection[{m\_\-onSubscribeInterfaces}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ConnectionCallback}$\ast$ {\bf RTC::PortBase::m\_\-onSubscribeInterfaces}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC_1_1PortBase_a63ef15306f2d4d66b9570f11d8715057}
+
+
+Callback functor objects. 
+
+This is callback objedct that is called when the interface is got. \index{RTC::PortBase@{RTC::PortBase}!m\_\-onUnsubscribeInterfaces@{m\_\-onUnsubscribeInterfaces}}
+\index{m\_\-onUnsubscribeInterfaces@{m\_\-onUnsubscribeInterfaces}!RTC::PortBase@{RTC::PortBase}}
+\subsubsection[{m\_\-onUnsubscribeInterfaces}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ConnectionCallback}$\ast$ {\bf RTC::PortBase::m\_\-onUnsubscribeInterfaces}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC_1_1PortBase_a34d4ada2f1dfcebec2adc85e5aea484a}
+
+
+Callback functor objects. 
+
+This is a callback object that is called when the interface is released. \index{RTC::PortBase@{RTC::PortBase}!m\_\-ownerInstanceName@{m\_\-ownerInstanceName}}
+\index{m\_\-ownerInstanceName@{m\_\-ownerInstanceName}!RTC::PortBase@{RTC::PortBase}}
+\subsubsection[{m\_\-ownerInstanceName}]{\setlength{\rightskip}{0pt plus 5cm}std::string {\bf RTC::PortBase::m\_\-ownerInstanceName}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC_1_1PortBase_a6f33c6161ecc2b00babcb3a18c7438df}
+
+
+Instance name. 
+
+\index{RTC::PortBase@{RTC::PortBase}!m\_\-portconnListeners@{m\_\-portconnListeners}}
+\index{m\_\-portconnListeners@{m\_\-portconnListeners}!RTC::PortBase@{RTC::PortBase}}
+\subsubsection[{m\_\-portconnListeners}]{\setlength{\rightskip}{0pt plus 5cm}{\bf PortConnectListeners}$\ast$ {\bf RTC::PortBase::m\_\-portconnListeners}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC_1_1PortBase_a0e9ebbf6f53845b48d087240eeb8656f}
+
+
+\doxyref{PortConnectListener}{p.}{classRTC_1_1PortConnectListener} holder. 
+
+Holders of \doxyref{PortConnectListeners}{p.}{classRTC_1_1PortConnectListeners} 
+
+Referenced by onConnected(), onConnectNextport(), onDisconnected(), onDisconnectNextport(), onNotifyConnect(), onNotifyDisconnect(), onPublishInterfaces(), onSubscribeInterfaces(), and onUnsubscribeInterfaces().
+
+\index{RTC::PortBase@{RTC::PortBase}!m\_\-profile@{m\_\-profile}}
+\index{m\_\-profile@{m\_\-profile}!RTC::PortBase@{RTC::PortBase}}
+\subsubsection[{m\_\-profile}]{\setlength{\rightskip}{0pt plus 5cm}PortProfile {\bf RTC::PortBase::m\_\-profile}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC_1_1PortBase_a02b8a89853dc64600f9301a87f50138a}
+
+
+PortProfile of the Port. 
+
+
+
+Referenced by addProperty(), and appendProperty().
+
+\index{RTC::PortBase@{RTC::PortBase}!m\_\-profile\_\-mutex@{m\_\-profile\_\-mutex}}
+\index{m\_\-profile\_\-mutex@{m\_\-profile\_\-mutex}!RTC::PortBase@{RTC::PortBase}}
+\subsubsection[{m\_\-profile\_\-mutex}]{\setlength{\rightskip}{0pt plus 5cm}{\bf coil::Mutex} {\bf RTC::PortBase::m\_\-profile\_\-mutex}\hspace{0.3cm}{\ttfamily  [mutable, protected]}}\label{classRTC_1_1PortBase_a2ee84ba32ff8423c318798dea9814642}
+
+
+Mutex of PortProfile. 
+
+\index{RTC::PortBase@{RTC::PortBase}!rtclog@{rtclog}}
+\index{rtclog@{rtclog}!RTC::PortBase@{RTC::PortBase}}
+\subsubsection[{rtclog}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Logger} {\bf RTC::PortBase::rtclog}\hspace{0.3cm}{\ttfamily  [mutable, protected]}}\label{classRTC_1_1PortBase_ab111ca721c706fe5e93da18705ace90e}
+
+
+\doxyref{Logger}{p.}{classRTC_1_1Logger} stream. 
+

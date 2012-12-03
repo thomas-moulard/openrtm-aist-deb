@@ -1,0 +1,83 @@
+\section{RTC::PortConnectListenerHolder Class Reference}
+\label{classRTC_1_1PortConnectListenerHolder}\index{RTC::PortConnectListenerHolder@{RTC::PortConnectListenerHolder}}
+
+
+\doxyref{PortConnectListener}{p.}{classRTC_1_1PortConnectListener} holder class.  
+
+
+
+
+{\ttfamily \#include $<$PortConnectListener.h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf PortConnectListenerHolder} ()
+\begin{DoxyCompactList}\small\item\em Constructor. \item\end{DoxyCompactList}\item 
+virtual {\bf $\sim$PortConnectListenerHolder} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \item\end{DoxyCompactList}\item 
+void {\bf addListener} ({\bf PortConnectListener} $\ast$listener, bool autoclean)
+\begin{DoxyCompactList}\small\item\em Add the listener. \item\end{DoxyCompactList}\item 
+void {\bf removeListener} ({\bf PortConnectListener} $\ast$listener)
+\begin{DoxyCompactList}\small\item\em Remove the listener. \item\end{DoxyCompactList}\item 
+void {\bf notify} (const char $\ast$portname, RTC::ConnectorProfile \&profile)
+\begin{DoxyCompactList}\small\item\em Notify listeners. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\doxyref{PortConnectListener}{p.}{classRTC_1_1PortConnectListener} holder class. This class manages one ore more instances of \doxyref{PortConnectListener}{p.}{classRTC_1_1PortConnectListener} class. 
+
+\subsection{Constructor \& Destructor Documentation}
+\index{RTC::PortConnectListenerHolder@{RTC::PortConnectListenerHolder}!PortConnectListenerHolder@{PortConnectListenerHolder}}
+\index{PortConnectListenerHolder@{PortConnectListenerHolder}!RTC::PortConnectListenerHolder@{RTC::PortConnectListenerHolder}}
+\subsubsection[{PortConnectListenerHolder}]{\setlength{\rightskip}{0pt plus 5cm}RTC::PortConnectListenerHolder::PortConnectListenerHolder ()}\label{classRTC_1_1PortConnectListenerHolder_a1e6f9d56ac4cd0c7f32c4bc9053ab64c}
+
+
+Constructor. 
+
+\index{RTC::PortConnectListenerHolder@{RTC::PortConnectListenerHolder}!$\sim$PortConnectListenerHolder@{$\sim$PortConnectListenerHolder}}
+\index{$\sim$PortConnectListenerHolder@{$\sim$PortConnectListenerHolder}!RTC::PortConnectListenerHolder@{RTC::PortConnectListenerHolder}}
+\subsubsection[{$\sim$PortConnectListenerHolder}]{\setlength{\rightskip}{0pt plus 5cm}virtual RTC::PortConnectListenerHolder::$\sim$PortConnectListenerHolder ()\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classRTC_1_1PortConnectListenerHolder_a72d78de73416c8f0816409acb576021f}
+
+
+Destructor. 
+
+
+
+\subsection{Member Function Documentation}
+\index{RTC::PortConnectListenerHolder@{RTC::PortConnectListenerHolder}!addListener@{addListener}}
+\index{addListener@{addListener}!RTC::PortConnectListenerHolder@{RTC::PortConnectListenerHolder}}
+\subsubsection[{addListener}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::PortConnectListenerHolder::addListener ({\bf PortConnectListener} $\ast$ {\em listener}, \/  bool {\em autoclean})}\label{classRTC_1_1PortConnectListenerHolder_aede9e6b87040256d64002836545057c0}
+
+
+Add the listener. 
+
+This method adds the listener.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em listener}]Added listener \item[{\em autoclean}]true:The listener is deleted at the destructor., false:The listener is not deleted at the destructor. \end{DoxyParams}
+\index{RTC::PortConnectListenerHolder@{RTC::PortConnectListenerHolder}!notify@{notify}}
+\index{notify@{notify}!RTC::PortConnectListenerHolder@{RTC::PortConnectListenerHolder}}
+\subsubsection[{notify}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::PortConnectListenerHolder::notify (const char $\ast$ {\em portname}, \/  RTC::ConnectorProfile \& {\em profile})}\label{classRTC_1_1PortConnectListenerHolder_a61b163601a4c3a77e7eae1c406d4d412}
+
+
+Notify listeners. 
+
+This calls the Callback method of the registered listener.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em info}]\doxyref{ConnectorInfo}{p.}{classRTC_1_1ConnectorInfo} \end{DoxyParams}
+\index{RTC::PortConnectListenerHolder@{RTC::PortConnectListenerHolder}!removeListener@{removeListener}}
+\index{removeListener@{removeListener}!RTC::PortConnectListenerHolder@{RTC::PortConnectListenerHolder}}
+\subsubsection[{removeListener}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::PortConnectListenerHolder::removeListener ({\bf PortConnectListener} $\ast$ {\em listener})}\label{classRTC_1_1PortConnectListenerHolder_a682df243f73abdd99faa0311278b5993}
+
+
+Remove the listener. 
+
+This method removes the listener.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em listener}]Removed listener \end{DoxyParams}

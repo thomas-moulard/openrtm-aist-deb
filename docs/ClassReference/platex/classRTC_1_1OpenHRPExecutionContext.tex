@@ -1,0 +1,73 @@
+\section{クラス RTC::OpenHRPExecutionContext}
+\label{classRTC_1_1OpenHRPExecutionContext}\index{RTC::OpenHRPExecutionContext@{RTC::OpenHRPExecutionContext}}
+
+
+\doxyref{OpenHRPExecutionContext}{p.}{classRTC_1_1OpenHRPExecutionContext} クラス.  
+
+
+
+
+{\ttfamily \#include $<$OpenHRPExecutionContext.h$>$}
+
+RTC::OpenHRPExecutionContextに対する継承グラフ\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3cm]{classRTC_1_1OpenHRPExecutionContext}
+\end{center}
+\end{figure}
+\subsection*{Public メソッド}
+\begin{DoxyCompactItemize}
+\item 
+{\bf OpenHRPExecutionContext} ()
+\begin{DoxyCompactList}\small\item\em コンストラクタ \item\end{DoxyCompactList}\item 
+virtual {\bf $\sim$OpenHRPExecutionContext} (void)
+\begin{DoxyCompactList}\small\item\em デストラクタ \item\end{DoxyCompactList}\item 
+virtual void {\bf tick} (void)  throw (CORBA::SystemException)
+\begin{DoxyCompactList}\small\item\em ExecutionContextの処理を進める. \item\end{DoxyCompactList}\item 
+virtual int {\bf svc} (void)
+\begin{DoxyCompactList}\small\item\em ExecutionContext のスレッド実行フラグ. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{説明}
+\doxyref{OpenHRPExecutionContext}{p.}{classRTC_1_1OpenHRPExecutionContext} クラス. OpenHRP3のための実行コンテキスト。外部からの \doxyref{tick()}{p.}{classRTC_1_1OpenHRPExecutionContext_a8d48b4067e8f98c350d09b318cf14f60} 呼び出しにより、1周期 分だけ処理を進めることができる。 
+
+\subsection{コンストラクタとデストラクタ}
+\index{RTC::OpenHRPExecutionContext@{RTC::OpenHRPExecutionContext}!OpenHRPExecutionContext@{OpenHRPExecutionContext}}
+\index{OpenHRPExecutionContext@{OpenHRPExecutionContext}!RTC::OpenHRPExecutionContext@{RTC::OpenHRPExecutionContext}}
+\subsubsection[{OpenHRPExecutionContext}]{\setlength{\rightskip}{0pt plus 5cm}RTC::OpenHRPExecutionContext::OpenHRPExecutionContext ()}\label{classRTC_1_1OpenHRPExecutionContext_ad12f022ef04647d6dc48759c797a7690}
+
+
+コンストラクタ 
+
+\index{RTC::OpenHRPExecutionContext@{RTC::OpenHRPExecutionContext}!$\sim$OpenHRPExecutionContext@{$\sim$OpenHRPExecutionContext}}
+\index{$\sim$OpenHRPExecutionContext@{$\sim$OpenHRPExecutionContext}!RTC::OpenHRPExecutionContext@{RTC::OpenHRPExecutionContext}}
+\subsubsection[{$\sim$OpenHRPExecutionContext}]{\setlength{\rightskip}{0pt plus 5cm}virtual RTC::OpenHRPExecutionContext::$\sim$OpenHRPExecutionContext (void)\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classRTC_1_1OpenHRPExecutionContext_ae04a5545a82fb0ff78f5288f05634c17}
+
+
+デストラクタ 
+
+
+
+\subsection{関数}
+\index{RTC::OpenHRPExecutionContext@{RTC::OpenHRPExecutionContext}!svc@{svc}}
+\index{svc@{svc}!RTC::OpenHRPExecutionContext@{RTC::OpenHRPExecutionContext}}
+\subsubsection[{svc}]{\setlength{\rightskip}{0pt plus 5cm}virtual int RTC::OpenHRPExecutionContext::svc (void)\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classRTC_1_1OpenHRPExecutionContext_a1de64d423a97b75133711ae3c32bd216}
+
+
+ExecutionContext のスレッド実行フラグ. 
+
+
+
+{\bf RTC::PeriodicExecutionContext} \doxyref{}{p.}{classRTC_1_1PeriodicExecutionContext_acce0ee7c44366398928e688f895af60b}を再定義しています。
+
+\index{RTC::OpenHRPExecutionContext@{RTC::OpenHRPExecutionContext}!tick@{tick}}
+\index{tick@{tick}!RTC::OpenHRPExecutionContext@{RTC::OpenHRPExecutionContext}}
+\subsubsection[{tick}]{\setlength{\rightskip}{0pt plus 5cm}virtual void RTC::OpenHRPExecutionContext::tick (void)  throw (CORBA::SystemException)\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classRTC_1_1OpenHRPExecutionContext_a8d48b4067e8f98c350d09b318cf14f60}
+
+
+ExecutionContextの処理を進める. 
+
+ExecutionContextの処理を１周期分進める。 
+
+{\bf RTC::ExecutionContextBase} \doxyref{}{p.}{classRTC_1_1ExecutionContextBase_a9a72856fe8c46ab49c54042d30c9e343}を再定義しています。
+

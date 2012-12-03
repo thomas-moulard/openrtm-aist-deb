@@ -1,0 +1,134 @@
+\section{RTC::ConnectorBase Class Reference}
+\label{classRTC_1_1ConnectorBase}\index{RTC::ConnectorBase@{RTC::ConnectorBase}}
+
+
+Connector Base class.  
+
+
+
+
+{\ttfamily \#include $<$ConnectorBase.h$>$}
+
+Inheritance diagram for RTC::ConnectorBase:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.11111cm]{classRTC_1_1ConnectorBase}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual {\bf $\sim$ConnectorBase} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \item\end{DoxyCompactList}\item 
+virtual const {\bf ConnectorInfo} \& {\bf profile} ()=0
+\begin{DoxyCompactList}\small\item\em Getting \doxyref{Profile}{p.}{classProfile}. \item\end{DoxyCompactList}\item 
+virtual const char $\ast$ {\bf id} ()=0
+\begin{DoxyCompactList}\small\item\em Getting Connector ID. \item\end{DoxyCompactList}\item 
+virtual const char $\ast$ {\bf name} ()=0
+\begin{DoxyCompactList}\small\item\em Getting Connector name. \item\end{DoxyCompactList}\item 
+virtual ReturnCode {\bf disconnect} ()=0
+\begin{DoxyCompactList}\small\item\em Disconnect connection. \item\end{DoxyCompactList}\item 
+virtual {\bf CdrBufferBase} $\ast$ {\bf getBuffer} ()=0
+\begin{DoxyCompactList}\small\item\em Getting Buffer. \item\end{DoxyCompactList}\item 
+virtual void {\bf activate} ()=0
+\begin{DoxyCompactList}\small\item\em Connector activation. \item\end{DoxyCompactList}\item 
+virtual void {\bf deactivate} ()=0
+\begin{DoxyCompactList}\small\item\em Connector deactivation. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Connector Base class. The base class to derive subclasses for InPort/OutPort, Push/Pull Connectors
+
+\begin{DoxySince}{Since}
+1.0.0 
+\end{DoxySince}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{RTC::ConnectorBase@{RTC::ConnectorBase}!$\sim$ConnectorBase@{$\sim$ConnectorBase}}
+\index{$\sim$ConnectorBase@{$\sim$ConnectorBase}!RTC::ConnectorBase@{RTC::ConnectorBase}}
+\subsubsection[{$\sim$ConnectorBase}]{\setlength{\rightskip}{0pt plus 5cm}virtual RTC::ConnectorBase::$\sim$ConnectorBase ()\hspace{0.3cm}{\ttfamily  [inline, virtual]}}\label{classRTC_1_1ConnectorBase_afa5e1e6f1924c4f6e90b1e7a2efd869e}
+
+
+Destructor. 
+
+
+
+\subsection{Member Function Documentation}
+\index{RTC::ConnectorBase@{RTC::ConnectorBase}!activate@{activate}}
+\index{activate@{activate}!RTC::ConnectorBase@{RTC::ConnectorBase}}
+\subsubsection[{activate}]{\setlength{\rightskip}{0pt plus 5cm}virtual void RTC::ConnectorBase::activate ()\hspace{0.3cm}{\ttfamily  [pure virtual]}}\label{classRTC_1_1ConnectorBase_a6f7f9ddd882546044f911d66aefee665}
+
+
+Connector activation. 
+
+This operation activates this connector 
+
+Implemented in {\bf RTC::InPortPullConnector} \doxyref{}{p.}{classRTC_1_1InPortPullConnector_a0caf7d4d08dec18fd2973b39d2bc497d}, {\bf RTC::InPortPushConnector} \doxyref{}{p.}{classRTC_1_1InPortPushConnector_a5a34568fa4c67ad895e7842882077e30}, {\bf RTC::OutPortPullConnector} \doxyref{}{p.}{classRTC_1_1OutPortPullConnector_a4a2119db40dea439bc6da3eeeed11aa5}, and {\bf RTC::OutPortPushConnector} \doxyref{}{p.}{classRTC_1_1OutPortPushConnector_ad99dbf702d15a56b9d0b0deca3f8469a}.
+
+\index{RTC::ConnectorBase@{RTC::ConnectorBase}!deactivate@{deactivate}}
+\index{deactivate@{deactivate}!RTC::ConnectorBase@{RTC::ConnectorBase}}
+\subsubsection[{deactivate}]{\setlength{\rightskip}{0pt plus 5cm}virtual void RTC::ConnectorBase::deactivate ()\hspace{0.3cm}{\ttfamily  [pure virtual]}}\label{classRTC_1_1ConnectorBase_a8fe6a1bfe8d5ee586d51293b2bcf36d1}
+
+
+Connector deactivation. 
+
+This operation deactivates this connector 
+
+Implemented in {\bf RTC::InPortPullConnector} \doxyref{}{p.}{classRTC_1_1InPortPullConnector_a1dcb7d9c9c4eb8e4667180f1da142788}, {\bf RTC::InPortPushConnector} \doxyref{}{p.}{classRTC_1_1InPortPushConnector_af93f9456bc93eba17fda8b2f0ceda313}, {\bf RTC::OutPortPullConnector} \doxyref{}{p.}{classRTC_1_1OutPortPullConnector_a2a681ec7dc8db477c34ce2bd84e1ac44}, and {\bf RTC::OutPortPushConnector} \doxyref{}{p.}{classRTC_1_1OutPortPushConnector_a5a3f57bca350504a903b10c2a57ac80b}.
+
+\index{RTC::ConnectorBase@{RTC::ConnectorBase}!disconnect@{disconnect}}
+\index{disconnect@{disconnect}!RTC::ConnectorBase@{RTC::ConnectorBase}}
+\subsubsection[{disconnect}]{\setlength{\rightskip}{0pt plus 5cm}virtual ReturnCode RTC::ConnectorBase::disconnect ()\hspace{0.3cm}{\ttfamily  [pure virtual]}}\label{classRTC_1_1ConnectorBase_a17b1e3bb26ccb844ef2952661977768c}
+
+
+Disconnect connection. 
+
+This operation disconnect this connection 
+
+Implemented in {\bf RTC::InPortConnector} \doxyref{}{p.}{classRTC_1_1InPortConnector_a8677105bbf5ae5ed3e79dc3b057ea0b9}, {\bf RTC::InPortPullConnector} \doxyref{}{p.}{classRTC_1_1InPortPullConnector_a74e8c2fbfdbbacd1d3a67b4017b993df}, {\bf RTC::InPortPushConnector} \doxyref{}{p.}{classRTC_1_1InPortPushConnector_afb5920eabaa874b43bc900348a2fb2ad}, {\bf RTC::OutPortConnector} \doxyref{}{p.}{classRTC_1_1OutPortConnector_a0871d3168eb72d38b598cf862f1ac799}, {\bf RTC::OutPortPullConnector} \doxyref{}{p.}{classRTC_1_1OutPortPullConnector_aef4713815a7140da7c65b690c3a89256}, and {\bf RTC::OutPortPushConnector} \doxyref{}{p.}{classRTC_1_1OutPortPushConnector_ace1f7f9d47a8c2a31781a8cc1da828f0}.
+
+\index{RTC::ConnectorBase@{RTC::ConnectorBase}!getBuffer@{getBuffer}}
+\index{getBuffer@{getBuffer}!RTC::ConnectorBase@{RTC::ConnectorBase}}
+\subsubsection[{getBuffer}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf CdrBufferBase}$\ast$ RTC::ConnectorBase::getBuffer ()\hspace{0.3cm}{\ttfamily  [pure virtual]}}\label{classRTC_1_1ConnectorBase_ad06710a5e9e1862ed50d4a4411c2927d}
+
+
+Getting Buffer. 
+
+This operation returns this connector's buffer 
+
+Implemented in {\bf RTC::InPortConnector} \doxyref{}{p.}{classRTC_1_1InPortConnector_a7a2e6e83f1c50892632b5e23bf2f8ec6}, {\bf RTC::OutPortConnector} \doxyref{}{p.}{classRTC_1_1OutPortConnector_aed38944495c634d459bb0c06618f33a1}, {\bf RTC::OutPortPullConnector} \doxyref{}{p.}{classRTC_1_1OutPortPullConnector_a8b3df65ce00c96f9c4782653948b59d3}, and {\bf RTC::OutPortPushConnector} \doxyref{}{p.}{classRTC_1_1OutPortPushConnector_a5a04e7d25e944f89cbc5a323749887fd}.
+
+\index{RTC::ConnectorBase@{RTC::ConnectorBase}!id@{id}}
+\index{id@{id}!RTC::ConnectorBase@{RTC::ConnectorBase}}
+\subsubsection[{id}]{\setlength{\rightskip}{0pt plus 5cm}virtual const char$\ast$ RTC::ConnectorBase::id ()\hspace{0.3cm}{\ttfamily  [pure virtual]}}\label{classRTC_1_1ConnectorBase_ae2cc57833a7e28f0e605222ecb63e219}
+
+
+Getting Connector ID. 
+
+This operation returns Connector ID 
+
+Implemented in {\bf RTC::InPortConnector} \doxyref{}{p.}{classRTC_1_1InPortConnector_af497212651998eaef0c38913d4762f52}, and {\bf RTC::OutPortConnector} \doxyref{}{p.}{classRTC_1_1OutPortConnector_ae59f1f12f25e2749c8c57db09a3b3aee}.
+
+\index{RTC::ConnectorBase@{RTC::ConnectorBase}!name@{name}}
+\index{name@{name}!RTC::ConnectorBase@{RTC::ConnectorBase}}
+\subsubsection[{name}]{\setlength{\rightskip}{0pt plus 5cm}virtual const char$\ast$ RTC::ConnectorBase::name ()\hspace{0.3cm}{\ttfamily  [pure virtual]}}\label{classRTC_1_1ConnectorBase_a73e002174dc02ec4830c624e7fd96b43}
+
+
+Getting Connector name. 
+
+This operation returns Connector name 
+
+Implemented in {\bf RTC::InPortConnector} \doxyref{}{p.}{classRTC_1_1InPortConnector_abb9dd2bf3f81d132a2a3eb4f31ff461d}, and {\bf RTC::OutPortConnector} \doxyref{}{p.}{classRTC_1_1OutPortConnector_a5c82fa5aa785b8b8272137355025c0a8}.
+
+\index{RTC::ConnectorBase@{RTC::ConnectorBase}!profile@{profile}}
+\index{profile@{profile}!RTC::ConnectorBase@{RTC::ConnectorBase}}
+\subsubsection[{profile}]{\setlength{\rightskip}{0pt plus 5cm}virtual const {\bf ConnectorInfo}\& RTC::ConnectorBase::profile ()\hspace{0.3cm}{\ttfamily  [pure virtual]}}\label{classRTC_1_1ConnectorBase_a8bd2e9cbd6a9341ec4c97416dcf981c7}
+
+
+Getting \doxyref{Profile}{p.}{classProfile}. 
+
+This operation returns Connector \doxyref{Profile}{p.}{classProfile} 
+
+Implemented in {\bf RTC::InPortConnector} \doxyref{}{p.}{classRTC_1_1InPortConnector_ade653239f3932f5968ee818ecfd53354}, and {\bf RTC::OutPortConnector} \doxyref{}{p.}{classRTC_1_1OutPortConnector_a1c21b81e5dd176cd5f3723a8a0783936}.
+

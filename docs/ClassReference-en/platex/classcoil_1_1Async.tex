@@ -1,0 +1,78 @@
+\section{coil::Async Class Reference}
+\label{classcoil_1_1Async}\index{coil::Async@{coil::Async}}
+
+
+\doxyref{Async}{p.}{classcoil_1_1Async} class.  
+
+
+
+
+{\ttfamily \#include $<$Async.h$>$}
+
+Inheritance diagram for coil::Async:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3cm]{classcoil_1_1Async}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Async} ()
+\begin{DoxyCompactList}\small\item\em Constructor. \item\end{DoxyCompactList}\item 
+virtual {\bf $\sim$Async} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \item\end{DoxyCompactList}\item 
+virtual void {\bf invoke} ()=0
+\begin{DoxyCompactList}\small\item\em Asynchronous invocation. \item\end{DoxyCompactList}\item 
+virtual bool {\bf finished} ()=0
+\begin{DoxyCompactList}\small\item\em Check on completion state. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\doxyref{Async}{p.}{classcoil_1_1Async} class. 
+
+\subsection{Constructor \& Destructor Documentation}
+\index{coil::Async@{coil::Async}!Async@{Async}}
+\index{Async@{Async}!coil::Async@{coil::Async}}
+\subsubsection[{Async}]{\setlength{\rightskip}{0pt plus 5cm}coil::Async::Async ()\hspace{0.3cm}{\ttfamily  [inline]}}\label{classcoil_1_1Async_a91ae54f017184f8a59920f5264561072}
+
+
+Constructor. 
+
+Constructor \index{coil::Async@{coil::Async}!$\sim$Async@{$\sim$Async}}
+\index{$\sim$Async@{$\sim$Async}!coil::Async@{coil::Async}}
+\subsubsection[{$\sim$Async}]{\setlength{\rightskip}{0pt plus 5cm}virtual coil::Async::$\sim$Async ()\hspace{0.3cm}{\ttfamily  [inline, virtual]}}\label{classcoil_1_1Async_ac38f68a3d5cb896cc0ae40a1bdc5a5e6}
+
+
+Destructor. 
+
+Destructor 
+
+\subsection{Member Function Documentation}
+\index{coil::Async@{coil::Async}!finished@{finished}}
+\index{finished@{finished}!coil::Async@{coil::Async}}
+\subsubsection[{finished}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool coil::Async::finished ()\hspace{0.3cm}{\ttfamily  [pure virtual]}}\label{classcoil_1_1Async_a791b91a66a98acec44e63b0c5fae8b20}
+
+
+Check on completion state. 
+
+Pure virtual function for check on completion state.
+
+\begin{DoxyReturn}{Returns}
+true: finished, false: unfinished 
+\end{DoxyReturn}
+
+
+Implemented in {\bf coil::Async\_\-t$<$ Object, Func $>$} \doxyref{}{p.}{classcoil_1_1Async__t_af7c59952bc29131e36ee456d23bdf746}, and {\bf coil::Async\_\-ref\_\-t$<$ Object, Func $>$} \doxyref{}{p.}{classcoil_1_1Async__ref__t_a9f47a1903293a0f6f53041f42b30368b}.
+
+\index{coil::Async@{coil::Async}!invoke@{invoke}}
+\index{invoke@{invoke}!coil::Async@{coil::Async}}
+\subsubsection[{invoke}]{\setlength{\rightskip}{0pt plus 5cm}virtual void coil::Async::invoke ()\hspace{0.3cm}{\ttfamily  [pure virtual]}}\label{classcoil_1_1Async_ada31d64682effe5daa79212d07c02b65}
+
+
+Asynchronous invocation. 
+
+Pure virtual function for Asynchronous invocation. 
+
+Implemented in {\bf coil::Async\_\-t$<$ Object, Func $>$} \doxyref{}{p.}{classcoil_1_1Async__t_aa6b4d79bed3225128f3e5cbde7d0fef8}, and {\bf coil::Async\_\-ref\_\-t$<$ Object, Func $>$} \doxyref{}{p.}{classcoil_1_1Async__ref__t_a6be7d1b1d810323d89e8bf9c00f5874a}.
+

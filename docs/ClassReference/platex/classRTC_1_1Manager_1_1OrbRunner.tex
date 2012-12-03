@@ -1,0 +1,111 @@
+\section{クラス RTC::Manager::OrbRunner}
+\label{classRTC_1_1Manager_1_1OrbRunner}\index{RTC::Manager::OrbRunner@{RTC::Manager::OrbRunner}}
+
+
+\doxyref{OrbRunner}{p.}{classRTC_1_1Manager_1_1OrbRunner} クラス.  
+
+
+
+
+{\ttfamily \#include $<$Manager.h$>$}
+
+RTC::Manager::OrbRunnerに対する継承グラフ\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2cm]{classRTC_1_1Manager_1_1OrbRunner}
+\end{center}
+\end{figure}
+\subsection*{Public メソッド}
+\begin{DoxyCompactItemize}
+\item 
+{\bf OrbRunner} (CORBA::ORB\_\-ptr orb)
+\item 
+virtual int {\bf open} (void $\ast$args)
+\begin{DoxyCompactList}\small\item\em ORB 活性化処理. \item\end{DoxyCompactList}\item 
+virtual int {\bf svc} (void)
+\begin{DoxyCompactList}\small\item\em ORB 開始処理. \item\end{DoxyCompactList}\item 
+virtual int {\bf close} (unsigned long flags)
+\begin{DoxyCompactList}\small\item\em ORB 終了処理. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{説明}
+\doxyref{OrbRunner}{p.}{classRTC_1_1Manager_1_1OrbRunner} クラス. ORB 実行用ヘルパークラス。
+
+\begin{DoxySince}{から}
+0.4.0 
+\end{DoxySince}
+
+
+\subsection{コンストラクタとデストラクタ}
+\index{RTC::Manager::OrbRunner@{RTC::Manager::OrbRunner}!OrbRunner@{OrbRunner}}
+\index{OrbRunner@{OrbRunner}!RTC::Manager::OrbRunner@{RTC::Manager::OrbRunner}}
+\subsubsection[{OrbRunner}]{\setlength{\rightskip}{0pt plus 5cm}RTC::Manager::OrbRunner::OrbRunner (CORBA::ORB\_\-ptr {\em orb})\hspace{0.3cm}{\ttfamily  [inline]}}\label{classRTC_1_1Manager_1_1OrbRunner_a6b29c03c3a113edcd3d1eb36361c1ab6}
+コンストラクタ 
+
+参照先 open().
+
+
+
+\subsection{関数}
+\index{RTC::Manager::OrbRunner@{RTC::Manager::OrbRunner}!close@{close}}
+\index{close@{close}!RTC::Manager::OrbRunner@{RTC::Manager::OrbRunner}}
+\subsubsection[{close}]{\setlength{\rightskip}{0pt plus 5cm}virtual int RTC::Manager::OrbRunner::close (unsigned long {\em flags})\hspace{0.3cm}{\ttfamily  [inline, virtual]}}\label{classRTC_1_1Manager_1_1OrbRunner_a19fb5b7a8e18910b31c13207dccbe167}
+
+
+ORB 終了処理. 
+
+ORB 終了処理
+
+
+\begin{DoxyParams}{引数}
+\item[{\em flags}]終了処理フラグ\end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+終了処理結果 
+\end{DoxyReturn}
+
+
+{\bf coil::Task} \doxyref{}{p.}{classcoil_1_1Task_aa3bfcb01e9d162e4053a4c7312673879}を再定義しています。
+
+\index{RTC::Manager::OrbRunner@{RTC::Manager::OrbRunner}!open@{open}}
+\index{open@{open}!RTC::Manager::OrbRunner@{RTC::Manager::OrbRunner}}
+\subsubsection[{open}]{\setlength{\rightskip}{0pt plus 5cm}virtual int RTC::Manager::OrbRunner::open (void $\ast$ {\em args})\hspace{0.3cm}{\ttfamily  [inline, virtual]}}\label{classRTC_1_1Manager_1_1OrbRunner_a879d024f9e63e641475a627641871600}
+
+
+ORB 活性化処理. 
+
+ORB 活性化処理
+
+
+\begin{DoxyParams}{引数}
+\item[{\em args}]活性化時引数\end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+活性化結果 
+\end{DoxyReturn}
+
+
+{\bf coil::Task} \doxyref{}{p.}{classcoil_1_1Task_af964d1b21ddf53987e8190cb4e5d9613}を再定義しています。
+
+
+
+参照先 coil::Task::activate().
+
+
+
+参照元 OrbRunner().
+
+\index{RTC::Manager::OrbRunner@{RTC::Manager::OrbRunner}!svc@{svc}}
+\index{svc@{svc}!RTC::Manager::OrbRunner@{RTC::Manager::OrbRunner}}
+\subsubsection[{svc}]{\setlength{\rightskip}{0pt plus 5cm}virtual int RTC::Manager::OrbRunner::svc (void)\hspace{0.3cm}{\ttfamily  [inline, virtual]}}\label{classRTC_1_1Manager_1_1OrbRunner_a269a4a56e2c0d5ee5782c10a9c6ef608}
+
+
+ORB 開始処理. 
+
+ORB 開始処理
+
+\begin{DoxyReturn}{戻り値}
+開始処理結果 
+\end{DoxyReturn}
+
+
+{\bf coil::Task} \doxyref{}{p.}{classcoil_1_1Task_ae68f22a4afbe8cddde1fe910bc3dd226}を再定義しています。
+

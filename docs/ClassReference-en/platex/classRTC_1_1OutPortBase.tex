@@ -1,0 +1,614 @@
+\section{RTC::OutPortBase Class Reference}
+\label{classRTC_1_1OutPortBase}\index{RTC::OutPortBase@{RTC::OutPortBase}}
+
+
+Output base class.  
+
+
+
+
+{\ttfamily \#include $<$OutPortBase.h$>$}
+
+Inheritance diagram for RTC::OutPortBase:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3cm]{classRTC_1_1OutPortBase}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf OutPortBase} (const char $\ast$name, const char $\ast$data\_\-type)
+\begin{DoxyCompactList}\small\item\em Constructor. \item\end{DoxyCompactList}\item 
+virtual {\bf $\sim$OutPortBase} (void)
+\begin{DoxyCompactList}\small\item\em Destructor. \item\end{DoxyCompactList}\item 
+void {\bf init} ({\bf coil::Properties} \&prop)
+\begin{DoxyCompactList}\small\item\em Initializing properties. \item\end{DoxyCompactList}\item 
+virtual bool {\bf write} ()=0
+\begin{DoxyCompactList}\small\item\em Write data. \item\end{DoxyCompactList}\item 
+{\bf coil::Properties} \& {\bf properties} ()
+\begin{DoxyCompactList}\small\item\em Get properties. \item\end{DoxyCompactList}\item 
+const std::vector$<$ {\bf OutPortConnector} $\ast$ $>$ \& {\bf connectors} ()
+\begin{DoxyCompactList}\small\item\em Connector list. \item\end{DoxyCompactList}\item 
+{\bf ConnectorInfoList} {\bf getConnectorProfiles} ()
+\begin{DoxyCompactList}\small\item\em ConnectorProfile list. \item\end{DoxyCompactList}\item 
+{\bf coil::vstring} {\bf getConnectorIds} ()
+\begin{DoxyCompactList}\small\item\em ConnectorId list. \item\end{DoxyCompactList}\item 
+{\bf coil::vstring} {\bf getConnectorNames} ()
+\begin{DoxyCompactList}\small\item\em Connector name list. \item\end{DoxyCompactList}\item 
+{\bf OutPortConnector} $\ast$ {\bf getConnectorById} (const char $\ast$id)
+\begin{DoxyCompactList}\small\item\em Getting ConnectorProfile by ID. \item\end{DoxyCompactList}\item 
+{\bf OutPortConnector} $\ast$ {\bf getConnectorByName} (const char $\ast$name)
+\begin{DoxyCompactList}\small\item\em Getting Connector by name. \item\end{DoxyCompactList}\item 
+bool {\bf getConnectorProfileById} (const char $\ast$id, {\bf ConnectorInfo} \&prof)
+\begin{DoxyCompactList}\small\item\em Getting ConnectorProfile by name. \item\end{DoxyCompactList}\item 
+bool {\bf getConnectorProfileByName} (const char $\ast$name, {\bf ConnectorInfo} \&prof)
+\begin{DoxyCompactList}\small\item\em Getting ConnectorProfile by name. \item\end{DoxyCompactList}\item 
+virtual void {\bf activateInterfaces} ()
+\begin{DoxyCompactList}\small\item\em Activate all Port interfaces. \item\end{DoxyCompactList}\item 
+virtual void {\bf deactivateInterfaces} ()
+\begin{DoxyCompactList}\small\item\em Deactivate all Port interfaces. \item\end{DoxyCompactList}\item 
+void {\bf addConnectorDataListener} ({\bf ConnectorDataListenerType} listener\_\-type, {\bf ConnectorDataListener} $\ast$listener, bool autoclean=true)
+\begin{DoxyCompactList}\small\item\em Adding BufferDataListener type listener. \item\end{DoxyCompactList}\item 
+void {\bf removeConnectorDataListener} ({\bf ConnectorDataListenerType} listener\_\-type, {\bf ConnectorDataListener} $\ast$listener)
+\begin{DoxyCompactList}\small\item\em Removing BufferDataListener type listener. \item\end{DoxyCompactList}\item 
+void {\bf addConnectorListener} ({\bf ConnectorListenerType} callback\_\-type, {\bf ConnectorListener} $\ast$listener, bool autoclean=true)
+\begin{DoxyCompactList}\small\item\em Adding \doxyref{ConnectorListener}{p.}{classRTC_1_1ConnectorListener} type listener. \item\end{DoxyCompactList}\item 
+void {\bf removeConnectorListener} ({\bf ConnectorListenerType} callback\_\-type, {\bf ConnectorListener} $\ast$listener)
+\begin{DoxyCompactList}\small\item\em Removing BufferDataListener type listener. \item\end{DoxyCompactList}\item 
+bool {\bf isLittleEndian} ()
+\begin{DoxyCompactList}\small\item\em return it whether endian setting. \item\end{DoxyCompactList}\item 
+virtual ReturnCode\_\-t {\bf connect} (ConnectorProfile \&connector\_\-profile)  throw (CORBA::SystemException)
+\begin{DoxyCompactList}\small\item\em [CORBA interface] Connect the Port \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+DATAPORTSTATUS\_\-ENUM typedef std::vector$<$ {\bf OutPortConnector} $\ast$ $>$ {\bf ConnectorList}
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bf configure} ()
+\begin{DoxyCompactList}\small\item\em Configureing outport. \item\end{DoxyCompactList}\item 
+virtual ReturnCode\_\-t {\bf publishInterfaces} (ConnectorProfile \&connector\_\-profile)
+\begin{DoxyCompactList}\small\item\em Publish interface information. \item\end{DoxyCompactList}\item 
+virtual ReturnCode\_\-t {\bf subscribeInterfaces} (const ConnectorProfile \&connector\_\-profile)
+\begin{DoxyCompactList}\small\item\em Subscribe to the interface. \item\end{DoxyCompactList}\item 
+virtual void {\bf unsubscribeInterfaces} (const ConnectorProfile \&connector\_\-profile)
+\begin{DoxyCompactList}\small\item\em Disconnect the interface connection. \item\end{DoxyCompactList}\item 
+void {\bf initProviders} ()
+\begin{DoxyCompactList}\small\item\em \doxyref{OutPort}{p.}{classRTC_1_1OutPort} provider initialization. \item\end{DoxyCompactList}\item 
+void {\bf initConsumers} ()
+\begin{DoxyCompactList}\small\item\em \doxyref{InPort}{p.}{classRTC_1_1InPort} consumer initialization. \item\end{DoxyCompactList}\item 
+bool {\bf checkEndian} (const {\bf coil::Properties} \&prop, bool \&littleEndian)
+\begin{DoxyCompactList}\small\item\em Checking endian flag of serializer. \item\end{DoxyCompactList}\item 
+{\bf OutPortProvider} $\ast$ {\bf createProvider} (ConnectorProfile \&cprof, {\bf coil::Properties} \&prop)
+\begin{DoxyCompactList}\small\item\em \doxyref{OutPort}{p.}{classRTC_1_1OutPort} provider creation. \item\end{DoxyCompactList}\item 
+{\bf InPortConsumer} $\ast$ {\bf createConsumer} (const ConnectorProfile \&cprof, {\bf coil::Properties} \&prop)
+\begin{DoxyCompactList}\small\item\em \doxyref{InPort}{p.}{classRTC_1_1InPort} consumer creation. \item\end{DoxyCompactList}\item 
+{\bf OutPortConnector} $\ast$ {\bf createConnector} (const ConnectorProfile \&cprof, {\bf coil::Properties} \&prop, {\bf InPortConsumer} $\ast$consumer)
+\begin{DoxyCompactList}\small\item\em \doxyref{OutPortPushConnector}{p.}{classRTC_1_1OutPortPushConnector} creation. \item\end{DoxyCompactList}\item 
+{\bf OutPortConnector} $\ast$ {\bf createConnector} (const ConnectorProfile \&cprof, {\bf coil::Properties} \&prop, {\bf OutPortProvider} $\ast$provider)
+\begin{DoxyCompactList}\small\item\em \doxyref{OutPortPullConnector}{p.}{classRTC_1_1OutPortPullConnector} creation. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+{\bf coil::Properties} {\bf m\_\-properties}
+\begin{DoxyCompactList}\small\item\em Properties. \item\end{DoxyCompactList}\item 
+std::vector$<$ {\bf OutPortConnector} $\ast$ $>$ {\bf m\_\-connectors}
+\begin{DoxyCompactList}\small\item\em Connection list. \item\end{DoxyCompactList}\item 
+{\bf coil::vstring} {\bf m\_\-providerTypes}
+\begin{DoxyCompactList}\small\item\em Available providers. \item\end{DoxyCompactList}\item 
+{\bf coil::vstring} {\bf m\_\-consumerTypes}
+\begin{DoxyCompactList}\small\item\em Available consumers. \item\end{DoxyCompactList}\item 
+bool {\bf m\_\-littleEndian}
+\begin{DoxyCompactList}\small\item\em Connected Endian. \item\end{DoxyCompactList}\item 
+{\bf ConnectorListeners} {\bf m\_\-listeners}
+\begin{DoxyCompactList}\small\item\em \doxyref{ConnectorDataListener}{p.}{classRTC_1_1ConnectorDataListener} listener. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Output base class. The base class of OutPort$<$T$>$ which are implementations of \doxyref{OutPort}{p.}{classRTC_1_1OutPort}
+
+Form a kind of Observer pattern with \doxyref{OutPortBase}{p.}{classRTC_1_1OutPortBase} and \doxyref{PublisherBase}{p.}{classRTC_1_1PublisherBase}. attach(), detach(), notify() of \doxyref{OutPortBase}{p.}{classRTC_1_1OutPortBase} and push() of \doxyref{PublisherBase}{p.}{classRTC_1_1PublisherBase} are methods associated with the Observer pattern.
+
+\begin{DoxySince}{Since}
+0.2.0 
+\end{DoxySince}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{RTC::OutPortBase@{RTC::OutPortBase}!OutPortBase@{OutPortBase}}
+\index{OutPortBase@{OutPortBase}!RTC::OutPortBase@{RTC::OutPortBase}}
+\subsubsection[{OutPortBase}]{\setlength{\rightskip}{0pt plus 5cm}RTC::OutPortBase::OutPortBase (const char $\ast$ {\em name}, \/  const char $\ast$ {\em data\_\-type})}\label{classRTC_1_1OutPortBase_a95786a0eb7c1f637357de98f015e4866}
+
+
+Constructor. 
+
+Constructor
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em name}]Port name \item[{\em data\_\-type}]Data type \end{DoxyParams}
+\index{RTC::OutPortBase@{RTC::OutPortBase}!$\sim$OutPortBase@{$\sim$OutPortBase}}
+\index{$\sim$OutPortBase@{$\sim$OutPortBase}!RTC::OutPortBase@{RTC::OutPortBase}}
+\subsubsection[{$\sim$OutPortBase}]{\setlength{\rightskip}{0pt plus 5cm}virtual RTC::OutPortBase::$\sim$OutPortBase (void)\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classRTC_1_1OutPortBase_a3db521230b7f94317a69201d64fee7af}
+
+
+Destructor. 
+
+Destructor Detach all subscribed Publishers. 
+
+\subsection{Member Function Documentation}
+\index{RTC::OutPortBase@{RTC::OutPortBase}!activateInterfaces@{activateInterfaces}}
+\index{activateInterfaces@{activateInterfaces}!RTC::OutPortBase@{RTC::OutPortBase}}
+\subsubsection[{activateInterfaces}]{\setlength{\rightskip}{0pt plus 5cm}virtual void RTC::OutPortBase::activateInterfaces ()\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classRTC_1_1OutPortBase_a4741de18bb77db12a192055468eca8a8}
+
+
+Activate all Port interfaces. 
+
+This operation activate all interfaces that is registered in the ports. 
+
+Implements {\bf RTC::PortBase} \doxyref{}{p.}{classRTC_1_1PortBase_ad779347bae007555968dda9e78004e34}.
+
+\index{RTC::OutPortBase@{RTC::OutPortBase}!addConnectorDataListener@{addConnectorDataListener}}
+\index{addConnectorDataListener@{addConnectorDataListener}!RTC::OutPortBase@{RTC::OutPortBase}}
+\subsubsection[{addConnectorDataListener}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::OutPortBase::addConnectorDataListener ({\bf ConnectorDataListenerType} {\em listener\_\-type}, \/  {\bf ConnectorDataListener} $\ast$ {\em listener}, \/  bool {\em autoclean} = {\ttfamily true})}\label{classRTC_1_1OutPortBase_a2a2fb10deae53b4c3a8d13f9191ab63c}
+
+
+Adding BufferDataListener type listener. 
+
+This operation adds certain listeners related to buffer writing and reading events. The following listener types are available.
+
+
+\begin{DoxyItemize}
+\item ON\_\-BUFFER\_\-WRITE: At the time of buffer write
+\item ON\_\-BUFFER\_\-FULL: At the time of buffer full
+\item ON\_\-BUFFER\_\-WRITE\_\-TIMEOUT: At the time of buffer write timeout
+\item ON\_\-BUFFER\_\-OVERWRITE: At the time of buffer overwrite
+\item ON\_\-BUFFER\_\-READ: At the time of buffer read
+\item ON\_\-SEND: At the time of sending to \doxyref{InPort}{p.}{classRTC_1_1InPort}
+\item ON\_\-RECEIVED: At the time of finishing sending to \doxyref{InPort}{p.}{classRTC_1_1InPort}
+\item ON\_\-SENDER\_\-TIMEOUT: At the time of timeout of \doxyref{OutPort}{p.}{classRTC_1_1OutPort}
+\item ON\_\-SENDER\_\-ERROR: At the time of error of \doxyref{OutPort}{p.}{classRTC_1_1OutPort}
+\item ON\_\-RECEIVER\_\-FULL: At the time of bufferfull of \doxyref{InPort}{p.}{classRTC_1_1InPort}
+\item ON\_\-RECEIVER\_\-TIMEOUT: At the time of timeout of \doxyref{InPort}{p.}{classRTC_1_1InPort}
+\item ON\_\-RECEIVER\_\-ERROR: At the time of error of \doxyref{InPort}{p.}{classRTC_1_1InPort}
+\end{DoxyItemize}
+
+Listeners should have the following function operator().
+
+\doxyref{ConnectorDataListener}{p.}{classRTC_1_1ConnectorDataListener}:: operator()(const ConnectorProfile\&, const cdrStream\&)
+
+The ownership of the given listener object is transferred to this \doxyref{OutPort}{p.}{classRTC_1_1OutPort} object in default. The given listener object will be destroied automatically in the OutPort's dtor or if the listener is deleted by \doxyref{removeConnectorDataListener()}{p.}{classRTC_1_1OutPortBase_a28120f94dd82dc7e4962268ac6a97346} function. If you want to keep ownership of the listener object, give \char`\"{}false\char`\"{} value to 3rd argument to inhibit automatic destruction.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em listener\_\-type}]A listener type \item[{\em listener}]A pointer to a listener object \item[{\em autoclean}]A flag for automatic listener destruction \end{DoxyParams}
+\index{RTC::OutPortBase@{RTC::OutPortBase}!addConnectorListener@{addConnectorListener}}
+\index{addConnectorListener@{addConnectorListener}!RTC::OutPortBase@{RTC::OutPortBase}}
+\subsubsection[{addConnectorListener}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::OutPortBase::addConnectorListener ({\bf ConnectorListenerType} {\em callback\_\-type}, \/  {\bf ConnectorListener} $\ast$ {\em listener}, \/  bool {\em autoclean} = {\ttfamily true})}\label{classRTC_1_1OutPortBase_a89cff8fae97dcaeb956dc52a49861bbf}
+
+
+Adding \doxyref{ConnectorListener}{p.}{classRTC_1_1ConnectorListener} type listener. 
+
+This operation adds certain listeners related to buffer writing and reading events. The following listener types are available.
+
+
+\begin{DoxyItemize}
+\item ON\_\-BUFFER\_\-EMPTY: At the time of buffer empty
+\item ON\_\-BUFFER\_\-READTIMEOUT: At the time of buffer read timeout
+\end{DoxyItemize}
+
+Listeners should have the following function operator().
+
+ConnectorListener::operator()(const ConnectorProfile\&)
+
+The ownership of the given listener object is transferred to this \doxyref{OutPort}{p.}{classRTC_1_1OutPort} object in default. The given listener object will be destroied automatically in the OutPort's dtor or if the listener is deleted by \doxyref{removeConnectorListener()}{p.}{classRTC_1_1OutPortBase_a5d6edaaff9cc904df3d00a9c0f930f7d} function. If you want to keep ownership of the listener object, give \char`\"{}false\char`\"{} value to 3rd argument to inhibit automatic destruction.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em listener\_\-type}]A listener type \item[{\em listener}]A pointer to a listener object \item[{\em autoclean}]A flag for automatic listener destruction \end{DoxyParams}
+\index{RTC::OutPortBase@{RTC::OutPortBase}!checkEndian@{checkEndian}}
+\index{checkEndian@{checkEndian}!RTC::OutPortBase@{RTC::OutPortBase}}
+\subsubsection[{checkEndian}]{\setlength{\rightskip}{0pt plus 5cm}bool RTC::OutPortBase::checkEndian (const {\bf coil::Properties} \& {\em prop}, \/  bool \& {\em littleEndian})\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC_1_1OutPortBase_ad195a844990d4cc95a2b2998958e4b6e}
+
+
+Checking endian flag of serializer. 
+
+This operation checks endian flag of data serializer that is specified properties. If valid specification is found, this operation returns true and set argument littleEndian. True means little endian, false means big endian.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em prop}]Properties \item[{\em littleEndian}]Endian Information(true:little,false:big) \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true:\char`\"{}Serializer\char`\"{} key doesn't exist. or \char`\"{}Serializer\char`\"{} key exists and there is a content. false:There is no content though \char`\"{}Serializer\char`\"{} key exists. or ithe content is not \char`\"{}Little. \char`\"{} though \char`\"{}Serializer\char`\"{} key exists, or the content is not \char`\"{}little\char`\"{} or \char`\"{}big\char`\"{} though \char`\"{}Serializer\char`\"{} key exists. 
+\end{DoxyReturn}
+\index{RTC::OutPortBase@{RTC::OutPortBase}!configure@{configure}}
+\index{configure@{configure}!RTC::OutPortBase@{RTC::OutPortBase}}
+\subsubsection[{configure}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::OutPortBase::configure ()\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC_1_1OutPortBase_a5eb7b4574c30267df1935f005020f323}
+
+
+Configureing outport. 
+
+This operation configures the outport based on the properties. \index{RTC::OutPortBase@{RTC::OutPortBase}!connect@{connect}}
+\index{connect@{connect}!RTC::OutPortBase@{RTC::OutPortBase}}
+\subsubsection[{connect}]{\setlength{\rightskip}{0pt plus 5cm}virtual ReturnCode\_\-t RTC::OutPortBase::connect (ConnectorProfile \& {\em connector\_\-profile})  throw (CORBA::SystemException)\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classRTC_1_1OutPortBase_ab6297aece321369ebc78900962627f0d}
+
+
+[CORBA interface] Connect the Port 
+
+This operation establishes connection according to the given ConnectionProfile inforamtion. This function is premised on calling from mainly application program or tools.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em connector\_\-profile}]The ConnectorProfile. \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+ReturnCode\_\-t The return code of ReturnCode\_\-t type. 
+\end{DoxyReturn}
+
+
+Reimplemented from {\bf RTC::PortBase} \doxyref{}{p.}{classRTC_1_1PortBase_a139d07d2e94f7e793aedf4aa24b92462}.
+
+\index{RTC::OutPortBase@{RTC::OutPortBase}!connectors@{connectors}}
+\index{connectors@{connectors}!RTC::OutPortBase@{RTC::OutPortBase}}
+\subsubsection[{connectors}]{\setlength{\rightskip}{0pt plus 5cm}const std::vector$<${\bf OutPortConnector}$\ast$$>$\& RTC::OutPortBase::connectors ()}\label{classRTC_1_1OutPortBase_a83d97dbbf83c397896f5b6823fb01c52}
+
+
+Connector list. 
+
+This operation returns connector list
+
+\begin{DoxyReturn}{Returns}
+connector list 
+\end{DoxyReturn}
+\index{RTC::OutPortBase@{RTC::OutPortBase}!createConnector@{createConnector}}
+\index{createConnector@{createConnector}!RTC::OutPortBase@{RTC::OutPortBase}}
+\subsubsection[{createConnector}]{\setlength{\rightskip}{0pt plus 5cm}{\bf OutPortConnector}$\ast$ RTC::OutPortBase::createConnector (const ConnectorProfile \& {\em cprof}, \/  {\bf coil::Properties} \& {\em prop}, \/  {\bf OutPortProvider} $\ast$ {\em provider})\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC_1_1OutPortBase_abe4972bf07450f8233530944ad8dba1b}
+
+
+\doxyref{OutPortPullConnector}{p.}{classRTC_1_1OutPortPullConnector} creation. 
+
+\index{RTC::OutPortBase@{RTC::OutPortBase}!createConnector@{createConnector}}
+\index{createConnector@{createConnector}!RTC::OutPortBase@{RTC::OutPortBase}}
+\subsubsection[{createConnector}]{\setlength{\rightskip}{0pt plus 5cm}{\bf OutPortConnector}$\ast$ RTC::OutPortBase::createConnector (const ConnectorProfile \& {\em cprof}, \/  {\bf coil::Properties} \& {\em prop}, \/  {\bf InPortConsumer} $\ast$ {\em consumer})\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC_1_1OutPortBase_a7567ee516c9656377f9a914c77d026e6}
+
+
+\doxyref{OutPortPushConnector}{p.}{classRTC_1_1OutPortPushConnector} creation. 
+
+\index{RTC::OutPortBase@{RTC::OutPortBase}!createConsumer@{createConsumer}}
+\index{createConsumer@{createConsumer}!RTC::OutPortBase@{RTC::OutPortBase}}
+\subsubsection[{createConsumer}]{\setlength{\rightskip}{0pt plus 5cm}{\bf InPortConsumer}$\ast$ RTC::OutPortBase::createConsumer (const ConnectorProfile \& {\em cprof}, \/  {\bf coil::Properties} \& {\em prop})\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC_1_1OutPortBase_a26c370ab01108683ab09955e78200d1d}
+
+
+\doxyref{InPort}{p.}{classRTC_1_1InPort} consumer creation. 
+
+\index{RTC::OutPortBase@{RTC::OutPortBase}!createProvider@{createProvider}}
+\index{createProvider@{createProvider}!RTC::OutPortBase@{RTC::OutPortBase}}
+\subsubsection[{createProvider}]{\setlength{\rightskip}{0pt plus 5cm}{\bf OutPortProvider}$\ast$ RTC::OutPortBase::createProvider (ConnectorProfile \& {\em cprof}, \/  {\bf coil::Properties} \& {\em prop})\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC_1_1OutPortBase_a506bc2f4535406c09ea1db611a8bf6f1}
+
+
+\doxyref{OutPort}{p.}{classRTC_1_1OutPort} provider creation. 
+
+\index{RTC::OutPortBase@{RTC::OutPortBase}!deactivateInterfaces@{deactivateInterfaces}}
+\index{deactivateInterfaces@{deactivateInterfaces}!RTC::OutPortBase@{RTC::OutPortBase}}
+\subsubsection[{deactivateInterfaces}]{\setlength{\rightskip}{0pt plus 5cm}virtual void RTC::OutPortBase::deactivateInterfaces ()\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classRTC_1_1OutPortBase_aa08d3ddfdf0b00398b40e76164622e43}
+
+
+Deactivate all Port interfaces. 
+
+This operation deactivate all interfaces that is registered in the ports. 
+
+Implements {\bf RTC::PortBase} \doxyref{}{p.}{classRTC_1_1PortBase_a8dfb8a33b92b9fc9b6c070df2def633f}.
+
+\index{RTC::OutPortBase@{RTC::OutPortBase}!getConnectorById@{getConnectorById}}
+\index{getConnectorById@{getConnectorById}!RTC::OutPortBase@{RTC::OutPortBase}}
+\subsubsection[{getConnectorById}]{\setlength{\rightskip}{0pt plus 5cm}{\bf OutPortConnector}$\ast$ RTC::OutPortBase::getConnectorById (const char $\ast$ {\em id})}\label{classRTC_1_1OutPortBase_a4ff8c933fea3435d173037e68f92520a}
+
+
+Getting ConnectorProfile by ID. 
+
+This operation returns Connector specified by ID.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em id}]Connector ID \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A pointer to connector 
+\end{DoxyReturn}
+\index{RTC::OutPortBase@{RTC::OutPortBase}!getConnectorByName@{getConnectorByName}}
+\index{getConnectorByName@{getConnectorByName}!RTC::OutPortBase@{RTC::OutPortBase}}
+\subsubsection[{getConnectorByName}]{\setlength{\rightskip}{0pt plus 5cm}{\bf OutPortConnector}$\ast$ RTC::OutPortBase::getConnectorByName (const char $\ast$ {\em name})}\label{classRTC_1_1OutPortBase_a53d5f58ad958a9969b161fbb7ae3e919}
+
+
+Getting Connector by name. 
+
+This operation returns Connector specified by name.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em id}]Connector ID \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A pointer to connector 
+\end{DoxyReturn}
+\index{RTC::OutPortBase@{RTC::OutPortBase}!getConnectorIds@{getConnectorIds}}
+\index{getConnectorIds@{getConnectorIds}!RTC::OutPortBase@{RTC::OutPortBase}}
+\subsubsection[{getConnectorIds}]{\setlength{\rightskip}{0pt plus 5cm}{\bf coil::vstring} RTC::OutPortBase::getConnectorIds ()}\label{classRTC_1_1OutPortBase_a0db797d2c4ac56ab98d5c5ea930d022c}
+
+
+ConnectorId list. 
+
+This operation returns ConnectorId list
+
+\begin{DoxyReturn}{Returns}
+connector list 
+\end{DoxyReturn}
+\index{RTC::OutPortBase@{RTC::OutPortBase}!getConnectorNames@{getConnectorNames}}
+\index{getConnectorNames@{getConnectorNames}!RTC::OutPortBase@{RTC::OutPortBase}}
+\subsubsection[{getConnectorNames}]{\setlength{\rightskip}{0pt plus 5cm}{\bf coil::vstring} RTC::OutPortBase::getConnectorNames ()}\label{classRTC_1_1OutPortBase_a474559c3988ea65fe5563f0227862d08}
+
+
+Connector name list. 
+
+This operation returns Connector name list
+
+\begin{DoxyReturn}{Returns}
+connector name list 
+\end{DoxyReturn}
+\index{RTC::OutPortBase@{RTC::OutPortBase}!getConnectorProfileById@{getConnectorProfileById}}
+\index{getConnectorProfileById@{getConnectorProfileById}!RTC::OutPortBase@{RTC::OutPortBase}}
+\subsubsection[{getConnectorProfileById}]{\setlength{\rightskip}{0pt plus 5cm}bool RTC::OutPortBase::getConnectorProfileById (const char $\ast$ {\em id}, \/  {\bf ConnectorInfo} \& {\em prof})}\label{classRTC_1_1OutPortBase_a8cc163db1fd53e54df6f3ec6ba5c6b16}
+
+
+Getting ConnectorProfile by name. 
+
+This operation returns ConnectorProfile specified by name
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em id}]Connector ID \item[{\em prof}]ConnectorProfile \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+false　specified ID does not exist 
+\end{DoxyReturn}
+\index{RTC::OutPortBase@{RTC::OutPortBase}!getConnectorProfileByName@{getConnectorProfileByName}}
+\index{getConnectorProfileByName@{getConnectorProfileByName}!RTC::OutPortBase@{RTC::OutPortBase}}
+\subsubsection[{getConnectorProfileByName}]{\setlength{\rightskip}{0pt plus 5cm}bool RTC::OutPortBase::getConnectorProfileByName (const char $\ast$ {\em name}, \/  {\bf ConnectorInfo} \& {\em prof})}\label{classRTC_1_1OutPortBase_a63d98b3384374f68321349dbd9e5925b}
+
+
+Getting ConnectorProfile by name. 
+
+This operation returns ConnectorProfile specified by name
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em id}]Connector ID \item[{\em prof}]ConnectorProfile \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+false specified name does not exist 
+\end{DoxyReturn}
+\index{RTC::OutPortBase@{RTC::OutPortBase}!getConnectorProfiles@{getConnectorProfiles}}
+\index{getConnectorProfiles@{getConnectorProfiles}!RTC::OutPortBase@{RTC::OutPortBase}}
+\subsubsection[{getConnectorProfiles}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ConnectorInfoList} RTC::OutPortBase::getConnectorProfiles ()}\label{classRTC_1_1OutPortBase_a6de24c315156e2b38dff8d637914d0dd}
+
+
+ConnectorProfile list. 
+
+This operation returns ConnectorProfile list
+
+\begin{DoxyReturn}{Returns}
+connector list 
+\end{DoxyReturn}
+\index{RTC::OutPortBase@{RTC::OutPortBase}!init@{init}}
+\index{init@{init}!RTC::OutPortBase@{RTC::OutPortBase}}
+\subsubsection[{init}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::OutPortBase::init ({\bf coil::Properties} \& {\em prop})}\label{classRTC_1_1OutPortBase_a27791a8f1962b01340d8fe152110b662}
+
+
+Initializing properties. 
+
+This operation initializes outport's properties 
+\begin{DoxyParams}{Parameters}
+\item[{\em prop}]Property for setting ports \end{DoxyParams}
+\index{RTC::OutPortBase@{RTC::OutPortBase}!initConsumers@{initConsumers}}
+\index{initConsumers@{initConsumers}!RTC::OutPortBase@{RTC::OutPortBase}}
+\subsubsection[{initConsumers}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::OutPortBase::initConsumers ()\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC_1_1OutPortBase_a32710b3850d1b41f5ddaced499e5ac4d}
+
+
+\doxyref{InPort}{p.}{classRTC_1_1InPort} consumer initialization. 
+
+\index{RTC::OutPortBase@{RTC::OutPortBase}!initProviders@{initProviders}}
+\index{initProviders@{initProviders}!RTC::OutPortBase@{RTC::OutPortBase}}
+\subsubsection[{initProviders}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::OutPortBase::initProviders ()\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC_1_1OutPortBase_a8ab9e314fe8444513f69c2a85a74b3fb}
+
+
+\doxyref{OutPort}{p.}{classRTC_1_1OutPort} provider initialization. 
+
+\index{RTC::OutPortBase@{RTC::OutPortBase}!isLittleEndian@{isLittleEndian}}
+\index{isLittleEndian@{isLittleEndian}!RTC::OutPortBase@{RTC::OutPortBase}}
+\subsubsection[{isLittleEndian}]{\setlength{\rightskip}{0pt plus 5cm}bool RTC::OutPortBase::isLittleEndian ()}\label{classRTC_1_1OutPortBase_ae9d972b4ccddc74ab257c1652c3748d4}
+
+
+return it whether endian setting. 
+
+\begin{DoxyReturn}{Returns}
+Return true in the case of \char`\"{}little\char`\"{}, false in \char`\"{}big\char`\"{} than it. 
+\end{DoxyReturn}
+\index{RTC::OutPortBase@{RTC::OutPortBase}!properties@{properties}}
+\index{properties@{properties}!RTC::OutPortBase@{RTC::OutPortBase}}
+\subsubsection[{properties}]{\setlength{\rightskip}{0pt plus 5cm}{\bf coil::Properties}\& RTC::OutPortBase::properties ()}\label{classRTC_1_1OutPortBase_a91e1aa398696c02beb3c1968a9e31ab1}
+
+
+Get properties. 
+
+Getting properties of this \doxyref{OutPort}{p.}{classRTC_1_1OutPort}
+
+\begin{DoxyReturn}{Returns}
+OutPort's properties 
+\end{DoxyReturn}
+\index{RTC::OutPortBase@{RTC::OutPortBase}!publishInterfaces@{publishInterfaces}}
+\index{publishInterfaces@{publishInterfaces}!RTC::OutPortBase@{RTC::OutPortBase}}
+\subsubsection[{publishInterfaces}]{\setlength{\rightskip}{0pt plus 5cm}virtual ReturnCode\_\-t RTC::OutPortBase::publishInterfaces (ConnectorProfile \& {\em connector\_\-profile})\hspace{0.3cm}{\ttfamily  [protected, virtual]}}\label{classRTC_1_1OutPortBase_ab71eea8c300820c2dd21dd13a61f6e0f}
+
+
+Publish interface information. 
+
+This operation is pure virutal function that would be called at the beginning of the \doxyref{notify\_\-connect()}{p.}{classRTC_1_1PortBase_a9bcc3c981a6649f37f3ad7eac31e5766} process sequence. In the \doxyref{notify\_\-connect()}{p.}{classRTC_1_1PortBase_a9bcc3c981a6649f37f3ad7eac31e5766}, the following methods would be called in order.
+
+
+\begin{DoxyItemize}
+\item \doxyref{publishInterfaces()}{p.}{classRTC_1_1OutPortBase_ab71eea8c300820c2dd21dd13a61f6e0f}
+\item \doxyref{connectNext()}{p.}{classRTC_1_1PortBase_acd7017c12c99c59c191d1269b40a7423}
+\item \doxyref{subscribeInterfaces()}{p.}{classRTC_1_1OutPortBase_a76018cbaa5c13fa3363e196c442f5c49}
+\item \doxyref{updateConnectorProfile()}{p.}{classRTC_1_1PortBase_aaaa8155f6dd891d0a4b77e6f6c55c97b}
+\end{DoxyItemize}
+
+This operation should create the new connection for the new connector\_\-id, and should update the connection for the existing connection\_\-id.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em connector\_\-profile}]The connection profile information\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The return code of ReturnCode\_\-t type. 
+\end{DoxyReturn}
+
+
+Implements {\bf RTC::PortBase} \doxyref{}{p.}{classRTC_1_1PortBase_acf31878c5912f56c122aaa2310e182de}.
+
+\index{RTC::OutPortBase@{RTC::OutPortBase}!removeConnectorDataListener@{removeConnectorDataListener}}
+\index{removeConnectorDataListener@{removeConnectorDataListener}!RTC::OutPortBase@{RTC::OutPortBase}}
+\subsubsection[{removeConnectorDataListener}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::OutPortBase::removeConnectorDataListener ({\bf ConnectorDataListenerType} {\em listener\_\-type}, \/  {\bf ConnectorDataListener} $\ast$ {\em listener})}\label{classRTC_1_1OutPortBase_a28120f94dd82dc7e4962268ac6a97346}
+
+
+Removing BufferDataListener type listener. 
+
+This operation removes a specified listener.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em listener\_\-type}]A listener type \item[{\em listener}]A pointer to a listener object \end{DoxyParams}
+\index{RTC::OutPortBase@{RTC::OutPortBase}!removeConnectorListener@{removeConnectorListener}}
+\index{removeConnectorListener@{removeConnectorListener}!RTC::OutPortBase@{RTC::OutPortBase}}
+\subsubsection[{removeConnectorListener}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::OutPortBase::removeConnectorListener ({\bf ConnectorListenerType} {\em callback\_\-type}, \/  {\bf ConnectorListener} $\ast$ {\em listener})}\label{classRTC_1_1OutPortBase_a5d6edaaff9cc904df3d00a9c0f930f7d}
+
+
+Removing BufferDataListener type listener. 
+
+This operation removes a specified listener.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em listener\_\-type}]A listener type \item[{\em listener}]A pointer to a listener object \end{DoxyParams}
+\index{RTC::OutPortBase@{RTC::OutPortBase}!subscribeInterfaces@{subscribeInterfaces}}
+\index{subscribeInterfaces@{subscribeInterfaces}!RTC::OutPortBase@{RTC::OutPortBase}}
+\subsubsection[{subscribeInterfaces}]{\setlength{\rightskip}{0pt plus 5cm}virtual ReturnCode\_\-t RTC::OutPortBase::subscribeInterfaces (const ConnectorProfile \& {\em connector\_\-profile})\hspace{0.3cm}{\ttfamily  [protected, virtual]}}\label{classRTC_1_1OutPortBase_a76018cbaa5c13fa3363e196c442f5c49}
+
+
+Subscribe to the interface. 
+
+This operation is pure virutal function that would be called at the middle of the \doxyref{notify\_\-connect()}{p.}{classRTC_1_1PortBase_a9bcc3c981a6649f37f3ad7eac31e5766} process sequence. In the \doxyref{notify\_\-connect()}{p.}{classRTC_1_1PortBase_a9bcc3c981a6649f37f3ad7eac31e5766}, the following methods would be called in order.
+
+
+\begin{DoxyItemize}
+\item \doxyref{publishInterfaces()}{p.}{classRTC_1_1OutPortBase_ab71eea8c300820c2dd21dd13a61f6e0f}
+\item \doxyref{connectNext()}{p.}{classRTC_1_1PortBase_acd7017c12c99c59c191d1269b40a7423}
+\item \doxyref{subscribeInterfaces()}{p.}{classRTC_1_1OutPortBase_a76018cbaa5c13fa3363e196c442f5c49}
+\item \doxyref{updateConnectorProfile()}{p.}{classRTC_1_1PortBase_aaaa8155f6dd891d0a4b77e6f6c55c97b}
+\end{DoxyItemize}
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em connector\_\-profile}]The connection profile information\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The return code of ReturnCode\_\-t type. 
+\end{DoxyReturn}
+
+
+Implements {\bf RTC::PortBase} \doxyref{}{p.}{classRTC_1_1PortBase_afce755069836c1ee637784e2a9e5a02b}.
+
+\index{RTC::OutPortBase@{RTC::OutPortBase}!unsubscribeInterfaces@{unsubscribeInterfaces}}
+\index{unsubscribeInterfaces@{unsubscribeInterfaces}!RTC::OutPortBase@{RTC::OutPortBase}}
+\subsubsection[{unsubscribeInterfaces}]{\setlength{\rightskip}{0pt plus 5cm}virtual void RTC::OutPortBase::unsubscribeInterfaces (const ConnectorProfile \& {\em connector\_\-profile})\hspace{0.3cm}{\ttfamily  [protected, virtual]}}\label{classRTC_1_1OutPortBase_ad2c373292a41c5f2eb088e7ae124b857}
+
+
+Disconnect the interface connection. 
+
+This operation is pure virutal function that would be called at the end of the \doxyref{notify\_\-disconnect()}{p.}{classRTC_1_1PortBase_ae78bb7882d22bca794bd0faa78452aca} process sequence. In the \doxyref{notify\_\-disconnect()}{p.}{classRTC_1_1PortBase_ae78bb7882d22bca794bd0faa78452aca}, the following methods would be called.
+\begin{DoxyItemize}
+\item \doxyref{disconnectNext()}{p.}{classRTC_1_1PortBase_a4eeddc35a698e4020e7ba96627dcde3b}
+\item \doxyref{unsubscribeInterfaces()}{p.}{classRTC_1_1OutPortBase_ad2c373292a41c5f2eb088e7ae124b857}
+\item \doxyref{eraseConnectorProfile()}{p.}{classRTC_1_1PortBase_a3803219dc15de9ebb9bf096a82cfb383}
+\end{DoxyItemize}
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em connector\_\-profile}]The profile information associated with the connection \end{DoxyParams}
+
+
+Implements {\bf RTC::PortBase} \doxyref{}{p.}{classRTC_1_1PortBase_a8a843a387e99d4d4daa6e829eb1db569}.
+
+\index{RTC::OutPortBase@{RTC::OutPortBase}!write@{write}}
+\index{write@{write}!RTC::OutPortBase@{RTC::OutPortBase}}
+\subsubsection[{write}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool RTC::OutPortBase::write ()\hspace{0.3cm}{\ttfamily  [pure virtual]}}\label{classRTC_1_1OutPortBase_a282e66241624ed46a8963ecf4ff70f01}
+
+
+Write data. 
+
+Write data to the port. Write the value, which was set to the bound variable, to the port.
+
+\begin{DoxyReturn}{Returns}
+Writing result (Successful:true, Failed:false) 
+\end{DoxyReturn}
+
+
+Implemented in {\bf RTC::OutPort$<$ DataType $>$} \doxyref{}{p.}{classRTC_1_1OutPort_a4eefb7caaaf1a48cc7a1678bbd58624c}.
+
+
+
+\subsection{Member Data Documentation}
+\index{RTC::OutPortBase@{RTC::OutPortBase}!ConnectorList@{ConnectorList}}
+\index{ConnectorList@{ConnectorList}!RTC::OutPortBase@{RTC::OutPortBase}}
+\subsubsection[{ConnectorList}]{\setlength{\rightskip}{0pt plus 5cm}DATAPORTSTATUS\_\-ENUM typedef std::vector$<${\bf OutPortConnector}$\ast$$>$ {\bf RTC::OutPortBase::ConnectorList}}\label{classRTC_1_1OutPortBase_a5a2d8b59fb93e4cc3bd80ab6b5fa321f}
+\index{RTC::OutPortBase@{RTC::OutPortBase}!m\_\-connectors@{m\_\-connectors}}
+\index{m\_\-connectors@{m\_\-connectors}!RTC::OutPortBase@{RTC::OutPortBase}}
+\subsubsection[{m\_\-connectors}]{\setlength{\rightskip}{0pt plus 5cm}std::vector$<${\bf OutPortConnector}$\ast$$>$ {\bf RTC::OutPortBase::m\_\-connectors}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC_1_1OutPortBase_a9e128dfb805e355c7c536500312bfad9}
+
+
+Connection list. 
+
+
+
+Referenced by RTC::OutPort$<$ DataType $>$::write().
+
+\index{RTC::OutPortBase@{RTC::OutPortBase}!m\_\-consumerTypes@{m\_\-consumerTypes}}
+\index{m\_\-consumerTypes@{m\_\-consumerTypes}!RTC::OutPortBase@{RTC::OutPortBase}}
+\subsubsection[{m\_\-consumerTypes}]{\setlength{\rightskip}{0pt plus 5cm}{\bf coil::vstring} {\bf RTC::OutPortBase::m\_\-consumerTypes}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC_1_1OutPortBase_a3787af478e3010e59f229216fb8b3acc}
+
+
+Available consumers. 
+
+\index{RTC::OutPortBase@{RTC::OutPortBase}!m\_\-listeners@{m\_\-listeners}}
+\index{m\_\-listeners@{m\_\-listeners}!RTC::OutPortBase@{RTC::OutPortBase}}
+\subsubsection[{m\_\-listeners}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ConnectorListeners} {\bf RTC::OutPortBase::m\_\-listeners}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC_1_1OutPortBase_a7518900a77606860e5136591ecdbcb3f}
+
+
+\doxyref{ConnectorDataListener}{p.}{classRTC_1_1ConnectorDataListener} listener. 
+
+\index{RTC::OutPortBase@{RTC::OutPortBase}!m\_\-littleEndian@{m\_\-littleEndian}}
+\index{m\_\-littleEndian@{m\_\-littleEndian}!RTC::OutPortBase@{RTC::OutPortBase}}
+\subsubsection[{m\_\-littleEndian}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf RTC::OutPortBase::m\_\-littleEndian}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC_1_1OutPortBase_a07dd2cf7d73b4bf1cf6c8f6a986bd7fa}
+
+
+Connected Endian. 
+
+\index{RTC::OutPortBase@{RTC::OutPortBase}!m\_\-properties@{m\_\-properties}}
+\index{m\_\-properties@{m\_\-properties}!RTC::OutPortBase@{RTC::OutPortBase}}
+\subsubsection[{m\_\-properties}]{\setlength{\rightskip}{0pt plus 5cm}{\bf coil::Properties} {\bf RTC::OutPortBase::m\_\-properties}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC_1_1OutPortBase_a76003823355b35cd06fbc2281a5014c9}
+
+
+Properties. 
+
+\index{RTC::OutPortBase@{RTC::OutPortBase}!m\_\-providerTypes@{m\_\-providerTypes}}
+\index{m\_\-providerTypes@{m\_\-providerTypes}!RTC::OutPortBase@{RTC::OutPortBase}}
+\subsubsection[{m\_\-providerTypes}]{\setlength{\rightskip}{0pt plus 5cm}{\bf coil::vstring} {\bf RTC::OutPortBase::m\_\-providerTypes}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC_1_1OutPortBase_aef12f1f86604ef16542fb1b36bbd0bf7}
+
+
+Available providers. 
+

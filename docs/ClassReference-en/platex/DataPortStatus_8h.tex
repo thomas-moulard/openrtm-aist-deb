@@ -1,0 +1,71 @@
+\section{DataPortStatus.h File Reference}
+\label{DataPortStatus_8h}\index{DataPortStatus.h@{DataPortStatus.h}}
+
+
+DataPortStatus class.  
+
+
+{\ttfamily \#include $<$vector$>$}\par
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class {\bf RTC::DataPortStatus}
+\begin{DoxyCompactList}\small\item\em \doxyref{DataPortStatus}{p.}{classRTC_1_1DataPortStatus} mixin class. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace {\bf RTC}
+
+
+\begin{DoxyCompactList}\small\item\em RT-\/Component. \item\end{DoxyCompactList}
+
+\end{DoxyCompactItemize}
+\subsection*{Defines}
+\begin{DoxyCompactItemize}
+\item 
+\#define {\bf DATAPORTSTATUS\_\-ENUM}
+\begin{DoxyCompactList}\small\item\em Importing \doxyref{RTC::DataPortStatus}{p.}{classRTC_1_1DataPortStatus} macro. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef std::vector$<$ DataPortStatus::Enum $>$ {\bf RTC::DataPortStatusList}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+DataPortStatus class. \begin{DoxyDate}{Date}
+\$Date\$ 
+\end{DoxyDate}
+\begin{DoxyAuthor}{Author}
+Noriaki Ando $<${\tt n-\/ando@aist.go.jp}$>$
+\end{DoxyAuthor}
+Copyright (C) 2009-\/2010 Noriaki Ando Task-\/intelligence Research Group, Intelligent Systems Research Institute, National Institute of Advanced Industrial Science and Technology (AIST), Japan All rights reserved.
+
+\$Id\$ 
+
+\subsection{Define Documentation}
+\index{DataPortStatus.h@{DataPortStatus.h}!DATAPORTSTATUS\_\-ENUM@{DATAPORTSTATUS\_\-ENUM}}
+\index{DATAPORTSTATUS\_\-ENUM@{DATAPORTSTATUS\_\-ENUM}!DataPortStatus.h@{DataPortStatus.h}}
+\subsubsection[{DATAPORTSTATUS\_\-ENUM}]{\setlength{\rightskip}{0pt plus 5cm}\#define DATAPORTSTATUS\_\-ENUM}\label{DataPortStatus_8h_a71942892127d0f2995c2610b1e22ef23}
+{\bfseries Value:}
+\begin{DoxyCode}
+typedef ::RTC::DataPortStatus::Enum ReturnCode;       \
+  using ::RTC::DataPortStatus::PORT_OK;                 \
+  using ::RTC::DataPortStatus::PORT_ERROR;              \
+  using ::RTC::DataPortStatus::BUFFER_FULL;             \
+  using ::RTC::DataPortStatus::BUFFER_EMPTY;            \
+  using ::RTC::DataPortStatus::BUFFER_TIMEOUT;          \
+  using ::RTC::DataPortStatus::SEND_FULL;               \
+  using ::RTC::DataPortStatus::SEND_TIMEOUT;            \
+  using ::RTC::DataPortStatus::RECV_EMPTY;              \
+  using ::RTC::DataPortStatus::RECV_TIMEOUT;            \
+  using ::RTC::DataPortStatus::INVALID_ARGS;            \
+  using ::RTC::DataPortStatus::PRECONDITION_NOT_MET;    \
+  using ::RTC::DataPortStatus::CONNECTION_LOST;         \
+  using ::RTC::DataPortStatus::UNKNOWN_ERROR;
+\end{DoxyCode}
+
+
+Importing \doxyref{RTC::DataPortStatus}{p.}{classRTC_1_1DataPortStatus} macro. 
+
+This macro imports all the member of enum declared in \doxyref{RTC::DataPortStatus}{p.}{classRTC_1_1DataPortStatus} into the current namespace. Inserting at the head of class declaration, classes which utilize DataPortStatus can access Enum members of DataPortStatus without using namespace resolve operator. 

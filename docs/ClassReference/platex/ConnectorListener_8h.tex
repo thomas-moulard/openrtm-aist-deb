@@ -1,0 +1,80 @@
+\section{ConnectorListener.h}
+\label{ConnectorListener_8h}\index{ConnectorListener.h@{ConnectorListener.h}}
+
+
+connector listener class  
+
+
+{\ttfamily \#include $<$vector$>$}\par
+{\ttfamily \#include $<$utility$>$}\par
+{\ttfamily \#include $<$coil/Mutex.h$>$}\par
+{\ttfamily \#include $<$coil/Guard.h$>$}\par
+{\ttfamily \#include $<$rtm/RTC.h$>$}\par
+{\ttfamily \#include $<$rtm/ConnectorBase.h$>$}\par
+\subsection*{構成}
+\begin{DoxyCompactItemize}
+\item 
+class {\bf RTC::ConnectorDataListener}
+\begin{DoxyCompactList}\small\item\em \doxyref{ConnectorDataListener}{p.}{classRTC_1_1ConnectorDataListener} クラス. \item\end{DoxyCompactList}\item 
+class {\bf RTC::ConnectorDataListenerT$<$ DataType $>$}
+\begin{DoxyCompactList}\small\item\em \doxyref{ConnectorDataListenerT}{p.}{classRTC_1_1ConnectorDataListenerT} クラス. \item\end{DoxyCompactList}\item 
+class {\bf RTC::ConnectorListener}
+\begin{DoxyCompactList}\small\item\em \doxyref{ConnectorListener}{p.}{classRTC_1_1ConnectorListener} クラス. \item\end{DoxyCompactList}\item 
+class {\bf RTC::ConnectorDataListenerHolder}
+\begin{DoxyCompactList}\small\item\em \doxyref{ConnectorDataListener}{p.}{classRTC_1_1ConnectorDataListener} ホルダクラス. \item\end{DoxyCompactList}\item 
+class {\bf RTC::ConnectorListenerHolder}
+\begin{DoxyCompactList}\small\item\em \doxyref{ConnectorListener}{p.}{classRTC_1_1ConnectorListener} ホルダクラス. \item\end{DoxyCompactList}\item 
+class {\bf RTC::ConnectorListeners}
+\begin{DoxyCompactList}\small\item\em \doxyref{ConnectorListeners}{p.}{classRTC_1_1ConnectorListeners} クラス. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{ネームスペース}
+\begin{DoxyCompactItemize}
+\item 
+namespace {\bf RTC}
+
+
+\begin{DoxyCompactList}\small\item\em RTコンポーネント. \item\end{DoxyCompactList}
+
+\end{DoxyCompactItemize}
+\subsection*{列挙型}
+\begin{DoxyCompactItemize}
+\item 
+enum {\bf RTC::ConnectorDataListenerType} \{ \par
+{\bf RTC::ON\_\-BUFFER\_\-WRITE} =  0, 
+{\bf RTC::ON\_\-BUFFER\_\-FULL}, 
+{\bf RTC::ON\_\-BUFFER\_\-WRITE\_\-TIMEOUT}, 
+{\bf RTC::ON\_\-BUFFER\_\-OVERWRITE}, 
+\par
+{\bf RTC::ON\_\-BUFFER\_\-READ}, 
+{\bf RTC::ON\_\-SEND}, 
+{\bf RTC::ON\_\-RECEIVED}, 
+{\bf RTC::ON\_\-RECEIVER\_\-FULL}, 
+\par
+{\bf RTC::ON\_\-RECEIVER\_\-TIMEOUT}, 
+{\bf RTC::ON\_\-RECEIVER\_\-ERROR}, 
+{\bf RTC::CONNECTOR\_\-DATA\_\-LISTENER\_\-NUM}
+ \}
+\begin{DoxyCompactList}\small\item\em ConnectorDataListener のタイプ. \item\end{DoxyCompactList}\item 
+enum {\bf RTC::ConnectorListenerType} \{ \par
+{\bf RTC::ON\_\-BUFFER\_\-EMPTY} =  0, 
+{\bf RTC::ON\_\-BUFFER\_\-READ\_\-TIMEOUT}, 
+{\bf RTC::ON\_\-SENDER\_\-EMPTY}, 
+{\bf RTC::ON\_\-SENDER\_\-TIMEOUT}, 
+\par
+{\bf RTC::ON\_\-SENDER\_\-ERROR}, 
+{\bf RTC::ON\_\-CONNECT}, 
+{\bf RTC::ON\_\-DISCONNECT}, 
+{\bf RTC::CONNECTOR\_\-LISTENER\_\-NUM}
+ \}
+\begin{DoxyCompactList}\small\item\em ConnectorListener のタイプ. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{説明}
+connector listener class \begin{DoxyDate}{日付}
+\$Date\$ 
+\end{DoxyDate}
+\begin{DoxyAuthor}{作者}
+Noriaki Ando $<${\tt n-\/ando@aist.go.jp}$>$
+\end{DoxyAuthor}
+Copyright (C) 2009 Noriaki Ando Task-\/intelligence Research Group, Intelligent Systems Research Institute, National Institute of Advanced Industrial Science and Technology (AIST), Japan All rights reserved.
+
+\$Id\$ 

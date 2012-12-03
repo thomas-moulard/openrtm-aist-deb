@@ -1,0 +1,116 @@
+\section{coil::TimeMeasure Class Reference}
+\label{classcoil_1_1TimeMeasure}\index{coil::TimeMeasure@{coil::TimeMeasure}}
+
+
+\doxyref{TimeMeasure}{p.}{classcoil_1_1TimeMeasure} class.  
+
+
+
+
+{\ttfamily \#include $<$TimeMeasure.h$>$}
+
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct {\bf Statistics}
+\begin{DoxyCompactList}\small\item\em Structure for time statistics. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf TimeMeasure} (int buflen=100)
+\begin{DoxyCompactList}\small\item\em Constructor. \item\end{DoxyCompactList}\item 
+void {\bf tick} ()
+\item 
+void {\bf tack} ()
+\begin{DoxyCompactList}\small\item\em Finish time measurement for time statistics. \item\end{DoxyCompactList}\item 
+{\bf coil::TimeValue} \& {\bf interval} ()
+\begin{DoxyCompactList}\small\item\em Get a interval time. \item\end{DoxyCompactList}\item 
+void {\bf reset} ()
+\item 
+unsigned long int {\bf count} () const 
+\begin{DoxyCompactList}\small\item\em Get number of time measurement buffer. \item\end{DoxyCompactList}\item 
+bool {\bf getStatistics} (double \&max\_\-interval, double \&min\_\-interval, double \&mean\_\-interval, double \&stddev)
+\begin{DoxyCompactList}\small\item\em Get total statistics. \item\end{DoxyCompactList}\item 
+{\bf Statistics} {\bf getStatistics} ()
+\begin{DoxyCompactList}\small\item\em Get statistics result. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\doxyref{TimeMeasure}{p.}{classcoil_1_1TimeMeasure} class. This class is used for getting statistics of code execution time. Using get\_\-stat you can get maximum, minimum, mean and standard deviation time for code execution. 
+
+\subsection{Constructor \& Destructor Documentation}
+\index{coil::TimeMeasure@{coil::TimeMeasure}!TimeMeasure@{TimeMeasure}}
+\index{TimeMeasure@{TimeMeasure}!coil::TimeMeasure@{coil::TimeMeasure}}
+\subsubsection[{TimeMeasure}]{\setlength{\rightskip}{0pt plus 5cm}coil::TimeMeasure::TimeMeasure (int {\em buflen} = {\ttfamily 100})}\label{classcoil_1_1TimeMeasure_a6ac76a54625fc4cc007652fec2af09bb}
+
+
+Constructor. 
+
+Time \doxyref{Statistics}{p.}{structcoil_1_1TimeMeasure_1_1Statistics} object for profiling. 
+
+\subsection{Member Function Documentation}
+\index{coil::TimeMeasure@{coil::TimeMeasure}!count@{count}}
+\index{count@{count}!coil::TimeMeasure@{coil::TimeMeasure}}
+\subsubsection[{count}]{\setlength{\rightskip}{0pt plus 5cm}unsigned long int coil::TimeMeasure::count () const}\label{classcoil_1_1TimeMeasure_a82733b3a440a7c1410832025229b40de}
+
+
+Get number of time measurement buffer. 
+
+Get number of time measurement buffer.
+
+\begin{DoxyReturn}{Returns}
+Measurement count 
+\end{DoxyReturn}
+\index{coil::TimeMeasure@{coil::TimeMeasure}!getStatistics@{getStatistics}}
+\index{getStatistics@{getStatistics}!coil::TimeMeasure@{coil::TimeMeasure}}
+\subsubsection[{getStatistics}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Statistics} coil::TimeMeasure::getStatistics ()}\label{classcoil_1_1TimeMeasure_a8cb4d1eea05aa422fa5a44dec658c6fa}
+
+
+Get statistics result. 
+
+Get statistics result.
+
+\begin{DoxyReturn}{Returns}
+\doxyref{Statistics}{p.}{structcoil_1_1TimeMeasure_1_1Statistics} result 
+\end{DoxyReturn}
+\index{coil::TimeMeasure@{coil::TimeMeasure}!getStatistics@{getStatistics}}
+\index{getStatistics@{getStatistics}!coil::TimeMeasure@{coil::TimeMeasure}}
+\subsubsection[{getStatistics}]{\setlength{\rightskip}{0pt plus 5cm}bool coil::TimeMeasure::getStatistics (double \& {\em max\_\-interval}, \/  double \& {\em min\_\-interval}, \/  double \& {\em mean\_\-interval}, \/  double \& {\em stddev})}\label{classcoil_1_1TimeMeasure_ae96b0d34caa15bc909a7af01b745f0bf}
+
+
+Get total statistics. 
+
+Get total statistics.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em max\_\-interval}]Max value [ns] \item[{\em min\_\-interval}]Min value [ns] \item[{\em mean\_\-interval}]Mean value [ns] \item[{\em stddev}]Standard deviation value\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true: Data found, false: Data not found 
+\end{DoxyReturn}
+\index{coil::TimeMeasure@{coil::TimeMeasure}!interval@{interval}}
+\index{interval@{interval}!coil::TimeMeasure@{coil::TimeMeasure}}
+\subsubsection[{interval}]{\setlength{\rightskip}{0pt plus 5cm}{\bf coil::TimeValue}\& coil::TimeMeasure::interval ()}\label{classcoil_1_1TimeMeasure_ac6c5235ee59d14d71d39a843616c4b8e}
+
+
+Get a interval time. 
+
+Get a interval time.
+
+\begin{DoxyReturn}{Returns}
+\doxyref{TimeValue}{p.}{classcoil_1_1TimeValue} object 
+\end{DoxyReturn}
+\index{coil::TimeMeasure@{coil::TimeMeasure}!reset@{reset}}
+\index{reset@{reset}!coil::TimeMeasure@{coil::TimeMeasure}}
+\subsubsection[{reset}]{\setlength{\rightskip}{0pt plus 5cm}void coil::TimeMeasure::reset ()}\label{classcoil_1_1TimeMeasure_ad0ad98dd9d6857b65bbb0e9e1c9e438f}
+Initialize for statistics related data. \index{coil::TimeMeasure@{coil::TimeMeasure}!tack@{tack}}
+\index{tack@{tack}!coil::TimeMeasure@{coil::TimeMeasure}}
+\subsubsection[{tack}]{\setlength{\rightskip}{0pt plus 5cm}void coil::TimeMeasure::tack ()}\label{classcoil_1_1TimeMeasure_a7bd16bccd9e7dea1debdc9f5a3cc194a}
+
+
+Finish time measurement for time statistics. 
+
+End of time measurement for time statistics. \index{coil::TimeMeasure@{coil::TimeMeasure}!tick@{tick}}
+\index{tick@{tick}!coil::TimeMeasure@{coil::TimeMeasure}}
+\subsubsection[{tick}]{\setlength{\rightskip}{0pt plus 5cm}void coil::TimeMeasure::tick ()}\label{classcoil_1_1TimeMeasure_a8353ec18533cd585d6bd1d76209e49c7}
+Begin time measurement for time statistics. 

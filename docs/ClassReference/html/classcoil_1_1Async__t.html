@@ -1,0 +1,245 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<title>OpenRTM: クラス テンプレート coil::Async_t&lt; Object, Func &gt;</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<!-- 作成： Doxygen 1.6.3 -->
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="index.html"><span>メインページ</span></a></li>
+      <li><a href="namespaces.html"><span>ネームスペース</span></a></li>
+      <li class="current"><a href="annotated.html"><span>クラス</span></a></li>
+      <li><a href="files.html"><span>ファイル</span></a></li>
+    </ul>
+  </div>
+  <div class="tabs">
+    <ul>
+      <li><a href="annotated.html"><span>構成</span></a></li>
+      <li><a href="hierarchy.html"><span>クラス階層</span></a></li>
+      <li><a href="functions.html"><span>構成メンバ</span></a></li>
+    </ul>
+  </div>
+  <div class="navpath"><a class="el" href="namespacecoil.html">coil</a>::<a class="el" href="classcoil_1_1Async__t.html">Async_t</a>
+  </div>
+</div>
+<div class="contents">
+<h1>クラス テンプレート coil::Async_t&lt; Object, Func &gt;</h1><!-- doxytag: class="coil::Async_t" --><!-- doxytag: inherits="coil::Async" -->
+<p><a class="el" href="classcoil_1_1Async__t.html" title="Async_t テンプレートクラス.">Async_t</a> テンプレートクラス.  
+<a href="#_details">[詳細]</a></p>
+
+<p><code>#include &lt;<a class="el" href="Async_8h_source.html">Async.h</a>&gt;</code></p>
+<div class="dynheader">
+coil::Async_t&lt; Object, Func &gt;に対する継承グラフ</div>
+<div class="dynsection">
+ <div class="center">
+  <img src="classcoil_1_1Async__t.png" usemap="#coil::Async_t&lt; Object, Func &gt;_map" alt=""/>
+  <map id="coil::Async_t&lt; Object, Func &gt;_map" name="coil::Async_t&lt; Object, Func &gt;_map">
+<area href="classcoil_1_1Async.html" alt="coil::Async" shape="rect" coords="0,56,183,80"/>
+<area href="classcoil_1_1Task.html" alt="coil::Task" shape="rect" coords="0,0,183,24"/>
+</map>
+ </div>
+</div>
+
+<p><a href="classcoil_1_1Async__t-members.html">すべてのメンバ一覧</a></p>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr><td colspan="2"><h2>Public メソッド</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcoil_1_1Async__t.html#a164cb08198f5f690675e843d89677991">Async_t</a> (Object *obj, Func func, bool auto_delete=false)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">コンストラクタ  <a href="#a164cb08198f5f690675e843d89677991"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcoil_1_1Async__t.html#afbda05450d027b0d0357283a264763c9">~Async_t</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">デストラクタ  <a href="#afbda05450d027b0d0357283a264763c9"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcoil_1_1Async__t.html#a2a935cf066cd5b3a90feb0aa19b9a4b1">svc</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">非同期処理用のスレッド実行関数  <a href="#a2a935cf066cd5b3a90feb0aa19b9a4b1"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcoil_1_1Async__t.html#aaffa0e7e46f8380b0e91e5177485e00d">finalize</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">非同期処理終了  <a href="#aaffa0e7e46f8380b0e91e5177485e00d"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcoil_1_1Async__t.html#aa6b4d79bed3225128f3e5cbde7d0fef8">invoke</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">非同期処理活性化  <a href="#aa6b4d79bed3225128f3e5cbde7d0fef8"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcoil_1_1Async__t.html#af7c59952bc29131e36ee456d23bdf746">finished</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">完了状態チェック  <a href="#af7c59952bc29131e36ee456d23bdf746"></a><br/></td></tr>
+</table>
+<hr/><a name="_details"></a><h2>説明</h2>
+<h3>template&lt;typename Object, typename Func&gt;<br/>
+ class coil::Async_t&lt; Object, Func &gt;</h3>
+
+<p><a class="el" href="classcoil_1_1Async__t.html" title="Async_t テンプレートクラス.">Async_t</a> テンプレートクラス. </p>
+<hr/><h2>コンストラクタとデストラクタ</h2>
+<a class="anchor" id="a164cb08198f5f690675e843d89677991"></a><!-- doxytag: member="coil::Async_t::Async_t" ref="a164cb08198f5f690675e843d89677991" args="(Object *obj, Func func, bool auto_delete=false)" -->
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Object, typename Func&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classcoil_1_1Async__t.html">coil::Async_t</a>&lt; Object, Func &gt;::<a class="el" href="classcoil_1_1Async__t.html">Async_t</a> </td>
+          <td>(</td>
+          <td class="paramtype">Object *&nbsp;</td>
+          <td class="paramname"> <em>obj</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Func&nbsp;</td>
+          <td class="paramname"> <em>func</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&nbsp;</td>
+          <td class="paramname"> <em>auto_delete</em> = <code>false</code></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>コンストラクタ </p>
+<p>コンストラクタ。</p>
+<dl><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>obj</em>&nbsp;</td><td>登録対象オブジェクト </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>func</em>&nbsp;</td><td>非同期実行用関数 </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>auto_delete</em>&nbsp;</td><td>非同期実行終了時に自動的にインスタンス削除を行うかどうかのフラグ </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="afbda05450d027b0d0357283a264763c9"></a><!-- doxytag: member="coil::Async_t::~Async_t" ref="afbda05450d027b0d0357283a264763c9" args="()" -->
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Object, typename Func&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual <a class="el" href="classcoil_1_1Async__t.html">coil::Async_t</a>&lt; Object, Func &gt;::~<a class="el" href="classcoil_1_1Async__t.html">Async_t</a> </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [inline, virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>デストラクタ </p>
+<p>デストラクタ。 </p>
+
+</div>
+</div>
+<hr/><h2>関数</h2>
+<a class="anchor" id="aaffa0e7e46f8380b0e91e5177485e00d"></a><!-- doxytag: member="coil::Async_t::finalize" ref="aaffa0e7e46f8380b0e91e5177485e00d" args="()" -->
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Object, typename Func&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void <a class="el" href="classcoil_1_1Async__t.html">coil::Async_t</a>&lt; Object, Func &gt;::finalize </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [inline, virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>非同期処理終了 </p>
+<p>非同期処理を終了し、インスタンスを削除する。 </p>
+
+<p><a class="el" href="classcoil_1_1Task.html#af7cfcc8cf5c0c322739a92374ce05cca">coil::Task</a>を再定義しています。</p>
+
+</div>
+</div>
+<a class="anchor" id="af7c59952bc29131e36ee456d23bdf746"></a><!-- doxytag: member="coil::Async_t::finished" ref="af7c59952bc29131e36ee456d23bdf746" args="()" -->
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Object, typename Func&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual bool <a class="el" href="classcoil_1_1Async__t.html">coil::Async_t</a>&lt; Object, Func &gt;::finished </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [inline, virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>完了状態チェック </p>
+<p>完了状態を返す。</p>
+<dl class="return"><dt><b>戻り値:</b></dt><dd>true: 完了, false: 未完了 </dd></dl>
+
+<p><a class="el" href="classcoil_1_1Async.html#a791b91a66a98acec44e63b0c5fae8b20">coil::Async</a>を実装しています。</p>
+
+</div>
+</div>
+<a class="anchor" id="aa6b4d79bed3225128f3e5cbde7d0fef8"></a><!-- doxytag: member="coil::Async_t::invoke" ref="aa6b4d79bed3225128f3e5cbde7d0fef8" args="()" -->
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Object, typename Func&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void <a class="el" href="classcoil_1_1Async__t.html">coil::Async_t</a>&lt; Object, Func &gt;::invoke </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [inline, virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>非同期処理活性化 </p>
+<p>非同期処理を活性化する。 </p>
+
+<p><a class="el" href="classcoil_1_1Async.html#ada31d64682effe5daa79212d07c02b65">coil::Async</a>を実装しています。</p>
+
+<p>参照先 <a class="el" href="classcoil_1_1Task.html#a812bc27f5acb67931a4c03c07c7aeb9e">coil::Task::activate()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a2a935cf066cd5b3a90feb0aa19b9a4b1"></a><!-- doxytag: member="coil::Async_t::svc" ref="a2a935cf066cd5b3a90feb0aa19b9a4b1" args="()" -->
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Object, typename Func&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual int <a class="el" href="classcoil_1_1Async__t.html">coil::Async_t</a>&lt; Object, Func &gt;::svc </td>
+          <td>(</td>
+          <td class="paramtype">void&nbsp;</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [inline, virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>非同期処理用のスレッド実行関数 </p>
+<p>登録されたオブジェクトの非同期処理を呼び出す。</p>
+<dl class="return"><dt><b>戻り値:</b></dt><dd>実行結果 </dd></dl>
+
+<p><a class="el" href="classcoil_1_1Task.html#ae68f22a4afbe8cddde1fe910bc3dd226">coil::Task</a>を再定義しています。</p>
+
+</div>
+</div>
+</div>
+<hr class="footer"/><address style="text-align: right;"><small>OpenRTMに対してThu May 24 23:25:19 2012に生成されました。&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.6.3 </small></address>
+</body>
+</html>

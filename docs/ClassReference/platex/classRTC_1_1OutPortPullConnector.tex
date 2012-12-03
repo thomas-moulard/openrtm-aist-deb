@@ -1,0 +1,192 @@
+\section{クラス RTC::OutPortPullConnector}
+\label{classRTC_1_1OutPortPullConnector}\index{RTC::OutPortPullConnector@{RTC::OutPortPullConnector}}
+
+
+\doxyref{OutPortPullConnector}{p.}{classRTC_1_1OutPortPullConnector} クラス.  
+
+
+
+
+{\ttfamily \#include $<$OutPortPullConnector.h$>$}
+
+RTC::OutPortPullConnectorに対する継承グラフ\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4cm]{classRTC_1_1OutPortPullConnector}
+\end{center}
+\end{figure}
+\subsection*{Public メソッド}
+\begin{DoxyCompactItemize}
+\item 
+DATAPORTSTATUS\_\-ENUM {\bf OutPortPullConnector} ({\bf ConnectorInfo} info, {\bf OutPortProvider} $\ast$provider, {\bf ConnectorListeners} \&listeners, {\bf CdrBufferBase} $\ast$buffer=0)
+\begin{DoxyCompactList}\small\item\em コンストラクタ \item\end{DoxyCompactList}\item 
+virtual {\bf $\sim$OutPortPullConnector} ()
+\begin{DoxyCompactList}\small\item\em デストラクタ \item\end{DoxyCompactList}\item 
+virtual ReturnCode {\bf write} (const cdrMemoryStream \&data)
+\begin{DoxyCompactList}\small\item\em データの書き込み \item\end{DoxyCompactList}\item 
+virtual ReturnCode {\bf disconnect} ()
+\begin{DoxyCompactList}\small\item\em 接続解除 \item\end{DoxyCompactList}\item 
+virtual {\bf CdrBufferBase} $\ast$ {\bf getBuffer} ()
+\begin{DoxyCompactList}\small\item\em Buffer を取得する. \item\end{DoxyCompactList}\item 
+virtual void {\bf activate} ()
+\begin{DoxyCompactList}\small\item\em アクティブ化 \item\end{DoxyCompactList}\item 
+virtual void {\bf deactivate} ()
+\begin{DoxyCompactList}\small\item\em 非アクティブ化 \item\end{DoxyCompactList}\item 
+{\bf CdrBufferBase} $\ast$ {\bf createBuffer} ({\bf ConnectorInfo} \&info)
+\begin{DoxyCompactList}\small\item\em Bufferの生成. \item\end{DoxyCompactList}\item 
+void {\bf onConnect} ()
+\begin{DoxyCompactList}\small\item\em 接続確立時にコールバックを呼ぶ \item\end{DoxyCompactList}\item 
+void {\bf onDisconnect} ()
+\begin{DoxyCompactList}\small\item\em 接続切断時にコールバックを呼ぶ \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected 変数}
+\begin{DoxyCompactItemize}
+\item 
+{\bf OutPortProvider} $\ast$ {\bf m\_\-provider}
+\begin{DoxyCompactList}\small\item\em \doxyref{OutPortProvider}{p.}{classRTC_1_1OutPortProvider} へのポインタ. \item\end{DoxyCompactList}\item 
+{\bf ConnectorListeners} \& {\bf m\_\-listeners}
+\begin{DoxyCompactList}\small\item\em ConnectorListenrs への参照. \item\end{DoxyCompactList}\item 
+{\bf CdrBufferBase} $\ast$ {\bf m\_\-buffer}
+\begin{DoxyCompactList}\small\item\em Buffer へのポインタ. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{説明}
+\doxyref{OutPortPullConnector}{p.}{classRTC_1_1OutPortPullConnector} クラス. \doxyref{OutPort}{p.}{classRTC_1_1OutPort} の pull 型データフローのための Connector クラス。このオブ ジェクトは、接続時に dataflow\_\-type に pull が指定された場合、 \doxyref{OutPort}{p.}{classRTC_1_1OutPort} によって生成・所有され、InPortPullConnector と対になって、 データポートの pull 型のデータフローを実現する。一つの接続に対して、 一つのデータストリームを提供する唯一の Connector が対応する。 Connector は 接続時に生成される UUID 形式の ID により区別される。
+
+\doxyref{OutPortPullConnector}{p.}{classRTC_1_1OutPortPullConnector} は以下の三つのオブジェクトを所有し管理する。
+
+
+\begin{DoxyItemize}
+\item \doxyref{InPortConsumer}{p.}{classRTC_1_1InPortConsumer}
+\item Buffer
+\end{DoxyItemize}
+
+\doxyref{OutPort}{p.}{classRTC_1_1OutPort} に書き込まれたデータは \doxyref{OutPortPullConnector::write()}{p.}{classRTC_1_1OutPortPullConnector_a9fbb676086061d99ce808818b6ddc316} に渡 され Buffer に書き込まれる。InPortPullConnector が \doxyref{OutPortPullConnector}{p.}{classRTC_1_1OutPortPullConnector} からデータを読み出すことで \doxyref{InPort}{p.}{classRTC_1_1InPort} にデータが 転送される。
+
+\begin{DoxySince}{から}
+1.0.0 
+\end{DoxySince}
+
+
+\subsection{コンストラクタとデストラクタ}
+\index{RTC::OutPortPullConnector@{RTC::OutPortPullConnector}!OutPortPullConnector@{OutPortPullConnector}}
+\index{OutPortPullConnector@{OutPortPullConnector}!RTC::OutPortPullConnector@{RTC::OutPortPullConnector}}
+\subsubsection[{OutPortPullConnector}]{\setlength{\rightskip}{0pt plus 5cm}DATAPORTSTATUS\_\-ENUM RTC::OutPortPullConnector::OutPortPullConnector ({\bf ConnectorInfo} {\em info}, \/  {\bf OutPortProvider} $\ast$ {\em provider}, \/  {\bf ConnectorListeners} \& {\em listeners}, \/  {\bf CdrBufferBase} $\ast$ {\em buffer} = {\ttfamily 0})}\label{classRTC_1_1OutPortPullConnector_a93e1c0f8c992535feb7b45b32199aed1}
+
+
+コンストラクタ 
+
+\doxyref{OutPortPullConnector}{p.}{classRTC_1_1OutPortPullConnector} のコンストラクタはオブジェクト生成時に下記 を引数にとる。ConnectorInfo は接続情報を含み、この情報に従いバッ ファ等を生成する。OutPort インターフェースのプロバイダオブジェク トへのポインタを取り、所有権を持つので、OutPortPullConnector は \doxyref{OutPortProvider}{p.}{classRTC_1_1OutPortProvider} の解体責任を持つ。各種イベントに対するコールバッ ク機構を提供する \doxyref{ConnectorListeners}{p.}{classRTC_1_1ConnectorListeners} を持ち、適切なタイミングでコー ルバックを呼び出す。データバッファがもし \doxyref{OutPortBase}{p.}{classRTC_1_1OutPortBase} から提供さ れる場合はそのポインタを取る。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em info}]\doxyref{ConnectorInfo}{p.}{classRTC_1_1ConnectorInfo} \item[{\em provider}]\doxyref{OutPortProvider}{p.}{classRTC_1_1OutPortProvider} \item[{\em listeners}]\doxyref{ConnectorListeners}{p.}{classRTC_1_1ConnectorListeners} 型のリスナオブジェクトリスト \item[{\em buffer}]CdrBufferBase 型のバッファ \end{DoxyParams}
+\index{RTC::OutPortPullConnector@{RTC::OutPortPullConnector}!$\sim$OutPortPullConnector@{$\sim$OutPortPullConnector}}
+\index{$\sim$OutPortPullConnector@{$\sim$OutPortPullConnector}!RTC::OutPortPullConnector@{RTC::OutPortPullConnector}}
+\subsubsection[{$\sim$OutPortPullConnector}]{\setlength{\rightskip}{0pt plus 5cm}virtual RTC::OutPortPullConnector::$\sim$OutPortPullConnector ()\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classRTC_1_1OutPortPullConnector_af23e3daabf4eec96738a2c0f57d7b88f}
+
+
+デストラクタ 
+
+\doxyref{disconnect()}{p.}{classRTC_1_1OutPortPullConnector_aef4713815a7140da7c65b690c3a89256} が呼ばれ、provider, buffer が解体・削除される。 
+
+\subsection{関数}
+\index{RTC::OutPortPullConnector@{RTC::OutPortPullConnector}!activate@{activate}}
+\index{activate@{activate}!RTC::OutPortPullConnector@{RTC::OutPortPullConnector}}
+\subsubsection[{activate}]{\setlength{\rightskip}{0pt plus 5cm}virtual void RTC::OutPortPullConnector::activate ()\hspace{0.3cm}{\ttfamily  [inline, virtual]}}\label{classRTC_1_1OutPortPullConnector_a4a2119db40dea439bc6da3eeeed11aa5}
+
+
+アクティブ化 
+
+このコネクタをアクティブ化する 
+
+{\bf RTC::ConnectorBase} \doxyref{}{p.}{classRTC_1_1ConnectorBase_a6f7f9ddd882546044f911d66aefee665}を実装しています。
+
+\index{RTC::OutPortPullConnector@{RTC::OutPortPullConnector}!createBuffer@{createBuffer}}
+\index{createBuffer@{createBuffer}!RTC::OutPortPullConnector@{RTC::OutPortPullConnector}}
+\subsubsection[{createBuffer}]{\setlength{\rightskip}{0pt plus 5cm}{\bf CdrBufferBase}$\ast$ RTC::OutPortPullConnector::createBuffer ({\bf ConnectorInfo} \& {\em info})}\label{classRTC_1_1OutPortPullConnector_aad8358ac04ab437bd6811b977f939dcb}
+
+
+Bufferの生成. 
+
+\index{RTC::OutPortPullConnector@{RTC::OutPortPullConnector}!deactivate@{deactivate}}
+\index{deactivate@{deactivate}!RTC::OutPortPullConnector@{RTC::OutPortPullConnector}}
+\subsubsection[{deactivate}]{\setlength{\rightskip}{0pt plus 5cm}virtual void RTC::OutPortPullConnector::deactivate ()\hspace{0.3cm}{\ttfamily  [inline, virtual]}}\label{classRTC_1_1OutPortPullConnector_a2a681ec7dc8db477c34ce2bd84e1ac44}
+
+
+非アクティブ化 
+
+このコネクタを非アクティブ化する 
+
+{\bf RTC::ConnectorBase} \doxyref{}{p.}{classRTC_1_1ConnectorBase_a8fe6a1bfe8d5ee586d51293b2bcf36d1}を実装しています。
+
+\index{RTC::OutPortPullConnector@{RTC::OutPortPullConnector}!disconnect@{disconnect}}
+\index{disconnect@{disconnect}!RTC::OutPortPullConnector@{RTC::OutPortPullConnector}}
+\subsubsection[{disconnect}]{\setlength{\rightskip}{0pt plus 5cm}virtual ReturnCode RTC::OutPortPullConnector::disconnect ()\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classRTC_1_1OutPortPullConnector_aef4713815a7140da7c65b690c3a89256}
+
+
+接続解除 
+
+consumer, publisher, buffer が解体・削除される。 
+
+{\bf RTC::OutPortConnector} \doxyref{}{p.}{classRTC_1_1OutPortConnector_a0871d3168eb72d38b598cf862f1ac799}を実装しています。
+
+\index{RTC::OutPortPullConnector@{RTC::OutPortPullConnector}!getBuffer@{getBuffer}}
+\index{getBuffer@{getBuffer}!RTC::OutPortPullConnector@{RTC::OutPortPullConnector}}
+\subsubsection[{getBuffer}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf CdrBufferBase}$\ast$ RTC::OutPortPullConnector::getBuffer ()\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classRTC_1_1OutPortPullConnector_a8b3df65ce00c96f9c4782653948b59d3}
+
+
+Buffer を取得する. 
+
+Connector が保持している Buffer を返す 
+
+{\bf RTC::OutPortConnector} \doxyref{}{p.}{classRTC_1_1OutPortConnector_aed38944495c634d459bb0c06618f33a1}を実装しています。
+
+\index{RTC::OutPortPullConnector@{RTC::OutPortPullConnector}!onConnect@{onConnect}}
+\index{onConnect@{onConnect}!RTC::OutPortPullConnector@{RTC::OutPortPullConnector}}
+\subsubsection[{onConnect}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::OutPortPullConnector::onConnect ()}\label{classRTC_1_1OutPortPullConnector_a5f6cd6ccc9bd8acfcac089fd59a065c3}
+
+
+接続確立時にコールバックを呼ぶ 
+
+\index{RTC::OutPortPullConnector@{RTC::OutPortPullConnector}!onDisconnect@{onDisconnect}}
+\index{onDisconnect@{onDisconnect}!RTC::OutPortPullConnector@{RTC::OutPortPullConnector}}
+\subsubsection[{onDisconnect}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::OutPortPullConnector::onDisconnect ()}\label{classRTC_1_1OutPortPullConnector_a36b2faa1c66040304c18f17fecc02f3f}
+
+
+接続切断時にコールバックを呼ぶ 
+
+\index{RTC::OutPortPullConnector@{RTC::OutPortPullConnector}!write@{write}}
+\index{write@{write}!RTC::OutPortPullConnector@{RTC::OutPortPullConnector}}
+\subsubsection[{write}]{\setlength{\rightskip}{0pt plus 5cm}virtual ReturnCode RTC::OutPortPullConnector::write (const cdrMemoryStream \& {\em data})\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classRTC_1_1OutPortPullConnector_a9fbb676086061d99ce808818b6ddc316}
+
+
+データの書き込み 
+
+Publisherに対してデータを書き込み、これにより対応するInPortへ データが転送される。 
+
+{\bf RTC::OutPortConnector} \doxyref{}{p.}{classRTC_1_1OutPortConnector_af5b15d5b4346561d53b70c9040ae59a2}を実装しています。
+
+
+
+\subsection{変数}
+\index{RTC::OutPortPullConnector@{RTC::OutPortPullConnector}!m\_\-buffer@{m\_\-buffer}}
+\index{m\_\-buffer@{m\_\-buffer}!RTC::OutPortPullConnector@{RTC::OutPortPullConnector}}
+\subsubsection[{m\_\-buffer}]{\setlength{\rightskip}{0pt plus 5cm}{\bf CdrBufferBase}$\ast$ {\bf RTC::OutPortPullConnector::m\_\-buffer}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC_1_1OutPortPullConnector_ad5323b469342a7b14f3932849e7ebe51}
+
+
+Buffer へのポインタ. 
+
+\index{RTC::OutPortPullConnector@{RTC::OutPortPullConnector}!m\_\-listeners@{m\_\-listeners}}
+\index{m\_\-listeners@{m\_\-listeners}!RTC::OutPortPullConnector@{RTC::OutPortPullConnector}}
+\subsubsection[{m\_\-listeners}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ConnectorListeners}\& {\bf RTC::OutPortPullConnector::m\_\-listeners}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC_1_1OutPortPullConnector_a8a53b6d0efa5673f14f122c9f857978b}
+
+
+ConnectorListenrs への参照. 
+
+\index{RTC::OutPortPullConnector@{RTC::OutPortPullConnector}!m\_\-provider@{m\_\-provider}}
+\index{m\_\-provider@{m\_\-provider}!RTC::OutPortPullConnector@{RTC::OutPortPullConnector}}
+\subsubsection[{m\_\-provider}]{\setlength{\rightskip}{0pt plus 5cm}{\bf OutPortProvider}$\ast$ {\bf RTC::OutPortPullConnector::m\_\-provider}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC_1_1OutPortPullConnector_a613017f3f36a6d0ee9e8bdf952587ed8}
+
+
+\doxyref{OutPortProvider}{p.}{classRTC_1_1OutPortProvider} へのポインタ. 
+

@@ -1,0 +1,306 @@
+\section{SDOPackage::PeriodicECOrganization Class Reference}
+\label{classSDOPackage_1_1PeriodicECOrganization}\index{SDOPackage::PeriodicECOrganization@{SDOPackage::PeriodicECOrganization}}
+
+
+\doxyref{PeriodicECOrganization}{p.}{classSDOPackage_1_1PeriodicECOrganization} class.  
+
+
+
+
+{\ttfamily \#include $<$PeriodicECSharedComposite.h$>$}
+
+Inheritance diagram for SDOPackage::PeriodicECOrganization:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2cm]{classSDOPackage_1_1PeriodicECOrganization}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class {\bf Member}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf PeriodicECOrganization} (::{\bf RTC::RTObject\_\-impl} $\ast$rtobj)
+\begin{DoxyCompactList}\small\item\em Constructor. \item\end{DoxyCompactList}\item 
+virtual {\bf $\sim$PeriodicECOrganization} (void)
+\begin{DoxyCompactList}\small\item\em Destructor. \item\end{DoxyCompactList}\item 
+virtual ::CORBA::Boolean {\bf add\_\-members} (const SDOList \&sdo\_\-list)  throw (::CORBA::SystemException,	     InvalidParameter, NotAvailable, InternalError)
+\begin{DoxyCompactList}\small\item\em [CORBA interface] Add Organization member \item\end{DoxyCompactList}\item 
+virtual ::CORBA::Boolean {\bf set\_\-members} (const SDOList \&sdos)  throw (::CORBA::SystemException,	     InvalidParameter, NotAvailable, InternalError)
+\begin{DoxyCompactList}\small\item\em [CORBA interface] Set Organization member \item\end{DoxyCompactList}\item 
+virtual ::CORBA::Boolean {\bf remove\_\-member} (const char $\ast$id)  throw (::CORBA::SystemException,	     InvalidParameter, NotAvailable, InternalError)
+\begin{DoxyCompactList}\small\item\em [CORBA interface] Remove a member of Organization \item\end{DoxyCompactList}\item 
+void {\bf removeAllMembers} (void)
+\begin{DoxyCompactList}\small\item\em Remove a member of Organization. \item\end{DoxyCompactList}\item 
+void {\bf updateDelegatedPorts} (void)
+\begin{DoxyCompactList}\small\item\em Update/Remove a member of Organization. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef std::vector$<$ {\bf Member} $>$::iterator {\bf MemIt}
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool {\bf sdoToDFC} (const SDO\_\-ptr sdo,::OpenRTM::DataFlowComponent\_\-ptr \&dfc)
+\begin{DoxyCompactList}\small\item\em Conversion from \doxyref{SDO}{p.}{classSDO} to DFC. \item\end{DoxyCompactList}\item 
+void {\bf stopOwnedEC} ({\bf Member} \&member)
+\begin{DoxyCompactList}\small\item\em Stop Owned ExecutionContexts. \item\end{DoxyCompactList}\item 
+void {\bf startOwnedEC} ({\bf Member} \&member)
+\begin{DoxyCompactList}\small\item\em Start Owned ExecutionContexts. \item\end{DoxyCompactList}\item 
+void {\bf addOrganizationToTarget} ({\bf Member} \&member)
+\begin{DoxyCompactList}\small\item\em Set Organization object to target DFC. \item\end{DoxyCompactList}\item 
+void {\bf removeOrganizationFromTarget} ({\bf Member} \&member)
+\begin{DoxyCompactList}\small\item\em Remove Organization object from a target DFC. \item\end{DoxyCompactList}\item 
+void {\bf addParticipantToEC} ({\bf Member} \&member)
+\begin{DoxyCompactList}\small\item\em Set CompositeRTC's ExecutionContext to the given DFC. \item\end{DoxyCompactList}\item 
+void {\bf removeParticipantFromEC} ({\bf Member} \&member)
+\begin{DoxyCompactList}\small\item\em Remove participant DFC from CompositeRTC's ExecutionContext. \item\end{DoxyCompactList}\item 
+void {\bf addPort} ({\bf Member} \&member, PortList \&portlist)
+\begin{DoxyCompactList}\small\item\em Delegate given RTC's ports to the Composite. \item\end{DoxyCompactList}\item 
+void {\bf removePort} ({\bf Member} \&member, PortList \&portlist)
+\begin{DoxyCompactList}\small\item\em Remove delegated participatns's ports from the composite. \item\end{DoxyCompactList}\item 
+void {\bf updateExportedPortsList} (void)
+\begin{DoxyCompactList}\small\item\em PortsList is updated. \item\end{DoxyCompactList}\item 
+void {\bf print} (PortList p)
+\begin{DoxyCompactList}\small\item\em Output PortList to StandardOutput. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+{\bf RTC::Logger} {\bf rtclog}
+\begin{DoxyCompactList}\small\item\em Logger stream. \item\end{DoxyCompactList}\item 
+::{\bf RTC::RTObject\_\-impl} $\ast$ {\bf m\_\-rtobj}
+\begin{DoxyCompactList}\small\item\em RT Object. \item\end{DoxyCompactList}\item 
+::RTC::ExecutionContext\_\-var {\bf m\_\-ec}
+\begin{DoxyCompactList}\small\item\em ExecutionContext Object reference. \item\end{DoxyCompactList}\item 
+std::vector$<$ {\bf Member} $>$ {\bf m\_\-rtcMembers}
+\begin{DoxyCompactList}\small\item\em \doxyref{Member}{p.}{classSDOPackage_1_1PeriodicECOrganization_1_1Member} list. \item\end{DoxyCompactList}\item 
+PortList {\bf m\_\-expPorts}
+\begin{DoxyCompactList}\small\item\em Port List. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\doxyref{PeriodicECOrganization}{p.}{classSDOPackage_1_1PeriodicECOrganization} class. Implement of Organization\_\-imp 
+
+\subsection{Member Typedef Documentation}
+\index{SDOPackage::PeriodicECOrganization@{SDOPackage::PeriodicECOrganization}!MemIt@{MemIt}}
+\index{MemIt@{MemIt}!SDOPackage::PeriodicECOrganization@{SDOPackage::PeriodicECOrganization}}
+\subsubsection[{MemIt}]{\setlength{\rightskip}{0pt plus 5cm}typedef std::vector$<${\bf Member}$>$::iterator {\bf SDOPackage::PeriodicECOrganization::MemIt}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classSDOPackage_1_1PeriodicECOrganization_ae810672c39f7fdc9c45e8600057a14c5}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{SDOPackage::PeriodicECOrganization@{SDOPackage::PeriodicECOrganization}!PeriodicECOrganization@{PeriodicECOrganization}}
+\index{PeriodicECOrganization@{PeriodicECOrganization}!SDOPackage::PeriodicECOrganization@{SDOPackage::PeriodicECOrganization}}
+\subsubsection[{PeriodicECOrganization}]{\setlength{\rightskip}{0pt plus 5cm}SDOPackage::PeriodicECOrganization::PeriodicECOrganization (::{\bf RTC::RTObject\_\-impl} $\ast$ {\em rtobj})}\label{classSDOPackage_1_1PeriodicECOrganization_ad5ea3d0afb793a5e16b9f7afba6086f0}
+
+
+Constructor. 
+
+Constructor
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em rtobj}]Object \end{DoxyParams}
+\index{SDOPackage::PeriodicECOrganization@{SDOPackage::PeriodicECOrganization}!$\sim$PeriodicECOrganization@{$\sim$PeriodicECOrganization}}
+\index{$\sim$PeriodicECOrganization@{$\sim$PeriodicECOrganization}!SDOPackage::PeriodicECOrganization@{SDOPackage::PeriodicECOrganization}}
+\subsubsection[{$\sim$PeriodicECOrganization}]{\setlength{\rightskip}{0pt plus 5cm}virtual SDOPackage::PeriodicECOrganization::$\sim$PeriodicECOrganization (void)\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classSDOPackage_1_1PeriodicECOrganization_ab82bfe5c0a4374aac82b1a1ff0ba70a6}
+
+
+Destructor. 
+
+Destructor 
+
+\subsection{Member Function Documentation}
+\index{SDOPackage::PeriodicECOrganization@{SDOPackage::PeriodicECOrganization}!add\_\-members@{add\_\-members}}
+\index{add\_\-members@{add\_\-members}!SDOPackage::PeriodicECOrganization@{SDOPackage::PeriodicECOrganization}}
+\subsubsection[{add\_\-members}]{\setlength{\rightskip}{0pt plus 5cm}virtual ::CORBA::Boolean SDOPackage::PeriodicECOrganization::add\_\-members (const SDOList \& {\em sdo\_\-list})  throw (::CORBA::SystemException,	     InvalidParameter, NotAvailable, InternalError)\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classSDOPackage_1_1PeriodicECOrganization_a008a89d79ec0173359519f90aaa1482a}
+
+
+[CORBA interface] Add Organization member 
+
+This operation adds the given SDOList to the existing organization's member list
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em sdo\_\-list}]\doxyref{SDO}{p.}{classSDO} member list to be added \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+boolean will returned if the operation succeed 
+\end{DoxyReturn}
+
+
+Reimplemented from {\bf SDOPackage::Organization\_\-impl} \doxyref{}{p.}{classSDOPackage_1_1Organization__impl_a5a7e771a78dce198f23e6045f9073be3}.
+
+\index{SDOPackage::PeriodicECOrganization@{SDOPackage::PeriodicECOrganization}!addOrganizationToTarget@{addOrganizationToTarget}}
+\index{addOrganizationToTarget@{addOrganizationToTarget}!SDOPackage::PeriodicECOrganization@{SDOPackage::PeriodicECOrganization}}
+\subsubsection[{addOrganizationToTarget}]{\setlength{\rightskip}{0pt plus 5cm}void SDOPackage::PeriodicECOrganization::addOrganizationToTarget ({\bf Member} \& {\em member})\hspace{0.3cm}{\ttfamily  [protected]}}\label{classSDOPackage_1_1PeriodicECOrganization_aa463016a3959267942e484c9c6c063f9}
+
+
+Set Organization object to target DFC. 
+
+\index{SDOPackage::PeriodicECOrganization@{SDOPackage::PeriodicECOrganization}!addParticipantToEC@{addParticipantToEC}}
+\index{addParticipantToEC@{addParticipantToEC}!SDOPackage::PeriodicECOrganization@{SDOPackage::PeriodicECOrganization}}
+\subsubsection[{addParticipantToEC}]{\setlength{\rightskip}{0pt plus 5cm}void SDOPackage::PeriodicECOrganization::addParticipantToEC ({\bf Member} \& {\em member})\hspace{0.3cm}{\ttfamily  [protected]}}\label{classSDOPackage_1_1PeriodicECOrganization_a2f8ae200a774d13953de46c93b716aa9}
+
+
+Set CompositeRTC's ExecutionContext to the given DFC. 
+
+\index{SDOPackage::PeriodicECOrganization@{SDOPackage::PeriodicECOrganization}!addPort@{addPort}}
+\index{addPort@{addPort}!SDOPackage::PeriodicECOrganization@{SDOPackage::PeriodicECOrganization}}
+\subsubsection[{addPort}]{\setlength{\rightskip}{0pt plus 5cm}void SDOPackage::PeriodicECOrganization::addPort ({\bf Member} \& {\em member}, \/  PortList \& {\em portlist})\hspace{0.3cm}{\ttfamily  [protected]}}\label{classSDOPackage_1_1PeriodicECOrganization_aaad97b0695025f94541a4b90f4e1cfc7}
+
+
+Delegate given RTC's ports to the Composite. 
+
+\index{SDOPackage::PeriodicECOrganization@{SDOPackage::PeriodicECOrganization}!print@{print}}
+\index{print@{print}!SDOPackage::PeriodicECOrganization@{SDOPackage::PeriodicECOrganization}}
+\subsubsection[{print}]{\setlength{\rightskip}{0pt plus 5cm}void SDOPackage::PeriodicECOrganization::print (PortList {\em p})\hspace{0.3cm}{\ttfamily  [inline, protected]}}\label{classSDOPackage_1_1PeriodicECOrganization_a5962668ac6e85e7e17f0063d02257fdf}
+
+
+Output PortList to StandardOutput. 
+
+\index{SDOPackage::PeriodicECOrganization@{SDOPackage::PeriodicECOrganization}!remove\_\-member@{remove\_\-member}}
+\index{remove\_\-member@{remove\_\-member}!SDOPackage::PeriodicECOrganization@{SDOPackage::PeriodicECOrganization}}
+\subsubsection[{remove\_\-member}]{\setlength{\rightskip}{0pt plus 5cm}virtual ::CORBA::Boolean SDOPackage::PeriodicECOrganization::remove\_\-member (const char $\ast$ {\em id})  throw (::CORBA::SystemException,	     InvalidParameter, NotAvailable, InternalError)\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classSDOPackage_1_1PeriodicECOrganization_ab6a580bcb96ba7706d4bd1995f66e4f7}
+
+
+[CORBA interface] Remove a member of Organization 
+
+This operation removes a \doxyref{SDO}{p.}{classSDO} from existing member list by specified ID.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em id}]The ID of the \doxyref{SDO}{p.}{classSDO} to be removed \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+boolean will returned if the operation succeed 
+\end{DoxyReturn}
+
+
+Reimplemented from {\bf SDOPackage::Organization\_\-impl} \doxyref{}{p.}{classSDOPackage_1_1Organization__impl_ad5b844e581d3c48d8a0d039d40f8c7f2}.
+
+\index{SDOPackage::PeriodicECOrganization@{SDOPackage::PeriodicECOrganization}!removeAllMembers@{removeAllMembers}}
+\index{removeAllMembers@{removeAllMembers}!SDOPackage::PeriodicECOrganization@{SDOPackage::PeriodicECOrganization}}
+\subsubsection[{removeAllMembers}]{\setlength{\rightskip}{0pt plus 5cm}void SDOPackage::PeriodicECOrganization::removeAllMembers (void)}\label{classSDOPackage_1_1PeriodicECOrganization_a7a654538c4530a805b329fb48dc04c16}
+
+
+Remove a member of Organization. 
+
+\index{SDOPackage::PeriodicECOrganization@{SDOPackage::PeriodicECOrganization}!removeOrganizationFromTarget@{removeOrganizationFromTarget}}
+\index{removeOrganizationFromTarget@{removeOrganizationFromTarget}!SDOPackage::PeriodicECOrganization@{SDOPackage::PeriodicECOrganization}}
+\subsubsection[{removeOrganizationFromTarget}]{\setlength{\rightskip}{0pt plus 5cm}void SDOPackage::PeriodicECOrganization::removeOrganizationFromTarget ({\bf Member} \& {\em member})\hspace{0.3cm}{\ttfamily  [protected]}}\label{classSDOPackage_1_1PeriodicECOrganization_a4a39502f6568c3cfd1e6255c61c6f4db}
+
+
+Remove Organization object from a target DFC. 
+
+\index{SDOPackage::PeriodicECOrganization@{SDOPackage::PeriodicECOrganization}!removeParticipantFromEC@{removeParticipantFromEC}}
+\index{removeParticipantFromEC@{removeParticipantFromEC}!SDOPackage::PeriodicECOrganization@{SDOPackage::PeriodicECOrganization}}
+\subsubsection[{removeParticipantFromEC}]{\setlength{\rightskip}{0pt plus 5cm}void SDOPackage::PeriodicECOrganization::removeParticipantFromEC ({\bf Member} \& {\em member})\hspace{0.3cm}{\ttfamily  [protected]}}\label{classSDOPackage_1_1PeriodicECOrganization_a0aedd76c4be2d356b1d94547de15f38a}
+
+
+Remove participant DFC from CompositeRTC's ExecutionContext. 
+
+\index{SDOPackage::PeriodicECOrganization@{SDOPackage::PeriodicECOrganization}!removePort@{removePort}}
+\index{removePort@{removePort}!SDOPackage::PeriodicECOrganization@{SDOPackage::PeriodicECOrganization}}
+\subsubsection[{removePort}]{\setlength{\rightskip}{0pt plus 5cm}void SDOPackage::PeriodicECOrganization::removePort ({\bf Member} \& {\em member}, \/  PortList \& {\em portlist})\hspace{0.3cm}{\ttfamily  [protected]}}\label{classSDOPackage_1_1PeriodicECOrganization_a0de9ffd2aed39ecbf6215fc3b66c77f3}
+
+
+Remove delegated participatns's ports from the composite. 
+
+\index{SDOPackage::PeriodicECOrganization@{SDOPackage::PeriodicECOrganization}!sdoToDFC@{sdoToDFC}}
+\index{sdoToDFC@{sdoToDFC}!SDOPackage::PeriodicECOrganization@{SDOPackage::PeriodicECOrganization}}
+\subsubsection[{sdoToDFC}]{\setlength{\rightskip}{0pt plus 5cm}bool SDOPackage::PeriodicECOrganization::sdoToDFC (const SDO\_\-ptr {\em sdo}, \/  ::OpenRTM::DataFlowComponent\_\-ptr \& {\em dfc})\hspace{0.3cm}{\ttfamily  [protected]}}\label{classSDOPackage_1_1PeriodicECOrganization_a7e1bb67618ed102b79eafd908a4f47eb}
+
+
+Conversion from \doxyref{SDO}{p.}{classSDO} to DFC. 
+
+\index{SDOPackage::PeriodicECOrganization@{SDOPackage::PeriodicECOrganization}!set\_\-members@{set\_\-members}}
+\index{set\_\-members@{set\_\-members}!SDOPackage::PeriodicECOrganization@{SDOPackage::PeriodicECOrganization}}
+\subsubsection[{set\_\-members}]{\setlength{\rightskip}{0pt plus 5cm}virtual ::CORBA::Boolean SDOPackage::PeriodicECOrganization::set\_\-members (const SDOList \& {\em sdos})  throw (::CORBA::SystemException,	     InvalidParameter, NotAvailable, InternalError)\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classSDOPackage_1_1PeriodicECOrganization_a821e45718787e92851c830655cb12164}
+
+
+[CORBA interface] Set Organization member 
+
+This operation removes existing member list and sets the given SDOList to the existing organization's member list
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em sdo\_\-list}]\doxyref{SDO}{p.}{classSDO} member list to be set \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+boolean will returned if the operation succeed 
+\end{DoxyReturn}
+
+
+Reimplemented from {\bf SDOPackage::Organization\_\-impl} \doxyref{}{p.}{classSDOPackage_1_1Organization__impl_aa08d0464d1bb97686e0f5e1e4bae78b9}.
+
+\index{SDOPackage::PeriodicECOrganization@{SDOPackage::PeriodicECOrganization}!startOwnedEC@{startOwnedEC}}
+\index{startOwnedEC@{startOwnedEC}!SDOPackage::PeriodicECOrganization@{SDOPackage::PeriodicECOrganization}}
+\subsubsection[{startOwnedEC}]{\setlength{\rightskip}{0pt plus 5cm}void SDOPackage::PeriodicECOrganization::startOwnedEC ({\bf Member} \& {\em member})\hspace{0.3cm}{\ttfamily  [protected]}}\label{classSDOPackage_1_1PeriodicECOrganization_abf456fed3462ce891a4bae9eac092322}
+
+
+Start Owned ExecutionContexts. 
+
+\index{SDOPackage::PeriodicECOrganization@{SDOPackage::PeriodicECOrganization}!stopOwnedEC@{stopOwnedEC}}
+\index{stopOwnedEC@{stopOwnedEC}!SDOPackage::PeriodicECOrganization@{SDOPackage::PeriodicECOrganization}}
+\subsubsection[{stopOwnedEC}]{\setlength{\rightskip}{0pt plus 5cm}void SDOPackage::PeriodicECOrganization::stopOwnedEC ({\bf Member} \& {\em member})\hspace{0.3cm}{\ttfamily  [protected]}}\label{classSDOPackage_1_1PeriodicECOrganization_a13977dd7c84294d44488aaee421f2e48}
+
+
+Stop Owned ExecutionContexts. 
+
+\index{SDOPackage::PeriodicECOrganization@{SDOPackage::PeriodicECOrganization}!updateDelegatedPorts@{updateDelegatedPorts}}
+\index{updateDelegatedPorts@{updateDelegatedPorts}!SDOPackage::PeriodicECOrganization@{SDOPackage::PeriodicECOrganization}}
+\subsubsection[{updateDelegatedPorts}]{\setlength{\rightskip}{0pt plus 5cm}void SDOPackage::PeriodicECOrganization::updateDelegatedPorts (void)}\label{classSDOPackage_1_1PeriodicECOrganization_aad4d76ef234a1fb489d2a5eb02f5d367}
+
+
+Update/Remove a member of Organization. 
+
+\index{SDOPackage::PeriodicECOrganization@{SDOPackage::PeriodicECOrganization}!updateExportedPortsList@{updateExportedPortsList}}
+\index{updateExportedPortsList@{updateExportedPortsList}!SDOPackage::PeriodicECOrganization@{SDOPackage::PeriodicECOrganization}}
+\subsubsection[{updateExportedPortsList}]{\setlength{\rightskip}{0pt plus 5cm}void SDOPackage::PeriodicECOrganization::updateExportedPortsList (void)\hspace{0.3cm}{\ttfamily  [protected]}}\label{classSDOPackage_1_1PeriodicECOrganization_a38800b068097bddeaad555ee95e64d82}
+
+
+PortsList is updated. 
+
+
+
+\subsection{Member Data Documentation}
+\index{SDOPackage::PeriodicECOrganization@{SDOPackage::PeriodicECOrganization}!m\_\-ec@{m\_\-ec}}
+\index{m\_\-ec@{m\_\-ec}!SDOPackage::PeriodicECOrganization@{SDOPackage::PeriodicECOrganization}}
+\subsubsection[{m\_\-ec}]{\setlength{\rightskip}{0pt plus 5cm}::RTC::ExecutionContext\_\-var {\bf SDOPackage::PeriodicECOrganization::m\_\-ec}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classSDOPackage_1_1PeriodicECOrganization_a4b2d96e5fe7cd0f110de085ee5722a29}
+
+
+ExecutionContext Object reference. 
+
+\index{SDOPackage::PeriodicECOrganization@{SDOPackage::PeriodicECOrganization}!m\_\-expPorts@{m\_\-expPorts}}
+\index{m\_\-expPorts@{m\_\-expPorts}!SDOPackage::PeriodicECOrganization@{SDOPackage::PeriodicECOrganization}}
+\subsubsection[{m\_\-expPorts}]{\setlength{\rightskip}{0pt plus 5cm}PortList {\bf SDOPackage::PeriodicECOrganization::m\_\-expPorts}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classSDOPackage_1_1PeriodicECOrganization_a2158932a1cbedea26b76ec5a7835f694}
+
+
+Port List. 
+
+\index{SDOPackage::PeriodicECOrganization@{SDOPackage::PeriodicECOrganization}!m\_\-rtcMembers@{m\_\-rtcMembers}}
+\index{m\_\-rtcMembers@{m\_\-rtcMembers}!SDOPackage::PeriodicECOrganization@{SDOPackage::PeriodicECOrganization}}
+\subsubsection[{m\_\-rtcMembers}]{\setlength{\rightskip}{0pt plus 5cm}std::vector$<${\bf Member}$>$ {\bf SDOPackage::PeriodicECOrganization::m\_\-rtcMembers}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classSDOPackage_1_1PeriodicECOrganization_a48a37088efdc1fd0aab7613071758aac}
+
+
+\doxyref{Member}{p.}{classSDOPackage_1_1PeriodicECOrganization_1_1Member} list. 
+
+\index{SDOPackage::PeriodicECOrganization@{SDOPackage::PeriodicECOrganization}!m\_\-rtobj@{m\_\-rtobj}}
+\index{m\_\-rtobj@{m\_\-rtobj}!SDOPackage::PeriodicECOrganization@{SDOPackage::PeriodicECOrganization}}
+\subsubsection[{m\_\-rtobj}]{\setlength{\rightskip}{0pt plus 5cm}::{\bf RTC::RTObject\_\-impl}$\ast$ {\bf SDOPackage::PeriodicECOrganization::m\_\-rtobj}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classSDOPackage_1_1PeriodicECOrganization_a1a35649c5759fcad5e48813337fe52be}
+
+
+RT Object. 
+
+\index{SDOPackage::PeriodicECOrganization@{SDOPackage::PeriodicECOrganization}!rtclog@{rtclog}}
+\index{rtclog@{rtclog}!SDOPackage::PeriodicECOrganization@{SDOPackage::PeriodicECOrganization}}
+\subsubsection[{rtclog}]{\setlength{\rightskip}{0pt plus 5cm}{\bf RTC::Logger} {\bf SDOPackage::PeriodicECOrganization::rtclog}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classSDOPackage_1_1PeriodicECOrganization_a6aadb6a2d4266c6d80a003b7ce30de17}
+
+
+Logger stream. 
+
+
+
+Reimplemented from {\bf SDOPackage::Organization\_\-impl} \doxyref{}{p.}{classSDOPackage_1_1Organization__impl_a47d0b3ab2bda09862034e71a06ea5c6f}.
+

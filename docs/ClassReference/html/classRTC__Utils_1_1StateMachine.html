@@ -1,0 +1,915 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<title>OpenRTM: クラス テンプレート RTC_Utils::StateMachine&lt; State, Listener, States, Callback &gt;</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<!-- 作成： Doxygen 1.6.3 -->
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="index.html"><span>メインページ</span></a></li>
+      <li><a href="namespaces.html"><span>ネームスペース</span></a></li>
+      <li class="current"><a href="annotated.html"><span>クラス</span></a></li>
+      <li><a href="files.html"><span>ファイル</span></a></li>
+    </ul>
+  </div>
+  <div class="tabs">
+    <ul>
+      <li><a href="annotated.html"><span>構成</span></a></li>
+      <li><a href="hierarchy.html"><span>クラス階層</span></a></li>
+      <li><a href="functions.html"><span>構成メンバ</span></a></li>
+    </ul>
+  </div>
+  <div class="navpath"><a class="el" href="namespaceRTC__Utils.html">RTC_Utils</a>::<a class="el" href="classRTC__Utils_1_1StateMachine.html">StateMachine</a>
+  </div>
+</div>
+<div class="contents">
+<h1>クラス テンプレート RTC_Utils::StateMachine&lt; State, Listener, States, Callback &gt;</h1><!-- doxytag: class="RTC_Utils::StateMachine" -->
+<p>状態マシンクラス  
+<a href="#_details">[詳細]</a></p>
+
+<p><code>#include &lt;<a class="el" href="StateMachine_8h_source.html">StateMachine.h</a>&gt;</code></p>
+
+<p><a href="classRTC__Utils_1_1StateMachine-members.html">すべてのメンバ一覧</a></p>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr><td colspan="2"><h2>Public メソッド</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC__Utils_1_1StateMachine.html#acca3c5b3e35ae468bde803fd0975f074">StateMachine</a> (int num_of_state)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">コンストラクタ  <a href="#acca3c5b3e35ae468bde803fd0975f074"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC__Utils_1_1StateMachine.html#a26c9f468d0188e47d891b984f8cd761d">~StateMachine</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC__Utils_1_1StateMachine.html#a0d232546cd076ffbb0860a612e582416">setNOP</a> (Callback call_back)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">NOP関数を登録する.  <a href="#a0d232546cd076ffbb0860a612e582416"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC__Utils_1_1StateMachine.html#afa4701917d4d6ec2a70f78397519f1f9">setListener</a> (Listener *listener)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Listener オブジェクトを登録する.  <a href="#afa4701917d4d6ec2a70f78397519f1f9"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC__Utils_1_1StateMachine.html#a611cd79fa4c9257159de08011e7e6509">setEntryAction</a> (State state, Callback call_back)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Entry action 関数を登録する.  <a href="#a611cd79fa4c9257159de08011e7e6509"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC__Utils_1_1StateMachine.html#a7bdcc53df08ccb0fa7fb31472613b2fe">setPreDoAction</a> (State state, Callback call_back)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">PreDo action 関数を登録する.  <a href="#a7bdcc53df08ccb0fa7fb31472613b2fe"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC__Utils_1_1StateMachine.html#a40da53fd17393b10e4b89b9a63ba1332">setDoAction</a> (State state, Callback call_back)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Do action 関数を登録する.  <a href="#a40da53fd17393b10e4b89b9a63ba1332"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC__Utils_1_1StateMachine.html#aad4ee723ecbd2f5c97b358336574c26c">setPostDoAction</a> (State state, Callback call_back)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">PostDo action 関数を登録する.  <a href="#aad4ee723ecbd2f5c97b358336574c26c"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC__Utils_1_1StateMachine.html#ac308579215117b100ba31c38c31d580a">setExitAction</a> (State state, Callback call_back)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Exit action 関数を登録する.  <a href="#ac308579215117b100ba31c38c31d580a"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC__Utils_1_1StateMachine.html#a1b18262bc0c7fa8cae25dffd567a0806">setTransitionAction</a> (Callback call_back)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">State transition action 関数を登録する.  <a href="#a1b18262bc0c7fa8cae25dffd567a0806"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC__Utils_1_1StateMachine.html#a5501ddabd4b93f4e7043708e2de26781">setStartState</a> (States states)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">初期状態をセットする  <a href="#a5501ddabd4b93f4e7043708e2de26781"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">States&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC__Utils_1_1StateMachine.html#af665f3b667caa54e29dc59a6d5b16d4c">getStates</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">状態を取得する  <a href="#af665f3b667caa54e29dc59a6d5b16d4c"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">State&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC__Utils_1_1StateMachine.html#a1a768beb5bc5ec5a0e828d0e006d8003">getState</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">現在の状態を取得する  <a href="#a1a768beb5bc5ec5a0e828d0e006d8003"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC__Utils_1_1StateMachine.html#a6338403cf745c61423e310a8b481b9df">isIn</a> (State state)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">現在状態を確認  <a href="#a6338403cf745c61423e310a8b481b9df"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC__Utils_1_1StateMachine.html#a43b923b77e7e4d3562a83880c488197d">goTo</a> (State state)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">状態を遷移  <a href="#a43b923b77e7e4d3562a83880c488197d"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC__Utils_1_1StateMachine.html#af979deaf6160e247a6a6e3027f31c83b">worker</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">駆動関数  <a href="#af979deaf6160e247a6a6e3027f31c83b"></a><br/></td></tr>
+<tr><td colspan="2"><h2>Protected メソッド</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC__Utils_1_1StateMachine.html#a99b23364ce99c4473f3a149383e7230f">setNullFunc</a> (Callback *s, Callback nullfunc)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">NOP関数を設定.  <a href="#a99b23364ce99c4473f3a149383e7230f"></a><br/></td></tr>
+<tr><td colspan="2"><h2>Protected 変数</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC__Utils_1_1StateMachine.html#a2503583562749e18c43ca48c6066d9f4">m_num</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">状態数  <a href="#a2503583562749e18c43ca48c6066d9f4"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">Listener *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC__Utils_1_1StateMachine.html#a25f2e293e773fe5c4ffdd49fb343f734">m_listener</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">コールバック関数用リスナー  <a href="#a25f2e293e773fe5c4ffdd49fb343f734"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">Callback *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC__Utils_1_1StateMachine.html#a728fe8f596c77e326bc356b274144bb5">m_entry</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Entry action 用コールバック関数.  <a href="#a728fe8f596c77e326bc356b274144bb5"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">Callback *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC__Utils_1_1StateMachine.html#a687b8b8abab11fb696555fa861240f30">m_predo</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">PreDo action 用コールバック関数.  <a href="#a687b8b8abab11fb696555fa861240f30"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">Callback *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC__Utils_1_1StateMachine.html#a86145d8ddee737f186fe019dc84de243">m_do</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Do action 用コールバック関数.  <a href="#a86145d8ddee737f186fe019dc84de243"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">Callback *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC__Utils_1_1StateMachine.html#ac90335d93cc0c173335b130dd91a33e4">m_postdo</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">PostDo action 用コールバック関数.  <a href="#ac90335d93cc0c173335b130dd91a33e4"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">Callback *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC__Utils_1_1StateMachine.html#a75fb6776bd228a8005eda56e49a33373">m_exit</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Exit action 用コールバック関数.  <a href="#a75fb6776bd228a8005eda56e49a33373"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">Callback&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC__Utils_1_1StateMachine.html#aa292b9b27cf14ea9b82b2ad8b8ddc49d">m_transit</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">State transition action 用コールバック関数.  <a href="#aa292b9b27cf14ea9b82b2ad8b8ddc49d"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">States&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC__Utils_1_1StateMachine.html#a29e2692dc448060388da12e0a029cfad">m_states</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">現在の状態情報  <a href="#a29e2692dc448060388da12e0a029cfad"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC__Utils_1_1StateMachine.html#aa02af266af8b8e0abf6609abede2a323">m_selftrans</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classcoil_1_1Mutex.html">Mutex</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC__Utils_1_1StateMachine.html#aedd1306b007958b49a248d07578214b3">m_mutex</a></td></tr>
+</table>
+<hr/><a name="_details"></a><h2>説明</h2>
+<h3>template&lt;class State, class Listener, class States = StateHolder&lt;State&gt;, class Callback = void (Listener::*)(const States&amp; states)&gt;<br/>
+ class RTC_Utils::StateMachine&lt; State, Listener, States, Callback &gt;</h3>
+
+<p>状態マシンクラス </p>
+<p><a class="el" href="classRTC__Utils_1_1StateMachine.html" title="状態マシンクラス">StateMachine</a> クラスは状態マシンを実現するクラスである。</p>
+<p>例: ActiveObjectは状態マシンを持つアクティブオブジェクトであるとする。 状態は3状態 INACTIVE, ACTIVE, ERROR があり、各状態でのEntryやExit動作を 定義したいとすると、以下のように実現される。 </p>
+<pre>
+ class ActiveObject 
+ {  
+ public: 
+   enum MyState { INACTIVE, ACTIVE, ERROR }; 
+   typedef States&lt;MyState&gt; MyStates;</pre><pre>   ActiveObject() 
+     : m_sm(3) 
+   { 
+     m_sm.setNOP(&amp;ActiveObject::nullAction); 
+     m_sm.setListener(this);</pre><pre>     m_sm.setExitAction(INACTIVE, &amp;ActiveObject::inactiveExit); 
+       : 
+     m_sm.setPostDoAction(ERROR, &amp;ActiveObject::errorPostDo); 
+     m_sm.setTransitionAction(&amp;ActiveObject:transition); 
+   };</pre><pre>   bool nullAction(MyStates st) {}; 
+   bool inactiveExit(MyStates st) {}; 
+     : 
+   bool errorPostDo(MyStates st) {}; 
+   bool transition(MyStates st) {};</pre><pre> private: 
+   StateMachine&lt;MyState, bool, ActiveObject&gt; m_sm; 
+ }; 
+ </pre><p> 状態を持たせたいクラスは以下の条件を満たすように実装しなければならない。 </p>
+<ol>
+<li>
+enum で状態を定義 </li>
+<li>
+<a class="el" href="classRTC__Utils_1_1StateMachine.html" title="状態マシンクラス">StateMachine</a> のテンプレート引数は、<br/>
+ &lt;状態の型(MyState), リスナーオブジェクト, 状態ホルダー，コールバック関数&gt; </li>
+<li>
+<a class="el" href="classRTC__Utils_1_1StateMachine.html" title="状態マシンクラス">StateMachine</a> のコンストラクタ引数は状態の数 </li>
+<li>
+以下のアクション関数を(Return _function_name_(States)) の関数として設定 <ol>
+<li>
+何もしない関数を必ず定義し、setNOP で与えなければならない </li>
+<li>
+各状態毎に, set(Entry|PreDo|Do|PostDo|Exit)Action でアクションを設定 </li>
+<li>
+状態遷移時のアクションを <a class="el" href="classRTC__Utils_1_1StateMachine.html#a1b18262bc0c7fa8cae25dffd567a0806" title="State transition action 関数を登録する.">setTransitionAction()</a> で設定。 </li>
+</ol>
+</li>
+<li>
+遷移時のアクションは、与えられた現在状態、次状態、前状態を元に、 ユーザが実装しなければならない。 </li>
+<li>
+状態の変更は <a class="el" href="classRTC__Utils_1_1StateMachine.html#a43b923b77e7e4d3562a83880c488197d" title="状態を遷移">goTo()</a> で、状態のチェックは isIn(state) で行う。 </li>
+<li>
+<a class="el" href="classRTC__Utils_1_1StateMachine.html#a43b923b77e7e4d3562a83880c488197d" title="状態を遷移">goTo()</a>は次状態を強制的にセットする関数であり、遷移の可否は、 ユーザが現在状態を取得し判断するロジックを実装しなければならない。 </li>
+</ol>
+<p>このクラスは、一つの状態に対して、 </p>
+<ul>
+<li>
+Entry action </li>
+<li>
+PreDo action </li>
+<li>
+Do action </li>
+<li>
+PostDo action </li>
+<li>
+Exit action </li>
+</ul>
+<p>5つのアクションが定義することができる。 Transition action はあらゆる状態間遷移で呼び出されるアクションで、 その振る舞いはユーザが定義しなければならない。</p>
+<p>このクラスは以下のようなタイミングで各アクションが実行される。</p>
+<ul>
+<li>
+<p class="startli">状態が変更され(A-&gt;B)状態が遷移する場合 <br/>
+ (A:Exit)-&gt;|(状態更新:A-&gt;B)-&gt;(B:Entry)-&gt;(B:PreDo)-&gt;(B:Do)-&gt;(B:PostDo)</p>
+<p class="endli"></p>
+</li>
+<li>
+<p class="startli">状態が変更されず、B状態を維持する場合 (|はステップの区切りを表す)<br/>
+ (B(n-1):PostDo)-&gt;|(B(n):PreDo)-&gt;(B(n):Do)-&gt;(B(n):PostDo)-&gt;|(B(n+1):PreDo)<br/>
+ PreDo, Do, PostDo が繰り返し実行される。</p>
+<p class="endli"></p>
+</li>
+<li>
+自己遷移する場合 <br/>
+ (B(n-1):PostDo)-&gt;(B(n-1):Exit)-&gt;|(B(n):Entry)-&gt;(B(n):PreDo) <br/>
+ 一旦 Exit が呼ばれた後、Entry が実行され、以降は前項と同じ動作をする。 </li>
+</ul>
+<dl><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>State</em>&nbsp;</td><td>状態の型 </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>Listener</em>&nbsp;</td><td>アクション用リスナーオブジェクト </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>States</em>&nbsp;</td><td>状態ホルダー </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>Callback</em>&nbsp;</td><td>アクション用コールバック関数</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="since"><dt><b>から:</b></dt><dd>0.4.0 </dd></dl>
+<hr/><h2>コンストラクタとデストラクタ</h2>
+<a class="anchor" id="acca3c5b3e35ae468bde803fd0975f074"></a><!-- doxytag: member="RTC_Utils::StateMachine::StateMachine" ref="acca3c5b3e35ae468bde803fd0975f074" args="(int num_of_state)" -->
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class State, class Listener, class States = StateHolder&lt;State&gt;, class Callback = void (Listener::*)(const States&amp; states)&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classRTC__Utils_1_1StateMachine.html">RTC_Utils::StateMachine</a>&lt; State, Listener, States, Callback &gt;::<a class="el" href="classRTC__Utils_1_1StateMachine.html">StateMachine</a> </td>
+          <td>(</td>
+          <td class="paramtype">int&nbsp;</td>
+          <td class="paramname"> <em>num_of_state</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>コンストラクタ </p>
+<p>コンストラクタ</p>
+<dl><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>num_of_state</em>&nbsp;</td><td>ステートマシン中の状態数 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a26c9f468d0188e47d891b984f8cd761d"></a><!-- doxytag: member="RTC_Utils::StateMachine::~StateMachine" ref="a26c9f468d0188e47d891b984f8cd761d" args="()" -->
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class State, class Listener, class States = StateHolder&lt;State&gt;, class Callback = void (Listener::*)(const States&amp; states)&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual <a class="el" href="classRTC__Utils_1_1StateMachine.html">RTC_Utils::StateMachine</a>&lt; State, Listener, States, Callback &gt;::~<a class="el" href="classRTC__Utils_1_1StateMachine.html">StateMachine</a> </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [inline, virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<hr/><h2>関数</h2>
+<a class="anchor" id="a1a768beb5bc5ec5a0e828d0e006d8003"></a><!-- doxytag: member="RTC_Utils::StateMachine::getState" ref="a1a768beb5bc5ec5a0e828d0e006d8003" args="()" -->
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class State, class Listener, class States = StateHolder&lt;State&gt;, class Callback = void (Listener::*)(const States&amp; states)&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">State <a class="el" href="classRTC__Utils_1_1StateMachine.html">RTC_Utils::StateMachine</a>&lt; State, Listener, States, Callback &gt;::getState </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>現在の状態を取得する </p>
+<p>現在の状態を取得する。</p>
+<dl class="return"><dt><b>戻り値:</b></dt><dd>現在の状態 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="af665f3b667caa54e29dc59a6d5b16d4c"></a><!-- doxytag: member="RTC_Utils::StateMachine::getStates" ref="af665f3b667caa54e29dc59a6d5b16d4c" args="()" -->
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class State, class Listener, class States = StateHolder&lt;State&gt;, class Callback = void (Listener::*)(const States&amp; states)&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">States <a class="el" href="classRTC__Utils_1_1StateMachine.html">RTC_Utils::StateMachine</a>&lt; State, Listener, States, Callback &gt;::getStates </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>状態を取得する </p>
+<p>状態情報を取得する。 現在の状態、１つ前の状態、遷移予定の状態を取得することができる。</p>
+<dl class="return"><dt><b>戻り値:</b></dt><dd>状態情報 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a43b923b77e7e4d3562a83880c488197d"></a><!-- doxytag: member="RTC_Utils::StateMachine::goTo" ref="a43b923b77e7e4d3562a83880c488197d" args="(State state)" -->
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class State, class Listener, class States = StateHolder&lt;State&gt;, class Callback = void (Listener::*)(const States&amp; states)&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classRTC__Utils_1_1StateMachine.html">RTC_Utils::StateMachine</a>&lt; State, Listener, States, Callback &gt;::goTo </td>
+          <td>(</td>
+          <td class="paramtype">State&nbsp;</td>
+          <td class="paramname"> <em>state</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>状態を遷移 </p>
+<p>指定した状態に状態を遷移する。 本関数は次状態を強制的にセットする関数である。 このため、遷移の可否は、ユーザが現在状態を取得し判断するロジックを 実装しなければならない。 遷移先が現在の状態と同じ場合には、自己遷移フラグをセットする。</p>
+<dl><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>state</em>&nbsp;</td><td>遷移先状態 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>参照元 <a class="el" href="PeriodicExecutionContext_8h_source.html#l01137">RTC::PeriodicExecutionContext::DFP&lt; OpenRTM::DataFlowComponent_var &gt;::on_activated()</a>, <a class="el" href="PeriodicExecutionContext_8h_source.html#l01274">RTC::PeriodicExecutionContext::DFP&lt; OpenRTM::DataFlowComponent_var &gt;::on_execute()</a>, <a class="el" href="PeriodicExecutionContext_8h_source.html#l01239">RTC::PeriodicExecutionContext::DFP&lt; OpenRTM::DataFlowComponent_var &gt;::on_reset()</a>, と <a class="el" href="PeriodicExecutionContext_8h_source.html#l01309">RTC::PeriodicExecutionContext::DFP&lt; OpenRTM::DataFlowComponent_var &gt;::on_state_update()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a6338403cf745c61423e310a8b481b9df"></a><!-- doxytag: member="RTC_Utils::StateMachine::isIn" ref="a6338403cf745c61423e310a8b481b9df" args="(State state)" -->
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class State, class Listener, class States = StateHolder&lt;State&gt;, class Callback = void (Listener::*)(const States&amp; states)&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="classRTC__Utils_1_1StateMachine.html">RTC_Utils::StateMachine</a>&lt; State, Listener, States, Callback &gt;::isIn </td>
+          <td>(</td>
+          <td class="paramtype">State&nbsp;</td>
+          <td class="paramname"> <em>state</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>現在状態を確認 </p>
+<p>現在の状態が、引数で指定した状態と一致するか確認する。</p>
+<dl><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>state</em>&nbsp;</td><td>確認対象状態</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>戻り値:</b></dt><dd>状態確認結果 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a40da53fd17393b10e4b89b9a63ba1332"></a><!-- doxytag: member="RTC_Utils::StateMachine::setDoAction" ref="a40da53fd17393b10e4b89b9a63ba1332" args="(State state, Callback call_back)" -->
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class State, class Listener, class States = StateHolder&lt;State&gt;, class Callback = void (Listener::*)(const States&amp; states)&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="classRTC__Utils_1_1StateMachine.html">RTC_Utils::StateMachine</a>&lt; State, Listener, States, Callback &gt;::setDoAction </td>
+          <td>(</td>
+          <td class="paramtype">State&nbsp;</td>
+          <td class="paramname"> <em>state</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Callback&nbsp;</td>
+          <td class="paramname"> <em>call_back</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Do action 関数を登録する. </p>
+<p>各状態内で実行される Do action 用コールバック関数を登録する。</p>
+<dl><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>state</em>&nbsp;</td><td>登録対象状態 </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>call_back</em>&nbsp;</td><td>Do action 用コールバック関数</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>戻り値:</b></dt><dd>アクション実行結果 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a611cd79fa4c9257159de08011e7e6509"></a><!-- doxytag: member="RTC_Utils::StateMachine::setEntryAction" ref="a611cd79fa4c9257159de08011e7e6509" args="(State state, Callback call_back)" -->
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class State, class Listener, class States = StateHolder&lt;State&gt;, class Callback = void (Listener::*)(const States&amp; states)&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="classRTC__Utils_1_1StateMachine.html">RTC_Utils::StateMachine</a>&lt; State, Listener, States, Callback &gt;::setEntryAction </td>
+          <td>(</td>
+          <td class="paramtype">State&nbsp;</td>
+          <td class="paramname"> <em>state</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Callback&nbsp;</td>
+          <td class="paramname"> <em>call_back</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Entry action 関数を登録する. </p>
+<p>各状態に入った際に実行される Entry action 用コールバック関数を登録する。</p>
+<dl><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>state</em>&nbsp;</td><td>登録対象状態 </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>call_back</em>&nbsp;</td><td>Entry action 用コールバック関数</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>戻り値:</b></dt><dd>アクション実行結果 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ac308579215117b100ba31c38c31d580a"></a><!-- doxytag: member="RTC_Utils::StateMachine::setExitAction" ref="ac308579215117b100ba31c38c31d580a" args="(State state, Callback call_back)" -->
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class State, class Listener, class States = StateHolder&lt;State&gt;, class Callback = void (Listener::*)(const States&amp; states)&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="classRTC__Utils_1_1StateMachine.html">RTC_Utils::StateMachine</a>&lt; State, Listener, States, Callback &gt;::setExitAction </td>
+          <td>(</td>
+          <td class="paramtype">State&nbsp;</td>
+          <td class="paramname"> <em>state</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Callback&nbsp;</td>
+          <td class="paramname"> <em>call_back</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Exit action 関数を登録する. </p>
+<p>各状態内で実行される Exit action 用コールバック関数を登録する。</p>
+<dl><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>state</em>&nbsp;</td><td>登録対象状態 </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>call_back</em>&nbsp;</td><td>Exit action 用コールバック関数</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>戻り値:</b></dt><dd>アクション実行結果 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="afa4701917d4d6ec2a70f78397519f1f9"></a><!-- doxytag: member="RTC_Utils::StateMachine::setListener" ref="afa4701917d4d6ec2a70f78397519f1f9" args="(Listener *listener)" -->
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class State, class Listener, class States = StateHolder&lt;State&gt;, class Callback = void (Listener::*)(const States&amp; states)&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classRTC__Utils_1_1StateMachine.html">RTC_Utils::StateMachine</a>&lt; State, Listener, States, Callback &gt;::setListener </td>
+          <td>(</td>
+          <td class="paramtype">Listener *&nbsp;</td>
+          <td class="paramname"> <em>listener</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Listener オブジェクトを登録する. </p>
+<p>各種アクション実行時に呼び出される Listener オブジェクトを登録する。</p>
+<dl><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>listener</em>&nbsp;</td><td>Listener オブジェクト </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a0d232546cd076ffbb0860a612e582416"></a><!-- doxytag: member="RTC_Utils::StateMachine::setNOP" ref="a0d232546cd076ffbb0860a612e582416" args="(Callback call_back)" -->
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class State, class Listener, class States = StateHolder&lt;State&gt;, class Callback = void (Listener::*)(const States&amp; states)&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classRTC__Utils_1_1StateMachine.html">RTC_Utils::StateMachine</a>&lt; State, Listener, States, Callback &gt;::setNOP </td>
+          <td>(</td>
+          <td class="paramtype">Callback&nbsp;</td>
+          <td class="paramname"> <em>call_back</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>NOP関数を登録する. </p>
+<p>NOP関数(何もしない関数)を登録する。</p>
+<dl><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>call_back</em>&nbsp;</td><td>コールバック関数 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a99b23364ce99c4473f3a149383e7230f"></a><!-- doxytag: member="RTC_Utils::StateMachine::setNullFunc" ref="a99b23364ce99c4473f3a149383e7230f" args="(Callback *s, Callback nullfunc)" -->
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class State, class Listener, class States = StateHolder&lt;State&gt;, class Callback = void (Listener::*)(const States&amp; states)&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classRTC__Utils_1_1StateMachine.html">RTC_Utils::StateMachine</a>&lt; State, Listener, States, Callback &gt;::setNullFunc </td>
+          <td>(</td>
+          <td class="paramtype">Callback *&nbsp;</td>
+          <td class="paramname"> <em>s</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Callback&nbsp;</td>
+          <td class="paramname"> <em>nullfunc</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td><code> [inline, protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>NOP関数を設定. </p>
+<p>NOP関数(何もしない関数)を登録する。</p>
+<dl><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>s</em>&nbsp;</td><td>コールバック関数設定先 </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>nullfunc</em>&nbsp;</td><td>コールバック関数(NOP関数) </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="aad4ee723ecbd2f5c97b358336574c26c"></a><!-- doxytag: member="RTC_Utils::StateMachine::setPostDoAction" ref="aad4ee723ecbd2f5c97b358336574c26c" args="(State state, Callback call_back)" -->
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class State, class Listener, class States = StateHolder&lt;State&gt;, class Callback = void (Listener::*)(const States&amp; states)&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="classRTC__Utils_1_1StateMachine.html">RTC_Utils::StateMachine</a>&lt; State, Listener, States, Callback &gt;::setPostDoAction </td>
+          <td>(</td>
+          <td class="paramtype">State&nbsp;</td>
+          <td class="paramname"> <em>state</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Callback&nbsp;</td>
+          <td class="paramname"> <em>call_back</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>PostDo action 関数を登録する. </p>
+<p>各状態内で実行される PostDo action 用コールバック関数を登録する。</p>
+<dl><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>state</em>&nbsp;</td><td>登録対象状態 </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>call_back</em>&nbsp;</td><td>PostDo action 用コールバック関数</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>戻り値:</b></dt><dd>アクション実行結果 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a7bdcc53df08ccb0fa7fb31472613b2fe"></a><!-- doxytag: member="RTC_Utils::StateMachine::setPreDoAction" ref="a7bdcc53df08ccb0fa7fb31472613b2fe" args="(State state, Callback call_back)" -->
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class State, class Listener, class States = StateHolder&lt;State&gt;, class Callback = void (Listener::*)(const States&amp; states)&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="classRTC__Utils_1_1StateMachine.html">RTC_Utils::StateMachine</a>&lt; State, Listener, States, Callback &gt;::setPreDoAction </td>
+          <td>(</td>
+          <td class="paramtype">State&nbsp;</td>
+          <td class="paramname"> <em>state</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Callback&nbsp;</td>
+          <td class="paramname"> <em>call_back</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>PreDo action 関数を登録する. </p>
+<p>各状態内で実行される PreDo action 用コールバック関数を登録する。</p>
+<dl><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>state</em>&nbsp;</td><td>登録対象状態 </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>call_back</em>&nbsp;</td><td>PreDo action 用コールバック関数</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>戻り値:</b></dt><dd>アクション実行結果 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a5501ddabd4b93f4e7043708e2de26781"></a><!-- doxytag: member="RTC_Utils::StateMachine::setStartState" ref="a5501ddabd4b93f4e7043708e2de26781" args="(States states)" -->
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class State, class Listener, class States = StateHolder&lt;State&gt;, class Callback = void (Listener::*)(const States&amp; states)&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classRTC__Utils_1_1StateMachine.html">RTC_Utils::StateMachine</a>&lt; State, Listener, States, Callback &gt;::setStartState </td>
+          <td>(</td>
+          <td class="paramtype">States&nbsp;</td>
+          <td class="paramname"> <em>states</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>初期状態をセットする </p>
+<p>ステートマシンの初期状態を設定する。</p>
+<dl><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>states</em>&nbsp;</td><td>初期状態 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a1b18262bc0c7fa8cae25dffd567a0806"></a><!-- doxytag: member="RTC_Utils::StateMachine::setTransitionAction" ref="a1b18262bc0c7fa8cae25dffd567a0806" args="(Callback call_back)" -->
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class State, class Listener, class States = StateHolder&lt;State&gt;, class Callback = void (Listener::*)(const States&amp; states)&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="classRTC__Utils_1_1StateMachine.html">RTC_Utils::StateMachine</a>&lt; State, Listener, States, Callback &gt;::setTransitionAction </td>
+          <td>(</td>
+          <td class="paramtype">Callback&nbsp;</td>
+          <td class="paramname"> <em>call_back</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>State transition action 関数を登録する. </p>
+<p>状態遷移時に実行される State transition action 用コールバック関数を 登録する。</p>
+<dl><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>call_back</em>&nbsp;</td><td>State transition 用コールバック関数</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>戻り値:</b></dt><dd>アクション実行結果 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="af979deaf6160e247a6a6e3027f31c83b"></a><!-- doxytag: member="RTC_Utils::StateMachine::worker" ref="af979deaf6160e247a6a6e3027f31c83b" args="()" -->
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class State, class Listener, class States = StateHolder&lt;State&gt;, class Callback = void (Listener::*)(const States&amp; states)&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classRTC__Utils_1_1StateMachine.html">RTC_Utils::StateMachine</a>&lt; State, Listener, States, Callback &gt;::worker </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>駆動関数 </p>
+<p>ステートマシンの駆動関数。 実際の状態遷移および状態遷移発生時の各アクションの呼びだしを実行する。 </p>
+
+</div>
+</div>
+<hr/><h2>変数</h2>
+<a class="anchor" id="a86145d8ddee737f186fe019dc84de243"></a><!-- doxytag: member="RTC_Utils::StateMachine::m_do" ref="a86145d8ddee737f186fe019dc84de243" args="" -->
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class State, class Listener, class States = StateHolder&lt;State&gt;, class Callback = void (Listener::*)(const States&amp; states)&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">Callback* <a class="el" href="classRTC__Utils_1_1StateMachine.html">RTC_Utils::StateMachine</a>&lt; State, Listener, States, Callback &gt;::<a class="el" href="classRTC__Utils_1_1StateMachine.html#a86145d8ddee737f186fe019dc84de243">m_do</a><code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Do action 用コールバック関数. </p>
+
+</div>
+</div>
+<a class="anchor" id="a728fe8f596c77e326bc356b274144bb5"></a><!-- doxytag: member="RTC_Utils::StateMachine::m_entry" ref="a728fe8f596c77e326bc356b274144bb5" args="" -->
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class State, class Listener, class States = StateHolder&lt;State&gt;, class Callback = void (Listener::*)(const States&amp; states)&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">Callback* <a class="el" href="classRTC__Utils_1_1StateMachine.html">RTC_Utils::StateMachine</a>&lt; State, Listener, States, Callback &gt;::<a class="el" href="classRTC__Utils_1_1StateMachine.html#a728fe8f596c77e326bc356b274144bb5">m_entry</a><code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Entry action 用コールバック関数. </p>
+
+</div>
+</div>
+<a class="anchor" id="a75fb6776bd228a8005eda56e49a33373"></a><!-- doxytag: member="RTC_Utils::StateMachine::m_exit" ref="a75fb6776bd228a8005eda56e49a33373" args="" -->
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class State, class Listener, class States = StateHolder&lt;State&gt;, class Callback = void (Listener::*)(const States&amp; states)&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">Callback* <a class="el" href="classRTC__Utils_1_1StateMachine.html">RTC_Utils::StateMachine</a>&lt; State, Listener, States, Callback &gt;::<a class="el" href="classRTC__Utils_1_1StateMachine.html#a75fb6776bd228a8005eda56e49a33373">m_exit</a><code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Exit action 用コールバック関数. </p>
+
+</div>
+</div>
+<a class="anchor" id="a25f2e293e773fe5c4ffdd49fb343f734"></a><!-- doxytag: member="RTC_Utils::StateMachine::m_listener" ref="a25f2e293e773fe5c4ffdd49fb343f734" args="" -->
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class State, class Listener, class States = StateHolder&lt;State&gt;, class Callback = void (Listener::*)(const States&amp; states)&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">Listener* <a class="el" href="classRTC__Utils_1_1StateMachine.html">RTC_Utils::StateMachine</a>&lt; State, Listener, States, Callback &gt;::<a class="el" href="classRTC__Utils_1_1StateMachine.html#a25f2e293e773fe5c4ffdd49fb343f734">m_listener</a><code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>コールバック関数用リスナー </p>
+
+</div>
+</div>
+<a class="anchor" id="aedd1306b007958b49a248d07578214b3"></a><!-- doxytag: member="RTC_Utils::StateMachine::m_mutex" ref="aedd1306b007958b49a248d07578214b3" args="" -->
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class State, class Listener, class States = StateHolder&lt;State&gt;, class Callback = void (Listener::*)(const States&amp; states)&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classcoil_1_1Mutex.html">Mutex</a> <a class="el" href="classRTC__Utils_1_1StateMachine.html">RTC_Utils::StateMachine</a>&lt; State, Listener, States, Callback &gt;::<a class="el" href="classRTC__Utils_1_1StateMachine.html#aedd1306b007958b49a248d07578214b3">m_mutex</a><code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a2503583562749e18c43ca48c6066d9f4"></a><!-- doxytag: member="RTC_Utils::StateMachine::m_num" ref="a2503583562749e18c43ca48c6066d9f4" args="" -->
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class State, class Listener, class States = StateHolder&lt;State&gt;, class Callback = void (Listener::*)(const States&amp; states)&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">int <a class="el" href="classRTC__Utils_1_1StateMachine.html">RTC_Utils::StateMachine</a>&lt; State, Listener, States, Callback &gt;::<a class="el" href="classRTC__Utils_1_1StateMachine.html#a2503583562749e18c43ca48c6066d9f4">m_num</a><code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>状態数 </p>
+
+</div>
+</div>
+<a class="anchor" id="ac90335d93cc0c173335b130dd91a33e4"></a><!-- doxytag: member="RTC_Utils::StateMachine::m_postdo" ref="ac90335d93cc0c173335b130dd91a33e4" args="" -->
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class State, class Listener, class States = StateHolder&lt;State&gt;, class Callback = void (Listener::*)(const States&amp; states)&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">Callback* <a class="el" href="classRTC__Utils_1_1StateMachine.html">RTC_Utils::StateMachine</a>&lt; State, Listener, States, Callback &gt;::<a class="el" href="classRTC__Utils_1_1StateMachine.html#ac90335d93cc0c173335b130dd91a33e4">m_postdo</a><code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>PostDo action 用コールバック関数. </p>
+
+</div>
+</div>
+<a class="anchor" id="a687b8b8abab11fb696555fa861240f30"></a><!-- doxytag: member="RTC_Utils::StateMachine::m_predo" ref="a687b8b8abab11fb696555fa861240f30" args="" -->
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class State, class Listener, class States = StateHolder&lt;State&gt;, class Callback = void (Listener::*)(const States&amp; states)&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">Callback* <a class="el" href="classRTC__Utils_1_1StateMachine.html">RTC_Utils::StateMachine</a>&lt; State, Listener, States, Callback &gt;::<a class="el" href="classRTC__Utils_1_1StateMachine.html#a687b8b8abab11fb696555fa861240f30">m_predo</a><code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>PreDo action 用コールバック関数. </p>
+
+</div>
+</div>
+<a class="anchor" id="aa02af266af8b8e0abf6609abede2a323"></a><!-- doxytag: member="RTC_Utils::StateMachine::m_selftrans" ref="aa02af266af8b8e0abf6609abede2a323" args="" -->
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class State, class Listener, class States = StateHolder&lt;State&gt;, class Callback = void (Listener::*)(const States&amp; states)&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="classRTC__Utils_1_1StateMachine.html">RTC_Utils::StateMachine</a>&lt; State, Listener, States, Callback &gt;::<a class="el" href="classRTC__Utils_1_1StateMachine.html#aa02af266af8b8e0abf6609abede2a323">m_selftrans</a><code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a29e2692dc448060388da12e0a029cfad"></a><!-- doxytag: member="RTC_Utils::StateMachine::m_states" ref="a29e2692dc448060388da12e0a029cfad" args="" -->
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class State, class Listener, class States = StateHolder&lt;State&gt;, class Callback = void (Listener::*)(const States&amp; states)&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">States <a class="el" href="classRTC__Utils_1_1StateMachine.html">RTC_Utils::StateMachine</a>&lt; State, Listener, States, Callback &gt;::<a class="el" href="classRTC__Utils_1_1StateMachine.html#a29e2692dc448060388da12e0a029cfad">m_states</a><code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>現在の状態情報 </p>
+
+</div>
+</div>
+<a class="anchor" id="aa292b9b27cf14ea9b82b2ad8b8ddc49d"></a><!-- doxytag: member="RTC_Utils::StateMachine::m_transit" ref="aa292b9b27cf14ea9b82b2ad8b8ddc49d" args="" -->
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class State, class Listener, class States = StateHolder&lt;State&gt;, class Callback = void (Listener::*)(const States&amp; states)&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">Callback <a class="el" href="classRTC__Utils_1_1StateMachine.html">RTC_Utils::StateMachine</a>&lt; State, Listener, States, Callback &gt;::<a class="el" href="classRTC__Utils_1_1StateMachine.html#aa292b9b27cf14ea9b82b2ad8b8ddc49d">m_transit</a><code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>State transition action 用コールバック関数. </p>
+
+</div>
+</div>
+</div>
+<hr class="footer"/><address style="text-align: right;"><small>OpenRTMに対してThu May 24 23:25:20 2012に生成されました。&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.6.3 </small></address>
+</body>
+</html>

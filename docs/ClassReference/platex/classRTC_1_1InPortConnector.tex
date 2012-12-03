@@ -1,0 +1,240 @@
+\section{クラス RTC::InPortConnector}
+\label{classRTC_1_1InPortConnector}\index{RTC::InPortConnector@{RTC::InPortConnector}}
+
+
+\doxyref{InPortConnector}{p.}{classRTC_1_1InPortConnector} 基底クラス.  
+
+
+
+
+{\ttfamily \#include $<$InPortConnector.h$>$}
+
+RTC::InPortConnectorに対する継承グラフ\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4cm]{classRTC_1_1InPortConnector}
+\end{center}
+\end{figure}
+\subsection*{Public メソッド}
+\begin{DoxyCompactItemize}
+\item 
+DATAPORTSTATUS\_\-ENUM {\bf InPortConnector} ({\bf ConnectorInfo} \&info, {\bf CdrBufferBase} $\ast$buffer)
+\begin{DoxyCompactList}\small\item\em コンストラクタ \item\end{DoxyCompactList}\item 
+virtual {\bf $\sim$InPortConnector} ()
+\begin{DoxyCompactList}\small\item\em デストラクタ \item\end{DoxyCompactList}\item 
+virtual const {\bf ConnectorInfo} \& {\bf profile} ()
+\begin{DoxyCompactList}\small\item\em \doxyref{ConnectorInfo}{p.}{classRTC_1_1ConnectorInfo} 取得. \item\end{DoxyCompactList}\item 
+virtual const char $\ast$ {\bf id} ()
+\begin{DoxyCompactList}\small\item\em Connector ID 取得. \item\end{DoxyCompactList}\item 
+virtual const char $\ast$ {\bf name} ()
+\begin{DoxyCompactList}\small\item\em Connector 名取得. \item\end{DoxyCompactList}\item 
+virtual ReturnCode {\bf disconnect} ()=0
+\begin{DoxyCompactList}\small\item\em 接続解除関数 \item\end{DoxyCompactList}\item 
+virtual {\bf CdrBufferBase} $\ast$ {\bf getBuffer} ()
+\begin{DoxyCompactList}\small\item\em Buffer を取得する. \item\end{DoxyCompactList}\item 
+virtual ReturnCode {\bf read} (cdrMemoryStream \&data)=0
+\begin{DoxyCompactList}\small\item\em read 関数 \item\end{DoxyCompactList}\item 
+virtual void {\bf setEndian} (const bool endian\_\-type)
+\begin{DoxyCompactList}\small\item\em endianタイプ設定 \item\end{DoxyCompactList}\item 
+virtual bool {\bf isLittleEndian} ()
+\begin{DoxyCompactList}\small\item\em endian 設定を返す \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected 変数}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Logger} {\bf rtclog}
+\begin{DoxyCompactList}\small\item\em ロガーストリーム \item\end{DoxyCompactList}\item 
+{\bf ConnectorInfo} {\bf m\_\-profile}
+\begin{DoxyCompactList}\small\item\em \doxyref{ConnectorInfo}{p.}{classRTC_1_1ConnectorInfo}. \item\end{DoxyCompactList}\item 
+{\bf CdrBufferBase} $\ast$ {\bf m\_\-buffer}
+\begin{DoxyCompactList}\small\item\em Connector が保持している Buffer. \item\end{DoxyCompactList}\item 
+bool {\bf m\_\-littleEndian}
+\begin{DoxyCompactList}\small\item\em 接続エンディアン \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{説明}
+\doxyref{InPortConnector}{p.}{classRTC_1_1InPortConnector} 基底クラス. \doxyref{InPort}{p.}{classRTC_1_1InPort} の Push/Pull 各種 Connector を派生させるための基底クラス。
+
+\begin{DoxySince}{から}
+1.0.0 
+\end{DoxySince}
+
+
+\subsection{コンストラクタとデストラクタ}
+\index{RTC::InPortConnector@{RTC::InPortConnector}!InPortConnector@{InPortConnector}}
+\index{InPortConnector@{InPortConnector}!RTC::InPortConnector@{RTC::InPortConnector}}
+\subsubsection[{InPortConnector}]{\setlength{\rightskip}{0pt plus 5cm}DATAPORTSTATUS\_\-ENUM RTC::InPortConnector::InPortConnector ({\bf ConnectorInfo} \& {\em info}, \/  {\bf CdrBufferBase} $\ast$ {\em buffer})}\label{classRTC_1_1InPortConnector_a5817248420e91c6bc5c939d0e48cd417}
+
+
+コンストラクタ 
+
+
+\begin{DoxyParams}{引数}
+\item[{\em info}]接続情報を含む \doxyref{ConnectorInfo}{p.}{classRTC_1_1ConnectorInfo} オブジェクト \item[{\em buffer}]このコネクタのバッファへのポインタ \end{DoxyParams}
+\index{RTC::InPortConnector@{RTC::InPortConnector}!$\sim$InPortConnector@{$\sim$InPortConnector}}
+\index{$\sim$InPortConnector@{$\sim$InPortConnector}!RTC::InPortConnector@{RTC::InPortConnector}}
+\subsubsection[{$\sim$InPortConnector}]{\setlength{\rightskip}{0pt plus 5cm}virtual RTC::InPortConnector::$\sim$InPortConnector ()\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classRTC_1_1InPortConnector_aad8160823b8a719fd80bdfb752deddb5}
+
+
+デストラクタ 
+
+
+
+\subsection{関数}
+\index{RTC::InPortConnector@{RTC::InPortConnector}!disconnect@{disconnect}}
+\index{disconnect@{disconnect}!RTC::InPortConnector@{RTC::InPortConnector}}
+\subsubsection[{disconnect}]{\setlength{\rightskip}{0pt plus 5cm}virtual ReturnCode RTC::InPortConnector::disconnect ()\hspace{0.3cm}{\ttfamily  [pure virtual]}}\label{classRTC_1_1InPortConnector_a8677105bbf5ae5ed3e79dc3b057ea0b9}
+
+
+接続解除関数 
+
+Connector が保持している接続を解除する
+
+\begin{DoxyReturn}{戻り値}
+ReturnCode 
+\end{DoxyReturn}
+
+
+{\bf RTC::ConnectorBase} \doxyref{}{p.}{classRTC_1_1ConnectorBase_a17b1e3bb26ccb844ef2952661977768c}を実装しています。
+
+
+
+{\bf RTC::InPortPullConnector} \doxyref{}{p.}{classRTC_1_1InPortPullConnector_a74e8c2fbfdbbacd1d3a67b4017b993df}, と {\bf RTC::InPortPushConnector} \doxyref{}{p.}{classRTC_1_1InPortPushConnector_afb5920eabaa874b43bc900348a2fb2ad}で実装されています。
+
+\index{RTC::InPortConnector@{RTC::InPortConnector}!getBuffer@{getBuffer}}
+\index{getBuffer@{getBuffer}!RTC::InPortConnector@{RTC::InPortConnector}}
+\subsubsection[{getBuffer}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf CdrBufferBase}$\ast$ RTC::InPortConnector::getBuffer ()\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classRTC_1_1InPortConnector_a7a2e6e83f1c50892632b5e23bf2f8ec6}
+
+
+Buffer を取得する. 
+
+Connector が保持している Buffer を返す
+
+\begin{DoxyReturn}{戻り値}
+このコネクタが保持するバッファへのポインタ 
+\end{DoxyReturn}
+
+
+{\bf RTC::ConnectorBase} \doxyref{}{p.}{classRTC_1_1ConnectorBase_ad06710a5e9e1862ed50d4a4411c2927d}を実装しています。
+
+\index{RTC::InPortConnector@{RTC::InPortConnector}!id@{id}}
+\index{id@{id}!RTC::InPortConnector@{RTC::InPortConnector}}
+\subsubsection[{id}]{\setlength{\rightskip}{0pt plus 5cm}virtual const char$\ast$ RTC::InPortConnector::id ()\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classRTC_1_1InPortConnector_af497212651998eaef0c38913d4762f52}
+
+
+Connector ID 取得. 
+
+Connector ID を取得する
+
+\begin{DoxyReturn}{戻り値}
+コネクタ ID 文字列へのポインタ 
+\end{DoxyReturn}
+
+
+{\bf RTC::ConnectorBase} \doxyref{}{p.}{classRTC_1_1ConnectorBase_ae2cc57833a7e28f0e605222ecb63e219}を実装しています。
+
+\index{RTC::InPortConnector@{RTC::InPortConnector}!isLittleEndian@{isLittleEndian}}
+\index{isLittleEndian@{isLittleEndian}!RTC::InPortConnector@{RTC::InPortConnector}}
+\subsubsection[{isLittleEndian}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool RTC::InPortConnector::isLittleEndian ()\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classRTC_1_1InPortConnector_ac7e308f77f6b5210694320ebab0e0651}
+
+
+endian 設定を返す 
+
+このコネクタに設定されたエンディアンが little endian かどうか。
+
+\begin{DoxyReturn}{戻り値}
+true: little endian, false: big endian 
+\end{DoxyReturn}
+\index{RTC::InPortConnector@{RTC::InPortConnector}!name@{name}}
+\index{name@{name}!RTC::InPortConnector@{RTC::InPortConnector}}
+\subsubsection[{name}]{\setlength{\rightskip}{0pt plus 5cm}virtual const char$\ast$ RTC::InPortConnector::name ()\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classRTC_1_1InPortConnector_abb9dd2bf3f81d132a2a3eb4f31ff461d}
+
+
+Connector 名取得. 
+
+Connector 名を取得する
+
+\begin{DoxyReturn}{戻り値}
+コネクタ名文字列へのポインタ 
+\end{DoxyReturn}
+
+
+{\bf RTC::ConnectorBase} \doxyref{}{p.}{classRTC_1_1ConnectorBase_a73e002174dc02ec4830c624e7fd96b43}を実装しています。
+
+\index{RTC::InPortConnector@{RTC::InPortConnector}!profile@{profile}}
+\index{profile@{profile}!RTC::InPortConnector@{RTC::InPortConnector}}
+\subsubsection[{profile}]{\setlength{\rightskip}{0pt plus 5cm}virtual const {\bf ConnectorInfo}\& RTC::InPortConnector::profile ()\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classRTC_1_1InPortConnector_ade653239f3932f5968ee818ecfd53354}
+
+
+\doxyref{ConnectorInfo}{p.}{classRTC_1_1ConnectorInfo} 取得. 
+
+Connector \doxyref{ConnectorInfo}{p.}{classRTC_1_1ConnectorInfo} を取得する
+
+\begin{DoxyReturn}{戻り値}
+このコネクタが保持する \doxyref{ConnectorInfo}{p.}{classRTC_1_1ConnectorInfo} オブジェクト 
+\end{DoxyReturn}
+
+
+{\bf RTC::ConnectorBase} \doxyref{}{p.}{classRTC_1_1ConnectorBase_a8bd2e9cbd6a9341ec4c97416dcf981c7}を実装しています。
+
+\index{RTC::InPortConnector@{RTC::InPortConnector}!read@{read}}
+\index{read@{read}!RTC::InPortConnector@{RTC::InPortConnector}}
+\subsubsection[{read}]{\setlength{\rightskip}{0pt plus 5cm}virtual ReturnCode RTC::InPortConnector::read (cdrMemoryStream \& {\em data})\hspace{0.3cm}{\ttfamily  [pure virtual]}}\label{classRTC_1_1InPortConnector_a2ffc997f36cb6549029852484327bffd}
+
+
+read 関数 
+
+Buffer からデータを \doxyref{InPort}{p.}{classRTC_1_1InPort} へ read する関数
+
+
+\begin{DoxyParams}{引数}
+\item[{\em data}]このコネクタから読み出されるデータを格納する変数への参照 \end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+ReturnCode 
+\end{DoxyReturn}
+
+
+{\bf RTC::InPortPullConnector} \doxyref{}{p.}{classRTC_1_1InPortPullConnector_ac2bfcf970c6c0422e279af7d3b638efd}, と {\bf RTC::InPortPushConnector} \doxyref{}{p.}{classRTC_1_1InPortPushConnector_a1403a79f0e0ce7d6c34b4385db6ed8ef}で実装されています。
+
+\index{RTC::InPortConnector@{RTC::InPortConnector}!setEndian@{setEndian}}
+\index{setEndian@{setEndian}!RTC::InPortConnector@{RTC::InPortConnector}}
+\subsubsection[{setEndian}]{\setlength{\rightskip}{0pt plus 5cm}virtual void RTC::InPortConnector::setEndian (const bool {\em endian\_\-type})\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classRTC_1_1InPortConnector_a2349abc81262854781949e9d376cd109}
+
+
+endianタイプ設定 
+
+endianタイプを設定する
+
+
+\begin{DoxyParams}{引数}
+\item[{\em endian\_\-type}]true: little, false: big \end{DoxyParams}
+
+
+\subsection{変数}
+\index{RTC::InPortConnector@{RTC::InPortConnector}!m\_\-buffer@{m\_\-buffer}}
+\index{m\_\-buffer@{m\_\-buffer}!RTC::InPortConnector@{RTC::InPortConnector}}
+\subsubsection[{m\_\-buffer}]{\setlength{\rightskip}{0pt plus 5cm}{\bf CdrBufferBase}$\ast$ {\bf RTC::InPortConnector::m\_\-buffer}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC_1_1InPortConnector_aef89e379b8b4045f26bb36cc3c537d70}
+
+
+Connector が保持している Buffer. 
+
+\index{RTC::InPortConnector@{RTC::InPortConnector}!m\_\-littleEndian@{m\_\-littleEndian}}
+\index{m\_\-littleEndian@{m\_\-littleEndian}!RTC::InPortConnector@{RTC::InPortConnector}}
+\subsubsection[{m\_\-littleEndian}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf RTC::InPortConnector::m\_\-littleEndian}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC_1_1InPortConnector_a5cb0e047a379c1d4c4ee1e1fea4e9663}
+
+
+接続エンディアン 
+
+\index{RTC::InPortConnector@{RTC::InPortConnector}!m\_\-profile@{m\_\-profile}}
+\index{m\_\-profile@{m\_\-profile}!RTC::InPortConnector@{RTC::InPortConnector}}
+\subsubsection[{m\_\-profile}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ConnectorInfo} {\bf RTC::InPortConnector::m\_\-profile}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC_1_1InPortConnector_a8983dceedb2ae10a2f583ab9632f4337}
+
+
+\doxyref{ConnectorInfo}{p.}{classRTC_1_1ConnectorInfo}. 
+
+\index{RTC::InPortConnector@{RTC::InPortConnector}!rtclog@{rtclog}}
+\index{rtclog@{rtclog}!RTC::InPortConnector@{RTC::InPortConnector}}
+\subsubsection[{rtclog}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Logger} {\bf RTC::InPortConnector::rtclog}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC_1_1InPortConnector_a823551eac7e254552246921cca0c4c92}
+
+
+ロガーストリーム 
+

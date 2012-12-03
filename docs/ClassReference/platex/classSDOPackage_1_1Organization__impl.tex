@@ -1,0 +1,424 @@
+\section{クラス SDOPackage::Organization\_\-impl}
+\label{classSDOPackage_1_1Organization__impl}\index{SDOPackage::Organization\_\-impl@{SDOPackage::Organization\_\-impl}}
+
+
+\doxyref{SDO}{p.}{classSDO} Organization 実装クラス.  
+
+
+
+
+{\ttfamily \#include $<$SdoOrganization.h$>$}
+
+SDOPackage::Organization\_\-implに対する継承グラフ\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2cm]{classSDOPackage_1_1Organization__impl}
+\end{center}
+\end{figure}
+\subsection*{構成}
+\begin{DoxyCompactItemize}
+\item 
+struct {\bf nv\_\-name}
+\begin{DoxyCompactList}\small\item\em NameValue用functor. \item\end{DoxyCompactList}\item 
+struct {\bf sdo\_\-id}
+\begin{DoxyCompactList}\small\item\em SDO用functor. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public メソッド}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Organization\_\-impl} (SDOSystemElement\_\-ptr sdo)
+\item 
+virtual {\bf $\sim$Organization\_\-impl} (void)
+\begin{DoxyCompactList}\small\item\em 仮想デストラクタ \item\end{DoxyCompactList}\item 
+virtual char $\ast$ {\bf get\_\-organization\_\-id} ()  throw (CORBA::SystemException,	     InvalidParameter, NotAvailable, InternalError)
+\begin{DoxyCompactList}\small\item\em [CORBA interface] Organization ID を取得する \item\end{DoxyCompactList}\item 
+virtual CORBA::Boolean {\bf add\_\-organization\_\-property} (const OrganizationProperty \&org\_\-property)  throw (CORBA::SystemException,	     InvalidParameter, NotAvailable, InternalError)
+\begin{DoxyCompactList}\small\item\em [CORBA interface] OrganizationProperty のセット \item\end{DoxyCompactList}\item 
+virtual OrganizationProperty $\ast$ {\bf get\_\-organization\_\-property} ()  throw (CORBA::SystemException,	     NotAvailable, InternalError)
+\begin{DoxyCompactList}\small\item\em [CORBA interface] OrganizationProperty の取得 \item\end{DoxyCompactList}\item 
+virtual CORBA::Any $\ast$ {\bf get\_\-organization\_\-property\_\-value} (const char $\ast$name)  throw (CORBA::SystemException,	     InvalidParameter, NotAvailable, InternalError)
+\begin{DoxyCompactList}\small\item\em [CORBA interface] OrganizationProperty の特定の値の取得 \item\end{DoxyCompactList}\item 
+virtual CORBA::Boolean {\bf set\_\-organization\_\-property\_\-value} (const char $\ast$name, const CORBA::Any \&value)  throw (CORBA::SystemException,	     InvalidParameter, NotAvailable, InternalError)
+\begin{DoxyCompactList}\small\item\em [CORBA interface] OrganizationProperty の値のセット \item\end{DoxyCompactList}\item 
+virtual CORBA::Boolean {\bf remove\_\-organization\_\-property} (const char $\ast$name)  throw (CORBA::SystemException,	     InvalidParameter, NotAvailable, InternalError)
+\begin{DoxyCompactList}\small\item\em [CORBA interface] OrganizationProperty の削除 \item\end{DoxyCompactList}\item 
+virtual CORBA::Boolean {\bf add\_\-members} (const SDOList \&sdo\_\-list)  throw (CORBA::SystemException,	     InvalidParameter, NotAvailable, InternalError)
+\begin{DoxyCompactList}\small\item\em [CORBA interface] \doxyref{SDO}{p.}{classSDO} メンバーの追加 \item\end{DoxyCompactList}\item 
+virtual SDOList $\ast$ {\bf get\_\-members} ()  throw (CORBA::SystemException,	     NotAvailable, InternalError)
+\begin{DoxyCompactList}\small\item\em [CORBA interface] Organization のメンバーを取得する \item\end{DoxyCompactList}\item 
+virtual CORBA::Boolean {\bf set\_\-members} (const SDOList \&sdos)  throw (CORBA::SystemException,	     InvalidParameter, NotAvailable, InternalError)
+\begin{DoxyCompactList}\small\item\em [CORBA interface] \doxyref{SDO}{p.}{classSDO} の セット \item\end{DoxyCompactList}\item 
+virtual CORBA::Boolean {\bf remove\_\-member} (const char $\ast$id)  throw (CORBA::SystemException,	     InvalidParameter, NotAvailable, InternalError)
+\begin{DoxyCompactList}\small\item\em [CORBA interface] \doxyref{SDO}{p.}{classSDO} メンバーの削除 \item\end{DoxyCompactList}\item 
+virtual SDOSystemElement\_\-ptr {\bf get\_\-owner} ()  throw (CORBA::SystemException,	     NotAvailable, InternalError)
+\begin{DoxyCompactList}\small\item\em [CORBA interface] Organization のオーナーを取得する \item\end{DoxyCompactList}\item 
+virtual CORBA::Boolean {\bf set\_\-owner} (SDOSystemElement\_\-ptr sdo)  throw (CORBA::SystemException,	     InvalidParameter, NotAvailable, InternalError)
+\begin{DoxyCompactList}\small\item\em [CORBA interface] Organization にオーナーをセットする \item\end{DoxyCompactList}\item 
+virtual DependencyType {\bf get\_\-dependency} ()  throw (CORBA::SystemException,	     NotAvailable, InternalError)
+\begin{DoxyCompactList}\small\item\em [CORBA interface] Organization の DependencyType を取得 \item\end{DoxyCompactList}\item 
+virtual CORBA::Boolean {\bf set\_\-dependency} (DependencyType dependency)  throw (CORBA::SystemException,	     NotAvailable, InternalError)
+\begin{DoxyCompactList}\small\item\em [CORBA interface] Organization の DependencyType をセットする \item\end{DoxyCompactList}\item 
+Organization\_\-ptr {\bf getObjRef} ()
+\end{DoxyCompactItemize}
+\subsection*{Protected 変数}
+\begin{DoxyCompactItemize}
+\item 
+::{\bf RTC::Logger} {\bf rtclog}
+\item 
+Organization\_\-var {\bf m\_\-objref}
+\item 
+std::string {\bf m\_\-pId}
+\begin{DoxyCompactList}\small\item\em Organization の識別子. \item\end{DoxyCompactList}\item 
+SDOPackage::SDOList {\bf m\_\-memberList}
+\begin{DoxyCompactList}\small\item\em Organization に関連付けられた \doxyref{SDO}{p.}{classSDO} メンバのリスト. \item\end{DoxyCompactList}\item 
+SDOPackage::SDOSystemElement\_\-var {\bf m\_\-varOwner}
+\begin{DoxyCompactList}\small\item\em Organization の owner. \item\end{DoxyCompactList}\item 
+SDOPackage::DependencyType {\bf m\_\-dependency}
+\begin{DoxyCompactList}\small\item\em 依存関係のタイプ \item\end{DoxyCompactList}\item 
+SDOPackage::OrganizationProperty {\bf m\_\-orgProperty}
+\begin{DoxyCompactList}\small\item\em Organization プロパティ. \item\end{DoxyCompactList}\item 
+{\bf Mutex} {\bf m\_\-org\_\-mutex}
+\end{DoxyCompactItemize}
+
+
+\subsection{説明}
+\doxyref{SDO}{p.}{classSDO} Organization 実装クラス. Organization interface は Resource Data Model で定義されたデータの 追加、削除等の操作を行うためのインターフェースである。
+
+\begin{DoxySince}{から}
+0.4.0 
+\end{DoxySince}
+
+
+\subsection{コンストラクタとデストラクタ}
+\index{SDOPackage::Organization\_\-impl@{SDOPackage::Organization\_\-impl}!Organization\_\-impl@{Organization\_\-impl}}
+\index{Organization\_\-impl@{Organization\_\-impl}!SDOPackage::Organization_impl@{SDOPackage::Organization\_\-impl}}
+\subsubsection[{Organization\_\-impl}]{\setlength{\rightskip}{0pt plus 5cm}SDOPackage::Organization\_\-impl::Organization\_\-impl (SDOSystemElement\_\-ptr {\em sdo})}\label{classSDOPackage_1_1Organization__impl_ab7c506dc13f4a02db56cb3d8171358d6}
+コンストラクタ \index{SDOPackage::Organization\_\-impl@{SDOPackage::Organization\_\-impl}!$\sim$Organization\_\-impl@{$\sim$Organization\_\-impl}}
+\index{$\sim$Organization\_\-impl@{$\sim$Organization\_\-impl}!SDOPackage::Organization_impl@{SDOPackage::Organization\_\-impl}}
+\subsubsection[{$\sim$Organization\_\-impl}]{\setlength{\rightskip}{0pt plus 5cm}virtual SDOPackage::Organization\_\-impl::$\sim$Organization\_\-impl (void)\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classSDOPackage_1_1Organization__impl_a160e661434126cc0cb515dbc9d320513}
+
+
+仮想デストラクタ 
+
+仮想デストラクタ。 
+
+\subsection{関数}
+\index{SDOPackage::Organization\_\-impl@{SDOPackage::Organization\_\-impl}!add\_\-members@{add\_\-members}}
+\index{add\_\-members@{add\_\-members}!SDOPackage::Organization_impl@{SDOPackage::Organization\_\-impl}}
+\subsubsection[{add\_\-members}]{\setlength{\rightskip}{0pt plus 5cm}virtual CORBA::Boolean SDOPackage::Organization\_\-impl::add\_\-members (const SDOList \& {\em sdo\_\-list})  throw (CORBA::SystemException,	     InvalidParameter, NotAvailable, InternalError)\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classSDOPackage_1_1Organization__impl_a5a7e771a78dce198f23e6045f9073be3}
+
+
+[CORBA interface] \doxyref{SDO}{p.}{classSDO} メンバーの追加 
+
+Organization にメンバーとして \doxyref{SDO}{p.}{classSDO} を追加する。 引数 \char`\"{}sdo\char`\"{} に追加するメンバー \doxyref{SDO}{p.}{classSDO} を指定する。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em sdo\_\-list}]Organization に追加される \doxyref{SDO}{p.}{classSDO} のリスト。\end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+オペレーションが成功したかどうかを返す。
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{例外}
+\item[{\em SDONotExists}]ターゲットのSDOが存在しない。(本例外は、CORBA標準 システム例外のOBJECT\_\-NOT\_\-EXISTにマッピングされる) \item[{\em InvalidParameter}]引数 \char`\"{}sdo\char`\"{} が nullである。 \item[{\em NotAvailable}]SDOは存在するが応答がない。 \item[{\em InternalError}]内部的エラーが発生した。 \end{DoxyExceptions}
+
+
+{\bf SDOPackage::PeriodicECOrganization} \doxyref{}{p.}{classSDOPackage_1_1PeriodicECOrganization_a008a89d79ec0173359519f90aaa1482a}で再定義されています。
+
+\index{SDOPackage::Organization\_\-impl@{SDOPackage::Organization\_\-impl}!add\_\-organization\_\-property@{add\_\-organization\_\-property}}
+\index{add\_\-organization\_\-property@{add\_\-organization\_\-property}!SDOPackage::Organization_impl@{SDOPackage::Organization\_\-impl}}
+\subsubsection[{add\_\-organization\_\-property}]{\setlength{\rightskip}{0pt plus 5cm}virtual CORBA::Boolean SDOPackage::Organization\_\-impl::add\_\-organization\_\-property (const OrganizationProperty \& {\em org\_\-property})  throw (CORBA::SystemException,	     InvalidParameter, NotAvailable, InternalError)\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classSDOPackage_1_1Organization__impl_ab02129859961c524e8186e43f96bc6eb}
+
+
+[CORBA interface] OrganizationProperty のセット 
+
+※ \doxyref{SDO}{p.}{classSDO} Specification の PIM 記述とオペレーション名が異なる。 ※ addOrganizationProperty に対応か？\par
+ OrganizationProperty を Organization に追加するオペレーション。 OrganizationProperty は Organization のプロパティ記述である。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em org\_\-property}]セットする OrganizationProperty\end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+オペレーションが成功したかどうかを返す。
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{例外}
+\item[{\em SDONotExists}]ターゲットのSDOが存在しない。(本例外は、CORBA標準 システム例外のOBJECT\_\-NOT\_\-EXISTにマッピングされる) \item[{\em InvalidParameter}]\char`\"{}org\_\-property\char`\"{} が null。 \item[{\em NotAvailable}]SDOは存在するが応答がない。 \item[{\em InternalError}]内部的エラーが発生した。 \end{DoxyExceptions}
+\index{SDOPackage::Organization\_\-impl@{SDOPackage::Organization\_\-impl}!get\_\-dependency@{get\_\-dependency}}
+\index{get\_\-dependency@{get\_\-dependency}!SDOPackage::Organization_impl@{SDOPackage::Organization\_\-impl}}
+\subsubsection[{get\_\-dependency}]{\setlength{\rightskip}{0pt plus 5cm}virtual DependencyType SDOPackage::Organization\_\-impl::get\_\-dependency ()  throw (CORBA::SystemException,	     NotAvailable, InternalError)\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classSDOPackage_1_1Organization__impl_aeabeb607e93fb5ca9b27233cf5513791}
+
+
+[CORBA interface] Organization の DependencyType を取得 
+
+Organization の関係を表す \char`\"{}DependencyType\char`\"{} を返す。
+
+\begin{DoxyReturn}{戻り値}
+Organization の依存関係 DependencyType を返す。 DependencyType は OMG \doxyref{SDO}{p.}{classSDO} 仕様の Section 2.2.2 2-\/3 ページの \char`\"{}Data Structures Used by Resource Data Model\char`\"{} を参照。
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{例外}
+\item[{\em SDONotExists}]ターゲットのSDOが存在しない。(本例外は、CORBA標準 システム例外のOBJECT\_\-NOT\_\-EXISTにマッピングされる) \item[{\em NotAvailable}]SDOは存在するが応答がない。 \item[{\em InternalError}]内部的エラーが発生した。 \end{DoxyExceptions}
+\index{SDOPackage::Organization\_\-impl@{SDOPackage::Organization\_\-impl}!get\_\-members@{get\_\-members}}
+\index{get\_\-members@{get\_\-members}!SDOPackage::Organization_impl@{SDOPackage::Organization\_\-impl}}
+\subsubsection[{get\_\-members}]{\setlength{\rightskip}{0pt plus 5cm}virtual SDOList$\ast$ SDOPackage::Organization\_\-impl::get\_\-members ()  throw (CORBA::SystemException,	     NotAvailable, InternalError)\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classSDOPackage_1_1Organization__impl_a1d0f8f2bb7f3e3ba7aad0b004f4e84ac}
+
+
+[CORBA interface] Organization のメンバーを取得する 
+
+Organization のメンバーの \doxyref{SDO}{p.}{classSDO} のリストを返す。 メンバーが存在しなければ空のリストを返す。
+
+\begin{DoxyReturn}{戻り値}
+Organization に含まれるメンバー \doxyref{SDO}{p.}{classSDO} のリスト。
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{例外}
+\item[{\em SDONotExists}]ターゲットのSDOが存在しない。(本例外は、CORBA標準 システム例外のOBJECT\_\-NOT\_\-EXISTにマッピングされる) \item[{\em NotAvailable}]SDOは存在するが応答がない。 \item[{\em InternalError}]内部的エラーが発生した。 \end{DoxyExceptions}
+\index{SDOPackage::Organization\_\-impl@{SDOPackage::Organization\_\-impl}!get\_\-organization\_\-id@{get\_\-organization\_\-id}}
+\index{get\_\-organization\_\-id@{get\_\-organization\_\-id}!SDOPackage::Organization_impl@{SDOPackage::Organization\_\-impl}}
+\subsubsection[{get\_\-organization\_\-id}]{\setlength{\rightskip}{0pt plus 5cm}virtual char$\ast$ SDOPackage::Organization\_\-impl::get\_\-organization\_\-id ()  throw (CORBA::SystemException,	     InvalidParameter, NotAvailable, InternalError)\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classSDOPackage_1_1Organization__impl_acaaf9eebd6c4759ea0b21e89221e9cab}
+
+
+[CORBA interface] Organization ID を取得する 
+
+Organization の ID を返すオペレーション。
+
+\begin{DoxyReturn}{戻り値}
+Resource Data Model で定義された Organization ID。
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{例外}
+\item[{\em SDONotExists}]ターゲットのSDOが存在しない。(本例外は、CORBA標準 システム例外のOBJECT\_\-NOT\_\-EXISTにマッピングされる) \item[{\em NotAvailable}]SDOは存在するが応答がない。 \item[{\em InternalError}]内部的エラーが発生した。 \end{DoxyExceptions}
+\index{SDOPackage::Organization\_\-impl@{SDOPackage::Organization\_\-impl}!get\_\-organization\_\-property@{get\_\-organization\_\-property}}
+\index{get\_\-organization\_\-property@{get\_\-organization\_\-property}!SDOPackage::Organization_impl@{SDOPackage::Organization\_\-impl}}
+\subsubsection[{get\_\-organization\_\-property}]{\setlength{\rightskip}{0pt plus 5cm}virtual OrganizationProperty$\ast$ SDOPackage::Organization\_\-impl::get\_\-organization\_\-property ()  throw (CORBA::SystemException,	     NotAvailable, InternalError)\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classSDOPackage_1_1Organization__impl_a6ac94a9bd99f81762dcab79066d0d84c}
+
+
+[CORBA interface] OrganizationProperty の取得 
+
+Organization が所有する OrganizationProperty を返すオペレーション。 Organization がプロパティを持たなければ空のリストを返す。
+
+\begin{DoxyReturn}{戻り値}
+Organization のプロパティのリスト。
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{例外}
+\item[{\em SDONotExists}]ターゲットのSDOが存在しない。(本例外は、CORBA標準 システム例外のOBJECT\_\-NOT\_\-EXISTにマッピングされる) \item[{\em NotAvailable}]SDOは存在するが応答がない。 \item[{\em InternalError}]内部的エラーが発生した。 \end{DoxyExceptions}
+\index{SDOPackage::Organization\_\-impl@{SDOPackage::Organization\_\-impl}!get\_\-organization\_\-property\_\-value@{get\_\-organization\_\-property\_\-value}}
+\index{get\_\-organization\_\-property\_\-value@{get\_\-organization\_\-property\_\-value}!SDOPackage::Organization_impl@{SDOPackage::Organization\_\-impl}}
+\subsubsection[{get\_\-organization\_\-property\_\-value}]{\setlength{\rightskip}{0pt plus 5cm}virtual CORBA::Any$\ast$ SDOPackage::Organization\_\-impl::get\_\-organization\_\-property\_\-value (const char $\ast$ {\em name})  throw (CORBA::SystemException,	     InvalidParameter, NotAvailable, InternalError)\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classSDOPackage_1_1Organization__impl_a02e5ecaeba5fca183dd93cf9807dbe99}
+
+
+[CORBA interface] OrganizationProperty の特定の値の取得 
+
+OrganizationProperty の指定された値を返すオペレーション。 引数 \char`\"{}name\char`\"{} で指定されたプロパティの値を返す。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em name}]値を返すプロパティの名前。\end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+引数 \char`\"{}name\char`\"{} で指定されたプロパティの値。
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{例外}
+\item[{\em SDONotExists}]ターゲットのSDOが存在しない。(本例外は、CORBA標準 システム例外のOBJECT\_\-NOT\_\-EXISTにマッピングされる) \item[{\em InvalidParameter}]引数 \char`\"{}name\char`\"{} で指定されたプロパティが 存在しない。 \item[{\em NotAvailable}]SDOは存在するが応答がない。 \item[{\em InternalError}]内部的エラーが発生した。 \end{DoxyExceptions}
+\index{SDOPackage::Organization\_\-impl@{SDOPackage::Organization\_\-impl}!get\_\-owner@{get\_\-owner}}
+\index{get\_\-owner@{get\_\-owner}!SDOPackage::Organization_impl@{SDOPackage::Organization\_\-impl}}
+\subsubsection[{get\_\-owner}]{\setlength{\rightskip}{0pt plus 5cm}virtual SDOSystemElement\_\-ptr SDOPackage::Organization\_\-impl::get\_\-owner ()  throw (CORBA::SystemException,	     NotAvailable, InternalError)\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classSDOPackage_1_1Organization__impl_ab98e0ee72ee2372279cd8b7f0209f154}
+
+
+[CORBA interface] Organization のオーナーを取得する 
+
+この Organization のオーナーへの参照を返す。
+
+\begin{DoxyReturn}{戻り値}
+オーナーオブジェクトへの参照。
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{例外}
+\item[{\em SDONotExists}]ターゲットのSDOが存在しない。(本例外は、CORBA標準 システム例外のOBJECT\_\-NOT\_\-EXISTにマッピングされる) \item[{\em NotAvailable}]SDOは存在するが応答がない。 \item[{\em InternalError}]内部的エラーが発生した。 \end{DoxyExceptions}
+\index{SDOPackage::Organization\_\-impl@{SDOPackage::Organization\_\-impl}!getObjRef@{getObjRef}}
+\index{getObjRef@{getObjRef}!SDOPackage::Organization_impl@{SDOPackage::Organization\_\-impl}}
+\subsubsection[{getObjRef}]{\setlength{\rightskip}{0pt plus 5cm}Organization\_\-ptr SDOPackage::Organization\_\-impl::getObjRef (void)\hspace{0.3cm}{\ttfamily  [inline]}}\label{classSDOPackage_1_1Organization__impl_a4d4010dd0570ba1147691ab99e4d28d7}
+\index{SDOPackage::Organization\_\-impl@{SDOPackage::Organization\_\-impl}!remove\_\-member@{remove\_\-member}}
+\index{remove\_\-member@{remove\_\-member}!SDOPackage::Organization_impl@{SDOPackage::Organization\_\-impl}}
+\subsubsection[{remove\_\-member}]{\setlength{\rightskip}{0pt plus 5cm}virtual CORBA::Boolean SDOPackage::Organization\_\-impl::remove\_\-member (const char $\ast$ {\em id})  throw (CORBA::SystemException,	     InvalidParameter, NotAvailable, InternalError)\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classSDOPackage_1_1Organization__impl_ad5b844e581d3c48d8a0d039d40f8c7f2}
+
+
+[CORBA interface] \doxyref{SDO}{p.}{classSDO} メンバーの削除 
+
+Organization から引数で指定された \char`\"{}id\char`\"{} の \doxyref{SDO}{p.}{classSDO} を削除する。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em id}]削除する \doxyref{SDO}{p.}{classSDO} の id。\end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+オペレーションが成功したかどうかを返す。
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{例外}
+\item[{\em SDONotExists}]ターゲットのSDOが存在しない。(本例外は、CORBA標準 システム例外のOBJECT\_\-NOT\_\-EXISTにマッピングされる) \item[{\em InvalidParameter}]引数 \char`\"{}id\char`\"{} が null もしくは存在しない。 \item[{\em NotAvailable}]SDOは存在するが応答がない。 \item[{\em InternalError}]内部的エラーが発生した。 \end{DoxyExceptions}
+
+
+{\bf SDOPackage::PeriodicECOrganization} \doxyref{}{p.}{classSDOPackage_1_1PeriodicECOrganization_ab6a580bcb96ba7706d4bd1995f66e4f7}で再定義されています。
+
+\index{SDOPackage::Organization\_\-impl@{SDOPackage::Organization\_\-impl}!remove\_\-organization\_\-property@{remove\_\-organization\_\-property}}
+\index{remove\_\-organization\_\-property@{remove\_\-organization\_\-property}!SDOPackage::Organization_impl@{SDOPackage::Organization\_\-impl}}
+\subsubsection[{remove\_\-organization\_\-property}]{\setlength{\rightskip}{0pt plus 5cm}virtual CORBA::Boolean SDOPackage::Organization\_\-impl::remove\_\-organization\_\-property (const char $\ast$ {\em name})  throw (CORBA::SystemException,	     InvalidParameter, NotAvailable, InternalError)\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classSDOPackage_1_1Organization__impl_a09e82772de7292a16823209df5f29110}
+
+
+[CORBA interface] OrganizationProperty の削除 
+
+OrganizationProperty の NVList から特定のプロパティを削除する。 削除されるプロパティの名前は引数 \char`\"{}name\char`\"{} により指定される。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em name}]削除するプロパティの名前。\end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+オペレーションが成功したかどうかを返す。
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{例外}
+\item[{\em SDONotExists}]ターゲットのSDOが存在しない。(本例外は、CORBA標準 システム例外のOBJECT\_\-NOT\_\-EXISTにマッピングされる) \item[{\em InvalidParameter}]引数 \char`\"{}name\char`\"{} で指定されたプロパティは 存在しない。 \item[{\em NotAvailable}]SDOは存在するが応答がない。 \item[{\em InternalError}]内部的エラーが発生した。 \end{DoxyExceptions}
+\index{SDOPackage::Organization\_\-impl@{SDOPackage::Organization\_\-impl}!set\_\-dependency@{set\_\-dependency}}
+\index{set\_\-dependency@{set\_\-dependency}!SDOPackage::Organization_impl@{SDOPackage::Organization\_\-impl}}
+\subsubsection[{set\_\-dependency}]{\setlength{\rightskip}{0pt plus 5cm}virtual CORBA::Boolean SDOPackage::Organization\_\-impl::set\_\-dependency (DependencyType {\em dependency})  throw (CORBA::SystemException,	     NotAvailable, InternalError)\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classSDOPackage_1_1Organization__impl_a6100256daad4076a8f7d08d0e4b3f8e3}
+
+
+[CORBA interface] Organization の DependencyType をセットする 
+
+Organization の依存関係 \char`\"{}DependencyType\char`\"{} をセットする。 引数 \char`\"{}dependency\char`\"{} により依存関係を与える。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em dependency}]Organization の依存関係を表す DependencyType。 DependencyType は OMG \doxyref{SDO}{p.}{classSDO} 仕様の Section 2.2.2、2-\/3 ページの \char`\"{}Data Structures Used by Resource Data Model\char`\"{} を参照。\end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+オペレーションが成功したかどうかを返す。
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{例外}
+\item[{\em SDONotExists}]ターゲットのSDOが存在しない。(本例外は、CORBA標準 システム例外のOBJECT\_\-NOT\_\-EXISTにマッピングされる) \item[{\em InvalidParameter}]引数 \char`\"{}sProfile\char`\"{} が nullである。 \item[{\em NotAvailable}]SDOは存在するが応答がない。 \item[{\em InternalError}]内部的エラーが発生した。 \end{DoxyExceptions}
+\index{SDOPackage::Organization\_\-impl@{SDOPackage::Organization\_\-impl}!set\_\-members@{set\_\-members}}
+\index{set\_\-members@{set\_\-members}!SDOPackage::Organization_impl@{SDOPackage::Organization\_\-impl}}
+\subsubsection[{set\_\-members}]{\setlength{\rightskip}{0pt plus 5cm}virtual CORBA::Boolean SDOPackage::Organization\_\-impl::set\_\-members (const SDOList \& {\em sdos})  throw (CORBA::SystemException,	     InvalidParameter, NotAvailable, InternalError)\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classSDOPackage_1_1Organization__impl_aa08d0464d1bb97686e0f5e1e4bae78b9}
+
+
+[CORBA interface] \doxyref{SDO}{p.}{classSDO} の セット 
+
+\doxyref{SDO}{p.}{classSDO} のリストを Organization のメンバーとしてセットする。 Organization がすでにメンバーの \doxyref{SDO}{p.}{classSDO} を管理している場合は、 与えられた \doxyref{SDO}{p.}{classSDO} のリストに置き換える。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em sdos}]メンバーの SDO。\end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+オペレーションが成功したかどうかを返す。
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{例外}
+\item[{\em SDONotExists}]ターゲットのSDOが存在しない。(本例外は、CORBA標準 システム例外のOBJECT\_\-NOT\_\-EXISTにマッピングされる) \item[{\em InvalidParameter}]引数 \char`\"{}SDOList\char`\"{} が nullである、もしくは 引数に指定された \char`\"{}SDOList\char`\"{} が存在しない。 \item[{\em NotAvailable}]SDOは存在するが応答がない。 \item[{\em InternalError}]内部的エラーが発生した。 \end{DoxyExceptions}
+
+
+{\bf SDOPackage::PeriodicECOrganization} \doxyref{}{p.}{classSDOPackage_1_1PeriodicECOrganization_a821e45718787e92851c830655cb12164}で再定義されています。
+
+\index{SDOPackage::Organization\_\-impl@{SDOPackage::Organization\_\-impl}!set\_\-organization\_\-property\_\-value@{set\_\-organization\_\-property\_\-value}}
+\index{set\_\-organization\_\-property\_\-value@{set\_\-organization\_\-property\_\-value}!SDOPackage::Organization_impl@{SDOPackage::Organization\_\-impl}}
+\subsubsection[{set\_\-organization\_\-property\_\-value}]{\setlength{\rightskip}{0pt plus 5cm}virtual CORBA::Boolean SDOPackage::Organization\_\-impl::set\_\-organization\_\-property\_\-value (const char $\ast$ {\em name}, \/  const CORBA::Any \& {\em value})  throw (CORBA::SystemException,	     InvalidParameter, NotAvailable, InternalError)\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classSDOPackage_1_1Organization__impl_a0ce1e00a7de070b701a6b664b6044803}
+
+
+[CORBA interface] OrganizationProperty の値のセット 
+
+OrganizationProperty の NVList に name と value のセットを追加もしくは 更新するオペレーション。name と value は引数 \char`\"{}name\char`\"{} と \char`\"{}value\char`\"{} により 指定する。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em name}]追加・更新されるプロパティの名前。 \item[{\em value}]追加・更新されるプロパティの値。\end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+オペレーションが成功したかどうかを返す。
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{例外}
+\item[{\em SDONotExists}]ターゲットのSDOが存在しない。(本例外は、CORBA標準 システム例外のOBJECT\_\-NOT\_\-EXISTにマッピングされる) \item[{\em InvalidParameter}]引数 \char`\"{}name\char`\"{} で指定されたプロパティは 存在しない。 \item[{\em NotAvailable}]SDOは存在するが応答がない。 \item[{\em InternalError}]内部的エラーが発生した。 \end{DoxyExceptions}
+\index{SDOPackage::Organization\_\-impl@{SDOPackage::Organization\_\-impl}!set\_\-owner@{set\_\-owner}}
+\index{set\_\-owner@{set\_\-owner}!SDOPackage::Organization_impl@{SDOPackage::Organization\_\-impl}}
+\subsubsection[{set\_\-owner}]{\setlength{\rightskip}{0pt plus 5cm}virtual CORBA::Boolean SDOPackage::Organization\_\-impl::set\_\-owner (SDOSystemElement\_\-ptr {\em sdo})  throw (CORBA::SystemException,	     InvalidParameter, NotAvailable, InternalError)\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classSDOPackage_1_1Organization__impl_a36798146bf99264b45a2c37c8db40113}
+
+
+[CORBA interface] Organization にオーナーをセットする 
+
+Organization に対して SDOSystemElement をオーナーとしてセットする。 引数 \char`\"{}sdo\char`\"{} にセットする SDOSystemElement を指定する。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em sdo}]オーナーオブジェクトの参照。\end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+オペレーションが成功したかどうかを返す。
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{例外}
+\item[{\em SDONotExists}]ターゲットのSDOが存在しない。(本例外は、CORBA標準 システム例外のOBJECT\_\-NOT\_\-EXISTにマッピングされる) \item[{\em InvalidParameter}]引数 \char`\"{}sdo\char`\"{} が nullである、もしくは、 \char`\"{}sdo\char`\"{} が存在しない。 \item[{\em NotAvailable}]SDOは存在するが応答がない。 \item[{\em InternalError}]内部的エラーが発生した。 \end{DoxyExceptions}
+
+
+\subsection{変数}
+\index{SDOPackage::Organization\_\-impl@{SDOPackage::Organization\_\-impl}!m\_\-dependency@{m\_\-dependency}}
+\index{m\_\-dependency@{m\_\-dependency}!SDOPackage::Organization_impl@{SDOPackage::Organization\_\-impl}}
+\subsubsection[{m\_\-dependency}]{\setlength{\rightskip}{0pt plus 5cm}SDOPackage::DependencyType {\bf SDOPackage::Organization\_\-impl::m\_\-dependency}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classSDOPackage_1_1Organization__impl_a8622fc3cb6c1ab72683ca840b3c2be6e}
+
+
+依存関係のタイプ 
+
+Owner と member の依存関係を指定する属性。 Organization は以下のトポロジパターンを表現することができる。
+
+
+\begin{DoxyEnumerate}
+\item owner が member を管理する階層的構造。この場合 DependencyType は OWN という値を持つ。
+\item members が owner を管理する逆向きの階層的構造。この場合は DependencyType は OWNER という値を持つ。
+\item owner と member に依存関係がないフラットな構造。この場合は DependencyType は NO\_\-DEPENDENCY という値を持つ。
+\end{DoxyEnumerate}
+
+\doxyref{SDO}{p.}{classSDO} および SDOSystemElement のサブクラスは Organization の owner として 振舞うことが出来る。SDO が owner の場合にはOrganization は上記の いずれかのトポロジーパターンをとる。
+
+
+\begin{DoxyItemize}
+\item Organization が 1. のトポロジーパターンを持つ場合、唯一つの owner \doxyref{SDO}{p.}{classSDO} は member \doxyref{SDO}{p.}{classSDO} を制御する。たとえば、エアコン(owner)は、 温度センサ(member)、湿度センサ(member)、風量制御器(member)を制御する。
+\item Organization が 2. のトポロジを持つ場合は、複数の \doxyref{SDO}{p.}{classSDO} member が唯一の \doxyref{SDO}{p.}{classSDO} owner を共有する。たとえば、アンプ(owner)はいくつかのAV コンポーネント(member)から共有される。
+\item \doxyref{SDO}{p.}{classSDO} ではない SDOSystemElement のサブクラスが owner の場合、 以下のようなトポロジー例が考えられる。 -\/-\/ User(owner)-\/SDO(member): ユーザ(owner) は一つ以上の SDO(member)を 管理する。これは上記トポロジパタン1.にあたる。 -\/-\/ Location(owner)-\/SDO(members): 一つ以上の SDO(member) が特定の場所 = location(owner) で動作している場合、Organization のトポロジパターン は 3. の場合になる。たとえば、複数の PDA がある部屋にあり、互いに同等 な関係であり相互に通信可能な場合はこれにあたる。 
+\end{DoxyItemize}\index{SDOPackage::Organization\_\-impl@{SDOPackage::Organization\_\-impl}!m\_\-memberList@{m\_\-memberList}}
+\index{m\_\-memberList@{m\_\-memberList}!SDOPackage::Organization_impl@{SDOPackage::Organization\_\-impl}}
+\subsubsection[{m\_\-memberList}]{\setlength{\rightskip}{0pt plus 5cm}SDOPackage::SDOList {\bf SDOPackage::Organization\_\-impl::m\_\-memberList}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classSDOPackage_1_1Organization__impl_ac65d070f485dddff671fb5f2d201aa2a}
+
+
+Organization に関連付けられた \doxyref{SDO}{p.}{classSDO} メンバのリスト. 
+
+\index{SDOPackage::Organization\_\-impl@{SDOPackage::Organization\_\-impl}!m\_\-objref@{m\_\-objref}}
+\index{m\_\-objref@{m\_\-objref}!SDOPackage::Organization_impl@{SDOPackage::Organization\_\-impl}}
+\subsubsection[{m\_\-objref}]{\setlength{\rightskip}{0pt plus 5cm}Organization\_\-var {\bf SDOPackage::Organization\_\-impl::m\_\-objref}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classSDOPackage_1_1Organization__impl_a68a2d52c754eeae18073d5ff32216845}
+\index{SDOPackage::Organization\_\-impl@{SDOPackage::Organization\_\-impl}!m\_\-org\_\-mutex@{m\_\-org\_\-mutex}}
+\index{m\_\-org\_\-mutex@{m\_\-org\_\-mutex}!SDOPackage::Organization_impl@{SDOPackage::Organization\_\-impl}}
+\subsubsection[{m\_\-org\_\-mutex}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Mutex} {\bf SDOPackage::Organization\_\-impl::m\_\-org\_\-mutex}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classSDOPackage_1_1Organization__impl_ae487f554a69bd0ab5b8a2444eb3a7b1e}
+\index{SDOPackage::Organization\_\-impl@{SDOPackage::Organization\_\-impl}!m\_\-orgProperty@{m\_\-orgProperty}}
+\index{m\_\-orgProperty@{m\_\-orgProperty}!SDOPackage::Organization_impl@{SDOPackage::Organization\_\-impl}}
+\subsubsection[{m\_\-orgProperty}]{\setlength{\rightskip}{0pt plus 5cm}SDOPackage::OrganizationProperty {\bf SDOPackage::Organization\_\-impl::m\_\-orgProperty}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classSDOPackage_1_1Organization__impl_aca23d88a15fcd898a346dacab08553d2}
+
+
+Organization プロパティ. 
+
+OrganizationProperty は Organization のプロパティ情報を保持する。 一つの Organization は0個もしくは1個の OrganizationProperty をもつ。 \index{SDOPackage::Organization\_\-impl@{SDOPackage::Organization\_\-impl}!m\_\-pId@{m\_\-pId}}
+\index{m\_\-pId@{m\_\-pId}!SDOPackage::Organization_impl@{SDOPackage::Organization\_\-impl}}
+\subsubsection[{m\_\-pId}]{\setlength{\rightskip}{0pt plus 5cm}std::string {\bf SDOPackage::Organization\_\-impl::m\_\-pId}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classSDOPackage_1_1Organization__impl_a4e8ff36cca423c773e0ebd3eb78283c8}
+
+
+Organization の識別子. 
+
+\index{SDOPackage::Organization\_\-impl@{SDOPackage::Organization\_\-impl}!m\_\-varOwner@{m\_\-varOwner}}
+\index{m\_\-varOwner@{m\_\-varOwner}!SDOPackage::Organization_impl@{SDOPackage::Organization\_\-impl}}
+\subsubsection[{m\_\-varOwner}]{\setlength{\rightskip}{0pt plus 5cm}SDOPackage::SDOSystemElement\_\-var {\bf SDOPackage::Organization\_\-impl::m\_\-varOwner}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classSDOPackage_1_1Organization__impl_acf94768454e1f23f81b4d449abd00af0}
+
+
+Organization の owner. 
+
+\index{SDOPackage::Organization\_\-impl@{SDOPackage::Organization\_\-impl}!rtclog@{rtclog}}
+\index{rtclog@{rtclog}!SDOPackage::Organization_impl@{SDOPackage::Organization\_\-impl}}
+\subsubsection[{rtclog}]{\setlength{\rightskip}{0pt plus 5cm}::{\bf RTC::Logger} {\bf SDOPackage::Organization\_\-impl::rtclog}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classSDOPackage_1_1Organization__impl_a47d0b3ab2bda09862034e71a06ea5c6f}
+
+
+{\bf SDOPackage::PeriodicECOrganization} \doxyref{}{p.}{classSDOPackage_1_1PeriodicECOrganization_a6aadb6a2d4266c6d80a003b7ce30de17}で再定義されています。
+

@@ -1,0 +1,162 @@
+\section{RTC::CorbaConsumer$<$ ObjectType, ObjectTypePtr, ObjectTypeVar $>$ Class Template Reference}
+\label{classRTC_1_1CorbaConsumer}\index{RTC::CorbaConsumer@{RTC::CorbaConsumer}}
+
+
+{\ttfamily \#include $<$CorbaConsumer.h$>$}
+
+Inheritance diagram for RTC::CorbaConsumer$<$ ObjectType, ObjectTypePtr, ObjectTypeVar $>$:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2cm]{classRTC_1_1CorbaConsumer}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf CorbaConsumer} ()
+\begin{DoxyCompactList}\small\item\em Consructor. \item\end{DoxyCompactList}\item 
+{\bf CorbaConsumer} (const {\bf CorbaConsumer} \&x)
+\begin{DoxyCompactList}\small\item\em Copy constructor. \item\end{DoxyCompactList}\item 
+{\bf CorbaConsumer} \& {\bf operator=} (const {\bf CorbaConsumer} \&x)
+\begin{DoxyCompactList}\small\item\em Assignment operator. \item\end{DoxyCompactList}\item 
+void {\bf swap} ({\bf CorbaConsumer} \&x)
+\item 
+virtual {\bf $\sim$CorbaConsumer} (void)
+\begin{DoxyCompactList}\small\item\em Virtual destructor. \item\end{DoxyCompactList}\item 
+virtual bool {\bf setObject} (CORBA::Object\_\-ptr obj)
+\begin{DoxyCompactList}\small\item\em Set Object. \item\end{DoxyCompactList}\item 
+ObjectTypePtr {\bf \_\-ptr} ()
+\begin{DoxyCompactList}\small\item\em Get Object reference narrowed as ObjectType. \item\end{DoxyCompactList}\item 
+ObjectTypePtr {\bf operator-\/$>$} ()
+\begin{DoxyCompactList}\small\item\em Get Object reference narrowed as ObjectType. \item\end{DoxyCompactList}\item 
+virtual void {\bf releaseObject} ()
+\begin{DoxyCompactList}\small\item\em Clear CORBA object setting. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+ObjectTypeVar {\bf m\_\-var}
+\begin{DoxyCompactList}\small\item\em CORBA object which has been set. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsubsection*{template$<$class ObjectType, typename ObjectTypePtr = typename ObjectType::\_\-ptr\_\-type, typename ObjectTypeVar = typename ObjectType::\_\-var\_\-type$>$ class RTC::CorbaConsumer$<$ ObjectType, ObjectTypePtr, ObjectTypeVar $>$}
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{RTC::CorbaConsumer@{RTC::CorbaConsumer}!CorbaConsumer@{CorbaConsumer}}
+\index{CorbaConsumer@{CorbaConsumer}!RTC::CorbaConsumer@{RTC::CorbaConsumer}}
+\subsubsection[{CorbaConsumer}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class ObjectType, typename ObjectTypePtr = typename ObjectType::\_\-ptr\_\-type, typename ObjectTypeVar = typename ObjectType::\_\-var\_\-type$>$ {\bf RTC::CorbaConsumer}$<$ ObjectType, ObjectTypePtr, ObjectTypeVar $>$::{\bf CorbaConsumer} ()\hspace{0.3cm}{\ttfamily  [inline]}}\label{classRTC_1_1CorbaConsumer_ac39b07e1bd3e2cc58ef1096e6282eaf0}
+
+
+Consructor. 
+
+\index{RTC::CorbaConsumer@{RTC::CorbaConsumer}!CorbaConsumer@{CorbaConsumer}}
+\index{CorbaConsumer@{CorbaConsumer}!RTC::CorbaConsumer@{RTC::CorbaConsumer}}
+\subsubsection[{CorbaConsumer}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class ObjectType, typename ObjectTypePtr = typename ObjectType::\_\-ptr\_\-type, typename ObjectTypeVar = typename ObjectType::\_\-var\_\-type$>$ {\bf RTC::CorbaConsumer}$<$ ObjectType, ObjectTypePtr, ObjectTypeVar $>$::{\bf CorbaConsumer} (const {\bf CorbaConsumer}$<$ ObjectType, ObjectTypePtr, ObjectTypeVar $>$ \& {\em x})\hspace{0.3cm}{\ttfamily  [inline]}}\label{classRTC_1_1CorbaConsumer_a354892b07ff51fac179912008eb0814f}
+
+
+Copy constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em x}]Copy source. \end{DoxyParams}
+\index{RTC::CorbaConsumer@{RTC::CorbaConsumer}!$\sim$CorbaConsumer@{$\sim$CorbaConsumer}}
+\index{$\sim$CorbaConsumer@{$\sim$CorbaConsumer}!RTC::CorbaConsumer@{RTC::CorbaConsumer}}
+\subsubsection[{$\sim$CorbaConsumer}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class ObjectType, typename ObjectTypePtr = typename ObjectType::\_\-ptr\_\-type, typename ObjectTypeVar = typename ObjectType::\_\-var\_\-type$>$ virtual {\bf RTC::CorbaConsumer}$<$ ObjectType, ObjectTypePtr, ObjectTypeVar $>$::$\sim${\bf CorbaConsumer} (void)\hspace{0.3cm}{\ttfamily  [inline, virtual]}}\label{classRTC_1_1CorbaConsumer_ae99db7e281bc3216fb298b9da307548f}
+
+
+Virtual destructor. 
+
+
+
+\subsection{Member Function Documentation}
+\index{RTC::CorbaConsumer@{RTC::CorbaConsumer}!\_\-ptr@{\_\-ptr}}
+\index{\_\-ptr@{\_\-ptr}!RTC::CorbaConsumer@{RTC::CorbaConsumer}}
+\subsubsection[{\_\-ptr}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class ObjectType, typename ObjectTypePtr = typename ObjectType::\_\-ptr\_\-type, typename ObjectTypeVar = typename ObjectType::\_\-var\_\-type$>$ ObjectTypePtr {\bf RTC::CorbaConsumer}$<$ ObjectType, ObjectTypePtr, ObjectTypeVar $>$::\_\-ptr ()\hspace{0.3cm}{\ttfamily  [inline]}}\label{classRTC_1_1CorbaConsumer_ac3a5849614fa03ad5cf1822cc0f4b144}
+
+
+Get Object reference narrowed as ObjectType. 
+
+This operation returns object reference narrowed as ObjectType. To use the returned object reference, reference have to be set by \doxyref{setObject()}{p.}{classRTC_1_1CorbaConsumer_a8e5db22a71b01b1a8178d9966eb6499d}. If object is not set, this operation returns nil object reference.
+
+\begin{DoxyReturn}{Returns}
+The object reference narrowed as ObjectType 
+\end{DoxyReturn}
+\index{RTC::CorbaConsumer@{RTC::CorbaConsumer}!operator-\/$>$@{operator-\/$>$}}
+\index{operator-\/$>$@{operator-\/$>$}!RTC::CorbaConsumer@{RTC::CorbaConsumer}}
+\subsubsection[{operator-\/$>$}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class ObjectType, typename ObjectTypePtr = typename ObjectType::\_\-ptr\_\-type, typename ObjectTypeVar = typename ObjectType::\_\-var\_\-type$>$ ObjectTypePtr {\bf RTC::CorbaConsumer}$<$ ObjectType, ObjectTypePtr, ObjectTypeVar $>$::operator-\/$>$ ()\hspace{0.3cm}{\ttfamily  [inline]}}\label{classRTC_1_1CorbaConsumer_ad05c547a2896f087fa7ad24c323e14f5}
+
+
+Get Object reference narrowed as ObjectType. 
+
+This operation returns object reference narrowed as ObjectType. To use the returned object reference, reference have to be set by \doxyref{setObject()}{p.}{classRTC_1_1CorbaConsumer_a8e5db22a71b01b1a8178d9966eb6499d}. If object is not set, this operation returns nil object reference.
+
+\begin{DoxyReturn}{Returns}
+The object reference narrowed as ObjectType 
+\end{DoxyReturn}
+\index{RTC::CorbaConsumer@{RTC::CorbaConsumer}!operator=@{operator=}}
+\index{operator=@{operator=}!RTC::CorbaConsumer@{RTC::CorbaConsumer}}
+\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class ObjectType, typename ObjectTypePtr = typename ObjectType::\_\-ptr\_\-type, typename ObjectTypeVar = typename ObjectType::\_\-var\_\-type$>$ {\bf CorbaConsumer}\& {\bf RTC::CorbaConsumer}$<$ ObjectType, ObjectTypePtr, ObjectTypeVar $>$::operator= (const {\bf CorbaConsumer}$<$ ObjectType, ObjectTypePtr, ObjectTypeVar $>$ \& {\em x})\hspace{0.3cm}{\ttfamily  [inline]}}\label{classRTC_1_1CorbaConsumer_aa61a46fd2808e8b66f3b2d4df1ca001c}
+
+
+Assignment operator. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em x}]Copy source.\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+An assignment result 
+\end{DoxyReturn}
+\index{RTC::CorbaConsumer@{RTC::CorbaConsumer}!releaseObject@{releaseObject}}
+\index{releaseObject@{releaseObject}!RTC::CorbaConsumer@{RTC::CorbaConsumer}}
+\subsubsection[{releaseObject}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class ObjectType, typename ObjectTypePtr = typename ObjectType::\_\-ptr\_\-type, typename ObjectTypeVar = typename ObjectType::\_\-var\_\-type$>$ virtual void {\bf RTC::CorbaConsumer}$<$ ObjectType, ObjectTypePtr, ObjectTypeVar $>$::releaseObject ()\hspace{0.3cm}{\ttfamily  [inline, virtual]}}\label{classRTC_1_1CorbaConsumer_aaebca7bff42ba840684cf51fb8577290}
+
+
+Clear CORBA object setting. 
+
+Clear CORBA object which is set. Operate nothing for CORBA object itself. 
+
+Reimplemented from {\bf RTC::CorbaConsumerBase} \doxyref{}{p.}{classRTC_1_1CorbaConsumerBase_aafdaaab4a66319fe5ab1486b1001dfb9}.
+
+
+
+Referenced by RTC::CorbaConsumer$<$ ::OpenRTM::OutPortCdr $>$::releaseObject(), RTC::CorbaConsumer$<$ ::OpenRTM::OutPortCdr $>$::setObject(), and RTC::CorbaConsumer$<$ ::OpenRTM::OutPortCdr $>$::$\sim$CorbaConsumer().
+
+\index{RTC::CorbaConsumer@{RTC::CorbaConsumer}!setObject@{setObject}}
+\index{setObject@{setObject}!RTC::CorbaConsumer@{RTC::CorbaConsumer}}
+\subsubsection[{setObject}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class ObjectType, typename ObjectTypePtr = typename ObjectType::\_\-ptr\_\-type, typename ObjectTypeVar = typename ObjectType::\_\-var\_\-type$>$ virtual bool {\bf RTC::CorbaConsumer}$<$ ObjectType, ObjectTypePtr, ObjectTypeVar $>$::setObject (CORBA::Object\_\-ptr {\em obj})\hspace{0.3cm}{\ttfamily  [inline, virtual]}}\label{classRTC_1_1CorbaConsumer_a8e5db22a71b01b1a8178d9966eb6499d}
+
+
+Set Object. 
+
+Override function of \doxyref{ConsumerBase}{p.}{classConsumerBase}. This operation set an Object to CORBA:Object\_\-var in the class, and this object is narrowed to given template parameter and stored in the member variable.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em obj}]CORBA Objecct\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+An object setting result. If target object is null, it returns false. 
+\end{DoxyReturn}
+
+
+Reimplemented from {\bf RTC::CorbaConsumerBase} \doxyref{}{p.}{classRTC_1_1CorbaConsumerBase_aa91cc706b62c6782f79bfc76663f3dcc}.
+
+\index{RTC::CorbaConsumer@{RTC::CorbaConsumer}!swap@{swap}}
+\index{swap@{swap}!RTC::CorbaConsumer@{RTC::CorbaConsumer}}
+\subsubsection[{swap}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class ObjectType, typename ObjectTypePtr = typename ObjectType::\_\-ptr\_\-type, typename ObjectTypeVar = typename ObjectType::\_\-var\_\-type$>$ void {\bf RTC::CorbaConsumer}$<$ ObjectType, ObjectTypePtr, ObjectTypeVar $>$::swap ({\bf CorbaConsumer}$<$ ObjectType, ObjectTypePtr, ObjectTypeVar $>$ \& {\em x})\hspace{0.3cm}{\ttfamily  [inline]}}\label{classRTC_1_1CorbaConsumer_a6d15ea38a83646af6e5ed91c73791f94}
+
+
+Referenced by RTC::CorbaConsumer$<$ ::OpenRTM::OutPortCdr $>$::operator=(), and RTC::CorbaConsumer$<$ ::OpenRTM::OutPortCdr $>$::swap().
+
+
+
+\subsection{Member Data Documentation}
+\index{RTC::CorbaConsumer@{RTC::CorbaConsumer}!m\_\-var@{m\_\-var}}
+\index{m\_\-var@{m\_\-var}!RTC::CorbaConsumer@{RTC::CorbaConsumer}}
+\subsubsection[{m\_\-var}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class ObjectType, typename ObjectTypePtr = typename ObjectType::\_\-ptr\_\-type, typename ObjectTypeVar = typename ObjectType::\_\-var\_\-type$>$ ObjectTypeVar {\bf RTC::CorbaConsumer}$<$ ObjectType, ObjectTypePtr, ObjectTypeVar $>$::{\bf m\_\-var}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC_1_1CorbaConsumer_ac3d6f44c6fa4b9cf4f5be7ca6656e070}
+
+
+CORBA object which has been set. 
+
+
+
+Referenced by RTC::CorbaConsumer$<$ ::OpenRTM::OutPortCdr $>$::\_\-ptr(), RTC::CorbaConsumer$<$ ::OpenRTM::OutPortCdr $>$::operator-\/$>$(), RTC::CorbaConsumer$<$ ::OpenRTM::OutPortCdr $>$::releaseObject(), RTC::CorbaConsumer$<$ ::OpenRTM::OutPortCdr $>$::setObject(), and RTC::CorbaConsumer$<$ ::OpenRTM::OutPortCdr $>$::swap().
+

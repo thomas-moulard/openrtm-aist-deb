@@ -1,0 +1,184 @@
+\section{coil::Task Class Reference}
+\label{classcoil_1_1Task}\index{coil::Task@{coil::Task}}
+
+
+\doxyref{Task}{p.}{classcoil_1_1Task} class.  
+
+
+
+
+{\ttfamily \#include $<$Task.h$>$}
+
+Inheritance diagram for coil::Task:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=0.981308cm]{classcoil_1_1Task}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Task} ()
+\begin{DoxyCompactList}\small\item\em Constructor. \item\end{DoxyCompactList}\item 
+virtual {\bf $\sim$Task} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \item\end{DoxyCompactList}\item 
+virtual int {\bf open} (void $\ast$args=0)
+\begin{DoxyCompactList}\small\item\em \doxyref{Task}{p.}{classcoil_1_1Task} open. \item\end{DoxyCompactList}\item 
+virtual int {\bf close} (unsigned long flags=0)
+\begin{DoxyCompactList}\small\item\em \doxyref{Task}{p.}{classcoil_1_1Task} close. \item\end{DoxyCompactList}\item 
+virtual int {\bf svc} ()
+\begin{DoxyCompactList}\small\item\em Execute thread. \item\end{DoxyCompactList}\item 
+virtual void {\bf activate} ()
+\begin{DoxyCompactList}\small\item\em Create a thread. \item\end{DoxyCompactList}\item 
+virtual int {\bf wait} (void)
+\begin{DoxyCompactList}\small\item\em Waiting for the thread terminate. \item\end{DoxyCompactList}\item 
+virtual int {\bf suspend} (void)
+\begin{DoxyCompactList}\small\item\em Suspending the task. \item\end{DoxyCompactList}\item 
+virtual int {\bf resume} (void)
+\begin{DoxyCompactList}\small\item\em Resuming the suspended task. \item\end{DoxyCompactList}\item 
+virtual void {\bf reset} ()
+\begin{DoxyCompactList}\small\item\em Reset of task count. \item\end{DoxyCompactList}\item 
+virtual void {\bf finalize} ()
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void $\ast$ {\bf svc\_\-run} (void $\ast$args=0)
+\begin{DoxyCompactList}\small\item\em Start thread Execution. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\doxyref{Task}{p.}{classcoil_1_1Task} class. 
+
+\subsection{Constructor \& Destructor Documentation}
+\index{coil::Task@{coil::Task}!Task@{Task}}
+\index{Task@{Task}!coil::Task@{coil::Task}}
+\subsubsection[{Task}]{\setlength{\rightskip}{0pt plus 5cm}coil::Task::Task ()}\label{classcoil_1_1Task_acb44c7174ccc75d4962dbdebd8ea97be}
+
+
+Constructor. 
+
+Constructor \index{coil::Task@{coil::Task}!$\sim$Task@{$\sim$Task}}
+\index{$\sim$Task@{$\sim$Task}!coil::Task@{coil::Task}}
+\subsubsection[{$\sim$Task}]{\setlength{\rightskip}{0pt plus 5cm}virtual coil::Task::$\sim$Task ()\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classcoil_1_1Task_adaf74253b2fa6387a49afa5575812897}
+
+
+Destructor. 
+
+Destructor 
+
+\subsection{Member Function Documentation}
+\index{coil::Task@{coil::Task}!activate@{activate}}
+\index{activate@{activate}!coil::Task@{coil::Task}}
+\subsubsection[{activate}]{\setlength{\rightskip}{0pt plus 5cm}virtual void coil::Task::activate ()\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classcoil_1_1Task_a812bc27f5acb67931a4c03c07c7aeb9e}
+
+
+Create a thread. 
+
+Create a thread 
+
+Reimplemented in {\bf coil::PeriodicTask} \doxyref{}{p.}{classcoil_1_1PeriodicTask_a7c697df8165aecf55667950e1777a334}, and {\bf coil::PeriodicTaskBase} \doxyref{}{p.}{classcoil_1_1PeriodicTaskBase_ae3deb2c37063d35ad294bfbb07dafdba}.
+
+
+
+Referenced by coil::Async\_\-ref\_\-t$<$ Object, Func $>$::invoke(), coil::Async\_\-t$<$ Object, Func $>$::invoke(), RTC::Manager::Terminator::open(), and RTC::Manager::OrbRunner::open().
+
+\index{coil::Task@{coil::Task}!close@{close}}
+\index{close@{close}!coil::Task@{coil::Task}}
+\subsubsection[{close}]{\setlength{\rightskip}{0pt plus 5cm}virtual int coil::Task::close (unsigned long {\em flags} = {\ttfamily 0})\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classcoil_1_1Task_aa3bfcb01e9d162e4053a4c7312673879}
+
+
+\doxyref{Task}{p.}{classcoil_1_1Task} close. 
+
+\doxyref{Task}{p.}{classcoil_1_1Task} close
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em flags}]Flags \end{DoxyParams}
+
+
+Reimplemented in {\bf RTC::Manager::OrbRunner} \doxyref{}{p.}{classRTC_1_1Manager_1_1OrbRunner_a19fb5b7a8e18910b31c13207dccbe167}, and {\bf RTC::PeriodicExecutionContext} \doxyref{}{p.}{classRTC_1_1PeriodicExecutionContext_a61e63a2d5f7aac790af5e105000df6fd}.
+
+\index{coil::Task@{coil::Task}!finalize@{finalize}}
+\index{finalize@{finalize}!coil::Task@{coil::Task}}
+\subsubsection[{finalize}]{\setlength{\rightskip}{0pt plus 5cm}virtual void coil::Task::finalize ()\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classcoil_1_1Task_af7cfcc8cf5c0c322739a92374ce05cca}
+Finalizing the task. 
+
+Reimplemented in {\bf coil::Async\_\-t$<$ Object, Func $>$} \doxyref{}{p.}{classcoil_1_1Async__t_aaffa0e7e46f8380b0e91e5177485e00d}, {\bf coil::Async\_\-ref\_\-t$<$ Object, Func $>$} \doxyref{}{p.}{classcoil_1_1Async__ref__t_a3aa9d20e422e78db584ead57a50200da}, {\bf coil::PeriodicTask} \doxyref{}{p.}{classcoil_1_1PeriodicTask_a5ec56997c14c95ee3ce095979fa47f61}, and {\bf coil::PeriodicTaskBase} \doxyref{}{p.}{classcoil_1_1PeriodicTaskBase_a2e131861d53d1553d2bb12d7c5bbddf4}.
+
+\index{coil::Task@{coil::Task}!open@{open}}
+\index{open@{open}!coil::Task@{coil::Task}}
+\subsubsection[{open}]{\setlength{\rightskip}{0pt plus 5cm}virtual int coil::Task::open (void $\ast$ {\em args} = {\ttfamily 0})\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classcoil_1_1Task_af964d1b21ddf53987e8190cb4e5d9613}
+
+
+\doxyref{Task}{p.}{classcoil_1_1Task} open. 
+
+\doxyref{Task}{p.}{classcoil_1_1Task} open
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em args}]Arguments \end{DoxyParams}
+
+
+Reimplemented in {\bf coil::Timer} \doxyref{}{p.}{classcoil_1_1Timer_a0ab295e065392c392418c676328a2601}, {\bf RTC::Manager::OrbRunner} \doxyref{}{p.}{classRTC_1_1Manager_1_1OrbRunner_a879d024f9e63e641475a627641871600}, {\bf RTC::Manager::Terminator} \doxyref{}{p.}{classRTC_1_1Manager_1_1Terminator_ae6fb66641a477fc91a7aca38e49eb0fa}, and {\bf RTC::PeriodicExecutionContext} \doxyref{}{p.}{classRTC_1_1PeriodicExecutionContext_a1a8cf7148599db0ac62f76e4142df3e3}.
+
+\index{coil::Task@{coil::Task}!reset@{reset}}
+\index{reset@{reset}!coil::Task@{coil::Task}}
+\subsubsection[{reset}]{\setlength{\rightskip}{0pt plus 5cm}virtual void coil::Task::reset ()\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classcoil_1_1Task_ae66f1fc87f7768a834980b3141ccf992}
+
+
+Reset of task count. 
+
+Reset of task count \index{coil::Task@{coil::Task}!resume@{resume}}
+\index{resume@{resume}!coil::Task@{coil::Task}}
+\subsubsection[{resume}]{\setlength{\rightskip}{0pt plus 5cm}virtual int coil::Task::resume (void)\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classcoil_1_1Task_a093088197230d448855155cddda19b11}
+
+
+Resuming the suspended task. 
+
+Resuming the suspended task 
+
+Reimplemented in {\bf coil::PeriodicTask} \doxyref{}{p.}{classcoil_1_1PeriodicTask_acf42beb37616fc6418c04e199ea57263}, and {\bf coil::PeriodicTaskBase} \doxyref{}{p.}{classcoil_1_1PeriodicTaskBase_aed680b3484a799cf932f7c65188018b5}.
+
+\index{coil::Task@{coil::Task}!suspend@{suspend}}
+\index{suspend@{suspend}!coil::Task@{coil::Task}}
+\subsubsection[{suspend}]{\setlength{\rightskip}{0pt plus 5cm}virtual int coil::Task::suspend (void)\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classcoil_1_1Task_a9f65419174b1974a9b145042562af9a8}
+
+
+Suspending the task. 
+
+Suspending the task 
+
+Reimplemented in {\bf coil::PeriodicTask} \doxyref{}{p.}{classcoil_1_1PeriodicTask_acc1199a128277eb89e7737df00d33264}, and {\bf coil::PeriodicTaskBase} \doxyref{}{p.}{classcoil_1_1PeriodicTaskBase_a3868ef5fb39dcb023c3fade0a307898d}.
+
+\index{coil::Task@{coil::Task}!svc@{svc}}
+\index{svc@{svc}!coil::Task@{coil::Task}}
+\subsubsection[{svc}]{\setlength{\rightskip}{0pt plus 5cm}virtual int coil::Task::svc ()\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classcoil_1_1Task_ae68f22a4afbe8cddde1fe910bc3dd226}
+
+
+Execute thread. 
+
+Execute thread 
+
+Reimplemented in {\bf coil::Async\_\-t$<$ Object, Func $>$} \doxyref{}{p.}{classcoil_1_1Async__t_a2a935cf066cd5b3a90feb0aa19b9a4b1}, {\bf coil::Async\_\-ref\_\-t$<$ Object, Func $>$} \doxyref{}{p.}{classcoil_1_1Async__ref__t_a0faaac2e307957306e4a5f093aa39d26}, {\bf coil::PeriodicTask} \doxyref{}{p.}{classcoil_1_1PeriodicTask_aa1bc5fbad66b0b7ae03844fc447e0097}, {\bf coil::Timer} \doxyref{}{p.}{classcoil_1_1Timer_af995c8abd6fe7d6aa92fdf21c41e8670}, {\bf RTC::ExtTrigExecutionContext} \doxyref{}{p.}{classRTC_1_1ExtTrigExecutionContext_aaa5d7178bb12669324647eb702629535}, {\bf RTC::Manager::OrbRunner} \doxyref{}{p.}{classRTC_1_1Manager_1_1OrbRunner_a269a4a56e2c0d5ee5782c10a9c6ef608}, {\bf RTC::Manager::Terminator} \doxyref{}{p.}{classRTC_1_1Manager_1_1Terminator_a7b02960ecfb120c5531278607c1cac64}, {\bf RTC::OpenHRPExecutionContext} \doxyref{}{p.}{classRTC_1_1OpenHRPExecutionContext_a1de64d423a97b75133711ae3c32bd216}, and {\bf RTC::PeriodicExecutionContext} \doxyref{}{p.}{classRTC_1_1PeriodicExecutionContext_acce0ee7c44366398928e688f895af60b}.
+
+\index{coil::Task@{coil::Task}!svc\_\-run@{svc\_\-run}}
+\index{svc\_\-run@{svc\_\-run}!coil::Task@{coil::Task}}
+\subsubsection[{svc\_\-run}]{\setlength{\rightskip}{0pt plus 5cm}static void$\ast$ coil::Task::svc\_\-run (void $\ast$ {\em args} = {\ttfamily 0})\hspace{0.3cm}{\ttfamily  [static]}}\label{classcoil_1_1Task_aea0afe54b17952065d4f0bef1963aead}
+
+
+Start thread Execution. 
+
+Start thread Execution
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em args}]Thread arguments \end{DoxyParams}
+\index{coil::Task@{coil::Task}!wait@{wait}}
+\index{wait@{wait}!coil::Task@{coil::Task}}
+\subsubsection[{wait}]{\setlength{\rightskip}{0pt plus 5cm}virtual int coil::Task::wait (void)\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classcoil_1_1Task_ad999fcc89264eece8b909b680cbf5ba1}
+
+
+Waiting for the thread terminate. 
+
+Waiting for the thread terminate 

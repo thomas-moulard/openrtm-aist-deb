@@ -1,0 +1,159 @@
+\section{RTC::InPortConsumer Class Reference}
+\label{classRTC_1_1InPortConsumer}\index{RTC::InPortConsumer@{RTC::InPortConsumer}}
+
+
+\doxyref{InPortConsumer}{p.}{classRTC_1_1InPortConsumer} abstract class.  
+
+
+
+
+{\ttfamily \#include $<$InPortConsumer.h$>$}
+
+Inheritance diagram for RTC::InPortConsumer:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3cm]{classRTC_1_1InPortConsumer}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct {\bf publishInterfaceProfileFunc}
+\begin{DoxyCompactList}\small\item\em Functor to publish interface profile. \item\end{DoxyCompactList}\item 
+struct {\bf subscribeInterfaceFunc}
+\begin{DoxyCompactList}\small\item\em Functor to publish interface profile. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual DATAPORTSTATUS\_\-ENUM {\bf $\sim$InPortConsumer} (void)
+\begin{DoxyCompactList}\small\item\em Destructor. \item\end{DoxyCompactList}\item 
+virtual void {\bf init} ({\bf coil::Properties} \&prop)=0
+\begin{DoxyCompactList}\small\item\em Initializing configuration. \item\end{DoxyCompactList}\item 
+virtual ReturnCode {\bf put} (const cdrMemoryStream \&data)=0
+\begin{DoxyCompactList}\small\item\em Send data to the destination port. \item\end{DoxyCompactList}\item 
+virtual void {\bf publishInterfaceProfile} (SDOPackage::NVList \&properties)=0
+\begin{DoxyCompactList}\small\item\em Publish InterfaceProfile information. \item\end{DoxyCompactList}\item 
+virtual bool {\bf subscribeInterface} (const SDOPackage::NVList \&properties)=0
+\begin{DoxyCompactList}\small\item\em Subscribe the data send notification. \item\end{DoxyCompactList}\item 
+virtual void {\bf unsubscribeInterface} (const SDOPackage::NVList \&properties)=0
+\begin{DoxyCompactList}\small\item\em Unsubscribe the data send notification. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\doxyref{InPortConsumer}{p.}{classRTC_1_1InPortConsumer} abstract class. This is the abstract interface class for the input port \doxyref{Consumer}{p.}{classConsumer}. Concrete classes must implement the following pure virtual functions.
+\begin{DoxyItemize}
+\item push(): Send data
+\item clone(): Copy ports
+\item \doxyref{subscribeInterface()}{p.}{classRTC_1_1InPortConsumer_a63073caab2216e2686b34d2c8901c591}: Subscribe the data send notification
+\item \doxyref{unsubscribeInterface()}{p.}{classRTC_1_1InPortConsumer_a59530bf39fca610e2c7136700a214aab}: Unsubscribe the data send notification
+\end{DoxyItemize}
+
+\begin{DoxySince}{Since}
+0.4.0 
+\end{DoxySince}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{RTC::InPortConsumer@{RTC::InPortConsumer}!$\sim$InPortConsumer@{$\sim$InPortConsumer}}
+\index{$\sim$InPortConsumer@{$\sim$InPortConsumer}!RTC::InPortConsumer@{RTC::InPortConsumer}}
+\subsubsection[{$\sim$InPortConsumer}]{\setlength{\rightskip}{0pt plus 5cm}virtual DATAPORTSTATUS\_\-ENUM RTC::InPortConsumer::$\sim$InPortConsumer (void)\hspace{0.3cm}{\ttfamily  [inline, virtual]}}\label{classRTC_1_1InPortConsumer_a6a6d7b589839aa3d42129198f7c7e2e5}
+
+
+Destructor. 
+
+Destructor 
+
+\subsection{Member Function Documentation}
+\index{RTC::InPortConsumer@{RTC::InPortConsumer}!init@{init}}
+\index{init@{init}!RTC::InPortConsumer@{RTC::InPortConsumer}}
+\subsubsection[{init}]{\setlength{\rightskip}{0pt plus 5cm}virtual void RTC::InPortConsumer::init ({\bf coil::Properties} \& {\em prop})\hspace{0.3cm}{\ttfamily  [pure virtual]}}\label{classRTC_1_1InPortConsumer_a70772c84fa42d6108e30c0f52a9674d5}
+
+
+Initializing configuration. 
+
+This operation would be called to configure this consumer in initialization. 
+
+Implemented in {\bf RTC::InPortCorbaCdrConsumer} \doxyref{}{p.}{classRTC_1_1InPortCorbaCdrConsumer_a5682cf80be88cfbb6ab238e7b3733686}.
+
+\index{RTC::InPortConsumer@{RTC::InPortConsumer}!publishInterfaceProfile@{publishInterfaceProfile}}
+\index{publishInterfaceProfile@{publishInterfaceProfile}!RTC::InPortConsumer@{RTC::InPortConsumer}}
+\subsubsection[{publishInterfaceProfile}]{\setlength{\rightskip}{0pt plus 5cm}virtual void RTC::InPortConsumer::publishInterfaceProfile (SDOPackage::NVList \& {\em properties})\hspace{0.3cm}{\ttfamily  [pure virtual]}}\label{classRTC_1_1InPortConsumer_a1bb34ea50047ecf1b2642fc61192d40b}
+
+
+Publish InterfaceProfile information. 
+
+Publish interfaceProfile information. Check the dataport.interface\_\-type value of the NameValue object specified by an argument in property information and get information only when the interface type of the specified port is matched.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em properties}]Properties to get InterfaceProfile information \end{DoxyParams}
+
+
+Implemented in {\bf RTC::InPortCorbaCdrConsumer} \doxyref{}{p.}{classRTC_1_1InPortCorbaCdrConsumer_aa71ca4621080b782a09a640f18daa2e9}.
+
+
+
+Referenced by RTC::InPortConsumer::publishInterfaceProfileFunc::operator()().
+
+\index{RTC::InPortConsumer@{RTC::InPortConsumer}!put@{put}}
+\index{put@{put}!RTC::InPortConsumer@{RTC::InPortConsumer}}
+\subsubsection[{put}]{\setlength{\rightskip}{0pt plus 5cm}virtual ReturnCode RTC::InPortConsumer::put (const cdrMemoryStream \& {\em data})\hspace{0.3cm}{\ttfamily  [pure virtual]}}\label{classRTC_1_1InPortConsumer_a7868875b611a5dde0db3d0fcdf5703e5}
+
+
+Send data to the destination port. 
+
+Pure virtual function to send data to the destination port.
+
+This function might the following return codes
+
+
+\begin{DoxyItemize}
+\item PORT\_\-OK: Normal return
+\item PORT\_\-ERROR: Error occurred in data transfer process
+\item SEND\_\-FULL: Buffer full although \doxyref{OutPort}{p.}{classRTC_1_1OutPort} tried to send data
+\item SEND\_\-TIMEOUT: Timeout although \doxyref{OutPort}{p.}{classRTC_1_1OutPort} tried to send data
+\item CONNECTION\_\-LOST: Connection lost
+\item UNKNOWN\_\-ERROR: Unknown error 
+\end{DoxyItemize}
+
+Implemented in {\bf RTC::InPortCorbaCdrConsumer} \doxyref{}{p.}{classRTC_1_1InPortCorbaCdrConsumer_ab910b2bf2a841c2c11bce50e75d36abb}.
+
+\index{RTC::InPortConsumer@{RTC::InPortConsumer}!subscribeInterface@{subscribeInterface}}
+\index{subscribeInterface@{subscribeInterface}!RTC::InPortConsumer@{RTC::InPortConsumer}}
+\subsubsection[{subscribeInterface}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool RTC::InPortConsumer::subscribeInterface (const SDOPackage::NVList \& {\em properties})\hspace{0.3cm}{\ttfamily  [pure virtual]}}\label{classRTC_1_1InPortConsumer_a63073caab2216e2686b34d2c8901c591}
+
+
+Subscribe the data send notification. 
+
+Pure virtual function to subscribe the data send notification based on specified property information.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em properties}]Properties for reference when subscribing\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Subscription result 
+\end{DoxyReturn}
+
+
+Implemented in {\bf RTC::InPortCorbaCdrConsumer} \doxyref{}{p.}{classRTC_1_1InPortCorbaCdrConsumer_a6ca9cba69e9bc1015d79330ed9a56b71}.
+
+
+
+Referenced by RTC::InPortConsumer::subscribeInterfaceFunc::operator()().
+
+\index{RTC::InPortConsumer@{RTC::InPortConsumer}!unsubscribeInterface@{unsubscribeInterface}}
+\index{unsubscribeInterface@{unsubscribeInterface}!RTC::InPortConsumer@{RTC::InPortConsumer}}
+\subsubsection[{unsubscribeInterface}]{\setlength{\rightskip}{0pt plus 5cm}virtual void RTC::InPortConsumer::unsubscribeInterface (const SDOPackage::NVList \& {\em properties})\hspace{0.3cm}{\ttfamily  [pure virtual]}}\label{classRTC_1_1InPortConsumer_a59530bf39fca610e2c7136700a214aab}
+
+
+Unsubscribe the data send notification. 
+
+Pure virtual function to unsubscribe the data send notification.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em properties}]Properties for reference when unsubscribing \end{DoxyParams}
+
+
+Implemented in {\bf RTC::InPortCorbaCdrConsumer} \doxyref{}{p.}{classRTC_1_1InPortCorbaCdrConsumer_a6e297f6ebc3dae7b547e1ec8af06ee9f}.
+

@@ -1,0 +1,45 @@
+\section{CORBA\_\-IORUtil.h File Reference}
+\label{CORBA__IORUtil_8h}\index{CORBA\_\-IORUtil.h@{CORBA\_\-IORUtil.h}}
+
+
+CORBA IOR manipulation utility functions.  
+
+
+{\ttfamily \#include $<$rtm/RTC.h$>$}\par
+\subsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace {\bf CORBA\_\-SeqUtil}
+
+
+\begin{DoxyCompactList}\small\item\em CORBA IOR helper functions. \item\end{DoxyCompactList}
+
+\item 
+namespace {\bf CORBA\_\-IORUtil}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool {\bf CORBA\_\-IORUtil::toIOR} (const char $\ast$iorstr, IOP::IOR \&ior)
+\begin{DoxyCompactList}\small\item\em Convert from IOR string to IOR structure. \item\end{DoxyCompactList}\item 
+bool {\bf CORBA\_\-IORUtil::toString} (IOP::IOR \&ior, std::string \&iorstr)
+\begin{DoxyCompactList}\small\item\em Convert from IOR structure to IOR string. \item\end{DoxyCompactList}\item 
+bool {\bf CORBA\_\-IORUtil::replaceEndpoint} (std::string \&iorstr, const std::string \&endpoint)
+\begin{DoxyCompactList}\small\item\em Replace endpoint address in IOR entry. \item\end{DoxyCompactList}\item 
+std::string {\bf CORBA\_\-IORUtil::formatIORinfo} (const char $\ast$iorstr)
+\begin{DoxyCompactList}\small\item\em Extracts information from IOR string and returns formatted string. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+CORBA IOR manipulation utility functions. \begin{DoxyDate}{Date}
+
+\end{DoxyDate}
+\begin{DoxyParagraph}{Date}
+2007-\/12-\/31 03:06:24 
+\end{DoxyParagraph}
+\begin{DoxyAuthor}{Author}
+Noriaki Ando $<${\tt n-\/ando@aist.go.jp}$>$
+\end{DoxyAuthor}
+Copyright (C) 2010 Intelligent Systems Research Institute, National Institute of Advanced Industrial Science and Technology (AIST), Japan All rights reserved.
+
+\$Id\$ 

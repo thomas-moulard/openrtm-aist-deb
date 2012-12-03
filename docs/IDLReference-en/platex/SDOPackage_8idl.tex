@@ -1,0 +1,103 @@
+\section{SDOPackage.idl File Reference}
+\label{SDOPackage_8idl}\index{SDOPackage.idl@{SDOPackage.idl}}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct {\bf SDOPackage::NameValue}
+\item 
+union {\bf SDOPackage::Numeric}
+\item 
+struct {\bf SDOPackage::EnumerationType}
+\item 
+struct {\bf SDOPackage::RangeType}
+\item 
+struct {\bf SDOPackage::IntervalType}
+\item 
+union {\bf SDOPackage::AllowedValues}
+\item 
+struct {\bf SDOPackage::Parameter}
+\item 
+struct {\bf SDOPackage::OrganizationProperty}
+\item 
+struct {\bf SDOPackage::DeviceProfile}
+\item 
+struct {\bf SDOPackage::ServiceProfile}
+\item 
+struct {\bf SDOPackage::ConfigurationSet}
+\item 
+interface {\bf SDOPackage::SDOSystemElement}
+\item 
+interface {\bf SDOPackage::SDO}
+\item 
+interface {\bf SDOPackage::Configuration}
+\item 
+interface {\bf SDOPackage::Monitoring}
+\item 
+interface {\bf SDOPackage::SDOService}
+\item 
+interface {\bf SDOPackage::Organization}
+\end{DoxyCompactItemize}
+\subsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace {\bf SDOPackage}
+\end{DoxyCompactItemize}
+\subsection*{Defines}
+\begin{DoxyCompactItemize}
+\item 
+\#define {\bf TypeCode}~CORBA::TypeCode
+\item 
+\#define {\bf exception\_\-body}~\{ string description; \}
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef sequence$<$ string $>$ {\bf SDOPackage::StringList}
+\item 
+typedef sequence$<$ SDO $>$ {\bf SDOPackage::SDOList}
+\item 
+typedef sequence$<$ Organization $>$ {\bf SDOPackage::OrganizationList}
+\item 
+typedef string {\bf SDOPackage::UniqueIdentifier}
+\item 
+typedef sequence$<$ NameValue $>$ {\bf SDOPackage::NVList}
+\item 
+typedef sequence$<$ Parameter $>$ {\bf SDOPackage::ParameterList}
+\item 
+typedef sequence$<$ ServiceProfile $>$ {\bf SDOPackage::ServiceProfileList}
+\item 
+typedef sequence$<$ ConfigurationSet $>$ {\bf SDOPackage::ConfigurationSetList}
+\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum {\bf SDOPackage::NumericType} \{ {\bf SDOPackage::SHORT\_\-TYPE}, 
+{\bf SDOPackage::LONG\_\-TYPE}, 
+{\bf SDOPackage::FLOAT\_\-TYPE}, 
+{\bf SDOPackage::DOUBLE\_\-TYPE}
+ \}
+\item 
+enum {\bf SDOPackage::ComplexDataType} \{ {\bf SDOPackage::ENUMERATION}, 
+{\bf SDOPackage::RANGE}, 
+{\bf SDOPackage::INTERVAL}
+ \}
+\item 
+enum {\bf SDOPackage::DependencyType} \{ {\bf SDOPackage::OWN}, 
+{\bf SDOPackage::OWNED}, 
+{\bf SDOPackage::NO\_\-DEPENDENCY}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+exception NotAvailable {\bf SDOPackage::exception\_\-body}
+\end{DoxyCompactItemize}
+
+
+\subsection{Define Documentation}
+\index{SDOPackage.idl@{SDOPackage.idl}!exception\_\-body@{exception\_\-body}}
+\index{exception\_\-body@{exception\_\-body}!SDOPackage.idl@{SDOPackage.idl}}
+\subsubsection[{exception\_\-body}]{\setlength{\rightskip}{0pt plus 5cm}\#define exception\_\-body~\{ string description; \}}\label{SDOPackage_8idl_a323e32c35a492d5fd6880568fc2ced8e}
+CORBA specific model for SDOs \index{SDOPackage.idl@{SDOPackage.idl}!TypeCode@{TypeCode}}
+\index{TypeCode@{TypeCode}!SDOPackage.idl@{SDOPackage.idl}}
+\subsubsection[{TypeCode}]{\setlength{\rightskip}{0pt plus 5cm}\#define TypeCode~CORBA::TypeCode}\label{SDOPackage_8idl_a237806f5539769ecfbad2352106cb773}

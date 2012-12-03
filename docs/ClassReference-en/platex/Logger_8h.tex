@@ -1,0 +1,65 @@
+\section{Logger.h File Reference}
+\label{Logger_8h}\index{Logger.h@{Logger.h}}
+
+
+log\_\-streambuf and log\_\-stream class  
+
+
+{\ttfamily \#include $<$limits.h$>$}\par
+{\ttfamily \#include $<$iostream$>$}\par
+{\ttfamily \#include $<$fstream$>$}\par
+{\ttfamily \#include $<$vector$>$}\par
+{\ttfamily \#include $<$string$>$}\par
+{\ttfamily \#include $<$coil/Mutex.h$>$}\par
+{\ttfamily \#include $<$coil/Guard.h$>$}\par
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class {\bf coil::log\_\-streambuf$<$ \_\-CharT, \_\-Traits $>$}
+\begin{DoxyCompactList}\small\item\em \doxyref{log\_\-streambuf}{p.}{classcoil_1_1log__streambuf} template class \item\end{DoxyCompactList}\item 
+struct {\bf coil::log\_\-streambuf$<$ \_\-CharT, \_\-Traits $>$::Stream}
+\begin{DoxyCompactList}\small\item\em Structure for stream management. \item\end{DoxyCompactList}\item 
+class {\bf coil::log\_\-stream$<$ \_\-CharT, \_\-Traits $>$}
+\begin{DoxyCompactList}\small\item\em \doxyref{log\_\-stream}{p.}{classcoil_1_1log__stream} template class \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace {\bf coil}
+
+
+\begin{DoxyCompactList}\small\item\em Common Object Interface Layer. \item\end{DoxyCompactList}
+
+\end{DoxyCompactItemize}
+\subsection*{Defines}
+\begin{DoxyCompactItemize}
+\item 
+\#define {\bf BUFFER\_\-LEN}~LINE\_\-MAX
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef log\_\-streambuf$<$ char $>$ {\bf coil::LogStreamBuffer}
+\item 
+typedef log\_\-stream$<$ char $>$ {\bf coil::LogStream}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+log\_\-streambuf and log\_\-stream class \begin{DoxyDate}{Date}
+\$Date\$ 
+\end{DoxyDate}
+\begin{DoxyAuthor}{Author}
+Noriaki Ando $<${\tt n-\/ando@aist.go.jp}$>$
+\end{DoxyAuthor}
+Copyright (C) 2009 Noriaki Ando Task-\/intelligence Research Group, Intelligent Systems Research Institute, National Institute of Advanced Industrial Science and Technology (AIST), Japan All rights reserved.
+
+\$Id\$ 
+
+\subsection{Define Documentation}
+\index{Logger.h@{Logger.h}!BUFFER\_\-LEN@{BUFFER\_\-LEN}}
+\index{BUFFER\_\-LEN@{BUFFER\_\-LEN}!Logger.h@{Logger.h}}
+\subsubsection[{BUFFER\_\-LEN}]{\setlength{\rightskip}{0pt plus 5cm}\#define BUFFER\_\-LEN~LINE\_\-MAX}\label{Logger_8h_a46130dc86f2322714bba26960b64e7bb}
+
+
+Referenced by coil::log\_\-streambuf$<$ \_\-CharT, \_\-Traits $>$::log\_\-streambuf().
+

@@ -1,0 +1,103 @@
+\section{coil::TaskFunc$<$ T, F $>$ Class Template Reference}
+\label{classcoil_1_1TaskFunc}\index{coil::TaskFunc@{coil::TaskFunc}}
+
+
+\doxyref{TaskFunc}{p.}{classcoil_1_1TaskFunc} template class.  
+
+
+
+
+{\ttfamily \#include $<$PeriodicTaskBase.h$>$}
+
+Inheritance diagram for coil::TaskFunc$<$ T, F $>$:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2cm]{classcoil_1_1TaskFunc}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf TaskFunc} (T $\ast$obj, F func)
+\begin{DoxyCompactList}\small\item\em Constructor. \item\end{DoxyCompactList}\item 
+virtual {\bf $\sim$TaskFunc} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \item\end{DoxyCompactList}\item 
+virtual int {\bf operator()} ()
+\begin{DoxyCompactList}\small\item\em Functor. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+T $\ast$ {\bf m\_\-obj}
+\begin{DoxyCompactList}\small\item\em object \item\end{DoxyCompactList}\item 
+F {\bf m\_\-func}
+\begin{DoxyCompactList}\small\item\em function \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$typename T, typename F = int ($\ast$)()$>$ class coil::TaskFunc$<$ T, F $>$}
+
+\doxyref{TaskFunc}{p.}{classcoil_1_1TaskFunc} template class. 
+
+\subsection{Constructor \& Destructor Documentation}
+\index{coil::TaskFunc@{coil::TaskFunc}!TaskFunc@{TaskFunc}}
+\index{TaskFunc@{TaskFunc}!coil::TaskFunc@{coil::TaskFunc}}
+\subsubsection[{TaskFunc}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T , typename F  = int ($\ast$)()$>$ {\bf coil::TaskFunc}$<$ T, F $>$::{\bf TaskFunc} (T $\ast$ {\em obj}, \/  F {\em func})\hspace{0.3cm}{\ttfamily  [inline]}}\label{classcoil_1_1TaskFunc_a1410664ef96bd517ae8ab57f90beedf9}
+
+
+Constructor. 
+
+Constructor
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em obj}]Object. \item[{\em func}]Function. \end{DoxyParams}
+\index{coil::TaskFunc@{coil::TaskFunc}!$\sim$TaskFunc@{$\sim$TaskFunc}}
+\index{$\sim$TaskFunc@{$\sim$TaskFunc}!coil::TaskFunc@{coil::TaskFunc}}
+\subsubsection[{$\sim$TaskFunc}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T , typename F  = int ($\ast$)()$>$ virtual {\bf coil::TaskFunc}$<$ T, F $>$::$\sim${\bf TaskFunc} ()\hspace{0.3cm}{\ttfamily  [inline, virtual]}}\label{classcoil_1_1TaskFunc_aa6fd4414acf37320347ed4e533009f23}
+
+
+Destructor. 
+
+Destructor 
+
+\subsection{Member Function Documentation}
+\index{coil::TaskFunc@{coil::TaskFunc}!operator()@{operator()}}
+\index{operator()@{operator()}!coil::TaskFunc@{coil::TaskFunc}}
+\subsubsection[{operator()}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T , typename F  = int ($\ast$)()$>$ virtual int {\bf coil::TaskFunc}$<$ T, F $>$::operator() ()\hspace{0.3cm}{\ttfamily  [inline, virtual]}}\label{classcoil_1_1TaskFunc_a01e6194b5baa8ad84f23e26f85c544c7}
+
+
+Functor. 
+
+Execute a function of the object. 
+
+Implements {\bf coil::TaskFuncBase} \doxyref{}{p.}{classcoil_1_1TaskFuncBase_a4160d1057520a3452ead66979d2c3596}.
+
+
+
+References coil::TaskFunc$<$ T, F $>$::m\_\-func, and coil::TaskFunc$<$ T, F $>$::m\_\-obj.
+
+
+
+\subsection{Member Data Documentation}
+\index{coil::TaskFunc@{coil::TaskFunc}!m\_\-func@{m\_\-func}}
+\index{m\_\-func@{m\_\-func}!coil::TaskFunc@{coil::TaskFunc}}
+\subsubsection[{m\_\-func}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T , typename F  = int ($\ast$)()$>$ F {\bf coil::TaskFunc}$<$ T, F $>$::{\bf m\_\-func}}\label{classcoil_1_1TaskFunc_af609c03a98edc37c2c1ef95825cf8684}
+
+
+function 
+
+
+
+Referenced by coil::TaskFunc$<$ T, F $>$::operator()().
+
+\index{coil::TaskFunc@{coil::TaskFunc}!m\_\-obj@{m\_\-obj}}
+\index{m\_\-obj@{m\_\-obj}!coil::TaskFunc@{coil::TaskFunc}}
+\subsubsection[{m\_\-obj}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T , typename F  = int ($\ast$)()$>$ T$\ast$ {\bf coil::TaskFunc}$<$ T, F $>$::{\bf m\_\-obj}}\label{classcoil_1_1TaskFunc_ae959369ffe02cbc787c9e5849c91028f}
+
+
+object 
+
+
+
+Referenced by coil::TaskFunc$<$ T, F $>$::operator()().
+

@@ -1,0 +1,83 @@
+\section{クラス RTC::ConfigurationSetListenerHolder}
+\label{classRTC_1_1ConfigurationSetListenerHolder}\index{RTC::ConfigurationSetListenerHolder@{RTC::ConfigurationSetListenerHolder}}
+
+
+\doxyref{ConfigurationSetListener}{p.}{classRTC_1_1ConfigurationSetListener} ホルダクラス.  
+
+
+
+
+{\ttfamily \#include $<$ConfigurationListener.h$>$}
+
+\subsection*{Public メソッド}
+\begin{DoxyCompactItemize}
+\item 
+{\bf ConfigurationSetListenerHolder} ()
+\begin{DoxyCompactList}\small\item\em コンストラクタ \item\end{DoxyCompactList}\item 
+virtual {\bf $\sim$ConfigurationSetListenerHolder} ()
+\begin{DoxyCompactList}\small\item\em デストラクタ \item\end{DoxyCompactList}\item 
+void {\bf addListener} ({\bf ConfigurationSetListener} $\ast$listener, bool autoclean)
+\begin{DoxyCompactList}\small\item\em リスナーの追加 \item\end{DoxyCompactList}\item 
+void {\bf removeListener} ({\bf ConfigurationSetListener} $\ast$listener)
+\begin{DoxyCompactList}\small\item\em リスナーの削除 \item\end{DoxyCompactList}\item 
+void {\bf notify} (const {\bf coil::Properties} \&config\_\-set)
+\begin{DoxyCompactList}\small\item\em リスナーへ通知する \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{説明}
+\doxyref{ConfigurationSetListener}{p.}{classRTC_1_1ConfigurationSetListener} ホルダクラス. 複数の \doxyref{ConfigurationSetListener}{p.}{classRTC_1_1ConfigurationSetListener} を保持し管理するクラス。 
+
+\subsection{コンストラクタとデストラクタ}
+\index{RTC::ConfigurationSetListenerHolder@{RTC::ConfigurationSetListenerHolder}!ConfigurationSetListenerHolder@{ConfigurationSetListenerHolder}}
+\index{ConfigurationSetListenerHolder@{ConfigurationSetListenerHolder}!RTC::ConfigurationSetListenerHolder@{RTC::ConfigurationSetListenerHolder}}
+\subsubsection[{ConfigurationSetListenerHolder}]{\setlength{\rightskip}{0pt plus 5cm}RTC::ConfigurationSetListenerHolder::ConfigurationSetListenerHolder ()}\label{classRTC_1_1ConfigurationSetListenerHolder_a81c3e9d69da6b1b744364e6af34a3698}
+
+
+コンストラクタ 
+
+\index{RTC::ConfigurationSetListenerHolder@{RTC::ConfigurationSetListenerHolder}!$\sim$ConfigurationSetListenerHolder@{$\sim$ConfigurationSetListenerHolder}}
+\index{$\sim$ConfigurationSetListenerHolder@{$\sim$ConfigurationSetListenerHolder}!RTC::ConfigurationSetListenerHolder@{RTC::ConfigurationSetListenerHolder}}
+\subsubsection[{$\sim$ConfigurationSetListenerHolder}]{\setlength{\rightskip}{0pt plus 5cm}virtual RTC::ConfigurationSetListenerHolder::$\sim$ConfigurationSetListenerHolder ()\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classRTC_1_1ConfigurationSetListenerHolder_a938dca2bccdd00daa1727fbd14959b46}
+
+
+デストラクタ 
+
+
+
+\subsection{関数}
+\index{RTC::ConfigurationSetListenerHolder@{RTC::ConfigurationSetListenerHolder}!addListener@{addListener}}
+\index{addListener@{addListener}!RTC::ConfigurationSetListenerHolder@{RTC::ConfigurationSetListenerHolder}}
+\subsubsection[{addListener}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::ConfigurationSetListenerHolder::addListener ({\bf ConfigurationSetListener} $\ast$ {\em listener}, \/  bool {\em autoclean})}\label{classRTC_1_1ConfigurationSetListenerHolder_a568f4545a41cda30b1ec6f71e1868385}
+
+
+リスナーの追加 
+
+リスナーを追加する。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em listener}]追加するリスナ \item[{\em autoclean}]true:デストラクタで削除する, false:デストラクタで削除しない \end{DoxyParams}
+\index{RTC::ConfigurationSetListenerHolder@{RTC::ConfigurationSetListenerHolder}!notify@{notify}}
+\index{notify@{notify}!RTC::ConfigurationSetListenerHolder@{RTC::ConfigurationSetListenerHolder}}
+\subsubsection[{notify}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::ConfigurationSetListenerHolder::notify (const {\bf coil::Properties} \& {\em config\_\-set})}\label{classRTC_1_1ConfigurationSetListenerHolder_a1fc224cba3c137486999eff95c5849e7}
+
+
+リスナーへ通知する 
+
+登録されているリスナのコールバックメソッドを呼び出す。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em info}]\doxyref{ConnectorInfo}{p.}{classRTC_1_1ConnectorInfo} \item[{\em cdrdata}]データ \end{DoxyParams}
+\index{RTC::ConfigurationSetListenerHolder@{RTC::ConfigurationSetListenerHolder}!removeListener@{removeListener}}
+\index{removeListener@{removeListener}!RTC::ConfigurationSetListenerHolder@{RTC::ConfigurationSetListenerHolder}}
+\subsubsection[{removeListener}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::ConfigurationSetListenerHolder::removeListener ({\bf ConfigurationSetListener} $\ast$ {\em listener})}\label{classRTC_1_1ConfigurationSetListenerHolder_a4d67bf75f51935e54eef796ee8f6c252}
+
+
+リスナーの削除 
+
+リスナを削除する。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em listener}]削除するリスナ \end{DoxyParams}

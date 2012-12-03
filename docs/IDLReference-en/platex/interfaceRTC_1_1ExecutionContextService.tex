@@ -1,0 +1,261 @@
+\section{RTC::ExecutionContextService Interface Reference}
+\label{interfaceRTC_1_1ExecutionContextService}\index{RTC::ExecutionContextService@{RTC::ExecutionContextService}}
+
+
+\doxyref{ExecutionContextService}{p.}{interfaceRTC_1_1ExecutionContextService}.  
+
+
+
+
+{\ttfamily import \char`\"{}RTC.idl\char`\"{};}
+
+Inheritance diagram for RTC::ExecutionContextService:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3cm]{interfaceRTC_1_1ExecutionContextService}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf ExecutionContextProfile} {\bf get\_\-profile} ()
+\begin{DoxyCompactList}\small\item\em get\_\-profile \item\end{DoxyCompactList}\item 
+boolean {\bf is\_\-running} ()
+\begin{DoxyCompactList}\small\item\em is\_\-running \item\end{DoxyCompactList}\item 
+{\bf ReturnCode\_\-t} {\bf start} ()
+\begin{DoxyCompactList}\small\item\em start \item\end{DoxyCompactList}\item 
+{\bf ReturnCode\_\-t} {\bf stop} ()
+\begin{DoxyCompactList}\small\item\em stop \item\end{DoxyCompactList}\item 
+double {\bf get\_\-rate} ()
+\begin{DoxyCompactList}\small\item\em get\_\-rate \item\end{DoxyCompactList}\item 
+{\bf ReturnCode\_\-t} {\bf set\_\-rate} (in double rate)
+\begin{DoxyCompactList}\small\item\em set\_\-rate \item\end{DoxyCompactList}\item 
+{\bf ReturnCode\_\-t} {\bf add\_\-component} (in {\bf LightweightRTObject} comp)
+\begin{DoxyCompactList}\small\item\em add\_\-component \item\end{DoxyCompactList}\item 
+{\bf ReturnCode\_\-t} {\bf remove\_\-component} (in {\bf LightweightRTObject} comp)
+\begin{DoxyCompactList}\small\item\em remove\_\-component \item\end{DoxyCompactList}\item 
+{\bf ReturnCode\_\-t} {\bf activate\_\-component} (in {\bf LightweightRTObject} comp)
+\begin{DoxyCompactList}\small\item\em activate\_\-component \item\end{DoxyCompactList}\item 
+{\bf ReturnCode\_\-t} {\bf deactivate\_\-component} (in {\bf LightweightRTObject} comp)
+\begin{DoxyCompactList}\small\item\em deactivate\_\-component \item\end{DoxyCompactList}\item 
+{\bf ReturnCode\_\-t} {\bf reset\_\-component} (in {\bf LightweightRTObject} comp)
+\begin{DoxyCompactList}\small\item\em reset\_\-component \item\end{DoxyCompactList}\item 
+{\bf LifeCycleState} {\bf get\_\-component\_\-state} (in {\bf LightweightRTObject} comp)
+\begin{DoxyCompactList}\small\item\em get\_\-component\_\-state \item\end{DoxyCompactList}\item 
+{\bf ExecutionKind} {\bf get\_\-kind} ()
+\begin{DoxyCompactList}\small\item\em get\_\-kind \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\doxyref{ExecutionContextService}{p.}{interfaceRTC_1_1ExecutionContextService}. \subsection{Description}\label{namespaceRTC_Description}
+An \doxyref{ExecutionContextService}{p.}{interfaceRTC_1_1ExecutionContextService} exposes an \doxyref{ExecutionContext}{p.}{interfaceRTC_1_1ExecutionContext} as an SDO service such that the context may be controlled remotely.\subsection{Semantics}\label{namespaceRTC_Semantics}
+Depending on the implementation, this interface may itself be an execution context (that is, it may be passed to the operations of \doxyref{ComponentAction}{p.}{interfaceRTC_1_1ComponentAction}) or it may represent a remote execution context that is not of type \doxyref{ExecutionContextService}{p.}{interfaceRTC_1_1ExecutionContextService}. 
+
+\subsection{Member Function Documentation}
+\index{RTC::ExecutionContextService@{RTC::ExecutionContextService}!activate\_\-component@{activate\_\-component}}
+\index{activate\_\-component@{activate\_\-component}!RTC::ExecutionContextService@{RTC::ExecutionContextService}}
+\subsubsection[{activate\_\-component}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ReturnCode\_\-t} RTC::ExecutionContext::activate\_\-component (in {\bf LightweightRTObject} {\em comp})\hspace{0.3cm}{\ttfamily  [inherited]}}\label{interfaceRTC_1_1ExecutionContext_af4a8aeab4a5e71e731b89556ef3e33e1}
+
+
+activate\_\-component 
+
+\subsection{Description}\label{namespaceRTC_Description}
+The given participant \doxyref{RTC}{p.}{namespaceRTC} is Inactive and is therefore not being invoked according to the execution context¡Çs execution kind. This operation shall cause the \doxyref{RTC}{p.}{namespaceRTC} to transition to the Active state such that it may subsequently be invoked in this execution context.\subsection{Semantics}\label{namespaceRTC_Semantics}
+The callback on\_\-activate shall be called as a result of calling this operation. This operation shall not return until the callback has returned, and shall result in an error if the callback does. The following figure is a non-\/normative example sequence diagram for activate\_\-component.\subsection{Constraints}\label{interfaceRTC_1_1LightweightRTObject_Constraints}
+
+\begin{DoxyItemize}
+\item An execution context can only activate its participant components. If the given \doxyref{RTC}{p.}{namespaceRTC} is not participating in the execution context, this operation shall fail with ReturnCode\_\-t::BAD\_\-PARAMETER.
+\end{DoxyItemize}
+
+
+\begin{DoxyItemize}
+\item An \doxyref{RTC}{p.}{namespaceRTC} that is in the Error state cannot be activated until after it has been reset. If the given \doxyref{RTC}{p.}{namespaceRTC} is in the Error state, this operation shall fail with ReturnCode\_\-t::PRECONDITION\_\-NOT\_\-MET.
+\end{DoxyItemize}
+
+
+\begin{DoxyItemize}
+\item This operation shall fail with ReturnCode\_\-t::BAD\_\-PARAMETER if the given component is not in its Alive state. 
+\end{DoxyItemize}\index{RTC::ExecutionContextService@{RTC::ExecutionContextService}!add\_\-component@{add\_\-component}}
+\index{add\_\-component@{add\_\-component}!RTC::ExecutionContextService@{RTC::ExecutionContextService}}
+\subsubsection[{add\_\-component}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ReturnCode\_\-t} RTC::ExecutionContext::add\_\-component (in {\bf LightweightRTObject} {\em comp})\hspace{0.3cm}{\ttfamily  [inherited]}}\label{interfaceRTC_1_1ExecutionContext_a7ac1a5b9820e571153db730c9369b600}
+
+
+add\_\-component 
+
+\subsection{Description}\label{namespaceRTC_Description}
+The operation causes the given \doxyref{RTC}{p.}{namespaceRTC} to begin participating in the execution context.\subsection{Semantics}\label{namespaceRTC_Semantics}
+The newly added \doxyref{RTC}{p.}{namespaceRTC} will receive a call to LightweightRTComponent::attach\_\-context (see Section 5.2.2.2.5) and then enter the Inactive state.\subsection{Constraints}\label{interfaceRTC_1_1LightweightRTObject_Constraints}
+
+\begin{DoxyItemize}
+\item If the ExecutionKind of this context is PERIODIC, the \doxyref{RTC}{p.}{namespaceRTC} must be a data flow component (see Section 5.3.1.1). Otherwise, this operation shall fail with ReturnCode\_\-t::PRECONDITION\_\-NOT\_\-MET.
+\end{DoxyItemize}
+
+
+\begin{DoxyItemize}
+\item If the ExecutionKind of this context is EVENT\_\-DRIVEN, the \doxyref{RTC}{p.}{namespaceRTC} must be an FSM participant (see Section 5.3.2.3). Otherwise, this operation shall fail with ReturnCode\_\-t::PRECONDITION\_\-NOT\_\-MET. 
+\end{DoxyItemize}\index{RTC::ExecutionContextService@{RTC::ExecutionContextService}!deactivate\_\-component@{deactivate\_\-component}}
+\index{deactivate\_\-component@{deactivate\_\-component}!RTC::ExecutionContextService@{RTC::ExecutionContextService}}
+\subsubsection[{deactivate\_\-component}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ReturnCode\_\-t} RTC::ExecutionContext::deactivate\_\-component (in {\bf LightweightRTObject} {\em comp})\hspace{0.3cm}{\ttfamily  [inherited]}}\label{interfaceRTC_1_1ExecutionContext_a82a23124035a957f2191b520a011e870}
+
+
+deactivate\_\-component 
+
+\subsection{Description}\label{namespaceRTC_Description}
+The given \doxyref{RTC}{p.}{namespaceRTC} is Active in the execution context. Cause it to transition to the Inactive state such that it will not be subsequently invoked from the context unless and until it is activated again.\subsection{Semantics}\label{namespaceRTC_Semantics}
+The callback on\_\-deactivate shall be called as a result of calling this operation. This operation shall not return until the callback has returned, and shall result in an error if the callback does. The following figure is a non-\/normative example sequence diagram for deactivate\_\-component.\subsection{Constraints}\label{interfaceRTC_1_1LightweightRTObject_Constraints}
+
+\begin{DoxyItemize}
+\item An execution context can only deactivate its participant components. If the given \doxyref{RTC}{p.}{namespaceRTC} is not participating in the execution context, this operation shall fail with ReturnCode\_\-t::BAD\_\-PARAMETER.
+\end{DoxyItemize}
+
+
+\begin{DoxyItemize}
+\item This operation shall fail with ReturnCode\_\-t::BAD\_\-PARAMETER if the given component is not in its Alive state. 
+\end{DoxyItemize}\index{RTC::ExecutionContextService@{RTC::ExecutionContextService}!get\_\-component\_\-state@{get\_\-component\_\-state}}
+\index{get\_\-component\_\-state@{get\_\-component\_\-state}!RTC::ExecutionContextService@{RTC::ExecutionContextService}}
+\subsubsection[{get\_\-component\_\-state}]{\setlength{\rightskip}{0pt plus 5cm}{\bf LifeCycleState} RTC::ExecutionContext::get\_\-component\_\-state (in {\bf LightweightRTObject} {\em comp})\hspace{0.3cm}{\ttfamily  [inherited]}}\label{interfaceRTC_1_1ExecutionContext_a51a0396327ec0bab96f06a246032fc84}
+
+
+get\_\-component\_\-state 
+
+\subsection{Description}\label{namespaceRTC_Description}
+This operation shall report the LifeCycleState of the given participant \doxyref{RTC}{p.}{namespaceRTC}.\subsection{Constraints}\label{interfaceRTC_1_1LightweightRTObject_Constraints}
+
+\begin{DoxyItemize}
+\item The given \doxyref{RTC}{p.}{namespaceRTC} must be Alive.
+\end{DoxyItemize}
+
+
+\begin{DoxyItemize}
+\item The given \doxyref{RTC}{p.}{namespaceRTC} must be a participant in the target execution context.
+\end{DoxyItemize}
+
+
+\begin{DoxyItemize}
+\item The LifeCycleState returned by this operation shall be one of LifeCycleState::INACTIVE, ACTIVE, or ERROR. 
+\end{DoxyItemize}\index{RTC::ExecutionContextService@{RTC::ExecutionContextService}!get\_\-kind@{get\_\-kind}}
+\index{get\_\-kind@{get\_\-kind}!RTC::ExecutionContextService@{RTC::ExecutionContextService}}
+\subsubsection[{get\_\-kind}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ExecutionKind} RTC::ExecutionContext::get\_\-kind ()\hspace{0.3cm}{\ttfamily  [inherited]}}\label{interfaceRTC_1_1ExecutionContext_aa7175c37b85b78b90ea5468a4f1379b0}
+
+
+get\_\-kind 
+
+\subsection{Description}\label{namespaceRTC_Description}
+This operation shall report the execution kind of the execution context. \index{RTC::ExecutionContextService@{RTC::ExecutionContextService}!get\_\-profile@{get\_\-profile}}
+\index{get\_\-profile@{get\_\-profile}!RTC::ExecutionContextService@{RTC::ExecutionContextService}}
+\subsubsection[{get\_\-profile}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ExecutionContextProfile} RTC::ExecutionContextService::get\_\-profile ()}\label{interfaceRTC_1_1ExecutionContextService_a5cad2c38e1f1b7c61d5f345c9c49a193}
+
+
+get\_\-profile 
+
+\subsection{Description}\label{namespaceRTC_Description}
+This operation provides a profile \char`\"{}descriptor\char`\"{} for the execution context. \index{RTC::ExecutionContextService@{RTC::ExecutionContextService}!get\_\-rate@{get\_\-rate}}
+\index{get\_\-rate@{get\_\-rate}!RTC::ExecutionContextService@{RTC::ExecutionContextService}}
+\subsubsection[{get\_\-rate}]{\setlength{\rightskip}{0pt plus 5cm}double RTC::ExecutionContext::get\_\-rate ()\hspace{0.3cm}{\ttfamily  [inherited]}}\label{interfaceRTC_1_1ExecutionContext_ad9c05f6e738c310f4ad5c686770fa5cc}
+
+
+get\_\-rate 
+
+\subsection{Description}\label{namespaceRTC_Description}
+This operation shall return the rate (in hertz) at which its Active participating RTCs are being invoked.\subsection{Semantics}\label{namespaceRTC_Semantics}
+An implementation is permitted to perform some periodic or quasi-\/periodic processing within an execution context with an ExecutionKind other than PERIODIC. In such a case, the result of this operation is implementation-\/defined. If no periodic processing of any kind is taking place within the context, this operation shall fail as described in Section 5.2.1.\subsection{Constraints}\label{interfaceRTC_1_1LightweightRTObject_Constraints}
+
+\begin{DoxyItemize}
+\item If the context has an ExecutionKind of PERIODIC, this operation shall return a rate greater than zero. 
+\end{DoxyItemize}\index{RTC::ExecutionContextService@{RTC::ExecutionContextService}!is\_\-running@{is\_\-running}}
+\index{is\_\-running@{is\_\-running}!RTC::ExecutionContextService@{RTC::ExecutionContextService}}
+\subsubsection[{is\_\-running}]{\setlength{\rightskip}{0pt plus 5cm}boolean RTC::ExecutionContext::is\_\-running ()\hspace{0.3cm}{\ttfamily  [inherited]}}\label{interfaceRTC_1_1ExecutionContext_a4aa7b4668eccb0d88befaa411cf5283e}
+
+
+is\_\-running 
+
+\subsection{Description}\label{namespaceRTC_Description}
+This operation shall return true if the context is in the Running state.\subsection{Semantics}\label{namespaceRTC_Semantics}
+While the context is Running, all Active RTCs participating in the context shall be executed according to the context¡Çs execution kind. \index{RTC::ExecutionContextService@{RTC::ExecutionContextService}!remove\_\-component@{remove\_\-component}}
+\index{remove\_\-component@{remove\_\-component}!RTC::ExecutionContextService@{RTC::ExecutionContextService}}
+\subsubsection[{remove\_\-component}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ReturnCode\_\-t} RTC::ExecutionContext::remove\_\-component (in {\bf LightweightRTObject} {\em comp})\hspace{0.3cm}{\ttfamily  [inherited]}}\label{interfaceRTC_1_1ExecutionContext_a75d5152e03f4bfcf9a905aa0f9083243}
+
+
+remove\_\-component 
+
+\subsection{Description}\label{namespaceRTC_Description}
+This operation causes a participant \doxyref{RTC}{p.}{namespaceRTC} to stop participating in the execution context.\subsection{Semantics}\label{namespaceRTC_Semantics}
+The removed \doxyref{RTC}{p.}{namespaceRTC} will receive a call to LightweightRTComponent::detach\_\-context (see Section 5.2.2.2.6).\subsection{Constraints}\label{interfaceRTC_1_1LightweightRTObject_Constraints}
+
+\begin{DoxyItemize}
+\item If the given \doxyref{RTC}{p.}{namespaceRTC} is not currently participating in the execution context, this operation shall fail with ReturnCode\_\-t::BAD\_\-PARAMETER.
+\end{DoxyItemize}
+
+
+\begin{DoxyItemize}
+\item An \doxyref{RTC}{p.}{namespaceRTC} must be deactivated before it can be removed from an execution context. If the given \doxyref{RTC}{p.}{namespaceRTC} is participating in the execution context but is still in the Active state, this operation shall fail with ReturnCode\_\-t::PRECONDITION\_\-NOT\_\-MET. 
+\end{DoxyItemize}\index{RTC::ExecutionContextService@{RTC::ExecutionContextService}!reset\_\-component@{reset\_\-component}}
+\index{reset\_\-component@{reset\_\-component}!RTC::ExecutionContextService@{RTC::ExecutionContextService}}
+\subsubsection[{reset\_\-component}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ReturnCode\_\-t} RTC::ExecutionContext::reset\_\-component (in {\bf LightweightRTObject} {\em comp})\hspace{0.3cm}{\ttfamily  [inherited]}}\label{interfaceRTC_1_1ExecutionContext_a27a1ae76eb00c58ba097a96fe358980b}
+
+
+reset\_\-component 
+
+\subsection{Description}\label{namespaceRTC_Description}
+Attempt to recover the \doxyref{RTC}{p.}{namespaceRTC} when it is in Error.\subsection{Semantics}\label{namespaceRTC_Semantics}
+The \doxyref{ComponentAction::on\_\-reset}{p.}{interfaceRTC_1_1ComponentAction_adb0e61bff251337d79c7c7d050d8304e} callback shall be invoked. This operation shall not return until the callback has returned, and shall result in an error if the callback does. If possible, the \doxyref{RTC}{p.}{namespaceRTC} developer should implement that callback such that the \doxyref{RTC}{p.}{namespaceRTC} may be returned to a valid state. $\ast$ If this operation fails, the \doxyref{RTC}{p.}{namespaceRTC} will remain in Error.\subsection{Constraints}\label{interfaceRTC_1_1LightweightRTObject_Constraints}
+
+\begin{DoxyItemize}
+\item An \doxyref{RTC}{p.}{namespaceRTC} may only be reset in an execution context in which it is in error. If the \doxyref{RTC}{p.}{namespaceRTC} is not in Error in the identified context, this operation shall fail with ReturnCode\_\-t::PRECONDITION\_\-NOT\_\-MET. However, that failure shall not cause the \doxyref{RTC}{p.}{namespaceRTC} to enter the Error state.
+\end{DoxyItemize}
+
+
+\begin{DoxyItemize}
+\item An \doxyref{RTC}{p.}{namespaceRTC} may not be reset while in the Created state. Any attempt to invoke this operation while the \doxyref{RTC}{p.}{namespaceRTC} is in that state shall fail with ReturnCode\_\-t::PRECONDITION\_\-NOT\_\-MET. However, that failure shall not cause the \doxyref{RTC}{p.}{namespaceRTC} to enter the Error state. 
+\end{DoxyItemize}\index{RTC::ExecutionContextService@{RTC::ExecutionContextService}!set\_\-rate@{set\_\-rate}}
+\index{set\_\-rate@{set\_\-rate}!RTC::ExecutionContextService@{RTC::ExecutionContextService}}
+\subsubsection[{set\_\-rate}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ReturnCode\_\-t} RTC::ExecutionContext::set\_\-rate (in double {\em rate})\hspace{0.3cm}{\ttfamily  [inherited]}}\label{interfaceRTC_1_1ExecutionContext_ae6bdf760ff071970f9ed9e0a9d6fe459}
+
+
+set\_\-rate 
+
+\subsection{Description}\label{namespaceRTC_Description}
+This operation shall set the rate (in hertz) at which this context¡Çs Active participating RTCs are being called.\subsection{Semantics}\label{namespaceRTC_Semantics}
+If the execution kind of the context is PERIODIC, a rate change shall result in the invocation of on\_\-rate\_\-changed on any RTCs realizing \doxyref{DataFlowComponentAction}{p.}{interfaceRTC_1_1DataFlowComponentAction} that are registered with any RTCs participating in the context. An implementation is permitted to perform some periodic or quasi-\/periodic processing within an execution context with an ExecutionKind other than PERIODIC. If such is the case, and the implementation reports a rate from get\_\-rate, this operation shall set that rate successfully provided that the given rate is valid. If no periodic processing of any kind is taking place within the context, this operation shall fail with ReturnCode\_\-t::UNSUPPORTED.\subsection{Constraints}\label{interfaceRTC_1_1LightweightRTObject_Constraints}
+
+\begin{DoxyItemize}
+\item The given rate must be greater than zero. Otherwise, this operation shall fail with ReturnCode\_\-t::BAD\_\-PARAMETER. 
+\end{DoxyItemize}\index{RTC::ExecutionContextService@{RTC::ExecutionContextService}!start@{start}}
+\index{start@{start}!RTC::ExecutionContextService@{RTC::ExecutionContextService}}
+\subsubsection[{start}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ReturnCode\_\-t} RTC::ExecutionContext::start ()\hspace{0.3cm}{\ttfamily  [inherited]}}\label{interfaceRTC_1_1ExecutionContext_ab015ee47c132e0cf223459d2db7b9f94}
+
+
+start 
+
+\subsection{Description}\label{namespaceRTC_Description}
+Request that the context enter the Running state. Once the state transition occurs, the \doxyref{ComponentAction::on\_\-startup}{p.}{interfaceRTC_1_1ComponentAction_ac305f00c92f4650cf4fc798aac37eef2} operation (see Section 5.2.2.4.3) will be invoked. \subsection{Description}\label{namespaceRTC_Description}
+\subsection{Semantics}\label{namespaceRTC_Semantics}
+An execution context may not be started until the RT components that participate in it have been initialized. An execution context may be started and stopped multiple times.\subsection{Constraints}\label{interfaceRTC_1_1LightweightRTObject_Constraints}
+
+\begin{DoxyItemize}
+\item This operation shall fail with ReturnCode\_\-t::PRECONDITION\_\-NOT\_\-MET if the context is not in the Stopped state.
+\end{DoxyItemize}
+
+
+\begin{DoxyItemize}
+\item This operation shall fail with ReturnCode\_\-t::PRECONDITION\_\-NOT\_\-MET if any of the participating components are not in their Alive state. 
+\end{DoxyItemize}\index{RTC::ExecutionContextService@{RTC::ExecutionContextService}!stop@{stop}}
+\index{stop@{stop}!RTC::ExecutionContextService@{RTC::ExecutionContextService}}
+\subsubsection[{stop}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ReturnCode\_\-t} RTC::ExecutionContext::stop ()\hspace{0.3cm}{\ttfamily  [inherited]}}\label{interfaceRTC_1_1ExecutionContext_afe216bae26d5817459a67e5b7e3134ce}
+
+
+stop 
+
+\subsection{Description}\label{namespaceRTC_Description}
+Request that the context enter the Stopped state. Once the transition occurs, the \doxyref{ComponentAction::on\_\-shutdown}{p.}{interfaceRTC_1_1ComponentAction_accc47711344c811c9bdba0d66a3048f2} operation (see Section 5.2.2.4.4) will be invoked.\subsection{Semantics}\label{namespaceRTC_Semantics}
+An execution context must be stopped before the RT components that participate in it are finalized.
+
+An execution context may be started and stopped multiple times.\subsection{Constraints}\label{interfaceRTC_1_1LightweightRTObject_Constraints}
+
+\begin{DoxyItemize}
+\item This operation shall fail with ReturnCode\_\-t::PRECONDITION\_\-NOT\_\-MET if the context is not in the Running state. 
+\end{DoxyItemize}
+
+The documentation for this interface was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+{\bf RTC.idl}\end{DoxyCompactItemize}

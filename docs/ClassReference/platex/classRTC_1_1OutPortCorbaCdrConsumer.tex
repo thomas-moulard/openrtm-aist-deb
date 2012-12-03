@@ -1,0 +1,171 @@
+\section{クラス RTC::OutPortCorbaCdrConsumer}
+\label{classRTC_1_1OutPortCorbaCdrConsumer}\index{RTC::OutPortCorbaCdrConsumer@{RTC::OutPortCorbaCdrConsumer}}
+
+
+\doxyref{OutPortCorbaCdrConsumer}{p.}{classRTC_1_1OutPortCorbaCdrConsumer} クラス.  
+
+
+
+
+{\ttfamily \#include $<$OutPortCorbaCdrConsumer.h$>$}
+
+RTC::OutPortCorbaCdrConsumerに対する継承グラフ\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.80936cm]{classRTC_1_1OutPortCorbaCdrConsumer}
+\end{center}
+\end{figure}
+\subsection*{Public メソッド}
+\begin{DoxyCompactItemize}
+\item 
+DATAPORTSTATUS\_\-ENUM {\bf OutPortCorbaCdrConsumer} ()
+\item 
+virtual {\bf $\sim$OutPortCorbaCdrConsumer} (void)
+\item 
+virtual void {\bf init} ({\bf coil::Properties} \&prop)
+\begin{DoxyCompactList}\small\item\em 設定初期化 \item\end{DoxyCompactList}\item 
+virtual void {\bf setBuffer} ({\bf CdrBufferBase} $\ast$buffer)
+\begin{DoxyCompactList}\small\item\em バッファをセットする \item\end{DoxyCompactList}\item 
+virtual void {\bf setListener} ({\bf ConnectorInfo} \&info, {\bf ConnectorListeners} $\ast$listeners)
+\begin{DoxyCompactList}\small\item\em リスナを設定する。 \item\end{DoxyCompactList}\item 
+virtual ReturnCode {\bf get} (cdrMemoryStream \&data)
+\begin{DoxyCompactList}\small\item\em データを読み出す \item\end{DoxyCompactList}\item 
+virtual bool {\bf subscribeInterface} (const SDOPackage::NVList \&properties)
+\begin{DoxyCompactList}\small\item\em データ受信通知への登録 \item\end{DoxyCompactList}\item 
+virtual void {\bf unsubscribeInterface} (const SDOPackage::NVList \&properties)
+\begin{DoxyCompactList}\small\item\em データ受信通知からの登録解除 \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{説明}
+\doxyref{OutPortCorbaCdrConsumer}{p.}{classRTC_1_1OutPortCorbaCdrConsumer} クラス. \doxyref{OutPortConsumer}{p.}{classRTC_1_1OutPortConsumer}
+
+データ転送に CORBA の OpenRTM::OutPortCdr インターフェースを利用し た、pull 型データフロー型を実現する \doxyref{OutPort}{p.}{classRTC_1_1OutPort} コンシューマクラス。
+
+\begin{DoxySince}{から}
+0.4.0 
+\end{DoxySince}
+
+
+\subsection{コンストラクタとデストラクタ}
+\index{RTC::OutPortCorbaCdrConsumer@{RTC::OutPortCorbaCdrConsumer}!OutPortCorbaCdrConsumer@{OutPortCorbaCdrConsumer}}
+\index{OutPortCorbaCdrConsumer@{OutPortCorbaCdrConsumer}!RTC::OutPortCorbaCdrConsumer@{RTC::OutPortCorbaCdrConsumer}}
+\subsubsection[{OutPortCorbaCdrConsumer}]{\setlength{\rightskip}{0pt plus 5cm}DATAPORTSTATUS\_\-ENUM RTC::OutPortCorbaCdrConsumer::OutPortCorbaCdrConsumer ()}\label{classRTC_1_1OutPortCorbaCdrConsumer_a0126f5206a8ba0eaba011977a511db30}
+コンストラクタ \index{RTC::OutPortCorbaCdrConsumer@{RTC::OutPortCorbaCdrConsumer}!$\sim$OutPortCorbaCdrConsumer@{$\sim$OutPortCorbaCdrConsumer}}
+\index{$\sim$OutPortCorbaCdrConsumer@{$\sim$OutPortCorbaCdrConsumer}!RTC::OutPortCorbaCdrConsumer@{RTC::OutPortCorbaCdrConsumer}}
+\subsubsection[{$\sim$OutPortCorbaCdrConsumer}]{\setlength{\rightskip}{0pt plus 5cm}virtual RTC::OutPortCorbaCdrConsumer::$\sim$OutPortCorbaCdrConsumer (void)\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classRTC_1_1OutPortCorbaCdrConsumer_a4289608c8e3e4e0de4a1f2b9e9e18f28}
+デストラクタ 
+
+\subsection{関数}
+\index{RTC::OutPortCorbaCdrConsumer@{RTC::OutPortCorbaCdrConsumer}!get@{get}}
+\index{get@{get}!RTC::OutPortCorbaCdrConsumer@{RTC::OutPortCorbaCdrConsumer}}
+\subsubsection[{get}]{\setlength{\rightskip}{0pt plus 5cm}virtual ReturnCode RTC::OutPortCorbaCdrConsumer::get (cdrMemoryStream \& {\em data})\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classRTC_1_1OutPortCorbaCdrConsumer_a72889a36a5359ed449f569a9f9c64762}
+
+
+データを読み出す 
+
+設定されたデータを読み出す。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em data}]読み出したデータを受け取るオブジェクト\end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+データ読み出し処理結果(読み出し成功:true、読み出し失敗:false) 
+\end{DoxyReturn}
+
+
+{\bf RTC::OutPortConsumer} \doxyref{}{p.}{classRTC_1_1OutPortConsumer_acd8302e6ded9e796afb047aff0bc1c0e}を実装しています。
+
+\index{RTC::OutPortCorbaCdrConsumer@{RTC::OutPortCorbaCdrConsumer}!init@{init}}
+\index{init@{init}!RTC::OutPortCorbaCdrConsumer@{RTC::OutPortCorbaCdrConsumer}}
+\subsubsection[{init}]{\setlength{\rightskip}{0pt plus 5cm}virtual void RTC::OutPortCorbaCdrConsumer::init ({\bf coil::Properties} \& {\em prop})\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classRTC_1_1OutPortCorbaCdrConsumer_a2370f34a0600da08bdb57074dc9af5e7}
+
+
+設定初期化 
+
+OutPortConsumerの各種設定を行う。実装クラスでは、与えられた Propertiesから必要な情報を取得して各種設定を行う。この \doxyref{init()}{p.}{classRTC_1_1OutPortCorbaCdrConsumer_a2370f34a0600da08bdb57074dc9af5e7} 関 数は、OutPortProvider生成直後および、接続時にそれぞれ呼ばれる可 能性がある。したがって、この関数は複数回呼ばれることを想定して記 述されるべきである。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em prop}]設定情報 \end{DoxyParams}
+
+
+{\bf RTC::OutPortConsumer} \doxyref{}{p.}{classRTC_1_1OutPortConsumer_ab746873de12fd0fb1d8bf37e79192e54}を実装しています。
+
+\index{RTC::OutPortCorbaCdrConsumer@{RTC::OutPortCorbaCdrConsumer}!setBuffer@{setBuffer}}
+\index{setBuffer@{setBuffer}!RTC::OutPortCorbaCdrConsumer@{RTC::OutPortCorbaCdrConsumer}}
+\subsubsection[{setBuffer}]{\setlength{\rightskip}{0pt plus 5cm}virtual void RTC::OutPortCorbaCdrConsumer::setBuffer ({\bf CdrBufferBase} $\ast$ {\em buffer})\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classRTC_1_1OutPortCorbaCdrConsumer_a0ce5797c8fbdeded604b75cbfc7022a1}
+
+
+バッファをセットする 
+
+OutPortConsumerがデータを取り出すバッファをセットする。 すでにセットされたバッファがある場合、以前のバッファへの ポインタに対して上書きされる。 OutPortProviderはバッファの所有権を仮定していないので、 バッファの削除はユーザの責任で行わなければならない。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em buffer}]OutPortProviderがデータを取り出すバッファへのポインタ \end{DoxyParams}
+
+
+{\bf RTC::OutPortConsumer} \doxyref{}{p.}{classRTC_1_1OutPortConsumer_a78e11b4a34b7de7a11efd06809a38c1a}を実装しています。
+
+\index{RTC::OutPortCorbaCdrConsumer@{RTC::OutPortCorbaCdrConsumer}!setListener@{setListener}}
+\index{setListener@{setListener}!RTC::OutPortCorbaCdrConsumer@{RTC::OutPortCorbaCdrConsumer}}
+\subsubsection[{setListener}]{\setlength{\rightskip}{0pt plus 5cm}virtual void RTC::OutPortCorbaCdrConsumer::setListener ({\bf ConnectorInfo} \& {\em info}, \/  {\bf ConnectorListeners} $\ast$ {\em listeners})\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classRTC_1_1OutPortCorbaCdrConsumer_a2e9d1d58f46f1c8c286fbd244251e1c8}
+
+
+リスナを設定する。 
+
+\doxyref{InPort}{p.}{classRTC_1_1InPort} はデータ送信処理における各種イベントに対して特定のリスナ オブジェクトをコールするコールバック機構を提供する。詳細は \doxyref{ConnectorListener.h}{p.}{ConnectorListener_8h} の \doxyref{ConnectorDataListener}{p.}{classRTC_1_1ConnectorDataListener}, \doxyref{ConnectorListener}{p.}{classRTC_1_1ConnectorListener} 等を参照のこと。OutPortCorbaCdrProvider では、以下のコールバック が提供される。
+
+
+\begin{DoxyItemize}
+\item ON\_\-BUFFER\_\-WRITE
+\item ON\_\-BUFFER\_\-FULL
+\item ON\_\-RECEIVED
+\item ON\_\-RECEIVER\_\-FULL
+\item ON\_\-SENDER\_\-EMPTY
+\item ON\_\-SENDER\_\-TIMEOUT
+\item ON\_\-SENDER\_\-ERROR
+\end{DoxyItemize}
+
+
+\begin{DoxyParams}{引数}
+\item[{\em info}]接続情報 \item[{\em listeners}]リスナオブジェクト \end{DoxyParams}
+
+
+{\bf RTC::OutPortConsumer} \doxyref{}{p.}{classRTC_1_1OutPortConsumer_a19b78db46c31332782bf122f5e12e09b}を実装しています。
+
+\index{RTC::OutPortCorbaCdrConsumer@{RTC::OutPortCorbaCdrConsumer}!subscribeInterface@{subscribeInterface}}
+\index{subscribeInterface@{subscribeInterface}!RTC::OutPortCorbaCdrConsumer@{RTC::OutPortCorbaCdrConsumer}}
+\subsubsection[{subscribeInterface}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool RTC::OutPortCorbaCdrConsumer::subscribeInterface (const SDOPackage::NVList \& {\em properties})\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classRTC_1_1OutPortCorbaCdrConsumer_ac0173f06be09ffc9059bda6295d47d4b}
+
+
+データ受信通知への登録 
+
+指定されたプロパティに基づいて、データ受信通知の受け取りに登録する。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em properties}]登録情報\end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+登録処理結果(登録成功:true、登録失敗:false) 
+\end{DoxyReturn}
+
+
+{\bf RTC::OutPortConsumer} \doxyref{}{p.}{classRTC_1_1OutPortConsumer_a84bc467a9540b1eef126feec41551328}を実装しています。
+
+\index{RTC::OutPortCorbaCdrConsumer@{RTC::OutPortCorbaCdrConsumer}!unsubscribeInterface@{unsubscribeInterface}}
+\index{unsubscribeInterface@{unsubscribeInterface}!RTC::OutPortCorbaCdrConsumer@{RTC::OutPortCorbaCdrConsumer}}
+\subsubsection[{unsubscribeInterface}]{\setlength{\rightskip}{0pt plus 5cm}virtual void RTC::OutPortCorbaCdrConsumer::unsubscribeInterface (const SDOPackage::NVList \& {\em properties})\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classRTC_1_1OutPortCorbaCdrConsumer_a2191f5b9443c7941a197007b95964d0e}
+
+
+データ受信通知からの登録解除 
+
+データ受信通知の受け取りから登録を解除する。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em properties}]登録解除情報 \end{DoxyParams}
+
+
+{\bf RTC::OutPortConsumer} \doxyref{}{p.}{classRTC_1_1OutPortConsumer_a81f847f4cc94889811ad5638764c8a24}を実装しています。
+

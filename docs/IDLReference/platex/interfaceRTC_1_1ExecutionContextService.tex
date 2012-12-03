@@ -1,0 +1,88 @@
+\section{インタフェース RTC::ExecutionContextService}
+\label{interfaceRTC_1_1ExecutionContextService}\index{RTC::ExecutionContextService@{RTC::ExecutionContextService}}
+
+
+{\ttfamily import \char`\"{}RTC.idl\char`\"{};}
+
+RTC::ExecutionContextServiceに対する継承グラフ\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3cm]{interfaceRTC_1_1ExecutionContextService}
+\end{center}
+\end{figure}
+\subsection*{Public メソッド}
+\begin{DoxyCompactItemize}
+\item 
+{\bf ExecutionContextProfile} {\bf get\_\-profile} ()
+\item 
+boolean {\bf is\_\-running} ()
+\item 
+{\bf ReturnCode\_\-t} {\bf start} ()
+\item 
+{\bf ReturnCode\_\-t} {\bf stop} ()
+\item 
+double {\bf get\_\-rate} ()
+\item 
+{\bf ReturnCode\_\-t} {\bf set\_\-rate} (in double rate)
+\item 
+{\bf ReturnCode\_\-t} {\bf add\_\-component} (in {\bf LightweightRTObject} comp)
+\item 
+{\bf ReturnCode\_\-t} {\bf remove\_\-component} (in {\bf LightweightRTObject} comp)
+\item 
+{\bf ReturnCode\_\-t} {\bf activate\_\-component} (in {\bf LightweightRTObject} comp)
+\item 
+{\bf ReturnCode\_\-t} {\bf deactivate\_\-component} (in {\bf LightweightRTObject} comp)
+\item 
+{\bf ReturnCode\_\-t} {\bf reset\_\-component} (in {\bf LightweightRTObject} comp)
+\item 
+{\bf LifeCycleState} {\bf get\_\-component\_\-state} (in {\bf LightweightRTObject} comp)
+\item 
+{\bf ExecutionKind} {\bf get\_\-kind} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{関数}
+\index{RTC::ExecutionContextService@{RTC::ExecutionContextService}!activate\_\-component@{activate\_\-component}}
+\index{activate\_\-component@{activate\_\-component}!RTC::ExecutionContextService@{RTC::ExecutionContextService}}
+\subsubsection[{activate\_\-component}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ReturnCode\_\-t} RTC::ExecutionContext::activate\_\-component (in {\bf LightweightRTObject} {\em comp})\hspace{0.3cm}{\ttfamily  [inherited]}}\label{interfaceRTC_1_1ExecutionContext_af4a8aeab4a5e71e731b89556ef3e33e1}
+\index{RTC::ExecutionContextService@{RTC::ExecutionContextService}!add\_\-component@{add\_\-component}}
+\index{add\_\-component@{add\_\-component}!RTC::ExecutionContextService@{RTC::ExecutionContextService}}
+\subsubsection[{add\_\-component}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ReturnCode\_\-t} RTC::ExecutionContext::add\_\-component (in {\bf LightweightRTObject} {\em comp})\hspace{0.3cm}{\ttfamily  [inherited]}}\label{interfaceRTC_1_1ExecutionContext_a7ac1a5b9820e571153db730c9369b600}
+\index{RTC::ExecutionContextService@{RTC::ExecutionContextService}!deactivate\_\-component@{deactivate\_\-component}}
+\index{deactivate\_\-component@{deactivate\_\-component}!RTC::ExecutionContextService@{RTC::ExecutionContextService}}
+\subsubsection[{deactivate\_\-component}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ReturnCode\_\-t} RTC::ExecutionContext::deactivate\_\-component (in {\bf LightweightRTObject} {\em comp})\hspace{0.3cm}{\ttfamily  [inherited]}}\label{interfaceRTC_1_1ExecutionContext_a82a23124035a957f2191b520a011e870}
+\index{RTC::ExecutionContextService@{RTC::ExecutionContextService}!get\_\-component\_\-state@{get\_\-component\_\-state}}
+\index{get\_\-component\_\-state@{get\_\-component\_\-state}!RTC::ExecutionContextService@{RTC::ExecutionContextService}}
+\subsubsection[{get\_\-component\_\-state}]{\setlength{\rightskip}{0pt plus 5cm}{\bf LifeCycleState} RTC::ExecutionContext::get\_\-component\_\-state (in {\bf LightweightRTObject} {\em comp})\hspace{0.3cm}{\ttfamily  [inherited]}}\label{interfaceRTC_1_1ExecutionContext_a51a0396327ec0bab96f06a246032fc84}
+\index{RTC::ExecutionContextService@{RTC::ExecutionContextService}!get\_\-kind@{get\_\-kind}}
+\index{get\_\-kind@{get\_\-kind}!RTC::ExecutionContextService@{RTC::ExecutionContextService}}
+\subsubsection[{get\_\-kind}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ExecutionKind} RTC::ExecutionContext::get\_\-kind ()\hspace{0.3cm}{\ttfamily  [inherited]}}\label{interfaceRTC_1_1ExecutionContext_aa7175c37b85b78b90ea5468a4f1379b0}
+\index{RTC::ExecutionContextService@{RTC::ExecutionContextService}!get\_\-profile@{get\_\-profile}}
+\index{get\_\-profile@{get\_\-profile}!RTC::ExecutionContextService@{RTC::ExecutionContextService}}
+\subsubsection[{get\_\-profile}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ExecutionContextProfile} RTC::ExecutionContextService::get\_\-profile ()}\label{interfaceRTC_1_1ExecutionContextService_a5cad2c38e1f1b7c61d5f345c9c49a193}
+\index{RTC::ExecutionContextService@{RTC::ExecutionContextService}!get\_\-rate@{get\_\-rate}}
+\index{get\_\-rate@{get\_\-rate}!RTC::ExecutionContextService@{RTC::ExecutionContextService}}
+\subsubsection[{get\_\-rate}]{\setlength{\rightskip}{0pt plus 5cm}double RTC::ExecutionContext::get\_\-rate ()\hspace{0.3cm}{\ttfamily  [inherited]}}\label{interfaceRTC_1_1ExecutionContext_ad9c05f6e738c310f4ad5c686770fa5cc}
+\index{RTC::ExecutionContextService@{RTC::ExecutionContextService}!is\_\-running@{is\_\-running}}
+\index{is\_\-running@{is\_\-running}!RTC::ExecutionContextService@{RTC::ExecutionContextService}}
+\subsubsection[{is\_\-running}]{\setlength{\rightskip}{0pt plus 5cm}boolean RTC::ExecutionContext::is\_\-running ()\hspace{0.3cm}{\ttfamily  [inherited]}}\label{interfaceRTC_1_1ExecutionContext_a4aa7b4668eccb0d88befaa411cf5283e}
+\index{RTC::ExecutionContextService@{RTC::ExecutionContextService}!remove\_\-component@{remove\_\-component}}
+\index{remove\_\-component@{remove\_\-component}!RTC::ExecutionContextService@{RTC::ExecutionContextService}}
+\subsubsection[{remove\_\-component}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ReturnCode\_\-t} RTC::ExecutionContext::remove\_\-component (in {\bf LightweightRTObject} {\em comp})\hspace{0.3cm}{\ttfamily  [inherited]}}\label{interfaceRTC_1_1ExecutionContext_a75d5152e03f4bfcf9a905aa0f9083243}
+\index{RTC::ExecutionContextService@{RTC::ExecutionContextService}!reset\_\-component@{reset\_\-component}}
+\index{reset\_\-component@{reset\_\-component}!RTC::ExecutionContextService@{RTC::ExecutionContextService}}
+\subsubsection[{reset\_\-component}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ReturnCode\_\-t} RTC::ExecutionContext::reset\_\-component (in {\bf LightweightRTObject} {\em comp})\hspace{0.3cm}{\ttfamily  [inherited]}}\label{interfaceRTC_1_1ExecutionContext_a27a1ae76eb00c58ba097a96fe358980b}
+\index{RTC::ExecutionContextService@{RTC::ExecutionContextService}!set\_\-rate@{set\_\-rate}}
+\index{set\_\-rate@{set\_\-rate}!RTC::ExecutionContextService@{RTC::ExecutionContextService}}
+\subsubsection[{set\_\-rate}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ReturnCode\_\-t} RTC::ExecutionContext::set\_\-rate (in double {\em rate})\hspace{0.3cm}{\ttfamily  [inherited]}}\label{interfaceRTC_1_1ExecutionContext_ae6bdf760ff071970f9ed9e0a9d6fe459}
+\index{RTC::ExecutionContextService@{RTC::ExecutionContextService}!start@{start}}
+\index{start@{start}!RTC::ExecutionContextService@{RTC::ExecutionContextService}}
+\subsubsection[{start}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ReturnCode\_\-t} RTC::ExecutionContext::start ()\hspace{0.3cm}{\ttfamily  [inherited]}}\label{interfaceRTC_1_1ExecutionContext_ab015ee47c132e0cf223459d2db7b9f94}
+\index{RTC::ExecutionContextService@{RTC::ExecutionContextService}!stop@{stop}}
+\index{stop@{stop}!RTC::ExecutionContextService@{RTC::ExecutionContextService}}
+\subsubsection[{stop}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ReturnCode\_\-t} RTC::ExecutionContext::stop ()\hspace{0.3cm}{\ttfamily  [inherited]}}\label{interfaceRTC_1_1ExecutionContext_afe216bae26d5817459a67e5b7e3134ce}
+
+
+このインタフェースの説明は次のファイルから生成されました:\begin{DoxyCompactItemize}
+\item 
+{\bf RTC.idl}\end{DoxyCompactItemize}

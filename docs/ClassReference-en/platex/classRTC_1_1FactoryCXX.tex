@@ -1,0 +1,133 @@
+\section{RTC::FactoryCXX Class Reference}
+\label{classRTC_1_1FactoryCXX}\index{RTC::FactoryCXX@{RTC::FactoryCXX}}
+
+
+\doxyref{FactoryCXX}{p.}{classRTC_1_1FactoryCXX} class.  
+
+
+
+
+{\ttfamily \#include $<$Factory.h$>$}
+
+Inheritance diagram for RTC::FactoryCXX:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2cm]{classRTC_1_1FactoryCXX}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf FactoryCXX} (const {\bf coil::Properties} \&profile, {\bf RtcNewFunc} new\_\-func, {\bf RtcDeleteFunc} delete\_\-func, {\bf NumberingPolicy} $\ast$policy=new {\bf DefaultNumberingPolicy}())
+\begin{DoxyCompactList}\small\item\em Constructor. \item\end{DoxyCompactList}\item 
+virtual {\bf $\sim$FactoryCXX} ()
+\item 
+virtual {\bf RTObject\_\-impl} $\ast$ {\bf create} ({\bf Manager} $\ast$mgr)
+\begin{DoxyCompactList}\small\item\em Create RT-\/Components. \item\end{DoxyCompactList}\item 
+virtual void {\bf destroy} ({\bf RTObject\_\-impl} $\ast$comp)
+\begin{DoxyCompactList}\small\item\em Destroy RT-\/Components. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+{\bf RtcNewFunc} {\bf m\_\-New}
+\begin{DoxyCompactList}\small\item\em The pointer to component object create function. \item\end{DoxyCompactList}\item 
+{\bf RtcDeleteFunc} {\bf m\_\-Delete}
+\begin{DoxyCompactList}\small\item\em The pointer to component object destroy function. \item\end{DoxyCompactList}\item 
+{\bf NumberingPolicy} $\ast$ {\bf m\_\-policy}
+\begin{DoxyCompactList}\small\item\em The naming policy on creating the components. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\doxyref{FactoryCXX}{p.}{classRTC_1_1FactoryCXX} class. RT-\/Component factory class for C++.
+
+\begin{DoxySince}{Since}
+0.2.0 
+\end{DoxySince}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{RTC::FactoryCXX@{RTC::FactoryCXX}!FactoryCXX@{FactoryCXX}}
+\index{FactoryCXX@{FactoryCXX}!RTC::FactoryCXX@{RTC::FactoryCXX}}
+\subsubsection[{FactoryCXX}]{\setlength{\rightskip}{0pt plus 5cm}RTC::FactoryCXX::FactoryCXX (const {\bf coil::Properties} \& {\em profile}, \/  {\bf RtcNewFunc} {\em new\_\-func}, \/  {\bf RtcDeleteFunc} {\em delete\_\-func}, \/  {\bf NumberingPolicy} $\ast$ {\em policy} = {\ttfamily new~{\bf DefaultNumberingPolicy}()})}\label{classRTC_1_1FactoryCXX_a899ed96d9e5525f8dbd21e6306dd2311}
+
+
+Constructor. 
+
+Constructor. Create component factory class with three arguments: component profile, function pointer to object create function and object destroy function.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em profile}]Component profile \item[{\em new\_\-func}]Pointer to component create function \item[{\em delete\_\-func}]Pointer to component destroy function \item[{\em policy}]The naming policy at component creation (The default value:\doxyref{DefaultNumberingPolicy}{p.}{classDefaultNumberingPolicy}) \end{DoxyParams}
+\index{RTC::FactoryCXX@{RTC::FactoryCXX}!$\sim$FactoryCXX@{$\sim$FactoryCXX}}
+\index{$\sim$FactoryCXX@{$\sim$FactoryCXX}!RTC::FactoryCXX@{RTC::FactoryCXX}}
+\subsubsection[{$\sim$FactoryCXX}]{\setlength{\rightskip}{0pt plus 5cm}virtual RTC::FactoryCXX::$\sim$FactoryCXX ()\hspace{0.3cm}{\ttfamily  [inline, virtual]}}\label{classRTC_1_1FactoryCXX_aac5ae8d77d40e9be05e5b1706e4a0137}
+
+
+References m\_\-policy.
+
+
+
+\subsection{Member Function Documentation}
+\index{RTC::FactoryCXX@{RTC::FactoryCXX}!create@{create}}
+\index{create@{create}!RTC::FactoryCXX@{RTC::FactoryCXX}}
+\subsubsection[{create}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf RTObject\_\-impl}$\ast$ RTC::FactoryCXX::create ({\bf Manager} $\ast$ {\em mgr})\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classRTC_1_1FactoryCXX_adf709b76b21aefe81338d9b885dcdcbe}
+
+
+Create RT-\/Components. 
+
+Create RT-\/Component's instances
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em mgr}]\doxyref{Manager}{p.}{classRTC_1_1Manager} object\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Created RT-\/Components 
+\end{DoxyReturn}
+
+
+Implements {\bf RTC::FactoryBase} \doxyref{}{p.}{classRTC_1_1FactoryBase_a08c22a5849ae192e442ce11754fb0be7}.
+
+\index{RTC::FactoryCXX@{RTC::FactoryCXX}!destroy@{destroy}}
+\index{destroy@{destroy}!RTC::FactoryCXX@{RTC::FactoryCXX}}
+\subsubsection[{destroy}]{\setlength{\rightskip}{0pt plus 5cm}virtual void RTC::FactoryCXX::destroy ({\bf RTObject\_\-impl} $\ast$ {\em comp})\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classRTC_1_1FactoryCXX_a627c4dd3b5686d4df13a39c2a481c8e4}
+
+
+Destroy RT-\/Components. 
+
+Destroy RT-\/Component's instances
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em comp}]The target RT-\/Component for destruction \end{DoxyParams}
+
+
+Implements {\bf RTC::FactoryBase} \doxyref{}{p.}{classRTC_1_1FactoryBase_aa7cb36bdcc0c8debba468b064ce03e7e}.
+
+
+
+\subsection{Member Data Documentation}
+\index{RTC::FactoryCXX@{RTC::FactoryCXX}!m\_\-Delete@{m\_\-Delete}}
+\index{m\_\-Delete@{m\_\-Delete}!RTC::FactoryCXX@{RTC::FactoryCXX}}
+\subsubsection[{m\_\-Delete}]{\setlength{\rightskip}{0pt plus 5cm}{\bf RtcDeleteFunc} {\bf RTC::FactoryCXX::m\_\-Delete}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC_1_1FactoryCXX_abb2914e846bc84a822189bdd290ddbab}
+
+
+The pointer to component object destroy function. 
+
+\index{RTC::FactoryCXX@{RTC::FactoryCXX}!m\_\-New@{m\_\-New}}
+\index{m\_\-New@{m\_\-New}!RTC::FactoryCXX@{RTC::FactoryCXX}}
+\subsubsection[{m\_\-New}]{\setlength{\rightskip}{0pt plus 5cm}{\bf RtcNewFunc} {\bf RTC::FactoryCXX::m\_\-New}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC_1_1FactoryCXX_a2f437b41029d2a66893b3d49db0a0808}
+
+
+The pointer to component object create function. 
+
+\index{RTC::FactoryCXX@{RTC::FactoryCXX}!m\_\-policy@{m\_\-policy}}
+\index{m\_\-policy@{m\_\-policy}!RTC::FactoryCXX@{RTC::FactoryCXX}}
+\subsubsection[{m\_\-policy}]{\setlength{\rightskip}{0pt plus 5cm}{\bf NumberingPolicy}$\ast$ {\bf RTC::FactoryCXX::m\_\-policy}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC_1_1FactoryCXX_a5114c456980db9cd6645353628fb20bd}
+
+
+The naming policy on creating the components. 
+
+
+
+Referenced by $\sim$FactoryCXX().
+

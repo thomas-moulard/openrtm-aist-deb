@@ -1,0 +1,65 @@
+\section{Logger.h}
+\label{Logger_8h}\index{Logger.h@{Logger.h}}
+
+
+log\_\-streambuf and log\_\-stream class  
+
+
+{\ttfamily \#include $<$limits.h$>$}\par
+{\ttfamily \#include $<$iostream$>$}\par
+{\ttfamily \#include $<$fstream$>$}\par
+{\ttfamily \#include $<$vector$>$}\par
+{\ttfamily \#include $<$string$>$}\par
+{\ttfamily \#include $<$coil/Mutex.h$>$}\par
+{\ttfamily \#include $<$coil/Guard.h$>$}\par
+\subsection*{構成}
+\begin{DoxyCompactItemize}
+\item 
+class {\bf coil::log\_\-streambuf$<$ \_\-CharT, \_\-Traits $>$}
+\begin{DoxyCompactList}\small\item\em \doxyref{log\_\-streambuf}{p.}{classcoil_1_1log__streambuf} テンプレートクラス \item\end{DoxyCompactList}\item 
+struct {\bf coil::log\_\-streambuf$<$ \_\-CharT, \_\-Traits $>$::Stream}
+\begin{DoxyCompactList}\small\item\em ストリーム管理用構造体 \item\end{DoxyCompactList}\item 
+class {\bf coil::log\_\-stream$<$ \_\-CharT, \_\-Traits $>$}
+\begin{DoxyCompactList}\small\item\em \doxyref{log\_\-stream}{p.}{classcoil_1_1log__stream} テンプレートクラス \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{ネームスペース}
+\begin{DoxyCompactItemize}
+\item 
+namespace {\bf coil}
+
+
+\begin{DoxyCompactList}\small\item\em Common Object Interface Layer. \item\end{DoxyCompactList}
+
+\end{DoxyCompactItemize}
+\subsection*{マクロ定義}
+\begin{DoxyCompactItemize}
+\item 
+\#define {\bf BUFFER\_\-LEN}~LINE\_\-MAX
+\end{DoxyCompactItemize}
+\subsection*{型定義}
+\begin{DoxyCompactItemize}
+\item 
+typedef log\_\-streambuf$<$ char $>$ {\bf coil::LogStreamBuffer}
+\item 
+typedef log\_\-stream$<$ char $>$ {\bf coil::LogStream}
+\end{DoxyCompactItemize}
+
+
+\subsection{説明}
+log\_\-streambuf and log\_\-stream class \begin{DoxyDate}{日付}
+\$Date\$ 
+\end{DoxyDate}
+\begin{DoxyAuthor}{作者}
+Noriaki Ando $<${\tt n-\/ando@aist.go.jp}$>$
+\end{DoxyAuthor}
+Copyright (C) 2009 Noriaki Ando Task-\/intelligence Research Group, Intelligent Systems Research Institute, National Institute of Advanced Industrial Science and Technology (AIST), Japan All rights reserved.
+
+\$Id\$ 
+
+\subsection{マクロ定義}
+\index{Logger.h@{Logger.h}!BUFFER\_\-LEN@{BUFFER\_\-LEN}}
+\index{BUFFER\_\-LEN@{BUFFER\_\-LEN}!Logger.h@{Logger.h}}
+\subsubsection[{BUFFER\_\-LEN}]{\setlength{\rightskip}{0pt plus 5cm}\#define BUFFER\_\-LEN~LINE\_\-MAX}\label{Logger_8h_a46130dc86f2322714bba26960b64e7bb}
+
+
+参照元 coil::log\_\-streambuf$<$ \_\-CharT, \_\-Traits $>$::log\_\-streambuf().
+

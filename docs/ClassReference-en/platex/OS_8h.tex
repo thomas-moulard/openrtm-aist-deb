@@ -1,0 +1,50 @@
+\section{OS.h File Reference}
+\label{OS_8h}\index{OS.h@{OS.h}}
+{\ttfamily \#include $<$string$>$}\par
+{\ttfamily \#include $<$sys/utsname.h$>$}\par
+{\ttfamily \#include $<$sys/types.h$>$}\par
+{\ttfamily \#include $<$unistd.h$>$}\par
+{\ttfamily \#include $<$stdlib.h$>$}\par
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class {\bf coil::GetOpt}
+\begin{DoxyCompactList}\small\item\em \doxyref{GetOpt}{p.}{classcoil_1_1GetOpt} class. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace {\bf coil}
+
+
+\begin{DoxyCompactList}\small\item\em Common Object Interface Layer. \item\end{DoxyCompactList}
+
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef ::utsname {\bf coil::utsname}
+\begin{DoxyCompactList}\small\item\em Get System information. \item\end{DoxyCompactList}\item 
+typedef ::pid\_\-t {\bf coil::pid\_\-t}
+\begin{DoxyCompactList}\small\item\em Get process ID of the caller process. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int {\bf coil::uname} (utsname $\ast$name)
+\item 
+pid\_\-t {\bf coil::getpid} ()
+\item 
+pid\_\-t {\bf coil::getppid} ()
+\begin{DoxyCompactList}\small\item\em Get process ID of the parent process. \item\end{DoxyCompactList}\item 
+char $\ast$ {\bf coil::getenv} (const char $\ast$name)
+\begin{DoxyCompactList}\small\item\em Get environment variable. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+char $\ast$ {\bf optarg}
+\end{DoxyCompactItemize}
+
+
+\subsection{Variable Documentation}
+\index{OS.h@{OS.h}!optarg@{optarg}}
+\index{optarg@{optarg}!OS.h@{OS.h}}
+\subsubsection[{optarg}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ {\bf optarg}}\label{OS_8h_adb50a0eab9fed92fc3bfc7dfa4f2c410}

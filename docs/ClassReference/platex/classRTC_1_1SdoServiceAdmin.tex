@@ -1,0 +1,148 @@
+\section{クラス RTC::SdoServiceAdmin}
+\label{classRTC_1_1SdoServiceAdmin}\index{RTC::SdoServiceAdmin@{RTC::SdoServiceAdmin}}
+
+
+{\ttfamily \#include $<$SdoServiceAdmin.h$>$}
+
+\subsection*{Public メソッド}
+\begin{DoxyCompactItemize}
+\item 
+{\bf SdoServiceAdmin} (::{\bf RTC::RTObject\_\-impl} \&rtobj)
+\begin{DoxyCompactList}\small\item\em コンストラクタ \item\end{DoxyCompactList}\item 
+virtual {\bf $\sim$SdoServiceAdmin} ()
+\begin{DoxyCompactList}\small\item\em 仮想デストラクタ \item\end{DoxyCompactList}\item 
+SDOPackage::ServiceProfileList $\ast$ {\bf getServiceProviderProfiles} ()
+\begin{DoxyCompactList}\small\item\em \doxyref{SDO}{p.}{classSDO} Service Provider の ServiceProfileList を取得する. \item\end{DoxyCompactList}\item 
+SDOPackage::ServiceProfile $\ast$ {\bf getServiceProviderProfile} (const char $\ast$id)
+\begin{DoxyCompactList}\small\item\em \doxyref{SDO}{p.}{classSDO} Service Provider の ServiceProfile を取得する. \item\end{DoxyCompactList}\item 
+SDOPackage::SDOService\_\-ptr {\bf getServiceProvider} (const char $\ast$id)
+\begin{DoxyCompactList}\small\item\em \doxyref{SDO}{p.}{classSDO} Service Provider の Service を取得する. \item\end{DoxyCompactList}\item 
+bool {\bf addSdoServiceProvider} (const SDOPackage::ServiceProfile \&prof, {\bf SdoServiceProviderBase} $\ast$provider)
+\begin{DoxyCompactList}\small\item\em \doxyref{SDO}{p.}{classSDO} service provider をセットする. \item\end{DoxyCompactList}\item 
+bool {\bf removeSdoServiceProvider} (const char $\ast$id)
+\begin{DoxyCompactList}\small\item\em \doxyref{SDO}{p.}{classSDO} service provider を削除する. \item\end{DoxyCompactList}\item 
+bool {\bf addSdoServiceConsumer} (const SDOPackage::ServiceProfile \&sProfile)
+\begin{DoxyCompactList}\small\item\em Service Consumer を追加する. \item\end{DoxyCompactList}\item 
+bool {\bf removeSdoServiceConsumer} (const char $\ast$id)
+\begin{DoxyCompactList}\small\item\em Service Consumer を削除する. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected メソッド}
+\begin{DoxyCompactItemize}
+\item 
+bool {\bf isEnabledConsumerType} (const SDOPackage::ServiceProfile \&sProfile)
+\begin{DoxyCompactList}\small\item\em 許可されたサービス型かどうか調べる \item\end{DoxyCompactList}\item 
+bool {\bf isExistingConsumerType} (const SDOPackage::ServiceProfile \&sProfile)
+\begin{DoxyCompactList}\small\item\em 存在するサービス型かどうか調べる \item\end{DoxyCompactList}\item 
+const std::string {\bf getUUID} () const 
+\item 
+std::string {\bf ifrToKey} (std::string \&ifr)
+\end{DoxyCompactItemize}
+
+
+\subsection{コンストラクタとデストラクタ}
+\index{RTC::SdoServiceAdmin@{RTC::SdoServiceAdmin}!SdoServiceAdmin@{SdoServiceAdmin}}
+\index{SdoServiceAdmin@{SdoServiceAdmin}!RTC::SdoServiceAdmin@{RTC::SdoServiceAdmin}}
+\subsubsection[{SdoServiceAdmin}]{\setlength{\rightskip}{0pt plus 5cm}RTC::SdoServiceAdmin::SdoServiceAdmin (::{\bf RTC::RTObject\_\-impl} \& {\em rtobj})}\label{classRTC_1_1SdoServiceAdmin_a45e28d8596d1bd59edf3eea77fedeb47}
+
+
+コンストラクタ 
+
+コンストラクタ
+
+
+\begin{DoxyParams}{引数}
+\item[{\em }]\end{DoxyParams}
+\index{RTC::SdoServiceAdmin@{RTC::SdoServiceAdmin}!$\sim$SdoServiceAdmin@{$\sim$SdoServiceAdmin}}
+\index{$\sim$SdoServiceAdmin@{$\sim$SdoServiceAdmin}!RTC::SdoServiceAdmin@{RTC::SdoServiceAdmin}}
+\subsubsection[{$\sim$SdoServiceAdmin}]{\setlength{\rightskip}{0pt plus 5cm}virtual RTC::SdoServiceAdmin::$\sim$SdoServiceAdmin ()\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classRTC_1_1SdoServiceAdmin_ab700853834a24a583c59916406bb3ede}
+
+
+仮想デストラクタ 
+
+仮想デストラクタ。 
+
+\subsection{関数}
+\index{RTC::SdoServiceAdmin@{RTC::SdoServiceAdmin}!addSdoServiceConsumer@{addSdoServiceConsumer}}
+\index{addSdoServiceConsumer@{addSdoServiceConsumer}!RTC::SdoServiceAdmin@{RTC::SdoServiceAdmin}}
+\subsubsection[{addSdoServiceConsumer}]{\setlength{\rightskip}{0pt plus 5cm}bool RTC::SdoServiceAdmin::addSdoServiceConsumer (const SDOPackage::ServiceProfile \& {\em sProfile})}\label{classRTC_1_1SdoServiceAdmin_a4a792474027993453ae58af3e93a2f88}
+
+
+Service Consumer を追加する. 
+
+\index{RTC::SdoServiceAdmin@{RTC::SdoServiceAdmin}!addSdoServiceProvider@{addSdoServiceProvider}}
+\index{addSdoServiceProvider@{addSdoServiceProvider}!RTC::SdoServiceAdmin@{RTC::SdoServiceAdmin}}
+\subsubsection[{addSdoServiceProvider}]{\setlength{\rightskip}{0pt plus 5cm}bool RTC::SdoServiceAdmin::addSdoServiceProvider (const SDOPackage::ServiceProfile \& {\em prof}, \/  {\bf SdoServiceProviderBase} $\ast$ {\em provider})}\label{classRTC_1_1SdoServiceAdmin_af804e5e4781b50baae1b3de60f3d6496}
+
+
+\doxyref{SDO}{p.}{classSDO} service provider をセットする. 
+
+\index{RTC::SdoServiceAdmin@{RTC::SdoServiceAdmin}!getServiceProvider@{getServiceProvider}}
+\index{getServiceProvider@{getServiceProvider}!RTC::SdoServiceAdmin@{RTC::SdoServiceAdmin}}
+\subsubsection[{getServiceProvider}]{\setlength{\rightskip}{0pt plus 5cm}SDOPackage::SDOService\_\-ptr RTC::SdoServiceAdmin::getServiceProvider (const char $\ast$ {\em id})}\label{classRTC_1_1SdoServiceAdmin_ad3ab043c59a1aecb426dd16d0dafe438}
+
+
+\doxyref{SDO}{p.}{classSDO} Service Provider の Service を取得する. 
+
+id で指定されたIFR IDを持つSDO Service のオブジェクトリファレン ス を取得する。id が NULL ポインタの場合、指定された id に該当す るServiceProfile が存在しない場合、InvalidParameter 例外が送出さ れる。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em id}]\doxyref{SDO}{p.}{classSDO} Service provider の IFR ID \end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+指定された id を持つ \doxyref{SDO}{p.}{classSDO} Service のオブジェクトリファレンス 
+\end{DoxyReturn}
+\index{RTC::SdoServiceAdmin@{RTC::SdoServiceAdmin}!getServiceProviderProfile@{getServiceProviderProfile}}
+\index{getServiceProviderProfile@{getServiceProviderProfile}!RTC::SdoServiceAdmin@{RTC::SdoServiceAdmin}}
+\subsubsection[{getServiceProviderProfile}]{\setlength{\rightskip}{0pt plus 5cm}SDOPackage::ServiceProfile$\ast$ RTC::SdoServiceAdmin::getServiceProviderProfile (const char $\ast$ {\em id})}\label{classRTC_1_1SdoServiceAdmin_ac013070205b3b5264ddb549c85af2681}
+
+
+\doxyref{SDO}{p.}{classSDO} Service Provider の ServiceProfile を取得する. 
+
+id で指定されたIFR IDを持つSDO Service Provider の ServiceProfile を取得する。id が NULL ポインタの場合、指定された id に該当するServiceProfile が存在しない場合、InvalidParameter 例外が送出される。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em id}]\doxyref{SDO}{p.}{classSDO} Service provider の IFR ID \end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+指定された id を持つ ServiceProfile 
+\end{DoxyReturn}
+\index{RTC::SdoServiceAdmin@{RTC::SdoServiceAdmin}!getServiceProviderProfiles@{getServiceProviderProfiles}}
+\index{getServiceProviderProfiles@{getServiceProviderProfiles}!RTC::SdoServiceAdmin@{RTC::SdoServiceAdmin}}
+\subsubsection[{getServiceProviderProfiles}]{\setlength{\rightskip}{0pt plus 5cm}SDOPackage::ServiceProfileList$\ast$ RTC::SdoServiceAdmin::getServiceProviderProfiles ()}\label{classRTC_1_1SdoServiceAdmin_aa545a020d9ac522fbeac7f76bd4e63f9}
+
+
+\doxyref{SDO}{p.}{classSDO} Service Provider の ServiceProfileList を取得する. 
+
+\index{RTC::SdoServiceAdmin@{RTC::SdoServiceAdmin}!getUUID@{getUUID}}
+\index{getUUID@{getUUID}!RTC::SdoServiceAdmin@{RTC::SdoServiceAdmin}}
+\subsubsection[{getUUID}]{\setlength{\rightskip}{0pt plus 5cm}const std::string RTC::SdoServiceAdmin::getUUID () const\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC_1_1SdoServiceAdmin_ad8c7185a9cfb8609efb7a56733965482}
+\index{RTC::SdoServiceAdmin@{RTC::SdoServiceAdmin}!ifrToKey@{ifrToKey}}
+\index{ifrToKey@{ifrToKey}!RTC::SdoServiceAdmin@{RTC::SdoServiceAdmin}}
+\subsubsection[{ifrToKey}]{\setlength{\rightskip}{0pt plus 5cm}std::string RTC::SdoServiceAdmin::ifrToKey (std::string \& {\em ifr})\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC_1_1SdoServiceAdmin_aff360c7ad3fcb5840ab08af69e65197f}
+\index{RTC::SdoServiceAdmin@{RTC::SdoServiceAdmin}!isEnabledConsumerType@{isEnabledConsumerType}}
+\index{isEnabledConsumerType@{isEnabledConsumerType}!RTC::SdoServiceAdmin@{RTC::SdoServiceAdmin}}
+\subsubsection[{isEnabledConsumerType}]{\setlength{\rightskip}{0pt plus 5cm}bool RTC::SdoServiceAdmin::isEnabledConsumerType (const SDOPackage::ServiceProfile \& {\em sProfile})\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC_1_1SdoServiceAdmin_ab114ba34cebe63be60b4b5a97ec24ca9}
+
+
+許可されたサービス型かどうか調べる 
+
+\index{RTC::SdoServiceAdmin@{RTC::SdoServiceAdmin}!isExistingConsumerType@{isExistingConsumerType}}
+\index{isExistingConsumerType@{isExistingConsumerType}!RTC::SdoServiceAdmin@{RTC::SdoServiceAdmin}}
+\subsubsection[{isExistingConsumerType}]{\setlength{\rightskip}{0pt plus 5cm}bool RTC::SdoServiceAdmin::isExistingConsumerType (const SDOPackage::ServiceProfile \& {\em sProfile})\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC_1_1SdoServiceAdmin_a14b63642645a6e1c507d9f5af103e75a}
+
+
+存在するサービス型かどうか調べる 
+
+\index{RTC::SdoServiceAdmin@{RTC::SdoServiceAdmin}!removeSdoServiceConsumer@{removeSdoServiceConsumer}}
+\index{removeSdoServiceConsumer@{removeSdoServiceConsumer}!RTC::SdoServiceAdmin@{RTC::SdoServiceAdmin}}
+\subsubsection[{removeSdoServiceConsumer}]{\setlength{\rightskip}{0pt plus 5cm}bool RTC::SdoServiceAdmin::removeSdoServiceConsumer (const char $\ast$ {\em id})}\label{classRTC_1_1SdoServiceAdmin_a7892dc9307816d8b328f24818d1748bd}
+
+
+Service Consumer を削除する. 
+
+\index{RTC::SdoServiceAdmin@{RTC::SdoServiceAdmin}!removeSdoServiceProvider@{removeSdoServiceProvider}}
+\index{removeSdoServiceProvider@{removeSdoServiceProvider}!RTC::SdoServiceAdmin@{RTC::SdoServiceAdmin}}
+\subsubsection[{removeSdoServiceProvider}]{\setlength{\rightskip}{0pt plus 5cm}bool RTC::SdoServiceAdmin::removeSdoServiceProvider (const char $\ast$ {\em id})}\label{classRTC_1_1SdoServiceAdmin_a5a777143a8022bac8f993fcaeb329b18}
+
+
+\doxyref{SDO}{p.}{classSDO} service provider を削除する. 
+

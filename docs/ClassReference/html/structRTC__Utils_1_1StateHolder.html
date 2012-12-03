@@ -1,0 +1,114 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<title>OpenRTM: クラス テンプレート RTC_Utils::StateHolder&lt; State &gt;</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<!-- 作成： Doxygen 1.6.3 -->
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="index.html"><span>メインページ</span></a></li>
+      <li><a href="namespaces.html"><span>ネームスペース</span></a></li>
+      <li class="current"><a href="annotated.html"><span>クラス</span></a></li>
+      <li><a href="files.html"><span>ファイル</span></a></li>
+    </ul>
+  </div>
+  <div class="tabs">
+    <ul>
+      <li><a href="annotated.html"><span>構成</span></a></li>
+      <li><a href="hierarchy.html"><span>クラス階層</span></a></li>
+      <li><a href="functions.html"><span>構成メンバ</span></a></li>
+    </ul>
+  </div>
+  <div class="navpath"><a class="el" href="namespaceRTC__Utils.html">RTC_Utils</a>::<a class="el" href="structRTC__Utils_1_1StateHolder.html">StateHolder</a>
+  </div>
+</div>
+<div class="contents">
+<h1>クラス テンプレート RTC_Utils::StateHolder&lt; State &gt;</h1><!-- doxytag: class="RTC_Utils::StateHolder" -->
+<p>状態保持用クラス  
+<a href="#_details">[詳細]</a></p>
+
+<p><code>#include &lt;<a class="el" href="StateMachine_8h_source.html">StateMachine.h</a>&gt;</code></p>
+
+<p><a href="classRTC__Utils_1_1StateHolder-members.html">すべてのメンバ一覧</a></p>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr><td colspan="2"><h2>Public 変数</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">State&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structRTC__Utils_1_1StateHolder.html#a6d8c823054382ec53cf68d84b57e8376">curr</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">State&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structRTC__Utils_1_1StateHolder.html#a8e1e247158f889059ba84d6428a4fd35">prev</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">State&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structRTC__Utils_1_1StateHolder.html#af7c8270e02be5f1575d4982115149713">next</a></td></tr>
+</table>
+<hr/><a name="_details"></a><h2>説明</h2>
+<h3>template&lt;class State&gt;<br/>
+ class RTC_Utils::StateHolder&lt; State &gt;</h3>
+
+<p>状態保持用クラス </p>
+<p>状態を保持するためのホルダークラス。 現在の状態と、１つ前の状態、遷移予定の状態を保持する。</p>
+<dl><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>State</em>&nbsp;</td><td>保持する状態の型</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="since"><dt><b>から:</b></dt><dd>0.4.0 </dd></dl>
+<hr/><h2>変数</h2>
+<a class="anchor" id="a6d8c823054382ec53cf68d84b57e8376"></a><!-- doxytag: member="RTC_Utils::StateHolder::curr" ref="a6d8c823054382ec53cf68d84b57e8376" args="" -->
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class State&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">State <a class="el" href="structRTC__Utils_1_1StateHolder.html">RTC_Utils::StateHolder</a>&lt; State &gt;::<a class="el" href="structRTC__Utils_1_1StateHolder.html#a6d8c823054382ec53cf68d84b57e8376">curr</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>参照元 <a class="el" href="PeriodicExecutionContext_8h_source.html#l00691">RTC::PeriodicExecutionContext::DFPBase::DFPBase()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="af7c8270e02be5f1575d4982115149713"></a><!-- doxytag: member="RTC_Utils::StateHolder::next" ref="af7c8270e02be5f1575d4982115149713" args="" -->
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class State&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">State <a class="el" href="structRTC__Utils_1_1StateHolder.html">RTC_Utils::StateHolder</a>&lt; State &gt;::<a class="el" href="structRTC__Utils_1_1StateHolder.html#af7c8270e02be5f1575d4982115149713">next</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>参照元 <a class="el" href="PeriodicExecutionContext_8h_source.html#l00691">RTC::PeriodicExecutionContext::DFPBase::DFPBase()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a8e1e247158f889059ba84d6428a4fd35"></a><!-- doxytag: member="RTC_Utils::StateHolder::prev" ref="a8e1e247158f889059ba84d6428a4fd35" args="" -->
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class State&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">State <a class="el" href="structRTC__Utils_1_1StateHolder.html">RTC_Utils::StateHolder</a>&lt; State &gt;::<a class="el" href="structRTC__Utils_1_1StateHolder.html#a8e1e247158f889059ba84d6428a4fd35">prev</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>参照元 <a class="el" href="PeriodicExecutionContext_8h_source.html#l00691">RTC::PeriodicExecutionContext::DFPBase::DFPBase()</a>.</p>
+
+</div>
+</div>
+</div>
+<hr class="footer"/><address style="text-align: right;"><small>OpenRTMに対してThu May 24 23:25:20 2012に生成されました。&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.6.3 </small></address>
+</body>
+</html>

@@ -1,0 +1,166 @@
+\section{SDOPackage Namespace Reference}
+\label{namespaceSDOPackage}\index{SDOPackage@{SDOPackage}}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct {\bf NameValue}
+\item 
+union {\bf Numeric}
+\item 
+struct {\bf EnumerationType}
+\item 
+struct {\bf RangeType}
+\item 
+struct {\bf IntervalType}
+\item 
+union {\bf AllowedValues}
+\item 
+struct {\bf Parameter}
+\item 
+struct {\bf OrganizationProperty}
+\item 
+struct {\bf DeviceProfile}
+\item 
+struct {\bf ServiceProfile}
+\item 
+struct {\bf ConfigurationSet}
+\item 
+interface {\bf SDOSystemElement}
+\item 
+interface {\bf SDO}
+\item 
+interface {\bf Configuration}
+\item 
+interface {\bf Monitoring}
+\item 
+interface {\bf SDOService}
+\item 
+interface {\bf Organization}
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef sequence$<$ string $>$ {\bf StringList}
+\item 
+typedef sequence$<$ {\bf SDO} $>$ {\bf SDOList}
+\item 
+typedef sequence$<$ {\bf Organization} $>$ {\bf OrganizationList}
+\item 
+typedef string {\bf UniqueIdentifier}
+\item 
+typedef sequence$<$ {\bf NameValue} $>$ {\bf NVList}
+\item 
+typedef sequence$<$ {\bf Parameter} $>$ {\bf ParameterList}
+\item 
+typedef sequence$<$ {\bf ServiceProfile} $>$ {\bf ServiceProfileList}
+\item 
+typedef sequence$<$ {\bf ConfigurationSet} $>$ {\bf ConfigurationSetList}
+\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum {\bf NumericType} \{ {\bf SHORT\_\-TYPE}, 
+{\bf LONG\_\-TYPE}, 
+{\bf FLOAT\_\-TYPE}, 
+{\bf DOUBLE\_\-TYPE}
+ \}
+\item 
+enum {\bf ComplexDataType} \{ {\bf ENUMERATION}, 
+{\bf RANGE}, 
+{\bf INTERVAL}
+ \}
+\item 
+enum {\bf DependencyType} \{ {\bf OWN}, 
+{\bf OWNED}, 
+{\bf NO\_\-DEPENDENCY}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+exception NotAvailable {\bf exception\_\-body}
+\end{DoxyCompactItemize}
+
+
+\subsection{Typedef Documentation}
+\index{SDOPackage@{SDOPackage}!ConfigurationSetList@{ConfigurationSetList}}
+\index{ConfigurationSetList@{ConfigurationSetList}!SDOPackage@{SDOPackage}}
+\subsubsection[{ConfigurationSetList}]{\setlength{\rightskip}{0pt plus 5cm}typedef sequence$<${\bf ConfigurationSet}$>$ {\bf SDOPackage::ConfigurationSetList}}\label{namespaceSDOPackage_ad9d3f3e4436d5ae8aa92fd71fa85e034}
+\index{SDOPackage@{SDOPackage}!NVList@{NVList}}
+\index{NVList@{NVList}!SDOPackage@{SDOPackage}}
+\subsubsection[{NVList}]{\setlength{\rightskip}{0pt plus 5cm}typedef sequence$<${\bf NameValue}$>$ {\bf SDOPackage::NVList}}\label{namespaceSDOPackage_a51e72be2b0d7e550db7782ddb1d58e9d}
+\index{SDOPackage@{SDOPackage}!OrganizationList@{OrganizationList}}
+\index{OrganizationList@{OrganizationList}!SDOPackage@{SDOPackage}}
+\subsubsection[{OrganizationList}]{\setlength{\rightskip}{0pt plus 5cm}typedef sequence$<${\bf Organization}$>$ {\bf SDOPackage::OrganizationList}}\label{namespaceSDOPackage_a31cbea00ad118b641831e30a56e80a72}
+\index{SDOPackage@{SDOPackage}!ParameterList@{ParameterList}}
+\index{ParameterList@{ParameterList}!SDOPackage@{SDOPackage}}
+\subsubsection[{ParameterList}]{\setlength{\rightskip}{0pt plus 5cm}typedef sequence$<${\bf Parameter}$>$ {\bf SDOPackage::ParameterList}}\label{namespaceSDOPackage_ac7ed6ef96e20edd9db20df029d1d46d2}
+\index{SDOPackage@{SDOPackage}!SDOList@{SDOList}}
+\index{SDOList@{SDOList}!SDOPackage@{SDOPackage}}
+\subsubsection[{SDOList}]{\setlength{\rightskip}{0pt plus 5cm}typedef sequence$<${\bf SDO}$>$ {\bf SDOPackage::SDOList}}\label{namespaceSDOPackage_ab3569f8f3e2127ff298ae3c526cf3921}
+\index{SDOPackage@{SDOPackage}!ServiceProfileList@{ServiceProfileList}}
+\index{ServiceProfileList@{ServiceProfileList}!SDOPackage@{SDOPackage}}
+\subsubsection[{ServiceProfileList}]{\setlength{\rightskip}{0pt plus 5cm}typedef sequence$<${\bf ServiceProfile}$>$ {\bf SDOPackage::ServiceProfileList}}\label{namespaceSDOPackage_ab56433e04a6155a19aeae801c45155e8}
+\index{SDOPackage@{SDOPackage}!StringList@{StringList}}
+\index{StringList@{StringList}!SDOPackage@{SDOPackage}}
+\subsubsection[{StringList}]{\setlength{\rightskip}{0pt plus 5cm}typedef sequence$<$string$>$ {\bf SDOPackage::StringList}}\label{namespaceSDOPackage_a808e705041501570a7ef8870afe0d1a8}
+-\/-\/-\/-\/-\/-\/-\/ Data Types -\/-\/-\/-\/-\/-\/-\/ \index{SDOPackage@{SDOPackage}!UniqueIdentifier@{UniqueIdentifier}}
+\index{UniqueIdentifier@{UniqueIdentifier}!SDOPackage@{SDOPackage}}
+\subsubsection[{UniqueIdentifier}]{\setlength{\rightskip}{0pt plus 5cm}typedef string {\bf SDOPackage::UniqueIdentifier}}\label{namespaceSDOPackage_a05a058395bb070fc59e9d81d4b1f9f98}
+
+
+\subsection{Enumeration Type Documentation}
+\index{SDOPackage@{SDOPackage}!ComplexDataType@{ComplexDataType}}
+\index{ComplexDataType@{ComplexDataType}!SDOPackage@{SDOPackage}}
+\subsubsection[{ComplexDataType}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf SDOPackage::ComplexDataType}}\label{namespaceSDOPackage_a4b1574edd51d4ca64092ae2ee28c4a4f}
+\begin{Desc}
+\item[Enumerator: ]\par
+\begin{description}
+\index{ENUMERATION@{ENUMERATION}!SDOPackage@{SDOPackage}}\index{SDOPackage@{SDOPackage}!ENUMERATION@{ENUMERATION}}\item[{\em 
+ENUMERATION\label{namespaceSDOPackage_a4b1574edd51d4ca64092ae2ee28c4a4fa9ac020c658eba1cc0a98bec524a45c6e}
+}]\index{RANGE@{RANGE}!SDOPackage@{SDOPackage}}\index{SDOPackage@{SDOPackage}!RANGE@{RANGE}}\item[{\em 
+RANGE\label{namespaceSDOPackage_a4b1574edd51d4ca64092ae2ee28c4a4fa4d5a1765b6375887daa4494d40c113bf}
+}]\index{INTERVAL@{INTERVAL}!SDOPackage@{SDOPackage}}\index{SDOPackage@{SDOPackage}!INTERVAL@{INTERVAL}}\item[{\em 
+INTERVAL\label{namespaceSDOPackage_a4b1574edd51d4ca64092ae2ee28c4a4fae6079f15c13c60356dbc2ee6af4f8bb9}
+}]\end{description}
+\end{Desc}
+
+\index{SDOPackage@{SDOPackage}!DependencyType@{DependencyType}}
+\index{DependencyType@{DependencyType}!SDOPackage@{SDOPackage}}
+\subsubsection[{DependencyType}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf SDOPackage::DependencyType}}\label{namespaceSDOPackage_a0e2f8c0a81f492a5b4143ae381d11a68}
+\begin{Desc}
+\item[Enumerator: ]\par
+\begin{description}
+\index{OWN@{OWN}!SDOPackage@{SDOPackage}}\index{SDOPackage@{SDOPackage}!OWN@{OWN}}\item[{\em 
+OWN\label{namespaceSDOPackage_a0e2f8c0a81f492a5b4143ae381d11a68a2b132798545c7aa3574291d4e8d0c1c4}
+}]\index{OWNED@{OWNED}!SDOPackage@{SDOPackage}}\index{SDOPackage@{SDOPackage}!OWNED@{OWNED}}\item[{\em 
+OWNED\label{namespaceSDOPackage_a0e2f8c0a81f492a5b4143ae381d11a68abab6eb2254537ee1f23c96626f1f5e1d}
+}]\index{NO\_\-DEPENDENCY@{NO\_\-DEPENDENCY}!SDOPackage@{SDOPackage}}\index{SDOPackage@{SDOPackage}!NO\_\-DEPENDENCY@{NO\_\-DEPENDENCY}}\item[{\em 
+NO\_\-DEPENDENCY\label{namespaceSDOPackage_a0e2f8c0a81f492a5b4143ae381d11a68a4586ce486740d7219edffe6e71f48bbb}
+}]\end{description}
+\end{Desc}
+
+\index{SDOPackage@{SDOPackage}!NumericType@{NumericType}}
+\index{NumericType@{NumericType}!SDOPackage@{SDOPackage}}
+\subsubsection[{NumericType}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf SDOPackage::NumericType}}\label{namespaceSDOPackage_a74e51e3aadb58d5340ffccfae4f7dadc}
+\begin{Desc}
+\item[Enumerator: ]\par
+\begin{description}
+\index{SHORT\_\-TYPE@{SHORT\_\-TYPE}!SDOPackage@{SDOPackage}}\index{SDOPackage@{SDOPackage}!SHORT\_\-TYPE@{SHORT\_\-TYPE}}\item[{\em 
+SHORT\_\-TYPE\label{namespaceSDOPackage_a74e51e3aadb58d5340ffccfae4f7dadcaeebe80772c18f0df366a429a69de5904}
+}]\index{LONG\_\-TYPE@{LONG\_\-TYPE}!SDOPackage@{SDOPackage}}\index{SDOPackage@{SDOPackage}!LONG\_\-TYPE@{LONG\_\-TYPE}}\item[{\em 
+LONG\_\-TYPE\label{namespaceSDOPackage_a74e51e3aadb58d5340ffccfae4f7dadcac9724262823ad907f6a3467d3ef0a8f9}
+}]\index{FLOAT\_\-TYPE@{FLOAT\_\-TYPE}!SDOPackage@{SDOPackage}}\index{SDOPackage@{SDOPackage}!FLOAT\_\-TYPE@{FLOAT\_\-TYPE}}\item[{\em 
+FLOAT\_\-TYPE\label{namespaceSDOPackage_a74e51e3aadb58d5340ffccfae4f7dadcada64459f9020df9b508fe5844c9392f2}
+}]\index{DOUBLE\_\-TYPE@{DOUBLE\_\-TYPE}!SDOPackage@{SDOPackage}}\index{SDOPackage@{SDOPackage}!DOUBLE\_\-TYPE@{DOUBLE\_\-TYPE}}\item[{\em 
+DOUBLE\_\-TYPE\label{namespaceSDOPackage_a74e51e3aadb58d5340ffccfae4f7dadca38ee4dc2f79b705d3a9d61ccf6ed16d3}
+}]\end{description}
+\end{Desc}
+
+
+
+\subsection{Variable Documentation}
+\index{SDOPackage@{SDOPackage}!exception\_\-body@{exception\_\-body}}
+\index{exception\_\-body@{exception\_\-body}!SDOPackage@{SDOPackage}}
+\subsubsection[{exception\_\-body}]{\setlength{\rightskip}{0pt plus 5cm}exception InternalError {\bf SDOPackage::exception\_\-body}}\label{namespaceSDOPackage_a32f5520092f5ffaa1201384238bae0b0}
+-\/-\/-\/-\/-\/-\/-\/ Exceptions -\/-\/-\/-\/-\/-\/-\/ 

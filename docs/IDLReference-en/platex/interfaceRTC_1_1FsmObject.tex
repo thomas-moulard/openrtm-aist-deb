@@ -1,0 +1,43 @@
+\section{RTC::FsmObject Interface Reference}
+\label{interfaceRTC_1_1FsmObject}\index{RTC::FsmObject@{RTC::FsmObject}}
+
+
+\doxyref{FsmObject}{p.}{interfaceRTC_1_1FsmObject}.  
+
+
+
+
+{\ttfamily import \char`\"{}RTC.idl\char`\"{};}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf ReturnCode\_\-t} {\bf send\_\-stimulus} (in string message, in {\bf ExecutionContextHandle\_\-t} exec\_\-handle)
+\begin{DoxyCompactList}\small\item\em send\_\-stimulus \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\doxyref{FsmObject}{p.}{interfaceRTC_1_1FsmObject}. \subsection{Description}\label{namespaceRTC_Description}
+The \doxyref{FsmObject}{p.}{interfaceRTC_1_1FsmObject} interface allows programs to send stimuli to a finite state machine, possibly causing it to change states. 
+
+\subsection{Member Function Documentation}
+\index{RTC::FsmObject@{RTC::FsmObject}!send\_\-stimulus@{send\_\-stimulus}}
+\index{send\_\-stimulus@{send\_\-stimulus}!RTC::FsmObject@{RTC::FsmObject}}
+\subsubsection[{send\_\-stimulus}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ReturnCode\_\-t} RTC::FsmObject::send\_\-stimulus (in string {\em message}, \/  in {\bf ExecutionContextHandle\_\-t} {\em exec\_\-handle})}\label{interfaceRTC_1_1FsmObject_a6c374a4be4ef1824feced8825dfe7a25}
+
+
+send\_\-stimulus 
+
+\subsection{Description}\label{namespaceRTC_Description}
+Send a stimulus to an FSM that realizes this interface.\subsection{Semantics}\label{namespaceRTC_Semantics}
+If the stimulus corresponds to any outgoing transition of the current state, that transition shall be taken and the state shall change. Any FSM participants associated with the exit of the current state, the transition to the new state, or the entry to the new state shall be invoked. If the stimulus does not correspond to any such transition, this operation shall succeed but have no effect.
+
+If the given execution context is a non-\/nil reference to a context in which this FSM participates, the transition shall be executed in that context. If the argument is nil, the FSM shall choose an EVENT\_\-DRIVEN context in which to execute the transition. If the argument is non-\/nil, but this FSM does not participate in the given context, this operation shall fail with $\ast$ ReturnCode\_\-t::BAD\_\-PARAMETER.\subsection{Constraints}\label{interfaceRTC_1_1LightweightRTObject_Constraints}
+
+\begin{DoxyItemize}
+\item The given execution context shall be of kind EVENT\_\-DRIVEN. 
+\end{DoxyItemize}
+
+The documentation for this interface was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+{\bf RTC.idl}\end{DoxyCompactItemize}

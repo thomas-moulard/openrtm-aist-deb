@@ -1,0 +1,71 @@
+\section{クラス RTC::PortActionListener}
+\label{classRTC_1_1PortActionListener}\index{RTC::PortActionListener@{RTC::PortActionListener}}
+
+
+\doxyref{PortActionListener}{p.}{classRTC_1_1PortActionListener} クラス.  
+
+
+
+
+{\ttfamily \#include $<$ComponentActionListener.h$>$}
+
+\subsection*{Public メソッド}
+\begin{DoxyCompactItemize}
+\item 
+virtual {\bf $\sim$PortActionListener} ()
+\begin{DoxyCompactList}\small\item\em デストラクタ \item\end{DoxyCompactList}\item 
+virtual void {\bf operator()} (const ::RTC::PortProfile \&pprof)=0
+\begin{DoxyCompactList}\small\item\em 仮想コールバック関数 \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public メソッド}
+\begin{DoxyCompactItemize}
+\item 
+static const char $\ast$ {\bf toString} ({\bf PortActionListenerType} type)
+\begin{DoxyCompactList}\small\item\em PreComponentActionListenerType を文字列に変換. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{説明}
+\doxyref{PortActionListener}{p.}{classRTC_1_1PortActionListener} クラス. 各アクションに対応するユーザーコードが呼ばれる直前のタイミング でコールされるリスなクラスの基底クラス。
+
+
+\begin{DoxyItemize}
+\item ADD\_\-PORT:
+\item REMOVE\_\-PORT: 
+\end{DoxyItemize}
+
+\subsection{コンストラクタとデストラクタ}
+\index{RTC::PortActionListener@{RTC::PortActionListener}!$\sim$PortActionListener@{$\sim$PortActionListener}}
+\index{$\sim$PortActionListener@{$\sim$PortActionListener}!RTC::PortActionListener@{RTC::PortActionListener}}
+\subsubsection[{$\sim$PortActionListener}]{\setlength{\rightskip}{0pt plus 5cm}virtual RTC::PortActionListener::$\sim$PortActionListener ()\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classRTC_1_1PortActionListener_ac7047168ee56c6b6c38d6cf22487f162}
+
+
+デストラクタ 
+
+
+
+\subsection{関数}
+\index{RTC::PortActionListener@{RTC::PortActionListener}!operator()@{operator()}}
+\index{operator()@{operator()}!RTC::PortActionListener@{RTC::PortActionListener}}
+\subsubsection[{operator()}]{\setlength{\rightskip}{0pt plus 5cm}virtual void RTC::PortActionListener::operator() (const ::RTC::PortProfile \& {\em pprof})\hspace{0.3cm}{\ttfamily  [pure virtual]}}\label{classRTC_1_1PortActionListener_ab64a3fa4bf5ef0d2c07295284c6bba65}
+
+
+仮想コールバック関数 
+
+\doxyref{PortActionListener}{p.}{classRTC_1_1PortActionListener} のコールバック関数 \index{RTC::PortActionListener@{RTC::PortActionListener}!toString@{toString}}
+\index{toString@{toString}!RTC::PortActionListener@{RTC::PortActionListener}}
+\subsubsection[{toString}]{\setlength{\rightskip}{0pt plus 5cm}static const char$\ast$ RTC::PortActionListener::toString ({\bf PortActionListenerType} {\em type})\hspace{0.3cm}{\ttfamily  [inline, static]}}\label{classRTC_1_1PortActionListener_a40455f05b976a6b28df3aeb4aecb3706}
+
+
+PreComponentActionListenerType を文字列に変換. 
+
+PreComponentActionListenerType を文字列に変換する
+
+
+\begin{DoxyParams}{引数}
+\item[{\em type}]変換対象 PreComponentActionListenerType\end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+文字列変換結果 
+\end{DoxyReturn}
+
+
+参照先 RTC::PORT\_\-ACTION\_\-LISTENER\_\-NUM.
+

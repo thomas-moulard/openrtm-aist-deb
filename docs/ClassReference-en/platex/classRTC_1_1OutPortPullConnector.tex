@@ -1,0 +1,192 @@
+\section{RTC::OutPortPullConnector Class Reference}
+\label{classRTC_1_1OutPortPullConnector}\index{RTC::OutPortPullConnector@{RTC::OutPortPullConnector}}
+
+
+\doxyref{OutPortPullConnector}{p.}{classRTC_1_1OutPortPullConnector} class.  
+
+
+
+
+{\ttfamily \#include $<$OutPortPullConnector.h$>$}
+
+Inheritance diagram for RTC::OutPortPullConnector:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4cm]{classRTC_1_1OutPortPullConnector}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+DATAPORTSTATUS\_\-ENUM {\bf OutPortPullConnector} ({\bf ConnectorInfo} info, {\bf OutPortProvider} $\ast$provider, {\bf ConnectorListeners} \&listeners, {\bf CdrBufferBase} $\ast$buffer=0)
+\begin{DoxyCompactList}\small\item\em Constructor. \item\end{DoxyCompactList}\item 
+virtual {\bf $\sim$OutPortPullConnector} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \item\end{DoxyCompactList}\item 
+virtual ReturnCode {\bf write} (const cdrMemoryStream \&data)
+\begin{DoxyCompactList}\small\item\em Writing data. \item\end{DoxyCompactList}\item 
+virtual ReturnCode {\bf disconnect} ()
+\begin{DoxyCompactList}\small\item\em disconnect \item\end{DoxyCompactList}\item 
+virtual {\bf CdrBufferBase} $\ast$ {\bf getBuffer} ()
+\begin{DoxyCompactList}\small\item\em Getting Buffer. \item\end{DoxyCompactList}\item 
+virtual void {\bf activate} ()
+\begin{DoxyCompactList}\small\item\em Connector activation. \item\end{DoxyCompactList}\item 
+virtual void {\bf deactivate} ()
+\begin{DoxyCompactList}\small\item\em Connector deactivation. \item\end{DoxyCompactList}\item 
+{\bf CdrBufferBase} $\ast$ {\bf createBuffer} ({\bf ConnectorInfo} \&info)
+\begin{DoxyCompactList}\small\item\em create buffer \item\end{DoxyCompactList}\item 
+void {\bf onConnect} ()
+\begin{DoxyCompactList}\small\item\em Invoke callback when connection is established. \item\end{DoxyCompactList}\item 
+void {\bf onDisconnect} ()
+\begin{DoxyCompactList}\small\item\em Invoke callback when connection is destroied. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+{\bf OutPortProvider} $\ast$ {\bf m\_\-provider}
+\begin{DoxyCompactList}\small\item\em the pointer to the \doxyref{OutPortProvider}{p.}{classRTC_1_1OutPortProvider} \item\end{DoxyCompactList}\item 
+{\bf ConnectorListeners} \& {\bf m\_\-listeners}
+\begin{DoxyCompactList}\small\item\em A reference to a \doxyref{ConnectorListener}{p.}{classRTC_1_1ConnectorListener}. \item\end{DoxyCompactList}\item 
+{\bf CdrBufferBase} $\ast$ {\bf m\_\-buffer}
+\begin{DoxyCompactList}\small\item\em the pointer to the buffer \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\doxyref{OutPortPullConnector}{p.}{classRTC_1_1OutPortPullConnector} class. Connector class of \doxyref{OutPort}{p.}{classRTC_1_1OutPort} for pull type dataflow. When \char`\"{}pull\char`\"{} is specified as dataflow\_\-type at the time of establishing connection, this object is generated and owned by the \doxyref{OutPort}{p.}{classRTC_1_1OutPort}. This connector and \doxyref{InPortPullConnector}{p.}{classRTC_1_1InPortPullConnector} make a pair and realize pull type dataflow of data ports. One connector corresponds to one connection which provides a data stream. Connector is distinguished by ID of the UUID that is generated at establishing connection.
+
+\doxyref{OutPortPullConnector}{p.}{classRTC_1_1OutPortPullConnector} owns and manages the following objects.
+
+
+\begin{DoxyItemize}
+\item \doxyref{InPortConsumer}{p.}{classRTC_1_1InPortConsumer}
+\item Buffer
+\end{DoxyItemize}
+
+Data written into the \doxyref{OutPort}{p.}{classRTC_1_1OutPort} is passed to \doxyref{OutPortPullConnector::write()}{p.}{classRTC_1_1OutPortPullConnector_a9fbb676086061d99ce808818b6ddc316}, and it is written into the buffer. By reading data from \doxyref{OutPortPullConnector}{p.}{classRTC_1_1OutPortPullConnector} to \doxyref{InPortPullConnector}{p.}{classRTC_1_1InPortPullConnector}, data transfer is realized.
+
+\begin{DoxySince}{Since}
+1.0.0 
+\end{DoxySince}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{RTC::OutPortPullConnector@{RTC::OutPortPullConnector}!OutPortPullConnector@{OutPortPullConnector}}
+\index{OutPortPullConnector@{OutPortPullConnector}!RTC::OutPortPullConnector@{RTC::OutPortPullConnector}}
+\subsubsection[{OutPortPullConnector}]{\setlength{\rightskip}{0pt plus 5cm}DATAPORTSTATUS\_\-ENUM RTC::OutPortPullConnector::OutPortPullConnector ({\bf ConnectorInfo} {\em info}, \/  {\bf OutPortProvider} $\ast$ {\em provider}, \/  {\bf ConnectorListeners} \& {\em listeners}, \/  {\bf CdrBufferBase} $\ast$ {\em buffer} = {\ttfamily 0})}\label{classRTC_1_1OutPortPullConnector_a93e1c0f8c992535feb7b45b32199aed1}
+
+
+Constructor. 
+
+OutPortPullConnector's constructor is given the following arguments. According to \doxyref{ConnectorInfo}{p.}{classRTC_1_1ConnectorInfo} which includes connection information, a buffer is created. It is also given a pointer to the provider object for the \doxyref{OutPort}{p.}{classRTC_1_1OutPort} interface. The owner-\/ship of the pointer is owned by this \doxyref{OutPortPullConnector}{p.}{classRTC_1_1OutPortPullConnector}, it has responsibility to destruct the \doxyref{OutPortProvider}{p.}{classRTC_1_1OutPortProvider}. \doxyref{OutPortPullConnector}{p.}{classRTC_1_1OutPortPullConnector} also has \doxyref{ConnectorListeners}{p.}{classRTC_1_1ConnectorListeners} to provide event callback mechanisms, and they would be called at the proper timing. If data buffer is given by \doxyref{OutPortBase}{p.}{classRTC_1_1OutPortBase}, the pointer to the buffer is also given as arguments.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em info}]\doxyref{ConnectorInfo}{p.}{classRTC_1_1ConnectorInfo} \item[{\em provider}]\doxyref{OutPortProvider}{p.}{classRTC_1_1OutPortProvider} \item[{\em listeners}]\doxyref{ConnectorListeners}{p.}{classRTC_1_1ConnectorListeners} type lsitener object list \item[{\em buffer}]CdrBufferBase type buffer \end{DoxyParams}
+\index{RTC::OutPortPullConnector@{RTC::OutPortPullConnector}!$\sim$OutPortPullConnector@{$\sim$OutPortPullConnector}}
+\index{$\sim$OutPortPullConnector@{$\sim$OutPortPullConnector}!RTC::OutPortPullConnector@{RTC::OutPortPullConnector}}
+\subsubsection[{$\sim$OutPortPullConnector}]{\setlength{\rightskip}{0pt plus 5cm}virtual RTC::OutPortPullConnector::$\sim$OutPortPullConnector ()\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classRTC_1_1OutPortPullConnector_af23e3daabf4eec96738a2c0f57d7b88f}
+
+
+Destructor. 
+
+This operation calls \doxyref{disconnect()}{p.}{classRTC_1_1OutPortPullConnector_aef4713815a7140da7c65b690c3a89256}, which destructs and deletes the consumer, the publisher and the buffer. 
+
+\subsection{Member Function Documentation}
+\index{RTC::OutPortPullConnector@{RTC::OutPortPullConnector}!activate@{activate}}
+\index{activate@{activate}!RTC::OutPortPullConnector@{RTC::OutPortPullConnector}}
+\subsubsection[{activate}]{\setlength{\rightskip}{0pt plus 5cm}virtual void RTC::OutPortPullConnector::activate ()\hspace{0.3cm}{\ttfamily  [inline, virtual]}}\label{classRTC_1_1OutPortPullConnector_a4a2119db40dea439bc6da3eeeed11aa5}
+
+
+Connector activation. 
+
+This operation activates this connector 
+
+Implements {\bf RTC::ConnectorBase} \doxyref{}{p.}{classRTC_1_1ConnectorBase_a6f7f9ddd882546044f911d66aefee665}.
+
+\index{RTC::OutPortPullConnector@{RTC::OutPortPullConnector}!createBuffer@{createBuffer}}
+\index{createBuffer@{createBuffer}!RTC::OutPortPullConnector@{RTC::OutPortPullConnector}}
+\subsubsection[{createBuffer}]{\setlength{\rightskip}{0pt plus 5cm}{\bf CdrBufferBase}$\ast$ RTC::OutPortPullConnector::createBuffer ({\bf ConnectorInfo} \& {\em info})}\label{classRTC_1_1OutPortPullConnector_aad8358ac04ab437bd6811b977f939dcb}
+
+
+create buffer 
+
+\index{RTC::OutPortPullConnector@{RTC::OutPortPullConnector}!deactivate@{deactivate}}
+\index{deactivate@{deactivate}!RTC::OutPortPullConnector@{RTC::OutPortPullConnector}}
+\subsubsection[{deactivate}]{\setlength{\rightskip}{0pt plus 5cm}virtual void RTC::OutPortPullConnector::deactivate ()\hspace{0.3cm}{\ttfamily  [inline, virtual]}}\label{classRTC_1_1OutPortPullConnector_a2a681ec7dc8db477c34ce2bd84e1ac44}
+
+
+Connector deactivation. 
+
+This operation deactivates this connector 
+
+Implements {\bf RTC::ConnectorBase} \doxyref{}{p.}{classRTC_1_1ConnectorBase_a8fe6a1bfe8d5ee586d51293b2bcf36d1}.
+
+\index{RTC::OutPortPullConnector@{RTC::OutPortPullConnector}!disconnect@{disconnect}}
+\index{disconnect@{disconnect}!RTC::OutPortPullConnector@{RTC::OutPortPullConnector}}
+\subsubsection[{disconnect}]{\setlength{\rightskip}{0pt plus 5cm}virtual ReturnCode RTC::OutPortPullConnector::disconnect ()\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classRTC_1_1OutPortPullConnector_aef4713815a7140da7c65b690c3a89256}
+
+
+disconnect 
+
+This operation destruct and delete the consumer, the publisher and the buffer. 
+
+Implements {\bf RTC::OutPortConnector} \doxyref{}{p.}{classRTC_1_1OutPortConnector_a0871d3168eb72d38b598cf862f1ac799}.
+
+\index{RTC::OutPortPullConnector@{RTC::OutPortPullConnector}!getBuffer@{getBuffer}}
+\index{getBuffer@{getBuffer}!RTC::OutPortPullConnector@{RTC::OutPortPullConnector}}
+\subsubsection[{getBuffer}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf CdrBufferBase}$\ast$ RTC::OutPortPullConnector::getBuffer ()\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classRTC_1_1OutPortPullConnector_a8b3df65ce00c96f9c4782653948b59d3}
+
+
+Getting Buffer. 
+
+This operation returns this connector's buffer 
+
+Implements {\bf RTC::OutPortConnector} \doxyref{}{p.}{classRTC_1_1OutPortConnector_aed38944495c634d459bb0c06618f33a1}.
+
+\index{RTC::OutPortPullConnector@{RTC::OutPortPullConnector}!onConnect@{onConnect}}
+\index{onConnect@{onConnect}!RTC::OutPortPullConnector@{RTC::OutPortPullConnector}}
+\subsubsection[{onConnect}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::OutPortPullConnector::onConnect ()}\label{classRTC_1_1OutPortPullConnector_a5f6cd6ccc9bd8acfcac089fd59a065c3}
+
+
+Invoke callback when connection is established. 
+
+\index{RTC::OutPortPullConnector@{RTC::OutPortPullConnector}!onDisconnect@{onDisconnect}}
+\index{onDisconnect@{onDisconnect}!RTC::OutPortPullConnector@{RTC::OutPortPullConnector}}
+\subsubsection[{onDisconnect}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::OutPortPullConnector::onDisconnect ()}\label{classRTC_1_1OutPortPullConnector_a36b2faa1c66040304c18f17fecc02f3f}
+
+
+Invoke callback when connection is destroied. 
+
+\index{RTC::OutPortPullConnector@{RTC::OutPortPullConnector}!write@{write}}
+\index{write@{write}!RTC::OutPortPullConnector@{RTC::OutPortPullConnector}}
+\subsubsection[{write}]{\setlength{\rightskip}{0pt plus 5cm}virtual ReturnCode RTC::OutPortPullConnector::write (const cdrMemoryStream \& {\em data})\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classRTC_1_1OutPortPullConnector_a9fbb676086061d99ce808818b6ddc316}
+
+
+Writing data. 
+
+This operation writes data into publisher and then the data will be transferred to correspondent \doxyref{InPort}{p.}{classRTC_1_1InPort}. 
+
+Implements {\bf RTC::OutPortConnector} \doxyref{}{p.}{classRTC_1_1OutPortConnector_af5b15d5b4346561d53b70c9040ae59a2}.
+
+
+
+\subsection{Member Data Documentation}
+\index{RTC::OutPortPullConnector@{RTC::OutPortPullConnector}!m\_\-buffer@{m\_\-buffer}}
+\index{m\_\-buffer@{m\_\-buffer}!RTC::OutPortPullConnector@{RTC::OutPortPullConnector}}
+\subsubsection[{m\_\-buffer}]{\setlength{\rightskip}{0pt plus 5cm}{\bf CdrBufferBase}$\ast$ {\bf RTC::OutPortPullConnector::m\_\-buffer}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC_1_1OutPortPullConnector_ad5323b469342a7b14f3932849e7ebe51}
+
+
+the pointer to the buffer 
+
+\index{RTC::OutPortPullConnector@{RTC::OutPortPullConnector}!m\_\-listeners@{m\_\-listeners}}
+\index{m\_\-listeners@{m\_\-listeners}!RTC::OutPortPullConnector@{RTC::OutPortPullConnector}}
+\subsubsection[{m\_\-listeners}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ConnectorListeners}\& {\bf RTC::OutPortPullConnector::m\_\-listeners}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC_1_1OutPortPullConnector_a8a53b6d0efa5673f14f122c9f857978b}
+
+
+A reference to a \doxyref{ConnectorListener}{p.}{classRTC_1_1ConnectorListener}. 
+
+\index{RTC::OutPortPullConnector@{RTC::OutPortPullConnector}!m\_\-provider@{m\_\-provider}}
+\index{m\_\-provider@{m\_\-provider}!RTC::OutPortPullConnector@{RTC::OutPortPullConnector}}
+\subsubsection[{m\_\-provider}]{\setlength{\rightskip}{0pt plus 5cm}{\bf OutPortProvider}$\ast$ {\bf RTC::OutPortPullConnector::m\_\-provider}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC_1_1OutPortPullConnector_a613017f3f36a6d0ee9e8bdf952587ed8}
+
+
+the pointer to the \doxyref{OutPortProvider}{p.}{classRTC_1_1OutPortProvider} 
+

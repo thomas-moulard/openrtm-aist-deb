@@ -1,0 +1,258 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<title>OpenRTM: クラス RTC::FactoryBase</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<!-- 作成： Doxygen 1.6.3 -->
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="index.html"><span>メインページ</span></a></li>
+      <li><a href="namespaces.html"><span>ネームスペース</span></a></li>
+      <li class="current"><a href="annotated.html"><span>クラス</span></a></li>
+      <li><a href="files.html"><span>ファイル</span></a></li>
+    </ul>
+  </div>
+  <div class="tabs">
+    <ul>
+      <li><a href="annotated.html"><span>構成</span></a></li>
+      <li><a href="hierarchy.html"><span>クラス階層</span></a></li>
+      <li><a href="functions.html"><span>構成メンバ</span></a></li>
+    </ul>
+  </div>
+  <div class="navpath"><a class="el" href="namespaceRTC.html">RTC</a>::<a class="el" href="classRTC_1_1FactoryBase.html">FactoryBase</a>
+  </div>
+</div>
+<div class="contents">
+<h1>クラス RTC::FactoryBase</h1><!-- doxytag: class="RTC::FactoryBase" -->
+<p><a class="el" href="classRTC_1_1FactoryBase.html" title="FactoryBase 基底クラス.">FactoryBase</a> 基底クラス.  
+<a href="#_details">[詳細]</a></p>
+
+<p><code>#include &lt;<a class="el" href="rtm_2Factory_8h_source.html">Factory.h</a>&gt;</code></p>
+<div class="dynheader">
+RTC::FactoryBaseに対する継承グラフ</div>
+<div class="dynsection">
+ <div class="center">
+  <img src="classRTC_1_1FactoryBase.png" usemap="#RTC::FactoryBase_map" alt=""/>
+  <map id="RTC::FactoryBase_map" name="RTC::FactoryBase_map">
+<area href="classRTC_1_1FactoryCXX.html" alt="RTC::FactoryCXX" shape="rect" coords="0,56,114,80"/>
+</map>
+ </div>
+</div>
+
+<p><a href="classRTC_1_1FactoryBase-members.html">すべてのメンバ一覧</a></p>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr><td colspan="2"><h2>Public メソッド</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1FactoryBase.html#a2c77bfaacbdf1b1531decffe97bc0f12">FactoryBase</a> (const <a class="el" href="classcoil_1_1Properties.html">coil::Properties</a> &amp;profile)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">コンストラクタ  <a href="#a2c77bfaacbdf1b1531decffe97bc0f12"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1FactoryBase.html#a07017bcb7c8ed828e8cc48007af6671d">~FactoryBase</a> (void)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classRTC_1_1RTObject__impl.html">RTObject_impl</a> *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1FactoryBase.html#a08c22a5849ae192e442ce11754fb0be7">create</a> (<a class="el" href="classRTC_1_1Manager.html">Manager</a> *mgr)=0</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">コンポーネントの生成  <a href="#a08c22a5849ae192e442ce11754fb0be7"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1FactoryBase.html#aa7cb36bdcc0c8debba468b064ce03e7e">destroy</a> (<a class="el" href="classRTC_1_1RTObject__impl.html">RTObject_impl</a> *comp)=0</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">コンポーネントの破棄  <a href="#aa7cb36bdcc0c8debba468b064ce03e7e"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classcoil_1_1Properties.html">coil::Properties</a> &amp;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1FactoryBase.html#a457d7420f495268cc192eccd9aad6de3">profile</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">コンポーネントプロファイルの取得  <a href="#a457d7420f495268cc192eccd9aad6de3"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1FactoryBase.html#ab75a344374a7b67a8622d6608ec83502">number</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">現在のインスタンス数の取得  <a href="#ab75a344374a7b67a8622d6608ec83502"></a><br/></td></tr>
+<tr><td colspan="2"><h2>Protected 変数</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classcoil_1_1Properties.html">coil::Properties</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1FactoryBase.html#a70ac748e36fd0977a3c9f9c61433119b">m_Profile</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">コンポーネントのプロファイル  <a href="#a70ac748e36fd0977a3c9f9c61433119b"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1FactoryBase.html#ad40d7862aa60026e340b9ec1a2e77ad3">m_Number</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">現在のインスタンス数  <a href="#ad40d7862aa60026e340b9ec1a2e77ad3"></a><br/></td></tr>
+</table>
+<hr/><a name="_details"></a><h2>説明</h2>
+<p><a class="el" href="classRTC_1_1FactoryBase.html" title="FactoryBase 基底クラス.">FactoryBase</a> 基底クラス. </p>
+<p>コンポーネントファクトリの基底クラス。</p>
+<dl class="since"><dt><b>から:</b></dt><dd>0.2.0 </dd></dl>
+<hr/><h2>コンストラクタとデストラクタ</h2>
+<a class="anchor" id="a2c77bfaacbdf1b1531decffe97bc0f12"></a><!-- doxytag: member="RTC::FactoryBase::FactoryBase" ref="a2c77bfaacbdf1b1531decffe97bc0f12" args="(const coil::Properties &amp;profile)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">RTC::FactoryBase::FactoryBase </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classcoil_1_1Properties.html">coil::Properties</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>profile</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>コンストラクタ </p>
+<p>コンストラクタ。</p>
+<dl><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>profile</em>&nbsp;</td><td>コンポーネントのプロファイル </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a07017bcb7c8ed828e8cc48007af6671d"></a><!-- doxytag: member="RTC::FactoryBase::~FactoryBase" ref="a07017bcb7c8ed828e8cc48007af6671d" args="(void)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual RTC::FactoryBase::~FactoryBase </td>
+          <td>(</td>
+          <td class="paramtype">void&nbsp;</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>デストラクタ </p>
+
+</div>
+</div>
+<hr/><h2>関数</h2>
+<a class="anchor" id="a08c22a5849ae192e442ce11754fb0be7"></a><!-- doxytag: member="RTC::FactoryBase::create" ref="a08c22a5849ae192e442ce11754fb0be7" args="(Manager *mgr)=0" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual <a class="el" href="classRTC_1_1RTObject__impl.html">RTObject_impl</a>* RTC::FactoryBase::create </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classRTC_1_1Manager.html">Manager</a> *&nbsp;</td>
+          <td class="paramname"> <em>mgr</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [pure virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>コンポーネントの生成 </p>
+<p>RT-Component のインスタンスを生成するための純粋仮想関数。</p>
+<dl><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>mgr</em>&nbsp;</td><td>マネージャオブジェクト</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>戻り値:</b></dt><dd>生成したコンポーネント </dd></dl>
+
+<p><a class="el" href="classRTC_1_1FactoryCXX.html#adf709b76b21aefe81338d9b885dcdcbe">RTC::FactoryCXX</a>で実装されています。</p>
+
+</div>
+</div>
+<a class="anchor" id="aa7cb36bdcc0c8debba468b064ce03e7e"></a><!-- doxytag: member="RTC::FactoryBase::destroy" ref="aa7cb36bdcc0c8debba468b064ce03e7e" args="(RTObject_impl *comp)=0" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void RTC::FactoryBase::destroy </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classRTC_1_1RTObject__impl.html">RTObject_impl</a> *&nbsp;</td>
+          <td class="paramname"> <em>comp</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [pure virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>コンポーネントの破棄 </p>
+<p>RT-Component のインスタンスを破棄するための純粋仮想関数。</p>
+<dl><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>comp</em>&nbsp;</td><td>破棄対象 RTコンポーネント </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p><a class="el" href="classRTC_1_1FactoryCXX.html#a627c4dd3b5686d4df13a39c2a481c8e4">RTC::FactoryCXX</a>で実装されています。</p>
+
+</div>
+</div>
+<a class="anchor" id="ab75a344374a7b67a8622d6608ec83502"></a><!-- doxytag: member="RTC::FactoryBase::number" ref="ab75a344374a7b67a8622d6608ec83502" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual int RTC::FactoryBase::number </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>現在のインスタンス数の取得 </p>
+<p>コンポーネントの現在のインスタンス数を取得する。</p>
+<dl class="return"><dt><b>戻り値:</b></dt><dd>コンポーネントのインスタンス数 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a457d7420f495268cc192eccd9aad6de3"></a><!-- doxytag: member="RTC::FactoryBase::profile" ref="a457d7420f495268cc192eccd9aad6de3" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual <a class="el" href="classcoil_1_1Properties.html">coil::Properties</a>&amp; RTC::FactoryBase::profile </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>コンポーネントプロファイルの取得 </p>
+<p>コンポーネントのプロファイルを取得する</p>
+<dl class="return"><dt><b>戻り値:</b></dt><dd>コンポーネントのプロファイル </dd></dl>
+
+<p>参照元 <a class="el" href="Manager_8h_source.html#l01822">RTC::Manager::ModuleFactories::operator()()</a>, と <a class="el" href="Manager_8h_source.html#l01714">RTC::Manager::FactoryPredicate::operator()()</a>.</p>
+
+</div>
+</div>
+<hr/><h2>変数</h2>
+<a class="anchor" id="ad40d7862aa60026e340b9ec1a2e77ad3"></a><!-- doxytag: member="RTC::FactoryBase::m_Number" ref="ad40d7862aa60026e340b9ec1a2e77ad3" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int <a class="el" href="classRTC_1_1FactoryBase.html#ad40d7862aa60026e340b9ec1a2e77ad3">RTC::FactoryBase::m_Number</a><code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>現在のインスタンス数 </p>
+
+</div>
+</div>
+<a class="anchor" id="a70ac748e36fd0977a3c9f9c61433119b"></a><!-- doxytag: member="RTC::FactoryBase::m_Profile" ref="a70ac748e36fd0977a3c9f9c61433119b" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classcoil_1_1Properties.html">coil::Properties</a> <a class="el" href="classRTC_1_1FactoryBase.html#a70ac748e36fd0977a3c9f9c61433119b">RTC::FactoryBase::m_Profile</a><code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>コンポーネントのプロファイル </p>
+
+</div>
+</div>
+</div>
+<hr class="footer"/><address style="text-align: right;"><small>OpenRTMに対してThu May 24 23:25:19 2012に生成されました。&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.6.3 </small></address>
+</body>
+</html>

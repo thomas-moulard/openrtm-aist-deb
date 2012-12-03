@@ -1,0 +1,251 @@
+\section{RTC::Logger Class Reference}
+\label{classRTC_1_1Logger}\index{RTC::Logger@{RTC::Logger}}
+
+
+\doxyref{Logger}{p.}{classRTC_1_1Logger} class.  
+
+
+
+
+{\ttfamily \#include $<$SystemLogger.h$>$}
+
+Inheritance diagram for RTC::Logger:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2cm]{classRTC_1_1Logger}
+\end{center}
+\end{figure}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \{ \par
+{\bf RTL\_\-SILENT}, 
+{\bf RTL\_\-FATAL}, 
+{\bf RTL\_\-ERROR}, 
+{\bf RTL\_\-WARN}, 
+\par
+{\bf RTL\_\-INFO}, 
+{\bf RTL\_\-DEBUG}, 
+{\bf RTL\_\-TRACE}, 
+{\bf RTL\_\-VERBOSE}, 
+\par
+{\bf RTL\_\-PARANOID}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Logger} (const char $\ast$name=\char`\"{}\char`\"{})
+\begin{DoxyCompactList}\small\item\em Constructor. \item\end{DoxyCompactList}\item 
+{\bf Logger} ({\bf LogStreamBuf} $\ast$streambuf)
+\begin{DoxyCompactList}\small\item\em Constructor. \item\end{DoxyCompactList}\item 
+virtual {\bf $\sim$Logger} (void)
+\begin{DoxyCompactList}\small\item\em Virtual destructor. \item\end{DoxyCompactList}\item 
+bool {\bf setLevel} (const char $\ast$level)
+\begin{DoxyCompactList}\small\item\em Set log level by string. \item\end{DoxyCompactList}\item 
+void {\bf setDateFormat} (const char $\ast$format)
+\begin{DoxyCompactList}\small\item\em Set date/time format for adding the header. \item\end{DoxyCompactList}\item 
+void {\bf setName} (const char $\ast$name)
+\begin{DoxyCompactList}\small\item\em Set suffix of date/time string of header. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void {\bf header} (int level)
+\begin{DoxyCompactList}\small\item\em Message prefix appender function. \item\end{DoxyCompactList}\item 
+std::string {\bf getDate} (void)
+\begin{DoxyCompactList}\small\item\em Get the current formatted date/time string Get the current datetime described by specified format. \item\end{DoxyCompactList}\item 
+int {\bf strToLevel} (const char $\ast$level)
+\begin{DoxyCompactList}\small\item\em Set the log level Set the log level corresponding to the given string. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\doxyref{Logger}{p.}{classRTC_1_1Logger} class. This class is composed of the buffer class and the format class.
+\begin{DoxyItemize}
+\item The buffer class
+\begin{DoxyItemize}
+\item The buffer class serializes to the MultiThreading writing and does buffering.
+\item The buffer class can output the log at two or more output destination. As the example of the output destination, filing, the standard, the log server etc.
+\item The output destination can be added to the buffer with addStream.
+\end{DoxyItemize}
+\item The format class
+\begin{DoxyItemize}
+\item The format class can output it by specifying the log level.
+\item The format is [Time] [Loglevel] [Ssuffix] [Message].
+\item [Time] [Loglevel] [Suffix] are added by the automatic operation.
+\item [Suffix] can be specified.
+\item Loglevel
+\begin{DoxyItemize}
+\item RTL\_\-SILENT
+\item RTL\_\-FATAL
+\item RTL\_\-ERROR
+\item RTL\_\-WARN
+\item RTL\_\-INFO
+\item RTL\_\-DEBUG
+\item RTL\_\-TRACE
+\item RTL\_\-VERBOSE
+\item RTL\_\-PARANOID
+\end{DoxyItemize}
+\item The format class can be locked/unlocked to this format object. 
+\end{DoxyItemize}
+\end{DoxyItemize}
+
+\subsection{Member Enumeration Documentation}
+\subsubsection[{"@0}]{\setlength{\rightskip}{0pt plus 5cm}anonymous enum}\label{classRTC_1_1Logger_a26c3dbf0a4c0fa3c4cc5e3a472636879}
+\begin{Desc}
+\item[Enumerator: ]\par
+\begin{description}
+\index{RTL\_\-SILENT@{RTL\_\-SILENT}!RTC::Logger@{RTC::Logger}}\index{RTC::Logger@{RTC::Logger}!RTL\_\-SILENT@{RTL\_\-SILENT}}\item[{\em 
+RTL\_\-SILENT\label{classRTC_1_1Logger_a26c3dbf0a4c0fa3c4cc5e3a472636879a3367cbfc4e33871c5fa76fd1cd36756a}
+}]\index{RTL\_\-FATAL@{RTL\_\-FATAL}!RTC::Logger@{RTC::Logger}}\index{RTC::Logger@{RTC::Logger}!RTL\_\-FATAL@{RTL\_\-FATAL}}\item[{\em 
+RTL\_\-FATAL\label{classRTC_1_1Logger_a26c3dbf0a4c0fa3c4cc5e3a472636879a7fe2f71dc262f90d320099edb7c16087}
+}]\index{RTL\_\-ERROR@{RTL\_\-ERROR}!RTC::Logger@{RTC::Logger}}\index{RTC::Logger@{RTC::Logger}!RTL\_\-ERROR@{RTL\_\-ERROR}}\item[{\em 
+RTL\_\-ERROR\label{classRTC_1_1Logger_a26c3dbf0a4c0fa3c4cc5e3a472636879ac99eb1601f28452bc182c2d86a1029a0}
+}]\index{RTL\_\-WARN@{RTL\_\-WARN}!RTC::Logger@{RTC::Logger}}\index{RTC::Logger@{RTC::Logger}!RTL\_\-WARN@{RTL\_\-WARN}}\item[{\em 
+RTL\_\-WARN\label{classRTC_1_1Logger_a26c3dbf0a4c0fa3c4cc5e3a472636879a519a7175117c1fe1e4d37950f56437ba}
+}]\index{RTL\_\-INFO@{RTL\_\-INFO}!RTC::Logger@{RTC::Logger}}\index{RTC::Logger@{RTC::Logger}!RTL\_\-INFO@{RTL\_\-INFO}}\item[{\em 
+RTL\_\-INFO\label{classRTC_1_1Logger_a26c3dbf0a4c0fa3c4cc5e3a472636879a14e025e496dafbec620acc01f3df9ef5}
+}]\index{RTL\_\-DEBUG@{RTL\_\-DEBUG}!RTC::Logger@{RTC::Logger}}\index{RTC::Logger@{RTC::Logger}!RTL\_\-DEBUG@{RTL\_\-DEBUG}}\item[{\em 
+RTL\_\-DEBUG\label{classRTC_1_1Logger_a26c3dbf0a4c0fa3c4cc5e3a472636879a1d7ef00333c4c80a9a726d9d33b428e0}
+}]\index{RTL\_\-TRACE@{RTL\_\-TRACE}!RTC::Logger@{RTC::Logger}}\index{RTC::Logger@{RTC::Logger}!RTL\_\-TRACE@{RTL\_\-TRACE}}\item[{\em 
+RTL\_\-TRACE\label{classRTC_1_1Logger_a26c3dbf0a4c0fa3c4cc5e3a472636879af6a89134b5b95f2f4b4fb6cf2c631b54}
+}]\index{RTL\_\-VERBOSE@{RTL\_\-VERBOSE}!RTC::Logger@{RTC::Logger}}\index{RTC::Logger@{RTC::Logger}!RTL\_\-VERBOSE@{RTL\_\-VERBOSE}}\item[{\em 
+RTL\_\-VERBOSE\label{classRTC_1_1Logger_a26c3dbf0a4c0fa3c4cc5e3a472636879abdbd3de57d4b10ba4e8f19f601619378}
+}]\index{RTL\_\-PARANOID@{RTL\_\-PARANOID}!RTC::Logger@{RTC::Logger}}\index{RTC::Logger@{RTC::Logger}!RTL\_\-PARANOID@{RTL\_\-PARANOID}}\item[{\em 
+RTL\_\-PARANOID\label{classRTC_1_1Logger_a26c3dbf0a4c0fa3c4cc5e3a472636879ac9bd2a83ac9b45acba1e71b2cd3b9fad}
+}]\end{description}
+\end{Desc}
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{RTC::Logger@{RTC::Logger}!Logger@{Logger}}
+\index{Logger@{Logger}!RTC::Logger@{RTC::Logger}}
+\subsubsection[{Logger}]{\setlength{\rightskip}{0pt plus 5cm}RTC::Logger::Logger (const char $\ast$ {\em name} = {\ttfamily \char`\"{}\char`\"{}})}\label{classRTC_1_1Logger_ab2e8e5300567b89edc7586f41e184c5b}
+
+
+Constructor. 
+
+Constructor
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em name}]suffix of date/time string of header. \end{DoxyParams}
+\index{RTC::Logger@{RTC::Logger}!Logger@{Logger}}
+\index{Logger@{Logger}!RTC::Logger@{RTC::Logger}}
+\subsubsection[{Logger}]{\setlength{\rightskip}{0pt plus 5cm}RTC::Logger::Logger ({\bf LogStreamBuf} $\ast$ {\em streambuf})}\label{classRTC_1_1Logger_a201ebea93493a822bef5397b0666c1f3}
+
+
+Constructor. 
+
+Constructor
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em streambuf}]LogStream object \end{DoxyParams}
+\index{RTC::Logger@{RTC::Logger}!$\sim$Logger@{$\sim$Logger}}
+\index{$\sim$Logger@{$\sim$Logger}!RTC::Logger@{RTC::Logger}}
+\subsubsection[{$\sim$Logger}]{\setlength{\rightskip}{0pt plus 5cm}virtual RTC::Logger::$\sim$Logger (void)\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classRTC_1_1Logger_a4cc391947ae2c203773216049b6a658d}
+
+
+Virtual destructor. 
+
+
+
+\subsection{Member Function Documentation}
+\index{RTC::Logger@{RTC::Logger}!getDate@{getDate}}
+\index{getDate@{getDate}!RTC::Logger@{RTC::Logger}}
+\subsubsection[{getDate}]{\setlength{\rightskip}{0pt plus 5cm}std::string RTC::Logger::getDate (void)\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC_1_1Logger_afd3ce56caeea1d4cb12725b4c0905aec}
+
+
+Get the current formatted date/time string Get the current datetime described by specified format. 
+
+\begin{DoxyReturn}{Returns}
+Format specification current datetime 
+\end{DoxyReturn}
+\index{RTC::Logger@{RTC::Logger}!header@{header}}
+\index{header@{header}!RTC::Logger@{RTC::Logger}}
+\subsubsection[{header}]{\setlength{\rightskip}{0pt plus 5cm}virtual void RTC::Logger::header (int {\em level})\hspace{0.3cm}{\ttfamily  [protected, virtual]}}\label{classRTC_1_1Logger_a8361781fa7f52ab330c4522bcdd3068b}
+
+
+Message prefix appender function. 
+
+Subclasses of this class should override this operation, and this function should be defined to append some prefix to the log messages. 
+
+Reimplemented from {\bf coil::log\_\-stream$<$ \_\-CharT, \_\-Traits $>$} \doxyref{}{p.}{classcoil_1_1log__stream_acef16b17dc52f988d7f3b28afde3e960}.
+
+\index{RTC::Logger@{RTC::Logger}!setDateFormat@{setDateFormat}}
+\index{setDateFormat@{setDateFormat}!RTC::Logger@{RTC::Logger}}
+\subsubsection[{setDateFormat}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::Logger::setDateFormat (const char $\ast$ {\em format})}\label{classRTC_1_1Logger_a5479637be023b33f41a75894806887b7}
+
+
+Set date/time format for adding the header. 
+
+The format specification string is as follows: 
+\begin{DoxyPre}
+ \%a abbreviated weekday name 
+ \%A full weekday name 
+ \%b abbreviated month name 
+ \%B full month name 
+ \%c the standard date and time string 
+ \%d day of the month, as a number (1-31) 
+ \%H hour, 24 hour format (0-23) 
+ \%I hour, 12 hour format (1-12) 
+ \%j day of the year, as a number (1-366) 
+ \%m month as a number (1-12).
+    Note: some versions of Microsoft Visual C++ may use values that range
+    from 0-11. 
+ \%M minute as a number (0-59) 
+ \%p locale's equivalent of AM or PM 
+ \%Q millisecond as a number (0-999) from ver 1.1
+ \%q microsecond as a number (0-999) from ver 1.1
+ \%S second as a number (0-59) 
+ \%U week of the year, sunday as the first day 
+ \%w weekday as a decimal (0-6, sunday=0) 
+ \%W week of the year, monday as the first day 
+ \%x standard date string 
+ \%X standard time string 
+ \%y year in decimal, without the century (0-99) 
+ \%Y year in decimal, with the century 
+ \%Z time zone name 
+ \%\% a percent sign 
+ \end{DoxyPre}
+
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em fmt}]Datetime format \end{DoxyParams}
+\index{RTC::Logger@{RTC::Logger}!setLevel@{setLevel}}
+\index{setLevel@{setLevel}!RTC::Logger@{RTC::Logger}}
+\subsubsection[{setLevel}]{\setlength{\rightskip}{0pt plus 5cm}bool RTC::Logger::setLevel (const char $\ast$ {\em level})}\label{classRTC_1_1Logger_abfc5decf1819d5e5fbd9d4f755c6d9a3}
+
+
+Set log level by string. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em level}]log level \end{DoxyParams}
+\index{RTC::Logger@{RTC::Logger}!setName@{setName}}
+\index{setName@{setName}!RTC::Logger@{RTC::Logger}}
+\subsubsection[{setName}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::Logger::setName (const char $\ast$ {\em name})}\label{classRTC_1_1Logger_a4a7b805b7d950cdc4eed64565a7a62d3}
+
+
+Set suffix of date/time string of header. 
+
+Set the suffix string added after the datatime of the header.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em suffix}]Suffix string \end{DoxyParams}
+\index{RTC::Logger@{RTC::Logger}!strToLevel@{strToLevel}}
+\index{strToLevel@{strToLevel}!RTC::Logger@{RTC::Logger}}
+\subsubsection[{strToLevel}]{\setlength{\rightskip}{0pt plus 5cm}int RTC::Logger::strToLevel (const char $\ast$ {\em level})\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC_1_1Logger_a684f47d977da5a696021137583852407}
+
+
+Set the log level Set the log level corresponding to the given string. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em lv}]Log level string \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The set log level 
+\end{DoxyReturn}

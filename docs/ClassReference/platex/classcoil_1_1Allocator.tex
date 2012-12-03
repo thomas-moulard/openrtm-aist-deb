@@ -1,0 +1,100 @@
+\section{クラス coil::Allocator}
+\label{classcoil_1_1Allocator}\index{coil::Allocator@{coil::Allocator}}
+
+
+\doxyref{Allocator}{p.}{classcoil_1_1Allocator} クラス.  
+
+
+
+
+{\ttfamily \#include $<$Allocator.h$>$}
+
+coil::Allocatorに対する継承グラフ\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2cm]{classcoil_1_1Allocator}
+\end{center}
+\end{figure}
+\subsection*{Public メソッド}
+\begin{DoxyCompactItemize}
+\item 
+virtual {\bf $\sim$Allocator} ()
+\begin{DoxyCompactList}\small\item\em デストラクタ \item\end{DoxyCompactList}\item 
+virtual void $\ast$ {\bf New} (size\_\-t t)  throw (std::bad\_\-alloc)
+\begin{DoxyCompactList}\small\item\em メモリ領域確保 \item\end{DoxyCompactList}\item 
+virtual void {\bf Delete} (void $\ast$p)  throw ()
+\begin{DoxyCompactList}\small\item\em メモリ領域解放 \item\end{DoxyCompactList}\item 
+virtual void $\ast$ {\bf NewArray} (size\_\-t t)  throw (std::bad\_\-alloc)
+\begin{DoxyCompactList}\small\item\em 配列用メモリ領域確保 \item\end{DoxyCompactList}\item 
+virtual void {\bf DeleteArray} (void $\ast$p)  throw ()
+\begin{DoxyCompactList}\small\item\em 配列用メモリ領域解放 \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{説明}
+\doxyref{Allocator}{p.}{classcoil_1_1Allocator} クラス. 
+
+\subsection{コンストラクタとデストラクタ}
+\index{coil::Allocator@{coil::Allocator}!$\sim$Allocator@{$\sim$Allocator}}
+\index{$\sim$Allocator@{$\sim$Allocator}!coil::Allocator@{coil::Allocator}}
+\subsubsection[{$\sim$Allocator}]{\setlength{\rightskip}{0pt plus 5cm}virtual coil::Allocator::$\sim$Allocator ()\hspace{0.3cm}{\ttfamily  [inline, virtual]}}\label{classcoil_1_1Allocator_a4ddf0d97ba85758bc3b23227a8dd9cb6}
+
+
+デストラクタ 
+
+デストラクタ。 
+
+\subsection{関数}
+\index{coil::Allocator@{coil::Allocator}!Delete@{Delete}}
+\index{Delete@{Delete}!coil::Allocator@{coil::Allocator}}
+\subsubsection[{Delete}]{\setlength{\rightskip}{0pt plus 5cm}virtual void coil::Allocator::Delete (void $\ast$ {\em p})  throw ()\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classcoil_1_1Allocator_a75e74a4664cbafc49bdc9e2ed4d2d8a8}
+
+
+メモリ領域解放 
+
+メモリ領域を解放する。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em p}]メモリ領域へのポインタ \end{DoxyParams}
+\index{coil::Allocator@{coil::Allocator}!DeleteArray@{DeleteArray}}
+\index{DeleteArray@{DeleteArray}!coil::Allocator@{coil::Allocator}}
+\subsubsection[{DeleteArray}]{\setlength{\rightskip}{0pt plus 5cm}virtual void coil::Allocator::DeleteArray (void $\ast$ {\em p})  throw ()\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classcoil_1_1Allocator_ad3239ab9cf554cfe16e93be8109d83bc}
+
+
+配列用メモリ領域解放 
+
+配列用メモリ領域を解放する。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em p}]メモリ領域へのポインタ \end{DoxyParams}
+\index{coil::Allocator@{coil::Allocator}!New@{New}}
+\index{New@{New}!coil::Allocator@{coil::Allocator}}
+\subsubsection[{New}]{\setlength{\rightskip}{0pt plus 5cm}virtual void$\ast$ coil::Allocator::New (size\_\-t {\em t})  throw (std::bad\_\-alloc)\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classcoil_1_1Allocator_a5f57ccb211ac241c2eb9845865eedfaf}
+
+
+メモリ領域確保 
+
+メモリ領域を確保する。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em t}]割り当てサイズ\end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+メモリ領域へのポインタ 
+\end{DoxyReturn}
+\index{coil::Allocator@{coil::Allocator}!NewArray@{NewArray}}
+\index{NewArray@{NewArray}!coil::Allocator@{coil::Allocator}}
+\subsubsection[{NewArray}]{\setlength{\rightskip}{0pt plus 5cm}virtual void$\ast$ coil::Allocator::NewArray (size\_\-t {\em t})  throw (std::bad\_\-alloc)\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classcoil_1_1Allocator_aa614febe55894d46ce0c319418d4cc04}
+
+
+配列用メモリ領域確保 
+
+配列用メモリ領域を確保する。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em t}]割り当てサイズ\end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+メモリ領域へのポインタ 
+\end{DoxyReturn}

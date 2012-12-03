@@ -1,0 +1,61 @@
+\section{RingBuffer.h File Reference}
+\label{RingBuffer_8h}\index{RingBuffer.h@{RingBuffer.h}}
+
+
+Defautl Buffer class.  
+
+
+{\ttfamily \#include $<$vector$>$}\par
+{\ttfamily \#include $<$algorithm$>$}\par
+{\ttfamily \#include $<$iostream$>$}\par
+{\ttfamily \#include $<$coil/TimeValue.h$>$}\par
+{\ttfamily \#include $<$coil/Mutex.h$>$}\par
+{\ttfamily \#include $<$coil/Guard.h$>$}\par
+{\ttfamily \#include $<$coil/Condition.h$>$}\par
+{\ttfamily \#include $<$coil/stringutil.h$>$}\par
+{\ttfamily \#include $<$rtm/BufferBase.h$>$}\par
+{\ttfamily \#include $<$rtm/BufferStatus.h$>$}\par
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class {\bf RTC::RingBuffer$<$ DataType $>$}
+\begin{DoxyCompactList}\small\item\em Ring buffer implementation class. \item\end{DoxyCompactList}\item 
+struct {\bfseries RTC::RingBuffer$<$ DataType $>$::condition}
+\begin{DoxyCompactList}\small\item\em struct for condition variable \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace {\bf RTC}
+
+
+\begin{DoxyCompactList}\small\item\em RT-\/Component. \item\end{DoxyCompactList}
+
+\end{DoxyCompactItemize}
+\subsection*{Defines}
+\begin{DoxyCompactItemize}
+\item 
+\#define {\bf RINGBUFFER\_\-DEFAULT\_\-LENGTH}~8
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Defautl Buffer class. \begin{DoxyDate}{Date}
+
+\end{DoxyDate}
+\begin{DoxyParagraph}{Date}
+2007-\/12-\/31 03:08:06 
+\end{DoxyParagraph}
+\begin{DoxyAuthor}{Author}
+Noriaki Ando $<${\tt n-\/ando@aist.go.jp}$>$
+\end{DoxyAuthor}
+Copyright (C) 2006-\/2009 Noriaki Ando Task-\/intelligence Research Group, Intelligent Systems Research Institute, National Institute of Advanced Industrial Science and Technology (AIST), Japan All rights reserved.
+
+\begin{DoxyParagraph}{Id}
+\doxyref{RingBuffer.h}{p.}{RingBuffer_8h} 2015 2010-\/12-\/29 11:33:33Z n-\/ando 
+\end{DoxyParagraph}
+
+
+\subsection{Define Documentation}
+\index{RingBuffer.h@{RingBuffer.h}!RINGBUFFER\_\-DEFAULT\_\-LENGTH@{RINGBUFFER\_\-DEFAULT\_\-LENGTH}}
+\index{RINGBUFFER\_\-DEFAULT\_\-LENGTH@{RINGBUFFER\_\-DEFAULT\_\-LENGTH}!RingBuffer.h@{RingBuffer.h}}
+\subsubsection[{RINGBUFFER\_\-DEFAULT\_\-LENGTH}]{\setlength{\rightskip}{0pt plus 5cm}\#define RINGBUFFER\_\-DEFAULT\_\-LENGTH~8}\label{RingBuffer_8h_a41df60019e24b161f48a056b4b7115a4}

@@ -1,0 +1,42 @@
+\section{RTC::MultiModeComponentAction Interface Reference}
+\label{interfaceRTC_1_1MultiModeComponentAction}\index{RTC::MultiModeComponentAction@{RTC::MultiModeComponentAction}}
+
+
+\doxyref{MultiModeComponentAction}{p.}{interfaceRTC_1_1MultiModeComponentAction}.  
+
+
+
+
+{\ttfamily import \char`\"{}RTC.idl\char`\"{};}
+
+Inheritance diagram for RTC::MultiModeComponentAction:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2cm]{interfaceRTC_1_1MultiModeComponentAction}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf ReturnCode\_\-t} {\bf on\_\-mode\_\-changed} (in {\bf ExecutionContextHandle\_\-t} exec\_\-handle)
+\begin{DoxyCompactList}\small\item\em on\_\-mode\_\-changed \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\doxyref{MultiModeComponentAction}{p.}{interfaceRTC_1_1MultiModeComponentAction}. \doxyref{MultiModeComponentAction}{p.}{interfaceRTC_1_1MultiModeComponentAction} is a companion to \doxyref{ComponentAction}{p.}{interfaceRTC_1_1ComponentAction} that is realized by RTCs that support multiple modes. 
+
+\subsection{Member Function Documentation}
+\index{RTC::MultiModeComponentAction@{RTC::MultiModeComponentAction}!on\_\-mode\_\-changed@{on\_\-mode\_\-changed}}
+\index{on\_\-mode\_\-changed@{on\_\-mode\_\-changed}!RTC::MultiModeComponentAction@{RTC::MultiModeComponentAction}}
+\subsubsection[{on\_\-mode\_\-changed}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ReturnCode\_\-t} RTC::MultiModeComponentAction::on\_\-mode\_\-changed (in {\bf ExecutionContextHandle\_\-t} {\em exec\_\-handle})}\label{interfaceRTC_1_1MultiModeComponentAction_a0918cd39b3bfc001681ca40505304d7b}
+
+
+on\_\-mode\_\-changed 
+
+\subsection{Description}\label{namespaceRTC_Description}
+This callback is invoked each time the observed mode of a component has changed with respect to a particular execution context.\subsection{Semantics}\label{namespaceRTC_Semantics}
+If the context is PERIODIC, this callback shall come before the next call to on\_\-execute (see Section 5.3.1.2.1) within that context. The new mode can be retrieved with get\_\-current\_\-mode\_\-in\_\-context. If the result is the same as the result of get\_\-current\_\-mode, the mode has stabilized. 
+
+The documentation for this interface was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+{\bf RTC.idl}\end{DoxyCompactItemize}

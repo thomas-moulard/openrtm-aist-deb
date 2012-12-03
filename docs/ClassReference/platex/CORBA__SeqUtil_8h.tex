@@ -1,0 +1,60 @@
+\section{CORBA\_\-SeqUtil.h}
+\label{CORBA__SeqUtil_8h}\index{CORBA\_\-SeqUtil.h@{CORBA\_\-SeqUtil.h}}
+
+
+CORBA sequence utility template functions.  
+
+
+{\ttfamily \#include $<$rtm/RTC.h$>$}\par
+{\ttfamily \#include $<$rtm/Manager.h$>$}\par
+\subsection*{ネームスペース}
+\begin{DoxyCompactItemize}
+\item 
+namespace {\bf CORBA\_\-SeqUtil}
+
+
+\begin{DoxyCompactList}\small\item\em CORBA sequence ヘルパーテンプレート関数. \item\end{DoxyCompactList}
+
+\end{DoxyCompactItemize}
+\subsection*{関数}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$class CorbaSequence , class Functor $>$ }\\Functor {\bf CORBA\_\-SeqUtil::for\_\-each} (CorbaSequence \&seq, Functor f)
+\begin{DoxyCompactList}\small\item\em CORBA sequence に対して functor を適用する. \item\end{DoxyCompactList}\item 
+{\footnotesize template$<$class CorbaSequence , class Functor $>$ }\\CORBA::Long {\bf CORBA\_\-SeqUtil::find} (const CorbaSequence \&seq, Functor f)
+\begin{DoxyCompactList}\small\item\em CORBA sequence の中から functor に適合する要素のインデックスを返す. \item\end{DoxyCompactList}\item 
+{\footnotesize template$<$class CorbaSequence , class SequenceElement $>$ }\\void {\bf CORBA\_\-SeqUtil::push\_\-back} (CorbaSequence \&seq, SequenceElement elem)
+\begin{DoxyCompactList}\small\item\em CORBA sequence の最後に要素を追加する. \item\end{DoxyCompactList}\item 
+{\footnotesize template$<$class CorbaSequence $>$ }\\void {\bf CORBA\_\-SeqUtil::push\_\-back\_\-list} (CorbaSequence \&seq1, const CorbaSequence \&seq2)
+\begin{DoxyCompactList}\small\item\em CORBA sequence をマージする. \item\end{DoxyCompactList}\item 
+{\footnotesize template$<$class CorbaSequence , class SequenceElement $>$ }\\void {\bf CORBA\_\-SeqUtil::insert} (CorbaSequence \&seq, SequenceElement \&elem, CORBA::ULong index)
+\begin{DoxyCompactList}\small\item\em CORBA sequence に要素を挿入する. \item\end{DoxyCompactList}\item 
+{\footnotesize template$<$class CorbaSequence , class SequenceElement $>$ }\\SequenceElement \& {\bf CORBA\_\-SeqUtil::front} (CorbaSequence \&seq)
+\begin{DoxyCompactList}\small\item\em CORBA sequence の先頭要素を取得する. \item\end{DoxyCompactList}\item 
+{\footnotesize template$<$class CorbaSequence , class SequenceElement $>$ }\\SequenceElement \& {\bf CORBA\_\-SeqUtil::back} (CorbaSequence \&seq)
+\begin{DoxyCompactList}\small\item\em CORBA sequence の末尾要素を取得する. \item\end{DoxyCompactList}\item 
+{\footnotesize template$<$class CorbaSequence $>$ }\\void {\bf CORBA\_\-SeqUtil::erase} (CorbaSequence \&seq, CORBA::ULong index)
+\begin{DoxyCompactList}\small\item\em CORBA sequence の指定された位置の要素を削除する. \item\end{DoxyCompactList}\item 
+{\footnotesize template$<$class CorbaSequence , class Functor $>$ }\\void {\bf CORBA\_\-SeqUtil::erase\_\-if} (CorbaSequence \&seq, Functor f)
+\begin{DoxyCompactList}\small\item\em シーケンスの要素を述語にしたがって削除する \item\end{DoxyCompactList}\item 
+{\footnotesize template$<$class CorbaSequence $>$ }\\void {\bf CORBA\_\-SeqUtil::clear} (CorbaSequence \&seq)
+\begin{DoxyCompactList}\small\item\em CORBA sequence の全要素を削除. \item\end{DoxyCompactList}\item 
+{\footnotesize template$<$class CorbaRefSequence $>$ }\\{\bf coil::vstring} {\bf CORBA\_\-SeqUtil::refToVstring} (const CorbaRefSequence \&objlist)
+\end{DoxyCompactItemize}
+
+
+\subsection{説明}
+CORBA sequence utility template functions. \begin{DoxyDate}{日付}
+
+\end{DoxyDate}
+\begin{DoxyParagraph}{Date}
+2007-\/12-\/31 03:06:24 
+\end{DoxyParagraph}
+\begin{DoxyAuthor}{作者}
+Noriaki Ando $<${\tt n-\/ando@aist.go.jp}$>$
+\end{DoxyAuthor}
+Copyright (C) 2006-\/2008 Task-\/intelligence Research Group, Intelligent Systems Research Institute, National Institute of Advanced Industrial Science and Technology (AIST), Japan All rights reserved.
+
+\begin{DoxyParagraph}{Id}
+\doxyref{CORBA\_\-SeqUtil.h}{p.}{CORBA__SeqUtil_8h} 2019 2011-\/01-\/06 17:02:23Z n-\/ando 
+\end{DoxyParagraph}

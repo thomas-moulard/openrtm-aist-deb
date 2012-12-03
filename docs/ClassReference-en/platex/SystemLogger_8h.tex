@@ -1,0 +1,218 @@
+\section{SystemLogger.h File Reference}
+\label{SystemLogger_8h}\index{SystemLogger.h@{SystemLogger.h}}
+
+
+RT component logger class.  
+
+
+{\ttfamily \#include $<$rtm/config\_\-rtc.h$>$}\par
+{\ttfamily \#include $<$coil/Time.h$>$}\par
+{\ttfamily \#include $<$coil/Logger.h$>$}\par
+{\ttfamily \#include $<$coil/Mutex.h$>$}\par
+{\ttfamily \#include $<$coil/Guard.h$>$}\par
+{\ttfamily \#include $<$coil/stringutil.h$>$}\par
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class {\bf RTC::Logger}
+\begin{DoxyCompactList}\small\item\em \doxyref{Logger}{p.}{classRTC_1_1Logger} class. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace {\bf RTC}
+
+
+\begin{DoxyCompactList}\small\item\em RT-\/Component. \item\end{DoxyCompactList}
+
+\end{DoxyCompactItemize}
+\subsection*{Defines}
+\begin{DoxyCompactItemize}
+\item 
+\#define {\bf RTC\_\-LOG}(LV, fmt)
+\begin{DoxyCompactList}\small\item\em General-\/purpose log output macro. \item\end{DoxyCompactList}\item 
+\#define {\bf RTC\_\-LOG\_\-STR}(LV, str)
+\item 
+\#define {\bf RTC\_\-FATAL}(fmt)~RTC\_\-LOG(::RTC::Logger::RTL\_\-FATAL, fmt)
+\begin{DoxyCompactList}\small\item\em Error log output macro. \item\end{DoxyCompactList}\item 
+\#define {\bf RTC\_\-FATAL\_\-STR}(str)~RTC\_\-LOG\_\-STR(::RTC::Logger::RTL\_\-FATAL, str)
+\item 
+\#define {\bf RTC\_\-ERROR}(fmt)~RTC\_\-LOG(::RTC::Logger::RTL\_\-ERROR, fmt)
+\begin{DoxyCompactList}\small\item\em Error log output macro. \item\end{DoxyCompactList}\item 
+\#define {\bf RTC\_\-ERROR\_\-STR}(str)~RTC\_\-LOG\_\-STR(::RTC::Logger::RTL\_\-ERROR, str)
+\item 
+\#define {\bf RTC\_\-WARN}(fmt)~RTC\_\-LOG(::RTC::Logger::RTL\_\-WARN, fmt)
+\begin{DoxyCompactList}\small\item\em Warning log output macro. \item\end{DoxyCompactList}\item 
+\#define {\bf RTC\_\-WARN\_\-STR}(str)~RTC\_\-LOG\_\-STR(::RTC::Logger::RTL\_\-WARN, str)
+\item 
+\#define {\bf RTC\_\-INFO}(fmt)~RTC\_\-LOG(::RTC::Logger::RTL\_\-INFO, fmt)
+\begin{DoxyCompactList}\small\item\em Information level log output macro. \item\end{DoxyCompactList}\item 
+\#define {\bf RTC\_\-INFO\_\-STR}(str)~RTC\_\-LOG\_\-STR(::RTC::Logger::RTL\_\-INFO, str)
+\item 
+\#define {\bf RTC\_\-DEBUG}(fmt)~RTC\_\-LOG(::RTC::Logger::RTL\_\-DEBUG, fmt)
+\begin{DoxyCompactList}\small\item\em Debug level log output macro. \item\end{DoxyCompactList}\item 
+\#define {\bf RTC\_\-DEBUG\_\-STR}(str)~RTC\_\-LOG\_\-STR(::RTC::Logger::RTL\_\-DEBUG, str)
+\item 
+\#define {\bf RTC\_\-TRACE}(fmt)~RTC\_\-LOG(::RTC::Logger::RTL\_\-TRACE, fmt)
+\begin{DoxyCompactList}\small\item\em Trace level log output macro. \item\end{DoxyCompactList}\item 
+\#define {\bf RTC\_\-TRACE\_\-STR}(str)~RTC\_\-LOG\_\-STR(::RTC::Logger::RTL\_\-TRACE, str)
+\item 
+\#define {\bf RTC\_\-VERBOSE}(fmt)~RTC\_\-LOG(::RTC::Logger::RTL\_\-VERBOSE, fmt)
+\begin{DoxyCompactList}\small\item\em Verbose level log output macro. \item\end{DoxyCompactList}\item 
+\#define {\bf RTC\_\-VERBOSE\_\-STR}(str)~RTC\_\-LOG\_\-STR(::RTC::Logger::RTL\_\-VERBOSE, str)
+\item 
+\#define {\bf RTC\_\-PARANOID}(fmt)~RTC\_\-LOG(::RTC::Logger::RTL\_\-PARANOID, fmt)
+\begin{DoxyCompactList}\small\item\em Paranoid level log output macro. \item\end{DoxyCompactList}\item 
+\#define {\bf RTC\_\-PARANOID\_\-STR}(str)~RTC\_\-LOG\_\-STR(::RTC::Logger::RTL\_\-PARANOID, str)
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef ::{\bf coil::LogStreamBuffer} {\bf RTC::LogStreamBuf}
+\item 
+typedef ::{\bf coil::LogStream} {\bf RTC::LogStream}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+RT component logger class. \begin{DoxyDate}{Date}
+
+\end{DoxyDate}
+\begin{DoxyParagraph}{Date}
+2007-\/07-\/20 16:10:32 
+\end{DoxyParagraph}
+\begin{DoxyAuthor}{Author}
+Noriaki Ando $<${\tt n-\/ando@aist.go.jp}$>$
+\end{DoxyAuthor}
+Copyright (C) 2003-\/2008 Task-\/intelligence Research Group, Intelligent Systems Research Institute, National Institute of Advanced Industrial Science and Technology (AIST), Japan All rights reserved.
+
+\begin{DoxyParagraph}{Id}
+\doxyref{SystemLogger.h}{p.}{SystemLogger_8h} 2017 2010-\/12-\/30 16:38:36Z n-\/ando 
+\end{DoxyParagraph}
+
+
+\subsection{Define Documentation}
+\index{SystemLogger.h@{SystemLogger.h}!RTC\_\-DEBUG@{RTC\_\-DEBUG}}
+\index{RTC\_\-DEBUG@{RTC\_\-DEBUG}!SystemLogger.h@{SystemLogger.h}}
+\subsubsection[{RTC\_\-DEBUG}]{\setlength{\rightskip}{0pt plus 5cm}\#define RTC\_\-DEBUG(fmt)~RTC\_\-LOG(::RTC::Logger::RTL\_\-DEBUG, fmt)}\label{SystemLogger_8h_a8584f4f111f7c1a87bc2f78ae81faca8}
+
+
+Debug level log output macro. 
+
+If log levels are ( DEBUG, TRACE, VERBOSE, PARANOID ), message will be output to log. 
+
+Referenced by RTC::InPort$<$ DataType $>$::isEmpty(), RTC::InPort$<$ DataType $>$::isNew(), RTC::InPort$<$ DataType $>$::read(), and RTC::OutPort$<$ DataType $>$::write().
+
+\index{SystemLogger.h@{SystemLogger.h}!RTC\_\-DEBUG\_\-STR@{RTC\_\-DEBUG\_\-STR}}
+\index{RTC\_\-DEBUG\_\-STR@{RTC\_\-DEBUG\_\-STR}!SystemLogger.h@{SystemLogger.h}}
+\subsubsection[{RTC\_\-DEBUG\_\-STR}]{\setlength{\rightskip}{0pt plus 5cm}\#define RTC\_\-DEBUG\_\-STR(str)~RTC\_\-LOG\_\-STR(::RTC::Logger::RTL\_\-DEBUG, str)}\label{SystemLogger_8h_a5401c259a77c5829cf7b63e23cc65682}
+\index{SystemLogger.h@{SystemLogger.h}!RTC\_\-ERROR@{RTC\_\-ERROR}}
+\index{RTC\_\-ERROR@{RTC\_\-ERROR}!SystemLogger.h@{SystemLogger.h}}
+\subsubsection[{RTC\_\-ERROR}]{\setlength{\rightskip}{0pt plus 5cm}\#define RTC\_\-ERROR(fmt)~RTC\_\-LOG(::RTC::Logger::RTL\_\-ERROR, fmt)}\label{SystemLogger_8h_aaf5cdaec4317b35e81aba41329dab425}
+
+
+Error log output macro. 
+
+This is a log output macro of the error level. If log levels are ERROR, WARN, INFO, NORMAL, DEBUG, TRACE, VERBOSE or PARANOID, message will be output to log. 
+
+Referenced by RTC::InPort$<$ DataType $>$::read().
+
+\index{SystemLogger.h@{SystemLogger.h}!RTC\_\-ERROR\_\-STR@{RTC\_\-ERROR\_\-STR}}
+\index{RTC\_\-ERROR\_\-STR@{RTC\_\-ERROR\_\-STR}!SystemLogger.h@{SystemLogger.h}}
+\subsubsection[{RTC\_\-ERROR\_\-STR}]{\setlength{\rightskip}{0pt plus 5cm}\#define RTC\_\-ERROR\_\-STR(str)~RTC\_\-LOG\_\-STR(::RTC::Logger::RTL\_\-ERROR, str)}\label{SystemLogger_8h_a7ece8313e02961219e516b2682cf6f93}
+\index{SystemLogger.h@{SystemLogger.h}!RTC\_\-FATAL@{RTC\_\-FATAL}}
+\index{RTC\_\-FATAL@{RTC\_\-FATAL}!SystemLogger.h@{SystemLogger.h}}
+\subsubsection[{RTC\_\-FATAL}]{\setlength{\rightskip}{0pt plus 5cm}\#define RTC\_\-FATAL(fmt)~RTC\_\-LOG(::RTC::Logger::RTL\_\-FATAL, fmt)}\label{SystemLogger_8h_a2e1f95d815eccd6ed95353ceccea4f26}
+
+
+Error log output macro. 
+
+This is a log output macro of the error level. If log levels are ERROR, WARN, INFO, NORMAL, DEBUG, TRACE, VERBOSE or PARANOID, message will be output to log. \index{SystemLogger.h@{SystemLogger.h}!RTC\_\-FATAL\_\-STR@{RTC\_\-FATAL\_\-STR}}
+\index{RTC\_\-FATAL\_\-STR@{RTC\_\-FATAL\_\-STR}!SystemLogger.h@{SystemLogger.h}}
+\subsubsection[{RTC\_\-FATAL\_\-STR}]{\setlength{\rightskip}{0pt plus 5cm}\#define RTC\_\-FATAL\_\-STR(str)~RTC\_\-LOG\_\-STR(::RTC::Logger::RTL\_\-FATAL, str)}\label{SystemLogger_8h_a467ecf118f4439794aecdd72306aaa7b}
+\index{SystemLogger.h@{SystemLogger.h}!RTC\_\-INFO@{RTC\_\-INFO}}
+\index{RTC\_\-INFO@{RTC\_\-INFO}!SystemLogger.h@{SystemLogger.h}}
+\subsubsection[{RTC\_\-INFO}]{\setlength{\rightskip}{0pt plus 5cm}\#define RTC\_\-INFO(fmt)~RTC\_\-LOG(::RTC::Logger::RTL\_\-INFO, fmt)}\label{SystemLogger_8h_ae0c397beda112bf2bde6818b56586d73}
+
+
+Information level log output macro. 
+
+If log levels are ( INFO, NORMAL, DEBUG, TRACE, VERBOSE, PARANOID ), message will be output to log. \index{SystemLogger.h@{SystemLogger.h}!RTC\_\-INFO\_\-STR@{RTC\_\-INFO\_\-STR}}
+\index{RTC\_\-INFO\_\-STR@{RTC\_\-INFO\_\-STR}!SystemLogger.h@{SystemLogger.h}}
+\subsubsection[{RTC\_\-INFO\_\-STR}]{\setlength{\rightskip}{0pt plus 5cm}\#define RTC\_\-INFO\_\-STR(str)~RTC\_\-LOG\_\-STR(::RTC::Logger::RTL\_\-INFO, str)}\label{SystemLogger_8h_ac22af4959e3910e4d822389873c7d800}
+\index{SystemLogger.h@{SystemLogger.h}!RTC\_\-LOG@{RTC\_\-LOG}}
+\index{RTC\_\-LOG@{RTC\_\-LOG}!SystemLogger.h@{SystemLogger.h}}
+\subsubsection[{RTC\_\-LOG}]{\setlength{\rightskip}{0pt plus 5cm}\#define RTC\_\-LOG(LV, \/  fmt)}\label{SystemLogger_8h_a4195b4f89d033f7c9749046b37c580a9}
+{\bfseries Value:}
+\begin{DoxyCode}
+if (rtclog.isValid(LV))                                   \
+    {                                                       \
+      std::string str = ::coil::sprintf fmt;                \
+      rtclog.lock();                                        \
+      rtclog.level(LV) << str << std::endl; \
+      rtclog.unlock();                                      \
+    }
+\end{DoxyCode}
+
+
+General-\/purpose log output macro. 
+
+Lock log level and output format string as arguments. \index{SystemLogger.h@{SystemLogger.h}!RTC\_\-LOG\_\-STR@{RTC\_\-LOG\_\-STR}}
+\index{RTC\_\-LOG\_\-STR@{RTC\_\-LOG\_\-STR}!SystemLogger.h@{SystemLogger.h}}
+\subsubsection[{RTC\_\-LOG\_\-STR}]{\setlength{\rightskip}{0pt plus 5cm}\#define RTC\_\-LOG\_\-STR(LV, \/  str)}\label{SystemLogger_8h_a97acda084a1d015de74a52fdca9d43d1}
+{\bfseries Value:}
+\begin{DoxyCode}
+if (rtclog.isValid(LV))                                   \
+    {                                                       \
+      rtclog.lock();                                        \
+      rtclog.level(LV) << str << std::endl;  \
+      rtclog.unlock();                                      \
+    }
+\end{DoxyCode}
+\index{SystemLogger.h@{SystemLogger.h}!RTC\_\-PARANOID@{RTC\_\-PARANOID}}
+\index{RTC\_\-PARANOID@{RTC\_\-PARANOID}!SystemLogger.h@{SystemLogger.h}}
+\subsubsection[{RTC\_\-PARANOID}]{\setlength{\rightskip}{0pt plus 5cm}\#define RTC\_\-PARANOID(fmt)~RTC\_\-LOG(::RTC::Logger::RTL\_\-PARANOID, fmt)}\label{SystemLogger_8h_a71ff287f5c4691c6f3bb40639a910056}
+
+
+Paranoid level log output macro. 
+
+If log levels are ( PARANOID ), message will be output to log. \index{SystemLogger.h@{SystemLogger.h}!RTC\_\-PARANOID\_\-STR@{RTC\_\-PARANOID\_\-STR}}
+\index{RTC\_\-PARANOID\_\-STR@{RTC\_\-PARANOID\_\-STR}!SystemLogger.h@{SystemLogger.h}}
+\subsubsection[{RTC\_\-PARANOID\_\-STR}]{\setlength{\rightskip}{0pt plus 5cm}\#define RTC\_\-PARANOID\_\-STR(str)~RTC\_\-LOG\_\-STR(::RTC::Logger::RTL\_\-PARANOID, str)}\label{SystemLogger_8h_a71164fe42be28323937eea3eb5770031}
+\index{SystemLogger.h@{SystemLogger.h}!RTC\_\-TRACE@{RTC\_\-TRACE}}
+\index{RTC\_\-TRACE@{RTC\_\-TRACE}!SystemLogger.h@{SystemLogger.h}}
+\subsubsection[{RTC\_\-TRACE}]{\setlength{\rightskip}{0pt plus 5cm}\#define RTC\_\-TRACE(fmt)~RTC\_\-LOG(::RTC::Logger::RTL\_\-TRACE, fmt)}\label{SystemLogger_8h_a7a1fba8759d5440619471ff7197f3afd}
+
+
+Trace level log output macro. 
+
+If log levels are ( TRACE, VERBOSE, PARANOID ), message will be output to log. 
+
+Referenced by RTC::RTObject\_\-impl::bindParameter(), RTC::RTObject\_\-impl::getCategory(), RTC::RTObject\_\-impl::getDescription(), RTC::RTObject\_\-impl::getInstanceName(), RTC::RTObject\_\-impl::getTypeName(), RTC::RTObject\_\-impl::getVendor(), RTC::RTObject\_\-impl::getVersion(), RTC::InPort$<$ DataType $>$::isEmpty(), RTC::InPort$<$ DataType $>$::isNew(), RTC::InPort$<$ DataType $>$::read(), RTC::OutPortConnector::write(), and RTC::OutPort$<$ DataType $>$::write().
+
+\index{SystemLogger.h@{SystemLogger.h}!RTC\_\-TRACE\_\-STR@{RTC\_\-TRACE\_\-STR}}
+\index{RTC\_\-TRACE\_\-STR@{RTC\_\-TRACE\_\-STR}!SystemLogger.h@{SystemLogger.h}}
+\subsubsection[{RTC\_\-TRACE\_\-STR}]{\setlength{\rightskip}{0pt plus 5cm}\#define RTC\_\-TRACE\_\-STR(str)~RTC\_\-LOG\_\-STR(::RTC::Logger::RTL\_\-TRACE, str)}\label{SystemLogger_8h_a9ccfa7d0676485531e25473fe50fece9}
+\index{SystemLogger.h@{SystemLogger.h}!RTC\_\-VERBOSE@{RTC\_\-VERBOSE}}
+\index{RTC\_\-VERBOSE@{RTC\_\-VERBOSE}!SystemLogger.h@{SystemLogger.h}}
+\subsubsection[{RTC\_\-VERBOSE}]{\setlength{\rightskip}{0pt plus 5cm}\#define RTC\_\-VERBOSE(fmt)~RTC\_\-LOG(::RTC::Logger::RTL\_\-VERBOSE, fmt)}\label{SystemLogger_8h_adf4b62bbb0d8baf2956d16eadb32ee35}
+
+
+Verbose level log output macro. 
+
+If log levels are ( VERBOSE, PARANOID ), message will be output to log. \index{SystemLogger.h@{SystemLogger.h}!RTC\_\-VERBOSE\_\-STR@{RTC\_\-VERBOSE\_\-STR}}
+\index{RTC\_\-VERBOSE\_\-STR@{RTC\_\-VERBOSE\_\-STR}!SystemLogger.h@{SystemLogger.h}}
+\subsubsection[{RTC\_\-VERBOSE\_\-STR}]{\setlength{\rightskip}{0pt plus 5cm}\#define RTC\_\-VERBOSE\_\-STR(str)~RTC\_\-LOG\_\-STR(::RTC::Logger::RTL\_\-VERBOSE, str)}\label{SystemLogger_8h_a439a7045cd414fd7660330284601af14}
+\index{SystemLogger.h@{SystemLogger.h}!RTC\_\-WARN@{RTC\_\-WARN}}
+\index{RTC\_\-WARN@{RTC\_\-WARN}!SystemLogger.h@{SystemLogger.h}}
+\subsubsection[{RTC\_\-WARN}]{\setlength{\rightskip}{0pt plus 5cm}\#define RTC\_\-WARN(fmt)~RTC\_\-LOG(::RTC::Logger::RTL\_\-WARN, fmt)}\label{SystemLogger_8h_a39971e40900477d0c115aee9ecb08ad2}
+
+
+Warning log output macro. 
+
+If log levels are ( WARN, INFO, NORMAL, DEBUG, TRACE, VERBOSE, PARANOID ), message will be output to log. 
+
+Referenced by RTC::InPort$<$ DataType $>$::read(), and RTC::OutPort$<$ DataType $>$::write().
+
+\index{SystemLogger.h@{SystemLogger.h}!RTC\_\-WARN\_\-STR@{RTC\_\-WARN\_\-STR}}
+\index{RTC\_\-WARN\_\-STR@{RTC\_\-WARN\_\-STR}!SystemLogger.h@{SystemLogger.h}}
+\subsubsection[{RTC\_\-WARN\_\-STR}]{\setlength{\rightskip}{0pt plus 5cm}\#define RTC\_\-WARN\_\-STR(str)~RTC\_\-LOG\_\-STR(::RTC::Logger::RTL\_\-WARN, str)}\label{SystemLogger_8h_a0577f526e5976374ebfd36a62faef18d}

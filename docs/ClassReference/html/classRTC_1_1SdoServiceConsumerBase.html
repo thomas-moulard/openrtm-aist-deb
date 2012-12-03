@@ -1,0 +1,248 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<title>OpenRTM: クラス RTC::SdoServiceConsumerBase</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<!-- 作成： Doxygen 1.6.3 -->
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="index.html"><span>メインページ</span></a></li>
+      <li><a href="namespaces.html"><span>ネームスペース</span></a></li>
+      <li class="current"><a href="annotated.html"><span>クラス</span></a></li>
+      <li><a href="files.html"><span>ファイル</span></a></li>
+    </ul>
+  </div>
+  <div class="tabs">
+    <ul>
+      <li><a href="annotated.html"><span>構成</span></a></li>
+      <li><a href="hierarchy.html"><span>クラス階層</span></a></li>
+      <li><a href="functions.html"><span>構成メンバ</span></a></li>
+    </ul>
+  </div>
+  <div class="navpath"><a class="el" href="namespaceRTC.html">RTC</a>::<a class="el" href="classRTC_1_1SdoServiceConsumerBase.html">SdoServiceConsumerBase</a>
+  </div>
+</div>
+<div class="contents">
+<h1>クラス RTC::SdoServiceConsumerBase</h1><!-- doxytag: class="RTC::SdoServiceConsumerBase" -->
+<p>SdoServiceConsumer　基底クラス.  
+<a href="#_details">[詳細]</a></p>
+
+<p><code>#include &lt;<a class="el" href="SdoServiceConsumerBase_8h_source.html">SdoServiceConsumerBase.h</a>&gt;</code></p>
+
+<p><a href="classRTC_1_1SdoServiceConsumerBase-members.html">すべてのメンバ一覧</a></p>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr><td colspan="2"><h2>Public メソッド</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1SdoServiceConsumerBase.html#ae45b7d29a8fc76d5d05f2d891bbc9096">~SdoServiceConsumerBase</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">仮想デストラクタ  <a href="#ae45b7d29a8fc76d5d05f2d891bbc9096"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1SdoServiceConsumerBase.html#a9e454d76db971863a7498dce52acd26c">init</a> (<a class="el" href="classRTC_1_1RTObject__impl.html">RTObject_impl</a> &amp;rtobj, const SDOPackage::ServiceProfile &amp;profile)=0</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">コンシューマクラスの初期化関数  <a href="#a9e454d76db971863a7498dce52acd26c"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1SdoServiceConsumerBase.html#a422e9ad09cea8a41f3dcb077a71915df">reinit</a> (const SDOPackage::ServiceProfile &amp;profile)=0</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">コンシューマクラスの再初期化関数  <a href="#a422e9ad09cea8a41f3dcb077a71915df"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual const <br class="typebreak"/>
+SDOPackage::ServiceProfile &amp;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1SdoServiceConsumerBase.html#ab4a65437935f84849f3e1161344a0eb1">getProfile</a> () const =0</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">ServiceProfile を返す.  <a href="#ab4a65437935f84849f3e1161344a0eb1"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1SdoServiceConsumerBase.html#a3b26d2a7ec88ac0168a51db5aaf692c6">finalize</a> ()=0</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">終了処理  <a href="#a3b26d2a7ec88ac0168a51db5aaf692c6"></a><br/></td></tr>
+</table>
+<hr/><a name="_details"></a><h2>説明</h2>
+<p>SdoServiceConsumer　基底クラス. </p>
+<p>SDOで定義されているSDOサービスのコンシューマを実装するための基底ク ラス。SDOサービスには、外部から提供サービスをRTC(<a class="el" href="classSDO.html" title="SDO service 管理クラス.">SDO</a>)側で利用する SDOサービスコンシューマと、RTC(<a class="el" href="classSDO.html" title="SDO service 管理クラス.">SDO</a>)自身がSDOサービスを提供するSDO サービスプロバイダがある。すべてのSDOサービスコンシューマはこの基 底クラスを継承して実装される。</p>
+<p>このオブジェクトのライフサイクルは以下の通り。</p>
+<ol type="1">
+<li>オブジェクトは通常、共有オブジェクト (so, DLL) としてコンパイル・ リンクされる。</li>
+<li>マネージャに対してロードされるとモジュール初期化関数によりオブ ジェクトファクトリが、SdoServiceConsumerFactory に対して登録さ れる。登録のキーにはサービスインターフェースの IFR (interface repository) ID が利用され、これによりサービスが区別される。</li>
+<li>外部のツールなどからサービスプロバイダがアタッチされた場合、サー ビスインターフェースの IFR ID が同一である <a class="el" href="classSDO.html" title="SDO service 管理クラス.">SDO</a> コンシューマがイ ンスタンス化され、提供されたSDOサービスの ServiceProfile (この 構造体はサービスのオブジェクトリファレンスを含む) がコンシュー マにアタッチされる。</li>
+<li>このときのアタッチシーケンスは以下の通り。<ol type="a">
+<li>SDO::get_configuration() により Configuration オブジェクトを取得</li>
+<li>Configuration::add_service_profile() により外部側の SdoServiceProvider を ServiceProfile により <a class="el" href="namespaceRTC.html" title="RTコンポーネント.">RTC</a> に与える。</li>
+<li>RTC側でサービスを呼び出す必要が有った場合、この SdoServiceConsumer が保持しているサービスオブジェクトプロキシ に対して呼び出しを行う</li>
+</ol>
+</li>
+<li>最終的に SdoServiceConsumer が不要になった場合には、 Configuration::remove_service_profile() が id とともに呼び出され SDOサービスコンシューマが <a class="el" href="namespaceRTC.html" title="RTコンポーネント.">RTC</a> から削除される。</li>
+</ol>
+<pre></pre><pre>   [<a class="el" href="namespaceRTC.html" title="RTコンポーネント.">RTC</a>] [<a class="el" href="classSDO.html" title="SDO service 管理クラス.">SDO</a> consumer] [Configuration]  [<a class="el" href="classSDO.html" title="SDO service 管理クラス.">SDO</a> service]    [Other]
+     |          :             |                 |            |
+     |          :         get_configuration()   |            |
+     |&lt;---------:-------------------------------|------------|
+     |          :             |                 |            |
+     |          :             |   add_service_profile(prof)  |
+     |          :  create()   |&lt;----------------|------------|
+     |          |&lt;------------|                 |            |
+     |          |         call_sdo_service()    |            |
+     |          |-------------|----------------&gt;|            |
+     |          |         call_sdo_service2()   |            |
+     |          |-------------|----------------&gt;|            |
+     |          |             |       :         |            |
+     |          |             |                 |            |
+     |          |             | remove_service_profile(id)   |
+     |          |  delete()   |&lt;----------------|------------|
+     |          x&lt;------------|                 |            |
+     |                        |                 x            x</pre><pre> </pre><p>このクラスの実装に当たっては、少なくとも以下の純粋仮想関数を実装す る必要がある。</p>
+<ul>
+<li><a class="el" href="classRTC_1_1SdoServiceConsumerBase.html#a9e454d76db971863a7498dce52acd26c" title="コンシューマクラスの初期化関数">init()</a>: 初期化関数。与えられた RTObject および ServiceProfile か ら、当該オブジェクトを初期化する。</li>
+<li><a class="el" href="classRTC_1_1SdoServiceConsumerBase.html#a422e9ad09cea8a41f3dcb077a71915df" title="コンシューマクラスの再初期化関数">reinit()</a>: 再初期化関数。ServiceProfile は設定情報更新のため同一 IDで呼び出されることが有るが、その際にこの関数が新たな ServiceProfile とともに呼び出される。関数内では、設定の変更など 再初期化処理を実装する。</li>
+<li><a class="el" href="classRTC_1_1SdoServiceConsumerBase.html#ab4a65437935f84849f3e1161344a0eb1" title="ServiceProfile を返す.">getProfile()</a>: 設定されたプロファイルを返す関数。</li>
+<li><a class="el" href="classRTC_1_1SdoServiceConsumerBase.html#a3b26d2a7ec88ac0168a51db5aaf692c6" title="終了処理">finalize()</a>: 終了処理。コンシューマがデタッチされる際に呼び出され る関数。関数内では終了処理を実装する。</li>
+</ul>
+<p>SdoServiceConsumer は通常共有オブジェクトとしてコンパイル・リンク される。共有オブジェクトのエントリポイントは通常コンパイルされたファ イル名の basename + "Init" にしておく。以下に、クラス名、ファイル 名、エントリポイント関数名の推奨例を示す。</p>
+<ul>
+<li>実装クラス名: MySdoServiceConusmer</li>
+<li>ファイル名: MySdoServiceConsumer.h. MySdoServiceConsumer.cpp</li>
+<li>共有オブジェクト名: MySdoServiceConsumer.so (or DLL)</li>
+<li>エントリポイント関数名: MySdoServiceConsumerInit()</li>
+</ul>
+<p>エントリポイント関数は通常以下のように、SdoServiceConsumerFactory に当該コンシューマのファクトリ (と解体ファンクタ) を登録する以下の ような関数になる。</p>
+<pre>
+ extern "C"
+ {
+   void MySdoServiceConsumerInit()
+   {
+     <a class="el" href="namespaceRTC.html#a6c2099a80b4f7567f31080ee7490549b" title="SdoServiceConsumerFactory の typedef.">RTC::SdoServiceConsumerFactory</a>&amp; factory
+       = <a class="el" href="classcoil_1_1Singleton.html#aea119e0534a0de4b63a8f84c7d68b223" title="インスタンス生成">RTC::SdoServiceConsumerFactory::instance()</a>;
+     factory.addFactory(<a class="el" href="namespaceCORBA__Util.html#a47a5aa0e695c80e6461d2034cae19d5b" title="CORBA型のリポジトリIDを文字列で取得する.">CORBA_Util::toRepositoryId&lt;OpenRTM::MySdoService&gt;()</a>,
+                        coil::Creator&lt; <a class="el" href="classRTC_1_1SdoServiceConsumerBase.html" title="SdoServiceConsumer　基底クラス.">RTC::SdoServiceConsumerBase</a>,
+                        RTC::MySdoServiceConsumer&gt;,
+                        coil::Destructor&lt; <a class="el" href="classRTC_1_1SdoServiceConsumerBase.html" title="SdoServiceConsumer　基底クラス.">RTC::SdoServiceConsumerBase</a>,
+                        RTC::MySdoServiceConsumer&gt;);
+   }
+ };
+ </pre> <hr/><h2>コンストラクタとデストラクタ</h2>
+<a class="anchor" id="ae45b7d29a8fc76d5d05f2d891bbc9096"></a><!-- doxytag: member="RTC::SdoServiceConsumerBase::~SdoServiceConsumerBase" ref="ae45b7d29a8fc76d5d05f2d891bbc9096" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual RTC::SdoServiceConsumerBase::~SdoServiceConsumerBase </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [inline, virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>仮想デストラクタ </p>
+
+</div>
+</div>
+<hr/><h2>関数</h2>
+<a class="anchor" id="a3b26d2a7ec88ac0168a51db5aaf692c6"></a><!-- doxytag: member="RTC::SdoServiceConsumerBase::finalize" ref="a3b26d2a7ec88ac0168a51db5aaf692c6" args="()=0" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void RTC::SdoServiceConsumerBase::finalize </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [pure virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>終了処理 </p>
+<p>SDOサービスがでタッチされる際に呼び出される終了処理用関数。サー ビスのでタッチに際して、当該オブジェクトが保持するリソースを解放 するなどの処理を行う。 </p>
+
+</div>
+</div>
+<a class="anchor" id="ab4a65437935f84849f3e1161344a0eb1"></a><!-- doxytag: member="RTC::SdoServiceConsumerBase::getProfile" ref="ab4a65437935f84849f3e1161344a0eb1" args="() const =0" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual const SDOPackage::ServiceProfile&amp; RTC::SdoServiceConsumerBase::getProfile </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const<code> [pure virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>ServiceProfile を返す. </p>
+<p><a class="el" href="classRTC_1_1SdoServiceConsumerBase.html#a9e454d76db971863a7498dce52acd26c" title="コンシューマクラスの初期化関数">init()</a>/reinit()で与えられた ServiceProfile は通常オブジェクト内 で保持される。SDO Service 管理フレームワークは管理上このオブジェ クトに対応する ServiceProfile を必要とするので、この関数では保持 されている ServiceProfile を返す。</p>
+<dl class="return"><dt><b>戻り値:</b></dt><dd>このオブジェクトが保持している ServiceProfile </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a9e454d76db971863a7498dce52acd26c"></a><!-- doxytag: member="RTC::SdoServiceConsumerBase::init" ref="a9e454d76db971863a7498dce52acd26c" args="(RTObject_impl &amp;rtobj, const SDOPackage::ServiceProfile &amp;profile)=0" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual bool RTC::SdoServiceConsumerBase::init </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classRTC_1_1RTObject__impl.html">RTObject_impl</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>rtobj</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const SDOPackage::ServiceProfile &amp;&nbsp;</td>
+          <td class="paramname"> <em>profile</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td><code> [pure virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>コンシューマクラスの初期化関数 </p>
+<p>このオブジェクトの初期化を行う。外部からSDOサービスが ServiceProfile とともにアタッチされると、SDOコンシューマがインス タンス化され、その直後に <a class="el" href="classSDO.html" title="SDO service 管理クラス.">SDO</a> サービスがアタッチされた <a class="el" href="namespaceRTC.html" title="RTコンポーネント.">RTC</a> と与え られた ServiceProfile を引数としてこの関数が呼ばれる。</p>
+<p>関数内では、ServiceProfile 内の <a class="el" href="classSDO.html" title="SDO service 管理クラス.">SDO</a> サービスリファレンスを <a class="el" href="classRTC_1_1CorbaConsumer.html" title="オブジェクトリファレンスを保持するプレースホルダテンプレートクラス...">CorbaConsumer</a> クラス等を利用しオブジェクト内に保持するとともに、 properties から設定内容を読み込みサービス固有の設定等を行う。与 えられたサービスのオブジェクトリファレンスが不正、あるいは properties の内容が不正、等の場合は戻り値に false を返す。</p>
+<dl><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>rtobj</em>&nbsp;</td><td>このオブジェクトがインスタンス化された <a class="el" href="namespaceRTC.html" title="RTコンポーネント.">RTC</a> </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>profile</em>&nbsp;</td><td>外部から与えられた <a class="el" href="classSDO.html" title="SDO service 管理クラス.">SDO</a> ServiceProfile </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>戻り値:</b></dt><dd>与えられた <a class="el" href="classSDO.html" title="SDO service 管理クラス.">SDO</a> Service や ServiceProfile が不正の場合 false </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a422e9ad09cea8a41f3dcb077a71915df"></a><!-- doxytag: member="RTC::SdoServiceConsumerBase::reinit" ref="a422e9ad09cea8a41f3dcb077a71915df" args="(const SDOPackage::ServiceProfile &amp;profile)=0" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual bool RTC::SdoServiceConsumerBase::reinit </td>
+          <td>(</td>
+          <td class="paramtype">const SDOPackage::ServiceProfile &amp;&nbsp;</td>
+          <td class="paramname"> <em>profile</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [pure virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>コンシューマクラスの再初期化関数 </p>
+<p>このオブジェクトの再初期化を行う。ServiceProfile には id フィー ルドにセッション固有の UUID がセットされているが、同一の id の場 合、properties に設定された設定情報の変更や、service フィールド のサービスの参照の変更が行われる。その際に呼ばれるのがこの <a class="el" href="classRTC_1_1SdoServiceConsumerBase.html#a422e9ad09cea8a41f3dcb077a71915df" title="コンシューマクラスの再初期化関数">reinit()</a> 関数である。実装では、service フィールドのオブジェクト リファレンスの同一性を確認し、異なっている場合保持しているリファ レンスを更新する必要がある。また properties には新たな設定が与え られている可能性があるので、内容を読み込み設定を更新する。</p>
+<dl><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>profile</em>&nbsp;</td><td>新たに与えられた <a class="el" href="classSDO.html" title="SDO service 管理クラス.">SDO</a> ServiceProfile </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>戻り値:</b></dt><dd>不正な ServiceProfile が与えられた場合は false </dd></dl>
+
+</div>
+</div>
+</div>
+<hr class="footer"/><address style="text-align: right;"><small>OpenRTMに対してThu May 24 23:25:20 2012に生成されました。&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.6.3 </small></address>
+</body>
+</html>

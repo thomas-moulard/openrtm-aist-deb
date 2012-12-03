@@ -1,0 +1,258 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<title>OpenRTM: クラス RTC::InPortConsumer</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<!-- 作成： Doxygen 1.6.3 -->
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="index.html"><span>メインページ</span></a></li>
+      <li><a href="namespaces.html"><span>ネームスペース</span></a></li>
+      <li class="current"><a href="annotated.html"><span>クラス</span></a></li>
+      <li><a href="files.html"><span>ファイル</span></a></li>
+    </ul>
+  </div>
+  <div class="tabs">
+    <ul>
+      <li><a href="annotated.html"><span>構成</span></a></li>
+      <li><a href="hierarchy.html"><span>クラス階層</span></a></li>
+      <li><a href="functions.html"><span>構成メンバ</span></a></li>
+    </ul>
+  </div>
+  <div class="navpath"><a class="el" href="namespaceRTC.html">RTC</a>::<a class="el" href="classRTC_1_1InPortConsumer.html">InPortConsumer</a>
+  </div>
+</div>
+<div class="contents">
+<h1>クラス RTC::InPortConsumer</h1><!-- doxytag: class="RTC::InPortConsumer" --><!-- doxytag: inherits="RTC::DataPortStatus" -->
+<p><a class="el" href="classRTC_1_1InPortConsumer.html" title="InPortConsumer 抽象クラス.">InPortConsumer</a> 抽象クラス.  
+<a href="#_details">[詳細]</a></p>
+
+<p><code>#include &lt;<a class="el" href="InPortConsumer_8h_source.html">InPortConsumer.h</a>&gt;</code></p>
+<div class="dynheader">
+RTC::InPortConsumerに対する継承グラフ</div>
+<div class="dynsection">
+ <div class="center">
+  <img src="classRTC_1_1InPortConsumer.png" usemap="#RTC::InPortConsumer_map" alt=""/>
+  <map id="RTC::InPortConsumer_map" name="RTC::InPortConsumer_map">
+<area href="classRTC_1_1DataPortStatus.html" alt="RTC::DataPortStatus" shape="rect" coords="0,0,188,24"/>
+<area href="classRTC_1_1InPortCorbaCdrConsumer.html" alt="RTC::InPortCorbaCdrConsumer" shape="rect" coords="0,112,188,136"/>
+</map>
+ </div>
+</div>
+
+<p><a href="classRTC_1_1InPortConsumer-members.html">すべてのメンバ一覧</a></p>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr><td colspan="2"><h2>構成</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">struct &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structRTC_1_1InPortConsumer_1_1publishInterfaceProfileFunc.html">publishInterfaceProfileFunc</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">インターフェースプロファイルを公開するたのファンクタ  <a href="structRTC_1_1InPortConsumer_1_1publishInterfaceProfileFunc.html#_details">[詳細]</a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">struct &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structRTC_1_1InPortConsumer_1_1subscribeInterfaceFunc.html">subscribeInterfaceFunc</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">インターフェースプロファイルを公開するたのファンクタ  <a href="structRTC_1_1InPortConsumer_1_1subscribeInterfaceFunc.html#_details">[詳細]</a><br/></td></tr>
+<tr><td colspan="2"><h2>Public メソッド</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual DATAPORTSTATUS_ENUM&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1InPortConsumer.html#a6a6d7b589839aa3d42129198f7c7e2e5">~InPortConsumer</a> (void)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1InPortConsumer.html#a70772c84fa42d6108e30c0f52a9674d5">init</a> (<a class="el" href="classcoil_1_1Properties.html">coil::Properties</a> &amp;prop)=0</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">設定初期化  <a href="#a70772c84fa42d6108e30c0f52a9674d5"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual ReturnCode&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1InPortConsumer.html#a7868875b611a5dde0db3d0fcdf5703e5">put</a> (const cdrMemoryStream &amp;data)=0</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">接続先へのデータ送信  <a href="#a7868875b611a5dde0db3d0fcdf5703e5"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1InPortConsumer.html#a1bb34ea50047ecf1b2642fc61192d40b">publishInterfaceProfile</a> (SDOPackage::NVList &amp;properties)=0</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">InterfaceProfile情報を公開する.  <a href="#a1bb34ea50047ecf1b2642fc61192d40b"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1InPortConsumer.html#a63073caab2216e2686b34d2c8901c591">subscribeInterface</a> (const SDOPackage::NVList &amp;properties)=0</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">データ送出通知受け取りへの登録  <a href="#a63073caab2216e2686b34d2c8901c591"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1InPortConsumer.html#a59530bf39fca610e2c7136700a214aab">unsubscribeInterface</a> (const SDOPackage::NVList &amp;properties)=0</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">データ送出通知受け取りからの登録解除  <a href="#a59530bf39fca610e2c7136700a214aab"></a><br/></td></tr>
+</table>
+<hr/><a name="_details"></a><h2>説明</h2>
+<p><a class="el" href="classRTC_1_1InPortConsumer.html" title="InPortConsumer 抽象クラス.">InPortConsumer</a> 抽象クラス. </p>
+<p>入力ポートコンシューマのための抽象インターフェースクラス 各具象クラスは、以下の純粋仮想関数の実装を提供しなければならない。</p>
+<ul>
+<li>push(): データ送信</li>
+<li>clone(): ポートのコピー</li>
+<li><a class="el" href="classRTC_1_1InPortConsumer.html#a63073caab2216e2686b34d2c8901c591" title="データ送出通知受け取りへの登録">subscribeInterface()</a>: データ送出通知への登録</li>
+<li><a class="el" href="classRTC_1_1InPortConsumer.html#a59530bf39fca610e2c7136700a214aab" title="データ送出通知受け取りからの登録解除">unsubscribeInterface()</a>: データ送出通知の登録解除</li>
+</ul>
+<dl class="since"><dt><b>から:</b></dt><dd>0.4.0 </dd></dl>
+<hr/><h2>コンストラクタとデストラクタ</h2>
+<a class="anchor" id="a6a6d7b589839aa3d42129198f7c7e2e5"></a><!-- doxytag: member="RTC::InPortConsumer::~InPortConsumer" ref="a6a6d7b589839aa3d42129198f7c7e2e5" args="(void)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual DATAPORTSTATUS_ENUM RTC::InPortConsumer::~InPortConsumer </td>
+          <td>(</td>
+          <td class="paramtype">void&nbsp;</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [inline, virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>デストラクタ </p>
+
+</div>
+</div>
+<hr/><h2>関数</h2>
+<a class="anchor" id="a70772c84fa42d6108e30c0f52a9674d5"></a><!-- doxytag: member="RTC::InPortConsumer::init" ref="a70772c84fa42d6108e30c0f52a9674d5" args="(coil::Properties &amp;prop)=0" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void RTC::InPortConsumer::init </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classcoil_1_1Properties.html">coil::Properties</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>prop</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [pure virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>設定初期化 </p>
+<p>InPortConsumerの各種設定を行う </p>
+
+<p><a class="el" href="classRTC_1_1InPortCorbaCdrConsumer.html#a5682cf80be88cfbb6ab238e7b3733686">RTC::InPortCorbaCdrConsumer</a>で実装されています。</p>
+
+</div>
+</div>
+<a class="anchor" id="a1bb34ea50047ecf1b2642fc61192d40b"></a><!-- doxytag: member="RTC::InPortConsumer::publishInterfaceProfile" ref="a1bb34ea50047ecf1b2642fc61192d40b" args="(SDOPackage::NVList &amp;properties)=0" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void RTC::InPortConsumer::publishInterfaceProfile </td>
+          <td>(</td>
+          <td class="paramtype">SDOPackage::NVList &amp;&nbsp;</td>
+          <td class="paramname"> <em>properties</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [pure virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>InterfaceProfile情報を公開する. </p>
+<p>InterfaceProfile情報を公開する。 引数で指定するプロパティ情報内の NameValue オブジェクトの dataport.interface_type 値を調べ、当該ポートに設定されている インターフェースタイプと一致する場合のみ情報を取得する。</p>
+<dl><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>properties</em>&nbsp;</td><td>InterfaceProfile情報を受け取るプロパティ </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p><a class="el" href="classRTC_1_1InPortCorbaCdrConsumer.html#aa71ca4621080b782a09a640f18daa2e9">RTC::InPortCorbaCdrConsumer</a>で実装されています。</p>
+
+<p>参照元 <a class="el" href="InPortConsumer_8h_source.html#l00228">RTC::InPortConsumer::publishInterfaceProfileFunc::operator()()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a7868875b611a5dde0db3d0fcdf5703e5"></a><!-- doxytag: member="RTC::InPortConsumer::put" ref="a7868875b611a5dde0db3d0fcdf5703e5" args="(const cdrMemoryStream &amp;data)=0" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual ReturnCode RTC::InPortConsumer::put </td>
+          <td>(</td>
+          <td class="paramtype">const cdrMemoryStream &amp;&nbsp;</td>
+          <td class="paramname"> <em>data</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [pure virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>接続先へのデータ送信 </p>
+<p>接続先のポートへデータを送信するための純粋仮想関数。</p>
+<p>この関数は、以下のリターンコードを返す。</p>
+<ul>
+<li>PORT_OK: 正常終了。</li>
+<li>PORT_ERROR: データ送信の過程で何らかのエラーが発生した。</li>
+<li>SEND_FULL: データを送信したが、相手側バッファがフルだった。</li>
+<li>SEND_TIMEOUT: データを送信したが、相手側バッファがタイムアウトした。</li>
+<li>CONNECTION_LOST: 接続が切断された</li>
+<li>UNKNOWN_ERROR: 原因不明のエラー</li>
+</ul>
+<dl><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>data</em>&nbsp;</td><td>送信するデータ </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>戻り値:</b></dt><dd>リターンコード </dd></dl>
+
+<p><a class="el" href="classRTC_1_1InPortCorbaCdrConsumer.html#ab910b2bf2a841c2c11bce50e75d36abb">RTC::InPortCorbaCdrConsumer</a>で実装されています。</p>
+
+</div>
+</div>
+<a class="anchor" id="a63073caab2216e2686b34d2c8901c591"></a><!-- doxytag: member="RTC::InPortConsumer::subscribeInterface" ref="a63073caab2216e2686b34d2c8901c591" args="(const SDOPackage::NVList &amp;properties)=0" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual bool RTC::InPortConsumer::subscribeInterface </td>
+          <td>(</td>
+          <td class="paramtype">const SDOPackage::NVList &amp;&nbsp;</td>
+          <td class="paramname"> <em>properties</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [pure virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>データ送出通知受け取りへの登録 </p>
+<p>指定されたプロパティの内容に基づいて、データ送出通知の受け取りに登録する ための純粋仮想関数。</p>
+<dl><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>properties</em>&nbsp;</td><td>登録時に参照するプロパティ</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>戻り値:</b></dt><dd>登録処理結果 </dd></dl>
+
+<p><a class="el" href="classRTC_1_1InPortCorbaCdrConsumer.html#a6ca9cba69e9bc1015d79330ed9a56b71">RTC::InPortCorbaCdrConsumer</a>で実装されています。</p>
+
+<p>参照元 <a class="el" href="InPortConsumer_8h_source.html#l00245">RTC::InPortConsumer::subscribeInterfaceFunc::operator()()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a59530bf39fca610e2c7136700a214aab"></a><!-- doxytag: member="RTC::InPortConsumer::unsubscribeInterface" ref="a59530bf39fca610e2c7136700a214aab" args="(const SDOPackage::NVList &amp;properties)=0" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void RTC::InPortConsumer::unsubscribeInterface </td>
+          <td>(</td>
+          <td class="paramtype">const SDOPackage::NVList &amp;&nbsp;</td>
+          <td class="paramname"> <em>properties</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [pure virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>データ送出通知受け取りからの登録解除 </p>
+<p>データ送出通知の受け取りから登録解除するための純粋仮想関数。</p>
+<dl><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>properties</em>&nbsp;</td><td>登録解除時に参照するプロパティ </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p><a class="el" href="classRTC_1_1InPortCorbaCdrConsumer.html#a6e297f6ebc3dae7b547e1ec8af06ee9f">RTC::InPortCorbaCdrConsumer</a>で実装されています。</p>
+
+</div>
+</div>
+</div>
+<hr class="footer"/><address style="text-align: right;"><small>OpenRTMに対してThu May 24 23:25:19 2012に生成されました。&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.6.3 </small></address>
+</body>
+</html>

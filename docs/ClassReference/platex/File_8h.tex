@@ -1,0 +1,26 @@
+\section{File.h}
+\label{File_8h}\index{File.h@{File.h}}
+{\ttfamily \#include $<$cstring$>$}\par
+{\ttfamily \#include $<$sys/types.h$>$}\par
+{\ttfamily \#include $<$dirent.h$>$}\par
+{\ttfamily \#include $<$libgen.h$>$}\par
+{\ttfamily \#include $<$coil/config\_\-coil.h$>$}\par
+{\ttfamily \#include $<$coil/stringutil.h$>$}\par
+\subsection*{ネームスペース}
+\begin{DoxyCompactItemize}
+\item 
+namespace {\bf coil}
+
+
+\begin{DoxyCompactList}\small\item\em Common Object Interface Layer. \item\end{DoxyCompactList}
+
+\end{DoxyCompactItemize}
+\subsection*{関数}
+\begin{DoxyCompactItemize}
+\item 
+std::string {\bf coil::dirname} (char $\ast$path)
+\begin{DoxyCompactList}\small\item\em ファイルパスよりディレクトリ部分を取得する \item\end{DoxyCompactList}\item 
+std::string {\bf coil::basename} (const char $\ast$path)
+\begin{DoxyCompactList}\small\item\em ファイルパスよりファイル名部分を取得する \item\end{DoxyCompactList}\item 
+{\bf coil::vstring} {\bf coil::filelist} (const char $\ast$path, const char $\ast$glob\_\-str=\char`\"{}\char`\"{})
+\begin{DoxyCompactList}\small\item\em ファイルリストを取得する \item\end{DoxyCompactList}\end{DoxyCompactItemize}

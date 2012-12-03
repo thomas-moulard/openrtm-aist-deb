@@ -1,0 +1,37 @@
+\section{RTC::ModuleManager::UnloadPred Class Reference}
+\label{classRTC_1_1ModuleManager_1_1UnloadPred}\index{RTC::ModuleManager::UnloadPred@{RTC::ModuleManager::UnloadPred}}
+
+
+Module unloading functor.  
+
+
+
+
+{\ttfamily \#include $<$ModuleManager.h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf UnloadPred} ()
+\item 
+void {\bf operator()} ({\bf DLLEntity} $\ast$dll)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Module unloading functor. 
+
+\subsection{Constructor \& Destructor Documentation}
+\index{RTC::ModuleManager::UnloadPred@{RTC::ModuleManager::UnloadPred}!UnloadPred@{UnloadPred}}
+\index{UnloadPred@{UnloadPred}!RTC::ModuleManager::UnloadPred@{RTC::ModuleManager::UnloadPred}}
+\subsubsection[{UnloadPred}]{\setlength{\rightskip}{0pt plus 5cm}RTC::ModuleManager::UnloadPred::UnloadPred ()\hspace{0.3cm}{\ttfamily  [inline]}}\label{classRTC_1_1ModuleManager_1_1UnloadPred_a15b19c95fe3ce5851e521af92260f226}
+
+
+\subsection{Member Function Documentation}
+\index{RTC::ModuleManager::UnloadPred@{RTC::ModuleManager::UnloadPred}!operator()@{operator()}}
+\index{operator()@{operator()}!RTC::ModuleManager::UnloadPred@{RTC::ModuleManager::UnloadPred}}
+\subsubsection[{operator()}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::ModuleManager::UnloadPred::operator() ({\bf DLLEntity} $\ast$ {\em dll})\hspace{0.3cm}{\ttfamily  [inline]}}\label{classRTC_1_1ModuleManager_1_1UnloadPred_acccf2b1a74cee5b7aaaa306298b7d6c0}
+
+
+References coil::DynamicLib::close(), and RTC::ModuleManager::DLLEntity::dll.
+

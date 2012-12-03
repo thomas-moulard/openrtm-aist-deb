@@ -1,0 +1,65 @@
+\section{RTC::ExecutionContextActionListener Class Reference}
+\label{classRTC_1_1ExecutionContextActionListener}\index{RTC::ExecutionContextActionListener@{RTC::ExecutionContextActionListener}}
+
+
+\doxyref{ExecutionContextActionListener}{p.}{classRTC_1_1ExecutionContextActionListener} class.  
+
+
+
+
+{\ttfamily \#include $<$ComponentActionListener.h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual {\bf $\sim$ExecutionContextActionListener} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \item\end{DoxyCompactList}\item 
+virtual void {\bf operator()} ({\bf UniqueId} ec\_\-id)=0
+\begin{DoxyCompactList}\small\item\em Virtual Callback function. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static const char $\ast$ {\bf toString} ({\bf ExecutionContextActionListenerType} type)
+\begin{DoxyCompactList}\small\item\em Convert PreComponentActionListenerType into the string. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\doxyref{ExecutionContextActionListener}{p.}{classRTC_1_1ExecutionContextActionListener} class. This class is abstract base class for listener classes that provides callbacks for various events in rtobject. 
+
+\subsection{Constructor \& Destructor Documentation}
+\index{RTC::ExecutionContextActionListener@{RTC::ExecutionContextActionListener}!$\sim$ExecutionContextActionListener@{$\sim$ExecutionContextActionListener}}
+\index{$\sim$ExecutionContextActionListener@{$\sim$ExecutionContextActionListener}!RTC::ExecutionContextActionListener@{RTC::ExecutionContextActionListener}}
+\subsubsection[{$\sim$ExecutionContextActionListener}]{\setlength{\rightskip}{0pt plus 5cm}virtual RTC::ExecutionContextActionListener::$\sim$ExecutionContextActionListener ()\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classRTC_1_1ExecutionContextActionListener_a1fb1f35df22c9154123dcb3a95f2b61a}
+
+
+Destructor. 
+
+
+
+\subsection{Member Function Documentation}
+\index{RTC::ExecutionContextActionListener@{RTC::ExecutionContextActionListener}!operator()@{operator()}}
+\index{operator()@{operator()}!RTC::ExecutionContextActionListener@{RTC::ExecutionContextActionListener}}
+\subsubsection[{operator()}]{\setlength{\rightskip}{0pt plus 5cm}virtual void RTC::ExecutionContextActionListener::operator() ({\bf UniqueId} {\em ec\_\-id})\hspace{0.3cm}{\ttfamily  [pure virtual]}}\label{classRTC_1_1ExecutionContextActionListener_ad899dc2caf7982525bca5ad5c399b989}
+
+
+Virtual Callback function. 
+
+This is a the Callback function for \doxyref{ExecutionContextActionListener}{p.}{classRTC_1_1ExecutionContextActionListener} \index{RTC::ExecutionContextActionListener@{RTC::ExecutionContextActionListener}!toString@{toString}}
+\index{toString@{toString}!RTC::ExecutionContextActionListener@{RTC::ExecutionContextActionListener}}
+\subsubsection[{toString}]{\setlength{\rightskip}{0pt plus 5cm}static const char$\ast$ RTC::ExecutionContextActionListener::toString ({\bf ExecutionContextActionListenerType} {\em type})\hspace{0.3cm}{\ttfamily  [inline, static]}}\label{classRTC_1_1ExecutionContextActionListener_a09d31917b4cbdcc69eec0243cafe3d61}
+
+
+Convert PreComponentActionListenerType into the string. 
+
+Convert PreComponentActionListenerType into the string.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em type}]The target PreComponentActionListenerType for transformation\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Trnasformation result of string representation 
+\end{DoxyReturn}
+
+
+References RTC::EC\_\-ACTION\_\-LISTENER\_\-NUM.
+

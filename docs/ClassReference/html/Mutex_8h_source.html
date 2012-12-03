@@ -1,0 +1,75 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<title>OpenRTM: Mutex.h ソースファイル</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<!-- 作成： Doxygen 1.6.3 -->
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="index.html"><span>メインページ</span></a></li>
+      <li><a href="namespaces.html"><span>ネームスペース</span></a></li>
+      <li><a href="annotated.html"><span>クラス</span></a></li>
+      <li class="current"><a href="files.html"><span>ファイル</span></a></li>
+    </ul>
+  </div>
+  <div class="tabs">
+    <ul>
+      <li><a href="files.html"><span>ファイル一覧</span></a></li>
+      <li><a href="globals.html"><span>ファイルメンバ</span></a></li>
+    </ul>
+  </div>
+<h1>Mutex.h</h1><a href="Mutex_8h.html">説明を見る。</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="comment">// -*- C++ -*-</span>
+<a name="l00020"></a>00020 <span class="comment"></span><span class="preprocessor">#ifndef COIL_MUTEX_H</span>
+<a name="l00021"></a>00021 <span class="preprocessor"></span><span class="preprocessor">#define COIL_MUTEX_H</span>
+<a name="l00022"></a>00022 <span class="preprocessor"></span>
+<a name="l00023"></a>00023 <span class="preprocessor">#include &lt;pthread.h&gt;</span>
+<a name="l00024"></a>00024 
+<a name="l00025"></a>00025 <span class="keyword">namespace </span>coil
+<a name="l00026"></a>00026 {
+<a name="l00040"></a><a class="code" href="classcoil_1_1Mutex.html">00040</a>   <span class="keyword">class </span><a class="code" href="classcoil_1_1Mutex.html" title="Mutex クラス.">Mutex</a>
+<a name="l00041"></a>00041   {
+<a name="l00042"></a>00042   <span class="keyword">public</span>:
+<a name="l00062"></a><a class="code" href="classcoil_1_1Mutex.html#a45a1dccbb0d845c4668d832830b3381e">00062</a>     <a class="code" href="classcoil_1_1Mutex.html#a45a1dccbb0d845c4668d832830b3381e" title="コンストラクタ">Mutex</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> * <span class="keyword">const</span> name = 0)
+<a name="l00063"></a>00063     {
+<a name="l00064"></a>00064       ::pthread_mutex_init(&amp;<a class="code" href="classcoil_1_1Mutex.html#a6ae0f7d95d947ca3a333fc5628225ab7" title="排他制御オブジェクト">mutex_</a>, 0);
+<a name="l00065"></a>00065     }
+<a name="l00066"></a>00066 
+<a name="l00082"></a><a class="code" href="classcoil_1_1Mutex.html#ace6ccbe6d64be438633e5fdd33642606">00082</a>     <a class="code" href="classcoil_1_1Mutex.html#ace6ccbe6d64be438633e5fdd33642606" title="デストラクタ">~Mutex</a>()
+<a name="l00083"></a>00083     {
+<a name="l00084"></a>00084       ::pthread_mutex_destroy(&amp;<a class="code" href="classcoil_1_1Mutex.html#a6ae0f7d95d947ca3a333fc5628225ab7" title="排他制御オブジェクト">mutex_</a>);
+<a name="l00085"></a>00085     }
+<a name="l00086"></a>00086 
+<a name="l00102"></a><a class="code" href="classcoil_1_1Mutex.html#abd97daab1969a6cbf0e65ddf9944f669">00102</a>     <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="classcoil_1_1Mutex.html#abd97daab1969a6cbf0e65ddf9944f669" title="排他制御のロック">lock</a>()
+<a name="l00103"></a>00103     {
+<a name="l00104"></a>00104       ::pthread_mutex_lock(&amp;<a class="code" href="classcoil_1_1Mutex.html#a6ae0f7d95d947ca3a333fc5628225ab7" title="排他制御オブジェクト">mutex_</a>);
+<a name="l00105"></a>00105     }
+<a name="l00106"></a>00106 
+<a name="l00122"></a><a class="code" href="classcoil_1_1Mutex.html#aaf471565209e694eb5cd308f0c0dabdd">00122</a>     <span class="keyword">inline</span> <span class="keywordtype">bool</span> <a class="code" href="classcoil_1_1Mutex.html#aaf471565209e694eb5cd308f0c0dabdd" title="排他制御のノンブロッキングロック">trylock</a>()
+<a name="l00123"></a>00123     {
+<a name="l00124"></a>00124       return ::pthread_mutex_trylock(&amp;<a class="code" href="classcoil_1_1Mutex.html#a6ae0f7d95d947ca3a333fc5628225ab7" title="排他制御オブジェクト">mutex_</a>);
+<a name="l00125"></a>00125     }
+<a name="l00126"></a>00126 
+<a name="l00142"></a><a class="code" href="classcoil_1_1Mutex.html#aae9502c922762c052edafdeb53aa9baa">00142</a>     <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="classcoil_1_1Mutex.html#aae9502c922762c052edafdeb53aa9baa" title="排他制御のロック解除">unlock</a>()
+<a name="l00143"></a>00143     {
+<a name="l00144"></a>00144       ::pthread_mutex_unlock(&amp;<a class="code" href="classcoil_1_1Mutex.html#a6ae0f7d95d947ca3a333fc5628225ab7" title="排他制御オブジェクト">mutex_</a>);
+<a name="l00145"></a>00145     }
+<a name="l00146"></a>00146 
+<a name="l00158"></a><a class="code" href="classcoil_1_1Mutex.html#a6ae0f7d95d947ca3a333fc5628225ab7">00158</a>     pthread_mutex_t <a class="code" href="classcoil_1_1Mutex.html#a6ae0f7d95d947ca3a333fc5628225ab7" title="排他制御オブジェクト">mutex_</a>;
+<a name="l00159"></a>00159 
+<a name="l00160"></a>00160   <span class="keyword">private</span>:
+<a name="l00161"></a>00161     <a class="code" href="classcoil_1_1Mutex.html#a45a1dccbb0d845c4668d832830b3381e" title="コンストラクタ">Mutex</a>(<span class="keyword">const</span> <a class="code" href="classcoil_1_1Mutex.html" title="Mutex クラス.">Mutex</a>&amp;);
+<a name="l00162"></a>00162     <a class="code" href="classcoil_1_1Mutex.html" title="Mutex クラス.">Mutex</a>&amp; operator=(<span class="keyword">const</span> <a class="code" href="classcoil_1_1Mutex.html" title="Mutex クラス.">Mutex</a> &amp;);
+<a name="l00163"></a>00163   };
+<a name="l00164"></a>00164 };
+<a name="l00165"></a>00165 <span class="preprocessor">#endif // COIL_MUTEX_H</span>
+</pre></div></div>
+<hr class="footer"/><address style="text-align: right;"><small>OpenRTMに対してThu May 24 23:25:18 2012に生成されました。&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.6.3 </small></address>
+</body>
+</html>

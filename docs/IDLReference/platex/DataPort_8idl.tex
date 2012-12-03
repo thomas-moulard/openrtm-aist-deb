@@ -1,0 +1,56 @@
+\section{DataPort.idl}
+\label{DataPort_8idl}\index{DataPort.idl@{DataPort.idl}}
+
+
+DataPort interface definition.  
+
+
+\subsection*{構成}
+\begin{DoxyCompactItemize}
+\item 
+interface {\bf OpenRTM::InPortCdr}
+\item 
+interface {\bf OpenRTM::OutPortCdr}
+\end{DoxyCompactItemize}
+\subsection*{ネームスペース}
+\begin{DoxyCompactItemize}
+\item 
+namespace {\bf OpenRTM}
+\end{DoxyCompactItemize}
+\subsection*{型定義}
+\begin{DoxyCompactItemize}
+\item 
+typedef sequence$<$ octet $>$ {\bf OpenRTM::CdrData}
+\end{DoxyCompactItemize}
+\subsection*{列挙型}
+\begin{DoxyCompactItemize}
+\item 
+enum {\bf OpenRTM::PortStatus} \{ \par
+{\bf OpenRTM::PORT\_\-OK}, 
+{\bf OpenRTM::PORT\_\-ERROR}, 
+{\bf OpenRTM::BUFFER\_\-FULL}, 
+{\bf OpenRTM::BUFFER\_\-EMPTY}, 
+\par
+{\bf OpenRTM::BUFFER\_\-TIMEOUT}, 
+{\bf OpenRTM::UNKNOWN\_\-ERROR}
+ \}
+\end{DoxyCompactItemize}
+
+
+\subsection{説明}
+DataPort interface definition. \begin{DoxyDate}{日付}
+
+\end{DoxyDate}
+\begin{DoxyParagraph}{Date}
+2007-\/01-\/09 15:40:14 
+\end{DoxyParagraph}
+\begin{DoxyAuthor}{作者}
+Noriaki Ando $<${\tt n-\/ando@aist.go.jp}$>$
+\end{DoxyAuthor}
+Copyright (C) 2006 Noriaki Ando Task-\/intelligence Research Group, Intelligent Systems Research Institute, National Institute of Advanced Industrial Science and Technology (AIST), Japan
+
+All rights reserved.
+
+\begin{DoxyParagraph}{Id}
+\doxyref{DataPort.idl}{p.}{DataPort_8idl} 1597 2009-\/12-\/22 02:26:17Z n-\/ando 
+\end{DoxyParagraph}

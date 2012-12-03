@@ -1,0 +1,569 @@
+\section{クラス RTC::PublisherNew}
+\label{classRTC_1_1PublisherNew}\index{RTC::PublisherNew@{RTC::PublisherNew}}
+
+
+\doxyref{PublisherNew}{p.}{classRTC_1_1PublisherNew} クラス.  
+
+
+
+
+{\ttfamily \#include $<$PublisherNew.h$>$}
+
+RTC::PublisherNewに対する継承グラフ\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3cm]{classRTC_1_1PublisherNew}
+\end{center}
+\end{figure}
+\subsection*{Public 型}
+\begin{DoxyCompactItemize}
+\item 
+typedef {\bf coil::Mutex} {\bf Mutex}
+\item 
+typedef {\bf coil::Condition}$<$ {\bf Mutex} $>$ {\bf Condition}
+\item 
+typedef {\bf coil::Guard}$<$ {\bf coil::Mutex} $>$ {\bf Guard}
+\end{DoxyCompactItemize}
+\subsection*{Public メソッド}
+\begin{DoxyCompactItemize}
+\item 
+DATAPORTSTATUS\_\-ENUM {\bf PublisherNew} ()
+\item 
+virtual {\bf $\sim$PublisherNew} (void)
+\item 
+virtual ReturnCode {\bf init} ({\bf coil::Properties} \&prop)
+\begin{DoxyCompactList}\small\item\em 初期化 \item\end{DoxyCompactList}\item 
+virtual ReturnCode {\bf setConsumer} ({\bf InPortConsumer} $\ast$consumer)
+\begin{DoxyCompactList}\small\item\em InPortコンシューマのセット. \item\end{DoxyCompactList}\item 
+virtual ReturnCode {\bf setBuffer} ({\bf CdrBufferBase} $\ast$buffer)
+\begin{DoxyCompactList}\small\item\em バッファのセット \item\end{DoxyCompactList}\item 
+virtual ReturnCode {\bf setListener} ({\bf ConnectorInfo} \&info, {\bf ConnectorListeners} $\ast$listeners)
+\begin{DoxyCompactList}\small\item\em リスナを設定する。 \item\end{DoxyCompactList}\item 
+virtual ReturnCode {\bf write} (const cdrMemoryStream \&data, unsigned long sec, unsigned long usec)
+\begin{DoxyCompactList}\small\item\em データを書き込む \item\end{DoxyCompactList}\item 
+virtual bool {\bf isActive} ()
+\begin{DoxyCompactList}\small\item\em アクティブ化確認 \item\end{DoxyCompactList}\item 
+virtual ReturnCode {\bf activate} ()
+\begin{DoxyCompactList}\small\item\em アクティブ化する \item\end{DoxyCompactList}\item 
+virtual ReturnCode {\bf deactivate} ()
+\begin{DoxyCompactList}\small\item\em 非アクティブ化する \item\end{DoxyCompactList}\item 
+virtual int {\bf svc} (void)
+\begin{DoxyCompactList}\small\item\em スレッド実行関数 \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected 型}
+\begin{DoxyCompactItemize}
+\item 
+enum {\bf Policy} \{ {\bf ALL}, 
+{\bf FIFO}, 
+{\bf SKIP}, 
+{\bf NEW}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Protected メソッド}
+\begin{DoxyCompactItemize}
+\item 
+void {\bf setPushPolicy} (const {\bf coil::Properties} \&prop)
+\begin{DoxyCompactList}\small\item\em PushPolicy の設定. \item\end{DoxyCompactList}\item 
+bool {\bf createTask} (const {\bf coil::Properties} \&prop)
+\begin{DoxyCompactList}\small\item\em Task の設定. \item\end{DoxyCompactList}\item 
+ReturnCode {\bf pushAll} ()
+\begin{DoxyCompactList}\small\item\em push \char`\"{}all\char`\"{} policy \item\end{DoxyCompactList}\item 
+ReturnCode {\bf pushFifo} ()
+\begin{DoxyCompactList}\small\item\em push \char`\"{}fifo\char`\"{} policy \item\end{DoxyCompactList}\item 
+ReturnCode {\bf pushSkip} ()
+\begin{DoxyCompactList}\small\item\em push \char`\"{}skip\char`\"{} policy \item\end{DoxyCompactList}\item 
+ReturnCode {\bf pushNew} ()
+\begin{DoxyCompactList}\small\item\em push \char`\"{}new\char`\"{} policy \item\end{DoxyCompactList}\item 
+ReturnCode {\bf convertReturn} ({\bf BufferStatus::Enum} status, const cdrMemoryStream \&data)
+\begin{DoxyCompactList}\small\item\em \doxyref{BufferStatus}{p.}{classRTC_1_1BufferStatus} から \doxyref{DataPortStatus}{p.}{classRTC_1_1DataPortStatus} への変換. \item\end{DoxyCompactList}\item 
+ReturnCode {\bf invokeListener} ({\bf DataPortStatus::Enum} status, const cdrMemoryStream \&data)
+\begin{DoxyCompactList}\small\item\em DataPortStatusに従ってリスナへ通知する関数を呼び出す。. \item\end{DoxyCompactList}\item 
+void {\bf onBufferWrite} (const cdrMemoryStream \&data)
+\begin{DoxyCompactList}\small\item\em ON\_\-BUFFER\_\-WRITEのリスナへ通知する。. \item\end{DoxyCompactList}\item 
+void {\bf onBufferFull} (const cdrMemoryStream \&data)
+\begin{DoxyCompactList}\small\item\em ON\_\-BUFFER\_\-FULLリスナへイベントを通知する。. \item\end{DoxyCompactList}\item 
+void {\bf onBufferWriteTimeout} (const cdrMemoryStream \&data)
+\begin{DoxyCompactList}\small\item\em ON\_\-BUFFER\_\-WRITE\_\-TIMEOUTのリスナへ通知する。. \item\end{DoxyCompactList}\item 
+void {\bf onBufferWriteOverwrite} (const cdrMemoryStream \&data)
+\begin{DoxyCompactList}\small\item\em ON\_\-BUFFER\_\-OVERWRITEのリスナへ通知する。. \item\end{DoxyCompactList}\item 
+void {\bf onBufferRead} (const cdrMemoryStream \&data)
+\begin{DoxyCompactList}\small\item\em ON\_\-BUFFER\_\-READのリスナへ通知する。. \item\end{DoxyCompactList}\item 
+void {\bf onSend} (const cdrMemoryStream \&data)
+\begin{DoxyCompactList}\small\item\em ON\_\-SENDのリスナへ通知する。. \item\end{DoxyCompactList}\item 
+void {\bf onReceived} (const cdrMemoryStream \&data)
+\begin{DoxyCompactList}\small\item\em ON\_\-RECEIVEDのリスナへ通知する。. \item\end{DoxyCompactList}\item 
+void {\bf onReceiverFull} (const cdrMemoryStream \&data)
+\begin{DoxyCompactList}\small\item\em ON\_\-RECEIVER\_\-FULLのリスナへ通知する。. \item\end{DoxyCompactList}\item 
+void {\bf onReceiverTimeout} (const cdrMemoryStream \&data)
+\begin{DoxyCompactList}\small\item\em ON\_\-RECEIVER\_\-TIMEOUTのリスナへ通知する。. \item\end{DoxyCompactList}\item 
+void {\bf onReceiverError} (const cdrMemoryStream \&data)
+\begin{DoxyCompactList}\small\item\em ON\_\-RECEIVER\_\-ERRORのリスナへ通知する。. \item\end{DoxyCompactList}\item 
+void {\bf onSenderError} ()
+\begin{DoxyCompactList}\small\item\em ON\_\-SENDER\_\-ERRORのリスナへ通知する。. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{説明}
+\doxyref{PublisherNew}{p.}{classRTC_1_1PublisherNew} クラス. バッファ内に新規データが格納されたタイミングで、その新規データを送信する。 データ送出タイミングを待つコンシューマを、送出する側とは異なるスレッドで 動作させる場合に使用。 Publisherの駆動は、データ送出のタイミングになるまでブロックされ、 送出タイミングの通知を受けると、即座にコンシューマの送出処理を呼び出す。 
+
+\subsection{型定義}
+\index{RTC::PublisherNew@{RTC::PublisherNew}!Condition@{Condition}}
+\index{Condition@{Condition}!RTC::PublisherNew@{RTC::PublisherNew}}
+\subsubsection[{Condition}]{\setlength{\rightskip}{0pt plus 5cm}typedef {\bf coil::Condition}$<${\bf Mutex}$>$ {\bf RTC::PublisherNew::Condition}}\label{classRTC_1_1PublisherNew_a609791e61ff70b68be2a41e3bda44008}
+\index{RTC::PublisherNew@{RTC::PublisherNew}!Guard@{Guard}}
+\index{Guard@{Guard}!RTC::PublisherNew@{RTC::PublisherNew}}
+\subsubsection[{Guard}]{\setlength{\rightskip}{0pt plus 5cm}typedef {\bf coil::Guard}$<${\bf coil::Mutex}$>$ {\bf RTC::PublisherNew::Guard}}\label{classRTC_1_1PublisherNew_acea27418378fea75be772d70f8f66932}
+\index{RTC::PublisherNew@{RTC::PublisherNew}!Mutex@{Mutex}}
+\index{Mutex@{Mutex}!RTC::PublisherNew@{RTC::PublisherNew}}
+\subsubsection[{Mutex}]{\setlength{\rightskip}{0pt plus 5cm}typedef {\bf coil::Mutex} {\bf RTC::PublisherNew::Mutex}}\label{classRTC_1_1PublisherNew_a87c7fae781ea33f98f4ff1140208f683}
+
+
+\subsection{列挙型}
+\index{RTC::PublisherNew@{RTC::PublisherNew}!Policy@{Policy}}
+\index{Policy@{Policy}!RTC::PublisherNew@{RTC::PublisherNew}}
+\subsubsection[{Policy}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf RTC::PublisherNew::Policy}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC_1_1PublisherNew_a4cf5b097a973c8bfd964ec3c303969cd}
+\begin{Desc}
+\item[列挙型の値: ]\par
+\begin{description}
+\index{ALL@{ALL}!RTC::PublisherNew@{RTC::PublisherNew}}\index{RTC::PublisherNew@{RTC::PublisherNew}!ALL@{ALL}}\item[{\em 
+ALL\label{classRTC_1_1PublisherNew_a4cf5b097a973c8bfd964ec3c303969cda9b2fe02254a4837c19d2a8c770447f51}
+}]\index{FIFO@{FIFO}!RTC::PublisherNew@{RTC::PublisherNew}}\index{RTC::PublisherNew@{RTC::PublisherNew}!FIFO@{FIFO}}\item[{\em 
+FIFO\label{classRTC_1_1PublisherNew_a4cf5b097a973c8bfd964ec3c303969cdaa4a5140b293366e88c777d36bb317af9}
+}]\index{SKIP@{SKIP}!RTC::PublisherNew@{RTC::PublisherNew}}\index{RTC::PublisherNew@{RTC::PublisherNew}!SKIP@{SKIP}}\item[{\em 
+SKIP\label{classRTC_1_1PublisherNew_a4cf5b097a973c8bfd964ec3c303969cda159ee0245ace780587c26f8ef017a4ad}
+}]\index{NEW@{NEW}!RTC::PublisherNew@{RTC::PublisherNew}}\index{RTC::PublisherNew@{RTC::PublisherNew}!NEW@{NEW}}\item[{\em 
+NEW\label{classRTC_1_1PublisherNew_a4cf5b097a973c8bfd964ec3c303969cda808d77f43eba2fd14b98d08817588dbd}
+}]\end{description}
+\end{Desc}
+
+
+
+\subsection{コンストラクタとデストラクタ}
+\index{RTC::PublisherNew@{RTC::PublisherNew}!PublisherNew@{PublisherNew}}
+\index{PublisherNew@{PublisherNew}!RTC::PublisherNew@{RTC::PublisherNew}}
+\subsubsection[{PublisherNew}]{\setlength{\rightskip}{0pt plus 5cm}DATAPORTSTATUS\_\-ENUM RTC::PublisherNew::PublisherNew ()}\label{classRTC_1_1PublisherNew_afdd11e92f0bbe7e7a2b87cb7787dae73}
+コンストラクタ \index{RTC::PublisherNew@{RTC::PublisherNew}!$\sim$PublisherNew@{$\sim$PublisherNew}}
+\index{$\sim$PublisherNew@{$\sim$PublisherNew}!RTC::PublisherNew@{RTC::PublisherNew}}
+\subsubsection[{$\sim$PublisherNew}]{\setlength{\rightskip}{0pt plus 5cm}virtual RTC::PublisherNew::$\sim$PublisherNew (void)\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classRTC_1_1PublisherNew_ac11e4863316b95bbd6b570ee5b06af06}
+デストラクタ 
+
+\subsection{関数}
+\index{RTC::PublisherNew@{RTC::PublisherNew}!activate@{activate}}
+\index{activate@{activate}!RTC::PublisherNew@{RTC::PublisherNew}}
+\subsubsection[{activate}]{\setlength{\rightskip}{0pt plus 5cm}virtual ReturnCode RTC::PublisherNew::activate ()\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classRTC_1_1PublisherNew_a8dccae837b6e92229a2cf7a1c8f836a5}
+
+
+アクティブ化する 
+
+Publisher をアクティブ化する。この関数を呼び出すことにより、 Publisherが持つ、データを送信するスレッドが動作を開始する。初期 化が行われていないなどにより、事前条件を満たさない場合、エラーコー ド PRECONDITION\_\-NOT\_\-MET を返す。
+
+\begin{DoxyReturn}{戻り値}
+PORT\_\-OK 正常終了 PRECONDITION\_\-NOT\_\-MET 事前条件を満たさない 
+\end{DoxyReturn}
+
+
+{\bf RTC::PublisherBase} \doxyref{}{p.}{classRTC_1_1PublisherBase_a4f0e0ca91e07a25481ffa83ef027feb6}を実装しています。
+
+\index{RTC::PublisherNew@{RTC::PublisherNew}!convertReturn@{convertReturn}}
+\index{convertReturn@{convertReturn}!RTC::PublisherNew@{RTC::PublisherNew}}
+\subsubsection[{convertReturn}]{\setlength{\rightskip}{0pt plus 5cm}ReturnCode RTC::PublisherNew::convertReturn ({\bf BufferStatus::Enum} {\em status}, \/  const cdrMemoryStream \& {\em data})\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC_1_1PublisherNew_a5de2fe2cff2dda7f62fd7627fcbaf7ca}
+
+
+\doxyref{BufferStatus}{p.}{classRTC_1_1BufferStatus} から \doxyref{DataPortStatus}{p.}{classRTC_1_1DataPortStatus} への変換. 
+
+バッファからの戻り値を \doxyref{DataPortStatus::Enum}{p.}{classRTC_1_1DataPortStatus_ac47c3e85f39e51eb55230337c0efc64f} 型へ変換する関数。そ れぞれ、以下のように変換される。変換時にコールバックを呼ぶ場合、 コールバク関数も付記する。
+
+
+\begin{DoxyItemize}
+\item BUFFER\_\-OK: PORT\_\-OK
+\begin{DoxyItemize}
+\item None
+\end{DoxyItemize}
+\item BUFFER\_\-ERROR: BUFFER\_\-ERROR
+\begin{DoxyItemize}
+\item None
+\end{DoxyItemize}
+\item BUFFER\_\-FULL: BUFFER\_\-FULL
+\begin{DoxyItemize}
+\item \doxyref{onBufferFull()}{p.}{classRTC_1_1PublisherNew_a81f03425de9d3ac11045dd8bb2a03bf2}
+\end{DoxyItemize}
+\item NOT\_\-SUPPORTED: PORT\_\-ERROR
+\begin{DoxyItemize}
+\item None
+\end{DoxyItemize}
+\item TIMEOUT: BUFFER\_\-TIMEOUT
+\begin{DoxyItemize}
+\item \doxyref{onBufferWriteTimeout()}{p.}{classRTC_1_1PublisherNew_a396d70ed36facf14222f59e8a268368e}
+\end{DoxyItemize}
+\item PRECONDITION\_\-NOT\_\-MET: PRECONDITION\_\-NOT\_\-MET
+\begin{DoxyItemize}
+\item None
+\end{DoxyItemize}
+\item other: PORT\_\-ERROR
+\begin{DoxyItemize}
+\item None
+\end{DoxyItemize}
+\end{DoxyItemize}
+
+
+\begin{DoxyParams}{引数}
+\item[{\em status}]\doxyref{BufferStatus}{p.}{classRTC_1_1BufferStatus} \item[{\em data}]cdrMemoryStream \end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+DataPortStatu 型のリターンコード 
+\end{DoxyReturn}
+\index{RTC::PublisherNew@{RTC::PublisherNew}!createTask@{createTask}}
+\index{createTask@{createTask}!RTC::PublisherNew@{RTC::PublisherNew}}
+\subsubsection[{createTask}]{\setlength{\rightskip}{0pt plus 5cm}bool RTC::PublisherNew::createTask (const {\bf coil::Properties} \& {\em prop})\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC_1_1PublisherNew_ae2d000f0982b41a4f24867df55f3d3cf}
+
+
+Task の設定. 
+
+\index{RTC::PublisherNew@{RTC::PublisherNew}!deactivate@{deactivate}}
+\index{deactivate@{deactivate}!RTC::PublisherNew@{RTC::PublisherNew}}
+\subsubsection[{deactivate}]{\setlength{\rightskip}{0pt plus 5cm}virtual ReturnCode RTC::PublisherNew::deactivate ()\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classRTC_1_1PublisherNew_a41177856ad39e6540132e8e7f07f8406}
+
+
+非アクティブ化する 
+
+Publisher を非アクティブ化する。この関数を呼び出すことにより、 Publisherが持つ、データを送信するスレッドが動作を停止する。初期 化が行われていないなどにより、事前条件を満たさない場合、エラーコー ド PRECONDITION\_\-NOT\_\-MET を返す。
+
+\begin{DoxyReturn}{戻り値}
+PORT\_\-OK 正常終了 PRECONDITION\_\-NOT\_\-MET 事前条件を満たさない 
+\end{DoxyReturn}
+
+
+{\bf RTC::PublisherBase} \doxyref{}{p.}{classRTC_1_1PublisherBase_ace68807ed92a38af8ca49ece25db0d8a}を実装しています。
+
+\index{RTC::PublisherNew@{RTC::PublisherNew}!init@{init}}
+\index{init@{init}!RTC::PublisherNew@{RTC::PublisherNew}}
+\subsubsection[{init}]{\setlength{\rightskip}{0pt plus 5cm}virtual ReturnCode RTC::PublisherNew::init ({\bf coil::Properties} \& {\em prop})\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classRTC_1_1PublisherNew_a01bff99edfad7f69e9a75fb07a91d5e6}
+
+
+初期化 
+
+このクラスのオブジェクトを使用するのに先立ち、必ずこの関数を呼び 出す必要がある。引数には、このオブジェクトの各種設定情報を含む Properties を与える。データをプッシュする際のポリシーとして publisher.push\_\-policy をキーとする値に、all, fifo, skip, new の いずれかを与えることができる。
+
+以下のオプションを与えることができる。
+
+
+\begin{DoxyItemize}
+\item thread\_\-type: スレッドのタイプ (文字列、デフォルト: default)
+\item publisher.push\_\-policy: Pushポリシー (all, fifo, skip, new)
+\item publisher.skip\_\-count: 上記ポリシが skip のときのスキップ数
+\item measurement.exec\_\-time: タスク実行時間計測 (enable/disable)
+\item measurement.exec\_\-count: タスク関数実行時間計測周期 (数値, 回数)
+\item measurement.period\_\-time: タスク周期時間計測 (enable/disable)
+\item measurement.period\_\-count: タスク周期時間計測周期 (数値, 回数)
+\end{DoxyItemize}
+
+
+\begin{DoxyParams}{引数}
+\item[{\em property}]本Publisherの駆動制御情報を設定したPropertyオブジェクト \end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+ReturnCode PORT\_\-OK 正常終了 INVALID\_\-ARGS Properties が不正な値を含む 
+\end{DoxyReturn}
+
+
+{\bf RTC::PublisherBase} \doxyref{}{p.}{classRTC_1_1PublisherBase_a9915af3afab216e2b39fa8702b54b0b7}を実装しています。
+
+\index{RTC::PublisherNew@{RTC::PublisherNew}!invokeListener@{invokeListener}}
+\index{invokeListener@{invokeListener}!RTC::PublisherNew@{RTC::PublisherNew}}
+\subsubsection[{invokeListener}]{\setlength{\rightskip}{0pt plus 5cm}ReturnCode RTC::PublisherNew::invokeListener ({\bf DataPortStatus::Enum} {\em status}, \/  const cdrMemoryStream \& {\em data})\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC_1_1PublisherNew_a7a643aea4632d8234630df209cd63209}
+
+
+DataPortStatusに従ってリスナへ通知する関数を呼び出す。. 
+
+
+\begin{DoxyParams}{引数}
+\item[{\em status}]\doxyref{DataPortStatus}{p.}{classRTC_1_1DataPortStatus} \item[{\em data}]cdrMemoryStream \end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+リターンコード 
+\end{DoxyReturn}
+\index{RTC::PublisherNew@{RTC::PublisherNew}!isActive@{isActive}}
+\index{isActive@{isActive}!RTC::PublisherNew@{RTC::PublisherNew}}
+\subsubsection[{isActive}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool RTC::PublisherNew::isActive ()\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classRTC_1_1PublisherNew_a05304d710c7e77dd3702422dd3cc91aa}
+
+
+アクティブ化確認 
+
+Publisher はデータポートと同期して activate/deactivate される。 \doxyref{activate()}{p.}{classRTC_1_1PublisherNew_a8dccae837b6e92229a2cf7a1c8f836a5} / \doxyref{deactivate()}{p.}{classRTC_1_1PublisherNew_a41177856ad39e6540132e8e7f07f8406} 関数によって、アクティブ状態と非アクティ ブ状態が切り替わる。この関数により、現在アクティブ状態か、非アク ティブ状態かを確認することができる。
+
+\begin{DoxyReturn}{戻り値}
+状態確認結果(アクティブ状態:true、非アクティブ状態:false) 
+\end{DoxyReturn}
+
+
+{\bf RTC::PublisherBase} \doxyref{}{p.}{classRTC_1_1PublisherBase_aed0e118b4a1bda091ba38066cc8e4c7b}を実装しています。
+
+\index{RTC::PublisherNew@{RTC::PublisherNew}!onBufferFull@{onBufferFull}}
+\index{onBufferFull@{onBufferFull}!RTC::PublisherNew@{RTC::PublisherNew}}
+\subsubsection[{onBufferFull}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::PublisherNew::onBufferFull (const cdrMemoryStream \& {\em data})\hspace{0.3cm}{\ttfamily  [inline, protected]}}\label{classRTC_1_1PublisherNew_a81f03425de9d3ac11045dd8bb2a03bf2}
+
+
+ON\_\-BUFFER\_\-FULLリスナへイベントを通知する。. 
+
+
+\begin{DoxyParams}{引数}
+\item[{\em data}]cdrMemoryStream \end{DoxyParams}
+
+
+参照先 RTC::ON\_\-BUFFER\_\-FULL.
+
+\index{RTC::PublisherNew@{RTC::PublisherNew}!onBufferRead@{onBufferRead}}
+\index{onBufferRead@{onBufferRead}!RTC::PublisherNew@{RTC::PublisherNew}}
+\subsubsection[{onBufferRead}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::PublisherNew::onBufferRead (const cdrMemoryStream \& {\em data})\hspace{0.3cm}{\ttfamily  [inline, protected]}}\label{classRTC_1_1PublisherNew_a37cbd07e2478992bbfbcb620fd60c288}
+
+
+ON\_\-BUFFER\_\-READのリスナへ通知する。. 
+
+
+\begin{DoxyParams}{引数}
+\item[{\em data}]cdrMemoryStream \end{DoxyParams}
+
+
+参照先 RTC::ON\_\-BUFFER\_\-READ.
+
+\index{RTC::PublisherNew@{RTC::PublisherNew}!onBufferWrite@{onBufferWrite}}
+\index{onBufferWrite@{onBufferWrite}!RTC::PublisherNew@{RTC::PublisherNew}}
+\subsubsection[{onBufferWrite}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::PublisherNew::onBufferWrite (const cdrMemoryStream \& {\em data})\hspace{0.3cm}{\ttfamily  [inline, protected]}}\label{classRTC_1_1PublisherNew_aef8f97b957d7ddbc6c14204828ad45f0}
+
+
+ON\_\-BUFFER\_\-WRITEのリスナへ通知する。. 
+
+
+\begin{DoxyParams}{引数}
+\item[{\em data}]cdrMemoryStream \end{DoxyParams}
+
+
+参照先 RTC::ON\_\-BUFFER\_\-WRITE.
+
+\index{RTC::PublisherNew@{RTC::PublisherNew}!onBufferWriteOverwrite@{onBufferWriteOverwrite}}
+\index{onBufferWriteOverwrite@{onBufferWriteOverwrite}!RTC::PublisherNew@{RTC::PublisherNew}}
+\subsubsection[{onBufferWriteOverwrite}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::PublisherNew::onBufferWriteOverwrite (const cdrMemoryStream \& {\em data})\hspace{0.3cm}{\ttfamily  [inline, protected]}}\label{classRTC_1_1PublisherNew_a60b6e9650f170c3dcb11bbfe0b30e336}
+
+
+ON\_\-BUFFER\_\-OVERWRITEのリスナへ通知する。. 
+
+
+\begin{DoxyParams}{引数}
+\item[{\em data}]cdrMemoryStream \end{DoxyParams}
+
+
+参照先 RTC::ON\_\-BUFFER\_\-OVERWRITE.
+
+\index{RTC::PublisherNew@{RTC::PublisherNew}!onBufferWriteTimeout@{onBufferWriteTimeout}}
+\index{onBufferWriteTimeout@{onBufferWriteTimeout}!RTC::PublisherNew@{RTC::PublisherNew}}
+\subsubsection[{onBufferWriteTimeout}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::PublisherNew::onBufferWriteTimeout (const cdrMemoryStream \& {\em data})\hspace{0.3cm}{\ttfamily  [inline, protected]}}\label{classRTC_1_1PublisherNew_a396d70ed36facf14222f59e8a268368e}
+
+
+ON\_\-BUFFER\_\-WRITE\_\-TIMEOUTのリスナへ通知する。. 
+
+
+\begin{DoxyParams}{引数}
+\item[{\em data}]cdrMemoryStream \end{DoxyParams}
+
+
+参照先 RTC::ON\_\-BUFFER\_\-WRITE\_\-TIMEOUT.
+
+\index{RTC::PublisherNew@{RTC::PublisherNew}!onReceived@{onReceived}}
+\index{onReceived@{onReceived}!RTC::PublisherNew@{RTC::PublisherNew}}
+\subsubsection[{onReceived}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::PublisherNew::onReceived (const cdrMemoryStream \& {\em data})\hspace{0.3cm}{\ttfamily  [inline, protected]}}\label{classRTC_1_1PublisherNew_a0632afa94869fa79b6c11172042860fc}
+
+
+ON\_\-RECEIVEDのリスナへ通知する。. 
+
+
+\begin{DoxyParams}{引数}
+\item[{\em data}]cdrMemoryStream \end{DoxyParams}
+
+
+参照先 RTC::ON\_\-RECEIVED.
+
+\index{RTC::PublisherNew@{RTC::PublisherNew}!onReceiverError@{onReceiverError}}
+\index{onReceiverError@{onReceiverError}!RTC::PublisherNew@{RTC::PublisherNew}}
+\subsubsection[{onReceiverError}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::PublisherNew::onReceiverError (const cdrMemoryStream \& {\em data})\hspace{0.3cm}{\ttfamily  [inline, protected]}}\label{classRTC_1_1PublisherNew_a46cc438a770162ae5a633bbade631aad}
+
+
+ON\_\-RECEIVER\_\-ERRORのリスナへ通知する。. 
+
+
+\begin{DoxyParams}{引数}
+\item[{\em data}]cdrMemoryStream \end{DoxyParams}
+
+
+参照先 RTC::ON\_\-RECEIVER\_\-ERROR.
+
+\index{RTC::PublisherNew@{RTC::PublisherNew}!onReceiverFull@{onReceiverFull}}
+\index{onReceiverFull@{onReceiverFull}!RTC::PublisherNew@{RTC::PublisherNew}}
+\subsubsection[{onReceiverFull}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::PublisherNew::onReceiverFull (const cdrMemoryStream \& {\em data})\hspace{0.3cm}{\ttfamily  [inline, protected]}}\label{classRTC_1_1PublisherNew_a9a651513aaac510d2fbd478c1219c851}
+
+
+ON\_\-RECEIVER\_\-FULLのリスナへ通知する。. 
+
+
+\begin{DoxyParams}{引数}
+\item[{\em data}]cdrMemoryStream \end{DoxyParams}
+
+
+参照先 RTC::ON\_\-RECEIVER\_\-FULL.
+
+\index{RTC::PublisherNew@{RTC::PublisherNew}!onReceiverTimeout@{onReceiverTimeout}}
+\index{onReceiverTimeout@{onReceiverTimeout}!RTC::PublisherNew@{RTC::PublisherNew}}
+\subsubsection[{onReceiverTimeout}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::PublisherNew::onReceiverTimeout (const cdrMemoryStream \& {\em data})\hspace{0.3cm}{\ttfamily  [inline, protected]}}\label{classRTC_1_1PublisherNew_a63330ba8db7c47f97d52cd147894c877}
+
+
+ON\_\-RECEIVER\_\-TIMEOUTのリスナへ通知する。. 
+
+
+\begin{DoxyParams}{引数}
+\item[{\em data}]cdrMemoryStream \end{DoxyParams}
+
+
+参照先 RTC::ON\_\-RECEIVER\_\-TIMEOUT.
+
+\index{RTC::PublisherNew@{RTC::PublisherNew}!onSend@{onSend}}
+\index{onSend@{onSend}!RTC::PublisherNew@{RTC::PublisherNew}}
+\subsubsection[{onSend}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::PublisherNew::onSend (const cdrMemoryStream \& {\em data})\hspace{0.3cm}{\ttfamily  [inline, protected]}}\label{classRTC_1_1PublisherNew_afe04d927167e9f38dc3663384f9fddb8}
+
+
+ON\_\-SENDのリスナへ通知する。. 
+
+
+\begin{DoxyParams}{引数}
+\item[{\em data}]cdrMemoryStream \end{DoxyParams}
+
+
+参照先 RTC::ON\_\-SEND.
+
+\index{RTC::PublisherNew@{RTC::PublisherNew}!onSenderError@{onSenderError}}
+\index{onSenderError@{onSenderError}!RTC::PublisherNew@{RTC::PublisherNew}}
+\subsubsection[{onSenderError}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::PublisherNew::onSenderError ()\hspace{0.3cm}{\ttfamily  [inline, protected]}}\label{classRTC_1_1PublisherNew_a87954b599feec27478c24b337571c944}
+
+
+ON\_\-SENDER\_\-ERRORのリスナへ通知する。. 
+
+
+\begin{DoxyParams}{引数}
+\item[{\em data}]cdrMemoryStream \end{DoxyParams}
+
+
+参照先 RTC::ON\_\-SENDER\_\-ERROR.
+
+\index{RTC::PublisherNew@{RTC::PublisherNew}!pushAll@{pushAll}}
+\index{pushAll@{pushAll}!RTC::PublisherNew@{RTC::PublisherNew}}
+\subsubsection[{pushAll}]{\setlength{\rightskip}{0pt plus 5cm}ReturnCode RTC::PublisherNew::pushAll ()\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC_1_1PublisherNew_aa98d09ffcb5b453201008546a239a4d5}
+
+
+push \char`\"{}all\char`\"{} policy 
+
+\index{RTC::PublisherNew@{RTC::PublisherNew}!pushFifo@{pushFifo}}
+\index{pushFifo@{pushFifo}!RTC::PublisherNew@{RTC::PublisherNew}}
+\subsubsection[{pushFifo}]{\setlength{\rightskip}{0pt plus 5cm}ReturnCode RTC::PublisherNew::pushFifo ()\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC_1_1PublisherNew_a902b8647cef1d5d1331fed76038ae2fa}
+
+
+push \char`\"{}fifo\char`\"{} policy 
+
+\index{RTC::PublisherNew@{RTC::PublisherNew}!pushNew@{pushNew}}
+\index{pushNew@{pushNew}!RTC::PublisherNew@{RTC::PublisherNew}}
+\subsubsection[{pushNew}]{\setlength{\rightskip}{0pt plus 5cm}ReturnCode RTC::PublisherNew::pushNew ()\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC_1_1PublisherNew_ae3448d8e79f726d72904ecbfebac1731}
+
+
+push \char`\"{}new\char`\"{} policy 
+
+\index{RTC::PublisherNew@{RTC::PublisherNew}!pushSkip@{pushSkip}}
+\index{pushSkip@{pushSkip}!RTC::PublisherNew@{RTC::PublisherNew}}
+\subsubsection[{pushSkip}]{\setlength{\rightskip}{0pt plus 5cm}ReturnCode RTC::PublisherNew::pushSkip ()\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC_1_1PublisherNew_a1defbd4b385724dd3e9ec5e9553f6288}
+
+
+push \char`\"{}skip\char`\"{} policy 
+
+\index{RTC::PublisherNew@{RTC::PublisherNew}!setBuffer@{setBuffer}}
+\index{setBuffer@{setBuffer}!RTC::PublisherNew@{RTC::PublisherNew}}
+\subsubsection[{setBuffer}]{\setlength{\rightskip}{0pt plus 5cm}virtual ReturnCode RTC::PublisherNew::setBuffer ({\bf CdrBufferBase} $\ast$ {\em buffer})\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classRTC_1_1PublisherNew_a5c2ff671b335bbcff79d633cb4d50080}
+
+
+バッファのセット 
+
+この関数では、この Publisher に関連付けられるバッファをセットする。 バッファオブジェクトがヌルポインタの場合、INVALID\_\-ARGSが返される。 それ以外の場合は、PORT\_\-OK が返される。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em buffer}]CDR buffer へのポインタ \end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+ReturnCode PORT\_\-OK 正常終了 INVALID\_\-ARGS 引数に不正な値が含まれている 
+\end{DoxyReturn}
+\index{RTC::PublisherNew@{RTC::PublisherNew}!setConsumer@{setConsumer}}
+\index{setConsumer@{setConsumer}!RTC::PublisherNew@{RTC::PublisherNew}}
+\subsubsection[{setConsumer}]{\setlength{\rightskip}{0pt plus 5cm}virtual ReturnCode RTC::PublisherNew::setConsumer ({\bf InPortConsumer} $\ast$ {\em consumer})\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classRTC_1_1PublisherNew_a8a0485bf2d39c01c4abf3692be2f6db2}
+
+
+InPortコンシューマのセット. 
+
+この関数では、この Publisher に関連付けられるコンシューマをセットする。 コンシューマオブジェクトがヌルポインタの場合、INVALID\_\-ARGSが返される。 それ以外の場合は、PORT\_\-OK が返される。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em consumer}]Consumer へのポインタ \end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+ReturnCode PORT\_\-OK 正常終了 INVALID\_\-ARGS 引数に不正な値が含まれている 
+\end{DoxyReturn}
+
+
+{\bf RTC::PublisherBase} \doxyref{}{p.}{classRTC_1_1PublisherBase_a7ff8bf60fa9d713402572404b3dc922c}を実装しています。
+
+\index{RTC::PublisherNew@{RTC::PublisherNew}!setListener@{setListener}}
+\index{setListener@{setListener}!RTC::PublisherNew@{RTC::PublisherNew}}
+\subsubsection[{setListener}]{\setlength{\rightskip}{0pt plus 5cm}virtual ReturnCode RTC::PublisherNew::setListener ({\bf ConnectorInfo} \& {\em info}, \/  {\bf ConnectorListeners} $\ast$ {\em listeners})\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classRTC_1_1PublisherNew_a14b2739ed8f2e756c89747b56db45161}
+
+
+リスナを設定する。 
+
+Publisher に対してリスナオブジェクト \doxyref{ConnectorListeners}{p.}{classRTC_1_1ConnectorListeners} を設定する。 各種リスナオブジェクトを含む \doxyref{ConnectorListeners}{p.}{classRTC_1_1ConnectorListeners} をセットすることで、 バッファの読み書き、データの送信時等にこれらのリスナをコールする。 \doxyref{ConnectorListeners}{p.}{classRTC_1_1ConnectorListeners} オブジェクトの所有権はポートまたは RTObject が持ち Publisher 削除時に \doxyref{ConnectorListeners}{p.}{classRTC_1_1ConnectorListeners} は削除されることはない。 \doxyref{ConnectorListeners}{p.}{classRTC_1_1ConnectorListeners} がヌルポインタの場合 INVALID\_\-ARGS を返す。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em info}]ConnectorProfile をローカル化したオブジェクト \doxyref{ConnectorInfo}{p.}{classRTC_1_1ConnectorInfo} \item[{\em listeners}]リスナを多数保持する \doxyref{ConnectorListeners}{p.}{classRTC_1_1ConnectorListeners} オブジェクト \end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+PORT\_\-OK 正常終了 INVALID\_\-ARGS 不正な引数 
+\end{DoxyReturn}
+
+
+{\bf RTC::PublisherBase} \doxyref{}{p.}{classRTC_1_1PublisherBase_a9d12db1358f8b70a5ee761d905170bc2}を実装しています。
+
+\index{RTC::PublisherNew@{RTC::PublisherNew}!setPushPolicy@{setPushPolicy}}
+\index{setPushPolicy@{setPushPolicy}!RTC::PublisherNew@{RTC::PublisherNew}}
+\subsubsection[{setPushPolicy}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::PublisherNew::setPushPolicy (const {\bf coil::Properties} \& {\em prop})\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC_1_1PublisherNew_a53be97827224bc0f050caeef77e6409b}
+
+
+PushPolicy の設定. 
+
+\index{RTC::PublisherNew@{RTC::PublisherNew}!svc@{svc}}
+\index{svc@{svc}!RTC::PublisherNew@{RTC::PublisherNew}}
+\subsubsection[{svc}]{\setlength{\rightskip}{0pt plus 5cm}virtual int RTC::PublisherNew::svc (void)\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classRTC_1_1PublisherNew_ac4299987e417c441fa2374f5b82b0e38}
+
+
+スレッド実行関数 
+
+\doxyref{coil::PeriodicTask}{p.}{classcoil_1_1PeriodicTask} により周期実行されるタスク実行関数。 \index{RTC::PublisherNew@{RTC::PublisherNew}!write@{write}}
+\index{write@{write}!RTC::PublisherNew@{RTC::PublisherNew}}
+\subsubsection[{write}]{\setlength{\rightskip}{0pt plus 5cm}virtual ReturnCode RTC::PublisherNew::write (const cdrMemoryStream \& {\em data}, \/  unsigned long {\em sec}, \/  unsigned long {\em usec})\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classRTC_1_1PublisherNew_aea22c81a78df515c6fb06a227d1f3ce6}
+
+
+データを書き込む 
+
+Publisher が保持するバッファに対してデータを書き込む。コンシュー マ、バッファ、リスナ等が適切に設定されていない等、Publisher オブ ジェクトが正しく初期化されていない場合、この関数を呼び出すとエラー コード PRECONDITION\_\-NOT\_\-MET が返され、バッファへの書き込み等の操 作は一切行われない。
+
+バッファへの書き込みと、InPortへのデータの送信は非同期的に行われ るため、この関数は、InPortへのデータ送信の結果を示す、 CONNECTION\_\-LOST, BUFFER\_\-FULL などのリターンコードを返すことがあ る。この場合、データのバッファへの書き込みは行われない。
+
+バッファへの書き込みに対して、バッファがフル状態、バッファのエ ラー、バッファへの書き込みがタイムアウトした場合、バッファの事前 条件が満たされない場合にはそれぞれ、エラーコード BUFFER\_\-FULL, BUFFER\_\-ERROR, BUFFER\_\-TIMEOUT, PRECONDITION\_\-NOT\_\-MET が返される。
+
+これら以外のエラーの場合、PORT\_\-ERROR が返される。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em data}]書き込むデータ \item[{\em sec}]タイムアウト時間 \item[{\em nsec}]タイムアウト時間\end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+PORT\_\-OK 正常終了 PRECONDITION\_\-NO\_\-MET consumer, buffer, listener等が適切に設定 されていない等、このオブジェクトの事前条件 を満たさない場合。 CONNECTION\_\-LOST 接続が切断されたことを検知した。 BUFFER\_\-FULL バッファがフル状態である。 BUFFER\_\-ERROR バッファに何らかのエラーが生じた場合。 NOT\_\-SUPPORTED サポートされない操作が行われた。 TIMEOUT タイムアウトした。 
+\end{DoxyReturn}
+
+
+{\bf RTC::PublisherBase} \doxyref{}{p.}{classRTC_1_1PublisherBase_abd693b65ffe07276683facfd710be537}を実装しています。
+

@@ -1,0 +1,200 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<title>OpenRTM: クラス RTC::ConnectorDataListenerHolder</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<!-- 作成： Doxygen 1.6.3 -->
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="index.html"><span>メインページ</span></a></li>
+      <li><a href="namespaces.html"><span>ネームスペース</span></a></li>
+      <li class="current"><a href="annotated.html"><span>クラス</span></a></li>
+      <li><a href="files.html"><span>ファイル</span></a></li>
+    </ul>
+  </div>
+  <div class="tabs">
+    <ul>
+      <li><a href="annotated.html"><span>構成</span></a></li>
+      <li><a href="hierarchy.html"><span>クラス階層</span></a></li>
+      <li><a href="functions.html"><span>構成メンバ</span></a></li>
+    </ul>
+  </div>
+  <div class="navpath"><a class="el" href="namespaceRTC.html">RTC</a>::<a class="el" href="classRTC_1_1ConnectorDataListenerHolder.html">ConnectorDataListenerHolder</a>
+  </div>
+</div>
+<div class="contents">
+<h1>クラス RTC::ConnectorDataListenerHolder</h1><!-- doxytag: class="RTC::ConnectorDataListenerHolder" -->
+<p><a class="el" href="classRTC_1_1ConnectorDataListener.html" title="ConnectorDataListener クラス.">ConnectorDataListener</a> ホルダクラス.  
+<a href="#_details">[詳細]</a></p>
+
+<p><code>#include &lt;<a class="el" href="ConnectorListener_8h_source.html">ConnectorListener.h</a>&gt;</code></p>
+
+<p><a href="classRTC_1_1ConnectorDataListenerHolder-members.html">すべてのメンバ一覧</a></p>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr><td colspan="2"><h2>Public メソッド</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1ConnectorDataListenerHolder.html#aa0c299c42ade0ce19b2ef5b70136034d">ConnectorDataListenerHolder</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">コンストラクタ  <a href="#aa0c299c42ade0ce19b2ef5b70136034d"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1ConnectorDataListenerHolder.html#a50ba55ec3f0ded808616e9c79aa63ef1">~ConnectorDataListenerHolder</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">デストラクタ  <a href="#a50ba55ec3f0ded808616e9c79aa63ef1"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1ConnectorDataListenerHolder.html#a37534a08dd65b6c1bb54776d21970995">addListener</a> (<a class="el" href="classRTC_1_1ConnectorDataListener.html">ConnectorDataListener</a> *listener, bool autoclean)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">リスナーの追加  <a href="#a37534a08dd65b6c1bb54776d21970995"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1ConnectorDataListenerHolder.html#a966d7887d2168f2b7a5cc2b1a721ae8d">removeListener</a> (<a class="el" href="classRTC_1_1ConnectorDataListener.html">ConnectorDataListener</a> *listener)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">リスナーの削除  <a href="#a966d7887d2168f2b7a5cc2b1a721ae8d"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1ConnectorDataListenerHolder.html#a44a647d9839d95c2c414a7d8737feb7b">notify</a> (const <a class="el" href="classRTC_1_1ConnectorInfo.html">ConnectorInfo</a> &amp;info, const cdrMemoryStream &amp;cdrdata)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">リスナーへ通知する  <a href="#a44a647d9839d95c2c414a7d8737feb7b"></a><br/></td></tr>
+</table>
+<hr/><a name="_details"></a><h2>説明</h2>
+<p><a class="el" href="classRTC_1_1ConnectorDataListener.html" title="ConnectorDataListener クラス.">ConnectorDataListener</a> ホルダクラス. </p>
+<p>複数の <a class="el" href="classRTC_1_1ConnectorDataListener.html" title="ConnectorDataListener クラス.">ConnectorDataListener</a> を保持し管理するクラス。 </p>
+<hr/><h2>コンストラクタとデストラクタ</h2>
+<a class="anchor" id="aa0c299c42ade0ce19b2ef5b70136034d"></a><!-- doxytag: member="RTC::ConnectorDataListenerHolder::ConnectorDataListenerHolder" ref="aa0c299c42ade0ce19b2ef5b70136034d" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">RTC::ConnectorDataListenerHolder::ConnectorDataListenerHolder </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>コンストラクタ </p>
+
+</div>
+</div>
+<a class="anchor" id="a50ba55ec3f0ded808616e9c79aa63ef1"></a><!-- doxytag: member="RTC::ConnectorDataListenerHolder::~ConnectorDataListenerHolder" ref="a50ba55ec3f0ded808616e9c79aa63ef1" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual RTC::ConnectorDataListenerHolder::~ConnectorDataListenerHolder </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>デストラクタ </p>
+
+</div>
+</div>
+<hr/><h2>関数</h2>
+<a class="anchor" id="a37534a08dd65b6c1bb54776d21970995"></a><!-- doxytag: member="RTC::ConnectorDataListenerHolder::addListener" ref="a37534a08dd65b6c1bb54776d21970995" args="(ConnectorDataListener *listener, bool autoclean)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void RTC::ConnectorDataListenerHolder::addListener </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classRTC_1_1ConnectorDataListener.html">ConnectorDataListener</a> *&nbsp;</td>
+          <td class="paramname"> <em>listener</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&nbsp;</td>
+          <td class="paramname"> <em>autoclean</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>リスナーの追加 </p>
+<p>リスナーを追加する。</p>
+<dl><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>listener</em>&nbsp;</td><td>追加するリスナ </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>autoclean</em>&nbsp;</td><td>true:デストラクタで削除する, false:デストラクタで削除しない </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a44a647d9839d95c2c414a7d8737feb7b"></a><!-- doxytag: member="RTC::ConnectorDataListenerHolder::notify" ref="a44a647d9839d95c2c414a7d8737feb7b" args="(const ConnectorInfo &amp;info, const cdrMemoryStream &amp;cdrdata)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void RTC::ConnectorDataListenerHolder::notify </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classRTC_1_1ConnectorInfo.html">ConnectorInfo</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>info</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const cdrMemoryStream &amp;&nbsp;</td>
+          <td class="paramname"> <em>cdrdata</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>リスナーへ通知する </p>
+<p>登録されているリスナのコールバックメソッドを呼び出す。</p>
+<dl><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>info</em>&nbsp;</td><td><a class="el" href="classRTC_1_1ConnectorInfo.html" title="ConnectorInfo クラス.">ConnectorInfo</a> </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>cdrdata</em>&nbsp;</td><td>データ </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a966d7887d2168f2b7a5cc2b1a721ae8d"></a><!-- doxytag: member="RTC::ConnectorDataListenerHolder::removeListener" ref="a966d7887d2168f2b7a5cc2b1a721ae8d" args="(ConnectorDataListener *listener)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void RTC::ConnectorDataListenerHolder::removeListener </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classRTC_1_1ConnectorDataListener.html">ConnectorDataListener</a> *&nbsp;</td>
+          <td class="paramname"> <em>listener</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>リスナーの削除 </p>
+<p>リスナを削除する。</p>
+<dl><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>listener</em>&nbsp;</td><td>削除するリスナ </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+</div>
+<hr class="footer"/><address style="text-align: right;"><small>OpenRTMに対してThu May 24 23:25:19 2012に生成されました。&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.6.3 </small></address>
+</body>
+</html>

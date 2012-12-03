@@ -1,0 +1,754 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<title>OpenRTM: クラス RTM::ManagerServant</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<!-- 作成： Doxygen 1.6.3 -->
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="index.html"><span>メインページ</span></a></li>
+      <li><a href="namespaces.html"><span>ネームスペース</span></a></li>
+      <li class="current"><a href="annotated.html"><span>クラス</span></a></li>
+      <li><a href="files.html"><span>ファイル</span></a></li>
+    </ul>
+  </div>
+  <div class="tabs">
+    <ul>
+      <li><a href="annotated.html"><span>構成</span></a></li>
+      <li><a href="hierarchy.html"><span>クラス階層</span></a></li>
+      <li><a href="functions.html"><span>構成メンバ</span></a></li>
+    </ul>
+  </div>
+  <div class="navpath"><a class="el" href="namespaceRTM.html">RTM</a>::<a class="el" href="classRTM_1_1ManagerServant.html">ManagerServant</a>
+  </div>
+</div>
+<div class="contents">
+<h1>クラス RTM::ManagerServant</h1><!-- doxytag: class="RTM::ManagerServant" -->
+<p>ManagerのCORBA化クラス.  
+<a href="#_details">[詳細]</a></p>
+
+<p><code>#include &lt;<a class="el" href="ManagerServant_8h_source.html">ManagerServant.h</a>&gt;</code></p>
+
+<p><a href="classRTM_1_1ManagerServant-members.html">すべてのメンバ一覧</a></p>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr><td colspan="2"><h2>構成</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">class &nbsp;</td><td class="memItemRight" valign="bottom"><b>is_equiv</b></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Manager_var が等価かどうかのファンクタ. <br/></td></tr>
+<tr><td colspan="2"><h2>Public メソッド</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTM_1_1ManagerServant.html#aada9f52af552ed6d2e7de04f9b196a25">ManagerServant</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTM_1_1ManagerServant.html#ad4bb0182c1b1e2f2223155a37bbabb7e">~ManagerServant</a> (void)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">仮想デストラクタ  <a href="#ad4bb0182c1b1e2f2223155a37bbabb7e"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">RTC::ReturnCode_t&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTM_1_1ManagerServant.html#ac1d69225890ad440d2d75f665bd31ac6">load_module</a> (const char *pathname, const char *initfunc)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">モジュールをロードする  <a href="#ac1d69225890ad440d2d75f665bd31ac6"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">RTC::ReturnCode_t&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTM_1_1ManagerServant.html#acf76f20459885fbb6a83f607bf9cff35">unload_module</a> (const char *pathname)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">モジュールをアンロードする  <a href="#acf76f20459885fbb6a83f607bf9cff35"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">RTM::ModuleProfileList *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTM_1_1ManagerServant.html#a9e0582a658b194f91a80129fea351d8a">get_loadable_modules</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">ロード可能なモジュールのプロファイルを取得する  <a href="#a9e0582a658b194f91a80129fea351d8a"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">RTM::ModuleProfileList *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTM_1_1ManagerServant.html#a2ccfbcb809e519451a0c04feaba2919e">get_loaded_modules</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">ロード済みのモジュールのプロファイルを取得する  <a href="#a2ccfbcb809e519451a0c04feaba2919e"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">RTM::ModuleProfileList *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTM_1_1ManagerServant.html#ab6c4c8b57aa03f4bc69a6f7ec30b233d">get_factory_profiles</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">コンポーネントファクトリのプロファイルを取得する  <a href="#ab6c4c8b57aa03f4bc69a6f7ec30b233d"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">RTC::RTObject_ptr&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTM_1_1ManagerServant.html#a7c46e44473f1a792f9b9f47cb7fc08a4">create_component</a> (const char *module_name)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">コンポーネントを生成する  <a href="#a7c46e44473f1a792f9b9f47cb7fc08a4"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">RTC::ReturnCode_t&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTM_1_1ManagerServant.html#a30cc0c1da9580f412aafef08e7f0d74d">delete_component</a> (const char *instance_name)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">コンポーネントを削除する  <a href="#a30cc0c1da9580f412aafef08e7f0d74d"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">RTC::RTCList *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTM_1_1ManagerServant.html#a827ff4bcb8c4c8278dbbe2293700c7be">get_components</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">起動中のコンポーネントのリストを取得する  <a href="#a827ff4bcb8c4c8278dbbe2293700c7be"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">RTC::ComponentProfileList *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTM_1_1ManagerServant.html#a3fac7c58f63f3f879c014ab7f77efd93">get_component_profiles</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">起動中のコンポーネントプロファイルのリストを取得する  <a href="#a3fac7c58f63f3f879c014ab7f77efd93"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">RTM::ManagerProfile *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTM_1_1ManagerServant.html#ac6f6020bcb7291afdba9c4104c5a25fb">get_profile</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">マネージャのプロファイルを取得する  <a href="#ac6f6020bcb7291afdba9c4104c5a25fb"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">RTM::NVList *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTM_1_1ManagerServant.html#a07ddc50aa1af52666260baf98e98a3f8">get_configuration</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">マネージャのコンフィギュレーションを取得する  <a href="#a07ddc50aa1af52666260baf98e98a3f8"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">RTC::ReturnCode_t&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTM_1_1ManagerServant.html#a085a32d8ad1124a277d10c50e3bc99d9">set_configuration</a> (const char *name, const char *value)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">マネージャのコンフィギュレーションを設定する  <a href="#a085a32d8ad1124a277d10c50e3bc99d9"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">::CORBA::Boolean&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTM_1_1ManagerServant.html#af3962cce6ec2cfbb7dbd7e4e985ac5f3">is_master</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">マネージャがマスターかどうか  <a href="#af3962cce6ec2cfbb7dbd7e4e985ac5f3"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">RTM::ManagerList *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTM_1_1ManagerServant.html#a0e5f79790b6e0a66bb83568d1e98c58f">get_master_managers</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">マスターマネージャの取得  <a href="#a0e5f79790b6e0a66bb83568d1e98c58f"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">RTC::ReturnCode_t&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTM_1_1ManagerServant.html#a129cd02f5e6d8a68eea578e5ad57cd81">add_master_manager</a> (RTM::Manager_ptr mgr)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">マスターマネージャの追加  <a href="#a129cd02f5e6d8a68eea578e5ad57cd81"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">RTC::ReturnCode_t&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTM_1_1ManagerServant.html#a20453d7ef15894bf7965d858cb90a66f">remove_master_manager</a> (RTM::Manager_ptr mgr)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">マスターマネージャの削除  <a href="#a20453d7ef15894bf7965d858cb90a66f"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">RTM::ManagerList *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTM_1_1ManagerServant.html#ae4ccbc651be158f1ce221128bef598fd">get_slave_managers</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">スレーブマネージャの取得  <a href="#ae4ccbc651be158f1ce221128bef598fd"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">RTC::ReturnCode_t&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTM_1_1ManagerServant.html#a7f3cd417fe64ae217719776634cdabb8">add_slave_manager</a> (RTM::Manager_ptr mgr)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">スレーブマネージャの追加  <a href="#a7f3cd417fe64ae217719776634cdabb8"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">RTC::ReturnCode_t&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTM_1_1ManagerServant.html#acc95f96d5e15c4379af297eb32559ab8">remove_slave_manager</a> (RTM::Manager_ptr mgr)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">スレーブマネージャの削除  <a href="#acc95f96d5e15c4379af297eb32559ab8"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">RTC::ReturnCode_t&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTM_1_1ManagerServant.html#a4b78fb03a5989eb1c4f6de722603bca5">fork</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">プロセスのコピーを生成する  <a href="#a4b78fb03a5989eb1c4f6de722603bca5"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">RTC::ReturnCode_t&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTM_1_1ManagerServant.html#a98f5d973b85551ddc88094c34a3df1c7">shutdown</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">shutdownする  <a href="#a98f5d973b85551ddc88094c34a3df1c7"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">RTC::ReturnCode_t&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTM_1_1ManagerServant.html#aad40967cb7c29e2466c8dde7e2dad25f">restart</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">再起動する。  <a href="#aad40967cb7c29e2466c8dde7e2dad25f"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">CORBA::Object_ptr&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTM_1_1ManagerServant.html#a0b0f618d18c13dc8a7a31bae56027f84">get_service</a> (const char *name)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">RTCのリファレンスを取得する。.  <a href="#a0b0f618d18c13dc8a7a31bae56027f84"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">RTM::Manager_ptr&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTM_1_1ManagerServant.html#a592b15c210062c1d64c3c696652e6613">getObjRef</a> () const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Managerのリファレンスを取得する。.  <a href="#a592b15c210062c1d64c3c696652e6613"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTM_1_1ManagerServant.html#a824001f679a58c1bb965a17b4533981c">createINSManager</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">INSManagerの生成.  <a href="#a824001f679a58c1bb965a17b4533981c"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">RTM::Manager_ptr&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTM_1_1ManagerServant.html#aee3038a2250ec62f224c7df2f8edffd9">findManager</a> (const char *host_port)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Managerのリファレンスを検索する。.  <a href="#aee3038a2250ec62f224c7df2f8edffd9"></a><br/></td></tr>
+</table>
+<hr/><a name="_details"></a><h2>説明</h2>
+<p>ManagerのCORBA化クラス. </p>
+<p>ManagerをCORBAサーバント化し、外部からコンポーネントの生成・削除、 システム状態の取得などが行える。 </p>
+<hr/><h2>コンストラクタとデストラクタ</h2>
+<a class="anchor" id="aada9f52af552ed6d2e7de04f9b196a25"></a><!-- doxytag: member="RTM::ManagerServant::ManagerServant" ref="aada9f52af552ed6d2e7de04f9b196a25" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">RTM::ManagerServant::ManagerServant </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>コンストラクタ </p>
+
+</div>
+</div>
+<a class="anchor" id="ad4bb0182c1b1e2f2223155a37bbabb7e"></a><!-- doxytag: member="RTM::ManagerServant::~ManagerServant" ref="ad4bb0182c1b1e2f2223155a37bbabb7e" args="(void)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual RTM::ManagerServant::~ManagerServant </td>
+          <td>(</td>
+          <td class="paramtype">void&nbsp;</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>仮想デストラクタ </p>
+
+</div>
+</div>
+<hr/><h2>関数</h2>
+<a class="anchor" id="a129cd02f5e6d8a68eea578e5ad57cd81"></a><!-- doxytag: member="RTM::ManagerServant::add_master_manager" ref="a129cd02f5e6d8a68eea578e5ad57cd81" args="(RTM::Manager_ptr mgr)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">RTC::ReturnCode_t RTM::ManagerServant::add_master_manager </td>
+          <td>(</td>
+          <td class="paramtype">RTM::Manager_ptr&nbsp;</td>
+          <td class="paramname"> <em>mgr</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>マスターマネージャの追加 </p>
+<p>このマネージャのマスタとしてマネージャを一つ追加する。戻り値には、 当該マネージャ上で追加されたマスターマネージャを識別するユニーク なIDが返される。このマネージャがマスタの場合、当該IDで指定された マスターマネージャを返す。IDで指定されたマスターマネージャがない 場合、nilオブジェクトが返る。</p>
+<dl class="return"><dt><b>戻り値:</b></dt><dd>マスターマネージャ </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a7f3cd417fe64ae217719776634cdabb8"></a><!-- doxytag: member="RTM::ManagerServant::add_slave_manager" ref="a7f3cd417fe64ae217719776634cdabb8" args="(RTM::Manager_ptr mgr)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">RTC::ReturnCode_t RTM::ManagerServant::add_slave_manager </td>
+          <td>(</td>
+          <td class="paramtype">RTM::Manager_ptr&nbsp;</td>
+          <td class="paramname"> <em>mgr</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>スレーブマネージャの追加 </p>
+<p>このマネージャのマスタとしてマネージャを一つ追加する。</p>
+<dl><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>mgr</em>&nbsp;</td><td>スレーブマネージャ </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>戻り値:</b></dt><dd>ReturnCode_t </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a7c46e44473f1a792f9b9f47cb7fc08a4"></a><!-- doxytag: member="RTM::ManagerServant::create_component" ref="a7c46e44473f1a792f9b9f47cb7fc08a4" args="(const char *module_name)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">RTC::RTObject_ptr RTM::ManagerServant::create_component </td>
+          <td>(</td>
+          <td class="paramtype">const char *&nbsp;</td>
+          <td class="paramname"> <em>module_name</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>コンポーネントを生成する </p>
+<p>引数に指定されたコンポーネントを生成する。</p>
+<dl class="return"><dt><b>戻り値:</b></dt><dd>生成されたRTコンポーネント </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a824001f679a58c1bb965a17b4533981c"></a><!-- doxytag: member="RTM::ManagerServant::createINSManager" ref="a824001f679a58c1bb965a17b4533981c" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool RTM::ManagerServant::createINSManager </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>INSManagerの生成. </p>
+<dl class="return"><dt><b>戻り値:</b></dt><dd></dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a30cc0c1da9580f412aafef08e7f0d74d"></a><!-- doxytag: member="RTM::ManagerServant::delete_component" ref="a30cc0c1da9580f412aafef08e7f0d74d" args="(const char *instance_name)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">RTC::ReturnCode_t RTM::ManagerServant::delete_component </td>
+          <td>(</td>
+          <td class="paramtype">const char *&nbsp;</td>
+          <td class="paramname"> <em>instance_name</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>コンポーネントを削除する </p>
+<p>引数に指定されたコンポーネントを削除する。</p>
+<dl class="return"><dt><b>戻り値:</b></dt><dd>リターンコード </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="aee3038a2250ec62f224c7df2f8edffd9"></a><!-- doxytag: member="RTM::ManagerServant::findManager" ref="aee3038a2250ec62f224c7df2f8edffd9" args="(const char *host_port)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">RTM::Manager_ptr RTM::ManagerServant::findManager </td>
+          <td>(</td>
+          <td class="paramtype">const char *&nbsp;</td>
+          <td class="paramname"> <em>host_port</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Managerのリファレンスを検索する。. </p>
+<dl class="return"><dt><b>戻り値:</b></dt><dd>Managerのリファレンス </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a4b78fb03a5989eb1c4f6de722603bca5"></a><!-- doxytag: member="RTM::ManagerServant::fork" ref="a4b78fb03a5989eb1c4f6de722603bca5" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">RTC::ReturnCode_t RTM::ManagerServant::fork </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>プロセスのコピーを生成する </p>
+<dl class="return"><dt><b>戻り値:</b></dt><dd>ReturnCode_t </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a3fac7c58f63f3f879c014ab7f77efd93"></a><!-- doxytag: member="RTM::ManagerServant::get_component_profiles" ref="a3fac7c58f63f3f879c014ab7f77efd93" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">RTC::ComponentProfileList* RTM::ManagerServant::get_component_profiles </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>起動中のコンポーネントプロファイルのリストを取得する </p>
+<p>現在当該マネージャ上で起動中のコンポーネントのプロファイルのリス トを返す。</p>
+<dl class="return"><dt><b>戻り値:</b></dt><dd>RTコンポーネントプロファイルのリスト </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a827ff4bcb8c4c8278dbbe2293700c7be"></a><!-- doxytag: member="RTM::ManagerServant::get_components" ref="a827ff4bcb8c4c8278dbbe2293700c7be" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">RTC::RTCList* RTM::ManagerServant::get_components </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>起動中のコンポーネントのリストを取得する </p>
+<p>現在当該マネージャ上で起動中のコンポーネントのリストを返す。</p>
+<dl class="return"><dt><b>戻り値:</b></dt><dd>RTコンポーネントのリスト </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a07ddc50aa1af52666260baf98e98a3f8"></a><!-- doxytag: member="RTM::ManagerServant::get_configuration" ref="a07ddc50aa1af52666260baf98e98a3f8" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">RTM::NVList* RTM::ManagerServant::get_configuration </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>マネージャのコンフィギュレーションを取得する </p>
+<p>現在当該マネージャのコンフィギュレーションを取得する。</p>
+<dl class="return"><dt><b>戻り値:</b></dt><dd>マネージャコンフィギュレーション </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ab6c4c8b57aa03f4bc69a6f7ec30b233d"></a><!-- doxytag: member="RTM::ManagerServant::get_factory_profiles" ref="ab6c4c8b57aa03f4bc69a6f7ec30b233d" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">RTM::ModuleProfileList* RTM::ManagerServant::get_factory_profiles </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>コンポーネントファクトリのプロファイルを取得する </p>
+<p>ロード済みのモジュールのうち、RTコンポーネントのモジュールが持つ ファクトリのプロファイルのリストを取得する。</p>
+<dl class="return"><dt><b>戻り値:</b></dt><dd>コンポーネントファクトリのプロファイルリスト </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a9e0582a658b194f91a80129fea351d8a"></a><!-- doxytag: member="RTM::ManagerServant::get_loadable_modules" ref="a9e0582a658b194f91a80129fea351d8a" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">RTM::ModuleProfileList* RTM::ManagerServant::get_loadable_modules </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>ロード可能なモジュールのプロファイルを取得する </p>
+<p>ロード可能なモジュールのプロファイルを取得する。</p>
+<dl class="return"><dt><b>戻り値:</b></dt><dd>モジュールプロファイル </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a2ccfbcb809e519451a0c04feaba2919e"></a><!-- doxytag: member="RTM::ManagerServant::get_loaded_modules" ref="a2ccfbcb809e519451a0c04feaba2919e" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">RTM::ModuleProfileList* RTM::ManagerServant::get_loaded_modules </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>ロード済みのモジュールのプロファイルを取得する </p>
+<p>ロード済みのモジュールのプロファイルを取得する。</p>
+<dl class="return"><dt><b>戻り値:</b></dt><dd>モジュールプロファイル </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a0e5f79790b6e0a66bb83568d1e98c58f"></a><!-- doxytag: member="RTM::ManagerServant::get_master_managers" ref="a0e5f79790b6e0a66bb83568d1e98c58f" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">RTM::ManagerList* RTM::ManagerServant::get_master_managers </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>マスターマネージャの取得 </p>
+<p>このマネージャがスレーブマネージャの場合、マスターとなっているマ ネージャのリストを返す。このマネージャがマスターの場合、空のリス トが返る。</p>
+<dl class="return"><dt><b>戻り値:</b></dt><dd>マスターマネージャのリスト </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ac6f6020bcb7291afdba9c4104c5a25fb"></a><!-- doxytag: member="RTM::ManagerServant::get_profile" ref="ac6f6020bcb7291afdba9c4104c5a25fb" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">RTM::ManagerProfile* RTM::ManagerServant::get_profile </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>マネージャのプロファイルを取得する </p>
+<p>現在当該マネージャのプロファイルを取得する。</p>
+<dl class="return"><dt><b>戻り値:</b></dt><dd>マネージャプロファイル </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a0b0f618d18c13dc8a7a31bae56027f84"></a><!-- doxytag: member="RTM::ManagerServant::get_service" ref="a0b0f618d18c13dc8a7a31bae56027f84" args="(const char *name)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">CORBA::Object_ptr RTM::ManagerServant::get_service </td>
+          <td>(</td>
+          <td class="paramtype">const char *&nbsp;</td>
+          <td class="paramname"> <em>name</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>RTCのリファレンスを取得する。. </p>
+<dl class="return"><dt><b>戻り値:</b></dt><dd>RTCのリファレンス </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ae4ccbc651be158f1ce221128bef598fd"></a><!-- doxytag: member="RTM::ManagerServant::get_slave_managers" ref="ae4ccbc651be158f1ce221128bef598fd" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">RTM::ManagerList* RTM::ManagerServant::get_slave_managers </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>スレーブマネージャの取得 </p>
+<p>このマネージャがスレーブマネージャの場合、スレーブとなっているマ ネージャのリストを返す。このマネージャがスレーブの場合、空のリス トが返る。</p>
+<dl class="return"><dt><b>戻り値:</b></dt><dd>スレーブマネージャのリスト </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a592b15c210062c1d64c3c696652e6613"></a><!-- doxytag: member="RTM::ManagerServant::getObjRef" ref="a592b15c210062c1d64c3c696652e6613" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">RTM::Manager_ptr RTM::ManagerServant::getObjRef </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Managerのリファレンスを取得する。. </p>
+<dl class="return"><dt><b>戻り値:</b></dt><dd>Managerのリファレンス </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="af3962cce6ec2cfbb7dbd7e4e985ac5f3"></a><!-- doxytag: member="RTM::ManagerServant::is_master" ref="af3962cce6ec2cfbb7dbd7e4e985ac5f3" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">::CORBA::Boolean RTM::ManagerServant::is_master </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>マネージャがマスターかどうか </p>
+<p>この関数はマネージャがマスターかどうかを返す。Trueならば、当該マ ネージャはマスターであり、それ以外は False を返す。</p>
+<dl class="return"><dt><b>戻り値:</b></dt><dd>マスターマネージャかどうかのbool値 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ac1d69225890ad440d2d75f665bd31ac6"></a><!-- doxytag: member="RTM::ManagerServant::load_module" ref="ac1d69225890ad440d2d75f665bd31ac6" args="(const char *pathname, const char *initfunc)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">RTC::ReturnCode_t RTM::ManagerServant::load_module </td>
+          <td>(</td>
+          <td class="paramtype">const char *&nbsp;</td>
+          <td class="paramname"> <em>pathname</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&nbsp;</td>
+          <td class="paramname"> <em>initfunc</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>モジュールをロードする </p>
+<p>当該マネージャに指定されたモジュールをロードし、指定された初期化 関数で初期化を行う。</p>
+<dl><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>pathname</em>&nbsp;</td><td>モジュールへのパス </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>initfunc</em>&nbsp;</td><td>モジュールの初期化関数 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>戻り値:</b></dt><dd>リターンコード</dd></dl>
+<p>standard constructor </p>
+
+</div>
+</div>
+<a class="anchor" id="a20453d7ef15894bf7965d858cb90a66f"></a><!-- doxytag: member="RTM::ManagerServant::remove_master_manager" ref="a20453d7ef15894bf7965d858cb90a66f" args="(RTM::Manager_ptr mgr)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">RTC::ReturnCode_t RTM::ManagerServant::remove_master_manager </td>
+          <td>(</td>
+          <td class="paramtype">RTM::Manager_ptr&nbsp;</td>
+          <td class="paramname"> <em>mgr</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>マスターマネージャの削除 </p>
+<p>このマネージャが保持するマスタのうち、指定されたものを削除する。</p>
+<dl><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>mgr</em>&nbsp;</td><td>マスターマネージャ </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>戻り値:</b></dt><dd>ReturnCode_t </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="acc95f96d5e15c4379af297eb32559ab8"></a><!-- doxytag: member="RTM::ManagerServant::remove_slave_manager" ref="acc95f96d5e15c4379af297eb32559ab8" args="(RTM::Manager_ptr mgr)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">RTC::ReturnCode_t RTM::ManagerServant::remove_slave_manager </td>
+          <td>(</td>
+          <td class="paramtype">RTM::Manager_ptr&nbsp;</td>
+          <td class="paramname"> <em>mgr</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>スレーブマネージャの削除 </p>
+<p>このマネージャが保持するマスタのうち、指定されたものを削除する。</p>
+<dl><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>mgr</em>&nbsp;</td><td>スレーブマネージャ </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>戻り値:</b></dt><dd>ReturnCode_t </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="aad40967cb7c29e2466c8dde7e2dad25f"></a><!-- doxytag: member="RTM::ManagerServant::restart" ref="aad40967cb7c29e2466c8dde7e2dad25f" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">RTC::ReturnCode_t RTM::ManagerServant::restart </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>再起動する。 </p>
+<dl class="return"><dt><b>戻り値:</b></dt><dd>ReturnCode_t </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a085a32d8ad1124a277d10c50e3bc99d9"></a><!-- doxytag: member="RTM::ManagerServant::set_configuration" ref="a085a32d8ad1124a277d10c50e3bc99d9" args="(const char *name, const char *value)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">RTC::ReturnCode_t RTM::ManagerServant::set_configuration </td>
+          <td>(</td>
+          <td class="paramtype">const char *&nbsp;</td>
+          <td class="paramname"> <em>name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&nbsp;</td>
+          <td class="paramname"> <em>value</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>マネージャのコンフィギュレーションを設定する </p>
+<p>現在当該マネージャのコンフィギュレーションを設定する。</p>
+<dl><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>name</em>&nbsp;</td><td>セットするコンフィギュレーションのキー名 </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>value</em>&nbsp;</td><td>セットするコンフィギュレーションの値 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>戻り値:</b></dt><dd>リターンコード </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a98f5d973b85551ddc88094c34a3df1c7"></a><!-- doxytag: member="RTM::ManagerServant::shutdown" ref="a98f5d973b85551ddc88094c34a3df1c7" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">RTC::ReturnCode_t RTM::ManagerServant::shutdown </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>shutdownする </p>
+<dl class="return"><dt><b>戻り値:</b></dt><dd>ReturnCode_t </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="acf76f20459885fbb6a83f607bf9cff35"></a><!-- doxytag: member="RTM::ManagerServant::unload_module" ref="acf76f20459885fbb6a83f607bf9cff35" args="(const char *pathname)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">RTC::ReturnCode_t RTM::ManagerServant::unload_module </td>
+          <td>(</td>
+          <td class="paramtype">const char *&nbsp;</td>
+          <td class="paramname"> <em>pathname</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>モジュールをアンロードする </p>
+<p>当該マネージャに指定されたモジュールをアンロードする。</p>
+<dl><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>pathname</em>&nbsp;</td><td>モジュールへのパス </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>戻り値:</b></dt><dd>リターンコード </dd></dl>
+
+</div>
+</div>
+</div>
+<hr class="footer"/><address style="text-align: right;"><small>OpenRTMに対してThu May 24 23:25:20 2012に生成されました。&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.6.3 </small></address>
+</body>
+</html>

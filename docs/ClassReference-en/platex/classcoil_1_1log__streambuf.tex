@@ -1,0 +1,220 @@
+\section{coil::log\_\-streambuf$<$ \_\-CharT, \_\-Traits $>$ Class Template Reference}
+\label{classcoil_1_1log__streambuf}\index{coil::log\_\-streambuf@{coil::log\_\-streambuf}}
+
+
+\doxyref{log\_\-streambuf}{p.}{classcoil_1_1log__streambuf} template class  
+
+
+
+
+{\ttfamily \#include $<$Logger.h$>$}
+
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct {\bf Stream}
+\begin{DoxyCompactList}\small\item\em Structure for stream management. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef \_\-CharT {\bf char\_\-type}
+\item 
+typedef \_\-Traits {\bf traits\_\-type}
+\item 
+typedef std::basic\_\-streambuf$<$ {\bf char\_\-type}, {\bf traits\_\-type} $>$ {\bf streambuf\_\-type}
+\item 
+typedef {\bf coil::Mutex} {\bf Mutex}
+\item 
+typedef {\bf coil::Guard}$<$ {\bf coil::Mutex} $>$ {\bf Guard}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf log\_\-streambuf} ()
+\begin{DoxyCompactList}\small\item\em Constructor. \item\end{DoxyCompactList}\item 
+virtual {\bf $\sim$log\_\-streambuf} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \item\end{DoxyCompactList}\item 
+void {\bf addStream} ({\bf streambuf\_\-type} $\ast$stream, bool cleanup=false)
+\begin{DoxyCompactList}\small\item\em Destructor. \item\end{DoxyCompactList}\item 
+bool {\bf removeStream} ({\bf streambuf\_\-type} $\ast$stream)
+\begin{DoxyCompactList}\small\item\em Destructor. \item\end{DoxyCompactList}\item 
+std::vector$<$ {\bf streambuf\_\-type} $\ast$ $>$ {\bf getBuffers} ()
+\begin{DoxyCompactList}\small\item\em Get stream buffer list. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual std::streamsize {\bf xsputn} (const {\bf char\_\-type} $\ast$s, std::streamsize n)
+\begin{DoxyCompactList}\small\item\em override of basic\_\-streambuf::xsputn \item\end{DoxyCompactList}\item 
+virtual std::streamsize {\bf stream\_\-sputn} ()
+\begin{DoxyCompactList}\small\item\em Write the stream buffer in stream. \item\end{DoxyCompactList}\item 
+virtual std::streamsize {\bf stream\_\-sputn} (const {\bf char\_\-type} $\ast$s, std::streamsize n)
+\begin{DoxyCompactList}\small\item\em Writes up to n characters from the array pointed by s to the output sequence controlled by the stream buffer. \item\end{DoxyCompactList}\item 
+virtual int {\bf overflow} (int c=traits\_\-type::eof())
+\begin{DoxyCompactList}\small\item\em override of basic\_\-streambuf::overflow \item\end{DoxyCompactList}\item 
+virtual int {\bf sync} ()
+\begin{DoxyCompactList}\small\item\em override of basic\_\-streambuf::sync \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$typename \_\-CharT, typename \_\-Traits = std::char\_\-traits$<$\_\-CharT$>$$>$ class coil::log\_\-streambuf$<$ \_\-CharT, \_\-Traits $>$}
+
+\doxyref{log\_\-streambuf}{p.}{classcoil_1_1log__streambuf} template class 
+
+\subsection{Member Typedef Documentation}
+\index{coil::log\_\-streambuf@{coil::log\_\-streambuf}!char\_\-type@{char\_\-type}}
+\index{char\_\-type@{char\_\-type}!coil::log_streambuf@{coil::log\_\-streambuf}}
+\subsubsection[{char\_\-type}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename \_\-CharT , typename \_\-Traits  = std::char\_\-traits$<$\_\-CharT$>$$>$ typedef \_\-CharT {\bf coil::log\_\-streambuf}$<$ \_\-CharT, \_\-Traits $>$::{\bf char\_\-type}}\label{classcoil_1_1log__streambuf_a9a97107a5978778f9429e4735f5e85ae}
+\index{coil::log\_\-streambuf@{coil::log\_\-streambuf}!Guard@{Guard}}
+\index{Guard@{Guard}!coil::log_streambuf@{coil::log\_\-streambuf}}
+\subsubsection[{Guard}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename \_\-CharT , typename \_\-Traits  = std::char\_\-traits$<$\_\-CharT$>$$>$ typedef {\bf coil::Guard}$<${\bf coil::Mutex}$>$ {\bf coil::log\_\-streambuf}$<$ \_\-CharT, \_\-Traits $>$::{\bf Guard}}\label{classcoil_1_1log__streambuf_a740dfbbcd0b7983a7a1ad2c1c371d046}
+\index{coil::log\_\-streambuf@{coil::log\_\-streambuf}!Mutex@{Mutex}}
+\index{Mutex@{Mutex}!coil::log_streambuf@{coil::log\_\-streambuf}}
+\subsubsection[{Mutex}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename \_\-CharT , typename \_\-Traits  = std::char\_\-traits$<$\_\-CharT$>$$>$ typedef {\bf coil::Mutex} {\bf coil::log\_\-streambuf}$<$ \_\-CharT, \_\-Traits $>$::{\bf Mutex}}\label{classcoil_1_1log__streambuf_a414ef58cbec8134201f3404e5273f8ed}
+\index{coil::log\_\-streambuf@{coil::log\_\-streambuf}!streambuf\_\-type@{streambuf\_\-type}}
+\index{streambuf\_\-type@{streambuf\_\-type}!coil::log_streambuf@{coil::log\_\-streambuf}}
+\subsubsection[{streambuf\_\-type}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename \_\-CharT , typename \_\-Traits  = std::char\_\-traits$<$\_\-CharT$>$$>$ typedef std::basic\_\-streambuf$<${\bf char\_\-type}, {\bf traits\_\-type}$>$ {\bf coil::log\_\-streambuf}$<$ \_\-CharT, \_\-Traits $>$::{\bf streambuf\_\-type}}\label{classcoil_1_1log__streambuf_a3f1122c7ac61e1e2b89033914ee85b54}
+\index{coil::log\_\-streambuf@{coil::log\_\-streambuf}!traits\_\-type@{traits\_\-type}}
+\index{traits\_\-type@{traits\_\-type}!coil::log_streambuf@{coil::log\_\-streambuf}}
+\subsubsection[{traits\_\-type}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename \_\-CharT , typename \_\-Traits  = std::char\_\-traits$<$\_\-CharT$>$$>$ typedef \_\-Traits {\bf coil::log\_\-streambuf}$<$ \_\-CharT, \_\-Traits $>$::{\bf traits\_\-type}}\label{classcoil_1_1log__streambuf_a01e45ac5fd741c82e0a39d5e1aac2f47}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{coil::log\_\-streambuf@{coil::log\_\-streambuf}!log\_\-streambuf@{log\_\-streambuf}}
+\index{log\_\-streambuf@{log\_\-streambuf}!coil::log_streambuf@{coil::log\_\-streambuf}}
+\subsubsection[{log\_\-streambuf}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename \_\-CharT , typename \_\-Traits  = std::char\_\-traits$<$\_\-CharT$>$$>$ {\bf coil::log\_\-streambuf}$<$ \_\-CharT, \_\-Traits $>$::{\bf log\_\-streambuf} ()\hspace{0.3cm}{\ttfamily  [inline]}}\label{classcoil_1_1log__streambuf_aa499e3c876c6222463357e382b344671}
+
+
+Constructor. 
+
+Constructor 
+
+References BUFFER\_\-LEN.
+
+\index{coil::log\_\-streambuf@{coil::log\_\-streambuf}!$\sim$log\_\-streambuf@{$\sim$log\_\-streambuf}}
+\index{$\sim$log\_\-streambuf@{$\sim$log\_\-streambuf}!coil::log_streambuf@{coil::log\_\-streambuf}}
+\subsubsection[{$\sim$log\_\-streambuf}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename \_\-CharT , typename \_\-Traits  = std::char\_\-traits$<$\_\-CharT$>$$>$ virtual {\bf coil::log\_\-streambuf}$<$ \_\-CharT, \_\-Traits $>$::$\sim${\bf log\_\-streambuf} ()\hspace{0.3cm}{\ttfamily  [inline, virtual]}}\label{classcoil_1_1log__streambuf_adfc4bc61eaa1c574bfa8bc6ee23b3136}
+
+
+Destructor. 
+
+Destructor 
+
+\subsection{Member Function Documentation}
+\index{coil::log\_\-streambuf@{coil::log\_\-streambuf}!addStream@{addStream}}
+\index{addStream@{addStream}!coil::log_streambuf@{coil::log\_\-streambuf}}
+\subsubsection[{addStream}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename \_\-CharT , typename \_\-Traits  = std::char\_\-traits$<$\_\-CharT$>$$>$ void {\bf coil::log\_\-streambuf}$<$ \_\-CharT, \_\-Traits $>$::addStream ({\bf streambuf\_\-type} $\ast$ {\em stream}, \/  bool {\em cleanup} = {\ttfamily false})\hspace{0.3cm}{\ttfamily  [inline]}}\label{classcoil_1_1log__streambuf_a2a3ecd6335b08209108c4f9558ba9398}
+
+
+Destructor. 
+
+This operation adds a stream that is actual output stream. User has responsibility to destruct the stream object, since this object never destructs the stream objects. The added stream objects should not be destructed before the destruction of this object. The stream destruction should be done by user after removing it from this object or destructing this object.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em stream}]a pointer to std::basic\_\-streambuf type stream object \end{DoxyParams}
+\index{coil::log\_\-streambuf@{coil::log\_\-streambuf}!getBuffers@{getBuffers}}
+\index{getBuffers@{getBuffers}!coil::log_streambuf@{coil::log\_\-streambuf}}
+\subsubsection[{getBuffers}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename \_\-CharT , typename \_\-Traits  = std::char\_\-traits$<$\_\-CharT$>$$>$ std::vector$<${\bf streambuf\_\-type}$\ast$$>$ {\bf coil::log\_\-streambuf}$<$ \_\-CharT, \_\-Traits $>$::getBuffers ()\hspace{0.3cm}{\ttfamily  [inline]}}\label{classcoil_1_1log__streambuf_a4cc8a12c3925ba73388bf7a897f6498b}
+
+
+Get stream buffer list. 
+
+Return a stream buffer list.
+
+\begin{DoxyReturn}{Returns}
+streambuf\_\-type list 
+\end{DoxyReturn}
+\index{coil::log\_\-streambuf@{coil::log\_\-streambuf}!overflow@{overflow}}
+\index{overflow@{overflow}!coil::log_streambuf@{coil::log\_\-streambuf}}
+\subsubsection[{overflow}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename \_\-CharT , typename \_\-Traits  = std::char\_\-traits$<$\_\-CharT$>$$>$ virtual int {\bf coil::log\_\-streambuf}$<$ \_\-CharT, \_\-Traits $>$::overflow (int {\em c} = {\ttfamily traits\_\-type::eof()})\hspace{0.3cm}{\ttfamily  [inline, protected, virtual]}}\label{classcoil_1_1log__streambuf_adebdd1a8aded503c77efee296f7c3a04}
+
+
+override of basic\_\-streambuf::overflow 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em c}]input character \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+return value 
+\end{DoxyReturn}
+
+
+References coil::log\_\-streambuf$<$ \_\-CharT, \_\-Traits $>$::stream\_\-sputn().
+
+
+
+Referenced by coil::log\_\-streambuf$<$ \_\-CharT, \_\-Traits $>$::sync().
+
+\index{coil::log\_\-streambuf@{coil::log\_\-streambuf}!removeStream@{removeStream}}
+\index{removeStream@{removeStream}!coil::log_streambuf@{coil::log\_\-streambuf}}
+\subsubsection[{removeStream}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename \_\-CharT , typename \_\-Traits  = std::char\_\-traits$<$\_\-CharT$>$$>$ bool {\bf coil::log\_\-streambuf}$<$ \_\-CharT, \_\-Traits $>$::removeStream ({\bf streambuf\_\-type} $\ast$ {\em stream})\hspace{0.3cm}{\ttfamily  [inline]}}\label{classcoil_1_1log__streambuf_a1704c352e01cc833612690e3bbc67b68}
+
+
+Destructor. 
+
+This operation remove a stream that is actual output stream. User has responsibility to destruct the stream object.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em stream}]a pointer to std::basic\_\-streambuf type stream object \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Whether removing the stream succeeded. 
+\end{DoxyReturn}
+\index{coil::log\_\-streambuf@{coil::log\_\-streambuf}!stream\_\-sputn@{stream\_\-sputn}}
+\index{stream\_\-sputn@{stream\_\-sputn}!coil::log_streambuf@{coil::log\_\-streambuf}}
+\subsubsection[{stream\_\-sputn}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename \_\-CharT , typename \_\-Traits  = std::char\_\-traits$<$\_\-CharT$>$$>$ virtual std::streamsize {\bf coil::log\_\-streambuf}$<$ \_\-CharT, \_\-Traits $>$::stream\_\-sputn (const {\bf char\_\-type} $\ast$ {\em s}, \/  std::streamsize {\em n})\hspace{0.3cm}{\ttfamily  [inline, protected, virtual]}}\label{classcoil_1_1log__streambuf_acd1e28861820f7fd8065c32eef65f04d}
+
+
+Writes up to n characters from the array pointed by s to the output sequence controlled by the stream buffer. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em s}]a pointer to input characters \item[{\em n}]number of input characters \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The number of characters written. 
+\end{DoxyReturn}
+\index{coil::log\_\-streambuf@{coil::log\_\-streambuf}!stream\_\-sputn@{stream\_\-sputn}}
+\index{stream\_\-sputn@{stream\_\-sputn}!coil::log_streambuf@{coil::log\_\-streambuf}}
+\subsubsection[{stream\_\-sputn}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename \_\-CharT , typename \_\-Traits  = std::char\_\-traits$<$\_\-CharT$>$$>$ virtual std::streamsize {\bf coil::log\_\-streambuf}$<$ \_\-CharT, \_\-Traits $>$::stream\_\-sputn ()\hspace{0.3cm}{\ttfamily  [inline, protected, virtual]}}\label{classcoil_1_1log__streambuf_a9f8cef21f4ea01f154ef5520513d60ea}
+
+
+Write the stream buffer in stream. 
+
+\begin{DoxyReturn}{Returns}
+The number of characters written. 
+\end{DoxyReturn}
+
+
+Referenced by coil::log\_\-streambuf$<$ \_\-CharT, \_\-Traits $>$::overflow(), coil::log\_\-streambuf$<$ \_\-CharT, \_\-Traits $>$::sync(), and coil::log\_\-streambuf$<$ \_\-CharT, \_\-Traits $>$::xsputn().
+
+\index{coil::log\_\-streambuf@{coil::log\_\-streambuf}!sync@{sync}}
+\index{sync@{sync}!coil::log_streambuf@{coil::log\_\-streambuf}}
+\subsubsection[{sync}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename \_\-CharT , typename \_\-Traits  = std::char\_\-traits$<$\_\-CharT$>$$>$ virtual int {\bf coil::log\_\-streambuf}$<$ \_\-CharT, \_\-Traits $>$::sync ()\hspace{0.3cm}{\ttfamily  [inline, protected, virtual]}}\label{classcoil_1_1log__streambuf_a1b973de50d8021dd19c200afc6067562}
+
+
+override of basic\_\-streambuf::sync 
+
+\begin{DoxyReturn}{Returns}
+return value 
+\end{DoxyReturn}
+
+
+References coil::log\_\-streambuf$<$ \_\-CharT, \_\-Traits $>$::overflow(), and coil::log\_\-streambuf$<$ \_\-CharT, \_\-Traits $>$::stream\_\-sputn().
+
+\index{coil::log\_\-streambuf@{coil::log\_\-streambuf}!xsputn@{xsputn}}
+\index{xsputn@{xsputn}!coil::log_streambuf@{coil::log\_\-streambuf}}
+\subsubsection[{xsputn}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename \_\-CharT , typename \_\-Traits  = std::char\_\-traits$<$\_\-CharT$>$$>$ virtual std::streamsize {\bf coil::log\_\-streambuf}$<$ \_\-CharT, \_\-Traits $>$::xsputn (const {\bf char\_\-type} $\ast$ {\em s}, \/  std::streamsize {\em n})\hspace{0.3cm}{\ttfamily  [inline, protected, virtual]}}\label{classcoil_1_1log__streambuf_a113d3c59f9616c432bb182705efa3bc6}
+
+
+override of basic\_\-streambuf::xsputn 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em s}]a pointer to input characters \item[{\em n}]number of input characters \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+input stream size 
+\end{DoxyReturn}
+
+
+References coil::log\_\-streambuf$<$ \_\-CharT, \_\-Traits $>$::stream\_\-sputn().
+

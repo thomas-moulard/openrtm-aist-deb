@@ -1,0 +1,1047 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<title>OpenRTM: クラス SDOPackage::Configuration_impl</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<!-- 作成： Doxygen 1.6.3 -->
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="index.html"><span>メインページ</span></a></li>
+      <li><a href="namespaces.html"><span>ネームスペース</span></a></li>
+      <li class="current"><a href="annotated.html"><span>クラス</span></a></li>
+      <li><a href="files.html"><span>ファイル</span></a></li>
+    </ul>
+  </div>
+  <div class="tabs">
+    <ul>
+      <li><a href="annotated.html"><span>構成</span></a></li>
+      <li><a href="hierarchy.html"><span>クラス階層</span></a></li>
+      <li><a href="functions.html"><span>構成メンバ</span></a></li>
+    </ul>
+  </div>
+  <div class="navpath"><a class="el" href="namespaceSDOPackage.html">SDOPackage</a>::<a class="el" href="classSDOPackage_1_1Configuration__impl.html">Configuration_impl</a>
+  </div>
+</div>
+<div class="contents">
+<h1>クラス SDOPackage::Configuration_impl</h1><!-- doxytag: class="SDOPackage::Configuration_impl" -->
+<p><a class="el" href="classSDO.html" title="SDO service 管理クラス.">SDO</a> Configuration 実装クラス.  
+<a href="#_details">[詳細]</a></p>
+
+<p><code>#include &lt;<a class="el" href="SdoConfiguration_8h_source.html">SdoConfiguration.h</a>&gt;</code></p>
+
+<p><a href="classSDOPackage_1_1Configuration__impl-members.html">すべてのメンバ一覧</a></p>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr><td colspan="2"><h2>構成</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">struct &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structSDOPackage_1_1Configuration__impl_1_1config__id.html">config_id</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">ConfigurationSet用functor.  <a href="structSDOPackage_1_1Configuration__impl_1_1config__id.html#_details">[詳細]</a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">struct &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structSDOPackage_1_1Configuration__impl_1_1nv__name.html">nv_name</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">NVList用functor.  <a href="structSDOPackage_1_1Configuration__impl_1_1nv__name.html#_details">[詳細]</a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">struct &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structSDOPackage_1_1Configuration__impl_1_1org__id.html">org_id</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Organization用functor.  <a href="structSDOPackage_1_1Configuration__impl_1_1org__id.html#_details">[詳細]</a><br/></td></tr>
+<tr><td colspan="2"><h2>Public メソッド</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSDOPackage_1_1Configuration__impl.html#aa9a10c1aa6abb899a866f501ba2c4075">Configuration_impl</a> (<a class="el" href="classRTC_1_1ConfigAdmin.html">RTC::ConfigAdmin</a> &amp;configAdmin, <a class="el" href="classRTC_1_1SdoServiceAdmin.html">RTC::SdoServiceAdmin</a> &amp;sdoServiceAdmin)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">コンストラクタ  <a href="#aa9a10c1aa6abb899a866f501ba2c4075"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSDOPackage_1_1Configuration__impl.html#a64d2363427a77cb4b8e79e2f6d55e6d7">~Configuration_impl</a> (void)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">仮想デストラクタ  <a href="#a64d2363427a77cb4b8e79e2f6d55e6d7"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual CORBA::Boolean&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSDOPackage_1_1Configuration__impl.html#ae54b63a9474dd9a98854e186cf5ae167">set_device_profile</a> (const DeviceProfile &amp;dProfile)  throw (CORBA::SystemException,	     InvalidParameter, NotAvailable, InternalError)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">[CORBA interface] <a class="el" href="classSDO.html" title="SDO service 管理クラス.">SDO</a> の DeviceProfile のセット  <a href="#ae54b63a9474dd9a98854e186cf5ae167"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual CORBA::Boolean&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSDOPackage_1_1Configuration__impl.html#a42e08f0ca92fa64b4728c499d1e4e707">add_service_profile</a> (const ServiceProfile &amp;sProfile)  throw (CORBA::SystemException,	     InvalidParameter, NotAvailable, InternalError)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">[CORBA interface] <a class="el" href="classSDO.html" title="SDO service 管理クラス.">SDO</a> の ServiceProfile のセット  <a href="#a42e08f0ca92fa64b4728c499d1e4e707"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual CORBA::Boolean&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSDOPackage_1_1Configuration__impl.html#a7963b66fe9bdbac8b23528ec5c7bca79">add_organization</a> (Organization_ptr org)  throw (CORBA::SystemException,	     InvalidParameter, NotAvailable, InternalError)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">[CORBA interface] Organization の追加  <a href="#a7963b66fe9bdbac8b23528ec5c7bca79"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual CORBA::Boolean&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSDOPackage_1_1Configuration__impl.html#ac5efa6fdefbae7f0f851fadf0fffdf48">remove_service_profile</a> (const char *id)  throw (CORBA::SystemException,	     InvalidParameter, NotAvailable, InternalError)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">[CORBA interface] ServiceProfile の削除  <a href="#ac5efa6fdefbae7f0f851fadf0fffdf48"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual CORBA::Boolean&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSDOPackage_1_1Configuration__impl.html#a8cc3deeb795a9b9c42c9507375660670">remove_organization</a> (const char *organization_id)  throw (CORBA::SystemException,	     InvalidParameter, NotAvailable, InternalError)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">[CORBA interface] Organization の参照の削除  <a href="#a8cc3deeb795a9b9c42c9507375660670"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual ParameterList *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSDOPackage_1_1Configuration__impl.html#a719cf33d63573f2c77e76cc0bd7c95a1">get_configuration_parameters</a> ()  throw (CORBA::SystemException,	     NotAvailable, InternalError)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">[CORBA interface] 設定パラメータのリストの取得  <a href="#a719cf33d63573f2c77e76cc0bd7c95a1"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual NVList *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSDOPackage_1_1Configuration__impl.html#a35e8b8d9af4a2b4f78e0a86244bff558">get_configuration_parameter_values</a> ()  throw (CORBA::SystemException,	     NotAvailable, InternalError)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">[CORBA interface] Configuration parameter の値のリストの取得  <a href="#a35e8b8d9af4a2b4f78e0a86244bff558"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual CORBA::Any *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSDOPackage_1_1Configuration__impl.html#a27497be83bfe0bacde9fc4f89c861077">get_configuration_parameter_value</a> (const char *name)  throw (CORBA::SystemException,	     InvalidParameter, NotAvailable, InternalError)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">[CORBA interface] Configuration parameter の値の取得  <a href="#a27497be83bfe0bacde9fc4f89c861077"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual CORBA::Boolean&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSDOPackage_1_1Configuration__impl.html#ad8be3428eca25a151d9e0a11447828b0">set_configuration_parameter</a> (const char *name, const CORBA::Any &amp;value)  throw (CORBA::SystemException,	     InvalidParameter, NotAvailable, InternalError)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">[CORBA interface] Configuration パラメータの変更  <a href="#ad8be3428eca25a151d9e0a11447828b0"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual ConfigurationSetList *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSDOPackage_1_1Configuration__impl.html#a77844f4a7407bc48c11a455f89d32f4d">get_configuration_sets</a> ()  throw (CORBA::SystemException,	     NotAvailable, InternalError)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">[CORBA interface] ConfigurationSet リストの取得  <a href="#a77844f4a7407bc48c11a455f89d32f4d"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual ConfigurationSet *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSDOPackage_1_1Configuration__impl.html#a9053da972df19c6411b0326eb5239b39">get_configuration_set</a> (const char *<a class="el" href="structSDOPackage_1_1Configuration__impl_1_1config__id.html">config_id</a>)  throw (CORBA::SystemException,	     NotAvailable, InternalError)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">[CORBA interface] ConfigurationSet の取得  <a href="#a9053da972df19c6411b0326eb5239b39"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual ConfigurationSet *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSDOPackage_1_1Configuration__impl.html#aee57768379674404422130e0f04468e2">get_active_configuration_set</a> ()  throw (CORBA::SystemException,	     NotAvailable, InternalError)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">[CORBA interface] アクティブな ConfigurationSet を取得する  <a href="#aee57768379674404422130e0f04468e2"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual CORBA::Boolean&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSDOPackage_1_1Configuration__impl.html#a3765b45decf597811c3e0f562b914fab">add_configuration_set</a> (const ConfigurationSet &amp;configuration_set)  throw (CORBA::SystemException,	     InvalidParameter, NotAvailable, InternalError)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">[CORBA interface] ConfigurationSet を追加する  <a href="#a3765b45decf597811c3e0f562b914fab"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual CORBA::Boolean&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSDOPackage_1_1Configuration__impl.html#a89a53c51f56795a098f3be79052413ad">set_configuration_set_values</a> (const ConfigurationSet &amp;configuration_set)  throw (CORBA::SystemException,	     InvalidParameter, NotAvailable, InternalError)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">[CORBA interface] ConfigurationSet をセットする  <a href="#a89a53c51f56795a098f3be79052413ad"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual CORBA::Boolean&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSDOPackage_1_1Configuration__impl.html#ac82aad180dcb37a3d652abb0e368da0a">remove_configuration_set</a> (const char *<a class="el" href="structSDOPackage_1_1Configuration__impl_1_1config__id.html">config_id</a>)  throw (CORBA::SystemException,	     InvalidParameter, NotAvailable, InternalError)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">[CORBA interface] ConfigurationSet を削除する  <a href="#ac82aad180dcb37a3d652abb0e368da0a"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual CORBA::Boolean&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSDOPackage_1_1Configuration__impl.html#a7264893ed1b678fcf301a73304bf77b7">activate_configuration_set</a> (const char *<a class="el" href="structSDOPackage_1_1Configuration__impl_1_1config__id.html">config_id</a>)  throw (CORBA::SystemException,	     InvalidParameter, NotAvailable, InternalError)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">[CORBA interface] ConfigurationSet のアクティブ化  <a href="#a7264893ed1b678fcf301a73304bf77b7"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">Configuration_ptr&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSDOPackage_1_1Configuration__impl.html#a8d613297a107207f423427d27ea08d51">getObjRef</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">オブジェクト　リファレンスを取得する  <a href="#a8d613297a107207f423427d27ea08d51"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">const DeviceProfile&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSDOPackage_1_1Configuration__impl.html#a68fcf4197d16a2e3207066b91f8a3b3b">getDeviceProfile</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight"><a class="el" href="classSDO.html" title="SDO service 管理クラス.">SDO</a> の DeviceProfile を取得する.  <a href="#a68fcf4197d16a2e3207066b91f8a3b3b"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">const OrganizationList&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSDOPackage_1_1Configuration__impl.html#ae418c54724bbdd5be5e8dc78d3185666">getOrganizations</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight"><a class="el" href="classSDO.html" title="SDO service 管理クラス.">SDO</a> の Organization リストを取得する.  <a href="#ae418c54724bbdd5be5e8dc78d3185666"></a><br/></td></tr>
+<tr><td colspan="2"><h2>Protected メソッド</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">const std::string&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSDOPackage_1_1Configuration__impl.html#a6226cee3af7cc21745134e4a4fec5472">getUUID</a> () const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">UUIDを生成する.  <a href="#a6226cee3af7cc21745134e4a4fec5472"></a><br/></td></tr>
+<tr><td colspan="2"><h2>Protected 変数</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">::<a class="el" href="classRTC_1_1Logger.html">RTC::Logger</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSDOPackage_1_1Configuration__impl.html#a9ed7b17de24aa80ee09593a98df0e4b9">rtclog</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">Configuration_var&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSDOPackage_1_1Configuration__impl.html#a36a9f12d50e566abcbd3fe236c83a350">m_objref</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">CORBA オブジェクトへの参照.  <a href="#a36a9f12d50e566abcbd3fe236c83a350"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">DeviceProfile&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSDOPackage_1_1Configuration__impl.html#a66e90439d4abad6f5d82ffe3295bf7ec">m_deviceProfile</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Lock 付き <a class="el" href="classSDO.html" title="SDO service 管理クラス.">SDO</a> DeviceProfile.  <a href="#a66e90439d4abad6f5d82ffe3295bf7ec"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classcoil_1_1Mutex.html">Mutex</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSDOPackage_1_1Configuration__impl.html#a9689abe24b863917c2a59b6040803a1b">m_dprofile_mutex</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">ParameterList&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSDOPackage_1_1Configuration__impl.html#acaea00148dbf45d58a42f6d7aabfa082">m_parameters</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight"><a class="el" href="classSDO.html" title="SDO service 管理クラス.">SDO</a> Parameter.  <a href="#acaea00148dbf45d58a42f6d7aabfa082"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classcoil_1_1Mutex.html">Mutex</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSDOPackage_1_1Configuration__impl.html#acc6db9158b0f0bc0b7e333ecebbb80b7">m_params_mutex</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classRTC_1_1ConfigAdmin.html">RTC::ConfigAdmin</a> &amp;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSDOPackage_1_1Configuration__impl.html#a7cd573c3000eb9242ee023fcea7b5112">m_configsets</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Lock 付き <a class="el" href="classSDO.html" title="SDO service 管理クラス.">SDO</a> ConfigurationSetList.  <a href="#a7cd573c3000eb9242ee023fcea7b5112"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classcoil_1_1Mutex.html">Mutex</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSDOPackage_1_1Configuration__impl.html#af254d8973fdb5c36b8169a7552cc64d4">m_config_mutex</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classRTC_1_1SdoServiceAdmin.html">RTC::SdoServiceAdmin</a> &amp;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSDOPackage_1_1Configuration__impl.html#af667dca0114e7e41f7df5ecd304a2d39">m_sdoservice</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Lock 付き <a class="el" href="classSDO.html" title="SDO service 管理クラス.">SDO</a> Service 管理オブジェクト.  <a href="#af667dca0114e7e41f7df5ecd304a2d39"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classcoil_1_1Mutex.html">Mutex</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSDOPackage_1_1Configuration__impl.html#ae8b2a69d6acc56f1d3291200a70ce60d">m_sdoservice_mutex</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">OrganizationList&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSDOPackage_1_1Configuration__impl.html#a3aedc84961dbfe19b7f6d4fe7ab1c09b">m_organizations</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Lock 付き <a class="el" href="classSDO.html" title="SDO service 管理クラス.">SDO</a> OrganizationList.  <a href="#a3aedc84961dbfe19b7f6d4fe7ab1c09b"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classcoil_1_1Mutex.html">Mutex</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSDOPackage_1_1Configuration__impl.html#a88038663067f3f3f5cc525ee9e2aba1d">m_org_mutex</a></td></tr>
+</table>
+<hr/><a name="_details"></a><h2>説明</h2>
+<p><a class="el" href="classSDO.html" title="SDO service 管理クラス.">SDO</a> Configuration 実装クラス. </p>
+<p>Configuration interface は Resource Data Model で定義されたデータの 追加、削除等の操作を行うためのインターフェースである。 DeviceProfile, ServiceProfile, ConfigurationProfile および Organization の変更を行うためのオペレーションを備えている。SDO の仕様ではアクセス制御 およびセキュリティに関する詳細については規定していない。</p>
+<p>複数の設定 (Configuration) を保持することにより、容易かつ素早くある設定 を反映させることができる。事前に定義された複数の設定を ConfigurationSets および configuration profile として保持することができる。ひとつの ConfigurationSet は特定の設定に関連付けられた全プロパティ値のリストを、 ユニークID、詳細とともに持っている。これにより、各設定項目の詳細を記述し 区別することができる。Configuration interface のオペレーションはこれら ConfiguratioinSets の管理を支援する。</p>
+<ul>
+<li>ConfigurationSet: id, description, NVList から構成される1セットの設定</li>
+<li>ConfigurationSetList: ConfigurationSet のリスト</li>
+<li>Parameter: name, type, allowed_values から構成されるパラメータ定義。</li>
+<li>ActiveConfigurationSet: 現在有効なコンフィギュレーションの1セット。</li>
+</ul>
+<p>以下、SDO仕様に明記されていないもしくは解釈がわからないため独自解釈</p>
+<p>以下の関数は ParameterList に対して処理を行う。</p>
+<ul>
+<li><a class="el" href="classSDOPackage_1_1Configuration__impl.html#a719cf33d63573f2c77e76cc0bd7c95a1" title="[CORBA interface] 設定パラメータのリストの取得">get_configuration_parameters()</a></li>
+</ul>
+<p>以下の関数はアクティブなConfigurationSetに対する処理を行う</p>
+<ul>
+<li><a class="el" href="classSDOPackage_1_1Configuration__impl.html#a35e8b8d9af4a2b4f78e0a86244bff558" title="[CORBA interface] Configuration parameter の値のリストの取得">get_configuration_parameter_values()</a></li>
+<li><a class="el" href="classSDOPackage_1_1Configuration__impl.html#a27497be83bfe0bacde9fc4f89c861077" title="[CORBA interface] Configuration parameter の値の取得">get_configuration_parameter_value()</a></li>
+<li><a class="el" href="classSDOPackage_1_1Configuration__impl.html#ad8be3428eca25a151d9e0a11447828b0" title="[CORBA interface] Configuration パラメータの変更">set_configuration_parameter()</a></li>
+</ul>
+<p>以下の関数はConfigurationSetListに対して処理を行う</p>
+<ul>
+<li><a class="el" href="classSDOPackage_1_1Configuration__impl.html#a77844f4a7407bc48c11a455f89d32f4d" title="[CORBA interface] ConfigurationSet リストの取得">get_configuration_sets()</a></li>
+<li><a class="el" href="classSDOPackage_1_1Configuration__impl.html#a9053da972df19c6411b0326eb5239b39" title="[CORBA interface] ConfigurationSet の取得">get_configuration_set()</a></li>
+<li><a class="el" href="classSDOPackage_1_1Configuration__impl.html#a89a53c51f56795a098f3be79052413ad" title="[CORBA interface] ConfigurationSet をセットする">set_configuration_set_values()</a></li>
+<li><a class="el" href="classSDOPackage_1_1Configuration__impl.html#aee57768379674404422130e0f04468e2" title="[CORBA interface] アクティブな ConfigurationSet を取得する">get_active_configuration_set()</a></li>
+<li><a class="el" href="classSDOPackage_1_1Configuration__impl.html#a3765b45decf597811c3e0f562b914fab" title="[CORBA interface] ConfigurationSet を追加する">add_configuration_set()</a></li>
+<li><a class="el" href="classSDOPackage_1_1Configuration__impl.html#ac82aad180dcb37a3d652abb0e368da0a" title="[CORBA interface] ConfigurationSet を削除する">remove_configuration_set()</a></li>
+<li><a class="el" href="classSDOPackage_1_1Configuration__impl.html#a7264893ed1b678fcf301a73304bf77b7" title="[CORBA interface] ConfigurationSet のアクティブ化">activate_configuration_set()</a></li>
+</ul>
+<dl class="since"><dt><b>から:</b></dt><dd>0.4.0 </dd></dl>
+<hr/><h2>コンストラクタとデストラクタ</h2>
+<a class="anchor" id="aa9a10c1aa6abb899a866f501ba2c4075"></a><!-- doxytag: member="SDOPackage::Configuration_impl::Configuration_impl" ref="aa9a10c1aa6abb899a866f501ba2c4075" args="(RTC::ConfigAdmin &amp;configAdmin, RTC::SdoServiceAdmin &amp;sdoServiceAdmin)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">SDOPackage::Configuration_impl::Configuration_impl </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classRTC_1_1ConfigAdmin.html">RTC::ConfigAdmin</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>configAdmin</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classRTC_1_1SdoServiceAdmin.html">RTC::SdoServiceAdmin</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>sdoServiceAdmin</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>コンストラクタ </p>
+<p>コンストラクタ</p>
+<dl><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>configAdmin</em>&nbsp;</td><td>ConfigurationSetList </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a64d2363427a77cb4b8e79e2f6d55e6d7"></a><!-- doxytag: member="SDOPackage::Configuration_impl::~Configuration_impl" ref="a64d2363427a77cb4b8e79e2f6d55e6d7" args="(void)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual SDOPackage::Configuration_impl::~Configuration_impl </td>
+          <td>(</td>
+          <td class="paramtype">void&nbsp;</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>仮想デストラクタ </p>
+<p>仮想デストラクタ。 </p>
+
+</div>
+</div>
+<hr/><h2>関数</h2>
+<a class="anchor" id="a7264893ed1b678fcf301a73304bf77b7"></a><!-- doxytag: member="SDOPackage::Configuration_impl::activate_configuration_set" ref="a7264893ed1b678fcf301a73304bf77b7" args="(const char *config_id)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual CORBA::Boolean SDOPackage::Configuration_impl::activate_configuration_set </td>
+          <td>(</td>
+          <td class="paramtype">const char *&nbsp;</td>
+          <td class="paramname"> <em>config_id</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td>  throw (CORBA::SystemException,	     InvalidParameter, NotAvailable, InternalError)<code> [virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>[CORBA interface] ConfigurationSet のアクティブ化 </p>
+<p>ConfigurationProfile に格納された ConfigurationSet のうち一つを アクティブにする。 このオペレーションは特定の ConfigurationSet をアクティブにする。 すなわち、SDO のコンフィギュレーション・プロパティがその格納されている ConfigurationSet により設定されるプロパティの値に変更される。 指定された ConfigurationSet の値がアクティブ・コンフィギュレーション にコピーされるということを意味する。</p>
+<dl><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em><a class="el" href="structSDOPackage_1_1Configuration__impl_1_1config__id.html" title="ConfigurationSet用functor.">config_id</a></em>&nbsp;</td><td>アクティブ化する ConfigurationSet の id。</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>戻り値:</b></dt><dd>オペレーションが成功したかどうか。</dd></dl>
+<dl><dt><b>例外:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>SDONotExists</em>&nbsp;</td><td>ターゲットのSDOが存在しない。(本例外は、CORBA標準 システム例外のOBJECT_NOT_EXISTにマッピングされる) </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>InvalidParameter</em>&nbsp;</td><td>引数 "config_id" が null である、もしくは 引数で指定された ConfigurationSet が存在しない。 </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>NotAvailable</em>&nbsp;</td><td>SDOは存在するが応答がない。 </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>InternalError</em>&nbsp;</td><td>内部的エラーが発生した。 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a3765b45decf597811c3e0f562b914fab"></a><!-- doxytag: member="SDOPackage::Configuration_impl::add_configuration_set" ref="a3765b45decf597811c3e0f562b914fab" args="(const ConfigurationSet &amp;configuration_set)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual CORBA::Boolean SDOPackage::Configuration_impl::add_configuration_set </td>
+          <td>(</td>
+          <td class="paramtype">const ConfigurationSet &amp;&nbsp;</td>
+          <td class="paramname"> <em>configuration_set</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td>  throw (CORBA::SystemException,	     InvalidParameter, NotAvailable, InternalError)<code> [virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>[CORBA interface] ConfigurationSet を追加する </p>
+<p>ConfigurationProfile に ConfigurationSet を追加するオペレーション。</p>
+<dl><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>configuration_set</em>&nbsp;</td><td>追加する ConfigurationSet。</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>戻り値:</b></dt><dd>オペレーションが成功したかどうか。</dd></dl>
+<dl><dt><b>例外:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>SDONotExists</em>&nbsp;</td><td>ターゲットのSDOが存在しない。(本例外は、CORBA標準 システム例外のOBJECT_NOT_EXISTにマッピングされる) </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>InvalidParameter</em>&nbsp;</td><td>"configurationSet" が null か、 "configurationSet"で定義された属性の１つが不正か、 指定された configurationSet もIDが既に存在する。 </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>NotAvailable</em>&nbsp;</td><td>SDOは存在するが応答がない。 </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>InternalError</em>&nbsp;</td><td>内部的エラーが発生した。 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a7963b66fe9bdbac8b23528ec5c7bca79"></a><!-- doxytag: member="SDOPackage::Configuration_impl::add_organization" ref="a7963b66fe9bdbac8b23528ec5c7bca79" args="(Organization_ptr org)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual CORBA::Boolean SDOPackage::Configuration_impl::add_organization </td>
+          <td>(</td>
+          <td class="paramtype">Organization_ptr&nbsp;</td>
+          <td class="paramname"> <em>org</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td>  throw (CORBA::SystemException,	     InvalidParameter, NotAvailable, InternalError)<code> [virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>[CORBA interface] Organization の追加 </p>
+<p>このオペレーションは Organization object のリファレンスを追加する。</p>
+<dl><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>org</em>&nbsp;</td><td>追加する Organization</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>戻り値:</b></dt><dd>オペレーションが成功したかどうかを返す。</dd></dl>
+<dl><dt><b>例外:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>SDONotExists</em>&nbsp;</td><td>ターゲットのSDOが存在しない。(本例外は、CORBA標準 システム例外のOBJECT_NOT_EXISTにマッピングされる) </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>NotAvailable</em>&nbsp;</td><td>SDOは存在するが応答がない。 </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>InvalidParameter</em>&nbsp;</td><td>引数 "organization" が null である。 </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>InternalError</em>&nbsp;</td><td>内部的エラーが発生した。 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a42e08f0ca92fa64b4728c499d1e4e707"></a><!-- doxytag: member="SDOPackage::Configuration_impl::add_service_profile" ref="a42e08f0ca92fa64b4728c499d1e4e707" args="(const ServiceProfile &amp;sProfile)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual CORBA::Boolean SDOPackage::Configuration_impl::add_service_profile </td>
+          <td>(</td>
+          <td class="paramtype">const ServiceProfile &amp;&nbsp;</td>
+          <td class="paramname"> <em>sProfile</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td>  throw (CORBA::SystemException,	     InvalidParameter, NotAvailable, InternalError)<code> [virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>[CORBA interface] <a class="el" href="classSDO.html" title="SDO service 管理クラス.">SDO</a> の ServiceProfile のセット </p>
+<p>このオペレーションはこの Configuration interface を所有する対象 <a class="el" href="classSDO.html" title="SDO service 管理クラス.">SDO</a> の ServiceProfile を追加する。もし引数の ServiceProfile の id が空であれば 新しい ID が生成されその ServiceProfile を格納する。もし id が空で なければ、SDO は同じ id を持つ ServiceProfile を検索する。 同じ id が存在しなければこの ServiceProfile を追加し、id が存在すれば 上書きをする。<br/>
+ (注意：最新バージョンではオペレーション名がadd_service_profile変更)</p>
+<dl><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>sProfile</em>&nbsp;</td><td>追加する ServiceProfile</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>戻り値:</b></dt><dd>オペレーションが成功したかどうかを返す。</dd></dl>
+<dl><dt><b>例外:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>SDONotExists</em>&nbsp;</td><td>ターゲットのSDOが存在しない。(本例外は、CORBA標準 システム例外のOBJECT_NOT_EXISTにマッピングされる) </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>InvalidParameter</em>&nbsp;</td><td>引数 "sProfile" が nullである。 </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>NotAvailable</em>&nbsp;</td><td>SDOは存在するが応答がない。 </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>InternalError</em>&nbsp;</td><td>内部的エラーが発生した。 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="aee57768379674404422130e0f04468e2"></a><!-- doxytag: member="SDOPackage::Configuration_impl::get_active_configuration_set" ref="aee57768379674404422130e0f04468e2" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual ConfigurationSet* SDOPackage::Configuration_impl::get_active_configuration_set </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td>  throw (CORBA::SystemException,	     NotAvailable, InternalError)<code> [virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>[CORBA interface] アクティブな ConfigurationSet を取得する </p>
+<p>このオペレーションは当該SDOの現在アクティブな ConfigurationSet を返す。 (もしSDOの現在の設定が予め定義された ConfigurationSet により設定されて いるならば。) ConfigurationSet は以下の場合にはアクティブではないものとみなされる。</p>
+<ul>
+<li>現在の設定が予め定義された ConfigurationSet によりセットされていない、</li>
+<li><a class="el" href="classSDO.html" title="SDO service 管理クラス.">SDO</a> の設定がアクティブになった後に変更された、</li>
+<li><a class="el" href="classSDO.html" title="SDO service 管理クラス.">SDO</a> を設定する ConfigurationSet が変更された、</li>
+</ul>
+<p>これらの場合には、空の ConfigurationSet が返される。</p>
+<dl class="return"><dt><b>戻り値:</b></dt><dd>現在アクティブな ConfigurationSet。</dd></dl>
+<dl><dt><b>例外:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>SDONotExists</em>&nbsp;</td><td>ターゲットのSDOが存在しない。(本例外は、CORBA標準 システム例外のOBJECT_NOT_EXISTにマッピングされる) </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>NotAvailable</em>&nbsp;</td><td>SDOは存在するが応答がない。 </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>InternalError</em>&nbsp;</td><td>内部的エラーが発生した。 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a27497be83bfe0bacde9fc4f89c861077"></a><!-- doxytag: member="SDOPackage::Configuration_impl::get_configuration_parameter_value" ref="a27497be83bfe0bacde9fc4f89c861077" args="(const char *name)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual CORBA::Any* SDOPackage::Configuration_impl::get_configuration_parameter_value </td>
+          <td>(</td>
+          <td class="paramtype">const char *&nbsp;</td>
+          <td class="paramname"> <em>name</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td>  throw (CORBA::SystemException,	     InvalidParameter, NotAvailable, InternalError)<code> [virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>[CORBA interface] Configuration parameter の値の取得 </p>
+<p>このオペレーションは引数 "name" で指定されたパラメータ値を返す。</p>
+<dl><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>name</em>&nbsp;</td><td>値を要求するパラメータの名前。</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>戻り値:</b></dt><dd>指定されたパラメータの値。</dd></dl>
+<dl><dt><b>例外:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>SDONotExists</em>&nbsp;</td><td>ターゲットのSDOが存在しない。(本例外は、CORBA標準 システム例外のOBJECT_NOT_EXISTにマッピングされる) </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>InvalidParameter</em>&nbsp;</td><td>引数 "name" が null である。 もしくは "name" に関連付けられたパラメータが存在しない。 </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>NotAvailable</em>&nbsp;</td><td>SDOは存在するが応答がない。 </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>InternalError</em>&nbsp;</td><td>内部的エラーが発生した。 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a35e8b8d9af4a2b4f78e0a86244bff558"></a><!-- doxytag: member="SDOPackage::Configuration_impl::get_configuration_parameter_values" ref="a35e8b8d9af4a2b4f78e0a86244bff558" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual NVList* SDOPackage::Configuration_impl::get_configuration_parameter_values </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td>  throw (CORBA::SystemException,	     NotAvailable, InternalError)<code> [virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>[CORBA interface] Configuration parameter の値のリストの取得 </p>
+<p>このオペレーションは全ての configuration パラメータおよび値を返す。</p>
+<dl class="return"><dt><b>戻り値:</b></dt><dd>全ての configuration パラメータと値のリスト。</dd></dl>
+<dl><dt><b>例外:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>SDONotExists</em>&nbsp;</td><td>ターゲットのSDOが存在しない。(本例外は、CORBA標準 システム例外のOBJECT_NOT_EXISTにマッピングされる) </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>NotAvailable</em>&nbsp;</td><td>SDOは存在するが応答がない。 </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>InternalError</em>&nbsp;</td><td>内部的エラーが発生した。 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a719cf33d63573f2c77e76cc0bd7c95a1"></a><!-- doxytag: member="SDOPackage::Configuration_impl::get_configuration_parameters" ref="a719cf33d63573f2c77e76cc0bd7c95a1" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual ParameterList* SDOPackage::Configuration_impl::get_configuration_parameters </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td>  throw (CORBA::SystemException,	     NotAvailable, InternalError)<code> [virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>[CORBA interface] 設定パラメータのリストの取得 </p>
+<p>このオペレーションは configuration parameter のリストを返す。 <a class="el" href="classSDO.html" title="SDO service 管理クラス.">SDO</a> が設定可能なパラメータを持たなければ空のリストを返す。</p>
+<dl class="return"><dt><b>戻り値:</b></dt><dd>設定を特徴付けるパラメータ定義のリスト。</dd></dl>
+<dl><dt><b>例外:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>SDONotExists</em>&nbsp;</td><td>ターゲットのSDOが存在しない。(本例外は、CORBA標準 システム例外のOBJECT_NOT_EXISTにマッピングされる) </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>NotAvailable</em>&nbsp;</td><td>SDOは存在するが応答がない。 </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>InternalError</em>&nbsp;</td><td>内部的エラーが発生した。 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a9053da972df19c6411b0326eb5239b39"></a><!-- doxytag: member="SDOPackage::Configuration_impl::get_configuration_set" ref="a9053da972df19c6411b0326eb5239b39" args="(const char *config_id)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual ConfigurationSet* SDOPackage::Configuration_impl::get_configuration_set </td>
+          <td>(</td>
+          <td class="paramtype">const char *&nbsp;</td>
+          <td class="paramname"> <em>config_id</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td>  throw (CORBA::SystemException,	     NotAvailable, InternalError)<code> [virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>[CORBA interface] ConfigurationSet の取得 </p>
+<p>このオペレーションは引数で指定された ConfigurationSet の ID に関連 付けられた ConfigurationSet を返す。</p>
+<dl><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em><a class="el" href="structSDOPackage_1_1Configuration__impl_1_1config__id.html" title="ConfigurationSet用functor.">config_id</a></em>&nbsp;</td><td>ConfigurationSet の識別子。</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>戻り値:</b></dt><dd>引数により指定された ConfigurationSet。</dd></dl>
+<dl><dt><b>例外:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>SDONotExists</em>&nbsp;</td><td>ターゲットのSDOが存在しない。(本例外は、CORBA標準 システム例外のOBJECT_NOT_EXISTにマッピングされる) </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>InvalidParameter</em>&nbsp;</td><td>"config_id" が null か、指定された ConfigurationSet が存在しない。 </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>NotAvailable</em>&nbsp;</td><td>SDOは存在するが応答がない。 </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>InternalError</em>&nbsp;</td><td>内部的エラーが発生した。 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a77844f4a7407bc48c11a455f89d32f4d"></a><!-- doxytag: member="SDOPackage::Configuration_impl::get_configuration_sets" ref="a77844f4a7407bc48c11a455f89d32f4d" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual ConfigurationSetList* SDOPackage::Configuration_impl::get_configuration_sets </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td>  throw (CORBA::SystemException,	     NotAvailable, InternalError)<code> [virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>[CORBA interface] ConfigurationSet リストの取得 </p>
+<p>このオペレーションは ConfigurationProfile が持つ ConfigurationSet の リストを返す。 <a class="el" href="classSDO.html" title="SDO service 管理クラス.">SDO</a> が ConfigurationSet を持たなければ空のリストを返す。</p>
+<dl class="return"><dt><b>戻り値:</b></dt><dd>保持している ConfigurationSet のリストの現在値。</dd></dl>
+<dl><dt><b>例外:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>SDONotExists</em>&nbsp;</td><td>ターゲットのSDOが存在しない。(本例外は、CORBA標準 システム例外のOBJECT_NOT_EXISTにマッピングされる) </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>NotAvailable</em>&nbsp;</td><td>SDOは存在するが応答がない。 </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>InternalError</em>&nbsp;</td><td>内部的エラーが発生した。 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a68fcf4197d16a2e3207066b91f8a3b3b"></a><!-- doxytag: member="SDOPackage::Configuration_impl::getDeviceProfile" ref="a68fcf4197d16a2e3207066b91f8a3b3b" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const DeviceProfile SDOPackage::Configuration_impl::getDeviceProfile </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p><a class="el" href="classSDO.html" title="SDO service 管理クラス.">SDO</a> の DeviceProfile を取得する. </p>
+<p><a class="el" href="classSDO.html" title="SDO service 管理クラス.">SDO</a> の DeviceProfile を取得する</p>
+<dl class="return"><dt><b>戻り値:</b></dt><dd><a class="el" href="classSDO.html" title="SDO service 管理クラス.">SDO</a> の DeviceProfile </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a8d613297a107207f423427d27ea08d51"></a><!-- doxytag: member="SDOPackage::Configuration_impl::getObjRef" ref="a8d613297a107207f423427d27ea08d51" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Configuration_ptr SDOPackage::Configuration_impl::getObjRef </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>オブジェクト　リファレンスを取得する </p>
+<p>対象のオブジェクトリファレンスを取得する</p>
+<dl class="return"><dt><b>戻り値:</b></dt><dd>オブジェクトリファレンス </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ae418c54724bbdd5be5e8dc78d3185666"></a><!-- doxytag: member="SDOPackage::Configuration_impl::getOrganizations" ref="ae418c54724bbdd5be5e8dc78d3185666" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const OrganizationList SDOPackage::Configuration_impl::getOrganizations </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p><a class="el" href="classSDO.html" title="SDO service 管理クラス.">SDO</a> の Organization リストを取得する. </p>
+<p><a class="el" href="classSDO.html" title="SDO service 管理クラス.">SDO</a> の Organization リストを取得する</p>
+<dl class="return"><dt><b>戻り値:</b></dt><dd><a class="el" href="classSDO.html" title="SDO service 管理クラス.">SDO</a> の Organization リスト </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a6226cee3af7cc21745134e4a4fec5472"></a><!-- doxytag: member="SDOPackage::Configuration_impl::getUUID" ref="a6226cee3af7cc21745134e4a4fec5472" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const std::string SDOPackage::Configuration_impl::getUUID </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const<code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>UUIDを生成する. </p>
+<p>UUIDを生成する</p>
+<dl class="return"><dt><b>戻り値:</b></dt><dd>生成したUUID </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ac82aad180dcb37a3d652abb0e368da0a"></a><!-- doxytag: member="SDOPackage::Configuration_impl::remove_configuration_set" ref="ac82aad180dcb37a3d652abb0e368da0a" args="(const char *config_id)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual CORBA::Boolean SDOPackage::Configuration_impl::remove_configuration_set </td>
+          <td>(</td>
+          <td class="paramtype">const char *&nbsp;</td>
+          <td class="paramname"> <em>config_id</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td>  throw (CORBA::SystemException,	     InvalidParameter, NotAvailable, InternalError)<code> [virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>[CORBA interface] ConfigurationSet を削除する </p>
+<p>ConfigurationProfile から ConfigurationSet を削除する。</p>
+<dl><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em><a class="el" href="structSDOPackage_1_1Configuration__impl_1_1config__id.html" title="ConfigurationSet用functor.">config_id</a></em>&nbsp;</td><td>削除する ConfigurationSet の id。</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>戻り値:</b></dt><dd>オペレーションが成功したかどうか。</dd></dl>
+<dl><dt><b>例外:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>SDONotExists</em>&nbsp;</td><td>ターゲットのSDOが存在しない。(本例外は、CORBA標準 システム例外のOBJECT_NOT_EXISTにマッピングされる) </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>InvalidParameter</em>&nbsp;</td><td>引数 "configurationSetID" が null である、 もしくは、引数で指定された ConfigurationSet が存在しない。 </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>NotAvailable</em>&nbsp;</td><td>SDOは存在するが応答がない。 </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>InternalError</em>&nbsp;</td><td>内部的エラーが発生した。 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a8cc3deeb795a9b9c42c9507375660670"></a><!-- doxytag: member="SDOPackage::Configuration_impl::remove_organization" ref="a8cc3deeb795a9b9c42c9507375660670" args="(const char *organization_id)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual CORBA::Boolean SDOPackage::Configuration_impl::remove_organization </td>
+          <td>(</td>
+          <td class="paramtype">const char *&nbsp;</td>
+          <td class="paramname"> <em>organization_id</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td>  throw (CORBA::SystemException,	     InvalidParameter, NotAvailable, InternalError)<code> [virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>[CORBA interface] Organization の参照の削除 </p>
+<p>このオペレーションは Organization の参照を削除する。</p>
+<dl><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>organization_id</em>&nbsp;</td><td>削除する Organization の一意な id。</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>戻り値:</b></dt><dd>オペレーションが成功したかどうかを返す。</dd></dl>
+<dl><dt><b>例外:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>SDONotExists</em>&nbsp;</td><td>ターゲットのSDOが存在しない。(本例外は、CORBA標準 システム例外のOBJECT_NOT_EXISTにマッピングされる) </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>InvalidParameter</em>&nbsp;</td><td>引数 "organization_id" が null である。 もしくは "organization_id" に関連付けられた OrganizationProfile が存在しない。 </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>NotAvailable</em>&nbsp;</td><td>SDOは存在するが応答がない。 </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>InternalError</em>&nbsp;</td><td>内部的エラーが発生した。 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="ac5efa6fdefbae7f0f851fadf0fffdf48"></a><!-- doxytag: member="SDOPackage::Configuration_impl::remove_service_profile" ref="ac5efa6fdefbae7f0f851fadf0fffdf48" args="(const char *id)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual CORBA::Boolean SDOPackage::Configuration_impl::remove_service_profile </td>
+          <td>(</td>
+          <td class="paramtype">const char *&nbsp;</td>
+          <td class="paramname"> <em>id</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td>  throw (CORBA::SystemException,	     InvalidParameter, NotAvailable, InternalError)<code> [virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>[CORBA interface] ServiceProfile の削除 </p>
+<p>このオペレーションはこの Configuration interface を持つ <a class="el" href="classSDO.html" title="SDO service 管理クラス.">SDO</a> の Service の ServiceProfile を削除する。削除する ServiceProfile は引数により指定される。</p>
+<dl><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>id</em>&nbsp;</td><td>削除する ServiceProfile の serviceID。</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>戻り値:</b></dt><dd>オペレーションが成功したかどうかを返す。</dd></dl>
+<dl><dt><b>例外:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>SDONotExists</em>&nbsp;</td><td>ターゲットのSDOが存在しない。(本例外は、CORBA標準 システム例外のOBJECT_NOT_EXISTにマッピングされる) </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>InvalidParameter</em>&nbsp;</td><td>引数 "id" が null である。もしくは "id" に 関連付けられた ServiceProfile が存在しない。 </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>NotAvailable</em>&nbsp;</td><td>SDOは存在するが応答がない。 </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>InternalError</em>&nbsp;</td><td>内部的エラーが発生した。 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="ad8be3428eca25a151d9e0a11447828b0"></a><!-- doxytag: member="SDOPackage::Configuration_impl::set_configuration_parameter" ref="ad8be3428eca25a151d9e0a11447828b0" args="(const char *name, const CORBA::Any &amp;value)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual CORBA::Boolean SDOPackage::Configuration_impl::set_configuration_parameter </td>
+          <td>(</td>
+          <td class="paramtype">const char *&nbsp;</td>
+          <td class="paramname"> <em>name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const CORBA::Any &amp;&nbsp;</td>
+          <td class="paramname"> <em>value</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td>  throw (CORBA::SystemException,	     InvalidParameter, NotAvailable, InternalError)<code> [virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>[CORBA interface] Configuration パラメータの変更 </p>
+<p>このオペレーションは "name" で指定したパラメータの値を "value" に 変更する。</p>
+<dl><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>name</em>&nbsp;</td><td>変更対象パラメータの名前。 </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>value</em>&nbsp;</td><td>変更対象パラメータの新しい値。</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>戻り値:</b></dt><dd>オペレーションが成功したかどうかを返す。</dd></dl>
+<dl><dt><b>例外:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>SDONotExists</em>&nbsp;</td><td>ターゲットのSDOが存在しない。(本例外は、CORBA標準 システム例外のOBJECT_NOT_EXISTにマッピングされる) </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>InvalidParameter</em>&nbsp;</td><td>引数( "name"もしくは"value") が null である。 もしくは "name" に関連付けられたパラメータが存在しない。 </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>NotAvailable</em>&nbsp;</td><td>SDOは存在するが応答がない。 </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>InternalError</em>&nbsp;</td><td>内部的エラーが発生した。 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a89a53c51f56795a098f3be79052413ad"></a><!-- doxytag: member="SDOPackage::Configuration_impl::set_configuration_set_values" ref="a89a53c51f56795a098f3be79052413ad" args="(const ConfigurationSet &amp;configuration_set)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual CORBA::Boolean SDOPackage::Configuration_impl::set_configuration_set_values </td>
+          <td>(</td>
+          <td class="paramtype">const ConfigurationSet &amp;&nbsp;</td>
+          <td class="paramname"> <em>configuration_set</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td>  throw (CORBA::SystemException,	     InvalidParameter, NotAvailable, InternalError)<code> [virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>[CORBA interface] ConfigurationSet をセットする </p>
+<p>このオペレーションは指定された id の ConfigurationSet を更新する。</p>
+<dl><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em><a class="el" href="structSDOPackage_1_1Configuration__impl_1_1config__id.html" title="ConfigurationSet用functor.">config_id</a></em>&nbsp;</td><td>変更する ConfigurationSet の ID。 </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>configuration_set</em>&nbsp;</td><td>変更する ConfigurationSet そのもの。</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>戻り値:</b></dt><dd>ConfigurationSet が正常に更新できた場合は true。 そうでなければ false を返す。</dd></dl>
+<dl><dt><b>例外:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>InvalidParameter</em>&nbsp;</td><td><a class="el" href="structSDOPackage_1_1Configuration__impl_1_1config__id.html" title="ConfigurationSet用functor.">config_id</a> が null か、 指定された id で格納された ConfigurationSetが 存在しないか、指定された configuration_set内 の属性の１つが不正。 </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>SDONotExists</em>&nbsp;</td><td>ターゲットのSDOが存在しない。(本例外は、CORBA標準 システム例外のOBJECT_NOT_EXISTにマッピングされる) </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>NotAvailable</em>&nbsp;</td><td>SDOは存在するが応答がない。 </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>InternalError</em>&nbsp;</td><td>内部的エラーが発生した。 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="ae54b63a9474dd9a98854e186cf5ae167"></a><!-- doxytag: member="SDOPackage::Configuration_impl::set_device_profile" ref="ae54b63a9474dd9a98854e186cf5ae167" args="(const DeviceProfile &amp;dProfile)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual CORBA::Boolean SDOPackage::Configuration_impl::set_device_profile </td>
+          <td>(</td>
+          <td class="paramtype">const DeviceProfile &amp;&nbsp;</td>
+          <td class="paramname"> <em>dProfile</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td>  throw (CORBA::SystemException,	     InvalidParameter, NotAvailable, InternalError)<code> [virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>[CORBA interface] <a class="el" href="classSDO.html" title="SDO service 管理クラス.">SDO</a> の DeviceProfile のセット </p>
+<p>このオペレーションは <a class="el" href="classSDO.html" title="SDO service 管理クラス.">SDO</a> の DeviceProfile をセットする。SDO が DeviceProfile を保持していない場合は新たな DeviceProfile を生成し、 DeviceProfile をすでに保持している場合は既存のものと置き換える。</p>
+<dl><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>dProfile</em>&nbsp;</td><td><a class="el" href="classSDO.html" title="SDO service 管理クラス.">SDO</a> に関連付けられる DeviceProfile。</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>戻り値:</b></dt><dd>オペレーションが成功したかどうかを返す。</dd></dl>
+<dl><dt><b>例外:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>SDONotExists</em>&nbsp;</td><td>ターゲットのSDOが存在しない。(本例外は、CORBA標準 システム例外のOBJECT_NOT_EXISTにマッピングされる) </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>NotAvailable</em>&nbsp;</td><td>SDOは存在するが応答がない。 </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>InvalidParameter</em>&nbsp;</td><td>引数 "dProfile" が null である。 </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>InternalError</em>&nbsp;</td><td>内部的エラーが発生した。 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<hr/><h2>変数</h2>
+<a class="anchor" id="af254d8973fdb5c36b8169a7552cc64d4"></a><!-- doxytag: member="SDOPackage::Configuration_impl::m_config_mutex" ref="af254d8973fdb5c36b8169a7552cc64d4" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classcoil_1_1Mutex.html">Mutex</a> <a class="el" href="classSDOPackage_1_1Configuration__impl.html#af254d8973fdb5c36b8169a7552cc64d4">SDOPackage::Configuration_impl::m_config_mutex</a><code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a7cd573c3000eb9242ee023fcea7b5112"></a><!-- doxytag: member="SDOPackage::Configuration_impl::m_configsets" ref="a7cd573c3000eb9242ee023fcea7b5112" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classRTC_1_1ConfigAdmin.html">RTC::ConfigAdmin</a>&amp; <a class="el" href="classSDOPackage_1_1Configuration__impl.html#a7cd573c3000eb9242ee023fcea7b5112">SDOPackage::Configuration_impl::m_configsets</a><code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Lock 付き <a class="el" href="classSDO.html" title="SDO service 管理クラス.">SDO</a> ConfigurationSetList. </p>
+
+</div>
+</div>
+<a class="anchor" id="a66e90439d4abad6f5d82ffe3295bf7ec"></a><!-- doxytag: member="SDOPackage::Configuration_impl::m_deviceProfile" ref="a66e90439d4abad6f5d82ffe3295bf7ec" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">DeviceProfile <a class="el" href="classSDOPackage_1_1Configuration__impl.html#a66e90439d4abad6f5d82ffe3295bf7ec">SDOPackage::Configuration_impl::m_deviceProfile</a><code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Lock 付き <a class="el" href="classSDO.html" title="SDO service 管理クラス.">SDO</a> DeviceProfile. </p>
+
+</div>
+</div>
+<a class="anchor" id="a9689abe24b863917c2a59b6040803a1b"></a><!-- doxytag: member="SDOPackage::Configuration_impl::m_dprofile_mutex" ref="a9689abe24b863917c2a59b6040803a1b" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classcoil_1_1Mutex.html">Mutex</a> <a class="el" href="classSDOPackage_1_1Configuration__impl.html#a9689abe24b863917c2a59b6040803a1b">SDOPackage::Configuration_impl::m_dprofile_mutex</a><code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a36a9f12d50e566abcbd3fe236c83a350"></a><!-- doxytag: member="SDOPackage::Configuration_impl::m_objref" ref="a36a9f12d50e566abcbd3fe236c83a350" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Configuration_var <a class="el" href="classSDOPackage_1_1Configuration__impl.html#a36a9f12d50e566abcbd3fe236c83a350">SDOPackage::Configuration_impl::m_objref</a><code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>CORBA オブジェクトへの参照. </p>
+
+</div>
+</div>
+<a class="anchor" id="a88038663067f3f3f5cc525ee9e2aba1d"></a><!-- doxytag: member="SDOPackage::Configuration_impl::m_org_mutex" ref="a88038663067f3f3f5cc525ee9e2aba1d" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classcoil_1_1Mutex.html">Mutex</a> <a class="el" href="classSDOPackage_1_1Configuration__impl.html#a88038663067f3f3f5cc525ee9e2aba1d">SDOPackage::Configuration_impl::m_org_mutex</a><code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a3aedc84961dbfe19b7f6d4fe7ab1c09b"></a><!-- doxytag: member="SDOPackage::Configuration_impl::m_organizations" ref="a3aedc84961dbfe19b7f6d4fe7ab1c09b" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">OrganizationList <a class="el" href="classSDOPackage_1_1Configuration__impl.html#a3aedc84961dbfe19b7f6d4fe7ab1c09b">SDOPackage::Configuration_impl::m_organizations</a><code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Lock 付き <a class="el" href="classSDO.html" title="SDO service 管理クラス.">SDO</a> OrganizationList. </p>
+
+</div>
+</div>
+<a class="anchor" id="acaea00148dbf45d58a42f6d7aabfa082"></a><!-- doxytag: member="SDOPackage::Configuration_impl::m_parameters" ref="acaea00148dbf45d58a42f6d7aabfa082" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">ParameterList <a class="el" href="classSDOPackage_1_1Configuration__impl.html#acaea00148dbf45d58a42f6d7aabfa082">SDOPackage::Configuration_impl::m_parameters</a><code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p><a class="el" href="classSDO.html" title="SDO service 管理クラス.">SDO</a> Parameter. </p>
+<p>実装技術に非依存な変数(パラメータ)を定義するデータ構造。 パラメータ構造は、変数の名前と型を定義する。 定義されている属性は以下のとおり。</p>
+<ul>
+<li>name : パラメータの名前。</li>
+<li>type : パラメータの型名。パラメータ・データ型のオリジナルの値範囲は 属性 allowedValues の定義で限定することができる。</li>
+</ul>
+<p>allowedValues : パラメータが取ることのできる値。 パラメータ型に固有の定義を限定する必要がある場合のみ この属性は使用される。例えば、文字列パラメータに許さ れる値を列挙によって限定したり、数値型パラメータに許 される値を範囲によって限定したりする。パラメータに許 される値は、列挙、範囲またはインターバル構造で定義す ることができる。 もしもパラメータに対する制約がない場合は、allowedValues 属性はnullとなる。すなわち、パラメータ型に固有の範囲 であればどのような値も取ることができる。</p>
+<p>struct Parameter { string name; TypeCode type; AllowedValues allowed_values; };</p>
+<p>Lock 付き <a class="el" href="classSDO.html" title="SDO service 管理クラス.">SDO</a> ParameterList </p>
+
+</div>
+</div>
+<a class="anchor" id="acc6db9158b0f0bc0b7e333ecebbb80b7"></a><!-- doxytag: member="SDOPackage::Configuration_impl::m_params_mutex" ref="acc6db9158b0f0bc0b7e333ecebbb80b7" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classcoil_1_1Mutex.html">Mutex</a> <a class="el" href="classSDOPackage_1_1Configuration__impl.html#acc6db9158b0f0bc0b7e333ecebbb80b7">SDOPackage::Configuration_impl::m_params_mutex</a><code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="af667dca0114e7e41f7df5ecd304a2d39"></a><!-- doxytag: member="SDOPackage::Configuration_impl::m_sdoservice" ref="af667dca0114e7e41f7df5ecd304a2d39" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classRTC_1_1SdoServiceAdmin.html">RTC::SdoServiceAdmin</a>&amp; <a class="el" href="classSDOPackage_1_1Configuration__impl.html#af667dca0114e7e41f7df5ecd304a2d39">SDOPackage::Configuration_impl::m_sdoservice</a><code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Lock 付き <a class="el" href="classSDO.html" title="SDO service 管理クラス.">SDO</a> Service 管理オブジェクト. </p>
+
+</div>
+</div>
+<a class="anchor" id="ae8b2a69d6acc56f1d3291200a70ce60d"></a><!-- doxytag: member="SDOPackage::Configuration_impl::m_sdoservice_mutex" ref="ae8b2a69d6acc56f1d3291200a70ce60d" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classcoil_1_1Mutex.html">Mutex</a> <a class="el" href="classSDOPackage_1_1Configuration__impl.html#ae8b2a69d6acc56f1d3291200a70ce60d">SDOPackage::Configuration_impl::m_sdoservice_mutex</a><code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a9ed7b17de24aa80ee09593a98df0e4b9"></a><!-- doxytag: member="SDOPackage::Configuration_impl::rtclog" ref="a9ed7b17de24aa80ee09593a98df0e4b9" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">::<a class="el" href="classRTC_1_1Logger.html">RTC::Logger</a> <a class="el" href="classSDOPackage_1_1Configuration__impl.html#a9ed7b17de24aa80ee09593a98df0e4b9">SDOPackage::Configuration_impl::rtclog</a><code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+</div>
+<hr class="footer"/><address style="text-align: right;"><small>OpenRTMに対してThu May 24 23:25:20 2012に生成されました。&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.6.3 </small></address>
+</body>
+</html>

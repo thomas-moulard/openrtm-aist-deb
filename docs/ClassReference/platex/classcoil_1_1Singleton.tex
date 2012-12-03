@@ -1,0 +1,124 @@
+\section{クラス テンプレート coil::Singleton$<$ SingletonClass $>$}
+\label{classcoil_1_1Singleton}\index{coil::Singleton@{coil::Singleton}}
+
+
+\doxyref{Singleton}{p.}{classcoil_1_1Singleton} テンプレートクラス.  
+
+
+
+
+{\ttfamily \#include $<$Singleton.h$>$}
+
+\subsection*{Public 型}
+\begin{DoxyCompactItemize}
+\item 
+typedef SingletonClass $\ast$ {\bf SingletonClassPtr}
+\item 
+typedef ::{\bf coil::Mutex} {\bf Mutex}
+\end{DoxyCompactItemize}
+\subsection*{Static Public メソッド}
+\begin{DoxyCompactItemize}
+\item 
+static SingletonClass \& {\bf instance} ()
+\begin{DoxyCompactList}\small\item\em インスタンス生成 \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected メソッド}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Singleton} ()
+\item 
+{\bf $\sim$Singleton} ()
+\begin{DoxyCompactList}\small\item\em デストラクタ \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Protected 変数}
+\begin{DoxyCompactItemize}
+\item 
+static {\bf coil::Mutex} {\bf m\_\-mutex}
+\begin{DoxyCompactList}\small\item\em 排他制御オブジェクト \item\end{DoxyCompactList}\item 
+static SingletonClass $\ast$ {\bf m\_\-instance}
+\begin{DoxyCompactList}\small\item\em SingletonClass オブジェクト. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{説明}
+\subsubsection*{template$<$class SingletonClass$>$ class coil::Singleton$<$ SingletonClass $>$}
+
+\doxyref{Singleton}{p.}{classcoil_1_1Singleton} テンプレートクラス. このテンプレートは、任意のクラスを \doxyref{Singleton}{p.}{classcoil_1_1Singleton} にするテンプレートである。 以下のようにして使用する。
+
+class A \{ // \}; typedef coil::Singleton$<$A$>$ A\_\-;
+
+任意の場所で
+
+A\& a(A\_\-:\doxyref{instance()}{p.}{classcoil_1_1Singleton_aea119e0534a0de4b63a8f84c7d68b223}); // a は A の唯一のインスタンスが入る
+
+ただし、A自体のコンストラクタは使用できるので、同一のソースで、
+
+A$\ast$ a = new A();
+
+のようにすることもできるため、注意が必要である。 対象とするクラスを new することを禁止するためには、以下のように、 対象クラスで Singelton を継承 (CRTP) し friend 宣言する必要がある。
+
+class A : public coil::Singleton$<$A$>$ \{ public: private: A()\{\}
+
+friend class coil::Singelton$<$A$>$; \};
+
+こうすることで、
+
+A$\ast$ a = new A(); // は禁止される A\& a(A::instance()); // が唯一のインスタンスを得る唯一の方法 
+
+\subsection{型定義}
+\index{coil::Singleton@{coil::Singleton}!Mutex@{Mutex}}
+\index{Mutex@{Mutex}!coil::Singleton@{coil::Singleton}}
+\subsubsection[{Mutex}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class SingletonClass$>$ typedef ::{\bf coil::Mutex} {\bf coil::Singleton}$<$ SingletonClass $>$::{\bf Mutex}}\label{classcoil_1_1Singleton_af6243866ab48be9ac8d7b281d759cd1c}
+\index{coil::Singleton@{coil::Singleton}!SingletonClassPtr@{SingletonClassPtr}}
+\index{SingletonClassPtr@{SingletonClassPtr}!coil::Singleton@{coil::Singleton}}
+\subsubsection[{SingletonClassPtr}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class SingletonClass$>$ typedef SingletonClass$\ast$ {\bf coil::Singleton}$<$ SingletonClass $>$::{\bf SingletonClassPtr}}\label{classcoil_1_1Singleton_adb784c577f526ace94b230c74375f921}
+
+
+\subsection{コンストラクタとデストラクタ}
+\index{coil::Singleton@{coil::Singleton}!Singleton@{Singleton}}
+\index{Singleton@{Singleton}!coil::Singleton@{coil::Singleton}}
+\subsubsection[{Singleton}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class SingletonClass$>$ {\bf coil::Singleton}$<$ SingletonClass $>$::{\bf Singleton} ()\hspace{0.3cm}{\ttfamily  [inline, protected]}}\label{classcoil_1_1Singleton_a1e56aa2b59843aa78a55e9099dbb442d}
+コンストラクタ \index{coil::Singleton@{coil::Singleton}!$\sim$Singleton@{$\sim$Singleton}}
+\index{$\sim$Singleton@{$\sim$Singleton}!coil::Singleton@{coil::Singleton}}
+\subsubsection[{$\sim$Singleton}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class SingletonClass$>$ {\bf coil::Singleton}$<$ SingletonClass $>$::$\sim${\bf Singleton} ()\hspace{0.3cm}{\ttfamily  [inline, protected]}}\label{classcoil_1_1Singleton_a72e29ae00139baec4bd628ca6cafc435}
+
+
+デストラクタ 
+
+デストラクタ。 
+
+\subsection{関数}
+\index{coil::Singleton@{coil::Singleton}!instance@{instance}}
+\index{instance@{instance}!coil::Singleton@{coil::Singleton}}
+\subsubsection[{instance}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class SingletonClass$>$ static SingletonClass\& {\bf coil::Singleton}$<$ SingletonClass $>$::instance ()\hspace{0.3cm}{\ttfamily  [inline, static]}}\label{classcoil_1_1Singleton_aea119e0534a0de4b63a8f84c7d68b223}
+
+
+インスタンス生成 
+
+インスタンスを生成する。
+
+\begin{DoxyReturn}{戻り値}
+インスタンス 
+\end{DoxyReturn}
+
+
+\subsection{変数}
+\index{coil::Singleton@{coil::Singleton}!m\_\-instance@{m\_\-instance}}
+\index{m\_\-instance@{m\_\-instance}!coil::Singleton@{coil::Singleton}}
+\subsubsection[{m\_\-instance}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class SingletonClass$>$ {\bf Singleton}$<$ SingletonClass $>$::{\bf SingletonClassPtr} {\bf coil::Singleton}$<$ SingletonClass $>$::{\bf m\_\-instance}\hspace{0.3cm}{\ttfamily  [inline, static, protected]}}\label{classcoil_1_1Singleton_a659e398fd8dc1de180362648561fb9aa}
+
+
+SingletonClass オブジェクト. 
+
+
+
+参照元 coil::Singleton$<$ GlobalFactory$<$ AbstractClass, Identifier, Compare, Creator, Destructor $>$ $>$::instance().
+
+\index{coil::Singleton@{coil::Singleton}!m\_\-mutex@{m\_\-mutex}}
+\index{m\_\-mutex@{m\_\-mutex}!coil::Singleton@{coil::Singleton}}
+\subsubsection[{m\_\-mutex}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class SingletonClass$>$ {\bf Singleton}$<$ SingletonClass $>$::{\bf Mutex} {\bf coil::Singleton}$<$ SingletonClass $>$::{\bf m\_\-mutex}\hspace{0.3cm}{\ttfamily  [inline, static, protected]}}\label{classcoil_1_1Singleton_ad7047e7f3d2d88476d9f200e024a4d18}
+
+
+排他制御オブジェクト 
+
+
+
+参照元 coil::Singleton$<$ GlobalFactory$<$ AbstractClass, Identifier, Compare, Creator, Destructor $>$ $>$::instance().
+

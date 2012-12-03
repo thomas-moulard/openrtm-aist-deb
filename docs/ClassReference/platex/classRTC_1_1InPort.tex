@@ -1,0 +1,270 @@
+\section{クラス テンプレート RTC::InPort$<$ DataType $>$}
+\label{classRTC_1_1InPort}\index{RTC::InPort@{RTC::InPort}}
+
+
+\doxyref{InPort}{p.}{classRTC_1_1InPort} テンプレートクラス.  
+
+
+
+
+{\ttfamily \#include $<$InPort.h$>$}
+
+RTC::InPort$<$ DataType $>$に対する継承グラフ\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3cm]{classRTC_1_1InPort}
+\end{center}
+\end{figure}
+\subsection*{Public メソッド}
+\begin{DoxyCompactItemize}
+\item 
+DATAPORTSTATUS\_\-ENUM {\bf InPort} (const char $\ast$name, DataType \&value, int bufsize=64, bool read\_\-block=false, bool write\_\-block=false, int read\_\-timeout=0, int write\_\-timeout=0)
+\begin{DoxyCompactList}\small\item\em コンストラクタ \item\end{DoxyCompactList}\item 
+virtual {\bf $\sim$InPort} (void)
+\begin{DoxyCompactList}\small\item\em デストラクタ \item\end{DoxyCompactList}\item 
+virtual const char $\ast$ {\bf name} ()
+\begin{DoxyCompactList}\small\item\em ポート名称を取得する。 \item\end{DoxyCompactList}\item 
+virtual bool {\bf isNew} ()
+\begin{DoxyCompactList}\small\item\em 最新データが存在するか確認する \item\end{DoxyCompactList}\item 
+virtual bool {\bf isEmpty} ()
+\begin{DoxyCompactList}\small\item\em バッファが空かどうか確認する \item\end{DoxyCompactList}\item 
+bool {\bf read} ()
+\begin{DoxyCompactList}\small\item\em DataPort から値を読み出す. \item\end{DoxyCompactList}\item 
+virtual void {\bf update} ()
+\begin{DoxyCompactList}\small\item\em バインドされた T 型の変数に \doxyref{InPort}{p.}{classRTC_1_1InPort} バッファの最新値を読み込む \item\end{DoxyCompactList}\item 
+void {\bf operator$>$$>$} (DataType \&rhs)
+\begin{DoxyCompactList}\small\item\em T 型のデータへ \doxyref{InPort}{p.}{classRTC_1_1InPort} の最新値データを読み込む. \item\end{DoxyCompactList}\item 
+void {\bf setOnRead} ({\bf OnRead}$<$ DataType $>$ $\ast$on\_\-read)
+\begin{DoxyCompactList}\small\item\em \doxyref{InPort}{p.}{classRTC_1_1InPort} バッファへデータ読み込み時のコールバックの設定. \item\end{DoxyCompactList}\item 
+void {\bf setOnReadConvert} ({\bf OnReadConvert}$<$ DataType $>$ $\ast$on\_\-rconvert)
+\begin{DoxyCompactList}\small\item\em \doxyref{InPort}{p.}{classRTC_1_1InPort} バッファへデータ読み出し時のコールバックの設定. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{説明}
+\subsubsection*{template$<$class DataType$>$ class RTC::InPort$<$ DataType $>$}
+
+\doxyref{InPort}{p.}{classRTC_1_1InPort} テンプレートクラス. \doxyref{InPort}{p.}{classRTC_1_1InPort} の実装である InPort$<$T$>$ のテンプレートクラス。 $<$T$>$ はBasicDataType.idl にて定義されている型で、メンバとして Time 型の tm , および T型の data を持つ構造体でなくてはならない。 \doxyref{InPort}{p.}{classRTC_1_1InPort} は内部にリングバッファを持ち、外部から送信されたデータを順次 このリングバッファに格納する。リングバッファのサイズはデフォルトで64と なっているが、コンストラクタ引数によりサイズを指定することができる。 データはフラグによって未読、既読状態が管理され、isNew(), write(), \doxyref{read()}{p.}{classRTC_1_1InPort_a1b6e58e0c821b46148266ddfd0b9bd54}, isFull(), \doxyref{isEmpty()}{p.}{classRTC_1_1InPort_a0bf0a0b180a60961fa7559aa54af57ca} 等のメソッドによりハンドリングすることができる。
+
+OnRead系コールバック (読み出しに起因するイベントによりコールされる)
+
+
+\begin{DoxyItemize}
+\item void OnRead::operator(): \doxyref{InPort::read()}{p.}{classRTC_1_1InPort_a1b6e58e0c821b46148266ddfd0b9bd54} を呼び出し読み出しを行う際にコールされる。
+\end{DoxyItemize}
+
+
+\begin{DoxyItemize}
+\item DataType OnReadConvert::operator(DataType): \doxyref{InPort::read()}{p.}{classRTC_1_1InPort_a1b6e58e0c821b46148266ddfd0b9bd54} を呼び出し、データをバッファから読みだす際に呼ばれ データの変換を行う。引数にはバッファから読み出された値が与えられ、 変換後のデータを戻り値として返す。この値がread()の返す値となる。
+\end{DoxyItemize}
+
+\begin{DoxySince}{から}
+0.2.0 
+\end{DoxySince}
+
+
+\subsection{コンストラクタとデストラクタ}
+\index{RTC::InPort@{RTC::InPort}!InPort@{InPort}}
+\index{InPort@{InPort}!RTC::InPort@{RTC::InPort}}
+\subsubsection[{InPort}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class DataType $>$ DATAPORTSTATUS\_\-ENUM {\bf RTC::InPort}$<$ DataType $>$::{\bf InPort} (const char $\ast$ {\em name}, \/  DataType \& {\em value}, \/  int {\em bufsize} = {\ttfamily 64}, \/  bool {\em read\_\-block} = {\ttfamily false}, \/  bool {\em write\_\-block} = {\ttfamily false}, \/  int {\em read\_\-timeout} = {\ttfamily 0}, \/  int {\em write\_\-timeout} = {\ttfamily 0})\hspace{0.3cm}{\ttfamily  [inline]}}\label{classRTC_1_1InPort_a8450177baa07f202144fbba039f4b827}
+
+
+コンストラクタ 
+
+コンストラクタ。 パラメータとして与えられる T 型の変数にバインドされる。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em name}]\doxyref{InPort}{p.}{classRTC_1_1InPort} 名。InPortBase:\doxyref{name()}{p.}{classRTC_1_1InPort_ae8e026ff3e775a211022e2a108d8a672} により参照される。 \item[{\em value}]この \doxyref{InPort}{p.}{classRTC_1_1InPort} にバインドされる T 型の変数 \item[{\em bufsize}]\doxyref{InPort}{p.}{classRTC_1_1InPort} 内部のリングバッファのバッファ長(デフォルト値:64) \item[{\em read\_\-block}]読込ブロックフラグ。 データ読込時に未読データがない場合、次のデータ受信までブロックする かどうかを設定(デフォルト値:false) \item[{\em write\_\-block}]書込ブロックフラグ。 データ書込時にバッファがフルであった場合、バッファに空きができる までブロックするかどうかを設定(デフォルト値:false) \item[{\em read\_\-timeout}]読込ブロックを指定していない場合の、データ読取タイム アウト時間(ミリ秒)(デフォルト値:0) \item[{\em write\_\-timeout}]書込ブロックを指定していない場合の、データ書込タイム アウト時間(ミリ秒)(デフォルト値:0) \end{DoxyParams}
+\index{RTC::InPort@{RTC::InPort}!$\sim$InPort@{$\sim$InPort}}
+\index{$\sim$InPort@{$\sim$InPort}!RTC::InPort@{RTC::InPort}}
+\subsubsection[{$\sim$InPort}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class DataType $>$ virtual {\bf RTC::InPort}$<$ DataType $>$::$\sim${\bf InPort} (void)\hspace{0.3cm}{\ttfamily  [inline, virtual]}}\label{classRTC_1_1InPort_a42532e8164d15bbb92cdce9ff5f3baf8}
+
+
+デストラクタ 
+
+デストラクタ。 
+
+\subsection{関数}
+\index{RTC::InPort@{RTC::InPort}!isEmpty@{isEmpty}}
+\index{isEmpty@{isEmpty}!RTC::InPort@{RTC::InPort}}
+\subsubsection[{isEmpty}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class DataType $>$ virtual bool {\bf RTC::InPort}$<$ DataType $>$::isEmpty (void)\hspace{0.3cm}{\ttfamily  [inline, virtual]}}\label{classRTC_1_1InPort_a0bf0a0b180a60961fa7559aa54af57ca}
+
+
+バッファが空かどうか確認する 
+
+InPortのバッファが空かどうかを bool 値で返す。 空の場合は true, 未読データがある場合は false を返す。
+
+\begin{DoxyReturn}{戻り値}
+true バッファは空 false バッファに未読データがある 
+\end{DoxyReturn}
+
+
+参照先 RTC::InPortBase::m\_\-connectors, RTC::PortBase::m\_\-connectorsMutex, RTC\_\-DEBUG, と RTC\_\-TRACE.
+
+\index{RTC::InPort@{RTC::InPort}!isNew@{isNew}}
+\index{isNew@{isNew}!RTC::InPort@{RTC::InPort}}
+\subsubsection[{isNew}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class DataType $>$ virtual bool {\bf RTC::InPort}$<$ DataType $>$::isNew ()\hspace{0.3cm}{\ttfamily  [inline, virtual]}}\label{classRTC_1_1InPort_af3030dcf08e4951924407df3e71fc123}
+
+
+最新データが存在するか確認する 
+
+InPortに未読の最新データが到着しているかをbool値で返す。 InPortが未接続の場合、および接続コネクタのバッファがEmpty の場合にはfalseを返す。
+
+\begin{DoxyReturn}{戻り値}
+true 未読の最新データが存在する false 未接続またはバッファにデータが存在しない。 
+\end{DoxyReturn}
+
+
+参照先 RTC::InPortBase::m\_\-connectors, RTC::PortBase::m\_\-connectorsMutex, RTC\_\-DEBUG, と RTC\_\-TRACE.
+
+\index{RTC::InPort@{RTC::InPort}!name@{name}}
+\index{name@{name}!RTC::InPort@{RTC::InPort}}
+\subsubsection[{name}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class DataType $>$ virtual const char$\ast$ {\bf RTC::InPort}$<$ DataType $>$::name ()\hspace{0.3cm}{\ttfamily  [inline, virtual]}}\label{classRTC_1_1InPort_ae8e026ff3e775a211022e2a108d8a672}
+
+
+ポート名称を取得する。 
+
+ポート名称を取得する。
+
+\begin{DoxyReturn}{戻り値}
+ポート名称 
+\end{DoxyReturn}
+\index{RTC::InPort@{RTC::InPort}!operator$>$$>$@{operator$>$$>$}}
+\index{operator$>$$>$@{operator$>$$>$}!RTC::InPort@{RTC::InPort}}
+\subsubsection[{operator$>$$>$}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class DataType $>$ void {\bf RTC::InPort}$<$ DataType $>$::operator$>$$>$ (DataType \& {\em rhs})\hspace{0.3cm}{\ttfamily  [inline]}}\label{classRTC_1_1InPort_a44cc1bb1cf583f7b88578e39c04b5ea5}
+
+
+T 型のデータへ \doxyref{InPort}{p.}{classRTC_1_1InPort} の最新値データを読み込む. 
+
+\doxyref{InPort}{p.}{classRTC_1_1InPort} に設定されている最新データを読み込み、 指定されたデータ変数に設定する。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em rhs}]\doxyref{InPort}{p.}{classRTC_1_1InPort} バッファから値を読み込む T 型変数 \end{DoxyParams}
+
+
+参照先 RTC::InPort$<$ DataType $>$::read().
+
+\index{RTC::InPort@{RTC::InPort}!read@{read}}
+\index{read@{read}!RTC::InPort@{RTC::InPort}}
+\subsubsection[{read}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class DataType $>$ bool {\bf RTC::InPort}$<$ DataType $>$::read ()\hspace{0.3cm}{\ttfamily  [inline, virtual]}}\label{classRTC_1_1InPort_a1b6e58e0c821b46148266ddfd0b9bd54}
+
+
+DataPort から値を読み出す. 
+
+InPortに書き込まれたデータを読みだす。接続数が0、またはバッファに データが書き込まれていない状態で読みだした場合の戻り値は不定である。 バッファが空の状態のとき、 事前に設定されたモード (readback, do\_\-nothing, block) に応じて、 以下のような動作をする。
+
+
+\begin{DoxyItemize}
+\item readback: 最後の値を読みなおす。
+\end{DoxyItemize}
+
+
+\begin{DoxyItemize}
+\item do\_\-nothing: 何もしない
+\end{DoxyItemize}
+
+
+\begin{DoxyItemize}
+\item block: ブロックする。タイムアウトが設定されている場合は、 タイムアウトするまで待つ。
+\end{DoxyItemize}
+
+バッファが空の状態では、InPortにバインドされた変数の値が返される。 したがって、初回読み出し時には不定値を返す可能性がある。 この関数を利用する際には、
+
+
+\begin{DoxyItemize}
+\item \doxyref{isNew()}{p.}{classRTC_1_1InPort_af3030dcf08e4951924407df3e71fc123}, \doxyref{isEmpty()}{p.}{classRTC_1_1InPort_a0bf0a0b180a60961fa7559aa54af57ca} と併用し、事前にバッファ状態をチェックする。
+\end{DoxyItemize}
+
+
+\begin{DoxyItemize}
+\item 初回読み出し時に不定値を返さないようにバインド変数を事前に初期化する
+\end{DoxyItemize}
+
+
+\begin{DoxyItemize}
+\item ReturnCode read(DataType\& data) 関数の利用を検討する。
+\end{DoxyItemize}
+
+ことが望ましい。
+
+各コールバック関数は以下のように呼び出される。
+\begin{DoxyItemize}
+\item \doxyref{OnRead}{p.}{structRTC_1_1OnRead}: \doxyref{read()}{p.}{classRTC_1_1InPort_a1b6e58e0c821b46148266ddfd0b9bd54} 関数が呼ばれる際に必ず呼ばれる。
+\end{DoxyItemize}
+
+
+\begin{DoxyItemize}
+\item \doxyref{OnReadConvert}{p.}{structRTC_1_1OnReadConvert}: データの読み出しが成功した場合、読みだしたデータを 引数としてOnReadConvertが呼び出され、戻り値をread()が戻り値 として返す。
+\end{DoxyItemize}
+
+
+\begin{DoxyItemize}
+\item OnEmpty: バッファが空のためデータの読み出しに失敗した場合呼び出される。 OnEmpty の戻り値を \doxyref{read()}{p.}{classRTC_1_1InPort_a1b6e58e0c821b46148266ddfd0b9bd54} の戻り値として返す。
+\end{DoxyItemize}
+
+
+\begin{DoxyItemize}
+\item OnBufferTimeout: データフロー型がPush型の場合に、読み出し タイムアウトのためにデータの読み出しに失敗した場合に呼ばれる。
+\end{DoxyItemize}
+
+
+\begin{DoxyItemize}
+\item OnRecvTimeout: データフロー型がPull型の場合に、読み出しタイムアウト のためにデータ読み出しに失敗した場合に呼ばれる。
+\end{DoxyItemize}
+
+
+\begin{DoxyItemize}
+\item OnReadError: 上記以外の理由で読みだしに失敗した場合に呼ばれる。 理由としては、バッファ設定の不整合、例外の発生などが考えられる が通常は起こりえないためバグの可能性がある。
+\end{DoxyItemize}
+
+\begin{DoxyReturn}{戻り値}
+読み出し結果(読み出し成功:true, 読み出し失敗:false) 
+\end{DoxyReturn}
+
+
+{\bf RTC::InPortBase} \doxyref{}{p.}{classRTC_1_1InPortBase_a448e72f4d6d7890c4fb6add7d86d04b5}を実装しています。
+
+
+
+参照先 RTC::DataPortStatus::BUFFER\_\-EMPTY, RTC::DataPortStatus::BUFFER\_\-TIMEOUT, RTC::InPortBase::m\_\-connectors, RTC::PortBase::m\_\-connectorsMutex, RTC::DataPortStatus::PORT\_\-OK, RTC\_\-DEBUG, RTC\_\-ERROR, RTC\_\-TRACE, と RTC\_\-WARN.
+
+
+
+参照元 RTC::InPort$<$ DataType $>$::operator$>$$>$(), と RTC::InPort$<$ DataType $>$::update().
+
+\index{RTC::InPort@{RTC::InPort}!setOnRead@{setOnRead}}
+\index{setOnRead@{setOnRead}!RTC::InPort@{RTC::InPort}}
+\subsubsection[{setOnRead}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class DataType $>$ void {\bf RTC::InPort}$<$ DataType $>$::setOnRead ({\bf OnRead}$<$ DataType $>$ $\ast$ {\em on\_\-read})\hspace{0.3cm}{\ttfamily  [inline]}}\label{classRTC_1_1InPort_a93fe41858e1e8dd7dee71b64703b7343}
+
+
+\doxyref{InPort}{p.}{classRTC_1_1InPort} バッファへデータ読み込み時のコールバックの設定. 
+
+\doxyref{InPort}{p.}{classRTC_1_1InPort} が持つバッファからデータが読み込まれる直前に呼ばれるコールバック オブジェクトを設定する。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em on\_\-read}]\doxyref{OnRead}{p.}{structRTC_1_1OnRead}$<$DataType$>$型のオブジェクト \end{DoxyParams}
+\index{RTC::InPort@{RTC::InPort}!setOnReadConvert@{setOnReadConvert}}
+\index{setOnReadConvert@{setOnReadConvert}!RTC::InPort@{RTC::InPort}}
+\subsubsection[{setOnReadConvert}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class DataType $>$ void {\bf RTC::InPort}$<$ DataType $>$::setOnReadConvert ({\bf OnReadConvert}$<$ DataType $>$ $\ast$ {\em on\_\-rconvert})\hspace{0.3cm}{\ttfamily  [inline]}}\label{classRTC_1_1InPort_af799d52ed11a670ef56da9a2b2a9e7ff}
+
+
+\doxyref{InPort}{p.}{classRTC_1_1InPort} バッファへデータ読み出し時のコールバックの設定. 
+
+\doxyref{InPort}{p.}{classRTC_1_1InPort} が持つバッファからデータが読み出される際に呼ばれるコールバック オブジェクトを設定する。コールバックオブジェクトの戻り値がread()メソッド の呼出結果となる。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em on\_\-rconvert}]\doxyref{OnReadConvert}{p.}{structRTC_1_1OnReadConvert}$<$DataType$>$型のオブジェクト \end{DoxyParams}
+\index{RTC::InPort@{RTC::InPort}!update@{update}}
+\index{update@{update}!RTC::InPort@{RTC::InPort}}
+\subsubsection[{update}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class DataType $>$ virtual void {\bf RTC::InPort}$<$ DataType $>$::update (void)\hspace{0.3cm}{\ttfamily  [inline, virtual]}}\label{classRTC_1_1InPort_ad1efc0019d9a62030106552ad4f4436d}
+
+
+バインドされた T 型の変数に \doxyref{InPort}{p.}{classRTC_1_1InPort} バッファの最新値を読み込む 
+
+バインドされた T 型のデータに \doxyref{InPort}{p.}{classRTC_1_1InPort} の最新値を読み込む。 コンストラクタで T 型の変数と \doxyref{InPort}{p.}{classRTC_1_1InPort} がバインドされていなければならない。 このメソッドはポリモーフィックに使用される事を前提としているため、 型に依存しない引数、戻り値となっている。 
+
+参照先 RTC::InPort$<$ DataType $>$::read().
+

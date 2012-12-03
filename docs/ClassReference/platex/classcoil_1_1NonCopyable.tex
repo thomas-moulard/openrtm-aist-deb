@@ -1,0 +1,41 @@
+\section{クラス coil::NonCopyable}
+\label{classcoil_1_1NonCopyable}\index{coil::NonCopyable@{coil::NonCopyable}}
+
+
+コピー禁止ミックスイン  
+
+
+
+
+{\ttfamily \#include $<$NonCopyable.h$>$}
+
+\subsection*{Protected メソッド}
+\begin{DoxyCompactItemize}
+\item 
+{\bf NonCopyable} ()
+\begin{DoxyCompactList}\small\item\em コンストラクタ \item\end{DoxyCompactList}\item 
+{\bf $\sim$NonCopyable} ()
+\begin{DoxyCompactList}\small\item\em デストラクタ \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{説明}
+コピー禁止ミックスイン 対象クラスのオブジェクトのコピーを禁止する。コピーを禁止したいクラ スでは、NonCopyableをprivate継承することでオブジェクトのコピーを禁 止することができる。
+
+-\/例: class CopyProhibitedClass : private \doxyref{NonCopyable}{p.}{classcoil_1_1NonCopyable} \{\}; 
+
+\subsection{コンストラクタとデストラクタ}
+\index{coil::NonCopyable@{coil::NonCopyable}!NonCopyable@{NonCopyable}}
+\index{NonCopyable@{NonCopyable}!coil::NonCopyable@{coil::NonCopyable}}
+\subsubsection[{NonCopyable}]{\setlength{\rightskip}{0pt plus 5cm}coil::NonCopyable::NonCopyable ()\hspace{0.3cm}{\ttfamily  [inline, protected]}}\label{classcoil_1_1NonCopyable_a4e2595899e62bfe0ed4db66e285b85d9}
+
+
+コンストラクタ 
+
+コンストラクタ。 \index{coil::NonCopyable@{coil::NonCopyable}!$\sim$NonCopyable@{$\sim$NonCopyable}}
+\index{$\sim$NonCopyable@{$\sim$NonCopyable}!coil::NonCopyable@{coil::NonCopyable}}
+\subsubsection[{$\sim$NonCopyable}]{\setlength{\rightskip}{0pt plus 5cm}coil::NonCopyable::$\sim$NonCopyable ()\hspace{0.3cm}{\ttfamily  [inline, protected]}}\label{classcoil_1_1NonCopyable_a0dc4a13a68c4f3a35a74378cf949f53a}
+
+
+デストラクタ 
+
+デストラクタ。 

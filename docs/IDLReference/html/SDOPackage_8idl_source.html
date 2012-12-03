@@ -1,0 +1,325 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<title>OpenRTM: SDOPackage.idl ソースファイル</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<!-- 作成： Doxygen 1.6.3 -->
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="index.html"><span>メインページ</span></a></li>
+      <li><a href="namespaces.html"><span>ネームスペース</span></a></li>
+      <li><a href="annotated.html"><span>クラス</span></a></li>
+      <li class="current"><a href="files.html"><span>ファイル</span></a></li>
+    </ul>
+  </div>
+  <div class="tabs">
+    <ul>
+      <li><a href="files.html"><span>ファイル一覧</span></a></li>
+      <li><a href="globals.html"><span>ファイルメンバ</span></a></li>
+    </ul>
+  </div>
+<h1>SDOPackage.idl</h1><a href="SDOPackage_8idl.html">説明を見る。</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="comment">//Platform Independent Model (PIM) and Platform Specific Model (PSM)</span>
+<a name="l00002"></a>00002 <span class="comment">//for Super Distributed Objects (SDO) Specification, v1.1 - OMG IDL Summary File</span>
+<a name="l00003"></a>00003 <span class="comment">//Object Management Group, Inc.</span>
+<a name="l00004"></a>00004 <span class="comment">//Copyright (c) 2003, Fraunhofer FOKUS</span>
+<a name="l00005"></a>00005 <span class="comment">//Copyright (c) 2003, Hitachi, Ltd.</span>
+<a name="l00006"></a>00006 <span class="comment">//The companies listed above have granted to the Object Management Group, Inc. </span>
+<a name="l00007"></a>00007 <span class="comment">//(OMG) a nonexclusive, royalty-free, paid up, worldwide license to copy and </span>
+<a name="l00008"></a>00008 <span class="comment">//distribute this document and to modify this document and distribute copies of </span>
+<a name="l00009"></a>00009 <span class="comment">//the modified version. Each of the copyright holders listed above has agreed </span>
+<a name="l00010"></a>00010 <span class="comment">//that no person shall be deemed to have infringed the copyright in the included </span>
+<a name="l00011"></a>00011 <span class="comment">//material of any such copyright holder by reason of having used the </span>
+<a name="l00012"></a>00012 <span class="comment">//specification set forth herein or having conformed any computer software to </span>
+<a name="l00013"></a>00013 <span class="comment">//the specification. </span>
+<a name="l00014"></a>00014 <span class="comment">//</span>
+<a name="l00015"></a>00015 <span class="comment">//This file contains OMG IDL from the Naming Service Specification, v1.2.</span>
+<a name="l00016"></a>00016 <span class="comment">//OMG regularly publishes a summary file that contains all the &quot;code&quot; parts of </span>
+<a name="l00017"></a>00017 <span class="comment">//an OMG formal document. Every formal document line that is IDL, PIDL, or </span>
+<a name="l00018"></a>00018 <span class="comment">//language code is included in the summary file. The reason for such a listing </span>
+<a name="l00019"></a>00019 <span class="comment">//is to give readers an electronic version of the &quot;code&quot; so that they can </span>
+<a name="l00020"></a>00020 <span class="comment">//extract pieces of it. Readers might want to test an example, include it in </span>
+<a name="l00021"></a>00021 <span class="comment">//their own code, or use it for documentation purposes. Having the code lines </span>
+<a name="l00022"></a>00022 <span class="comment">//available electronically means there is less likelihood of a transcription </span>
+<a name="l00023"></a>00023 <span class="comment">//error. </span>
+<a name="l00024"></a>00024 <span class="comment">//</span>
+<a name="l00025"></a>00025 <span class="comment">// ver 1.0  formal/2004-11-02</span>
+<a name="l00026"></a>00026 <span class="comment">// ver 1.1  (RTF report: dtc/2008-03-05)</span>
+<a name="l00027"></a>00027 <span class="comment">//</span>
+<a name="l00028"></a>00028 <span class="comment">//SDOPackage.idl</span>
+<a name="l00029"></a>00029 
+<a name="l00030"></a>00030 <span class="preprocessor">#ifndef    _SDO_PACKAGE_IDL_</span>
+<a name="l00031"></a>00031 <span class="preprocessor"></span><span class="preprocessor">#define    _SDO_PACKAGE_IDL_</span>
+<a name="l00032"></a>00032 <span class="preprocessor"></span>
+<a name="l00033"></a>00033 <span class="preprocessor">#ifdef TAO_IDL</span>
+<a name="l00034"></a>00034 <span class="preprocessor"></span><span class="preprocessor">#include &lt;orb.idl&gt;</span>
+<a name="l00035"></a>00035 <span class="preprocessor">#endif</span>
+<a name="l00036"></a>00036 <span class="preprocessor"></span><span class="preprocessor">#ifdef USE_MONITORING</span>
+<a name="l00037"></a>00037 <span class="preprocessor"></span><span class="preprocessor">#include &lt;CosNotifyComm.idl&gt;</span>
+<a name="l00038"></a>00038 <span class="preprocessor">#endif</span>
+<a name="l00039"></a>00039 <span class="preprocessor"></span><span class="preprocessor">#ifndef ORBIT2_IDL</span>
+<a name="l00040"></a><a class="code" href="SDOPackage_8idl.html#a237806f5539769ecfbad2352106cb773">00040</a> <span class="preprocessor"></span><span class="preprocessor">#define TypeCode CORBA::TypeCode</span>
+<a name="l00041"></a>00041 <span class="preprocessor"></span><span class="preprocessor">#endif</span>
+<a name="l00042"></a>00042 <span class="preprocessor"></span>
+<a name="l00044"></a>00044 <span class="preprocessor">#pragma prefix &quot;org.omg&quot;</span>
+<a name="l00045"></a><a class="code" href="SDOPackage_8idl.html#a323e32c35a492d5fd6880568fc2ced8e">00045</a> <span class="preprocessor"></span><span class="preprocessor">#define exception_body { string description; }</span>
+<a name="l00046"></a>00046 <span class="preprocessor"></span>
+<a name="l00047"></a><a class="code" href="namespaceSDOPackage.html">00047</a> module SDOPackage
+<a name="l00048"></a>00048 {
+<a name="l00049"></a>00049   interface <a class="code" href="interfaceSDOPackage_1_1SDO.html">SDO</a>;
+<a name="l00050"></a>00050   interface <a class="code" href="interfaceSDOPackage_1_1SDOService.html">SDOService</a>;
+<a name="l00051"></a>00051   interface <a class="code" href="interfaceSDOPackage_1_1SDOSystemElement.html">SDOSystemElement</a>;
+<a name="l00052"></a>00052   interface <a class="code" href="interfaceSDOPackage_1_1Configuration.html">Configuration</a>;
+<a name="l00053"></a>00053   interface <a class="code" href="interfaceSDOPackage_1_1Monitoring.html">Monitoring</a>;
+<a name="l00054"></a><a class="code" href="namespaceSDOPackage.html#a808e705041501570a7ef8870afe0d1a8">00054</a>   interface <a class="code" href="interfaceSDOPackage_1_1Organization.html">Organization</a>;
+<a name="l00055"></a>00055   
+<a name="l00057"></a>00057   <span class="keyword">typedef</span> sequence&lt;string&gt;       <a class="code" href="namespaceSDOPackage.html#a808e705041501570a7ef8870afe0d1a8">StringList</a>;
+<a name="l00058"></a><a class="code" href="namespaceSDOPackage.html#ab3569f8f3e2127ff298ae3c526cf3921">00058</a>   <span class="keyword">typedef</span> sequence&lt;SDO&gt;          <a class="code" href="namespaceSDOPackage.html#ab3569f8f3e2127ff298ae3c526cf3921">SDOList</a>;
+<a name="l00059"></a><a class="code" href="namespaceSDOPackage.html#a31cbea00ad118b641831e30a56e80a72">00059</a>   <span class="keyword">typedef</span> sequence&lt;Organization&gt; <a class="code" href="namespaceSDOPackage.html#a31cbea00ad118b641831e30a56e80a72">OrganizationList</a>;
+<a name="l00060"></a><a class="code" href="namespaceSDOPackage.html#a05a058395bb070fc59e9d81d4b1f9f98">00060</a>   <span class="keyword">typedef</span> <span class="keywordtype">string</span>                 <a class="code" href="namespaceRTC.html#af8d8a30578314e18f51bf3ac62fe4c40">UniqueIdentifier</a>;
+<a name="l00061"></a>00061 
+<a name="l00062"></a><a class="code" href="structSDOPackage_1_1NameValue.html">00062</a>   <span class="keyword">struct </span><a class="code" href="structSDOPackage_1_1NameValue.html">NameValue</a>
+<a name="l00063"></a>00063   {
+<a name="l00064"></a><a class="code" href="structSDOPackage_1_1NameValue.html#a4604ff503adb6aea4fc6908be13476ad">00064</a>     <span class="keywordtype">string</span> name;
+<a name="l00065"></a><a class="code" href="structSDOPackage_1_1NameValue.html#a0796af9c2444254bc9b5e9f63c182f00">00065</a>     any value;
+<a name="l00066"></a>00066   };
+<a name="l00067"></a>00067 
+<a name="l00068"></a><a class="code" href="namespaceSDOPackage.html#a51e72be2b0d7e550db7782ddb1d58e9d">00068</a>   <span class="keyword">typedef</span> sequence&lt;NameValue&gt;   <a class="code" href="namespaceRTM.html#a45f18393ee434c9e3a1432820eb3a4fe">NVList</a>;
+<a name="l00069"></a>00069 
+<a name="l00070"></a><a class="code" href="namespaceSDOPackage.html#a74e51e3aadb58d5340ffccfae4f7dadc">00070</a>   <span class="keyword">enum</span> <a class="code" href="namespaceSDOPackage.html#a74e51e3aadb58d5340ffccfae4f7dadc">NumericType</a>
+<a name="l00071"></a>00071   {
+<a name="l00072"></a><a class="code" href="namespaceSDOPackage.html#a74e51e3aadb58d5340ffccfae4f7dadcaeebe80772c18f0df366a429a69de5904">00072</a>     <a class="code" href="namespaceSDOPackage.html#a74e51e3aadb58d5340ffccfae4f7dadcaeebe80772c18f0df366a429a69de5904">SHORT_TYPE</a>,
+<a name="l00073"></a><a class="code" href="namespaceSDOPackage.html#a74e51e3aadb58d5340ffccfae4f7dadcac9724262823ad907f6a3467d3ef0a8f9">00073</a>     <a class="code" href="namespaceSDOPackage.html#a74e51e3aadb58d5340ffccfae4f7dadcac9724262823ad907f6a3467d3ef0a8f9">LONG_TYPE</a>,
+<a name="l00074"></a><a class="code" href="namespaceSDOPackage.html#a74e51e3aadb58d5340ffccfae4f7dadcada64459f9020df9b508fe5844c9392f2">00074</a>     <a class="code" href="namespaceSDOPackage.html#a74e51e3aadb58d5340ffccfae4f7dadcada64459f9020df9b508fe5844c9392f2">FLOAT_TYPE</a>,
+<a name="l00075"></a><a class="code" href="namespaceSDOPackage.html#a74e51e3aadb58d5340ffccfae4f7dadca38ee4dc2f79b705d3a9d61ccf6ed16d3">00075</a>     <a class="code" href="namespaceSDOPackage.html#a74e51e3aadb58d5340ffccfae4f7dadca38ee4dc2f79b705d3a9d61ccf6ed16d3">DOUBLE_TYPE</a>
+<a name="l00076"></a>00076   };
+<a name="l00077"></a>00077 
+<a name="l00078"></a><a class="code" href="unionSDOPackage_1_1Numeric.html">00078</a>   <span class="keyword">union </span><a class="code" href="unionSDOPackage_1_1Numeric.html">Numeric</a> switch (<a class="code" href="namespaceSDOPackage.html#a74e51e3aadb58d5340ffccfae4f7dadc">NumericType</a>)
+<a name="l00079"></a>00079   {
+<a name="l00080"></a><a class="code" href="unionSDOPackage_1_1Numeric.html#a37ea8e10da99b8d6147d59bb8bf1588b">00080</a>   <span class="keywordflow">case</span> <a class="code" href="namespaceSDOPackage.html#a74e51e3aadb58d5340ffccfae4f7dadcaeebe80772c18f0df366a429a69de5904">SHORT_TYPE</a>:  <span class="keywordtype">short</span> short_value;
+<a name="l00081"></a><a class="code" href="unionSDOPackage_1_1Numeric.html#a925fa3b9f2f43b001183cdc5f6e60c91">00081</a>   <span class="keywordflow">case</span> <a class="code" href="namespaceSDOPackage.html#a74e51e3aadb58d5340ffccfae4f7dadcac9724262823ad907f6a3467d3ef0a8f9">LONG_TYPE</a>: <span class="keywordtype">long</span> long_value;
+<a name="l00082"></a><a class="code" href="unionSDOPackage_1_1Numeric.html#af8a208ebea5bb57d21e277f45b638a90">00082</a>   <span class="keywordflow">case</span> <a class="code" href="namespaceSDOPackage.html#a74e51e3aadb58d5340ffccfae4f7dadcada64459f9020df9b508fe5844c9392f2">FLOAT_TYPE</a>: <span class="keywordtype">float</span> float_value;
+<a name="l00083"></a><a class="code" href="unionSDOPackage_1_1Numeric.html#aa6b082202442d38b557483d5d0d0d9ec">00083</a>   <span class="keywordflow">case</span> <a class="code" href="namespaceSDOPackage.html#a74e51e3aadb58d5340ffccfae4f7dadca38ee4dc2f79b705d3a9d61ccf6ed16d3">DOUBLE_TYPE</a>: <span class="keywordtype">double</span> double_value;
+<a name="l00084"></a>00084   };
+<a name="l00085"></a>00085 
+<a name="l00086"></a><a class="code" href="structSDOPackage_1_1EnumerationType.html">00086</a>   <span class="keyword">struct </span><a class="code" href="structSDOPackage_1_1EnumerationType.html">EnumerationType</a>
+<a name="l00087"></a>00087   {
+<a name="l00088"></a><a class="code" href="structSDOPackage_1_1EnumerationType.html#a9b6c16891322e19809a402b850cb9243">00088</a>     StringList enumerated_values;
+<a name="l00089"></a>00089   };
+<a name="l00090"></a>00090 
+<a name="l00091"></a><a class="code" href="structSDOPackage_1_1RangeType.html">00091</a>   <span class="keyword">struct </span><a class="code" href="structSDOPackage_1_1RangeType.html">RangeType</a>
+<a name="l00092"></a>00092   {
+<a name="l00093"></a><a class="code" href="structSDOPackage_1_1RangeType.html#a187349fcc13ac77fdb084b1e0766b677">00093</a>     <a class="code" href="unionSDOPackage_1_1Numeric.html">Numeric</a> min;
+<a name="l00094"></a><a class="code" href="structSDOPackage_1_1RangeType.html#aff075dda1fdc09516c6a34afa0d4392b">00094</a>     <a class="code" href="unionSDOPackage_1_1Numeric.html">Numeric</a> max;
+<a name="l00095"></a><a class="code" href="structSDOPackage_1_1RangeType.html#a59bf920ae92bdce181dfa296a03a72c7">00095</a>     <span class="keywordtype">boolean</span> min_inclusive;
+<a name="l00096"></a><a class="code" href="structSDOPackage_1_1RangeType.html#af433b6ed4435689e1b863ce270fee672">00096</a>     <span class="keywordtype">boolean</span> max_inclusive;
+<a name="l00097"></a>00097   };
+<a name="l00098"></a>00098 
+<a name="l00099"></a><a class="code" href="structSDOPackage_1_1IntervalType.html">00099</a>   <span class="keyword">struct </span><a class="code" href="structSDOPackage_1_1IntervalType.html">IntervalType</a>
+<a name="l00100"></a>00100   {
+<a name="l00101"></a><a class="code" href="structSDOPackage_1_1IntervalType.html#a3f0d49fb52fe8f19143921c44bd3990f">00101</a>     <a class="code" href="unionSDOPackage_1_1Numeric.html">Numeric</a> min;
+<a name="l00102"></a><a class="code" href="structSDOPackage_1_1IntervalType.html#aa712935cd3564a4ccef14713b278d1b1">00102</a>     <a class="code" href="unionSDOPackage_1_1Numeric.html">Numeric</a> max;
+<a name="l00103"></a><a class="code" href="structSDOPackage_1_1IntervalType.html#a1c39de81fb0c54339e906701a0874ef0">00103</a>     <span class="keywordtype">boolean</span> min_inclusive;
+<a name="l00104"></a><a class="code" href="structSDOPackage_1_1IntervalType.html#ab91d204fe571aa33a74631745aaf6e29">00104</a>     <span class="keywordtype">boolean</span> max_inclusive;
+<a name="l00105"></a><a class="code" href="structSDOPackage_1_1IntervalType.html#a8adfa6cc83bff1b0998457429290958f">00105</a>     <a class="code" href="unionSDOPackage_1_1Numeric.html">Numeric</a> step;
+<a name="l00106"></a>00106   };
+<a name="l00107"></a>00107 
+<a name="l00108"></a><a class="code" href="namespaceSDOPackage.html#a4b1574edd51d4ca64092ae2ee28c4a4f">00108</a>   <span class="keyword">enum</span> <a class="code" href="namespaceSDOPackage.html#a4b1574edd51d4ca64092ae2ee28c4a4f">ComplexDataType</a>
+<a name="l00109"></a>00109   {
+<a name="l00110"></a><a class="code" href="namespaceSDOPackage.html#a4b1574edd51d4ca64092ae2ee28c4a4fa4d5a1765b6375887daa4494d40c113bf">00110</a>     <a class="code" href="namespaceSDOPackage.html#a4b1574edd51d4ca64092ae2ee28c4a4fa9ac020c658eba1cc0a98bec524a45c6e">ENUMERATION</a>, <a class="code" href="namespaceSDOPackage.html#a4b1574edd51d4ca64092ae2ee28c4a4fa4d5a1765b6375887daa4494d40c113bf">RANGE</a>, <a class="code" href="namespaceSDOPackage.html#a4b1574edd51d4ca64092ae2ee28c4a4fae6079f15c13c60356dbc2ee6af4f8bb9">INTERVAL</a>
+<a name="l00111"></a>00111   };
+<a name="l00112"></a>00112 
+<a name="l00113"></a><a class="code" href="unionSDOPackage_1_1AllowedValues.html">00113</a>   <span class="keyword">union </span><a class="code" href="unionSDOPackage_1_1AllowedValues.html">AllowedValues</a> switch (<a class="code" href="namespaceSDOPackage.html#a4b1574edd51d4ca64092ae2ee28c4a4f">ComplexDataType</a>)
+<a name="l00114"></a>00114   {
+<a name="l00115"></a><a class="code" href="unionSDOPackage_1_1AllowedValues.html#a52aa4da4d48dbaaa00f065a39b084507">00115</a>   <span class="keywordflow">case</span> <a class="code" href="namespaceSDOPackage.html#a4b1574edd51d4ca64092ae2ee28c4a4fa9ac020c658eba1cc0a98bec524a45c6e">ENUMERATION</a>:    <a class="code" href="structSDOPackage_1_1EnumerationType.html">EnumerationType</a> allowed_enum;
+<a name="l00116"></a><a class="code" href="unionSDOPackage_1_1AllowedValues.html#a9c74705f12153ddb248be33042e94208">00116</a>   <span class="keywordflow">case</span> <a class="code" href="namespaceSDOPackage.html#a4b1574edd51d4ca64092ae2ee28c4a4fae6079f15c13c60356dbc2ee6af4f8bb9">INTERVAL</a>:       <a class="code" href="structSDOPackage_1_1IntervalType.html">IntervalType</a> allowed_interval;
+<a name="l00117"></a><a class="code" href="unionSDOPackage_1_1AllowedValues.html#a9b722e71505439c91edf4d81429c6e84">00117</a>   <span class="keywordflow">case</span> <a class="code" href="namespaceSDOPackage.html#a4b1574edd51d4ca64092ae2ee28c4a4fa4d5a1765b6375887daa4494d40c113bf">RANGE</a>:          <a class="code" href="structSDOPackage_1_1RangeType.html">RangeType</a>   allowed_range;
+<a name="l00118"></a>00118   };
+<a name="l00119"></a>00119 
+<a name="l00120"></a><a class="code" href="structSDOPackage_1_1Parameter.html">00120</a>   <span class="keyword">struct </span><a class="code" href="structSDOPackage_1_1Parameter.html">Parameter</a>
+<a name="l00121"></a>00121   {
+<a name="l00122"></a><a class="code" href="structSDOPackage_1_1Parameter.html#a0da7260b28bd3569dad58dc7c5bba457">00122</a>     <span class="keywordtype">string</span>         name;
+<a name="l00123"></a>00123 <span class="preprocessor">#ifndef ORBIT2_IDL</span>
+<a name="l00124"></a><a class="code" href="structSDOPackage_1_1Parameter.html#a013f778942e59807be89122000bb7f25">00124</a> <span class="preprocessor"></span>    <a class="code" href="SDOPackage_8idl.html#a237806f5539769ecfbad2352106cb773">TypeCode</a>       type;
+<a name="l00125"></a>00125 <span class="preprocessor">#else</span>
+<a name="l00126"></a>00126 <span class="preprocessor"></span>    <a class="code" href="SDOPackage_8idl.html#a237806f5539769ecfbad2352106cb773">TypeCode</a>       type;
+<a name="l00127"></a>00127 <span class="preprocessor">#endif</span>
+<a name="l00128"></a><a class="code" href="structSDOPackage_1_1Parameter.html#a81cafbb66579be6e62740aa4d093b8be">00128</a> <span class="preprocessor"></span>    <a class="code" href="unionSDOPackage_1_1AllowedValues.html">AllowedValues</a>  allowed_values;
+<a name="l00129"></a>00129   };
+<a name="l00130"></a>00130 
+<a name="l00131"></a><a class="code" href="namespaceSDOPackage.html#ac7ed6ef96e20edd9db20df029d1d46d2">00131</a>   <span class="keyword">typedef</span> sequence&lt;Parameter&gt; <a class="code" href="namespaceSDOPackage.html#ac7ed6ef96e20edd9db20df029d1d46d2">ParameterList</a>;
+<a name="l00132"></a><a class="code" href="structSDOPackage_1_1OrganizationProperty.html">00132</a>   <span class="keyword">struct </span><a class="code" href="structSDOPackage_1_1OrganizationProperty.html">OrganizationProperty</a>
+<a name="l00133"></a>00133   {
+<a name="l00134"></a><a class="code" href="structSDOPackage_1_1OrganizationProperty.html#a7ffebfa961644064d0051782634c2554">00134</a>     NVList properties;
+<a name="l00135"></a>00135   };
+<a name="l00136"></a><a class="code" href="namespaceSDOPackage.html#a0e2f8c0a81f492a5b4143ae381d11a68">00136</a>   <span class="keyword">enum</span> <a class="code" href="namespaceSDOPackage.html#a0e2f8c0a81f492a5b4143ae381d11a68">DependencyType</a>
+<a name="l00137"></a>00137   {
+<a name="l00138"></a><a class="code" href="namespaceSDOPackage.html#a0e2f8c0a81f492a5b4143ae381d11a68a2b132798545c7aa3574291d4e8d0c1c4">00138</a>     <a class="code" href="namespaceSDOPackage.html#a0e2f8c0a81f492a5b4143ae381d11a68a2b132798545c7aa3574291d4e8d0c1c4">OWN</a>,
+<a name="l00139"></a><a class="code" href="namespaceSDOPackage.html#a0e2f8c0a81f492a5b4143ae381d11a68abab6eb2254537ee1f23c96626f1f5e1d">00139</a>     <a class="code" href="namespaceSDOPackage.html#a0e2f8c0a81f492a5b4143ae381d11a68abab6eb2254537ee1f23c96626f1f5e1d">OWNED</a>,
+<a name="l00140"></a><a class="code" href="namespaceSDOPackage.html#a0e2f8c0a81f492a5b4143ae381d11a68a4586ce486740d7219edffe6e71f48bbb">00140</a>     <a class="code" href="namespaceSDOPackage.html#a0e2f8c0a81f492a5b4143ae381d11a68a4586ce486740d7219edffe6e71f48bbb">NO_DEPENDENCY</a>
+<a name="l00141"></a>00141   };
+<a name="l00142"></a>00142 
+<a name="l00143"></a><a class="code" href="structSDOPackage_1_1DeviceProfile.html">00143</a>   <span class="keyword">struct </span><a class="code" href="structSDOPackage_1_1DeviceProfile.html">DeviceProfile</a>
+<a name="l00144"></a>00144   {
+<a name="l00145"></a><a class="code" href="structSDOPackage_1_1DeviceProfile.html#a41856ed05da8e78d4e853c44fb82a0f0">00145</a>     <span class="keywordtype">string</span> device_type;
+<a name="l00146"></a><a class="code" href="structSDOPackage_1_1DeviceProfile.html#a7f04867de10ac0a3f2dba9d1e672e94c">00146</a>     <span class="keywordtype">string</span> manufacturer;
+<a name="l00147"></a><a class="code" href="structSDOPackage_1_1DeviceProfile.html#a36b90434d0fc86721269a418667af436">00147</a>     <span class="keywordtype">string</span> model;
+<a name="l00148"></a><a class="code" href="structSDOPackage_1_1DeviceProfile.html#adcf7a5ff087fb27effb546f9adcd9c1e">00148</a>     <span class="keywordtype">string</span> version;
+<a name="l00149"></a><a class="code" href="structSDOPackage_1_1DeviceProfile.html#a6945952e1a03ed66975f8880ad66cc8b">00149</a>     NVList properties;
+<a name="l00150"></a>00150   };
+<a name="l00151"></a>00151 
+<a name="l00152"></a><a class="code" href="structSDOPackage_1_1ServiceProfile.html">00152</a>   <span class="keyword">struct </span><a class="code" href="structSDOPackage_1_1ServiceProfile.html">ServiceProfile</a>
+<a name="l00153"></a>00153   {
+<a name="l00154"></a><a class="code" href="structSDOPackage_1_1ServiceProfile.html#a147cc3a82086729b503a8838fb87207d">00154</a>     <span class="keywordtype">string</span> id;
+<a name="l00155"></a><a class="code" href="structSDOPackage_1_1ServiceProfile.html#a3cca8b894a7ca01c338bd892d3b43e59">00155</a>     <span class="keywordtype">string</span> interface_type;
+<a name="l00156"></a><a class="code" href="structSDOPackage_1_1ServiceProfile.html#aef2aa811254bff3cc038c377cf23562d">00156</a>     NVList properties;
+<a name="l00157"></a><a class="code" href="structSDOPackage_1_1ServiceProfile.html#a603c6ea80a4a86c0dc1dad9f20d96efb">00157</a>     SDOService service;
+<a name="l00158"></a>00158   };
+<a name="l00159"></a>00159 
+<a name="l00160"></a><a class="code" href="namespaceSDOPackage.html#ab56433e04a6155a19aeae801c45155e8">00160</a>   <span class="keyword">typedef</span> sequence &lt;ServiceProfile&gt; <a class="code" href="namespaceSDOPackage.html#ab56433e04a6155a19aeae801c45155e8">ServiceProfileList</a>;
+<a name="l00161"></a><a class="code" href="structSDOPackage_1_1ConfigurationSet.html">00161</a>   <span class="keyword">struct </span><a class="code" href="structSDOPackage_1_1ConfigurationSet.html">ConfigurationSet</a>
+<a name="l00162"></a>00162   {
+<a name="l00163"></a><a class="code" href="structSDOPackage_1_1ConfigurationSet.html#a2e6620e0ecf1dbbefb4d25ec3d0e6ca5">00163</a>     <span class="keywordtype">string</span> id;
+<a name="l00164"></a><a class="code" href="structSDOPackage_1_1ConfigurationSet.html#ab29b970de7ba627ab35ad294e92c7983">00164</a>     <span class="keywordtype">string</span> description;
+<a name="l00165"></a><a class="code" href="structSDOPackage_1_1ConfigurationSet.html#ae28985bc93cdf23fc12357aa03552ebb">00165</a>     NVList configuration_data;
+<a name="l00166"></a>00166   };
+<a name="l00167"></a>00167 
+<a name="l00168"></a><a class="code" href="namespaceSDOPackage.html#ad9d3f3e4436d5ae8aa92fd71fa85e034">00168</a>   <span class="keyword">typedef</span> sequence&lt;ConfigurationSet&gt; <a class="code" href="namespaceSDOPackage.html#ad9d3f3e4436d5ae8aa92fd71fa85e034">ConfigurationSetList</a>;
+<a name="l00169"></a>00169 
+<a name="l00170"></a>00170 
+<a name="l00172"></a><a class="code" href="namespaceSDOPackage.html#a32f5520092f5ffaa1201384238bae0b0">00172</a>   exception NotAvailable             <a class="code" href="SDOPackage_8idl.html#a323e32c35a492d5fd6880568fc2ced8e">exception_body</a>;
+<a name="l00173"></a>00173   exception InterfaceNotImplemented  exception_body;
+<a name="l00174"></a>00174   exception InvalidParameter         exception_body;
+<a name="l00175"></a>00175   exception InternalError            exception_body;
+<a name="l00176"></a>00176   
+<a name="l00178"></a><a class="code" href="interfaceSDOPackage_1_1SDOSystemElement.html">00178</a>   interface SDOSystemElement
+<a name="l00179"></a>00179   {
+<a name="l00180"></a>00180     OrganizationList get_owned_organizations()
+<a name="l00181"></a>00181       raises (NotAvailable,InternalError);
+<a name="l00182"></a>00182   };
+<a name="l00183"></a><a class="code" href="interfaceSDOPackage_1_1SDO.html">00183</a>   interface SDO : SDOSystemElement
+<a name="l00184"></a>00184   {
+<a name="l00185"></a>00185     UniqueIdentifier get_sdo_id()
+<a name="l00186"></a>00186       raises (NotAvailable, InternalError);
+<a name="l00187"></a>00187     <span class="keywordtype">string</span> get_sdo_type()
+<a name="l00188"></a>00188       raises (NotAvailable, InternalError);
+<a name="l00189"></a>00189     <a class="code" href="structSDOPackage_1_1DeviceProfile.html">DeviceProfile</a> get_device_profile ()
+<a name="l00190"></a>00190       raises (NotAvailable, InternalError);
+<a name="l00191"></a>00191     ServiceProfileList get_service_profiles ()
+<a name="l00192"></a>00192       raises (NotAvailable, InternalError);
+<a name="l00193"></a>00193     <a class="code" href="structSDOPackage_1_1ServiceProfile.html">ServiceProfile</a> get_service_profile (in UniqueIdentifier <span class="keywordtype">id</span>)
+<a name="l00194"></a>00194       raises (InvalidParameter, NotAvailable, InternalError);
+<a name="l00195"></a>00195     SDOService get_sdo_service (in UniqueIdentifier <span class="keywordtype">id</span>) 
+<a name="l00196"></a>00196       raises (InvalidParameter, NotAvailable, InternalError);
+<a name="l00197"></a>00197     Configuration get_configuration ()
+<a name="l00198"></a>00198       raises (InterfaceNotImplemented, NotAvailable, InternalError);
+<a name="l00199"></a>00199     Monitoring get_monitoring ()
+<a name="l00200"></a>00200       raises (InterfaceNotImplemented, NotAvailable, InternalError);
+<a name="l00201"></a>00201     OrganizationList get_organizations ()
+<a name="l00202"></a>00202       raises (NotAvailable, InternalError);
+<a name="l00203"></a>00203     NVList get_status_list ()
+<a name="l00204"></a>00204       raises (NotAvailable, InternalError);
+<a name="l00205"></a>00205     any get_status (in <span class="keywordtype">string</span> nme)
+<a name="l00206"></a>00206       raises (InvalidParameter, NotAvailable, InternalError);
+<a name="l00207"></a>00207   };
+<a name="l00208"></a>00208 
+<a name="l00209"></a>00209 
+<a name="l00210"></a><a class="code" href="interfaceSDOPackage_1_1Configuration.html">00210</a>   interface Configuration
+<a name="l00211"></a>00211   {
+<a name="l00212"></a>00212     <span class="keywordtype">boolean</span> set_device_profile (in <a class="code" href="structSDOPackage_1_1DeviceProfile.html">DeviceProfile</a> dProfile)
+<a name="l00213"></a>00213       raises (InvalidParameter, NotAvailable, InternalError);
+<a name="l00214"></a>00214     <span class="keywordtype">boolean</span> add_service_profile (in <a class="code" href="structSDOPackage_1_1ServiceProfile.html">ServiceProfile</a> sProfile)
+<a name="l00215"></a>00215       raises (InvalidParameter, NotAvailable, InternalError);
+<a name="l00216"></a>00216     <span class="keywordtype">boolean</span> add_organization (in Organization organization_object)
+<a name="l00217"></a>00217       raises (InvalidParameter, NotAvailable, InternalError);
+<a name="l00218"></a>00218     <span class="keywordtype">boolean</span> remove_service_profile (in UniqueIdentifier <span class="keywordtype">id</span>)
+<a name="l00219"></a>00219       raises (InvalidParameter, NotAvailable, InternalError);
+<a name="l00220"></a>00220     <span class="keywordtype">boolean</span> remove_organization (in UniqueIdentifier organization_id)
+<a name="l00221"></a>00221       raises (InvalidParameter, NotAvailable, InternalError);
+<a name="l00222"></a>00222     ParameterList get_configuration_parameters ()
+<a name="l00223"></a>00223       raises (NotAvailable, InternalError);
+<a name="l00224"></a>00224     NVList get_configuration_parameter_values ()
+<a name="l00225"></a>00225       raises (NotAvailable, InternalError);
+<a name="l00226"></a>00226     any get_configuration_parameter_value (in <span class="keywordtype">string</span> name)
+<a name="l00227"></a>00227       raises (InvalidParameter, NotAvailable, InternalError);
+<a name="l00228"></a>00228     <span class="keywordtype">boolean</span> set_configuration_parameter (in <span class="keywordtype">string</span> name,
+<a name="l00229"></a>00229                                          in any value)
+<a name="l00230"></a>00230       raises (InvalidParameter, NotAvailable, InternalError);
+<a name="l00231"></a>00231     ConfigurationSetList get_configuration_sets ()
+<a name="l00232"></a>00232       raises (NotAvailable, InternalError);
+<a name="l00233"></a>00233     <a class="code" href="structSDOPackage_1_1ConfigurationSet.html">ConfigurationSet</a> get_configuration_set (in UniqueIdentifier config_id)
+<a name="l00234"></a>00234       raises (NotAvailable, InternalError);
+<a name="l00235"></a>00235     <span class="keywordtype">boolean</span> set_configuration_set_values (in <a class="code" href="structSDOPackage_1_1ConfigurationSet.html">ConfigurationSet</a> configuration_set)
+<a name="l00236"></a>00236       raises (InvalidParameter, NotAvailable, InternalError);
+<a name="l00237"></a>00237     <a class="code" href="structSDOPackage_1_1ConfigurationSet.html">ConfigurationSet</a> get_active_configuration_set ()
+<a name="l00238"></a>00238       raises (NotAvailable, InternalError);
+<a name="l00239"></a>00239     <span class="keywordtype">boolean</span> add_configuration_set (in <a class="code" href="structSDOPackage_1_1ConfigurationSet.html">ConfigurationSet</a> configuration_set)
+<a name="l00240"></a>00240       raises (InvalidParameter, NotAvailable, InternalError);
+<a name="l00241"></a>00241     <span class="keywordtype">boolean</span> remove_configuration_set (in UniqueIdentifier config_id)
+<a name="l00242"></a>00242       raises (InvalidParameter, NotAvailable, InternalError);
+<a name="l00243"></a>00243     <span class="keywordtype">boolean</span> activate_configuration_set (in UniqueIdentifier config_id)
+<a name="l00244"></a>00244       raises (InvalidParameter, NotAvailable, InternalError);
+<a name="l00245"></a>00245   };
+<a name="l00246"></a>00246 
+<a name="l00247"></a>00247 
+<a name="l00248"></a>00248 <span class="preprocessor">#ifdef USE_MONITORING</span>
+<a name="l00249"></a>00249 <span class="preprocessor"></span>  interface Monitoring : CosNotifyComm::StructuredPushConsumer,
+<a name="l00250"></a>00250     CosNotifyComm::StructuredPushSupplier
+<a name="l00251"></a>00251   {
+<a name="l00252"></a>00252     any get_monitoring_parameter_value (in <span class="keywordtype">string</span> name)
+<a name="l00253"></a>00253       raises (InvalidParameter, NotAvailable, InternalError);
+<a name="l00254"></a>00254     ParameterList get_monitoring_parameters ()
+<a name="l00255"></a>00255       raises (NotAvailable, InternalError);
+<a name="l00256"></a>00256     NVList get_monitoring_parameter_values ()
+<a name="l00257"></a>00257       raises (NotAvailable, InternalError);
+<a name="l00258"></a>00258   };
+<a name="l00259"></a>00259 <span class="preprocessor">#else</span>
+<a name="l00260"></a><a class="code" href="interfaceSDOPackage_1_1Monitoring.html">00260</a> <span class="preprocessor"></span>  interface Monitoring {};
+<a name="l00261"></a>00261 <span class="preprocessor">#endif</span>
+<a name="l00262"></a>00262 <span class="preprocessor"></span>
+<a name="l00263"></a><a class="code" href="interfaceSDOPackage_1_1SDOService.html">00263</a>   interface SDOService {};
+<a name="l00264"></a>00264   
+<a name="l00265"></a><a class="code" href="interfaceSDOPackage_1_1Organization.html">00265</a>   interface Organization
+<a name="l00266"></a>00266   {
+<a name="l00267"></a>00267     UniqueIdentifier get_organization_id ()
+<a name="l00268"></a>00268       raises (InvalidParameter, NotAvailable, InternalError);
+<a name="l00269"></a>00269     <a class="code" href="structSDOPackage_1_1OrganizationProperty.html">OrganizationProperty</a> get_organization_property ()
+<a name="l00270"></a>00270       raises (NotAvailable, InternalError);
+<a name="l00271"></a>00271     any get_organization_property_value (in <span class="keywordtype">string</span> name)
+<a name="l00272"></a>00272       raises (InvalidParameter, NotAvailable, InternalError);
+<a name="l00273"></a>00273     <span class="keywordtype">boolean</span> add_organization_property (in <a class="code" href="structSDOPackage_1_1OrganizationProperty.html">OrganizationProperty</a> organization_property)
+<a name="l00274"></a>00274       raises (InvalidParameter, NotAvailable, InternalError);
+<a name="l00275"></a>00275     <span class="keywordtype">boolean</span> set_organization_property_value (in <span class="keywordtype">string</span> name,
+<a name="l00276"></a>00276                                              in any value)
+<a name="l00277"></a>00277       raises (InvalidParameter, NotAvailable, InternalError);
+<a name="l00278"></a>00278     <span class="keywordtype">boolean</span> remove_organization_property ( in <span class="keywordtype">string</span> name )
+<a name="l00279"></a>00279       raises (InvalidParameter, NotAvailable, InternalError);
+<a name="l00280"></a>00280     SDOSystemElement get_owner ()
+<a name="l00281"></a>00281       raises (NotAvailable, InternalError);
+<a name="l00282"></a>00282     <span class="keywordtype">boolean</span> set_owner (in SDOSystemElement sdo) 
+<a name="l00283"></a>00283       raises (InvalidParameter, NotAvailable, InternalError);
+<a name="l00284"></a>00284     SDOList get_members ()
+<a name="l00285"></a>00285       raises (NotAvailable, InternalError);
+<a name="l00286"></a>00286     <span class="keywordtype">boolean</span> set_members (in SDOList sdos) 
+<a name="l00287"></a>00287       raises (InvalidParameter, NotAvailable, InternalError);
+<a name="l00288"></a>00288     <span class="keywordtype">boolean</span> add_members ( in SDOList sdo_list)
+<a name="l00289"></a>00289       raises (InvalidParameter, NotAvailable, InternalError);
+<a name="l00290"></a>00290     <span class="keywordtype">boolean</span> remove_member (in UniqueIdentifier <span class="keywordtype">id</span>)
+<a name="l00291"></a>00291       raises (InvalidParameter, NotAvailable, InternalError);
+<a name="l00292"></a>00292     <a class="code" href="namespaceSDOPackage.html#a0e2f8c0a81f492a5b4143ae381d11a68">DependencyType</a> get_dependency()
+<a name="l00293"></a>00293       raises (NotAvailable, InternalError);
+<a name="l00294"></a>00294     <span class="keywordtype">boolean</span> set_dependency (in <a class="code" href="namespaceSDOPackage.html#a0e2f8c0a81f492a5b4143ae381d11a68">DependencyType</a> dependency) 
+<a name="l00295"></a>00295       raises (NotAvailable, InternalError);
+<a name="l00296"></a>00296   };
+<a name="l00297"></a>00297 };
+<a name="l00298"></a>00298 <span class="preprocessor">#endif //_SDO_PACKAGE_IDL_</span>
+</pre></div></div>
+<hr class="footer"/><address style="text-align: right;"><small>OpenRTMに対してThu May 24 23:25:23 2012に生成されました。&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.6.3 </small></address>
+</body>
+</html>

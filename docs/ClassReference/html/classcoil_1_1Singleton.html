@@ -1,0 +1,213 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<title>OpenRTM: クラス テンプレート coil::Singleton&lt; SingletonClass &gt;</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<!-- 作成： Doxygen 1.6.3 -->
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="index.html"><span>メインページ</span></a></li>
+      <li><a href="namespaces.html"><span>ネームスペース</span></a></li>
+      <li class="current"><a href="annotated.html"><span>クラス</span></a></li>
+      <li><a href="files.html"><span>ファイル</span></a></li>
+    </ul>
+  </div>
+  <div class="tabs">
+    <ul>
+      <li><a href="annotated.html"><span>構成</span></a></li>
+      <li><a href="hierarchy.html"><span>クラス階層</span></a></li>
+      <li><a href="functions.html"><span>構成メンバ</span></a></li>
+    </ul>
+  </div>
+  <div class="navpath"><a class="el" href="namespacecoil.html">coil</a>::<a class="el" href="classcoil_1_1Singleton.html">Singleton</a>
+  </div>
+</div>
+<div class="contents">
+<h1>クラス テンプレート coil::Singleton&lt; SingletonClass &gt;</h1><!-- doxytag: class="coil::Singleton" -->
+<p><a class="el" href="classcoil_1_1Singleton.html" title="Singleton テンプレートクラス.">Singleton</a> テンプレートクラス.  
+<a href="#_details">[詳細]</a></p>
+
+<p><code>#include &lt;<a class="el" href="Singleton_8h_source.html">Singleton.h</a>&gt;</code></p>
+
+<p><a href="classcoil_1_1Singleton-members.html">すべてのメンバ一覧</a></p>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr><td colspan="2"><h2>Public 型</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">typedef SingletonClass *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcoil_1_1Singleton.html#adb784c577f526ace94b230c74375f921">SingletonClassPtr</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">typedef ::<a class="el" href="classcoil_1_1Mutex.html">coil::Mutex</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcoil_1_1Singleton.html#af6243866ab48be9ac8d7b281d759cd1c">Mutex</a></td></tr>
+<tr><td colspan="2"><h2>Static Public メソッド</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static SingletonClass &amp;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcoil_1_1Singleton.html#aea119e0534a0de4b63a8f84c7d68b223">instance</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">インスタンス生成  <a href="#aea119e0534a0de4b63a8f84c7d68b223"></a><br/></td></tr>
+<tr><td colspan="2"><h2>Protected メソッド</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcoil_1_1Singleton.html#a1e56aa2b59843aa78a55e9099dbb442d">Singleton</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcoil_1_1Singleton.html#a72e29ae00139baec4bd628ca6cafc435">~Singleton</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">デストラクタ  <a href="#a72e29ae00139baec4bd628ca6cafc435"></a><br/></td></tr>
+<tr><td colspan="2"><h2>Static Protected 変数</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classcoil_1_1Mutex.html">coil::Mutex</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcoil_1_1Singleton.html#ad7047e7f3d2d88476d9f200e024a4d18">m_mutex</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">排他制御オブジェクト  <a href="#ad7047e7f3d2d88476d9f200e024a4d18"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static SingletonClass *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcoil_1_1Singleton.html#a659e398fd8dc1de180362648561fb9aa">m_instance</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">SingletonClass オブジェクト.  <a href="#a659e398fd8dc1de180362648561fb9aa"></a><br/></td></tr>
+</table>
+<hr/><a name="_details"></a><h2>説明</h2>
+<h3>template&lt;class SingletonClass&gt;<br/>
+ class coil::Singleton&lt; SingletonClass &gt;</h3>
+
+<p><a class="el" href="classcoil_1_1Singleton.html" title="Singleton テンプレートクラス.">Singleton</a> テンプレートクラス. </p>
+<p>このテンプレートは、任意のクラスを <a class="el" href="classcoil_1_1Singleton.html" title="Singleton テンプレートクラス.">Singleton</a> にするテンプレートである。 以下のようにして使用する。</p>
+<p>class A { // }; typedef coil::Singleton&lt;A&gt; A_;</p>
+<p>任意の場所で</p>
+<p>A&amp; a(A_:<a class="el" href="classcoil_1_1Singleton.html#aea119e0534a0de4b63a8f84c7d68b223" title="インスタンス生成">instance()</a>); // a は A の唯一のインスタンスが入る</p>
+<p>ただし、A自体のコンストラクタは使用できるので、同一のソースで、</p>
+<p>A* a = new A();</p>
+<p>のようにすることもできるため、注意が必要である。 対象とするクラスを new することを禁止するためには、以下のように、 対象クラスで Singelton を継承 (CRTP) し friend 宣言する必要がある。</p>
+<p>class A : public coil::Singleton&lt;A&gt; { public: private: A(){}</p>
+<p>friend class coil::Singelton&lt;A&gt;; };</p>
+<p>こうすることで、</p>
+<p>A* a = new A(); // は禁止される A&amp; a(A::instance()); // が唯一のインスタンスを得る唯一の方法 </p>
+<hr/><h2>型定義</h2>
+<a class="anchor" id="af6243866ab48be9ac8d7b281d759cd1c"></a><!-- doxytag: member="coil::Singleton::Mutex" ref="af6243866ab48be9ac8d7b281d759cd1c" args="" -->
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class SingletonClass&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef ::<a class="el" href="classcoil_1_1Mutex.html">coil::Mutex</a> <a class="el" href="classcoil_1_1Singleton.html">coil::Singleton</a>&lt; SingletonClass &gt;::<a class="el" href="classcoil_1_1Mutex.html">Mutex</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="adb784c577f526ace94b230c74375f921"></a><!-- doxytag: member="coil::Singleton::SingletonClassPtr" ref="adb784c577f526ace94b230c74375f921" args="" -->
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class SingletonClass&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef SingletonClass* <a class="el" href="classcoil_1_1Singleton.html">coil::Singleton</a>&lt; SingletonClass &gt;::<a class="el" href="classcoil_1_1Singleton.html#adb784c577f526ace94b230c74375f921">SingletonClassPtr</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<hr/><h2>コンストラクタとデストラクタ</h2>
+<a class="anchor" id="a1e56aa2b59843aa78a55e9099dbb442d"></a><!-- doxytag: member="coil::Singleton::Singleton" ref="a1e56aa2b59843aa78a55e9099dbb442d" args="()" -->
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class SingletonClass&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classcoil_1_1Singleton.html">coil::Singleton</a>&lt; SingletonClass &gt;::<a class="el" href="classcoil_1_1Singleton.html">Singleton</a> </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [inline, protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>コンストラクタ </p>
+
+</div>
+</div>
+<a class="anchor" id="a72e29ae00139baec4bd628ca6cafc435"></a><!-- doxytag: member="coil::Singleton::~Singleton" ref="a72e29ae00139baec4bd628ca6cafc435" args="()" -->
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class SingletonClass&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classcoil_1_1Singleton.html">coil::Singleton</a>&lt; SingletonClass &gt;::~<a class="el" href="classcoil_1_1Singleton.html">Singleton</a> </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [inline, protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>デストラクタ </p>
+<p>デストラクタ。 </p>
+
+</div>
+</div>
+<hr/><h2>関数</h2>
+<a class="anchor" id="aea119e0534a0de4b63a8f84c7d68b223"></a><!-- doxytag: member="coil::Singleton::instance" ref="aea119e0534a0de4b63a8f84c7d68b223" args="()" -->
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class SingletonClass&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">static SingletonClass&amp; <a class="el" href="classcoil_1_1Singleton.html">coil::Singleton</a>&lt; SingletonClass &gt;::instance </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [inline, static]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>インスタンス生成 </p>
+<p>インスタンスを生成する。</p>
+<dl class="return"><dt><b>戻り値:</b></dt><dd>インスタンス </dd></dl>
+
+</div>
+</div>
+<hr/><h2>変数</h2>
+<a class="anchor" id="a659e398fd8dc1de180362648561fb9aa"></a><!-- doxytag: member="coil::Singleton::m_instance" ref="a659e398fd8dc1de180362648561fb9aa" args="" -->
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class SingletonClass&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classcoil_1_1Singleton.html">Singleton</a>&lt; SingletonClass &gt;::<a class="el" href="classcoil_1_1Singleton.html#adb784c577f526ace94b230c74375f921">SingletonClassPtr</a> <a class="el" href="classcoil_1_1Singleton.html">coil::Singleton</a>&lt; SingletonClass &gt;::<a class="el" href="classcoil_1_1Singleton.html#a659e398fd8dc1de180362648561fb9aa">m_instance</a><code> [inline, static, protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>SingletonClass オブジェクト. </p>
+
+<p>参照元 <a class="el" href="Singleton_8h_source.html#l00131">coil::Singleton&lt; GlobalFactory&lt; AbstractClass, Identifier, Compare, Creator, Destructor &gt; &gt;::instance()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ad7047e7f3d2d88476d9f200e024a4d18"></a><!-- doxytag: member="coil::Singleton::m_mutex" ref="ad7047e7f3d2d88476d9f200e024a4d18" args="" -->
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class SingletonClass&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classcoil_1_1Singleton.html">Singleton</a>&lt; SingletonClass &gt;::<a class="el" href="classcoil_1_1Mutex.html">Mutex</a> <a class="el" href="classcoil_1_1Singleton.html">coil::Singleton</a>&lt; SingletonClass &gt;::<a class="el" href="classcoil_1_1Singleton.html#ad7047e7f3d2d88476d9f200e024a4d18">m_mutex</a><code> [inline, static, protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>排他制御オブジェクト </p>
+
+<p>参照元 <a class="el" href="Singleton_8h_source.html#l00131">coil::Singleton&lt; GlobalFactory&lt; AbstractClass, Identifier, Compare, Creator, Destructor &gt; &gt;::instance()</a>.</p>
+
+</div>
+</div>
+</div>
+<hr class="footer"/><address style="text-align: right;"><small>OpenRTMに対してThu May 24 23:25:19 2012に生成されました。&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.6.3 </small></address>
+</body>
+</html>

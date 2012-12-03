@@ -1,0 +1,407 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<title>OpenRTM: クラス RTC::OutPortConnector</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<!-- 作成： Doxygen 1.6.3 -->
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="index.html"><span>メインページ</span></a></li>
+      <li><a href="namespaces.html"><span>ネームスペース</span></a></li>
+      <li class="current"><a href="annotated.html"><span>クラス</span></a></li>
+      <li><a href="files.html"><span>ファイル</span></a></li>
+    </ul>
+  </div>
+  <div class="tabs">
+    <ul>
+      <li><a href="annotated.html"><span>構成</span></a></li>
+      <li><a href="hierarchy.html"><span>クラス階層</span></a></li>
+      <li><a href="functions.html"><span>構成メンバ</span></a></li>
+    </ul>
+  </div>
+  <div class="navpath"><a class="el" href="namespaceRTC.html">RTC</a>::<a class="el" href="classRTC_1_1OutPortConnector.html">OutPortConnector</a>
+  </div>
+</div>
+<div class="contents">
+<h1>クラス RTC::OutPortConnector</h1><!-- doxytag: class="RTC::OutPortConnector" --><!-- doxytag: inherits="RTC::ConnectorBase" -->
+<p><a class="el" href="classRTC_1_1OutPortConnector.html" title="OutPortConnector 基底クラス.">OutPortConnector</a> 基底クラス.  
+<a href="#_details">[詳細]</a></p>
+
+<p><code>#include &lt;<a class="el" href="OutPortConnector_8h_source.html">OutPortConnector.h</a>&gt;</code></p>
+<div class="dynheader">
+RTC::OutPortConnectorに対する継承グラフ</div>
+<div class="dynsection">
+ <div class="center">
+  <img src="classRTC_1_1OutPortConnector.png" usemap="#RTC::OutPortConnector_map" alt=""/>
+  <map id="RTC::OutPortConnector_map" name="RTC::OutPortConnector_map">
+<area href="classRTC_1_1ConnectorBase.html" alt="RTC::ConnectorBase" shape="rect" coords="91,56,263,80"/>
+<area href="classRTC_1_1DataPortStatus.html" alt="RTC::DataPortStatus" shape="rect" coords="91,0,263,24"/>
+<area href="classRTC_1_1OutPortPullConnector.html" alt="RTC::OutPortPullConnector" shape="rect" coords="0,168,172,192"/>
+<area href="classRTC_1_1OutPortPushConnector.html" alt="RTC::OutPortPushConnector" shape="rect" coords="182,168,354,192"/>
+</map>
+ </div>
+</div>
+
+<p><a href="classRTC_1_1OutPortConnector-members.html">すべてのメンバ一覧</a></p>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr><td colspan="2"><h2>Public メソッド</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">DATAPORTSTATUS_ENUM&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1OutPortConnector.html#a941d3ff2886bfd28a0b654c8923d509a">OutPortConnector</a> (<a class="el" href="classRTC_1_1ConnectorInfo.html">ConnectorInfo</a> &amp;info)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">コンストラクタ  <a href="#a941d3ff2886bfd28a0b654c8923d509a"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1OutPortConnector.html#ac3954158370810f557167468ce50bebb">~OutPortConnector</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">デストラクタ  <a href="#ac3954158370810f557167468ce50bebb"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classRTC_1_1ConnectorInfo.html">ConnectorInfo</a> &amp;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1OutPortConnector.html#a1c21b81e5dd176cd5f3723a8a0783936">profile</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight"><a class="el" href="classProfile.html" title="Connector profile ローカル構造体.">Profile</a> 取得.  <a href="#a1c21b81e5dd176cd5f3723a8a0783936"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">const char *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1OutPortConnector.html#ae59f1f12f25e2749c8c57db09a3b3aee">id</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Connector ID 取得.  <a href="#ae59f1f12f25e2749c8c57db09a3b3aee"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">const char *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1OutPortConnector.html#a5c82fa5aa785b8b8272137355025c0a8">name</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Connector 名取得.  <a href="#a5c82fa5aa785b8b8272137355025c0a8"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual ReturnCode&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1OutPortConnector.html#a0871d3168eb72d38b598cf862f1ac799">disconnect</a> ()=0</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">接続解除関数  <a href="#a0871d3168eb72d38b598cf862f1ac799"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classRTC_1_1BufferBase.html">CdrBufferBase</a> *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1OutPortConnector.html#aed38944495c634d459bb0c06618f33a1">getBuffer</a> ()=0</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Buffer を取得する.  <a href="#aed38944495c634d459bb0c06618f33a1"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual ReturnCode&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1OutPortConnector.html#af5b15d5b4346561d53b70c9040ae59a2">write</a> (const cdrMemoryStream &amp;data)=0</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">write 関数  <a href="#af5b15d5b4346561d53b70c9040ae59a2"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1OutPortConnector.html#a30052fdaa6c1a57c1bfa3b6c81466fa2">setEndian</a> (const bool endian_type)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">endianタイプ設定  <a href="#a30052fdaa6c1a57c1bfa3b6c81466fa2"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1OutPortConnector.html#a090c635c6d5cddd62ba64233998d88d3">isLittleEndian</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">endian 設定を返す  <a href="#a090c635c6d5cddd62ba64233998d88d3"></a><br/></td></tr>
+<tr><td class="memTemplParams" colspan="2">template&lt;class DataType &gt; </td></tr>
+<tr><td class="memTemplItemLeft" align="right" valign="top">ReturnCode&nbsp;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classRTC_1_1OutPortConnector.html#a8a62a3d377c05b619a38c831dd8506c2">write</a> (const DataType &amp;data)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">データ型の変換テンプレート  <a href="#a8a62a3d377c05b619a38c831dd8506c2"></a><br/></td></tr>
+<tr><td colspan="2"><h2>Protected 変数</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classRTC_1_1Logger.html">Logger</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1OutPortConnector.html#ac3e0e6553b0adb733cd5ebef516c560c">rtclog</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">ロガーストリーム  <a href="#ac3e0e6553b0adb733cd5ebef516c560c"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classRTC_1_1ConnectorInfo.html">ConnectorInfo</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1OutPortConnector.html#a82c3a40cb8544f6b6c2bd31245ae7af3">m_profile</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Port の PortProfile.  <a href="#a82c3a40cb8544f6b6c2bd31245ae7af3"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1OutPortConnector.html#a077ce88acdad63cc9e0a0353b0c31685">m_littleEndian</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">接続エンディアン  <a href="#a077ce88acdad63cc9e0a0353b0c31685"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">cdrMemoryStream&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1OutPortConnector.html#af4824a80ca3fcdb148a8edd91323b7ee">m_cdr</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">cdrストリーム  <a href="#af4824a80ca3fcdb148a8edd91323b7ee"></a><br/></td></tr>
+</table>
+<hr/><a name="_details"></a><h2>説明</h2>
+<p><a class="el" href="classRTC_1_1OutPortConnector.html" title="OutPortConnector 基底クラス.">OutPortConnector</a> 基底クラス. </p>
+<p><a class="el" href="classRTC_1_1OutPort.html" title="OutPort テンプレートクラス.">OutPort</a> の Push/Pull 各種 Connector を派生させるための 基底クラス。</p>
+<dl class="since"><dt><b>から:</b></dt><dd>1.0.0 </dd></dl>
+<hr/><h2>コンストラクタとデストラクタ</h2>
+<a class="anchor" id="a941d3ff2886bfd28a0b654c8923d509a"></a><!-- doxytag: member="RTC::OutPortConnector::OutPortConnector" ref="a941d3ff2886bfd28a0b654c8923d509a" args="(ConnectorInfo &amp;info)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">DATAPORTSTATUS_ENUM RTC::OutPortConnector::OutPortConnector </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classRTC_1_1ConnectorInfo.html">ConnectorInfo</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>info</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>コンストラクタ </p>
+
+</div>
+</div>
+<a class="anchor" id="ac3954158370810f557167468ce50bebb"></a><!-- doxytag: member="RTC::OutPortConnector::~OutPortConnector" ref="ac3954158370810f557167468ce50bebb" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual RTC::OutPortConnector::~OutPortConnector </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>デストラクタ </p>
+
+</div>
+</div>
+<hr/><h2>関数</h2>
+<a class="anchor" id="a0871d3168eb72d38b598cf862f1ac799"></a><!-- doxytag: member="RTC::OutPortConnector::disconnect" ref="a0871d3168eb72d38b598cf862f1ac799" args="()=0" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual ReturnCode RTC::OutPortConnector::disconnect </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [pure virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>接続解除関数 </p>
+<p>Connector が保持している接続を解除する </p>
+
+<p><a class="el" href="classRTC_1_1ConnectorBase.html#a17b1e3bb26ccb844ef2952661977768c">RTC::ConnectorBase</a>を実装しています。</p>
+
+<p><a class="el" href="classRTC_1_1OutPortPullConnector.html#aef4713815a7140da7c65b690c3a89256">RTC::OutPortPullConnector</a>, と <a class="el" href="classRTC_1_1OutPortPushConnector.html#ace1f7f9d47a8c2a31781a8cc1da828f0">RTC::OutPortPushConnector</a>で実装されています。</p>
+
+</div>
+</div>
+<a class="anchor" id="aed38944495c634d459bb0c06618f33a1"></a><!-- doxytag: member="RTC::OutPortConnector::getBuffer" ref="aed38944495c634d459bb0c06618f33a1" args="()=0" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual <a class="el" href="classRTC_1_1BufferBase.html">CdrBufferBase</a>* RTC::OutPortConnector::getBuffer </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [pure virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Buffer を取得する. </p>
+<p>Connector が保持している Buffer を返す </p>
+
+<p><a class="el" href="classRTC_1_1ConnectorBase.html#ad06710a5e9e1862ed50d4a4411c2927d">RTC::ConnectorBase</a>を実装しています。</p>
+
+<p><a class="el" href="classRTC_1_1OutPortPullConnector.html#a8b3df65ce00c96f9c4782653948b59d3">RTC::OutPortPullConnector</a>, と <a class="el" href="classRTC_1_1OutPortPushConnector.html#a5a04e7d25e944f89cbc5a323749887fd">RTC::OutPortPushConnector</a>で実装されています。</p>
+
+</div>
+</div>
+<a class="anchor" id="ae59f1f12f25e2749c8c57db09a3b3aee"></a><!-- doxytag: member="RTC::OutPortConnector::id" ref="ae59f1f12f25e2749c8c57db09a3b3aee" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const char* RTC::OutPortConnector::id </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Connector ID 取得. </p>
+<p>Connector ID を取得する </p>
+
+<p><a class="el" href="classRTC_1_1ConnectorBase.html#ae2cc57833a7e28f0e605222ecb63e219">RTC::ConnectorBase</a>を実装しています。</p>
+
+</div>
+</div>
+<a class="anchor" id="a090c635c6d5cddd62ba64233998d88d3"></a><!-- doxytag: member="RTC::OutPortConnector::isLittleEndian" ref="a090c635c6d5cddd62ba64233998d88d3" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual bool RTC::OutPortConnector::isLittleEndian </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>endian 設定を返す </p>
+<p>endian 設定のbool値を返す。</p>
+<dl class="return"><dt><b>戻り値:</b></dt><dd>m_littleEndian がlittleの場合true、bigの場合false を返す。 </dd></dl>
+
+<p>参照元 <a class="el" href="OutPortConnector_8h_source.html#l00209">write()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a5c82fa5aa785b8b8272137355025c0a8"></a><!-- doxytag: member="RTC::OutPortConnector::name" ref="a5c82fa5aa785b8b8272137355025c0a8" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const char* RTC::OutPortConnector::name </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Connector 名取得. </p>
+<p>Connector 名を取得する </p>
+
+<p><a class="el" href="classRTC_1_1ConnectorBase.html#a73e002174dc02ec4830c624e7fd96b43">RTC::ConnectorBase</a>を実装しています。</p>
+
+</div>
+</div>
+<a class="anchor" id="a1c21b81e5dd176cd5f3723a8a0783936"></a><!-- doxytag: member="RTC::OutPortConnector::profile" ref="a1c21b81e5dd176cd5f3723a8a0783936" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="classRTC_1_1ConnectorInfo.html">ConnectorInfo</a>&amp; RTC::OutPortConnector::profile </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p><a class="el" href="classProfile.html" title="Connector profile ローカル構造体.">Profile</a> 取得. </p>
+<p>Connector <a class="el" href="classProfile.html" title="Connector profile ローカル構造体.">Profile</a> を取得する </p>
+
+<p><a class="el" href="classRTC_1_1ConnectorBase.html#a8bd2e9cbd6a9341ec4c97416dcf981c7">RTC::ConnectorBase</a>を実装しています。</p>
+
+</div>
+</div>
+<a class="anchor" id="a30052fdaa6c1a57c1bfa3b6c81466fa2"></a><!-- doxytag: member="RTC::OutPortConnector::setEndian" ref="a30052fdaa6c1a57c1bfa3b6c81466fa2" args="(const bool endian_type)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void RTC::OutPortConnector::setEndian </td>
+          <td>(</td>
+          <td class="paramtype">const bool&nbsp;</td>
+          <td class="paramname"> <em>endian_type</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>endianタイプ設定 </p>
+<p>endianタイプを設定する </p>
+
+</div>
+</div>
+<a class="anchor" id="a8a62a3d377c05b619a38c831dd8506c2"></a><!-- doxytag: member="RTC::OutPortConnector::write" ref="a8a62a3d377c05b619a38c831dd8506c2" args="(const DataType &amp;data)" -->
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class DataType &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">ReturnCode RTC::OutPortConnector::write </td>
+          <td>(</td>
+          <td class="paramtype">const DataType &amp;&nbsp;</td>
+          <td class="paramname"> <em>data</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>データ型の変換テンプレート </p>
+<p>Timed* から CdrMemoryStream に変換する。 </p>
+
+<p>参照先 <a class="el" href="classRTC_1_1OutPortConnector.html#a090c635c6d5cddd62ba64233998d88d3">isLittleEndian()</a>, <a class="el" href="OutPortConnector_8h_source.html#l00250">m_cdr</a>, <a class="el" href="SystemLogger_8h_source.html#l00510">RTC_TRACE</a>, と <a class="el" href="classRTC_1_1OutPortConnector.html#af5b15d5b4346561d53b70c9040ae59a2">write()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="af5b15d5b4346561d53b70c9040ae59a2"></a><!-- doxytag: member="RTC::OutPortConnector::write" ref="af5b15d5b4346561d53b70c9040ae59a2" args="(const cdrMemoryStream &amp;data)=0" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual ReturnCode RTC::OutPortConnector::write </td>
+          <td>(</td>
+          <td class="paramtype">const cdrMemoryStream &amp;&nbsp;</td>
+          <td class="paramname"> <em>data</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [pure virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>write 関数 </p>
+<p><a class="el" href="classRTC_1_1OutPort.html" title="OutPort テンプレートクラス.">OutPort</a> からデータを Buffer へ write する関数 </p>
+
+<p><a class="el" href="classRTC_1_1OutPortPullConnector.html#a9fbb676086061d99ce808818b6ddc316">RTC::OutPortPullConnector</a>, と <a class="el" href="classRTC_1_1OutPortPushConnector.html#aa8d4b3864f5d7fc7e98f60e1b38864de">RTC::OutPortPushConnector</a>で実装されています。</p>
+
+<p>参照元 <a class="el" href="OutPortConnector_8h_source.html#l00209">write()</a>.</p>
+
+</div>
+</div>
+<hr/><h2>変数</h2>
+<a class="anchor" id="af4824a80ca3fcdb148a8edd91323b7ee"></a><!-- doxytag: member="RTC::OutPortConnector::m_cdr" ref="af4824a80ca3fcdb148a8edd91323b7ee" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">cdrMemoryStream <a class="el" href="classRTC_1_1OutPortConnector.html#af4824a80ca3fcdb148a8edd91323b7ee">RTC::OutPortConnector::m_cdr</a><code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>cdrストリーム </p>
+
+<p>参照元 <a class="el" href="OutPortConnector_8h_source.html#l00209">write()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a077ce88acdad63cc9e0a0353b0c31685"></a><!-- doxytag: member="RTC::OutPortConnector::m_littleEndian" ref="a077ce88acdad63cc9e0a0353b0c31685" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="classRTC_1_1OutPortConnector.html#a077ce88acdad63cc9e0a0353b0c31685">RTC::OutPortConnector::m_littleEndian</a><code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>接続エンディアン </p>
+
+</div>
+</div>
+<a class="anchor" id="a82c3a40cb8544f6b6c2bd31245ae7af3"></a><!-- doxytag: member="RTC::OutPortConnector::m_profile" ref="a82c3a40cb8544f6b6c2bd31245ae7af3" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classRTC_1_1ConnectorInfo.html">ConnectorInfo</a> <a class="el" href="classRTC_1_1OutPortConnector.html#a82c3a40cb8544f6b6c2bd31245ae7af3">RTC::OutPortConnector::m_profile</a><code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Port の PortProfile. </p>
+
+</div>
+</div>
+<a class="anchor" id="ac3e0e6553b0adb733cd5ebef516c560c"></a><!-- doxytag: member="RTC::OutPortConnector::rtclog" ref="ac3e0e6553b0adb733cd5ebef516c560c" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classRTC_1_1Logger.html">Logger</a> <a class="el" href="classRTC_1_1OutPortConnector.html#ac3e0e6553b0adb733cd5ebef516c560c">RTC::OutPortConnector::rtclog</a><code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>ロガーストリーム </p>
+
+</div>
+</div>
+</div>
+<hr class="footer"/><address style="text-align: right;"><small>OpenRTMに対してThu May 24 23:25:20 2012に生成されました。&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.6.3 </small></address>
+</body>
+</html>

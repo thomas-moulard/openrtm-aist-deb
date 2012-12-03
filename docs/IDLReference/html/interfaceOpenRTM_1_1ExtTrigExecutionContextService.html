@@ -1,0 +1,318 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<title>OpenRTM: インタフェース OpenRTM::ExtTrigExecutionContextService</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<!-- 作成： Doxygen 1.6.3 -->
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="index.html"><span>メインページ</span></a></li>
+      <li><a href="namespaces.html"><span>ネームスペース</span></a></li>
+      <li class="current"><a href="annotated.html"><span>クラス</span></a></li>
+      <li><a href="files.html"><span>ファイル</span></a></li>
+    </ul>
+  </div>
+  <div class="tabs">
+    <ul>
+      <li><a href="annotated.html"><span>構成</span></a></li>
+      <li><a href="hierarchy.html"><span>クラス階層</span></a></li>
+      <li><a href="functions.html"><span>構成メンバ</span></a></li>
+    </ul>
+  </div>
+  <div class="navpath"><a class="el" href="namespaceOpenRTM.html">OpenRTM</a>::<a class="el" href="interfaceOpenRTM_1_1ExtTrigExecutionContextService.html">ExtTrigExecutionContextService</a>
+  </div>
+</div>
+<div class="contents">
+<h1>インタフェース OpenRTM::ExtTrigExecutionContextService</h1><!-- doxytag: class="OpenRTM::ExtTrigExecutionContextService" --><!-- doxytag: inherits="RTC::ExecutionContextService" -->
+<p><code>import &quot;<a class="el" href="OpenRTM_8idl_source.html">OpenRTM.idl</a>&quot;;</code></p>
+<div class="dynheader">
+OpenRTM::ExtTrigExecutionContextServiceに対する継承グラフ</div>
+<div class="dynsection">
+ <div class="center">
+  <img src="interfaceOpenRTM_1_1ExtTrigExecutionContextService.png" usemap="#OpenRTM::ExtTrigExecutionContextService_map" alt=""/>
+  <map id="OpenRTM::ExtTrigExecutionContextService_map" name="OpenRTM::ExtTrigExecutionContextService_map">
+<area href="interfaceRTC_1_1ExecutionContextService.html" alt="RTC::ExecutionContextService" shape="rect" coords="132,56,387,80"/>
+<area href="interfaceRTC_1_1ExecutionContext.html" alt="RTC::ExecutionContext" shape="rect" coords="0,0,255,24"/>
+<area href="interfaceSDOPackage_1_1SDOService.html" alt="SDOPackage::SDOService" shape="rect" coords="265,0,520,24"/>
+</map>
+ </div>
+</div>
+
+<p><a href="interfaceOpenRTM_1_1ExtTrigExecutionContextService-members.html">すべてのメンバ一覧</a></p>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr><td colspan="2"><h2>Public メソッド</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="interfaceOpenRTM_1_1ExtTrigExecutionContextService.html#a0a9227a44b63a0fc49fbc8ea9acc898d">tick</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">ExecutionContextProfile&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="interfaceRTC_1_1ExecutionContextService.html#a5cad2c38e1f1b7c61d5f345c9c49a193">get_profile</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">boolean&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="interfaceRTC_1_1ExecutionContext.html#a4aa7b4668eccb0d88befaa411cf5283e">is_running</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">ReturnCode_t&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="interfaceRTC_1_1ExecutionContext.html#ab015ee47c132e0cf223459d2db7b9f94">start</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">ReturnCode_t&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="interfaceRTC_1_1ExecutionContext.html#afe216bae26d5817459a67e5b7e3134ce">stop</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">double&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="interfaceRTC_1_1ExecutionContext.html#ad9c05f6e738c310f4ad5c686770fa5cc">get_rate</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">ReturnCode_t&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="interfaceRTC_1_1ExecutionContext.html#ae6bdf760ff071970f9ed9e0a9d6fe459">set_rate</a> (in double rate)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">ReturnCode_t&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="interfaceRTC_1_1ExecutionContext.html#a7ac1a5b9820e571153db730c9369b600">add_component</a> (in LightweightRTObject comp)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">ReturnCode_t&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="interfaceRTC_1_1ExecutionContext.html#a75d5152e03f4bfcf9a905aa0f9083243">remove_component</a> (in LightweightRTObject comp)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">ReturnCode_t&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="interfaceRTC_1_1ExecutionContext.html#af4a8aeab4a5e71e731b89556ef3e33e1">activate_component</a> (in LightweightRTObject comp)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">ReturnCode_t&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="interfaceRTC_1_1ExecutionContext.html#a82a23124035a957f2191b520a011e870">deactivate_component</a> (in LightweightRTObject comp)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">ReturnCode_t&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="interfaceRTC_1_1ExecutionContext.html#a27a1ae76eb00c58ba097a96fe358980b">reset_component</a> (in LightweightRTObject comp)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">LifeCycleState&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="interfaceRTC_1_1ExecutionContext.html#a51a0396327ec0bab96f06a246032fc84">get_component_state</a> (in LightweightRTObject comp)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">ExecutionKind&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="interfaceRTC_1_1ExecutionContext.html#aa7175c37b85b78b90ea5468a4f1379b0">get_kind</a> ()</td></tr>
+</table>
+<hr/><h2>関数</h2>
+<a class="anchor" id="af4a8aeab4a5e71e731b89556ef3e33e1"></a><!-- doxytag: member="OpenRTM::ExtTrigExecutionContextService::activate_component" ref="af4a8aeab4a5e71e731b89556ef3e33e1" args="(in LightweightRTObject comp)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">ReturnCode_t RTC::ExecutionContext::activate_component </td>
+          <td>(</td>
+          <td class="paramtype">in <a class="el" href="interfaceRTC_1_1LightweightRTObject.html">LightweightRTObject</a>&nbsp;</td>
+          <td class="paramname"> <em>comp</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [inherited]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a7ac1a5b9820e571153db730c9369b600"></a><!-- doxytag: member="OpenRTM::ExtTrigExecutionContextService::add_component" ref="a7ac1a5b9820e571153db730c9369b600" args="(in LightweightRTObject comp)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">ReturnCode_t RTC::ExecutionContext::add_component </td>
+          <td>(</td>
+          <td class="paramtype">in <a class="el" href="interfaceRTC_1_1LightweightRTObject.html">LightweightRTObject</a>&nbsp;</td>
+          <td class="paramname"> <em>comp</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [inherited]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a82a23124035a957f2191b520a011e870"></a><!-- doxytag: member="OpenRTM::ExtTrigExecutionContextService::deactivate_component" ref="a82a23124035a957f2191b520a011e870" args="(in LightweightRTObject comp)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">ReturnCode_t RTC::ExecutionContext::deactivate_component </td>
+          <td>(</td>
+          <td class="paramtype">in <a class="el" href="interfaceRTC_1_1LightweightRTObject.html">LightweightRTObject</a>&nbsp;</td>
+          <td class="paramname"> <em>comp</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [inherited]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a51a0396327ec0bab96f06a246032fc84"></a><!-- doxytag: member="OpenRTM::ExtTrigExecutionContextService::get_component_state" ref="a51a0396327ec0bab96f06a246032fc84" args="(in LightweightRTObject comp)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">LifeCycleState RTC::ExecutionContext::get_component_state </td>
+          <td>(</td>
+          <td class="paramtype">in <a class="el" href="interfaceRTC_1_1LightweightRTObject.html">LightweightRTObject</a>&nbsp;</td>
+          <td class="paramname"> <em>comp</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [inherited]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="aa7175c37b85b78b90ea5468a4f1379b0"></a><!-- doxytag: member="OpenRTM::ExtTrigExecutionContextService::get_kind" ref="aa7175c37b85b78b90ea5468a4f1379b0" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">ExecutionKind RTC::ExecutionContext::get_kind </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [inherited]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a5cad2c38e1f1b7c61d5f345c9c49a193"></a><!-- doxytag: member="OpenRTM::ExtTrigExecutionContextService::get_profile" ref="a5cad2c38e1f1b7c61d5f345c9c49a193" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">ExecutionContextProfile RTC::ExecutionContextService::get_profile </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [inherited]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ad9c05f6e738c310f4ad5c686770fa5cc"></a><!-- doxytag: member="OpenRTM::ExtTrigExecutionContextService::get_rate" ref="ad9c05f6e738c310f4ad5c686770fa5cc" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double RTC::ExecutionContext::get_rate </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [inherited]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a4aa7b4668eccb0d88befaa411cf5283e"></a><!-- doxytag: member="OpenRTM::ExtTrigExecutionContextService::is_running" ref="a4aa7b4668eccb0d88befaa411cf5283e" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">boolean RTC::ExecutionContext::is_running </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [inherited]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a75d5152e03f4bfcf9a905aa0f9083243"></a><!-- doxytag: member="OpenRTM::ExtTrigExecutionContextService::remove_component" ref="a75d5152e03f4bfcf9a905aa0f9083243" args="(in LightweightRTObject comp)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">ReturnCode_t RTC::ExecutionContext::remove_component </td>
+          <td>(</td>
+          <td class="paramtype">in <a class="el" href="interfaceRTC_1_1LightweightRTObject.html">LightweightRTObject</a>&nbsp;</td>
+          <td class="paramname"> <em>comp</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [inherited]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a27a1ae76eb00c58ba097a96fe358980b"></a><!-- doxytag: member="OpenRTM::ExtTrigExecutionContextService::reset_component" ref="a27a1ae76eb00c58ba097a96fe358980b" args="(in LightweightRTObject comp)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">ReturnCode_t RTC::ExecutionContext::reset_component </td>
+          <td>(</td>
+          <td class="paramtype">in <a class="el" href="interfaceRTC_1_1LightweightRTObject.html">LightweightRTObject</a>&nbsp;</td>
+          <td class="paramname"> <em>comp</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [inherited]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ae6bdf760ff071970f9ed9e0a9d6fe459"></a><!-- doxytag: member="OpenRTM::ExtTrigExecutionContextService::set_rate" ref="ae6bdf760ff071970f9ed9e0a9d6fe459" args="(in double rate)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">ReturnCode_t RTC::ExecutionContext::set_rate </td>
+          <td>(</td>
+          <td class="paramtype">in double&nbsp;</td>
+          <td class="paramname"> <em>rate</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [inherited]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ab015ee47c132e0cf223459d2db7b9f94"></a><!-- doxytag: member="OpenRTM::ExtTrigExecutionContextService::start" ref="ab015ee47c132e0cf223459d2db7b9f94" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">ReturnCode_t RTC::ExecutionContext::start </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [inherited]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="afe216bae26d5817459a67e5b7e3134ce"></a><!-- doxytag: member="OpenRTM::ExtTrigExecutionContextService::stop" ref="afe216bae26d5817459a67e5b7e3134ce" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">ReturnCode_t RTC::ExecutionContext::stop </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [inherited]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a0a9227a44b63a0fc49fbc8ea9acc898d"></a><!-- doxytag: member="OpenRTM::ExtTrigExecutionContextService::tick" ref="a0a9227a44b63a0fc49fbc8ea9acc898d" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void OpenRTM::ExtTrigExecutionContextService::tick </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<hr/>このインタフェースの説明は次のファイルから生成されました:<ul>
+<li><a class="el" href="OpenRTM_8idl_source.html">OpenRTM.idl</a></li>
+</ul>
+</div>
+<hr class="footer"/><address style="text-align: right;"><small>OpenRTMに対してThu May 24 23:25:23 2012に生成されました。&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.6.3 </small></address>
+</body>
+</html>

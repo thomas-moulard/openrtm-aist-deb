@@ -1,0 +1,103 @@
+\section{RTC::Config$<$ VarType, TransFunc $>$ Class Template Reference}
+\label{classRTC_1_1Config}\index{RTC::Config@{RTC::Config}}
+
+
+\doxyref{Config}{p.}{classRTC_1_1Config} class.  
+
+
+
+
+{\ttfamily \#include $<$ConfigAdmin.h$>$}
+
+Inheritance diagram for RTC::Config$<$ VarType, TransFunc $>$:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2cm]{classRTC_1_1Config}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Config} (const char $\ast${\bf name}, VarType \&var, const char $\ast$def\_\-val, TransFunc trans=coil::stringTo)
+\begin{DoxyCompactList}\small\item\em Constructor. \item\end{DoxyCompactList}\item 
+virtual {\bf $\sim$Config} (void)
+\item 
+virtual bool {\bf update} (const char $\ast$val)
+\begin{DoxyCompactList}\small\item\em Update a bind parameter value. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+VarType \& {\bf m\_\-var}
+\begin{DoxyCompactList}\small\item\em Configuration parameter variable. \item\end{DoxyCompactList}\item 
+TransFunc {\bf m\_\-trans}
+\begin{DoxyCompactList}\small\item\em Transformation function to convert configuration parameter type into string format. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$typename VarType, typename TransFunc = bool ($\ast$)(VarType\&, const char$\ast$)$>$ class RTC::Config$<$ VarType, TransFunc $>$}
+
+\doxyref{Config}{p.}{classRTC_1_1Config} class. Class to hold the configuration parameter information. Specify the data type of the configuration as $<$VarType$>$ Specify transformation function to convert data type set as $<$TransFunc$>$ into string format.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em VarType}]Cariable to hold configuration parameter \item[{\em TransFunc}]Transformation function to transform the stored data type into string format.\end{DoxyParams}
+\begin{DoxySince}{Since}
+0.4.0 
+\end{DoxySince}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{RTC::Config@{RTC::Config}!Config@{Config}}
+\index{Config@{Config}!RTC::Config@{RTC::Config}}
+\subsubsection[{Config}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename VarType , typename TransFunc  = bool ($\ast$)(VarType\&, const char$\ast$)$>$ {\bf RTC::Config}$<$ VarType, TransFunc $>$::{\bf Config} (const char $\ast$ {\em name}, \/  VarType \& {\em var}, \/  const char $\ast$ {\em def\_\-val}, \/  TransFunc {\em trans} = {\ttfamily coil::stringTo})\hspace{0.3cm}{\ttfamily  [inline]}}\label{classRTC_1_1Config_a5caed5e472c99e525d741ae8fd032d64}
+
+
+Constructor. 
+
+Constructor
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em name}]Configuration parameter name \item[{\em var}]Configuration parameter variable \item[{\em def\_\-val}]Default value in string format \item[{\em trans}]Function to transform into string format \end{DoxyParams}
+\index{RTC::Config@{RTC::Config}!$\sim$Config@{$\sim$Config}}
+\index{$\sim$Config@{$\sim$Config}!RTC::Config@{RTC::Config}}
+\subsubsection[{$\sim$Config}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename VarType , typename TransFunc  = bool ($\ast$)(VarType\&, const char$\ast$)$>$ virtual {\bf RTC::Config}$<$ VarType, TransFunc $>$::$\sim${\bf Config} (void)\hspace{0.3cm}{\ttfamily  [inline, virtual]}}\label{classRTC_1_1Config_ad0b0e304b1d8746e151cc23441dabf0c}
+Virtual Destructor. 
+
+\subsection{Member Function Documentation}
+\index{RTC::Config@{RTC::Config}!update@{update}}
+\index{update@{update}!RTC::Config@{RTC::Config}}
+\subsubsection[{update}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename VarType , typename TransFunc  = bool ($\ast$)(VarType\&, const char$\ast$)$>$ virtual bool {\bf RTC::Config}$<$ VarType, TransFunc $>$::update (const char $\ast$ {\em val})\hspace{0.3cm}{\ttfamily  [inline, virtual]}}\label{classRTC_1_1Config_ae62b81ad2d80a5f40f594f473f9556fa}
+
+
+Update a bind parameter value. 
+
+Update configuration paramater by the configuration value.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em val}]The parameter values converted into character string format\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Update result (Successful:true, Failed:false) 
+\end{DoxyReturn}
+
+
+Implements {\bf RTC::ConfigBase} \doxyref{}{p.}{structRTC_1_1ConfigBase_a353307f47fe534865db2a9173380e38c}.
+
+
+
+\subsection{Member Data Documentation}
+\index{RTC::Config@{RTC::Config}!m\_\-trans@{m\_\-trans}}
+\index{m\_\-trans@{m\_\-trans}!RTC::Config@{RTC::Config}}
+\subsubsection[{m\_\-trans}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename VarType , typename TransFunc  = bool ($\ast$)(VarType\&, const char$\ast$)$>$ TransFunc {\bf RTC::Config}$<$ VarType, TransFunc $>$::{\bf m\_\-trans}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC_1_1Config_a944a46727c2b8ed20b1eb92945563658}
+
+
+Transformation function to convert configuration parameter type into string format. 
+
+\index{RTC::Config@{RTC::Config}!m\_\-var@{m\_\-var}}
+\index{m\_\-var@{m\_\-var}!RTC::Config@{RTC::Config}}
+\subsubsection[{m\_\-var}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename VarType , typename TransFunc  = bool ($\ast$)(VarType\&, const char$\ast$)$>$ VarType\& {\bf RTC::Config}$<$ VarType, TransFunc $>$::{\bf m\_\-var}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC_1_1Config_a0ce4e14958ec4d7a45ea8a9aa2e72847}
+
+
+Configuration parameter variable. 
+

@@ -1,0 +1,76 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<title>OpenRTM: Task.h ソースファイル</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<!-- 作成： Doxygen 1.6.3 -->
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="index.html"><span>メインページ</span></a></li>
+      <li><a href="namespaces.html"><span>ネームスペース</span></a></li>
+      <li><a href="annotated.html"><span>クラス</span></a></li>
+      <li class="current"><a href="files.html"><span>ファイル</span></a></li>
+    </ul>
+  </div>
+  <div class="tabs">
+    <ul>
+      <li><a href="files.html"><span>ファイル一覧</span></a></li>
+      <li><a href="globals.html"><span>ファイルメンバ</span></a></li>
+    </ul>
+  </div>
+<h1>Task.h</h1><a href="Task_8h.html">説明を見る。</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="comment">// -*- C++ -*-</span>
+<a name="l00019"></a>00019 <span class="comment"></span><span class="preprocessor">#ifndef COIL_TASK_H</span>
+<a name="l00020"></a>00020 <span class="preprocessor"></span><span class="preprocessor">#define COIL_TASK_H</span>
+<a name="l00021"></a>00021 <span class="preprocessor"></span>
+<a name="l00022"></a>00022 <span class="preprocessor">#include &lt;pthread.h&gt;</span>
+<a name="l00023"></a>00023 
+<a name="l00024"></a>00024 <span class="keyword">namespace </span>coil
+<a name="l00025"></a>00025 {
+<a name="l00039"></a><a class="code" href="classcoil_1_1Task.html">00039</a>   <span class="keyword">class </span><a class="code" href="classcoil_1_1Task.html" title="Task クラス.">Task</a>
+<a name="l00040"></a>00040   {
+<a name="l00041"></a>00041   <span class="keyword">public</span>:
+<a name="l00057"></a>00057     <a class="code" href="classcoil_1_1Task.html#acb44c7174ccc75d4962dbdebd8ea97be">Task</a>();
+<a name="l00058"></a>00058 
+<a name="l00074"></a>00074     <span class="keyword">virtual</span> <a class="code" href="classcoil_1_1Task.html#adaf74253b2fa6387a49afa5575812897">~Task</a>();
+<a name="l00075"></a>00075 
+<a name="l00095"></a>00095     <span class="keyword">virtual</span> <span class="keywordtype">int</span> <a class="code" href="classcoil_1_1Task.html#af964d1b21ddf53987e8190cb4e5d9613" title="タスクオープン">open</a>(<span class="keywordtype">void</span>* args = 0);
+<a name="l00096"></a>00096 
+<a name="l00116"></a>00116     <span class="keyword">virtual</span> <span class="keywordtype">int</span> <a class="code" href="classcoil_1_1Task.html#aa3bfcb01e9d162e4053a4c7312673879" title="タスククローズ">close</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> flags = 0);
+<a name="l00117"></a>00117 
+<a name="l00133"></a>00133     <span class="keyword">virtual</span> <span class="keywordtype">int</span> <a class="code" href="classcoil_1_1Task.html#ae68f22a4afbe8cddde1fe910bc3dd226">svc</a>();
+<a name="l00134"></a>00134 
+<a name="l00150"></a>00150     <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classcoil_1_1Task.html#a812bc27f5acb67931a4c03c07c7aeb9e">activate</a>();
+<a name="l00151"></a>00151 
+<a name="l00167"></a>00167     <span class="keyword">virtual</span> <span class="keywordtype">int</span> <a class="code" href="classcoil_1_1Task.html#ad999fcc89264eece8b909b680cbf5ba1">wait</a>(<span class="keywordtype">void</span>);
+<a name="l00168"></a>00168 
+<a name="l00184"></a>00184     <span class="keyword">virtual</span> <span class="keywordtype">int</span> <a class="code" href="classcoil_1_1Task.html#a9f65419174b1974a9b145042562af9a8">suspend</a>(<span class="keywordtype">void</span>);
+<a name="l00185"></a>00185 
+<a name="l00201"></a>00201     <span class="keyword">virtual</span> <span class="keywordtype">int</span> <a class="code" href="classcoil_1_1Task.html#a093088197230d448855155cddda19b11">resume</a>(<span class="keywordtype">void</span>);
+<a name="l00202"></a>00202 
+<a name="l00218"></a>00218     <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classcoil_1_1Task.html#ae66f1fc87f7768a834980b3141ccf992">reset</a>();
+<a name="l00219"></a>00219 
+<a name="l00235"></a>00235     <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classcoil_1_1Task.html#af7cfcc8cf5c0c322739a92374ce05cca">finalize</a>();
+<a name="l00236"></a>00236 
+<a name="l00256"></a>00256     <span class="keyword">static</span> <span class="keywordtype">void</span>* <a class="code" href="classcoil_1_1Task.html#aea0afe54b17952065d4f0bef1963aead" title="スレッド実行を開始する">svc_run</a>(<span class="keywordtype">void</span>* args = 0);
+<a name="l00257"></a>00257 
+<a name="l00258"></a>00258   <span class="keyword">private</span>:
+<a name="l00259"></a>00259     <span class="keywordtype">int</span> m_count;
+<a name="l00260"></a>00260     pthread_t m_thread;
+<a name="l00261"></a>00261     pthread_attr_t m_attr;
+<a name="l00262"></a>00262     <span class="keywordtype">void</span>* m_args;
+<a name="l00263"></a>00263 
+<a name="l00264"></a>00264   };
+<a name="l00265"></a>00265 };
+<a name="l00266"></a>00266 
+<a name="l00267"></a>00267 <span class="preprocessor">#endif // COIL_TASK_H</span>
+</pre></div></div>
+<hr class="footer"/><address style="text-align: right;"><small>OpenRTMに対してThu May 24 23:25:18 2012に生成されました。&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.6.3 </small></address>
+</body>
+</html>

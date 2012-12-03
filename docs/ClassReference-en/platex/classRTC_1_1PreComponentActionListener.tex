@@ -1,0 +1,65 @@
+\section{RTC::PreComponentActionListener Class Reference}
+\label{classRTC_1_1PreComponentActionListener}\index{RTC::PreComponentActionListener@{RTC::PreComponentActionListener}}
+
+
+\doxyref{PreComponentActionListener}{p.}{classRTC_1_1PreComponentActionListener} class.  
+
+
+
+
+{\ttfamily \#include $<$ComponentActionListener.h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual {\bf $\sim$PreComponentActionListener} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \item\end{DoxyCompactList}\item 
+virtual void {\bf operator()} ({\bf UniqueId} ec\_\-id)=0
+\begin{DoxyCompactList}\small\item\em Virtual Callback function. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static const char $\ast$ {\bf toString} ({\bf PreComponentActionListenerType} type)
+\begin{DoxyCompactList}\small\item\em Convert PreComponentActionListenerType into the string. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\doxyref{PreComponentActionListener}{p.}{classRTC_1_1PreComponentActionListener} class. This class is abstract base class for listener classes that provides callbacks for various events in rtobject. 
+
+\subsection{Constructor \& Destructor Documentation}
+\index{RTC::PreComponentActionListener@{RTC::PreComponentActionListener}!$\sim$PreComponentActionListener@{$\sim$PreComponentActionListener}}
+\index{$\sim$PreComponentActionListener@{$\sim$PreComponentActionListener}!RTC::PreComponentActionListener@{RTC::PreComponentActionListener}}
+\subsubsection[{$\sim$PreComponentActionListener}]{\setlength{\rightskip}{0pt plus 5cm}virtual RTC::PreComponentActionListener::$\sim$PreComponentActionListener ()\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classRTC_1_1PreComponentActionListener_a2150e1cf96d3091af1eade01fb6c7e05}
+
+
+Destructor. 
+
+
+
+\subsection{Member Function Documentation}
+\index{RTC::PreComponentActionListener@{RTC::PreComponentActionListener}!operator()@{operator()}}
+\index{operator()@{operator()}!RTC::PreComponentActionListener@{RTC::PreComponentActionListener}}
+\subsubsection[{operator()}]{\setlength{\rightskip}{0pt plus 5cm}virtual void RTC::PreComponentActionListener::operator() ({\bf UniqueId} {\em ec\_\-id})\hspace{0.3cm}{\ttfamily  [pure virtual]}}\label{classRTC_1_1PreComponentActionListener_a03350eaacaf67ce986f350959acf7a1d}
+
+
+Virtual Callback function. 
+
+This is a the Callback function for \doxyref{PreComponentActionListener}{p.}{classRTC_1_1PreComponentActionListener}. \index{RTC::PreComponentActionListener@{RTC::PreComponentActionListener}!toString@{toString}}
+\index{toString@{toString}!RTC::PreComponentActionListener@{RTC::PreComponentActionListener}}
+\subsubsection[{toString}]{\setlength{\rightskip}{0pt plus 5cm}static const char$\ast$ RTC::PreComponentActionListener::toString ({\bf PreComponentActionListenerType} {\em type})\hspace{0.3cm}{\ttfamily  [inline, static]}}\label{classRTC_1_1PreComponentActionListener_a697776819a3d13d8ebbf45a52808493a}
+
+
+Convert PreComponentActionListenerType into the string. 
+
+Convert PreComponentActionListenerType into the string.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em type}]The target PreComponentActionListenerType for transformation\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Trnasformation result of string representation 
+\end{DoxyReturn}
+
+
+References RTC::PRE\_\-COMPONENT\_\-ACTION\_\-LISTENER\_\-NUM.
+

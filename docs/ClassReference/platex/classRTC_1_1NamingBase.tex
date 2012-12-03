@@ -1,0 +1,120 @@
+\section{クラス RTC::NamingBase}
+\label{classRTC_1_1NamingBase}\index{RTC::NamingBase@{RTC::NamingBase}}
+
+
+NamingService 管理用抽象クラス.  
+
+
+
+
+{\ttfamily \#include $<$NamingManager.h$>$}
+
+RTC::NamingBaseに対する継承グラフ\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2cm]{classRTC_1_1NamingBase}
+\end{center}
+\end{figure}
+\subsection*{Public メソッド}
+\begin{DoxyCompactItemize}
+\item 
+{\bf NamingBase} ()
+\begin{DoxyCompactList}\small\item\em コンストラクタ \item\end{DoxyCompactList}\item 
+virtual {\bf $\sim$NamingBase} (void)
+\begin{DoxyCompactList}\small\item\em デストラクタ \item\end{DoxyCompactList}\item 
+virtual void {\bf bindObject} (const char $\ast$name, const {\bf RTObject\_\-impl} $\ast$rtobj)=0
+\begin{DoxyCompactList}\small\item\em 指定したオブジェクトをNamingServiceへバインドする純粋仮想関数 \item\end{DoxyCompactList}\item 
+virtual void {\bf bindObject} (const char $\ast$name, const {\bf RTM::ManagerServant} $\ast$mgr)=0
+\begin{DoxyCompactList}\small\item\em 指定したManagerServantをNamingServiceへバインドする純粋仮想関数 \item\end{DoxyCompactList}\item 
+virtual void {\bf unbindObject} (const char $\ast$name)=0
+\begin{DoxyCompactList}\small\item\em 指定したオブジェクトをNamingServiceからアンバインドするための 純粋仮想関数 \item\end{DoxyCompactList}\item 
+virtual bool {\bf isAlive} ()=0
+\begin{DoxyCompactList}\small\item\em ネームサーバの生存を確認する。 \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{説明}
+NamingService 管理用抽象クラス. NamingServer 管理用抽象インターフェースクラス。 具象管理クラスは、以下の純粋仮想関数の実装を提供しなければならない。
+\begin{DoxyItemize}
+\item \doxyref{bindObject()}{p.}{classRTC_1_1NamingBase_ac8b6c5670ae869ba80b9407169cc7928} : 指定したオブジェクトのNamingServiceへのバインド
+\item \doxyref{unbindObject()}{p.}{classRTC_1_1NamingBase_a78700b13ec16ffadfc80c13461db3832} : 指定したオブジェクトのNamingServiceからのアンバインド
+\end{DoxyItemize}
+
+\begin{DoxySince}{から}
+0.4.0 
+\end{DoxySince}
+
+
+\subsection{コンストラクタとデストラクタ}
+\index{RTC::NamingBase@{RTC::NamingBase}!NamingBase@{NamingBase}}
+\index{NamingBase@{NamingBase}!RTC::NamingBase@{RTC::NamingBase}}
+\subsubsection[{NamingBase}]{\setlength{\rightskip}{0pt plus 5cm}RTC::NamingBase::NamingBase ()\hspace{0.3cm}{\ttfamily  [inline]}}\label{classRTC_1_1NamingBase_aac7efb11bd9fdddd23b290c655141133}
+
+
+コンストラクタ 
+
+\index{RTC::NamingBase@{RTC::NamingBase}!$\sim$NamingBase@{$\sim$NamingBase}}
+\index{$\sim$NamingBase@{$\sim$NamingBase}!RTC::NamingBase@{RTC::NamingBase}}
+\subsubsection[{$\sim$NamingBase}]{\setlength{\rightskip}{0pt plus 5cm}virtual RTC::NamingBase::$\sim$NamingBase (void)\hspace{0.3cm}{\ttfamily  [inline, virtual]}}\label{classRTC_1_1NamingBase_af6d06310a58dd4c8ca09daf727881e26}
+
+
+デストラクタ 
+
+
+
+\subsection{関数}
+\index{RTC::NamingBase@{RTC::NamingBase}!bindObject@{bindObject}}
+\index{bindObject@{bindObject}!RTC::NamingBase@{RTC::NamingBase}}
+\subsubsection[{bindObject}]{\setlength{\rightskip}{0pt plus 5cm}virtual void RTC::NamingBase::bindObject (const char $\ast$ {\em name}, \/  const {\bf RTM::ManagerServant} $\ast$ {\em mgr})\hspace{0.3cm}{\ttfamily  [pure virtual]}}\label{classRTC_1_1NamingBase_a46494e91f57881e0b19faad01f7ea675}
+
+
+指定したManagerServantをNamingServiceへバインドする純粋仮想関数 
+
+
+\begin{DoxyParams}{引数}
+\item[{\em name}]バインド時の名称 \item[{\em rtobj}]バインド対象ManagerServant \end{DoxyParams}
+
+
+{\bf RTC::NamingOnCorba} \doxyref{}{p.}{classRTC_1_1NamingOnCorba_a539b34abf7968f2ad2c2a8af46bfe509}で実装されています。
+
+\index{RTC::NamingBase@{RTC::NamingBase}!bindObject@{bindObject}}
+\index{bindObject@{bindObject}!RTC::NamingBase@{RTC::NamingBase}}
+\subsubsection[{bindObject}]{\setlength{\rightskip}{0pt plus 5cm}virtual void RTC::NamingBase::bindObject (const char $\ast$ {\em name}, \/  const {\bf RTObject\_\-impl} $\ast$ {\em rtobj})\hspace{0.3cm}{\ttfamily  [pure virtual]}}\label{classRTC_1_1NamingBase_ac8b6c5670ae869ba80b9407169cc7928}
+
+
+指定したオブジェクトをNamingServiceへバインドする純粋仮想関数 
+
+
+\begin{DoxyParams}{引数}
+\item[{\em name}]バインド時の名称 \item[{\em rtobj}]バインド対象オブジェクト \end{DoxyParams}
+
+
+{\bf RTC::NamingOnCorba} \doxyref{}{p.}{classRTC_1_1NamingOnCorba_a6361ae7eac2cf8788bbc0ad98b4440b3}で実装されています。
+
+\index{RTC::NamingBase@{RTC::NamingBase}!isAlive@{isAlive}}
+\index{isAlive@{isAlive}!RTC::NamingBase@{RTC::NamingBase}}
+\subsubsection[{isAlive}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool RTC::NamingBase::isAlive ()\hspace{0.3cm}{\ttfamily  [pure virtual]}}\label{classRTC_1_1NamingBase_af2e5abca5e0f91fb1ed6f830b1837318}
+
+
+ネームサーバの生存を確認する。 
+
+\begin{DoxyReturn}{戻り値}
+true:生存している, false:生存していない 
+\end{DoxyReturn}
+
+
+{\bf RTC::NamingOnCorba} \doxyref{}{p.}{classRTC_1_1NamingOnCorba_af48e8a29fce37cb045a14ea452c4031d}で実装されています。
+
+\index{RTC::NamingBase@{RTC::NamingBase}!unbindObject@{unbindObject}}
+\index{unbindObject@{unbindObject}!RTC::NamingBase@{RTC::NamingBase}}
+\subsubsection[{unbindObject}]{\setlength{\rightskip}{0pt plus 5cm}virtual void RTC::NamingBase::unbindObject (const char $\ast$ {\em name})\hspace{0.3cm}{\ttfamily  [pure virtual]}}\label{classRTC_1_1NamingBase_a78700b13ec16ffadfc80c13461db3832}
+
+
+指定したオブジェクトをNamingServiceからアンバインドするための 純粋仮想関数 
+
+
+\begin{DoxyParams}{引数}
+\item[{\em name}]アンバインド対象オブジェクト \end{DoxyParams}
+
+
+{\bf RTC::NamingOnCorba} \doxyref{}{p.}{classRTC_1_1NamingOnCorba_ac9f33dd6f2f4df81640d720057da98da}で実装されています。
+

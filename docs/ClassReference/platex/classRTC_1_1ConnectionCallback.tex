@@ -1,0 +1,50 @@
+\section{クラス RTC::ConnectionCallback}
+\label{classRTC_1_1ConnectionCallback}\index{RTC::ConnectionCallback@{RTC::ConnectionCallback}}
+
+
+connect/notify\_\-connect() 時のコールバック抽象クラス  
+
+
+
+
+{\ttfamily \#include $<$PortCallback.h$>$}
+
+\subsection*{Public メソッド}
+\begin{DoxyCompactItemize}
+\item 
+virtual {\bf $\sim$ConnectionCallback} (void)
+\item 
+virtual void {\bf operator()} (RTC::ConnectorProfile \&profile)=0
+\begin{DoxyCompactList}\small\item\em コールバック関数 \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{説明}
+connect/notify\_\-connect() 時のコールバック抽象クラス Portに対してconnect/notify\_\-connect() 等が呼び出される時に呼び出される コールバックファンクタ。引数に RTC::ConnectorProfile を取る。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em profile}]ConnectorProfile\end{DoxyParams}
+\begin{DoxySince}{から}
+1.0.0 
+\end{DoxySince}
+
+
+\subsection{コンストラクタとデストラクタ}
+\index{RTC::ConnectionCallback@{RTC::ConnectionCallback}!$\sim$ConnectionCallback@{$\sim$ConnectionCallback}}
+\index{$\sim$ConnectionCallback@{$\sim$ConnectionCallback}!RTC::ConnectionCallback@{RTC::ConnectionCallback}}
+\subsubsection[{$\sim$ConnectionCallback}]{\setlength{\rightskip}{0pt plus 5cm}virtual RTC::ConnectionCallback::$\sim$ConnectionCallback (void)\hspace{0.3cm}{\ttfamily  [inline, virtual]}}\label{classRTC_1_1ConnectionCallback_a8ce9ddf57298521257e45003717763df}
+デストラクタ 
+
+\subsection{関数}
+\index{RTC::ConnectionCallback@{RTC::ConnectionCallback}!operator()@{operator()}}
+\index{operator()@{operator()}!RTC::ConnectionCallback@{RTC::ConnectionCallback}}
+\subsubsection[{operator()}]{\setlength{\rightskip}{0pt plus 5cm}virtual void RTC::ConnectionCallback::operator() (RTC::ConnectorProfile \& {\em profile})\hspace{0.3cm}{\ttfamily  [pure virtual]}}\label{classRTC_1_1ConnectionCallback_ab28717e4f965c2ddbf89eb4d5f27b0ac}
+
+
+コールバック関数 
+
+connect/notify\_\-connect() 等が呼び出される時に呼び出される コールバック関数
+
+
+\begin{DoxyParams}{引数}
+\item[{\em profile}]ConnectorProfile \end{DoxyParams}

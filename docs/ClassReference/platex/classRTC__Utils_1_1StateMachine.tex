@@ -1,0 +1,464 @@
+\section{クラス テンプレート RTC\_\-Utils::StateMachine$<$ State, Listener, States, Callback $>$}
+\label{classRTC__Utils_1_1StateMachine}\index{RTC\_\-Utils::StateMachine@{RTC\_\-Utils::StateMachine}}
+
+
+状態マシンクラス  
+
+
+
+
+{\ttfamily \#include $<$StateMachine.h$>$}
+
+\subsection*{Public メソッド}
+\begin{DoxyCompactItemize}
+\item 
+{\bf StateMachine} (int num\_\-of\_\-state)
+\begin{DoxyCompactList}\small\item\em コンストラクタ \item\end{DoxyCompactList}\item 
+virtual {\bf $\sim$StateMachine} ()
+\item 
+void {\bf setNOP} (Callback call\_\-back)
+\begin{DoxyCompactList}\small\item\em NOP関数を登録する. \item\end{DoxyCompactList}\item 
+void {\bf setListener} (Listener $\ast$listener)
+\begin{DoxyCompactList}\small\item\em Listener オブジェクトを登録する. \item\end{DoxyCompactList}\item 
+bool {\bf setEntryAction} (State state, Callback call\_\-back)
+\begin{DoxyCompactList}\small\item\em Entry action 関数を登録する. \item\end{DoxyCompactList}\item 
+bool {\bf setPreDoAction} (State state, Callback call\_\-back)
+\begin{DoxyCompactList}\small\item\em PreDo action 関数を登録する. \item\end{DoxyCompactList}\item 
+bool {\bf setDoAction} (State state, Callback call\_\-back)
+\begin{DoxyCompactList}\small\item\em Do action 関数を登録する. \item\end{DoxyCompactList}\item 
+bool {\bf setPostDoAction} (State state, Callback call\_\-back)
+\begin{DoxyCompactList}\small\item\em PostDo action 関数を登録する. \item\end{DoxyCompactList}\item 
+bool {\bf setExitAction} (State state, Callback call\_\-back)
+\begin{DoxyCompactList}\small\item\em Exit action 関数を登録する. \item\end{DoxyCompactList}\item 
+bool {\bf setTransitionAction} (Callback call\_\-back)
+\begin{DoxyCompactList}\small\item\em State transition action 関数を登録する. \item\end{DoxyCompactList}\item 
+void {\bf setStartState} (States states)
+\begin{DoxyCompactList}\small\item\em 初期状態をセットする \item\end{DoxyCompactList}\item 
+States {\bf getStates} ()
+\begin{DoxyCompactList}\small\item\em 状態を取得する \item\end{DoxyCompactList}\item 
+State {\bf getState} ()
+\begin{DoxyCompactList}\small\item\em 現在の状態を取得する \item\end{DoxyCompactList}\item 
+bool {\bf isIn} (State state)
+\begin{DoxyCompactList}\small\item\em 現在状態を確認 \item\end{DoxyCompactList}\item 
+void {\bf goTo} (State state)
+\begin{DoxyCompactList}\small\item\em 状態を遷移 \item\end{DoxyCompactList}\item 
+void {\bf worker} ()
+\begin{DoxyCompactList}\small\item\em 駆動関数 \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected メソッド}
+\begin{DoxyCompactItemize}
+\item 
+void {\bf setNullFunc} (Callback $\ast$s, Callback nullfunc)
+\begin{DoxyCompactList}\small\item\em NOP関数を設定. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected 変数}
+\begin{DoxyCompactItemize}
+\item 
+int {\bf m\_\-num}
+\begin{DoxyCompactList}\small\item\em 状態数 \item\end{DoxyCompactList}\item 
+Listener $\ast$ {\bf m\_\-listener}
+\begin{DoxyCompactList}\small\item\em コールバック関数用リスナー \item\end{DoxyCompactList}\item 
+Callback $\ast$ {\bf m\_\-entry}
+\begin{DoxyCompactList}\small\item\em Entry action 用コールバック関数. \item\end{DoxyCompactList}\item 
+Callback $\ast$ {\bf m\_\-predo}
+\begin{DoxyCompactList}\small\item\em PreDo action 用コールバック関数. \item\end{DoxyCompactList}\item 
+Callback $\ast$ {\bf m\_\-do}
+\begin{DoxyCompactList}\small\item\em Do action 用コールバック関数. \item\end{DoxyCompactList}\item 
+Callback $\ast$ {\bf m\_\-postdo}
+\begin{DoxyCompactList}\small\item\em PostDo action 用コールバック関数. \item\end{DoxyCompactList}\item 
+Callback $\ast$ {\bf m\_\-exit}
+\begin{DoxyCompactList}\small\item\em Exit action 用コールバック関数. \item\end{DoxyCompactList}\item 
+Callback {\bf m\_\-transit}
+\begin{DoxyCompactList}\small\item\em State transition action 用コールバック関数. \item\end{DoxyCompactList}\item 
+States {\bf m\_\-states}
+\begin{DoxyCompactList}\small\item\em 現在の状態情報 \item\end{DoxyCompactList}\item 
+bool {\bf m\_\-selftrans}
+\item 
+{\bf Mutex} {\bf m\_\-mutex}
+\end{DoxyCompactItemize}
+
+
+\subsection{説明}
+\subsubsection*{template$<$class State, class Listener, class States = StateHolder$<$State$>$, class Callback = void (Listener::$\ast$)(const States\& states)$>$ class RTC\_\-Utils::StateMachine$<$ State, Listener, States, Callback $>$}
+
+状態マシンクラス \doxyref{StateMachine}{p.}{classRTC__Utils_1_1StateMachine} クラスは状態マシンを実現するクラスである。
+
+例: ActiveObjectは状態マシンを持つアクティブオブジェクトであるとする。 状態は3状態 INACTIVE, ACTIVE, ERROR があり、各状態でのEntryやExit動作を 定義したいとすると、以下のように実現される。 
+\begin{DoxyPre}
+ class ActiveObject 
+ \{  
+ public: 
+   enum MyState \{ INACTIVE, ACTIVE, ERROR \}; 
+   typedef States<MyState> MyStates;\end{DoxyPre}
+
+
+
+\begin{DoxyPre}   ActiveObject() 
+     : m\_sm(3) 
+   \{ 
+     m\_sm.setNOP(&ActiveObject::nullAction); 
+     m\_sm.setListener(this);\end{DoxyPre}
+
+
+
+\begin{DoxyPre}     m\_sm.setExitAction(INACTIVE, &ActiveObject::inactiveExit); 
+       : 
+     m\_sm.setPostDoAction(ERROR, &ActiveObject::errorPostDo); 
+     m\_sm.setTransitionAction(&ActiveObject:transition); 
+   \};\end{DoxyPre}
+
+
+
+\begin{DoxyPre}   bool nullAction(MyStates st) \{\}; 
+   bool inactiveExit(MyStates st) \{\}; 
+     : 
+   bool errorPostDo(MyStates st) \{\}; 
+   bool transition(MyStates st) \{\};\end{DoxyPre}
+
+
+
+\begin{DoxyPre} private: 
+   StateMachine<MyState, bool, ActiveObject> m\_sm; 
+ \}; 
+ \end{DoxyPre}
+ 状態を持たせたいクラスは以下の条件を満たすように実装しなければならない。 
+\begin{DoxyEnumerate}
+\item enum で状態を定義 
+\item \doxyref{StateMachine}{p.}{classRTC__Utils_1_1StateMachine} のテンプレート引数は、\par
+ $<$状態の型(MyState), リスナーオブジェクト, 状態ホルダー，コールバック関数$>$ 
+\item \doxyref{StateMachine}{p.}{classRTC__Utils_1_1StateMachine} のコンストラクタ引数は状態の数 
+\item 以下のアクション関数を(Return \_\-function\_\-name\_\-(States)) の関数として設定 
+\begin{DoxyEnumerate}
+\item 何もしない関数を必ず定義し、setNOP で与えなければならない 
+\item 各状態毎に, set(Entry$|$PreDo$|$Do$|$PostDo$|$Exit)Action でアクションを設定 
+\item 状態遷移時のアクションを \doxyref{setTransitionAction()}{p.}{classRTC__Utils_1_1StateMachine_a1b18262bc0c7fa8cae25dffd567a0806} で設定。 
+\end{DoxyEnumerate}
+\item 遷移時のアクションは、与えられた現在状態、次状態、前状態を元に、 ユーザが実装しなければならない。 
+\item 状態の変更は \doxyref{goTo()}{p.}{classRTC__Utils_1_1StateMachine_a43b923b77e7e4d3562a83880c488197d} で、状態のチェックは isIn(state) で行う。 
+\item \doxyref{goTo()}{p.}{classRTC__Utils_1_1StateMachine_a43b923b77e7e4d3562a83880c488197d}は次状態を強制的にセットする関数であり、遷移の可否は、 ユーザが現在状態を取得し判断するロジックを実装しなければならない。 
+\end{DoxyEnumerate}
+
+このクラスは、一つの状態に対して、 
+\begin{DoxyItemize}
+\item Entry action 
+\item PreDo action 
+\item Do action 
+\item PostDo action 
+\item Exit action 
+\end{DoxyItemize}5つのアクションが定義することができる。 Transition action はあらゆる状態間遷移で呼び出されるアクションで、 その振る舞いはユーザが定義しなければならない。
+
+このクラスは以下のようなタイミングで各アクションが実行される。
+
+
+\begin{DoxyItemize}
+\item 状態が変更され(A-\/$>$B)状態が遷移する場合 \par
+ (A:Exit)-\/$>$$|$(状態更新:A-\/$>$B)-\/$>$(B:Entry)-\/$>$(B:PreDo)-\/$>$(B:Do)-\/$>$(B:PostDo)
+
+
+\item 状態が変更されず、B状態を維持する場合 ($|$はステップの区切りを表す)\par
+ (B(n-\/1):PostDo)-\/$>$$|$(B(n):PreDo)-\/$>$(B(n):Do)-\/$>$(B(n):PostDo)-\/$>$$|$(B(n+1):PreDo)\par
+ PreDo, Do, PostDo が繰り返し実行される。
+
+
+\item 自己遷移する場合 \par
+ (B(n-\/1):PostDo)-\/$>$(B(n-\/1):Exit)-\/$>$$|$(B(n):Entry)-\/$>$(B(n):PreDo) \par
+ 一旦 Exit が呼ばれた後、Entry が実行され、以降は前項と同じ動作をする。 
+\end{DoxyItemize}
+
+
+\begin{DoxyParams}{引数}
+\item[{\em State}]状態の型 \item[{\em Listener}]アクション用リスナーオブジェクト \item[{\em States}]状態ホルダー \item[{\em Callback}]アクション用コールバック関数\end{DoxyParams}
+\begin{DoxySince}{から}
+0.4.0 
+\end{DoxySince}
+
+
+\subsection{コンストラクタとデストラクタ}
+\index{RTC\_\-Utils::StateMachine@{RTC\_\-Utils::StateMachine}!StateMachine@{StateMachine}}
+\index{StateMachine@{StateMachine}!RTC_Utils::StateMachine@{RTC\_\-Utils::StateMachine}}
+\subsubsection[{StateMachine}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class State, class Listener, class States = StateHolder$<$State$>$, class Callback = void (Listener::$\ast$)(const States\& states)$>$ {\bf RTC\_\-Utils::StateMachine}$<$ State, Listener, States, Callback $>$::{\bf StateMachine} (int {\em num\_\-of\_\-state})\hspace{0.3cm}{\ttfamily  [inline]}}\label{classRTC__Utils_1_1StateMachine_acca3c5b3e35ae468bde803fd0975f074}
+
+
+コンストラクタ 
+
+コンストラクタ
+
+
+\begin{DoxyParams}{引数}
+\item[{\em num\_\-of\_\-state}]ステートマシン中の状態数 \end{DoxyParams}
+\index{RTC\_\-Utils::StateMachine@{RTC\_\-Utils::StateMachine}!$\sim$StateMachine@{$\sim$StateMachine}}
+\index{$\sim$StateMachine@{$\sim$StateMachine}!RTC_Utils::StateMachine@{RTC\_\-Utils::StateMachine}}
+\subsubsection[{$\sim$StateMachine}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class State, class Listener, class States = StateHolder$<$State$>$, class Callback = void (Listener::$\ast$)(const States\& states)$>$ virtual {\bf RTC\_\-Utils::StateMachine}$<$ State, Listener, States, Callback $>$::$\sim${\bf StateMachine} ()\hspace{0.3cm}{\ttfamily  [inline, virtual]}}\label{classRTC__Utils_1_1StateMachine_a26c9f468d0188e47d891b984f8cd761d}
+
+
+\subsection{関数}
+\index{RTC\_\-Utils::StateMachine@{RTC\_\-Utils::StateMachine}!getState@{getState}}
+\index{getState@{getState}!RTC_Utils::StateMachine@{RTC\_\-Utils::StateMachine}}
+\subsubsection[{getState}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class State, class Listener, class States = StateHolder$<$State$>$, class Callback = void (Listener::$\ast$)(const States\& states)$>$ State {\bf RTC\_\-Utils::StateMachine}$<$ State, Listener, States, Callback $>$::getState ()\hspace{0.3cm}{\ttfamily  [inline]}}\label{classRTC__Utils_1_1StateMachine_a1a768beb5bc5ec5a0e828d0e006d8003}
+
+
+現在の状態を取得する 
+
+現在の状態を取得する。
+
+\begin{DoxyReturn}{戻り値}
+現在の状態 
+\end{DoxyReturn}
+\index{RTC\_\-Utils::StateMachine@{RTC\_\-Utils::StateMachine}!getStates@{getStates}}
+\index{getStates@{getStates}!RTC_Utils::StateMachine@{RTC\_\-Utils::StateMachine}}
+\subsubsection[{getStates}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class State, class Listener, class States = StateHolder$<$State$>$, class Callback = void (Listener::$\ast$)(const States\& states)$>$ States {\bf RTC\_\-Utils::StateMachine}$<$ State, Listener, States, Callback $>$::getStates ()\hspace{0.3cm}{\ttfamily  [inline]}}\label{classRTC__Utils_1_1StateMachine_af665f3b667caa54e29dc59a6d5b16d4c}
+
+
+状態を取得する 
+
+状態情報を取得する。 現在の状態、１つ前の状態、遷移予定の状態を取得することができる。
+
+\begin{DoxyReturn}{戻り値}
+状態情報 
+\end{DoxyReturn}
+\index{RTC\_\-Utils::StateMachine@{RTC\_\-Utils::StateMachine}!goTo@{goTo}}
+\index{goTo@{goTo}!RTC_Utils::StateMachine@{RTC\_\-Utils::StateMachine}}
+\subsubsection[{goTo}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class State, class Listener, class States = StateHolder$<$State$>$, class Callback = void (Listener::$\ast$)(const States\& states)$>$ void {\bf RTC\_\-Utils::StateMachine}$<$ State, Listener, States, Callback $>$::goTo (State {\em state})\hspace{0.3cm}{\ttfamily  [inline]}}\label{classRTC__Utils_1_1StateMachine_a43b923b77e7e4d3562a83880c488197d}
+
+
+状態を遷移 
+
+指定した状態に状態を遷移する。 本関数は次状態を強制的にセットする関数である。 このため、遷移の可否は、ユーザが現在状態を取得し判断するロジックを 実装しなければならない。 遷移先が現在の状態と同じ場合には、自己遷移フラグをセットする。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em state}]遷移先状態 \end{DoxyParams}
+
+
+参照元 RTC::PeriodicExecutionContext::DFP$<$ OpenRTM::DataFlowComponent\_\-var $>$::on\_\-activated(), RTC::PeriodicExecutionContext::DFP$<$ OpenRTM::DataFlowComponent\_\-var $>$::on\_\-execute(), RTC::PeriodicExecutionContext::DFP$<$ OpenRTM::DataFlowComponent\_\-var $>$::on\_\-reset(), と RTC::PeriodicExecutionContext::DFP$<$ OpenRTM::DataFlowComponent\_\-var $>$::on\_\-state\_\-update().
+
+\index{RTC\_\-Utils::StateMachine@{RTC\_\-Utils::StateMachine}!isIn@{isIn}}
+\index{isIn@{isIn}!RTC_Utils::StateMachine@{RTC\_\-Utils::StateMachine}}
+\subsubsection[{isIn}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class State, class Listener, class States = StateHolder$<$State$>$, class Callback = void (Listener::$\ast$)(const States\& states)$>$ bool {\bf RTC\_\-Utils::StateMachine}$<$ State, Listener, States, Callback $>$::isIn (State {\em state})\hspace{0.3cm}{\ttfamily  [inline]}}\label{classRTC__Utils_1_1StateMachine_a6338403cf745c61423e310a8b481b9df}
+
+
+現在状態を確認 
+
+現在の状態が、引数で指定した状態と一致するか確認する。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em state}]確認対象状態\end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+状態確認結果 
+\end{DoxyReturn}
+\index{RTC\_\-Utils::StateMachine@{RTC\_\-Utils::StateMachine}!setDoAction@{setDoAction}}
+\index{setDoAction@{setDoAction}!RTC_Utils::StateMachine@{RTC\_\-Utils::StateMachine}}
+\subsubsection[{setDoAction}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class State, class Listener, class States = StateHolder$<$State$>$, class Callback = void (Listener::$\ast$)(const States\& states)$>$ bool {\bf RTC\_\-Utils::StateMachine}$<$ State, Listener, States, Callback $>$::setDoAction (State {\em state}, \/  Callback {\em call\_\-back})\hspace{0.3cm}{\ttfamily  [inline]}}\label{classRTC__Utils_1_1StateMachine_a40da53fd17393b10e4b89b9a63ba1332}
+
+
+Do action 関数を登録する. 
+
+各状態内で実行される Do action 用コールバック関数を登録する。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em state}]登録対象状態 \item[{\em call\_\-back}]Do action 用コールバック関数\end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+アクション実行結果 
+\end{DoxyReturn}
+\index{RTC\_\-Utils::StateMachine@{RTC\_\-Utils::StateMachine}!setEntryAction@{setEntryAction}}
+\index{setEntryAction@{setEntryAction}!RTC_Utils::StateMachine@{RTC\_\-Utils::StateMachine}}
+\subsubsection[{setEntryAction}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class State, class Listener, class States = StateHolder$<$State$>$, class Callback = void (Listener::$\ast$)(const States\& states)$>$ bool {\bf RTC\_\-Utils::StateMachine}$<$ State, Listener, States, Callback $>$::setEntryAction (State {\em state}, \/  Callback {\em call\_\-back})\hspace{0.3cm}{\ttfamily  [inline]}}\label{classRTC__Utils_1_1StateMachine_a611cd79fa4c9257159de08011e7e6509}
+
+
+Entry action 関数を登録する. 
+
+各状態に入った際に実行される Entry action 用コールバック関数を登録する。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em state}]登録対象状態 \item[{\em call\_\-back}]Entry action 用コールバック関数\end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+アクション実行結果 
+\end{DoxyReturn}
+\index{RTC\_\-Utils::StateMachine@{RTC\_\-Utils::StateMachine}!setExitAction@{setExitAction}}
+\index{setExitAction@{setExitAction}!RTC_Utils::StateMachine@{RTC\_\-Utils::StateMachine}}
+\subsubsection[{setExitAction}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class State, class Listener, class States = StateHolder$<$State$>$, class Callback = void (Listener::$\ast$)(const States\& states)$>$ bool {\bf RTC\_\-Utils::StateMachine}$<$ State, Listener, States, Callback $>$::setExitAction (State {\em state}, \/  Callback {\em call\_\-back})\hspace{0.3cm}{\ttfamily  [inline]}}\label{classRTC__Utils_1_1StateMachine_ac308579215117b100ba31c38c31d580a}
+
+
+Exit action 関数を登録する. 
+
+各状態内で実行される Exit action 用コールバック関数を登録する。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em state}]登録対象状態 \item[{\em call\_\-back}]Exit action 用コールバック関数\end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+アクション実行結果 
+\end{DoxyReturn}
+\index{RTC\_\-Utils::StateMachine@{RTC\_\-Utils::StateMachine}!setListener@{setListener}}
+\index{setListener@{setListener}!RTC_Utils::StateMachine@{RTC\_\-Utils::StateMachine}}
+\subsubsection[{setListener}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class State, class Listener, class States = StateHolder$<$State$>$, class Callback = void (Listener::$\ast$)(const States\& states)$>$ void {\bf RTC\_\-Utils::StateMachine}$<$ State, Listener, States, Callback $>$::setListener (Listener $\ast$ {\em listener})\hspace{0.3cm}{\ttfamily  [inline]}}\label{classRTC__Utils_1_1StateMachine_afa4701917d4d6ec2a70f78397519f1f9}
+
+
+Listener オブジェクトを登録する. 
+
+各種アクション実行時に呼び出される Listener オブジェクトを登録する。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em listener}]Listener オブジェクト \end{DoxyParams}
+\index{RTC\_\-Utils::StateMachine@{RTC\_\-Utils::StateMachine}!setNOP@{setNOP}}
+\index{setNOP@{setNOP}!RTC_Utils::StateMachine@{RTC\_\-Utils::StateMachine}}
+\subsubsection[{setNOP}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class State, class Listener, class States = StateHolder$<$State$>$, class Callback = void (Listener::$\ast$)(const States\& states)$>$ void {\bf RTC\_\-Utils::StateMachine}$<$ State, Listener, States, Callback $>$::setNOP (Callback {\em call\_\-back})\hspace{0.3cm}{\ttfamily  [inline]}}\label{classRTC__Utils_1_1StateMachine_a0d232546cd076ffbb0860a612e582416}
+
+
+NOP関数を登録する. 
+
+NOP関数(何もしない関数)を登録する。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em call\_\-back}]コールバック関数 \end{DoxyParams}
+\index{RTC\_\-Utils::StateMachine@{RTC\_\-Utils::StateMachine}!setNullFunc@{setNullFunc}}
+\index{setNullFunc@{setNullFunc}!RTC_Utils::StateMachine@{RTC\_\-Utils::StateMachine}}
+\subsubsection[{setNullFunc}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class State, class Listener, class States = StateHolder$<$State$>$, class Callback = void (Listener::$\ast$)(const States\& states)$>$ void {\bf RTC\_\-Utils::StateMachine}$<$ State, Listener, States, Callback $>$::setNullFunc (Callback $\ast$ {\em s}, \/  Callback {\em nullfunc})\hspace{0.3cm}{\ttfamily  [inline, protected]}}\label{classRTC__Utils_1_1StateMachine_a99b23364ce99c4473f3a149383e7230f}
+
+
+NOP関数を設定. 
+
+NOP関数(何もしない関数)を登録する。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em s}]コールバック関数設定先 \item[{\em nullfunc}]コールバック関数(NOP関数) \end{DoxyParams}
+\index{RTC\_\-Utils::StateMachine@{RTC\_\-Utils::StateMachine}!setPostDoAction@{setPostDoAction}}
+\index{setPostDoAction@{setPostDoAction}!RTC_Utils::StateMachine@{RTC\_\-Utils::StateMachine}}
+\subsubsection[{setPostDoAction}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class State, class Listener, class States = StateHolder$<$State$>$, class Callback = void (Listener::$\ast$)(const States\& states)$>$ bool {\bf RTC\_\-Utils::StateMachine}$<$ State, Listener, States, Callback $>$::setPostDoAction (State {\em state}, \/  Callback {\em call\_\-back})\hspace{0.3cm}{\ttfamily  [inline]}}\label{classRTC__Utils_1_1StateMachine_aad4ee723ecbd2f5c97b358336574c26c}
+
+
+PostDo action 関数を登録する. 
+
+各状態内で実行される PostDo action 用コールバック関数を登録する。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em state}]登録対象状態 \item[{\em call\_\-back}]PostDo action 用コールバック関数\end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+アクション実行結果 
+\end{DoxyReturn}
+\index{RTC\_\-Utils::StateMachine@{RTC\_\-Utils::StateMachine}!setPreDoAction@{setPreDoAction}}
+\index{setPreDoAction@{setPreDoAction}!RTC_Utils::StateMachine@{RTC\_\-Utils::StateMachine}}
+\subsubsection[{setPreDoAction}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class State, class Listener, class States = StateHolder$<$State$>$, class Callback = void (Listener::$\ast$)(const States\& states)$>$ bool {\bf RTC\_\-Utils::StateMachine}$<$ State, Listener, States, Callback $>$::setPreDoAction (State {\em state}, \/  Callback {\em call\_\-back})\hspace{0.3cm}{\ttfamily  [inline]}}\label{classRTC__Utils_1_1StateMachine_a7bdcc53df08ccb0fa7fb31472613b2fe}
+
+
+PreDo action 関数を登録する. 
+
+各状態内で実行される PreDo action 用コールバック関数を登録する。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em state}]登録対象状態 \item[{\em call\_\-back}]PreDo action 用コールバック関数\end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+アクション実行結果 
+\end{DoxyReturn}
+\index{RTC\_\-Utils::StateMachine@{RTC\_\-Utils::StateMachine}!setStartState@{setStartState}}
+\index{setStartState@{setStartState}!RTC_Utils::StateMachine@{RTC\_\-Utils::StateMachine}}
+\subsubsection[{setStartState}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class State, class Listener, class States = StateHolder$<$State$>$, class Callback = void (Listener::$\ast$)(const States\& states)$>$ void {\bf RTC\_\-Utils::StateMachine}$<$ State, Listener, States, Callback $>$::setStartState (States {\em states})\hspace{0.3cm}{\ttfamily  [inline]}}\label{classRTC__Utils_1_1StateMachine_a5501ddabd4b93f4e7043708e2de26781}
+
+
+初期状態をセットする 
+
+ステートマシンの初期状態を設定する。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em states}]初期状態 \end{DoxyParams}
+\index{RTC\_\-Utils::StateMachine@{RTC\_\-Utils::StateMachine}!setTransitionAction@{setTransitionAction}}
+\index{setTransitionAction@{setTransitionAction}!RTC_Utils::StateMachine@{RTC\_\-Utils::StateMachine}}
+\subsubsection[{setTransitionAction}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class State, class Listener, class States = StateHolder$<$State$>$, class Callback = void (Listener::$\ast$)(const States\& states)$>$ bool {\bf RTC\_\-Utils::StateMachine}$<$ State, Listener, States, Callback $>$::setTransitionAction (Callback {\em call\_\-back})\hspace{0.3cm}{\ttfamily  [inline]}}\label{classRTC__Utils_1_1StateMachine_a1b18262bc0c7fa8cae25dffd567a0806}
+
+
+State transition action 関数を登録する. 
+
+状態遷移時に実行される State transition action 用コールバック関数を 登録する。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em call\_\-back}]State transition 用コールバック関数\end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+アクション実行結果 
+\end{DoxyReturn}
+\index{RTC\_\-Utils::StateMachine@{RTC\_\-Utils::StateMachine}!worker@{worker}}
+\index{worker@{worker}!RTC_Utils::StateMachine@{RTC\_\-Utils::StateMachine}}
+\subsubsection[{worker}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class State, class Listener, class States = StateHolder$<$State$>$, class Callback = void (Listener::$\ast$)(const States\& states)$>$ void {\bf RTC\_\-Utils::StateMachine}$<$ State, Listener, States, Callback $>$::worker ()\hspace{0.3cm}{\ttfamily  [inline]}}\label{classRTC__Utils_1_1StateMachine_af979deaf6160e247a6a6e3027f31c83b}
+
+
+駆動関数 
+
+ステートマシンの駆動関数。 実際の状態遷移および状態遷移発生時の各アクションの呼びだしを実行する。 
+
+\subsection{変数}
+\index{RTC\_\-Utils::StateMachine@{RTC\_\-Utils::StateMachine}!m\_\-do@{m\_\-do}}
+\index{m\_\-do@{m\_\-do}!RTC_Utils::StateMachine@{RTC\_\-Utils::StateMachine}}
+\subsubsection[{m\_\-do}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class State, class Listener, class States = StateHolder$<$State$>$, class Callback = void (Listener::$\ast$)(const States\& states)$>$ Callback$\ast$ {\bf RTC\_\-Utils::StateMachine}$<$ State, Listener, States, Callback $>$::{\bf m\_\-do}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC__Utils_1_1StateMachine_a86145d8ddee737f186fe019dc84de243}
+
+
+Do action 用コールバック関数. 
+
+\index{RTC\_\-Utils::StateMachine@{RTC\_\-Utils::StateMachine}!m\_\-entry@{m\_\-entry}}
+\index{m\_\-entry@{m\_\-entry}!RTC_Utils::StateMachine@{RTC\_\-Utils::StateMachine}}
+\subsubsection[{m\_\-entry}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class State, class Listener, class States = StateHolder$<$State$>$, class Callback = void (Listener::$\ast$)(const States\& states)$>$ Callback$\ast$ {\bf RTC\_\-Utils::StateMachine}$<$ State, Listener, States, Callback $>$::{\bf m\_\-entry}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC__Utils_1_1StateMachine_a728fe8f596c77e326bc356b274144bb5}
+
+
+Entry action 用コールバック関数. 
+
+\index{RTC\_\-Utils::StateMachine@{RTC\_\-Utils::StateMachine}!m\_\-exit@{m\_\-exit}}
+\index{m\_\-exit@{m\_\-exit}!RTC_Utils::StateMachine@{RTC\_\-Utils::StateMachine}}
+\subsubsection[{m\_\-exit}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class State, class Listener, class States = StateHolder$<$State$>$, class Callback = void (Listener::$\ast$)(const States\& states)$>$ Callback$\ast$ {\bf RTC\_\-Utils::StateMachine}$<$ State, Listener, States, Callback $>$::{\bf m\_\-exit}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC__Utils_1_1StateMachine_a75fb6776bd228a8005eda56e49a33373}
+
+
+Exit action 用コールバック関数. 
+
+\index{RTC\_\-Utils::StateMachine@{RTC\_\-Utils::StateMachine}!m\_\-listener@{m\_\-listener}}
+\index{m\_\-listener@{m\_\-listener}!RTC_Utils::StateMachine@{RTC\_\-Utils::StateMachine}}
+\subsubsection[{m\_\-listener}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class State, class Listener, class States = StateHolder$<$State$>$, class Callback = void (Listener::$\ast$)(const States\& states)$>$ Listener$\ast$ {\bf RTC\_\-Utils::StateMachine}$<$ State, Listener, States, Callback $>$::{\bf m\_\-listener}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC__Utils_1_1StateMachine_a25f2e293e773fe5c4ffdd49fb343f734}
+
+
+コールバック関数用リスナー 
+
+\index{RTC\_\-Utils::StateMachine@{RTC\_\-Utils::StateMachine}!m\_\-mutex@{m\_\-mutex}}
+\index{m\_\-mutex@{m\_\-mutex}!RTC_Utils::StateMachine@{RTC\_\-Utils::StateMachine}}
+\subsubsection[{m\_\-mutex}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class State, class Listener, class States = StateHolder$<$State$>$, class Callback = void (Listener::$\ast$)(const States\& states)$>$ {\bf Mutex} {\bf RTC\_\-Utils::StateMachine}$<$ State, Listener, States, Callback $>$::{\bf m\_\-mutex}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC__Utils_1_1StateMachine_aedd1306b007958b49a248d07578214b3}
+\index{RTC\_\-Utils::StateMachine@{RTC\_\-Utils::StateMachine}!m\_\-num@{m\_\-num}}
+\index{m\_\-num@{m\_\-num}!RTC_Utils::StateMachine@{RTC\_\-Utils::StateMachine}}
+\subsubsection[{m\_\-num}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class State, class Listener, class States = StateHolder$<$State$>$, class Callback = void (Listener::$\ast$)(const States\& states)$>$ int {\bf RTC\_\-Utils::StateMachine}$<$ State, Listener, States, Callback $>$::{\bf m\_\-num}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC__Utils_1_1StateMachine_a2503583562749e18c43ca48c6066d9f4}
+
+
+状態数 
+
+\index{RTC\_\-Utils::StateMachine@{RTC\_\-Utils::StateMachine}!m\_\-postdo@{m\_\-postdo}}
+\index{m\_\-postdo@{m\_\-postdo}!RTC_Utils::StateMachine@{RTC\_\-Utils::StateMachine}}
+\subsubsection[{m\_\-postdo}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class State, class Listener, class States = StateHolder$<$State$>$, class Callback = void (Listener::$\ast$)(const States\& states)$>$ Callback$\ast$ {\bf RTC\_\-Utils::StateMachine}$<$ State, Listener, States, Callback $>$::{\bf m\_\-postdo}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC__Utils_1_1StateMachine_ac90335d93cc0c173335b130dd91a33e4}
+
+
+PostDo action 用コールバック関数. 
+
+\index{RTC\_\-Utils::StateMachine@{RTC\_\-Utils::StateMachine}!m\_\-predo@{m\_\-predo}}
+\index{m\_\-predo@{m\_\-predo}!RTC_Utils::StateMachine@{RTC\_\-Utils::StateMachine}}
+\subsubsection[{m\_\-predo}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class State, class Listener, class States = StateHolder$<$State$>$, class Callback = void (Listener::$\ast$)(const States\& states)$>$ Callback$\ast$ {\bf RTC\_\-Utils::StateMachine}$<$ State, Listener, States, Callback $>$::{\bf m\_\-predo}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC__Utils_1_1StateMachine_a687b8b8abab11fb696555fa861240f30}
+
+
+PreDo action 用コールバック関数. 
+
+\index{RTC\_\-Utils::StateMachine@{RTC\_\-Utils::StateMachine}!m\_\-selftrans@{m\_\-selftrans}}
+\index{m\_\-selftrans@{m\_\-selftrans}!RTC_Utils::StateMachine@{RTC\_\-Utils::StateMachine}}
+\subsubsection[{m\_\-selftrans}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class State, class Listener, class States = StateHolder$<$State$>$, class Callback = void (Listener::$\ast$)(const States\& states)$>$ bool {\bf RTC\_\-Utils::StateMachine}$<$ State, Listener, States, Callback $>$::{\bf m\_\-selftrans}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC__Utils_1_1StateMachine_aa02af266af8b8e0abf6609abede2a323}
+\index{RTC\_\-Utils::StateMachine@{RTC\_\-Utils::StateMachine}!m\_\-states@{m\_\-states}}
+\index{m\_\-states@{m\_\-states}!RTC_Utils::StateMachine@{RTC\_\-Utils::StateMachine}}
+\subsubsection[{m\_\-states}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class State, class Listener, class States = StateHolder$<$State$>$, class Callback = void (Listener::$\ast$)(const States\& states)$>$ States {\bf RTC\_\-Utils::StateMachine}$<$ State, Listener, States, Callback $>$::{\bf m\_\-states}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC__Utils_1_1StateMachine_a29e2692dc448060388da12e0a029cfad}
+
+
+現在の状態情報 
+
+\index{RTC\_\-Utils::StateMachine@{RTC\_\-Utils::StateMachine}!m\_\-transit@{m\_\-transit}}
+\index{m\_\-transit@{m\_\-transit}!RTC_Utils::StateMachine@{RTC\_\-Utils::StateMachine}}
+\subsubsection[{m\_\-transit}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class State, class Listener, class States = StateHolder$<$State$>$, class Callback = void (Listener::$\ast$)(const States\& states)$>$ Callback {\bf RTC\_\-Utils::StateMachine}$<$ State, Listener, States, Callback $>$::{\bf m\_\-transit}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC__Utils_1_1StateMachine_aa292b9b27cf14ea9b82b2ad8b8ddc49d}
+
+
+State transition action 用コールバック関数. 
+

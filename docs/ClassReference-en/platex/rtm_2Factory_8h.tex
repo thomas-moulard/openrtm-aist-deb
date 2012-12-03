@@ -1,0 +1,34 @@
+\section{Factory.h File Reference}
+\label{rtm_2Factory_8h}\index{Factory.h@{Factory.h}}
+{\ttfamily \#include $<$coil/Properties.h$>$}\par
+{\ttfamily \#include $<$rtm/NumberingPolicy.h$>$}\par
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class {\bf RTC::FactoryBase}
+\begin{DoxyCompactList}\small\item\em \doxyref{FactoryBase}{p.}{classRTC_1_1FactoryBase} base class. \item\end{DoxyCompactList}\item 
+class {\bf RTC::FactoryCXX}
+\begin{DoxyCompactList}\small\item\em \doxyref{FactoryCXX}{p.}{classRTC_1_1FactoryCXX} class. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace {\bf RTC}
+
+
+\begin{DoxyCompactList}\small\item\em RT-\/Component. \item\end{DoxyCompactList}
+
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef RTObject\_\-impl $\ast$($\ast$ {\bf RTC::RtcNewFunc} )(Manager $\ast$manager)
+\item 
+typedef void($\ast$ {\bf RTC::RtcDeleteFunc} )(RTObject\_\-impl $\ast$rtc)
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$class \_\-New $>$ }\\RTObject\_\-impl $\ast$ {\bf RTC::Create} (Manager $\ast$manager)
+\begin{DoxyCompactList}\small\item\em Template function to create RT-\/Components. \item\end{DoxyCompactList}\item 
+{\footnotesize template$<$class \_\-Delete $>$ }\\void {\bf RTC::Delete} (RTObject\_\-impl $\ast$rtc)
+\begin{DoxyCompactList}\small\item\em Template function to destroy RT-\/Components. \item\end{DoxyCompactList}\end{DoxyCompactItemize}

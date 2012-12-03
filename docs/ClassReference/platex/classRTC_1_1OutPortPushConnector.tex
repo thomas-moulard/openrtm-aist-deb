@@ -1,0 +1,193 @@
+\section{クラス RTC::OutPortPushConnector}
+\label{classRTC_1_1OutPortPushConnector}\index{RTC::OutPortPushConnector@{RTC::OutPortPushConnector}}
+
+
+\doxyref{OutPortPushConnector}{p.}{classRTC_1_1OutPortPushConnector} クラス.  
+
+
+
+
+{\ttfamily \#include $<$OutPortPushConnector.h$>$}
+
+RTC::OutPortPushConnectorに対する継承グラフ\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4cm]{classRTC_1_1OutPortPushConnector}
+\end{center}
+\end{figure}
+\subsection*{Public メソッド}
+\begin{DoxyCompactItemize}
+\item 
+DATAPORTSTATUS\_\-ENUM {\bf OutPortPushConnector} ({\bf ConnectorInfo} info, {\bf InPortConsumer} $\ast$consumer, {\bf ConnectorListeners} \&listeners, {\bf CdrBufferBase} $\ast$buffer=0)
+\begin{DoxyCompactList}\small\item\em コンストラクタ \item\end{DoxyCompactList}\item 
+virtual {\bf $\sim$OutPortPushConnector} ()
+\begin{DoxyCompactList}\small\item\em デストラクタ \item\end{DoxyCompactList}\item 
+virtual ReturnCode {\bf write} (const cdrMemoryStream \&data)
+\begin{DoxyCompactList}\small\item\em データの書き込み \item\end{DoxyCompactList}\item 
+virtual ReturnCode {\bf disconnect} ()
+\begin{DoxyCompactList}\small\item\em 接続解除 \item\end{DoxyCompactList}\item 
+virtual void {\bf activate} ()
+\begin{DoxyCompactList}\small\item\em アクティブ化 \item\end{DoxyCompactList}\item 
+virtual void {\bf deactivate} ()
+\begin{DoxyCompactList}\small\item\em 非アクティブ化 \item\end{DoxyCompactList}\item 
+virtual {\bf CdrBufferBase} $\ast$ {\bf getBuffer} ()
+\begin{DoxyCompactList}\small\item\em Buffer を取得する. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected メソッド}
+\begin{DoxyCompactItemize}
+\item 
+virtual {\bf PublisherBase} $\ast$ {\bf createPublisher} ({\bf ConnectorInfo} \&info)
+\begin{DoxyCompactList}\small\item\em Publisherの生成. \item\end{DoxyCompactList}\item 
+virtual {\bf CdrBufferBase} $\ast$ {\bf createBuffer} ({\bf ConnectorInfo} \&info)
+\begin{DoxyCompactList}\small\item\em Bufferの生成. \item\end{DoxyCompactList}\item 
+void {\bf onConnect} ()
+\begin{DoxyCompactList}\small\item\em 接続確立時にコールバックを呼ぶ \item\end{DoxyCompactList}\item 
+void {\bf onDisconnect} ()
+\begin{DoxyCompactList}\small\item\em 接続切断時にコールバックを呼ぶ \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{説明}
+\doxyref{OutPortPushConnector}{p.}{classRTC_1_1OutPortPushConnector} クラス. \doxyref{OutPort}{p.}{classRTC_1_1OutPort} の push 型データフローのための Connector クラス。このオブ ジェクトは、接続時に dataflow\_\-type に push が指定された場合、 \doxyref{OutPort}{p.}{classRTC_1_1OutPort} によって生成・所有され、InPortPushConnector と対になって、 データポートの push 型のデータフローを実現する。一つの接続に対して、 一つのデータストリームを提供する唯一の Connector が対応する。 Connector は 接続時に生成される UUID 形式の ID により区別される。
+
+\doxyref{OutPortPushConnector}{p.}{classRTC_1_1OutPortPushConnector} は以下の三つのオブジェクトを所有し管理する。
+
+
+\begin{DoxyItemize}
+\item \doxyref{InPortConsumer}{p.}{classRTC_1_1InPortConsumer}
+\item Buffer
+\item Publisher
+\end{DoxyItemize}
+
+\doxyref{OutPort}{p.}{classRTC_1_1OutPort} に書き込まれたデータは \doxyref{OutPortPushConnector::write()}{p.}{classRTC_1_1OutPortPushConnector_aa8d4b3864f5d7fc7e98f60e1b38864de} に渡 され、Connector は Publisher にデータを書き込む。Publisher はその 特性に従ってデータを Buffer から取得し \doxyref{InPortConsumer}{p.}{classRTC_1_1InPortConsumer} に対して push することで \doxyref{InPort}{p.}{classRTC_1_1InPort} にデータが転送される。
+
+\begin{DoxySince}{から}
+1.0.0 
+\end{DoxySince}
+
+
+\subsection{コンストラクタとデストラクタ}
+\index{RTC::OutPortPushConnector@{RTC::OutPortPushConnector}!OutPortPushConnector@{OutPortPushConnector}}
+\index{OutPortPushConnector@{OutPortPushConnector}!RTC::OutPortPushConnector@{RTC::OutPortPushConnector}}
+\subsubsection[{OutPortPushConnector}]{\setlength{\rightskip}{0pt plus 5cm}DATAPORTSTATUS\_\-ENUM RTC::OutPortPushConnector::OutPortPushConnector ({\bf ConnectorInfo} {\em info}, \/  {\bf InPortConsumer} $\ast$ {\em consumer}, \/  {\bf ConnectorListeners} \& {\em listeners}, \/  {\bf CdrBufferBase} $\ast$ {\em buffer} = {\ttfamily 0})}\label{classRTC_1_1OutPortPushConnector_a38b9953d41b0b2a3a61aedcf954907cb}
+
+
+コンストラクタ 
+
+\doxyref{OutPortPushConnector}{p.}{classRTC_1_1OutPortPushConnector} のコンストラクタはオブジェクト生成時に下記 を引数にとる。ConnectorInfo は接続情報を含み、この情報に従いパブ リッシャやバッファ等を生成する。InPort インターフェースに対する コンシューマオブジェクトへのポインタを取り、所有権を持つので、 \doxyref{OutPortPushConnector}{p.}{classRTC_1_1OutPortPushConnector} は \doxyref{InPortConsumer}{p.}{classRTC_1_1InPortConsumer} の解体責任を持つ。各種イ ベントに対するコールバック機構を提供する \doxyref{ConnectorListeners}{p.}{classRTC_1_1ConnectorListeners} を持 ち、適切なタイミングでコールバックを呼び出す。データバッファがも し \doxyref{OutPortBase}{p.}{classRTC_1_1OutPortBase} から提供される場合はそのポインタを取る。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em info}]\doxyref{ConnectorInfo}{p.}{classRTC_1_1ConnectorInfo} \item[{\em consumer}]\doxyref{InPortConsumer}{p.}{classRTC_1_1InPortConsumer} \item[{\em listeners}]\doxyref{ConnectorListeners}{p.}{classRTC_1_1ConnectorListeners} 型のリスナオブジェクトリスト \item[{\em buffer}]CdrBufferBase 型のバッファ \end{DoxyParams}
+\index{RTC::OutPortPushConnector@{RTC::OutPortPushConnector}!$\sim$OutPortPushConnector@{$\sim$OutPortPushConnector}}
+\index{$\sim$OutPortPushConnector@{$\sim$OutPortPushConnector}!RTC::OutPortPushConnector@{RTC::OutPortPushConnector}}
+\subsubsection[{$\sim$OutPortPushConnector}]{\setlength{\rightskip}{0pt plus 5cm}virtual RTC::OutPortPushConnector::$\sim$OutPortPushConnector ()\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classRTC_1_1OutPortPushConnector_a3f54eed6b522ac55405c9dfbd8d72639}
+
+
+デストラクタ 
+
+\doxyref{disconnect()}{p.}{classRTC_1_1OutPortPushConnector_ace1f7f9d47a8c2a31781a8cc1da828f0} が呼ばれ、consumer, publisher, buffer が解体・削除される。 
+
+\subsection{関数}
+\index{RTC::OutPortPushConnector@{RTC::OutPortPushConnector}!activate@{activate}}
+\index{activate@{activate}!RTC::OutPortPushConnector@{RTC::OutPortPushConnector}}
+\subsubsection[{activate}]{\setlength{\rightskip}{0pt plus 5cm}virtual void RTC::OutPortPushConnector::activate ()\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classRTC_1_1OutPortPushConnector_ad99dbf702d15a56b9d0b0deca3f8469a}
+
+
+アクティブ化 
+
+このコネクタをアクティブ化する 
+
+{\bf RTC::ConnectorBase} \doxyref{}{p.}{classRTC_1_1ConnectorBase_a6f7f9ddd882546044f911d66aefee665}を実装しています。
+
+\index{RTC::OutPortPushConnector@{RTC::OutPortPushConnector}!createBuffer@{createBuffer}}
+\index{createBuffer@{createBuffer}!RTC::OutPortPushConnector@{RTC::OutPortPushConnector}}
+\subsubsection[{createBuffer}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf CdrBufferBase}$\ast$ RTC::OutPortPushConnector::createBuffer ({\bf ConnectorInfo} \& {\em info})\hspace{0.3cm}{\ttfamily  [protected, virtual]}}\label{classRTC_1_1OutPortPushConnector_a862ec981cc8519b6a6952e85fa065d52}
+
+
+Bufferの生成. 
+
+与えられた接続情報に基づきバッファを生成する。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em info}]接続情報 \end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+バッファへのポインタ 
+\end{DoxyReturn}
+\index{RTC::OutPortPushConnector@{RTC::OutPortPushConnector}!createPublisher@{createPublisher}}
+\index{createPublisher@{createPublisher}!RTC::OutPortPushConnector@{RTC::OutPortPushConnector}}
+\subsubsection[{createPublisher}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf PublisherBase}$\ast$ RTC::OutPortPushConnector::createPublisher ({\bf ConnectorInfo} \& {\em info})\hspace{0.3cm}{\ttfamily  [protected, virtual]}}\label{classRTC_1_1OutPortPushConnector_a88c603a38f56a653f2f4efbd22ce1e40}
+
+
+Publisherの生成. 
+
+与えられた接続情報に基づきパブリッシャを生成する。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em info}]接続情報 \end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+パブリッシャへのポインタ 
+\end{DoxyReturn}
+\index{RTC::OutPortPushConnector@{RTC::OutPortPushConnector}!deactivate@{deactivate}}
+\index{deactivate@{deactivate}!RTC::OutPortPushConnector@{RTC::OutPortPushConnector}}
+\subsubsection[{deactivate}]{\setlength{\rightskip}{0pt plus 5cm}virtual void RTC::OutPortPushConnector::deactivate ()\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classRTC_1_1OutPortPushConnector_a5a3f57bca350504a903b10c2a57ac80b}
+
+
+非アクティブ化 
+
+このコネクタを非アクティブ化する 
+
+{\bf RTC::ConnectorBase} \doxyref{}{p.}{classRTC_1_1ConnectorBase_a8fe6a1bfe8d5ee586d51293b2bcf36d1}を実装しています。
+
+\index{RTC::OutPortPushConnector@{RTC::OutPortPushConnector}!disconnect@{disconnect}}
+\index{disconnect@{disconnect}!RTC::OutPortPushConnector@{RTC::OutPortPushConnector}}
+\subsubsection[{disconnect}]{\setlength{\rightskip}{0pt plus 5cm}virtual ReturnCode RTC::OutPortPushConnector::disconnect ()\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classRTC_1_1OutPortPushConnector_ace1f7f9d47a8c2a31781a8cc1da828f0}
+
+
+接続解除 
+
+consumer, publisher, buffer が解体・削除される。 
+
+{\bf RTC::OutPortConnector} \doxyref{}{p.}{classRTC_1_1OutPortConnector_a0871d3168eb72d38b598cf862f1ac799}を実装しています。
+
+\index{RTC::OutPortPushConnector@{RTC::OutPortPushConnector}!getBuffer@{getBuffer}}
+\index{getBuffer@{getBuffer}!RTC::OutPortPushConnector@{RTC::OutPortPushConnector}}
+\subsubsection[{getBuffer}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf CdrBufferBase}$\ast$ RTC::OutPortPushConnector::getBuffer ()\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classRTC_1_1OutPortPushConnector_a5a04e7d25e944f89cbc5a323749887fd}
+
+
+Buffer を取得する. 
+
+Connector が保持している Buffer を返す 
+
+{\bf RTC::OutPortConnector} \doxyref{}{p.}{classRTC_1_1OutPortConnector_aed38944495c634d459bb0c06618f33a1}を実装しています。
+
+\index{RTC::OutPortPushConnector@{RTC::OutPortPushConnector}!onConnect@{onConnect}}
+\index{onConnect@{onConnect}!RTC::OutPortPushConnector@{RTC::OutPortPushConnector}}
+\subsubsection[{onConnect}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::OutPortPushConnector::onConnect ()\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC_1_1OutPortPushConnector_a6ba54f5066e4baacb48c4851282c1c18}
+
+
+接続確立時にコールバックを呼ぶ 
+
+\index{RTC::OutPortPushConnector@{RTC::OutPortPushConnector}!onDisconnect@{onDisconnect}}
+\index{onDisconnect@{onDisconnect}!RTC::OutPortPushConnector@{RTC::OutPortPushConnector}}
+\subsubsection[{onDisconnect}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::OutPortPushConnector::onDisconnect ()\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC_1_1OutPortPushConnector_a470e87d018180f8f7db1fe47c726a912}
+
+
+接続切断時にコールバックを呼ぶ 
+
+\index{RTC::OutPortPushConnector@{RTC::OutPortPushConnector}!write@{write}}
+\index{write@{write}!RTC::OutPortPushConnector@{RTC::OutPortPushConnector}}
+\subsubsection[{write}]{\setlength{\rightskip}{0pt plus 5cm}virtual ReturnCode RTC::OutPortPushConnector::write (const cdrMemoryStream \& {\em data})\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classRTC_1_1OutPortPushConnector_aa8d4b3864f5d7fc7e98f60e1b38864de}
+
+
+データの書き込み 
+
+Publisherに対してデータを書き込み、これにより対応するInPortへデー タが転送される。正常終了した場合 PORT\_\-OK が返される。それ以外の 場合、エラー値として、CONNECTION\_\-LOST, BUFFER\_\-FULL, BUFFER\_\-ERROR, PORT\_\-ERROR, BUFFER\_\-TIMEOUT, PRECONDITION\_\-NO\_\-MET が 返される。
+
+\begin{DoxyReturn}{戻り値}
+PORT\_\-OK 正常終了 CONNECTION\_\-LOST 接続がロストした BUFFER\_\-FULL バッファが一杯である BUFFER\_\-ERROR バッファエラー BUFFER\_\-TIMEOUT バッファへの書き込みがタイムアウトした PRECONDITION\_\-NOT\_\-MET 事前条件を満たさない PORT\_\-ERROR その他のエラー 
+\end{DoxyReturn}
+
+
+{\bf RTC::OutPortConnector} \doxyref{}{p.}{classRTC_1_1OutPortConnector_af5b15d5b4346561d53b70c9040ae59a2}を実装しています。
+

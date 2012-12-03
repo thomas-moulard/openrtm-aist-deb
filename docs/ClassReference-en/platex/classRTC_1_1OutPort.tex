@@ -1,0 +1,189 @@
+\section{RTC::OutPort$<$ DataType $>$ Class Template Reference}
+\label{classRTC_1_1OutPort}\index{RTC::OutPort@{RTC::OutPort}}
+
+
+\doxyref{OutPort}{p.}{classRTC_1_1OutPort} template class.  
+
+
+
+
+{\ttfamily \#include $<$OutPort.h$>$}
+
+Inheritance diagram for RTC::OutPort$<$ DataType $>$:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3cm]{classRTC_1_1OutPort}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf OutPort} (const char $\ast$name, DataType \&value)
+\begin{DoxyCompactList}\small\item\em Constructor. \item\end{DoxyCompactList}\item 
+virtual {\bf $\sim$OutPort} (void)
+\begin{DoxyCompactList}\small\item\em Destructor. \item\end{DoxyCompactList}\item 
+virtual bool {\bf write} (DataType \&value)
+\begin{DoxyCompactList}\small\item\em Write data. \item\end{DoxyCompactList}\item 
+bool {\bf write} ()
+\begin{DoxyCompactList}\small\item\em Write data. \item\end{DoxyCompactList}\item 
+bool {\bf operator$<$$<$} (DataType \&value)
+\begin{DoxyCompactList}\small\item\em Write data. \item\end{DoxyCompactList}\item 
+{\bf DataPortStatus::Enum} {\bf getStatus} (int index)
+\begin{DoxyCompactList}\small\item\em Getting specified connector's writing status. \item\end{DoxyCompactList}\item 
+{\bf DataPortStatusList} {\bf getStatusList} ()
+\begin{DoxyCompactList}\small\item\em Getting specified connector's writing status list. \item\end{DoxyCompactList}\item 
+void {\bf setOnWrite} ({\bf OnWrite}$<$ DataType $>$ $\ast$on\_\-write)
+\begin{DoxyCompactList}\small\item\em Set \doxyref{OnWrite}{p.}{classRTC_1_1OnWrite} callback. \item\end{DoxyCompactList}\item 
+void {\bf setOnWriteConvert} ({\bf OnWriteConvert}$<$ DataType $>$ $\ast$on\_\-wconvert)
+\begin{DoxyCompactList}\small\item\em Set \doxyref{OnWriteConvert}{p.}{structRTC_1_1OnWriteConvert} callback. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$class DataType$>$ class RTC::OutPort$<$ DataType $>$}
+
+\doxyref{OutPort}{p.}{classRTC_1_1OutPort} template class. This is the \doxyref{OutPort}{p.}{classRTC_1_1OutPort} template class. The data type \char`\"{}DateType\char`\"{} supported by \doxyref{OutPort}{p.}{classRTC_1_1OutPort} and the buffer type \char`\"{}BufferType\char`\"{} are used as template arguments.
+
+\begin{DoxySince}{Since}
+0.2.0 
+\end{DoxySince}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{RTC::OutPort@{RTC::OutPort}!OutPort@{OutPort}}
+\index{OutPort@{OutPort}!RTC::OutPort@{RTC::OutPort}}
+\subsubsection[{OutPort}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class DataType $>$ {\bf RTC::OutPort}$<$ DataType $>$::{\bf OutPort} (const char $\ast$ {\em name}, \/  DataType \& {\em value})\hspace{0.3cm}{\ttfamily  [inline]}}\label{classRTC_1_1OutPort_af564b47046f4c79713e7a16d5f476aa6}
+
+
+Constructor. 
+
+Constructor
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em name}]Port's name \item[{\em value}]Data variable bound to this port \item[{\em length}]Buffer length (The default value:8) \end{DoxyParams}
+\index{RTC::OutPort@{RTC::OutPort}!$\sim$OutPort@{$\sim$OutPort}}
+\index{$\sim$OutPort@{$\sim$OutPort}!RTC::OutPort@{RTC::OutPort}}
+\subsubsection[{$\sim$OutPort}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class DataType $>$ virtual {\bf RTC::OutPort}$<$ DataType $>$::$\sim${\bf OutPort} (void)\hspace{0.3cm}{\ttfamily  [inline, virtual]}}\label{classRTC_1_1OutPort_a678f9415aae9691b109cac05ab7efc0f}
+
+
+Destructor. 
+
+Destructor 
+
+\subsection{Member Function Documentation}
+\index{RTC::OutPort@{RTC::OutPort}!getStatus@{getStatus}}
+\index{getStatus@{getStatus}!RTC::OutPort@{RTC::OutPort}}
+\subsubsection[{getStatus}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class DataType $>$ {\bf DataPortStatus::Enum} {\bf RTC::OutPort}$<$ DataType $>$::getStatus (int {\em index})\hspace{0.3cm}{\ttfamily  [inline]}}\label{classRTC_1_1OutPort_a8d9d6078d0766ef178eaa0e7a89e4323}
+
+
+Getting specified connector's writing status. 
+
+An \doxyref{OutPort}{p.}{classRTC_1_1OutPort} has Connectors that are virtual data stream channel for each connection. \char`\"{}write()\char`\"{} function write into these Connectors, and each Connector returns writing-\/status. \doxyref{write()}{p.}{classRTC_1_1OutPort_a4eefb7caaaf1a48cc7a1678bbd58624c} function will return a true value if all Connectors return normal status, and a false value will be returned if at least one Connector failed. This function can be used to inspect each return status
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em index}]Connector index \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Writing status 
+\end{DoxyReturn}
+\index{RTC::OutPort@{RTC::OutPort}!getStatusList@{getStatusList}}
+\index{getStatusList@{getStatusList}!RTC::OutPort@{RTC::OutPort}}
+\subsubsection[{getStatusList}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class DataType $>$ {\bf DataPortStatusList} {\bf RTC::OutPort}$<$ DataType $>$::getStatusList ()\hspace{0.3cm}{\ttfamily  [inline]}}\label{classRTC_1_1OutPort_a2e599360675f20b2a462185d9fb4f6ee}
+
+
+Getting specified connector's writing status list. 
+
+An \doxyref{OutPort}{p.}{classRTC_1_1OutPort} has Connectors that are virtual data stream channel for each connection. \char`\"{}write()\char`\"{} function write into these Connectors, and each Connector returns writing-\/status. \doxyref{write()}{p.}{classRTC_1_1OutPort_a4eefb7caaaf1a48cc7a1678bbd58624c} function will return a true value if all Connectors return normal status, and a false value will be returned if at least one Connector failed. This function can be used to inspect each return status
+
+\begin{DoxyReturn}{Returns}
+Writing status list 
+\end{DoxyReturn}
+\index{RTC::OutPort@{RTC::OutPort}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!RTC::OutPort@{RTC::OutPort}}
+\subsubsection[{operator$<$$<$}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class DataType $>$ bool {\bf RTC::OutPort}$<$ DataType $>$::operator$<$$<$ (DataType \& {\em value})\hspace{0.3cm}{\ttfamily  [inline]}}\label{classRTC_1_1OutPort_ab96cafce5bda52fe093c451ea0ea5e80}
+
+
+Write data. 
+
+Write data to the port. Write the set value to the port.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em value}]The target data for writing\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Writing result (Successful:true, Failed:false) 
+\end{DoxyReturn}
+
+
+References RTC::OutPort$<$ DataType $>$::write().
+
+\index{RTC::OutPort@{RTC::OutPort}!setOnWrite@{setOnWrite}}
+\index{setOnWrite@{setOnWrite}!RTC::OutPort@{RTC::OutPort}}
+\subsubsection[{setOnWrite}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class DataType $>$ void {\bf RTC::OutPort}$<$ DataType $>$::setOnWrite ({\bf OnWrite}$<$ DataType $>$ $\ast$ {\em on\_\-write})\hspace{0.3cm}{\ttfamily  [inline]}}\label{classRTC_1_1OutPort_a9a23160be80aa4394c11f257d6f3b985}
+
+
+Set \doxyref{OnWrite}{p.}{classRTC_1_1OnWrite} callback. 
+
+This operation sets the \doxyref{OnWrite}{p.}{classRTC_1_1OnWrite} callback functor that is called just before \doxyref{write()}{p.}{classRTC_1_1OutPort_a4eefb7caaaf1a48cc7a1678bbd58624c} operation call. The ownership of the functor object is owned by caller of this operation. Therefore caller have to destruct the callback functor object by itself. Giving 0 as an argument for this operation, callback will be disabled.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em on\_\-write}]\doxyref{OnWrite}{p.}{classRTC_1_1OnWrite} callback functor \end{DoxyParams}
+\index{RTC::OutPort@{RTC::OutPort}!setOnWriteConvert@{setOnWriteConvert}}
+\index{setOnWriteConvert@{setOnWriteConvert}!RTC::OutPort@{RTC::OutPort}}
+\subsubsection[{setOnWriteConvert}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class DataType $>$ void {\bf RTC::OutPort}$<$ DataType $>$::setOnWriteConvert ({\bf OnWriteConvert}$<$ DataType $>$ $\ast$ {\em on\_\-wconvert})\hspace{0.3cm}{\ttfamily  [inline]}}\label{classRTC_1_1OutPort_acfcace76efbc58ef8f9654b467a2ef3c}
+
+
+Set \doxyref{OnWriteConvert}{p.}{structRTC_1_1OnWriteConvert} callback. 
+
+This operation sets the \doxyref{OnWriteConvert}{p.}{structRTC_1_1OnWriteConvert} callback functor that converts given data and is called just before \doxyref{write()}{p.}{classRTC_1_1OutPort_a4eefb7caaaf1a48cc7a1678bbd58624c} operation call. A recent data is given to argument and return data will be written into connector or its buffer. The ownership of the functor object is owned by caller of this operation. Therefore caller have to destruct the callback functor object by itself. Giving 0 as an argument for this operation, callback will be disabled.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em on\_\-wconvert}]\doxyref{OnWriteConvert}{p.}{structRTC_1_1OnWriteConvert} callback functor \end{DoxyParams}
+\index{RTC::OutPort@{RTC::OutPort}!write@{write}}
+\index{write@{write}!RTC::OutPort@{RTC::OutPort}}
+\subsubsection[{write}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class DataType $>$ bool {\bf RTC::OutPort}$<$ DataType $>$::write ()\hspace{0.3cm}{\ttfamily  [inline, virtual]}}\label{classRTC_1_1OutPort_a4eefb7caaaf1a48cc7a1678bbd58624c}
+
+
+Write data. 
+
+Write data to the port. Write the value, which was set to the bound variable, to the port.
+
+\begin{DoxyReturn}{Returns}
+Writing result (Successful:true, Failed:false) 
+\end{DoxyReturn}
+
+
+Implements {\bf RTC::OutPortBase} \doxyref{}{p.}{classRTC_1_1OutPortBase_a282e66241624ed46a8963ecf4ff70f01}.
+
+
+
+Referenced by RTC::OutPort$<$ DataType $>$::operator$<$$<$().
+
+\index{RTC::OutPort@{RTC::OutPort}!write@{write}}
+\index{write@{write}!RTC::OutPort@{RTC::OutPort}}
+\subsubsection[{write}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class DataType $>$ virtual bool {\bf RTC::OutPort}$<$ DataType $>$::write (DataType \& {\em value})\hspace{0.3cm}{\ttfamily  [inline, virtual]}}\label{classRTC_1_1OutPort_a7b12cce88841e731f8bd57fb98062dcf}
+
+
+Write data. 
+
+Write data in the port.
+
+
+\begin{DoxyItemize}
+\item When callback functor \doxyref{OnWrite}{p.}{classRTC_1_1OnWrite} is already set, \doxyref{OnWrite}{p.}{classRTC_1_1OnWrite} will be invoked before writing into the buffer held by \doxyref{OutPort}{p.}{classRTC_1_1OutPort}.
+\item When the buffer held by \doxyref{OutPort}{p.}{classRTC_1_1OutPort} can detect the overflow, and when it detected the overflow at writing, callback functor OnOverflow will be invoked.
+\item When callback functor \doxyref{OnWriteConvert}{p.}{structRTC_1_1OnWriteConvert} is already set, the return value of operator() of \doxyref{OnWriteConvert}{p.}{structRTC_1_1OnWriteConvert} will be written into the buffer at the writing.
+\end{DoxyItemize}
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em value}]The target data for writing\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Writing result (Successful:true, Failed:false) 
+\end{DoxyReturn}
+
+
+References RTC::DataPortStatus::CONNECTION\_\-LOST, RTC::PortBase::disconnect(), RTC::PortBase::findConnProfile(), CORBA\_\-SeqUtil::for\_\-each(), RTC::OutPortBase::m\_\-connectors, RTC::PortBase::m\_\-connectorsMutex, RTC::PortBase::m\_\-onConnectionLost, RTC::DataPortStatus::PORT\_\-OK, RTC\_\-DEBUG, RTC\_\-TRACE, and RTC\_\-WARN.
+

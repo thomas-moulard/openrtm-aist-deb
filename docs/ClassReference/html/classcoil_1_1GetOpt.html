@@ -1,0 +1,226 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<title>OpenRTM: クラス coil::GetOpt</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<!-- 作成： Doxygen 1.6.3 -->
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="index.html"><span>メインページ</span></a></li>
+      <li><a href="namespaces.html"><span>ネームスペース</span></a></li>
+      <li class="current"><a href="annotated.html"><span>クラス</span></a></li>
+      <li><a href="files.html"><span>ファイル</span></a></li>
+    </ul>
+  </div>
+  <div class="tabs">
+    <ul>
+      <li><a href="annotated.html"><span>構成</span></a></li>
+      <li><a href="hierarchy.html"><span>クラス階層</span></a></li>
+      <li><a href="functions.html"><span>構成メンバ</span></a></li>
+    </ul>
+  </div>
+  <div class="navpath"><a class="el" href="namespacecoil.html">coil</a>::<a class="el" href="classcoil_1_1GetOpt.html">GetOpt</a>
+  </div>
+</div>
+<div class="contents">
+<h1>クラス coil::GetOpt</h1><!-- doxytag: class="coil::GetOpt" -->
+<p><a class="el" href="classcoil_1_1GetOpt.html" title="GetOpt クラス.">GetOpt</a> クラス.  
+<a href="#_details">[詳細]</a></p>
+
+<p><code>#include &lt;<a class="el" href="OS_8h_source.html">OS.h</a>&gt;</code></p>
+
+<p><a href="classcoil_1_1GetOpt-members.html">すべてのメンバ一覧</a></p>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr><td colspan="2"><h2>Public メソッド</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcoil_1_1GetOpt.html#ac5d327f254117a66c9f2f1a60d02f2fd">GetOpt</a> (int argc, char *const argv[], const char *opt, int flag)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">コンストラクタ  <a href="#ac5d327f254117a66c9f2f1a60d02f2fd"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcoil_1_1GetOpt.html#ac72f5662f12ddac40609a91d7ef91dca">~GetOpt</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">デストラクタ  <a href="#ac72f5662f12ddac40609a91d7ef91dca"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcoil_1_1GetOpt.html#aeccfe44e8e4cf01a3eb105f06414e3f8">operator()</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">コマンドライン引数解析  <a href="#aeccfe44e8e4cf01a3eb105f06414e3f8"></a><br/></td></tr>
+<tr><td colspan="2"><h2>Public 変数</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">char *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcoil_1_1GetOpt.html#ab737d20597f45c203ee94149602fd76e">optarg</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcoil_1_1GetOpt.html#a65e9137c10e3f5d0558b1a2581314ac2">optind</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">オプション引数  <a href="#a65e9137c10e3f5d0558b1a2581314ac2"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcoil_1_1GetOpt.html#ad0c8937327497c149a3e9fc2b8848849">opterr</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">処理対象引数  <a href="#ad0c8937327497c149a3e9fc2b8848849"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcoil_1_1GetOpt.html#a6b068abe70b88844f85a2eda5855e29d">optopt</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">エラー表示 0:抑止、1:表示  <a href="#a6b068abe70b88844f85a2eda5855e29d"></a><br/></td></tr>
+</table>
+<hr/><a name="_details"></a><h2>説明</h2>
+<p><a class="el" href="classcoil_1_1GetOpt.html" title="GetOpt クラス.">GetOpt</a> クラス. </p>
+<hr/><h2>コンストラクタとデストラクタ</h2>
+<a class="anchor" id="ac5d327f254117a66c9f2f1a60d02f2fd"></a><!-- doxytag: member="coil::GetOpt::GetOpt" ref="ac5d327f254117a66c9f2f1a60d02f2fd" args="(int argc, char *const argv[], const char *opt, int flag)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">coil::GetOpt::GetOpt </td>
+          <td>(</td>
+          <td class="paramtype">int&nbsp;</td>
+          <td class="paramname"> <em>argc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *const &nbsp;</td>
+          <td class="paramname"> <em>argv</em>[], </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&nbsp;</td>
+          <td class="paramname"> <em>opt</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&nbsp;</td>
+          <td class="paramname"> <em>flag</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>コンストラクタ </p>
+<p>コンストラクタ。</p>
+<dl><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>name</em>&nbsp;</td><td>オブジェクト名 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>参照先 <a class="el" href="OS_8h_source.html#l00239">optind</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ac72f5662f12ddac40609a91d7ef91dca"></a><!-- doxytag: member="coil::GetOpt::~GetOpt" ref="ac72f5662f12ddac40609a91d7ef91dca" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">coil::GetOpt::~GetOpt </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>デストラクタ </p>
+<p>デストラクタ。 </p>
+
+<p>参照先 <a class="el" href="OS_8h_source.html#l00239">optind</a>.</p>
+
+</div>
+</div>
+<hr/><h2>関数</h2>
+<a class="anchor" id="aeccfe44e8e4cf01a3eb105f06414e3f8"></a><!-- doxytag: member="coil::GetOpt::operator()" ref="aeccfe44e8e4cf01a3eb105f06414e3f8" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int coil::GetOpt::operator() </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>コマンドライン引数解析 </p>
+<p>コマンドライン引数を解析する。</p>
+<dl class="return"><dt><b>戻り値:</b></dt><dd>解析結果 </dd></dl>
+
+<p>参照先 <a class="el" href="OS_8h_source.html#l00238">optarg</a>, <a class="el" href="OS_8h_source.html#l00240">opterr</a>, <a class="el" href="OS_8h_source.html#l00239">optind</a>, と <a class="el" href="OS_8h_source.html#l00241">optopt</a>.</p>
+
+</div>
+</div>
+<hr/><h2>変数</h2>
+<a class="anchor" id="ab737d20597f45c203ee94149602fd76e"></a><!-- doxytag: member="coil::GetOpt::optarg" ref="ab737d20597f45c203ee94149602fd76e" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char* <a class="el" href="classcoil_1_1GetOpt.html#ab737d20597f45c203ee94149602fd76e">coil::GetOpt::optarg</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>参照元 <a class="el" href="OS_8h_source.html#l00224">operator()()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ad0c8937327497c149a3e9fc2b8848849"></a><!-- doxytag: member="coil::GetOpt::opterr" ref="ad0c8937327497c149a3e9fc2b8848849" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int <a class="el" href="classcoil_1_1GetOpt.html#ad0c8937327497c149a3e9fc2b8848849">coil::GetOpt::opterr</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>処理対象引数 </p>
+
+<p>参照元 <a class="el" href="OS_8h_source.html#l00224">operator()()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a65e9137c10e3f5d0558b1a2581314ac2"></a><!-- doxytag: member="coil::GetOpt::optind" ref="a65e9137c10e3f5d0558b1a2581314ac2" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int <a class="el" href="classcoil_1_1GetOpt.html#a65e9137c10e3f5d0558b1a2581314ac2">coil::GetOpt::optind</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>オプション引数 </p>
+
+<p>参照元 <a class="el" href="OS_8h_source.html#l00179">GetOpt()</a>, <a class="el" href="OS_8h_source.html#l00224">operator()()</a>, と <a class="el" href="OS_8h_source.html#l00200">~GetOpt()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a6b068abe70b88844f85a2eda5855e29d"></a><!-- doxytag: member="coil::GetOpt::optopt" ref="a6b068abe70b88844f85a2eda5855e29d" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int <a class="el" href="classcoil_1_1GetOpt.html#a6b068abe70b88844f85a2eda5855e29d">coil::GetOpt::optopt</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>エラー表示 0:抑止、1:表示 </p>
+
+<p>参照元 <a class="el" href="OS_8h_source.html#l00224">operator()()</a>.</p>
+
+</div>
+</div>
+</div>
+<hr class="footer"/><address style="text-align: right;"><small>OpenRTMに対してThu May 24 23:25:19 2012に生成されました。&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.6.3 </small></address>
+</body>
+</html>

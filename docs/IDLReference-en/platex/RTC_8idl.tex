@@ -1,0 +1,127 @@
+\section{RTC.idl File Reference}
+\label{RTC_8idl}\index{RTC.idl@{RTC.idl}}
+{\ttfamily import \char`\"{}SDOPackage.idl\char`\"{};}\par
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+interface {\bf RTC::ComponentAction}
+\begin{DoxyCompactList}\small\item\em \doxyref{ComponentAction}{p.}{interfaceRTC_1_1ComponentAction}. \item\end{DoxyCompactList}\item 
+interface {\bf RTC::LightweightRTObject}
+\begin{DoxyCompactList}\small\item\em \doxyref{LightweightRTObject}{p.}{interfaceRTC_1_1LightweightRTObject}. \item\end{DoxyCompactList}\item 
+interface {\bf RTC::ExecutionContext}
+\begin{DoxyCompactList}\small\item\em \doxyref{ExecutionContext}{p.}{interfaceRTC_1_1ExecutionContext}. \item\end{DoxyCompactList}\item 
+interface {\bf RTC::DataFlowComponentAction}
+\begin{DoxyCompactList}\small\item\em \doxyref{DataFlowComponentAction}{p.}{interfaceRTC_1_1DataFlowComponentAction}. \item\end{DoxyCompactList}\item 
+interface {\bf RTC::DataFlowComponent}
+\begin{DoxyCompactList}\small\item\em dataFlowComponent \item\end{DoxyCompactList}\item 
+interface {\bf RTC::Fsm}
+\begin{DoxyCompactList}\small\item\em fsm \item\end{DoxyCompactList}\item 
+interface {\bf RTC::FsmParticipantAction}
+\begin{DoxyCompactList}\small\item\em \doxyref{FsmParticipantAction}{p.}{interfaceRTC_1_1FsmParticipantAction}. \item\end{DoxyCompactList}\item 
+interface {\bf RTC::FsmParticipant}
+\item 
+interface {\bf RTC::Mode}
+\begin{DoxyCompactList}\small\item\em \doxyref{Mode}{p.}{interfaceRTC_1_1Mode}. \item\end{DoxyCompactList}\item 
+interface {\bf RTC::ModeCapable}
+\begin{DoxyCompactList}\small\item\em \doxyref{ModeCapable}{p.}{interfaceRTC_1_1ModeCapable}. \item\end{DoxyCompactList}\item 
+interface {\bf RTC::MultiModeComponentAction}
+\begin{DoxyCompactList}\small\item\em \doxyref{MultiModeComponentAction}{p.}{interfaceRTC_1_1MultiModeComponentAction}. \item\end{DoxyCompactList}\item 
+interface {\bf RTC::MultiModeObject}
+\item 
+struct {\bf RTC::PortInterfaceProfile}
+\begin{DoxyCompactList}\small\item\em \doxyref{PortInterfaceProfile}{p.}{structRTC_1_1PortInterfaceProfile}. \item\end{DoxyCompactList}\item 
+struct {\bf RTC::ConnectorProfile}
+\begin{DoxyCompactList}\small\item\em \doxyref{ConnectorProfile}{p.}{structRTC_1_1ConnectorProfile}. \item\end{DoxyCompactList}\item 
+struct {\bf RTC::PortProfile}
+\begin{DoxyCompactList}\small\item\em \doxyref{PortProfile}{p.}{structRTC_1_1PortProfile}. \item\end{DoxyCompactList}\item 
+struct {\bf RTC::ExecutionContextProfile}
+\item 
+interface {\bf RTC::FsmObject}
+\begin{DoxyCompactList}\small\item\em \doxyref{FsmObject}{p.}{interfaceRTC_1_1FsmObject}. \item\end{DoxyCompactList}\item 
+struct {\bf RTC::FsmBehaviorProfile}
+\begin{DoxyCompactList}\small\item\em \doxyref{FsmBehaviorProfile}{p.}{structRTC_1_1FsmBehaviorProfile}. \item\end{DoxyCompactList}\item 
+struct {\bf RTC::FsmProfile}
+\begin{DoxyCompactList}\small\item\em \doxyref{FsmProfile}{p.}{structRTC_1_1FsmProfile}. \item\end{DoxyCompactList}\item 
+interface {\bf RTC::FsmService}
+\begin{DoxyCompactList}\small\item\em \doxyref{FsmService}{p.}{interfaceRTC_1_1FsmService}. \item\end{DoxyCompactList}\item 
+struct {\bf RTC::ComponentProfile}
+\begin{DoxyCompactList}\small\item\em \doxyref{ComponentProfile}{p.}{structRTC_1_1ComponentProfile}. \item\end{DoxyCompactList}\item 
+interface {\bf RTC::PortService}
+\begin{DoxyCompactList}\small\item\em \doxyref{PortService}{p.}{interfaceRTC_1_1PortService}. \item\end{DoxyCompactList}\item 
+interface {\bf RTC::ExecutionContextService}
+\begin{DoxyCompactList}\small\item\em \doxyref{ExecutionContextService}{p.}{interfaceRTC_1_1ExecutionContextService}. \item\end{DoxyCompactList}\item 
+interface {\bf RTC::RTObject}
+\begin{DoxyCompactList}\small\item\em \doxyref{RTObject}{p.}{interfaceRTC_1_1RTObject}. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace {\bf RTC}
+\end{DoxyCompactItemize}
+\subsection*{Defines}
+\begin{DoxyCompactItemize}
+\item 
+\#define {\bf EXECUTION\_\-HANDLE\_\-TYPE\_\-NATIVE}~long
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef EXECUTION\_\-HANDLE\_\-TYPE\_\-NATIVE {\bf RTC::ExecutionContextHandle\_\-t}
+\begin{DoxyCompactList}\small\item\em ExecutionContextHandle\_\-t. \item\end{DoxyCompactList}\item 
+typedef {\bf SDOPackage::UniqueIdentifier} {\bf RTC::UniqueIdentifier}
+\item 
+typedef {\bf SDOPackage::NVList} {\bf RTC::NVList}
+\item 
+typedef sequence$<$ ExecutionContext $>$ {\bf RTC::ExecutionContextList}
+\item 
+typedef sequence$<$ PortInterfaceProfile $>$ {\bf RTC::PortInterfaceProfileList}
+\item 
+typedef sequence$<$ PortService $>$ {\bf RTC::PortServiceList}
+\item 
+typedef sequence$<$ RTObject $>$ {\bf RTC::RTCList}
+\item 
+typedef sequence$<$ ConnectorProfile $>$ {\bf RTC::ConnectorProfileList}
+\item 
+typedef sequence$<$ PortProfile $>$ {\bf RTC::PortProfileList}
+\item 
+typedef sequence$<$ ExecutionContextProfile $>$ {\bf RTC::ExecutionContextProfileList}
+\item 
+typedef sequence$<$ FsmBehaviorProfile $>$ {\bf RTC::FsmBehaviorProfileList}
+\item 
+typedef sequence$<$ ComponentProfile $>$ {\bf RTC::ComponentProfileList}
+\item 
+typedef sequence$<$ ExecutionContextService $>$ {\bf RTC::ExecutionContextServiceList}
+\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum {\bf RTC::ReturnCode\_\-t} \{ \par
+{\bf RTC::RTC\_\-OK}, 
+{\bf RTC::RTC\_\-ERROR}, 
+{\bf RTC::BAD\_\-PARAMETER}, 
+{\bf RTC::UNSUPPORTED}, 
+\par
+{\bf RTC::OUT\_\-OF\_\-RESOURCES}, 
+{\bf RTC::PRECONDITION\_\-NOT\_\-MET}
+ \}
+\begin{DoxyCompactList}\small\item\em ReturnCode\_\-t. \item\end{DoxyCompactList}\item 
+enum {\bf RTC::LifeCycleState} \{ {\bf RTC::CREATED\_\-STATE}, 
+{\bf RTC::INACTIVE\_\-STATE}, 
+{\bf RTC::ACTIVE\_\-STATE}, 
+{\bf RTC::ERROR\_\-STATE}
+ \}
+\begin{DoxyCompactList}\small\item\em LifeCycleState. \item\end{DoxyCompactList}\item 
+enum {\bf RTC::ExecutionKind} \{ {\bf RTC::PERIODIC}, 
+{\bf RTC::EVENT\_\-DRIVEN}, 
+{\bf RTC::OTHER}
+ \}
+\begin{DoxyCompactList}\small\item\em ExecutionKind. \item\end{DoxyCompactList}\item 
+enum {\bf RTC::PortInterfacePolarity} \{ {\bf RTC::PROVIDED}, 
+{\bf RTC::REQUIRED}
+ \}
+\begin{DoxyCompactList}\small\item\em PortInterfacePolarity. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Define Documentation}
+\index{RTC.idl@{RTC.idl}!EXECUTION\_\-HANDLE\_\-TYPE\_\-NATIVE@{EXECUTION\_\-HANDLE\_\-TYPE\_\-NATIVE}}
+\index{EXECUTION\_\-HANDLE\_\-TYPE\_\-NATIVE@{EXECUTION\_\-HANDLE\_\-TYPE\_\-NATIVE}!RTC.idl@{RTC.idl}}
+\subsubsection[{EXECUTION\_\-HANDLE\_\-TYPE\_\-NATIVE}]{\setlength{\rightskip}{0pt plus 5cm}\#define EXECUTION\_\-HANDLE\_\-TYPE\_\-NATIVE~long}\label{RTC_8idl_aeffb3a05d02a2be4851f4c1c59f000c3}

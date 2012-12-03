@@ -1,0 +1,112 @@
+\section{ComponentActionListener.h}
+\label{ComponentActionListener_8h}\index{ComponentActionListener.h@{ComponentActionListener.h}}
+
+
+component action listener class  
+
+
+{\ttfamily \#include $<$vector$>$}\par
+{\ttfamily \#include $<$utility$>$}\par
+{\ttfamily \#include $<$coil/Mutex.h$>$}\par
+{\ttfamily \#include $<$coil/Guard.h$>$}\par
+{\ttfamily \#include $<$rtm/RTC.h$>$}\par
+{\ttfamily \#include $<$rtm/idl/RTCSkel.h$>$}\par
+{\ttfamily \#include $<$rtm/ConnectorBase.h$>$}\par
+\subsection*{構成}
+\begin{DoxyCompactItemize}
+\item 
+class {\bf RTC::PreComponentActionListener}
+\begin{DoxyCompactList}\small\item\em \doxyref{PreComponentActionListener}{p.}{classRTC_1_1PreComponentActionListener} クラス. \item\end{DoxyCompactList}\item 
+class {\bf RTC::PostComponentActionListener}
+\begin{DoxyCompactList}\small\item\em \doxyref{PostComponentActionListener}{p.}{classRTC_1_1PostComponentActionListener} クラス. \item\end{DoxyCompactList}\item 
+class {\bf RTC::PortActionListener}
+\begin{DoxyCompactList}\small\item\em \doxyref{PortActionListener}{p.}{classRTC_1_1PortActionListener} クラス. \item\end{DoxyCompactList}\item 
+class {\bf RTC::ExecutionContextActionListener}
+\begin{DoxyCompactList}\small\item\em \doxyref{ExecutionContextActionListener}{p.}{classRTC_1_1ExecutionContextActionListener} クラス. \item\end{DoxyCompactList}\item 
+class {\bf RTC::PreComponentActionListenerHolder}
+\begin{DoxyCompactList}\small\item\em \doxyref{PreComponentActionListener}{p.}{classRTC_1_1PreComponentActionListener} ホルダクラス. \item\end{DoxyCompactList}\item 
+class {\bf RTC::PostComponentActionListenerHolder}
+\begin{DoxyCompactList}\small\item\em \doxyref{PostComponentActionListener}{p.}{classRTC_1_1PostComponentActionListener} ホルダクラス. \item\end{DoxyCompactList}\item 
+class {\bf RTC::PortActionListenerHolder}
+\begin{DoxyCompactList}\small\item\em \doxyref{PortActionListener}{p.}{classRTC_1_1PortActionListener} ホルダクラス. \item\end{DoxyCompactList}\item 
+class {\bf RTC::ExecutionContextActionListenerHolder}
+\begin{DoxyCompactList}\small\item\em \doxyref{ExecutionContextActionListener}{p.}{classRTC_1_1ExecutionContextActionListener} ホルダクラス. \item\end{DoxyCompactList}\item 
+class {\bf RTC::ComponentActionListeners}
+\begin{DoxyCompactList}\small\item\em \doxyref{ComponentActionListeners}{p.}{classRTC_1_1ComponentActionListeners} クラス. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{ネームスペース}
+\begin{DoxyCompactItemize}
+\item 
+namespace {\bf RTC}
+
+
+\begin{DoxyCompactList}\small\item\em RTコンポーネント. \item\end{DoxyCompactList}
+
+\end{DoxyCompactItemize}
+\subsection*{型定義}
+\begin{DoxyCompactItemize}
+\item 
+typedef ExecutionContextHandle\_\-t {\bf RTC::UniqueId}
+\end{DoxyCompactItemize}
+\subsection*{列挙型}
+\begin{DoxyCompactItemize}
+\item 
+enum {\bf RTC::PreComponentActionListenerType} \{ \par
+{\bf RTC::PRE\_\-ON\_\-INITIALIZE}, 
+{\bf RTC::PRE\_\-ON\_\-FINALIZE}, 
+{\bf RTC::PRE\_\-ON\_\-STARTUP}, 
+{\bf RTC::PRE\_\-ON\_\-SHUTDOWN}, 
+\par
+{\bf RTC::PRE\_\-ON\_\-ACTIVATED}, 
+{\bf RTC::PRE\_\-ON\_\-DEACTIVATED}, 
+{\bf RTC::PRE\_\-ON\_\-ABORTING}, 
+{\bf RTC::PRE\_\-ON\_\-ERROR}, 
+\par
+{\bf RTC::PRE\_\-ON\_\-RESET}, 
+{\bf RTC::PRE\_\-ON\_\-EXECUTE}, 
+{\bf RTC::PRE\_\-ON\_\-STATE\_\-UPDATE}, 
+{\bf RTC::PRE\_\-ON\_\-RATE\_\-CHANGED}, 
+\par
+{\bf RTC::PRE\_\-COMPONENT\_\-ACTION\_\-LISTENER\_\-NUM}
+ \}
+\begin{DoxyCompactList}\small\item\em PreComponentActionListener のタイプ. \item\end{DoxyCompactList}\item 
+enum {\bf RTC::PostComponentActionListenerType} \{ \par
+{\bf RTC::POST\_\-ON\_\-INITIALIZE}, 
+{\bf RTC::POST\_\-ON\_\-FINALIZE}, 
+{\bf RTC::POST\_\-ON\_\-STARTUP}, 
+{\bf RTC::POST\_\-ON\_\-SHUTDOWN}, 
+\par
+{\bf RTC::POST\_\-ON\_\-ACTIVATED}, 
+{\bf RTC::POST\_\-ON\_\-DEACTIVATED}, 
+{\bf RTC::POST\_\-ON\_\-ABORTING}, 
+{\bf RTC::POST\_\-ON\_\-ERROR}, 
+\par
+{\bf RTC::POST\_\-ON\_\-RESET}, 
+{\bf RTC::POST\_\-ON\_\-EXECUTE}, 
+{\bf RTC::POST\_\-ON\_\-STATE\_\-UPDATE}, 
+{\bf RTC::POST\_\-ON\_\-RATE\_\-CHANGED}, 
+\par
+{\bf RTC::POST\_\-COMPONENT\_\-ACTION\_\-LISTENER\_\-NUM}
+ \}
+\begin{DoxyCompactList}\small\item\em PostCompoenntActionListener のタイプ. \item\end{DoxyCompactList}\item 
+enum {\bf RTC::PortActionListenerType} \{ {\bf RTC::ADD\_\-PORT}, 
+{\bf RTC::REMOVE\_\-PORT}, 
+{\bf RTC::PORT\_\-ACTION\_\-LISTENER\_\-NUM}
+ \}
+\begin{DoxyCompactList}\small\item\em PortActionListener のタイプ. \item\end{DoxyCompactList}\item 
+enum {\bf RTC::ExecutionContextActionListenerType} \{ {\bf RTC::EC\_\-ATTACHED}, 
+{\bf RTC::EC\_\-DETACHED}, 
+{\bf RTC::EC\_\-ACTION\_\-LISTENER\_\-NUM}
+ \}
+\begin{DoxyCompactList}\small\item\em ExecutionContextActionListener のタイプ. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{説明}
+component action listener class \begin{DoxyDate}{日付}
+\$Date\$ 
+\end{DoxyDate}
+\begin{DoxyAuthor}{作者}
+Noriaki Ando $<${\tt n-\/ando@aist.go.jp}$>$
+\end{DoxyAuthor}
+Copyright (C) 2011 Noriaki Ando Intelligent Systems Research Institute, National Institute of Advanced Industrial Science and Technology (AIST), Japan All rights reserved.
+
+\$Id\$ 

@@ -1,0 +1,88 @@
+\section{RTC::ExtTrigExecutionContext Class Reference}
+\label{classRTC_1_1ExtTrigExecutionContext}\index{RTC::ExtTrigExecutionContext@{RTC::ExtTrigExecutionContext}}
+
+
+ExecutionContext class that enables one step execution.  
+
+
+
+
+{\ttfamily \#include $<$ExtTrigExecutionContext.h$>$}
+
+Inheritance diagram for RTC::ExtTrigExecutionContext:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3cm]{classRTC_1_1ExtTrigExecutionContext}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct {\bfseries Worker}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf ExtTrigExecutionContext} ()
+\begin{DoxyCompactList}\small\item\em Constructor. \item\end{DoxyCompactList}\item 
+virtual {\bf $\sim$ExtTrigExecutionContext} (void)
+\begin{DoxyCompactList}\small\item\em Destructor. \item\end{DoxyCompactList}\item 
+virtual void {\bf tick} ()  throw (CORBA::SystemException)
+\begin{DoxyCompactList}\small\item\em Move forward one step of ExecutionContext. \item\end{DoxyCompactList}\item 
+virtual int {\bf svc} (void)
+\begin{DoxyCompactList}\small\item\em Invoke each component's operation. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+ExecutionContext class that enables one step execution. ExecutionContext class that can execute every one cycle for Periodic Sampled Data Processing. Time(Tick) advances one cycle by invoking method externally.
+
+\begin{DoxySince}{Since}
+0.4.0 
+\end{DoxySince}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{RTC::ExtTrigExecutionContext@{RTC::ExtTrigExecutionContext}!ExtTrigExecutionContext@{ExtTrigExecutionContext}}
+\index{ExtTrigExecutionContext@{ExtTrigExecutionContext}!RTC::ExtTrigExecutionContext@{RTC::ExtTrigExecutionContext}}
+\subsubsection[{ExtTrigExecutionContext}]{\setlength{\rightskip}{0pt plus 5cm}RTC::ExtTrigExecutionContext::ExtTrigExecutionContext ()}\label{classRTC_1_1ExtTrigExecutionContext_a203eb6aa27e25fab09a3cb35d471b080}
+
+
+Constructor. 
+
+Constructor \index{RTC::ExtTrigExecutionContext@{RTC::ExtTrigExecutionContext}!$\sim$ExtTrigExecutionContext@{$\sim$ExtTrigExecutionContext}}
+\index{$\sim$ExtTrigExecutionContext@{$\sim$ExtTrigExecutionContext}!RTC::ExtTrigExecutionContext@{RTC::ExtTrigExecutionContext}}
+\subsubsection[{$\sim$ExtTrigExecutionContext}]{\setlength{\rightskip}{0pt plus 5cm}virtual RTC::ExtTrigExecutionContext::$\sim$ExtTrigExecutionContext (void)\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classRTC_1_1ExtTrigExecutionContext_a5f931fd6a6fdf84d8c7dedccc5f0b318}
+
+
+Destructor. 
+
+Destructor 
+
+\subsection{Member Function Documentation}
+\index{RTC::ExtTrigExecutionContext@{RTC::ExtTrigExecutionContext}!svc@{svc}}
+\index{svc@{svc}!RTC::ExtTrigExecutionContext@{RTC::ExtTrigExecutionContext}}
+\subsubsection[{svc}]{\setlength{\rightskip}{0pt plus 5cm}virtual int RTC::ExtTrigExecutionContext::svc (void)\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classRTC_1_1ExtTrigExecutionContext_aaa5d7178bb12669324647eb702629535}
+
+
+Invoke each component's operation. 
+
+Invoke each component's operation which is attached this ExecutionContext. Stop until the next operation is invoked after all component operations are invoked.
+
+\begin{DoxyReturn}{Returns}
+Operation result 
+\end{DoxyReturn}
+
+
+Reimplemented from {\bf RTC::PeriodicExecutionContext} \doxyref{}{p.}{classRTC_1_1PeriodicExecutionContext_acce0ee7c44366398928e688f895af60b}.
+
+\index{RTC::ExtTrigExecutionContext@{RTC::ExtTrigExecutionContext}!tick@{tick}}
+\index{tick@{tick}!RTC::ExtTrigExecutionContext@{RTC::ExtTrigExecutionContext}}
+\subsubsection[{tick}]{\setlength{\rightskip}{0pt plus 5cm}virtual void RTC::ExtTrigExecutionContext::tick ()  throw (CORBA::SystemException)\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classRTC_1_1ExtTrigExecutionContext_a620fd10cb8d7c5dc3a35d1bb21e06cde}
+
+
+Move forward one step of ExecutionContext. 
+
+Move forward one step of the ExecutionContext processing. 
+
+Reimplemented from {\bf RTC::ExecutionContextBase} \doxyref{}{p.}{classRTC_1_1ExecutionContextBase_a9a72856fe8c46ab49c54042d30c9e343}.
+

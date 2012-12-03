@@ -1,0 +1,103 @@
+\section{クラス テンプレート coil::TaskFunc$<$ T, F $>$}
+\label{classcoil_1_1TaskFunc}\index{coil::TaskFunc@{coil::TaskFunc}}
+
+
+\doxyref{TaskFunc}{p.}{classcoil_1_1TaskFunc} テンプレートクラス.  
+
+
+
+
+{\ttfamily \#include $<$PeriodicTaskBase.h$>$}
+
+coil::TaskFunc$<$ T, F $>$に対する継承グラフ\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2cm]{classcoil_1_1TaskFunc}
+\end{center}
+\end{figure}
+\subsection*{Public メソッド}
+\begin{DoxyCompactItemize}
+\item 
+{\bf TaskFunc} (T $\ast$obj, F func)
+\begin{DoxyCompactList}\small\item\em コンストラクタ \item\end{DoxyCompactList}\item 
+virtual {\bf $\sim$TaskFunc} ()
+\begin{DoxyCompactList}\small\item\em デストラクタ \item\end{DoxyCompactList}\item 
+virtual int {\bf operator()} ()
+\begin{DoxyCompactList}\small\item\em オブジェクトの関数実行 \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public 変数}
+\begin{DoxyCompactItemize}
+\item 
+T $\ast$ {\bf m\_\-obj}
+\begin{DoxyCompactList}\small\item\em オブジェクト \item\end{DoxyCompactList}\item 
+F {\bf m\_\-func}
+\begin{DoxyCompactList}\small\item\em 関数 \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{説明}
+\subsubsection*{template$<$typename T, typename F = int ($\ast$)()$>$ class coil::TaskFunc$<$ T, F $>$}
+
+\doxyref{TaskFunc}{p.}{classcoil_1_1TaskFunc} テンプレートクラス. 
+
+\subsection{コンストラクタとデストラクタ}
+\index{coil::TaskFunc@{coil::TaskFunc}!TaskFunc@{TaskFunc}}
+\index{TaskFunc@{TaskFunc}!coil::TaskFunc@{coil::TaskFunc}}
+\subsubsection[{TaskFunc}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T , typename F  = int ($\ast$)()$>$ {\bf coil::TaskFunc}$<$ T, F $>$::{\bf TaskFunc} (T $\ast$ {\em obj}, \/  F {\em func})\hspace{0.3cm}{\ttfamily  [inline]}}\label{classcoil_1_1TaskFunc_a1410664ef96bd517ae8ab57f90beedf9}
+
+
+コンストラクタ 
+
+コンストラクタ。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em obj}]オブジェクト \item[{\em func}]関数 \end{DoxyParams}
+\index{coil::TaskFunc@{coil::TaskFunc}!$\sim$TaskFunc@{$\sim$TaskFunc}}
+\index{$\sim$TaskFunc@{$\sim$TaskFunc}!coil::TaskFunc@{coil::TaskFunc}}
+\subsubsection[{$\sim$TaskFunc}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T , typename F  = int ($\ast$)()$>$ virtual {\bf coil::TaskFunc}$<$ T, F $>$::$\sim${\bf TaskFunc} ()\hspace{0.3cm}{\ttfamily  [inline, virtual]}}\label{classcoil_1_1TaskFunc_aa6fd4414acf37320347ed4e533009f23}
+
+
+デストラクタ 
+
+デストラクタ。 
+
+\subsection{関数}
+\index{coil::TaskFunc@{coil::TaskFunc}!operator()@{operator()}}
+\index{operator()@{operator()}!coil::TaskFunc@{coil::TaskFunc}}
+\subsubsection[{operator()}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T , typename F  = int ($\ast$)()$>$ virtual int {\bf coil::TaskFunc}$<$ T, F $>$::operator() ()\hspace{0.3cm}{\ttfamily  [inline, virtual]}}\label{classcoil_1_1TaskFunc_a01e6194b5baa8ad84f23e26f85c544c7}
+
+
+オブジェクトの関数実行 
+
+オブジェクトの関数を実行する。 
+
+{\bf coil::TaskFuncBase} \doxyref{}{p.}{classcoil_1_1TaskFuncBase_a4160d1057520a3452ead66979d2c3596}を実装しています。
+
+
+
+参照先 coil::TaskFunc$<$ T, F $>$::m\_\-func, と coil::TaskFunc$<$ T, F $>$::m\_\-obj.
+
+
+
+\subsection{変数}
+\index{coil::TaskFunc@{coil::TaskFunc}!m\_\-func@{m\_\-func}}
+\index{m\_\-func@{m\_\-func}!coil::TaskFunc@{coil::TaskFunc}}
+\subsubsection[{m\_\-func}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T , typename F  = int ($\ast$)()$>$ F {\bf coil::TaskFunc}$<$ T, F $>$::{\bf m\_\-func}}\label{classcoil_1_1TaskFunc_af609c03a98edc37c2c1ef95825cf8684}
+
+
+関数 
+
+
+
+参照元 coil::TaskFunc$<$ T, F $>$::operator()().
+
+\index{coil::TaskFunc@{coil::TaskFunc}!m\_\-obj@{m\_\-obj}}
+\index{m\_\-obj@{m\_\-obj}!coil::TaskFunc@{coil::TaskFunc}}
+\subsubsection[{m\_\-obj}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T , typename F  = int ($\ast$)()$>$ T$\ast$ {\bf coil::TaskFunc}$<$ T, F $>$::{\bf m\_\-obj}}\label{classcoil_1_1TaskFunc_ae959369ffe02cbc787c9e5849c91028f}
+
+
+オブジェクト 
+
+
+
+参照元 coil::TaskFunc$<$ T, F $>$::operator()().
+

@@ -1,0 +1,199 @@
+\section{„Ç§„É≥„Çø„Éï„Çß„Éº„Çπ RTC::RTObject}
+\label{interfaceRTC_1_1RTObject}\index{RTC::RTObject@{RTC::RTObject}}
+
+
+{\ttfamily import \char`\"{}RTC.idl\char`\"{};}
+
+RTC::RTObject„Å´ÂØæ„Åô„ÇãÁ∂ôÊâø„Ç∞„É©„Éï\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4cm]{interfaceRTC_1_1RTObject}
+\end{center}
+\end{figure}
+\subsection*{Public „É°„ÇΩ„ÉÉ„Éâ}
+\begin{DoxyCompactItemize}
+\item 
+{\bf ComponentProfile} {\bf get\_\-component\_\-profile} ()
+\item 
+{\bf PortServiceList} {\bf get\_\-ports} ()
+\item 
+{\bf ReturnCode\_\-t} {\bf initialize} ()
+\item 
+{\bf ReturnCode\_\-t} {\bf finalize} ()
+\item 
+boolean {\bf is\_\-alive} (in {\bf ExecutionContext} exec\_\-context)
+\item 
+{\bf ReturnCode\_\-t} {\bf exit} ()
+\item 
+{\bf ExecutionContextHandle\_\-t} {\bf attach\_\-context} (in {\bf ExecutionContext} exec\_\-context)
+\item 
+{\bf ReturnCode\_\-t} {\bf detach\_\-context} (in {\bf ExecutionContextHandle\_\-t} exec\_\-handle)
+\item 
+{\bf ExecutionContext} {\bf get\_\-context} (in {\bf ExecutionContextHandle\_\-t} exec\_\-handle)
+\item 
+{\bf ExecutionContextList} {\bf get\_\-owned\_\-contexts} ()
+\begin{DoxyCompactList}\small\item\em get\_\-owned\_\-contexts \item\end{DoxyCompactList}\item 
+{\bf ExecutionContextList} {\bf get\_\-participating\_\-contexts} ()
+\begin{DoxyCompactList}\small\item\em get\_\-participating\_\-contexts \item\end{DoxyCompactList}\item 
+{\bf ExecutionContextHandle\_\-t} {\bf get\_\-context\_\-handle} (in {\bf ExecutionContext} cxt)
+\item 
+{\bf ReturnCode\_\-t} {\bf on\_\-initialize} ()
+\item 
+{\bf ReturnCode\_\-t} {\bf on\_\-finalize} ()
+\item 
+{\bf ReturnCode\_\-t} {\bf on\_\-startup} (in {\bf ExecutionContextHandle\_\-t} exec\_\-handle)
+\item 
+{\bf ReturnCode\_\-t} {\bf on\_\-shutdown} (in {\bf ExecutionContextHandle\_\-t} exec\_\-handle)
+\item 
+{\bf ReturnCode\_\-t} {\bf on\_\-activated} (in {\bf ExecutionContextHandle\_\-t} exec\_\-handle)
+\item 
+{\bf ReturnCode\_\-t} {\bf on\_\-deactivated} (in {\bf ExecutionContextHandle\_\-t} exec\_\-handle)
+\item 
+{\bf ReturnCode\_\-t} {\bf on\_\-aborting} (in {\bf ExecutionContextHandle\_\-t} exec\_\-handle)
+\item 
+{\bf ReturnCode\_\-t} {\bf on\_\-error} (in {\bf ExecutionContextHandle\_\-t} exec\_\-handle)
+\item 
+{\bf ReturnCode\_\-t} {\bf on\_\-reset} (in {\bf ExecutionContextHandle\_\-t} exec\_\-handle)
+\item 
+{\bf UniqueIdentifier} {\bf get\_\-sdo\_\-id} ()  raises (NotAvailable, InternalError)
+\item 
+string {\bf get\_\-sdo\_\-type} ()  raises (NotAvailable, InternalError)
+\item 
+DeviceProfile {\bf get\_\-device\_\-profile} ()  raises (NotAvailable, InternalError)
+\item 
+ServiceProfileList {\bf get\_\-service\_\-profiles} ()  raises (NotAvailable, InternalError)
+\item 
+ServiceProfile {\bf get\_\-service\_\-profile} (in {\bf UniqueIdentifier} id)  raises (InvalidParameter, NotAvailable, InternalError)
+\item 
+SDOService {\bf get\_\-sdo\_\-service} (in {\bf UniqueIdentifier} id)  raises (InvalidParameter, NotAvailable, InternalError)
+\item 
+Configuration {\bf get\_\-configuration} ()  raises (InterfaceNotImplemented, NotAvailable, InternalError)
+\item 
+Monitoring {\bf get\_\-monitoring} ()  raises (InterfaceNotImplemented, NotAvailable, InternalError)
+\item 
+OrganizationList {\bf get\_\-organizations} ()  raises (NotAvailable, InternalError)
+\item 
+{\bf NVList} {\bf get\_\-status\_\-list} ()  raises (NotAvailable, InternalError)
+\item 
+any {\bf get\_\-status} (in string nme)  raises (InvalidParameter, NotAvailable, InternalError)
+\item 
+OrganizationList {\bf get\_\-owned\_\-organizations} ()  raises (NotAvailable,InternalError)
+\end{DoxyCompactItemize}
+
+
+\subsection{Èñ¢Êï∞}
+\index{RTC::RTObject@{RTC::RTObject}!attach\_\-context@{attach\_\-context}}
+\index{attach\_\-context@{attach\_\-context}!RTC::RTObject@{RTC::RTObject}}
+\subsubsection[{attach\_\-context}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ExecutionContextHandle\_\-t} RTC::LightweightRTObject::attach\_\-context (in {\bf ExecutionContext} {\em exec\_\-context})\hspace{0.3cm}{\ttfamily  [inherited]}}\label{interfaceRTC_1_1LightweightRTObject_a48dbdbcac3254c29ad01d43a4ee5a00c}
+\index{RTC::RTObject@{RTC::RTObject}!detach\_\-context@{detach\_\-context}}
+\index{detach\_\-context@{detach\_\-context}!RTC::RTObject@{RTC::RTObject}}
+\subsubsection[{detach\_\-context}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ReturnCode\_\-t} RTC::LightweightRTObject::detach\_\-context (in {\bf ExecutionContextHandle\_\-t} {\em exec\_\-handle})\hspace{0.3cm}{\ttfamily  [inherited]}}\label{interfaceRTC_1_1LightweightRTObject_a8eb94420ca08e8f7acaa778ed883b9a4}
+\index{RTC::RTObject@{RTC::RTObject}!exit@{exit}}
+\index{exit@{exit}!RTC::RTObject@{RTC::RTObject}}
+\subsubsection[{exit}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ReturnCode\_\-t} RTC::LightweightRTObject::exit ()\hspace{0.3cm}{\ttfamily  [inherited]}}\label{interfaceRTC_1_1LightweightRTObject_a49bd940b6964fa80d696db15b45c2f87}
+\index{RTC::RTObject@{RTC::RTObject}!finalize@{finalize}}
+\index{finalize@{finalize}!RTC::RTObject@{RTC::RTObject}}
+\subsubsection[{finalize}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ReturnCode\_\-t} RTC::LightweightRTObject::finalize ()\hspace{0.3cm}{\ttfamily  [inherited]}}\label{interfaceRTC_1_1LightweightRTObject_a23466f177b4289662ea035be831426ad}
+\index{RTC::RTObject@{RTC::RTObject}!get\_\-component\_\-profile@{get\_\-component\_\-profile}}
+\index{get\_\-component\_\-profile@{get\_\-component\_\-profile}!RTC::RTObject@{RTC::RTObject}}
+\subsubsection[{get\_\-component\_\-profile}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ComponentProfile} RTC::RTObject::get\_\-component\_\-profile ()}\label{interfaceRTC_1_1RTObject_aa75c245c8e7e0dd19148bbe5cefe4dcc}
+\index{RTC::RTObject@{RTC::RTObject}!get\_\-configuration@{get\_\-configuration}}
+\index{get\_\-configuration@{get\_\-configuration}!RTC::RTObject@{RTC::RTObject}}
+\subsubsection[{get\_\-configuration}]{\setlength{\rightskip}{0pt plus 5cm}Configuration SDOPackage::SDO::get\_\-configuration ()  raises (InterfaceNotImplemented, NotAvailable, InternalError)\hspace{0.3cm}{\ttfamily  [inherited]}}\label{interfaceSDOPackage_1_1SDO_a89b6ff35b88f6212355e439a3a47c60a}
+\index{RTC::RTObject@{RTC::RTObject}!get\_\-context@{get\_\-context}}
+\index{get\_\-context@{get\_\-context}!RTC::RTObject@{RTC::RTObject}}
+\subsubsection[{get\_\-context}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ExecutionContext} RTC::LightweightRTObject::get\_\-context (in {\bf ExecutionContextHandle\_\-t} {\em exec\_\-handle})\hspace{0.3cm}{\ttfamily  [inherited]}}\label{interfaceRTC_1_1LightweightRTObject_a7bb123faf81bcb57542c3a17f10948d6}
+\index{RTC::RTObject@{RTC::RTObject}!get\_\-context\_\-handle@{get\_\-context\_\-handle}}
+\index{get\_\-context\_\-handle@{get\_\-context\_\-handle}!RTC::RTObject@{RTC::RTObject}}
+\subsubsection[{get\_\-context\_\-handle}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ExecutionContextHandle\_\-t} RTC::LightweightRTObject::get\_\-context\_\-handle (in {\bf ExecutionContext} {\em cxt})\hspace{0.3cm}{\ttfamily  [inherited]}}\label{interfaceRTC_1_1LightweightRTObject_af54041744c01d68026aa200276e12f45}
+\#\#\# [∏Ìø¢] \doxyref{RTC.idl}{p.}{RTC_8idl} §À§œ¥ﬁ§ﬁ§Ï§∆§§§ §§§¨PIM§À§œ¥ﬁ§ﬁ§Ï§∆§§§Î°£ \#\#\# PIM§¨¿µ§∑§§°£ \index{RTC::RTObject@{RTC::RTObject}!get\_\-device\_\-profile@{get\_\-device\_\-profile}}
+\index{get\_\-device\_\-profile@{get\_\-device\_\-profile}!RTC::RTObject@{RTC::RTObject}}
+\subsubsection[{get\_\-device\_\-profile}]{\setlength{\rightskip}{0pt plus 5cm}DeviceProfile SDOPackage::SDO::get\_\-device\_\-profile ()  raises (NotAvailable, InternalError)\hspace{0.3cm}{\ttfamily  [inherited]}}\label{interfaceSDOPackage_1_1SDO_af96303b2025ea3e340303365b7ad9f0f}
+\index{RTC::RTObject@{RTC::RTObject}!get\_\-monitoring@{get\_\-monitoring}}
+\index{get\_\-monitoring@{get\_\-monitoring}!RTC::RTObject@{RTC::RTObject}}
+\subsubsection[{get\_\-monitoring}]{\setlength{\rightskip}{0pt plus 5cm}Monitoring SDOPackage::SDO::get\_\-monitoring ()  raises (InterfaceNotImplemented, NotAvailable, InternalError)\hspace{0.3cm}{\ttfamily  [inherited]}}\label{interfaceSDOPackage_1_1SDO_a7db6dded91e964ec26085d1fa8f540c9}
+\index{RTC::RTObject@{RTC::RTObject}!get\_\-organizations@{get\_\-organizations}}
+\index{get\_\-organizations@{get\_\-organizations}!RTC::RTObject@{RTC::RTObject}}
+\subsubsection[{get\_\-organizations}]{\setlength{\rightskip}{0pt plus 5cm}OrganizationList SDOPackage::SDO::get\_\-organizations ()  raises (NotAvailable, InternalError)\hspace{0.3cm}{\ttfamily  [inherited]}}\label{interfaceSDOPackage_1_1SDO_aadb5f8bb6eb2529189d3779940607edd}
+\index{RTC::RTObject@{RTC::RTObject}!get\_\-owned\_\-contexts@{get\_\-owned\_\-contexts}}
+\index{get\_\-owned\_\-contexts@{get\_\-owned\_\-contexts}!RTC::RTObject@{RTC::RTObject}}
+\subsubsection[{get\_\-owned\_\-contexts}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ExecutionContextList} RTC::LightweightRTObject::get\_\-owned\_\-contexts ()\hspace{0.3cm}{\ttfamily  [inherited]}}\label{interfaceRTC_1_1LightweightRTObject_aea9dd2a447cc3ddc55f20aab698da408}
+
+
+get\_\-owned\_\-contexts 
+
+\subsection{Description}\label{interfaceRTC_1_1LightweightRTObject_Description}
+§≥§Œ \doxyref{RTC}{p.}{namespaceRTC} §¨ΩÍÕ≠§π§Î \doxyref{ExecutionContext}{p.}{interfaceRTC_1_1ExecutionContext} §Œ•Í•π•»§ÚºË∆¿§π§Î°£ \index{RTC::RTObject@{RTC::RTObject}!get\_\-owned\_\-organizations@{get\_\-owned\_\-organizations}}
+\index{get\_\-owned\_\-organizations@{get\_\-owned\_\-organizations}!RTC::RTObject@{RTC::RTObject}}
+\subsubsection[{get\_\-owned\_\-organizations}]{\setlength{\rightskip}{0pt plus 5cm}OrganizationList SDOPackage::SDOSystemElement::get\_\-owned\_\-organizations ()  raises (NotAvailable,InternalError)\hspace{0.3cm}{\ttfamily  [inherited]}}\label{interfaceSDOPackage_1_1SDOSystemElement_a81238047c5dfa47d2cf3ebce1b78b240}
+\index{RTC::RTObject@{RTC::RTObject}!get\_\-participating\_\-contexts@{get\_\-participating\_\-contexts}}
+\index{get\_\-participating\_\-contexts@{get\_\-participating\_\-contexts}!RTC::RTObject@{RTC::RTObject}}
+\subsubsection[{get\_\-participating\_\-contexts}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ExecutionContextList} RTC::LightweightRTObject::get\_\-participating\_\-contexts ()\hspace{0.3cm}{\ttfamily  [inherited]}}\label{interfaceRTC_1_1LightweightRTObject_af2224880b89275ecf82efad0999b022a}
+
+
+get\_\-participating\_\-contexts 
+
+\subsection{Description}\label{interfaceRTC_1_1LightweightRTObject_Description}
+§≥§Œ \doxyref{RTC}{p.}{namespaceRTC} §¨ª≤≤√§∑§∆§§§Î§π§Ÿ§∆§Œ \doxyref{ExecutionContext}{p.}{interfaceRTC_1_1ExecutionContext} §Œ•Í•π•»§ÚºË∆¿§π§Î°£\subsection{Semantics}\label{interfaceRTC_1_1LightweightRTObject_Semantics}
+§≥§Œ•Í•π•»§À¥ﬁ§ﬁ§Ï§Îº¬π‘•≥•Û•∆•≠•π•»§œ°¢attach\_\-context §¨∏∆§”Ω– §µ§Ï§Î§¥§»§À°¢•Í•π•»§Àƒ…≤√§µ§Ï°¢detach\_\-context §¨∏∆§”Ω–§µ§Ï§Î§¥ §»§À°¢•Í•π•»§´§È∫ÔΩ¸§µ§Ï§Î°£ \index{RTC::RTObject@{RTC::RTObject}!get\_\-ports@{get\_\-ports}}
+\index{get\_\-ports@{get\_\-ports}!RTC::RTObject@{RTC::RTObject}}
+\subsubsection[{get\_\-ports}]{\setlength{\rightskip}{0pt plus 5cm}{\bf PortServiceList} RTC::RTObject::get\_\-ports ()}\label{interfaceRTC_1_1RTObject_a4e21edb9c244ed8469cb1fb2de48e158}
+\index{RTC::RTObject@{RTC::RTObject}!get\_\-sdo\_\-id@{get\_\-sdo\_\-id}}
+\index{get\_\-sdo\_\-id@{get\_\-sdo\_\-id}!RTC::RTObject@{RTC::RTObject}}
+\subsubsection[{get\_\-sdo\_\-id}]{\setlength{\rightskip}{0pt plus 5cm}{\bf UniqueIdentifier} SDOPackage::SDO::get\_\-sdo\_\-id ()  raises (NotAvailable, InternalError)\hspace{0.3cm}{\ttfamily  [inherited]}}\label{interfaceSDOPackage_1_1SDO_a08ccbbb1855dff27c598c38ce0c5aab1}
+\index{RTC::RTObject@{RTC::RTObject}!get\_\-sdo\_\-service@{get\_\-sdo\_\-service}}
+\index{get\_\-sdo\_\-service@{get\_\-sdo\_\-service}!RTC::RTObject@{RTC::RTObject}}
+\subsubsection[{get\_\-sdo\_\-service}]{\setlength{\rightskip}{0pt plus 5cm}SDOService SDOPackage::SDO::get\_\-sdo\_\-service (in {\bf UniqueIdentifier} {\em id})  raises (InvalidParameter, NotAvailable, InternalError)\hspace{0.3cm}{\ttfamily  [inherited]}}\label{interfaceSDOPackage_1_1SDO_a7d612d97207fecaf134959b93c6b3e60}
+\index{RTC::RTObject@{RTC::RTObject}!get\_\-sdo\_\-type@{get\_\-sdo\_\-type}}
+\index{get\_\-sdo\_\-type@{get\_\-sdo\_\-type}!RTC::RTObject@{RTC::RTObject}}
+\subsubsection[{get\_\-sdo\_\-type}]{\setlength{\rightskip}{0pt plus 5cm}string SDOPackage::SDO::get\_\-sdo\_\-type ()  raises (NotAvailable, InternalError)\hspace{0.3cm}{\ttfamily  [inherited]}}\label{interfaceSDOPackage_1_1SDO_a2b4141376be89eb90fd4904643476320}
+\index{RTC::RTObject@{RTC::RTObject}!get\_\-service\_\-profile@{get\_\-service\_\-profile}}
+\index{get\_\-service\_\-profile@{get\_\-service\_\-profile}!RTC::RTObject@{RTC::RTObject}}
+\subsubsection[{get\_\-service\_\-profile}]{\setlength{\rightskip}{0pt plus 5cm}ServiceProfile SDOPackage::SDO::get\_\-service\_\-profile (in {\bf UniqueIdentifier} {\em id})  raises (InvalidParameter, NotAvailable, InternalError)\hspace{0.3cm}{\ttfamily  [inherited]}}\label{interfaceSDOPackage_1_1SDO_a5ea1929e10ccc5e8b5896c4b0fbee635}
+\index{RTC::RTObject@{RTC::RTObject}!get\_\-service\_\-profiles@{get\_\-service\_\-profiles}}
+\index{get\_\-service\_\-profiles@{get\_\-service\_\-profiles}!RTC::RTObject@{RTC::RTObject}}
+\subsubsection[{get\_\-service\_\-profiles}]{\setlength{\rightskip}{0pt plus 5cm}ServiceProfileList SDOPackage::SDO::get\_\-service\_\-profiles ()  raises (NotAvailable, InternalError)\hspace{0.3cm}{\ttfamily  [inherited]}}\label{interfaceSDOPackage_1_1SDO_af455c384fa54ab6872d28db1baec3a1d}
+\index{RTC::RTObject@{RTC::RTObject}!get\_\-status@{get\_\-status}}
+\index{get\_\-status@{get\_\-status}!RTC::RTObject@{RTC::RTObject}}
+\subsubsection[{get\_\-status}]{\setlength{\rightskip}{0pt plus 5cm}any SDOPackage::SDO::get\_\-status (in string {\em nme})  raises (InvalidParameter, NotAvailable, InternalError)\hspace{0.3cm}{\ttfamily  [inherited]}}\label{interfaceSDOPackage_1_1SDO_a2655f624a38b590593154c8a8c11e6e8}
+\index{RTC::RTObject@{RTC::RTObject}!get\_\-status\_\-list@{get\_\-status\_\-list}}
+\index{get\_\-status\_\-list@{get\_\-status\_\-list}!RTC::RTObject@{RTC::RTObject}}
+\subsubsection[{get\_\-status\_\-list}]{\setlength{\rightskip}{0pt plus 5cm}{\bf NVList} SDOPackage::SDO::get\_\-status\_\-list ()  raises (NotAvailable, InternalError)\hspace{0.3cm}{\ttfamily  [inherited]}}\label{interfaceSDOPackage_1_1SDO_ae019ba73a5675a871701153bc56db14c}
+\index{RTC::RTObject@{RTC::RTObject}!initialize@{initialize}}
+\index{initialize@{initialize}!RTC::RTObject@{RTC::RTObject}}
+\subsubsection[{initialize}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ReturnCode\_\-t} RTC::LightweightRTObject::initialize ()\hspace{0.3cm}{\ttfamily  [inherited]}}\label{interfaceRTC_1_1LightweightRTObject_afb28c4d97677804da09488578b840eb5}
+\index{RTC::RTObject@{RTC::RTObject}!is\_\-alive@{is\_\-alive}}
+\index{is\_\-alive@{is\_\-alive}!RTC::RTObject@{RTC::RTObject}}
+\subsubsection[{is\_\-alive}]{\setlength{\rightskip}{0pt plus 5cm}boolean RTC::LightweightRTObject::is\_\-alive (in {\bf ExecutionContext} {\em exec\_\-context})\hspace{0.3cm}{\ttfamily  [inherited]}}\label{interfaceRTC_1_1LightweightRTObject_aa07c8c299b0addc49887508c1ee7be27}
+\index{RTC::RTObject@{RTC::RTObject}!on\_\-aborting@{on\_\-aborting}}
+\index{on\_\-aborting@{on\_\-aborting}!RTC::RTObject@{RTC::RTObject}}
+\subsubsection[{on\_\-aborting}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ReturnCode\_\-t} RTC::ComponentAction::on\_\-aborting (in {\bf ExecutionContextHandle\_\-t} {\em exec\_\-handle})\hspace{0.3cm}{\ttfamily  [inherited]}}\label{interfaceRTC_1_1ComponentAction_a876e58ebcea16c307e131b3e6a58ddbe}
+\index{RTC::RTObject@{RTC::RTObject}!on\_\-activated@{on\_\-activated}}
+\index{on\_\-activated@{on\_\-activated}!RTC::RTObject@{RTC::RTObject}}
+\subsubsection[{on\_\-activated}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ReturnCode\_\-t} RTC::ComponentAction::on\_\-activated (in {\bf ExecutionContextHandle\_\-t} {\em exec\_\-handle})\hspace{0.3cm}{\ttfamily  [inherited]}}\label{interfaceRTC_1_1ComponentAction_a4f51f627067d0c54e89c4c0827fa6432}
+\index{RTC::RTObject@{RTC::RTObject}!on\_\-deactivated@{on\_\-deactivated}}
+\index{on\_\-deactivated@{on\_\-deactivated}!RTC::RTObject@{RTC::RTObject}}
+\subsubsection[{on\_\-deactivated}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ReturnCode\_\-t} RTC::ComponentAction::on\_\-deactivated (in {\bf ExecutionContextHandle\_\-t} {\em exec\_\-handle})\hspace{0.3cm}{\ttfamily  [inherited]}}\label{interfaceRTC_1_1ComponentAction_aa5f9cfb9677ba685be333ad666c87f88}
+\index{RTC::RTObject@{RTC::RTObject}!on\_\-error@{on\_\-error}}
+\index{on\_\-error@{on\_\-error}!RTC::RTObject@{RTC::RTObject}}
+\subsubsection[{on\_\-error}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ReturnCode\_\-t} RTC::ComponentAction::on\_\-error (in {\bf ExecutionContextHandle\_\-t} {\em exec\_\-handle})\hspace{0.3cm}{\ttfamily  [inherited]}}\label{interfaceRTC_1_1ComponentAction_a110fdde803e9b13f27308b897439962a}
+\index{RTC::RTObject@{RTC::RTObject}!on\_\-finalize@{on\_\-finalize}}
+\index{on\_\-finalize@{on\_\-finalize}!RTC::RTObject@{RTC::RTObject}}
+\subsubsection[{on\_\-finalize}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ReturnCode\_\-t} RTC::ComponentAction::on\_\-finalize ()\hspace{0.3cm}{\ttfamily  [inherited]}}\label{interfaceRTC_1_1ComponentAction_a9c9e2d638cd2b748609be8a23410aedc}
+\index{RTC::RTObject@{RTC::RTObject}!on\_\-initialize@{on\_\-initialize}}
+\index{on\_\-initialize@{on\_\-initialize}!RTC::RTObject@{RTC::RTObject}}
+\subsubsection[{on\_\-initialize}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ReturnCode\_\-t} RTC::ComponentAction::on\_\-initialize ()\hspace{0.3cm}{\ttfamily  [inherited]}}\label{interfaceRTC_1_1ComponentAction_a8703b183bc1bed9e2fd3ecac126cb231}
+\index{RTC::RTObject@{RTC::RTObject}!on\_\-reset@{on\_\-reset}}
+\index{on\_\-reset@{on\_\-reset}!RTC::RTObject@{RTC::RTObject}}
+\subsubsection[{on\_\-reset}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ReturnCode\_\-t} RTC::ComponentAction::on\_\-reset (in {\bf ExecutionContextHandle\_\-t} {\em exec\_\-handle})\hspace{0.3cm}{\ttfamily  [inherited]}}\label{interfaceRTC_1_1ComponentAction_adb0e61bff251337d79c7c7d050d8304e}
+\index{RTC::RTObject@{RTC::RTObject}!on\_\-shutdown@{on\_\-shutdown}}
+\index{on\_\-shutdown@{on\_\-shutdown}!RTC::RTObject@{RTC::RTObject}}
+\subsubsection[{on\_\-shutdown}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ReturnCode\_\-t} RTC::ComponentAction::on\_\-shutdown (in {\bf ExecutionContextHandle\_\-t} {\em exec\_\-handle})\hspace{0.3cm}{\ttfamily  [inherited]}}\label{interfaceRTC_1_1ComponentAction_accc47711344c811c9bdba0d66a3048f2}
+\index{RTC::RTObject@{RTC::RTObject}!on\_\-startup@{on\_\-startup}}
+\index{on\_\-startup@{on\_\-startup}!RTC::RTObject@{RTC::RTObject}}
+\subsubsection[{on\_\-startup}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ReturnCode\_\-t} RTC::ComponentAction::on\_\-startup (in {\bf ExecutionContextHandle\_\-t} {\em exec\_\-handle})\hspace{0.3cm}{\ttfamily  [inherited]}}\label{interfaceRTC_1_1ComponentAction_ac305f00c92f4650cf4fc798aac37eef2}
+
+
+„Åì„ÅÆ„Ç§„É≥„Çø„Éï„Çß„Éº„Çπ„ÅÆË™¨Êòé„ÅØÊ¨°„ÅÆ„Éï„Ç°„Ç§„É´„Åã„ÇâÁîüÊàê„Åï„Çå„Åæ„Åó„Åü:\begin{DoxyCompactItemize}
+\item 
+{\bf RTC.idl}\end{DoxyCompactItemize}

@@ -1,0 +1,49 @@
+\section{RTC::OnRead$<$ DataType $>$ Class Template Reference}
+\label{structRTC_1_1OnRead}\index{RTC::OnRead@{RTC::OnRead}}
+
+
+Callback abstract class on read().  
+
+
+
+
+{\ttfamily \#include $<$PortCallback.h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual {\bf $\sim$OnRead} (void)
+\begin{DoxyCompactList}\small\item\em Destructor. \item\end{DoxyCompactList}\item 
+virtual void {\bf operator()} ()=0
+\begin{DoxyCompactList}\small\item\em Callback function. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$class DataType$>$ class RTC::OnRead$<$ DataType $>$}
+
+Callback abstract class on read(). This is the interface for callback invoked immediately before data is done read() from the InPort's buffer.
+
+\begin{DoxySince}{Since}
+0.4.0 
+\end{DoxySince}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{RTC::OnRead@{RTC::OnRead}!$\sim$OnRead@{$\sim$OnRead}}
+\index{$\sim$OnRead@{$\sim$OnRead}!RTC::OnRead@{RTC::OnRead}}
+\subsubsection[{$\sim$OnRead}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class DataType$>$ virtual {\bf RTC::OnRead}$<$ DataType $>$::$\sim${\bf OnRead} (void)\hspace{0.3cm}{\ttfamily  [inline, virtual]}}\label{structRTC_1_1OnRead_a20a17e2f2e297cef090ae6694535aa4f}
+
+
+Destructor. 
+
+Destructor 
+
+\subsection{Member Function Documentation}
+\index{RTC::OnRead@{RTC::OnRead}!operator()@{operator()}}
+\index{operator()@{operator()}!RTC::OnRead@{RTC::OnRead}}
+\subsubsection[{operator()}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class DataType$>$ virtual void {\bf RTC::OnRead}$<$ DataType $>$::operator() ()\hspace{0.3cm}{\ttfamily  [pure virtual]}}\label{structRTC_1_1OnRead_abf996b7db051b969ac4a02882f4e0962}
+
+
+Callback function. 
+
+This is the callback method invoked immediately before data is readout from the buffer. 

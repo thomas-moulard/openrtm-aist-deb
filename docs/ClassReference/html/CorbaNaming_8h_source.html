@@ -1,0 +1,241 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<title>OpenRTM: CorbaNaming.h ソースファイル</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<!-- 作成： Doxygen 1.6.3 -->
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="index.html"><span>メインページ</span></a></li>
+      <li><a href="namespaces.html"><span>ネームスペース</span></a></li>
+      <li><a href="annotated.html"><span>クラス</span></a></li>
+      <li class="current"><a href="files.html"><span>ファイル</span></a></li>
+    </ul>
+  </div>
+  <div class="tabs">
+    <ul>
+      <li><a href="files.html"><span>ファイル一覧</span></a></li>
+      <li><a href="globals.html"><span>ファイルメンバ</span></a></li>
+    </ul>
+  </div>
+<h1>CorbaNaming.h</h1><a href="CorbaNaming_8h.html">説明を見る。</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="comment">// -*- C++ -*-</span>
+<a name="l00020"></a>00020 <span class="comment"></span><span class="preprocessor">#ifndef RTC_CORBANAMING_H</span>
+<a name="l00021"></a>00021 <span class="preprocessor"></span><span class="preprocessor">#define RTC_CORBANAMING_H</span>
+<a name="l00022"></a>00022 <span class="preprocessor"></span>
+<a name="l00023"></a>00023 <span class="preprocessor">#include &lt;<a class="code" href="RTC_8h.html" title="RTComponent header.">rtm/RTC.h</a>&gt;</span>
+<a name="l00024"></a>00024 
+<a name="l00025"></a>00025 <span class="comment">// STL includes</span>
+<a name="l00026"></a>00026 <span class="preprocessor">#include &lt;map&gt;</span>
+<a name="l00027"></a>00027 <span class="preprocessor">#include &lt;string&gt;</span>
+<a name="l00028"></a>00028 <span class="preprocessor">#include &lt;vector&gt;</span>
+<a name="l00029"></a>00029 
+<a name="l00045"></a>00045 <span class="preprocessor">#ifdef WIN32</span>
+<a name="l00046"></a>00046 <span class="preprocessor"></span><span class="preprocessor">#pragma warning( disable : 4290 )</span>
+<a name="l00047"></a>00047 <span class="preprocessor"></span><span class="preprocessor">#endif</span>
+<a name="l00048"></a>00048 <span class="preprocessor"></span>
+<a name="l00049"></a>00049 <span class="keyword">namespace </span>RTC
+<a name="l00050"></a>00050 {
+<a name="l00089"></a><a class="code" href="classRTC_1_1CorbaNaming.html">00089</a>   <span class="keyword">class </span><a class="code" href="classRTC_1_1CorbaNaming.html" title="CORBA Naming Service ヘルパークラス.">CorbaNaming</a>
+<a name="l00090"></a>00090   {
+<a name="l00091"></a>00091   <span class="keyword">public</span>:
+<a name="l00107"></a>00107     <a class="code" href="classRTC_1_1CorbaNaming.html#a081d0658c45831f74dcefb3b2bccb631" title="コンストラクタ">CorbaNaming</a>(CORBA::ORB_ptr orb);
+<a name="l00108"></a>00108     
+<a name="l00126"></a>00126     <a class="code" href="classRTC_1_1CorbaNaming.html#a081d0658c45831f74dcefb3b2bccb631" title="コンストラクタ">CorbaNaming</a>(CORBA::ORB_ptr orb, <span class="keyword">const</span> <span class="keywordtype">char</span>* name_server);
+<a name="l00127"></a>00127     
+<a name="l00139"></a><a class="code" href="classRTC_1_1CorbaNaming.html#ad929fafaa24f3360341aeb1a4e8ee826">00139</a>     <span class="keyword">virtual</span> <a class="code" href="classRTC_1_1CorbaNaming.html#ad929fafaa24f3360341aeb1a4e8ee826" title="仮想デストラクタ">~CorbaNaming</a>(<span class="keywordtype">void</span>){};
+<a name="l00140"></a>00140     
+<a name="l00160"></a>00160     <span class="keywordtype">void</span> <a class="code" href="classRTC_1_1CorbaNaming.html#aca3989e92a47edac443aee43479dbd96" title="ネーミングサービスの初期化">init</a>(<span class="keyword">const</span> <span class="keywordtype">char</span>* name_server);
+<a name="l00161"></a>00161 
+<a name="l00162"></a>00162     <span class="keywordtype">bool</span> <a class="code" href="classRTC_1_1CorbaNaming.html#a05315f770a8c4a385d67270569c59108">isAlive</a>();
+<a name="l00163"></a>00163     
+<a name="l00164"></a><a class="code" href="classRTC_1_1CorbaNaming.html#adcd493bdbf96b312ce1b985b8a08c79d">00164</a>     <span class="keyword">typedef</span> CORBA::SystemException <a class="code" href="classRTC_1_1CorbaNaming.html#adcd493bdbf96b312ce1b985b8a08c79d">SystemException</a>;
+<a name="l00165"></a><a class="code" href="classRTC_1_1CorbaNaming.html#a92e7f10507946507a4e8daf126ecc409">00165</a>     <span class="keyword">typedef</span> CosNaming::NamingContext::NotFound      <a class="code" href="classRTC_1_1CorbaNaming.html#a92e7f10507946507a4e8daf126ecc409">NotFound</a>;
+<a name="l00166"></a><a class="code" href="classRTC_1_1CorbaNaming.html#a77504e9d1028c3f524151edda4c5faf4">00166</a>     <span class="keyword">typedef</span> CosNaming::NamingContext::CannotProceed <a class="code" href="classRTC_1_1CorbaNaming.html#a77504e9d1028c3f524151edda4c5faf4">CannotProceed</a>;
+<a name="l00167"></a><a class="code" href="classRTC_1_1CorbaNaming.html#ab79889ab5d3a28c494ee8768200e3683">00167</a>     <span class="keyword">typedef</span> CosNaming::NamingContext::InvalidName   <a class="code" href="classRTC_1_1CorbaNaming.html#ab79889ab5d3a28c494ee8768200e3683">InvalidName</a>;
+<a name="l00168"></a><a class="code" href="classRTC_1_1CorbaNaming.html#a6669a088b188bbf53d96328945db065f">00168</a>     <span class="keyword">typedef</span> CosNaming::NamingContext::AlreadyBound  <a class="code" href="classRTC_1_1CorbaNaming.html#a6669a088b188bbf53d96328945db065f">AlreadyBound</a>;
+<a name="l00169"></a><a class="code" href="classRTC_1_1CorbaNaming.html#a223ee860ea0ffa395e688b6eb0fd3b11">00169</a>     <span class="keyword">typedef</span> CosNaming::NamingContext::NotEmpty      <a class="code" href="classRTC_1_1CorbaNaming.html#a223ee860ea0ffa395e688b6eb0fd3b11">NotEmpty</a>;
+<a name="l00170"></a><a class="code" href="classRTC_1_1CorbaNaming.html#af3580312d8a2e6d00ad3dca75b3cfae3">00170</a>     <span class="keyword">typedef</span> CosNaming::NamingContextExt::InvalidAddress <a class="code" href="classRTC_1_1CorbaNaming.html#af3580312d8a2e6d00ad3dca75b3cfae3">InvalidAddress</a>;
+<a name="l00171"></a><a class="code" href="classRTC_1_1CorbaNaming.html#aea8dfd52409e620da87cc1b1a7e835cc">00171</a>     <span class="keyword">typedef</span> std::vector&lt;CORBA::Object_ptr&gt; <a class="code" href="classRTC_1_1CorbaNaming.html#aea8dfd52409e620da87cc1b1a7e835cc">ObjectList</a>;
+<a name="l00172"></a>00172     
+<a name="l00255"></a>00255     <span class="keywordtype">void</span> <a class="code" href="classRTC_1_1CorbaNaming.html#ac21620f79aecc1bf989629b7aac2938f" title="Object を bind する.">bind</a>(<span class="keyword">const</span> CosNaming::Name&amp; name, CORBA::Object_ptr obj,
+<a name="l00256"></a>00256               <span class="keyword">const</span> <span class="keywordtype">bool</span> force = 1)
+<a name="l00257"></a>00257       throw (<a class="code" href="classRTC_1_1CorbaNaming.html#adcd493bdbf96b312ce1b985b8a08c79d">SystemException</a>, <a class="code" href="classRTC_1_1CorbaNaming.html#a92e7f10507946507a4e8daf126ecc409">NotFound</a>, <a class="code" href="classRTC_1_1CorbaNaming.html#a77504e9d1028c3f524151edda4c5faf4">CannotProceed</a>,
+<a name="l00258"></a>00258              <a class="code" href="classRTC_1_1CorbaNaming.html#ab79889ab5d3a28c494ee8768200e3683">InvalidName</a>, <a class="code" href="classRTC_1_1CorbaNaming.html#a6669a088b188bbf53d96328945db065f">AlreadyBound</a>);
+<a name="l00259"></a>00259     
+<a name="l00298"></a>00298     <span class="keywordtype">void</span> <a class="code" href="classRTC_1_1CorbaNaming.html#a88fba8eb04bf1a2b631007d0d87ea28f" title="Object を bind する.">bindByString</a>(const <span class="keywordtype">char</span>* string_name, CORBA::Object_ptr obj,
+<a name="l00299"></a>00299                       const <span class="keywordtype">bool</span> force = 1)
+<a name="l00300"></a>00300       throw (SystemException, NotFound, CannotProceed,
+<a name="l00301"></a>00301              InvalidName, AlreadyBound);
+<a name="l00302"></a>00302     
+<a name="l00363"></a>00363     <span class="keywordtype">void</span> <a class="code" href="classRTC_1_1CorbaNaming.html#a5417cf439f8efd84f9d13d212f9e62bd" title="途中のコンテキストを再帰的に bind しながら Object を bind する...">bindRecursive</a>(CosNaming::NamingContext_ptr context,
+<a name="l00364"></a>00364                        const CosNaming::Name&amp; name,
+<a name="l00365"></a>00365                        CORBA::Object_ptr obj)
+<a name="l00366"></a>00366       throw (SystemException, CannotProceed, InvalidName, AlreadyBound);
+<a name="l00367"></a>00367     
+<a name="l00405"></a>00405     <span class="keywordtype">void</span> <a class="code" href="classRTC_1_1CorbaNaming.html#a45418a54e9f7dabac0aac79ca232fc76" title="Object を rebind する.">rebind</a>(const CosNaming::Name&amp; name, CORBA::Object_ptr obj,
+<a name="l00406"></a>00406                 const <span class="keywordtype">bool</span> force = 1)
+<a name="l00407"></a>00407       throw (SystemException, NotFound, CannotProceed, InvalidName);
+<a name="l00408"></a>00408     
+<a name="l00445"></a>00445     <span class="keywordtype">void</span> <a class="code" href="classRTC_1_1CorbaNaming.html#aa33c587d4d1068bc51de94199ce978b8" title="Object を rebind する.">rebindByString</a>(const <span class="keywordtype">char</span>* string_name, CORBA::Object_ptr obj,
+<a name="l00446"></a>00446                         const <span class="keywordtype">bool</span> force = 1)
+<a name="l00447"></a>00447       throw (SystemException, NotFound, CannotProceed, InvalidName);
+<a name="l00448"></a>00448     
+<a name="l00486"></a>00486     <span class="keywordtype">void</span> <a class="code" href="classRTC_1_1CorbaNaming.html#a44d87abf8edc49237f4f9da204b0fe24" title="途中のコンテキストを bind しながら Object を rebind する">rebindRecursive</a>(CosNaming::NamingContext_ptr context,
+<a name="l00487"></a>00487                          const CosNaming::Name&amp; name,
+<a name="l00488"></a>00488                          CORBA::Object_ptr obj)
+<a name="l00489"></a>00489       throw (SystemException, CannotProceed, InvalidName);
+<a name="l00490"></a>00490     
+<a name="l00527"></a>00527     <span class="keywordtype">void</span> <a class="code" href="classRTC_1_1CorbaNaming.html#a1eaa278d91546b514fdf361a0bfcbf87" title="NamingContext を bind する.">bindContext</a>(const CosNaming::Name&amp; name,
+<a name="l00528"></a>00528                      CosNaming::NamingContext_ptr name_cxt,
+<a name="l00529"></a>00529                      const <span class="keywordtype">bool</span> force = 1)
+<a name="l00530"></a>00530       throw (SystemException, NotFound, CannotProceed,
+<a name="l00531"></a>00531              InvalidName, AlreadyBound);
+<a name="l00532"></a>00532     
+<a name="l00570"></a>00570     <span class="keywordtype">void</span> <a class="code" href="classRTC_1_1CorbaNaming.html#a1eaa278d91546b514fdf361a0bfcbf87" title="NamingContext を bind する.">bindContext</a>(const <span class="keywordtype">char</span>* string_name,
+<a name="l00571"></a>00571                      CosNaming::NamingContext_ptr name_cxt,
+<a name="l00572"></a>00572                      const <span class="keywordtype">bool</span> force = 1)
+<a name="l00573"></a>00573       throw (SystemException, NotFound, CannotProceed,
+<a name="l00574"></a>00574              InvalidName, AlreadyBound);
+<a name="l00575"></a>00575     
+<a name="l00601"></a>00601     <span class="keywordtype">void</span> <a class="code" href="classRTC_1_1CorbaNaming.html#acefcc23ad029cbf3d989ffc61adc4d35" title="途中のコンテキストを再帰的に bind し NamingContext を bind する...">bindContextRecursive</a>(CosNaming::NamingContext_ptr context,
+<a name="l00602"></a>00602                               const CosNaming::Name&amp; name,
+<a name="l00603"></a>00603                               CosNaming::NamingContext_ptr name_cxt);
+<a name="l00604"></a>00604     
+<a name="l00643"></a>00643     <span class="keywordtype">void</span> <a class="code" href="classRTC_1_1CorbaNaming.html#afd9649388ba4f49b53d036b50e311df0" title="NamingContext を rebind する.">rebindContext</a>(const CosNaming::Name&amp; name,
+<a name="l00644"></a>00644                        CosNaming::NamingContext_ptr name_cxt,
+<a name="l00645"></a>00645                        const <span class="keywordtype">bool</span> force = 1)
+<a name="l00646"></a>00646       throw (SystemException, NotFound, CannotProceed, InvalidName);
+<a name="l00647"></a>00647     
+<a name="l00686"></a>00686     <span class="keywordtype">void</span> <a class="code" href="classRTC_1_1CorbaNaming.html#afd9649388ba4f49b53d036b50e311df0" title="NamingContext を rebind する.">rebindContext</a>(const <span class="keywordtype">char</span>* string_name,
+<a name="l00687"></a>00687                        CosNaming::NamingContext_ptr name_cxt,
+<a name="l00688"></a>00688                        const <span class="keywordtype">bool</span> force = 1)
+<a name="l00689"></a>00689       throw (SystemException, NotFound, CannotProceed, InvalidName);
+<a name="l00690"></a>00690     
+<a name="l00716"></a>00716     <span class="keywordtype">void</span> <a class="code" href="classRTC_1_1CorbaNaming.html#a481771ab96cc9e24339dd288216e5154" title="途中のコンテキストを再帰的に rebind し NamingContext を rebind する...">rebindContextRecursive</a>(CosNaming::NamingContext_ptr context,
+<a name="l00717"></a>00717                                 const CosNaming::Name&amp; name,
+<a name="l00718"></a>00718                                 CosNaming::NamingContext_ptr name_cxt);
+<a name="l00719"></a>00719     
+<a name="l00761"></a>00761     CORBA::Object_ptr <a class="code" href="classRTC_1_1CorbaNaming.html#aa5fdd805e58b5640360eecbd9ec48f9b" title="与えられた NameComponent にバインドされている Object を返す">resolve</a>(const CosNaming::Name&amp; name)
+<a name="l00762"></a>00762       throw (SystemException, NotFound, CannotProceed, InvalidName);
+<a name="l00763"></a>00763     
+<a name="l00806"></a>00806     CORBA::Object_ptr <a class="code" href="classRTC_1_1CorbaNaming.html#aa5fdd805e58b5640360eecbd9ec48f9b" title="与えられた NameComponent にバインドされている Object を返す">resolve</a>(const <span class="keywordtype">char</span>* string_name)
+<a name="l00807"></a>00807       throw (SystemException, NotFound, CannotProceed, InvalidName);
+<a name="l00808"></a>00808     
+<a name="l00846"></a>00846     <span class="keywordtype">void</span> <a class="code" href="classRTC_1_1CorbaNaming.html#a4b2f8435380f383834687f9253323980" title="与えられた NameComponent のバインディングを削除する">unbind</a>(const CosNaming::Name&amp; name)
+<a name="l00847"></a>00847       throw (SystemException, NotFound, CannotProceed, InvalidName);
+<a name="l00848"></a>00848     
+<a name="l00891"></a>00891     <span class="keywordtype">void</span> <a class="code" href="classRTC_1_1CorbaNaming.html#a4b2f8435380f383834687f9253323980" title="与えられた NameComponent のバインディングを削除する">unbind</a>(const <span class="keywordtype">char</span>* string_name)
+<a name="l00892"></a>00892       throw (SystemException, NotFound, CannotProceed, InvalidName);
+<a name="l00893"></a>00893     
+<a name="l00915"></a>00915     CosNaming::NamingContext_ptr <a class="code" href="classRTC_1_1CorbaNaming.html#a919496be1e542edf68184dbe6dec3eb9" title="新しいコンテキストを生成する">newContext</a>();
+<a name="l00916"></a>00916     
+<a name="l00956"></a>00956     CosNaming::NamingContext_ptr
+<a name="l00957"></a>00957     <a class="code" href="classRTC_1_1CorbaNaming.html#a7a1bd265833e6e101ea03926f5e30c52" title="新しいコンテキストを bind する">bindNewContext</a>(const CosNaming::Name&amp; name, <span class="keywordtype">bool</span> force = true)
+<a name="l00958"></a>00958       throw (SystemException, NotFound, CannotProceed,
+<a name="l00959"></a>00959              InvalidName, AlreadyBound);
+<a name="l00960"></a>00960     
+<a name="l01001"></a>01001     CosNaming::NamingContext_ptr
+<a name="l01002"></a>01002     <a class="code" href="classRTC_1_1CorbaNaming.html#a7a1bd265833e6e101ea03926f5e30c52" title="新しいコンテキストを bind する">bindNewContext</a>(const <span class="keywordtype">char</span>* string_name, <span class="keywordtype">bool</span> force = true)
+<a name="l01003"></a>01003       throw (SystemException, NotFound, CannotProceed,
+<a name="l01004"></a>01004              InvalidName, AlreadyBound);
+<a name="l01005"></a>01005     
+<a name="l01033"></a>01033     <span class="keywordtype">void</span> <a class="code" href="classRTC_1_1CorbaNaming.html#a85fef1b00d8e6dc0a266daa56b218725" title="NamingContext を非アクティブ化する.">destroy</a>(CosNaming::NamingContext_ptr context)
+<a name="l01034"></a>01034       throw (SystemException, <a class="code" href="classRTC_1_1CorbaNaming.html#a223ee860ea0ffa395e688b6eb0fd3b11">NotEmpty</a>);
+<a name="l01035"></a>01035     
+<a name="l01067"></a>01067     <span class="keywordtype">void</span> <a class="code" href="classRTC_1_1CorbaNaming.html#a82c8c8a1adbe87e34778be5ad9ef1ff6" title="NamingContext を再帰的に下って非アクティブ化する.">destroyRecursive</a>(CosNaming::NamingContext_ptr context)
+<a name="l01068"></a>01068       throw (SystemException, NotEmpty, NotFound, CannotProceed, InvalidName);
+<a name="l01069"></a>01069     
+<a name="l01083"></a>01083     <span class="keywordtype">void</span> <a class="code" href="classRTC_1_1CorbaNaming.html#a68877e40bf7bbc6e37137170e8212026" title="すべての Binding を削除する">clearAll</a>();
+<a name="l01084"></a>01084     
+<a name="l01108"></a>01108     <span class="keywordtype">void</span> <a class="code" href="classRTC_1_1CorbaNaming.html#ac05f8ec66b2e1dc41100fef4dd2c09fd" title="与えられた NamingContext の Binding を取得する">list</a>(CosNaming::NamingContext_ptr name_cxt,
+<a name="l01109"></a>01109               CORBA::ULong how_many,
+<a name="l01110"></a>01110               CosNaming::BindingList_var&amp; bl,
+<a name="l01111"></a>01111               CosNaming::BindingIterator_var&amp; bi);
+<a name="l01112"></a>01112     
+<a name="l01113"></a>01113     <span class="comment">//============================================================</span>
+<a name="l01114"></a>01114     <span class="comment">// interface of NamingContextExt</span>
+<a name="l01115"></a>01115     <span class="comment">//============================================================</span>
+<a name="l01141"></a>01141 <span class="comment"></span>    <span class="keywordtype">char</span>* <a class="code" href="classRTC_1_1CorbaNaming.html#a2b6bc9675b2aa4bc36a6df7087fff86b" title="与えられた NameComponent の文字列表現を返す">toString</a>(const CosNaming::Name&amp; name)
+<a name="l01142"></a>01142       throw (SystemException, InvalidName);
+<a name="l01143"></a>01143     
+<a name="l01169"></a>01169     CosNaming::Name <a class="code" href="classRTC_1_1CorbaNaming.html#a145435b772577b4ab4be1c6cee39296e" title="与えられた文字列表現を NameComponent に分解する">toName</a>(const <span class="keywordtype">char</span>* string_name)
+<a name="l01170"></a>01170       throw (SystemException, InvalidName);
+<a name="l01171"></a>01171     
+<a name="l01201"></a>01201     <span class="keywordtype">char</span>* <a class="code" href="classRTC_1_1CorbaNaming.html#a039f66a7b938c7d20f8a5990af2746ab" title="与えられた addre と string_name から URL表現を取得する">toUrl</a>(<span class="keywordtype">char</span>* addr, <span class="keywordtype">char</span>* string_name)
+<a name="l01202"></a>01202       throw (SystemException, <a class="code" href="classRTC_1_1CorbaNaming.html#af3580312d8a2e6d00ad3dca75b3cfae3">InvalidAddress</a>, InvalidName);
+<a name="l01203"></a>01203     
+<a name="l01235"></a>01235     CORBA::Object_ptr <a class="code" href="classRTC_1_1CorbaNaming.html#a0046eede262912d6da405d482f8e0153" title="与えられた文字列表現を resolve しオブジェクトを返す">resolveStr</a>(const <span class="keywordtype">char</span>* string_name)
+<a name="l01236"></a>01236       throw (SystemException, NotFound, CannotProceed,
+<a name="l01237"></a>01237              InvalidName, AlreadyBound);
+<a name="l01238"></a>01238     
+<a name="l01239"></a>01239     <span class="comment">//============================================================</span>
+<a name="l01240"></a>01240     <span class="comment">// Find functions</span>
+<a name="l01241"></a>01241     <span class="comment">//============================================================</span>
+<a name="l01242"></a>01242     
+<a name="l01243"></a>01243     <span class="comment">//    ObjectList find(const char* name, const char* kind);</span>
+<a name="l01244"></a>01244     <span class="comment">//    ObjectList findById(const char* name, const char* kind);</span>
+<a name="l01245"></a>01245     <span class="comment">//    ObjectList findByKind(const char* name, const char* kind);</span>
+<a name="l01246"></a>01246     
+<a name="l01279"></a>01279     CORBA::Object_ptr <a class="code" href="classRTC_1_1CorbaNaming.html#a5b0474504d93dfb7c565e2d815c08df2" title="オブジェクトの名前をバインドまたは解決する">bindOrResolve</a>(CosNaming::NamingContext_ptr context,
+<a name="l01280"></a>01280                                     const CosNaming::Name&amp; name,
+<a name="l01281"></a>01281                                     CORBA::Object_ptr obj);
+<a name="l01282"></a>01282     
+<a name="l01316"></a>01316     CosNaming::NamingContext_ptr
+<a name="l01317"></a>01317     <a class="code" href="classRTC_1_1CorbaNaming.html#a987187accb08864e9676e0663a3cc939" title="名前をバインドまたは解決する">bindOrResolveContext</a>(CosNaming::NamingContext_ptr context,
+<a name="l01318"></a>01318                          const CosNaming::Name&amp; name,
+<a name="l01319"></a>01319                          CosNaming::NamingContext_ptr new_context);
+<a name="l01320"></a>01320     
+<a name="l01351"></a>01351     CosNaming::NamingContext_ptr
+<a name="l01352"></a>01352     <a class="code" href="classRTC_1_1CorbaNaming.html#a987187accb08864e9676e0663a3cc939" title="名前をバインドまたは解決する">bindOrResolveContext</a>(CosNaming::NamingContext_ptr context,
+<a name="l01353"></a>01353                          const CosNaming::Name&amp; name);
+<a name="l01354"></a>01354     
+<a name="l01372"></a>01372     const <span class="keywordtype">char</span>* <a class="code" href="classRTC_1_1CorbaNaming.html#abca2ccc7a64e05822f3ea69d7c114e14" title="ネームサーバの名前を取得する">getNameServer</a>();
+<a name="l01373"></a>01373     
+<a name="l01391"></a>01391     CosNaming::NamingContext_ptr <a class="code" href="classRTC_1_1CorbaNaming.html#af5f0ff31edba062cb0858c29b38f946c" title="ルートコンテキストを取得する">getRootContext</a>();
+<a name="l01392"></a>01392     
+<a name="l01414"></a>01414     <span class="keywordtype">bool</span> <a class="code" href="classRTC_1_1CorbaNaming.html#a09ea40e547b2bf66f2a18f6f186c69d9" title="オブジェクトがネーミングコンテキストか判別する">isNamingContext</a>(CORBA::Object_ptr obj);
+<a name="l01415"></a>01415     
+<a name="l01437"></a>01437     <span class="keywordtype">bool</span> <a class="code" href="classRTC_1_1CorbaNaming.html#a09ea40e547b2bf66f2a18f6f186c69d9" title="オブジェクトがネーミングコンテキストか判別する">isNamingContext</a>(const CosNaming::Name&amp; name);
+<a name="l01438"></a>01438     
+<a name="l01460"></a>01460     <span class="keywordtype">bool</span> <a class="code" href="classRTC_1_1CorbaNaming.html#a09ea40e547b2bf66f2a18f6f186c69d9" title="オブジェクトがネーミングコンテキストか判別する">isNamingContext</a>(const <span class="keywordtype">char</span>* string_name);
+<a name="l01461"></a>01461     
+<a name="l01491"></a>01491     CosNaming::Name <a class="code" href="classRTC_1_1CorbaNaming.html#a28d5186a7f916a4216fe508557cafac4" title="ネームコンポーネントの部分を返す">subName</a>(const CosNaming::Name&amp; name,
+<a name="l01492"></a>01492                             CORBA::Long begin,
+<a name="l01493"></a>01493                             CORBA::Long end = -1);
+<a name="l01494"></a>01494     
+<a name="l01495"></a>01495   protected:
+<a name="l01528"></a>01528     <span class="keywordtype">void</span> <a class="code" href="classRTC_1_1CorbaNaming.html#a7d8bf6f90e7f39fbdf15d4037e9528f4" title="ネームコンポーネントの文字列表現を取得する">nameToString</a>(const CosNaming::Name&amp; name, <span class="keywordtype">char</span>* string_name,
+<a name="l01529"></a>01529                       CORBA::ULong slen);
+<a name="l01558"></a>01558     CORBA::ULong <a class="code" href="classRTC_1_1CorbaNaming.html#ab70cb38165eaca8be4960a9886ab4b24" title="ネームコンポーネントの文字列表現時の文字長を取得する">getNameLength</a>(const CosNaming::Name&amp; name);
+<a name="l01559"></a>01559     
+<a name="l01585"></a>01585     <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code" href="classRTC_1_1CorbaNaming.html#a9a5a03d8e244a0fa65a25337fe98a74a" title="文字列の分割">split</a>(const std::<span class="keywordtype">string</span>&amp; input,
+<a name="l01586"></a>01586                        const std::<span class="keywordtype">string</span>&amp; delimiter,
+<a name="l01587"></a>01587                        std::vector&lt;std::<span class="keywordtype">string</span>&gt;&amp; results);
+<a name="l01588"></a>01588     
+<a name="l01596"></a><a class="code" href="classRTC_1_1CorbaNaming.html#a49fb01cad296636d256d52b7c4295544">01596</a>     CORBA::ORB_var <a class="code" href="classRTC_1_1CorbaNaming.html#a49fb01cad296636d256d52b7c4295544" title="ORB.">m_varORB</a>;
+<a name="l01597"></a>01597     
+<a name="l01605"></a><a class="code" href="classRTC_1_1CorbaNaming.html#a55ba13ccbb69dad6e339625bdfd1336d">01605</a>     std::<span class="keywordtype">string</span> <a class="code" href="classRTC_1_1CorbaNaming.html#a55ba13ccbb69dad6e339625bdfd1336d" title="ネームサーバ名称">m_nameServer</a>;
+<a name="l01613"></a><a class="code" href="classRTC_1_1CorbaNaming.html#a3655f851970b9b4f9cfa4181f6847a82">01613</a>     CosNaming::NamingContextExt_var <a class="code" href="classRTC_1_1CorbaNaming.html#a3655f851970b9b4f9cfa4181f6847a82" title="指定したネームサーバのルートコンテキスト">m_rootContext</a>;
+<a name="l01614"></a>01614     
+<a name="l01615"></a>01615   private:
+<a name="l01616"></a>01616     CORBA::ULong m_blLength;
+<a name="l01617"></a>01617     
+<a name="l01618"></a>01618   }; <span class="comment">// class CorbaNaming</span>
+<a name="l01619"></a>01619 }; <span class="comment">// namespace RTC</span>
+<a name="l01620"></a>01620 
+<a name="l01621"></a>01621 <span class="preprocessor">#ifdef WIN32</span>
+<a name="l01622"></a>01622 <span class="preprocessor"></span><span class="preprocessor">#pragma warning( default : 4290 )</span>
+<a name="l01623"></a>01623 <span class="preprocessor"></span><span class="preprocessor">#endif</span>
+<a name="l01624"></a>01624 <span class="preprocessor"></span>
+<a name="l01625"></a>01625 <span class="preprocessor">#endif // end of RTC_CORBANAMING_H</span>
+</pre></div></div>
+<hr class="footer"/><address style="text-align: right;"><small>OpenRTMに対してThu May 24 23:25:18 2012に生成されました。&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.6.3 </small></address>
+</body>
+</html>

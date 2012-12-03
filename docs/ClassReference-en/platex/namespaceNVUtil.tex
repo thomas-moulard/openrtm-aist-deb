@@ -1,0 +1,308 @@
+\section{NVUtil Namespace Reference}
+\label{namespaceNVUtil}\index{NVUtil@{NVUtil}}
+
+
+Utility for NameValue.  
+
+
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$class Value $>$ }\\SDOPackage::NameValue {\bf newNV} (const char $\ast$name, Value value)
+\begin{DoxyCompactList}\small\item\em Create NameValue. \item\end{DoxyCompactList}\item 
+SDOPackage::NameValue {\bf newNVChar} (const char $\ast$name, const CORBA::Char value)
+\begin{DoxyCompactList}\small\item\em Create NameValue typed CORBA::Char. \item\end{DoxyCompactList}\item 
+SDOPackage::NameValue {\bf newNVBool} (const char $\ast$name, const CORBA::Boolean value)
+\begin{DoxyCompactList}\small\item\em Create NameValue typed CORBA::Boolean. \item\end{DoxyCompactList}\item 
+SDOPackage::NameValue {\bf newNVOctet} (const char $\ast$name, const CORBA::Octet value)
+\begin{DoxyCompactList}\small\item\em Create NameValue typed CORBA::Octet. \item\end{DoxyCompactList}\item 
+SDOPackage::NameValue {\bf newNVAny} (const char $\ast$name, const CORBA::Any \&value)
+\begin{DoxyCompactList}\small\item\em Create NameValue typed CORBA::Any. \item\end{DoxyCompactList}\item 
+void {\bf copyFromProperties} (SDOPackage::NVList \&nv, const {\bf coil::Properties} \&prop)
+\begin{DoxyCompactList}\small\item\em Copy the properties to NVList. \item\end{DoxyCompactList}\item 
+void {\bf copyToProperties} ({\bf coil::Properties} \&prop, const SDOPackage::NVList \&nv)
+\begin{DoxyCompactList}\small\item\em Copy NVList to the Proeprties. \item\end{DoxyCompactList}\item 
+{\bf coil::Properties} {\bf toProperties} (const SDOPackage::NVList \&nv)
+\begin{DoxyCompactList}\small\item\em Transform NVList to the properties. \item\end{DoxyCompactList}\item 
+const CORBA::Any \& {\bf find} (const SDOPackage::NVList \&nv, const char $\ast$name)
+\begin{DoxyCompactList}\small\item\em Return the value specified by name from NVList. \item\end{DoxyCompactList}\item 
+const CORBA::Long {\bf find\_\-index} (const SDOPackage::NVList \&nv, const char $\ast$name)
+\begin{DoxyCompactList}\small\item\em Return the index of element specified by name from NVList. \item\end{DoxyCompactList}\item 
+bool {\bf isString} (const SDOPackage::NVList \&nv, const char $\ast$name)
+\begin{DoxyCompactList}\small\item\em Validate whether value type specified by name is string type. \item\end{DoxyCompactList}\item 
+bool {\bf isStringValue} (const SDOPackage::NVList \&nv, const char $\ast$name, const char $\ast$value)
+\begin{DoxyCompactList}\small\item\em Check whether the value of specified name matches the specified string. \item\end{DoxyCompactList}\item 
+std::string {\bf toString} (const SDOPackage::NVList \&nv, const char $\ast$name)
+\begin{DoxyCompactList}\small\item\em Get NVList of specifid name as string. \item\end{DoxyCompactList}\item 
+bool {\bf appendStringValue} (SDOPackage::NVList \&nv, const char $\ast$name, const char $\ast$value)
+\begin{DoxyCompactList}\small\item\em Append the specified string to element of NVList. \item\end{DoxyCompactList}\item 
+void {\bf append} (SDOPackage::NVList \&dest, const SDOPackage::NVList \&src)
+\begin{DoxyCompactList}\small\item\em Append an element to NVList. \item\end{DoxyCompactList}\item 
+std::ostream \& {\bf dump} (std::ostream \&out, const SDOPackage::NVList \&nv)
+\begin{DoxyCompactList}\small\item\em Print information configured in NVList as string type. \item\end{DoxyCompactList}\item 
+void {\bf dump} (const SDOPackage::NVList \&nv)
+\begin{DoxyCompactList}\small\item\em Print information configured in NVList as a string type to Standard Outport. \item\end{DoxyCompactList}\item 
+std::string {\bf toString} (const SDOPackage::NVList \&nv)
+\begin{DoxyCompactList}\small\item\em Get information configured in NVList as a string type. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Utility for NameValue. This class provides the utility function of NameValue. 
+
+\subsection{Function Documentation}
+\index{NVUtil@{NVUtil}!append@{append}}
+\index{append@{append}!NVUtil@{NVUtil}}
+\subsubsection[{append}]{\setlength{\rightskip}{0pt plus 5cm}void NVUtil::append (SDOPackage::NVList \& {\em dest}, \/  const SDOPackage::NVList \& {\em src})}\label{namespaceNVUtil_a8421ff038960d9d3ca4e9342474979a5}
+
+
+Append an element to NVList. 
+
+This operation appends elements specified by src to NVList specified by dest.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em dest}]NVList to be appended \item[{\em src}]NVList to append \end{DoxyParams}
+\index{NVUtil@{NVUtil}!appendStringValue@{appendStringValue}}
+\index{appendStringValue@{appendStringValue}!NVUtil@{NVUtil}}
+\subsubsection[{appendStringValue}]{\setlength{\rightskip}{0pt plus 5cm}bool NVUtil::appendStringValue (SDOPackage::NVList \& {\em nv}, \/  const char $\ast$ {\em name}, \/  const char $\ast$ {\em value})}\label{namespaceNVUtil_aa481ca6c5c584b9da26d56fc2c4be67c}
+
+
+Append the specified string to element of NVList. 
+
+This operation appends the string value specified by value to the element specified by name. Operate nothing when the 'value' value has already been set to the element specified by name. Add the 'value' value each separating by a comma \char`\"{},\char`\"{} when the 'value' value is not set to the element specified by name. Set the specified value. Add a new element at the end of NVList, and set the specified value, when the element specified by name does not exist.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em nv}]The target NVList for the search \item[{\em name}]The target element name for the appending \item[{\em value}]String to append\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Append operation result 
+\end{DoxyReturn}
+
+
+Referenced by RTC::PortBase::appendProperty().
+
+\index{NVUtil@{NVUtil}!copyFromProperties@{copyFromProperties}}
+\index{copyFromProperties@{copyFromProperties}!NVUtil@{NVUtil}}
+\subsubsection[{copyFromProperties}]{\setlength{\rightskip}{0pt plus 5cm}void NVUtil::copyFromProperties (SDOPackage::NVList \& {\em nv}, \/  const {\bf coil::Properties} \& {\em prop})}\label{namespaceNVUtil_a91f16d79c724193c112e6107a61c309c}
+
+
+Copy the properties to NVList. 
+
+This operation copies the properties to NVList. All NVList's values are copied as CORBA::string.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em nv}]NVList to store properties values \item[{\em prop}]Properties that is copies from \end{DoxyParams}
+\index{NVUtil@{NVUtil}!copyToProperties@{copyToProperties}}
+\index{copyToProperties@{copyToProperties}!NVUtil@{NVUtil}}
+\subsubsection[{copyToProperties}]{\setlength{\rightskip}{0pt plus 5cm}void NVUtil::copyToProperties ({\bf coil::Properties} \& {\em prop}, \/  const SDOPackage::NVList \& {\em nv})}\label{namespaceNVUtil_a14b08fd8bdfde87e4846c5afced928dc}
+
+
+Copy NVList to the Proeprties. 
+
+This operation copies NVList to properties.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em prop}]Properties to store NVList values \item[{\em nv}]NVList of copy source \end{DoxyParams}
+\index{NVUtil@{NVUtil}!dump@{dump}}
+\index{dump@{dump}!NVUtil@{NVUtil}}
+\subsubsection[{dump}]{\setlength{\rightskip}{0pt plus 5cm}void NVUtil::dump (const SDOPackage::NVList \& {\em nv})}\label{namespaceNVUtil_a68fbd2feae5af9cd35f3483f4c1362f6}
+
+
+Print information configured in NVList as a string type to Standard Outport. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em nv}]The target NVList for the print \end{DoxyParams}
+\index{NVUtil@{NVUtil}!dump@{dump}}
+\index{dump@{dump}!NVUtil@{NVUtil}}
+\subsubsection[{dump}]{\setlength{\rightskip}{0pt plus 5cm}std::ostream\& NVUtil::dump (std::ostream \& {\em out}, \/  const SDOPackage::NVList \& {\em nv})}\label{namespaceNVUtil_ad68a7fd2f0fcf941456ea377ba49c477}
+
+
+Print information configured in NVList as string type. 
+
+Print configured information as string type in specified NVList. Also, print the reason (this is not string type) if the configured element is other than string type.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em nv}]The target NVList for the print \end{DoxyParams}
+\index{NVUtil@{NVUtil}!find@{find}}
+\index{find@{find}!NVUtil@{NVUtil}}
+\subsubsection[{find}]{\setlength{\rightskip}{0pt plus 5cm}const CORBA::Any\& NVUtil::find (const SDOPackage::NVList \& {\em nv}, \/  const char $\ast$ {\em name})}\label{namespaceNVUtil_a8efde48c92cd13ff1457fcb73cd026fe}
+
+
+Return the value specified by name from NVList. 
+
+This operation returns Any type of value specified by name. When an element of specified name doesn't exist, the exception will occur.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em nv}]The target NVList for the find \item[{\em name}]Name for the find\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Find result 
+\end{DoxyReturn}
+\index{NVUtil@{NVUtil}!find\_\-index@{find\_\-index}}
+\index{find\_\-index@{find\_\-index}!NVUtil@{NVUtil}}
+\subsubsection[{find\_\-index}]{\setlength{\rightskip}{0pt plus 5cm}const CORBA::Long NVUtil::find\_\-index (const SDOPackage::NVList \& {\em nv}, \/  const char $\ast$ {\em name})}\label{namespaceNVUtil_add5039cbee9e74bc4da747b249db558a}
+
+
+Return the index of element specified by name from NVList. 
+
+This operation returns the index at the position where the element specified by name is stored.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em nv}]The target NVList for the find \item[{\em name}]Name for the find\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Index of target object for the find 
+\end{DoxyReturn}
+\index{NVUtil@{NVUtil}!isString@{isString}}
+\index{isString@{isString}!NVUtil@{NVUtil}}
+\subsubsection[{isString}]{\setlength{\rightskip}{0pt plus 5cm}bool NVUtil::isString (const SDOPackage::NVList \& {\em nv}, \/  const char $\ast$ {\em name})}\label{namespaceNVUtil_a57b3c3b163059364182832d569efb60a}
+
+
+Validate whether value type specified by name is string type. 
+
+This operation returns the bool value by checking whether the type of value specified with name is CORBA::string.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em nv}]The target NVList for the search \item[{\em name}]Name for the search\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+String validation result (String:true, Else:false) 
+\end{DoxyReturn}
+\index{NVUtil@{NVUtil}!isStringValue@{isStringValue}}
+\index{isStringValue@{isStringValue}!NVUtil@{NVUtil}}
+\subsubsection[{isStringValue}]{\setlength{\rightskip}{0pt plus 5cm}bool NVUtil::isStringValue (const SDOPackage::NVList \& {\em nv}, \/  const char $\ast$ {\em name}, \/  const char $\ast$ {\em value})}\label{namespaceNVUtil_acf19e7f6c570ca8b1369ba049d7c8e53}
+
+
+Check whether the value of specified name matches the specified string. 
+
+This operation checks whether the value specified with name is CORBA::string and returns the bool value which matches spcified string.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em nv}]The target NVList for the search \item[{\em name}]Name for the search \item[{\em value}]String value to compare\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Check result (Match:true, Unmatch:false) 
+\end{DoxyReturn}
+\index{NVUtil@{NVUtil}!newNV@{newNV}}
+\index{newNV@{newNV}!NVUtil@{NVUtil}}
+\subsubsection[{newNV}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Value $>$ SDOPackage::NameValue NVUtil::newNV (const char $\ast$ {\em name}, \/  Value {\em value})\hspace{0.3cm}{\ttfamily  [inline]}}\label{namespaceNVUtil_a3f3d50eb508dfe6cac1042f5a5df74ab}
+
+
+Create NameValue. 
+
+This operation creates NameValue. CORBA::Char, CORBA::Boolean, CORBA::Octet creation is not supported. These type of NameValue should be created by using \doxyref{newNVChar()}{p.}{namespaceNVUtil_aaa45f65aa4afd401cc00b5e1199a9712}, \doxyref{newNVBool()}{p.}{namespaceNVUtil_ad6b493327abebff005646cac19705c0d}, \doxyref{newNVOctet()}{p.}{namespaceNVUtil_a56d45efda0465728f4aaab7baeeb6bd8} functions.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em name}]Name of NameValue \item[{\em value}]The value of NameValue\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+NameValue 
+\end{DoxyReturn}
+
+
+Referenced by RTC::PortBase::addProperty().
+
+\index{NVUtil@{NVUtil}!newNVAny@{newNVAny}}
+\index{newNVAny@{newNVAny}!NVUtil@{NVUtil}}
+\subsubsection[{newNVAny}]{\setlength{\rightskip}{0pt plus 5cm}SDOPackage::NameValue NVUtil::newNVAny (const char $\ast$ {\em name}, \/  const CORBA::Any \& {\em value})}\label{namespaceNVUtil_a6dd6358e923d48f6925e930402e2ebea}
+
+
+Create NameValue typed CORBA::Any. 
+
+This operation creates NameValue typed CORBA::Any.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em name}]Name of NameValue \item[{\em value}]The value of NameValue\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+NameValue 
+\end{DoxyReturn}
+\index{NVUtil@{NVUtil}!newNVBool@{newNVBool}}
+\index{newNVBool@{newNVBool}!NVUtil@{NVUtil}}
+\subsubsection[{newNVBool}]{\setlength{\rightskip}{0pt plus 5cm}SDOPackage::NameValue NVUtil::newNVBool (const char $\ast$ {\em name}, \/  const CORBA::Boolean {\em value})}\label{namespaceNVUtil_ad6b493327abebff005646cac19705c0d}
+
+
+Create NameValue typed CORBA::Boolean. 
+
+This operation creates NameValue typed CORBA::Boolean.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em name}]Name of NameValue \item[{\em value}]The value of NameValue\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+NameValue 
+\end{DoxyReturn}
+\index{NVUtil@{NVUtil}!newNVChar@{newNVChar}}
+\index{newNVChar@{newNVChar}!NVUtil@{NVUtil}}
+\subsubsection[{newNVChar}]{\setlength{\rightskip}{0pt plus 5cm}SDOPackage::NameValue NVUtil::newNVChar (const char $\ast$ {\em name}, \/  const CORBA::Char {\em value})}\label{namespaceNVUtil_aaa45f65aa4afd401cc00b5e1199a9712}
+
+
+Create NameValue typed CORBA::Char. 
+
+This operation creates NameValue typed CORBA::Char.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em name}]Name of NameValue \item[{\em value}]The value of NameValue\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+NameValue 
+\end{DoxyReturn}
+\index{NVUtil@{NVUtil}!newNVOctet@{newNVOctet}}
+\index{newNVOctet@{newNVOctet}!NVUtil@{NVUtil}}
+\subsubsection[{newNVOctet}]{\setlength{\rightskip}{0pt plus 5cm}SDOPackage::NameValue NVUtil::newNVOctet (const char $\ast$ {\em name}, \/  const CORBA::Octet {\em value})}\label{namespaceNVUtil_a56d45efda0465728f4aaab7baeeb6bd8}
+
+
+Create NameValue typed CORBA::Octet. 
+
+This operation creates NameValue typed CORBA::Octet.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em name}]Name of NameValue \item[{\em value}]The value of NameValue\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+NameValue 
+\end{DoxyReturn}
+\index{NVUtil@{NVUtil}!toProperties@{toProperties}}
+\index{toProperties@{toProperties}!NVUtil@{NVUtil}}
+\subsubsection[{toProperties}]{\setlength{\rightskip}{0pt plus 5cm}{\bf coil::Properties} NVUtil::toProperties (const SDOPackage::NVList \& {\em nv})}\label{namespaceNVUtil_a2796020be72c783b298c8c0d196d53fb}
+
+
+Transform NVList to the properties. 
+
+This operation transforms NVList to properties
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em nv}]NVList of tranformation source\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Transformation result Property 
+\end{DoxyReturn}
+\index{NVUtil@{NVUtil}!toString@{toString}}
+\index{toString@{toString}!NVUtil@{NVUtil}}
+\subsubsection[{toString}]{\setlength{\rightskip}{0pt plus 5cm}std::string NVUtil::toString (const SDOPackage::NVList \& {\em nv})}\label{namespaceNVUtil_a99f4fb8a6a68d0ba8d5ec7ba02f520a7}
+
+
+Get information configured in NVList as a string type. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em nv}]The target NVList for the print \end{DoxyParams}
+\index{NVUtil@{NVUtil}!toString@{toString}}
+\index{toString@{toString}!NVUtil@{NVUtil}}
+\subsubsection[{toString}]{\setlength{\rightskip}{0pt plus 5cm}std::string NVUtil::toString (const SDOPackage::NVList \& {\em nv}, \/  const char $\ast$ {\em name})}\label{namespaceNVUtil_a80e98f1be3213008577a8547a4c1c1e5}
+
+
+Get NVList of specifid name as string. 
+
+This operation returns string value in NVList specified by name. If the value in NVList specified by name is not CORBA::string type this operation returns empty string value.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em nv}]The target NVList for the search \item[{\em name}]Name for the search\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+String value corresponding to name 
+\end{DoxyReturn}

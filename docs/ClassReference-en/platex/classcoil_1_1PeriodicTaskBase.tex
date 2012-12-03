@@ -1,0 +1,300 @@
+\section{coil::PeriodicTaskBase Class Reference}
+\label{classcoil_1_1PeriodicTaskBase}\index{coil::PeriodicTaskBase@{coil::PeriodicTaskBase}}
+
+
+\doxyref{PeriodicTaskBase}{p.}{classcoil_1_1PeriodicTaskBase} class.  
+
+
+
+
+{\ttfamily \#include $<$PeriodicTaskBase.h$>$}
+
+Inheritance diagram for coil::PeriodicTaskBase:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3cm]{classcoil_1_1PeriodicTaskBase}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual {\bf $\sim$PeriodicTaskBase} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \item\end{DoxyCompactList}\item 
+virtual void {\bf activate} ()=0
+\begin{DoxyCompactList}\small\item\em Starting the task. \item\end{DoxyCompactList}\item 
+virtual void {\bf finalize} ()=0
+\begin{DoxyCompactList}\small\item\em Finalizing the task. \item\end{DoxyCompactList}\item 
+virtual int {\bf suspend} (void)=0
+\begin{DoxyCompactList}\small\item\em Suspending the task. \item\end{DoxyCompactList}\item 
+virtual int {\bf resume} (void)=0
+\begin{DoxyCompactList}\small\item\em Resuming the suspended task. \item\end{DoxyCompactList}\item 
+virtual void {\bf signal} ()=0
+\begin{DoxyCompactList}\small\item\em Executing the suspended task one tick. \item\end{DoxyCompactList}\item 
+virtual bool {\bf setTask} ({\bf TaskFuncBase} $\ast$func, bool delete\_\-in\_\-dtor=true)=0
+\begin{DoxyCompactList}\small\item\em Setting task execution function. \item\end{DoxyCompactList}\item 
+{\footnotesize template$<$class O , class F $>$ }\\bool {\bf setTask} (O $\ast$obj, F fun)
+\begin{DoxyCompactList}\small\item\em Setting task execution function. \item\end{DoxyCompactList}\item 
+virtual void {\bf setPeriod} (double period)=0
+\begin{DoxyCompactList}\small\item\em Setting task execution period. \item\end{DoxyCompactList}\item 
+virtual void {\bf setPeriod} ({\bf coil::TimeValue} \&period)=0
+\begin{DoxyCompactList}\small\item\em Setting task execution period. \item\end{DoxyCompactList}\item 
+virtual void {\bf executionMeasure} (bool value)=0
+\begin{DoxyCompactList}\small\item\em Validate a \doxyref{Task}{p.}{classcoil_1_1Task} execute time measurement. \item\end{DoxyCompactList}\item 
+virtual void {\bf executionMeasureCount} (int n)=0
+\begin{DoxyCompactList}\small\item\em \doxyref{Task}{p.}{classcoil_1_1Task} execute time measurement period. \item\end{DoxyCompactList}\item 
+virtual void {\bf periodicMeasure} (bool value)=0
+\begin{DoxyCompactList}\small\item\em Validate a \doxyref{Task}{p.}{classcoil_1_1Task} period time measurement. \item\end{DoxyCompactList}\item 
+virtual void {\bf periodicMeasureCount} (int n)=0
+\begin{DoxyCompactList}\small\item\em \doxyref{Task}{p.}{classcoil_1_1Task} period time measurement count. \item\end{DoxyCompactList}\item 
+virtual {\bf coil::TimeMeasure::Statistics} {\bf getExecStat} ()=0
+\begin{DoxyCompactList}\small\item\em Get a result in task execute time measurement. \item\end{DoxyCompactList}\item 
+virtual {\bf coil::TimeMeasure::Statistics} {\bf getPeriodStat} ()=0
+\begin{DoxyCompactList}\small\item\em Get a result in task period time measurement. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\doxyref{PeriodicTaskBase}{p.}{classcoil_1_1PeriodicTaskBase} class. 
+
+\subsection{Constructor \& Destructor Documentation}
+\index{coil::PeriodicTaskBase@{coil::PeriodicTaskBase}!$\sim$PeriodicTaskBase@{$\sim$PeriodicTaskBase}}
+\index{$\sim$PeriodicTaskBase@{$\sim$PeriodicTaskBase}!coil::PeriodicTaskBase@{coil::PeriodicTaskBase}}
+\subsubsection[{$\sim$PeriodicTaskBase}]{\setlength{\rightskip}{0pt plus 5cm}virtual coil::PeriodicTaskBase::$\sim$PeriodicTaskBase ()\hspace{0.3cm}{\ttfamily  [inline, virtual]}}\label{classcoil_1_1PeriodicTaskBase_a9ac3e837fc6d85bde48034f1d029b464}
+
+
+Destructor. 
+
+Destructor 
+
+\subsection{Member Function Documentation}
+\index{coil::PeriodicTaskBase@{coil::PeriodicTaskBase}!activate@{activate}}
+\index{activate@{activate}!coil::PeriodicTaskBase@{coil::PeriodicTaskBase}}
+\subsubsection[{activate}]{\setlength{\rightskip}{0pt plus 5cm}virtual void coil::PeriodicTaskBase::activate ()\hspace{0.3cm}{\ttfamily  [pure virtual]}}\label{classcoil_1_1PeriodicTaskBase_ae3deb2c37063d35ad294bfbb07dafdba}
+
+
+Starting the task. 
+
+Pure virtual function for starting the task. 
+
+Reimplemented from {\bf coil::Task} \doxyref{}{p.}{classcoil_1_1Task_a812bc27f5acb67931a4c03c07c7aeb9e}.
+
+
+
+Implemented in {\bf coil::PeriodicTask} \doxyref{}{p.}{classcoil_1_1PeriodicTask_a7c697df8165aecf55667950e1777a334}.
+
+\index{coil::PeriodicTaskBase@{coil::PeriodicTaskBase}!executionMeasure@{executionMeasure}}
+\index{executionMeasure@{executionMeasure}!coil::PeriodicTaskBase@{coil::PeriodicTaskBase}}
+\subsubsection[{executionMeasure}]{\setlength{\rightskip}{0pt plus 5cm}virtual void coil::PeriodicTaskBase::executionMeasure (bool {\em value})\hspace{0.3cm}{\ttfamily  [pure virtual]}}\label{classcoil_1_1PeriodicTaskBase_a969bd9f66f23c61202ce68f612e2569a}
+
+
+Validate a \doxyref{Task}{p.}{classcoil_1_1Task} execute time measurement. 
+
+Pure virtual function for validate a \doxyref{Task}{p.}{classcoil_1_1Task} execute time measurement.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em value}]flag(true: Valid, false: Invalid). \end{DoxyParams}
+
+
+Implemented in {\bf coil::PeriodicTask} \doxyref{}{p.}{classcoil_1_1PeriodicTask_a988c867d54f6fa8ef112935391a7e879}.
+
+\index{coil::PeriodicTaskBase@{coil::PeriodicTaskBase}!executionMeasureCount@{executionMeasureCount}}
+\index{executionMeasureCount@{executionMeasureCount}!coil::PeriodicTaskBase@{coil::PeriodicTaskBase}}
+\subsubsection[{executionMeasureCount}]{\setlength{\rightskip}{0pt plus 5cm}virtual void coil::PeriodicTaskBase::executionMeasureCount (int {\em n})\hspace{0.3cm}{\ttfamily  [pure virtual]}}\label{classcoil_1_1PeriodicTaskBase_af1f506c85ca94d5d0781fa3b060ecb77}
+
+
+\doxyref{Task}{p.}{classcoil_1_1Task} execute time measurement period. 
+
+Pure virtual function for task execute time measurement period.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em n}]Measurement period. \end{DoxyParams}
+
+
+Implemented in {\bf coil::PeriodicTask} \doxyref{}{p.}{classcoil_1_1PeriodicTask_ad1fe71158f351c23a0bfa7e245ce50e3}.
+
+\index{coil::PeriodicTaskBase@{coil::PeriodicTaskBase}!finalize@{finalize}}
+\index{finalize@{finalize}!coil::PeriodicTaskBase@{coil::PeriodicTaskBase}}
+\subsubsection[{finalize}]{\setlength{\rightskip}{0pt plus 5cm}virtual void coil::PeriodicTaskBase::finalize ()\hspace{0.3cm}{\ttfamily  [pure virtual]}}\label{classcoil_1_1PeriodicTaskBase_a2e131861d53d1553d2bb12d7c5bbddf4}
+
+
+Finalizing the task. 
+
+Pure virtual function for finalizing the task. 
+
+Reimplemented from {\bf coil::Task} \doxyref{}{p.}{classcoil_1_1Task_af7cfcc8cf5c0c322739a92374ce05cca}.
+
+
+
+Implemented in {\bf coil::PeriodicTask} \doxyref{}{p.}{classcoil_1_1PeriodicTask_a5ec56997c14c95ee3ce095979fa47f61}.
+
+\index{coil::PeriodicTaskBase@{coil::PeriodicTaskBase}!getExecStat@{getExecStat}}
+\index{getExecStat@{getExecStat}!coil::PeriodicTaskBase@{coil::PeriodicTaskBase}}
+\subsubsection[{getExecStat}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf coil::TimeMeasure::Statistics} coil::PeriodicTaskBase::getExecStat ()\hspace{0.3cm}{\ttfamily  [pure virtual]}}\label{classcoil_1_1PeriodicTaskBase_adc1f0e6d261d05032bbeac1206fc2ca7}
+
+
+Get a result in task execute time measurement. 
+
+Pure virtual function for get a result in task execute time measurement. 
+
+Implemented in {\bf coil::PeriodicTask} \doxyref{}{p.}{classcoil_1_1PeriodicTask_a06d63b05971974973608a9c2a8b067af}.
+
+\index{coil::PeriodicTaskBase@{coil::PeriodicTaskBase}!getPeriodStat@{getPeriodStat}}
+\index{getPeriodStat@{getPeriodStat}!coil::PeriodicTaskBase@{coil::PeriodicTaskBase}}
+\subsubsection[{getPeriodStat}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf coil::TimeMeasure::Statistics} coil::PeriodicTaskBase::getPeriodStat ()\hspace{0.3cm}{\ttfamily  [pure virtual]}}\label{classcoil_1_1PeriodicTaskBase_a2fad97663ebc6a3514bca02353bb2359}
+
+
+Get a result in task period time measurement. 
+
+Pure virtual function for get a result in task period time measurement. 
+
+Implemented in {\bf coil::PeriodicTask} \doxyref{}{p.}{classcoil_1_1PeriodicTask_ae41aa8a685f0b029169b9d64acdcc6af}.
+
+\index{coil::PeriodicTaskBase@{coil::PeriodicTaskBase}!periodicMeasure@{periodicMeasure}}
+\index{periodicMeasure@{periodicMeasure}!coil::PeriodicTaskBase@{coil::PeriodicTaskBase}}
+\subsubsection[{periodicMeasure}]{\setlength{\rightskip}{0pt plus 5cm}virtual void coil::PeriodicTaskBase::periodicMeasure (bool {\em value})\hspace{0.3cm}{\ttfamily  [pure virtual]}}\label{classcoil_1_1PeriodicTaskBase_af4f2a4cace2e2cf8b37f733aeed03880}
+
+
+Validate a \doxyref{Task}{p.}{classcoil_1_1Task} period time measurement. 
+
+Pure virtual function for validate a \doxyref{Task}{p.}{classcoil_1_1Task} period time measurement.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em value}]flag(true: Valid, false: Invalid). \end{DoxyParams}
+
+
+Implemented in {\bf coil::PeriodicTask} \doxyref{}{p.}{classcoil_1_1PeriodicTask_aa30b1a0c6044c0cd5cdcf0c1e25cd867}.
+
+\index{coil::PeriodicTaskBase@{coil::PeriodicTaskBase}!periodicMeasureCount@{periodicMeasureCount}}
+\index{periodicMeasureCount@{periodicMeasureCount}!coil::PeriodicTaskBase@{coil::PeriodicTaskBase}}
+\subsubsection[{periodicMeasureCount}]{\setlength{\rightskip}{0pt plus 5cm}virtual void coil::PeriodicTaskBase::periodicMeasureCount (int {\em n})\hspace{0.3cm}{\ttfamily  [pure virtual]}}\label{classcoil_1_1PeriodicTaskBase_a0c5b0e9a6414138ed05fe6f138ab47ae}
+
+
+\doxyref{Task}{p.}{classcoil_1_1Task} period time measurement count. 
+
+Pure virtual function for task period time measurement count.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em n}]Measurement period. \end{DoxyParams}
+
+
+Implemented in {\bf coil::PeriodicTask} \doxyref{}{p.}{classcoil_1_1PeriodicTask_a3fe9bf5ced1f672f196c5ee85c428173}.
+
+\index{coil::PeriodicTaskBase@{coil::PeriodicTaskBase}!resume@{resume}}
+\index{resume@{resume}!coil::PeriodicTaskBase@{coil::PeriodicTaskBase}}
+\subsubsection[{resume}]{\setlength{\rightskip}{0pt plus 5cm}virtual int coil::PeriodicTaskBase::resume (void)\hspace{0.3cm}{\ttfamily  [pure virtual]}}\label{classcoil_1_1PeriodicTaskBase_aed680b3484a799cf932f7c65188018b5}
+
+
+Resuming the suspended task. 
+
+Pure virtual function for resuming the suspended task. 
+
+Reimplemented from {\bf coil::Task} \doxyref{}{p.}{classcoil_1_1Task_a093088197230d448855155cddda19b11}.
+
+
+
+Implemented in {\bf coil::PeriodicTask} \doxyref{}{p.}{classcoil_1_1PeriodicTask_acf42beb37616fc6418c04e199ea57263}.
+
+\index{coil::PeriodicTaskBase@{coil::PeriodicTaskBase}!setPeriod@{setPeriod}}
+\index{setPeriod@{setPeriod}!coil::PeriodicTaskBase@{coil::PeriodicTaskBase}}
+\subsubsection[{setPeriod}]{\setlength{\rightskip}{0pt plus 5cm}virtual void coil::PeriodicTaskBase::setPeriod ({\bf coil::TimeValue} \& {\em period})\hspace{0.3cm}{\ttfamily  [pure virtual]}}\label{classcoil_1_1PeriodicTaskBase_aa400f55fc0a3123f19146c242944eba0}
+
+
+Setting task execution period. 
+
+Pure virtual function for setting task execution period.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em period}]Execution period. \end{DoxyParams}
+
+
+Implemented in {\bf coil::PeriodicTask} \doxyref{}{p.}{classcoil_1_1PeriodicTask_a737580314afb30b8e576e0b8c562fa37}.
+
+\index{coil::PeriodicTaskBase@{coil::PeriodicTaskBase}!setPeriod@{setPeriod}}
+\index{setPeriod@{setPeriod}!coil::PeriodicTaskBase@{coil::PeriodicTaskBase}}
+\subsubsection[{setPeriod}]{\setlength{\rightskip}{0pt plus 5cm}virtual void coil::PeriodicTaskBase::setPeriod (double {\em period})\hspace{0.3cm}{\ttfamily  [pure virtual]}}\label{classcoil_1_1PeriodicTaskBase_a861a2d0e555d800179f8777b65fa053f}
+
+
+Setting task execution period. 
+
+Pure virtual function for setting task execution period.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em period}]Execution period. \end{DoxyParams}
+
+
+Implemented in {\bf coil::PeriodicTask} \doxyref{}{p.}{classcoil_1_1PeriodicTask_aea8e9a3c53c9ed3cc18545ab6471e7c6}.
+
+\index{coil::PeriodicTaskBase@{coil::PeriodicTaskBase}!setTask@{setTask}}
+\index{setTask@{setTask}!coil::PeriodicTaskBase@{coil::PeriodicTaskBase}}
+\subsubsection[{setTask}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class O , class F $>$ bool coil::PeriodicTaskBase::setTask (O $\ast$ {\em obj}, \/  F {\em fun})\hspace{0.3cm}{\ttfamily  [inline]}}\label{classcoil_1_1PeriodicTaskBase_a5ad1174d04d2c01f1fb36bcc4ae84e38}
+
+
+Setting task execution function. 
+
+Pure virtual function for setting task execution function.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em obj}]Object. \item[{\em fun}]Function.\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true: successful, false: failed 
+\end{DoxyReturn}
+
+
+Reimplemented in {\bf coil::PeriodicTask} \doxyref{}{p.}{classcoil_1_1PeriodicTask_a13d65e19e45a3bef97b0ba8c311f2e09}.
+
+
+
+References setTask().
+
+\index{coil::PeriodicTaskBase@{coil::PeriodicTaskBase}!setTask@{setTask}}
+\index{setTask@{setTask}!coil::PeriodicTaskBase@{coil::PeriodicTaskBase}}
+\subsubsection[{setTask}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool coil::PeriodicTaskBase::setTask ({\bf TaskFuncBase} $\ast$ {\em func}, \/  bool {\em delete\_\-in\_\-dtor} = {\ttfamily true})\hspace{0.3cm}{\ttfamily  [pure virtual]}}\label{classcoil_1_1PeriodicTaskBase_a8a474e1d1471f106e67ee063dac3eba2}
+
+
+Setting task execution function. 
+
+Pure virtual function for setting task execution function.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em func}]Function. \item[{\em delete\_\-in\_\-dtor}]Delete flag. \end{DoxyParams}
+
+
+Implemented in {\bf coil::PeriodicTask} \doxyref{}{p.}{classcoil_1_1PeriodicTask_a7639cfa0161dccc496fd6e0b7301a9ba}.
+
+
+
+Referenced by setTask().
+
+\index{coil::PeriodicTaskBase@{coil::PeriodicTaskBase}!signal@{signal}}
+\index{signal@{signal}!coil::PeriodicTaskBase@{coil::PeriodicTaskBase}}
+\subsubsection[{signal}]{\setlength{\rightskip}{0pt plus 5cm}virtual void coil::PeriodicTaskBase::signal ()\hspace{0.3cm}{\ttfamily  [pure virtual]}}\label{classcoil_1_1PeriodicTaskBase_a62746e37dadba8ce7af043d10993f246}
+
+
+Executing the suspended task one tick. 
+
+Pure virtual function for executing the suspended task one tick. 
+
+Implemented in {\bf coil::PeriodicTask} \doxyref{}{p.}{classcoil_1_1PeriodicTask_ab8922b61fe6496415b374494a9c5bee1}.
+
+\index{coil::PeriodicTaskBase@{coil::PeriodicTaskBase}!suspend@{suspend}}
+\index{suspend@{suspend}!coil::PeriodicTaskBase@{coil::PeriodicTaskBase}}
+\subsubsection[{suspend}]{\setlength{\rightskip}{0pt plus 5cm}virtual int coil::PeriodicTaskBase::suspend (void)\hspace{0.3cm}{\ttfamily  [pure virtual]}}\label{classcoil_1_1PeriodicTaskBase_a3868ef5fb39dcb023c3fade0a307898d}
+
+
+Suspending the task. 
+
+Pure virtual function for suspending the task. 
+
+Reimplemented from {\bf coil::Task} \doxyref{}{p.}{classcoil_1_1Task_a9f65419174b1974a9b145042562af9a8}.
+
+
+
+Implemented in {\bf coil::PeriodicTask} \doxyref{}{p.}{classcoil_1_1PeriodicTask_acc1199a128277eb89e7737df00d33264}.
+

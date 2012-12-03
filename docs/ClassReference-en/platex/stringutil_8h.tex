@@ -1,0 +1,76 @@
+\section{stringutil.h File Reference}
+\label{stringutil_8h}\index{stringutil.h@{stringutil.h}}
+{\ttfamily \#include $<$string$>$}\par
+{\ttfamily \#include $<$vector$>$}\par
+{\ttfamily \#include $<$sstream$>$}\par
+\subsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace {\bf coil}
+
+
+\begin{DoxyCompactList}\small\item\em Common Object Interface Layer. \item\end{DoxyCompactList}
+
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef std::vector$<$ std::string $>$ {\bf coil::vstring}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+std::wstring {\bf coil::string2wstring} (std::string str)
+\begin{DoxyCompactList}\small\item\em string to wstring conversion \item\end{DoxyCompactList}\item 
+std::string {\bf coil::wstring2string} (std::wstring wstr)
+\begin{DoxyCompactList}\small\item\em wstring to string conversion \item\end{DoxyCompactList}\item 
+void {\bf coil::toUpper} (std::string \&str)
+\begin{DoxyCompactList}\small\item\em Uppercase String Transformation. \item\end{DoxyCompactList}\item 
+void {\bf coil::toLower} (std::string \&str)
+\begin{DoxyCompactList}\small\item\em Lowercase String Transformation. \item\end{DoxyCompactList}\item 
+int {\bf coil::getlinePortable} (std::istream \&istr, std::string \&line)
+\begin{DoxyCompactList}\small\item\em Read a line from input stream. \item\end{DoxyCompactList}\item 
+bool {\bf coil::isEscaped} (const std::string \&str, std::string::size\_\-type pos)
+\begin{DoxyCompactList}\small\item\em Check whether the character is escaped or not. \item\end{DoxyCompactList}\item 
+std::string {\bf coil::escape} (const std::string str)
+\begin{DoxyCompactList}\small\item\em Escape string. \item\end{DoxyCompactList}\item 
+std::string {\bf coil::unescape} (const std::string str)
+\begin{DoxyCompactList}\small\item\em Unescape string. \item\end{DoxyCompactList}\item 
+void {\bf coil::eraseBlank} (std::string \&str)
+\begin{DoxyCompactList}\small\item\em Erase blank characters of string. \item\end{DoxyCompactList}\item 
+void {\bf coil::eraseHeadBlank} (std::string \&str)
+\begin{DoxyCompactList}\small\item\em Erase the head blank characters of string. \item\end{DoxyCompactList}\item 
+void {\bf coil::eraseTailBlank} (std::string \&str)
+\begin{DoxyCompactList}\small\item\em Erase the tail blank characters of string. \item\end{DoxyCompactList}\item 
+void {\bf coil::eraseBothEndsBlank} (std::string \&str)
+\begin{DoxyCompactList}\small\item\em Erase the head blank and the tail blank characters of string. \item\end{DoxyCompactList}\item 
+std::string {\bf coil::normalize} (std::string \&str)
+\begin{DoxyCompactList}\small\item\em Erase the head/tail blank and replace upper case to lower case. \item\end{DoxyCompactList}\item 
+unsigned int {\bf coil::replaceString} (std::string \&str, const std::string from, const std::string to)
+\begin{DoxyCompactList}\small\item\em Replace string. \item\end{DoxyCompactList}\item 
+vstring {\bf coil::split} (const std::string \&input, const std::string \&delimiter, bool ignore\_\-empty=false)
+\begin{DoxyCompactList}\small\item\em Split string by delimiter. \item\end{DoxyCompactList}\item 
+bool {\bf coil::toBool} (std::string str, std::string yes, std::string no, bool default\_\-value=true)
+\begin{DoxyCompactList}\small\item\em Convert given string into bool value. \item\end{DoxyCompactList}\item 
+bool {\bf coil::includes} (const vstring \&list, std::string value, bool ignore\_\-case=true)
+\begin{DoxyCompactList}\small\item\em Include if a string is included in string list. \item\end{DoxyCompactList}\item 
+bool {\bf coil::includes} (const std::string \&list, std::string value, bool ignore\_\-case=true)
+\begin{DoxyCompactList}\small\item\em Include if a string is included in string list. \item\end{DoxyCompactList}\item 
+bool {\bf coil::isAbsolutePath} (const std::string \&str)
+\begin{DoxyCompactList}\small\item\em Investigate whether the given string is absolute path or not. \item\end{DoxyCompactList}\item 
+bool {\bf coil::isURL} (const std::string \&str)
+\begin{DoxyCompactList}\small\item\em Investigate whether the given string is URL or not. \item\end{DoxyCompactList}\item 
+{\footnotesize template$<$class Printable $>$ }\\std::string {\bf coil::otos} (Printable n)
+\begin{DoxyCompactList}\small\item\em Convert the given object to std::string. \item\end{DoxyCompactList}\item 
+{\footnotesize template$<$typename To $>$ }\\bool {\bf coil::stringTo} (To \&val, const char $\ast$str)
+\begin{DoxyCompactList}\small\item\em Convert the given std::string to object. \item\end{DoxyCompactList}\item 
+{\footnotesize template$<$$>$ }\\bool {\bf coil::stringTo$<$ std::string $>$} (std::string \&val, const char $\ast$str)
+\begin{DoxyCompactList}\small\item\em Convert the given string to std::string. \item\end{DoxyCompactList}\item 
+vstring {\bf coil::unique\_\-sv} (vstring sv)
+\begin{DoxyCompactList}\small\item\em Eliminate duplication from the given string list. \item\end{DoxyCompactList}\item 
+std::string {\bf coil::flatten} (vstring sv)
+\begin{DoxyCompactList}\small\item\em Create CSV file from the given string list. \item\end{DoxyCompactList}\item 
+char $\ast$$\ast$ {\bf coil::toArgv} (const vstring \&args)
+\begin{DoxyCompactList}\small\item\em Convert the given string list into the argument list. \item\end{DoxyCompactList}\item 
+std::string {\bf coil::sprintf} (char const $\ast$\_\-\_\-restrict fmt,...)
+\begin{DoxyCompactList}\small\item\em Convert it into a format given with an argumen. \item\end{DoxyCompactList}\end{DoxyCompactItemize}

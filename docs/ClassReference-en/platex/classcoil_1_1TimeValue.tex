@@ -1,0 +1,175 @@
+\section{coil::TimeValue Class Reference}
+\label{classcoil_1_1TimeValue}\index{coil::TimeValue@{coil::TimeValue}}
+
+
+\doxyref{TimeValue}{p.}{classcoil_1_1TimeValue} class.  
+
+
+
+
+{\ttfamily \#include $<$TimeValue.h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf TimeValue} (long sec=0, long usec=0)
+\begin{DoxyCompactList}\small\item\em Constructor. \item\end{DoxyCompactList}\item 
+{\bf TimeValue} (double timeval)
+\begin{DoxyCompactList}\small\item\em Constructor. \item\end{DoxyCompactList}\item 
+long int {\bf sec} () const 
+\begin{DoxyCompactList}\small\item\em Get value of second time scale. \item\end{DoxyCompactList}\item 
+long int {\bf usec} () const 
+\begin{DoxyCompactList}\small\item\em Get value of micro second time scale. \item\end{DoxyCompactList}\item 
+{\bf TimeValue} {\bf operator-\/} ({\bf TimeValue} \&tm)
+\begin{DoxyCompactList}\small\item\em Time subtraction. \item\end{DoxyCompactList}\item 
+{\bf TimeValue} {\bf operator+} ({\bf TimeValue} \&tm)
+\begin{DoxyCompactList}\small\item\em Time addition. \item\end{DoxyCompactList}\item 
+{\bf TimeValue} {\bf operator=} (double time)
+\begin{DoxyCompactList}\small\item\em Convert double type into time type. \item\end{DoxyCompactList}\item 
+{\bf operator double} () const 
+\begin{DoxyCompactList}\small\item\em Convert time type into double type. \item\end{DoxyCompactList}\item 
+int {\bf sign} () const 
+\begin{DoxyCompactList}\small\item\em Sign judgment. \item\end{DoxyCompactList}\item 
+void {\bf normalize} ()
+\begin{DoxyCompactList}\small\item\em Normalize. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\doxyref{TimeValue}{p.}{classcoil_1_1TimeValue} class. 
+
+\subsection{Constructor \& Destructor Documentation}
+\index{coil::TimeValue@{coil::TimeValue}!TimeValue@{TimeValue}}
+\index{TimeValue@{TimeValue}!coil::TimeValue@{coil::TimeValue}}
+\subsubsection[{TimeValue}]{\setlength{\rightskip}{0pt plus 5cm}coil::TimeValue::TimeValue (long {\em sec} = {\ttfamily 0}, \/  long {\em usec} = {\ttfamily 0})}\label{classcoil_1_1TimeValue_ab9c6ed65e268874b3f9a11df89288001}
+
+
+Constructor. 
+
+Constructor Initialize with the specified second and micro second.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em sec}]Second(The default value:0) \item[{\em usec}]Micro second(The default value:0) \end{DoxyParams}
+\index{coil::TimeValue@{coil::TimeValue}!TimeValue@{TimeValue}}
+\index{TimeValue@{TimeValue}!coil::TimeValue@{coil::TimeValue}}
+\subsubsection[{TimeValue}]{\setlength{\rightskip}{0pt plus 5cm}coil::TimeValue::TimeValue (double {\em timeval})}\label{classcoil_1_1TimeValue_a8512fb4540192bc9d4ca72cba86e2270}
+
+
+Constructor. 
+
+Constructor Initialize with the specified second and micro second.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em timeval}](Second $\ast$ 1000000 + Micro second) \end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\index{coil::TimeValue@{coil::TimeValue}!normalize@{normalize}}
+\index{normalize@{normalize}!coil::TimeValue@{coil::TimeValue}}
+\subsubsection[{normalize}]{\setlength{\rightskip}{0pt plus 5cm}void coil::TimeValue::normalize ()}\label{classcoil_1_1TimeValue_a71b8ef764a717296cf917fc031a7e0e5}
+
+
+Normalize. 
+
+Normalize the value expression into a canonical form. \index{coil::TimeValue@{coil::TimeValue}!operator double@{operator double}}
+\index{operator double@{operator double}!coil::TimeValue@{coil::TimeValue}}
+\subsubsection[{operator double}]{\setlength{\rightskip}{0pt plus 5cm}coil::TimeValue::operator double () const}\label{classcoil_1_1TimeValue_ae6db6e62bc386dca0a3249e8921e0972}
+
+
+Convert time type into double type. 
+
+Convert held information into double type.
+
+\begin{DoxyReturn}{Returns}
+Result for conversion of double type 
+\end{DoxyReturn}
+\index{coil::TimeValue@{coil::TimeValue}!operator+@{operator+}}
+\index{operator+@{operator+}!coil::TimeValue@{coil::TimeValue}}
+\subsubsection[{operator+}]{\setlength{\rightskip}{0pt plus 5cm}{\bf TimeValue} coil::TimeValue::operator+ ({\bf TimeValue} \& {\em tm})}\label{classcoil_1_1TimeValue_a7684f9087f4ced46cbef0e5ccc311168}
+
+
+Time addition. 
+
+Add the time given by the argument to the set time.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em tm}]Added time\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Addition result 
+\end{DoxyReturn}
+\index{coil::TimeValue@{coil::TimeValue}!operator-\/@{operator-\/}}
+\index{operator-\/@{operator-\/}!coil::TimeValue@{coil::TimeValue}}
+\subsubsection[{operator-\/}]{\setlength{\rightskip}{0pt plus 5cm}{\bf TimeValue} coil::TimeValue::operator-\/ ({\bf TimeValue} \& {\em tm})}\label{classcoil_1_1TimeValue_a5aa800d47f6d38da0881dd46c0bd2c35}
+
+
+Time subtraction. 
+
+Subtract the time given by the argument from the set time.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em tm}]Subtracted time\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Subtraction result 
+\end{DoxyReturn}
+\index{coil::TimeValue@{coil::TimeValue}!operator=@{operator=}}
+\index{operator=@{operator=}!coil::TimeValue@{coil::TimeValue}}
+\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf TimeValue} coil::TimeValue::operator= (double {\em time})}\label{classcoil_1_1TimeValue_a0d812b25cb2e64dca7b756185eade793}
+
+
+Convert double type into time type. 
+
+Convert double type given by the argument into time type.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em time}]the original value\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Conversion result 
+\end{DoxyReturn}
+\index{coil::TimeValue@{coil::TimeValue}!sec@{sec}}
+\index{sec@{sec}!coil::TimeValue@{coil::TimeValue}}
+\subsubsection[{sec}]{\setlength{\rightskip}{0pt plus 5cm}long int coil::TimeValue::sec () const\hspace{0.3cm}{\ttfamily  [inline]}}\label{classcoil_1_1TimeValue_a44b946e975c4980b6c84a5ca90b64018}
+
+
+Get value of second time scale. 
+
+Get value of second time scale.
+
+\begin{DoxyReturn}{Returns}
+value 
+\end{DoxyReturn}
+
+
+Referenced by RTC::RingBuffer$<$ DataType $>$::read(), setTimestamp(), coil::sleep(), and RTC::RingBuffer$<$ DataType $>$::write().
+
+\index{coil::TimeValue@{coil::TimeValue}!sign@{sign}}
+\index{sign@{sign}!coil::TimeValue@{coil::TimeValue}}
+\subsubsection[{sign}]{\setlength{\rightskip}{0pt plus 5cm}int coil::TimeValue::sign () const}\label{classcoil_1_1TimeValue_ac391e2e9ce2146edc91cbba98a5ee1b2}
+
+
+Sign judgment. 
+
+Judge sign of the held contents
+
+\begin{DoxyReturn}{Returns}
+1 if the return value is Plus sign, -\/1 if Minus, and 0 if 0. 
+\end{DoxyReturn}
+\index{coil::TimeValue@{coil::TimeValue}!usec@{usec}}
+\index{usec@{usec}!coil::TimeValue@{coil::TimeValue}}
+\subsubsection[{usec}]{\setlength{\rightskip}{0pt plus 5cm}long int coil::TimeValue::usec () const\hspace{0.3cm}{\ttfamily  [inline]}}\label{classcoil_1_1TimeValue_ad302adbb6df64245093d6a6ecd5a7576}
+
+
+Get value of micro second time scale. 
+
+Get value of micro second time scale.
+
+\begin{DoxyReturn}{Returns}
+value 
+\end{DoxyReturn}
+
+
+Referenced by RTC::RingBuffer$<$ DataType $>$::read(), setTimestamp(), coil::sleep(), and RTC::RingBuffer$<$ DataType $>$::write().
+

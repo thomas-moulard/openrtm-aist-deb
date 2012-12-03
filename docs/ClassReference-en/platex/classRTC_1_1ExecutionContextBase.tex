@@ -1,0 +1,74 @@
+\section{RTC::ExecutionContextBase Class Reference}
+\label{classRTC_1_1ExecutionContextBase}\index{RTC::ExecutionContextBase@{RTC::ExecutionContextBase}}
+
+
+A base class for ExecutionContext.  
+
+
+
+
+{\ttfamily \#include $<$ExecutionContextBase.h$>$}
+
+Inheritance diagram for RTC::ExecutionContextBase:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3cm]{classRTC_1_1ExecutionContextBase}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual {\bf $\sim$ExecutionContextBase} (void)
+\begin{DoxyCompactList}\small\item\em Virtual Destructor. \item\end{DoxyCompactList}\item 
+virtual void {\bf tick} ()  throw (CORBA::SystemException)
+\begin{DoxyCompactList}\small\item\em Proceed with tick of ExecutionContext. \item\end{DoxyCompactList}\item 
+virtual RTC::ReturnCode\_\-t {\bf bindComponent} ({\bf RTObject\_\-impl} $\ast$rtc)=0
+\item 
+virtual RTC::ExecutionContextService\_\-ptr {\bf getObjRef} ()=0
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A base class for ExecutionContext. A base class of ExecutionContext.
+
+\begin{DoxySince}{Since}
+0.4.0 
+\end{DoxySince}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{RTC::ExecutionContextBase@{RTC::ExecutionContextBase}!$\sim$ExecutionContextBase@{$\sim$ExecutionContextBase}}
+\index{$\sim$ExecutionContextBase@{$\sim$ExecutionContextBase}!RTC::ExecutionContextBase@{RTC::ExecutionContextBase}}
+\subsubsection[{$\sim$ExecutionContextBase}]{\setlength{\rightskip}{0pt plus 5cm}virtual RTC::ExecutionContextBase::$\sim$ExecutionContextBase (void)\hspace{0.3cm}{\ttfamily  [inline, virtual]}}\label{classRTC_1_1ExecutionContextBase_a3859cce1770696b6e8486e1199b47541}
+
+
+Virtual Destructor. 
+
+Virtual Destructor 
+
+\subsection{Member Function Documentation}
+\index{RTC::ExecutionContextBase@{RTC::ExecutionContextBase}!bindComponent@{bindComponent}}
+\index{bindComponent@{bindComponent}!RTC::ExecutionContextBase@{RTC::ExecutionContextBase}}
+\subsubsection[{bindComponent}]{\setlength{\rightskip}{0pt plus 5cm}virtual RTC::ReturnCode\_\-t RTC::ExecutionContextBase::bindComponent ({\bf RTObject\_\-impl} $\ast$ {\em rtc})\hspace{0.3cm}{\ttfamily  [pure virtual]}}\label{classRTC_1_1ExecutionContextBase_a63f6427cfe69b5dbc92fa192e26bcf7e}
+Bind the component. 
+
+Implemented in {\bf RTC::PeriodicExecutionContext} \doxyref{}{p.}{classRTC_1_1PeriodicExecutionContext_aac9d423142bf3b8d219740a4f202b033}.
+
+\index{RTC::ExecutionContextBase@{RTC::ExecutionContextBase}!getObjRef@{getObjRef}}
+\index{getObjRef@{getObjRef}!RTC::ExecutionContextBase@{RTC::ExecutionContextBase}}
+\subsubsection[{getObjRef}]{\setlength{\rightskip}{0pt plus 5cm}virtual RTC::ExecutionContextService\_\-ptr RTC::ExecutionContextBase::getObjRef ()\hspace{0.3cm}{\ttfamily  [pure virtual]}}\label{classRTC_1_1ExecutionContextBase_a05d88ee228cc75ab82e2c25c3eafc7db}
+Get the reference of the object. 
+
+Implemented in {\bf RTC::PeriodicExecutionContext} \doxyref{}{p.}{classRTC_1_1PeriodicExecutionContext_a24fac023d4758a6297dab92ee8db6610}.
+
+\index{RTC::ExecutionContextBase@{RTC::ExecutionContextBase}!tick@{tick}}
+\index{tick@{tick}!RTC::ExecutionContextBase@{RTC::ExecutionContextBase}}
+\subsubsection[{tick}]{\setlength{\rightskip}{0pt plus 5cm}virtual void RTC::ExecutionContextBase::tick (void)  throw (CORBA::SystemException)\hspace{0.3cm}{\ttfamily  [inline, virtual]}}\label{classRTC_1_1ExecutionContextBase_a9a72856fe8c46ab49c54042d30c9e343}
+
+
+Proceed with tick of ExecutionContext. 
+
+Proceed with tick of ExecutionContext for one period. 
+
+Reimplemented in {\bf RTC::ExtTrigExecutionContext} \doxyref{}{p.}{classRTC_1_1ExtTrigExecutionContext_a620fd10cb8d7c5dc3a35d1bb21e06cde}, and {\bf RTC::OpenHRPExecutionContext} \doxyref{}{p.}{classRTC_1_1OpenHRPExecutionContext_a8d48b4067e8f98c350d09b318cf14f60}.
+

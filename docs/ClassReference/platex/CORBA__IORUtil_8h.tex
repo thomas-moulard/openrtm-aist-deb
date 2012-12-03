@@ -1,0 +1,43 @@
+\section{CORBA\_\-IORUtil.h}
+\label{CORBA__IORUtil_8h}\index{CORBA\_\-IORUtil.h@{CORBA\_\-IORUtil.h}}
+
+
+CORBA IOR manipulation utility functions.  
+
+
+{\ttfamily \#include $<$rtm/RTC.h$>$}\par
+\subsection*{ネームスペース}
+\begin{DoxyCompactItemize}
+\item 
+namespace {\bf CORBA\_\-IORUtil}
+
+
+\begin{DoxyCompactList}\small\item\em CORBA IOR ヘルパー関数. \item\end{DoxyCompactList}
+
+\end{DoxyCompactItemize}
+\subsection*{関数}
+\begin{DoxyCompactItemize}
+\item 
+bool {\bf CORBA\_\-IORUtil::toIOR} (const char $\ast$iorstr, IOP::IOR \&ior)
+\begin{DoxyCompactList}\small\item\em IOR 文字列をIOR構造体へ変換する. \item\end{DoxyCompactList}\item 
+bool {\bf CORBA\_\-IORUtil::toString} (IOP::IOR \&ior, std::string \&iorstr)
+\begin{DoxyCompactList}\small\item\em IOR構造体をIOR文字列へ変換する. \item\end{DoxyCompactList}\item 
+bool {\bf CORBA\_\-IORUtil::replaceEndpoint} (std::string \&iorstr, const std::string \&endpoint)
+\begin{DoxyCompactList}\small\item\em IOR内のエンドポイントを置換する. \item\end{DoxyCompactList}\item 
+std::string {\bf CORBA\_\-IORUtil::formatIORinfo} (const char $\ast$iorstr)
+\begin{DoxyCompactList}\small\item\em IOR文字列から情報を抽出しフォーマット済みの文字列として返す. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{説明}
+CORBA IOR manipulation utility functions. \begin{DoxyDate}{日付}
+
+\end{DoxyDate}
+\begin{DoxyParagraph}{Date}
+2007-\/12-\/31 03:06:24 
+\end{DoxyParagraph}
+\begin{DoxyAuthor}{作者}
+Noriaki Ando $<${\tt n-\/ando@aist.go.jp}$>$
+\end{DoxyAuthor}
+Copyright (C) 2010 Intelligent Systems Research Institute, National Institute of Advanced Industrial Science and Technology (AIST), Japan All rights reserved.
+
+\$Id\$ 

@@ -1,0 +1,108 @@
+\section{RTC::ECFactoryBase Class Reference}
+\label{classRTC_1_1ECFactoryBase}\index{RTC::ECFactoryBase@{RTC::ECFactoryBase}}
+
+
+\doxyref{ECFactoryBase}{p.}{classRTC_1_1ECFactoryBase} abstract class.  
+
+
+
+
+{\ttfamily \#include $<$ECFactory.h$>$}
+
+Inheritance diagram for RTC::ECFactoryBase:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2cm]{classRTC_1_1ECFactoryBase}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual {\bf $\sim$ECFactoryBase} (void)
+\begin{DoxyCompactList}\small\item\em Virtual destructor. \item\end{DoxyCompactList}\item 
+virtual const char $\ast$ {\bf name} ()=0
+\begin{DoxyCompactList}\small\item\em Pure virtual function to get names of creation target ExecutionContext. \item\end{DoxyCompactList}\item 
+virtual {\bf ExecutionContextBase} $\ast$ {\bf create} ()=0
+\begin{DoxyCompactList}\small\item\em Pure virtual function to create ExecutionContext. \item\end{DoxyCompactList}\item 
+virtual void {\bf destroy} ({\bf ExecutionContextBase} $\ast$comp)=0
+\begin{DoxyCompactList}\small\item\em Pure virtual function to destroy ExecutionContext. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\doxyref{ECFactoryBase}{p.}{classRTC_1_1ECFactoryBase} abstract class. This is the abstruct Factory classes for ExecutionContext creation. Concrete classes for each ExecutionContext creation must implement the following pure virtual functions.
+
+This class provides the following public interfaces.
+\begin{DoxyItemize}
+\item \doxyref{name()}{p.}{classRTC_1_1ECFactoryBase_a521d5c350bf08586034dc034c46f5c70} : Get names of the target ExecutionContext for creation
+\item \doxyref{create()}{p.}{classRTC_1_1ECFactoryBase_a3a69009a302cb67881576fc407a6cb57} : Create ExecutionContext's instances
+\item \doxyref{destroy()}{p.}{classRTC_1_1ECFactoryBase_ad9eeff1fd2bdece6e696bc23eb6e9bcc}: Destroy ExecutionContext's instances
+\end{DoxyItemize}
+
+\begin{DoxySince}{Since}
+0.4.0 
+\end{DoxySince}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{RTC::ECFactoryBase@{RTC::ECFactoryBase}!$\sim$ECFactoryBase@{$\sim$ECFactoryBase}}
+\index{$\sim$ECFactoryBase@{$\sim$ECFactoryBase}!RTC::ECFactoryBase@{RTC::ECFactoryBase}}
+\subsubsection[{$\sim$ECFactoryBase}]{\setlength{\rightskip}{0pt plus 5cm}virtual RTC::ECFactoryBase::$\sim$ECFactoryBase (void)\hspace{0.3cm}{\ttfamily  [inline, virtual]}}\label{classRTC_1_1ECFactoryBase_ab80a647333b628435c91c63982f5498c}
+
+
+Virtual destructor. 
+
+Virtual destructor 
+
+\subsection{Member Function Documentation}
+\index{RTC::ECFactoryBase@{RTC::ECFactoryBase}!create@{create}}
+\index{create@{create}!RTC::ECFactoryBase@{RTC::ECFactoryBase}}
+\subsubsection[{create}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf ExecutionContextBase}$\ast$ RTC::ECFactoryBase::create ()\hspace{0.3cm}{\ttfamily  [pure virtual]}}\label{classRTC_1_1ECFactoryBase_a3a69009a302cb67881576fc407a6cb57}
+
+
+Pure virtual function to create ExecutionContext. 
+
+Pure virtual function to create ExecutionContext's instances.
+
+\begin{DoxyReturn}{Returns}
+Created ExecutionContext's instances 
+\end{DoxyReturn}
+
+
+Implemented in {\bf RTC::ECFactoryCXX} \doxyref{}{p.}{classRTC_1_1ECFactoryCXX_a3b9c612725a509f21908105334f2bc36}.
+
+\index{RTC::ECFactoryBase@{RTC::ECFactoryBase}!destroy@{destroy}}
+\index{destroy@{destroy}!RTC::ECFactoryBase@{RTC::ECFactoryBase}}
+\subsubsection[{destroy}]{\setlength{\rightskip}{0pt plus 5cm}virtual void RTC::ECFactoryBase::destroy ({\bf ExecutionContextBase} $\ast$ {\em comp})\hspace{0.3cm}{\ttfamily  [pure virtual]}}\label{classRTC_1_1ECFactoryBase_ad9eeff1fd2bdece6e696bc23eb6e9bcc}
+
+
+Pure virtual function to destroy ExecutionContext. 
+
+Pure virtual function to destroy ExecutionContext's instances.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em comp}]The target ExecutionContext's instances for destruction \end{DoxyParams}
+
+
+Implemented in {\bf RTC::ECFactoryCXX} \doxyref{}{p.}{classRTC_1_1ECFactoryCXX_a57dbab7164220dd469c3d23cf36ff721}.
+
+\index{RTC::ECFactoryBase@{RTC::ECFactoryBase}!name@{name}}
+\index{name@{name}!RTC::ECFactoryBase@{RTC::ECFactoryBase}}
+\subsubsection[{name}]{\setlength{\rightskip}{0pt plus 5cm}virtual const char$\ast$ RTC::ECFactoryBase::name ()\hspace{0.3cm}{\ttfamily  [pure virtual]}}\label{classRTC_1_1ECFactoryBase_a521d5c350bf08586034dc034c46f5c70}
+
+
+Pure virtual function to get names of creation target ExecutionContext. 
+
+Pure virtual function to get names of the target ExecutionContext for creation.
+
+\begin{DoxyReturn}{Returns}
+Names of the target ExecutionContext for creation 
+\end{DoxyReturn}
+
+
+Implemented in {\bf RTC::ECFactoryCXX} \doxyref{}{p.}{classRTC_1_1ECFactoryCXX_a7de52069a2c215b6fb4757b4cbe378ec}.
+
+
+
+Referenced by RTC::Manager::ECFactoryPredicate::operator()().
+

@@ -1,0 +1,2851 @@
+\section{クラス RTC::RTObject\_\-impl}
+\label{classRTC_1_1RTObject__impl}\index{RTC::RTObject\_\-impl@{RTC::RTObject\_\-impl}}
+
+
+RTコンポーネントクラス.  
+
+
+
+
+{\ttfamily \#include $<$RTObject.h$>$}
+
+RTC::RTObject\_\-implに対する継承グラフ\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2cm]{classRTC_1_1RTObject__impl}
+\end{center}
+\end{figure}
+\subsection*{構成}
+\begin{DoxyCompactItemize}
+\item 
+struct {\bf deactivate\_\-comps}
+\begin{DoxyCompactList}\small\item\em \doxyref{RTC}{p.}{namespaceRTC} 非活性化用ファンクタ. \item\end{DoxyCompactList}\item 
+struct {\bf ec\_\-copy}
+\begin{DoxyCompactList}\small\item\em ExecutionContext コピーファンクタ. \item\end{DoxyCompactList}\item 
+struct {\bf ec\_\-find}
+\begin{DoxyCompactList}\small\item\em ExecutionContext 検索用ファンクタ. \item\end{DoxyCompactList}\item 
+struct {\bf nv\_\-name}
+\begin{DoxyCompactList}\small\item\em NVList 検索用ファンクタ. \item\end{DoxyCompactList}\item 
+struct {\bf svc\_\-name}
+\begin{DoxyCompactList}\small\item\em SDOService のプロファイルリストからidでサーチするためのファンクタ. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public 型}
+\begin{DoxyCompactItemize}
+\item 
+typedef {\bf PreComponentActionListener} {\bf PreCompActionListener}
+\begin{DoxyCompactList}\small\item\em \doxyref{PreComponentActionListener}{p.}{classRTC_1_1PreComponentActionListener} リスナを追加する. \item\end{DoxyCompactList}\item 
+typedef {\bf PreComponentActionListenerType} {\bf PreCompActionListenerType}
+\item 
+typedef {\bf PostComponentActionListener} {\bf PostCompActionListener}
+\begin{DoxyCompactList}\small\item\em \doxyref{PostComponentActionListener}{p.}{classRTC_1_1PostComponentActionListener} リスナを追加する. \item\end{DoxyCompactList}\item 
+typedef {\bf PostComponentActionListenerType} {\bf PostCompActionListenerType}
+\item 
+typedef {\bf ExecutionContextActionListenerType} {\bf ECActionListenerType}
+\begin{DoxyCompactList}\small\item\em \doxyref{ExecutionContextActionListener}{p.}{classRTC_1_1ExecutionContextActionListener} リスナを追加する. \item\end{DoxyCompactList}\item 
+typedef {\bf ExecutionContextActionListener} {\bf ECActionListener}
+\end{DoxyCompactItemize}
+\subsection*{Public メソッド}
+\begin{DoxyCompactItemize}
+\item 
+{\bf RTObject\_\-impl} ({\bf Manager} $\ast$manager)
+\begin{DoxyCompactList}\small\item\em コンストラクタ \item\end{DoxyCompactList}\item 
+{\bf RTObject\_\-impl} (CORBA::ORB\_\-ptr orb, PortableServer::POA\_\-ptr poa)
+\begin{DoxyCompactList}\small\item\em コンストラクタ \item\end{DoxyCompactList}\item 
+virtual {\bf $\sim$RTObject\_\-impl} (void)
+\begin{DoxyCompactList}\small\item\em 仮想デストラクタ \item\end{DoxyCompactList}\item 
+virtual ReturnCode\_\-t {\bf initialize} ()  throw (CORBA::SystemException)
+\begin{DoxyCompactList}\small\item\em [CORBA interface] RTCを初期化する \item\end{DoxyCompactList}\item 
+virtual ReturnCode\_\-t {\bf finalize} ()  throw (CORBA::SystemException)
+\begin{DoxyCompactList}\small\item\em [CORBA interface] \doxyref{RTC}{p.}{namespaceRTC} を終了する \item\end{DoxyCompactList}\item 
+virtual ReturnCode\_\-t {\bf exit} ()  throw (CORBA::SystemException)
+\begin{DoxyCompactList}\small\item\em [CORBA interface] \doxyref{RTC}{p.}{namespaceRTC} がオーナーである ExecutionContext を 停止させ、そのコンテンツと共に終了させる \item\end{DoxyCompactList}\item 
+virtual CORBA::Boolean {\bf is\_\-alive} (ExecutionContext\_\-ptr exec\_\-context)  throw (CORBA::SystemException)
+\begin{DoxyCompactList}\small\item\em [CORBA interface] \doxyref{RTC}{p.}{namespaceRTC} が Alive 状態であるかどうか確認する。 \item\end{DoxyCompactList}\item 
+virtual ExecutionContext\_\-ptr {\bf get\_\-context} ({\bf UniqueId} exec\_\-handle)  throw (CORBA::SystemException)
+\begin{DoxyCompactList}\small\item\em [CORBA interface] ExecutionContextを取得する \item\end{DoxyCompactList}\item 
+virtual ExecutionContextList $\ast$ {\bf get\_\-owned\_\-contexts} ()  throw (CORBA::SystemException)
+\begin{DoxyCompactList}\small\item\em [CORBA interface] 所有する ExecutionContextListを 取得する \item\end{DoxyCompactList}\item 
+virtual ExecutionContextList $\ast$ {\bf get\_\-participating\_\-contexts} ()  throw (CORBA::SystemException)
+\begin{DoxyCompactList}\small\item\em [CORBA interface] 参加している ExecutionContextList を取得する \item\end{DoxyCompactList}\item 
+virtual ExecutionContextHandle\_\-t {\bf get\_\-context\_\-handle} (ExecutionContext\_\-ptr cxt)  throw (CORBA::SystemException)
+\begin{DoxyCompactList}\small\item\em [CORBA interface] ExecutionContext のハンドルを返す \item\end{DoxyCompactList}\item 
+{\bf UniqueId} {\bf attach\_\-context} (ExecutionContext\_\-ptr exec\_\-context)  throw (CORBA::SystemException)
+\begin{DoxyCompactList}\small\item\em [CORBA interface] ExecutionContextをattachする \item\end{DoxyCompactList}\item 
+{\bf UniqueId} {\bf bindContext} (ExecutionContext\_\-ptr exec\_\-context)
+\item 
+ReturnCode\_\-t {\bf detach\_\-context} ({\bf UniqueId} exec\_\-handle)  throw (CORBA::SystemException)
+\begin{DoxyCompactList}\small\item\em [CORBA interface] ExecutionContextをdetachする \item\end{DoxyCompactList}\item 
+virtual ComponentProfile $\ast$ {\bf get\_\-component\_\-profile} ()  throw (CORBA::SystemException)
+\begin{DoxyCompactList}\small\item\em [RTObject CORBA interface] コンポーネントプロファイルを取得する \item\end{DoxyCompactList}\item 
+virtual PortServiceList $\ast$ {\bf get\_\-ports} ()  throw (CORBA::SystemException)
+\begin{DoxyCompactList}\small\item\em [RTObject CORBA interface] ポートを取得する \item\end{DoxyCompactList}\item 
+virtual ReturnCode\_\-t {\bf on\_\-initialize} ()  throw (CORBA::SystemException)
+\begin{DoxyCompactList}\small\item\em [RTObject CORBA interface] ExecutionContextAdmin を取得する \item\end{DoxyCompactList}\item 
+virtual ReturnCode\_\-t {\bf on\_\-finalize} ()  throw (CORBA::SystemException)
+\begin{DoxyCompactList}\small\item\em [ComponentAction CORBA interface] \doxyref{RTC}{p.}{namespaceRTC} の終了 \item\end{DoxyCompactList}\item 
+virtual ReturnCode\_\-t {\bf on\_\-startup} ({\bf UniqueId} exec\_\-handle)  throw (CORBA::SystemException)
+\begin{DoxyCompactList}\small\item\em [ComponentAction CORBA interface] \doxyref{RTC}{p.}{namespaceRTC} の開始 \item\end{DoxyCompactList}\item 
+virtual ReturnCode\_\-t {\bf on\_\-shutdown} ({\bf UniqueId} exec\_\-handle)  throw (CORBA::SystemException)
+\begin{DoxyCompactList}\small\item\em [ComponentAction CORBA interface] \doxyref{RTC}{p.}{namespaceRTC} の停止 \item\end{DoxyCompactList}\item 
+virtual ReturnCode\_\-t {\bf on\_\-activated} ({\bf UniqueId} exec\_\-handle)  throw (CORBA::SystemException)
+\begin{DoxyCompactList}\small\item\em [ComponentAction CORBA interface] \doxyref{RTC}{p.}{namespaceRTC} の活性化 \item\end{DoxyCompactList}\item 
+virtual ReturnCode\_\-t {\bf on\_\-deactivated} ({\bf UniqueId} exec\_\-handle)  throw (CORBA::SystemException)
+\begin{DoxyCompactList}\small\item\em [ComponentAction CORBA interface] \doxyref{RTC}{p.}{namespaceRTC} の非活性化 \item\end{DoxyCompactList}\item 
+virtual ReturnCode\_\-t {\bf on\_\-aborting} ({\bf UniqueId} exec\_\-handle)  throw (CORBA::SystemException)
+\begin{DoxyCompactList}\small\item\em [ComponentAction CORBA interface] \doxyref{RTC}{p.}{namespaceRTC} のエラー状態への遷移 \item\end{DoxyCompactList}\item 
+virtual ReturnCode\_\-t {\bf on\_\-error} ({\bf UniqueId} exec\_\-handle)  throw (CORBA::SystemException)
+\begin{DoxyCompactList}\small\item\em [ComponentAction CORBA interface] \doxyref{RTC}{p.}{namespaceRTC} のエラー処理 \item\end{DoxyCompactList}\item 
+virtual ReturnCode\_\-t {\bf on\_\-reset} ({\bf UniqueId} exec\_\-handle)  throw (CORBA::SystemException)
+\begin{DoxyCompactList}\small\item\em [ComponentAction CORBA interface] \doxyref{RTC}{p.}{namespaceRTC} のリセット \item\end{DoxyCompactList}\item 
+virtual ReturnCode\_\-t {\bf on\_\-execute} ({\bf UniqueId} exec\_\-handle)  throw (CORBA::SystemException)
+\begin{DoxyCompactList}\small\item\em [DataFlowComponentAction CORBA interface] \doxyref{RTC}{p.}{namespaceRTC} の定常処理(第一周期) \item\end{DoxyCompactList}\item 
+virtual ReturnCode\_\-t {\bf on\_\-state\_\-update} ({\bf UniqueId} exec\_\-handle)  throw (CORBA::SystemException)
+\begin{DoxyCompactList}\small\item\em [DataFlowComponentAction CORBA interface] \doxyref{RTC}{p.}{namespaceRTC} の定常処理(第二周期) \item\end{DoxyCompactList}\item 
+virtual ReturnCode\_\-t {\bf on\_\-rate\_\-changed} ({\bf UniqueId} exec\_\-handle)  throw (CORBA::SystemException)
+\begin{DoxyCompactList}\small\item\em [DataFlowComponentAction CORBA interface] 実行周期変更通知 \item\end{DoxyCompactList}\item 
+virtual SDOPackage::OrganizationList $\ast$ {\bf get\_\-owned\_\-organizations} ()  throw (CORBA::SystemException,             SDOPackage::NotAvailable, SDOPackage::InternalError)
+\begin{DoxyCompactList}\small\item\em [\doxyref{SDO}{p.}{classSDO} interface] Organization リストの取得 \item\end{DoxyCompactList}\item 
+virtual char $\ast$ {\bf get\_\-sdo\_\-id} ()  throw (CORBA::SystemException,	     SDOPackage::NotAvailable, SDOPackage::InternalError)
+\begin{DoxyCompactList}\small\item\em [\doxyref{SDO}{p.}{classSDO} interface] \doxyref{SDO}{p.}{classSDO} ID の取得 \item\end{DoxyCompactList}\item 
+virtual char $\ast$ {\bf get\_\-sdo\_\-type} ()  throw (CORBA::SystemException, 	     SDOPackage::NotAvailable, SDOPackage::InternalError)
+\begin{DoxyCompactList}\small\item\em [\doxyref{SDO}{p.}{classSDO} interface] \doxyref{SDO}{p.}{classSDO} タイプの取得 \item\end{DoxyCompactList}\item 
+virtual SDOPackage::DeviceProfile $\ast$ {\bf get\_\-device\_\-profile} ()  throw (CORBA::SystemException, 	     SDOPackage::NotAvailable, SDOPackage::InternalError)
+\begin{DoxyCompactList}\small\item\em [\doxyref{SDO}{p.}{classSDO} interface] \doxyref{SDO}{p.}{classSDO} DeviceProfile リストの取得 \item\end{DoxyCompactList}\item 
+virtual SDOPackage::ServiceProfileList $\ast$ {\bf get\_\-service\_\-profiles} ()  throw (CORBA::SystemException, 	     SDOPackage::NotAvailable, SDOPackage::InternalError)
+\begin{DoxyCompactList}\small\item\em [\doxyref{SDO}{p.}{classSDO} interface] \doxyref{SDO}{p.}{classSDO} ServiceProfile の取得 \item\end{DoxyCompactList}\item 
+virtual SDOPackage::ServiceProfile $\ast$ {\bf get\_\-service\_\-profile} (const char $\ast$id)  throw (CORBA::SystemException, 	     SDOPackage::InvalidParameter, SDOPackage::NotAvailable,	     SDOPackage::InternalError)
+\begin{DoxyCompactList}\small\item\em [\doxyref{SDO}{p.}{classSDO} interface] 特定のServiceProfileの取得 \item\end{DoxyCompactList}\item 
+virtual SDOPackage::SDOService\_\-ptr {\bf get\_\-sdo\_\-service} (const char $\ast$id)  throw (CORBA::SystemException, 	     SDOPackage::InvalidParameter, SDOPackage::NotAvailable,	     SDOPackage::InternalError)
+\begin{DoxyCompactList}\small\item\em [\doxyref{SDO}{p.}{classSDO} interface] 指定された \doxyref{SDO}{p.}{classSDO} Service の取得 \item\end{DoxyCompactList}\item 
+virtual SDOPackage::Configuration\_\-ptr {\bf get\_\-configuration} ()  throw (CORBA::SystemException, 	     SDOPackage::InterfaceNotImplemented, SDOPackage::NotAvailable,	     SDOPackage::InternalError)
+\begin{DoxyCompactList}\small\item\em [\doxyref{SDO}{p.}{classSDO} interface] Configuration オブジェクトの取得 \item\end{DoxyCompactList}\item 
+virtual SDOPackage::Monitoring\_\-ptr {\bf get\_\-monitoring} ()  throw (CORBA::SystemException, 	     SDOPackage::InterfaceNotImplemented, SDOPackage::NotAvailable,	     SDOPackage::InternalError)
+\begin{DoxyCompactList}\small\item\em [\doxyref{SDO}{p.}{classSDO} interface] Monitoring オブジェクトの取得 \item\end{DoxyCompactList}\item 
+virtual SDOPackage::OrganizationList $\ast$ {\bf get\_\-organizations} ()  throw (CORBA::SystemException, 	     SDOPackage::NotAvailable, SDOPackage::InternalError)
+\begin{DoxyCompactList}\small\item\em [\doxyref{SDO}{p.}{classSDO} interface] Organization リストの取得 \item\end{DoxyCompactList}\item 
+virtual SDOPackage::NVList $\ast$ {\bf get\_\-status\_\-list} ()  throw (CORBA::SystemException, 	     SDOPackage::NotAvailable, SDOPackage::InternalError)
+\begin{DoxyCompactList}\small\item\em [\doxyref{SDO}{p.}{classSDO} interface] \doxyref{SDO}{p.}{classSDO} Status リストの取得 \item\end{DoxyCompactList}\item 
+virtual CORBA::Any $\ast$ {\bf get\_\-status} (const char $\ast$name)  throw (CORBA::SystemException, 	     SDOPackage::InvalidParameter, SDOPackage::NotAvailable,	     SDOPackage::InternalError)
+\begin{DoxyCompactList}\small\item\em [\doxyref{SDO}{p.}{classSDO} interface] \doxyref{SDO}{p.}{classSDO} Status の取得 \item\end{DoxyCompactList}\item 
+const char $\ast$ {\bf getInstanceName} ()
+\begin{DoxyCompactList}\small\item\em [local interface] インスタンス名の取得 \item\end{DoxyCompactList}\item 
+void {\bf setInstanceName} (const char $\ast$instance\_\-name)
+\begin{DoxyCompactList}\small\item\em [local interface] インスタンス名の設定 \item\end{DoxyCompactList}\item 
+const char $\ast$ {\bf getTypeName} ()
+\begin{DoxyCompactList}\small\item\em [local interface] 型名の取得 \item\end{DoxyCompactList}\item 
+const char $\ast$ {\bf getDescription} ()
+\begin{DoxyCompactList}\small\item\em [local interface] Description の取得 \item\end{DoxyCompactList}\item 
+const char $\ast$ {\bf getVersion} ()
+\begin{DoxyCompactList}\small\item\em [local interface] バージョン情報の取得 \item\end{DoxyCompactList}\item 
+const char $\ast$ {\bf getVendor} ()
+\begin{DoxyCompactList}\small\item\em [local interface] ベンダー情報の取得 \item\end{DoxyCompactList}\item 
+const char $\ast$ {\bf getCategory} ()
+\begin{DoxyCompactList}\small\item\em [local interface] カテゴリ情報の取得 \item\end{DoxyCompactList}\item 
+std::vector$<$ std::string $>$ {\bf getNamingNames} ()
+\begin{DoxyCompactList}\small\item\em [local interface] Naming Server 情報の取得 \item\end{DoxyCompactList}\item 
+void {\bf setObjRef} (const RTObject\_\-ptr rtobj)
+\begin{DoxyCompactList}\small\item\em [local interface] オブジェクトリファレンスの設定 \item\end{DoxyCompactList}\item 
+RTObject\_\-ptr {\bf getObjRef} () const 
+\begin{DoxyCompactList}\small\item\em [local interface] オブジェクトリファレンスの取得 \item\end{DoxyCompactList}\item 
+void {\bf setProperties} (const {\bf coil::Properties} \&prop)
+\begin{DoxyCompactList}\small\item\em [local interface] \doxyref{RTC}{p.}{namespaceRTC} のプロパティを設定する \item\end{DoxyCompactList}\item 
+{\bf coil::Properties} \& {\bf getProperties} ()
+\begin{DoxyCompactList}\small\item\em [local interface] \doxyref{RTC}{p.}{namespaceRTC} のプロパティを取得する \item\end{DoxyCompactList}\item 
+{\footnotesize template$<$typename VarType $>$ }\\bool {\bf bindParameter} (const char $\ast$param\_\-name, VarType \&var, const char $\ast$def\_\-val, bool($\ast$trans)(VarType \&, const char $\ast$)=coil::stringTo)
+\begin{DoxyCompactList}\small\item\em コンフィギュレーションパラメータの設定 \item\end{DoxyCompactList}\item 
+void {\bf updateParameters} (const char $\ast$config\_\-set)
+\begin{DoxyCompactList}\small\item\em コンフィギュレーションパラメータの更新(ID指定) \item\end{DoxyCompactList}\item 
+bool {\bf addPort} ({\bf PortBase} \&port)
+\begin{DoxyCompactList}\small\item\em [local interface] Port を登録する \item\end{DoxyCompactList}\item 
+bool {\bf addPort} (PortService\_\-ptr port)
+\begin{DoxyCompactList}\small\item\em [local interface] Port を登録する \item\end{DoxyCompactList}\item 
+bool {\bf addPort} ({\bf CorbaPort} \&port)
+\begin{DoxyCompactList}\small\item\em [local interface] Port を登録する \item\end{DoxyCompactList}\item 
+void {\bf registerPort} ({\bf PortBase} \&port)
+\begin{DoxyCompactList}\small\item\em [local interface] Port を登録する \item\end{DoxyCompactList}\item 
+void {\bf registerPort} (PortService\_\-ptr port)
+\begin{DoxyCompactList}\small\item\em [local interface] Port を登録する \item\end{DoxyCompactList}\item 
+void {\bf registerPort} ({\bf CorbaPort} \&port)
+\begin{DoxyCompactList}\small\item\em [local interface] Port を登録する \item\end{DoxyCompactList}\item 
+bool {\bf addInPort} (const char $\ast$name, {\bf InPortBase} \&inport)
+\begin{DoxyCompactList}\small\item\em [local interface] DataInPort を登録する \item\end{DoxyCompactList}\item 
+void {\bf registerInPort} (const char $\ast$name, {\bf InPortBase} \&inport)
+\begin{DoxyCompactList}\small\item\em [local interface] DataInPort を登録する \item\end{DoxyCompactList}\item 
+bool {\bf addOutPort} (const char $\ast$name, {\bf OutPortBase} \&outport)
+\begin{DoxyCompactList}\small\item\em [local interface] DataOutPort を登録する \item\end{DoxyCompactList}\item 
+void {\bf registerOutPort} (const char $\ast$name, {\bf OutPortBase} \&outport)
+\begin{DoxyCompactList}\small\item\em [local interface] DataOutPort を登録する \item\end{DoxyCompactList}\item 
+bool {\bf removeInPort} ({\bf InPortBase} \&port)
+\begin{DoxyCompactList}\small\item\em [local interface] \doxyref{InPort}{p.}{classRTC_1_1InPort} の登録を削除する \item\end{DoxyCompactList}\item 
+bool {\bf removeOutPort} ({\bf OutPortBase} \&port)
+\begin{DoxyCompactList}\small\item\em [local interface] \doxyref{OutPort}{p.}{classRTC_1_1OutPort} の登録を削除する \item\end{DoxyCompactList}\item 
+bool {\bf removePort} ({\bf PortBase} \&port)
+\begin{DoxyCompactList}\small\item\em [local interface] Port の登録を削除する \item\end{DoxyCompactList}\item 
+bool {\bf removePort} (PortService\_\-ptr port)
+\begin{DoxyCompactList}\small\item\em [local interface] Port の登録を削除する \item\end{DoxyCompactList}\item 
+bool {\bf removePort} ({\bf CorbaPort} \&port)
+\begin{DoxyCompactList}\small\item\em [local interface] Port の登録を削除する \item\end{DoxyCompactList}\item 
+void {\bf deletePort} ({\bf PortBase} \&port)
+\begin{DoxyCompactList}\small\item\em [local interface] Port の登録を削除する \item\end{DoxyCompactList}\item 
+void {\bf deletePort} (PortService\_\-ptr port)
+\begin{DoxyCompactList}\small\item\em [local interface] Port の登録を削除する \item\end{DoxyCompactList}\item 
+void {\bf deletePort} ({\bf CorbaPort} \&port)
+\begin{DoxyCompactList}\small\item\em [local interface] Port の登録を削除する \item\end{DoxyCompactList}\item 
+void {\bf deletePortByName} (const char $\ast$port\_\-name)
+\begin{DoxyCompactList}\small\item\em [local interface] 名前指定により Port の登録を削除する \item\end{DoxyCompactList}\item 
+ExecutionContext\_\-ptr {\bf getExecutionContext} ({\bf RTC::UniqueId} ec\_\-id)
+\begin{DoxyCompactList}\small\item\em [local interface] 実行コンテキストを取得する \item\end{DoxyCompactList}\item 
+double {\bf getExecutionRate} ({\bf RTC::UniqueId} ec\_\-id)
+\begin{DoxyCompactList}\small\item\em [local interface] 実行コンテキストの実行レートを取得する \item\end{DoxyCompactList}\item 
+ReturnCode\_\-t {\bf setExecutionRate} ({\bf RTC::UniqueId} ec\_\-id, double rate)
+\begin{DoxyCompactList}\small\item\em [local interface] 実行コンテキストの実行レートを設定する \item\end{DoxyCompactList}\item 
+bool {\bf isOwnExecutionContext} ({\bf RTC::UniqueId} ec\_\-id)
+\begin{DoxyCompactList}\small\item\em [local interface] 実行コンテキストの所有権を調べる \item\end{DoxyCompactList}\item 
+ReturnCode\_\-t {\bf deactivate} ({\bf RTC::UniqueId} ec\_\-id)
+\begin{DoxyCompactList}\small\item\em [local interface] 状態を Inactive に遷移させる \item\end{DoxyCompactList}\item 
+ReturnCode\_\-t {\bf activate} ({\bf RTC::UniqueId} ec\_\-id)
+\begin{DoxyCompactList}\small\item\em [local interface] 状態を Active に遷移させる \item\end{DoxyCompactList}\item 
+ReturnCode\_\-t {\bf reset} ({\bf RTC::UniqueId} ec\_\-id)
+\begin{DoxyCompactList}\small\item\em [local interface] 状態をリセットし Inactive に遷移させる \item\end{DoxyCompactList}\item 
+bool {\bf addSdoServiceProvider} (const SDOPackage::ServiceProfile \&prof, {\bf SdoServiceProviderBase} $\ast$provider)
+\begin{DoxyCompactList}\small\item\em [local interface] \doxyref{SDO}{p.}{classSDO} service provider をセットする \item\end{DoxyCompactList}\item 
+bool {\bf removeSdoServiceProvider} (const char $\ast$id)
+\begin{DoxyCompactList}\small\item\em [local interface] \doxyref{SDO}{p.}{classSDO} service provider を削除する \item\end{DoxyCompactList}\item 
+bool {\bf addSdoServiceConsumer} (const SDOPackage::ServiceProfile \&prof)
+\begin{DoxyCompactList}\small\item\em [local interface] \doxyref{SDO}{p.}{classSDO} service provider をセットする \item\end{DoxyCompactList}\item 
+bool {\bf removeSdoServiceConsumer} (const char $\ast$id)
+\begin{DoxyCompactList}\small\item\em [local interface] \doxyref{SDO}{p.}{classSDO} service provider を削除する \item\end{DoxyCompactList}\item 
+bool {\bf readAll} ()
+\begin{DoxyCompactList}\small\item\em 全 \doxyref{InPort}{p.}{classRTC_1_1InPort} のデータを読み込む。 \item\end{DoxyCompactList}\item 
+bool {\bf writeAll} ()
+\begin{DoxyCompactList}\small\item\em 全 \doxyref{OutPort}{p.}{classRTC_1_1OutPort} のwrite()メソッドをコールする。 \item\end{DoxyCompactList}\item 
+void {\bf setReadAll} (bool read=true, bool completion=false)
+\begin{DoxyCompactList}\small\item\em \doxyref{onExecute()}{p.}{classRTC_1_1RTObject__impl_acdaea58342f01d786e4a2ce0028f4ea8}実行前でのreadAll()メソッドの呼出を有効または無効にする。 \item\end{DoxyCompactList}\item 
+void {\bf setWriteAll} (bool write=true, bool completion=false)
+\begin{DoxyCompactList}\small\item\em \doxyref{onExecute()}{p.}{classRTC_1_1RTObject__impl_acdaea58342f01d786e4a2ce0028f4ea8}実行後にwriteAll()メソッドの呼出を有効または無効にする。 \item\end{DoxyCompactList}\item 
+void {\bf finalizePorts} ()
+\begin{DoxyCompactList}\small\item\em 全 Port の登録を削除する \item\end{DoxyCompactList}\item 
+void {\bf finalizeContexts} ()
+\begin{DoxyCompactList}\small\item\em ExecutionContextBaseリストの登録を削除する. \item\end{DoxyCompactList}\item 
+void {\bf addPreComponentActionListener} ({\bf PreComponentActionListenerType} listener\_\-type, {\bf PreComponentActionListener} $\ast$listener, bool autoclean=true)
+\item 
+{\footnotesize template$<$class Listener $>$ }\\{\bf PreComponentActionListener} $\ast$ {\bf addPreComponentActionListener} ({\bf PreCompActionListenerType} listener\_\-type, Listener \&obj, void(Listener::$\ast$memfunc)({\bf UniqueId} ec\_\-id))
+\item 
+void {\bf removePreComponentActionListener} ({\bf PreComponentActionListenerType} listener\_\-type, {\bf PreComponentActionListener} $\ast$listener)
+\begin{DoxyCompactList}\small\item\em \doxyref{PreComponentActionListener}{p.}{classRTC_1_1PreComponentActionListener} リスナを削除する. \item\end{DoxyCompactList}\item 
+void {\bf addPostComponentActionListener} ({\bf PostComponentActionListenerType} listener\_\-type, {\bf PostComponentActionListener} $\ast$listener, bool autoclean=true)
+\item 
+{\footnotesize template$<$class Listener $>$ }\\{\bf PostComponentActionListener} $\ast$ {\bf addPostComponentActionListener} ({\bf PostCompActionListenerType} listener\_\-type, Listener \&obj, void(Listener::$\ast$memfunc)({\bf UniqueId} ec\_\-id, ReturnCode\_\-t ret))
+\item 
+void {\bf removePostComponentActionListener} ({\bf PostComponentActionListenerType} listener\_\-type, {\bf PostComponentActionListener} $\ast$listener)
+\begin{DoxyCompactList}\small\item\em \doxyref{PostComponentActionListener}{p.}{classRTC_1_1PostComponentActionListener} リスナを削除する. \item\end{DoxyCompactList}\item 
+void {\bf addPortActionListener} ({\bf PortActionListenerType} listener\_\-type, {\bf PortActionListener} $\ast$listener, bool autoclean=true)
+\begin{DoxyCompactList}\small\item\em \doxyref{PortActionListener}{p.}{classRTC_1_1PortActionListener} リスナを追加する. \item\end{DoxyCompactList}\item 
+{\footnotesize template$<$class Listener $>$ }\\{\bf PortActionListener} $\ast$ {\bf addPortActionListener} ({\bf PortActionListenerType} listener\_\-type, Listener \&obj, void(Listener::$\ast$memfunc)(const RTC::PortProfile \&))
+\item 
+void {\bf removePortActionListener} ({\bf PortActionListenerType} listener\_\-type, {\bf PortActionListener} $\ast$listener)
+\begin{DoxyCompactList}\small\item\em \doxyref{PortActionListener}{p.}{classRTC_1_1PortActionListener} リスナを削除する. \item\end{DoxyCompactList}\item 
+void {\bf addExecutionContextActionListener} ({\bf ECActionListenerType} listener\_\-type, {\bf ECActionListener} $\ast$listener, bool autoclean=true)
+\item 
+{\footnotesize template$<$class Listener $>$ }\\{\bf ECActionListener} $\ast$ {\bf addExecutionContextActionListener} ({\bf ECActionListenerType} listener\_\-type, Listener \&obj, void(Listener::$\ast$memfunc)({\bf UniqueId}))
+\item 
+void {\bf removeExecutionContextActionListener} ({\bf ECActionListenerType} listener\_\-type, {\bf ECActionListener} $\ast$listener)
+\begin{DoxyCompactList}\small\item\em \doxyref{ExecutionContextActionListener}{p.}{classRTC_1_1ExecutionContextActionListener} リスナを削除する. \item\end{DoxyCompactList}\item 
+void {\bf addPortConnectListener} ({\bf PortConnectListenerType} listener\_\-type, {\bf PortConnectListener} $\ast$listener, bool autoclean=true)
+\begin{DoxyCompactList}\small\item\em \doxyref{PortConnectListener}{p.}{classRTC_1_1PortConnectListener} リスナを追加する. \item\end{DoxyCompactList}\item 
+{\footnotesize template$<$class Listener $>$ }\\{\bf PortConnectListener} $\ast$ {\bf addPortConnectListener} ({\bf PortConnectListenerType} listener\_\-type, Listener \&obj, void(Listener::$\ast$memfunc)(const char $\ast$, ConnectorProfile \&))
+\item 
+void {\bf removePortConnectListener} ({\bf PortConnectListenerType} listener\_\-type, {\bf PortConnectListener} $\ast$listener)
+\begin{DoxyCompactList}\small\item\em \doxyref{PortConnectListener}{p.}{classRTC_1_1PortConnectListener} リスナを削除する. \item\end{DoxyCompactList}\item 
+void {\bf addPortConnectRetListener} ({\bf PortConnectRetListenerType} listener\_\-type, {\bf PortConnectRetListener} $\ast$listener, bool autoclean=true)
+\begin{DoxyCompactList}\small\item\em \doxyref{PortConnectRetListener}{p.}{classRTC_1_1PortConnectRetListener} リスナを追加する. \item\end{DoxyCompactList}\item 
+{\footnotesize template$<$class Listener $>$ }\\{\bf PortConnectRetListener} $\ast$ {\bf addPortConnectRetListener} ({\bf PortConnectRetListenerType} listener\_\-type, Listener \&obj, void(Listener::$\ast$memfunc)(const char $\ast$, ConnectorProfile \&, ReturnCode\_\-t))
+\item 
+void {\bf removePortConnectRetListener} ({\bf PortConnectRetListenerType} listener\_\-type, {\bf PortConnectRetListener} $\ast$listener)
+\begin{DoxyCompactList}\small\item\em \doxyref{PortConnectRetListener}{p.}{classRTC_1_1PortConnectRetListener} リスナを削除する. \item\end{DoxyCompactList}\item 
+void {\bf addConfigurationParamListener} ({\bf ConfigurationParamListenerType} type, {\bf ConfigurationParamListener} $\ast$listener, bool autoclean=true)
+\begin{DoxyCompactList}\small\item\em \doxyref{ConfigurationParamListener}{p.}{classRTC_1_1ConfigurationParamListener} を追加する. \item\end{DoxyCompactList}\item 
+{\footnotesize template$<$class Listener $>$ }\\{\bf ConfigurationParamListener} $\ast$ {\bf addConfigurationParamListener} ({\bf ConfigurationParamListenerType} listener\_\-type, Listener \&obj, void(Listener::$\ast$memfunc)(const char $\ast$, const char $\ast$))
+\item 
+void {\bf removeConfigurationParamListener} ({\bf ConfigurationParamListenerType} type, {\bf ConfigurationParamListener} $\ast$listener)
+\begin{DoxyCompactList}\small\item\em \doxyref{ConfigurationParamListener}{p.}{classRTC_1_1ConfigurationParamListener} を削除する. \item\end{DoxyCompactList}\item 
+void {\bf addConfigurationSetListener} ({\bf ConfigurationSetListenerType} type, {\bf ConfigurationSetListener} $\ast$listener, bool autoclean=true)
+\begin{DoxyCompactList}\small\item\em \doxyref{ConfigurationSetListener}{p.}{classRTC_1_1ConfigurationSetListener} を追加する. \item\end{DoxyCompactList}\item 
+{\footnotesize template$<$class Listener $>$ }\\{\bf ConfigurationSetListener} $\ast$ {\bf addConfigurationSetListener} ({\bf ConfigurationSetListenerType} listener\_\-type, Listener \&obj, void(Listener::$\ast$memfunc)(const {\bf coil::Properties} \&config\_\-set))
+\item 
+void {\bf removeConfigurationSetListener} ({\bf ConfigurationSetListenerType} type, {\bf ConfigurationSetListener} $\ast$listener)
+\begin{DoxyCompactList}\small\item\em \doxyref{ConfigurationSetListener}{p.}{classRTC_1_1ConfigurationSetListener} を削除する. \item\end{DoxyCompactList}\item 
+void {\bf addConfigurationSetNameListener} ({\bf ConfigurationSetNameListenerType} type, {\bf ConfigurationSetNameListener} $\ast$listener, bool autoclean=true)
+\begin{DoxyCompactList}\small\item\em \doxyref{ConfigurationSetNameListener}{p.}{classRTC_1_1ConfigurationSetNameListener} を追加する. \item\end{DoxyCompactList}\item 
+{\footnotesize template$<$class Listener $>$ }\\{\bf ConfigurationSetNameListener} $\ast$ {\bf addConfigurationSetNameListener} ({\bf ConfigurationSetNameListenerType} type, Listener \&obj, void(Listener::$\ast$memfunc)(const char $\ast$))
+\item 
+void {\bf removeConfigurationSetNameListener} ({\bf ConfigurationSetNameListenerType} type, {\bf ConfigurationSetNameListener} $\ast$listener)
+\begin{DoxyCompactList}\small\item\em \doxyref{ConfigurationSetNameListener}{p.}{classRTC_1_1ConfigurationSetNameListener} を削除する. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected メソッド}
+\begin{DoxyCompactItemize}
+\item 
+virtual ReturnCode\_\-t {\bf onInitialize} ()
+\begin{DoxyCompactList}\small\item\em 初期化処理用コールバック関数 \item\end{DoxyCompactList}\item 
+virtual ReturnCode\_\-t {\bf onFinalize} ()
+\begin{DoxyCompactList}\small\item\em 終了処理用コールバック関数 \item\end{DoxyCompactList}\item 
+virtual ReturnCode\_\-t {\bf onStartup} ({\bf RTC::UniqueId} exec\_\-handle)
+\begin{DoxyCompactList}\small\item\em 開始処理用コールバック関数 \item\end{DoxyCompactList}\item 
+virtual ReturnCode\_\-t {\bf onShutdown} ({\bf RTC::UniqueId} exec\_\-handle)
+\begin{DoxyCompactList}\small\item\em 停止処理用コールバック関数 \item\end{DoxyCompactList}\item 
+virtual ReturnCode\_\-t {\bf onActivated} ({\bf RTC::UniqueId} exec\_\-handle)
+\begin{DoxyCompactList}\small\item\em 活性化処理用コールバック関数 \item\end{DoxyCompactList}\item 
+virtual ReturnCode\_\-t {\bf onDeactivated} ({\bf RTC::UniqueId} exec\_\-handle)
+\begin{DoxyCompactList}\small\item\em 非活性化処理用コールバック関数 \item\end{DoxyCompactList}\item 
+virtual ReturnCode\_\-t {\bf onExecute} ({\bf RTC::UniqueId} exec\_\-handle)
+\begin{DoxyCompactList}\small\item\em 周期処理用コールバック関数 \item\end{DoxyCompactList}\item 
+virtual ReturnCode\_\-t {\bf onAborting} ({\bf RTC::UniqueId} exec\_\-handle)
+\begin{DoxyCompactList}\small\item\em 中断処理用コールバック関数 \item\end{DoxyCompactList}\item 
+virtual ReturnCode\_\-t {\bf onError} ({\bf RTC::UniqueId} exec\_\-handle)
+\begin{DoxyCompactList}\small\item\em エラー処理用コールバック関数 \item\end{DoxyCompactList}\item 
+virtual ReturnCode\_\-t {\bf onReset} ({\bf RTC::UniqueId} exec\_\-handle)
+\begin{DoxyCompactList}\small\item\em リセット処理用コールバック関数 \item\end{DoxyCompactList}\item 
+virtual ReturnCode\_\-t {\bf onStateUpdate} ({\bf RTC::UniqueId} exec\_\-handle)
+\begin{DoxyCompactList}\small\item\em 状態変更処理用コールバック関数 \item\end{DoxyCompactList}\item 
+virtual ReturnCode\_\-t {\bf onRateChanged} ({\bf RTC::UniqueId} exec\_\-handle)
+\begin{DoxyCompactList}\small\item\em 動作周期変更通知用コールバック関数 \item\end{DoxyCompactList}\item 
+void {\bf shutdown} ()
+\begin{DoxyCompactList}\small\item\em \doxyref{RTC}{p.}{namespaceRTC} を終了する. \item\end{DoxyCompactList}\item 
+void {\bf preOnInitialize} ({\bf UniqueId} ec\_\-id)
+\item 
+void {\bf preOnFinalize} ({\bf UniqueId} ec\_\-id)
+\item 
+void {\bf preOnStartup} ({\bf UniqueId} ec\_\-id)
+\item 
+void {\bf preOnShutdown} ({\bf UniqueId} ec\_\-id)
+\item 
+void {\bf preOnActivated} ({\bf UniqueId} ec\_\-id)
+\item 
+void {\bf preOnDeactivated} ({\bf UniqueId} ec\_\-id)
+\item 
+void {\bf preOnAborting} ({\bf UniqueId} ec\_\-id)
+\item 
+void {\bf preOnError} ({\bf UniqueId} ec\_\-id)
+\item 
+void {\bf preOnReset} ({\bf UniqueId} ec\_\-id)
+\item 
+void {\bf preOnExecute} ({\bf UniqueId} ec\_\-id)
+\item 
+void {\bf preOnStateUpdate} ({\bf UniqueId} ec\_\-id)
+\item 
+void {\bf preOnRateChanged} ({\bf UniqueId} ec\_\-id)
+\item 
+void {\bf postOnInitialize} ({\bf UniqueId} ec\_\-id, ReturnCode\_\-t ret)
+\item 
+void {\bf postOnFinalize} ({\bf UniqueId} ec\_\-id, ReturnCode\_\-t ret)
+\item 
+void {\bf postOnStartup} ({\bf UniqueId} ec\_\-id, ReturnCode\_\-t ret)
+\item 
+void {\bf postOnShutdown} ({\bf UniqueId} ec\_\-id, ReturnCode\_\-t ret)
+\item 
+void {\bf postOnActivated} ({\bf UniqueId} ec\_\-id, ReturnCode\_\-t ret)
+\item 
+void {\bf postOnDeactivated} ({\bf UniqueId} ec\_\-id, ReturnCode\_\-t ret)
+\item 
+void {\bf postOnAborting} ({\bf UniqueId} ec\_\-id, ReturnCode\_\-t ret)
+\item 
+void {\bf postOnError} ({\bf UniqueId} ec\_\-id, ReturnCode\_\-t ret)
+\item 
+void {\bf postOnReset} ({\bf UniqueId} ec\_\-id, ReturnCode\_\-t ret)
+\item 
+void {\bf postOnExecute} ({\bf UniqueId} ec\_\-id, ReturnCode\_\-t ret)
+\item 
+void {\bf postOnStateUpdate} ({\bf UniqueId} ec\_\-id, ReturnCode\_\-t ret)
+\item 
+void {\bf postOnRateChanged} ({\bf UniqueId} ec\_\-id, ReturnCode\_\-t ret)
+\item 
+void {\bf onAddPort} (const PortProfile \&pprof)
+\item 
+void {\bf onRemovePort} (const PortProfile \&pprof)
+\item 
+void {\bf onAttachExecutionContext} ({\bf UniqueId} ec\_\-id)
+\item 
+void {\bf onDetachExecutionContext} ({\bf UniqueId} ec\_\-id)
+\end{DoxyCompactItemize}
+\subsection*{Protected 変数}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Logger} {\bf rtclog}
+\begin{DoxyCompactList}\small\item\em ロガーストリーム \item\end{DoxyCompactList}\item 
+{\bf Manager} $\ast$ {\bf m\_\-pManager}
+\begin{DoxyCompactList}\small\item\em マネージャオブジェクト \item\end{DoxyCompactList}\item 
+CORBA::ORB\_\-var {\bf m\_\-pORB}
+\begin{DoxyCompactList}\small\item\em ORB へのポインタ. \item\end{DoxyCompactList}\item 
+PortableServer::POA\_\-var {\bf m\_\-pPOA}
+\begin{DoxyCompactList}\small\item\em POA へのポインタ. \item\end{DoxyCompactList}\item 
+SDOPackage::OrganizationList {\bf m\_\-sdoOwnedOrganizations}
+\begin{DoxyCompactList}\small\item\em \doxyref{SDO}{p.}{classSDO} が保持する organization のリスト. \item\end{DoxyCompactList}\item 
+{\bf SDOPackage::Configuration\_\-impl} $\ast$ {\bf m\_\-pSdoConfigImpl}
+\begin{DoxyCompactList}\small\item\em \doxyref{SDO}{p.}{classSDO} Configuration オブジェクトへのポインタ. \item\end{DoxyCompactList}\item 
+SDOPackage::Configuration\_\-var {\bf m\_\-pSdoConfig}
+\begin{DoxyCompactList}\small\item\em \doxyref{SDO}{p.}{classSDO} Configuration Interface へのポインタ. \item\end{DoxyCompactList}\item 
+SDOPackage::OrganizationList {\bf m\_\-sdoOrganizations}
+\begin{DoxyCompactList}\small\item\em \doxyref{SDO}{p.}{classSDO} organization. \item\end{DoxyCompactList}\item 
+SDOPackage::NVList {\bf m\_\-sdoStatus}
+\begin{DoxyCompactList}\small\item\em \doxyref{SDO}{p.}{classSDO} Status. \item\end{DoxyCompactList}\item 
+ComponentProfile {\bf m\_\-profile}
+\begin{DoxyCompactList}\small\item\em コンポーネントプロファイル \item\end{DoxyCompactList}\item 
+RTObject\_\-var {\bf m\_\-objref}
+\begin{DoxyCompactList}\small\item\em オブジェクトリファレンス \item\end{DoxyCompactList}\item 
+{\bf PortAdmin} {\bf m\_\-portAdmin}
+\begin{DoxyCompactList}\small\item\em Port のオブジェクトリファレンスのリスト. \item\end{DoxyCompactList}\item 
+std::vector$<$ {\bf InPortBase} $\ast$ $>$ {\bf m\_\-inports}
+\begin{DoxyCompactList}\small\item\em InPortBase$\ast$ のリスト. \item\end{DoxyCompactList}\item 
+std::vector$<$ {\bf OutPortBase} $\ast$ $>$ {\bf m\_\-outports}
+\begin{DoxyCompactList}\small\item\em OutPortBase$\ast$ のリスト. \item\end{DoxyCompactList}\item 
+ExecutionContextServiceList {\bf m\_\-ecMine}
+\begin{DoxyCompactList}\small\item\em 自分がownerのExecutionContextService のリスト \item\end{DoxyCompactList}\item 
+std::vector$<$ {\bf ExecutionContextBase} $\ast$ $>$ {\bf m\_\-eclist}
+\begin{DoxyCompactList}\small\item\em \doxyref{ExecutionContextBase}{p.}{classRTC_1_1ExecutionContextBase} のリスト. \item\end{DoxyCompactList}\item 
+ExecutionContextServiceList {\bf m\_\-ecOther}
+\begin{DoxyCompactList}\small\item\em 参加しているExecutionContextService のリスト \item\end{DoxyCompactList}\item 
+bool {\bf m\_\-created}
+\begin{DoxyCompactList}\small\item\em Created 状態フラグ. \item\end{DoxyCompactList}\item 
+bool {\bf m\_\-exiting}
+\begin{DoxyCompactList}\small\item\em RTCの終了状態フラグ. \item\end{DoxyCompactList}\item 
+{\bf coil::Properties} {\bf m\_\-properties}
+\begin{DoxyCompactList}\small\item\em Alive 状態フラグ. \item\end{DoxyCompactList}\item 
+{\bf ConfigAdmin} {\bf m\_\-configsets}
+\begin{DoxyCompactList}\small\item\em コンフィギュレーション情報管理オブジェクト \item\end{DoxyCompactList}\item 
+{\bf SdoServiceAdmin} {\bf m\_\-sdoservice}
+\begin{DoxyCompactList}\small\item\em \doxyref{SDO}{p.}{classSDO} Service 管理オブジェクト. \item\end{DoxyCompactList}\item 
+bool {\bf m\_\-readAll}
+\begin{DoxyCompactList}\small\item\em \doxyref{readAll()}{p.}{classRTC_1_1RTObject__impl_a69b50eea5bc7f862114602963cca84ca}呼出用のフラグ \item\end{DoxyCompactList}\item 
+bool {\bf m\_\-writeAll}
+\begin{DoxyCompactList}\small\item\em \doxyref{writeAll()}{p.}{classRTC_1_1RTObject__impl_a4d72009c5347e0c03515c52d48427f4b}呼出用のフラグ \item\end{DoxyCompactList}\item 
+bool {\bf m\_\-readAllCompletion}
+\begin{DoxyCompactList}\small\item\em \doxyref{readAll()}{p.}{classRTC_1_1RTObject__impl_a69b50eea5bc7f862114602963cca84ca}用のフラグ \item\end{DoxyCompactList}\item 
+bool {\bf m\_\-writeAllCompletion}
+\begin{DoxyCompactList}\small\item\em \doxyref{writeAll()}{p.}{classRTC_1_1RTObject__impl_a4d72009c5347e0c03515c52d48427f4b}用のフラグ \item\end{DoxyCompactList}\item 
+{\bf ComponentActionListeners} {\bf m\_\-actionListeners}
+\begin{DoxyCompactList}\small\item\em ComponentActionListenerホルダ. \item\end{DoxyCompactList}\item 
+{\bf PortConnectListeners} {\bf m\_\-portconnListeners}
+\begin{DoxyCompactList}\small\item\em PortConnectListenerホルダ. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{説明}
+RTコンポーネントクラス. 各RTコンポーネントのベースとなるクラス。 Robotic Technology Component 仕様中の lightweightRTComponentの実装クラス。 コンポーネントの機能を提供する ComponentAction インターフェースと コンポーネントのライフサイクル管理を行うための LightweightRTObject の実装を 提供する。 実際にユーザがコンポーネントを作成する場合には、Execution Semantics に対応 した各サブクラスを利用する。\par
+ (現状の実装では Periodic Sampled Data Processing のみサポートしているため、 dataFlowComponent を直接継承している)
+
+\begin{DoxySince}{から}
+0.2.0 
+\end{DoxySince}
+
+
+\subsection{型定義}
+\index{RTC::RTObject\_\-impl@{RTC::RTObject\_\-impl}!ECActionListener@{ECActionListener}}
+\index{ECActionListener@{ECActionListener}!RTC::RTObject_impl@{RTC::RTObject\_\-impl}}
+\subsubsection[{ECActionListener}]{\setlength{\rightskip}{0pt plus 5cm}typedef {\bf ExecutionContextActionListener} {\bf RTC::RTObject\_\-impl::ECActionListener}}\label{classRTC_1_1RTObject__impl_acbe9287f8257c2adb4841ef7aed87c8e}
+\index{RTC::RTObject\_\-impl@{RTC::RTObject\_\-impl}!ECActionListenerType@{ECActionListenerType}}
+\index{ECActionListenerType@{ECActionListenerType}!RTC::RTObject_impl@{RTC::RTObject\_\-impl}}
+\subsubsection[{ECActionListenerType}]{\setlength{\rightskip}{0pt plus 5cm}typedef {\bf ExecutionContextActionListenerType} {\bf RTC::RTObject\_\-impl::ECActionListenerType}}\label{classRTC_1_1RTObject__impl_a53e84fd05025d6a0b78afa08c535c7b0}
+
+
+\doxyref{ExecutionContextActionListener}{p.}{classRTC_1_1ExecutionContextActionListener} リスナを追加する. 
+
+ExecutionContextの追加、削除時にコールバックされる各種リスナを設定する。
+
+設定できるリスナのタイプとコールバックイベントは以下の通り
+
+
+\begin{DoxyItemize}
+\item ATTACH\_\-EC: ExecutionContext アタッチ時
+\item DETACH\_\-EC: ExecutionContext デタッチ時
+\end{DoxyItemize}
+
+リスナは \doxyref{ExecutionContextActionListener}{p.}{classRTC_1_1ExecutionContextActionListener} を継承し、以下のシグニチャを持つ operator() を実装している必要がある。
+
+ExecutionContextActionListener::operator()(UniqueId　ec\_\-id)
+
+デフォルトでは、この関数に与えたリスナオブジェクトの所有権は RTObjectに移り、RTObject解体時もしくは、 \doxyref{removeExecutionContextActionListener()}{p.}{classRTC_1_1RTObject__impl_ada0da85f0c29137354a9cc9649052dd7} により削除時に自動的に解体される。 リスナオブジェクトの所有権を呼び出し側で維持したい場合は、第3引 数に false を指定し、自動的な解体を抑制することができる。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em listener\_\-type}]リスナタイプ \item[{\em listener}]リスナオブジェクトへのポインタ \item[{\em autoclean}]リスナオブジェクトの自動的解体を行うかどうかのフラグ \end{DoxyParams}
+\index{RTC::RTObject\_\-impl@{RTC::RTObject\_\-impl}!PostCompActionListener@{PostCompActionListener}}
+\index{PostCompActionListener@{PostCompActionListener}!RTC::RTObject_impl@{RTC::RTObject\_\-impl}}
+\subsubsection[{PostCompActionListener}]{\setlength{\rightskip}{0pt plus 5cm}typedef {\bf PostComponentActionListener} {\bf RTC::RTObject\_\-impl::PostCompActionListener}}\label{classRTC_1_1RTObject__impl_af4cfaa9824f5e671772758f0524ff40b}
+
+
+\doxyref{PostComponentActionListener}{p.}{classRTC_1_1PostComponentActionListener} リスナを追加する. 
+
+ComponentAction 実装関数の呼び出し直後のイベントに関連する各種リ スナを設定する。
+
+設定できるリスナのタイプとコールバックイベントは以下の通り
+
+
+\begin{DoxyItemize}
+\item POST\_\-ON\_\-INITIALIZE: onInitialize 直後
+\item POST\_\-ON\_\-FINALIZE: onFinalize 直後
+\item POST\_\-ON\_\-STARTUP: onStartup 直後
+\item POST\_\-ON\_\-SHUTDOWN: onShutdown 直後
+\item POST\_\-ON\_\-ACTIVATED: onActivated 直後
+\item POST\_\-ON\_\-DEACTIVATED: onDeactivated 直後
+\item POST\_\-ON\_\-ABORTED: onAborted 直後
+\item POST\_\-ON\_\-ERROR: onError 直後
+\item POST\_\-ON\_\-RESET: onReset 直後
+\item POST\_\-ON\_\-EXECUTE: onExecute 直後
+\item POST\_\-ON\_\-STATE\_\-UPDATE: onStateUpdate 直後
+\end{DoxyItemize}
+
+リスナは \doxyref{PostComponentActionListener}{p.}{classRTC_1_1PostComponentActionListener} を継承し、以下のシグニチャを持つ operator() を実装している必要がある。
+
+\doxyref{PostComponentActionListener::operator()(UniqueId ec\_\-id, ReturnCode\_\-t ret)}{p.}{classRTC_1_1PostComponentActionListener_aaa49c1ef998238b7e5e4ee6d4acdc9fb}
+
+デフォルトでは、この関数に与えたリスナオブジェクトの所有権は RTObjectに移り、RTObject解体時もしくは、 \doxyref{removePostComponentActionListener()}{p.}{classRTC_1_1RTObject__impl_afb62ee275a507019b41a76b3941a328d} により削除時に自動的に解体される。 リスナオブジェクトの所有権を呼び出し側で維持したい場合は、第3引 数に false を指定し、自動的な解体を抑制することができる。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em listener\_\-type}]リスナタイプ \item[{\em listener}]リスナオブジェクトへのポインタ \item[{\em autoclean}]リスナオブジェクトの自動的解体を行うかどうかのフラグ \end{DoxyParams}
+\index{RTC::RTObject\_\-impl@{RTC::RTObject\_\-impl}!PostCompActionListenerType@{PostCompActionListenerType}}
+\index{PostCompActionListenerType@{PostCompActionListenerType}!RTC::RTObject_impl@{RTC::RTObject\_\-impl}}
+\subsubsection[{PostCompActionListenerType}]{\setlength{\rightskip}{0pt plus 5cm}typedef {\bf PostComponentActionListenerType} {\bf RTC::RTObject\_\-impl::PostCompActionListenerType}}\label{classRTC_1_1RTObject__impl_a5afcc70fc366a8c85b50257b6ac13957}
+\index{RTC::RTObject\_\-impl@{RTC::RTObject\_\-impl}!PreCompActionListener@{PreCompActionListener}}
+\index{PreCompActionListener@{PreCompActionListener}!RTC::RTObject_impl@{RTC::RTObject\_\-impl}}
+\subsubsection[{PreCompActionListener}]{\setlength{\rightskip}{0pt plus 5cm}typedef {\bf PreComponentActionListener} {\bf RTC::RTObject\_\-impl::PreCompActionListener}}\label{classRTC_1_1RTObject__impl_aa4bd4357f41ded821cd4044e4aaf63bd}
+
+
+\doxyref{PreComponentActionListener}{p.}{classRTC_1_1PreComponentActionListener} リスナを追加する. 
+
+ComponentAction 実装関数の呼び出し直前のイベントに関連する各種リ スナを設定する。
+
+設定できるリスナのタイプとコールバックイベントは以下の通り
+
+
+\begin{DoxyItemize}
+\item PRE\_\-ON\_\-INITIALIZE: onInitialize 直前
+\item PRE\_\-ON\_\-FINALIZE: onFinalize 直前
+\item PRE\_\-ON\_\-STARTUP: onStartup 直前
+\item PRE\_\-ON\_\-SHUTDOWN: onShutdown 直前
+\item PRE\_\-ON\_\-ACTIVATED: onActivated 直前
+\item PRE\_\-ON\_\-DEACTIVATED: onDeactivated 直前
+\item PRE\_\-ON\_\-ABORTED: onAborted 直前
+\item PRE\_\-ON\_\-ERROR: onError 直前
+\item PRE\_\-ON\_\-RESET: onReset 直前
+\item PRE\_\-ON\_\-EXECUTE: onExecute 直前
+\item PRE\_\-ON\_\-STATE\_\-UPDATE: onStateUpdate 直前
+\end{DoxyItemize}
+
+リスナは \doxyref{PreComponentActionListener}{p.}{classRTC_1_1PreComponentActionListener} を継承し、以下のシグニチャを持つ operator() を実装している必要がある。
+
+\doxyref{PreComponentActionListener::operator()(UniqueId ec\_\-id)}{p.}{classRTC_1_1PreComponentActionListener_a03350eaacaf67ce986f350959acf7a1d}
+
+デフォルトでは、この関数に与えたリスナオブジェクトの所有権は RTObjectに移り、RTObject解体時もしくは、 \doxyref{removePreComponentActionListener()}{p.}{classRTC_1_1RTObject__impl_a2a1b8a95a0684eef98b9c011f61ad038} により削除時に自動的に解体される。 リスナオブジェクトの所有権を呼び出し側で維持したい場合は、第3引 数に false を指定し、自動的な解体を抑制することができる。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em listener\_\-type}]リスナタイプ \item[{\em listener}]リスナオブジェクトへのポインタ \item[{\em autoclean}]リスナオブジェクトの自動的解体を行うかどうかのフラグ \end{DoxyParams}
+\index{RTC::RTObject\_\-impl@{RTC::RTObject\_\-impl}!PreCompActionListenerType@{PreCompActionListenerType}}
+\index{PreCompActionListenerType@{PreCompActionListenerType}!RTC::RTObject_impl@{RTC::RTObject\_\-impl}}
+\subsubsection[{PreCompActionListenerType}]{\setlength{\rightskip}{0pt plus 5cm}typedef {\bf PreComponentActionListenerType} {\bf RTC::RTObject\_\-impl::PreCompActionListenerType}}\label{classRTC_1_1RTObject__impl_a194be830af65861f26454b4a27f1bb2b}
+
+
+\subsection{コンストラクタとデストラクタ}
+\index{RTC::RTObject\_\-impl@{RTC::RTObject\_\-impl}!RTObject\_\-impl@{RTObject\_\-impl}}
+\index{RTObject\_\-impl@{RTObject\_\-impl}!RTC::RTObject_impl@{RTC::RTObject\_\-impl}}
+\subsubsection[{RTObject\_\-impl}]{\setlength{\rightskip}{0pt plus 5cm}RTC::RTObject\_\-impl::RTObject\_\-impl ({\bf Manager} $\ast$ {\em manager})}\label{classRTC_1_1RTObject__impl_affffea36a16d267cb029a0669aa4fe49}
+
+
+コンストラクタ 
+
+コンストラクタ
+
+
+\begin{DoxyParams}{引数}
+\item[{\em manager}]マネージャオブジェクト \end{DoxyParams}
+\index{RTC::RTObject\_\-impl@{RTC::RTObject\_\-impl}!RTObject\_\-impl@{RTObject\_\-impl}}
+\index{RTObject\_\-impl@{RTObject\_\-impl}!RTC::RTObject_impl@{RTC::RTObject\_\-impl}}
+\subsubsection[{RTObject\_\-impl}]{\setlength{\rightskip}{0pt plus 5cm}RTC::RTObject\_\-impl::RTObject\_\-impl (CORBA::ORB\_\-ptr {\em orb}, \/  PortableServer::POA\_\-ptr {\em poa})}\label{classRTC_1_1RTObject__impl_a1fc75ad89f0c7334f8d1370bbee01b8c}
+
+
+コンストラクタ 
+
+コンストラクタ
+
+
+\begin{DoxyParams}{引数}
+\item[{\em orb}]ORB \item[{\em poa}]POA \end{DoxyParams}
+\index{RTC::RTObject\_\-impl@{RTC::RTObject\_\-impl}!$\sim$RTObject\_\-impl@{$\sim$RTObject\_\-impl}}
+\index{$\sim$RTObject\_\-impl@{$\sim$RTObject\_\-impl}!RTC::RTObject_impl@{RTC::RTObject\_\-impl}}
+\subsubsection[{$\sim$RTObject\_\-impl}]{\setlength{\rightskip}{0pt plus 5cm}virtual RTC::RTObject\_\-impl::$\sim$RTObject\_\-impl (void)\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classRTC_1_1RTObject__impl_a6d2c04a226cda6698c3cae162ba13174}
+
+
+仮想デストラクタ 
+
+
+
+\subsection{関数}
+\index{RTC::RTObject\_\-impl@{RTC::RTObject\_\-impl}!activate@{activate}}
+\index{activate@{activate}!RTC::RTObject_impl@{RTC::RTObject\_\-impl}}
+\subsubsection[{activate}]{\setlength{\rightskip}{0pt plus 5cm}ReturnCode\_\-t RTC::RTObject\_\-impl::activate ({\bf RTC::UniqueId} {\em ec\_\-id})}\label{classRTC_1_1RTObject__impl_aaea631c5dc94e75955e3f349d4257b79}
+
+
+[local interface] 状態を Active に遷移させる 
+
+状態を Inactive から Active に遷移させる。この関数は以下の関 数内で呼ばれることを前提としている。
+
+
+\begin{DoxyItemize}
+\item \doxyref{onStartup()}{p.}{classRTC_1_1RTObject__impl_a9b2db9b0a456640d5bd9f5a0801fd987}
+\item \doxyref{onDeactivated()}{p.}{classRTC_1_1RTObject__impl_a55a81b783612a34523af2677eb9d72bd}
+\end{DoxyItemize}
+
+この関数の引数は上記の関数の引数 UniquieID exec\_\-handle でなけ ればならない。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em ec\_\-id}]上記関数の第1引数 exec\_\-handle を渡す必要がある。 \end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+リターンコード 
+\end{DoxyReturn}
+\index{RTC::RTObject\_\-impl@{RTC::RTObject\_\-impl}!addConfigurationParamListener@{addConfigurationParamListener}}
+\index{addConfigurationParamListener@{addConfigurationParamListener}!RTC::RTObject_impl@{RTC::RTObject\_\-impl}}
+\subsubsection[{addConfigurationParamListener}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Listener $>$ {\bf ConfigurationParamListener}$\ast$ RTC::RTObject\_\-impl::addConfigurationParamListener ({\bf ConfigurationParamListenerType} {\em listener\_\-type}, \/  Listener \& {\em obj}, \/  void(Listener::$\ast$)(const char $\ast$, const char $\ast$) {\em memfunc})\hspace{0.3cm}{\ttfamily  [inline]}}\label{classRTC_1_1RTObject__impl_af60f389108456775c356787fedf27e94}
+
+
+参照先 addConfigurationParamListener().
+
+\index{RTC::RTObject\_\-impl@{RTC::RTObject\_\-impl}!addConfigurationParamListener@{addConfigurationParamListener}}
+\index{addConfigurationParamListener@{addConfigurationParamListener}!RTC::RTObject_impl@{RTC::RTObject\_\-impl}}
+\subsubsection[{addConfigurationParamListener}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::RTObject\_\-impl::addConfigurationParamListener ({\bf ConfigurationParamListenerType} {\em type}, \/  {\bf ConfigurationParamListener} $\ast$ {\em listener}, \/  bool {\em autoclean} = {\ttfamily true})}\label{classRTC_1_1RTObject__impl_a1c0a822c25005680f740d70593515389}
+
+
+\doxyref{ConfigurationParamListener}{p.}{classRTC_1_1ConfigurationParamListener} を追加する. 
+
+update(const char$\ast$ config\_\-set, const char$\ast$ config\_\-param) が呼ばれた際に コールされるリスナ \doxyref{ConfigurationParamListener}{p.}{classRTC_1_1ConfigurationParamListener} を追加する。 type には現在のところ ON\_\-UPDATE\_\-CONFIG\_\-PARAM のみが入る。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em type}]ConfigurationParamListenerType型の値。 ON\_\-UPDATE\_\-CONFIG\_\-PARAM がある。\item[{\em listener}]\doxyref{ConfigurationParamListener}{p.}{classRTC_1_1ConfigurationParamListener} 型のリスナオブジェクト。 \item[{\em autoclean}]リスナオブジェクトを自動で削除するかどうかのフラグ \end{DoxyParams}
+
+
+参照元 addConfigurationParamListener().
+
+\index{RTC::RTObject\_\-impl@{RTC::RTObject\_\-impl}!addConfigurationSetListener@{addConfigurationSetListener}}
+\index{addConfigurationSetListener@{addConfigurationSetListener}!RTC::RTObject_impl@{RTC::RTObject\_\-impl}}
+\subsubsection[{addConfigurationSetListener}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Listener $>$ {\bf ConfigurationSetListener}$\ast$ RTC::RTObject\_\-impl::addConfigurationSetListener ({\bf ConfigurationSetListenerType} {\em listener\_\-type}, \/  Listener \& {\em obj}, \/  void(Listener::$\ast$)(const {\bf coil::Properties} \&config\_\-set) {\em memfunc})\hspace{0.3cm}{\ttfamily  [inline]}}\label{classRTC_1_1RTObject__impl_a697922e612b1e84d1199028c2e2586cd}
+
+
+参照先 addConfigurationSetListener().
+
+\index{RTC::RTObject\_\-impl@{RTC::RTObject\_\-impl}!addConfigurationSetListener@{addConfigurationSetListener}}
+\index{addConfigurationSetListener@{addConfigurationSetListener}!RTC::RTObject_impl@{RTC::RTObject\_\-impl}}
+\subsubsection[{addConfigurationSetListener}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::RTObject\_\-impl::addConfigurationSetListener ({\bf ConfigurationSetListenerType} {\em type}, \/  {\bf ConfigurationSetListener} $\ast$ {\em listener}, \/  bool {\em autoclean} = {\ttfamily true})}\label{classRTC_1_1RTObject__impl_aaea148df6fa2185f6ca6dbdd82ec60be}
+
+
+\doxyref{ConfigurationSetListener}{p.}{classRTC_1_1ConfigurationSetListener} を追加する. 
+
+ConfigurationSet が更新されたときなどに呼ばれるリスナ \doxyref{ConfigurationSetListener}{p.}{classRTC_1_1ConfigurationSetListener} を追加する。設定可能なイベントは以下の 2種類がある。
+
+
+\begin{DoxyItemize}
+\item ON\_\-SET\_\-CONFIG\_\-SET: setConfigurationSetValues() で ConfigurationSet に値が設定された場合。
+\item ON\_\-ADD\_\-CONFIG\_\-SET: addConfigurationSet() で新しい ConfigurationSet が追加された場合。
+\end{DoxyItemize}
+
+
+\begin{DoxyParams}{引数}
+\item[{\em type}]ConfigurationSetListenerType型の値。 \item[{\em listener}]\doxyref{ConfigurationSetListener}{p.}{classRTC_1_1ConfigurationSetListener} 型のリスナオブジェクト。 \item[{\em autoclean}]リスナオブジェクトを自動で削除するかどうかのフラグ \end{DoxyParams}
+
+
+参照元 addConfigurationSetListener().
+
+\index{RTC::RTObject\_\-impl@{RTC::RTObject\_\-impl}!addConfigurationSetNameListener@{addConfigurationSetNameListener}}
+\index{addConfigurationSetNameListener@{addConfigurationSetNameListener}!RTC::RTObject_impl@{RTC::RTObject\_\-impl}}
+\subsubsection[{addConfigurationSetNameListener}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Listener $>$ {\bf ConfigurationSetNameListener}$\ast$ RTC::RTObject\_\-impl::addConfigurationSetNameListener ({\bf ConfigurationSetNameListenerType} {\em type}, \/  Listener \& {\em obj}, \/  void(Listener::$\ast$)(const char $\ast$) {\em memfunc})\hspace{0.3cm}{\ttfamily  [inline]}}\label{classRTC_1_1RTObject__impl_a8d3590e1ce13f71eda98dda998c53dc2}
+
+
+参照先 addConfigurationSetNameListener().
+
+\index{RTC::RTObject\_\-impl@{RTC::RTObject\_\-impl}!addConfigurationSetNameListener@{addConfigurationSetNameListener}}
+\index{addConfigurationSetNameListener@{addConfigurationSetNameListener}!RTC::RTObject_impl@{RTC::RTObject\_\-impl}}
+\subsubsection[{addConfigurationSetNameListener}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::RTObject\_\-impl::addConfigurationSetNameListener ({\bf ConfigurationSetNameListenerType} {\em type}, \/  {\bf ConfigurationSetNameListener} $\ast$ {\em listener}, \/  bool {\em autoclean} = {\ttfamily true})}\label{classRTC_1_1RTObject__impl_a5e9f593ad69e1a0a9ecc0541e3c6ba35}
+
+
+\doxyref{ConfigurationSetNameListener}{p.}{classRTC_1_1ConfigurationSetNameListener} を追加する. 
+
+ConfigurationSetName が更新されたときなどに呼ばれるリスナ \doxyref{ConfigurationSetNameListener}{p.}{classRTC_1_1ConfigurationSetNameListener} を追加する。設定可能なイベントは以下の 3種類がある。
+
+
+\begin{DoxyItemize}
+\item ON\_\-UPDATE\_\-CONFIG\_\-SET: ある ConfigurationSet がアップデートされた
+\item ON\_\-REMOVE\_\-CONFIG\_\-SET: ある ConfigurationSet が削除された
+\item ON\_\-ACTIVATE\_\-CONFIG\_\-SET: ある ConfigurationSet がアクティブ化された
+\end{DoxyItemize}
+
+
+\begin{DoxyParams}{引数}
+\item[{\em type}]ConfigurationSetNameListenerType型の値。 \item[{\em listener}]\doxyref{ConfigurationSetNameListener}{p.}{classRTC_1_1ConfigurationSetNameListener} 型のリスナオブジェクト。 \item[{\em autoclean}]リスナオブジェクトを自動で削除するかどうかのフラグ \end{DoxyParams}
+
+
+参照元 addConfigurationSetNameListener().
+
+\index{RTC::RTObject\_\-impl@{RTC::RTObject\_\-impl}!addExecutionContextActionListener@{addExecutionContextActionListener}}
+\index{addExecutionContextActionListener@{addExecutionContextActionListener}!RTC::RTObject_impl@{RTC::RTObject\_\-impl}}
+\subsubsection[{addExecutionContextActionListener}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Listener $>$ {\bf ECActionListener}$\ast$ RTC::RTObject\_\-impl::addExecutionContextActionListener ({\bf ECActionListenerType} {\em listener\_\-type}, \/  Listener \& {\em obj}, \/  void(Listener::$\ast$)({\bf UniqueId}) {\em memfunc})\hspace{0.3cm}{\ttfamily  [inline]}}\label{classRTC_1_1RTObject__impl_a82f7b0dcdb03d6a9d4bc2bc768a9bb06}
+
+
+参照先 addExecutionContextActionListener().
+
+\index{RTC::RTObject\_\-impl@{RTC::RTObject\_\-impl}!addExecutionContextActionListener@{addExecutionContextActionListener}}
+\index{addExecutionContextActionListener@{addExecutionContextActionListener}!RTC::RTObject_impl@{RTC::RTObject\_\-impl}}
+\subsubsection[{addExecutionContextActionListener}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::RTObject\_\-impl::addExecutionContextActionListener ({\bf ECActionListenerType} {\em listener\_\-type}, \/  {\bf ECActionListener} $\ast$ {\em listener}, \/  bool {\em autoclean} = {\ttfamily true})}\label{classRTC_1_1RTObject__impl_a062e939421b5429658b2c569471f9bf1}
+
+
+参照元 addExecutionContextActionListener().
+
+\index{RTC::RTObject\_\-impl@{RTC::RTObject\_\-impl}!addInPort@{addInPort}}
+\index{addInPort@{addInPort}!RTC::RTObject_impl@{RTC::RTObject\_\-impl}}
+\subsubsection[{addInPort}]{\setlength{\rightskip}{0pt plus 5cm}bool RTC::RTObject\_\-impl::addInPort (const char $\ast$ {\em name}, \/  {\bf InPortBase} \& {\em inport})}\label{classRTC_1_1RTObject__impl_acc1a9e9abf96bb15e24e2d467f613b8d}
+
+
+[local interface] DataInPort を登録する 
+
+\doxyref{RTC}{p.}{namespaceRTC} が保持する DataInPort を登録する。 Port のプロパティにデータポートであること(\char`\"{}port.dataport\char`\"{})、 TCPを使用すること(\char`\"{}tcp\_\-any\char`\"{})を設定するとともに、 DataInPort の インスタンスを生成し、登録する。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em name}]port 名称 \item[{\em inport}]登録対象 DataInPort \end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+登録結果(登録成功:true，登録失敗:false) 
+\end{DoxyReturn}
+\index{RTC::RTObject\_\-impl@{RTC::RTObject\_\-impl}!addOutPort@{addOutPort}}
+\index{addOutPort@{addOutPort}!RTC::RTObject_impl@{RTC::RTObject\_\-impl}}
+\subsubsection[{addOutPort}]{\setlength{\rightskip}{0pt plus 5cm}bool RTC::RTObject\_\-impl::addOutPort (const char $\ast$ {\em name}, \/  {\bf OutPortBase} \& {\em outport})}\label{classRTC_1_1RTObject__impl_a14850552c94f852a9f5bd98c7d94694b}
+
+
+[local interface] DataOutPort を登録する 
+
+\doxyref{RTC}{p.}{namespaceRTC} が保持する DataOutPortを登録する。 Port のプロパティにデータポートであること(\char`\"{}port.dataport\char`\"{})、 TCPを使用すること(\char`\"{}tcp\_\-any\char`\"{})を設定するとともに、 DataOutPort の インスタンスを生成し、登録する。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em name}]port 名称 \item[{\em outport}]登録対象 DataOutPort \end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+登録結果(登録成功:true，登録失敗:false) 
+\end{DoxyReturn}
+\index{RTC::RTObject\_\-impl@{RTC::RTObject\_\-impl}!addPort@{addPort}}
+\index{addPort@{addPort}!RTC::RTObject_impl@{RTC::RTObject\_\-impl}}
+\subsubsection[{addPort}]{\setlength{\rightskip}{0pt plus 5cm}bool RTC::RTObject\_\-impl::addPort ({\bf CorbaPort} \& {\em port})}\label{classRTC_1_1RTObject__impl_a88ec20224a5d9d3e1d8ed866fe1db455}
+
+
+[local interface] Port を登録する 
+
+\doxyref{RTC}{p.}{namespaceRTC} が保持するPortを登録する。 Port を外部からアクセス可能にするためには、このオペレーションにより 登録されていなければならない。登録される Port はこの \doxyref{RTC}{p.}{namespaceRTC} 内部において PortProfile.name により区別される。したがって、Port は \doxyref{RTC}{p.}{namespaceRTC} 内において、 ユニークな PortProfile.name を持たなければならない。 登録された Port は内部で適切にアクティブ化された後、その参照と オブジェクト参照がリスト内に保存される。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em port}]\doxyref{RTC}{p.}{namespaceRTC} に登録する Port \end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+登録結果(登録成功:true，登録失敗:false) 
+\end{DoxyReturn}
+\index{RTC::RTObject\_\-impl@{RTC::RTObject\_\-impl}!addPort@{addPort}}
+\index{addPort@{addPort}!RTC::RTObject_impl@{RTC::RTObject\_\-impl}}
+\subsubsection[{addPort}]{\setlength{\rightskip}{0pt plus 5cm}bool RTC::RTObject\_\-impl::addPort (PortService\_\-ptr {\em port})}\label{classRTC_1_1RTObject__impl_ade49bc9d4ee7d7fdc96ad1146b5fca42}
+
+
+[local interface] Port を登録する 
+
+\doxyref{RTC}{p.}{namespaceRTC} が保持するPortを登録する。 Port を外部からアクセス可能にするためには、このオペレーションにより 登録されていなければならない。登録される Port はこの \doxyref{RTC}{p.}{namespaceRTC} 内部において PortProfile.name により区別される。したがって、Port は \doxyref{RTC}{p.}{namespaceRTC} 内において、 ユニークな PortProfile.name を持たなければならない。 登録された Port は内部で適切にアクティブ化された後、その参照と オブジェクト参照がリスト内に保存される。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em port}]\doxyref{RTC}{p.}{namespaceRTC} に登録する Port \end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+登録結果(登録成功:true，登録失敗:false) 
+\end{DoxyReturn}
+\index{RTC::RTObject\_\-impl@{RTC::RTObject\_\-impl}!addPort@{addPort}}
+\index{addPort@{addPort}!RTC::RTObject_impl@{RTC::RTObject\_\-impl}}
+\subsubsection[{addPort}]{\setlength{\rightskip}{0pt plus 5cm}bool RTC::RTObject\_\-impl::addPort ({\bf PortBase} \& {\em port})}\label{classRTC_1_1RTObject__impl_aa14633b20e415fb3460a3f00cbbb1c13}
+
+
+[local interface] Port を登録する 
+
+\doxyref{RTC}{p.}{namespaceRTC} が保持するPortを登録する。 Port を外部からアクセス可能にするためには、このオペレーションにより 登録されていなければならない。登録される Port はこの \doxyref{RTC}{p.}{namespaceRTC} 内部において PortProfile.name により区別される。したがって、Port は \doxyref{RTC}{p.}{namespaceRTC} 内において、 ユニークな PortProfile.name を持たなければならない。 登録された Port は内部で適切にアクティブ化された後、その参照と オブジェクト参照がリスト内に保存される。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em port}]\doxyref{RTC}{p.}{namespaceRTC} に登録する Port \end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+登録結果(登録成功:true，登録失敗:false) 
+\end{DoxyReturn}
+\index{RTC::RTObject\_\-impl@{RTC::RTObject\_\-impl}!addPortActionListener@{addPortActionListener}}
+\index{addPortActionListener@{addPortActionListener}!RTC::RTObject_impl@{RTC::RTObject\_\-impl}}
+\subsubsection[{addPortActionListener}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Listener $>$ {\bf PortActionListener}$\ast$ RTC::RTObject\_\-impl::addPortActionListener ({\bf PortActionListenerType} {\em listener\_\-type}, \/  Listener \& {\em obj}, \/  void(Listener::$\ast$)(const RTC::PortProfile \&) {\em memfunc})\hspace{0.3cm}{\ttfamily  [inline]}}\label{classRTC_1_1RTObject__impl_aeb96697c5acae34780dd63234a6b391f}
+
+
+参照先 addPortActionListener().
+
+\index{RTC::RTObject\_\-impl@{RTC::RTObject\_\-impl}!addPortActionListener@{addPortActionListener}}
+\index{addPortActionListener@{addPortActionListener}!RTC::RTObject_impl@{RTC::RTObject\_\-impl}}
+\subsubsection[{addPortActionListener}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::RTObject\_\-impl::addPortActionListener ({\bf PortActionListenerType} {\em listener\_\-type}, \/  {\bf PortActionListener} $\ast$ {\em listener}, \/  bool {\em autoclean} = {\ttfamily true})}\label{classRTC_1_1RTObject__impl_a5941b587c64e4b8b72017f793b0f7682}
+
+
+\doxyref{PortActionListener}{p.}{classRTC_1_1PortActionListener} リスナを追加する. 
+
+Portの追加、削除時にコールバックされる各種リスナを設定する。
+
+設定できるリスナのタイプとコールバックイベントは以下の通り
+
+
+\begin{DoxyItemize}
+\item ADD\_\-PORT: Port追加時
+\item REMOVE\_\-PORT: Port削除時
+\end{DoxyItemize}
+
+リスナは \doxyref{PortActionListener}{p.}{classRTC_1_1PortActionListener} を継承し、以下のシグニチャを持つ operator() を実装している必要がある。
+
+PortActionListener::operator()(PortProfile\& pprof)
+
+デフォルトでは、この関数に与えたリスナオブジェクトの所有権は RTObjectに移り、RTObject解体時もしくは、 \doxyref{removePortActionListener()}{p.}{classRTC_1_1RTObject__impl_a7e78be34fd500a01986e0d2fa4dd6b10} により削除時に自動的に解体される。 リスナオブジェクトの所有権を呼び出し側で維持したい場合は、第3引 数に false を指定し、自動的な解体を抑制することができる。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em listener\_\-type}]リスナタイプ \item[{\em listener}]リスナオブジェクトへのポインタ \item[{\em autoclean}]リスナオブジェクトの自動的解体を行うかどうかのフラグ \end{DoxyParams}
+
+
+参照元 addPortActionListener().
+
+\index{RTC::RTObject\_\-impl@{RTC::RTObject\_\-impl}!addPortConnectListener@{addPortConnectListener}}
+\index{addPortConnectListener@{addPortConnectListener}!RTC::RTObject_impl@{RTC::RTObject\_\-impl}}
+\subsubsection[{addPortConnectListener}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Listener $>$ {\bf PortConnectListener}$\ast$ RTC::RTObject\_\-impl::addPortConnectListener ({\bf PortConnectListenerType} {\em listener\_\-type}, \/  Listener \& {\em obj}, \/  void(Listener::$\ast$)(const char $\ast$, ConnectorProfile \&) {\em memfunc})\hspace{0.3cm}{\ttfamily  [inline]}}\label{classRTC_1_1RTObject__impl_a33947e77a5c6188f889e2bdc6850b592}
+
+
+参照先 addPortConnectListener().
+
+\index{RTC::RTObject\_\-impl@{RTC::RTObject\_\-impl}!addPortConnectListener@{addPortConnectListener}}
+\index{addPortConnectListener@{addPortConnectListener}!RTC::RTObject_impl@{RTC::RTObject\_\-impl}}
+\subsubsection[{addPortConnectListener}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::RTObject\_\-impl::addPortConnectListener ({\bf PortConnectListenerType} {\em listener\_\-type}, \/  {\bf PortConnectListener} $\ast$ {\em listener}, \/  bool {\em autoclean} = {\ttfamily true})}\label{classRTC_1_1RTObject__impl_a28d320585613515018d9cd675e978784}
+
+
+\doxyref{PortConnectListener}{p.}{classRTC_1_1PortConnectListener} リスナを追加する. 
+
+Portの接続時や接続解除時に呼び出される各種リスナを設定する。
+
+設定できるリスナのタイプとコールバックイベントは以下の通り
+
+
+\begin{DoxyItemize}
+\item ON\_\-NOTIFY\_\-CONNECT: notify\_\-connect() 関数内呼び出し直後
+\item ON\_\-NOTIFY\_\-DISCONNECT: notify\_\-disconnect() 呼び出し直後
+\item ON\_\-UNSUBSCRIBE\_\-INTERFACES: notify\_\-disconnect() 内のIF購読解除時
+\end{DoxyItemize}
+
+リスナは \doxyref{PortConnectListener}{p.}{classRTC_1_1PortConnectListener} を継承し、以下のシグニチャを持つ operator() を実装している必要がある。
+
+PortConnectListener::operator()(const char$\ast$, ConnectorProfile)
+
+デフォルトでは、この関数に与えたリスナオブジェクトの所有権は RTObjectに移り、RTObject解体時もしくは、 \doxyref{removePortConnectListener()}{p.}{classRTC_1_1RTObject__impl_a1e4c94e6c6f95868fbf17cb516173a2c} により削除時に自動的に解体される。 リスナオブジェクトの所有権を呼び出し側で維持したい場合は、第3引 数に false を指定し、自動的な解体を抑制することができる。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em listener\_\-type}]リスナタイプ \item[{\em listener}]リスナオブジェクトへのポインタ \item[{\em autoclean}]リスナオブジェクトの自動的解体を行うかどうかのフラグ \end{DoxyParams}
+
+
+参照元 addPortConnectListener().
+
+\index{RTC::RTObject\_\-impl@{RTC::RTObject\_\-impl}!addPortConnectRetListener@{addPortConnectRetListener}}
+\index{addPortConnectRetListener@{addPortConnectRetListener}!RTC::RTObject_impl@{RTC::RTObject\_\-impl}}
+\subsubsection[{addPortConnectRetListener}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Listener $>$ {\bf PortConnectRetListener}$\ast$ RTC::RTObject\_\-impl::addPortConnectRetListener ({\bf PortConnectRetListenerType} {\em listener\_\-type}, \/  Listener \& {\em obj}, \/  void(Listener::$\ast$)(const char $\ast$, ConnectorProfile \&, ReturnCode\_\-t) {\em memfunc})\hspace{0.3cm}{\ttfamily  [inline]}}\label{classRTC_1_1RTObject__impl_acc3dac83ce711e7592d141fe123a50c0}
+
+
+参照先 addPortConnectRetListener().
+
+\index{RTC::RTObject\_\-impl@{RTC::RTObject\_\-impl}!addPortConnectRetListener@{addPortConnectRetListener}}
+\index{addPortConnectRetListener@{addPortConnectRetListener}!RTC::RTObject_impl@{RTC::RTObject\_\-impl}}
+\subsubsection[{addPortConnectRetListener}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::RTObject\_\-impl::addPortConnectRetListener ({\bf PortConnectRetListenerType} {\em listener\_\-type}, \/  {\bf PortConnectRetListener} $\ast$ {\em listener}, \/  bool {\em autoclean} = {\ttfamily true})}\label{classRTC_1_1RTObject__impl_af89ccdbeedec5ae28149cf1f8b19b1af}
+
+
+\doxyref{PortConnectRetListener}{p.}{classRTC_1_1PortConnectRetListener} リスナを追加する. 
+
+Portの接続時や接続解除時に呼び出される各種リスナを設定する。
+
+設定できるリスナのタイプとコールバックイベントは以下の通り
+
+
+\begin{DoxyItemize}
+\item ON\_\-CONNECT\_\-NEXTPORT: notify\_\-connect() 中のカスケード呼び出し直後
+\item ON\_\-SUBSCRIBE\_\-INTERFACES: notify\_\-connect() 中のインターフェース購読直後
+\item ON\_\-CONNECTED: nofity\_\-connect() 接続処理完了時に呼び出される
+\item ON\_\-DISCONNECT\_\-NEXT: notify\_\-disconnect() 中にカスケード呼び出し直後
+\item ON\_\-DISCONNECTED: notify\_\-disconnect() リターン時
+\end{DoxyItemize}
+
+リスナは \doxyref{PortConnectRetListener}{p.}{classRTC_1_1PortConnectRetListener} を継承し、以下のシグニチャを持つ operator() を実装している必要がある。
+
+PortConnectRetListener::operator()(const char$\ast$, ConnectorProfile)
+
+デフォルトでは、この関数に与えたリスナオブジェクトの所有権は RTObjectに移り、RTObject解体時もしくは、 \doxyref{removePortConnectRetListener()}{p.}{classRTC_1_1RTObject__impl_a1bb512321332d6902a27632f28d4f3bf} により削除時に自動的に解体される。 リスナオブジェクトの所有権を呼び出し側で維持したい場合は、第3引 数に false を指定し、自動的な解体を抑制することができる。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em listener\_\-type}]リスナタイプ \item[{\em listener}]リスナオブジェクトへのポインタ \item[{\em autoclean}]リスナオブジェクトの自動的解体を行うかどうかのフラグ \end{DoxyParams}
+
+
+参照元 addPortConnectRetListener().
+
+\index{RTC::RTObject\_\-impl@{RTC::RTObject\_\-impl}!addPostComponentActionListener@{addPostComponentActionListener}}
+\index{addPostComponentActionListener@{addPostComponentActionListener}!RTC::RTObject_impl@{RTC::RTObject\_\-impl}}
+\subsubsection[{addPostComponentActionListener}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Listener $>$ {\bf PostComponentActionListener}$\ast$ RTC::RTObject\_\-impl::addPostComponentActionListener ({\bf PostCompActionListenerType} {\em listener\_\-type}, \/  Listener \& {\em obj}, \/  void(Listener::$\ast$)({\bf UniqueId} ec\_\-id, ReturnCode\_\-t ret) {\em memfunc})\hspace{0.3cm}{\ttfamily  [inline]}}\label{classRTC_1_1RTObject__impl_a90d77e9a3b84e351d903ffbf0ec9b2cf}
+
+
+参照先 addPostComponentActionListener().
+
+\index{RTC::RTObject\_\-impl@{RTC::RTObject\_\-impl}!addPostComponentActionListener@{addPostComponentActionListener}}
+\index{addPostComponentActionListener@{addPostComponentActionListener}!RTC::RTObject_impl@{RTC::RTObject\_\-impl}}
+\subsubsection[{addPostComponentActionListener}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::RTObject\_\-impl::addPostComponentActionListener ({\bf PostComponentActionListenerType} {\em listener\_\-type}, \/  {\bf PostComponentActionListener} $\ast$ {\em listener}, \/  bool {\em autoclean} = {\ttfamily true})}\label{classRTC_1_1RTObject__impl_a3cd23a404fee04cc2b67225b3a4c4c39}
+
+
+参照元 addPostComponentActionListener().
+
+\index{RTC::RTObject\_\-impl@{RTC::RTObject\_\-impl}!addPreComponentActionListener@{addPreComponentActionListener}}
+\index{addPreComponentActionListener@{addPreComponentActionListener}!RTC::RTObject_impl@{RTC::RTObject\_\-impl}}
+\subsubsection[{addPreComponentActionListener}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Listener $>$ {\bf PreComponentActionListener}$\ast$ RTC::RTObject\_\-impl::addPreComponentActionListener ({\bf PreCompActionListenerType} {\em listener\_\-type}, \/  Listener \& {\em obj}, \/  void(Listener::$\ast$)({\bf UniqueId} ec\_\-id) {\em memfunc})\hspace{0.3cm}{\ttfamily  [inline]}}\label{classRTC_1_1RTObject__impl_a31dfff5c65b2d57a527c6fe622f0d8e9}
+
+
+参照先 addPreComponentActionListener().
+
+\index{RTC::RTObject\_\-impl@{RTC::RTObject\_\-impl}!addPreComponentActionListener@{addPreComponentActionListener}}
+\index{addPreComponentActionListener@{addPreComponentActionListener}!RTC::RTObject_impl@{RTC::RTObject\_\-impl}}
+\subsubsection[{addPreComponentActionListener}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::RTObject\_\-impl::addPreComponentActionListener ({\bf PreComponentActionListenerType} {\em listener\_\-type}, \/  {\bf PreComponentActionListener} $\ast$ {\em listener}, \/  bool {\em autoclean} = {\ttfamily true})}\label{classRTC_1_1RTObject__impl_a57233c55e7210c5afa40d73c98aad32c}
+
+
+参照元 addPreComponentActionListener().
+
+\index{RTC::RTObject\_\-impl@{RTC::RTObject\_\-impl}!addSdoServiceConsumer@{addSdoServiceConsumer}}
+\index{addSdoServiceConsumer@{addSdoServiceConsumer}!RTC::RTObject_impl@{RTC::RTObject\_\-impl}}
+\subsubsection[{addSdoServiceConsumer}]{\setlength{\rightskip}{0pt plus 5cm}bool RTC::RTObject\_\-impl::addSdoServiceConsumer (const SDOPackage::ServiceProfile \& {\em prof})}\label{classRTC_1_1RTObject__impl_ae0559ddc46f005106ecc1daebc5f3931}
+
+
+[local interface] \doxyref{SDO}{p.}{classSDO} service provider をセットする 
+
+\index{RTC::RTObject\_\-impl@{RTC::RTObject\_\-impl}!addSdoServiceProvider@{addSdoServiceProvider}}
+\index{addSdoServiceProvider@{addSdoServiceProvider}!RTC::RTObject_impl@{RTC::RTObject\_\-impl}}
+\subsubsection[{addSdoServiceProvider}]{\setlength{\rightskip}{0pt plus 5cm}bool RTC::RTObject\_\-impl::addSdoServiceProvider (const SDOPackage::ServiceProfile \& {\em prof}, \/  {\bf SdoServiceProviderBase} $\ast$ {\em provider})}\label{classRTC_1_1RTObject__impl_ab858ddb7167e9aa41fb0990f241222bd}
+
+
+[local interface] \doxyref{SDO}{p.}{classSDO} service provider をセットする 
+
+\index{RTC::RTObject\_\-impl@{RTC::RTObject\_\-impl}!attach\_\-context@{attach\_\-context}}
+\index{attach\_\-context@{attach\_\-context}!RTC::RTObject_impl@{RTC::RTObject\_\-impl}}
+\subsubsection[{attach\_\-context}]{\setlength{\rightskip}{0pt plus 5cm}{\bf UniqueId} RTC::RTObject\_\-impl::attach\_\-context (ExecutionContext\_\-ptr {\em exec\_\-context})  throw (CORBA::SystemException)}\label{classRTC_1_1RTObject__impl_a6f8f5f20b2f37d208d37a08720d2a050}
+
+
+[CORBA interface] ExecutionContextをattachする 
+
+指定した ExecutionContext にこの \doxyref{RTC}{p.}{namespaceRTC} を所属させる。この \doxyref{RTC}{p.}{namespaceRTC} と関連する ExecutionContext のハンドルを返す。 このオペレーションは、ExecutionContextOperationsadd\_\-component が呼ばれた際に呼び出される。返されたハンドルは他のクライアントで 使用することを想定していない。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em exec\_\-context}]所属先 ExecutionContext\end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+ExecutionContext ハンドル 
+\end{DoxyReturn}
+\index{RTC::RTObject\_\-impl@{RTC::RTObject\_\-impl}!bindContext@{bindContext}}
+\index{bindContext@{bindContext}!RTC::RTObject_impl@{RTC::RTObject\_\-impl}}
+\subsubsection[{bindContext}]{\setlength{\rightskip}{0pt plus 5cm}{\bf UniqueId} RTC::RTObject\_\-impl::bindContext (ExecutionContext\_\-ptr {\em exec\_\-context})}\label{classRTC_1_1RTObject__impl_a03eeaa7386b192301f45c9bd8043ed4d}
+\index{RTC::RTObject\_\-impl@{RTC::RTObject\_\-impl}!bindParameter@{bindParameter}}
+\index{bindParameter@{bindParameter}!RTC::RTObject_impl@{RTC::RTObject\_\-impl}}
+\subsubsection[{bindParameter}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename VarType $>$ bool RTC::RTObject\_\-impl::bindParameter (const char $\ast$ {\em param\_\-name}, \/  VarType \& {\em var}, \/  const char $\ast$ {\em def\_\-val}, \/  bool($\ast$)(VarType \&, const char $\ast$) {\em trans} = {\ttfamily coil::stringTo})\hspace{0.3cm}{\ttfamily  [inline]}}\label{classRTC_1_1RTObject__impl_a225f046da175bec7b87709442a58fe54}
+
+
+コンフィギュレーションパラメータの設定 
+
+コンフィギュレーションパラメータと変数をバインドする $<$VarType$>$としてコンフィギュレーションパラメータのデータ型を指定する。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em param\_\-name}]コンフィギュレーションパラメータ名 \item[{\em var}]コンフィギュレーションパラメータ格納用変数 \item[{\em def\_\-val}]コンフィギュレーションパラメータデフォルト値 \item[{\em trans}]コンフィギュレーションパラメータ文字列変換用関数\end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+設定結果(設定成功:true，設定失敗:false) 
+\end{DoxyReturn}
+
+
+参照先 RTC::ConfigAdmin::bindParameter(), m\_\-configsets, と RTC\_\-TRACE.
+
+\index{RTC::RTObject\_\-impl@{RTC::RTObject\_\-impl}!deactivate@{deactivate}}
+\index{deactivate@{deactivate}!RTC::RTObject_impl@{RTC::RTObject\_\-impl}}
+\subsubsection[{deactivate}]{\setlength{\rightskip}{0pt plus 5cm}ReturnCode\_\-t RTC::RTObject\_\-impl::deactivate ({\bf RTC::UniqueId} {\em ec\_\-id})}\label{classRTC_1_1RTObject__impl_ae0706975877f1a44f993774e409e81de}
+
+
+[local interface] 状態を Inactive に遷移させる 
+
+状態を Active から Inactive に遷移させる。この関数は以下の関 数内で呼ばれることを前提としている。
+
+
+\begin{DoxyItemize}
+\item \doxyref{onActivated()}{p.}{classRTC_1_1RTObject__impl_a8f5ab867b59f72634b2e19afac941be4}
+\item \doxyref{onExecute()}{p.}{classRTC_1_1RTObject__impl_acdaea58342f01d786e4a2ce0028f4ea8}
+\item \doxyref{onStateUpdate()}{p.}{classRTC_1_1RTObject__impl_ae940286df438ca15088510a63c3d6d6c}
+\end{DoxyItemize}
+
+この関数の引数は上記の関数の引数 UniquieID exec\_\-handle でなけ ればならない。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em ec\_\-id}]上記関数の第1引数 exec\_\-handle を渡す必要がある。 \end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+リターンコード 
+\end{DoxyReturn}
+\index{RTC::RTObject\_\-impl@{RTC::RTObject\_\-impl}!deletePort@{deletePort}}
+\index{deletePort@{deletePort}!RTC::RTObject_impl@{RTC::RTObject\_\-impl}}
+\subsubsection[{deletePort}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::RTObject\_\-impl::deletePort ({\bf CorbaPort} \& {\em port})}\label{classRTC_1_1RTObject__impl_aea6725a900f1a5c2d0db0b481595da57}
+
+
+[local interface] Port の登録を削除する 
+
+\doxyref{RTC}{p.}{namespaceRTC} が保持するPortの登録を削除する。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em port}]削除対象 Port \end{DoxyParams}
+\index{RTC::RTObject\_\-impl@{RTC::RTObject\_\-impl}!deletePort@{deletePort}}
+\index{deletePort@{deletePort}!RTC::RTObject_impl@{RTC::RTObject\_\-impl}}
+\subsubsection[{deletePort}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::RTObject\_\-impl::deletePort (PortService\_\-ptr {\em port})}\label{classRTC_1_1RTObject__impl_ad241b87aae2ef1630604c03a17e6e20d}
+
+
+[local interface] Port の登録を削除する 
+
+\doxyref{RTC}{p.}{namespaceRTC} が保持するPortの登録を削除する。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em port}]削除対象 Port \end{DoxyParams}
+\index{RTC::RTObject\_\-impl@{RTC::RTObject\_\-impl}!deletePort@{deletePort}}
+\index{deletePort@{deletePort}!RTC::RTObject_impl@{RTC::RTObject\_\-impl}}
+\subsubsection[{deletePort}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::RTObject\_\-impl::deletePort ({\bf PortBase} \& {\em port})}\label{classRTC_1_1RTObject__impl_ad294e4c54ba76a53ea22f4c24b2b15fb}
+
+
+[local interface] Port の登録を削除する 
+
+\doxyref{RTC}{p.}{namespaceRTC} が保持するPortの登録を削除する。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em port}]削除対象 Port \end{DoxyParams}
+\index{RTC::RTObject\_\-impl@{RTC::RTObject\_\-impl}!deletePortByName@{deletePortByName}}
+\index{deletePortByName@{deletePortByName}!RTC::RTObject_impl@{RTC::RTObject\_\-impl}}
+\subsubsection[{deletePortByName}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::RTObject\_\-impl::deletePortByName (const char $\ast$ {\em port\_\-name})}\label{classRTC_1_1RTObject__impl_a5e63cd411ad32fe60668ed977063f6e4}
+
+
+[local interface] 名前指定により Port の登録を削除する 
+
+名称を指定して \doxyref{RTC}{p.}{namespaceRTC} が保持するPortの登録を削除する。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em port\_\-name}]削除対象 Port 名 \end{DoxyParams}
+\index{RTC::RTObject\_\-impl@{RTC::RTObject\_\-impl}!detach\_\-context@{detach\_\-context}}
+\index{detach\_\-context@{detach\_\-context}!RTC::RTObject_impl@{RTC::RTObject\_\-impl}}
+\subsubsection[{detach\_\-context}]{\setlength{\rightskip}{0pt plus 5cm}ReturnCode\_\-t RTC::RTObject\_\-impl::detach\_\-context ({\bf UniqueId} {\em exec\_\-handle})  throw (CORBA::SystemException)}\label{classRTC_1_1RTObject__impl_a2cce94caa876ccf354b69c4dc0122878}
+
+
+[CORBA interface] ExecutionContextをdetachする 
+
+指定した ExecutionContext からこの \doxyref{RTC}{p.}{namespaceRTC} の所属を解除する。 このオペレーションは、ExecutionContextOperationsremove が呼ば れた際に呼び出される。返されたハンドルは他のクライアントで使用することを 想定していない。
+
+制約
+\begin{DoxyItemize}
+\item 指定された ExecutionContext に \doxyref{RTC}{p.}{namespaceRTC} がすでに所属していない場合には、 ReturnCode\_\-t::PRECONDITION\_\-NOT\_\-MET が返される。
+\item 指定された ExecutionContext にたしいて対して \doxyref{RTC}{p.}{namespaceRTC} がActive 状態である場 合には、 ReturnCode\_\-t::PRECONDITION\_\-NOT\_\-MET が返される。
+\end{DoxyItemize}
+
+
+\begin{DoxyParams}{引数}
+\item[{\em exec\_\-handle}]解除対象 ExecutionContextハンドル\end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+ReturnCode\_\-t 型のリターンコード 
+\end{DoxyReturn}
+\index{RTC::RTObject\_\-impl@{RTC::RTObject\_\-impl}!exit@{exit}}
+\index{exit@{exit}!RTC::RTObject_impl@{RTC::RTObject\_\-impl}}
+\subsubsection[{exit}]{\setlength{\rightskip}{0pt plus 5cm}virtual ReturnCode\_\-t RTC::RTObject\_\-impl::exit ()  throw (CORBA::SystemException)\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classRTC_1_1RTObject__impl_a825ebfacda52fca8ce158b8dd353d39e}
+
+
+[CORBA interface] \doxyref{RTC}{p.}{namespaceRTC} がオーナーである ExecutionContext を 停止させ、そのコンテンツと共に終了させる 
+
+この \doxyref{RTC}{p.}{namespaceRTC} がオーナーであるすべての実行コンテキストを停止する。 この \doxyref{RTC}{p.}{namespaceRTC} が他の実行コンテキストを所有する \doxyref{RTC}{p.}{namespaceRTC} に属する実行コンテキスト (i.e. 実行コンテキストを所有する \doxyref{RTC}{p.}{namespaceRTC} はすなわちその実行コンテキストの オーナーである。)に参加している場合、当該 \doxyref{RTC}{p.}{namespaceRTC} はそれらのコンテキスト上 で非活性化されなければならない。 \doxyref{RTC}{p.}{namespaceRTC} が実行中のどの ExecutionContext でも Active 状態ではなくなった後、 この \doxyref{RTC}{p.}{namespaceRTC} とこれに含まれる \doxyref{RTC}{p.}{namespaceRTC} が終了する。
+
+制約
+\begin{DoxyItemize}
+\item \doxyref{RTC}{p.}{namespaceRTC} が初期化されていなければ、終了させることはできない。 Created 状態にある \doxyref{RTC}{p.}{namespaceRTC} に \doxyref{exit()}{p.}{classRTC_1_1RTObject__impl_a825ebfacda52fca8ce158b8dd353d39e} を呼び出した場合、 ReturnCode\_\-t::PRECONDITION\_\-NOT\_\-MET で失敗する。
+\end{DoxyItemize}
+
+\begin{DoxyReturn}{戻り値}
+ReturnCode\_\-t 型のリターンコード 
+\end{DoxyReturn}
+\index{RTC::RTObject\_\-impl@{RTC::RTObject\_\-impl}!finalize@{finalize}}
+\index{finalize@{finalize}!RTC::RTObject_impl@{RTC::RTObject\_\-impl}}
+\subsubsection[{finalize}]{\setlength{\rightskip}{0pt plus 5cm}virtual ReturnCode\_\-t RTC::RTObject\_\-impl::finalize ()  throw (CORBA::SystemException)\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classRTC_1_1RTObject__impl_adbf424d726332bc0eb9b3542f117e3f3}
+
+
+[CORBA interface] \doxyref{RTC}{p.}{namespaceRTC} を終了する 
+
+このオペレーション呼び出しの結果として ComponentAction::on\_\-finalize() を呼び出す。
+
+制約
+\begin{DoxyItemize}
+\item \doxyref{RTC}{p.}{namespaceRTC} が ExecutionContext に所属している間は終了されない。この場合は、 まず最初に ExecutionContextOperations::remove によって参加を 解除しなければならない。これ以外の場合は、このオペレーション呼び出しは いかなる場合も ReturnCode\_\-t::PRECONDITION\_\-NOT\_\-ME で失敗する。
+\item \doxyref{RTC}{p.}{namespaceRTC} が Created 状態である場合、終了処理は行われない。 この場合、このオペレーション呼び出しはいかなる場合も ReturnCode\_\-t::PRECONDITION\_\-NOT\_\-MET で失敗する。
+\item このオペレーションはRTCのミドルウエアから呼ばれることを想定しており、 アプリケーション開発者は直接このオペレーションを呼ぶことは想定 されていない。
+\end{DoxyItemize}
+
+\begin{DoxyReturn}{戻り値}
+ReturnCode\_\-t 型のリターンコード 
+\end{DoxyReturn}
+\index{RTC::RTObject\_\-impl@{RTC::RTObject\_\-impl}!finalizeContexts@{finalizeContexts}}
+\index{finalizeContexts@{finalizeContexts}!RTC::RTObject_impl@{RTC::RTObject\_\-impl}}
+\subsubsection[{finalizeContexts}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::RTObject\_\-impl::finalizeContexts ()}\label{classRTC_1_1RTObject__impl_a942cffa70dd152477c23c8b3ad0d1083}
+
+
+ExecutionContextBaseリストの登録を削除する. 
+
+\index{RTC::RTObject\_\-impl@{RTC::RTObject\_\-impl}!finalizePorts@{finalizePorts}}
+\index{finalizePorts@{finalizePorts}!RTC::RTObject_impl@{RTC::RTObject\_\-impl}}
+\subsubsection[{finalizePorts}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::RTObject\_\-impl::finalizePorts ()}\label{classRTC_1_1RTObject__impl_ae0445c694a7cb4bbc8d635d84d3fc4c6}
+
+
+全 Port の登録を削除する 
+
+\doxyref{RTC}{p.}{namespaceRTC} が保持する全ての Port を削除する。 \index{RTC::RTObject\_\-impl@{RTC::RTObject\_\-impl}!get\_\-component\_\-profile@{get\_\-component\_\-profile}}
+\index{get\_\-component\_\-profile@{get\_\-component\_\-profile}!RTC::RTObject_impl@{RTC::RTObject\_\-impl}}
+\subsubsection[{get\_\-component\_\-profile}]{\setlength{\rightskip}{0pt plus 5cm}virtual ComponentProfile$\ast$ RTC::RTObject\_\-impl::get\_\-component\_\-profile ()  throw (CORBA::SystemException)\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classRTC_1_1RTObject__impl_ae6ce25fd82ec7926f9d38ac92732920b}
+
+
+[RTObject CORBA interface] コンポーネントプロファイルを取得する 
+
+当該コンポーネントのプロファイル情報を返す。
+
+\begin{DoxyReturn}{戻り値}
+コンポーネントプロファイル 
+\end{DoxyReturn}
+\index{RTC::RTObject\_\-impl@{RTC::RTObject\_\-impl}!get\_\-configuration@{get\_\-configuration}}
+\index{get\_\-configuration@{get\_\-configuration}!RTC::RTObject_impl@{RTC::RTObject\_\-impl}}
+\subsubsection[{get\_\-configuration}]{\setlength{\rightskip}{0pt plus 5cm}virtual SDOPackage::Configuration\_\-ptr RTC::RTObject\_\-impl::get\_\-configuration ()  throw (CORBA::SystemException, 	     SDOPackage::InterfaceNotImplemented, SDOPackage::NotAvailable,	     SDOPackage::InternalError)\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classRTC_1_1RTObject__impl_a5006e5f6553fa9da43bf820fa8972e90}
+
+
+[\doxyref{SDO}{p.}{classSDO} interface] Configuration オブジェクトの取得 
+
+このオペレーションは Configuration interface への参照を返す。 Configuration interface は各 \doxyref{SDO}{p.}{classSDO} を管理するためのインターフェースの ひとつである。このインターフェースは DeviceProfile, ServiceProfile, Organization で定義された \doxyref{SDO}{p.}{classSDO} の属性値を設定するために使用される。 Configuration インターフェースの詳細については、OMG \doxyref{SDO}{p.}{classSDO} specification の 2.3.5節, p.2-\/24 を参照のこと。
+
+\begin{DoxyReturn}{戻り値}
+\doxyref{SDO}{p.}{classSDO} の Configuration インターフェースへの参照
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{例外}
+\item[{\em InterfaceNotImplemented}]SDOはConfigurationインターフェースを 持たない。 \item[{\em SDONotExists}]ターゲットのSDOが存在しない。(本例外は、CORBA標準 システム例外のOBJECT\_\-NOT\_\-EXISTにマッピングされる) \item[{\em NotAvailable}]SDOは存在するが応答がない。 \item[{\em InternalError}]内部的エラーが発生した。 \end{DoxyExceptions}
+\index{RTC::RTObject\_\-impl@{RTC::RTObject\_\-impl}!get\_\-context@{get\_\-context}}
+\index{get\_\-context@{get\_\-context}!RTC::RTObject_impl@{RTC::RTObject\_\-impl}}
+\subsubsection[{get\_\-context}]{\setlength{\rightskip}{0pt plus 5cm}virtual ExecutionContext\_\-ptr RTC::RTObject\_\-impl::get\_\-context ({\bf UniqueId} {\em exec\_\-handle})  throw (CORBA::SystemException)\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classRTC_1_1RTObject__impl_a4ab4ed5969c8d13a03957282e2bf9991}
+
+
+[CORBA interface] ExecutionContextを取得する 
+
+指定したハンドルの ExecutionContext を取得する。 ハンドルから ExecutionContext へのマッピングは、特定の \doxyref{RTC}{p.}{namespaceRTC} インスタンスに 固有である。ハンドルはこの \doxyref{RTC}{p.}{namespaceRTC} を attach\_\-context した際に取得できる。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em exec\_\-handle}]取得対象 ExecutionContext ハンドル\end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+ExecutionContext 
+\end{DoxyReturn}
+\index{RTC::RTObject\_\-impl@{RTC::RTObject\_\-impl}!get\_\-context\_\-handle@{get\_\-context\_\-handle}}
+\index{get\_\-context\_\-handle@{get\_\-context\_\-handle}!RTC::RTObject_impl@{RTC::RTObject\_\-impl}}
+\subsubsection[{get\_\-context\_\-handle}]{\setlength{\rightskip}{0pt plus 5cm}virtual ExecutionContextHandle\_\-t RTC::RTObject\_\-impl::get\_\-context\_\-handle (ExecutionContext\_\-ptr {\em cxt})  throw (CORBA::SystemException)\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classRTC_1_1RTObject__impl_a0eb1dc1276710df7bebb76d1e1c9f035}
+
+
+[CORBA interface] ExecutionContext のハンドルを返す 
+
+与えられた実行コンテキストに関連付けられたハンドルを返す。 \index{RTC::RTObject\_\-impl@{RTC::RTObject\_\-impl}!get\_\-device\_\-profile@{get\_\-device\_\-profile}}
+\index{get\_\-device\_\-profile@{get\_\-device\_\-profile}!RTC::RTObject_impl@{RTC::RTObject\_\-impl}}
+\subsubsection[{get\_\-device\_\-profile}]{\setlength{\rightskip}{0pt plus 5cm}virtual SDOPackage::DeviceProfile$\ast$ RTC::RTObject\_\-impl::get\_\-device\_\-profile ()  throw (CORBA::SystemException, 	     SDOPackage::NotAvailable, SDOPackage::InternalError)\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classRTC_1_1RTObject__impl_a2ca6315809ca483d0efccee653ccbcb1}
+
+
+[\doxyref{SDO}{p.}{classSDO} interface] \doxyref{SDO}{p.}{classSDO} DeviceProfile リストの取得 
+
+\doxyref{SDO}{p.}{classSDO} の DeviceProfile を返すオペレーション。 \doxyref{SDO}{p.}{classSDO} がハードウエアデバイス に関連付けられていない場合には、空の DeviceProfile が返される。 このオペレーションは以下の型の例外を発生させる。
+
+\begin{DoxyReturn}{戻り値}
+\doxyref{SDO}{p.}{classSDO} DeviceProfile
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{例外}
+\item[{\em SDONotExists}]ターゲットのSDOが存在しない。(本例外は、CORBA標準 システム例外のOBJECT\_\-NOT\_\-EXISTにマッピングされる) \item[{\em NotAvailable}]SDOは存在するが応答がない。 \item[{\em InternalError}]内部的エラーが発生した。 \end{DoxyExceptions}
+\index{RTC::RTObject\_\-impl@{RTC::RTObject\_\-impl}!get\_\-monitoring@{get\_\-monitoring}}
+\index{get\_\-monitoring@{get\_\-monitoring}!RTC::RTObject_impl@{RTC::RTObject\_\-impl}}
+\subsubsection[{get\_\-monitoring}]{\setlength{\rightskip}{0pt plus 5cm}virtual SDOPackage::Monitoring\_\-ptr RTC::RTObject\_\-impl::get\_\-monitoring ()  throw (CORBA::SystemException, 	     SDOPackage::InterfaceNotImplemented, SDOPackage::NotAvailable,	     SDOPackage::InternalError)\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classRTC_1_1RTObject__impl_a2c2e2c2486df7049f4969b910c349d8f}
+
+
+[\doxyref{SDO}{p.}{classSDO} interface] Monitoring オブジェクトの取得 
+
+このオペレーションは Monitoring interface への参照を返す。 Monitoring interface は \doxyref{SDO}{p.}{classSDO} が管理するインターフェースの一つである。 このインターフェースは \doxyref{SDO}{p.}{classSDO} のプロパティをモニタリングするために 使用される。 Monitoring interface の詳細については OMG \doxyref{SDO}{p.}{classSDO} specification の 2.3.7節 \char`\"{}Monitoring Interface\char`\"{} p.2-\/35 を参照のこと。
+
+\begin{DoxyReturn}{戻り値}
+\doxyref{SDO}{p.}{classSDO} の Monitoring interface への参照
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{例外}
+\item[{\em InterfaceNotImplemented}]SDOはConfigurationインターフェースを 持たない。 \item[{\em SDONotExists}]ターゲットのSDOが存在しない。(本例外は、CORBA標準 システム例外のOBJECT\_\-NOT\_\-EXISTにマッピングされる) \item[{\em NotAvailable}]SDOは存在するが応答がない。 \item[{\em InternalError}]内部的エラーが発生した。 \end{DoxyExceptions}
+\index{RTC::RTObject\_\-impl@{RTC::RTObject\_\-impl}!get\_\-organizations@{get\_\-organizations}}
+\index{get\_\-organizations@{get\_\-organizations}!RTC::RTObject_impl@{RTC::RTObject\_\-impl}}
+\subsubsection[{get\_\-organizations}]{\setlength{\rightskip}{0pt plus 5cm}virtual SDOPackage::OrganizationList$\ast$ RTC::RTObject\_\-impl::get\_\-organizations ()  throw (CORBA::SystemException, 	     SDOPackage::NotAvailable, SDOPackage::InternalError)\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classRTC_1_1RTObject__impl_a70ca72f2927ee006f0a31c4c649a5772}
+
+
+[\doxyref{SDO}{p.}{classSDO} interface] Organization リストの取得 
+
+\doxyref{SDO}{p.}{classSDO} は0個以上の Organization (組織)に所属することができる。 もし \doxyref{SDO}{p.}{classSDO} が 1個以上の Organization に所属している場合、このオペレーションは所属する Organization のリストを返す。SDO が どの Organization にも所属していない 場合には、空のリストが返される。
+
+\begin{DoxyReturn}{戻り値}
+\doxyref{SDO}{p.}{classSDO} が所属する Organization のリスト。
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{例外}
+\item[{\em SDONotExists}]ターゲットのSDOが存在しない。(本例外は、CORBA標準 システム例外のOBJECT\_\-NOT\_\-EXISTにマッピングされる) \item[{\em NotAvailable}]SDOは存在するが応答がない。 \item[{\em InternalError}]内部的エラーが発生した。 \end{DoxyExceptions}
+\index{RTC::RTObject\_\-impl@{RTC::RTObject\_\-impl}!get\_\-owned\_\-contexts@{get\_\-owned\_\-contexts}}
+\index{get\_\-owned\_\-contexts@{get\_\-owned\_\-contexts}!RTC::RTObject_impl@{RTC::RTObject\_\-impl}}
+\subsubsection[{get\_\-owned\_\-contexts}]{\setlength{\rightskip}{0pt plus 5cm}virtual ExecutionContextList$\ast$ RTC::RTObject\_\-impl::get\_\-owned\_\-contexts ()  throw (CORBA::SystemException)\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classRTC_1_1RTObject__impl_a1ba4e4817b8d86c96665a311d3cc5240}
+
+
+[CORBA interface] 所有する ExecutionContextListを 取得する 
+
+この \doxyref{RTC}{p.}{namespaceRTC} が所有する ExecutionContext のリストを取得する。
+
+\begin{DoxyReturn}{戻り値}
+ExecutionContext リスト 
+\end{DoxyReturn}
+\index{RTC::RTObject\_\-impl@{RTC::RTObject\_\-impl}!get\_\-owned\_\-organizations@{get\_\-owned\_\-organizations}}
+\index{get\_\-owned\_\-organizations@{get\_\-owned\_\-organizations}!RTC::RTObject_impl@{RTC::RTObject\_\-impl}}
+\subsubsection[{get\_\-owned\_\-organizations}]{\setlength{\rightskip}{0pt plus 5cm}virtual SDOPackage::OrganizationList$\ast$ RTC::RTObject\_\-impl::get\_\-owned\_\-organizations ()  throw (CORBA::SystemException,             SDOPackage::NotAvailable, SDOPackage::InternalError)\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classRTC_1_1RTObject__impl_a1213e7589cfbca2a526f006f5e5a00e2}
+
+
+[\doxyref{SDO}{p.}{classSDO} interface] Organization リストの取得 
+
+SDOSystemElement は0個もしくはそれ以上の Organization を所有することが 出来る。 SDOSystemElement が1つ以上の Organization を所有している場合 には、このオペレーションは所有する Organization のリストを返す。 もしOrganizationを一つも所有していないければ空のリストを返す。
+
+\begin{DoxyReturn}{戻り値}
+所有している Organization リスト
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{例外}
+\item[{\em SDONotExists}]ターゲットのSDOが存在しない。(本例外は、CORBA標準 システム例外のOBJECT\_\-NOT\_\-EXISTにマッピングされる) \item[{\em NotAvailable}]SDOは存在するが応答がない。 \item[{\em InternalError}]内部的エラーが発生した。 \end{DoxyExceptions}
+\index{RTC::RTObject\_\-impl@{RTC::RTObject\_\-impl}!get\_\-participating\_\-contexts@{get\_\-participating\_\-contexts}}
+\index{get\_\-participating\_\-contexts@{get\_\-participating\_\-contexts}!RTC::RTObject_impl@{RTC::RTObject\_\-impl}}
+\subsubsection[{get\_\-participating\_\-contexts}]{\setlength{\rightskip}{0pt plus 5cm}virtual ExecutionContextList$\ast$ RTC::RTObject\_\-impl::get\_\-participating\_\-contexts ()  throw (CORBA::SystemException)\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classRTC_1_1RTObject__impl_a6a4221f6367a12ea08076d31d292392f}
+
+
+[CORBA interface] 参加している ExecutionContextList を取得する 
+
+この \doxyref{RTC}{p.}{namespaceRTC} が参加している ExecutionContext のリストを取得する。
+
+\begin{DoxyReturn}{戻り値}
+ExecutionContext リスト 
+\end{DoxyReturn}
+\index{RTC::RTObject\_\-impl@{RTC::RTObject\_\-impl}!get\_\-ports@{get\_\-ports}}
+\index{get\_\-ports@{get\_\-ports}!RTC::RTObject_impl@{RTC::RTObject\_\-impl}}
+\subsubsection[{get\_\-ports}]{\setlength{\rightskip}{0pt plus 5cm}virtual PortServiceList$\ast$ RTC::RTObject\_\-impl::get\_\-ports ()  throw (CORBA::SystemException)\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classRTC_1_1RTObject__impl_ab89dc9a54ee9df51b00cf7c296489ae2}
+
+
+[RTObject CORBA interface] ポートを取得する 
+
+当該コンポーネントが保有するポートの参照を返す。
+
+\begin{DoxyReturn}{戻り値}
+ポートリスト 
+\end{DoxyReturn}
+\index{RTC::RTObject\_\-impl@{RTC::RTObject\_\-impl}!get\_\-sdo\_\-id@{get\_\-sdo\_\-id}}
+\index{get\_\-sdo\_\-id@{get\_\-sdo\_\-id}!RTC::RTObject_impl@{RTC::RTObject\_\-impl}}
+\subsubsection[{get\_\-sdo\_\-id}]{\setlength{\rightskip}{0pt plus 5cm}virtual char$\ast$ RTC::RTObject\_\-impl::get\_\-sdo\_\-id ()  throw (CORBA::SystemException,	     SDOPackage::NotAvailable, SDOPackage::InternalError)\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classRTC_1_1RTObject__impl_a39fbd348ba1dd10c70a9be63e95e4eb4}
+
+
+[\doxyref{SDO}{p.}{classSDO} interface] \doxyref{SDO}{p.}{classSDO} ID の取得 
+
+\doxyref{SDO}{p.}{classSDO} ID を返すオペレーション。 このオペレーションは以下の型の例外を発生させる。
+
+\begin{DoxyReturn}{戻り値}
+リソースデータモデルで定義されている \doxyref{SDO}{p.}{classSDO} の ID
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{例外}
+\item[{\em SDONotExists}]ターゲットのSDOが存在しない。(本例外は、CORBA標準 システム例外のOBJECT\_\-NOT\_\-EXISTにマッピングされる) \item[{\em NotAvailable}]SDOは存在するが応答がない。 \item[{\em InternalError}]内部的エラーが発生した。 \end{DoxyExceptions}
+\index{RTC::RTObject\_\-impl@{RTC::RTObject\_\-impl}!get\_\-sdo\_\-service@{get\_\-sdo\_\-service}}
+\index{get\_\-sdo\_\-service@{get\_\-sdo\_\-service}!RTC::RTObject_impl@{RTC::RTObject\_\-impl}}
+\subsubsection[{get\_\-sdo\_\-service}]{\setlength{\rightskip}{0pt plus 5cm}virtual SDOPackage::SDOService\_\-ptr RTC::RTObject\_\-impl::get\_\-sdo\_\-service (const char $\ast$ {\em id})  throw (CORBA::SystemException, 	     SDOPackage::InvalidParameter, SDOPackage::NotAvailable,	     SDOPackage::InternalError)\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classRTC_1_1RTObject__impl_a8741546e5ad37f1ae6dc97be27a66aea}
+
+
+[\doxyref{SDO}{p.}{classSDO} interface] 指定された \doxyref{SDO}{p.}{classSDO} Service の取得 
+
+このオペレーションは引数 \char`\"{}id\char`\"{} で指定された名前によって区別される \doxyref{SDO}{p.}{classSDO} の Service へのオブジェクト参照を返す。 \doxyref{SDO}{p.}{classSDO} により提供される Service はそれぞれ一意の識別子により区別される。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em id}]\doxyref{SDO}{p.}{classSDO} Service に関連付けられた識別子。\end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+要求された \doxyref{SDO}{p.}{classSDO} Service への参照。
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{例外}
+\item[{\em InvalidParameter}]\char`\"{}id\char`\"{} で指定した ServiceProfile が存在しない。 \char`\"{}id\char`\"{} が null。 \item[{\em SDONotExists}]ターゲットのSDOが存在しない。(本例外は、CORBA標準 システム例外のOBJECT\_\-NOT\_\-EXISTにマッピングされる) \item[{\em NotAvailable}]SDOは存在するが応答がない。 \item[{\em InternalError}]内部的エラーが発生した。 \end{DoxyExceptions}
+\index{RTC::RTObject\_\-impl@{RTC::RTObject\_\-impl}!get\_\-sdo\_\-type@{get\_\-sdo\_\-type}}
+\index{get\_\-sdo\_\-type@{get\_\-sdo\_\-type}!RTC::RTObject_impl@{RTC::RTObject\_\-impl}}
+\subsubsection[{get\_\-sdo\_\-type}]{\setlength{\rightskip}{0pt plus 5cm}virtual char$\ast$ RTC::RTObject\_\-impl::get\_\-sdo\_\-type ()  throw (CORBA::SystemException, 	     SDOPackage::NotAvailable, SDOPackage::InternalError)\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classRTC_1_1RTObject__impl_afb16d9353ca53e2f66f9185dc2ae1566}
+
+
+[\doxyref{SDO}{p.}{classSDO} interface] \doxyref{SDO}{p.}{classSDO} タイプの取得 
+
+\doxyref{SDO}{p.}{classSDO} Type を返すオペレーション。 このオペレーションは以下の型の例外を発生させる。
+
+\begin{DoxyReturn}{戻り値}
+リソースデータモデルで定義されている \doxyref{SDO}{p.}{classSDO} の Type
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{例外}
+\item[{\em SDONotExists}]ターゲットのSDOが存在しない。(本例外は、CORBA標準 システム例外のOBJECT\_\-NOT\_\-EXISTにマッピングされる) \item[{\em NotAvailable}]SDOは存在するが応答がない。 \item[{\em InternalError}]内部的エラーが発生した。 \end{DoxyExceptions}
+\index{RTC::RTObject\_\-impl@{RTC::RTObject\_\-impl}!get\_\-service\_\-profile@{get\_\-service\_\-profile}}
+\index{get\_\-service\_\-profile@{get\_\-service\_\-profile}!RTC::RTObject_impl@{RTC::RTObject\_\-impl}}
+\subsubsection[{get\_\-service\_\-profile}]{\setlength{\rightskip}{0pt plus 5cm}virtual SDOPackage::ServiceProfile$\ast$ RTC::RTObject\_\-impl::get\_\-service\_\-profile (const char $\ast$ {\em id})  throw (CORBA::SystemException, 	     SDOPackage::InvalidParameter, SDOPackage::NotAvailable,	     SDOPackage::InternalError)\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classRTC_1_1RTObject__impl_ad823788614a095ca61ac43717eceba3c}
+
+
+[\doxyref{SDO}{p.}{classSDO} interface] 特定のServiceProfileの取得 
+
+引数 \char`\"{}id\char`\"{} で指定された名前のサービスの ServiceProfile を返す。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em id}]\doxyref{SDO}{p.}{classSDO} Service の ServiceProfile に関連付けられた識別子。\end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+指定された \doxyref{SDO}{p.}{classSDO} Service の ServiceProfile。
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{例外}
+\item[{\em InvalidParameter}]\char`\"{}id\char`\"{} で指定した ServiceProfile が存在しない。 \char`\"{}id\char`\"{} が null。 \item[{\em SDONotExists}]ターゲットのSDOが存在しない。(本例外は、CORBA標準 システム例外のOBJECT\_\-NOT\_\-EXISTにマッピングされる) \item[{\em NotAvailable}]SDOは存在するが応答がない。 \item[{\em InternalError}]内部的エラーが発生した。 \end{DoxyExceptions}
+\index{RTC::RTObject\_\-impl@{RTC::RTObject\_\-impl}!get\_\-service\_\-profiles@{get\_\-service\_\-profiles}}
+\index{get\_\-service\_\-profiles@{get\_\-service\_\-profiles}!RTC::RTObject_impl@{RTC::RTObject\_\-impl}}
+\subsubsection[{get\_\-service\_\-profiles}]{\setlength{\rightskip}{0pt plus 5cm}virtual SDOPackage::ServiceProfileList$\ast$ RTC::RTObject\_\-impl::get\_\-service\_\-profiles ()  throw (CORBA::SystemException, 	     SDOPackage::NotAvailable, SDOPackage::InternalError)\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classRTC_1_1RTObject__impl_a692ea5dd3bb9d73fc2851c21a5289f57}
+
+
+[\doxyref{SDO}{p.}{classSDO} interface] \doxyref{SDO}{p.}{classSDO} ServiceProfile の取得 
+
+\doxyref{SDO}{p.}{classSDO} が所有している Service の ServiceProfile を返すオペレーション。 \doxyref{SDO}{p.}{classSDO} がサービスを一つも所有していない場合には、空のリストを返す。 このオペレーションは以下の型の例外を発生させる。
+
+\begin{DoxyReturn}{戻り値}
+\doxyref{SDO}{p.}{classSDO} が提供する全ての Service の ServiceProfile。
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{例外}
+\item[{\em SDONotExists}]ターゲットのSDOが存在しない。(本例外は、CORBA標準 システム例外のOBJECT\_\-NOT\_\-EXISTにマッピングされる) \item[{\em NotAvailable}]SDOは存在するが応答がない。 \item[{\em InternalError}]内部的エラーが発生した。 \end{DoxyExceptions}
+\index{RTC::RTObject\_\-impl@{RTC::RTObject\_\-impl}!get\_\-status@{get\_\-status}}
+\index{get\_\-status@{get\_\-status}!RTC::RTObject_impl@{RTC::RTObject\_\-impl}}
+\subsubsection[{get\_\-status}]{\setlength{\rightskip}{0pt plus 5cm}virtual CORBA::Any$\ast$ RTC::RTObject\_\-impl::get\_\-status (const char $\ast$ {\em name})  throw (CORBA::SystemException, 	     SDOPackage::InvalidParameter, SDOPackage::NotAvailable,	     SDOPackage::InternalError)\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classRTC_1_1RTObject__impl_aef672ccc40fbe6fbc92846d03cfc00fa}
+
+
+[\doxyref{SDO}{p.}{classSDO} interface] \doxyref{SDO}{p.}{classSDO} Status の取得 
+
+This operation returns the value of the specified status parameter.
+
+
+\begin{DoxyParams}{引数}
+\item[{\em name}]\doxyref{SDO}{p.}{classSDO} のステータスを定義するパラメータ。\end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+指定されたパラメータのステータス値。
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{例外}
+\item[{\em SDONotExists}]ターゲットのSDOが存在しない。(本例外は、CORBA標準 システム例外のOBJECT\_\-NOT\_\-EXISTにマッピングされる) \item[{\em NotAvailable}]SDOは存在するが応答がない。 \item[{\em InvalidParameter}]引数 \char`\"{}name\char`\"{} が null あるいは存在しない。 \item[{\em InternalError}]内部的エラーが発生した。 \end{DoxyExceptions}
+\index{RTC::RTObject\_\-impl@{RTC::RTObject\_\-impl}!get\_\-status\_\-list@{get\_\-status\_\-list}}
+\index{get\_\-status\_\-list@{get\_\-status\_\-list}!RTC::RTObject_impl@{RTC::RTObject\_\-impl}}
+\subsubsection[{get\_\-status\_\-list}]{\setlength{\rightskip}{0pt plus 5cm}virtual SDOPackage::NVList$\ast$ RTC::RTObject\_\-impl::get\_\-status\_\-list ()  throw (CORBA::SystemException, 	     SDOPackage::NotAvailable, SDOPackage::InternalError)\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classRTC_1_1RTObject__impl_a70146e2ca576fbb77f887ac24ef470e0}
+
+
+[\doxyref{SDO}{p.}{classSDO} interface] \doxyref{SDO}{p.}{classSDO} Status リストの取得 
+
+このオペレーションは \doxyref{SDO}{p.}{classSDO} のステータスを表す NVList を返す。
+
+\begin{DoxyReturn}{戻り値}
+\doxyref{SDO}{p.}{classSDO} のステータス。
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{例外}
+\item[{\em SDONotExists}]ターゲットのSDOが存在しない。(本例外は、CORBA標準 システム例外のOBJECT\_\-NOT\_\-EXISTにマッピングされる) \item[{\em NotAvailable}]SDOは存在するが応答がない。 \item[{\em InternalError}]内部的エラーが発生した。 \end{DoxyExceptions}
+\index{RTC::RTObject\_\-impl@{RTC::RTObject\_\-impl}!getCategory@{getCategory}}
+\index{getCategory@{getCategory}!RTC::RTObject_impl@{RTC::RTObject\_\-impl}}
+\subsubsection[{getCategory}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ RTC::RTObject\_\-impl::getCategory ()\hspace{0.3cm}{\ttfamily  [inline]}}\label{classRTC_1_1RTObject__impl_a04632d5ef8dff275fbfd36fbe591f6ce}
+
+
+[local interface] カテゴリ情報の取得 
+
+ComponentProfile に設定されたカテゴリ情報を返す。
+
+\begin{DoxyReturn}{戻り値}
+カテゴリ情報 
+\end{DoxyReturn}
+
+
+参照先 m\_\-profile, と RTC\_\-TRACE.
+
+\index{RTC::RTObject\_\-impl@{RTC::RTObject\_\-impl}!getDescription@{getDescription}}
+\index{getDescription@{getDescription}!RTC::RTObject_impl@{RTC::RTObject\_\-impl}}
+\subsubsection[{getDescription}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ RTC::RTObject\_\-impl::getDescription ()\hspace{0.3cm}{\ttfamily  [inline]}}\label{classRTC_1_1RTObject__impl_a0d4f3d3fe53b3df883011e71f24c4569}
+
+
+[local interface] Description の取得 
+
+ComponentProfile に設定された Description を返す。
+
+\begin{DoxyReturn}{戻り値}
+Description 
+\end{DoxyReturn}
+
+
+参照先 m\_\-profile, と RTC\_\-TRACE.
+
+\index{RTC::RTObject\_\-impl@{RTC::RTObject\_\-impl}!getExecutionContext@{getExecutionContext}}
+\index{getExecutionContext@{getExecutionContext}!RTC::RTObject_impl@{RTC::RTObject\_\-impl}}
+\subsubsection[{getExecutionContext}]{\setlength{\rightskip}{0pt plus 5cm}ExecutionContext\_\-ptr RTC::RTObject\_\-impl::getExecutionContext ({\bf RTC::UniqueId} {\em ec\_\-id})}\label{classRTC_1_1RTObject__impl_a1692ce76b3f37fd916d73bb8793bdb0b}
+
+
+[local interface] 実行コンテキストを取得する 
+
+\doxyref{get\_\-context()}{p.}{classRTC_1_1RTObject__impl_a4ab4ed5969c8d13a03957282e2bf9991} と同じ機能のローカル版。違いはない。 この関数は以下の関数内で呼ばれることを前提としている。
+
+
+\begin{DoxyItemize}
+\item \doxyref{onStartup()}{p.}{classRTC_1_1RTObject__impl_a9b2db9b0a456640d5bd9f5a0801fd987}
+\item \doxyref{onShutdown()}{p.}{classRTC_1_1RTObject__impl_ae4871709a422049e541cbdfa944d3e7c}
+\item \doxyref{onActivated()}{p.}{classRTC_1_1RTObject__impl_a8f5ab867b59f72634b2e19afac941be4}
+\item \doxyref{onDeactivated()}{p.}{classRTC_1_1RTObject__impl_a55a81b783612a34523af2677eb9d72bd}
+\item \doxyref{onExecute()}{p.}{classRTC_1_1RTObject__impl_acdaea58342f01d786e4a2ce0028f4ea8}
+\item \doxyref{onAborting()}{p.}{classRTC_1_1RTObject__impl_a7e6125c496d5e254e23f7f92fcacb825}
+\item \doxyref{onError()}{p.}{classRTC_1_1RTObject__impl_afb1b1fe49a7bb410b06068ace63db1cd}
+\item \doxyref{onReset()}{p.}{classRTC_1_1RTObject__impl_ab1bd11e5c23b1d21d7d4489bda4cd245}
+\item \doxyref{onStateUpdate()}{p.}{classRTC_1_1RTObject__impl_ae940286df438ca15088510a63c3d6d6c}
+\item \doxyref{onRateChanged()}{p.}{classRTC_1_1RTObject__impl_a4c551d0c07b1e3e1e91bbf36d3954869}
+\end{DoxyItemize}
+
+この関数の引数はこれらの関数の引数 UniquieID exec\_\-handle でなけ ればならない。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em ec\_\-id}]上記関数の第1引数 exec\_\-handle を渡す必要がある。 \end{DoxyParams}
+\index{RTC::RTObject\_\-impl@{RTC::RTObject\_\-impl}!getExecutionRate@{getExecutionRate}}
+\index{getExecutionRate@{getExecutionRate}!RTC::RTObject_impl@{RTC::RTObject\_\-impl}}
+\subsubsection[{getExecutionRate}]{\setlength{\rightskip}{0pt plus 5cm}double RTC::RTObject\_\-impl::getExecutionRate ({\bf RTC::UniqueId} {\em ec\_\-id})}\label{classRTC_1_1RTObject__impl_a85d8799be79371943fc4cc44ec97a436}
+
+
+[local interface] 実行コンテキストの実行レートを取得する 
+
+現在実行中の実行コンテキストの実行レートを取得する。実行コンテキ ストのKindがPERIODIC以外の場合の動作は未定義である。この関数は以 下の関数内で呼ばれることを前提としている。
+
+
+\begin{DoxyItemize}
+\item \doxyref{onStartup()}{p.}{classRTC_1_1RTObject__impl_a9b2db9b0a456640d5bd9f5a0801fd987}
+\item \doxyref{onShutdown()}{p.}{classRTC_1_1RTObject__impl_ae4871709a422049e541cbdfa944d3e7c}
+\item \doxyref{onActivated()}{p.}{classRTC_1_1RTObject__impl_a8f5ab867b59f72634b2e19afac941be4}
+\item \doxyref{onDeactivated()}{p.}{classRTC_1_1RTObject__impl_a55a81b783612a34523af2677eb9d72bd}
+\item \doxyref{onExecute()}{p.}{classRTC_1_1RTObject__impl_acdaea58342f01d786e4a2ce0028f4ea8}
+\item \doxyref{onAborting()}{p.}{classRTC_1_1RTObject__impl_a7e6125c496d5e254e23f7f92fcacb825}
+\item \doxyref{onError()}{p.}{classRTC_1_1RTObject__impl_afb1b1fe49a7bb410b06068ace63db1cd}
+\item \doxyref{onReset()}{p.}{classRTC_1_1RTObject__impl_ab1bd11e5c23b1d21d7d4489bda4cd245}
+\item \doxyref{onStateUpdate()}{p.}{classRTC_1_1RTObject__impl_ae940286df438ca15088510a63c3d6d6c}
+\item \doxyref{onRateChanged()}{p.}{classRTC_1_1RTObject__impl_a4c551d0c07b1e3e1e91bbf36d3954869}
+\end{DoxyItemize}
+
+この関数の引数はこれらの関数の引数 UniquieID exec\_\-handle でなけ ればならない。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em ec\_\-id}]上記関数の第1引数 exec\_\-handle を渡す必要がある。 \end{DoxyParams}
+\index{RTC::RTObject\_\-impl@{RTC::RTObject\_\-impl}!getInstanceName@{getInstanceName}}
+\index{getInstanceName@{getInstanceName}!RTC::RTObject_impl@{RTC::RTObject\_\-impl}}
+\subsubsection[{getInstanceName}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ RTC::RTObject\_\-impl::getInstanceName ()\hspace{0.3cm}{\ttfamily  [inline]}}\label{classRTC_1_1RTObject__impl_aa2ccc2c92535fc717be34c009e6e9d2b}
+
+
+[local interface] インスタンス名の取得 
+
+ComponentProfile に設定されたインスタンス名を返す。
+
+\begin{DoxyReturn}{戻り値}
+インスタンス名 
+\end{DoxyReturn}
+
+
+参照先 m\_\-profile, と RTC\_\-TRACE.
+
+\index{RTC::RTObject\_\-impl@{RTC::RTObject\_\-impl}!getNamingNames@{getNamingNames}}
+\index{getNamingNames@{getNamingNames}!RTC::RTObject_impl@{RTC::RTObject\_\-impl}}
+\subsubsection[{getNamingNames}]{\setlength{\rightskip}{0pt plus 5cm}std::vector$<$std::string$>$ RTC::RTObject\_\-impl::getNamingNames ()}\label{classRTC_1_1RTObject__impl_ac386930b2987bbca3e9576bdb78108b2}
+
+
+[local interface] Naming Server 情報の取得 
+
+設定された Naming Server 情報を返す。
+
+\begin{DoxyReturn}{戻り値}
+Naming Server リスト 
+\end{DoxyReturn}
+\index{RTC::RTObject\_\-impl@{RTC::RTObject\_\-impl}!getObjRef@{getObjRef}}
+\index{getObjRef@{getObjRef}!RTC::RTObject_impl@{RTC::RTObject\_\-impl}}
+\subsubsection[{getObjRef}]{\setlength{\rightskip}{0pt plus 5cm}RTObject\_\-ptr RTC::RTObject\_\-impl::getObjRef () const}\label{classRTC_1_1RTObject__impl_a49377197bc332b5d89ebe338c2be879c}
+
+
+[local interface] オブジェクトリファレンスの取得 
+
+設定された CORBA オブジェクトリファレンスを取得する。
+
+\begin{DoxyReturn}{戻り値}
+オブジェクトリファレンス 
+\end{DoxyReturn}
+\index{RTC::RTObject\_\-impl@{RTC::RTObject\_\-impl}!getProperties@{getProperties}}
+\index{getProperties@{getProperties}!RTC::RTObject_impl@{RTC::RTObject\_\-impl}}
+\subsubsection[{getProperties}]{\setlength{\rightskip}{0pt plus 5cm}{\bf coil::Properties}\& RTC::RTObject\_\-impl::getProperties ()}\label{classRTC_1_1RTObject__impl_a3bc4a91b28862adff87bf9a4de401894}
+
+
+[local interface] \doxyref{RTC}{p.}{namespaceRTC} のプロパティを取得する 
+
+\doxyref{RTC}{p.}{namespaceRTC} が保持しているプロパティを返す。 RTCがプロパティを持たない場合は空のプロパティが返される。
+
+\begin{DoxyReturn}{戻り値}
+\doxyref{RTC}{p.}{namespaceRTC} のプロパティ 
+\end{DoxyReturn}
+\index{RTC::RTObject\_\-impl@{RTC::RTObject\_\-impl}!getTypeName@{getTypeName}}
+\index{getTypeName@{getTypeName}!RTC::RTObject_impl@{RTC::RTObject\_\-impl}}
+\subsubsection[{getTypeName}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ RTC::RTObject\_\-impl::getTypeName ()\hspace{0.3cm}{\ttfamily  [inline]}}\label{classRTC_1_1RTObject__impl_a0fc65615758b9de969278b3538183f1d}
+
+
+[local interface] 型名の取得 
+
+ComponentProfile に設定された型名を返す。
+
+\begin{DoxyReturn}{戻り値}
+型名 
+\end{DoxyReturn}
+
+
+参照先 m\_\-profile, と RTC\_\-TRACE.
+
+\index{RTC::RTObject\_\-impl@{RTC::RTObject\_\-impl}!getVendor@{getVendor}}
+\index{getVendor@{getVendor}!RTC::RTObject_impl@{RTC::RTObject\_\-impl}}
+\subsubsection[{getVendor}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ RTC::RTObject\_\-impl::getVendor ()\hspace{0.3cm}{\ttfamily  [inline]}}\label{classRTC_1_1RTObject__impl_a75672da54fbef99de57d93981b13e9bb}
+
+
+[local interface] ベンダー情報の取得 
+
+ComponentProfile に設定されたベンダー情報を返す。
+
+\begin{DoxyReturn}{戻り値}
+ベンダー情報 
+\end{DoxyReturn}
+
+
+参照先 m\_\-profile, と RTC\_\-TRACE.
+
+\index{RTC::RTObject\_\-impl@{RTC::RTObject\_\-impl}!getVersion@{getVersion}}
+\index{getVersion@{getVersion}!RTC::RTObject_impl@{RTC::RTObject\_\-impl}}
+\subsubsection[{getVersion}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ RTC::RTObject\_\-impl::getVersion ()\hspace{0.3cm}{\ttfamily  [inline]}}\label{classRTC_1_1RTObject__impl_a4e35036cd9ad8d1f383cd365c21525cb}
+
+
+[local interface] バージョン情報の取得 
+
+ComponentProfile に設定されたバージョン情報を返す。
+
+\begin{DoxyReturn}{戻り値}
+バージョン情報 
+\end{DoxyReturn}
+
+
+参照先 m\_\-profile, と RTC\_\-TRACE.
+
+\index{RTC::RTObject\_\-impl@{RTC::RTObject\_\-impl}!initialize@{initialize}}
+\index{initialize@{initialize}!RTC::RTObject_impl@{RTC::RTObject\_\-impl}}
+\subsubsection[{initialize}]{\setlength{\rightskip}{0pt plus 5cm}virtual ReturnCode\_\-t RTC::RTObject\_\-impl::initialize ()  throw (CORBA::SystemException)\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classRTC_1_1RTObject__impl_a1c3674926c3b00ae91822d358e17efc7}
+
+
+[CORBA interface] RTCを初期化する 
+
+このオペレーション呼び出しの結果として、ComponentActionon\_\-initialize コールバック関数が呼ばれる。
+
+制約
+\begin{DoxyItemize}
+\item \doxyref{RTC}{p.}{namespaceRTC} は Created状態の場合み初期化が行われる。他の状態にいる場合には ReturnCode\_\-t::PRECONDITION\_\-NOT\_\-MET が返され呼び出しは失敗する。
+\item このオペレーションは \doxyref{RTC}{p.}{namespaceRTC} のミドルウエアから呼ばれることを想定しており、 アプリケーション開発者は直接このオペレーションを呼ぶことは想定 されていない。
+\end{DoxyItemize}
+
+\begin{DoxyReturn}{戻り値}
+ReturnCode\_\-t 型のリターンコード 
+\end{DoxyReturn}
+\index{RTC::RTObject\_\-impl@{RTC::RTObject\_\-impl}!is\_\-alive@{is\_\-alive}}
+\index{is\_\-alive@{is\_\-alive}!RTC::RTObject_impl@{RTC::RTObject\_\-impl}}
+\subsubsection[{is\_\-alive}]{\setlength{\rightskip}{0pt plus 5cm}virtual CORBA::Boolean RTC::RTObject\_\-impl::is\_\-alive (ExecutionContext\_\-ptr {\em exec\_\-context})  throw (CORBA::SystemException)\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classRTC_1_1RTObject__impl_a87e2170d5e3a20d19e73a278fd474f97}
+
+
+[CORBA interface] \doxyref{RTC}{p.}{namespaceRTC} が Alive 状態であるかどうか確認する。 
+
+\doxyref{RTC}{p.}{namespaceRTC} が指定した ExecutionContext に対して Alive状態であるかどうか 確認する。RTC の状態が Active であるか、Inactive であるか、 Error であるかは実行中のExecutionContext に依存する。すなわち、 ある ExecutionContext に対してはActive 状態であっても、他の ExecutionContext に対しては Inactive 状態となる場合もありえる。 従って、このオペレーションは指定されたExecutionContext に問い合 わせて、この \doxyref{RTC}{p.}{namespaceRTC} の状態が Active、Inactive、Error の場合には Alive 状態として返す。
+
+\begin{DoxyReturn}{戻り値}
+Alive 状態確認結果 
+\end{DoxyReturn}
+\index{RTC::RTObject\_\-impl@{RTC::RTObject\_\-impl}!isOwnExecutionContext@{isOwnExecutionContext}}
+\index{isOwnExecutionContext@{isOwnExecutionContext}!RTC::RTObject_impl@{RTC::RTObject\_\-impl}}
+\subsubsection[{isOwnExecutionContext}]{\setlength{\rightskip}{0pt plus 5cm}bool RTC::RTObject\_\-impl::isOwnExecutionContext ({\bf RTC::UniqueId} {\em ec\_\-id})}\label{classRTC_1_1RTObject__impl_a4356102ed7e0e1e46c5d025d3d01f1d2}
+
+
+[local interface] 実行コンテキストの所有権を調べる 
+
+現在実行中の実行コンテキストの所有権を調べる。この関数は以下の関 数内で呼ばれることを前提としている。
+
+
+\begin{DoxyItemize}
+\item \doxyref{onStartup()}{p.}{classRTC_1_1RTObject__impl_a9b2db9b0a456640d5bd9f5a0801fd987}
+\item \doxyref{onShutdown()}{p.}{classRTC_1_1RTObject__impl_ae4871709a422049e541cbdfa944d3e7c}
+\item \doxyref{onActivated()}{p.}{classRTC_1_1RTObject__impl_a8f5ab867b59f72634b2e19afac941be4}
+\item \doxyref{onDeactivated()}{p.}{classRTC_1_1RTObject__impl_a55a81b783612a34523af2677eb9d72bd}
+\item \doxyref{onExecute()}{p.}{classRTC_1_1RTObject__impl_acdaea58342f01d786e4a2ce0028f4ea8}
+\item \doxyref{onAborting()}{p.}{classRTC_1_1RTObject__impl_a7e6125c496d5e254e23f7f92fcacb825}
+\item \doxyref{onError()}{p.}{classRTC_1_1RTObject__impl_afb1b1fe49a7bb410b06068ace63db1cd}
+\item \doxyref{onReset()}{p.}{classRTC_1_1RTObject__impl_ab1bd11e5c23b1d21d7d4489bda4cd245}
+\item \doxyref{onStateUpdate()}{p.}{classRTC_1_1RTObject__impl_ae940286df438ca15088510a63c3d6d6c}
+\item \doxyref{onRateChanged()}{p.}{classRTC_1_1RTObject__impl_a4c551d0c07b1e3e1e91bbf36d3954869}
+\end{DoxyItemize}
+
+この関数の引数はこれらの関数の引数 UniquieID exec\_\-handle でなけ ればならない。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em ec\_\-id}]上記関数の第1引数 exec\_\-handle を渡す必要がある。 \end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+true: 自身の実行コンテキスト、false: 他の実行コンテキスト 
+\end{DoxyReturn}
+\index{RTC::RTObject\_\-impl@{RTC::RTObject\_\-impl}!on\_\-aborting@{on\_\-aborting}}
+\index{on\_\-aborting@{on\_\-aborting}!RTC::RTObject_impl@{RTC::RTObject\_\-impl}}
+\subsubsection[{on\_\-aborting}]{\setlength{\rightskip}{0pt plus 5cm}virtual ReturnCode\_\-t RTC::RTObject\_\-impl::on\_\-aborting ({\bf UniqueId} {\em exec\_\-handle})  throw (CORBA::SystemException)\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classRTC_1_1RTObject__impl_ac5b944fb541961e51696d38dfde6e669}
+
+
+[ComponentAction CORBA interface] \doxyref{RTC}{p.}{namespaceRTC} のエラー状態への遷移 
+
+\doxyref{RTC}{p.}{namespaceRTC} が所属する ExecutionContext が Active 状態から Error 状態へ遷移した 場合に呼び出される。 このオペレーションは \doxyref{RTC}{p.}{namespaceRTC} が Error 状態に遷移した際に一度だけ呼び 出される。このオペレーション呼び出しの結果として \doxyref{onAborting()}{p.}{classRTC_1_1RTObject__impl_a7e6125c496d5e254e23f7f92fcacb825} コー ルバック関数が呼び出される。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em exec\_\-handle}]状態遷移した ExecutionContext の ID\end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+ReturnCode\_\-t 型のリターンコード 
+\end{DoxyReturn}
+\index{RTC::RTObject\_\-impl@{RTC::RTObject\_\-impl}!on\_\-activated@{on\_\-activated}}
+\index{on\_\-activated@{on\_\-activated}!RTC::RTObject_impl@{RTC::RTObject\_\-impl}}
+\subsubsection[{on\_\-activated}]{\setlength{\rightskip}{0pt plus 5cm}virtual ReturnCode\_\-t RTC::RTObject\_\-impl::on\_\-activated ({\bf UniqueId} {\em exec\_\-handle})  throw (CORBA::SystemException)\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classRTC_1_1RTObject__impl_a65ce50f1eaa5e85c529d4fd8cc1f2ea1}
+
+
+[ComponentAction CORBA interface] \doxyref{RTC}{p.}{namespaceRTC} の活性化 
+
+所属する ExecutionContext から \doxyref{RTC}{p.}{namespaceRTC} が活性化された際に呼び出される。 このオペレーション呼び出しの結果として \doxyref{onActivated()}{p.}{classRTC_1_1RTObject__impl_a8f5ab867b59f72634b2e19afac941be4} コールバック関数が 呼び出される。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em exec\_\-handle}]活性化 ExecutionContext の ID\end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+ReturnCode\_\-t 型のリターンコード 
+\end{DoxyReturn}
+\index{RTC::RTObject\_\-impl@{RTC::RTObject\_\-impl}!on\_\-deactivated@{on\_\-deactivated}}
+\index{on\_\-deactivated@{on\_\-deactivated}!RTC::RTObject_impl@{RTC::RTObject\_\-impl}}
+\subsubsection[{on\_\-deactivated}]{\setlength{\rightskip}{0pt plus 5cm}virtual ReturnCode\_\-t RTC::RTObject\_\-impl::on\_\-deactivated ({\bf UniqueId} {\em exec\_\-handle})  throw (CORBA::SystemException)\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classRTC_1_1RTObject__impl_a480a1d0617e36f8197d646755e8b6df9}
+
+
+[ComponentAction CORBA interface] \doxyref{RTC}{p.}{namespaceRTC} の非活性化 
+
+所属する ExecutionContext から \doxyref{RTC}{p.}{namespaceRTC} が非活性化された際に呼び出される。 このオペレーション呼び出しの結果として \doxyref{onDeactivated()}{p.}{classRTC_1_1RTObject__impl_a55a81b783612a34523af2677eb9d72bd} コールバック関数が 呼び出される。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em exec\_\-handle}]非活性化 ExecutionContext の ID\end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+ReturnCode\_\-t 型のリターンコード 
+\end{DoxyReturn}
+\index{RTC::RTObject\_\-impl@{RTC::RTObject\_\-impl}!on\_\-error@{on\_\-error}}
+\index{on\_\-error@{on\_\-error}!RTC::RTObject_impl@{RTC::RTObject\_\-impl}}
+\subsubsection[{on\_\-error}]{\setlength{\rightskip}{0pt plus 5cm}virtual ReturnCode\_\-t RTC::RTObject\_\-impl::on\_\-error ({\bf UniqueId} {\em exec\_\-handle})  throw (CORBA::SystemException)\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classRTC_1_1RTObject__impl_a0169e4ef2c757fde05146198e00b247f}
+
+
+[ComponentAction CORBA interface] \doxyref{RTC}{p.}{namespaceRTC} のエラー処理 
+
+\doxyref{RTC}{p.}{namespaceRTC} がエラー状態にいる際に呼び出される。 \doxyref{RTC}{p.}{namespaceRTC} がエラー状態の場合に、対象となる ExecutionContext のExecutionKind に 応じたタイミングで呼び出される。例えば、
+\begin{DoxyItemize}
+\item ExecutionKind が PERIODIC の場合、本オペレーションは DataFlowComponentAction::on\_\-execute と on\_\-state\_\-update の替わりに、 設定された順番、設定された周期で呼び出される。
+\item ExecutionKind が EVENT\_\-DRIVEN の場合、本オペレーションは FsmParticipantAction::on\_\-action が呼ばれた際に、替わりに呼び出される。 このオペレーション呼び出しの結果として \doxyref{onError()}{p.}{classRTC_1_1RTObject__impl_afb1b1fe49a7bb410b06068ace63db1cd} コールバック関数が呼び出 される。
+\end{DoxyItemize}
+
+
+\begin{DoxyParams}{引数}
+\item[{\em exec\_\-handle}]対象 ExecutionContext の ID\end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+ReturnCode\_\-t 型のリターンコード 
+\end{DoxyReturn}
+\index{RTC::RTObject\_\-impl@{RTC::RTObject\_\-impl}!on\_\-execute@{on\_\-execute}}
+\index{on\_\-execute@{on\_\-execute}!RTC::RTObject_impl@{RTC::RTObject\_\-impl}}
+\subsubsection[{on\_\-execute}]{\setlength{\rightskip}{0pt plus 5cm}virtual ReturnCode\_\-t RTC::RTObject\_\-impl::on\_\-execute ({\bf UniqueId} {\em exec\_\-handle})  throw (CORBA::SystemException)\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classRTC_1_1RTObject__impl_a6492d340ded85244d3fca659f92f7329}
+
+
+[DataFlowComponentAction CORBA interface] \doxyref{RTC}{p.}{namespaceRTC} の定常処理(第一周期) 
+
+以下の状態が保持されている場合に、設定された周期で定期的に呼び出される。
+\begin{DoxyItemize}
+\item \doxyref{RTC}{p.}{namespaceRTC} は Alive 状態である。
+\item 指定された ExecutionContext が Running 状態である。 本オペレーションは、Two-\/Pass Execution の第一周期で実行される。 このオペレーション呼び出しの結果として \doxyref{onExecute()}{p.}{classRTC_1_1RTObject__impl_acdaea58342f01d786e4a2ce0028f4ea8} コールバック関数が呼び 出される。
+\end{DoxyItemize}
+
+制約
+\begin{DoxyItemize}
+\item 指定された ExecutionContext の ExecutionKind は、 PERIODIC でなければな らない
+\end{DoxyItemize}
+
+
+\begin{DoxyParams}{引数}
+\item[{\em exec\_\-handle}]定常処理対象 ExecutionContext の ID\end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+ReturnCode\_\-t 型のリターンコード 
+\end{DoxyReturn}
+\index{RTC::RTObject\_\-impl@{RTC::RTObject\_\-impl}!on\_\-finalize@{on\_\-finalize}}
+\index{on\_\-finalize@{on\_\-finalize}!RTC::RTObject_impl@{RTC::RTObject\_\-impl}}
+\subsubsection[{on\_\-finalize}]{\setlength{\rightskip}{0pt plus 5cm}virtual ReturnCode\_\-t RTC::RTObject\_\-impl::on\_\-finalize ()  throw (CORBA::SystemException)\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classRTC_1_1RTObject__impl_a512e99e3ccd1ab0e89ba7e024f63e175}
+
+
+[ComponentAction CORBA interface] \doxyref{RTC}{p.}{namespaceRTC} の終了 
+
+\doxyref{RTC}{p.}{namespaceRTC} が破棄される。 \doxyref{RTC}{p.}{namespaceRTC} 固有の終了処理はここで実行する。 このオペレーション呼び出しの結果として \doxyref{onFinalize()}{p.}{classRTC_1_1RTObject__impl_ae255034d04d2797a594f908b58a17971} コールバック関数が 呼び出される。
+
+\begin{DoxyReturn}{戻り値}
+ReturnCode\_\-t 型のリターンコード 
+\end{DoxyReturn}
+\index{RTC::RTObject\_\-impl@{RTC::RTObject\_\-impl}!on\_\-initialize@{on\_\-initialize}}
+\index{on\_\-initialize@{on\_\-initialize}!RTC::RTObject_impl@{RTC::RTObject\_\-impl}}
+\subsubsection[{on\_\-initialize}]{\setlength{\rightskip}{0pt plus 5cm}virtual ReturnCode\_\-t RTC::RTObject\_\-impl::on\_\-initialize ()  throw (CORBA::SystemException)\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classRTC_1_1RTObject__impl_a7ce16a4c5029257d265121d220b159f3}
+
+
+[RTObject CORBA interface] ExecutionContextAdmin を取得する 
+
+このオペレーションは当該 \doxyref{RTC}{p.}{namespaceRTC} が所属する ExecutionContextに関連した ExecutionContextService のリストを返す。
+
+\begin{DoxyReturn}{戻り値}
+ExecutionContextService リスト
+\end{DoxyReturn}
+[ComponentAction CORBA interface] \doxyref{RTC}{p.}{namespaceRTC} の初期化 \doxyref{RTC}{p.}{namespaceRTC} が初期化され、Alive 状態に遷移する。 \doxyref{RTC}{p.}{namespaceRTC} 固有の初期化処理はここで実行する。 このオペレーション呼び出しの結果として \doxyref{onInitialize()}{p.}{classRTC_1_1RTObject__impl_ad98483b34aebe913fc7e73d4efa156f3} コールバック関数が 呼び出される。
+
+\begin{DoxyReturn}{戻り値}
+ReturnCode\_\-t 型のリターンコード 
+\end{DoxyReturn}
+\index{RTC::RTObject\_\-impl@{RTC::RTObject\_\-impl}!on\_\-rate\_\-changed@{on\_\-rate\_\-changed}}
+\index{on\_\-rate\_\-changed@{on\_\-rate\_\-changed}!RTC::RTObject_impl@{RTC::RTObject\_\-impl}}
+\subsubsection[{on\_\-rate\_\-changed}]{\setlength{\rightskip}{0pt plus 5cm}virtual ReturnCode\_\-t RTC::RTObject\_\-impl::on\_\-rate\_\-changed ({\bf UniqueId} {\em exec\_\-handle})  throw (CORBA::SystemException)\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classRTC_1_1RTObject__impl_a1bad25e9a7ec067b2a0a56f83418afa9}
+
+
+[DataFlowComponentAction CORBA interface] 実行周期変更通知 
+
+本オペレーションは、ExecutionContext の実行周期が変更されたことを通知する 際に呼び出される。 このオペレーション呼び出しの結果として \doxyref{onRateChanged()}{p.}{classRTC_1_1RTObject__impl_a4c551d0c07b1e3e1e91bbf36d3954869} コールバック関数が 呼び出される。
+
+制約
+\begin{DoxyItemize}
+\item 指定された ExecutionContext の ExecutionKind は、 PERIODIC でなければな らない
+\end{DoxyItemize}
+
+
+\begin{DoxyParams}{引数}
+\item[{\em exec\_\-handle}]定常処理対象 ExecutionContext の ID\end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+ReturnCode\_\-t 型のリターンコード 
+\end{DoxyReturn}
+\index{RTC::RTObject\_\-impl@{RTC::RTObject\_\-impl}!on\_\-reset@{on\_\-reset}}
+\index{on\_\-reset@{on\_\-reset}!RTC::RTObject_impl@{RTC::RTObject\_\-impl}}
+\subsubsection[{on\_\-reset}]{\setlength{\rightskip}{0pt plus 5cm}virtual ReturnCode\_\-t RTC::RTObject\_\-impl::on\_\-reset ({\bf UniqueId} {\em exec\_\-handle})  throw (CORBA::SystemException)\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classRTC_1_1RTObject__impl_a635526b192fad9e2c6c48483999f00d9}
+
+
+[ComponentAction CORBA interface] \doxyref{RTC}{p.}{namespaceRTC} のリセット 
+
+Error 状態にある \doxyref{RTC}{p.}{namespaceRTC} のリカバリ処理を実行し、Inactive 状態に復帰させる 場合に呼び出される。 \doxyref{RTC}{p.}{namespaceRTC} のリカバリ処理が成功した場合は Inactive 状態に復帰するが、それ以外の 場合には Error 状態に留まる。 このオペレーション呼び出しの結果として \doxyref{onReset()}{p.}{classRTC_1_1RTObject__impl_ab1bd11e5c23b1d21d7d4489bda4cd245} コールバック関数が呼び 出される。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em exec\_\-handle}]リセット対象 ExecutionContext の ID\end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+ReturnCode\_\-t 型のリターンコード 
+\end{DoxyReturn}
+\index{RTC::RTObject\_\-impl@{RTC::RTObject\_\-impl}!on\_\-shutdown@{on\_\-shutdown}}
+\index{on\_\-shutdown@{on\_\-shutdown}!RTC::RTObject_impl@{RTC::RTObject\_\-impl}}
+\subsubsection[{on\_\-shutdown}]{\setlength{\rightskip}{0pt plus 5cm}virtual ReturnCode\_\-t RTC::RTObject\_\-impl::on\_\-shutdown ({\bf UniqueId} {\em exec\_\-handle})  throw (CORBA::SystemException)\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classRTC_1_1RTObject__impl_aff9881ad3d92298da422b4e1fe01646e}
+
+
+[ComponentAction CORBA interface] \doxyref{RTC}{p.}{namespaceRTC} の停止 
+
+\doxyref{RTC}{p.}{namespaceRTC} が所属する ExecutionContext が Running 状態から Stopped 状態へ遷移 した場合に呼び出される。 このオペレーション呼び出しの結果として \doxyref{onShutdown()}{p.}{classRTC_1_1RTObject__impl_ae4871709a422049e541cbdfa944d3e7c} コールバック関数が 呼び出される。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em exec\_\-handle}]状態遷移した ExecutionContext の ID\end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+ReturnCode\_\-t 型のリターンコード 
+\end{DoxyReturn}
+\index{RTC::RTObject\_\-impl@{RTC::RTObject\_\-impl}!on\_\-startup@{on\_\-startup}}
+\index{on\_\-startup@{on\_\-startup}!RTC::RTObject_impl@{RTC::RTObject\_\-impl}}
+\subsubsection[{on\_\-startup}]{\setlength{\rightskip}{0pt plus 5cm}virtual ReturnCode\_\-t RTC::RTObject\_\-impl::on\_\-startup ({\bf UniqueId} {\em exec\_\-handle})  throw (CORBA::SystemException)\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classRTC_1_1RTObject__impl_ad4e716fa6d5e4c28b3aa5de322f0a47e}
+
+
+[ComponentAction CORBA interface] \doxyref{RTC}{p.}{namespaceRTC} の開始 
+
+\doxyref{RTC}{p.}{namespaceRTC} が所属する ExecutionContext が Stopped 状態から Running 状態へ遷移 した場合に呼び出される。 このオペレーション呼び出しの結果として \doxyref{onStartup()}{p.}{classRTC_1_1RTObject__impl_a9b2db9b0a456640d5bd9f5a0801fd987} コールバック関数が 呼び出される。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em exec\_\-handle}]状態遷移した ExecutionContext の ID\end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+ReturnCode\_\-t 型のリターンコード 
+\end{DoxyReturn}
+\index{RTC::RTObject\_\-impl@{RTC::RTObject\_\-impl}!on\_\-state\_\-update@{on\_\-state\_\-update}}
+\index{on\_\-state\_\-update@{on\_\-state\_\-update}!RTC::RTObject_impl@{RTC::RTObject\_\-impl}}
+\subsubsection[{on\_\-state\_\-update}]{\setlength{\rightskip}{0pt plus 5cm}virtual ReturnCode\_\-t RTC::RTObject\_\-impl::on\_\-state\_\-update ({\bf UniqueId} {\em exec\_\-handle})  throw (CORBA::SystemException)\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classRTC_1_1RTObject__impl_a814024e89d747d96d4a1365b119c7f98}
+
+
+[DataFlowComponentAction CORBA interface] \doxyref{RTC}{p.}{namespaceRTC} の定常処理(第二周期) 
+
+以下の状態が保持されている場合に、設定された周期で定期的に呼び出される。
+\begin{DoxyItemize}
+\item \doxyref{RTC}{p.}{namespaceRTC} は Alive 状態である。
+\item 指定された ExecutionContext が Running 状態である。 本オペレーションは、Two-\/Pass Execution の第二周期で実行される。 このオペレーション呼び出しの結果として \doxyref{onStateUpdate()}{p.}{classRTC_1_1RTObject__impl_ae940286df438ca15088510a63c3d6d6c} コールバック関数が 呼び出される。
+\end{DoxyItemize}
+
+制約
+\begin{DoxyItemize}
+\item 指定された ExecutionContext の ExecutionKind は、 PERIODIC でなければな らない
+\end{DoxyItemize}
+
+
+\begin{DoxyParams}{引数}
+\item[{\em exec\_\-handle}]定常処理対象 ExecutionContext の ID\end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+ReturnCode\_\-t 型のリターンコード 
+\end{DoxyReturn}
+\index{RTC::RTObject\_\-impl@{RTC::RTObject\_\-impl}!onAborting@{onAborting}}
+\index{onAborting@{onAborting}!RTC::RTObject_impl@{RTC::RTObject\_\-impl}}
+\subsubsection[{onAborting}]{\setlength{\rightskip}{0pt plus 5cm}virtual ReturnCode\_\-t RTC::RTObject\_\-impl::onAborting ({\bf RTC::UniqueId} {\em exec\_\-handle})\hspace{0.3cm}{\ttfamily  [protected, virtual]}}\label{classRTC_1_1RTObject__impl_a7e6125c496d5e254e23f7f92fcacb825}
+
+
+中断処理用コールバック関数 
+
+ComponentAction::on\_\-aborting が呼ばれた際に実行されるコールバック 関数。\par
+ 本関数は無条件に RTC::RTC\_\-OK を返すようにダミー実装されているので、 各コンポーネントの実際の中断処理は、本関数をオーバーライドして実装する 必要がある。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em exec\_\-handle}]参加している ExecutionContext の ID\end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+ReturnCode\_\-t 型のリターンコード 
+\end{DoxyReturn}
+\index{RTC::RTObject\_\-impl@{RTC::RTObject\_\-impl}!onActivated@{onActivated}}
+\index{onActivated@{onActivated}!RTC::RTObject_impl@{RTC::RTObject\_\-impl}}
+\subsubsection[{onActivated}]{\setlength{\rightskip}{0pt plus 5cm}virtual ReturnCode\_\-t RTC::RTObject\_\-impl::onActivated ({\bf RTC::UniqueId} {\em exec\_\-handle})\hspace{0.3cm}{\ttfamily  [protected, virtual]}}\label{classRTC_1_1RTObject__impl_a8f5ab867b59f72634b2e19afac941be4}
+
+
+活性化処理用コールバック関数 
+
+ComponentAction::on\_\-activated が呼ばれた際に実行されるコールバック 関数。\par
+ 本関数は無条件に RTC::RTC\_\-OK を返すようにダミー実装されているので、 各コンポーネントの実際の活性化処理は、本関数をオーバーライドして実装する 必要がある。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em exec\_\-handle}]参加している ExecutionContext の ID\end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+ReturnCode\_\-t 型のリターンコード 
+\end{DoxyReturn}
+
+
+{\bf RTC::PeriodicECSharedComposite} \doxyref{}{p.}{classRTC_1_1PeriodicECSharedComposite_a8d14176829861b061cfbb07ad0874856}で再定義されています。
+
+\index{RTC::RTObject\_\-impl@{RTC::RTObject\_\-impl}!onAddPort@{onAddPort}}
+\index{onAddPort@{onAddPort}!RTC::RTObject_impl@{RTC::RTObject\_\-impl}}
+\subsubsection[{onAddPort}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::RTObject\_\-impl::onAddPort (const PortProfile \& {\em pprof})\hspace{0.3cm}{\ttfamily  [inline, protected]}}\label{classRTC_1_1RTObject__impl_ad1c7274e41d7ab052c678580a64d840b}
+
+
+参照先 RTC::ADD\_\-PORT, m\_\-actionListeners, RTC::PortActionListenerHolder::notify(), と RTC::ComponentActionListeners::portaction\_\-.
+
+\index{RTC::RTObject\_\-impl@{RTC::RTObject\_\-impl}!onAttachExecutionContext@{onAttachExecutionContext}}
+\index{onAttachExecutionContext@{onAttachExecutionContext}!RTC::RTObject_impl@{RTC::RTObject\_\-impl}}
+\subsubsection[{onAttachExecutionContext}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::RTObject\_\-impl::onAttachExecutionContext ({\bf UniqueId} {\em ec\_\-id})\hspace{0.3cm}{\ttfamily  [inline, protected]}}\label{classRTC_1_1RTObject__impl_a0c70d8c65e0a29212bf23c8e84525735}
+
+
+参照先 RTC::EC\_\-ATTACHED, RTC::ComponentActionListeners::ecaction\_\-, m\_\-actionListeners, と RTC::ExecutionContextActionListenerHolder::notify().
+
+\index{RTC::RTObject\_\-impl@{RTC::RTObject\_\-impl}!onDeactivated@{onDeactivated}}
+\index{onDeactivated@{onDeactivated}!RTC::RTObject_impl@{RTC::RTObject\_\-impl}}
+\subsubsection[{onDeactivated}]{\setlength{\rightskip}{0pt plus 5cm}virtual ReturnCode\_\-t RTC::RTObject\_\-impl::onDeactivated ({\bf RTC::UniqueId} {\em exec\_\-handle})\hspace{0.3cm}{\ttfamily  [protected, virtual]}}\label{classRTC_1_1RTObject__impl_a55a81b783612a34523af2677eb9d72bd}
+
+
+非活性化処理用コールバック関数 
+
+ComponentAction::on\_\-deactivated が呼ばれた際に実行されるコールバック 関数。\par
+ 本関数は無条件に RTC::RTC\_\-OK を返すようにダミー実装されているの で、各コンポーネントの実際の非活性化処理は、本関数をオーバーライ ドして実装する必要がある。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em exec\_\-handle}]参加している ExecutionContext の ID\end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+ReturnCode\_\-t 型のリターンコード 
+\end{DoxyReturn}
+
+
+{\bf RTC::PeriodicECSharedComposite} \doxyref{}{p.}{classRTC_1_1PeriodicECSharedComposite_a3e0dcca8ec43176ecea64a68f6496b99}で再定義されています。
+
+\index{RTC::RTObject\_\-impl@{RTC::RTObject\_\-impl}!onDetachExecutionContext@{onDetachExecutionContext}}
+\index{onDetachExecutionContext@{onDetachExecutionContext}!RTC::RTObject_impl@{RTC::RTObject\_\-impl}}
+\subsubsection[{onDetachExecutionContext}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::RTObject\_\-impl::onDetachExecutionContext ({\bf UniqueId} {\em ec\_\-id})\hspace{0.3cm}{\ttfamily  [inline, protected]}}\label{classRTC_1_1RTObject__impl_aec942eea3877ba0403f4717c9bce221b}
+
+
+参照先 RTC::EC\_\-DETACHED, RTC::ComponentActionListeners::ecaction\_\-, m\_\-actionListeners, と RTC::ExecutionContextActionListenerHolder::notify().
+
+\index{RTC::RTObject\_\-impl@{RTC::RTObject\_\-impl}!onError@{onError}}
+\index{onError@{onError}!RTC::RTObject_impl@{RTC::RTObject\_\-impl}}
+\subsubsection[{onError}]{\setlength{\rightskip}{0pt plus 5cm}virtual ReturnCode\_\-t RTC::RTObject\_\-impl::onError ({\bf RTC::UniqueId} {\em exec\_\-handle})\hspace{0.3cm}{\ttfamily  [protected, virtual]}}\label{classRTC_1_1RTObject__impl_afb1b1fe49a7bb410b06068ace63db1cd}
+
+
+エラー処理用コールバック関数 
+
+ComponentAction::on\_\-error が呼ばれた際に実行されるコールバック関数。\par
+ 本関数は無条件に RTC::RTC\_\-OK を返すようにダミー実装されているので、 各コンポーネントの実際のエラー処理は、本関数をオーバーライドして実装する 必要がある。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em exec\_\-handle}]参加している ExecutionContext の ID\end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+ReturnCode\_\-t 型のリターンコード 
+\end{DoxyReturn}
+\index{RTC::RTObject\_\-impl@{RTC::RTObject\_\-impl}!onExecute@{onExecute}}
+\index{onExecute@{onExecute}!RTC::RTObject_impl@{RTC::RTObject\_\-impl}}
+\subsubsection[{onExecute}]{\setlength{\rightskip}{0pt plus 5cm}virtual ReturnCode\_\-t RTC::RTObject\_\-impl::onExecute ({\bf RTC::UniqueId} {\em exec\_\-handle})\hspace{0.3cm}{\ttfamily  [protected, virtual]}}\label{classRTC_1_1RTObject__impl_acdaea58342f01d786e4a2ce0028f4ea8}
+
+
+周期処理用コールバック関数 
+
+DataFlowComponentAction::on\_\-execute が呼ばれた際に実行される コールバック関数。\par
+ 本関数は無条件に RTC::RTC\_\-OK を返すようにダミー実装されているので、 各コンポーネントの実際の周期処理は、本関数をオーバーライドして実装する 必要がある。\par
+ 本関数は Periodic Sampled Data Processing における Two-\/Pass Executionの １回目の実行パスとして定期的に呼び出される。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em exec\_\-handle}]参加している ExecutionContext の ID\end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+ReturnCode\_\-t 型のリターンコード 
+\end{DoxyReturn}
+\index{RTC::RTObject\_\-impl@{RTC::RTObject\_\-impl}!onFinalize@{onFinalize}}
+\index{onFinalize@{onFinalize}!RTC::RTObject_impl@{RTC::RTObject\_\-impl}}
+\subsubsection[{onFinalize}]{\setlength{\rightskip}{0pt plus 5cm}virtual ReturnCode\_\-t RTC::RTObject\_\-impl::onFinalize ()\hspace{0.3cm}{\ttfamily  [protected, virtual]}}\label{classRTC_1_1RTObject__impl_ae255034d04d2797a594f908b58a17971}
+
+
+終了処理用コールバック関数 
+
+ComponentAction::on\_\-finalize が呼ばれた際に実行されるコールバック 関数。\par
+ 本関数は無条件に RTC::RTC\_\-OK を返すようにダミー実装されているので、 各コンポーネントの実際の終了処理は、本関数をオーバーライドして実装する 必要がある。
+
+\begin{DoxyReturn}{戻り値}
+ReturnCode\_\-t 型のリターンコード 
+\end{DoxyReturn}
+
+
+{\bf RTC::PeriodicECSharedComposite} \doxyref{}{p.}{classRTC_1_1PeriodicECSharedComposite_ac95f6324faef90dbe1af768e4da9d1c8}で再定義されています。
+
+\index{RTC::RTObject\_\-impl@{RTC::RTObject\_\-impl}!onInitialize@{onInitialize}}
+\index{onInitialize@{onInitialize}!RTC::RTObject_impl@{RTC::RTObject\_\-impl}}
+\subsubsection[{onInitialize}]{\setlength{\rightskip}{0pt plus 5cm}virtual ReturnCode\_\-t RTC::RTObject\_\-impl::onInitialize ()\hspace{0.3cm}{\ttfamily  [protected, virtual]}}\label{classRTC_1_1RTObject__impl_ad98483b34aebe913fc7e73d4efa156f3}
+
+
+初期化処理用コールバック関数 
+
+ComponentAction::on\_\-initialize が呼ばれた際に実行されるコールバック 関数。\par
+ 本関数は無条件に RTC::RTC\_\-OK を返すようにダミー実装されているので、 各コンポーネントの実際の初期化処理は、本関数をオーバーライドして実装する 必要がある。
+
+\begin{DoxyReturn}{戻り値}
+ReturnCode\_\-t 型のリターンコード 
+\end{DoxyReturn}
+
+
+{\bf RTC::PeriodicECSharedComposite} \doxyref{}{p.}{classRTC_1_1PeriodicECSharedComposite_a71c8ed52c564c0c1f8a38379ab3bdcd2}で再定義されています。
+
+\index{RTC::RTObject\_\-impl@{RTC::RTObject\_\-impl}!onRateChanged@{onRateChanged}}
+\index{onRateChanged@{onRateChanged}!RTC::RTObject_impl@{RTC::RTObject\_\-impl}}
+\subsubsection[{onRateChanged}]{\setlength{\rightskip}{0pt plus 5cm}virtual ReturnCode\_\-t RTC::RTObject\_\-impl::onRateChanged ({\bf RTC::UniqueId} {\em exec\_\-handle})\hspace{0.3cm}{\ttfamily  [protected, virtual]}}\label{classRTC_1_1RTObject__impl_a4c551d0c07b1e3e1e91bbf36d3954869}
+
+
+動作周期変更通知用コールバック関数 
+
+DataFlowComponentAction::on\_\-rate\_\-changed が呼ばれた際に実行される コールバック関数。\par
+ 本関数は無条件に RTC::RTC\_\-OK を返すようにダミー実装されているので、 各コンポーネントの実際の状態変更処理は、本関数をオーバーライドし て実装する必要がある。\par
+ 本関数は Periodic Sampled Data Processing において ExecutionContext の実行が更新された際に呼び 出される。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em exec\_\-handle}]参加している ExecutionContext の ID\end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+ReturnCode\_\-t 型のリターンコード 
+\end{DoxyReturn}
+\index{RTC::RTObject\_\-impl@{RTC::RTObject\_\-impl}!onRemovePort@{onRemovePort}}
+\index{onRemovePort@{onRemovePort}!RTC::RTObject_impl@{RTC::RTObject\_\-impl}}
+\subsubsection[{onRemovePort}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::RTObject\_\-impl::onRemovePort (const PortProfile \& {\em pprof})\hspace{0.3cm}{\ttfamily  [inline, protected]}}\label{classRTC_1_1RTObject__impl_a5b7c8752cfcf900340dafba592a0e4e1}
+
+
+参照先 m\_\-actionListeners, RTC::PortActionListenerHolder::notify(), RTC::ComponentActionListeners::portaction\_\-, と RTC::REMOVE\_\-PORT.
+
+\index{RTC::RTObject\_\-impl@{RTC::RTObject\_\-impl}!onReset@{onReset}}
+\index{onReset@{onReset}!RTC::RTObject_impl@{RTC::RTObject\_\-impl}}
+\subsubsection[{onReset}]{\setlength{\rightskip}{0pt plus 5cm}virtual ReturnCode\_\-t RTC::RTObject\_\-impl::onReset ({\bf RTC::UniqueId} {\em exec\_\-handle})\hspace{0.3cm}{\ttfamily  [protected, virtual]}}\label{classRTC_1_1RTObject__impl_ab1bd11e5c23b1d21d7d4489bda4cd245}
+
+
+リセット処理用コールバック関数 
+
+ComponentAction::on\_\-reset が呼ばれた際に実行されるコールバック関数。\par
+ 本関数は無条件に RTC::RTC\_\-OK を返すようにダミー実装されているので、 各コンポーネントの実際のリセット処理は、本関数をオーバーライドし て実装する必要がある。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em exec\_\-handle}]参加している ExecutionContext の ID\end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+ReturnCode\_\-t 型のリターンコード 
+\end{DoxyReturn}
+
+
+{\bf RTC::PeriodicECSharedComposite} \doxyref{}{p.}{classRTC_1_1PeriodicECSharedComposite_af71130d5e46cd7d6659c6e516508262e}で再定義されています。
+
+\index{RTC::RTObject\_\-impl@{RTC::RTObject\_\-impl}!onShutdown@{onShutdown}}
+\index{onShutdown@{onShutdown}!RTC::RTObject_impl@{RTC::RTObject\_\-impl}}
+\subsubsection[{onShutdown}]{\setlength{\rightskip}{0pt plus 5cm}virtual ReturnCode\_\-t RTC::RTObject\_\-impl::onShutdown ({\bf RTC::UniqueId} {\em exec\_\-handle})\hspace{0.3cm}{\ttfamily  [protected, virtual]}}\label{classRTC_1_1RTObject__impl_ae4871709a422049e541cbdfa944d3e7c}
+
+
+停止処理用コールバック関数 
+
+ComponentAction::on\_\-shutdown が呼ばれた際に実行されるコールバック 関数。\par
+ 本関数は無条件に RTC::RTC\_\-OK を返すようにダミー実装されているので、 各コンポーネントの実際の停止処理は、本関数をオーバーライドして実装する 必要がある。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em exec\_\-handle}]参加している ExecutionContext の ID\end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+ReturnCode\_\-t 型のリターンコード 
+\end{DoxyReturn}
+\index{RTC::RTObject\_\-impl@{RTC::RTObject\_\-impl}!onStartup@{onStartup}}
+\index{onStartup@{onStartup}!RTC::RTObject_impl@{RTC::RTObject\_\-impl}}
+\subsubsection[{onStartup}]{\setlength{\rightskip}{0pt plus 5cm}virtual ReturnCode\_\-t RTC::RTObject\_\-impl::onStartup ({\bf RTC::UniqueId} {\em exec\_\-handle})\hspace{0.3cm}{\ttfamily  [protected, virtual]}}\label{classRTC_1_1RTObject__impl_a9b2db9b0a456640d5bd9f5a0801fd987}
+
+
+開始処理用コールバック関数 
+
+ComponentAction::on\_\-startup が呼ばれた際に実行されるコールバック 関数。\par
+ 本関数は無条件に RTC::RTC\_\-OK を返すようにダミー実装されているので、 各コンポーネントの実際の開始処理は、本関数をオーバーライドして実装する 必要がある。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em exec\_\-handle}]参加している ExecutionContext の ID\end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+ReturnCode\_\-t 型のリターンコード 
+\end{DoxyReturn}
+\index{RTC::RTObject\_\-impl@{RTC::RTObject\_\-impl}!onStateUpdate@{onStateUpdate}}
+\index{onStateUpdate@{onStateUpdate}!RTC::RTObject_impl@{RTC::RTObject\_\-impl}}
+\subsubsection[{onStateUpdate}]{\setlength{\rightskip}{0pt plus 5cm}virtual ReturnCode\_\-t RTC::RTObject\_\-impl::onStateUpdate ({\bf RTC::UniqueId} {\em exec\_\-handle})\hspace{0.3cm}{\ttfamily  [protected, virtual]}}\label{classRTC_1_1RTObject__impl_ae940286df438ca15088510a63c3d6d6c}
+
+
+状態変更処理用コールバック関数 
+
+DataFlowComponentAction::on\_\-state\_\-update が呼ばれた際に実行される コールバック関数。\par
+ 本関数は無条件に RTC::RTC\_\-OK を返すようにダミー実装されているので、 各コンポーネントの実際の状態変更処理は、本関数をオーバーライドし て実装する必要がある。\par
+ 本関数は Periodic Sampled Data Processing における Two-\/Pass Executionの２回目の実行パスとして定 期的に呼び出される。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em exec\_\-handle}]参加している ExecutionContext の ID\end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+ReturnCode\_\-t 型のリターンコード 
+\end{DoxyReturn}
+\index{RTC::RTObject\_\-impl@{RTC::RTObject\_\-impl}!postOnAborting@{postOnAborting}}
+\index{postOnAborting@{postOnAborting}!RTC::RTObject_impl@{RTC::RTObject\_\-impl}}
+\subsubsection[{postOnAborting}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::RTObject\_\-impl::postOnAborting ({\bf UniqueId} {\em ec\_\-id}, \/  ReturnCode\_\-t {\em ret})\hspace{0.3cm}{\ttfamily  [inline, protected]}}\label{classRTC_1_1RTObject__impl_ac91032cc861d1e93d1b4d18093c71ed0}
+
+
+参照先 m\_\-actionListeners, RTC::PostComponentActionListenerHolder::notify(), RTC::POST\_\-ON\_\-ABORTING, と RTC::ComponentActionListeners::postaction\_\-.
+
+\index{RTC::RTObject\_\-impl@{RTC::RTObject\_\-impl}!postOnActivated@{postOnActivated}}
+\index{postOnActivated@{postOnActivated}!RTC::RTObject_impl@{RTC::RTObject\_\-impl}}
+\subsubsection[{postOnActivated}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::RTObject\_\-impl::postOnActivated ({\bf UniqueId} {\em ec\_\-id}, \/  ReturnCode\_\-t {\em ret})\hspace{0.3cm}{\ttfamily  [inline, protected]}}\label{classRTC_1_1RTObject__impl_a3c76e1e86876b5eef2beec85e810dafa}
+
+
+参照先 m\_\-actionListeners, RTC::PostComponentActionListenerHolder::notify(), RTC::POST\_\-ON\_\-ACTIVATED, と RTC::ComponentActionListeners::postaction\_\-.
+
+\index{RTC::RTObject\_\-impl@{RTC::RTObject\_\-impl}!postOnDeactivated@{postOnDeactivated}}
+\index{postOnDeactivated@{postOnDeactivated}!RTC::RTObject_impl@{RTC::RTObject\_\-impl}}
+\subsubsection[{postOnDeactivated}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::RTObject\_\-impl::postOnDeactivated ({\bf UniqueId} {\em ec\_\-id}, \/  ReturnCode\_\-t {\em ret})\hspace{0.3cm}{\ttfamily  [inline, protected]}}\label{classRTC_1_1RTObject__impl_a2d501f69c5d3d79f8834e83391205901}
+
+
+参照先 m\_\-actionListeners, RTC::PostComponentActionListenerHolder::notify(), RTC::POST\_\-ON\_\-DEACTIVATED, と RTC::ComponentActionListeners::postaction\_\-.
+
+\index{RTC::RTObject\_\-impl@{RTC::RTObject\_\-impl}!postOnError@{postOnError}}
+\index{postOnError@{postOnError}!RTC::RTObject_impl@{RTC::RTObject\_\-impl}}
+\subsubsection[{postOnError}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::RTObject\_\-impl::postOnError ({\bf UniqueId} {\em ec\_\-id}, \/  ReturnCode\_\-t {\em ret})\hspace{0.3cm}{\ttfamily  [inline, protected]}}\label{classRTC_1_1RTObject__impl_ac3d43ed9276ee14c6b4aa820d2794744}
+
+
+参照先 m\_\-actionListeners, RTC::PostComponentActionListenerHolder::notify(), RTC::POST\_\-ON\_\-ERROR, と RTC::ComponentActionListeners::postaction\_\-.
+
+\index{RTC::RTObject\_\-impl@{RTC::RTObject\_\-impl}!postOnExecute@{postOnExecute}}
+\index{postOnExecute@{postOnExecute}!RTC::RTObject_impl@{RTC::RTObject\_\-impl}}
+\subsubsection[{postOnExecute}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::RTObject\_\-impl::postOnExecute ({\bf UniqueId} {\em ec\_\-id}, \/  ReturnCode\_\-t {\em ret})\hspace{0.3cm}{\ttfamily  [inline, protected]}}\label{classRTC_1_1RTObject__impl_ad1b515265017f90516b1ea8a9b59a31e}
+
+
+参照先 m\_\-actionListeners, RTC::PostComponentActionListenerHolder::notify(), RTC::POST\_\-ON\_\-EXECUTE, と RTC::ComponentActionListeners::postaction\_\-.
+
+\index{RTC::RTObject\_\-impl@{RTC::RTObject\_\-impl}!postOnFinalize@{postOnFinalize}}
+\index{postOnFinalize@{postOnFinalize}!RTC::RTObject_impl@{RTC::RTObject\_\-impl}}
+\subsubsection[{postOnFinalize}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::RTObject\_\-impl::postOnFinalize ({\bf UniqueId} {\em ec\_\-id}, \/  ReturnCode\_\-t {\em ret})\hspace{0.3cm}{\ttfamily  [inline, protected]}}\label{classRTC_1_1RTObject__impl_ad62fb0ca024577fe3c1c592775e0b1db}
+
+
+参照先 m\_\-actionListeners, RTC::PostComponentActionListenerHolder::notify(), RTC::POST\_\-ON\_\-FINALIZE, と RTC::ComponentActionListeners::postaction\_\-.
+
+\index{RTC::RTObject\_\-impl@{RTC::RTObject\_\-impl}!postOnInitialize@{postOnInitialize}}
+\index{postOnInitialize@{postOnInitialize}!RTC::RTObject_impl@{RTC::RTObject\_\-impl}}
+\subsubsection[{postOnInitialize}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::RTObject\_\-impl::postOnInitialize ({\bf UniqueId} {\em ec\_\-id}, \/  ReturnCode\_\-t {\em ret})\hspace{0.3cm}{\ttfamily  [inline, protected]}}\label{classRTC_1_1RTObject__impl_a0094a5a9f980896a8435f62622f096d1}
+
+
+参照先 m\_\-actionListeners, RTC::PostComponentActionListenerHolder::notify(), RTC::POST\_\-ON\_\-INITIALIZE, と RTC::ComponentActionListeners::postaction\_\-.
+
+\index{RTC::RTObject\_\-impl@{RTC::RTObject\_\-impl}!postOnRateChanged@{postOnRateChanged}}
+\index{postOnRateChanged@{postOnRateChanged}!RTC::RTObject_impl@{RTC::RTObject\_\-impl}}
+\subsubsection[{postOnRateChanged}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::RTObject\_\-impl::postOnRateChanged ({\bf UniqueId} {\em ec\_\-id}, \/  ReturnCode\_\-t {\em ret})\hspace{0.3cm}{\ttfamily  [inline, protected]}}\label{classRTC_1_1RTObject__impl_a610d7e5bebc16e370ee35e73ea6d4c37}
+
+
+参照先 m\_\-actionListeners, RTC::PostComponentActionListenerHolder::notify(), RTC::POST\_\-ON\_\-RATE\_\-CHANGED, と RTC::ComponentActionListeners::postaction\_\-.
+
+\index{RTC::RTObject\_\-impl@{RTC::RTObject\_\-impl}!postOnReset@{postOnReset}}
+\index{postOnReset@{postOnReset}!RTC::RTObject_impl@{RTC::RTObject\_\-impl}}
+\subsubsection[{postOnReset}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::RTObject\_\-impl::postOnReset ({\bf UniqueId} {\em ec\_\-id}, \/  ReturnCode\_\-t {\em ret})\hspace{0.3cm}{\ttfamily  [inline, protected]}}\label{classRTC_1_1RTObject__impl_a27cde51168cfa54d8af1e2b7459439ec}
+
+
+参照先 m\_\-actionListeners, RTC::PostComponentActionListenerHolder::notify(), RTC::POST\_\-ON\_\-RESET, と RTC::ComponentActionListeners::postaction\_\-.
+
+\index{RTC::RTObject\_\-impl@{RTC::RTObject\_\-impl}!postOnShutdown@{postOnShutdown}}
+\index{postOnShutdown@{postOnShutdown}!RTC::RTObject_impl@{RTC::RTObject\_\-impl}}
+\subsubsection[{postOnShutdown}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::RTObject\_\-impl::postOnShutdown ({\bf UniqueId} {\em ec\_\-id}, \/  ReturnCode\_\-t {\em ret})\hspace{0.3cm}{\ttfamily  [inline, protected]}}\label{classRTC_1_1RTObject__impl_a7e3f09ce76805d8f2d3f9fe637d1c936}
+
+
+参照先 m\_\-actionListeners, RTC::PostComponentActionListenerHolder::notify(), RTC::POST\_\-ON\_\-SHUTDOWN, と RTC::ComponentActionListeners::postaction\_\-.
+
+\index{RTC::RTObject\_\-impl@{RTC::RTObject\_\-impl}!postOnStartup@{postOnStartup}}
+\index{postOnStartup@{postOnStartup}!RTC::RTObject_impl@{RTC::RTObject\_\-impl}}
+\subsubsection[{postOnStartup}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::RTObject\_\-impl::postOnStartup ({\bf UniqueId} {\em ec\_\-id}, \/  ReturnCode\_\-t {\em ret})\hspace{0.3cm}{\ttfamily  [inline, protected]}}\label{classRTC_1_1RTObject__impl_a2bed9aa5cdacd77ef8737b42d6527899}
+
+
+参照先 m\_\-actionListeners, RTC::PostComponentActionListenerHolder::notify(), RTC::POST\_\-ON\_\-STARTUP, と RTC::ComponentActionListeners::postaction\_\-.
+
+\index{RTC::RTObject\_\-impl@{RTC::RTObject\_\-impl}!postOnStateUpdate@{postOnStateUpdate}}
+\index{postOnStateUpdate@{postOnStateUpdate}!RTC::RTObject_impl@{RTC::RTObject\_\-impl}}
+\subsubsection[{postOnStateUpdate}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::RTObject\_\-impl::postOnStateUpdate ({\bf UniqueId} {\em ec\_\-id}, \/  ReturnCode\_\-t {\em ret})\hspace{0.3cm}{\ttfamily  [inline, protected]}}\label{classRTC_1_1RTObject__impl_a5547cf5805f42f19b9a79c8e78efdaea}
+
+
+参照先 m\_\-actionListeners, RTC::PostComponentActionListenerHolder::notify(), RTC::POST\_\-ON\_\-STATE\_\-UPDATE, と RTC::ComponentActionListeners::postaction\_\-.
+
+\index{RTC::RTObject\_\-impl@{RTC::RTObject\_\-impl}!preOnAborting@{preOnAborting}}
+\index{preOnAborting@{preOnAborting}!RTC::RTObject_impl@{RTC::RTObject\_\-impl}}
+\subsubsection[{preOnAborting}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::RTObject\_\-impl::preOnAborting ({\bf UniqueId} {\em ec\_\-id})\hspace{0.3cm}{\ttfamily  [inline, protected]}}\label{classRTC_1_1RTObject__impl_a40ac22a4ab421cbc64fce6b6031edeca}
+
+
+参照先 m\_\-actionListeners, RTC::PreComponentActionListenerHolder::notify(), RTC::PRE\_\-ON\_\-ABORTING, と RTC::ComponentActionListeners::preaction\_\-.
+
+\index{RTC::RTObject\_\-impl@{RTC::RTObject\_\-impl}!preOnActivated@{preOnActivated}}
+\index{preOnActivated@{preOnActivated}!RTC::RTObject_impl@{RTC::RTObject\_\-impl}}
+\subsubsection[{preOnActivated}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::RTObject\_\-impl::preOnActivated ({\bf UniqueId} {\em ec\_\-id})\hspace{0.3cm}{\ttfamily  [inline, protected]}}\label{classRTC_1_1RTObject__impl_a31041f777abcd3339ab236dcf66def70}
+
+
+参照先 m\_\-actionListeners, RTC::PreComponentActionListenerHolder::notify(), RTC::PRE\_\-ON\_\-ACTIVATED, と RTC::ComponentActionListeners::preaction\_\-.
+
+\index{RTC::RTObject\_\-impl@{RTC::RTObject\_\-impl}!preOnDeactivated@{preOnDeactivated}}
+\index{preOnDeactivated@{preOnDeactivated}!RTC::RTObject_impl@{RTC::RTObject\_\-impl}}
+\subsubsection[{preOnDeactivated}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::RTObject\_\-impl::preOnDeactivated ({\bf UniqueId} {\em ec\_\-id})\hspace{0.3cm}{\ttfamily  [inline, protected]}}\label{classRTC_1_1RTObject__impl_adbfcd69b96e8613dd533f697a18f6693}
+
+
+参照先 m\_\-actionListeners, RTC::PreComponentActionListenerHolder::notify(), RTC::PRE\_\-ON\_\-DEACTIVATED, と RTC::ComponentActionListeners::preaction\_\-.
+
+\index{RTC::RTObject\_\-impl@{RTC::RTObject\_\-impl}!preOnError@{preOnError}}
+\index{preOnError@{preOnError}!RTC::RTObject_impl@{RTC::RTObject\_\-impl}}
+\subsubsection[{preOnError}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::RTObject\_\-impl::preOnError ({\bf UniqueId} {\em ec\_\-id})\hspace{0.3cm}{\ttfamily  [inline, protected]}}\label{classRTC_1_1RTObject__impl_ad6b4731a96863651cfa2650f95761cb0}
+
+
+参照先 m\_\-actionListeners, RTC::PreComponentActionListenerHolder::notify(), RTC::PRE\_\-ON\_\-ERROR, と RTC::ComponentActionListeners::preaction\_\-.
+
+\index{RTC::RTObject\_\-impl@{RTC::RTObject\_\-impl}!preOnExecute@{preOnExecute}}
+\index{preOnExecute@{preOnExecute}!RTC::RTObject_impl@{RTC::RTObject\_\-impl}}
+\subsubsection[{preOnExecute}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::RTObject\_\-impl::preOnExecute ({\bf UniqueId} {\em ec\_\-id})\hspace{0.3cm}{\ttfamily  [inline, protected]}}\label{classRTC_1_1RTObject__impl_a86ea64797a077995fb6d9c3c082f11a5}
+
+
+参照先 m\_\-actionListeners, RTC::PreComponentActionListenerHolder::notify(), RTC::PRE\_\-ON\_\-EXECUTE, と RTC::ComponentActionListeners::preaction\_\-.
+
+\index{RTC::RTObject\_\-impl@{RTC::RTObject\_\-impl}!preOnFinalize@{preOnFinalize}}
+\index{preOnFinalize@{preOnFinalize}!RTC::RTObject_impl@{RTC::RTObject\_\-impl}}
+\subsubsection[{preOnFinalize}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::RTObject\_\-impl::preOnFinalize ({\bf UniqueId} {\em ec\_\-id})\hspace{0.3cm}{\ttfamily  [inline, protected]}}\label{classRTC_1_1RTObject__impl_a551af4cb942c7c4ea0c0a83dcd96de74}
+
+
+参照先 m\_\-actionListeners, RTC::PreComponentActionListenerHolder::notify(), RTC::PRE\_\-ON\_\-FINALIZE, と RTC::ComponentActionListeners::preaction\_\-.
+
+\index{RTC::RTObject\_\-impl@{RTC::RTObject\_\-impl}!preOnInitialize@{preOnInitialize}}
+\index{preOnInitialize@{preOnInitialize}!RTC::RTObject_impl@{RTC::RTObject\_\-impl}}
+\subsubsection[{preOnInitialize}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::RTObject\_\-impl::preOnInitialize ({\bf UniqueId} {\em ec\_\-id})\hspace{0.3cm}{\ttfamily  [inline, protected]}}\label{classRTC_1_1RTObject__impl_a539f232944c300b59b35ad86f307b143}
+
+
+参照先 m\_\-actionListeners, RTC::PreComponentActionListenerHolder::notify(), RTC::PRE\_\-ON\_\-INITIALIZE, と RTC::ComponentActionListeners::preaction\_\-.
+
+\index{RTC::RTObject\_\-impl@{RTC::RTObject\_\-impl}!preOnRateChanged@{preOnRateChanged}}
+\index{preOnRateChanged@{preOnRateChanged}!RTC::RTObject_impl@{RTC::RTObject\_\-impl}}
+\subsubsection[{preOnRateChanged}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::RTObject\_\-impl::preOnRateChanged ({\bf UniqueId} {\em ec\_\-id})\hspace{0.3cm}{\ttfamily  [inline, protected]}}\label{classRTC_1_1RTObject__impl_a68e6759b130aa6f3ce8666cf87b55975}
+
+
+参照先 m\_\-actionListeners, RTC::PreComponentActionListenerHolder::notify(), RTC::PRE\_\-ON\_\-RATE\_\-CHANGED, と RTC::ComponentActionListeners::preaction\_\-.
+
+\index{RTC::RTObject\_\-impl@{RTC::RTObject\_\-impl}!preOnReset@{preOnReset}}
+\index{preOnReset@{preOnReset}!RTC::RTObject_impl@{RTC::RTObject\_\-impl}}
+\subsubsection[{preOnReset}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::RTObject\_\-impl::preOnReset ({\bf UniqueId} {\em ec\_\-id})\hspace{0.3cm}{\ttfamily  [inline, protected]}}\label{classRTC_1_1RTObject__impl_ac21afea4580dbc12c8d5dfff26f0f7fb}
+
+
+参照先 m\_\-actionListeners, RTC::PreComponentActionListenerHolder::notify(), RTC::PRE\_\-ON\_\-RESET, と RTC::ComponentActionListeners::preaction\_\-.
+
+\index{RTC::RTObject\_\-impl@{RTC::RTObject\_\-impl}!preOnShutdown@{preOnShutdown}}
+\index{preOnShutdown@{preOnShutdown}!RTC::RTObject_impl@{RTC::RTObject\_\-impl}}
+\subsubsection[{preOnShutdown}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::RTObject\_\-impl::preOnShutdown ({\bf UniqueId} {\em ec\_\-id})\hspace{0.3cm}{\ttfamily  [inline, protected]}}\label{classRTC_1_1RTObject__impl_a3bc39ab66f40d1bda1c80f89ce63478e}
+
+
+参照先 m\_\-actionListeners, RTC::PreComponentActionListenerHolder::notify(), RTC::PRE\_\-ON\_\-SHUTDOWN, と RTC::ComponentActionListeners::preaction\_\-.
+
+\index{RTC::RTObject\_\-impl@{RTC::RTObject\_\-impl}!preOnStartup@{preOnStartup}}
+\index{preOnStartup@{preOnStartup}!RTC::RTObject_impl@{RTC::RTObject\_\-impl}}
+\subsubsection[{preOnStartup}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::RTObject\_\-impl::preOnStartup ({\bf UniqueId} {\em ec\_\-id})\hspace{0.3cm}{\ttfamily  [inline, protected]}}\label{classRTC_1_1RTObject__impl_a63dbc64a737123895020cfb712b0dd6d}
+
+
+参照先 m\_\-actionListeners, RTC::PreComponentActionListenerHolder::notify(), RTC::PRE\_\-ON\_\-STARTUP, と RTC::ComponentActionListeners::preaction\_\-.
+
+\index{RTC::RTObject\_\-impl@{RTC::RTObject\_\-impl}!preOnStateUpdate@{preOnStateUpdate}}
+\index{preOnStateUpdate@{preOnStateUpdate}!RTC::RTObject_impl@{RTC::RTObject\_\-impl}}
+\subsubsection[{preOnStateUpdate}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::RTObject\_\-impl::preOnStateUpdate ({\bf UniqueId} {\em ec\_\-id})\hspace{0.3cm}{\ttfamily  [inline, protected]}}\label{classRTC_1_1RTObject__impl_a448a6499d120015a800dc7fcd9f8f3b5}
+
+
+参照先 m\_\-actionListeners, RTC::PreComponentActionListenerHolder::notify(), RTC::PRE\_\-ON\_\-STATE\_\-UPDATE, と RTC::ComponentActionListeners::preaction\_\-.
+
+\index{RTC::RTObject\_\-impl@{RTC::RTObject\_\-impl}!readAll@{readAll}}
+\index{readAll@{readAll}!RTC::RTObject_impl@{RTC::RTObject\_\-impl}}
+\subsubsection[{readAll}]{\setlength{\rightskip}{0pt plus 5cm}bool RTC::RTObject\_\-impl::readAll ()}\label{classRTC_1_1RTObject__impl_a69b50eea5bc7f862114602963cca84ca}
+
+
+全 \doxyref{InPort}{p.}{classRTC_1_1InPort} のデータを読み込む。 
+
+\doxyref{RTC}{p.}{namespaceRTC} が保持する全ての \doxyref{InPort}{p.}{classRTC_1_1InPort} のデータを読み込む。
+
+\begin{DoxyReturn}{戻り値}
+読み込み結果(全ポートの読み込み成功:true，失敗:false) 
+\end{DoxyReturn}
+\index{RTC::RTObject\_\-impl@{RTC::RTObject\_\-impl}!registerInPort@{registerInPort}}
+\index{registerInPort@{registerInPort}!RTC::RTObject_impl@{RTC::RTObject\_\-impl}}
+\subsubsection[{registerInPort}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::RTObject\_\-impl::registerInPort (const char $\ast$ {\em name}, \/  {\bf InPortBase} \& {\em inport})}\label{classRTC_1_1RTObject__impl_a2fdb62660b7949fd7b9d5008abfdabcf}
+
+
+[local interface] DataInPort を登録する 
+
+\doxyref{RTC}{p.}{namespaceRTC} が保持する DataInPort を登録する。 Port のプロパティにデータポートであること(\char`\"{}port.dataport\char`\"{})、 TCPを使用すること(\char`\"{}tcp\_\-any\char`\"{})を設定するとともに、 DataInPort の インスタンスを生成し、登録する。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em name}]port 名称 \item[{\em inport}]登録対象 DataInPort \end{DoxyParams}
+\index{RTC::RTObject\_\-impl@{RTC::RTObject\_\-impl}!registerOutPort@{registerOutPort}}
+\index{registerOutPort@{registerOutPort}!RTC::RTObject_impl@{RTC::RTObject\_\-impl}}
+\subsubsection[{registerOutPort}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::RTObject\_\-impl::registerOutPort (const char $\ast$ {\em name}, \/  {\bf OutPortBase} \& {\em outport})}\label{classRTC_1_1RTObject__impl_a17d162e5ad6b41d3efcc191b63786577}
+
+
+[local interface] DataOutPort を登録する 
+
+\doxyref{RTC}{p.}{namespaceRTC} が保持する DataOutPortを登録する。 Port のプロパティにデータポートであること(\char`\"{}port.dataport\char`\"{})、 TCPを使用すること(\char`\"{}tcp\_\-any\char`\"{})を設定するとともに、 DataOutPort の インスタンスを生成し、登録する。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em name}]port 名称 \item[{\em outport}]登録対象 DataOutPort \end{DoxyParams}
+\index{RTC::RTObject\_\-impl@{RTC::RTObject\_\-impl}!registerPort@{registerPort}}
+\index{registerPort@{registerPort}!RTC::RTObject_impl@{RTC::RTObject\_\-impl}}
+\subsubsection[{registerPort}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::RTObject\_\-impl::registerPort ({\bf CorbaPort} \& {\em port})}\label{classRTC_1_1RTObject__impl_af511ea2fc09620186191cf0bf2c27fef}
+
+
+[local interface] Port を登録する 
+
+\doxyref{RTC}{p.}{namespaceRTC} が保持するPortを登録する。 Port を外部からアクセス可能にするためには、このオペレーションにより 登録されていなければならない。登録される Port はこの \doxyref{RTC}{p.}{namespaceRTC} 内部において PortProfile.name により区別される。したがって、Port は \doxyref{RTC}{p.}{namespaceRTC} 内において、 ユニークな PortProfile.name を持たなければならない。 登録された Port は内部で適切にアクティブ化された後、その参照と オブジェクト参照がリスト内に保存される。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em port}]\doxyref{RTC}{p.}{namespaceRTC} に登録する Port \end{DoxyParams}
+\index{RTC::RTObject\_\-impl@{RTC::RTObject\_\-impl}!registerPort@{registerPort}}
+\index{registerPort@{registerPort}!RTC::RTObject_impl@{RTC::RTObject\_\-impl}}
+\subsubsection[{registerPort}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::RTObject\_\-impl::registerPort (PortService\_\-ptr {\em port})}\label{classRTC_1_1RTObject__impl_add6b292d545fa3be0e4caa636ce58926}
+
+
+[local interface] Port を登録する 
+
+\doxyref{RTC}{p.}{namespaceRTC} が保持するPortを登録する。 Port を外部からアクセス可能にするためには、このオペレーションにより 登録されていなければならない。登録される Port はこの \doxyref{RTC}{p.}{namespaceRTC} 内部において PortProfile.name により区別される。したがって、Port は \doxyref{RTC}{p.}{namespaceRTC} 内において、 ユニークな PortProfile.name を持たなければならない。 登録された Port は内部で適切にアクティブ化された後、その参照と オブジェクト参照がリスト内に保存される。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em port}]\doxyref{RTC}{p.}{namespaceRTC} に登録する Port \end{DoxyParams}
+\index{RTC::RTObject\_\-impl@{RTC::RTObject\_\-impl}!registerPort@{registerPort}}
+\index{registerPort@{registerPort}!RTC::RTObject_impl@{RTC::RTObject\_\-impl}}
+\subsubsection[{registerPort}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::RTObject\_\-impl::registerPort ({\bf PortBase} \& {\em port})}\label{classRTC_1_1RTObject__impl_a4cc89b6b9ca8c549e05c049a62447a3b}
+
+
+[local interface] Port を登録する 
+
+\doxyref{RTC}{p.}{namespaceRTC} が保持するPortを登録する。 Port を外部からアクセス可能にするためには、このオペレーションにより 登録されていなければならない。登録される Port はこの \doxyref{RTC}{p.}{namespaceRTC} 内部において PortProfile.name により区別される。したがって、Port は \doxyref{RTC}{p.}{namespaceRTC} 内において、 ユニークな PortProfile.name を持たなければならない。 登録された Port は内部で適切にアクティブ化された後、その参照と オブジェクト参照がリスト内に保存される。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em port}]\doxyref{RTC}{p.}{namespaceRTC} に登録する Port \end{DoxyParams}
+\index{RTC::RTObject\_\-impl@{RTC::RTObject\_\-impl}!removeConfigurationParamListener@{removeConfigurationParamListener}}
+\index{removeConfigurationParamListener@{removeConfigurationParamListener}!RTC::RTObject_impl@{RTC::RTObject\_\-impl}}
+\subsubsection[{removeConfigurationParamListener}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::RTObject\_\-impl::removeConfigurationParamListener ({\bf ConfigurationParamListenerType} {\em type}, \/  {\bf ConfigurationParamListener} $\ast$ {\em listener})}\label{classRTC_1_1RTObject__impl_a73bf85eb74e4c53d26445dab4996e773}
+
+
+\doxyref{ConfigurationParamListener}{p.}{classRTC_1_1ConfigurationParamListener} を削除する. 
+
+addConfigurationParamListener で追加されたリスナオブジェクトを削除する。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em type}]ConfigurationParamListenerType型の値。 ON\_\-UPDATE\_\-CONFIG\_\-PARAM がある。 \item[{\em listener}]与えたリスナオブジェクトへのポインタ \end{DoxyParams}
+\index{RTC::RTObject\_\-impl@{RTC::RTObject\_\-impl}!removeConfigurationSetListener@{removeConfigurationSetListener}}
+\index{removeConfigurationSetListener@{removeConfigurationSetListener}!RTC::RTObject_impl@{RTC::RTObject\_\-impl}}
+\subsubsection[{removeConfigurationSetListener}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::RTObject\_\-impl::removeConfigurationSetListener ({\bf ConfigurationSetListenerType} {\em type}, \/  {\bf ConfigurationSetListener} $\ast$ {\em listener})}\label{classRTC_1_1RTObject__impl_ac8849f5ec74455386f9b4fbe8d150548}
+
+
+\doxyref{ConfigurationSetListener}{p.}{classRTC_1_1ConfigurationSetListener} を削除する. 
+
+addConfigurationSetListener で追加されたリスナオブジェクトを削除する。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em type}]ConfigurationSetListenerType型の値。 \item[{\em listener}]与えたリスナオブジェクトへのポインタ \end{DoxyParams}
+\index{RTC::RTObject\_\-impl@{RTC::RTObject\_\-impl}!removeConfigurationSetNameListener@{removeConfigurationSetNameListener}}
+\index{removeConfigurationSetNameListener@{removeConfigurationSetNameListener}!RTC::RTObject_impl@{RTC::RTObject\_\-impl}}
+\subsubsection[{removeConfigurationSetNameListener}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::RTObject\_\-impl::removeConfigurationSetNameListener ({\bf ConfigurationSetNameListenerType} {\em type}, \/  {\bf ConfigurationSetNameListener} $\ast$ {\em listener})}\label{classRTC_1_1RTObject__impl_abdc8db94e262388a8c3fd2dcf50c9191}
+
+
+\doxyref{ConfigurationSetNameListener}{p.}{classRTC_1_1ConfigurationSetNameListener} を削除する. 
+
+addConfigurationSetNameListener で追加されたリスナオブジェクトを 削除する。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em type}]ConfigurationSetNameListenerType型の値。 ON\_\-UPDATE\_\-CONFIG\_\-PARAM がある。 \item[{\em listener}]与えたリスナオブジェクトへのポインタ \end{DoxyParams}
+\index{RTC::RTObject\_\-impl@{RTC::RTObject\_\-impl}!removeExecutionContextActionListener@{removeExecutionContextActionListener}}
+\index{removeExecutionContextActionListener@{removeExecutionContextActionListener}!RTC::RTObject_impl@{RTC::RTObject\_\-impl}}
+\subsubsection[{removeExecutionContextActionListener}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::RTObject\_\-impl::removeExecutionContextActionListener ({\bf ECActionListenerType} {\em listener\_\-type}, \/  {\bf ECActionListener} $\ast$ {\em listener})}\label{classRTC_1_1RTObject__impl_ada0da85f0c29137354a9cc9649052dd7}
+
+
+\doxyref{ExecutionContextActionListener}{p.}{classRTC_1_1ExecutionContextActionListener} リスナを削除する. 
+
+設定した各種リスナを削除する。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em listener\_\-type}]リスナタイプ \item[{\em listener}]リスナオブジェクトへのポインタ \end{DoxyParams}
+\index{RTC::RTObject\_\-impl@{RTC::RTObject\_\-impl}!removeInPort@{removeInPort}}
+\index{removeInPort@{removeInPort}!RTC::RTObject_impl@{RTC::RTObject\_\-impl}}
+\subsubsection[{removeInPort}]{\setlength{\rightskip}{0pt plus 5cm}bool RTC::RTObject\_\-impl::removeInPort ({\bf InPortBase} \& {\em port})}\label{classRTC_1_1RTObject__impl_a3cf98f14fb6e7f43b27b2b47ee457eeb}
+
+
+[local interface] \doxyref{InPort}{p.}{classRTC_1_1InPort} の登録を削除する 
+
+\doxyref{RTC}{p.}{namespaceRTC} が保持するInPortの登録を削除する。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em port}]削除対象 Port \end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+削除結果(削除成功:true，削除失敗:false) 
+\end{DoxyReturn}
+\index{RTC::RTObject\_\-impl@{RTC::RTObject\_\-impl}!removeOutPort@{removeOutPort}}
+\index{removeOutPort@{removeOutPort}!RTC::RTObject_impl@{RTC::RTObject\_\-impl}}
+\subsubsection[{removeOutPort}]{\setlength{\rightskip}{0pt plus 5cm}bool RTC::RTObject\_\-impl::removeOutPort ({\bf OutPortBase} \& {\em port})}\label{classRTC_1_1RTObject__impl_a151c1383746882c1313b62962671472e}
+
+
+[local interface] \doxyref{OutPort}{p.}{classRTC_1_1OutPort} の登録を削除する 
+
+\doxyref{RTC}{p.}{namespaceRTC} が保持するOutPortの登録を削除する。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em port}]削除対象 Port \end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+削除結果(削除成功:true，削除失敗:false) 
+\end{DoxyReturn}
+\index{RTC::RTObject\_\-impl@{RTC::RTObject\_\-impl}!removePort@{removePort}}
+\index{removePort@{removePort}!RTC::RTObject_impl@{RTC::RTObject\_\-impl}}
+\subsubsection[{removePort}]{\setlength{\rightskip}{0pt plus 5cm}bool RTC::RTObject\_\-impl::removePort ({\bf CorbaPort} \& {\em port})}\label{classRTC_1_1RTObject__impl_a48a51c8597e646a83330e1f3e5c93b3e}
+
+
+[local interface] Port の登録を削除する 
+
+\doxyref{RTC}{p.}{namespaceRTC} が保持するPortの登録を削除する。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em port}]削除対象 Port \end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+削除結果(削除成功:true，削除失敗:false) 
+\end{DoxyReturn}
+\index{RTC::RTObject\_\-impl@{RTC::RTObject\_\-impl}!removePort@{removePort}}
+\index{removePort@{removePort}!RTC::RTObject_impl@{RTC::RTObject\_\-impl}}
+\subsubsection[{removePort}]{\setlength{\rightskip}{0pt plus 5cm}bool RTC::RTObject\_\-impl::removePort (PortService\_\-ptr {\em port})}\label{classRTC_1_1RTObject__impl_ab0ad51ebd02b4c7fcdf03b1819bd081c}
+
+
+[local interface] Port の登録を削除する 
+
+\doxyref{RTC}{p.}{namespaceRTC} が保持するPortの登録を削除する。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em port}]削除対象 Port \end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+削除結果(削除成功:true，削除失敗:false) 
+\end{DoxyReturn}
+\index{RTC::RTObject\_\-impl@{RTC::RTObject\_\-impl}!removePort@{removePort}}
+\index{removePort@{removePort}!RTC::RTObject_impl@{RTC::RTObject\_\-impl}}
+\subsubsection[{removePort}]{\setlength{\rightskip}{0pt plus 5cm}bool RTC::RTObject\_\-impl::removePort ({\bf PortBase} \& {\em port})}\label{classRTC_1_1RTObject__impl_a92ac41786e80aaf68523e357978a18eb}
+
+
+[local interface] Port の登録を削除する 
+
+\doxyref{RTC}{p.}{namespaceRTC} が保持するPortの登録を削除する。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em port}]削除対象 Port \end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+削除結果(削除成功:true，削除失敗:false) 
+\end{DoxyReturn}
+\index{RTC::RTObject\_\-impl@{RTC::RTObject\_\-impl}!removePortActionListener@{removePortActionListener}}
+\index{removePortActionListener@{removePortActionListener}!RTC::RTObject_impl@{RTC::RTObject\_\-impl}}
+\subsubsection[{removePortActionListener}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::RTObject\_\-impl::removePortActionListener ({\bf PortActionListenerType} {\em listener\_\-type}, \/  {\bf PortActionListener} $\ast$ {\em listener})}\label{classRTC_1_1RTObject__impl_a7e78be34fd500a01986e0d2fa4dd6b10}
+
+
+\doxyref{PortActionListener}{p.}{classRTC_1_1PortActionListener} リスナを削除する. 
+
+設定した各種リスナを削除する。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em listener\_\-type}]リスナタイプ \item[{\em listener}]リスナオブジェクトへのポインタ \end{DoxyParams}
+\index{RTC::RTObject\_\-impl@{RTC::RTObject\_\-impl}!removePortConnectListener@{removePortConnectListener}}
+\index{removePortConnectListener@{removePortConnectListener}!RTC::RTObject_impl@{RTC::RTObject\_\-impl}}
+\subsubsection[{removePortConnectListener}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::RTObject\_\-impl::removePortConnectListener ({\bf PortConnectListenerType} {\em listener\_\-type}, \/  {\bf PortConnectListener} $\ast$ {\em listener})}\label{classRTC_1_1RTObject__impl_a1e4c94e6c6f95868fbf17cb516173a2c}
+
+
+\doxyref{PortConnectListener}{p.}{classRTC_1_1PortConnectListener} リスナを削除する. 
+
+設定した各種リスナを削除する。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em listener\_\-type}]リスナタイプ \item[{\em listener}]リスナオブジェクトへのポインタ \end{DoxyParams}
+\index{RTC::RTObject\_\-impl@{RTC::RTObject\_\-impl}!removePortConnectRetListener@{removePortConnectRetListener}}
+\index{removePortConnectRetListener@{removePortConnectRetListener}!RTC::RTObject_impl@{RTC::RTObject\_\-impl}}
+\subsubsection[{removePortConnectRetListener}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::RTObject\_\-impl::removePortConnectRetListener ({\bf PortConnectRetListenerType} {\em listener\_\-type}, \/  {\bf PortConnectRetListener} $\ast$ {\em listener})}\label{classRTC_1_1RTObject__impl_a1bb512321332d6902a27632f28d4f3bf}
+
+
+\doxyref{PortConnectRetListener}{p.}{classRTC_1_1PortConnectRetListener} リスナを削除する. 
+
+設定した各種リスナを削除する。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em listener\_\-type}]リスナタイプ \item[{\em listener}]リスナオブジェクトへのポインタ \end{DoxyParams}
+\index{RTC::RTObject\_\-impl@{RTC::RTObject\_\-impl}!removePostComponentActionListener@{removePostComponentActionListener}}
+\index{removePostComponentActionListener@{removePostComponentActionListener}!RTC::RTObject_impl@{RTC::RTObject\_\-impl}}
+\subsubsection[{removePostComponentActionListener}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::RTObject\_\-impl::removePostComponentActionListener ({\bf PostComponentActionListenerType} {\em listener\_\-type}, \/  {\bf PostComponentActionListener} $\ast$ {\em listener})}\label{classRTC_1_1RTObject__impl_afb62ee275a507019b41a76b3941a328d}
+
+
+\doxyref{PostComponentActionListener}{p.}{classRTC_1_1PostComponentActionListener} リスナを削除する. 
+
+設定した各種リスナを削除する。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em listener\_\-type}]リスナタイプ \item[{\em listener}]リスナオブジェクトへのポインタ \end{DoxyParams}
+\index{RTC::RTObject\_\-impl@{RTC::RTObject\_\-impl}!removePreComponentActionListener@{removePreComponentActionListener}}
+\index{removePreComponentActionListener@{removePreComponentActionListener}!RTC::RTObject_impl@{RTC::RTObject\_\-impl}}
+\subsubsection[{removePreComponentActionListener}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::RTObject\_\-impl::removePreComponentActionListener ({\bf PreComponentActionListenerType} {\em listener\_\-type}, \/  {\bf PreComponentActionListener} $\ast$ {\em listener})}\label{classRTC_1_1RTObject__impl_a2a1b8a95a0684eef98b9c011f61ad038}
+
+
+\doxyref{PreComponentActionListener}{p.}{classRTC_1_1PreComponentActionListener} リスナを削除する. 
+
+設定した各種リスナを削除する。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em listener\_\-type}]リスナタイプ \item[{\em listener}]リスナオブジェクトへのポインタ \end{DoxyParams}
+\index{RTC::RTObject\_\-impl@{RTC::RTObject\_\-impl}!removeSdoServiceConsumer@{removeSdoServiceConsumer}}
+\index{removeSdoServiceConsumer@{removeSdoServiceConsumer}!RTC::RTObject_impl@{RTC::RTObject\_\-impl}}
+\subsubsection[{removeSdoServiceConsumer}]{\setlength{\rightskip}{0pt plus 5cm}bool RTC::RTObject\_\-impl::removeSdoServiceConsumer (const char $\ast$ {\em id})}\label{classRTC_1_1RTObject__impl_a096a4b92fd5cf1032c7d6812aada4085}
+
+
+[local interface] \doxyref{SDO}{p.}{classSDO} service provider を削除する 
+
+\index{RTC::RTObject\_\-impl@{RTC::RTObject\_\-impl}!removeSdoServiceProvider@{removeSdoServiceProvider}}
+\index{removeSdoServiceProvider@{removeSdoServiceProvider}!RTC::RTObject_impl@{RTC::RTObject\_\-impl}}
+\subsubsection[{removeSdoServiceProvider}]{\setlength{\rightskip}{0pt plus 5cm}bool RTC::RTObject\_\-impl::removeSdoServiceProvider (const char $\ast$ {\em id})}\label{classRTC_1_1RTObject__impl_a237d3987b43de60a1a595427f42b3b6f}
+
+
+[local interface] \doxyref{SDO}{p.}{classSDO} service provider を削除する 
+
+\index{RTC::RTObject\_\-impl@{RTC::RTObject\_\-impl}!reset@{reset}}
+\index{reset@{reset}!RTC::RTObject_impl@{RTC::RTObject\_\-impl}}
+\subsubsection[{reset}]{\setlength{\rightskip}{0pt plus 5cm}ReturnCode\_\-t RTC::RTObject\_\-impl::reset ({\bf RTC::UniqueId} {\em ec\_\-id})}\label{classRTC_1_1RTObject__impl_a2fc5b66b514e434809ff1b9875e24e55}
+
+
+[local interface] 状態をリセットし Inactive に遷移させる 
+
+状態を Error から Inactive に遷移させる。この関数は以下の関 数内で呼ばれることを前提としている。
+
+
+\begin{DoxyItemize}
+\item \doxyref{onError()}{p.}{classRTC_1_1RTObject__impl_afb1b1fe49a7bb410b06068ace63db1cd}
+\end{DoxyItemize}
+
+この関数の引数は上記の関数の引数 UniquieID exec\_\-handle でなけ ればならない。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em ec\_\-id}]上記関数の第1引数 exec\_\-handle を渡す必要がある。 \end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+リターンコード 
+\end{DoxyReturn}
+\index{RTC::RTObject\_\-impl@{RTC::RTObject\_\-impl}!setExecutionRate@{setExecutionRate}}
+\index{setExecutionRate@{setExecutionRate}!RTC::RTObject_impl@{RTC::RTObject\_\-impl}}
+\subsubsection[{setExecutionRate}]{\setlength{\rightskip}{0pt plus 5cm}ReturnCode\_\-t RTC::RTObject\_\-impl::setExecutionRate ({\bf RTC::UniqueId} {\em ec\_\-id}, \/  double {\em rate})}\label{classRTC_1_1RTObject__impl_a49e00723708d9c4e2408150ad059e3f3}
+
+
+[local interface] 実行コンテキストの実行レートを設定する 
+
+現在実行中の実行コンテキストの実行レートを設定する。実行コンテキ ストのKindがPERIODIC以外の場合の動作は未定義である。この関数は以 下の関数内で呼ばれることを前提としている。
+
+
+\begin{DoxyItemize}
+\item \doxyref{onStartup()}{p.}{classRTC_1_1RTObject__impl_a9b2db9b0a456640d5bd9f5a0801fd987}
+\item \doxyref{onShutdown()}{p.}{classRTC_1_1RTObject__impl_ae4871709a422049e541cbdfa944d3e7c}
+\item \doxyref{onActivated()}{p.}{classRTC_1_1RTObject__impl_a8f5ab867b59f72634b2e19afac941be4}
+\item \doxyref{onDeactivated()}{p.}{classRTC_1_1RTObject__impl_a55a81b783612a34523af2677eb9d72bd}
+\item \doxyref{onExecute()}{p.}{classRTC_1_1RTObject__impl_acdaea58342f01d786e4a2ce0028f4ea8}
+\item \doxyref{onAborting()}{p.}{classRTC_1_1RTObject__impl_a7e6125c496d5e254e23f7f92fcacb825}
+\item \doxyref{onError()}{p.}{classRTC_1_1RTObject__impl_afb1b1fe49a7bb410b06068ace63db1cd}
+\item \doxyref{onReset()}{p.}{classRTC_1_1RTObject__impl_ab1bd11e5c23b1d21d7d4489bda4cd245}
+\item \doxyref{onStateUpdate()}{p.}{classRTC_1_1RTObject__impl_ae940286df438ca15088510a63c3d6d6c}
+\item \doxyref{onRateChanged()}{p.}{classRTC_1_1RTObject__impl_a4c551d0c07b1e3e1e91bbf36d3954869}
+\end{DoxyItemize}
+
+この関数の引数はこれらの関数の引数 UniquieID exec\_\-handle でなけ ればならない。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em ec\_\-id}]上記関数の第1引数 exec\_\-handle を渡す必要がある。 \item[{\em rate}]実行レートを [Hz] で与える \end{DoxyParams}
+\index{RTC::RTObject\_\-impl@{RTC::RTObject\_\-impl}!setInstanceName@{setInstanceName}}
+\index{setInstanceName@{setInstanceName}!RTC::RTObject_impl@{RTC::RTObject\_\-impl}}
+\subsubsection[{setInstanceName}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::RTObject\_\-impl::setInstanceName (const char $\ast$ {\em instance\_\-name})}\label{classRTC_1_1RTObject__impl_a0d99228aeb0526ec4509d37158885209}
+
+
+[local interface] インスタンス名の設定 
+
+ComponentProfile に指定されたインスタンス名を設定する。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em instance\_\-name}]インスタンス名 \end{DoxyParams}
+\index{RTC::RTObject\_\-impl@{RTC::RTObject\_\-impl}!setObjRef@{setObjRef}}
+\index{setObjRef@{setObjRef}!RTC::RTObject_impl@{RTC::RTObject\_\-impl}}
+\subsubsection[{setObjRef}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::RTObject\_\-impl::setObjRef (const RTObject\_\-ptr {\em rtobj})}\label{classRTC_1_1RTObject__impl_a6019cf2afb9a1b64272daa53205a581b}
+
+
+[local interface] オブジェクトリファレンスの設定 
+
+\doxyref{RTC}{p.}{namespaceRTC} の CORBA オブジェクトリファレンスを設定する。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em rtobj}]オブジェクトリファレンス \end{DoxyParams}
+\index{RTC::RTObject\_\-impl@{RTC::RTObject\_\-impl}!setProperties@{setProperties}}
+\index{setProperties@{setProperties}!RTC::RTObject_impl@{RTC::RTObject\_\-impl}}
+\subsubsection[{setProperties}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::RTObject\_\-impl::setProperties (const {\bf coil::Properties} \& {\em prop})}\label{classRTC_1_1RTObject__impl_aed1e04e3f20978ec2c47f9457dd3c7da}
+
+
+[local interface] \doxyref{RTC}{p.}{namespaceRTC} のプロパティを設定する 
+
+\doxyref{RTC}{p.}{namespaceRTC} が保持すべきプロパティを設定する。与えられるプロパティは、 ComponentProfile 等に設定されるべき情報を持たなければならない。 このオペレーションは通常 \doxyref{RTC}{p.}{namespaceRTC} が初期化される際に \doxyref{Manager}{p.}{classRTC_1_1Manager} から 呼ばれることを意図している。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em prop}]\doxyref{RTC}{p.}{namespaceRTC} のプロパティ \end{DoxyParams}
+\index{RTC::RTObject\_\-impl@{RTC::RTObject\_\-impl}!setReadAll@{setReadAll}}
+\index{setReadAll@{setReadAll}!RTC::RTObject_impl@{RTC::RTObject\_\-impl}}
+\subsubsection[{setReadAll}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::RTObject\_\-impl::setReadAll (bool {\em read} = {\ttfamily true}, \/  bool {\em completion} = {\ttfamily false})}\label{classRTC_1_1RTObject__impl_af26c74869e5d5ab1ec0c231bd1fe71e1}
+
+
+\doxyref{onExecute()}{p.}{classRTC_1_1RTObject__impl_acdaea58342f01d786e4a2ce0028f4ea8}実行前でのreadAll()メソッドの呼出を有効または無効にする。 
+
+このメソッドをパラメータをtrueとして呼ぶ事により、onExecute()実行前に \doxyref{readAll()}{p.}{classRTC_1_1RTObject__impl_a69b50eea5bc7f862114602963cca84ca}が呼出されるようになる。 パラメータがfalseの場合は、readAll()呼出を無効にする。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em read(default:true)}](\doxyref{readAll()}{p.}{classRTC_1_1RTObject__impl_a69b50eea5bc7f862114602963cca84ca}メソッド呼出あり:true, \doxyref{readAll()}{p.}{classRTC_1_1RTObject__impl_a69b50eea5bc7f862114602963cca84ca}メソッド呼出なし:false)\item[{\em completion(default:false)}]\doxyref{readAll()}{p.}{classRTC_1_1RTObject__impl_a69b50eea5bc7f862114602963cca84ca}にて、どれかの一つのInPortのread()が失敗しても全ての InPortのread()を呼び出す:true, \doxyref{readAll()}{p.}{classRTC_1_1RTObject__impl_a69b50eea5bc7f862114602963cca84ca}にて、どれかの一つの InPortのread()が失敗した場合、すぐにfalseで抜ける:false \end{DoxyParams}
+\index{RTC::RTObject\_\-impl@{RTC::RTObject\_\-impl}!setWriteAll@{setWriteAll}}
+\index{setWriteAll@{setWriteAll}!RTC::RTObject_impl@{RTC::RTObject\_\-impl}}
+\subsubsection[{setWriteAll}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::RTObject\_\-impl::setWriteAll (bool {\em write} = {\ttfamily true}, \/  bool {\em completion} = {\ttfamily false})}\label{classRTC_1_1RTObject__impl_ae4794ea9facafb3b63b4ebb79436e82a}
+
+
+\doxyref{onExecute()}{p.}{classRTC_1_1RTObject__impl_acdaea58342f01d786e4a2ce0028f4ea8}実行後にwriteAll()メソッドの呼出を有効または無効にする。 
+
+このメソッドをパラメータをtrueとして呼ぶ事により、onExecute()実行後に \doxyref{writeAll()}{p.}{classRTC_1_1RTObject__impl_a4d72009c5347e0c03515c52d48427f4b}が呼出されるようになる。 パラメータがfalseの場合は、writeAll()呼出を無効にする。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em write(default:true)}](\doxyref{writeAll()}{p.}{classRTC_1_1RTObject__impl_a4d72009c5347e0c03515c52d48427f4b}メソッド呼出あり:true, \doxyref{writeAll()}{p.}{classRTC_1_1RTObject__impl_a4d72009c5347e0c03515c52d48427f4b}メソッド呼出 なし:false)\item[{\em completion(default:false)}]\doxyref{writeAll()}{p.}{classRTC_1_1RTObject__impl_a4d72009c5347e0c03515c52d48427f4b}にて、どれかの一つのOutPortのwrite()が失敗しても全 てのOutPortのwrite()を呼び出しを行う:true, \doxyref{writeAll()}{p.}{classRTC_1_1RTObject__impl_a4d72009c5347e0c03515c52d48427f4b}にて、ど れかの一つのOutPortのwrite()が失敗した場合、すぐにfalseで抜け る:false \end{DoxyParams}
+\index{RTC::RTObject\_\-impl@{RTC::RTObject\_\-impl}!shutdown@{shutdown}}
+\index{shutdown@{shutdown}!RTC::RTObject_impl@{RTC::RTObject\_\-impl}}
+\subsubsection[{shutdown}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::RTObject\_\-impl::shutdown ()\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC_1_1RTObject__impl_abcd21d19649fa1f4c9175ad77c7d6284}
+
+
+\doxyref{RTC}{p.}{namespaceRTC} を終了する. 
+
+\doxyref{RTC}{p.}{namespaceRTC} の終了処理を実行する。 保持している全 Port の登録を解除するとともに、該当する CORBA オブジェクト を非活性化し、RTC を終了する。 \index{RTC::RTObject\_\-impl@{RTC::RTObject\_\-impl}!updateParameters@{updateParameters}}
+\index{updateParameters@{updateParameters}!RTC::RTObject_impl@{RTC::RTObject\_\-impl}}
+\subsubsection[{updateParameters}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::RTObject\_\-impl::updateParameters (const char $\ast$ {\em config\_\-set})}\label{classRTC_1_1RTObject__impl_ada62b43e1f21cb2b5d3162781b2354c0}
+
+
+コンフィギュレーションパラメータの更新(ID指定) 
+
+指定したIDのコンフィギュレーションセットに設定した値で、 コンフィギュレーションパラメータの値を更新する
+
+
+\begin{DoxyParams}{引数}
+\item[{\em config\_\-set}]設定対象のコンフィギュレーションセットID \end{DoxyParams}
+\index{RTC::RTObject\_\-impl@{RTC::RTObject\_\-impl}!writeAll@{writeAll}}
+\index{writeAll@{writeAll}!RTC::RTObject_impl@{RTC::RTObject\_\-impl}}
+\subsubsection[{writeAll}]{\setlength{\rightskip}{0pt plus 5cm}bool RTC::RTObject\_\-impl::writeAll ()}\label{classRTC_1_1RTObject__impl_a4d72009c5347e0c03515c52d48427f4b}
+
+
+全 \doxyref{OutPort}{p.}{classRTC_1_1OutPort} のwrite()メソッドをコールする。 
+
+\doxyref{RTC}{p.}{namespaceRTC} が保持する全ての \doxyref{OutPort}{p.}{classRTC_1_1OutPort} のwrite()メソッドをコールする。
+
+\begin{DoxyReturn}{戻り値}
+読み込み結果(全ポートへの書き込み成功:true，失敗:false) 
+\end{DoxyReturn}
+
+
+\subsection{変数}
+\index{RTC::RTObject\_\-impl@{RTC::RTObject\_\-impl}!m\_\-actionListeners@{m\_\-actionListeners}}
+\index{m\_\-actionListeners@{m\_\-actionListeners}!RTC::RTObject_impl@{RTC::RTObject\_\-impl}}
+\subsubsection[{m\_\-actionListeners}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ComponentActionListeners} {\bf RTC::RTObject\_\-impl::m\_\-actionListeners}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC_1_1RTObject__impl_a03fc6f681c8b4b938db909d0330d54c2}
+
+
+ComponentActionListenerホルダ. 
+
+ComponentActionListenrを保持するホルダ 
+
+参照元 onAddPort(), onAttachExecutionContext(), onDetachExecutionContext(), onRemovePort(), postOnAborting(), postOnActivated(), postOnDeactivated(), postOnError(), postOnExecute(), postOnFinalize(), postOnInitialize(), postOnRateChanged(), postOnReset(), postOnShutdown(), postOnStartup(), postOnStateUpdate(), preOnAborting(), preOnActivated(), preOnDeactivated(), preOnError(), preOnExecute(), preOnFinalize(), preOnInitialize(), preOnRateChanged(), preOnReset(), preOnShutdown(), preOnStartup(), と preOnStateUpdate().
+
+\index{RTC::RTObject\_\-impl@{RTC::RTObject\_\-impl}!m\_\-configsets@{m\_\-configsets}}
+\index{m\_\-configsets@{m\_\-configsets}!RTC::RTObject_impl@{RTC::RTObject\_\-impl}}
+\subsubsection[{m\_\-configsets}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ConfigAdmin} {\bf RTC::RTObject\_\-impl::m\_\-configsets}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC_1_1RTObject__impl_aec97899b66ca3d30e17550dde008bd9b}
+
+
+コンフィギュレーション情報管理オブジェクト 
+
+
+
+参照元 bindParameter().
+
+\index{RTC::RTObject\_\-impl@{RTC::RTObject\_\-impl}!m\_\-created@{m\_\-created}}
+\index{m\_\-created@{m\_\-created}!RTC::RTObject_impl@{RTC::RTObject\_\-impl}}
+\subsubsection[{m\_\-created}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf RTC::RTObject\_\-impl::m\_\-created}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC_1_1RTObject__impl_aa0017d04a53bbf4779cd73c6cb6ff838}
+
+
+Created 状態フラグ. 
+
+\index{RTC::RTObject\_\-impl@{RTC::RTObject\_\-impl}!m\_\-eclist@{m\_\-eclist}}
+\index{m\_\-eclist@{m\_\-eclist}!RTC::RTObject_impl@{RTC::RTObject\_\-impl}}
+\subsubsection[{m\_\-eclist}]{\setlength{\rightskip}{0pt plus 5cm}std::vector$<${\bf ExecutionContextBase}$\ast$$>$ {\bf RTC::RTObject\_\-impl::m\_\-eclist}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC_1_1RTObject__impl_a53d0010baab90eb4ea01b2944d4bd868}
+
+
+\doxyref{ExecutionContextBase}{p.}{classRTC_1_1ExecutionContextBase} のリスト. 
+
+\index{RTC::RTObject\_\-impl@{RTC::RTObject\_\-impl}!m\_\-ecMine@{m\_\-ecMine}}
+\index{m\_\-ecMine@{m\_\-ecMine}!RTC::RTObject_impl@{RTC::RTObject\_\-impl}}
+\subsubsection[{m\_\-ecMine}]{\setlength{\rightskip}{0pt plus 5cm}ExecutionContextServiceList {\bf RTC::RTObject\_\-impl::m\_\-ecMine}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC_1_1RTObject__impl_ace21f818acb7ce850c9a09dc60312859}
+
+
+自分がownerのExecutionContextService のリスト 
+
+\index{RTC::RTObject\_\-impl@{RTC::RTObject\_\-impl}!m\_\-ecOther@{m\_\-ecOther}}
+\index{m\_\-ecOther@{m\_\-ecOther}!RTC::RTObject_impl@{RTC::RTObject\_\-impl}}
+\subsubsection[{m\_\-ecOther}]{\setlength{\rightskip}{0pt plus 5cm}ExecutionContextServiceList {\bf RTC::RTObject\_\-impl::m\_\-ecOther}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC_1_1RTObject__impl_a5d46743eb86f385515471940255ee81d}
+
+
+参加しているExecutionContextService のリスト 
+
+\index{RTC::RTObject\_\-impl@{RTC::RTObject\_\-impl}!m\_\-exiting@{m\_\-exiting}}
+\index{m\_\-exiting@{m\_\-exiting}!RTC::RTObject_impl@{RTC::RTObject\_\-impl}}
+\subsubsection[{m\_\-exiting}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf RTC::RTObject\_\-impl::m\_\-exiting}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC_1_1RTObject__impl_adcb90e43f991968c6939a79feacc59a4}
+
+
+RTCの終了状態フラグ. 
+
+\index{RTC::RTObject\_\-impl@{RTC::RTObject\_\-impl}!m\_\-inports@{m\_\-inports}}
+\index{m\_\-inports@{m\_\-inports}!RTC::RTObject_impl@{RTC::RTObject\_\-impl}}
+\subsubsection[{m\_\-inports}]{\setlength{\rightskip}{0pt plus 5cm}std::vector$<${\bf InPortBase}$\ast$$>$ {\bf RTC::RTObject\_\-impl::m\_\-inports}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC_1_1RTObject__impl_a66edfbf5f52775e9b2dcb3e74c4b2e9c}
+
+
+InPortBase$\ast$ のリスト. 
+
+\index{RTC::RTObject\_\-impl@{RTC::RTObject\_\-impl}!m\_\-objref@{m\_\-objref}}
+\index{m\_\-objref@{m\_\-objref}!RTC::RTObject_impl@{RTC::RTObject\_\-impl}}
+\subsubsection[{m\_\-objref}]{\setlength{\rightskip}{0pt plus 5cm}RTObject\_\-var {\bf RTC::RTObject\_\-impl::m\_\-objref}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC_1_1RTObject__impl_ae84b71318b7cb7206f2fa9dcfdccae40}
+
+
+オブジェクトリファレンス 
+
+\index{RTC::RTObject\_\-impl@{RTC::RTObject\_\-impl}!m\_\-outports@{m\_\-outports}}
+\index{m\_\-outports@{m\_\-outports}!RTC::RTObject_impl@{RTC::RTObject\_\-impl}}
+\subsubsection[{m\_\-outports}]{\setlength{\rightskip}{0pt plus 5cm}std::vector$<${\bf OutPortBase}$\ast$$>$ {\bf RTC::RTObject\_\-impl::m\_\-outports}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC_1_1RTObject__impl_afb5a5d2d07ce7f896c33be7dae046162}
+
+
+OutPortBase$\ast$ のリスト. 
+
+\index{RTC::RTObject\_\-impl@{RTC::RTObject\_\-impl}!m\_\-pManager@{m\_\-pManager}}
+\index{m\_\-pManager@{m\_\-pManager}!RTC::RTObject_impl@{RTC::RTObject\_\-impl}}
+\subsubsection[{m\_\-pManager}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Manager}$\ast$ {\bf RTC::RTObject\_\-impl::m\_\-pManager}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC_1_1RTObject__impl_a6d379b04c6f1cf12e6899b5735ce9550}
+
+
+マネージャオブジェクト 
+
+\index{RTC::RTObject\_\-impl@{RTC::RTObject\_\-impl}!m\_\-pORB@{m\_\-pORB}}
+\index{m\_\-pORB@{m\_\-pORB}!RTC::RTObject_impl@{RTC::RTObject\_\-impl}}
+\subsubsection[{m\_\-pORB}]{\setlength{\rightskip}{0pt plus 5cm}CORBA::ORB\_\-var {\bf RTC::RTObject\_\-impl::m\_\-pORB}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC_1_1RTObject__impl_a30dc61254be1017514261e366b43bc68}
+
+
+ORB へのポインタ. 
+
+\index{RTC::RTObject\_\-impl@{RTC::RTObject\_\-impl}!m\_\-portAdmin@{m\_\-portAdmin}}
+\index{m\_\-portAdmin@{m\_\-portAdmin}!RTC::RTObject_impl@{RTC::RTObject\_\-impl}}
+\subsubsection[{m\_\-portAdmin}]{\setlength{\rightskip}{0pt plus 5cm}{\bf PortAdmin} {\bf RTC::RTObject\_\-impl::m\_\-portAdmin}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC_1_1RTObject__impl_ad4cd9e1a965bae6ca8ffe12b98b923b5}
+
+
+Port のオブジェクトリファレンスのリスト. 
+
+\index{RTC::RTObject\_\-impl@{RTC::RTObject\_\-impl}!m\_\-portconnListeners@{m\_\-portconnListeners}}
+\index{m\_\-portconnListeners@{m\_\-portconnListeners}!RTC::RTObject_impl@{RTC::RTObject\_\-impl}}
+\subsubsection[{m\_\-portconnListeners}]{\setlength{\rightskip}{0pt plus 5cm}{\bf PortConnectListeners} {\bf RTC::RTObject\_\-impl::m\_\-portconnListeners}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC_1_1RTObject__impl_af48c40e9d1ecd9d56c2379907157d291}
+
+
+PortConnectListenerホルダ. 
+
+PortConnectListenrを保持するホルダ \index{RTC::RTObject\_\-impl@{RTC::RTObject\_\-impl}!m\_\-pPOA@{m\_\-pPOA}}
+\index{m\_\-pPOA@{m\_\-pPOA}!RTC::RTObject_impl@{RTC::RTObject\_\-impl}}
+\subsubsection[{m\_\-pPOA}]{\setlength{\rightskip}{0pt plus 5cm}PortableServer::POA\_\-var {\bf RTC::RTObject\_\-impl::m\_\-pPOA}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC_1_1RTObject__impl_adab30239836ad82adeca749785483ab1}
+
+
+POA へのポインタ. 
+
+\index{RTC::RTObject\_\-impl@{RTC::RTObject\_\-impl}!m\_\-profile@{m\_\-profile}}
+\index{m\_\-profile@{m\_\-profile}!RTC::RTObject_impl@{RTC::RTObject\_\-impl}}
+\subsubsection[{m\_\-profile}]{\setlength{\rightskip}{0pt plus 5cm}ComponentProfile {\bf RTC::RTObject\_\-impl::m\_\-profile}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC_1_1RTObject__impl_ab1d9a5d30ea9fb7a0f70eb0c2e53f406}
+
+
+コンポーネントプロファイル 
+
+
+
+参照元 getCategory(), getDescription(), getInstanceName(), getTypeName(), getVendor(), と getVersion().
+
+\index{RTC::RTObject\_\-impl@{RTC::RTObject\_\-impl}!m\_\-properties@{m\_\-properties}}
+\index{m\_\-properties@{m\_\-properties}!RTC::RTObject_impl@{RTC::RTObject\_\-impl}}
+\subsubsection[{m\_\-properties}]{\setlength{\rightskip}{0pt plus 5cm}{\bf coil::Properties} {\bf RTC::RTObject\_\-impl::m\_\-properties}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC_1_1RTObject__impl_aaa7708a550c5ebc8c828e02aff6f1399}
+
+
+Alive 状態フラグ. 
+
+\doxyref{RTC}{p.}{namespaceRTC} のプロパティ \index{RTC::RTObject\_\-impl@{RTC::RTObject\_\-impl}!m\_\-pSdoConfig@{m\_\-pSdoConfig}}
+\index{m\_\-pSdoConfig@{m\_\-pSdoConfig}!RTC::RTObject_impl@{RTC::RTObject\_\-impl}}
+\subsubsection[{m\_\-pSdoConfig}]{\setlength{\rightskip}{0pt plus 5cm}SDOPackage::Configuration\_\-var {\bf RTC::RTObject\_\-impl::m\_\-pSdoConfig}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC_1_1RTObject__impl_a851626a666adef65d60eae4741fdf31d}
+
+
+\doxyref{SDO}{p.}{classSDO} Configuration Interface へのポインタ. 
+
+\index{RTC::RTObject\_\-impl@{RTC::RTObject\_\-impl}!m\_\-pSdoConfigImpl@{m\_\-pSdoConfigImpl}}
+\index{m\_\-pSdoConfigImpl@{m\_\-pSdoConfigImpl}!RTC::RTObject_impl@{RTC::RTObject\_\-impl}}
+\subsubsection[{m\_\-pSdoConfigImpl}]{\setlength{\rightskip}{0pt plus 5cm}{\bf SDOPackage::Configuration\_\-impl}$\ast$ {\bf RTC::RTObject\_\-impl::m\_\-pSdoConfigImpl}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC_1_1RTObject__impl_a8900cc192c097b75055762dc55f4d2d7}
+
+
+\doxyref{SDO}{p.}{classSDO} Configuration オブジェクトへのポインタ. 
+
+\index{RTC::RTObject\_\-impl@{RTC::RTObject\_\-impl}!m\_\-readAll@{m\_\-readAll}}
+\index{m\_\-readAll@{m\_\-readAll}!RTC::RTObject_impl@{RTC::RTObject\_\-impl}}
+\subsubsection[{m\_\-readAll}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf RTC::RTObject\_\-impl::m\_\-readAll}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC_1_1RTObject__impl_af3998856510d836f63cbf010c2309bab}
+
+
+\doxyref{readAll()}{p.}{classRTC_1_1RTObject__impl_a69b50eea5bc7f862114602963cca84ca}呼出用のフラグ 
+
+\index{RTC::RTObject\_\-impl@{RTC::RTObject\_\-impl}!m\_\-readAllCompletion@{m\_\-readAllCompletion}}
+\index{m\_\-readAllCompletion@{m\_\-readAllCompletion}!RTC::RTObject_impl@{RTC::RTObject\_\-impl}}
+\subsubsection[{m\_\-readAllCompletion}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf RTC::RTObject\_\-impl::m\_\-readAllCompletion}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC_1_1RTObject__impl_a2c1128fba9c503e2e5fb05b0a9441e63}
+
+
+\doxyref{readAll()}{p.}{classRTC_1_1RTObject__impl_a69b50eea5bc7f862114602963cca84ca}用のフラグ 
+
+true:\doxyref{readAll()}{p.}{classRTC_1_1RTObject__impl_a69b50eea5bc7f862114602963cca84ca}の途中ででエラーが発生しても最後まで実施する。 false:\doxyref{readAll()}{p.}{classRTC_1_1RTObject__impl_a69b50eea5bc7f862114602963cca84ca}の途中ででエラーが発生した場合終了。 \index{RTC::RTObject\_\-impl@{RTC::RTObject\_\-impl}!m\_\-sdoOrganizations@{m\_\-sdoOrganizations}}
+\index{m\_\-sdoOrganizations@{m\_\-sdoOrganizations}!RTC::RTObject_impl@{RTC::RTObject\_\-impl}}
+\subsubsection[{m\_\-sdoOrganizations}]{\setlength{\rightskip}{0pt plus 5cm}SDOPackage::OrganizationList {\bf RTC::RTObject\_\-impl::m\_\-sdoOrganizations}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC_1_1RTObject__impl_a831b1613aceee446d4fe5c187832dc6d}
+
+
+\doxyref{SDO}{p.}{classSDO} organization. 
+
+\index{RTC::RTObject\_\-impl@{RTC::RTObject\_\-impl}!m\_\-sdoOwnedOrganizations@{m\_\-sdoOwnedOrganizations}}
+\index{m\_\-sdoOwnedOrganizations@{m\_\-sdoOwnedOrganizations}!RTC::RTObject_impl@{RTC::RTObject\_\-impl}}
+\subsubsection[{m\_\-sdoOwnedOrganizations}]{\setlength{\rightskip}{0pt plus 5cm}SDOPackage::OrganizationList {\bf RTC::RTObject\_\-impl::m\_\-sdoOwnedOrganizations}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC_1_1RTObject__impl_a4345549d13a181f27b8dd920f8a2a268}
+
+
+\doxyref{SDO}{p.}{classSDO} が保持する organization のリスト. 
+
+\index{RTC::RTObject\_\-impl@{RTC::RTObject\_\-impl}!m\_\-sdoservice@{m\_\-sdoservice}}
+\index{m\_\-sdoservice@{m\_\-sdoservice}!RTC::RTObject_impl@{RTC::RTObject\_\-impl}}
+\subsubsection[{m\_\-sdoservice}]{\setlength{\rightskip}{0pt plus 5cm}{\bf SdoServiceAdmin} {\bf RTC::RTObject\_\-impl::m\_\-sdoservice}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC_1_1RTObject__impl_a5281a690edc5eaa712646c36c8e40737}
+
+
+\doxyref{SDO}{p.}{classSDO} Service 管理オブジェクト. 
+
+\index{RTC::RTObject\_\-impl@{RTC::RTObject\_\-impl}!m\_\-sdoStatus@{m\_\-sdoStatus}}
+\index{m\_\-sdoStatus@{m\_\-sdoStatus}!RTC::RTObject_impl@{RTC::RTObject\_\-impl}}
+\subsubsection[{m\_\-sdoStatus}]{\setlength{\rightskip}{0pt plus 5cm}SDOPackage::NVList {\bf RTC::RTObject\_\-impl::m\_\-sdoStatus}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC_1_1RTObject__impl_a8d07143fd90f730dbe9cae38a72c2470}
+
+
+\doxyref{SDO}{p.}{classSDO} Status. 
+
+\index{RTC::RTObject\_\-impl@{RTC::RTObject\_\-impl}!m\_\-writeAll@{m\_\-writeAll}}
+\index{m\_\-writeAll@{m\_\-writeAll}!RTC::RTObject_impl@{RTC::RTObject\_\-impl}}
+\subsubsection[{m\_\-writeAll}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf RTC::RTObject\_\-impl::m\_\-writeAll}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC_1_1RTObject__impl_a8f5d9d5b1753071258922e14d573b9d4}
+
+
+\doxyref{writeAll()}{p.}{classRTC_1_1RTObject__impl_a4d72009c5347e0c03515c52d48427f4b}呼出用のフラグ 
+
+\index{RTC::RTObject\_\-impl@{RTC::RTObject\_\-impl}!m\_\-writeAllCompletion@{m\_\-writeAllCompletion}}
+\index{m\_\-writeAllCompletion@{m\_\-writeAllCompletion}!RTC::RTObject_impl@{RTC::RTObject\_\-impl}}
+\subsubsection[{m\_\-writeAllCompletion}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf RTC::RTObject\_\-impl::m\_\-writeAllCompletion}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC_1_1RTObject__impl_a84b98649f8cd19b95448c4e779128bc2}
+
+
+\doxyref{writeAll()}{p.}{classRTC_1_1RTObject__impl_a4d72009c5347e0c03515c52d48427f4b}用のフラグ 
+
+true:\doxyref{writeAll()}{p.}{classRTC_1_1RTObject__impl_a4d72009c5347e0c03515c52d48427f4b}の途中ででエラーが発生しても最後まで実施する。 false:\doxyref{writeAll()}{p.}{classRTC_1_1RTObject__impl_a4d72009c5347e0c03515c52d48427f4b}の途中ででエラーが発生した場合終了。 \index{RTC::RTObject\_\-impl@{RTC::RTObject\_\-impl}!rtclog@{rtclog}}
+\index{rtclog@{rtclog}!RTC::RTObject_impl@{RTC::RTObject\_\-impl}}
+\subsubsection[{rtclog}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Logger} {\bf RTC::RTObject\_\-impl::rtclog}\hspace{0.3cm}{\ttfamily  [mutable, protected]}}\label{classRTC_1_1RTObject__impl_ab0fee10e64c03f9797e9124b5d2a0289}
+
+
+ロガーストリーム 
+

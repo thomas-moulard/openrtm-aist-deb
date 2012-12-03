@@ -1,0 +1,75 @@
+\section{RTC::ConnectorDataListener Class Reference}
+\label{classRTC_1_1ConnectorDataListener}\index{RTC::ConnectorDataListener@{RTC::ConnectorDataListener}}
+
+
+\doxyref{ConnectorDataListener}{p.}{classRTC_1_1ConnectorDataListener} class.  
+
+
+
+
+{\ttfamily \#include $<$ConnectorListener.h$>$}
+
+Inheritance diagram for RTC::ConnectorDataListener:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2cm]{classRTC_1_1ConnectorDataListener}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual {\bf $\sim$ConnectorDataListener} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \item\end{DoxyCompactList}\item 
+virtual void {\bf operator()} (const {\bf ConnectorInfo} \&info, const cdrMemoryStream \&data)=0
+\begin{DoxyCompactList}\small\item\em Virtual Callback method. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static const char $\ast$ {\bf toString} ({\bf ConnectorDataListenerType} type)
+\begin{DoxyCompactList}\small\item\em Convert ConnectorDataListenerType into the string. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\doxyref{ConnectorDataListener}{p.}{classRTC_1_1ConnectorDataListener} class. This class is abstract base class for listener classes that provides callbacks for various events in the data port's connectors. 
+
+\subsection{Constructor \& Destructor Documentation}
+\index{RTC::ConnectorDataListener@{RTC::ConnectorDataListener}!$\sim$ConnectorDataListener@{$\sim$ConnectorDataListener}}
+\index{$\sim$ConnectorDataListener@{$\sim$ConnectorDataListener}!RTC::ConnectorDataListener@{RTC::ConnectorDataListener}}
+\subsubsection[{$\sim$ConnectorDataListener}]{\setlength{\rightskip}{0pt plus 5cm}virtual RTC::ConnectorDataListener::$\sim$ConnectorDataListener ()\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classRTC_1_1ConnectorDataListener_add956ee4c385ddd1e8f49b6ce052999f}
+
+
+Destructor. 
+
+
+
+\subsection{Member Function Documentation}
+\index{RTC::ConnectorDataListener@{RTC::ConnectorDataListener}!operator()@{operator()}}
+\index{operator()@{operator()}!RTC::ConnectorDataListener@{RTC::ConnectorDataListener}}
+\subsubsection[{operator()}]{\setlength{\rightskip}{0pt plus 5cm}virtual void RTC::ConnectorDataListener::operator() (const {\bf ConnectorInfo} \& {\em info}, \/  const cdrMemoryStream \& {\em data})\hspace{0.3cm}{\ttfamily  [pure virtual]}}\label{classRTC_1_1ConnectorDataListener_a3306cb3544db5d164c5917adddbfc298}
+
+
+Virtual Callback method. 
+
+This is a the Callback method to various events generated in Connector. 
+
+Implemented in {\bf RTC::ConnectorDataListenerT$<$ DataType $>$} \doxyref{}{p.}{classRTC_1_1ConnectorDataListenerT_a6d87ccd84018b4e5437336cbe7f9c72c}.
+
+\index{RTC::ConnectorDataListener@{RTC::ConnectorDataListener}!toString@{toString}}
+\index{toString@{toString}!RTC::ConnectorDataListener@{RTC::ConnectorDataListener}}
+\subsubsection[{toString}]{\setlength{\rightskip}{0pt plus 5cm}static const char$\ast$ RTC::ConnectorDataListener::toString ({\bf ConnectorDataListenerType} {\em type})\hspace{0.3cm}{\ttfamily  [inline, static]}}\label{classRTC_1_1ConnectorDataListener_ad626d18a31d3264d5c23cd55cd319fcb}
+
+
+Convert ConnectorDataListenerType into the string. 
+
+Convert ConnectorDataListenerType into the string.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em type}]The target ConnectorDataListenerType for transformation\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Trnasformation result of string representation 
+\end{DoxyReturn}
+
+
+References RTC::CONNECTOR\_\-DATA\_\-LISTENER\_\-NUM.
+

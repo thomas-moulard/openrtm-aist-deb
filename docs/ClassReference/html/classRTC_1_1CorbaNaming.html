@@ -1,0 +1,2028 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<title>OpenRTM: クラス RTC::CorbaNaming</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<!-- 作成： Doxygen 1.6.3 -->
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="index.html"><span>メインページ</span></a></li>
+      <li><a href="namespaces.html"><span>ネームスペース</span></a></li>
+      <li class="current"><a href="annotated.html"><span>クラス</span></a></li>
+      <li><a href="files.html"><span>ファイル</span></a></li>
+    </ul>
+  </div>
+  <div class="tabs">
+    <ul>
+      <li><a href="annotated.html"><span>構成</span></a></li>
+      <li><a href="hierarchy.html"><span>クラス階層</span></a></li>
+      <li><a href="functions.html"><span>構成メンバ</span></a></li>
+    </ul>
+  </div>
+  <div class="navpath"><a class="el" href="namespaceRTC.html">RTC</a>::<a class="el" href="classRTC_1_1CorbaNaming.html">CorbaNaming</a>
+  </div>
+</div>
+<div class="contents">
+<h1>クラス RTC::CorbaNaming</h1><!-- doxytag: class="RTC::CorbaNaming" -->
+<p>CORBA Naming Service ヘルパークラス.  
+<a href="#_details">[詳細]</a></p>
+
+<p><code>#include &lt;<a class="el" href="CorbaNaming_8h_source.html">CorbaNaming.h</a>&gt;</code></p>
+
+<p><a href="classRTC_1_1CorbaNaming-members.html">すべてのメンバ一覧</a></p>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr><td colspan="2"><h2>Public 型</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">typedef CORBA::SystemException&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1CorbaNaming.html#adcd493bdbf96b312ce1b985b8a08c79d">SystemException</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">typedef <br class="typebreak"/>
+CosNaming::NamingContext::NotFound&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1CorbaNaming.html#a92e7f10507946507a4e8daf126ecc409">NotFound</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">typedef <br class="typebreak"/>
+CosNaming::NamingContext::CannotProceed&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1CorbaNaming.html#a77504e9d1028c3f524151edda4c5faf4">CannotProceed</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">typedef <br class="typebreak"/>
+CosNaming::NamingContext::InvalidName&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1CorbaNaming.html#ab79889ab5d3a28c494ee8768200e3683">InvalidName</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">typedef <br class="typebreak"/>
+CosNaming::NamingContext::AlreadyBound&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1CorbaNaming.html#a6669a088b188bbf53d96328945db065f">AlreadyBound</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">typedef <br class="typebreak"/>
+CosNaming::NamingContext::NotEmpty&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1CorbaNaming.html#a223ee860ea0ffa395e688b6eb0fd3b11">NotEmpty</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">typedef <br class="typebreak"/>
+CosNaming::NamingContextExt::InvalidAddress&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1CorbaNaming.html#af3580312d8a2e6d00ad3dca75b3cfae3">InvalidAddress</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">typedef std::vector<br class="typebreak"/>
+&lt; CORBA::Object_ptr &gt;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1CorbaNaming.html#aea8dfd52409e620da87cc1b1a7e835cc">ObjectList</a></td></tr>
+<tr><td colspan="2"><h2>Public メソッド</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1CorbaNaming.html#a081d0658c45831f74dcefb3b2bccb631">CorbaNaming</a> (CORBA::ORB_ptr orb)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">コンストラクタ  <a href="#a081d0658c45831f74dcefb3b2bccb631"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1CorbaNaming.html#ae9e84d1814b4664789d2d1d88f13f97f">CorbaNaming</a> (CORBA::ORB_ptr orb, const char *name_server)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">コンストラクタ  <a href="#ae9e84d1814b4664789d2d1d88f13f97f"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1CorbaNaming.html#ad929fafaa24f3360341aeb1a4e8ee826">~CorbaNaming</a> (void)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">仮想デストラクタ  <a href="#ad929fafaa24f3360341aeb1a4e8ee826"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1CorbaNaming.html#aca3989e92a47edac443aee43479dbd96">init</a> (const char *name_server)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">ネーミングサービスの初期化  <a href="#aca3989e92a47edac443aee43479dbd96"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1CorbaNaming.html#a05315f770a8c4a385d67270569c59108">isAlive</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1CorbaNaming.html#ac21620f79aecc1bf989629b7aac2938f">bind</a> (const CosNaming::Name &amp;name, CORBA::Object_ptr obj, const bool force=1)  throw (SystemException, NotFound, CannotProceed,             InvalidName, AlreadyBound)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Object を bind する.  <a href="#ac21620f79aecc1bf989629b7aac2938f"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1CorbaNaming.html#a88fba8eb04bf1a2b631007d0d87ea28f">bindByString</a> (const char *string_name, CORBA::Object_ptr obj, const bool force=1)  throw (SystemException, NotFound, CannotProceed,             InvalidName, AlreadyBound)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Object を bind する.  <a href="#a88fba8eb04bf1a2b631007d0d87ea28f"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1CorbaNaming.html#a5417cf439f8efd84f9d13d212f9e62bd">bindRecursive</a> (CosNaming::NamingContext_ptr context, const CosNaming::Name &amp;name, CORBA::Object_ptr obj)  throw (SystemException, CannotProceed, InvalidName, AlreadyBound)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">途中のコンテキストを再帰的に bind しながら Object を bind する  <a href="#a5417cf439f8efd84f9d13d212f9e62bd"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1CorbaNaming.html#a45418a54e9f7dabac0aac79ca232fc76">rebind</a> (const CosNaming::Name &amp;name, CORBA::Object_ptr obj, const bool force=1)  throw (SystemException, NotFound, CannotProceed, InvalidName)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Object を rebind する.  <a href="#a45418a54e9f7dabac0aac79ca232fc76"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1CorbaNaming.html#aa33c587d4d1068bc51de94199ce978b8">rebindByString</a> (const char *string_name, CORBA::Object_ptr obj, const bool force=1)  throw (SystemException, NotFound, CannotProceed, InvalidName)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Object を rebind する.  <a href="#aa33c587d4d1068bc51de94199ce978b8"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1CorbaNaming.html#a44d87abf8edc49237f4f9da204b0fe24">rebindRecursive</a> (CosNaming::NamingContext_ptr context, const CosNaming::Name &amp;name, CORBA::Object_ptr obj)  throw (SystemException, CannotProceed, InvalidName)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">途中のコンテキストを bind しながら Object を rebind する  <a href="#a44d87abf8edc49237f4f9da204b0fe24"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1CorbaNaming.html#a1eaa278d91546b514fdf361a0bfcbf87">bindContext</a> (const CosNaming::Name &amp;name, CosNaming::NamingContext_ptr name_cxt, const bool force=1)  throw (SystemException, NotFound, CannotProceed,             InvalidName, AlreadyBound)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">NamingContext を bind する.  <a href="#a1eaa278d91546b514fdf361a0bfcbf87"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1CorbaNaming.html#a62c211af81e61ccc9dcbbf8c0f26eb15">bindContext</a> (const char *string_name, CosNaming::NamingContext_ptr name_cxt, const bool force=1)  throw (SystemException, NotFound, CannotProceed,             InvalidName, AlreadyBound)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">NamingContext を bind する.  <a href="#a62c211af81e61ccc9dcbbf8c0f26eb15"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1CorbaNaming.html#acefcc23ad029cbf3d989ffc61adc4d35">bindContextRecursive</a> (CosNaming::NamingContext_ptr context, const CosNaming::Name &amp;name, CosNaming::NamingContext_ptr name_cxt)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">途中のコンテキストを再帰的に bind し NamingContext を bind する  <a href="#acefcc23ad029cbf3d989ffc61adc4d35"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1CorbaNaming.html#afd9649388ba4f49b53d036b50e311df0">rebindContext</a> (const CosNaming::Name &amp;name, CosNaming::NamingContext_ptr name_cxt, const bool force=1)  throw (SystemException, NotFound, CannotProceed, InvalidName)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">NamingContext を rebind する.  <a href="#afd9649388ba4f49b53d036b50e311df0"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1CorbaNaming.html#ad21536c2439d8243ae43ec453a46501d">rebindContext</a> (const char *string_name, CosNaming::NamingContext_ptr name_cxt, const bool force=1)  throw (SystemException, NotFound, CannotProceed, InvalidName)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">NamingContext を rebind する.  <a href="#ad21536c2439d8243ae43ec453a46501d"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1CorbaNaming.html#a481771ab96cc9e24339dd288216e5154">rebindContextRecursive</a> (CosNaming::NamingContext_ptr context, const CosNaming::Name &amp;name, CosNaming::NamingContext_ptr name_cxt)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">途中のコンテキストを再帰的に rebind し NamingContext を rebind する  <a href="#a481771ab96cc9e24339dd288216e5154"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">CORBA::Object_ptr&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1CorbaNaming.html#aa5fdd805e58b5640360eecbd9ec48f9b">resolve</a> (const CosNaming::Name &amp;name)  throw (SystemException, NotFound, CannotProceed, InvalidName)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">与えられた NameComponent にバインドされている Object を返す  <a href="#aa5fdd805e58b5640360eecbd9ec48f9b"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">CORBA::Object_ptr&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1CorbaNaming.html#a6127eec83159c0057bc309c6d7e5d2d5">resolve</a> (const char *string_name)  throw (SystemException, NotFound, CannotProceed, InvalidName)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">与えられた NameComponent にバインドされている Object を返す  <a href="#a6127eec83159c0057bc309c6d7e5d2d5"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1CorbaNaming.html#a4b2f8435380f383834687f9253323980">unbind</a> (const CosNaming::Name &amp;name)  throw (SystemException, NotFound, CannotProceed, InvalidName)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">与えられた NameComponent のバインディングを削除する  <a href="#a4b2f8435380f383834687f9253323980"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1CorbaNaming.html#a7b024033bc92afd1cf5d7cf0a75e4c3e">unbind</a> (const char *string_name)  throw (SystemException, NotFound, CannotProceed, InvalidName)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">与えられた NameComponent のバインディングを削除する  <a href="#a7b024033bc92afd1cf5d7cf0a75e4c3e"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">CosNaming::NamingContext_ptr&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1CorbaNaming.html#a919496be1e542edf68184dbe6dec3eb9">newContext</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">新しいコンテキストを生成する  <a href="#a919496be1e542edf68184dbe6dec3eb9"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">CosNaming::NamingContext_ptr&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1CorbaNaming.html#a7a1bd265833e6e101ea03926f5e30c52">bindNewContext</a> (const CosNaming::Name &amp;name, bool force=true)  throw (SystemException, NotFound, CannotProceed,             InvalidName, AlreadyBound)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">新しいコンテキストを bind する  <a href="#a7a1bd265833e6e101ea03926f5e30c52"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">CosNaming::NamingContext_ptr&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1CorbaNaming.html#a7736c378704e3395532b3e05075121f5">bindNewContext</a> (const char *string_name, bool force=true)  throw (SystemException, NotFound, CannotProceed,             InvalidName, AlreadyBound)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">新しいコンテキストを bind する  <a href="#a7736c378704e3395532b3e05075121f5"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1CorbaNaming.html#a85fef1b00d8e6dc0a266daa56b218725">destroy</a> (CosNaming::NamingContext_ptr context)  throw (SystemException, NotEmpty)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">NamingContext を非アクティブ化する.  <a href="#a85fef1b00d8e6dc0a266daa56b218725"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1CorbaNaming.html#a82c8c8a1adbe87e34778be5ad9ef1ff6">destroyRecursive</a> (CosNaming::NamingContext_ptr context)  throw (SystemException, NotEmpty, NotFound, CannotProceed, InvalidName)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">NamingContext を再帰的に下って非アクティブ化する.  <a href="#a82c8c8a1adbe87e34778be5ad9ef1ff6"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1CorbaNaming.html#a68877e40bf7bbc6e37137170e8212026">clearAll</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">すべての Binding を削除する  <a href="#a68877e40bf7bbc6e37137170e8212026"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1CorbaNaming.html#ac05f8ec66b2e1dc41100fef4dd2c09fd">list</a> (CosNaming::NamingContext_ptr name_cxt, CORBA::ULong how_many, CosNaming::BindingList_var &amp;bl, CosNaming::BindingIterator_var &amp;bi)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">与えられた NamingContext の Binding を取得する  <a href="#ac05f8ec66b2e1dc41100fef4dd2c09fd"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">char *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1CorbaNaming.html#a2b6bc9675b2aa4bc36a6df7087fff86b">toString</a> (const CosNaming::Name &amp;name)  throw (SystemException, InvalidName)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">与えられた NameComponent の文字列表現を返す  <a href="#a2b6bc9675b2aa4bc36a6df7087fff86b"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">CosNaming::Name&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1CorbaNaming.html#a145435b772577b4ab4be1c6cee39296e">toName</a> (const char *string_name)  throw (SystemException, InvalidName)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">与えられた文字列表現を NameComponent に分解する  <a href="#a145435b772577b4ab4be1c6cee39296e"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">char *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1CorbaNaming.html#a039f66a7b938c7d20f8a5990af2746ab">toUrl</a> (char *addr, char *string_name)  throw (SystemException, InvalidAddress, InvalidName)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">与えられた addre と string_name から URL表現を取得する  <a href="#a039f66a7b938c7d20f8a5990af2746ab"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">CORBA::Object_ptr&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1CorbaNaming.html#a0046eede262912d6da405d482f8e0153">resolveStr</a> (const char *string_name)  throw (SystemException, NotFound, CannotProceed,             InvalidName, AlreadyBound)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">与えられた文字列表現を resolve しオブジェクトを返す  <a href="#a0046eede262912d6da405d482f8e0153"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">CORBA::Object_ptr&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1CorbaNaming.html#a5b0474504d93dfb7c565e2d815c08df2">bindOrResolve</a> (CosNaming::NamingContext_ptr context, const CosNaming::Name &amp;name, CORBA::Object_ptr obj)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">オブジェクトの名前をバインドまたは解決する  <a href="#a5b0474504d93dfb7c565e2d815c08df2"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">CosNaming::NamingContext_ptr&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1CorbaNaming.html#a987187accb08864e9676e0663a3cc939">bindOrResolveContext</a> (CosNaming::NamingContext_ptr context, const CosNaming::Name &amp;name, CosNaming::NamingContext_ptr new_context)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">名前をバインドまたは解決する  <a href="#a987187accb08864e9676e0663a3cc939"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">CosNaming::NamingContext_ptr&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1CorbaNaming.html#a5c57c1521026ea4f2e8cbfc423c1ed06">bindOrResolveContext</a> (CosNaming::NamingContext_ptr context, const CosNaming::Name &amp;name)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">名前をバインドまたは解決する  <a href="#a5c57c1521026ea4f2e8cbfc423c1ed06"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">const char *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1CorbaNaming.html#abca2ccc7a64e05822f3ea69d7c114e14">getNameServer</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">ネームサーバの名前を取得する  <a href="#abca2ccc7a64e05822f3ea69d7c114e14"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">CosNaming::NamingContext_ptr&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1CorbaNaming.html#af5f0ff31edba062cb0858c29b38f946c">getRootContext</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">ルートコンテキストを取得する  <a href="#af5f0ff31edba062cb0858c29b38f946c"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1CorbaNaming.html#a09ea40e547b2bf66f2a18f6f186c69d9">isNamingContext</a> (CORBA::Object_ptr obj)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">オブジェクトがネーミングコンテキストか判別する  <a href="#a09ea40e547b2bf66f2a18f6f186c69d9"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1CorbaNaming.html#a4decaf20d4e7407e8393a2ddef4958d0">isNamingContext</a> (const CosNaming::Name &amp;name)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">与えられた名前がネーミングコンテキストかどうか  <a href="#a4decaf20d4e7407e8393a2ddef4958d0"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1CorbaNaming.html#a1b2a61b7e231a5b34274ea59e79f3f56">isNamingContext</a> (const char *string_name)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">与えられた名前がネーミングコンテキストかどうか  <a href="#a1b2a61b7e231a5b34274ea59e79f3f56"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">CosNaming::Name&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1CorbaNaming.html#a28d5186a7f916a4216fe508557cafac4">subName</a> (const CosNaming::Name &amp;name, CORBA::Long begin, CORBA::Long end=-1)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">ネームコンポーネントの部分を返す  <a href="#a28d5186a7f916a4216fe508557cafac4"></a><br/></td></tr>
+<tr><td colspan="2"><h2>Protected メソッド</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1CorbaNaming.html#a7d8bf6f90e7f39fbdf15d4037e9528f4">nameToString</a> (const CosNaming::Name &amp;name, char *string_name, CORBA::ULong slen)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">ネームコンポーネントの文字列表現を取得する  <a href="#a7d8bf6f90e7f39fbdf15d4037e9528f4"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">CORBA::ULong&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1CorbaNaming.html#ab70cb38165eaca8be4960a9886ab4b24">getNameLength</a> (const CosNaming::Name &amp;name)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">ネームコンポーネントの文字列表現時の文字長を取得する  <a href="#ab70cb38165eaca8be4960a9886ab4b24"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">unsigned int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1CorbaNaming.html#a9a5a03d8e244a0fa65a25337fe98a74a">split</a> (const std::string &amp;input, const std::string &amp;delimiter, std::vector&lt; std::string &gt; &amp;results)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">文字列の分割  <a href="#a9a5a03d8e244a0fa65a25337fe98a74a"></a><br/></td></tr>
+<tr><td colspan="2"><h2>Protected 変数</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">CORBA::ORB_var&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1CorbaNaming.html#a49fb01cad296636d256d52b7c4295544">m_varORB</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">ORB.  <a href="#a49fb01cad296636d256d52b7c4295544"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">std::string&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1CorbaNaming.html#a55ba13ccbb69dad6e339625bdfd1336d">m_nameServer</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">ネームサーバ名称  <a href="#a55ba13ccbb69dad6e339625bdfd1336d"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">CosNaming::NamingContextExt_var&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1CorbaNaming.html#a3655f851970b9b4f9cfa4181f6847a82">m_rootContext</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">指定したネームサーバのルートコンテキスト  <a href="#a3655f851970b9b4f9cfa4181f6847a82"></a><br/></td></tr>
+</table>
+<hr/><a name="_details"></a><h2>説明</h2>
+<p>CORBA Naming Service ヘルパークラス. </p>
+<p>このクラスは、CosNamingNamingContext に対するラッパークラスである。 CosNaming::NamingContext が持つオペレーションとほぼ同じ機能の オペレーションを提供するとともに、ネームコンポーネント CosNaming::Name の代わりに文字列による名前表現を受け付けるオペレーションも提供する。</p>
+<p>オブジェクトは生成時、あるいは生成直後に CORBA ネームサーバに接続し 以後、このネームサーバのルートコンテキストに対して種々のオペレーション を処理する。 深い階層のネーミングコンテキストの作成やオブジェクトのバインドにおいて、 途中のコンテキストが存在しない場合でも、強制的にコンテキストをバインド し目的のコンテキストやオブジェクトのバインドを行うこともできる。</p>
+<dl class="since"><dt><b>から:</b></dt><dd>0.4.0 </dd></dl>
+<hr/><h2>型定義</h2>
+<a class="anchor" id="a6669a088b188bbf53d96328945db065f"></a><!-- doxytag: member="RTC::CorbaNaming::AlreadyBound" ref="a6669a088b188bbf53d96328945db065f" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef CosNaming::NamingContext::AlreadyBound <a class="el" href="classRTC_1_1CorbaNaming.html#a6669a088b188bbf53d96328945db065f">RTC::CorbaNaming::AlreadyBound</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a77504e9d1028c3f524151edda4c5faf4"></a><!-- doxytag: member="RTC::CorbaNaming::CannotProceed" ref="a77504e9d1028c3f524151edda4c5faf4" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef CosNaming::NamingContext::CannotProceed <a class="el" href="classRTC_1_1CorbaNaming.html#a77504e9d1028c3f524151edda4c5faf4">RTC::CorbaNaming::CannotProceed</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="af3580312d8a2e6d00ad3dca75b3cfae3"></a><!-- doxytag: member="RTC::CorbaNaming::InvalidAddress" ref="af3580312d8a2e6d00ad3dca75b3cfae3" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef CosNaming::NamingContextExt::InvalidAddress <a class="el" href="classRTC_1_1CorbaNaming.html#af3580312d8a2e6d00ad3dca75b3cfae3">RTC::CorbaNaming::InvalidAddress</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ab79889ab5d3a28c494ee8768200e3683"></a><!-- doxytag: member="RTC::CorbaNaming::InvalidName" ref="ab79889ab5d3a28c494ee8768200e3683" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef CosNaming::NamingContext::InvalidName <a class="el" href="classRTC_1_1CorbaNaming.html#ab79889ab5d3a28c494ee8768200e3683">RTC::CorbaNaming::InvalidName</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a223ee860ea0ffa395e688b6eb0fd3b11"></a><!-- doxytag: member="RTC::CorbaNaming::NotEmpty" ref="a223ee860ea0ffa395e688b6eb0fd3b11" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef CosNaming::NamingContext::NotEmpty <a class="el" href="classRTC_1_1CorbaNaming.html#a223ee860ea0ffa395e688b6eb0fd3b11">RTC::CorbaNaming::NotEmpty</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a92e7f10507946507a4e8daf126ecc409"></a><!-- doxytag: member="RTC::CorbaNaming::NotFound" ref="a92e7f10507946507a4e8daf126ecc409" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef CosNaming::NamingContext::NotFound <a class="el" href="classRTC_1_1CorbaNaming.html#a92e7f10507946507a4e8daf126ecc409">RTC::CorbaNaming::NotFound</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="aea8dfd52409e620da87cc1b1a7e835cc"></a><!-- doxytag: member="RTC::CorbaNaming::ObjectList" ref="aea8dfd52409e620da87cc1b1a7e835cc" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef std::vector&lt;CORBA::Object_ptr&gt; <a class="el" href="classRTC_1_1CorbaNaming.html#aea8dfd52409e620da87cc1b1a7e835cc">RTC::CorbaNaming::ObjectList</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="adcd493bdbf96b312ce1b985b8a08c79d"></a><!-- doxytag: member="RTC::CorbaNaming::SystemException" ref="adcd493bdbf96b312ce1b985b8a08c79d" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef CORBA::SystemException <a class="el" href="classRTC_1_1CorbaNaming.html#adcd493bdbf96b312ce1b985b8a08c79d">RTC::CorbaNaming::SystemException</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<hr/><h2>コンストラクタとデストラクタ</h2>
+<a class="anchor" id="a081d0658c45831f74dcefb3b2bccb631"></a><!-- doxytag: member="RTC::CorbaNaming::CorbaNaming" ref="a081d0658c45831f74dcefb3b2bccb631" args="(CORBA::ORB_ptr orb)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">RTC::CorbaNaming::CorbaNaming </td>
+          <td>(</td>
+          <td class="paramtype">CORBA::ORB_ptr&nbsp;</td>
+          <td class="paramname"> <em>orb</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>コンストラクタ </p>
+<dl><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>orb</em>&nbsp;</td><td>ORB </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="ae9e84d1814b4664789d2d1d88f13f97f"></a><!-- doxytag: member="RTC::CorbaNaming::CorbaNaming" ref="ae9e84d1814b4664789d2d1d88f13f97f" args="(CORBA::ORB_ptr orb, const char *name_server)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">RTC::CorbaNaming::CorbaNaming </td>
+          <td>(</td>
+          <td class="paramtype">CORBA::ORB_ptr&nbsp;</td>
+          <td class="paramname"> <em>orb</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&nbsp;</td>
+          <td class="paramname"> <em>name_server</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>コンストラクタ </p>
+<dl><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>orb</em>&nbsp;</td><td>ORB </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>name_server</em>&nbsp;</td><td>ネームサーバの名称 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="ad929fafaa24f3360341aeb1a4e8ee826"></a><!-- doxytag: member="RTC::CorbaNaming::~CorbaNaming" ref="ad929fafaa24f3360341aeb1a4e8ee826" args="(void)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual RTC::CorbaNaming::~CorbaNaming </td>
+          <td>(</td>
+          <td class="paramtype">void&nbsp;</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [inline, virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>仮想デストラクタ </p>
+
+</div>
+</div>
+<hr/><h2>関数</h2>
+<a class="anchor" id="ac21620f79aecc1bf989629b7aac2938f"></a><!-- doxytag: member="RTC::CorbaNaming::bind" ref="ac21620f79aecc1bf989629b7aac2938f" args="(const CosNaming::Name &amp;name, CORBA::Object_ptr obj, const bool force=1)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void RTC::CorbaNaming::bind </td>
+          <td>(</td>
+          <td class="paramtype">const CosNaming::Name &amp;&nbsp;</td>
+          <td class="paramname"> <em>name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">CORBA::Object_ptr&nbsp;</td>
+          <td class="paramname"> <em>obj</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const bool&nbsp;</td>
+          <td class="paramname"> <em>force</em> = <code>1</code></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td>  throw (<a class="el" href="classRTC_1_1CorbaNaming.html#adcd493bdbf96b312ce1b985b8a08c79d">SystemException</a>, <a class="el" href="classRTC_1_1CorbaNaming.html#a92e7f10507946507a4e8daf126ecc409">NotFound</a>, <a class="el" href="classRTC_1_1CorbaNaming.html#a77504e9d1028c3f524151edda4c5faf4">CannotProceed</a>,             <a class="el" href="classRTC_1_1CorbaNaming.html#ab79889ab5d3a28c494ee8768200e3683">InvalidName</a>, <a class="el" href="classRTC_1_1CorbaNaming.html#a6669a088b188bbf53d96328945db065f">AlreadyBound</a>)</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Object を bind する. </p>
+<p>CosNaming::bind() とほぼ同等の働きをするが、常に与えられたネームサーバの ルートコンテキストに対してbind()が呼び出される点が異なる。</p>
+<p>Name &lt;name&gt; と Object &lt;obj&gt; を当該 NamingContext 上にバインドする。 c_n が n 番目の NameComponent をあらわすとすると、 name が n 個の NameComponent から成るとき、以下のように扱われる。</p>
+<p>cxt-&gt;bind(&lt;c_1, c_2, ... c_n&gt;, obj) は以下の操作と同等である。 cxt-&gt;resolve(&lt;c_1, ... c_(n-1)&gt;)-&gt;bind(&lt;c_n&gt;, obj)</p>
+<p>すなわち、1番目からn-1番目のコンテキストを解決し、n-1番目のコンテキスト 上に name &lt;n&gt; として　obj を bind する。 名前解決に参加する &lt;c_1, ... c_(n-1)&gt; の NemingContext は、 <a class="el" href="classRTC_1_1CorbaNaming.html#a1eaa278d91546b514fdf361a0bfcbf87" title="NamingContext を bind する.">bindContext()</a> や <a class="el" href="classRTC_1_1CorbaNaming.html#afd9649388ba4f49b53d036b50e311df0" title="NamingContext を rebind する.">rebindContext()</a> で既にバインド済みでなければならない。 もし &lt;c_1, ... c_(n-1)&gt; の NamingContext が存在しない場合には、 NotFound 例外が発生する。</p>
+<p>ただし、強制バインドフラグ force が true の時は、&lt;c_1, ... c_(n-1)&gt; が存在しない場合にも、再帰的にコンテキストをバインドしながら、 最終的に obj を名前 name &lt;c_n&gt; にバインドする。</p>
+<p>いずれの場合でも、n-1番目のコンテキスト上に name&lt;n&gt; のオブジェクト (Object あるいは コンテキスト) がバインドされていれば AlreadyBound 例外が発生する。</p>
+<dl><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>name</em>&nbsp;</td><td>オブジェクトに付ける名前の NameComponent </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>obj</em>&nbsp;</td><td>関連付けられる Object </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>force</em>&nbsp;</td><td>trueの場合、途中のコンテキストを強制的にバインドする (デフォルト値:true)</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl><dt><b>例外:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>NotFound</em>&nbsp;</td><td>途中の &lt;c_1, c_2, ..., c_(n-1)&gt; が存在しない。 </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>CannotProceed</em>&nbsp;</td><td>何らかの理由で処理を継続できない。 </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>InvalidName</em>&nbsp;</td><td>引数 name の名前が不正。 </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>AlreadyBound</em>&nbsp;</td><td>name &lt;c_n&gt; の Object がすでにバインドされている。 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a88fba8eb04bf1a2b631007d0d87ea28f"></a><!-- doxytag: member="RTC::CorbaNaming::bindByString" ref="a88fba8eb04bf1a2b631007d0d87ea28f" args="(const char *string_name, CORBA::Object_ptr obj, const bool force=1)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void RTC::CorbaNaming::bindByString </td>
+          <td>(</td>
+          <td class="paramtype">const char *&nbsp;</td>
+          <td class="paramname"> <em>string_name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">CORBA::Object_ptr&nbsp;</td>
+          <td class="paramname"> <em>obj</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const bool&nbsp;</td>
+          <td class="paramname"> <em>force</em> = <code>1</code></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td>  throw (<a class="el" href="classRTC_1_1CorbaNaming.html#adcd493bdbf96b312ce1b985b8a08c79d">SystemException</a>, <a class="el" href="classRTC_1_1CorbaNaming.html#a92e7f10507946507a4e8daf126ecc409">NotFound</a>, <a class="el" href="classRTC_1_1CorbaNaming.html#a77504e9d1028c3f524151edda4c5faf4">CannotProceed</a>,             <a class="el" href="classRTC_1_1CorbaNaming.html#ab79889ab5d3a28c494ee8768200e3683">InvalidName</a>, <a class="el" href="classRTC_1_1CorbaNaming.html#a6669a088b188bbf53d96328945db065f">AlreadyBound</a>)</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Object を bind する. </p>
+<p>Object を bind する際に与える名前が文字列表現であること以外は、bind() と同じである。bind(toName(string_name), obj) と等価。</p>
+<dl><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>string_name</em>&nbsp;</td><td>オブジェクトに付ける名前の文字列表現 </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>obj</em>&nbsp;</td><td>関連付けられるオブジェクト </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>force</em>&nbsp;</td><td>trueの場合、途中のコンテキストを強制的にバインドする (デフォルト値:true)</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl><dt><b>例外:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>NotFound</em>&nbsp;</td><td>途中の &lt;c_1, c_2, ..., c_(n-1)&gt; が存在しない。 </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>CannotProceed</em>&nbsp;</td><td>何らかの理由で処理を継続できない。 </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>InvalidName</em>&nbsp;</td><td>引数 name の名前が不正。 </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>AlreadyBound</em>&nbsp;</td><td>name &lt;n&gt; の Object がすでにバインドされている。 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a62c211af81e61ccc9dcbbf8c0f26eb15"></a><!-- doxytag: member="RTC::CorbaNaming::bindContext" ref="a62c211af81e61ccc9dcbbf8c0f26eb15" args="(const char *string_name, CosNaming::NamingContext_ptr name_cxt, const bool force=1)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void RTC::CorbaNaming::bindContext </td>
+          <td>(</td>
+          <td class="paramtype">const char *&nbsp;</td>
+          <td class="paramname"> <em>string_name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">CosNaming::NamingContext_ptr&nbsp;</td>
+          <td class="paramname"> <em>name_cxt</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const bool&nbsp;</td>
+          <td class="paramname"> <em>force</em> = <code>1</code></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td>  throw (<a class="el" href="classRTC_1_1CorbaNaming.html#adcd493bdbf96b312ce1b985b8a08c79d">SystemException</a>, <a class="el" href="classRTC_1_1CorbaNaming.html#a92e7f10507946507a4e8daf126ecc409">NotFound</a>, <a class="el" href="classRTC_1_1CorbaNaming.html#a77504e9d1028c3f524151edda4c5faf4">CannotProceed</a>,             <a class="el" href="classRTC_1_1CorbaNaming.html#ab79889ab5d3a28c494ee8768200e3683">InvalidName</a>, <a class="el" href="classRTC_1_1CorbaNaming.html#a6669a088b188bbf53d96328945db065f">AlreadyBound</a>)</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>NamingContext を bind する. </p>
+<p>bind されるオブジェクトが NamingContext であることを除いて <a class="el" href="classRTC_1_1CorbaNaming.html#a88fba8eb04bf1a2b631007d0d87ea28f" title="Object を bind する.">bindByString()</a> と同じである。</p>
+<dl><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>string_name</em>&nbsp;</td><td>オブジェクトに付ける名前の文字列表現 </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>name_cxt</em>&nbsp;</td><td>関連付けられる NamingContext </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>force</em>&nbsp;</td><td>trueの場合、途中のコンテキストを強制的にバインドする (デフォルト値:true)</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl><dt><b>例外:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>NotFound</em>&nbsp;</td><td>途中の &lt;c_1, c_2, ..., c_(n-1)&gt; が存在しない。 </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>CannotProceed</em>&nbsp;</td><td>何らかの理由で処理を継続できない。 </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>InvalidName</em>&nbsp;</td><td>引数 name の名前が不正。 </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>AlreadyBound</em>&nbsp;</td><td>name &lt;n&gt; の Object がすでにバインドされている。 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a1eaa278d91546b514fdf361a0bfcbf87"></a><!-- doxytag: member="RTC::CorbaNaming::bindContext" ref="a1eaa278d91546b514fdf361a0bfcbf87" args="(const CosNaming::Name &amp;name, CosNaming::NamingContext_ptr name_cxt, const bool force=1)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void RTC::CorbaNaming::bindContext </td>
+          <td>(</td>
+          <td class="paramtype">const CosNaming::Name &amp;&nbsp;</td>
+          <td class="paramname"> <em>name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">CosNaming::NamingContext_ptr&nbsp;</td>
+          <td class="paramname"> <em>name_cxt</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const bool&nbsp;</td>
+          <td class="paramname"> <em>force</em> = <code>1</code></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td>  throw (<a class="el" href="classRTC_1_1CorbaNaming.html#adcd493bdbf96b312ce1b985b8a08c79d">SystemException</a>, <a class="el" href="classRTC_1_1CorbaNaming.html#a92e7f10507946507a4e8daf126ecc409">NotFound</a>, <a class="el" href="classRTC_1_1CorbaNaming.html#a77504e9d1028c3f524151edda4c5faf4">CannotProceed</a>,             <a class="el" href="classRTC_1_1CorbaNaming.html#ab79889ab5d3a28c494ee8768200e3683">InvalidName</a>, <a class="el" href="classRTC_1_1CorbaNaming.html#a6669a088b188bbf53d96328945db065f">AlreadyBound</a>)</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>NamingContext を bind する. </p>
+<p>bind されるオブジェクトが NamingContext であることを除いて <a class="el" href="classRTC_1_1CorbaNaming.html#ac21620f79aecc1bf989629b7aac2938f" title="Object を bind する.">bind()</a> と同じである。</p>
+<dl><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>name</em>&nbsp;</td><td>オブジェクトに付ける名前のネームコンポーネント </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>name_cxt</em>&nbsp;</td><td>関連付けられる NamingContext </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>force</em>&nbsp;</td><td>trueの場合、途中のコンテキストを強制的にバインドする (デフォルト値:true)</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl><dt><b>例外:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>NotFound</em>&nbsp;</td><td>途中の &lt;c_1, c_2, ..., c_(n-1)&gt; が存在しない。 </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>CannotProceed</em>&nbsp;</td><td>何らかの理由で処理を継続できない。 </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>InvalidName</em>&nbsp;</td><td>引数 name の名前が不正。 </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>AlreadyBound</em>&nbsp;</td><td>name &lt;c_n&gt; の Object がすでにバインドされている。 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="acefcc23ad029cbf3d989ffc61adc4d35"></a><!-- doxytag: member="RTC::CorbaNaming::bindContextRecursive" ref="acefcc23ad029cbf3d989ffc61adc4d35" args="(CosNaming::NamingContext_ptr context, const CosNaming::Name &amp;name, CosNaming::NamingContext_ptr name_cxt)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void RTC::CorbaNaming::bindContextRecursive </td>
+          <td>(</td>
+          <td class="paramtype">CosNaming::NamingContext_ptr&nbsp;</td>
+          <td class="paramname"> <em>context</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const CosNaming::Name &amp;&nbsp;</td>
+          <td class="paramname"> <em>name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">CosNaming::NamingContext_ptr&nbsp;</td>
+          <td class="paramname"> <em>name_cxt</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>途中のコンテキストを再帰的に bind し NamingContext を bind する </p>
+<p>bind されるオブジェクトが NamingContext であることを除いて <a class="el" href="classRTC_1_1CorbaNaming.html#a5417cf439f8efd84f9d13d212f9e62bd" title="途中のコンテキストを再帰的に bind しながら Object を bind する...">bindRecursive()</a> と同じである。</p>
+<dl><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>context</em>&nbsp;</td><td>bind を開始する　NamingContext </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>name</em>&nbsp;</td><td>オブジェクトに付ける名前のネームコンポーネント </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>name_cxt</em>&nbsp;</td><td>関連付けられる NamingContext </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a7736c378704e3395532b3e05075121f5"></a><!-- doxytag: member="RTC::CorbaNaming::bindNewContext" ref="a7736c378704e3395532b3e05075121f5" args="(const char *string_name, bool force=true)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">CosNaming::NamingContext_ptr RTC::CorbaNaming::bindNewContext </td>
+          <td>(</td>
+          <td class="paramtype">const char *&nbsp;</td>
+          <td class="paramname"> <em>string_name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&nbsp;</td>
+          <td class="paramname"> <em>force</em> = <code>true</code></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td>  throw (<a class="el" href="classRTC_1_1CorbaNaming.html#adcd493bdbf96b312ce1b985b8a08c79d">SystemException</a>, <a class="el" href="classRTC_1_1CorbaNaming.html#a92e7f10507946507a4e8daf126ecc409">NotFound</a>, <a class="el" href="classRTC_1_1CorbaNaming.html#a77504e9d1028c3f524151edda4c5faf4">CannotProceed</a>,             <a class="el" href="classRTC_1_1CorbaNaming.html#ab79889ab5d3a28c494ee8768200e3683">InvalidName</a>, <a class="el" href="classRTC_1_1CorbaNaming.html#a6669a088b188bbf53d96328945db065f">AlreadyBound</a>)</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>新しいコンテキストを bind する </p>
+<p>与えられた文字列に対応する新しいコンテキストをバインドする。 生成された　NamingContext はネームサーバ上で生成されたものである。</p>
+<dl><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>string_name</em>&nbsp;</td><td>NamingContextに付ける名前の文字列表現 </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>force</em>&nbsp;</td><td>trueの場合、途中のコンテキストを強制的にバインドする (デフォルト値:true)</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>戻り値:</b></dt><dd>生成された新しい NamingContext</dd></dl>
+<dl><dt><b>例外:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>NotFound</em>&nbsp;</td><td>途中の &lt;c_1, c_2, ..., c_(n-1)&gt; が存在しない。 </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>CannotProceed</em>&nbsp;</td><td>何らかの理由で処理を継続できない。 </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>InvalidName</em>&nbsp;</td><td>引数 name の名前が不正。 </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>AlreadyBound</em>&nbsp;</td><td>name &lt;n&gt; の Object がすでにバインドされている。 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a7a1bd265833e6e101ea03926f5e30c52"></a><!-- doxytag: member="RTC::CorbaNaming::bindNewContext" ref="a7a1bd265833e6e101ea03926f5e30c52" args="(const CosNaming::Name &amp;name, bool force=true)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">CosNaming::NamingContext_ptr RTC::CorbaNaming::bindNewContext </td>
+          <td>(</td>
+          <td class="paramtype">const CosNaming::Name &amp;&nbsp;</td>
+          <td class="paramname"> <em>name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&nbsp;</td>
+          <td class="paramname"> <em>force</em> = <code>true</code></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td>  throw (<a class="el" href="classRTC_1_1CorbaNaming.html#adcd493bdbf96b312ce1b985b8a08c79d">SystemException</a>, <a class="el" href="classRTC_1_1CorbaNaming.html#a92e7f10507946507a4e8daf126ecc409">NotFound</a>, <a class="el" href="classRTC_1_1CorbaNaming.html#a77504e9d1028c3f524151edda4c5faf4">CannotProceed</a>,             <a class="el" href="classRTC_1_1CorbaNaming.html#ab79889ab5d3a28c494ee8768200e3683">InvalidName</a>, <a class="el" href="classRTC_1_1CorbaNaming.html#a6669a088b188bbf53d96328945db065f">AlreadyBound</a>)</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>新しいコンテキストを bind する </p>
+<p>与えられた name に対して新しいコンテキストをバインドする。 生成された　NamingContext はネームサーバ上で生成されたものである。</p>
+<dl><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>name</em>&nbsp;</td><td>NamingContextに付ける名前のネームコンポーネント </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>force</em>&nbsp;</td><td>trueの場合、途中のコンテキストを強制的にバインドする (デフォルト値:true)</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>戻り値:</b></dt><dd>生成された新しい NamingContext</dd></dl>
+<dl><dt><b>例外:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>NotFound</em>&nbsp;</td><td>途中の &lt;c_1, c_2, ..., c_(n-1)&gt; が存在しない。 </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>CannotProceed</em>&nbsp;</td><td>何らかの理由で処理を継続できない。 </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>InvalidName</em>&nbsp;</td><td>引数 name の名前が不正。 </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>AlreadyBound</em>&nbsp;</td><td>name &lt;n&gt; の Object がすでにバインドされている。 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a5b0474504d93dfb7c565e2d815c08df2"></a><!-- doxytag: member="RTC::CorbaNaming::bindOrResolve" ref="a5b0474504d93dfb7c565e2d815c08df2" args="(CosNaming::NamingContext_ptr context, const CosNaming::Name &amp;name, CORBA::Object_ptr obj)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">CORBA::Object_ptr RTC::CorbaNaming::bindOrResolve </td>
+          <td>(</td>
+          <td class="paramtype">CosNaming::NamingContext_ptr&nbsp;</td>
+          <td class="paramname"> <em>context</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const CosNaming::Name &amp;&nbsp;</td>
+          <td class="paramname"> <em>name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">CORBA::Object_ptr&nbsp;</td>
+          <td class="paramname"> <em>obj</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>オブジェクトの名前をバインドまたは解決する </p>
+<p>指定されたコンテキストに対してオブジェクトを NameComponent で指定された 位置にバインドする。 同一箇所に既に他の要素がバインド済みの場合は、既存のバインド済み要素を 取得する。</p>
+<dl><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>context</em>&nbsp;</td><td>bind もしくは resole 対象コンテキスト </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>name</em>&nbsp;</td><td>オブジェクトに付ける名前の NameComponent </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>obj</em>&nbsp;</td><td>関連付けられる Object</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>戻り値:</b></dt><dd>NameComponent で指定された位置にバインドされているオブジェクト </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a5c57c1521026ea4f2e8cbfc423c1ed06"></a><!-- doxytag: member="RTC::CorbaNaming::bindOrResolveContext" ref="a5c57c1521026ea4f2e8cbfc423c1ed06" args="(CosNaming::NamingContext_ptr context, const CosNaming::Name &amp;name)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">CosNaming::NamingContext_ptr RTC::CorbaNaming::bindOrResolveContext </td>
+          <td>(</td>
+          <td class="paramtype">CosNaming::NamingContext_ptr&nbsp;</td>
+          <td class="paramname"> <em>context</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const CosNaming::Name &amp;&nbsp;</td>
+          <td class="paramname"> <em>name</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>名前をバインドまたは解決する </p>
+<p>指定されたコンテキストに対して NameComponent で指定された位置に 新規コンテキストをバインドする。 同一箇所に既に他の要素がバインド済みの場合は、既存のバインド済み要素を 取得する。</p>
+<dl><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>context</em>&nbsp;</td><td>bind もしくは resole 対象コンテキスト </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>name</em>&nbsp;</td><td>新規作成するコンテキストの位置を表す NameComponent</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>戻り値:</b></dt><dd>NameComponent で指定された位置にバインドされているContext </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a987187accb08864e9676e0663a3cc939"></a><!-- doxytag: member="RTC::CorbaNaming::bindOrResolveContext" ref="a987187accb08864e9676e0663a3cc939" args="(CosNaming::NamingContext_ptr context, const CosNaming::Name &amp;name, CosNaming::NamingContext_ptr new_context)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">CosNaming::NamingContext_ptr RTC::CorbaNaming::bindOrResolveContext </td>
+          <td>(</td>
+          <td class="paramtype">CosNaming::NamingContext_ptr&nbsp;</td>
+          <td class="paramname"> <em>context</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const CosNaming::Name &amp;&nbsp;</td>
+          <td class="paramname"> <em>name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">CosNaming::NamingContext_ptr&nbsp;</td>
+          <td class="paramname"> <em>new_context</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>名前をバインドまたは解決する </p>
+<p>指定されたコンテキストに対して Contextを NameComponent で指定された位置に バインドする。 同一箇所に既に他の要素がバインド済みの場合は、既存のバインド済み要素を 取得する。</p>
+<dl><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>context</em>&nbsp;</td><td>bind もしくは resole 対象コンテキスト </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>name</em>&nbsp;</td><td>コンテキストに付ける名前の NameComponent </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>new_context</em>&nbsp;</td><td>関連付けられる Context</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>戻り値:</b></dt><dd>NameComponent で指定された位置にバインドされているContext </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a5417cf439f8efd84f9d13d212f9e62bd"></a><!-- doxytag: member="RTC::CorbaNaming::bindRecursive" ref="a5417cf439f8efd84f9d13d212f9e62bd" args="(CosNaming::NamingContext_ptr context, const CosNaming::Name &amp;name, CORBA::Object_ptr obj)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void RTC::CorbaNaming::bindRecursive </td>
+          <td>(</td>
+          <td class="paramtype">CosNaming::NamingContext_ptr&nbsp;</td>
+          <td class="paramname"> <em>context</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const CosNaming::Name &amp;&nbsp;</td>
+          <td class="paramname"> <em>name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">CORBA::Object_ptr&nbsp;</td>
+          <td class="paramname"> <em>obj</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td>  throw (<a class="el" href="classRTC_1_1CorbaNaming.html#adcd493bdbf96b312ce1b985b8a08c79d">SystemException</a>, <a class="el" href="classRTC_1_1CorbaNaming.html#a77504e9d1028c3f524151edda4c5faf4">CannotProceed</a>, <a class="el" href="classRTC_1_1CorbaNaming.html#ab79889ab5d3a28c494ee8768200e3683">InvalidName</a>, <a class="el" href="classRTC_1_1CorbaNaming.html#a6669a088b188bbf53d96328945db065f">AlreadyBound</a>)</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>途中のコンテキストを再帰的に bind しながら Object を bind する </p>
+<p>context で与えられた NamingContext に対して、name で指定された ネームコンポーネント &lt;c_1, ... c_(n-1)&gt; を NamingContext として 解決しながら、名前 &lt;c_n&gt; に対して obj を bind する。 もし、&lt;c_1, ... c_(n-1)&gt; に対応する NamingContext がない場合には 新たな NamingContext をバインドする。</p>
+<p>最終的に &lt;c_1, c_2, ..., c_(n-1)&gt; に対応する NamingContext が生成 または解決された上で、CosNamingbind(&lt;c_n&gt;, object) が呼び出される。 このとき、すでにバインディングが存在すれば AlreadyBound例外が発生する。</p>
+<p>途中のコンテキストを解決する過程で、解決しようとするコンテキストと 同じ名前の NamingContext ではない Binding が存在する場合、 CannotProceed 例外が発生し処理を中止する。</p>
+<dl><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>context</em>&nbsp;</td><td>bind を開始する　NamingContext </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>name</em>&nbsp;</td><td>オブジェクトに付ける名前のネームコンポーネント </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>obj</em>&nbsp;</td><td>関連付けられるオブジェクト</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl><dt><b>例外:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>CannotProceed</em>&nbsp;</td><td>&lt;c_1, ..., c_(n-1)&gt; に対応する NamingContext のうちひとつが、すでに NamingContext 以外の object にバインド されており、処理を継続できない。 </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>InvalidName</em>&nbsp;</td><td>名前 name が不正 </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>AlreadyBound</em>&nbsp;</td><td>name &lt;c_n&gt; にすでに何らかの object がバインド されている。 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a68877e40bf7bbc6e37137170e8212026"></a><!-- doxytag: member="RTC::CorbaNaming::clearAll" ref="a68877e40bf7bbc6e37137170e8212026" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void RTC::CorbaNaming::clearAll </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>すべての Binding を削除する </p>
+<p>登録されている全てのBinding を削除する。 </p>
+
+</div>
+</div>
+<a class="anchor" id="a85fef1b00d8e6dc0a266daa56b218725"></a><!-- doxytag: member="RTC::CorbaNaming::destroy" ref="a85fef1b00d8e6dc0a266daa56b218725" args="(CosNaming::NamingContext_ptr context)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void RTC::CorbaNaming::destroy </td>
+          <td>(</td>
+          <td class="paramtype">CosNaming::NamingContext_ptr&nbsp;</td>
+          <td class="paramname"> <em>context</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td>  throw (<a class="el" href="classRTC_1_1CorbaNaming.html#adcd493bdbf96b312ce1b985b8a08c79d">SystemException</a>, <a class="el" href="classRTC_1_1CorbaNaming.html#a223ee860ea0ffa395e688b6eb0fd3b11">NotEmpty</a>)</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>NamingContext を非アクティブ化する. </p>
+<p>context で指定された NamingContext を非アクティブ化する。 context に他のコンテキストがバインドされている場合は NotEmpty 例外が 発生する。</p>
+<dl><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>context</em>&nbsp;</td><td>非アクティブ化する NamingContext</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl><dt><b>例外:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>NotEmpty</em>&nbsp;</td><td>対象context に他のコンテキストがバインドされている。 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a82c8c8a1adbe87e34778be5ad9ef1ff6"></a><!-- doxytag: member="RTC::CorbaNaming::destroyRecursive" ref="a82c8c8a1adbe87e34778be5ad9ef1ff6" args="(CosNaming::NamingContext_ptr context)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void RTC::CorbaNaming::destroyRecursive </td>
+          <td>(</td>
+          <td class="paramtype">CosNaming::NamingContext_ptr&nbsp;</td>
+          <td class="paramname"> <em>context</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td>  throw (<a class="el" href="classRTC_1_1CorbaNaming.html#adcd493bdbf96b312ce1b985b8a08c79d">SystemException</a>, <a class="el" href="classRTC_1_1CorbaNaming.html#a223ee860ea0ffa395e688b6eb0fd3b11">NotEmpty</a>, <a class="el" href="classRTC_1_1CorbaNaming.html#a92e7f10507946507a4e8daf126ecc409">NotFound</a>, <a class="el" href="classRTC_1_1CorbaNaming.html#a77504e9d1028c3f524151edda4c5faf4">CannotProceed</a>, <a class="el" href="classRTC_1_1CorbaNaming.html#ab79889ab5d3a28c494ee8768200e3683">InvalidName</a>)</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>NamingContext を再帰的に下って非アクティブ化する. </p>
+<p>context で与えられた NamingContext に対して、name で指定された ネームコンポーネント &lt;c_1, ... c_(n-1)&gt; を NamingContext として 解決しながら、名前 &lt;c_n&gt; に対して 非アクティブ化を行う。</p>
+<dl><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>context</em>&nbsp;</td><td>非アクティブ化する NamingContext</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl><dt><b>例外:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>NotEmpty</em>&nbsp;</td><td>対象context に他のコンテキストがバインドされている。 </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>NotFound</em>&nbsp;</td><td>途中の &lt;c_1, c_2, ..., c_(n-1)&gt; が存在しない。 </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>CannotProceed</em>&nbsp;</td><td>何らかの理由で処理を継続できない。 </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>InvalidName</em>&nbsp;</td><td>引数 name の名前が不正。 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="ab70cb38165eaca8be4960a9886ab4b24"></a><!-- doxytag: member="RTC::CorbaNaming::getNameLength" ref="ab70cb38165eaca8be4960a9886ab4b24" args="(const CosNaming::Name &amp;name)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">CORBA::ULong RTC::CorbaNaming::getNameLength </td>
+          <td>(</td>
+          <td class="paramtype">const CosNaming::Name &amp;&nbsp;</td>
+          <td class="paramname"> <em>name</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>ネームコンポーネントの文字列表現時の文字長を取得する </p>
+<p>指定したネームコンポーネントを文字列で表現した場合の長さを取得する。 文字列表現は、NameComponentの構成が{Nc[0],Nc[1],Nc[2]...}の場合、 Nc[0]id.Nc[0].kind/Nc[1]id.Nc[1].kind/Nc[2].id/Nc[2].kind... という形式で取得できる。</p>
+<dl><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>name</em>&nbsp;</td><td>取得対象NameComponent</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>戻り値:</b></dt><dd>指定したネームコンポーネントの文字列長さ </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="abca2ccc7a64e05822f3ea69d7c114e14"></a><!-- doxytag: member="RTC::CorbaNaming::getNameServer" ref="abca2ccc7a64e05822f3ea69d7c114e14" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const char* RTC::CorbaNaming::getNameServer </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>ネームサーバの名前を取得する </p>
+<p>設定したネームサーバの名前を取得する。</p>
+<dl class="return"><dt><b>戻り値:</b></dt><dd>ネームサーバの名前 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="af5f0ff31edba062cb0858c29b38f946c"></a><!-- doxytag: member="RTC::CorbaNaming::getRootContext" ref="af5f0ff31edba062cb0858c29b38f946c" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">CosNaming::NamingContext_ptr RTC::CorbaNaming::getRootContext </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>ルートコンテキストを取得する </p>
+<p>設定したネームサーバのルートコンテキストを取得する。</p>
+<dl class="return"><dt><b>戻り値:</b></dt><dd>ネームサーバのルートコンテキスト </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="aca3989e92a47edac443aee43479dbd96"></a><!-- doxytag: member="RTC::CorbaNaming::init" ref="aca3989e92a47edac443aee43479dbd96" args="(const char *name_server)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void RTC::CorbaNaming::init </td>
+          <td>(</td>
+          <td class="paramtype">const char *&nbsp;</td>
+          <td class="paramname"> <em>name_server</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>ネーミングサービスの初期化 </p>
+<p>指定されたネームサーバ上のネーミングサービスを初期化します。</p>
+<dl><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>name_server</em>&nbsp;</td><td>ネームサーバの名称 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a05315f770a8c4a385d67270569c59108"></a><!-- doxytag: member="RTC::CorbaNaming::isAlive" ref="a05315f770a8c4a385d67270569c59108" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool RTC::CorbaNaming::isAlive </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a1b2a61b7e231a5b34274ea59e79f3f56"></a><!-- doxytag: member="RTC::CorbaNaming::isNamingContext" ref="a1b2a61b7e231a5b34274ea59e79f3f56" args="(const char *string_name)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool RTC::CorbaNaming::isNamingContext </td>
+          <td>(</td>
+          <td class="paramtype">const char *&nbsp;</td>
+          <td class="paramname"> <em>string_name</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>与えられた名前がネーミングコンテキストかどうか </p>
+<p>文字列で指定した要素がネーミングコンテキストか判別する</p>
+<dl><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>string_name</em>&nbsp;</td><td>判別対象文字列</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>戻り値:</b></dt><dd>判別結果(ネーミングコンテキスト:true、それ以外:false) </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a4decaf20d4e7407e8393a2ddef4958d0"></a><!-- doxytag: member="RTC::CorbaNaming::isNamingContext" ref="a4decaf20d4e7407e8393a2ddef4958d0" args="(const CosNaming::Name &amp;name)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool RTC::CorbaNaming::isNamingContext </td>
+          <td>(</td>
+          <td class="paramtype">const CosNaming::Name &amp;&nbsp;</td>
+          <td class="paramname"> <em>name</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>与えられた名前がネーミングコンテキストかどうか </p>
+<p>NameComponentで指定した要素がネーミングコンテキストか判別する</p>
+<dl><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>name</em>&nbsp;</td><td>判別対象NameComponent</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>戻り値:</b></dt><dd>判別結果(ネーミングコンテキスト:true、それ以外:false) </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a09ea40e547b2bf66f2a18f6f186c69d9"></a><!-- doxytag: member="RTC::CorbaNaming::isNamingContext" ref="a09ea40e547b2bf66f2a18f6f186c69d9" args="(CORBA::Object_ptr obj)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool RTC::CorbaNaming::isNamingContext </td>
+          <td>(</td>
+          <td class="paramtype">CORBA::Object_ptr&nbsp;</td>
+          <td class="paramname"> <em>obj</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>オブジェクトがネーミングコンテキストか判別する </p>
+<p>指定した要素がネーミングコンテキストか判別する</p>
+<dl><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>obj</em>&nbsp;</td><td>判別対象要素</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>戻り値:</b></dt><dd>判別結果(ネーミングコンテキスト:true、それ以外:false) </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ac05f8ec66b2e1dc41100fef4dd2c09fd"></a><!-- doxytag: member="RTC::CorbaNaming::list" ref="ac05f8ec66b2e1dc41100fef4dd2c09fd" args="(CosNaming::NamingContext_ptr name_cxt, CORBA::ULong how_many, CosNaming::BindingList_var &amp;bl, CosNaming::BindingIterator_var &amp;bi)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void RTC::CorbaNaming::list </td>
+          <td>(</td>
+          <td class="paramtype">CosNaming::NamingContext_ptr&nbsp;</td>
+          <td class="paramname"> <em>name_cxt</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">CORBA::ULong&nbsp;</td>
+          <td class="paramname"> <em>how_many</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">CosNaming::BindingList_var &amp;&nbsp;</td>
+          <td class="paramname"> <em>bl</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">CosNaming::BindingIterator_var &amp;&nbsp;</td>
+          <td class="paramname"> <em>bi</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>与えられた NamingContext の Binding を取得する </p>
+<p>指定された NamingContext の Binding を取得する。</p>
+<dl><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>name_cxt</em>&nbsp;</td><td>Binding 取得対象 NamingContext </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>how_many</em>&nbsp;</td><td>Binding を取得する階層の深さ </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>bl</em>&nbsp;</td><td>取得した Binding を保持するホルダ </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>bi</em>&nbsp;</td><td>取得した Binding をたどるためのイテレータ </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a7d8bf6f90e7f39fbdf15d4037e9528f4"></a><!-- doxytag: member="RTC::CorbaNaming::nameToString" ref="a7d8bf6f90e7f39fbdf15d4037e9528f4" args="(const CosNaming::Name &amp;name, char *string_name, CORBA::ULong slen)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void RTC::CorbaNaming::nameToString </td>
+          <td>(</td>
+          <td class="paramtype">const CosNaming::Name &amp;&nbsp;</td>
+          <td class="paramname"> <em>name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&nbsp;</td>
+          <td class="paramname"> <em>string_name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">CORBA::ULong&nbsp;</td>
+          <td class="paramname"> <em>slen</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td><code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>ネームコンポーネントの文字列表現を取得する </p>
+<p>指定した範囲のネームコンポーネントの文字列表現を取得する。 文字列表現は、NameComponentの構成が{Nc[0], Nc[1], Nc[2]...}の場合、 Nc[0]id.Nc[0].kind/Nc[1]id.Nc[1].kind/Nc[2].id/Nc[2].kind... という形式で取得できる。 取得した文字列の長さが指定した長さ以上の場合は、 指定した長さで切り捨てられる。</p>
+<dl><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>name</em>&nbsp;</td><td>取得対象NameComponent </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>string_name</em>&nbsp;</td><td>取得結果文字列 </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>slen</em>&nbsp;</td><td>取得対象文字列最大値 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a919496be1e542edf68184dbe6dec3eb9"></a><!-- doxytag: member="RTC::CorbaNaming::newContext" ref="a919496be1e542edf68184dbe6dec3eb9" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">CosNaming::NamingContext_ptr RTC::CorbaNaming::newContext </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>新しいコンテキストを生成する </p>
+<p>与えられたネームサーバ上で生成された NamingContext を返す。 返された NamingContext は bind されていない。</p>
+<dl class="return"><dt><b>戻り値:</b></dt><dd>生成された新しい NamingContext </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a45418a54e9f7dabac0aac79ca232fc76"></a><!-- doxytag: member="RTC::CorbaNaming::rebind" ref="a45418a54e9f7dabac0aac79ca232fc76" args="(const CosNaming::Name &amp;name, CORBA::Object_ptr obj, const bool force=1)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void RTC::CorbaNaming::rebind </td>
+          <td>(</td>
+          <td class="paramtype">const CosNaming::Name &amp;&nbsp;</td>
+          <td class="paramname"> <em>name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">CORBA::Object_ptr&nbsp;</td>
+          <td class="paramname"> <em>obj</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const bool&nbsp;</td>
+          <td class="paramname"> <em>force</em> = <code>1</code></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td>  throw (<a class="el" href="classRTC_1_1CorbaNaming.html#adcd493bdbf96b312ce1b985b8a08c79d">SystemException</a>, <a class="el" href="classRTC_1_1CorbaNaming.html#a92e7f10507946507a4e8daf126ecc409">NotFound</a>, <a class="el" href="classRTC_1_1CorbaNaming.html#a77504e9d1028c3f524151edda4c5faf4">CannotProceed</a>, <a class="el" href="classRTC_1_1CorbaNaming.html#ab79889ab5d3a28c494ee8768200e3683">InvalidName</a>)</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Object を rebind する. </p>
+<p>name で指定された Binding がすでに存在する場合を除いて <a class="el" href="classRTC_1_1CorbaNaming.html#ac21620f79aecc1bf989629b7aac2938f" title="Object を bind する.">bind()</a> と同じ である。バインディングがすでに存在する場合には、新しいバインディングに 置き換えられる。</p>
+<dl><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>name</em>&nbsp;</td><td>オブジェクトに付ける名前の NameComponent </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>obj</em>&nbsp;</td><td>関連付けられるオブジェクト </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>force</em>&nbsp;</td><td>trueの場合、途中のコンテキストを強制的にバインドする (デフォルト値:true)</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl><dt><b>例外:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>NotFound</em>&nbsp;</td><td>途中の &lt;c_1, c_2, ..., c_(n-1)&gt; が存在しない。 </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>CannotProceed</em>&nbsp;</td><td>何らかの理由で処理を継続できない。 </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>InvalidName</em>&nbsp;</td><td>名前 name が不正 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="aa33c587d4d1068bc51de94199ce978b8"></a><!-- doxytag: member="RTC::CorbaNaming::rebindByString" ref="aa33c587d4d1068bc51de94199ce978b8" args="(const char *string_name, CORBA::Object_ptr obj, const bool force=1)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void RTC::CorbaNaming::rebindByString </td>
+          <td>(</td>
+          <td class="paramtype">const char *&nbsp;</td>
+          <td class="paramname"> <em>string_name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">CORBA::Object_ptr&nbsp;</td>
+          <td class="paramname"> <em>obj</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const bool&nbsp;</td>
+          <td class="paramname"> <em>force</em> = <code>1</code></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td>  throw (<a class="el" href="classRTC_1_1CorbaNaming.html#adcd493bdbf96b312ce1b985b8a08c79d">SystemException</a>, <a class="el" href="classRTC_1_1CorbaNaming.html#a92e7f10507946507a4e8daf126ecc409">NotFound</a>, <a class="el" href="classRTC_1_1CorbaNaming.html#a77504e9d1028c3f524151edda4c5faf4">CannotProceed</a>, <a class="el" href="classRTC_1_1CorbaNaming.html#ab79889ab5d3a28c494ee8768200e3683">InvalidName</a>)</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Object を rebind する. </p>
+<p>Object を rebind する際に与える名前が文字列表現であること以外は <a class="el" href="classRTC_1_1CorbaNaming.html#a45418a54e9f7dabac0aac79ca232fc76" title="Object を rebind する.">rebind()</a> と同じである。rebind(toName(string_name), obj) と等価。</p>
+<dl><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>string_name</em>&nbsp;</td><td>オブジェクトに付ける名前の文字列表現 </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>obj</em>&nbsp;</td><td>関連付けられるオブジェクト </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>force</em>&nbsp;</td><td>trueの場合、途中のコンテキストを強制的にバインドする (デフォルト値:true)</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl><dt><b>例外:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>NotFound</em>&nbsp;</td><td>途中の &lt;c_1, c_2, ..., c_(n-1)&gt; が存在しない。 </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>CannotProceed</em>&nbsp;</td><td>何らかの理由で処理を継続できない。 </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>InvalidName</em>&nbsp;</td><td>引数 name の名前が不正。 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="ad21536c2439d8243ae43ec453a46501d"></a><!-- doxytag: member="RTC::CorbaNaming::rebindContext" ref="ad21536c2439d8243ae43ec453a46501d" args="(const char *string_name, CosNaming::NamingContext_ptr name_cxt, const bool force=1)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void RTC::CorbaNaming::rebindContext </td>
+          <td>(</td>
+          <td class="paramtype">const char *&nbsp;</td>
+          <td class="paramname"> <em>string_name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">CosNaming::NamingContext_ptr&nbsp;</td>
+          <td class="paramname"> <em>name_cxt</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const bool&nbsp;</td>
+          <td class="paramname"> <em>force</em> = <code>1</code></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td>  throw (<a class="el" href="classRTC_1_1CorbaNaming.html#adcd493bdbf96b312ce1b985b8a08c79d">SystemException</a>, <a class="el" href="classRTC_1_1CorbaNaming.html#a92e7f10507946507a4e8daf126ecc409">NotFound</a>, <a class="el" href="classRTC_1_1CorbaNaming.html#a77504e9d1028c3f524151edda4c5faf4">CannotProceed</a>, <a class="el" href="classRTC_1_1CorbaNaming.html#ab79889ab5d3a28c494ee8768200e3683">InvalidName</a>)</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>NamingContext を rebind する. </p>
+<p>name で指定されたコンテキストがすでに存在する場合を除いて <a class="el" href="classRTC_1_1CorbaNaming.html#a1eaa278d91546b514fdf361a0bfcbf87" title="NamingContext を bind する.">bindContext()</a> と同じである。 バインディングがすでに存在する場合には、新しいバインディングに 置き換えられる。</p>
+<dl><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>string_name</em>&nbsp;</td><td>オブジェクトに付ける名前の文字列表現 </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>name_cxt</em>&nbsp;</td><td>関連付けられる NamingContext </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>force</em>&nbsp;</td><td>trueの場合、途中のコンテキストを強制的にバインドする (デフォルト値:true)</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl><dt><b>例外:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>NotFound</em>&nbsp;</td><td>途中の &lt;c_1, c_2, ..., c_(n-1)&gt; が存在しない。 </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>CannotProceed</em>&nbsp;</td><td>何らかの理由で処理を継続できない。 </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>InvalidName</em>&nbsp;</td><td>引数 name の名前が不正。 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="afd9649388ba4f49b53d036b50e311df0"></a><!-- doxytag: member="RTC::CorbaNaming::rebindContext" ref="afd9649388ba4f49b53d036b50e311df0" args="(const CosNaming::Name &amp;name, CosNaming::NamingContext_ptr name_cxt, const bool force=1)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void RTC::CorbaNaming::rebindContext </td>
+          <td>(</td>
+          <td class="paramtype">const CosNaming::Name &amp;&nbsp;</td>
+          <td class="paramname"> <em>name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">CosNaming::NamingContext_ptr&nbsp;</td>
+          <td class="paramname"> <em>name_cxt</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const bool&nbsp;</td>
+          <td class="paramname"> <em>force</em> = <code>1</code></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td>  throw (<a class="el" href="classRTC_1_1CorbaNaming.html#adcd493bdbf96b312ce1b985b8a08c79d">SystemException</a>, <a class="el" href="classRTC_1_1CorbaNaming.html#a92e7f10507946507a4e8daf126ecc409">NotFound</a>, <a class="el" href="classRTC_1_1CorbaNaming.html#a77504e9d1028c3f524151edda4c5faf4">CannotProceed</a>, <a class="el" href="classRTC_1_1CorbaNaming.html#ab79889ab5d3a28c494ee8768200e3683">InvalidName</a>)</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>NamingContext を rebind する. </p>
+<p>name で指定されたコンテキストがすでに存在する場合を除いて <a class="el" href="classRTC_1_1CorbaNaming.html#a1eaa278d91546b514fdf361a0bfcbf87" title="NamingContext を bind する.">bindContext()</a> と同じである。 バインディングがすでに存在する場合には、新しいバインディングに 置き換えられる。</p>
+<dl><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>name</em>&nbsp;</td><td>オブジェクトに付ける名前のネームコンポーネント </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>name_cxt</em>&nbsp;</td><td>関連付けられる NamingContext </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>force</em>&nbsp;</td><td>trueの場合、途中のコンテキストを強制的にバインドする (デフォルト値:true)</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl><dt><b>例外:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>NotFound</em>&nbsp;</td><td>途中の &lt;c_1, c_2, ..., c_(n-1)&gt; が存在しない。 </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>CannotProceed</em>&nbsp;</td><td>何らかの理由で処理を継続できない。 </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>InvalidName</em>&nbsp;</td><td>引数 name の名前が不正。 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a481771ab96cc9e24339dd288216e5154"></a><!-- doxytag: member="RTC::CorbaNaming::rebindContextRecursive" ref="a481771ab96cc9e24339dd288216e5154" args="(CosNaming::NamingContext_ptr context, const CosNaming::Name &amp;name, CosNaming::NamingContext_ptr name_cxt)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void RTC::CorbaNaming::rebindContextRecursive </td>
+          <td>(</td>
+          <td class="paramtype">CosNaming::NamingContext_ptr&nbsp;</td>
+          <td class="paramname"> <em>context</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const CosNaming::Name &amp;&nbsp;</td>
+          <td class="paramname"> <em>name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">CosNaming::NamingContext_ptr&nbsp;</td>
+          <td class="paramname"> <em>name_cxt</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>途中のコンテキストを再帰的に rebind し NamingContext を rebind する </p>
+<p>bind されるオブジェクトが NamingContext であることを除いて <a class="el" href="classRTC_1_1CorbaNaming.html#a44d87abf8edc49237f4f9da204b0fe24" title="途中のコンテキストを bind しながら Object を rebind する">rebindRecursive()</a> と同じである。</p>
+<dl><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>context</em>&nbsp;</td><td>bind を開始する　NamingContext </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>name</em>&nbsp;</td><td>オブジェクトに付ける名前の NameComponent </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>name_cxt</em>&nbsp;</td><td>関連付けられる NamingContext </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a44d87abf8edc49237f4f9da204b0fe24"></a><!-- doxytag: member="RTC::CorbaNaming::rebindRecursive" ref="a44d87abf8edc49237f4f9da204b0fe24" args="(CosNaming::NamingContext_ptr context, const CosNaming::Name &amp;name, CORBA::Object_ptr obj)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void RTC::CorbaNaming::rebindRecursive </td>
+          <td>(</td>
+          <td class="paramtype">CosNaming::NamingContext_ptr&nbsp;</td>
+          <td class="paramname"> <em>context</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const CosNaming::Name &amp;&nbsp;</td>
+          <td class="paramname"> <em>name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">CORBA::Object_ptr&nbsp;</td>
+          <td class="paramname"> <em>obj</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td>  throw (<a class="el" href="classRTC_1_1CorbaNaming.html#adcd493bdbf96b312ce1b985b8a08c79d">SystemException</a>, <a class="el" href="classRTC_1_1CorbaNaming.html#a77504e9d1028c3f524151edda4c5faf4">CannotProceed</a>, <a class="el" href="classRTC_1_1CorbaNaming.html#ab79889ab5d3a28c494ee8768200e3683">InvalidName</a>)</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>途中のコンテキストを bind しながら Object を rebind する </p>
+<p>name &lt;c_n&gt; で指定された NamingContext もしくは Object がすでに存在する 場合を除いて <a class="el" href="classRTC_1_1CorbaNaming.html#a5417cf439f8efd84f9d13d212f9e62bd" title="途中のコンテキストを再帰的に bind しながら Object を bind する...">bindRecursive()</a> と同じである。</p>
+<p>name &lt;c_n&gt; で指定されたバインディングがすでに存在する場合には、 新しいバインディングに置き換えられる。</p>
+<dl><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>context</em>&nbsp;</td><td>bind を開始する　NamingContext </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>name</em>&nbsp;</td><td>オブジェクトに付ける名前の NameComponent </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>obj</em>&nbsp;</td><td>関連付けられるオブジェクト</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl><dt><b>例外:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>CannotProceed</em>&nbsp;</td><td>途中のコンテキストが解決できない。 </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>InvalidName</em>&nbsp;</td><td>与えられた name が不正。 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a6127eec83159c0057bc309c6d7e5d2d5"></a><!-- doxytag: member="RTC::CorbaNaming::resolve" ref="a6127eec83159c0057bc309c6d7e5d2d5" args="(const char *string_name)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">CORBA::Object_ptr RTC::CorbaNaming::resolve </td>
+          <td>(</td>
+          <td class="paramtype">const char *&nbsp;</td>
+          <td class="paramname"> <em>string_name</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td>  throw (<a class="el" href="classRTC_1_1CorbaNaming.html#adcd493bdbf96b312ce1b985b8a08c79d">SystemException</a>, <a class="el" href="classRTC_1_1CorbaNaming.html#a92e7f10507946507a4e8daf126ecc409">NotFound</a>, <a class="el" href="classRTC_1_1CorbaNaming.html#a77504e9d1028c3f524151edda4c5faf4">CannotProceed</a>, <a class="el" href="classRTC_1_1CorbaNaming.html#ab79889ab5d3a28c494ee8768200e3683">InvalidName</a>)</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>与えられた NameComponent にバインドされている Object を返す </p>
+<p>name に bind されているオブジェクト参照を返す。 ネームコンポーネント &lt;c_1, c_2, ... c_n&gt; は再帰的に解決される。</p>
+<p>CosNaming::resolve() とほぼ同等の働きをするが、常に与えられた ネームサーバのルートコンテキストに対して <a class="el" href="classRTC_1_1CorbaNaming.html#aa5fdd805e58b5640360eecbd9ec48f9b" title="与えられた NameComponent にバインドされている Object を返す">resolve()</a> が呼び出される点が 異なる。</p>
+<dl><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>string_name</em>&nbsp;</td><td>解決すべきオブジェクトの名前の文字列表現</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>戻り値:</b></dt><dd>解決されたオブジェクト参照</dd></dl>
+<dl><dt><b>例外:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>NotFound</em>&nbsp;</td><td>途中の &lt;c_1, c_2, ..., c_(n-1)&gt; が存在しない。 </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>CannotProceed</em>&nbsp;</td><td>何らかの理由で処理を継続できない。 </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>InvalidName</em>&nbsp;</td><td>引数 name の名前が不正。 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="aa5fdd805e58b5640360eecbd9ec48f9b"></a><!-- doxytag: member="RTC::CorbaNaming::resolve" ref="aa5fdd805e58b5640360eecbd9ec48f9b" args="(const CosNaming::Name &amp;name)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">CORBA::Object_ptr RTC::CorbaNaming::resolve </td>
+          <td>(</td>
+          <td class="paramtype">const CosNaming::Name &amp;&nbsp;</td>
+          <td class="paramname"> <em>name</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td>  throw (<a class="el" href="classRTC_1_1CorbaNaming.html#adcd493bdbf96b312ce1b985b8a08c79d">SystemException</a>, <a class="el" href="classRTC_1_1CorbaNaming.html#a92e7f10507946507a4e8daf126ecc409">NotFound</a>, <a class="el" href="classRTC_1_1CorbaNaming.html#a77504e9d1028c3f524151edda4c5faf4">CannotProceed</a>, <a class="el" href="classRTC_1_1CorbaNaming.html#ab79889ab5d3a28c494ee8768200e3683">InvalidName</a>)</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>与えられた NameComponent にバインドされている Object を返す </p>
+<p>name に bind されているオブジェクト参照を返す。 ネームコンポーネント &lt;c_1, c_2, ... c_n&gt; は再帰的に解決される。</p>
+<p>CosNaming::resolve() とほぼ同等の働きをするが、常に与えられた ネームサーバのルートコンテキストに対して <a class="el" href="classRTC_1_1CorbaNaming.html#aa5fdd805e58b5640360eecbd9ec48f9b" title="与えられた NameComponent にバインドされている Object を返す">resolve()</a> が呼び出される点が 異なる。</p>
+<dl><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>name</em>&nbsp;</td><td>解決すべきオブジェクトの名前のネームコンポーネント</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>戻り値:</b></dt><dd>解決されたオブジェクト参照</dd></dl>
+<dl><dt><b>例外:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>NotFound</em>&nbsp;</td><td>途中の &lt;c_1, c_2, ..., c_(n-1)&gt; が存在しない。 </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>CannotProceed</em>&nbsp;</td><td>何らかの理由で処理を継続できない。 </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>InvalidName</em>&nbsp;</td><td>引数 name の名前が不正。 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a0046eede262912d6da405d482f8e0153"></a><!-- doxytag: member="RTC::CorbaNaming::resolveStr" ref="a0046eede262912d6da405d482f8e0153" args="(const char *string_name)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">CORBA::Object_ptr RTC::CorbaNaming::resolveStr </td>
+          <td>(</td>
+          <td class="paramtype">const char *&nbsp;</td>
+          <td class="paramname"> <em>string_name</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td>  throw (<a class="el" href="classRTC_1_1CorbaNaming.html#adcd493bdbf96b312ce1b985b8a08c79d">SystemException</a>, <a class="el" href="classRTC_1_1CorbaNaming.html#a92e7f10507946507a4e8daf126ecc409">NotFound</a>, <a class="el" href="classRTC_1_1CorbaNaming.html#a77504e9d1028c3f524151edda4c5faf4">CannotProceed</a>,             <a class="el" href="classRTC_1_1CorbaNaming.html#ab79889ab5d3a28c494ee8768200e3683">InvalidName</a>, <a class="el" href="classRTC_1_1CorbaNaming.html#a6669a088b188bbf53d96328945db065f">AlreadyBound</a>)</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>与えられた文字列表現を resolve しオブジェクトを返す </p>
+<p>指定された文字列表現をresolveし，オブジェクトを取得する。</p>
+<dl><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>string_name</em>&nbsp;</td><td>取得対象オブジェクト文字列表現</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>戻り値:</b></dt><dd>解決されたオブジェクト</dd></dl>
+<dl><dt><b>例外:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>NotFound</em>&nbsp;</td><td>途中の &lt;c_1, c_2, ..., c_(n-1)&gt; が存在しない。 </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>CannotProceed</em>&nbsp;</td><td>何らかの理由で処理を継続できない。 </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>InvalidName</em>&nbsp;</td><td>引数 name の名前が不正。 </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>AlreadyBound</em>&nbsp;</td><td>name &lt;n&gt; の Object がすでにバインドされている。 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a9a5a03d8e244a0fa65a25337fe98a74a"></a><!-- doxytag: member="RTC::CorbaNaming::split" ref="a9a5a03d8e244a0fa65a25337fe98a74a" args="(const std::string &amp;input, const std::string &amp;delimiter, std::vector&lt; std::string &gt; &amp;results)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned int RTC::CorbaNaming::split </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&nbsp;</td>
+          <td class="paramname"> <em>input</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&nbsp;</td>
+          <td class="paramname"> <em>delimiter</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::vector&lt; std::string &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>results</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td><code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>文字列の分割 </p>
+<p>文字列を指定したデリミタで分割する。</p>
+<dl><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>input</em>&nbsp;</td><td>分割対象文字列 </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>delimiter</em>&nbsp;</td><td>分割用デリミタ </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>results</em>&nbsp;</td><td>分割結果</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>戻り値:</b></dt><dd>分割した文字列の要素数 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a28d5186a7f916a4216fe508557cafac4"></a><!-- doxytag: member="RTC::CorbaNaming::subName" ref="a28d5186a7f916a4216fe508557cafac4" args="(const CosNaming::Name &amp;name, CORBA::Long begin, CORBA::Long end=&#45;1)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">CosNaming::Name RTC::CorbaNaming::subName </td>
+          <td>(</td>
+          <td class="paramtype">const CosNaming::Name &amp;&nbsp;</td>
+          <td class="paramname"> <em>name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">CORBA::Long&nbsp;</td>
+          <td class="paramname"> <em>begin</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">CORBA::Long&nbsp;</td>
+          <td class="paramname"> <em>end</em> = <code>-1</code></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>ネームコンポーネントの部分を返す </p>
+<p>指定された範囲のネームコンポーネントを取得する。 終了位置が指定されていない場合は、最後の要素を除いたネームコンポーネント を返す。</p>
+<dl><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>name</em>&nbsp;</td><td>検索対象NameComponent </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>begin</em>&nbsp;</td><td>取得範囲開始位置 </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>end</em>&nbsp;</td><td>取得範囲終了位置(デフォルト値:-1)</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>戻り値:</b></dt><dd>NameComponent 取得結果 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a145435b772577b4ab4be1c6cee39296e"></a><!-- doxytag: member="RTC::CorbaNaming::toName" ref="a145435b772577b4ab4be1c6cee39296e" args="(const char *string_name)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">CosNaming::Name RTC::CorbaNaming::toName </td>
+          <td>(</td>
+          <td class="paramtype">const char *&nbsp;</td>
+          <td class="paramname"> <em>string_name</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td>  throw (<a class="el" href="classRTC_1_1CorbaNaming.html#adcd493bdbf96b312ce1b985b8a08c79d">SystemException</a>, <a class="el" href="classRTC_1_1CorbaNaming.html#ab79889ab5d3a28c494ee8768200e3683">InvalidName</a>)</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>与えられた文字列表現を NameComponent に分解する </p>
+<p>指定された文字列を NameComponent に変換する。</p>
+<dl><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>string_name</em>&nbsp;</td><td>変換対象文字列</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>戻り値:</b></dt><dd>NameComponent 変換結果</dd></dl>
+<dl><dt><b>例外:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>InvalidName</em>&nbsp;</td><td>引数 string_name が不正。 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a2b6bc9675b2aa4bc36a6df7087fff86b"></a><!-- doxytag: member="RTC::CorbaNaming::toString" ref="a2b6bc9675b2aa4bc36a6df7087fff86b" args="(const CosNaming::Name &amp;name)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char* RTC::CorbaNaming::toString </td>
+          <td>(</td>
+          <td class="paramtype">const CosNaming::Name &amp;&nbsp;</td>
+          <td class="paramname"> <em>name</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td>  throw (<a class="el" href="classRTC_1_1CorbaNaming.html#adcd493bdbf96b312ce1b985b8a08c79d">SystemException</a>, <a class="el" href="classRTC_1_1CorbaNaming.html#ab79889ab5d3a28c494ee8768200e3683">InvalidName</a>)</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>与えられた NameComponent の文字列表現を返す </p>
+<p>指定された NameComponent を文字に変換する。</p>
+<dl><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>name</em>&nbsp;</td><td>変換対象 NameComponent</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>戻り値:</b></dt><dd>文字列変換結果</dd></dl>
+<dl><dt><b>例外:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>InvalidName</em>&nbsp;</td><td>引数 name の名前が不正。 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a039f66a7b938c7d20f8a5990af2746ab"></a><!-- doxytag: member="RTC::CorbaNaming::toUrl" ref="a039f66a7b938c7d20f8a5990af2746ab" args="(char *addr, char *string_name)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char* RTC::CorbaNaming::toUrl </td>
+          <td>(</td>
+          <td class="paramtype">char *&nbsp;</td>
+          <td class="paramname"> <em>addr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&nbsp;</td>
+          <td class="paramname"> <em>string_name</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td>  throw (<a class="el" href="classRTC_1_1CorbaNaming.html#adcd493bdbf96b312ce1b985b8a08c79d">SystemException</a>, <a class="el" href="classRTC_1_1CorbaNaming.html#af3580312d8a2e6d00ad3dca75b3cfae3">InvalidAddress</a>, <a class="el" href="classRTC_1_1CorbaNaming.html#ab79889ab5d3a28c494ee8768200e3683">InvalidName</a>)</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>与えられた addre と string_name から URL表現を取得する </p>
+<p>指定されたアドレスと名称をURLに変換する。</p>
+<dl><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>addr</em>&nbsp;</td><td>変換対象アドレス </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>string_name</em>&nbsp;</td><td>変換対象名称</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>戻り値:</b></dt><dd>URL 変換結果</dd></dl>
+<dl><dt><b>例外:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>InvalidAddress</em>&nbsp;</td><td>引数 addr が不正。 </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>InvalidName</em>&nbsp;</td><td>引数 string_name が不正。 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a7b024033bc92afd1cf5d7cf0a75e4c3e"></a><!-- doxytag: member="RTC::CorbaNaming::unbind" ref="a7b024033bc92afd1cf5d7cf0a75e4c3e" args="(const char *string_name)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void RTC::CorbaNaming::unbind </td>
+          <td>(</td>
+          <td class="paramtype">const char *&nbsp;</td>
+          <td class="paramname"> <em>string_name</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td>  throw (<a class="el" href="classRTC_1_1CorbaNaming.html#adcd493bdbf96b312ce1b985b8a08c79d">SystemException</a>, <a class="el" href="classRTC_1_1CorbaNaming.html#a92e7f10507946507a4e8daf126ecc409">NotFound</a>, <a class="el" href="classRTC_1_1CorbaNaming.html#a77504e9d1028c3f524151edda4c5faf4">CannotProceed</a>, <a class="el" href="classRTC_1_1CorbaNaming.html#ab79889ab5d3a28c494ee8768200e3683">InvalidName</a>)</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>与えられた NameComponent のバインディングを削除する </p>
+<p>name に bind されているオブジェクト参照を返す。 ネームコンポーネント &lt;c_1, c_2, ... c_n&gt; は再帰的に解決される。</p>
+<p>CosNaming::unbind() とほぼ同等の働きをするが、常に与えられた ネームサーバのルートコンテキストに対して <a class="el" href="classRTC_1_1CorbaNaming.html#a4b2f8435380f383834687f9253323980" title="与えられた NameComponent のバインディングを削除する">unbind()</a> が呼び出される点が 異なる。</p>
+<dl><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>string_name</em>&nbsp;</td><td>解決すべきオブジェクトの名前の文字列表現</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>戻り値:</b></dt><dd>解決されたオブジェクト参照</dd></dl>
+<dl><dt><b>例外:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>NotFound</em>&nbsp;</td><td>途中の &lt;c_1, c_2, ..., c_(n-1)&gt; が存在しない。 </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>CannotProceed</em>&nbsp;</td><td>何らかの理由で処理を継続できない。 </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>InvalidName</em>&nbsp;</td><td>引数 name の名前が不正。 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a4b2f8435380f383834687f9253323980"></a><!-- doxytag: member="RTC::CorbaNaming::unbind" ref="a4b2f8435380f383834687f9253323980" args="(const CosNaming::Name &amp;name)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void RTC::CorbaNaming::unbind </td>
+          <td>(</td>
+          <td class="paramtype">const CosNaming::Name &amp;&nbsp;</td>
+          <td class="paramname"> <em>name</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td>  throw (<a class="el" href="classRTC_1_1CorbaNaming.html#adcd493bdbf96b312ce1b985b8a08c79d">SystemException</a>, <a class="el" href="classRTC_1_1CorbaNaming.html#a92e7f10507946507a4e8daf126ecc409">NotFound</a>, <a class="el" href="classRTC_1_1CorbaNaming.html#a77504e9d1028c3f524151edda4c5faf4">CannotProceed</a>, <a class="el" href="classRTC_1_1CorbaNaming.html#ab79889ab5d3a28c494ee8768200e3683">InvalidName</a>)</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>与えられた NameComponent のバインディングを削除する </p>
+<p>name に bind されているオブジェクト参照を返す。 ネームコンポーネント &lt;c_1, c_2, ... c_n&gt; は再帰的に解決される。</p>
+<p>CosNaming::unbind() とほぼ同等の働きをするが、常に与えられた ネームサーバのルートコンテキストに対して <a class="el" href="classRTC_1_1CorbaNaming.html#a4b2f8435380f383834687f9253323980" title="与えられた NameComponent のバインディングを削除する">unbind()</a> が呼び出される点が 異なる。</p>
+<dl><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>name</em>&nbsp;</td><td>削除するオブジェクトのネームコンポーネント</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl><dt><b>例外:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>NotFound</em>&nbsp;</td><td>途中の &lt;c_1, c_2, ..., c_(n-1)&gt; が存在しない。 </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>CannotProceed</em>&nbsp;</td><td>何らかの理由で処理を継続できない。 </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>InvalidName</em>&nbsp;</td><td>引数 name の名前が不正。 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<hr/><h2>変数</h2>
+<a class="anchor" id="a55ba13ccbb69dad6e339625bdfd1336d"></a><!-- doxytag: member="RTC::CorbaNaming::m_nameServer" ref="a55ba13ccbb69dad6e339625bdfd1336d" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string <a class="el" href="classRTC_1_1CorbaNaming.html#a55ba13ccbb69dad6e339625bdfd1336d">RTC::CorbaNaming::m_nameServer</a><code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>ネームサーバ名称 </p>
+
+</div>
+</div>
+<a class="anchor" id="a3655f851970b9b4f9cfa4181f6847a82"></a><!-- doxytag: member="RTC::CorbaNaming::m_rootContext" ref="a3655f851970b9b4f9cfa4181f6847a82" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">CosNaming::NamingContextExt_var <a class="el" href="classRTC_1_1CorbaNaming.html#a3655f851970b9b4f9cfa4181f6847a82">RTC::CorbaNaming::m_rootContext</a><code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>指定したネームサーバのルートコンテキスト </p>
+
+</div>
+</div>
+<a class="anchor" id="a49fb01cad296636d256d52b7c4295544"></a><!-- doxytag: member="RTC::CorbaNaming::m_varORB" ref="a49fb01cad296636d256d52b7c4295544" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">CORBA::ORB_var <a class="el" href="classRTC_1_1CorbaNaming.html#a49fb01cad296636d256d52b7c4295544">RTC::CorbaNaming::m_varORB</a><code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>ORB. </p>
+
+</div>
+</div>
+</div>
+<hr class="footer"/><address style="text-align: right;"><small>OpenRTMに対してThu May 24 23:25:19 2012に生成されました。&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.6.3 </small></address>
+</body>
+</html>

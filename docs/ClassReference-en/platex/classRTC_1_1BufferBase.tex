@@ -1,0 +1,379 @@
+\section{RTC::BufferBase$<$ DataType $>$ Class Template Reference}
+\label{classRTC_1_1BufferBase}\index{RTC::BufferBase@{RTC::BufferBase}}
+
+
+\doxyref{BufferBase}{p.}{classRTC_1_1BufferBase} abstract class.  
+
+
+
+
+{\ttfamily \#include $<$BufferBase.h$>$}
+
+Inheritance diagram for RTC::BufferBase$<$ DataType $>$:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3cm]{classRTC_1_1BufferBase}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual BUFFERSTATUS\_\-ENUM {\bf $\sim$BufferBase} (void)
+\begin{DoxyCompactList}\small\item\em Virtual destructor. \item\end{DoxyCompactList}\item 
+virtual void {\bf init} (const {\bf coil::Properties} \&prop)=0
+\begin{DoxyCompactList}\small\item\em Set the buffer. \item\end{DoxyCompactList}\item 
+virtual size\_\-t {\bf length} (void) const =0
+\begin{DoxyCompactList}\small\item\em Get the buffer length. \item\end{DoxyCompactList}\item 
+virtual ReturnCode {\bf length} (size\_\-t n)=0
+\begin{DoxyCompactList}\small\item\em Set the buffer length. \item\end{DoxyCompactList}\item 
+virtual ReturnCode {\bf reset} ()=0
+\begin{DoxyCompactList}\small\item\em Reset the buffer status. \item\end{DoxyCompactList}\item 
+virtual DataType $\ast$ {\bf wptr} (long int n=0)=0
+\begin{DoxyCompactList}\small\item\em Get the writing pointer. \item\end{DoxyCompactList}\item 
+virtual ReturnCode {\bf advanceWptr} (long int n=1)=0
+\begin{DoxyCompactList}\small\item\em Forward n writing pointers. \item\end{DoxyCompactList}\item 
+virtual ReturnCode {\bf put} (const DataType \&value)=0
+\begin{DoxyCompactList}\small\item\em Write data into the buffer. \item\end{DoxyCompactList}\item 
+virtual ReturnCode {\bf write} (const DataType \&value, long int sec=-\/1, long int nsec=-\/1)=0
+\begin{DoxyCompactList}\small\item\em Write data into the buffer. \item\end{DoxyCompactList}\item 
+virtual size\_\-t {\bf writable} () const =0
+\begin{DoxyCompactList}\small\item\em Get a writable number. \item\end{DoxyCompactList}\item 
+virtual bool {\bf full} (void) const =0
+\begin{DoxyCompactList}\small\item\em Check on whether the buffer is full. \item\end{DoxyCompactList}\item 
+virtual DataType $\ast$ {\bf rptr} (long int n=0)=0
+\begin{DoxyCompactList}\small\item\em Get the reading pointer. \item\end{DoxyCompactList}\item 
+virtual ReturnCode {\bf advanceRptr} (long int n=1)=0
+\begin{DoxyCompactList}\small\item\em Forward n reading pointers. \item\end{DoxyCompactList}\item 
+virtual ReturnCode {\bf get} (DataType \&value)=0
+\begin{DoxyCompactList}\small\item\em Read data from the buffer. \item\end{DoxyCompactList}\item 
+virtual DataType \& {\bf get} ()=0
+\begin{DoxyCompactList}\small\item\em Read data from the buffer. \item\end{DoxyCompactList}\item 
+virtual ReturnCode {\bf read} (DataType \&value, long int sec=-\/1, long int nsec=-\/1)=0
+\begin{DoxyCompactList}\small\item\em Read data from the buffer. \item\end{DoxyCompactList}\item 
+virtual size\_\-t {\bf readable} () const =0
+\begin{DoxyCompactList}\small\item\em Write data into the buffer. \item\end{DoxyCompactList}\item 
+virtual bool {\bf empty} (void) const =0
+\begin{DoxyCompactList}\small\item\em Check on whether the buffer is empty. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$class DataType$>$ class RTC::BufferBase$<$ DataType $>$}
+
+\doxyref{BufferBase}{p.}{classRTC_1_1BufferBase} abstract class. This is the abstract interface class for various Buffer. Concrete buffer classes must implement the following pure virtual functions. The users specify data type to hold it in a buffer as $<$DataType$>$.
+
+This class provides public interface as follows.
+\begin{DoxyItemize}
+\item \doxyref{write()}{p.}{classRTC_1_1BufferBase_ad9df647826ca2f05664aa0f53e4142f7}: Write data into the buffer.
+\item \doxyref{read()}{p.}{classRTC_1_1BufferBase_a92f188cb4e9a92c9c1079273b1deadc0}: Read data from the buffer.
+\item \doxyref{length()}{p.}{classRTC_1_1BufferBase_ad41d5476f9bce0e737115e8ab7cc615f}: Get the buffer length.
+\item isFull(): Check on whether the buffer is full.
+\item isEmpty(): Check on whether the buffer is empty.
+\end{DoxyItemize}
+
+This class provides protected interface as follows.
+\begin{DoxyItemize}
+\item \doxyref{put()}{p.}{classRTC_1_1BufferBase_af6274c9bc458580643560752f9150235}: Store data into the buffer.
+\item \doxyref{get()}{p.}{classRTC_1_1BufferBase_af12dcf239b3842fe6c946cb61c3d0bd2}: Get data from the buffer.
+\end{DoxyItemize}
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em DataType}]Data type to be stored to the buffer.\end{DoxyParams}
+\begin{DoxySince}{Since}
+0.4.0 
+\end{DoxySince}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{RTC::BufferBase@{RTC::BufferBase}!$\sim$BufferBase@{$\sim$BufferBase}}
+\index{$\sim$BufferBase@{$\sim$BufferBase}!RTC::BufferBase@{RTC::BufferBase}}
+\subsubsection[{$\sim$BufferBase}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class DataType$>$ virtual BUFFERSTATUS\_\-ENUM {\bf RTC::BufferBase}$<$ DataType $>$::$\sim${\bf BufferBase} (void)\hspace{0.3cm}{\ttfamily  [inline, virtual]}}\label{classRTC_1_1BufferBase_a9d5cf204b02ee64d7ebf8f3754e2610d}
+
+
+Virtual destructor. 
+
+
+
+\subsection{Member Function Documentation}
+\index{RTC::BufferBase@{RTC::BufferBase}!advanceRptr@{advanceRptr}}
+\index{advanceRptr@{advanceRptr}!RTC::BufferBase@{RTC::BufferBase}}
+\subsubsection[{advanceRptr}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class DataType$>$ virtual ReturnCode {\bf RTC::BufferBase}$<$ DataType $>$::advanceRptr (long int {\em n} = {\ttfamily 1})\hspace{0.3cm}{\ttfamily  [pure virtual]}}\label{classRTC_1_1BufferBase_aebc3b8b032109963dfa0e3c48f59a333}
+
+
+Forward n reading pointers. 
+
+Pure virtual function to forward n reading pointers.
+
+\begin{DoxyReturn}{Returns}
+BUFFER\_\-OK: Successful BUFFER\_\-ERROR: Failed 
+\end{DoxyReturn}
+
+
+Implemented in {\bf RTC::RingBuffer$<$ DataType $>$} \doxyref{}{p.}{classRTC_1_1RingBuffer_a329834c2988670fa5f849923e9070ed8}.
+
+\index{RTC::BufferBase@{RTC::BufferBase}!advanceWptr@{advanceWptr}}
+\index{advanceWptr@{advanceWptr}!RTC::BufferBase@{RTC::BufferBase}}
+\subsubsection[{advanceWptr}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class DataType$>$ virtual ReturnCode {\bf RTC::BufferBase}$<$ DataType $>$::advanceWptr (long int {\em n} = {\ttfamily 1})\hspace{0.3cm}{\ttfamily  [pure virtual]}}\label{classRTC_1_1BufferBase_a75c0360e0621ebfcbd08e6e937d03ed2}
+
+
+Forward n writing pointers. 
+
+Pure virtual function to forward n writing pointers.
+
+\begin{DoxyReturn}{Returns}
+BUFFER\_\-OK: Successful BUFFER\_\-ERROR: Failed 
+\end{DoxyReturn}
+
+
+Implemented in {\bf RTC::RingBuffer$<$ DataType $>$} \doxyref{}{p.}{classRTC_1_1RingBuffer_a208c5454c6466f09a6cb1cbcd1297871}.
+
+\index{RTC::BufferBase@{RTC::BufferBase}!empty@{empty}}
+\index{empty@{empty}!RTC::BufferBase@{RTC::BufferBase}}
+\subsubsection[{empty}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class DataType$>$ virtual bool {\bf RTC::BufferBase}$<$ DataType $>$::empty (void) const\hspace{0.3cm}{\ttfamily  [pure virtual]}}\label{classRTC_1_1BufferBase_a00e5f836b601681073173740fdaa44d8}
+
+
+Check on whether the buffer is empty. 
+
+Pure virtual function to check on whether the buffer is empty.
+
+\begin{DoxyReturn}{Returns}
+True if the buffer is empty, else false. 
+\end{DoxyReturn}
+
+
+Implemented in {\bf RTC::RingBuffer$<$ DataType $>$} \doxyref{}{p.}{classRTC_1_1RingBuffer_ace2d405ddf45929f635ed596cd62f110}.
+
+\index{RTC::BufferBase@{RTC::BufferBase}!full@{full}}
+\index{full@{full}!RTC::BufferBase@{RTC::BufferBase}}
+\subsubsection[{full}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class DataType$>$ virtual bool {\bf RTC::BufferBase}$<$ DataType $>$::full (void) const\hspace{0.3cm}{\ttfamily  [pure virtual]}}\label{classRTC_1_1BufferBase_a66948bc482a6e127b0ed839a95d692b3}
+
+
+Check on whether the buffer is full. 
+
+Pure virtual function to check on whether the buffer is full.
+
+\begin{DoxyReturn}{Returns}
+True if the buffer is full, else false. 
+\end{DoxyReturn}
+
+
+Implemented in {\bf RTC::RingBuffer$<$ DataType $>$} \doxyref{}{p.}{classRTC_1_1RingBuffer_ae7a8906ed3de0c95ffed9dd4f5f74f3b}.
+
+\index{RTC::BufferBase@{RTC::BufferBase}!get@{get}}
+\index{get@{get}!RTC::BufferBase@{RTC::BufferBase}}
+\subsubsection[{get}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class DataType$>$ virtual DataType\& {\bf RTC::BufferBase}$<$ DataType $>$::get ()\hspace{0.3cm}{\ttfamily  [pure virtual]}}\label{classRTC_1_1BufferBase_af12dcf239b3842fe6c946cb61c3d0bd2}
+
+
+Read data from the buffer. 
+
+Pure virtual function to read data from the buffer.
+
+\begin{DoxyReturn}{Returns}
+Data got from buffer. 
+\end{DoxyReturn}
+
+
+Implemented in {\bf RTC::NullBuffer$<$ DataType $>$} \doxyref{}{p.}{classRTC_1_1NullBuffer_a5acb245659e61424bda0080b44d7b6d1}, and {\bf RTC::RingBuffer$<$ DataType $>$} \doxyref{}{p.}{classRTC_1_1RingBuffer_a229d439990825b2a829daf2f747b8b1b}.
+
+\index{RTC::BufferBase@{RTC::BufferBase}!get@{get}}
+\index{get@{get}!RTC::BufferBase@{RTC::BufferBase}}
+\subsubsection[{get}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class DataType$>$ virtual ReturnCode {\bf RTC::BufferBase}$<$ DataType $>$::get (DataType \& {\em value})\hspace{0.3cm}{\ttfamily  [pure virtual]}}\label{classRTC_1_1BufferBase_a82263a34b3274b316b6563ee5339a7a0}
+
+
+Read data from the buffer. 
+
+Pure virtual function to read data form the buffer.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em value}]Data to read.\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+BUFFER\_\-OK: Successful BUFFER\_\-ERROR: Failed 
+\end{DoxyReturn}
+
+
+Implemented in {\bf RTC::RingBuffer$<$ DataType $>$} \doxyref{}{p.}{classRTC_1_1RingBuffer_a10506341647d0f93cbea400fe9628bf0}.
+
+\index{RTC::BufferBase@{RTC::BufferBase}!init@{init}}
+\index{init@{init}!RTC::BufferBase@{RTC::BufferBase}}
+\subsubsection[{init}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class DataType$>$ virtual void {\bf RTC::BufferBase}$<$ DataType $>$::init (const {\bf coil::Properties} \& {\em prop})\hspace{0.3cm}{\ttfamily  [pure virtual]}}\label{classRTC_1_1BufferBase_a75adf7ba27bb2e795761bce1c7d76413}
+
+
+Set the buffer. 
+
+
+
+Implemented in {\bf RTC::RingBuffer$<$ DataType $>$} \doxyref{}{p.}{classRTC_1_1RingBuffer_a8bd57fca9d29703083c8ff0817dc0a55}.
+
+\index{RTC::BufferBase@{RTC::BufferBase}!length@{length}}
+\index{length@{length}!RTC::BufferBase@{RTC::BufferBase}}
+\subsubsection[{length}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class DataType$>$ virtual ReturnCode {\bf RTC::BufferBase}$<$ DataType $>$::length (size\_\-t {\em n})\hspace{0.3cm}{\ttfamily  [pure virtual]}}\label{classRTC_1_1BufferBase_a9da737609dfc79b3f10f63ca7efc2203}
+
+
+Set the buffer length. 
+
+Pure virtual function to set the buffer length.
+
+\begin{DoxyReturn}{Returns}
+BUFFER\_\-OK: Successful NOT\_\-SUPPORTED: The buffer length cannot be set. BUFFER\_\-ERROR: Failed 
+\end{DoxyReturn}
+
+
+Implemented in {\bf RTC::RingBuffer$<$ DataType $>$} \doxyref{}{p.}{classRTC_1_1RingBuffer_a9584ba6385836d6936d4fda2e595136e}.
+
+\index{RTC::BufferBase@{RTC::BufferBase}!length@{length}}
+\index{length@{length}!RTC::BufferBase@{RTC::BufferBase}}
+\subsubsection[{length}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class DataType$>$ virtual size\_\-t {\bf RTC::BufferBase}$<$ DataType $>$::length (void) const\hspace{0.3cm}{\ttfamily  [pure virtual]}}\label{classRTC_1_1BufferBase_ad41d5476f9bce0e737115e8ab7cc615f}
+
+
+Get the buffer length. 
+
+Pure virtual function to get the buffer length.
+
+\begin{DoxyReturn}{Returns}
+buffer length 
+\end{DoxyReturn}
+
+
+Implemented in {\bf RTC::NullBuffer$<$ DataType $>$} \doxyref{}{p.}{classRTC_1_1NullBuffer_a10b3ecbf48ec0987e321465f21887030}, and {\bf RTC::RingBuffer$<$ DataType $>$} \doxyref{}{p.}{classRTC_1_1RingBuffer_a00c6d912326c1bc65aaf8bc2f0e8895f}.
+
+\index{RTC::BufferBase@{RTC::BufferBase}!put@{put}}
+\index{put@{put}!RTC::BufferBase@{RTC::BufferBase}}
+\subsubsection[{put}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class DataType$>$ virtual ReturnCode {\bf RTC::BufferBase}$<$ DataType $>$::put (const DataType \& {\em value})\hspace{0.3cm}{\ttfamily  [pure virtual]}}\label{classRTC_1_1BufferBase_af6274c9bc458580643560752f9150235}
+
+
+Write data into the buffer. 
+
+Pure virtual function to write data into the buffer.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em value}]Target data to write.\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+BUFFER\_\-OK: Successful BUFFER\_\-ERROR: Failed 
+\end{DoxyReturn}
+
+
+Implemented in {\bf RTC::NullBuffer$<$ DataType $>$} \doxyref{}{p.}{classRTC_1_1NullBuffer_a0704a4190bd82c637635528ea4c28416}, and {\bf RTC::RingBuffer$<$ DataType $>$} \doxyref{}{p.}{classRTC_1_1RingBuffer_acc983b57ac5fd73a47afdfdaab1e3845}.
+
+\index{RTC::BufferBase@{RTC::BufferBase}!read@{read}}
+\index{read@{read}!RTC::BufferBase@{RTC::BufferBase}}
+\subsubsection[{read}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class DataType$>$ virtual ReturnCode {\bf RTC::BufferBase}$<$ DataType $>$::read (DataType \& {\em value}, \/  long int {\em sec} = {\ttfamily -\/1}, \/  long int {\em nsec} = {\ttfamily -\/1})\hspace{0.3cm}{\ttfamily  [pure virtual]}}\label{classRTC_1_1BufferBase_a92f188cb4e9a92c9c1079273b1deadc0}
+
+
+Read data from the buffer. 
+
+Pure virtual function to read data from the buffer.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em value}]Read data.\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Result of having read (true:Successful, false:Failed) 
+\end{DoxyReturn}
+
+
+Implemented in {\bf RTC::RingBuffer$<$ DataType $>$} \doxyref{}{p.}{classRTC_1_1RingBuffer_ae1b487f7b32dd15db9760b236edb0e5d}.
+
+\index{RTC::BufferBase@{RTC::BufferBase}!readable@{readable}}
+\index{readable@{readable}!RTC::BufferBase@{RTC::BufferBase}}
+\subsubsection[{readable}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class DataType$>$ virtual size\_\-t {\bf RTC::BufferBase}$<$ DataType $>$::readable () const\hspace{0.3cm}{\ttfamily  [pure virtual]}}\label{classRTC_1_1BufferBase_a7dd8259e299a273e2fe3744e669b381a}
+
+
+Write data into the buffer. 
+
+Pure virtual function to get a reading number.
+
+\begin{DoxyReturn}{Returns}
+readable number 
+\end{DoxyReturn}
+
+
+Implemented in {\bf RTC::RingBuffer$<$ DataType $>$} \doxyref{}{p.}{classRTC_1_1RingBuffer_ae5c8def9186589ac7ad53239a37fe99e}.
+
+\index{RTC::BufferBase@{RTC::BufferBase}!reset@{reset}}
+\index{reset@{reset}!RTC::BufferBase@{RTC::BufferBase}}
+\subsubsection[{reset}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class DataType$>$ virtual ReturnCode {\bf RTC::BufferBase}$<$ DataType $>$::reset ()\hspace{0.3cm}{\ttfamily  [pure virtual]}}\label{classRTC_1_1BufferBase_a941b36c7352c76da52725a169e094e16}
+
+
+Reset the buffer status. 
+
+Pure virtual function to reset the buffer status.
+
+\begin{DoxyReturn}{Returns}
+BUFFER\_\-OK: Successful NOT\_\-SUPPORTED: The buffer status cannot be reset. BUFFER\_\-ERROR: Failed 
+\end{DoxyReturn}
+
+
+Implemented in {\bf RTC::RingBuffer$<$ DataType $>$} \doxyref{}{p.}{classRTC_1_1RingBuffer_add373502f0292178296f3750d5e962a0}.
+
+\index{RTC::BufferBase@{RTC::BufferBase}!rptr@{rptr}}
+\index{rptr@{rptr}!RTC::BufferBase@{RTC::BufferBase}}
+\subsubsection[{rptr}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class DataType$>$ virtual DataType$\ast$ {\bf RTC::BufferBase}$<$ DataType $>$::rptr (long int {\em n} = {\ttfamily 0})\hspace{0.3cm}{\ttfamily  [pure virtual]}}\label{classRTC_1_1BufferBase_a854fd94174172b67034cf727e6c0a2d1}
+
+
+Get the reading pointer. 
+
+Pure virtual function to get the reading pointer.
+
+\begin{DoxyReturn}{Returns}
+reading pointer 
+\end{DoxyReturn}
+
+
+Implemented in {\bf RTC::RingBuffer$<$ DataType $>$} \doxyref{}{p.}{classRTC_1_1RingBuffer_a65401c71cb216a0730f6793f5a00dd1d}.
+
+\index{RTC::BufferBase@{RTC::BufferBase}!wptr@{wptr}}
+\index{wptr@{wptr}!RTC::BufferBase@{RTC::BufferBase}}
+\subsubsection[{wptr}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class DataType$>$ virtual DataType$\ast$ {\bf RTC::BufferBase}$<$ DataType $>$::wptr (long int {\em n} = {\ttfamily 0})\hspace{0.3cm}{\ttfamily  [pure virtual]}}\label{classRTC_1_1BufferBase_a27d6bb261714e84f16ef17e6920413ce}
+
+
+Get the writing pointer. 
+
+Pure virtual function to get the writing pointer.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em writeing}]pinter or n previous pointer \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+writing pointer 
+\end{DoxyReturn}
+
+
+Implemented in {\bf RTC::RingBuffer$<$ DataType $>$} \doxyref{}{p.}{classRTC_1_1RingBuffer_ad9aba4e554f5fd23a1cc7b9d63b0fe07}.
+
+\index{RTC::BufferBase@{RTC::BufferBase}!writable@{writable}}
+\index{writable@{writable}!RTC::BufferBase@{RTC::BufferBase}}
+\subsubsection[{writable}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class DataType$>$ virtual size\_\-t {\bf RTC::BufferBase}$<$ DataType $>$::writable () const\hspace{0.3cm}{\ttfamily  [pure virtual]}}\label{classRTC_1_1BufferBase_a089b1c57c7d8aea9f1bdcc055e20bff0}
+
+
+Get a writable number. 
+
+Pure virtual function to get a writable number.
+
+\begin{DoxyReturn}{Returns}
+value writable number 
+\end{DoxyReturn}
+
+
+Implemented in {\bf RTC::RingBuffer$<$ DataType $>$} \doxyref{}{p.}{classRTC_1_1RingBuffer_a7bebdef8031509955d74327ccad2ceec}.
+
+\index{RTC::BufferBase@{RTC::BufferBase}!write@{write}}
+\index{write@{write}!RTC::BufferBase@{RTC::BufferBase}}
+\subsubsection[{write}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class DataType$>$ virtual ReturnCode {\bf RTC::BufferBase}$<$ DataType $>$::write (const DataType \& {\em value}, \/  long int {\em sec} = {\ttfamily -\/1}, \/  long int {\em nsec} = {\ttfamily -\/1})\hspace{0.3cm}{\ttfamily  [pure virtual]}}\label{classRTC_1_1BufferBase_ad9df647826ca2f05664aa0f53e4142f7}
+
+
+Write data into the buffer. 
+
+Pure virtual function to write data into the buffer.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em value}]Target data to write.\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+BUFFER\_\-OK: Successful BUFFER\_\-ERROR: Failed 
+\end{DoxyReturn}
+
+
+Implemented in {\bf RTC::RingBuffer$<$ DataType $>$} \doxyref{}{p.}{classRTC_1_1RingBuffer_a4b062367982f9748b3ba5891cf753040}.
+

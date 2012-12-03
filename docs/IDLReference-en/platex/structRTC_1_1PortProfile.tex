@@ -1,0 +1,88 @@
+\section{RTC::PortProfile Struct Reference}
+\label{structRTC_1_1PortProfile}\index{RTC::PortProfile@{RTC::PortProfile}}
+
+
+\doxyref{PortProfile}{p.}{structRTC_1_1PortProfile}.  
+
+
+
+
+{\ttfamily import \char`\"{}RTC.idl\char`\"{};}
+
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+string {\bf name}
+\begin{DoxyCompactList}\small\item\em name \item\end{DoxyCompactList}\item 
+{\bf PortInterfaceProfileList} {\bf interfaces}
+\begin{DoxyCompactList}\small\item\em interfaces \item\end{DoxyCompactList}\item 
+{\bf PortService} {\bf port\_\-ref}
+\begin{DoxyCompactList}\small\item\em port\_\-ref \item\end{DoxyCompactList}\item 
+{\bf ConnectorProfileList} {\bf connector\_\-profiles}
+\begin{DoxyCompactList}\small\item\em connector\_\-profiles \item\end{DoxyCompactList}\item 
+{\bf RTObject} {\bf owner}
+\begin{DoxyCompactList}\small\item\em owner \item\end{DoxyCompactList}\item 
+{\bf NVList} {\bf properties}
+\begin{DoxyCompactList}\small\item\em properties \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\doxyref{PortProfile}{p.}{structRTC_1_1PortProfile}. \subsection{Description}\label{namespaceRTC_Description}
+A \doxyref{PortProfile}{p.}{structRTC_1_1PortProfile} describes a port of an \doxyref{RTC}{p.}{namespaceRTC} (referred to as the \char`\"{}target\char`\"{} \doxyref{RTC}{p.}{namespaceRTC}). This port is referred to as the \char`\"{}target\char`\"{} port. From this profile, other components and tools can obtain Port¡Çs name, type, object reference, and so on. 
+
+\subsection{Member Data Documentation}
+\index{RTC::PortProfile@{RTC::PortProfile}!connector\_\-profiles@{connector\_\-profiles}}
+\index{connector\_\-profiles@{connector\_\-profiles}!RTC::PortProfile@{RTC::PortProfile}}
+\subsubsection[{connector\_\-profiles}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ConnectorProfileList} {\bf RTC::PortProfile::connector\_\-profiles}}\label{structRTC_1_1PortProfile_a2222e576d0995c9a84663fb485f24aff}
+
+
+connector\_\-profiles 
+
+\subsection{Description}\label{namespaceRTC_Description}
+This attribute contains a collection of profiles describing the connections to the target port. \index{RTC::PortProfile@{RTC::PortProfile}!interfaces@{interfaces}}
+\index{interfaces@{interfaces}!RTC::PortProfile@{RTC::PortProfile}}
+\subsubsection[{interfaces}]{\setlength{\rightskip}{0pt plus 5cm}{\bf PortInterfaceProfileList} {\bf RTC::PortProfile::interfaces}}\label{structRTC_1_1PortProfile_ab9cda86e55b788ed3dc7d793d9849dab}
+
+
+interfaces 
+
+\subsection{Description}\label{namespaceRTC_Description}
+This attribute contains the name and polarity of each interface exposed by the target port. \index{RTC::PortProfile@{RTC::PortProfile}!name@{name}}
+\index{name@{name}!RTC::PortProfile@{RTC::PortProfile}}
+\subsubsection[{name}]{\setlength{\rightskip}{0pt plus 5cm}string {\bf RTC::PortProfile::name}}\label{structRTC_1_1PortProfile_aad548e10074a048a2d37282d75373d83}
+
+
+name 
+
+\subsection{Description}\label{namespaceRTC_Description}
+This attribute contains the name of the target port.\subsection{Semantics}\label{namespaceRTC_Semantics}
+Ports owned by an \doxyref{RTC}{p.}{namespaceRTC} are distinguished by their names. Therefore, this name should be unique within the target \doxyref{RTC}{p.}{namespaceRTC}. \index{RTC::PortProfile@{RTC::PortProfile}!owner@{owner}}
+\index{owner@{owner}!RTC::PortProfile@{RTC::PortProfile}}
+\subsubsection[{owner}]{\setlength{\rightskip}{0pt plus 5cm}{\bf RTObject} {\bf RTC::PortProfile::owner}}\label{structRTC_1_1PortProfile_a91b5c831f6c0dff96d0aa69d7cd84392}
+
+
+owner 
+
+\subsection{Description}\label{namespaceRTC_Description}
+This attribute contains a reference to the target \doxyref{RTC}{p.}{namespaceRTC}. \index{RTC::PortProfile@{RTC::PortProfile}!port\_\-ref@{port\_\-ref}}
+\index{port\_\-ref@{port\_\-ref}!RTC::PortProfile@{RTC::PortProfile}}
+\subsubsection[{port\_\-ref}]{\setlength{\rightskip}{0pt plus 5cm}{\bf PortService} {\bf RTC::PortProfile::port\_\-ref}}\label{structRTC_1_1PortProfile_aa0ed1c408a064f19080bc0a21a96bc43}
+
+
+port\_\-ref 
+
+\subsection{Description}\label{namespaceRTC_Description}
+This attributes contains a reference to the target port. \index{RTC::PortProfile@{RTC::PortProfile}!properties@{properties}}
+\index{properties@{properties}!RTC::PortProfile@{RTC::PortProfile}}
+\subsubsection[{properties}]{\setlength{\rightskip}{0pt plus 5cm}{\bf NVList} {\bf RTC::PortProfile::properties}}\label{structRTC_1_1PortProfile_aa9b72d4c51a62eab04ac2c701e39eaeb}
+
+
+properties 
+
+\subsection{Description}\label{namespaceRTC_Description}
+This attribute contains additional properties of the port.\subsection{Semantics}\label{namespaceRTC_Semantics}
+This attribute provides implementations the opportunity to describe additional characteristics of a particular port that are otherwise outside of the scope of this specification. 
+
+The documentation for this struct was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+{\bf RTC.idl}\end{DoxyCompactItemize}

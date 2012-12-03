@@ -1,0 +1,181 @@
+\section{RTC::CorbaConsumerBase Class Reference}
+\label{classRTC_1_1CorbaConsumerBase}\index{RTC::CorbaConsumerBase@{RTC::CorbaConsumerBase}}
+
+
+{\ttfamily \#include $<$CorbaConsumer.h$>$}
+
+Inheritance diagram for RTC::CorbaConsumerBase:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=1.34615cm]{classRTC_1_1CorbaConsumerBase}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf CorbaConsumerBase} ()
+\begin{DoxyCompactList}\small\item\em Consructor. \item\end{DoxyCompactList}\item 
+{\bf CorbaConsumerBase} (const {\bf CorbaConsumerBase} \&x)
+\begin{DoxyCompactList}\small\item\em Copy Consructor. \item\end{DoxyCompactList}\item 
+{\bf CorbaConsumerBase} \& {\bf operator=} (const {\bf CorbaConsumerBase} \&x)
+\begin{DoxyCompactList}\small\item\em Assignment operator. \item\end{DoxyCompactList}\item 
+void {\bf swap} ({\bf CorbaConsumerBase} \&x)
+\begin{DoxyCompactList}\small\item\em swap function \item\end{DoxyCompactList}\item 
+virtual {\bf $\sim$CorbaConsumerBase} (void)
+\begin{DoxyCompactList}\small\item\em Virtual destructor. \item\end{DoxyCompactList}\item 
+virtual bool {\bf setObject} (CORBA::Object\_\-ptr obj)
+\begin{DoxyCompactList}\small\item\em Set CORBA Object. \item\end{DoxyCompactList}\item 
+virtual CORBA::Object\_\-ptr {\bf getObject} ()
+\begin{DoxyCompactList}\small\item\em Get CORBA Object. \item\end{DoxyCompactList}\item 
+virtual void {\bf releaseObject} ()
+\begin{DoxyCompactList}\small\item\em Clear CORBA object setting. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+CORBA::Object\_\-var {\bf m\_\-objref}
+\begin{DoxyCompactList}\small\item\em CORBA object which is set. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{RTC::CorbaConsumerBase@{RTC::CorbaConsumerBase}!CorbaConsumerBase@{CorbaConsumerBase}}
+\index{CorbaConsumerBase@{CorbaConsumerBase}!RTC::CorbaConsumerBase@{RTC::CorbaConsumerBase}}
+\subsubsection[{CorbaConsumerBase}]{\setlength{\rightskip}{0pt plus 5cm}RTC::CorbaConsumerBase::CorbaConsumerBase ()\hspace{0.3cm}{\ttfamily  [inline]}}\label{classRTC_1_1CorbaConsumerBase_a95aebe603aca268718c13e37f1700603}
+
+
+Consructor. 
+
+\index{RTC::CorbaConsumerBase@{RTC::CorbaConsumerBase}!CorbaConsumerBase@{CorbaConsumerBase}}
+\index{CorbaConsumerBase@{CorbaConsumerBase}!RTC::CorbaConsumerBase@{RTC::CorbaConsumerBase}}
+\subsubsection[{CorbaConsumerBase}]{\setlength{\rightskip}{0pt plus 5cm}RTC::CorbaConsumerBase::CorbaConsumerBase (const {\bf CorbaConsumerBase} \& {\em x})\hspace{0.3cm}{\ttfamily  [inline]}}\label{classRTC_1_1CorbaConsumerBase_a0cef39f613583313f8b335259b78cdd2}
+
+
+Copy Consructor. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em x}]A \doxyref{CorbaConsumerBase}{p.}{classRTC_1_1CorbaConsumerBase} object of copy source \end{DoxyParams}
+\index{RTC::CorbaConsumerBase@{RTC::CorbaConsumerBase}!$\sim$CorbaConsumerBase@{$\sim$CorbaConsumerBase}}
+\index{$\sim$CorbaConsumerBase@{$\sim$CorbaConsumerBase}!RTC::CorbaConsumerBase@{RTC::CorbaConsumerBase}}
+\subsubsection[{$\sim$CorbaConsumerBase}]{\setlength{\rightskip}{0pt plus 5cm}virtual RTC::CorbaConsumerBase::$\sim$CorbaConsumerBase (void)\hspace{0.3cm}{\ttfamily  [inline, virtual]}}\label{classRTC_1_1CorbaConsumerBase_aa6b7667e37b137f3af8c6668da48f01d}
+
+
+Virtual destructor. 
+
+
+
+References releaseObject().
+
+
+
+\subsection{Member Function Documentation}
+\index{RTC::CorbaConsumerBase@{RTC::CorbaConsumerBase}!getObject@{getObject}}
+\index{getObject@{getObject}!RTC::CorbaConsumerBase@{RTC::CorbaConsumerBase}}
+\subsubsection[{getObject}]{\setlength{\rightskip}{0pt plus 5cm}virtual CORBA::Object\_\-ptr RTC::CorbaConsumerBase::getObject ()\hspace{0.3cm}{\ttfamily  [inline, virtual]}}\label{classRTC_1_1CorbaConsumerBase_af1d1c9413bf9f017c4bc605ca3a08bd3}
+
+
+Get CORBA Object. 
+
+Get the object reference held as CORBA::Object\_\-var type in \doxyref{ConsumerBase}{p.}{classConsumerBase} object.
+
+\begin{DoxyReturn}{Returns}
+Object reference of CORBA object 
+\end{DoxyReturn}
+
+
+References m\_\-objref.
+
+\index{RTC::CorbaConsumerBase@{RTC::CorbaConsumerBase}!operator=@{operator=}}
+\index{operator=@{operator=}!RTC::CorbaConsumerBase@{RTC::CorbaConsumerBase}}
+\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf CorbaConsumerBase}\& RTC::CorbaConsumerBase::operator= (const {\bf CorbaConsumerBase} \& {\em x})\hspace{0.3cm}{\ttfamily  [inline]}}\label{classRTC_1_1CorbaConsumerBase_af070cffba7981a1c42b7be15b01c8543}
+
+
+Assignment operator. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em x}]Copy source.\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+An assignment result 
+\end{DoxyReturn}
+
+
+References swap().
+
+\index{RTC::CorbaConsumerBase@{RTC::CorbaConsumerBase}!releaseObject@{releaseObject}}
+\index{releaseObject@{releaseObject}!RTC::CorbaConsumerBase@{RTC::CorbaConsumerBase}}
+\subsubsection[{releaseObject}]{\setlength{\rightskip}{0pt plus 5cm}virtual void RTC::CorbaConsumerBase::releaseObject ()\hspace{0.3cm}{\ttfamily  [inline, virtual]}}\label{classRTC_1_1CorbaConsumerBase_aafdaaab4a66319fe5ab1486b1001dfb9}
+
+
+Clear CORBA object setting. 
+
+Clear CORBA object which is set. Operate nothing for CORBA object itself. 
+
+Reimplemented in {\bf RTC::CorbaConsumer$<$ ObjectType, ObjectTypePtr, ObjectTypeVar $>$} \doxyref{}{p.}{classRTC_1_1CorbaConsumer_aaebca7bff42ba840684cf51fb8577290}, {\bf RTC::CorbaConsumer$<$ ::OpenRTM::InPortCdr $>$} \doxyref{}{p.}{classRTC_1_1CorbaConsumer_aaebca7bff42ba840684cf51fb8577290}, and {\bf RTC::CorbaConsumer$<$ ::OpenRTM::OutPortCdr $>$} \doxyref{}{p.}{classRTC_1_1CorbaConsumer_aaebca7bff42ba840684cf51fb8577290}.
+
+
+
+References m\_\-objref.
+
+
+
+Referenced by $\sim$CorbaConsumerBase().
+
+\index{RTC::CorbaConsumerBase@{RTC::CorbaConsumerBase}!setObject@{setObject}}
+\index{setObject@{setObject}!RTC::CorbaConsumerBase@{RTC::CorbaConsumerBase}}
+\subsubsection[{setObject}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool RTC::CorbaConsumerBase::setObject (CORBA::Object\_\-ptr {\em obj})\hspace{0.3cm}{\ttfamily  [inline, virtual]}}\label{classRTC_1_1CorbaConsumerBase_aa91cc706b62c6782f79bfc76663f3dcc}
+
+
+Set CORBA Object. 
+
+The given CORBA Object is held as CORBA::Object\_\-var type in \doxyref{ConsumerBase}{p.}{classConsumerBase} object.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em obj}]Object reference of CORBA object\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+If obj is nil reference, it returns false. 
+\end{DoxyReturn}
+
+
+Reimplemented in {\bf RTC::CorbaConsumer$<$ ObjectType, ObjectTypePtr, ObjectTypeVar $>$} \doxyref{}{p.}{classRTC_1_1CorbaConsumer_a8e5db22a71b01b1a8178d9966eb6499d}, {\bf RTC::CorbaConsumer$<$ ::OpenRTM::InPortCdr $>$} \doxyref{}{p.}{classRTC_1_1CorbaConsumer_a8e5db22a71b01b1a8178d9966eb6499d}, and {\bf RTC::CorbaConsumer$<$ ::OpenRTM::OutPortCdr $>$} \doxyref{}{p.}{classRTC_1_1CorbaConsumer_a8e5db22a71b01b1a8178d9966eb6499d}.
+
+
+
+References m\_\-objref.
+
+
+
+Referenced by RTC::CorbaConsumer$<$ ::OpenRTM::OutPortCdr $>$::setObject().
+
+\index{RTC::CorbaConsumerBase@{RTC::CorbaConsumerBase}!swap@{swap}}
+\index{swap@{swap}!RTC::CorbaConsumerBase@{RTC::CorbaConsumerBase}}
+\subsubsection[{swap}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::CorbaConsumerBase::swap ({\bf CorbaConsumerBase} \& {\em x})\hspace{0.3cm}{\ttfamily  [inline]}}\label{classRTC_1_1CorbaConsumerBase_a7dd51f4e04ab755dcd7d5e01fd6aca2f}
+
+
+swap function 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em x}]Copy source. \end{DoxyParams}
+
+
+References m\_\-objref.
+
+
+
+Referenced by operator=().
+
+
+
+\subsection{Member Data Documentation}
+\index{RTC::CorbaConsumerBase@{RTC::CorbaConsumerBase}!m\_\-objref@{m\_\-objref}}
+\index{m\_\-objref@{m\_\-objref}!RTC::CorbaConsumerBase@{RTC::CorbaConsumerBase}}
+\subsubsection[{m\_\-objref}]{\setlength{\rightskip}{0pt plus 5cm}CORBA::Object\_\-var {\bf RTC::CorbaConsumerBase::m\_\-objref}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC_1_1CorbaConsumerBase_a08aa594ab325d7ee84fecba104c41478}
+
+
+CORBA object which is set. 
+
+
+
+Referenced by getObject(), releaseObject(), RTC::CorbaConsumer$<$ ::OpenRTM::OutPortCdr $>$::setObject(), setObject(), and swap().
+

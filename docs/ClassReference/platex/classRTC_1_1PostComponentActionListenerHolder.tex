@@ -1,0 +1,87 @@
+\section{クラス RTC::PostComponentActionListenerHolder}
+\label{classRTC_1_1PostComponentActionListenerHolder}\index{RTC::PostComponentActionListenerHolder@{RTC::PostComponentActionListenerHolder}}
+
+
+\doxyref{PostComponentActionListener}{p.}{classRTC_1_1PostComponentActionListener} ホルダクラス.  
+
+
+
+
+{\ttfamily \#include $<$ComponentActionListener.h$>$}
+
+\subsection*{Public メソッド}
+\begin{DoxyCompactItemize}
+\item 
+{\bf PostComponentActionListenerHolder} ()
+\begin{DoxyCompactList}\small\item\em コンストラクタ \item\end{DoxyCompactList}\item 
+virtual {\bf $\sim$PostComponentActionListenerHolder} ()
+\begin{DoxyCompactList}\small\item\em デストラクタ \item\end{DoxyCompactList}\item 
+void {\bf addListener} ({\bf PostComponentActionListener} $\ast$listener, bool autoclean)
+\begin{DoxyCompactList}\small\item\em リスナーの追加 \item\end{DoxyCompactList}\item 
+void {\bf removeListener} ({\bf PostComponentActionListener} $\ast$listener)
+\begin{DoxyCompactList}\small\item\em リスナーの削除 \item\end{DoxyCompactList}\item 
+void {\bf notify} ({\bf UniqueId} ec\_\-id, ReturnCode\_\-t ret)
+\begin{DoxyCompactList}\small\item\em リスナーへ通知する \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{説明}
+\doxyref{PostComponentActionListener}{p.}{classRTC_1_1PostComponentActionListener} ホルダクラス. 複数の \doxyref{PostComponentActionListener}{p.}{classRTC_1_1PostComponentActionListener} を保持し管理するクラス。 
+
+\subsection{コンストラクタとデストラクタ}
+\index{RTC::PostComponentActionListenerHolder@{RTC::PostComponentActionListenerHolder}!PostComponentActionListenerHolder@{PostComponentActionListenerHolder}}
+\index{PostComponentActionListenerHolder@{PostComponentActionListenerHolder}!RTC::PostComponentActionListenerHolder@{RTC::PostComponentActionListenerHolder}}
+\subsubsection[{PostComponentActionListenerHolder}]{\setlength{\rightskip}{0pt plus 5cm}RTC::PostComponentActionListenerHolder::PostComponentActionListenerHolder ()}\label{classRTC_1_1PostComponentActionListenerHolder_a19ab235c67fc2071a6cb4a510df7aaf6}
+
+
+コンストラクタ 
+
+\index{RTC::PostComponentActionListenerHolder@{RTC::PostComponentActionListenerHolder}!$\sim$PostComponentActionListenerHolder@{$\sim$PostComponentActionListenerHolder}}
+\index{$\sim$PostComponentActionListenerHolder@{$\sim$PostComponentActionListenerHolder}!RTC::PostComponentActionListenerHolder@{RTC::PostComponentActionListenerHolder}}
+\subsubsection[{$\sim$PostComponentActionListenerHolder}]{\setlength{\rightskip}{0pt plus 5cm}virtual RTC::PostComponentActionListenerHolder::$\sim$PostComponentActionListenerHolder ()\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classRTC_1_1PostComponentActionListenerHolder_ae68e48224d06d484888e68432d1a3772}
+
+
+デストラクタ 
+
+
+
+\subsection{関数}
+\index{RTC::PostComponentActionListenerHolder@{RTC::PostComponentActionListenerHolder}!addListener@{addListener}}
+\index{addListener@{addListener}!RTC::PostComponentActionListenerHolder@{RTC::PostComponentActionListenerHolder}}
+\subsubsection[{addListener}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::PostComponentActionListenerHolder::addListener ({\bf PostComponentActionListener} $\ast$ {\em listener}, \/  bool {\em autoclean})}\label{classRTC_1_1PostComponentActionListenerHolder_a0601132d70391e277b196773acce09ab}
+
+
+リスナーの追加 
+
+リスナーを追加する。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em listener}]追加するリスナ \item[{\em autoclean}]true:デストラクタで削除する, false:デストラクタで削除しない \end{DoxyParams}
+\index{RTC::PostComponentActionListenerHolder@{RTC::PostComponentActionListenerHolder}!notify@{notify}}
+\index{notify@{notify}!RTC::PostComponentActionListenerHolder@{RTC::PostComponentActionListenerHolder}}
+\subsubsection[{notify}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::PostComponentActionListenerHolder::notify ({\bf UniqueId} {\em ec\_\-id}, \/  ReturnCode\_\-t {\em ret})}\label{classRTC_1_1PostComponentActionListenerHolder_a50efed058e3472b6ff258e41dd907d8e}
+
+
+リスナーへ通知する 
+
+登録されているリスナのコールバックメソッドを呼び出す。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em info}]\doxyref{ConnectorInfo}{p.}{classRTC_1_1ConnectorInfo} \item[{\em cdrdata}]データ \end{DoxyParams}
+
+
+参照元 RTC::RTObject\_\-impl::postOnAborting(), RTC::RTObject\_\-impl::postOnActivated(), RTC::RTObject\_\-impl::postOnDeactivated(), RTC::RTObject\_\-impl::postOnError(), RTC::RTObject\_\-impl::postOnExecute(), RTC::RTObject\_\-impl::postOnFinalize(), RTC::RTObject\_\-impl::postOnInitialize(), RTC::RTObject\_\-impl::postOnRateChanged(), RTC::RTObject\_\-impl::postOnReset(), RTC::RTObject\_\-impl::postOnShutdown(), RTC::RTObject\_\-impl::postOnStartup(), と RTC::RTObject\_\-impl::postOnStateUpdate().
+
+\index{RTC::PostComponentActionListenerHolder@{RTC::PostComponentActionListenerHolder}!removeListener@{removeListener}}
+\index{removeListener@{removeListener}!RTC::PostComponentActionListenerHolder@{RTC::PostComponentActionListenerHolder}}
+\subsubsection[{removeListener}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::PostComponentActionListenerHolder::removeListener ({\bf PostComponentActionListener} $\ast$ {\em listener})}\label{classRTC_1_1PostComponentActionListenerHolder_aef5e3bb6d3bc9dcea0eae7dd47e54941}
+
+
+リスナーの削除 
+
+リスナを削除する。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em listener}]削除するリスナ \end{DoxyParams}

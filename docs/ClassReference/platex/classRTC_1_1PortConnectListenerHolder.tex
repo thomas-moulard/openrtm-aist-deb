@@ -1,0 +1,83 @@
+\section{クラス RTC::PortConnectListenerHolder}
+\label{classRTC_1_1PortConnectListenerHolder}\index{RTC::PortConnectListenerHolder@{RTC::PortConnectListenerHolder}}
+
+
+\doxyref{PortConnectListener}{p.}{classRTC_1_1PortConnectListener} ホルダクラス.  
+
+
+
+
+{\ttfamily \#include $<$PortConnectListener.h$>$}
+
+\subsection*{Public メソッド}
+\begin{DoxyCompactItemize}
+\item 
+{\bf PortConnectListenerHolder} ()
+\begin{DoxyCompactList}\small\item\em コンストラクタ \item\end{DoxyCompactList}\item 
+virtual {\bf $\sim$PortConnectListenerHolder} ()
+\begin{DoxyCompactList}\small\item\em デストラクタ \item\end{DoxyCompactList}\item 
+void {\bf addListener} ({\bf PortConnectListener} $\ast$listener, bool autoclean)
+\begin{DoxyCompactList}\small\item\em リスナーの追加 \item\end{DoxyCompactList}\item 
+void {\bf removeListener} ({\bf PortConnectListener} $\ast$listener)
+\begin{DoxyCompactList}\small\item\em リスナーの削除 \item\end{DoxyCompactList}\item 
+void {\bf notify} (const char $\ast$portname, RTC::ConnectorProfile \&profile)
+\begin{DoxyCompactList}\small\item\em リスナーへ通知する \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{説明}
+\doxyref{PortConnectListener}{p.}{classRTC_1_1PortConnectListener} ホルダクラス. 複数の \doxyref{PortConnectListener}{p.}{classRTC_1_1PortConnectListener} を保持し管理するクラス。 
+
+\subsection{コンストラクタとデストラクタ}
+\index{RTC::PortConnectListenerHolder@{RTC::PortConnectListenerHolder}!PortConnectListenerHolder@{PortConnectListenerHolder}}
+\index{PortConnectListenerHolder@{PortConnectListenerHolder}!RTC::PortConnectListenerHolder@{RTC::PortConnectListenerHolder}}
+\subsubsection[{PortConnectListenerHolder}]{\setlength{\rightskip}{0pt plus 5cm}RTC::PortConnectListenerHolder::PortConnectListenerHolder ()}\label{classRTC_1_1PortConnectListenerHolder_a1e6f9d56ac4cd0c7f32c4bc9053ab64c}
+
+
+コンストラクタ 
+
+\index{RTC::PortConnectListenerHolder@{RTC::PortConnectListenerHolder}!$\sim$PortConnectListenerHolder@{$\sim$PortConnectListenerHolder}}
+\index{$\sim$PortConnectListenerHolder@{$\sim$PortConnectListenerHolder}!RTC::PortConnectListenerHolder@{RTC::PortConnectListenerHolder}}
+\subsubsection[{$\sim$PortConnectListenerHolder}]{\setlength{\rightskip}{0pt plus 5cm}virtual RTC::PortConnectListenerHolder::$\sim$PortConnectListenerHolder ()\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classRTC_1_1PortConnectListenerHolder_a72d78de73416c8f0816409acb576021f}
+
+
+デストラクタ 
+
+
+
+\subsection{関数}
+\index{RTC::PortConnectListenerHolder@{RTC::PortConnectListenerHolder}!addListener@{addListener}}
+\index{addListener@{addListener}!RTC::PortConnectListenerHolder@{RTC::PortConnectListenerHolder}}
+\subsubsection[{addListener}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::PortConnectListenerHolder::addListener ({\bf PortConnectListener} $\ast$ {\em listener}, \/  bool {\em autoclean})}\label{classRTC_1_1PortConnectListenerHolder_aede9e6b87040256d64002836545057c0}
+
+
+リスナーの追加 
+
+リスナーを追加する。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em listener}]追加するリスナ \item[{\em autoclean}]true:デストラクタで削除する, false:デストラクタで削除しない \end{DoxyParams}
+\index{RTC::PortConnectListenerHolder@{RTC::PortConnectListenerHolder}!notify@{notify}}
+\index{notify@{notify}!RTC::PortConnectListenerHolder@{RTC::PortConnectListenerHolder}}
+\subsubsection[{notify}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::PortConnectListenerHolder::notify (const char $\ast$ {\em portname}, \/  RTC::ConnectorProfile \& {\em profile})}\label{classRTC_1_1PortConnectListenerHolder_a61b163601a4c3a77e7eae1c406d4d412}
+
+
+リスナーへ通知する 
+
+登録されているリスナのコールバックメソッドを呼び出す。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em info}]\doxyref{ConnectorInfo}{p.}{classRTC_1_1ConnectorInfo} \end{DoxyParams}
+\index{RTC::PortConnectListenerHolder@{RTC::PortConnectListenerHolder}!removeListener@{removeListener}}
+\index{removeListener@{removeListener}!RTC::PortConnectListenerHolder@{RTC::PortConnectListenerHolder}}
+\subsubsection[{removeListener}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::PortConnectListenerHolder::removeListener ({\bf PortConnectListener} $\ast$ {\em listener})}\label{classRTC_1_1PortConnectListenerHolder_a682df243f73abdd99faa0311278b5993}
+
+
+リスナーの削除 
+
+リスナを削除する。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em listener}]削除するリスナ \end{DoxyParams}

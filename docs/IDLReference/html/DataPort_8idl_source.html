@@ -1,0 +1,60 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<title>OpenRTM: DataPort.idl ソースファイル</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<!-- 作成： Doxygen 1.6.3 -->
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="index.html"><span>メインページ</span></a></li>
+      <li><a href="namespaces.html"><span>ネームスペース</span></a></li>
+      <li><a href="annotated.html"><span>クラス</span></a></li>
+      <li class="current"><a href="files.html"><span>ファイル</span></a></li>
+    </ul>
+  </div>
+  <div class="tabs">
+    <ul>
+      <li><a href="files.html"><span>ファイル一覧</span></a></li>
+      <li><a href="globals.html"><span>ファイルメンバ</span></a></li>
+    </ul>
+  </div>
+<h1>DataPort.idl</h1><a href="DataPort_8idl.html">説明を見る。</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="comment">// -*- IDL -*-</span>
+<a name="l00021"></a>00021 <span class="comment"></span><span class="preprocessor">#ifndef DataInPort_idl</span>
+<a name="l00022"></a>00022 <span class="preprocessor"></span><span class="preprocessor">#define DataInPort_idl</span>
+<a name="l00023"></a>00023 <span class="preprocessor"></span>
+<a name="l00024"></a><a class="code" href="namespaceOpenRTM.html">00024</a> module OpenRTM
+<a name="l00025"></a>00025 {
+<a name="l00026"></a><a class="code" href="namespaceOpenRTM.html#a7f7915c380e3f7e68b3467a437add5aa">00026</a>   <span class="keyword">enum</span> <a class="code" href="namespaceOpenRTM.html#a7f7915c380e3f7e68b3467a437add5aa">PortStatus</a>
+<a name="l00027"></a>00027   {
+<a name="l00028"></a><a class="code" href="namespaceOpenRTM.html#a7f7915c380e3f7e68b3467a437add5aaadfea26e7226cffd95f7f064a7d9adcd2">00028</a>     <a class="code" href="namespaceOpenRTM.html#a7f7915c380e3f7e68b3467a437add5aaadfea26e7226cffd95f7f064a7d9adcd2">PORT_OK</a>,
+<a name="l00029"></a><a class="code" href="namespaceOpenRTM.html#a7f7915c380e3f7e68b3467a437add5aaaa627fe9ddcec17551ec07fb6cccaeef6">00029</a>     <a class="code" href="namespaceOpenRTM.html#a7f7915c380e3f7e68b3467a437add5aaaa627fe9ddcec17551ec07fb6cccaeef6">PORT_ERROR</a>,
+<a name="l00030"></a><a class="code" href="namespaceOpenRTM.html#a7f7915c380e3f7e68b3467a437add5aaa75e0b0d0cda4666c4eca68d52b83de01">00030</a>     <a class="code" href="namespaceOpenRTM.html#a7f7915c380e3f7e68b3467a437add5aaa75e0b0d0cda4666c4eca68d52b83de01">BUFFER_FULL</a>,
+<a name="l00031"></a><a class="code" href="namespaceOpenRTM.html#a7f7915c380e3f7e68b3467a437add5aaaa4368c655ea91cfe11f0619f3d352109">00031</a>     <a class="code" href="namespaceOpenRTM.html#a7f7915c380e3f7e68b3467a437add5aaaa4368c655ea91cfe11f0619f3d352109">BUFFER_EMPTY</a>,
+<a name="l00032"></a><a class="code" href="namespaceOpenRTM.html#a7f7915c380e3f7e68b3467a437add5aaaff0330aa63cdad4751bf96cb036993fb">00032</a>     <a class="code" href="namespaceOpenRTM.html#a7f7915c380e3f7e68b3467a437add5aaaff0330aa63cdad4751bf96cb036993fb">BUFFER_TIMEOUT</a>,
+<a name="l00033"></a><a class="code" href="namespaceOpenRTM.html#a7f7915c380e3f7e68b3467a437add5aaa96159a1a5e0fce9526faea243f305bb0">00033</a>     <a class="code" href="namespaceOpenRTM.html#a7f7915c380e3f7e68b3467a437add5aaa96159a1a5e0fce9526faea243f305bb0">UNKNOWN_ERROR</a>
+<a name="l00034"></a>00034   };
+<a name="l00035"></a>00035 
+<a name="l00036"></a><a class="code" href="namespaceOpenRTM.html#af5b607daef2b061583ed6fc579b62338">00036</a>   <span class="keyword">typedef</span> sequence&lt;octet&gt; <a class="code" href="namespaceOpenRTM.html#af5b607daef2b061583ed6fc579b62338">CdrData</a>;
+<a name="l00037"></a>00037 
+<a name="l00038"></a><a class="code" href="interfaceOpenRTM_1_1InPortCdr.html">00038</a>   interface <a class="code" href="interfaceOpenRTM_1_1InPortCdr.html">InPortCdr</a>
+<a name="l00039"></a>00039   {
+<a name="l00040"></a>00040     <a class="code" href="namespaceOpenRTM.html#a7f7915c380e3f7e68b3467a437add5aa">PortStatus</a> put(in CdrData data);
+<a name="l00041"></a>00041   };
+<a name="l00042"></a>00042 
+<a name="l00043"></a><a class="code" href="interfaceOpenRTM_1_1OutPortCdr.html">00043</a>   interface <a class="code" href="interfaceOpenRTM_1_1OutPortCdr.html">OutPortCdr</a>
+<a name="l00044"></a>00044   {
+<a name="l00045"></a>00045     <a class="code" href="namespaceOpenRTM.html#a7f7915c380e3f7e68b3467a437add5aa">PortStatus</a> <span class="keyword">get</span>(out CdrData data);
+<a name="l00046"></a>00046   };
+<a name="l00047"></a>00047 };
+<a name="l00048"></a>00048 <span class="preprocessor">#endif</span>
+</pre></div></div>
+<hr class="footer"/><address style="text-align: right;"><small>OpenRTMに対してThu May 24 23:25:23 2012に生成されました。&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.6.3 </small></address>
+</body>
+</html>

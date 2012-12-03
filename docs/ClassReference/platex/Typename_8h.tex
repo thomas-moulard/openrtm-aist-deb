@@ -1,0 +1,71 @@
+\section{Typename.h}
+\label{Typename_8h}\index{Typename.h@{Typename.h}}
+
+
+Typename function.  
+
+
+{\ttfamily \#include $<$iostream$>$}\par
+{\ttfamily \#include $<$rtm/RTC.h$>$}\par
+\subsection*{構成}
+\begin{DoxyCompactItemize}
+\item 
+struct {\bf CORBA\_\-Util::has\_\-nil\_\-helper$<$ T, \_\-ptr\_\-type $>$}
+\begin{DoxyCompactList}\small\item\em has nil helper \item\end{DoxyCompactList}\item 
+struct {\bf CORBA\_\-Util::has\_\-nil\_\-impl$<$ T, U $>$}
+\begin{DoxyCompactList}\small\item\em has nil impl: void case \item\end{DoxyCompactList}\item 
+struct {\bf CORBA\_\-Util::has\_\-nil\_\-impl$<$ T, typename has\_\-nil\_\-helper$<$ T,\&T::\_\-nil $>$::type $>$}
+\begin{DoxyCompactList}\small\item\em has nil impl: valid case \item\end{DoxyCompactList}\item 
+struct {\bf CORBA\_\-Util::has\_\-nil$<$ T $>$}
+\begin{DoxyCompactList}\small\item\em has nil traits class template \item\end{DoxyCompactList}\item 
+struct {\bf CORBA\_\-Util::is\_\-corba\_\-object$<$ T $>$}
+\begin{DoxyCompactList}\small\item\em is corba object traits class \item\end{DoxyCompactList}\item 
+class {\bf CORBA\_\-Util::typecode$<$ true, T $>$}
+\item 
+class {\bf CORBA\_\-Util::typecode$<$ false, T $>$}
+\end{DoxyCompactItemize}
+\subsection*{ネームスペース}
+\begin{DoxyCompactItemize}
+\item 
+namespace {\bf CORBA\_\-Util}
+\end{DoxyCompactItemize}
+\subsection*{関数}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$class T $>$ }\\const char $\ast$ {\bf CORBA\_\-Util::toTypename} ()
+\begin{DoxyCompactList}\small\item\em CORBA型のタイプ名を文字列で取得する. \item\end{DoxyCompactList}\item 
+{\footnotesize template$<$class T $>$ }\\const char $\ast$ {\bf CORBA\_\-Util::toTypenameOfStruct} ()
+\item 
+{\footnotesize template$<$class T $>$ }\\const char $\ast$ {\bf CORBA\_\-Util::toTypenameOfObject} ()
+\item 
+{\footnotesize template$<$class T $>$ }\\const char $\ast$ {\bf CORBA\_\-Util::toRepositoryId} ()
+\begin{DoxyCompactList}\small\item\em CORBA型のリポジトリIDを文字列で取得する. \item\end{DoxyCompactList}\item 
+{\footnotesize template$<$class T $>$ }\\const char $\ast$ {\bf CORBA\_\-Util::toRepositoryIdOfStruct} ()
+\item 
+{\footnotesize template$<$class T $>$ }\\const char $\ast$ {\bf CORBA\_\-Util::toRepositoryIdOfObject} ()
+\item 
+{\footnotesize template$<$class T $>$ }\\const char $\ast$ {\bf toTypename} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{説明}
+Typename function. \begin{DoxyDate}{日付}
+
+\end{DoxyDate}
+\begin{DoxyParagraph}{Date}
+2007-\/12-\/31 03:08:03 
+\end{DoxyParagraph}
+\begin{DoxyAuthor}{作者}
+Noriaki Ando $<${\tt n-\/ando@aist.go.jp}$>$
+\end{DoxyAuthor}
+Copyright (C) 2003-\/2009 Noriaki Ando Task-\/intelligence Research Group, Intelligent Systems Research Institute, National Institute of Advanced Industrial Science and Technology (AIST), Japan All rights reserved.
+
+\begin{DoxyParagraph}{Id}
+\doxyref{InPort.h}{p.}{InPort_8h} 1225 2009-\/02-\/28 02:30:25Z n-\/ando 
+\end{DoxyParagraph}
+
+
+\subsection{関数}
+\index{Typename.h@{Typename.h}!toTypename@{toTypename}}
+\index{toTypename@{toTypename}!Typename.h@{Typename.h}}
+\subsubsection[{toTypename}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ const char$\ast$ toTypename ()\hspace{0.3cm}{\ttfamily  [inline]}}\label{Typename_8h_ab6683d4c15723d3880efb8e0faf3cf8c}

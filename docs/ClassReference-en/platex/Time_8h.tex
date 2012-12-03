@@ -1,0 +1,33 @@
+\section{Time.h File Reference}
+\label{Time_8h}\index{Time.h@{Time.h}}
+{\ttfamily \#include $<$unistd.h$>$}\par
+{\ttfamily \#include $<$sys/time.h$>$}\par
+{\ttfamily \#include $<$sys/types.h$>$}\par
+{\ttfamily \#include $<$time.h$>$}\par
+{\ttfamily \#include $<$iostream$>$}\par
+{\ttfamily \#include $<$coil/config\_\-coil.h$>$}\par
+{\ttfamily \#include $<$coil/TimeValue.h$>$}\par
+\subsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace {\bf coil}
+
+
+\begin{DoxyCompactList}\small\item\em Common Object Interface Layer. \item\end{DoxyCompactList}
+
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+unsigned int {\bf coil::sleep} (unsigned int seconds)
+\begin{DoxyCompactList}\small\item\em Stop a processing at specified second time. \item\end{DoxyCompactList}\item 
+int {\bf coil::sleep} (TimeValue interval)
+\begin{DoxyCompactList}\small\item\em Stop a processing at specified second time. \item\end{DoxyCompactList}\item 
+int {\bf coil::usleep} (useconds\_\-t usec)
+\begin{DoxyCompactList}\small\item\em Stop a processing at specified micro second time. \item\end{DoxyCompactList}\item 
+int {\bf coil::gettimeofday} (struct timeval $\ast$tv, struct timezone $\ast$tz)
+\begin{DoxyCompactList}\small\item\em Get the time and timezone. \item\end{DoxyCompactList}\item 
+TimeValue {\bf coil::gettimeofday} ()
+\begin{DoxyCompactList}\small\item\em Get the time. \item\end{DoxyCompactList}\item 
+int {\bf coil::settimeofday} (const struct timeval $\ast$tv, const struct timezone $\ast$tz)
+\begin{DoxyCompactList}\small\item\em Set the time and timezone. \item\end{DoxyCompactList}\end{DoxyCompactItemize}

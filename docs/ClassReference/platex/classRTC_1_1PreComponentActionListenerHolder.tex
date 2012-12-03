@@ -1,0 +1,87 @@
+\section{クラス RTC::PreComponentActionListenerHolder}
+\label{classRTC_1_1PreComponentActionListenerHolder}\index{RTC::PreComponentActionListenerHolder@{RTC::PreComponentActionListenerHolder}}
+
+
+\doxyref{PreComponentActionListener}{p.}{classRTC_1_1PreComponentActionListener} ホルダクラス.  
+
+
+
+
+{\ttfamily \#include $<$ComponentActionListener.h$>$}
+
+\subsection*{Public メソッド}
+\begin{DoxyCompactItemize}
+\item 
+{\bf PreComponentActionListenerHolder} ()
+\begin{DoxyCompactList}\small\item\em コンストラクタ \item\end{DoxyCompactList}\item 
+virtual {\bf $\sim$PreComponentActionListenerHolder} ()
+\begin{DoxyCompactList}\small\item\em デストラクタ \item\end{DoxyCompactList}\item 
+void {\bf addListener} ({\bf PreComponentActionListener} $\ast$listener, bool autoclean)
+\begin{DoxyCompactList}\small\item\em リスナーの追加 \item\end{DoxyCompactList}\item 
+void {\bf removeListener} ({\bf PreComponentActionListener} $\ast$listener)
+\begin{DoxyCompactList}\small\item\em リスナーの削除 \item\end{DoxyCompactList}\item 
+void {\bf notify} ({\bf UniqueId} ec\_\-id)
+\begin{DoxyCompactList}\small\item\em リスナーへ通知する \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{説明}
+\doxyref{PreComponentActionListener}{p.}{classRTC_1_1PreComponentActionListener} ホルダクラス. 複数の \doxyref{PreComponentActionListener}{p.}{classRTC_1_1PreComponentActionListener} を保持し管理するクラス。 
+
+\subsection{コンストラクタとデストラクタ}
+\index{RTC::PreComponentActionListenerHolder@{RTC::PreComponentActionListenerHolder}!PreComponentActionListenerHolder@{PreComponentActionListenerHolder}}
+\index{PreComponentActionListenerHolder@{PreComponentActionListenerHolder}!RTC::PreComponentActionListenerHolder@{RTC::PreComponentActionListenerHolder}}
+\subsubsection[{PreComponentActionListenerHolder}]{\setlength{\rightskip}{0pt plus 5cm}RTC::PreComponentActionListenerHolder::PreComponentActionListenerHolder ()}\label{classRTC_1_1PreComponentActionListenerHolder_a337063623ffc7f5fbe2079505908b3e7}
+
+
+コンストラクタ 
+
+\index{RTC::PreComponentActionListenerHolder@{RTC::PreComponentActionListenerHolder}!$\sim$PreComponentActionListenerHolder@{$\sim$PreComponentActionListenerHolder}}
+\index{$\sim$PreComponentActionListenerHolder@{$\sim$PreComponentActionListenerHolder}!RTC::PreComponentActionListenerHolder@{RTC::PreComponentActionListenerHolder}}
+\subsubsection[{$\sim$PreComponentActionListenerHolder}]{\setlength{\rightskip}{0pt plus 5cm}virtual RTC::PreComponentActionListenerHolder::$\sim$PreComponentActionListenerHolder ()\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classRTC_1_1PreComponentActionListenerHolder_aba2c4497c966d00db75d63b660f6148e}
+
+
+デストラクタ 
+
+
+
+\subsection{関数}
+\index{RTC::PreComponentActionListenerHolder@{RTC::PreComponentActionListenerHolder}!addListener@{addListener}}
+\index{addListener@{addListener}!RTC::PreComponentActionListenerHolder@{RTC::PreComponentActionListenerHolder}}
+\subsubsection[{addListener}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::PreComponentActionListenerHolder::addListener ({\bf PreComponentActionListener} $\ast$ {\em listener}, \/  bool {\em autoclean})}\label{classRTC_1_1PreComponentActionListenerHolder_a58415eb66a4a779af8a6b86b7da1cfa6}
+
+
+リスナーの追加 
+
+リスナーを追加する。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em listener}]追加するリスナ \item[{\em autoclean}]true:デストラクタで削除する, false:デストラクタで削除しない \end{DoxyParams}
+\index{RTC::PreComponentActionListenerHolder@{RTC::PreComponentActionListenerHolder}!notify@{notify}}
+\index{notify@{notify}!RTC::PreComponentActionListenerHolder@{RTC::PreComponentActionListenerHolder}}
+\subsubsection[{notify}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::PreComponentActionListenerHolder::notify ({\bf UniqueId} {\em ec\_\-id})}\label{classRTC_1_1PreComponentActionListenerHolder_a43e7ccb6a619a1dc279d3e594b45460e}
+
+
+リスナーへ通知する 
+
+登録されているリスナのコールバックメソッドを呼び出す。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em info}]\doxyref{ConnectorInfo}{p.}{classRTC_1_1ConnectorInfo} \end{DoxyParams}
+
+
+参照元 RTC::RTObject\_\-impl::preOnAborting(), RTC::RTObject\_\-impl::preOnActivated(), RTC::RTObject\_\-impl::preOnDeactivated(), RTC::RTObject\_\-impl::preOnError(), RTC::RTObject\_\-impl::preOnExecute(), RTC::RTObject\_\-impl::preOnFinalize(), RTC::RTObject\_\-impl::preOnInitialize(), RTC::RTObject\_\-impl::preOnRateChanged(), RTC::RTObject\_\-impl::preOnReset(), RTC::RTObject\_\-impl::preOnShutdown(), RTC::RTObject\_\-impl::preOnStartup(), と RTC::RTObject\_\-impl::preOnStateUpdate().
+
+\index{RTC::PreComponentActionListenerHolder@{RTC::PreComponentActionListenerHolder}!removeListener@{removeListener}}
+\index{removeListener@{removeListener}!RTC::PreComponentActionListenerHolder@{RTC::PreComponentActionListenerHolder}}
+\subsubsection[{removeListener}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::PreComponentActionListenerHolder::removeListener ({\bf PreComponentActionListener} $\ast$ {\em listener})}\label{classRTC_1_1PreComponentActionListenerHolder_a1ccca6984c8ab0395ccc2f2a84283cf8}
+
+
+リスナーの削除 
+
+リスナを削除する。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em listener}]削除するリスナ \end{DoxyParams}

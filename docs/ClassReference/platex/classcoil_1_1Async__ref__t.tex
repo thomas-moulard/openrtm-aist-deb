@@ -1,0 +1,120 @@
+\section{クラス テンプレート coil::Async\_\-ref\_\-t$<$ Object, Func $>$}
+\label{classcoil_1_1Async__ref__t}\index{coil::Async\_\-ref\_\-t@{coil::Async\_\-ref\_\-t}}
+
+
+\doxyref{Async\_\-ref\_\-t}{p.}{classcoil_1_1Async__ref__t} テンプレートクラス.  
+
+
+
+
+{\ttfamily \#include $<$Async.h$>$}
+
+coil::Async\_\-ref\_\-t$<$ Object, Func $>$に対する継承グラフ\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3cm]{classcoil_1_1Async__ref__t}
+\end{center}
+\end{figure}
+\subsection*{Public メソッド}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Async\_\-ref\_\-t} (Object $\ast$obj, Func \&func, bool auto\_\-delete=false)
+\begin{DoxyCompactList}\small\item\em コンストラクタ \item\end{DoxyCompactList}\item 
+virtual {\bf $\sim$Async\_\-ref\_\-t} ()
+\begin{DoxyCompactList}\small\item\em デストラクタ \item\end{DoxyCompactList}\item 
+virtual int {\bf svc} ()
+\begin{DoxyCompactList}\small\item\em 非同期処理用のスレッド実行関数 \item\end{DoxyCompactList}\item 
+virtual void {\bf invoke} ()
+\begin{DoxyCompactList}\small\item\em 非同期処理活性化 \item\end{DoxyCompactList}\item 
+virtual bool {\bf finished} ()
+\begin{DoxyCompactList}\small\item\em 完了状態チェック \item\end{DoxyCompactList}\item 
+virtual void {\bf finalize} ()
+\begin{DoxyCompactList}\small\item\em 非同期処理終了 \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{説明}
+\subsubsection*{template$<$typename Object, typename Func$>$ class coil::Async\_\-ref\_\-t$<$ Object, Func $>$}
+
+\doxyref{Async\_\-ref\_\-t}{p.}{classcoil_1_1Async__ref__t} テンプレートクラス. 
+
+\subsection{コンストラクタとデストラクタ}
+\index{coil::Async\_\-ref\_\-t@{coil::Async\_\-ref\_\-t}!Async\_\-ref\_\-t@{Async\_\-ref\_\-t}}
+\index{Async\_\-ref\_\-t@{Async\_\-ref\_\-t}!coil::Async_ref_t@{coil::Async\_\-ref\_\-t}}
+\subsubsection[{Async\_\-ref\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Object, typename Func$>$ {\bf coil::Async\_\-ref\_\-t}$<$ Object, Func $>$::{\bf Async\_\-ref\_\-t} (Object $\ast$ {\em obj}, \/  Func \& {\em func}, \/  bool {\em auto\_\-delete} = {\ttfamily false})\hspace{0.3cm}{\ttfamily  [inline]}}\label{classcoil_1_1Async__ref__t_a9c9e02a04d699dbd488653a633f20383}
+
+
+コンストラクタ 
+
+コンストラクタ。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em obj}]登録対象オブジェクト \item[{\em func}]非同期実行用関数 \item[{\em auto\_\-delete}]非同期実行終了時に自動的にインスタンス削除を行うかどうかのフラグ \end{DoxyParams}
+\index{coil::Async\_\-ref\_\-t@{coil::Async\_\-ref\_\-t}!$\sim$Async\_\-ref\_\-t@{$\sim$Async\_\-ref\_\-t}}
+\index{$\sim$Async\_\-ref\_\-t@{$\sim$Async\_\-ref\_\-t}!coil::Async_ref_t@{coil::Async\_\-ref\_\-t}}
+\subsubsection[{$\sim$Async\_\-ref\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Object, typename Func$>$ virtual {\bf coil::Async\_\-ref\_\-t}$<$ Object, Func $>$::$\sim${\bf Async\_\-ref\_\-t} ()\hspace{0.3cm}{\ttfamily  [inline, virtual]}}\label{classcoil_1_1Async__ref__t_aae2afa89f0a4f9c59db0a630d792751c}
+
+
+デストラクタ 
+
+デストラクタ。 
+
+\subsection{関数}
+\index{coil::Async\_\-ref\_\-t@{coil::Async\_\-ref\_\-t}!finalize@{finalize}}
+\index{finalize@{finalize}!coil::Async_ref_t@{coil::Async\_\-ref\_\-t}}
+\subsubsection[{finalize}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Object, typename Func$>$ virtual void {\bf coil::Async\_\-ref\_\-t}$<$ Object, Func $>$::finalize ()\hspace{0.3cm}{\ttfamily  [inline, virtual]}}\label{classcoil_1_1Async__ref__t_a3aa9d20e422e78db584ead57a50200da}
+
+
+非同期処理終了 
+
+非同期処理を終了し、インスタンスを削除する。 
+
+{\bf coil::Task} \doxyref{}{p.}{classcoil_1_1Task_af7cfcc8cf5c0c322739a92374ce05cca}を再定義しています。
+
+\index{coil::Async\_\-ref\_\-t@{coil::Async\_\-ref\_\-t}!finished@{finished}}
+\index{finished@{finished}!coil::Async_ref_t@{coil::Async\_\-ref\_\-t}}
+\subsubsection[{finished}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Object, typename Func$>$ virtual bool {\bf coil::Async\_\-ref\_\-t}$<$ Object, Func $>$::finished ()\hspace{0.3cm}{\ttfamily  [inline, virtual]}}\label{classcoil_1_1Async__ref__t_a9f47a1903293a0f6f53041f42b30368b}
+
+
+完了状態チェック 
+
+完了状態を返す。
+
+\begin{DoxyReturn}{戻り値}
+true: 完了, false: 未完了 
+\end{DoxyReturn}
+
+
+{\bf coil::Async} \doxyref{}{p.}{classcoil_1_1Async_a791b91a66a98acec44e63b0c5fae8b20}を実装しています。
+
+\index{coil::Async\_\-ref\_\-t@{coil::Async\_\-ref\_\-t}!invoke@{invoke}}
+\index{invoke@{invoke}!coil::Async_ref_t@{coil::Async\_\-ref\_\-t}}
+\subsubsection[{invoke}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Object, typename Func$>$ virtual void {\bf coil::Async\_\-ref\_\-t}$<$ Object, Func $>$::invoke ()\hspace{0.3cm}{\ttfamily  [inline, virtual]}}\label{classcoil_1_1Async__ref__t_a6be7d1b1d810323d89e8bf9c00f5874a}
+
+
+非同期処理活性化 
+
+非同期処理を活性化する。 
+
+{\bf coil::Async} \doxyref{}{p.}{classcoil_1_1Async_ada31d64682effe5daa79212d07c02b65}を実装しています。
+
+
+
+参照先 coil::Task::activate().
+
+\index{coil::Async\_\-ref\_\-t@{coil::Async\_\-ref\_\-t}!svc@{svc}}
+\index{svc@{svc}!coil::Async_ref_t@{coil::Async\_\-ref\_\-t}}
+\subsubsection[{svc}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Object, typename Func$>$ virtual int {\bf coil::Async\_\-ref\_\-t}$<$ Object, Func $>$::svc (void)\hspace{0.3cm}{\ttfamily  [inline, virtual]}}\label{classcoil_1_1Async__ref__t_a0faaac2e307957306e4a5f093aa39d26}
+
+
+非同期処理用のスレッド実行関数 
+
+登録されたオブジェクトの非同期処理を呼び出す。
+
+\begin{DoxyReturn}{戻り値}
+実行結果 
+\end{DoxyReturn}
+
+
+{\bf coil::Task} \doxyref{}{p.}{classcoil_1_1Task_ae68f22a4afbe8cddde1fe910bc3dd226}を再定義しています。
+

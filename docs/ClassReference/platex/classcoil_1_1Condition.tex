@@ -1,0 +1,92 @@
+\section{クラス テンプレート coil::Condition$<$ M $>$}
+\label{classcoil_1_1Condition}\index{coil::Condition@{coil::Condition}}
+
+
+\doxyref{Condition}{p.}{classcoil_1_1Condition} テンプレートクラス.  
+
+
+
+
+{\ttfamily \#include $<$Condition.h$>$}
+
+\subsection*{Public メソッド}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Condition} (M \&mutex)
+\begin{DoxyCompactList}\small\item\em コンストラクタ \item\end{DoxyCompactList}\item 
+{\bf $\sim$Condition} ()
+\begin{DoxyCompactList}\small\item\em デストラクタ \item\end{DoxyCompactList}\item 
+void {\bf signal} ()
+\begin{DoxyCompactList}\small\item\em スレッド実行の再開 \item\end{DoxyCompactList}\item 
+void {\bf broadcast} ()
+\begin{DoxyCompactList}\small\item\em 全スレッド実行の再開 \item\end{DoxyCompactList}\item 
+bool {\bf wait} ()
+\begin{DoxyCompactList}\small\item\em スレッド実行の待機 \item\end{DoxyCompactList}\item 
+bool {\bf wait} (long second, long nano\_\-second=0)
+\begin{DoxyCompactList}\small\item\em 設定時間のスレッド実行待機 \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{説明}
+\subsubsection*{template$<$class M$>$ class coil::Condition$<$ M $>$}
+
+\doxyref{Condition}{p.}{classcoil_1_1Condition} テンプレートクラス. 
+
+\subsection{コンストラクタとデストラクタ}
+\index{coil::Condition@{coil::Condition}!Condition@{Condition}}
+\index{Condition@{Condition}!coil::Condition@{coil::Condition}}
+\subsubsection[{Condition}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class M$>$ {\bf coil::Condition}$<$ M $>$::{\bf Condition} (M \& {\em mutex})\hspace{0.3cm}{\ttfamily  [inline]}}\label{classcoil_1_1Condition_a6ccedf39320ed80a75659f7c781f1bd0}
+
+
+コンストラクタ 
+
+コンストラクタ。 \index{coil::Condition@{coil::Condition}!$\sim$Condition@{$\sim$Condition}}
+\index{$\sim$Condition@{$\sim$Condition}!coil::Condition@{coil::Condition}}
+\subsubsection[{$\sim$Condition}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class M$>$ {\bf coil::Condition}$<$ M $>$::$\sim${\bf Condition} ()\hspace{0.3cm}{\ttfamily  [inline]}}\label{classcoil_1_1Condition_af2186836de79b4a04096fd934dc7eb50}
+
+
+デストラクタ 
+
+デストラクタ。 
+
+\subsection{関数}
+\index{coil::Condition@{coil::Condition}!broadcast@{broadcast}}
+\index{broadcast@{broadcast}!coil::Condition@{coil::Condition}}
+\subsubsection[{broadcast}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class M$>$ void {\bf coil::Condition}$<$ M $>$::broadcast ()\hspace{0.3cm}{\ttfamily  [inline]}}\label{classcoil_1_1Condition_ab59335ec9ed423e1c60b88cbc79d2654}
+
+
+全スレッド実行の再開 
+
+待機している全てのスレッド実行を再開させる。 \index{coil::Condition@{coil::Condition}!signal@{signal}}
+\index{signal@{signal}!coil::Condition@{coil::Condition}}
+\subsubsection[{signal}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class M$>$ void {\bf coil::Condition}$<$ M $>$::signal ()\hspace{0.3cm}{\ttfamily  [inline]}}\label{classcoil_1_1Condition_a2398cf2cf423f73003bdb950261be46d}
+
+
+スレッド実行の再開 
+
+待機しているスレッド実行を再開させる。 \index{coil::Condition@{coil::Condition}!wait@{wait}}
+\index{wait@{wait}!coil::Condition@{coil::Condition}}
+\subsubsection[{wait}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class M$>$ bool {\bf coil::Condition}$<$ M $>$::wait (long {\em second}, \/  long {\em nano\_\-second} = {\ttfamily 0})\hspace{0.3cm}{\ttfamily  [inline]}}\label{classcoil_1_1Condition_a13e391f94d6e62316413d9b1e8377a8c}
+
+
+設定時間のスレッド実行待機 
+
+設定された時間、スレッドの実行を停止する。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em second}]秒単位の時間 \item[{\em nano\_\-second}]ナノ秒単位の時間\end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+true: 成功, false: 失敗 
+\end{DoxyReturn}
+\index{coil::Condition@{coil::Condition}!wait@{wait}}
+\index{wait@{wait}!coil::Condition@{coil::Condition}}
+\subsubsection[{wait}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class M$>$ bool {\bf coil::Condition}$<$ M $>$::wait ()\hspace{0.3cm}{\ttfamily  [inline]}}\label{classcoil_1_1Condition_a2b9ca2806914380fdc2a621ad2515566}
+
+
+スレッド実行の待機 
+
+条件変数が送信されるまでスレッドの実行を停止する。
+
+\begin{DoxyReturn}{戻り値}
+true: 成功, false: 失敗 
+\end{DoxyReturn}

@@ -1,0 +1,296 @@
+\section{クラス テンプレート coil::log\_\-stream$<$ \_\-CharT, \_\-Traits $>$}
+\label{classcoil_1_1log__stream}\index{coil::log\_\-stream@{coil::log\_\-stream}}
+
+
+\doxyref{log\_\-stream}{p.}{classcoil_1_1log__stream} テンプレートクラス  
+
+
+
+
+{\ttfamily \#include $<$Logger.h$>$}
+
+coil::log\_\-stream$<$ \_\-CharT, \_\-Traits $>$に対する継承グラフ\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2cm]{classcoil_1_1log__stream}
+\end{center}
+\end{figure}
+\subsection*{Public 型}
+\begin{DoxyCompactItemize}
+\item 
+typedef \_\-CharT {\bf char\_\-type}
+\item 
+typedef \_\-Traits {\bf traits\_\-type}
+\item 
+typedef std::basic\_\-ostream$<$ {\bf char\_\-type}, {\bf traits\_\-type} $>$ {\bf ostream\_\-type}
+\item 
+typedef std::basic\_\-streambuf$<$ {\bf char\_\-type}, {\bf traits\_\-type} $>$ {\bf streambuf\_\-type}
+\item 
+typedef {\bf coil::Mutex} {\bf Mutex}
+\item 
+typedef {\bf coil::Guard}$<$ {\bf Mutex} $>$ {\bf Guard}
+\end{DoxyCompactItemize}
+\subsection*{Public メソッド}
+\begin{DoxyCompactItemize}
+\item 
+{\bf log\_\-stream} ({\bf streambuf\_\-type} $\ast$sb, int levelmin, int levelmax, int level)
+\begin{DoxyCompactList}\small\item\em コンストラクタ \item\end{DoxyCompactList}\item 
+virtual void {\bf header} (int level)
+\begin{DoxyCompactList}\small\item\em メッセージのヘッダ追加関数 \item\end{DoxyCompactList}\item 
+bool {\bf setLevel} (int level)
+\begin{DoxyCompactList}\small\item\em ログレベル設定 \item\end{DoxyCompactList}\item 
+int {\bf getLevel} () const 
+\begin{DoxyCompactList}\small\item\em ログレベル取得 \item\end{DoxyCompactList}\item 
+void {\bf enableLock} ()
+\begin{DoxyCompactList}\small\item\em ロックモード設定 \item\end{DoxyCompactList}\item 
+void {\bf disableLock} ()
+\begin{DoxyCompactList}\small\item\em ロックモード解除 \item\end{DoxyCompactList}\item 
+{\bf ostream\_\-type} \& {\bf level} (int level)
+\begin{DoxyCompactList}\small\item\em ログストリームの取得 \item\end{DoxyCompactList}\item 
+bool {\bf isValid} (int level) const 
+\begin{DoxyCompactList}\small\item\em ログレベル有効チェック \item\end{DoxyCompactList}\item 
+void {\bf lock} ()
+\begin{DoxyCompactList}\small\item\em ログロック取得 ロックモードが設定されている場合、ログのロックを取得する。 \item\end{DoxyCompactList}\item 
+void {\bf unlock} ()
+\begin{DoxyCompactList}\small\item\em ログロック解放 ロックモードが設定されている場合に、ログのロックを解放する。 \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public 変数}
+\begin{DoxyCompactItemize}
+\item 
+static bool {\bf m\_\-lockEnable} = true
+\begin{DoxyCompactList}\small\item\em ロック有効モード \item\end{DoxyCompactList}\item 
+static {\bf Mutex} {\bf m\_\-mutex}
+\begin{DoxyCompactList}\small\item\em 排他制御オブジェクト \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected メソッド}
+\begin{DoxyCompactItemize}
+\item 
+{\bf $\sim$log\_\-stream} ()
+\begin{DoxyCompactList}\small\item\em デストラクタ \item\end{DoxyCompactList}\item 
+{\bf log\_\-stream} ()
+\item 
+{\bf log\_\-stream} (const {\bf log\_\-stream} \&x)
+\begin{DoxyCompactList}\small\item\em コピーコンストラクタ \item\end{DoxyCompactList}\item 
+{\bf log\_\-stream} \& {\bf operator=} (const {\bf log\_\-stream} \&x)
+\begin{DoxyCompactList}\small\item\em 代入演算子 \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{説明}
+\subsubsection*{template$<$typename \_\-CharT, typename \_\-Traits = std::char\_\-traits$<$\_\-CharT$>$$>$ class coil::log\_\-stream$<$ \_\-CharT, \_\-Traits $>$}
+
+\doxyref{log\_\-stream}{p.}{classcoil_1_1log__stream} テンプレートクラス 
+
+\subsection{型定義}
+\index{coil::log\_\-stream@{coil::log\_\-stream}!char\_\-type@{char\_\-type}}
+\index{char\_\-type@{char\_\-type}!coil::log_stream@{coil::log\_\-stream}}
+\subsubsection[{char\_\-type}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename \_\-CharT , typename \_\-Traits  = std::char\_\-traits$<$\_\-CharT$>$$>$ typedef \_\-CharT {\bf coil::log\_\-stream}$<$ \_\-CharT, \_\-Traits $>$::{\bf char\_\-type}}\label{classcoil_1_1log__stream_a36222157a85ec78d4ef230ab48b346e5}
+\index{coil::log\_\-stream@{coil::log\_\-stream}!Guard@{Guard}}
+\index{Guard@{Guard}!coil::log_stream@{coil::log\_\-stream}}
+\subsubsection[{Guard}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename \_\-CharT , typename \_\-Traits  = std::char\_\-traits$<$\_\-CharT$>$$>$ typedef {\bf coil::Guard}$<${\bf Mutex}$>$ {\bf coil::log\_\-stream}$<$ \_\-CharT, \_\-Traits $>$::{\bf Guard}}\label{classcoil_1_1log__stream_ae6cc892ef5e4fcf83efd547419566a3b}
+\index{coil::log\_\-stream@{coil::log\_\-stream}!Mutex@{Mutex}}
+\index{Mutex@{Mutex}!coil::log_stream@{coil::log\_\-stream}}
+\subsubsection[{Mutex}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename \_\-CharT , typename \_\-Traits  = std::char\_\-traits$<$\_\-CharT$>$$>$ typedef {\bf coil::Mutex} {\bf coil::log\_\-stream}$<$ \_\-CharT, \_\-Traits $>$::{\bf Mutex}}\label{classcoil_1_1log__stream_a60cf6ca351d737ffdc17af3313c7a5bb}
+\index{coil::log\_\-stream@{coil::log\_\-stream}!ostream\_\-type@{ostream\_\-type}}
+\index{ostream\_\-type@{ostream\_\-type}!coil::log_stream@{coil::log\_\-stream}}
+\subsubsection[{ostream\_\-type}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename \_\-CharT , typename \_\-Traits  = std::char\_\-traits$<$\_\-CharT$>$$>$ typedef std::basic\_\-ostream$<${\bf char\_\-type}, {\bf traits\_\-type}$>$ {\bf coil::log\_\-stream}$<$ \_\-CharT, \_\-Traits $>$::{\bf ostream\_\-type}}\label{classcoil_1_1log__stream_a85d8ac9d4a991da58728be6cac8c60cb}
+\index{coil::log\_\-stream@{coil::log\_\-stream}!streambuf\_\-type@{streambuf\_\-type}}
+\index{streambuf\_\-type@{streambuf\_\-type}!coil::log_stream@{coil::log\_\-stream}}
+\subsubsection[{streambuf\_\-type}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename \_\-CharT , typename \_\-Traits  = std::char\_\-traits$<$\_\-CharT$>$$>$ typedef std::basic\_\-streambuf$<${\bf char\_\-type}, {\bf traits\_\-type}$>$ {\bf coil::log\_\-stream}$<$ \_\-CharT, \_\-Traits $>$::{\bf streambuf\_\-type}}\label{classcoil_1_1log__stream_a24162f3e7cd5e323528e1826b133c960}
+\index{coil::log\_\-stream@{coil::log\_\-stream}!traits\_\-type@{traits\_\-type}}
+\index{traits\_\-type@{traits\_\-type}!coil::log_stream@{coil::log\_\-stream}}
+\subsubsection[{traits\_\-type}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename \_\-CharT , typename \_\-Traits  = std::char\_\-traits$<$\_\-CharT$>$$>$ typedef \_\-Traits {\bf coil::log\_\-stream}$<$ \_\-CharT, \_\-Traits $>$::{\bf traits\_\-type}}\label{classcoil_1_1log__stream_a89cce42b910a5280d48549dc6e67ebf5}
+
+
+\subsection{コンストラクタとデストラクタ}
+\index{coil::log\_\-stream@{coil::log\_\-stream}!log\_\-stream@{log\_\-stream}}
+\index{log\_\-stream@{log\_\-stream}!coil::log_stream@{coil::log\_\-stream}}
+\subsubsection[{log\_\-stream}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename \_\-CharT , typename \_\-Traits  = std::char\_\-traits$<$\_\-CharT$>$$>$ {\bf coil::log\_\-stream}$<$ \_\-CharT, \_\-Traits $>$::{\bf log\_\-stream} ({\bf streambuf\_\-type} $\ast$ {\em sb}, \/  int {\em levelmin}, \/  int {\em levelmax}, \/  int {\em level})\hspace{0.3cm}{\ttfamily  [inline]}}\label{classcoil_1_1log__stream_a5738d9fec1d931603810307b4b01ea0f}
+
+
+コンストラクタ 
+
+コンストラクタ
+
+
+\begin{DoxyParams}{引数}
+\item[{\em streambuf}]basic\_\-streambuf 型オブジェクト \item[{\em levelmin}]ログレベルの最小値 \item[{\em levelmax}]ログレベルの最大値 \item[{\em デフォルトのログレベル}]\end{DoxyParams}
+\index{coil::log\_\-stream@{coil::log\_\-stream}!$\sim$log\_\-stream@{$\sim$log\_\-stream}}
+\index{$\sim$log\_\-stream@{$\sim$log\_\-stream}!coil::log_stream@{coil::log\_\-stream}}
+\subsubsection[{$\sim$log\_\-stream}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename \_\-CharT , typename \_\-Traits  = std::char\_\-traits$<$\_\-CharT$>$$>$ {\bf coil::log\_\-stream}$<$ \_\-CharT, \_\-Traits $>$::$\sim${\bf log\_\-stream} ()\hspace{0.3cm}{\ttfamily  [inline, protected]}}\label{classcoil_1_1log__stream_a6004452bf54de2545bb38537f1063879}
+
+
+デストラクタ 
+
+デストラクタ。 \index{coil::log\_\-stream@{coil::log\_\-stream}!log\_\-stream@{log\_\-stream}}
+\index{log\_\-stream@{log\_\-stream}!coil::log_stream@{coil::log\_\-stream}}
+\subsubsection[{log\_\-stream}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename \_\-CharT , typename \_\-Traits  = std::char\_\-traits$<$\_\-CharT$>$$>$ {\bf coil::log\_\-stream}$<$ \_\-CharT, \_\-Traits $>$::{\bf log\_\-stream} ()\hspace{0.3cm}{\ttfamily  [protected]}}\label{classcoil_1_1log__stream_a15527816f1dd0c9d1206b936042822d7}
+デフォルトコンストラクタ \index{coil::log\_\-stream@{coil::log\_\-stream}!log\_\-stream@{log\_\-stream}}
+\index{log\_\-stream@{log\_\-stream}!coil::log_stream@{coil::log\_\-stream}}
+\subsubsection[{log\_\-stream}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename \_\-CharT , typename \_\-Traits  = std::char\_\-traits$<$\_\-CharT$>$$>$ {\bf coil::log\_\-stream}$<$ \_\-CharT, \_\-Traits $>$::{\bf log\_\-stream} (const {\bf log\_\-stream}$<$ \_\-CharT, \_\-Traits $>$ \& {\em x})\hspace{0.3cm}{\ttfamily  [protected]}}\label{classcoil_1_1log__stream_a63abd81121d608df212526b19fe4384a}
+
+
+コピーコンストラクタ 
+
+コピーコンストラクタ
+
+
+\begin{DoxyParams}{引数}
+\item[{\em x}]\doxyref{log\_\-stream}{p.}{classcoil_1_1log__stream} オブジェクト \end{DoxyParams}
+
+
+\subsection{関数}
+\index{coil::log\_\-stream@{coil::log\_\-stream}!disableLock@{disableLock}}
+\index{disableLock@{disableLock}!coil::log_stream@{coil::log\_\-stream}}
+\subsubsection[{disableLock}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename \_\-CharT , typename \_\-Traits  = std::char\_\-traits$<$\_\-CharT$>$$>$ void {\bf coil::log\_\-stream}$<$ \_\-CharT, \_\-Traits $>$::disableLock ()\hspace{0.3cm}{\ttfamily  [inline]}}\label{classcoil_1_1log__stream_a5823336515db45fe170d20af2883525c}
+
+
+ロックモード解除 
+
+ロックモードを無効にする。 
+
+参照先 coil::log\_\-stream$<$ \_\-CharT, \_\-Traits $>$::m\_\-lockEnable.
+
+\index{coil::log\_\-stream@{coil::log\_\-stream}!enableLock@{enableLock}}
+\index{enableLock@{enableLock}!coil::log_stream@{coil::log\_\-stream}}
+\subsubsection[{enableLock}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename \_\-CharT , typename \_\-Traits  = std::char\_\-traits$<$\_\-CharT$>$$>$ void {\bf coil::log\_\-stream}$<$ \_\-CharT, \_\-Traits $>$::enableLock ()\hspace{0.3cm}{\ttfamily  [inline]}}\label{classcoil_1_1log__stream_a31f76626dcd38cc32d10aa17e61198ee}
+
+
+ロックモード設定 
+
+ロックモードを有効にする。 
+
+参照先 coil::log\_\-stream$<$ \_\-CharT, \_\-Traits $>$::m\_\-lockEnable.
+
+\index{coil::log\_\-stream@{coil::log\_\-stream}!getLevel@{getLevel}}
+\index{getLevel@{getLevel}!coil::log_stream@{coil::log\_\-stream}}
+\subsubsection[{getLevel}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename \_\-CharT , typename \_\-Traits  = std::char\_\-traits$<$\_\-CharT$>$$>$ int {\bf coil::log\_\-stream}$<$ \_\-CharT, \_\-Traits $>$::getLevel () const\hspace{0.3cm}{\ttfamily  [inline]}}\label{classcoil_1_1log__stream_a46361ee727aa32dfb687116a7b411d78}
+
+
+ログレベル取得 
+
+ログレベルを取得する。
+
+\begin{DoxyReturn}{戻り値}
+ログレベル 
+\end{DoxyReturn}
+\index{coil::log\_\-stream@{coil::log\_\-stream}!header@{header}}
+\index{header@{header}!coil::log_stream@{coil::log\_\-stream}}
+\subsubsection[{header}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename \_\-CharT , typename \_\-Traits  = std::char\_\-traits$<$\_\-CharT$>$$>$ virtual void {\bf coil::log\_\-stream}$<$ \_\-CharT, \_\-Traits $>$::header (int {\em level})\hspace{0.3cm}{\ttfamily  [inline, virtual]}}\label{classcoil_1_1log__stream_acef16b17dc52f988d7f3b28afde3e960}
+
+
+メッセージのヘッダ追加関数 
+
+サブクラスにおいてこの関数をオーバーライドし、 ログメッセージに適当な時刻などのヘッダを追加する。 
+
+{\bf RTC::Logger} \doxyref{}{p.}{classRTC_1_1Logger_a8361781fa7f52ab330c4522bcdd3068b}で再定義されています。
+
+
+
+参照元 coil::log\_\-stream$<$ \_\-CharT, \_\-Traits $>$::level().
+
+\index{coil::log\_\-stream@{coil::log\_\-stream}!isValid@{isValid}}
+\index{isValid@{isValid}!coil::log_stream@{coil::log\_\-stream}}
+\subsubsection[{isValid}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename \_\-CharT , typename \_\-Traits  = std::char\_\-traits$<$\_\-CharT$>$$>$ bool {\bf coil::log\_\-stream}$<$ \_\-CharT, \_\-Traits $>$::isValid (int {\em level}) const\hspace{0.3cm}{\ttfamily  [inline]}}\label{classcoil_1_1log__stream_ae48e999605574b2d96c00a51c5cf18df}
+
+
+ログレベル有効チェック 
+
+指定されたログレベルが有効範囲かチェックし、有効・無効を返す。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em level}]ログレベル\end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+true: 有効, false: 無効 
+\end{DoxyReturn}
+\index{coil::log\_\-stream@{coil::log\_\-stream}!level@{level}}
+\index{level@{level}!coil::log_stream@{coil::log\_\-stream}}
+\subsubsection[{level}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename \_\-CharT , typename \_\-Traits  = std::char\_\-traits$<$\_\-CharT$>$$>$ {\bf ostream\_\-type}\& {\bf coil::log\_\-stream}$<$ \_\-CharT, \_\-Traits $>$::level (int {\em level})\hspace{0.3cm}{\ttfamily  [inline]}}\label{classcoil_1_1log__stream_a38cf29e6b6525011bc72510430f3c722}
+
+
+ログストリームの取得 
+
+指定されたログレベルを判断し、ログストリームを取得する。 指定されたログレベルが設定されているログレベル以下の場合には、本クラスを 返す。 指定されたログレベルが設定されているログレベルを超えている場合には、 ダミーログクラスを返す。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em level}]指定ログレベル\end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+対象ログストリーム 
+\end{DoxyReturn}
+
+
+参照先 coil::log\_\-stream$<$ \_\-CharT, \_\-Traits $>$::header().
+
+\index{coil::log\_\-stream@{coil::log\_\-stream}!lock@{lock}}
+\index{lock@{lock}!coil::log_stream@{coil::log\_\-stream}}
+\subsubsection[{lock}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename \_\-CharT , typename \_\-Traits  = std::char\_\-traits$<$\_\-CharT$>$$>$ void {\bf coil::log\_\-stream}$<$ \_\-CharT, \_\-Traits $>$::lock ()\hspace{0.3cm}{\ttfamily  [inline]}}\label{classcoil_1_1log__stream_aec5fa5773666bfda7cb57f3efe208c72}
+
+
+ログロック取得 ロックモードが設定されている場合、ログのロックを取得する。 
+
+
+
+参照先 coil::Mutex::lock(), coil::log\_\-stream$<$ \_\-CharT, \_\-Traits $>$::m\_\-lockEnable, と coil::log\_\-stream$<$ \_\-CharT, \_\-Traits $>$::m\_\-mutex.
+
+\index{coil::log\_\-stream@{coil::log\_\-stream}!operator=@{operator=}}
+\index{operator=@{operator=}!coil::log_stream@{coil::log\_\-stream}}
+\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename \_\-CharT , typename \_\-Traits  = std::char\_\-traits$<$\_\-CharT$>$$>$ {\bf log\_\-stream}\& {\bf coil::log\_\-stream}$<$ \_\-CharT, \_\-Traits $>$::operator= (const {\bf log\_\-stream}$<$ \_\-CharT, \_\-Traits $>$ \& {\em x})\hspace{0.3cm}{\ttfamily  [protected]}}\label{classcoil_1_1log__stream_ab53e7c0b4759cf7f977fb1edd7b21ded}
+
+
+代入演算子 
+
+log\_\-streamオブジェクトをコピーする。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em x}]log\_\-streamオブジェクト\end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+代入結果 
+\end{DoxyReturn}
+\index{coil::log\_\-stream@{coil::log\_\-stream}!setLevel@{setLevel}}
+\index{setLevel@{setLevel}!coil::log_stream@{coil::log\_\-stream}}
+\subsubsection[{setLevel}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename \_\-CharT , typename \_\-Traits  = std::char\_\-traits$<$\_\-CharT$>$$>$ bool {\bf coil::log\_\-stream}$<$ \_\-CharT, \_\-Traits $>$::setLevel (int {\em level})\hspace{0.3cm}{\ttfamily  [inline]}}\label{classcoil_1_1log__stream_a0c8986b423d39003ac210527708df43c}
+
+
+ログレベル設定 
+
+ログレベルを設定する。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em level}]ログレベル \end{DoxyParams}
+\index{coil::log\_\-stream@{coil::log\_\-stream}!unlock@{unlock}}
+\index{unlock@{unlock}!coil::log_stream@{coil::log\_\-stream}}
+\subsubsection[{unlock}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename \_\-CharT , typename \_\-Traits  = std::char\_\-traits$<$\_\-CharT$>$$>$ void {\bf coil::log\_\-stream}$<$ \_\-CharT, \_\-Traits $>$::unlock ()\hspace{0.3cm}{\ttfamily  [inline]}}\label{classcoil_1_1log__stream_ac85f05767b589c323d6b394c8e0ba6af}
+
+
+ログロック解放 ロックモードが設定されている場合に、ログのロックを解放する。 
+
+
+
+参照先 coil::log\_\-stream$<$ \_\-CharT, \_\-Traits $>$::m\_\-lockEnable, coil::log\_\-stream$<$ \_\-CharT, \_\-Traits $>$::m\_\-mutex, と coil::Mutex::unlock().
+
+
+
+\subsection{変数}
+\index{coil::log\_\-stream@{coil::log\_\-stream}!m\_\-lockEnable@{m\_\-lockEnable}}
+\index{m\_\-lockEnable@{m\_\-lockEnable}!coil::log_stream@{coil::log\_\-stream}}
+\subsubsection[{m\_\-lockEnable}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename \_\-CharT , typename \_\-Traits  = std::char\_\-traits$<$\_\-CharT$>$$>$ bool {\bf coil::log\_\-stream}$<$ \_\-CharT, \_\-Traits $>$::{\bf m\_\-lockEnable} = true\hspace{0.3cm}{\ttfamily  [inline, static]}}\label{classcoil_1_1log__stream_a128aedc763e4b1d1168069c013b24020}
+
+
+ロック有効モード 
+
+
+
+参照元 coil::log\_\-stream$<$ \_\-CharT, \_\-Traits $>$::disableLock(), coil::log\_\-stream$<$ \_\-CharT, \_\-Traits $>$::enableLock(), coil::log\_\-stream$<$ \_\-CharT, \_\-Traits $>$::lock(), と coil::log\_\-stream$<$ \_\-CharT, \_\-Traits $>$::unlock().
+
+\index{coil::log\_\-stream@{coil::log\_\-stream}!m\_\-mutex@{m\_\-mutex}}
+\index{m\_\-mutex@{m\_\-mutex}!coil::log_stream@{coil::log\_\-stream}}
+\subsubsection[{m\_\-mutex}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename \_\-CharT , typename \_\-Traits  = std::char\_\-traits$<$\_\-CharT$>$$>$ {\bf coil::Mutex} {\bf coil::log\_\-stream}$<$ \_\-CharT, \_\-Traits $>$::{\bf m\_\-mutex}\hspace{0.3cm}{\ttfamily  [inline, static]}}\label{classcoil_1_1log__stream_a0051fda5ad2fac41d8f2dbd9000b5814}
+
+
+排他制御オブジェクト 
+
+
+
+参照元 coil::log\_\-stream$<$ \_\-CharT, \_\-Traits $>$::lock(), と coil::log\_\-stream$<$ \_\-CharT, \_\-Traits $>$::unlock().
+

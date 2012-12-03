@@ -1,0 +1,59 @@
+\section{BufferStatus.h File Reference}
+\label{BufferStatus_8h}\index{BufferStatus.h@{BufferStatus.h}}
+
+
+Buffer status enum definition.  
+
+
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class {\bf RTC::BufferStatus}
+\begin{DoxyCompactList}\small\item\em \doxyref{BufferStatus}{p.}{classRTC_1_1BufferStatus} mixin class. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace {\bf RTC}
+
+
+\begin{DoxyCompactList}\small\item\em RT-\/Component. \item\end{DoxyCompactList}
+
+\end{DoxyCompactItemize}
+\subsection*{Defines}
+\begin{DoxyCompactItemize}
+\item 
+\#define {\bf BUFFERSTATUS\_\-ENUM}
+\begin{DoxyCompactList}\small\item\em Importing \doxyref{RTC::BufferStatus}{p.}{classRTC_1_1BufferStatus} macro. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Buffer status enum definition. \begin{DoxyDate}{Date}
+\$Date\$ 
+\end{DoxyDate}
+\begin{DoxyAuthor}{Author}
+Noriaki Ando $<${\tt n-\/ando@aist.go.jp}$>$
+\end{DoxyAuthor}
+Copyright (C) 2009 Noriaki Ando Task-\/intelligence Research Group, Intelligent Systems Research Institute, National Institute of Advanced Industrial Science and Technology (AIST), Japan All rights reserved.
+
+\$Id\$ 
+
+\subsection{Define Documentation}
+\index{BufferStatus.h@{BufferStatus.h}!BUFFERSTATUS\_\-ENUM@{BUFFERSTATUS\_\-ENUM}}
+\index{BUFFERSTATUS\_\-ENUM@{BUFFERSTATUS\_\-ENUM}!BufferStatus.h@{BufferStatus.h}}
+\subsubsection[{BUFFERSTATUS\_\-ENUM}]{\setlength{\rightskip}{0pt plus 5cm}\#define BUFFERSTATUS\_\-ENUM}\label{BufferStatus_8h_aa5d3227faf3ef033e69533c16bc07561}
+{\bfseries Value:}
+\begin{DoxyCode}
+typedef ::RTC::BufferStatus::Enum ReturnCode;       \
+  using ::RTC::BufferStatus::BUFFER_OK;               \
+  using ::RTC::BufferStatus::BUFFER_ERROR;            \
+  using ::RTC::BufferStatus::BUFFER_FULL;             \
+  using ::RTC::BufferStatus::BUFFER_EMPTY;            \
+  using ::RTC::BufferStatus::NOT_SUPPORTED;           \
+  using ::RTC::BufferStatus::TIMEOUT;                 \
+  using ::RTC::BufferStatus::PRECONDITION_NOT_MET;
+\end{DoxyCode}
+
+
+Importing \doxyref{RTC::BufferStatus}{p.}{classRTC_1_1BufferStatus} macro. 
+
+This macro imports all the member of enum declared in \doxyref{RTC::BufferStatus}{p.}{classRTC_1_1BufferStatus} into the current namespace. Inserting at the head of class declaration, classes which utilize BufferStatus can access Enum members of BufferStatus without using namespace resolve operator. 

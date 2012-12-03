@@ -1,0 +1,87 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<title>OpenRTM: PublisherBase.h ソースファイル</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<!-- 作成： Doxygen 1.6.3 -->
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="index.html"><span>メインページ</span></a></li>
+      <li><a href="namespaces.html"><span>ネームスペース</span></a></li>
+      <li><a href="annotated.html"><span>クラス</span></a></li>
+      <li class="current"><a href="files.html"><span>ファイル</span></a></li>
+    </ul>
+  </div>
+  <div class="tabs">
+    <ul>
+      <li><a href="files.html"><span>ファイル一覧</span></a></li>
+      <li><a href="globals.html"><span>ファイルメンバ</span></a></li>
+    </ul>
+  </div>
+<h1>PublisherBase.h</h1><a href="PublisherBase_8h.html">説明を見る。</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="comment">// -*- C++ -*-</span>
+<a name="l00020"></a>00020 <span class="comment"></span><span class="preprocessor">#ifndef RTC_PUBLISHERBASE_H</span>
+<a name="l00021"></a>00021 <span class="preprocessor"></span><span class="preprocessor">#define RTC_PUBLISHERBASE_H</span>
+<a name="l00022"></a>00022 <span class="preprocessor"></span>
+<a name="l00023"></a>00023 <span class="preprocessor">#include &lt;<a class="code" href="Properties_8h.html" title="Property list class (derived from Java Properties).">coil/Properties.h</a>&gt;</span>
+<a name="l00024"></a>00024 <span class="preprocessor">#include &lt;<a class="code" href="coil_2include_2coil_2Factory_8h.html">coil/Factory.h</a>&gt;</span>
+<a name="l00025"></a>00025 <span class="preprocessor">#include &lt;<a class="code" href="RTC_8h.html" title="RTComponent header.">rtm/RTC.h</a>&gt;</span>
+<a name="l00026"></a>00026 <span class="preprocessor">#include &lt;<a class="code" href="CdrBufferBase_8h.html">rtm/CdrBufferBase.h</a>&gt;</span>
+<a name="l00027"></a>00027 <span class="preprocessor">#include &lt;<a class="code" href="DataPortStatus_8h.html" title="DataPortStatus class.">rtm/DataPortStatus.h</a>&gt;</span>
+<a name="l00028"></a>00028 
+<a name="l00029"></a>00029 <span class="keyword">namespace </span>coil
+<a name="l00030"></a>00030 {
+<a name="l00031"></a>00031   <span class="keyword">class </span><a class="code" href="namespaceRTC.html#a59713fe4d015f5d49505ff87272058a1">Properties</a>;
+<a name="l00032"></a>00032 }
+<a name="l00033"></a>00033 <span class="keyword">namespace </span>RTC
+<a name="l00034"></a>00034 {
+<a name="l00035"></a>00035   <span class="keyword">class </span>InPortConsumer;
+<a name="l00036"></a>00036   <span class="keyword">class </span>ConnectorListeners;
+<a name="l00037"></a>00037   <span class="keyword">class </span>ConnectorInfo;
+<a name="l00038"></a>00038 
+<a name="l00063"></a><a class="code" href="classRTC_1_1PublisherBase.html">00063</a>   <span class="keyword">class </span><a class="code" href="classRTC_1_1PublisherBase.html" title="Publisher 基底クラス.">PublisherBase</a>
+<a name="l00064"></a>00064     : <span class="keyword">public</span> <a class="code" href="classRTC_1_1DataPortStatus.html" title="DataPortStatus mixin クラス.">DataPortStatus</a>
+<a name="l00065"></a>00065   {
+<a name="l00066"></a>00066   <span class="keyword">public</span>:
+<a name="l00067"></a>00067     <a class="code" href="DataPortStatus_8h.html#a71942892127d0f2995c2610b1e22ef23" title="RTC::DataPortStatus 導入">DATAPORTSTATUS_ENUM</a>
+<a name="l00079"></a><a class="code" href="classRTC_1_1PublisherBase.html#aded4450169b85220e99be1985dc29776">00079</a>     <span class="keyword">virtual</span> <a class="code" href="classRTC_1_1PublisherBase.html#aded4450169b85220e99be1985dc29776" title="デストラクタ">~PublisherBase</a>(<span class="keywordtype">void</span>){};
+<a name="l00080"></a>00080 
+<a name="l00108"></a>00108     <span class="keyword">virtual</span> ReturnCode <a class="code" href="classRTC_1_1PublisherBase.html#a9915af3afab216e2b39fa8702b54b0b7" title="設定初期化">init</a>(<a class="code" href="classcoil_1_1Properties.html" title="プロパティセットを表現するクラス">coil::Properties</a>&amp; prop) = 0;
+<a name="l00109"></a>00109 
+<a name="l00135"></a>00135     <span class="keyword">virtual</span> ReturnCode <a class="code" href="classRTC_1_1PublisherBase.html#a7ff8bf60fa9d713402572404b3dc922c" title="InPortコンシューマのセット.">setConsumer</a>(<a class="code" href="classRTC_1_1InPortConsumer.html" title="InPortConsumer 抽象クラス.">InPortConsumer</a>* consumer) = 0;
+<a name="l00136"></a>00136 
+<a name="l00162"></a>00162     <span class="keyword">virtual</span> ReturnCode <a class="code" href="classRTC_1_1PublisherBase.html#adb0d076dd59cab8cf37555d97f4cb62b" title="バッファのセット">setBuffer</a>(<a class="code" href="classRTC_1_1BufferBase.html" title="BufferBase 抽象クラス.">BufferBase&lt;cdrMemoryStream&gt;</a>* buffer) = 0;
+<a name="l00163"></a>00163 
+<a name="l00197"></a>00197     <span class="keyword">virtual</span> ReturnCode <a class="code" href="classRTC_1_1PublisherBase.html#a9d12db1358f8b70a5ee761d905170bc2" title="リスナを設定する。">setListener</a>(<a class="code" href="classRTC_1_1ConnectorInfo.html" title="ConnectorInfo クラス.">ConnectorInfo</a>&amp; info,
+<a name="l00198"></a>00198                                    <a class="code" href="classRTC_1_1ConnectorListeners.html" title="ConnectorListeners クラス.">ConnectorListeners</a>* listeners) = 0;
+<a name="l00199"></a>00199 
+<a name="l00256"></a>00256     <span class="keyword">virtual</span> ReturnCode <a class="code" href="classRTC_1_1PublisherBase.html#abd693b65ffe07276683facfd710be537" title="データを書き込む">write</a>(<span class="keyword">const</span> cdrMemoryStream&amp; data,
+<a name="l00257"></a>00257                              <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> sec,
+<a name="l00258"></a>00258                              <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> usec) = 0;
+<a name="l00259"></a>00259 
+<a name="l00287"></a>00287     <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code" href="classRTC_1_1PublisherBase.html#aed0e118b4a1bda091ba38066cc8e4c7b" title="アクティブ化確認">isActive</a>() = 0;
+<a name="l00288"></a>00288 
+<a name="l00314"></a>00314     <span class="keyword">virtual</span> ReturnCode <a class="code" href="classRTC_1_1PublisherBase.html#a4f0e0ca91e07a25481ffa83ef027feb6" title="アクティブ化する">activate</a>() = 0;
+<a name="l00315"></a>00315 
+<a name="l00341"></a>00341     <span class="keyword">virtual</span> ReturnCode <a class="code" href="classRTC_1_1PublisherBase.html#ace68807ed92a38af8ca49ece25db0d8a" title="非アクティブ化する">deactivate</a>() = 0;
+<a name="l00342"></a>00342   
+<a name="l00361"></a><a class="code" href="classRTC_1_1PublisherBase.html#a77aa978b2f391d6c9f2ee18419ba1b20">00361</a>     <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classRTC_1_1PublisherBase.html#a77aa978b2f391d6c9f2ee18419ba1b20" title="Publisher を破棄する。.">release</a>(){}
+<a name="l00362"></a>00362   };
+<a name="l00363"></a>00363 
+<a name="l00364"></a><a class="code" href="namespaceRTC.html#ac6dc25f00d624ce54f43c6f5cfa497b0">00364</a>   <span class="keyword">typedef</span> <a class="code" href="classcoil_1_1GlobalFactory.html" title="GlobalFactory テンプレートクラス.">coil::GlobalFactory&lt;PublisherBase&gt;</a> <a class="code" href="classcoil_1_1GlobalFactory.html" title="GlobalFactory テンプレートクラス.">PublisherFactory</a>;
+<a name="l00365"></a>00365 
+<a name="l00366"></a>00366 <span class="preprocessor">#if defined(WIN32) || defined(_WIN32) || defined(__WIN32__) || defined(__NT__)</span>
+<a name="l00367"></a>00367 <span class="preprocessor"></span>  <a class="code" href="coil_2include_2coil_2Factory_8h.html#a77366c1bd428629dc898e188bfd182a3">EXTERN</a> <span class="keyword">template</span> <span class="keyword">class </span><a class="code" href="coil_2include_2coil_2Factory_8h.html#ad8633c87c3a52f3ade10c27307bd134d">DLL_PLUGIN</a> <a class="code" href="classcoil_1_1GlobalFactory.html" title="GlobalFactory テンプレートクラス.">coil::GlobalFactory&lt;PublisherBase&gt;</a>;
+<a name="l00368"></a>00368 <span class="preprocessor">#endif</span>
+<a name="l00369"></a>00369 <span class="preprocessor"></span>};
+<a name="l00370"></a>00370 <span class="preprocessor">#endif // RTC_PUBLISHERBASE_H</span>
+</pre></div></div>
+<hr class="footer"/><address style="text-align: right;"><small>OpenRTMに対してThu May 24 23:25:18 2012に生成されました。&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.6.3 </small></address>
+</body>
+</html>

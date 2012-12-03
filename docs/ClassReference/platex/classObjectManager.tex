@@ -1,0 +1,182 @@
+\section{クラス テンプレート ObjectManager$<$ Identifier, Object, Predicate $>$}
+\label{classObjectManager}\index{ObjectManager@{ObjectManager}}
+
+
+オブジェクト管理用クラス  
+
+
+
+
+{\ttfamily \#include $<$ObjectManager.h$>$}
+
+\subsection*{構成}
+\begin{DoxyCompactItemize}
+\item 
+struct {\bf Objects}
+\begin{DoxyCompactList}\small\item\em オブジェクト管理用構造体 \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public 型}
+\begin{DoxyCompactItemize}
+\item 
+typedef std::vector$<$ Object $\ast$ $>$ {\bf ObjectVector}
+\item 
+typedef ObjectVector::iterator {\bf ObjectVectorItr}
+\item 
+typedef ObjectVector::const\_\-iterator {\bf ObjectVectorConstItr}
+\item 
+typedef {\bf coil::Mutex} {\bf Mutex}
+\item 
+typedef {\bf coil::Guard}$<$ {\bf coil::Mutex} $>$ {\bf Guard}
+\end{DoxyCompactItemize}
+\subsection*{Public メソッド}
+\begin{DoxyCompactItemize}
+\item 
+{\bf ObjectManager} ()
+\item 
+{\bf $\sim$ObjectManager} (void)
+\item 
+bool {\bf registerObject} (Object $\ast$obj)
+\begin{DoxyCompactList}\small\item\em 指定したオブジェクトを登録する \item\end{DoxyCompactList}\item 
+Object $\ast$ {\bf unregisterObject} (const Identifier \&id)
+\begin{DoxyCompactList}\small\item\em 指定したオブジェクトを登録解除する \item\end{DoxyCompactList}\item 
+Object $\ast$ {\bf find} (const Identifier \&id) const 
+\begin{DoxyCompactList}\small\item\em オブジェクトを検索する \item\end{DoxyCompactList}\item 
+std::vector$<$ Object $\ast$ $>$ {\bf getObjects} () const 
+\begin{DoxyCompactList}\small\item\em 登録されているオブジェクトのリストを取得する \item\end{DoxyCompactList}\item 
+{\footnotesize template$<$class Pred $>$ }\\Pred {\bf for\_\-each} (Pred p)
+\begin{DoxyCompactList}\small\item\em オブジェクト検索用ファンクタ \item\end{DoxyCompactList}\item 
+{\footnotesize template$<$class Pred $>$ }\\Pred {\bf for\_\-each} (Pred p) const 
+\begin{DoxyCompactList}\small\item\em オブジェクト検索用ファンクタ \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected 変数}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Objects} {\bf m\_\-objects}
+\begin{DoxyCompactList}\small\item\em 登録済みオブジェクト・リスト \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{説明}
+\subsubsection*{template$<$typename Identifier, typename Object, typename Predicate$>$ class ObjectManager$<$ Identifier, Object, Predicate $>$}
+
+オブジェクト管理用クラス 各種オブジェクトを管理するためのクラス。
+
+\begin{DoxySince}{から}
+0.4.0 
+\end{DoxySince}
+
+
+\subsection{型定義}
+\index{ObjectManager@{ObjectManager}!Guard@{Guard}}
+\index{Guard@{Guard}!ObjectManager@{ObjectManager}}
+\subsubsection[{Guard}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Identifier, typename Object, typename Predicate$>$ typedef {\bf coil::Guard}$<${\bf coil::Mutex}$>$ {\bf ObjectManager}$<$ Identifier, Object, Predicate $>$::{\bf Guard}}\label{classObjectManager_a269f7c04878a5ad6759d2ff21a21c4d1}
+\index{ObjectManager@{ObjectManager}!Mutex@{Mutex}}
+\index{Mutex@{Mutex}!ObjectManager@{ObjectManager}}
+\subsubsection[{Mutex}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Identifier, typename Object, typename Predicate$>$ typedef {\bf coil::Mutex} {\bf ObjectManager}$<$ Identifier, Object, Predicate $>$::{\bf Mutex}}\label{classObjectManager_aace44eee2c2a6ddfec63ac42b7bf601c}
+\index{ObjectManager@{ObjectManager}!ObjectVector@{ObjectVector}}
+\index{ObjectVector@{ObjectVector}!ObjectManager@{ObjectManager}}
+\subsubsection[{ObjectVector}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Identifier, typename Object, typename Predicate$>$ typedef std::vector$<$Object$\ast$$>$ {\bf ObjectManager}$<$ Identifier, Object, Predicate $>$::{\bf ObjectVector}}\label{classObjectManager_aa4fcbaee3d2516a6334f08fff837c7be}
+\index{ObjectManager@{ObjectManager}!ObjectVectorConstItr@{ObjectVectorConstItr}}
+\index{ObjectVectorConstItr@{ObjectVectorConstItr}!ObjectManager@{ObjectManager}}
+\subsubsection[{ObjectVectorConstItr}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Identifier, typename Object, typename Predicate$>$ typedef ObjectVector::const\_\-iterator {\bf ObjectManager}$<$ Identifier, Object, Predicate $>$::{\bf ObjectVectorConstItr}}\label{classObjectManager_acff0ec2b138b2dc0a2ad6b80c7dc1482}
+\index{ObjectManager@{ObjectManager}!ObjectVectorItr@{ObjectVectorItr}}
+\index{ObjectVectorItr@{ObjectVectorItr}!ObjectManager@{ObjectManager}}
+\subsubsection[{ObjectVectorItr}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Identifier, typename Object, typename Predicate$>$ typedef ObjectVector::iterator {\bf ObjectManager}$<$ Identifier, Object, Predicate $>$::{\bf ObjectVectorItr}}\label{classObjectManager_a64d7341e2e8152cd114ab2fbd66a237e}
+
+
+\subsection{コンストラクタとデストラクタ}
+\index{ObjectManager@{ObjectManager}!ObjectManager@{ObjectManager}}
+\index{ObjectManager@{ObjectManager}!ObjectManager@{ObjectManager}}
+\subsubsection[{ObjectManager}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Identifier, typename Object, typename Predicate$>$ {\bf ObjectManager}$<$ Identifier, Object, Predicate $>$::{\bf ObjectManager} ()\hspace{0.3cm}{\ttfamily  [inline]}}\label{classObjectManager_af32caa02e21da2fba152097615c00e60}
+コンストラクタ \index{ObjectManager@{ObjectManager}!$\sim$ObjectManager@{$\sim$ObjectManager}}
+\index{$\sim$ObjectManager@{$\sim$ObjectManager}!ObjectManager@{ObjectManager}}
+\subsubsection[{$\sim$ObjectManager}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Identifier, typename Object, typename Predicate$>$ {\bf ObjectManager}$<$ Identifier, Object, Predicate $>$::$\sim${\bf ObjectManager} (void)\hspace{0.3cm}{\ttfamily  [inline]}}\label{classObjectManager_a38ef0a5005c4a54bda07e0fa1755566a}
+デストラクタ 
+
+\subsection{関数}
+\index{ObjectManager@{ObjectManager}!find@{find}}
+\index{find@{find}!ObjectManager@{ObjectManager}}
+\subsubsection[{find}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Identifier, typename Object, typename Predicate$>$ Object$\ast$ {\bf ObjectManager}$<$ Identifier, Object, Predicate $>$::find (const Identifier \& {\em id}) const\hspace{0.3cm}{\ttfamily  [inline]}}\label{classObjectManager_a3f4cd060f97d7c74bc91d23e42df50de}
+
+
+オブジェクトを検索する 
+
+登録されているオブジェクトの中から指定した条件に合致するオブジェクトを検索 して取得する。 指定した条件に合致するオブジェクトが登録されていない場合にはNULLを返す。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em id}]検索対象オブジェクトのID\end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+オブジェクトの検索結果 
+\end{DoxyReturn}
+\index{ObjectManager@{ObjectManager}!for\_\-each@{for\_\-each}}
+\index{for\_\-each@{for\_\-each}!ObjectManager@{ObjectManager}}
+\subsubsection[{for\_\-each}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Identifier, typename Object, typename Predicate$>$ template$<$class Pred $>$ Pred {\bf ObjectManager}$<$ Identifier, Object, Predicate $>$::for\_\-each (Pred {\em p}) const\hspace{0.3cm}{\ttfamily  [inline]}}\label{classObjectManager_a84fa687e172f25f6facb497396683bb4}
+
+
+オブジェクト検索用ファンクタ 
+
+\index{ObjectManager@{ObjectManager}!for\_\-each@{for\_\-each}}
+\index{for\_\-each@{for\_\-each}!ObjectManager@{ObjectManager}}
+\subsubsection[{for\_\-each}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Identifier, typename Object, typename Predicate$>$ template$<$class Pred $>$ Pred {\bf ObjectManager}$<$ Identifier, Object, Predicate $>$::for\_\-each (Pred {\em p})\hspace{0.3cm}{\ttfamily  [inline]}}\label{classObjectManager_a179e86f4b3548f17ac88ac2e2679d541}
+
+
+オブジェクト検索用ファンクタ 
+
+
+
+参照元 ObjectManager$<$ const char $\ast$, DLLEntity, DllPred $>$::for\_\-each().
+
+\index{ObjectManager@{ObjectManager}!getObjects@{getObjects}}
+\index{getObjects@{getObjects}!ObjectManager@{ObjectManager}}
+\subsubsection[{getObjects}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Identifier, typename Object, typename Predicate$>$ std::vector$<$Object$\ast$$>$ {\bf ObjectManager}$<$ Identifier, Object, Predicate $>$::getObjects () const\hspace{0.3cm}{\ttfamily  [inline]}}\label{classObjectManager_ab60972d0240a0a1098ed5cec63f0fca2}
+
+
+登録されているオブジェクトのリストを取得する 
+
+登録されているオブジェクトのリストを取得する。
+
+\begin{DoxyReturn}{戻り値}
+登録されているオブジェクト・リスト 
+\end{DoxyReturn}
+\index{ObjectManager@{ObjectManager}!registerObject@{registerObject}}
+\index{registerObject@{registerObject}!ObjectManager@{ObjectManager}}
+\subsubsection[{registerObject}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Identifier, typename Object, typename Predicate$>$ bool {\bf ObjectManager}$<$ Identifier, Object, Predicate $>$::registerObject (Object $\ast$ {\em obj})\hspace{0.3cm}{\ttfamily  [inline]}}\label{classObjectManager_a43de06b277f07a24088b46f640de8221}
+
+
+指定したオブジェクトを登録する 
+
+指定したオブジェクトを登録する。 同一オブジェクトが登録済みの場合は、何も行わない。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em obj}]登録対象オブジェクト\end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+登録処理結果(オブジェクトを登録した場合にtrue) 
+\end{DoxyReturn}
+\index{ObjectManager@{ObjectManager}!unregisterObject@{unregisterObject}}
+\index{unregisterObject@{unregisterObject}!ObjectManager@{ObjectManager}}
+\subsubsection[{unregisterObject}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Identifier, typename Object, typename Predicate$>$ Object$\ast$ {\bf ObjectManager}$<$ Identifier, Object, Predicate $>$::unregisterObject (const Identifier \& {\em id})\hspace{0.3cm}{\ttfamily  [inline]}}\label{classObjectManager_a082eb0fcf17aeb833a8e0d80c077229a}
+
+
+指定したオブジェクトを登録解除する 
+
+指定したオブジェクトの登録を解除し、取得する。 指定したオブジェクトが登録されていない場合にはNULLを返す。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em id}]登録解除対象オブジェクトのID\end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+登録解除されたオブジェクト 
+\end{DoxyReturn}
+
+
+\subsection{変数}
+\index{ObjectManager@{ObjectManager}!m\_\-objects@{m\_\-objects}}
+\index{m\_\-objects@{m\_\-objects}!ObjectManager@{ObjectManager}}
+\subsubsection[{m\_\-objects}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Identifier, typename Object, typename Predicate$>$ {\bf Objects} {\bf ObjectManager}$<$ Identifier, Object, Predicate $>$::{\bf m\_\-objects}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classObjectManager_ae0c7be9ecce476a588ffb884d663b3e8}
+
+
+登録済みオブジェクト・リスト 
+
+
+
+参照元 ObjectManager$<$ const char $\ast$, DLLEntity, DllPred $>$::find(), ObjectManager$<$ const char $\ast$, DLLEntity, DllPred $>$::for\_\-each(), ObjectManager$<$ const char $\ast$, DLLEntity, DllPred $>$::getObjects(), ObjectManager$<$ const char $\ast$, DLLEntity, DllPred $>$::registerObject(), と ObjectManager$<$ const char $\ast$, DLLEntity, DllPred $>$::unregisterObject().
+

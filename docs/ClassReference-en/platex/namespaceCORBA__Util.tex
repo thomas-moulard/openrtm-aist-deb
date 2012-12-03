@@ -1,0 +1,103 @@
+\section{CORBA\_\-Util Namespace Reference}
+\label{namespaceCORBA__Util}\index{CORBA\_\-Util@{CORBA\_\-Util}}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct {\bf has\_\-nil\_\-helper}
+\begin{DoxyCompactList}\small\item\em has nil helper \item\end{DoxyCompactList}\item 
+struct {\bf has\_\-nil\_\-impl}
+\begin{DoxyCompactList}\small\item\em has nil impl: void case \item\end{DoxyCompactList}\item 
+struct {\bf has\_\-nil\_\-impl$<$ T, typename has\_\-nil\_\-helper$<$ T,\&T::\_\-nil $>$::type $>$}
+\begin{DoxyCompactList}\small\item\em has nil impl: valid case \item\end{DoxyCompactList}\item 
+struct {\bf has\_\-nil}
+\begin{DoxyCompactList}\small\item\em has nil traits class template \item\end{DoxyCompactList}\item 
+struct {\bf is\_\-corba\_\-object}
+\begin{DoxyCompactList}\small\item\em is corba object traits class \item\end{DoxyCompactList}\item 
+class {\bf typecode$<$ true, T $>$}
+\item 
+class {\bf typecode$<$ false, T $>$}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$class T $>$ }\\const char $\ast$ {\bf toTypename} ()
+\begin{DoxyCompactList}\small\item\em Getting CORBA defined type as characters. \item\end{DoxyCompactList}\item 
+{\footnotesize template$<$class T $>$ }\\const char $\ast$ {\bf toTypenameOfStruct} ()
+\item 
+{\footnotesize template$<$class T $>$ }\\const char $\ast$ {\bf toTypenameOfObject} ()
+\item 
+{\footnotesize template$<$class T $>$ }\\const char $\ast$ {\bf toRepositoryId} ()
+\begin{DoxyCompactList}\small\item\em Getting CORBA defined type as characters. \item\end{DoxyCompactList}\item 
+{\footnotesize template$<$class T $>$ }\\const char $\ast$ {\bf toRepositoryIdOfStruct} ()
+\item 
+{\footnotesize template$<$class T $>$ }\\const char $\ast$ {\bf toRepositoryIdOfObject} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\index{CORBA\_\-Util@{CORBA\_\-Util}!toRepositoryId@{toRepositoryId}}
+\index{toRepositoryId@{toRepositoryId}!CORBA_Util@{CORBA\_\-Util}}
+\subsubsection[{toRepositoryId}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ const char$\ast$ CORBA\_\-Util::toRepositoryId ()\hspace{0.3cm}{\ttfamily  [inline]}}\label{namespaceCORBA__Util_a47a5aa0e695c80e6461d2034cae19d5b}
+
+
+Getting CORBA defined type as characters. 
+
+This function returns the type name if class or struct type that is defined CORBA IDL. The template parameter can be a type which has type code.
+
+
+\begin{DoxyPre} 
+ std::cout << \doxyref{toRepositoryId<RTC::TimedFloat>()}{p.}{namespaceCORBA__Util_a47a5aa0e695c80e6461d2034cae19d5b} << std::endl;
+ std::cout << \doxyref{toRepositoryId<RTC::RTObject>()}{p.}{namespaceCORBA__Util_a47a5aa0e695c80e6461d2034cae19d5b} << std::endl;
+ \end{DoxyPre}
+ gives the following results. 
+\begin{DoxyPre}
+ IDL:RTC/TimedFloat:1.0
+ IDL:omg.org/RTC/RTObject:1.0
+ \end{DoxyPre}
+ \index{CORBA\_\-Util@{CORBA\_\-Util}!toRepositoryIdOfObject@{toRepositoryIdOfObject}}
+\index{toRepositoryIdOfObject@{toRepositoryIdOfObject}!CORBA_Util@{CORBA\_\-Util}}
+\subsubsection[{toRepositoryIdOfObject}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ const char$\ast$ CORBA\_\-Util::toRepositoryIdOfObject ()\hspace{0.3cm}{\ttfamily  [inline]}}\label{namespaceCORBA__Util_a5078d0d428288742c3bc54740e0a2f95}
+
+
+References CORBA\_\-Util::typecode$<$ true, T $>$::id().
+
+\index{CORBA\_\-Util@{CORBA\_\-Util}!toRepositoryIdOfStruct@{toRepositoryIdOfStruct}}
+\index{toRepositoryIdOfStruct@{toRepositoryIdOfStruct}!CORBA_Util@{CORBA\_\-Util}}
+\subsubsection[{toRepositoryIdOfStruct}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ const char$\ast$ CORBA\_\-Util::toRepositoryIdOfStruct ()\hspace{0.3cm}{\ttfamily  [inline]}}\label{namespaceCORBA__Util_a935fe3e0e1c47413dbce86ede6143ac2}
+
+
+References CORBA\_\-Util::typecode$<$ false, T $>$::id().
+
+\index{CORBA\_\-Util@{CORBA\_\-Util}!toTypename@{toTypename}}
+\index{toTypename@{toTypename}!CORBA_Util@{CORBA\_\-Util}}
+\subsubsection[{toTypename}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ const char$\ast$ CORBA\_\-Util::toTypename ()\hspace{0.3cm}{\ttfamily  [inline]}}\label{namespaceCORBA__Util_a3b056c40ff30639503a06a527e729c5b}
+
+
+Getting CORBA defined type as characters. 
+
+This function returns the type name if class or struct type that is defined CORBA IDL. The template parameter can be a type which has type code.
+
+
+\begin{DoxyPre} 
+ std::cout << \doxyref{toTypename<RTC::TimedFloat>()}{p.}{namespaceCORBA__Util_a3b056c40ff30639503a06a527e729c5b} << std::endl;
+ std::cout << \doxyref{toTypename<RTC::RTObject>()}{p.}{namespaceCORBA__Util_a3b056c40ff30639503a06a527e729c5b} << std::endl;
+ \end{DoxyPre}
+ gives the following results. 
+\begin{DoxyPre}
+ TimedFloat
+ RTObject
+ \end{DoxyPre}
+ \index{CORBA\_\-Util@{CORBA\_\-Util}!toTypenameOfObject@{toTypenameOfObject}}
+\index{toTypenameOfObject@{toTypenameOfObject}!CORBA_Util@{CORBA\_\-Util}}
+\subsubsection[{toTypenameOfObject}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ const char$\ast$ CORBA\_\-Util::toTypenameOfObject ()\hspace{0.3cm}{\ttfamily  [inline]}}\label{namespaceCORBA__Util_a112dbddd9341fc7c8d7057d001dd4fa6}
+
+
+References CORBA\_\-Util::typecode$<$ true, T $>$::name().
+
+\index{CORBA\_\-Util@{CORBA\_\-Util}!toTypenameOfStruct@{toTypenameOfStruct}}
+\index{toTypenameOfStruct@{toTypenameOfStruct}!CORBA_Util@{CORBA\_\-Util}}
+\subsubsection[{toTypenameOfStruct}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ const char$\ast$ CORBA\_\-Util::toTypenameOfStruct ()\hspace{0.3cm}{\ttfamily  [inline]}}\label{namespaceCORBA__Util_a2ee67c7ee4bb0f1483df1ee8ee101ca7}
+
+
+References CORBA\_\-Util::typecode$<$ false, T $>$::name().
+

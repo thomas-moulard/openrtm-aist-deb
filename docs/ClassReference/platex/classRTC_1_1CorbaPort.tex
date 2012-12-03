@@ -1,0 +1,554 @@
+\section{クラス RTC::CorbaPort}
+\label{classRTC_1_1CorbaPort}\index{RTC::CorbaPort@{RTC::CorbaPort}}
+
+
+RT コンポーネント CORBA provider/consumer 用 Port.  
+
+
+
+
+{\ttfamily \#include $<$CorbaPort.h$>$}
+
+RTC::CorbaPortに対する継承グラフ\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2cm]{classRTC_1_1CorbaPort}
+\end{center}
+\end{figure}
+\subsection*{構成}
+\begin{DoxyCompactItemize}
+\item 
+class {\bfseries CorbaConsumerHolder}
+\begin{DoxyCompactList}\small\item\em Consumer の情報を格納する構造体. \item\end{DoxyCompactList}\item 
+class {\bfseries CorbaProviderHolder}
+\begin{DoxyCompactList}\small\item\em Provider の情報を格納する構造体. \item\end{DoxyCompactList}\item 
+struct {\bfseries unsubscribe}
+\begin{DoxyCompactList}\small\item\em Consumer のオブジェクトを解放するための Functor. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public メソッド}
+\begin{DoxyCompactItemize}
+\item 
+{\bf CorbaPort} (const char $\ast$name)
+\begin{DoxyCompactList}\small\item\em コンストラクタ \item\end{DoxyCompactList}\item 
+virtual {\bf $\sim$CorbaPort} (void)
+\begin{DoxyCompactList}\small\item\em 仮想デストラクタ \item\end{DoxyCompactList}\item 
+void {\bf init} ({\bf coil::Properties} \&prop)
+\begin{DoxyCompactList}\small\item\em プロパティの初期化 \item\end{DoxyCompactList}\item 
+bool {\bf registerProvider} (const char $\ast$instance\_\-name, const char $\ast$type\_\-name, PortableServer::RefCountServantBase \&provider)
+\begin{DoxyCompactList}\small\item\em Provider を登録する. \item\end{DoxyCompactList}\item 
+bool {\bf registerConsumer} (const char $\ast$instance\_\-name, const char $\ast$type\_\-name, {\bf CorbaConsumerBase} \&consumer)
+\begin{DoxyCompactList}\small\item\em Consumer を登録する. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected メソッド}
+\begin{DoxyCompactItemize}
+\item 
+virtual ReturnCode\_\-t {\bf publishInterfaces} (ConnectorProfile \&connector\_\-profile)
+\begin{DoxyCompactList}\small\item\em Provider Interface 情報を公開する. \item\end{DoxyCompactList}\item 
+virtual ReturnCode\_\-t {\bf subscribeInterfaces} (const ConnectorProfile \&connector\_\-profile)
+\begin{DoxyCompactList}\small\item\em Provider Interface 情報を取得する. \item\end{DoxyCompactList}\item 
+virtual void {\bf unsubscribeInterfaces} (const ConnectorProfile \&connector\_\-profile)
+\begin{DoxyCompactList}\small\item\em Interface への接続を解除する. \item\end{DoxyCompactList}\item 
+virtual void {\bf activateInterfaces} ()
+\begin{DoxyCompactList}\small\item\em Port の全てのインターフェースを activates する. \item\end{DoxyCompactList}\item 
+virtual void {\bf deactivateInterfaces} ()
+\begin{DoxyCompactList}\small\item\em 全ての Port のインターフェースを deactivates する \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected 変数}
+\begin{DoxyCompactItemize}
+\item 
+{\bf coil::Properties} {\bf m\_\-properties}
+\begin{DoxyCompactList}\small\item\em プロパティ \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{説明}
+RT コンポーネント CORBA provider/consumer 用 Port. \doxyref{CorbaPort}{p.}{classRTC_1_1CorbaPort} は RT コンポーネントにおいて、ユーザ定義の CORBA オブジェ クトサービスおよびコンシューマを提供する Port 実装である。
+
+RT コンポーネントは、Port を介してユーザが定義した CORBA サービス を提供することができ、これを RT Service (Provider) と呼ぶ。また、 他の RT コンポーネントのサービスを利用するための CORBA オブジェク トのプレースホルダを提供することができ、これを RT Service Consumer と呼ぶ。 \doxyref{CorbaPort}{p.}{classRTC_1_1CorbaPort} は任意の数の Provider および Consumer を管理することがで き、Port 同士を接続する際に対応する Provider と Consumer を適切に 関連付けることができる。 \doxyref{CorbaPort}{p.}{classRTC_1_1CorbaPort} は通常以下のように利用される。
+
+
+\begin{DoxyPre}
+ \doxyref{RTC::CorbaPort}{p.}{classRTC_1_1CorbaPort} m\_port0; // Port の宣言\end{DoxyPre}
+
+
+
+\begin{DoxyPre} MyService\_impl m\_mysvc0; // この Port が提供する Serivce Provider
+ RTC::CorbaConsumer<YourService> m\_cons0; // この Port の Consumer\end{DoxyPre}
+
+
+
+\begin{DoxyPre} // Service Provider を Port に登録
+ m\_port0.registerProvider("MyService0", "Generic", m\_mysvc0);
+ // Service Consumer を Port に登録
+ m\_port0.registerConsumer("YourService0", "Generic", m\_cons0 );\end{DoxyPre}
+
+
+
+\begin{DoxyPre} // connect が行われた後\end{DoxyPre}
+
+
+
+\begin{DoxyPre} m\_cons0->your\_service\_function(); // YourService の関数をコール\end{DoxyPre}
+
+
+
+\begin{DoxyPre} // connect された 別のコンポーネントにおいて
+ m\_cons1->my\_service\_function(); // MyService の関数をコール
+ \end{DoxyPre}
+
+
+このように、提供したい Service Provider を \doxyref{registerProvider()}{p.}{classRTC_1_1CorbaPort_af9de5f6a90d3b0f6bfc07317e6a0d44f} で登 録することにより、他のコンポーネントから利用可能にし、他方、利用し たい Service Consumer を \doxyref{registerConsumer()}{p.}{classRTC_1_1CorbaPort_a70d4b49921c82916181aa681eea2ab2b} で登録することにより他 のコンポーネントの Service をコンポーネント内で利用可能にすること ができる。
+
+PortInterfaceProfile は Port に所属するプロバイダもしくはコンシュー マインターフェースについての情報を記述するためのプロファイルである。 接続を行うツール等は、これらの情報に基づき ConnectorProfile を適切 に生成し、接続を構成する Port のうち任意の一つに対して引数に ConnectorProfile を与えて Port::connect() を呼び出す必要がある。
+
+なお、PortInterfaceProfile のインスタンス名 \char`\"{}$\ast$\char`\"{} は特殊なインスタン スを表す。
+
+PROVIDEDすなわちプロバイダのインスタンス名が \char`\"{}$\ast$\char`\"{} の場合は、接続開 始時点ではインスタンスが存在せず、コンシューマの要求に応じて動的に インスタンスを生成するタイプのプロバイダであることを表す。したがっ て、接続開始時点ではインスタンス名は存在しないが、接続シーケンス中 のインターフェースを公開するプロセスにおいて、プロバイダは生成した インスタンスに対応した記述子を ConnectorProfile に適正に設定するも のとする。(未実装)
+
+REQUIREDすなわちコンシューマのインスタンス名が \char`\"{}$\ast$\char`\"{} の場合は、一つ のコンシューマが複数のプロバイダと接続可能なタイプのコンシューマで あることを示す。(未実装)
+
+以下は、Port間のインターフェースを接続するために ConnectorProfile に マッピングを記述するためのルールを示す。
+
+Portに付属するインターフェースの指定子のフォーマットを以下のように 定める。インターフェースに関するプロパティが以下の場合
+
+
+\begin{DoxyItemize}
+\item RTCインスタンス名: rtc\_\-iname
+\item ポート名: port\_\-name
+\item インターフェース極性: if\_\-polarity
+\item インターフェース型名: if\_\-tname
+\item インターフェースインスタンス名: if\_\-iname
+\end{DoxyItemize}
+
+インターフェースの指定子を以下の文字列名称で指定するものとする。
+
+$<$rtc\_\-iname$>$.port.$<$port\_\-name$>$.$<$if\_\-polarity$>$.$<$if\_\-tname$>$.$<$if\_\-iname$>$
+
+PROVIDED(提供)型すなわちプロバイダのインタフェースのプロパティが以 下の場合、
+
+
+\begin{DoxyItemize}
+\item rtc\_\-iname = MyComp0
+\item port\_\-name = myservice
+\item if\_\-polarity = provided
+\item if\_\-tname = echo\_\-interface
+\item if\_\-iname = echo\_\-interface2
+\end{DoxyItemize}
+
+インターフェース指定子は
+
+MyComp0.port.myservice.provided.echo\_\-interface.echo\_\-interface2
+
+のように記述される。また、同様にREQUIRED(要求)型すなわちコンシュー マのインターフェースのプロパティが以下の場合、
+
+
+\begin{DoxyItemize}
+\item rtc\_\-iname = YourComp0
+\item port\_\-name = yourservice
+\item if\_\-polarity = required
+\item if\_\-tname = hoge\_\-interface
+\item if\_\-iname = hoge\_\-interface1
+\end{DoxyItemize}
+
+インターフェース指定子は、
+
+YourComp0.port.myservice.required.hoge\_\-interface.hoge\_\-inteface1
+
+のように記述することができる。
+
+なお、ここで動的生成インターフェースのインスタンスのための特殊なタ イプのインスタンス名記述子
+
+
+\begin{DoxyItemize}
+\item $<$type\_\-name$>$$\ast$: 動的生成型インスタンス名記述子
+\item $<$type\_\-name$>$+: インクリメンタル生成型インスタンス名記述子
+\end{DoxyItemize}
+
+を定義する。動的生成インターフェースとは、接続時にインスタンスが生 成されるタイプのインターフェースである。(未実装)
+
+コンシューマが要求するプロバイダインターフェース記述子に動的生成型 インスタンス名記述子 \char`\"{}$<$type\_\-name$>$$\ast$\char`\"{} が指定された場合、プロバイダは インスタンスを1つ新規に生成する。\char`\"{}$<$type\_\-name$>$$\ast$\char`\"{} の記述子によりプロバ イダを要求する n 個のコンシューマが存在する場合、これらからの要求 (オペレーションコール)を1 つのプロバイダにより処理する関係を構築す る(下図)。
+
+
+\begin{DoxyPre}
+ consumer0 ]---<
+ consumer1 ]---<  O----[ provider0
+ consumer2 ]---<
+ \end{DoxyPre}
+
+
+これに対し、コンシューマが要求するプロバイダインターフェース記述子 にインクリメンタル生成型インスタンス名記述子 \char`\"{}$<$type\_\-name$>$+\char`\"{} が指定 された場合、記述子 \char`\"{}$<$type\_\-name$>$+\char`\"{} の数だけプロバイダのインスタン スが動的に生成される。すなわち、\char`\"{}$<$type\_\-name$>$+\char`\"{} の記述子によりプロバ イダを要求する n 個のコンシューマが存在する場合、n 個のプロバイダ がそれぞれの要求を処理する以下のような関係が構築される。
+
+
+\begin{DoxyPre}
+ consumer0 ]---<  O----[ provider0
+ consumer1 ]---<  O----[ provider1
+ consumer2 ]---<  O----[ provider2
+ \end{DoxyPre}
+
+
+接続に際して、ツール等から ConnectorProfile::properties に適切なイ ンターフェースマッピング指定を記述することで、相互のプロバイダ/コ ンシューマインターフェースを自由に接続することができる。ただし、接 続に関わる \doxyref{RTC}{p.}{namespaceRTC} の中に、異なるインスタンスでありながら、同一のインス タンス名が存在する場合、インターフェース記述子の一意性が保証できな いので、この方法による接続性は保証されない。
+
+ここでインターフェース記述子を簡単のために $<$if\_\-desc0$>$, $<$if\_\-desc1$>$, ... とする。また、ConnectorProfileproperties の NVListの key と value を key: value のように記述するものとする。
+
+いま、2つのコンポーネントのサービスポートを接続する場合を考える。 それぞれのコンポーネントのサービスポートが以下の場合、
+
+
+\begin{DoxyItemize}
+\item rtc\_\-iname: MyComp0 \par
+ port\_\-name: mycomp\_\-service \par
+ interfaces:
+\begin{DoxyItemize}
+\item if\_\-polarity: provided \par
+ if\_\-iname: echo0 \par
+ if\_\-tname: Echo
+\item if\_\-polarity: required \par
+ if\_\-iname: add0 \par
+ if\_\-tname: add
+\end{DoxyItemize}
+\end{DoxyItemize}
+
+
+\begin{DoxyItemize}
+\item rtc\_\-iname: YourComp0 \par
+ port\_\-name: yourcomp\_\-service \par
+ interfaces:
+\begin{DoxyItemize}
+\item if\_\-polarity: required \par
+ if\_\-iname: echo9 \par
+ if\_\-tname: Echo
+\item if\_\-polarity: provided \par
+ if\_\-iname: add9 \par
+ if\_\-tname: add
+\end{DoxyItemize}
+\end{DoxyItemize}
+
+
+\begin{DoxyPre}
+      MyComp0                                 YourComp0
+     \_\_\_\_\_\_\_ mycomp\_service   yourcomp\_service \_\_\_\_\_\_
+            |                                 |
+          |~~~|---O echo0         echo9 >---|~~~|
+          |   |---< add0          add9  O---|   |
+           ~T~                               ~T~
+            |                                 |
+ \end{DoxyPre}
+
+
+MyComp0 の echo0 (プロバイダ) と YourComp0 の echo9 (コンシューマ)、 MyComp0 の add0 (コンシューマ) と YourComp0 の echo9 (プロバイダ) をそれぞれ対にして接続させるものと仮定する。この場合、 ConnectorProfile は以下のように設定する。
+
+
+\begin{DoxyPre}
+ ConnectorProfile:
+   name: 任意のコネクタ名
+   connector\_id: 空文字
+   ports[]: mycomp\_service の参照, yourcomp\_service の参照
+   properties:
+     <add0>: <add9>
+     <echo9>: <echo0>
+ \end{DoxyPre}
+
+
+ただし、それぞれ
+
+
+\begin{DoxyPre}
+ <add0> は MyComp0.port.mycomp\_service.required.add.add0
+ <add9> は YourComp0.port.yourcomp\_service.provided.add.add9
+ <echo0> は MyComp0.port.mycomp\_service.provided.echo.echo0
+ <echo9> は YourComp0.port.yourcomp\_service.required.echo.echo9
+ \end{DoxyPre}
+
+
+である。接続プロセスにおいて、各ポートのプロバイダおよびコンシュー マは、それぞれ以下の作業を、CorbaPortpublishInterfaces(), CorbaPort::PortsubscribeInterfaces() 仮想関数において行う。
+
+プロバイダは、publishInterfaces() 関数において、自分のインターフェー ス記述子をキーとし、値にIORの文字列表記したものを ConnectorProfile::properties に設定する。前提として、このインター フェース記述子は今行おうとしているコネクタにおいては一意であるため、 同じキーは1つしか存在してはいけない。
+
+[この部分の記述は未実装の機能] なお、動的生成インターフェースにつ いては、以下の手続きに従い処理することとなる。publishInterface() 関数において、動的生成インスタンス名記述子 \char`\"{}$<$type\_\-name$>$$\ast$\char`\"{} または、 インクリメンタル生成型インスタンス名記述子 \char`\"{}$<$type\_\-name$>$+\char`\"{} が存在す るかどうかを走査する。動的生成インスタンス名記述子 \char`\"{}$<$type\_\-name$>$$\ast$\char`\"{} が存在する場合、プロバイダのインスタンスを1つ生成し、そのインター フェース指定子を key に、IOR文字列を value に設定するとともに、動 的生成インスタンス名記述子 \char`\"{}$<$type\_\-name$>$$\ast$\char`\"{} を value に含むすべての value 上のインターフェース指定子を、ここで生成したインターフェース 指定子に置き換える。
+
+インクリメンタル生成型インスタンス名記述子\char`\"{}$<$type\_\-name$>$+\char`\"{} が存在す る場合、インスタンス名記述子の数だけプロバイダのインスタンスを生成 し、それぞれのインターフェース指定子をkey に、IOR文字列を value に 設定するとともに、インクリメンタル生成型インスタンス名記述子 \char`\"{}$<$type\_\-name$>$+\char`\"{} を value 含むすべての value 上のインターフェース指 定子に対して順に、ここで生成したそれぞれのインターフェース指定子に 置き換える。
+
+プロバイダは \doxyref{subscribeInterfaces()}{p.}{classRTC_1_1CorbaPort_ad9a122cbe2f9892cc9555e805571742e} では特に操作は行わない。
+
+コンシューマは、 \doxyref{publishInterfaces()}{p.}{classRTC_1_1CorbaPort_a71aa316c3324369c4462193d10a5d098} においては特に操作を行わない。
+
+一方、 \doxyref{subscribeInterfaces()}{p.}{classRTC_1_1CorbaPort_ad9a122cbe2f9892cc9555e805571742e} では、自分の記述子を key とする key-\/value ペア が存在するかどうか調べ、もし存在すれば、その value に設定されたプロバイダのインターフェース指定子で指定される参照を、 さらに ConnectorProfile::properties から探し、それをコンシューマの 接続先として設定する。なお、意図的にコンシューマにプロバイダの参照 を設定しない場合は、予約文字列 \char`\"{}nil\char`\"{} または \char`\"{}null\char`\"{} を設定するもの とする。
+
+コンシューマは、もし自分の記述子が存在しない場合、またはプロバイダ の参照が Connector::properties に存在しない場合、コンシューマは、 自分のインスタンス名および型名と同一のプロバイダを探し、その参照を 自分自身に設定する。これは、OpenRTM-\/aist-\/0.4 との互換性を保持する ためのルールであり、1.0以降では推奨されない。
+
+プロバイダ対コンシューマの対応は一対一である必要はなく、プロバイダ 1 に対して、コンシューマ n、またはコンシューマ 1 に対してプロバイ ダ n のケースも許される。プロバイダ 1 に対して、コンシューマ n の ケースでは、あるプロバイダの指定子が、複数のコンシューマに対して、 上記の方法で指定されることにより、実現される。一方、コンシューマ 1 に対してプロバイダ n のケースでは、コンシューマ指定子の key に対 して、複数のプロバイダの指定子がカンマ区切りで列挙される形式となる ものとする。
+
+なお、インターフェースの対応関係の厳密さを指定するオプションとして、 以下のオプションを指定することができる。
+
+port.connection.strictness: strict, best\_\-effort
+
+strict: すべてのコンシューマに指定した参照が存在し、かつナローイン グにも成功しコンシューマに適切にセットできた場合にのみ Port 間の接続を確立する。
+
+best\_\-effort: ナローイング等に失敗した場合でも、エラーを返すことな く Port 間の接続を確立する。
+
+\begin{DoxySince}{から}
+0.4.0 
+\end{DoxySince}
+
+
+\subsection{コンストラクタとデストラクタ}
+\index{RTC::CorbaPort@{RTC::CorbaPort}!CorbaPort@{CorbaPort}}
+\index{CorbaPort@{CorbaPort}!RTC::CorbaPort@{RTC::CorbaPort}}
+\subsubsection[{CorbaPort}]{\setlength{\rightskip}{0pt plus 5cm}RTC::CorbaPort::CorbaPort (const char $\ast$ {\em name})}\label{classRTC_1_1CorbaPort_a2bbb2b39d9df5f82c61315fe3fa5cf7a}
+
+
+コンストラクタ 
+
+コンストラクタでは、引数に与えられた名前を \doxyref{PortBase}{p.}{classRTC_1_1PortBase} に対してセッ トするとともに、PortProfileproperties に対して
+
+
+\begin{DoxyItemize}
+\item port.port\_\-type: \char`\"{}CorbaPort\char`\"{}
+\end{DoxyItemize}
+
+をプロパティとして追加する。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em name}]Port の名前 \end{DoxyParams}
+\index{RTC::CorbaPort@{RTC::CorbaPort}!$\sim$CorbaPort@{$\sim$CorbaPort}}
+\index{$\sim$CorbaPort@{$\sim$CorbaPort}!RTC::CorbaPort@{RTC::CorbaPort}}
+\subsubsection[{$\sim$CorbaPort}]{\setlength{\rightskip}{0pt plus 5cm}virtual RTC::CorbaPort::$\sim$CorbaPort (void)\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classRTC_1_1CorbaPort_a7aa53f50989ea68ca419b9f6d5a8cfcc}
+
+
+仮想デストラクタ 
+
+
+
+\subsection{関数}
+\index{RTC::CorbaPort@{RTC::CorbaPort}!activateInterfaces@{activateInterfaces}}
+\index{activateInterfaces@{activateInterfaces}!RTC::CorbaPort@{RTC::CorbaPort}}
+\subsubsection[{activateInterfaces}]{\setlength{\rightskip}{0pt plus 5cm}virtual void RTC::CorbaPort::activateInterfaces ()\hspace{0.3cm}{\ttfamily  [protected, virtual]}}\label{classRTC_1_1CorbaPort_a1b9efe804a293b2c38a9cbe3b5ba54a0}
+
+
+Port の全てのインターフェースを activates する. 
+
+Port に登録されている全てのインターフェースを activate する。 
+
+{\bf RTC::PortBase} \doxyref{}{p.}{classRTC_1_1PortBase_ad779347bae007555968dda9e78004e34}を実装しています。
+
+\index{RTC::CorbaPort@{RTC::CorbaPort}!deactivateInterfaces@{deactivateInterfaces}}
+\index{deactivateInterfaces@{deactivateInterfaces}!RTC::CorbaPort@{RTC::CorbaPort}}
+\subsubsection[{deactivateInterfaces}]{\setlength{\rightskip}{0pt plus 5cm}virtual void RTC::CorbaPort::deactivateInterfaces ()\hspace{0.3cm}{\ttfamily  [protected, virtual]}}\label{classRTC_1_1CorbaPort_a4c25f8e04aa9cceff24c31ea3fec4e5b}
+
+
+全ての Port のインターフェースを deactivates する 
+
+Port に登録されている全てのインターフェースを deactivate する。 
+
+{\bf RTC::PortBase} \doxyref{}{p.}{classRTC_1_1PortBase_a8dfb8a33b92b9fc9b6c070df2def633f}を実装しています。
+
+\index{RTC::CorbaPort@{RTC::CorbaPort}!init@{init}}
+\index{init@{init}!RTC::CorbaPort@{RTC::CorbaPort}}
+\subsubsection[{init}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::CorbaPort::init ({\bf coil::Properties} \& {\em prop})}\label{classRTC_1_1CorbaPort_a5e62ee7818cafc02a3e7002a3742daab}
+
+
+プロパティの初期化 
+
+OutPortのプロパティを初期化する。このポートへの接続数を指定する プロパティ \char`\"{}connection\_\-limit\char`\"{} が含まれ、適切な数値が設定されてい る場合、最大接続数としてその数値が設定される。プロパティが設定さ れていない場合、もしくは適切な値が設定されていない場合には、最大 接続数は無制限となる。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em prop}]\doxyref{CorbaPort}{p.}{classRTC_1_1CorbaPort} のプロパティ \end{DoxyParams}
+\index{RTC::CorbaPort@{RTC::CorbaPort}!publishInterfaces@{publishInterfaces}}
+\index{publishInterfaces@{publishInterfaces}!RTC::CorbaPort@{RTC::CorbaPort}}
+\subsubsection[{publishInterfaces}]{\setlength{\rightskip}{0pt plus 5cm}virtual ReturnCode\_\-t RTC::CorbaPort::publishInterfaces (ConnectorProfile \& {\em connector\_\-profile})\hspace{0.3cm}{\ttfamily  [protected, virtual]}}\label{classRTC_1_1CorbaPort_a71aa316c3324369c4462193d10a5d098}
+
+
+Provider Interface 情報を公開する. 
+
+この Port が所有する Provider インターフェースに関する情報を ConnectorProfile::properties に代入し他の Port に対して公開する。 今、RTCのインスタンス名等の情報が以下の通りであるとして、
+
+
+\begin{DoxyItemize}
+\item RTCインスタンス名: rtc\_\-iname
+\item ポート名: port\_\-name
+\item インターフェース極性: if\_\-polarity
+\item インターフェース型名: if\_\-tname
+\item インターフェースインスタンス名: if\_\-iname
+\end{DoxyItemize}
+
+NameValue 型の ConnectorProfile::properties の name と value として 以下のものが格納される。
+
+
+\begin{DoxyItemize}
+\item name $<$rtc\_\-iname$>$.port.$<$port\_\-name$>$.provided.$<$if\_\-tname$>$.$<$if\_\-iname$>$
+\item value Provider インターフェースの IOR 文字列
+\end{DoxyItemize}
+
+なお、旧バージョンとの互換性のため以下の表記の NameValue も同時 に格納されるが、将来のバージョンでは削除される可能性がある。
+
+
+\begin{DoxyItemize}
+\item name port.$<$if\_\-tname$>$.$<$if\_\-iname$>$
+\item value Provider インターフェースの IOR 文字列
+\end{DoxyItemize}
+
+これらの値は ConnectorProfile::properties に格納され、他のポートに対して 伝達される。他の Port でこのインターフェースを使用する Consumer が 存在すれば、ConnectorProfile からこのキーからオブジェクトリファレンスを 取得し何らかの形で使用される。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em connector\_\-profile}]コネクタプロファイル \end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+ReturnCode\_\-t 型のリターンコード 
+\end{DoxyReturn}
+
+
+{\bf RTC::PortBase} \doxyref{}{p.}{classRTC_1_1PortBase_acf31878c5912f56c122aaa2310e182de}を実装しています。
+
+\index{RTC::CorbaPort@{RTC::CorbaPort}!registerConsumer@{registerConsumer}}
+\index{registerConsumer@{registerConsumer}!RTC::CorbaPort@{RTC::CorbaPort}}
+\subsubsection[{registerConsumer}]{\setlength{\rightskip}{0pt plus 5cm}bool RTC::CorbaPort::registerConsumer (const char $\ast$ {\em instance\_\-name}, \/  const char $\ast$ {\em type\_\-name}, \/  {\bf CorbaConsumerBase} \& {\em consumer})}\label{classRTC_1_1CorbaPort_a70d4b49921c82916181aa681eea2ab2b}
+
+
+Consumer を登録する. 
+
+この Port が要求するサービスのプレースホルダであるコンシューマ (Consumer) を登録する。Consumer が関連付けられるサービスのインス タンス名およびタイプ名として、引数に instance\_\-name, type\_\-name お よび Consumer 自身を与えることにより、内部でこれらが関連付けられ る。Port 間の接続 (connect) 時 には、subscribeInterfaces() で述 べられているルールに基づき、Provider Interface の参照が自動的に Consumer にセットされる。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em instance\_\-name}]Consumer が要求するサービスのインスタンス名 \item[{\em type\_\-name}]Consumer が要求するサービスのタイプ名 \item[{\em consumer}]CORBA サービスコンシューマ\end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+既に同名の instance\_\-name が登録されていれば false を返す。 
+\end{DoxyReturn}
+\index{RTC::CorbaPort@{RTC::CorbaPort}!registerProvider@{registerProvider}}
+\index{registerProvider@{registerProvider}!RTC::CorbaPort@{RTC::CorbaPort}}
+\subsubsection[{registerProvider}]{\setlength{\rightskip}{0pt plus 5cm}bool RTC::CorbaPort::registerProvider (const char $\ast$ {\em instance\_\-name}, \/  const char $\ast$ {\em type\_\-name}, \/  PortableServer::RefCountServantBase \& {\em provider})}\label{classRTC_1_1CorbaPort_af9de5f6a90d3b0f6bfc07317e6a0d44f}
+
+
+Provider を登録する. 
+
+この Port において提供したいサーバントをこの Port に対して登録す る。サーバントは、引数で与えられる instance\_\-name, type\_\-name を、 サーバント自身のインスタンス名およびタイプ名として、サーバントに 関連付けられる。この関数により、サーバントは \doxyref{CorbaPort}{p.}{classRTC_1_1CorbaPort} 内部に保 持されるとともに、PortInterfaceProfile にRTCPROVIDED インター フェースとして登録される。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em instance\_\-name}]サーバントのインスタンス名 \item[{\em type\_\-name}]サーバントのタイプ名 \item[{\em provider}]CORBA サーバント\end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+既に同名の instance\_\-name が登録されていれば false を返す。 
+\end{DoxyReturn}
+\index{RTC::CorbaPort@{RTC::CorbaPort}!subscribeInterfaces@{subscribeInterfaces}}
+\index{subscribeInterfaces@{subscribeInterfaces}!RTC::CorbaPort@{RTC::CorbaPort}}
+\subsubsection[{subscribeInterfaces}]{\setlength{\rightskip}{0pt plus 5cm}virtual ReturnCode\_\-t RTC::CorbaPort::subscribeInterfaces (const ConnectorProfile \& {\em connector\_\-profile})\hspace{0.3cm}{\ttfamily  [protected, virtual]}}\label{classRTC_1_1CorbaPort_ad9a122cbe2f9892cc9555e805571742e}
+
+
+Provider Interface 情報を取得する. 
+
+この Portが所有する Consumer Interface に適合する Provider Interface に関する情報をConnectorProfileproperties から抽出し Consumer Interface にオブジェクト参照をセットする。
+
+今、RTC のインスタンス名や Consumer Interface 等の情報が以下のと おりであると仮定すると、
+
+
+\begin{DoxyItemize}
+\item RTCインスタンス名: rtc\_\-iname
+\item ポート名: port\_\-name
+\item インターフェース極性: if\_\-polarity
+\item インターフェース型名: if\_\-tname
+\item インターフェースインスタンス名: if\_\-iname
+\end{DoxyItemize}
+
+この Consumer Interface を表すインターフェース指定子は以下のよう に表される。
+
+$<$rtc\_\-iname$>$.port.$<$port\_\-name$>$.required.$<$if\_\-tname$>$.$<$if\_\-iname$>$
+
+この関数は、まず引数 ConnectorProfile::properties に上記インター フェース指定子をキーとして格納されている Provider Interface 指定 子を探し出す。さらに、その Provider Interface 指定子をキーとして 格納されている Provider Interface の参照を表す IOR 文字列を取得 し、Consumer Interface にセットする。
+
+今、仮に、Provider を prov(n), その参照をIOR(n) さらに Consumer をcons(n) のように記述し、これらすべてのインターフェースの型が同 一であり、ConnectorProfile に以下の値が設定されているとする。
+
+
+\begin{DoxyPre}
+ ConnectorProfile::properties =
+ \{
+   prov0: IOR0,
+   prov1: IOR1,
+   prov2: IOR2,
+   cons0: prov2,
+   cons1: prov1,
+   cons2: prov0
+ \}
+ \end{DoxyPre}
+
+
+このとき、cons(0..2) にはそれぞれ、参照が以下のようにセットされる。
+
+
+\begin{DoxyPre}
+   cons0 = IOR2
+   cons1 = IOR1
+   cons2 = IOR0
+ \end{DoxyPre}
+
+
+なお、旧バージョンとの互換性のため、 ConnectorProfile::properties に Consumer Interface をキーとした 値がセットされていない場合でも、次のルールが適用される。
+
+今、仮に Consumer Interface が
+
+
+\begin{DoxyPre}
+  PortInterfaceProfile
+  \{
+    instance\_name = "PA10\_0";
+    type\_name     = "Manipulator";
+    polarity      = REQUIRED;
+  \}
+ \end{DoxyPre}
+
+
+として登録されていれば、他の Port の
+
+
+\begin{DoxyPre}
+  PortInterfaceProfile
+  \{
+    instance\_name = "PA10\_0";
+    type\_name     = "Manipulator";
+    polarity      = PROVIDED;
+  \}
+ \end{DoxyPre}
+
+
+として登録されている Serivce Provider のオブジェクト参照を探し、 Consumer にセットする。実際には、ConnectorProfileproperties に
+
+
+\begin{DoxyPre}
+ NameValue = \{ "port.Manipulator.PA10\_0": <Object reference>=""> \}
+ \end{DoxyPre}
+
+
+として登録されている NameValue を探し、そのオブジェクト参照を Consumer にセットする。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em connector\_\-profile}]コネクタプロファイル \end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+ReturnCode\_\-t 型のリターンコード 
+\end{DoxyReturn}
+
+
+{\bf RTC::PortBase} \doxyref{}{p.}{classRTC_1_1PortBase_afce755069836c1ee637784e2a9e5a02b}を実装しています。
+
+\index{RTC::CorbaPort@{RTC::CorbaPort}!unsubscribeInterfaces@{unsubscribeInterfaces}}
+\index{unsubscribeInterfaces@{unsubscribeInterfaces}!RTC::CorbaPort@{RTC::CorbaPort}}
+\subsubsection[{unsubscribeInterfaces}]{\setlength{\rightskip}{0pt plus 5cm}virtual void RTC::CorbaPort::unsubscribeInterfaces (const ConnectorProfile \& {\em connector\_\-profile})\hspace{0.3cm}{\ttfamily  [protected, virtual]}}\label{classRTC_1_1CorbaPort_a4776e122a3066d9e3a3e5d1e5da45b98}
+
+
+Interface への接続を解除する. 
+
+与えられた ConnectorProfile に関連する Consumer にセットされた すべての Object を解放し接続を解除する。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em connector\_\-profile}]コネクタプロファイル \end{DoxyParams}
+
+
+{\bf RTC::PortBase} \doxyref{}{p.}{classRTC_1_1PortBase_a8a843a387e99d4d4daa6e829eb1db569}を実装しています。
+
+
+
+\subsection{変数}
+\index{RTC::CorbaPort@{RTC::CorbaPort}!m\_\-properties@{m\_\-properties}}
+\index{m\_\-properties@{m\_\-properties}!RTC::CorbaPort@{RTC::CorbaPort}}
+\subsubsection[{m\_\-properties}]{\setlength{\rightskip}{0pt plus 5cm}{\bf coil::Properties} {\bf RTC::CorbaPort::m\_\-properties}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC_1_1CorbaPort_afb24858ffd644ff6d52bb422cfb442da}
+
+
+プロパティ 
+

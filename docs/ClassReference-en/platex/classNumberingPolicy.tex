@@ -1,0 +1,91 @@
+\section{NumberingPolicy Class Reference}
+\label{classNumberingPolicy}\index{NumberingPolicy@{NumberingPolicy}}
+
+
+Abstruct class for naming policy management when creating objects.  
+
+
+
+
+{\ttfamily \#include $<$NumberingPolicy.h$>$}
+
+Inheritance diagram for NumberingPolicy:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2cm]{classNumberingPolicy}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct {\bf ObjectNotFound}
+\begin{DoxyCompactList}\small\item\em The structures for exception handling when object was not found. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual {\bf $\sim$NumberingPolicy} (void)
+\begin{DoxyCompactList}\small\item\em Virtual destractor. \item\end{DoxyCompactList}\item 
+virtual std::string {\bf onCreate} (void $\ast$obj)=0
+\begin{DoxyCompactList}\small\item\em Create the name when creating objects. \item\end{DoxyCompactList}\item 
+virtual void {\bf onDelete} (void $\ast$obj)=0
+\begin{DoxyCompactList}\small\item\em Delete the name when deleting objects. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Abstruct class for naming policy management when creating objects. This is the abstract interface class to manage the naming policy when creating objects. Concrete classes must implement the following pure virtual functions.
+\begin{DoxyItemize}
+\item \doxyref{onCreate()}{p.}{classNumberingPolicy_a5a24d7cdf2cff8c97b1c798114504c31} : Create the name when creating objects.
+\item \doxyref{onDelete()}{p.}{classNumberingPolicy_a0bc5ddc2193e6415142327b4a5814d86} : Delete the name when deleting objects.
+\end{DoxyItemize}
+
+\begin{DoxySince}{Since}
+0.4.0 
+\end{DoxySince}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{NumberingPolicy@{NumberingPolicy}!$\sim$NumberingPolicy@{$\sim$NumberingPolicy}}
+\index{$\sim$NumberingPolicy@{$\sim$NumberingPolicy}!NumberingPolicy@{NumberingPolicy}}
+\subsubsection[{$\sim$NumberingPolicy}]{\setlength{\rightskip}{0pt plus 5cm}virtual NumberingPolicy::$\sim$NumberingPolicy (void)\hspace{0.3cm}{\ttfamily  [inline, virtual]}}\label{classNumberingPolicy_a07bd719848068793ca84f4ce87f57db7}
+
+
+Virtual destractor. 
+
+
+
+\subsection{Member Function Documentation}
+\index{NumberingPolicy@{NumberingPolicy}!onCreate@{onCreate}}
+\index{onCreate@{onCreate}!NumberingPolicy@{NumberingPolicy}}
+\subsubsection[{onCreate}]{\setlength{\rightskip}{0pt plus 5cm}virtual std::string NumberingPolicy::onCreate (void $\ast$ {\em obj})\hspace{0.3cm}{\ttfamily  [pure virtual]}}\label{classNumberingPolicy_a5a24d7cdf2cff8c97b1c798114504c31}
+
+
+Create the name when creating objects. 
+
+Pure virtual function to create the name when creating objects.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em obj}]The target object for the creation\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Name of the created object 
+\end{DoxyReturn}
+
+
+Implemented in {\bf DefaultNumberingPolicy} \doxyref{}{p.}{classDefaultNumberingPolicy_ad446abe9c24085dc3676a316e0d5da0c}.
+
+\index{NumberingPolicy@{NumberingPolicy}!onDelete@{onDelete}}
+\index{onDelete@{onDelete}!NumberingPolicy@{NumberingPolicy}}
+\subsubsection[{onDelete}]{\setlength{\rightskip}{0pt plus 5cm}virtual void NumberingPolicy::onDelete (void $\ast$ {\em obj})\hspace{0.3cm}{\ttfamily  [pure virtual]}}\label{classNumberingPolicy_a0bc5ddc2193e6415142327b4a5814d86}
+
+
+Delete the name when deleting objects. 
+
+Pure virtual function to delete the name when deleting object.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em obj}]The target object of the delete \end{DoxyParams}
+
+
+Implemented in {\bf DefaultNumberingPolicy} \doxyref{}{p.}{classDefaultNumberingPolicy_a216be8d1b29ecf328f04f98516364182}.
+

@@ -1,0 +1,68 @@
+\section{クラス テンプレート ListenerObject$<$ ListenerClass, CallbackFunc $>$}
+\label{classListenerObject}\index{ListenerObject@{ListenerObject}}
+
+
+\doxyref{ListenerObject}{p.}{classListenerObject} クラス.  
+
+
+
+
+{\ttfamily \#include $<$Listener.h$>$}
+
+ListenerObject$<$ ListenerClass, CallbackFunc $>$に対する継承グラフ\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2cm]{classListenerObject}
+\end{center}
+\end{figure}
+\subsection*{Public メソッド}
+\begin{DoxyCompactItemize}
+\item 
+{\bf ListenerObject} (ListenerClass $\ast$obj, {\bf CallbackFunc} cbf)
+\begin{DoxyCompactList}\small\item\em コンストラクタ \item\end{DoxyCompactList}\item 
+virtual {\bf $\sim$ListenerObject} ()
+\item 
+virtual void {\bf invoke} ()
+\begin{DoxyCompactList}\small\item\em コールバック用処理 \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{説明}
+\subsubsection*{template$<$class ListenerClass, class CallbackFunc = void (ListenerClass::$\ast$)()$>$ class ListenerObject$<$ ListenerClass, CallbackFunc $>$}
+
+\doxyref{ListenerObject}{p.}{classListenerObject} クラス. タイマーに登録するリスナー用基底クラス。
+
+\begin{DoxySince}{から}
+0.4.0 
+\end{DoxySince}
+
+
+\subsection{コンストラクタとデストラクタ}
+\index{ListenerObject@{ListenerObject}!ListenerObject@{ListenerObject}}
+\index{ListenerObject@{ListenerObject}!ListenerObject@{ListenerObject}}
+\subsubsection[{ListenerObject}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class ListenerClass , class CallbackFunc  = void (ListenerClass::$\ast$)()$>$ {\bf ListenerObject}$<$ ListenerClass, {\bf CallbackFunc} $>$::{\bf ListenerObject} (ListenerClass $\ast$ {\em obj}, \/  {\bf CallbackFunc} {\em cbf})\hspace{0.3cm}{\ttfamily  [inline]}}\label{classListenerObject_a53f8500598b1113c1f25e688fce65deb}
+
+
+コンストラクタ 
+
+コンストラクタ
+
+
+\begin{DoxyParams}{引数}
+\item[{\em obj}]リスナーオブジェクト \item[{\em cbf}]コールバック用関数 \end{DoxyParams}
+\index{ListenerObject@{ListenerObject}!$\sim$ListenerObject@{$\sim$ListenerObject}}
+\index{$\sim$ListenerObject@{$\sim$ListenerObject}!ListenerObject@{ListenerObject}}
+\subsubsection[{$\sim$ListenerObject}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class ListenerClass , class CallbackFunc  = void (ListenerClass::$\ast$)()$>$ virtual {\bf ListenerObject}$<$ ListenerClass, {\bf CallbackFunc} $>$::$\sim${\bf ListenerObject} ()\hspace{0.3cm}{\ttfamily  [inline, virtual]}}\label{classListenerObject_a17d7197a6efaf43be0e79bb451c65ba9}
+デストラクタ 
+
+\subsection{関数}
+\index{ListenerObject@{ListenerObject}!invoke@{invoke}}
+\index{invoke@{invoke}!ListenerObject@{ListenerObject}}
+\subsubsection[{invoke}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class ListenerClass , class CallbackFunc  = void (ListenerClass::$\ast$)()$>$ virtual void {\bf ListenerObject}$<$ ListenerClass, {\bf CallbackFunc} $>$::invoke ()\hspace{0.3cm}{\ttfamily  [inline, virtual]}}\label{classListenerObject_a89a5e9d005b8043419f4ccbb244f29d4}
+
+
+コールバック用処理 
+
+コールバック処理用関数 
+
+{\bf ListenerBase} \doxyref{}{p.}{classListenerBase_af2cace07df880215fda280ed3cbe0b0b}を実装しています。
+

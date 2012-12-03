@@ -1,0 +1,107 @@
+\section{クラス テンプレート RTC::Config$<$ VarType, TransFunc $>$}
+\label{classRTC_1_1Config}\index{RTC::Config@{RTC::Config}}
+
+
+\doxyref{Config}{p.}{classRTC_1_1Config} クラス.  
+
+
+
+
+{\ttfamily \#include $<$ConfigAdmin.h$>$}
+
+RTC::Config$<$ VarType, TransFunc $>$に対する継承グラフ\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2cm]{classRTC_1_1Config}
+\end{center}
+\end{figure}
+\subsection*{Public メソッド}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Config} (const char $\ast${\bf name}, VarType \&var, const char $\ast$def\_\-val, TransFunc trans=coil::stringTo)
+\begin{DoxyCompactList}\small\item\em コンストラクタ \item\end{DoxyCompactList}\item 
+virtual {\bf $\sim$Config} (void)
+\begin{DoxyCompactList}\small\item\em 仮想デストラクタ \item\end{DoxyCompactList}\item 
+virtual bool {\bf update} (const char $\ast$val)
+\begin{DoxyCompactList}\small\item\em バインドパラメータ値を更新 \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected 変数}
+\begin{DoxyCompactItemize}
+\item 
+VarType \& {\bf m\_\-var}
+\begin{DoxyCompactList}\small\item\em コンフィギュレーションパラメータ格納用変数 \item\end{DoxyCompactList}\item 
+TransFunc {\bf m\_\-trans}
+\begin{DoxyCompactList}\small\item\em コンフィギュレーションパラメータ型文字列変換関数 \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{説明}
+\subsubsection*{template$<$typename VarType, typename TransFunc = bool ($\ast$)(VarType\&, const char$\ast$)$>$ class RTC::Config$<$ VarType, TransFunc $>$}
+
+\doxyref{Config}{p.}{classRTC_1_1Config} クラス. コンフィギュレーションパラメータの情報を保持するクラス。 $<$VarType$>$としてコンフィギュレーションのデータ型を指定する。 $<$TransFunc$>$として設定されたデータ型を文字列に変換する変換関数を 指定する。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em VarType}]コンフィギュレーションパラメータ格納用変数 \item[{\em TransFunc}]格納したデータ型を文字列に変換する変換関数\end{DoxyParams}
+\begin{DoxySince}{から}
+0.4.0 
+\end{DoxySince}
+
+
+\subsection{コンストラクタとデストラクタ}
+\index{RTC::Config@{RTC::Config}!Config@{Config}}
+\index{Config@{Config}!RTC::Config@{RTC::Config}}
+\subsubsection[{Config}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename VarType , typename TransFunc  = bool ($\ast$)(VarType\&, const char$\ast$)$>$ {\bf RTC::Config}$<$ VarType, TransFunc $>$::{\bf Config} (const char $\ast$ {\em name}, \/  VarType \& {\em var}, \/  const char $\ast$ {\em def\_\-val}, \/  TransFunc {\em trans} = {\ttfamily coil::stringTo})\hspace{0.3cm}{\ttfamily  [inline]}}\label{classRTC_1_1Config_a5caed5e472c99e525d741ae8fd032d64}
+
+
+コンストラクタ 
+
+コンストラクタ
+
+
+\begin{DoxyParams}{引数}
+\item[{\em name}]コンフィギュレーションパラメータ名 \item[{\em var}]コンフィギュレーションパラメータ格納用変数 \item[{\em def\_\-val}]文字列形式のデフォルト値 \item[{\em trans}]文字列形式変換関数 \end{DoxyParams}
+\index{RTC::Config@{RTC::Config}!$\sim$Config@{$\sim$Config}}
+\index{$\sim$Config@{$\sim$Config}!RTC::Config@{RTC::Config}}
+\subsubsection[{$\sim$Config}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename VarType , typename TransFunc  = bool ($\ast$)(VarType\&, const char$\ast$)$>$ virtual {\bf RTC::Config}$<$ VarType, TransFunc $>$::$\sim${\bf Config} (void)\hspace{0.3cm}{\ttfamily  [inline, virtual]}}\label{classRTC_1_1Config_ad0b0e304b1d8746e151cc23441dabf0c}
+
+
+仮想デストラクタ 
+
+仮想デストラクタ。 
+
+\subsection{関数}
+\index{RTC::Config@{RTC::Config}!update@{update}}
+\index{update@{update}!RTC::Config@{RTC::Config}}
+\subsubsection[{update}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename VarType , typename TransFunc  = bool ($\ast$)(VarType\&, const char$\ast$)$>$ virtual bool {\bf RTC::Config}$<$ VarType, TransFunc $>$::update (const char $\ast$ {\em val})\hspace{0.3cm}{\ttfamily  [inline, virtual]}}\label{classRTC_1_1Config_ae62b81ad2d80a5f40f594f473f9556fa}
+
+
+バインドパラメータ値を更新 
+
+コンフィギュレーション設定値でコンフィギュレーションパラメータを更新する
+
+
+\begin{DoxyParams}{引数}
+\item[{\em val}]パラメータ値の文字列表現\end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+更新処理結果(更新成功:true，更新失敗:false) 
+\end{DoxyReturn}
+
+
+{\bf RTC::ConfigBase} \doxyref{}{p.}{structRTC_1_1ConfigBase_a353307f47fe534865db2a9173380e38c}を実装しています。
+
+
+
+\subsection{変数}
+\index{RTC::Config@{RTC::Config}!m\_\-trans@{m\_\-trans}}
+\index{m\_\-trans@{m\_\-trans}!RTC::Config@{RTC::Config}}
+\subsubsection[{m\_\-trans}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename VarType , typename TransFunc  = bool ($\ast$)(VarType\&, const char$\ast$)$>$ TransFunc {\bf RTC::Config}$<$ VarType, TransFunc $>$::{\bf m\_\-trans}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC_1_1Config_a944a46727c2b8ed20b1eb92945563658}
+
+
+コンフィギュレーションパラメータ型文字列変換関数 
+
+\index{RTC::Config@{RTC::Config}!m\_\-var@{m\_\-var}}
+\index{m\_\-var@{m\_\-var}!RTC::Config@{RTC::Config}}
+\subsubsection[{m\_\-var}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename VarType , typename TransFunc  = bool ($\ast$)(VarType\&, const char$\ast$)$>$ VarType\& {\bf RTC::Config}$<$ VarType, TransFunc $>$::{\bf m\_\-var}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC_1_1Config_a0ce4e14958ec4d7a45ea8a9aa2e72847}
+
+
+コンフィギュレーションパラメータ格納用変数 
+

@@ -1,0 +1,76 @@
+\section{NVUtil.h}
+\label{NVUtil_8h}\index{NVUtil.h@{NVUtil.h}}
+
+
+NameValue and NVList utility functions.  
+
+
+{\ttfamily \#include $<$string$>$}\par
+{\ttfamily \#include $<$iostream$>$}\par
+{\ttfamily \#include $<$coil/Properties.h$>$}\par
+{\ttfamily \#include $<$rtm/idl/SDOPackageSkel.h$>$}\par
+\subsection*{ネームスペース}
+\begin{DoxyCompactItemize}
+\item 
+namespace {\bf NVUtil}
+
+
+\begin{DoxyCompactList}\small\item\em NameValue 用ユーティリティ. \item\end{DoxyCompactList}
+
+\end{DoxyCompactItemize}
+\subsection*{関数}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$class Value $>$ }\\SDOPackage::NameValue {\bf NVUtil::newNV} (const char $\ast$name, Value value)
+\begin{DoxyCompactList}\small\item\em NameValue を生成する. \item\end{DoxyCompactList}\item 
+SDOPackage::NameValue {\bf NVUtil::newNVChar} (const char $\ast$name, const CORBA::Char value)
+\begin{DoxyCompactList}\small\item\em value が CORBA::Char の NameValue を生成する \item\end{DoxyCompactList}\item 
+SDOPackage::NameValue {\bf NVUtil::newNVBool} (const char $\ast$name, const CORBA::Boolean value)
+\begin{DoxyCompactList}\small\item\em value が CORBA::Boolean の NameValue を生成する \item\end{DoxyCompactList}\item 
+SDOPackage::NameValue {\bf NVUtil::newNVOctet} (const char $\ast$name, const CORBA::Octet value)
+\begin{DoxyCompactList}\small\item\em value が CORBA::Octet の NameValue を生成する \item\end{DoxyCompactList}\item 
+SDOPackage::NameValue {\bf NVUtil::newNVAny} (const char $\ast$name, const CORBA::Any \&value)
+\begin{DoxyCompactList}\small\item\em value が CORBA::Any の NameValue を生成する \item\end{DoxyCompactList}\item 
+void {\bf NVUtil::copyFromProperties} (SDOPackage::NVList \&nv, const {\bf coil::Properties} \&prop)
+\begin{DoxyCompactList}\small\item\em Properties を NVList へコピーする. \item\end{DoxyCompactList}\item 
+void {\bf NVUtil::copyToProperties} ({\bf coil::Properties} \&prop, const SDOPackage::NVList \&nv)
+\begin{DoxyCompactList}\small\item\em NVList を Properties へコピーする. \item\end{DoxyCompactList}\item 
+{\bf coil::Properties} {\bf NVUtil::toProperties} (const SDOPackage::NVList \&nv)
+\begin{DoxyCompactList}\small\item\em NVList を Properties へ変換する. \item\end{DoxyCompactList}\item 
+const CORBA::Any \& {\bf NVUtil::find} (const SDOPackage::NVList \&nv, const char $\ast$name)
+\begin{DoxyCompactList}\small\item\em NVList から name で指定された value を返す. \item\end{DoxyCompactList}\item 
+const CORBA::Long {\bf NVUtil::find\_\-index} (const SDOPackage::NVList \&nv, const char $\ast$name)
+\begin{DoxyCompactList}\small\item\em name で指定された要素のインデックスを返す \item\end{DoxyCompactList}\item 
+bool {\bf NVUtil::isString} (const SDOPackage::NVList \&nv, const char $\ast$name)
+\begin{DoxyCompactList}\small\item\em 指定された name の value の型が string であるか検証する \item\end{DoxyCompactList}\item 
+bool {\bf NVUtil::isStringValue} (const SDOPackage::NVList \&nv, const char $\ast$name, const char $\ast$value)
+\begin{DoxyCompactList}\small\item\em 指定された name の value の値が指定した文字列と一致するか検証する \item\end{DoxyCompactList}\item 
+std::string {\bf NVUtil::toString} (const SDOPackage::NVList \&nv, const char $\ast$name)
+\begin{DoxyCompactList}\small\item\em 指定された name の NVList を string として返す。 \item\end{DoxyCompactList}\item 
+bool {\bf NVUtil::appendStringValue} (SDOPackage::NVList \&nv, const char $\ast$name, const char $\ast$value)
+\begin{DoxyCompactList}\small\item\em 指定された文字列を NVList の要素に追加する。 \item\end{DoxyCompactList}\item 
+void {\bf NVUtil::append} (SDOPackage::NVList \&dest, const SDOPackage::NVList \&src)
+\begin{DoxyCompactList}\small\item\em NVList に要素を追加する。. \item\end{DoxyCompactList}\item 
+std::ostream \& {\bf NVUtil::dump} (std::ostream \&out, const SDOPackage::NVList \&nv)
+\begin{DoxyCompactList}\small\item\em NVList に設定されている内容を文字列として出力する。. \item\end{DoxyCompactList}\item 
+void {\bf NVUtil::dump} (const SDOPackage::NVList \&nv)
+\begin{DoxyCompactList}\small\item\em NVList に設定されている内容を文字列として標準出力する。. \item\end{DoxyCompactList}\item 
+std::string {\bf NVUtil::toString} (const SDOPackage::NVList \&nv)
+\begin{DoxyCompactList}\small\item\em NVList に設定されている内容を文字列にする. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{説明}
+NameValue and NVList utility functions. \begin{DoxyDate}{日付}
+
+\end{DoxyDate}
+\begin{DoxyParagraph}{Date}
+2007-\/12-\/31 03:08:04 
+\end{DoxyParagraph}
+\begin{DoxyAuthor}{作者}
+Noriaki Ando $<${\tt n-\/ando@aist.go.jp}$>$
+\end{DoxyAuthor}
+Copyright (C) 2006-\/2010 Noriaki Ando Task-\/intelligence Research Group, Intelligent Systems Research Institute, National Institute of Advanced Industrial Science and Technology (AIST), Japan All rights reserved.
+
+\begin{DoxyParagraph}{Id}
+\doxyref{NVUtil.h}{p.}{NVUtil_8h} 2019 2011-\/01-\/06 17:02:23Z n-\/ando 
+\end{DoxyParagraph}

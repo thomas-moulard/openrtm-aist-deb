@@ -1,0 +1,87 @@
+\section{クラス RTC::ExecutionContextActionListenerHolder}
+\label{classRTC_1_1ExecutionContextActionListenerHolder}\index{RTC::ExecutionContextActionListenerHolder@{RTC::ExecutionContextActionListenerHolder}}
+
+
+\doxyref{ExecutionContextActionListener}{p.}{classRTC_1_1ExecutionContextActionListener} ホルダクラス.  
+
+
+
+
+{\ttfamily \#include $<$ComponentActionListener.h$>$}
+
+\subsection*{Public メソッド}
+\begin{DoxyCompactItemize}
+\item 
+{\bf ExecutionContextActionListenerHolder} ()
+\begin{DoxyCompactList}\small\item\em コンストラクタ \item\end{DoxyCompactList}\item 
+virtual {\bf $\sim$ExecutionContextActionListenerHolder} ()
+\begin{DoxyCompactList}\small\item\em デストラクタ \item\end{DoxyCompactList}\item 
+void {\bf addListener} ({\bf ExecutionContextActionListener} $\ast$listener, bool autoclean)
+\begin{DoxyCompactList}\small\item\em リスナーの追加 \item\end{DoxyCompactList}\item 
+void {\bf removeListener} ({\bf ExecutionContextActionListener} $\ast$listener)
+\begin{DoxyCompactList}\small\item\em リスナーの削除 \item\end{DoxyCompactList}\item 
+void {\bf notify} ({\bf UniqueId} ec\_\-id)
+\begin{DoxyCompactList}\small\item\em リスナーへ通知する \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{説明}
+\doxyref{ExecutionContextActionListener}{p.}{classRTC_1_1ExecutionContextActionListener} ホルダクラス. 複数の \doxyref{ExecutionContextActionListener}{p.}{classRTC_1_1ExecutionContextActionListener} を保持し管理するクラス。 
+
+\subsection{コンストラクタとデストラクタ}
+\index{RTC::ExecutionContextActionListenerHolder@{RTC::ExecutionContextActionListenerHolder}!ExecutionContextActionListenerHolder@{ExecutionContextActionListenerHolder}}
+\index{ExecutionContextActionListenerHolder@{ExecutionContextActionListenerHolder}!RTC::ExecutionContextActionListenerHolder@{RTC::ExecutionContextActionListenerHolder}}
+\subsubsection[{ExecutionContextActionListenerHolder}]{\setlength{\rightskip}{0pt plus 5cm}RTC::ExecutionContextActionListenerHolder::ExecutionContextActionListenerHolder ()}\label{classRTC_1_1ExecutionContextActionListenerHolder_a422303d2192c9ee6643c202b793311fa}
+
+
+コンストラクタ 
+
+\index{RTC::ExecutionContextActionListenerHolder@{RTC::ExecutionContextActionListenerHolder}!$\sim$ExecutionContextActionListenerHolder@{$\sim$ExecutionContextActionListenerHolder}}
+\index{$\sim$ExecutionContextActionListenerHolder@{$\sim$ExecutionContextActionListenerHolder}!RTC::ExecutionContextActionListenerHolder@{RTC::ExecutionContextActionListenerHolder}}
+\subsubsection[{$\sim$ExecutionContextActionListenerHolder}]{\setlength{\rightskip}{0pt plus 5cm}virtual RTC::ExecutionContextActionListenerHolder::$\sim$ExecutionContextActionListenerHolder ()\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classRTC_1_1ExecutionContextActionListenerHolder_ade639d3634de5b385c318decc43f4a57}
+
+
+デストラクタ 
+
+
+
+\subsection{関数}
+\index{RTC::ExecutionContextActionListenerHolder@{RTC::ExecutionContextActionListenerHolder}!addListener@{addListener}}
+\index{addListener@{addListener}!RTC::ExecutionContextActionListenerHolder@{RTC::ExecutionContextActionListenerHolder}}
+\subsubsection[{addListener}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::ExecutionContextActionListenerHolder::addListener ({\bf ExecutionContextActionListener} $\ast$ {\em listener}, \/  bool {\em autoclean})}\label{classRTC_1_1ExecutionContextActionListenerHolder_ad6455f4d2a22c5bdd185294929177286}
+
+
+リスナーの追加 
+
+リスナーを追加する。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em listener}]追加するリスナ \item[{\em autoclean}]true:デストラクタで削除する, false:デストラクタで削除しない \end{DoxyParams}
+\index{RTC::ExecutionContextActionListenerHolder@{RTC::ExecutionContextActionListenerHolder}!notify@{notify}}
+\index{notify@{notify}!RTC::ExecutionContextActionListenerHolder@{RTC::ExecutionContextActionListenerHolder}}
+\subsubsection[{notify}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::ExecutionContextActionListenerHolder::notify ({\bf UniqueId} {\em ec\_\-id})}\label{classRTC_1_1ExecutionContextActionListenerHolder_afe7d95ed2fb7934e57f6e3b38f041188}
+
+
+リスナーへ通知する 
+
+登録されているリスナのコールバックメソッドを呼び出す。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em info}]\doxyref{ConnectorInfo}{p.}{classRTC_1_1ConnectorInfo} \item[{\em cdrdata}]データ \end{DoxyParams}
+
+
+参照元 RTC::RTObject\_\-impl::onAttachExecutionContext(), と RTC::RTObject\_\-impl::onDetachExecutionContext().
+
+\index{RTC::ExecutionContextActionListenerHolder@{RTC::ExecutionContextActionListenerHolder}!removeListener@{removeListener}}
+\index{removeListener@{removeListener}!RTC::ExecutionContextActionListenerHolder@{RTC::ExecutionContextActionListenerHolder}}
+\subsubsection[{removeListener}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::ExecutionContextActionListenerHolder::removeListener ({\bf ExecutionContextActionListener} $\ast$ {\em listener})}\label{classRTC_1_1ExecutionContextActionListenerHolder_acc2999c9555847e2cec937ac9b89ec56}
+
+
+リスナーの削除 
+
+リスナを削除する。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em listener}]削除するリスナ \end{DoxyParams}

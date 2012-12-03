@@ -1,0 +1,152 @@
+\section{RTC::FactoryBase Class Reference}
+\label{classRTC_1_1FactoryBase}\index{RTC::FactoryBase@{RTC::FactoryBase}}
+
+
+\doxyref{FactoryBase}{p.}{classRTC_1_1FactoryBase} base class.  
+
+
+
+
+{\ttfamily \#include $<$Factory.h$>$}
+
+Inheritance diagram for RTC::FactoryBase:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2cm]{classRTC_1_1FactoryBase}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf FactoryBase} (const {\bf coil::Properties} \&profile)
+\begin{DoxyCompactList}\small\item\em Constructor. \item\end{DoxyCompactList}\item 
+virtual {\bf $\sim$FactoryBase} (void)
+\begin{DoxyCompactList}\small\item\em Destructor. \item\end{DoxyCompactList}\item 
+virtual {\bf RTObject\_\-impl} $\ast$ {\bf create} ({\bf Manager} $\ast$mgr)=0
+\begin{DoxyCompactList}\small\item\em Create components. \item\end{DoxyCompactList}\item 
+virtual void {\bf destroy} ({\bf RTObject\_\-impl} $\ast$comp)=0
+\begin{DoxyCompactList}\small\item\em Destroy components. \item\end{DoxyCompactList}\item 
+virtual {\bf coil::Properties} \& {\bf profile} ()
+\begin{DoxyCompactList}\small\item\em Get the component profile. \item\end{DoxyCompactList}\item 
+virtual int {\bf number} ()
+\begin{DoxyCompactList}\small\item\em Get the number of current instances. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+{\bf coil::Properties} {\bf m\_\-Profile}
+\begin{DoxyCompactList}\small\item\em Component profile. \item\end{DoxyCompactList}\item 
+int {\bf m\_\-Number}
+\begin{DoxyCompactList}\small\item\em Number of current RT-\/Component's instances. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\doxyref{FactoryBase}{p.}{classRTC_1_1FactoryBase} base class. This is a base class for RT-\/Component factory.
+
+\begin{DoxySince}{Since}
+0.2.0 
+\end{DoxySince}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{RTC::FactoryBase@{RTC::FactoryBase}!FactoryBase@{FactoryBase}}
+\index{FactoryBase@{FactoryBase}!RTC::FactoryBase@{RTC::FactoryBase}}
+\subsubsection[{FactoryBase}]{\setlength{\rightskip}{0pt plus 5cm}RTC::FactoryBase::FactoryBase (const {\bf coil::Properties} \& {\em profile})}\label{classRTC_1_1FactoryBase_a2c77bfaacbdf1b1531decffe97bc0f12}
+
+
+Constructor. 
+
+Constructor.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em profile}]Component profile \end{DoxyParams}
+\index{RTC::FactoryBase@{RTC::FactoryBase}!$\sim$FactoryBase@{$\sim$FactoryBase}}
+\index{$\sim$FactoryBase@{$\sim$FactoryBase}!RTC::FactoryBase@{RTC::FactoryBase}}
+\subsubsection[{$\sim$FactoryBase}]{\setlength{\rightskip}{0pt plus 5cm}virtual RTC::FactoryBase::$\sim$FactoryBase (void)\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classRTC_1_1FactoryBase_a07017bcb7c8ed828e8cc48007af6671d}
+
+
+Destructor. 
+
+Destructor 
+
+\subsection{Member Function Documentation}
+\index{RTC::FactoryBase@{RTC::FactoryBase}!create@{create}}
+\index{create@{create}!RTC::FactoryBase@{RTC::FactoryBase}}
+\subsubsection[{create}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf RTObject\_\-impl}$\ast$ RTC::FactoryBase::create ({\bf Manager} $\ast$ {\em mgr})\hspace{0.3cm}{\ttfamily  [pure virtual]}}\label{classRTC_1_1FactoryBase_a08c22a5849ae192e442ce11754fb0be7}
+
+
+Create components. 
+
+Pure virtual function to create RT-\/Component's instances
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em mgr}]\doxyref{Manager}{p.}{classRTC_1_1Manager} object\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Created RT-\/Components 
+\end{DoxyReturn}
+
+
+Implemented in {\bf RTC::FactoryCXX} \doxyref{}{p.}{classRTC_1_1FactoryCXX_adf709b76b21aefe81338d9b885dcdcbe}.
+
+\index{RTC::FactoryBase@{RTC::FactoryBase}!destroy@{destroy}}
+\index{destroy@{destroy}!RTC::FactoryBase@{RTC::FactoryBase}}
+\subsubsection[{destroy}]{\setlength{\rightskip}{0pt plus 5cm}virtual void RTC::FactoryBase::destroy ({\bf RTObject\_\-impl} $\ast$ {\em comp})\hspace{0.3cm}{\ttfamily  [pure virtual]}}\label{classRTC_1_1FactoryBase_aa7cb36bdcc0c8debba468b064ce03e7e}
+
+
+Destroy components. 
+
+Pure virtual function to destroy RT-\/Component's instances
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em comp}]The target RT-\/Component for destruction \end{DoxyParams}
+
+
+Implemented in {\bf RTC::FactoryCXX} \doxyref{}{p.}{classRTC_1_1FactoryCXX_a627c4dd3b5686d4df13a39c2a481c8e4}.
+
+\index{RTC::FactoryBase@{RTC::FactoryBase}!number@{number}}
+\index{number@{number}!RTC::FactoryBase@{RTC::FactoryBase}}
+\subsubsection[{number}]{\setlength{\rightskip}{0pt plus 5cm}virtual int RTC::FactoryBase::number ()\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classRTC_1_1FactoryBase_ab75a344374a7b67a8622d6608ec83502}
+
+
+Get the number of current instances. 
+
+Get the number of current RT-\/Component's instances.
+
+\begin{DoxyReturn}{Returns}
+Number of RT-\/Component's instances 
+\end{DoxyReturn}
+\index{RTC::FactoryBase@{RTC::FactoryBase}!profile@{profile}}
+\index{profile@{profile}!RTC::FactoryBase@{RTC::FactoryBase}}
+\subsubsection[{profile}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf coil::Properties}\& RTC::FactoryBase::profile ()\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classRTC_1_1FactoryBase_a457d7420f495268cc192eccd9aad6de3}
+
+
+Get the component profile. 
+
+Get the component profile.
+
+\begin{DoxyReturn}{Returns}
+The component profile 
+\end{DoxyReturn}
+
+
+Referenced by RTC::Manager::ModuleFactories::operator()(), and RTC::Manager::FactoryPredicate::operator()().
+
+
+
+\subsection{Member Data Documentation}
+\index{RTC::FactoryBase@{RTC::FactoryBase}!m\_\-Number@{m\_\-Number}}
+\index{m\_\-Number@{m\_\-Number}!RTC::FactoryBase@{RTC::FactoryBase}}
+\subsubsection[{m\_\-Number}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf RTC::FactoryBase::m\_\-Number}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC_1_1FactoryBase_ad40d7862aa60026e340b9ec1a2e77ad3}
+
+
+Number of current RT-\/Component's instances. 
+
+\index{RTC::FactoryBase@{RTC::FactoryBase}!m\_\-Profile@{m\_\-Profile}}
+\index{m\_\-Profile@{m\_\-Profile}!RTC::FactoryBase@{RTC::FactoryBase}}
+\subsubsection[{m\_\-Profile}]{\setlength{\rightskip}{0pt plus 5cm}{\bf coil::Properties} {\bf RTC::FactoryBase::m\_\-Profile}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC_1_1FactoryBase_a70ac748e36fd0977a3c9f9c61433119b}
+
+
+Component profile. 
+

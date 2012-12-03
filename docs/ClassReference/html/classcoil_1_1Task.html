@@ -1,0 +1,348 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<title>OpenRTM: クラス coil::Task</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<!-- 作成： Doxygen 1.6.3 -->
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="index.html"><span>メインページ</span></a></li>
+      <li><a href="namespaces.html"><span>ネームスペース</span></a></li>
+      <li class="current"><a href="annotated.html"><span>クラス</span></a></li>
+      <li><a href="files.html"><span>ファイル</span></a></li>
+    </ul>
+  </div>
+  <div class="tabs">
+    <ul>
+      <li><a href="annotated.html"><span>構成</span></a></li>
+      <li><a href="hierarchy.html"><span>クラス階層</span></a></li>
+      <li><a href="functions.html"><span>構成メンバ</span></a></li>
+    </ul>
+  </div>
+  <div class="navpath"><a class="el" href="namespacecoil.html">coil</a>::<a class="el" href="classcoil_1_1Task.html">Task</a>
+  </div>
+</div>
+<div class="contents">
+<h1>クラス coil::Task</h1><!-- doxytag: class="coil::Task" -->
+<p><a class="el" href="classcoil_1_1Task.html" title="Task クラス.">Task</a> クラス.  
+<a href="#_details">[詳細]</a></p>
+
+<p><code>#include &lt;<a class="el" href="Task_8h_source.html">Task.h</a>&gt;</code></p>
+<div class="dynheader">
+coil::Taskに対する継承グラフ</div>
+<div class="dynsection">
+ <div class="center">
+  <img src="classcoil_1_1Task.png" usemap="#coil::Task_map" alt=""/>
+  <map id="coil::Task_map" name="coil::Task_map">
+<area href="classcoil_1_1Async.html" alt="coil::Async" shape="rect" coords="108,56,314,80"/>
+<area href="classcoil_1_1PeriodicTaskBase.html" alt="coil::PeriodicTaskBase" shape="rect" coords="432,56,638,80"/>
+<area href="classcoil_1_1Timer.html" alt="coil::Timer" shape="rect" coords="648,56,854,80"/>
+<area href="classRTC_1_1Manager_1_1OrbRunner.html" alt="RTC::Manager::OrbRunner" shape="rect" coords="864,56,1070,80"/>
+<area href="classRTC_1_1Manager_1_1Terminator.html" alt="RTC::Manager::Terminator" shape="rect" coords="1080,56,1286,80"/>
+<area href="classRTC_1_1PeriodicExecutionContext.html" alt="RTC::PeriodicExecutionContext" shape="rect" coords="1296,56,1502,80"/>
+<area href="classcoil_1_1Async__ref__t.html" alt="coil::Async_ref_t&lt; Object, Func &gt;" shape="rect" coords="0,112,206,136"/>
+<area href="classcoil_1_1Async__t.html" alt="coil::Async_t&lt; Object, Func &gt;" shape="rect" coords="216,112,422,136"/>
+<area href="classcoil_1_1PeriodicTask.html" alt="coil::PeriodicTask" shape="rect" coords="432,112,638,136"/>
+<area href="classRTC_1_1ExtTrigExecutionContext.html" alt="RTC::ExtTrigExecutionContext" shape="rect" coords="1188,112,1394,136"/>
+<area href="classRTC_1_1OpenHRPExecutionContext.html" alt="RTC::OpenHRPExecutionContext" shape="rect" coords="1404,112,1610,136"/>
+</map>
+ </div>
+</div>
+
+<p><a href="classcoil_1_1Task-members.html">すべてのメンバ一覧</a></p>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr><td colspan="2"><h2>Public メソッド</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcoil_1_1Task.html#acb44c7174ccc75d4962dbdebd8ea97be">Task</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcoil_1_1Task.html#adaf74253b2fa6387a49afa5575812897">~Task</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcoil_1_1Task.html#af964d1b21ddf53987e8190cb4e5d9613">open</a> (void *args=0)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">タスクオープン  <a href="#af964d1b21ddf53987e8190cb4e5d9613"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcoil_1_1Task.html#aa3bfcb01e9d162e4053a4c7312673879">close</a> (unsigned long flags=0)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">タスククローズ  <a href="#aa3bfcb01e9d162e4053a4c7312673879"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcoil_1_1Task.html#ae68f22a4afbe8cddde1fe910bc3dd226">svc</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcoil_1_1Task.html#a812bc27f5acb67931a4c03c07c7aeb9e">activate</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcoil_1_1Task.html#ad999fcc89264eece8b909b680cbf5ba1">wait</a> (void)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcoil_1_1Task.html#a9f65419174b1974a9b145042562af9a8">suspend</a> (void)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcoil_1_1Task.html#a093088197230d448855155cddda19b11">resume</a> (void)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcoil_1_1Task.html#ae66f1fc87f7768a834980b3141ccf992">reset</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcoil_1_1Task.html#af7cfcc8cf5c0c322739a92374ce05cca">finalize</a> ()</td></tr>
+<tr><td colspan="2"><h2>Static Public メソッド</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static void *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcoil_1_1Task.html#aea0afe54b17952065d4f0bef1963aead">svc_run</a> (void *args=0)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">スレッド実行を開始する  <a href="#aea0afe54b17952065d4f0bef1963aead"></a><br/></td></tr>
+</table>
+<hr/><a name="_details"></a><h2>説明</h2>
+<p><a class="el" href="classcoil_1_1Task.html" title="Task クラス.">Task</a> クラス. </p>
+<hr/><h2>コンストラクタとデストラクタ</h2>
+<a class="anchor" id="acb44c7174ccc75d4962dbdebd8ea97be"></a><!-- doxytag: member="coil::Task::Task" ref="acb44c7174ccc75d4962dbdebd8ea97be" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">coil::Task::Task </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>コンストラクタ </p>
+
+</div>
+</div>
+<a class="anchor" id="adaf74253b2fa6387a49afa5575812897"></a><!-- doxytag: member="coil::Task::~Task" ref="adaf74253b2fa6387a49afa5575812897" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual coil::Task::~Task </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>デストラクタ </p>
+
+</div>
+</div>
+<hr/><h2>関数</h2>
+<a class="anchor" id="a812bc27f5acb67931a4c03c07c7aeb9e"></a><!-- doxytag: member="coil::Task::activate" ref="a812bc27f5acb67931a4c03c07c7aeb9e" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void coil::Task::activate </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>スレッドを生成する </p>
+
+<p><a class="el" href="classcoil_1_1PeriodicTask.html#a7c697df8165aecf55667950e1777a334">coil::PeriodicTask</a>, と <a class="el" href="classcoil_1_1PeriodicTaskBase.html#ae3deb2c37063d35ad294bfbb07dafdba">coil::PeriodicTaskBase</a>で再定義されています。</p>
+
+<p>参照元 <a class="el" href="Async_8h_source.html#l00394">coil::Async_ref_t&lt; Object, Func &gt;::invoke()</a>, <a class="el" href="Async_8h_source.html#l00250">coil::Async_t&lt; Object, Func &gt;::invoke()</a>, <a class="el" href="Manager_8h_source.html#l02045">RTC::Manager::Terminator::open()</a>, と <a class="el" href="Manager_8h_source.html#l01894">RTC::Manager::OrbRunner::open()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aa3bfcb01e9d162e4053a4c7312673879"></a><!-- doxytag: member="coil::Task::close" ref="aa3bfcb01e9d162e4053a4c7312673879" args="(unsigned long flags=0)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual int coil::Task::close </td>
+          <td>(</td>
+          <td class="paramtype">unsigned long&nbsp;</td>
+          <td class="paramname"> <em>flags</em> = <code>0</code></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>タスククローズ </p>
+<p>タスククローズ</p>
+<dl><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>flags</em>&nbsp;</td><td>フラグ </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p><a class="el" href="classRTC_1_1Manager_1_1OrbRunner.html#a19fb5b7a8e18910b31c13207dccbe167">RTC::Manager::OrbRunner</a>, と <a class="el" href="classRTC_1_1PeriodicExecutionContext.html#a61e63a2d5f7aac790af5e105000df6fd">RTC::PeriodicExecutionContext</a>で再定義されています。</p>
+
+</div>
+</div>
+<a class="anchor" id="af7cfcc8cf5c0c322739a92374ce05cca"></a><!-- doxytag: member="coil::Task::finalize" ref="af7cfcc8cf5c0c322739a92374ce05cca" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void coil::Task::finalize </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>タスク実行を終了する </p>
+
+<p><a class="el" href="classcoil_1_1Async__t.html#aaffa0e7e46f8380b0e91e5177485e00d">coil::Async_t&lt; Object, Func &gt;</a>, <a class="el" href="classcoil_1_1Async__ref__t.html#a3aa9d20e422e78db584ead57a50200da">coil::Async_ref_t&lt; Object, Func &gt;</a>, <a class="el" href="classcoil_1_1PeriodicTask.html#a5ec56997c14c95ee3ce095979fa47f61">coil::PeriodicTask</a>, と <a class="el" href="classcoil_1_1PeriodicTaskBase.html#a2e131861d53d1553d2bb12d7c5bbddf4">coil::PeriodicTaskBase</a>で再定義されています。</p>
+
+</div>
+</div>
+<a class="anchor" id="af964d1b21ddf53987e8190cb4e5d9613"></a><!-- doxytag: member="coil::Task::open" ref="af964d1b21ddf53987e8190cb4e5d9613" args="(void *args=0)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual int coil::Task::open </td>
+          <td>(</td>
+          <td class="paramtype">void *&nbsp;</td>
+          <td class="paramname"> <em>args</em> = <code>0</code></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>タスクオープン </p>
+<p>タスクオープン</p>
+<dl><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>args</em>&nbsp;</td><td>引数 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p><a class="el" href="classcoil_1_1Timer.html#a0ab295e065392c392418c676328a2601">coil::Timer</a>, <a class="el" href="classRTC_1_1Manager_1_1OrbRunner.html#a879d024f9e63e641475a627641871600">RTC::Manager::OrbRunner</a>, <a class="el" href="classRTC_1_1Manager_1_1Terminator.html#ae6fb66641a477fc91a7aca38e49eb0fa">RTC::Manager::Terminator</a>, と <a class="el" href="classRTC_1_1PeriodicExecutionContext.html#a1a8cf7148599db0ac62f76e4142df3e3">RTC::PeriodicExecutionContext</a>で再定義されています。</p>
+
+</div>
+</div>
+<a class="anchor" id="ae66f1fc87f7768a834980b3141ccf992"></a><!-- doxytag: member="coil::Task::reset" ref="ae66f1fc87f7768a834980b3141ccf992" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void coil::Task::reset </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>タスク数リセット </p>
+
+</div>
+</div>
+<a class="anchor" id="a093088197230d448855155cddda19b11"></a><!-- doxytag: member="coil::Task::resume" ref="a093088197230d448855155cddda19b11" args="(void)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual int coil::Task::resume </td>
+          <td>(</td>
+          <td class="paramtype">void&nbsp;</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>中断されているタスクを再開する </p>
+
+<p><a class="el" href="classcoil_1_1PeriodicTask.html#acf42beb37616fc6418c04e199ea57263">coil::PeriodicTask</a>, と <a class="el" href="classcoil_1_1PeriodicTaskBase.html#aed680b3484a799cf932f7c65188018b5">coil::PeriodicTaskBase</a>で再定義されています。</p>
+
+</div>
+</div>
+<a class="anchor" id="a9f65419174b1974a9b145042562af9a8"></a><!-- doxytag: member="coil::Task::suspend" ref="a9f65419174b1974a9b145042562af9a8" args="(void)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual int coil::Task::suspend </td>
+          <td>(</td>
+          <td class="paramtype">void&nbsp;</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>タスク実行を中断する </p>
+
+<p><a class="el" href="classcoil_1_1PeriodicTask.html#acc1199a128277eb89e7737df00d33264">coil::PeriodicTask</a>, と <a class="el" href="classcoil_1_1PeriodicTaskBase.html#a3868ef5fb39dcb023c3fade0a307898d">coil::PeriodicTaskBase</a>で再定義されています。</p>
+
+</div>
+</div>
+<a class="anchor" id="ae68f22a4afbe8cddde1fe910bc3dd226"></a><!-- doxytag: member="coil::Task::svc" ref="ae68f22a4afbe8cddde1fe910bc3dd226" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual int coil::Task::svc </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>スレッドを実行する </p>
+
+<p><a class="el" href="classcoil_1_1Async__t.html#a2a935cf066cd5b3a90feb0aa19b9a4b1">coil::Async_t&lt; Object, Func &gt;</a>, <a class="el" href="classcoil_1_1Async__ref__t.html#a0faaac2e307957306e4a5f093aa39d26">coil::Async_ref_t&lt; Object, Func &gt;</a>, <a class="el" href="classcoil_1_1PeriodicTask.html#aa1bc5fbad66b0b7ae03844fc447e0097">coil::PeriodicTask</a>, <a class="el" href="classcoil_1_1Timer.html#af995c8abd6fe7d6aa92fdf21c41e8670">coil::Timer</a>, <a class="el" href="classRTC_1_1ExtTrigExecutionContext.html#aaa5d7178bb12669324647eb702629535">RTC::ExtTrigExecutionContext</a>, <a class="el" href="classRTC_1_1Manager_1_1OrbRunner.html#a269a4a56e2c0d5ee5782c10a9c6ef608">RTC::Manager::OrbRunner</a>, <a class="el" href="classRTC_1_1Manager_1_1Terminator.html#a7b02960ecfb120c5531278607c1cac64">RTC::Manager::Terminator</a>, <a class="el" href="classRTC_1_1OpenHRPExecutionContext.html#a1de64d423a97b75133711ae3c32bd216">RTC::OpenHRPExecutionContext</a>, と <a class="el" href="classRTC_1_1PeriodicExecutionContext.html#acce0ee7c44366398928e688f895af60b">RTC::PeriodicExecutionContext</a>で再定義されています。</p>
+
+</div>
+</div>
+<a class="anchor" id="aea0afe54b17952065d4f0bef1963aead"></a><!-- doxytag: member="coil::Task::svc_run" ref="aea0afe54b17952065d4f0bef1963aead" args="(void *args=0)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void* coil::Task::svc_run </td>
+          <td>(</td>
+          <td class="paramtype">void *&nbsp;</td>
+          <td class="paramname"> <em>args</em> = <code>0</code></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [static]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>スレッド実行を開始する </p>
+<p>スレッド実行を開始する</p>
+<dl><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>args</em>&nbsp;</td><td>スレッド引数 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="ad999fcc89264eece8b909b680cbf5ba1"></a><!-- doxytag: member="coil::Task::wait" ref="ad999fcc89264eece8b909b680cbf5ba1" args="(void)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual int coil::Task::wait </td>
+          <td>(</td>
+          <td class="paramtype">void&nbsp;</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>スレッド終了を待つ </p>
+
+</div>
+</div>
+</div>
+<hr class="footer"/><address style="text-align: right;"><small>OpenRTMに対してThu May 24 23:25:19 2012に生成されました。&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.6.3 </small></address>
+</body>
+</html>

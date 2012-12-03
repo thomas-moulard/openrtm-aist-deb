@@ -1,0 +1,333 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<title>OpenRTM: RTC.idl ソースファイル</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<!-- 作成： Doxygen 1.6.3 -->
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="index.html"><span>メインページ</span></a></li>
+      <li><a href="namespaces.html"><span>ネームスペース</span></a></li>
+      <li><a href="annotated.html"><span>クラス</span></a></li>
+      <li class="current"><a href="files.html"><span>ファイル</span></a></li>
+    </ul>
+  </div>
+  <div class="tabs">
+    <ul>
+      <li><a href="files.html"><span>ファイル一覧</span></a></li>
+      <li><a href="globals.html"><span>ファイルメンバ</span></a></li>
+    </ul>
+  </div>
+<h1>RTC.idl</h1><a href="RTC_8idl.html">説明を見る。</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="comment">// RTC.idl</span>
+<a name="l00002"></a>00002 
+<a name="l00003"></a>00003 <span class="preprocessor">#ifndef RTC_IDL</span>
+<a name="l00004"></a>00004 <span class="preprocessor"></span><span class="preprocessor">#define RTC_IDL</span>
+<a name="l00005"></a>00005 <span class="preprocessor"></span>
+<a name="l00006"></a>00006 <span class="preprocessor">#include &quot;<a class="code" href="SDOPackage_8idl.html">SDOPackage.idl</a>&quot;</span>
+<a name="l00007"></a>00007 
+<a name="l00008"></a>00008 <span class="preprocessor">#pragma prefix &quot;omg.org&quot;</span>
+<a name="l00009"></a>00009 <span class="preprocessor"></span>
+<a name="l00010"></a><a class="code" href="RTC_8idl.html#aeffb3a05d02a2be4851f4c1c59f000c3">00010</a> <span class="preprocessor">#define EXECUTION_HANDLE_TYPE_NATIVE long</span>
+<a name="l00011"></a>00011 <span class="preprocessor"></span>
+<a name="l00012"></a>00012 module RTC
+<a name="l00013"></a>00013 {
+<a name="l00031"></a><a class="code" href="namespaceRTC.html#abeec8a63e667bc7ba37489d083c382dd">00031</a>   <span class="keyword">typedef</span> <a class="code" href="RTC_8idl.html#aeffb3a05d02a2be4851f4c1c59f000c3">EXECUTION_HANDLE_TYPE_NATIVE</a> <a class="code" href="namespaceRTC.html#abeec8a63e667bc7ba37489d083c382dd">ExecutionContextHandle_t</a>;
+<a name="l00032"></a>00032 
+<a name="l00033"></a><a class="code" href="namespaceRTC.html#af8d8a30578314e18f51bf3ac62fe4c40">00033</a>   <span class="keyword">typedef</span> <a class="code" href="namespaceSDOPackage.html#a05a058395bb070fc59e9d81d4b1f9f98">SDOPackage::UniqueIdentifier</a> <a class="code" href="namespaceRTC.html#af8d8a30578314e18f51bf3ac62fe4c40">UniqueIdentifier</a>;
+<a name="l00034"></a><a class="code" href="namespaceRTC.html#a5ea13f6e926b4b72c51bb3765ce383d2">00034</a>   <span class="keyword">typedef</span> <a class="code" href="namespaceSDOPackage.html#a51e72be2b0d7e550db7782ddb1d58e9d">SDOPackage::NVList</a> <a class="code" href="namespaceRTM.html#a45f18393ee434c9e3a1432820eb3a4fe">NVList</a>;
+<a name="l00035"></a>00035   
+<a name="l00082"></a><a class="code" href="namespaceRTC.html#a0475158fee75648eda4ea6e56584dc4e">00082</a>   <span class="keyword">enum</span> <a class="code" href="namespaceRTC.html#a0475158fee75648eda4ea6e56584dc4e" title="ReturnCode_t.">ReturnCode_t</a>
+<a name="l00083"></a>00083   {
+<a name="l00084"></a><a class="code" href="namespaceRTC.html#a0475158fee75648eda4ea6e56584dc4ea863f8006deb331437e3ed6f1785544cc">00084</a>     <a class="code" href="namespaceRTC.html#a0475158fee75648eda4ea6e56584dc4ea863f8006deb331437e3ed6f1785544cc">RTC_OK</a>,
+<a name="l00085"></a><a class="code" href="namespaceRTC.html#a0475158fee75648eda4ea6e56584dc4ea1693cadc2f2d07e362c3d32fd733e2da">00085</a>     <a class="code" href="namespaceRTC.html#a0475158fee75648eda4ea6e56584dc4ea1693cadc2f2d07e362c3d32fd733e2da">RTC_ERROR</a>,
+<a name="l00086"></a><a class="code" href="namespaceRTC.html#a0475158fee75648eda4ea6e56584dc4ea49facff36d35df3904492c53641a4c0c">00086</a>     <a class="code" href="namespaceRTC.html#a0475158fee75648eda4ea6e56584dc4ea49facff36d35df3904492c53641a4c0c">BAD_PARAMETER</a>,
+<a name="l00087"></a><a class="code" href="namespaceRTC.html#a0475158fee75648eda4ea6e56584dc4eadadc644bb5129f12cbc112dfa5b856ef">00087</a>     <a class="code" href="namespaceRTC.html#a0475158fee75648eda4ea6e56584dc4eadadc644bb5129f12cbc112dfa5b856ef">UNSUPPORTED</a>,
+<a name="l00088"></a><a class="code" href="namespaceRTC.html#a0475158fee75648eda4ea6e56584dc4eadaab98420685788c6513c5355d9da6d5">00088</a>     <a class="code" href="namespaceRTC.html#a0475158fee75648eda4ea6e56584dc4eadaab98420685788c6513c5355d9da6d5">OUT_OF_RESOURCES</a>,
+<a name="l00089"></a><a class="code" href="namespaceRTC.html#a0475158fee75648eda4ea6e56584dc4eac259681c6b2125708b1b37084f69ecf3">00089</a>     <a class="code" href="namespaceRTC.html#a0475158fee75648eda4ea6e56584dc4eac259681c6b2125708b1b37084f69ecf3">PRECONDITION_NOT_MET</a>
+<a name="l00090"></a>00090   };
+<a name="l00091"></a>00091 
+<a name="l00103"></a><a class="code" href="namespaceRTC.html#a9db8210601efb0122880f32020ac39ee">00103</a>   <span class="keyword">enum</span> <a class="code" href="namespaceRTC.html#a9db8210601efb0122880f32020ac39ee">LifeCycleState</a>
+<a name="l00104"></a>00104   {
+<a name="l00116"></a><a class="code" href="namespaceRTC.html#a9db8210601efb0122880f32020ac39eeae45b8ba08b3e395c4b27d4d5b1d2cc8e">00116</a>     <a class="code" href="namespaceRTC.html#a9db8210601efb0122880f32020ac39eeae45b8ba08b3e395c4b27d4d5b1d2cc8e">CREATED_STATE</a>,
+<a name="l00117"></a>00117 
+<a name="l00138"></a><a class="code" href="namespaceRTC.html#a9db8210601efb0122880f32020ac39eeadd3136d9911fa24e8b884ab0640e2323">00138</a>     <a class="code" href="namespaceRTC.html#a9db8210601efb0122880f32020ac39eeadd3136d9911fa24e8b884ab0640e2323">INACTIVE_STATE</a>,
+<a name="l00139"></a>00139 
+<a name="l00159"></a><a class="code" href="namespaceRTC.html#a9db8210601efb0122880f32020ac39eea549a7813045a2c2baee8061696533fa6">00159</a>     <a class="code" href="namespaceRTC.html#a9db8210601efb0122880f32020ac39eea549a7813045a2c2baee8061696533fa6">ACTIVE_STATE</a>,
+<a name="l00160"></a>00160 
+<a name="l00175"></a><a class="code" href="namespaceRTC.html#a9db8210601efb0122880f32020ac39eea9602f3b3191ff7c323f4279d8e6deefd">00175</a>     <a class="code" href="namespaceRTC.html#a9db8210601efb0122880f32020ac39eea9602f3b3191ff7c323f4279d8e6deefd">ERROR_STATE</a>
+<a name="l00176"></a>00176   };
+<a name="l00177"></a>00177   
+<a name="l00178"></a><a class="code" href="namespaceRTC.html#ad53cb8fa2c184a5df4d8f93fbdde4e7f">00178</a>   interface <a class="code" href="interfaceRTC_1_1ExecutionContext.html">ExecutionContext</a>;
+<a name="l00179"></a>00179   <span class="keyword">typedef</span> sequence&lt;ExecutionContext&gt; <a class="code" href="namespaceRTC.html#ad53cb8fa2c184a5df4d8f93fbdde4e7f">ExecutionContextList</a>;
+<a name="l00180"></a>00180 
+<a name="l00204"></a><a class="code" href="interfaceRTC_1_1ComponentAction.html">00204</a>   interface <a class="code" href="interfaceRTC_1_1ComponentAction.html">ComponentAction</a>
+<a name="l00205"></a>00205   {
+<a name="l00222"></a>00222     <a class="code" href="namespaceRTC.html#a0475158fee75648eda4ea6e56584dc4e" title="ReturnCode_t.">ReturnCode_t</a> on_initialize();
+<a name="l00223"></a>00223 
+<a name="l00240"></a>00240     <a class="code" href="namespaceRTC.html#a0475158fee75648eda4ea6e56584dc4e" title="ReturnCode_t.">ReturnCode_t</a> on_finalize();
+<a name="l00241"></a>00241 
+<a name="l00255"></a>00255     <a class="code" href="namespaceRTC.html#a0475158fee75648eda4ea6e56584dc4e" title="ReturnCode_t.">ReturnCode_t</a> on_startup(in ExecutionContextHandle_t exec_handle);
+<a name="l00256"></a>00256 
+<a name="l00270"></a>00270     <a class="code" href="namespaceRTC.html#a0475158fee75648eda4ea6e56584dc4e" title="ReturnCode_t.">ReturnCode_t</a> on_shutdown(in ExecutionContextHandle_t exec_handle);
+<a name="l00271"></a>00271 
+<a name="l00284"></a>00284     <a class="code" href="namespaceRTC.html#a0475158fee75648eda4ea6e56584dc4e" title="ReturnCode_t.">ReturnCode_t</a> on_activated(in ExecutionContextHandle_t exec_handle);
+<a name="l00285"></a>00285 
+<a name="l00298"></a>00298     <a class="code" href="namespaceRTC.html#a0475158fee75648eda4ea6e56584dc4e" title="ReturnCode_t.">ReturnCode_t</a> on_deactivated(in ExecutionContextHandle_t exec_handle);
+<a name="l00299"></a>00299 
+<a name="l00319"></a>00319     <a class="code" href="namespaceRTC.html#a0475158fee75648eda4ea6e56584dc4e" title="ReturnCode_t.">ReturnCode_t</a> on_aborting(in ExecutionContextHandle_t exec_handle);
+<a name="l00320"></a>00320 
+<a name="l00348"></a>00348     <a class="code" href="namespaceRTC.html#a0475158fee75648eda4ea6e56584dc4e" title="ReturnCode_t.">ReturnCode_t</a> on_error(in ExecutionContextHandle_t exec_handle);
+<a name="l00349"></a>00349 
+<a name="l00370"></a>00370     <a class="code" href="namespaceRTC.html#a0475158fee75648eda4ea6e56584dc4e" title="ReturnCode_t.">ReturnCode_t</a> on_reset(in ExecutionContextHandle_t exec_handle);
+<a name="l00371"></a>00371   };
+<a name="l00372"></a>00372   
+<a name="l00443"></a><a class="code" href="interfaceRTC_1_1LightweightRTObject.html">00443</a>   interface <a class="code" href="interfaceRTC_1_1LightweightRTObject.html">LightweightRTObject</a>
+<a name="l00444"></a>00444     : <a class="code" href="interfaceRTC_1_1ComponentAction.html">ComponentAction</a>
+<a name="l00445"></a>00445   {
+<a name="l00469"></a>00469     <a class="code" href="namespaceRTC.html#a0475158fee75648eda4ea6e56584dc4e" title="ReturnCode_t.">ReturnCode_t</a> initialize();
+<a name="l00470"></a>00470 
+<a name="l00504"></a>00504     <a class="code" href="namespaceRTC.html#a0475158fee75648eda4ea6e56584dc4e" title="ReturnCode_t.">ReturnCode_t</a> finalize();
+<a name="l00505"></a>00505 
+<a name="l00527"></a>00527     <span class="keywordtype">boolean</span> is_alive(in ExecutionContext exec_context);
+<a name="l00528"></a>00528 
+<a name="l00559"></a>00559     <a class="code" href="namespaceRTC.html#a0475158fee75648eda4ea6e56584dc4e" title="ReturnCode_t.">ReturnCode_t</a> exit();
+<a name="l00560"></a>00560 
+<a name="l00581"></a>00581     ExecutionContextHandle_t attach_context(in ExecutionContext exec_context);
+<a name="l00582"></a>00582 
+<a name="l00611"></a>00611     <a class="code" href="namespaceRTC.html#a0475158fee75648eda4ea6e56584dc4e" title="ReturnCode_t.">ReturnCode_t</a> detach_context(in ExecutionContextHandle_t exec_handle);
+<a name="l00612"></a>00612 
+<a name="l00632"></a>00632     ExecutionContext get_context(in ExecutionContextHandle_t exec_handle);
+<a name="l00633"></a>00633 
+<a name="l00652"></a>00652     ExecutionContextList get_owned_contexts();
+<a name="l00653"></a>00653 
+<a name="l00684"></a>00684     ExecutionContextList get_participating_contexts();
+<a name="l00685"></a>00685     
+<a name="l00702"></a>00702     ExecutionContextHandle_t get_context_handle(in ExecutionContext cxt);
+<a name="l00703"></a>00703   };
+<a name="l00704"></a>00704   
+<a name="l00719"></a><a class="code" href="namespaceRTC.html#a3cab55785dde75414f8a8ae8492eee65">00719</a>   <span class="keyword">enum</span> <a class="code" href="namespaceRTC.html#a3cab55785dde75414f8a8ae8492eee65">ExecutionKind</a>
+<a name="l00720"></a>00720   {
+<a name="l00735"></a><a class="code" href="namespaceRTC.html#a3cab55785dde75414f8a8ae8492eee65a2da6149f3650700a1236b448000e7eef">00735</a>     <a class="code" href="namespaceRTC.html#a3cab55785dde75414f8a8ae8492eee65a2da6149f3650700a1236b448000e7eef">PERIODIC</a>,
+<a name="l00750"></a><a class="code" href="namespaceRTC.html#a3cab55785dde75414f8a8ae8492eee65a9cf0beeda6b279fcb6481e0cd42c5e9f">00750</a>     <a class="code" href="namespaceRTC.html#a3cab55785dde75414f8a8ae8492eee65a9cf0beeda6b279fcb6481e0cd42c5e9f">EVENT_DRIVEN</a>,
+<a name="l00765"></a><a class="code" href="namespaceRTC.html#a3cab55785dde75414f8a8ae8492eee65adb897716f710f877fc469a65243e0c75">00765</a>     <a class="code" href="namespaceRTC.html#a3cab55785dde75414f8a8ae8492eee65adb897716f710f877fc469a65243e0c75">OTHER</a>
+<a name="l00766"></a>00766   };
+<a name="l00767"></a>00767   
+<a name="l00834"></a><a class="code" href="interfaceRTC_1_1ExecutionContext.html">00834</a>   interface ExecutionContext
+<a name="l00835"></a>00835   {
+<a name="l00836"></a>00836     
+<a name="l00855"></a>00855     <span class="keywordtype">boolean</span> is_running();
+<a name="l00856"></a>00856     
+<a name="l00889"></a>00889     <a class="code" href="namespaceRTC.html#a0475158fee75648eda4ea6e56584dc4e" title="ReturnCode_t.">ReturnCode_t</a> start();
+<a name="l00890"></a>00890     
+<a name="l00918"></a>00918     <a class="code" href="namespaceRTC.html#a0475158fee75648eda4ea6e56584dc4e" title="ReturnCode_t.">ReturnCode_t</a> stop();
+<a name="l00919"></a>00919     
+<a name="l00947"></a>00947     <span class="keywordtype">double</span> get_rate();
+<a name="l00948"></a>00948     
+<a name="l00982"></a>00982     <a class="code" href="namespaceRTC.html#a0475158fee75648eda4ea6e56584dc4e" title="ReturnCode_t.">ReturnCode_t</a> set_rate(in <span class="keywordtype">double</span> rate);
+<a name="l00983"></a>00983     
+<a name="l01015"></a>01015     <a class="code" href="namespaceRTC.html#a0475158fee75648eda4ea6e56584dc4e" title="ReturnCode_t.">ReturnCode_t</a> add_component(in <a class="code" href="interfaceRTC_1_1LightweightRTObject.html">LightweightRTObject</a> comp);
+<a name="l01016"></a>01016     
+<a name="l01046"></a>01046     <a class="code" href="namespaceRTC.html#a0475158fee75648eda4ea6e56584dc4e" title="ReturnCode_t.">ReturnCode_t</a> remove_component(in <a class="code" href="interfaceRTC_1_1LightweightRTObject.html">LightweightRTObject</a> comp);
+<a name="l01047"></a>01047     
+<a name="l01087"></a>01087     <a class="code" href="namespaceRTC.html#a0475158fee75648eda4ea6e56584dc4e" title="ReturnCode_t.">ReturnCode_t</a> activate_component(in <a class="code" href="interfaceRTC_1_1LightweightRTObject.html">LightweightRTObject</a> comp);
+<a name="l01088"></a>01088     
+<a name="l01122"></a>01122     <a class="code" href="namespaceRTC.html#a0475158fee75648eda4ea6e56584dc4e" title="ReturnCode_t.">ReturnCode_t</a> deactivate_component(in <a class="code" href="interfaceRTC_1_1LightweightRTObject.html">LightweightRTObject</a> comp);
+<a name="l01123"></a>01123     
+<a name="l01158"></a>01158     <a class="code" href="namespaceRTC.html#a0475158fee75648eda4ea6e56584dc4e" title="ReturnCode_t.">ReturnCode_t</a> reset_component(in <a class="code" href="interfaceRTC_1_1LightweightRTObject.html">LightweightRTObject</a> comp);
+<a name="l01159"></a>01159     
+<a name="l01182"></a>01182     <a class="code" href="namespaceRTC.html#a9db8210601efb0122880f32020ac39ee">LifeCycleState</a> get_component_state(in <a class="code" href="interfaceRTC_1_1LightweightRTObject.html">LightweightRTObject</a> comp);
+<a name="l01183"></a>01183     
+<a name="l01197"></a>01197     <a class="code" href="namespaceRTC.html#a3cab55785dde75414f8a8ae8492eee65">ExecutionKind</a> get_kind();
+<a name="l01198"></a>01198   };
+<a name="l01199"></a>01199   
+<a name="l01200"></a>01200   
+<a name="l01216"></a><a class="code" href="interfaceRTC_1_1DataFlowComponentAction.html">01216</a>   interface <a class="code" href="interfaceRTC_1_1DataFlowComponentAction.html">DataFlowComponentAction</a>
+<a name="l01217"></a>01217   {
+<a name="l01243"></a>01243     <a class="code" href="namespaceRTC.html#a0475158fee75648eda4ea6e56584dc4e" title="ReturnCode_t.">ReturnCode_t</a> on_execute(in ExecutionContextHandle_t exec_handle);
+<a name="l01270"></a>01270     <a class="code" href="namespaceRTC.html#a0475158fee75648eda4ea6e56584dc4e" title="ReturnCode_t.">ReturnCode_t</a> on_state_update(in ExecutionContextHandle_t exec_handle);
+<a name="l01289"></a>01289     <a class="code" href="namespaceRTC.html#a0475158fee75648eda4ea6e56584dc4e" title="ReturnCode_t.">ReturnCode_t</a> on_rate_changed(in ExecutionContextHandle_t exec_handle);
+<a name="l01290"></a>01290   };
+<a name="l01291"></a>01291   
+<a name="l01317"></a><a class="code" href="interfaceRTC_1_1DataFlowComponent.html">01317</a>   interface <a class="code" href="interfaceRTC_1_1DataFlowComponent.html">DataFlowComponent</a>
+<a name="l01318"></a>01318     : <a class="code" href="interfaceRTC_1_1LightweightRTObject.html">LightweightRTObject</a>, <a class="code" href="interfaceRTC_1_1DataFlowComponentAction.html">DataFlowComponentAction</a>
+<a name="l01319"></a>01319   {
+<a name="l01320"></a>01320   };
+<a name="l01321"></a>01321   
+<a name="l01343"></a><a class="code" href="interfaceRTC_1_1Fsm.html">01343</a>   interface <a class="code" href="interfaceRTC_1_1Fsm.html">Fsm</a>
+<a name="l01344"></a>01344     : <a class="code" href="interfaceRTC_1_1LightweightRTObject.html">LightweightRTObject</a>
+<a name="l01345"></a>01345   {
+<a name="l01346"></a>01346   };
+<a name="l01347"></a>01347   
+<a name="l01363"></a><a class="code" href="interfaceRTC_1_1FsmParticipantAction.html">01363</a>   interface <a class="code" href="interfaceRTC_1_1FsmParticipantAction.html">FsmParticipantAction</a>
+<a name="l01364"></a>01364   {
+<a name="l01365"></a>01365     
+<a name="l01384"></a>01384     <a class="code" href="namespaceRTC.html#a0475158fee75648eda4ea6e56584dc4e" title="ReturnCode_t.">ReturnCode_t</a> on_action(in ExecutionContextHandle_t exec_handle);
+<a name="l01385"></a>01385   };
+<a name="l01386"></a>01386   
+<a name="l01394"></a><a class="code" href="interfaceRTC_1_1FsmParticipant.html">01394</a>   interface <a class="code" href="interfaceRTC_1_1FsmParticipant.html">FsmParticipant</a>
+<a name="l01395"></a>01395     : <a class="code" href="interfaceRTC_1_1LightweightRTObject.html">LightweightRTObject</a>, <a class="code" href="interfaceRTC_1_1FsmParticipantAction.html">FsmParticipantAction</a>
+<a name="l01396"></a>01396   {
+<a name="l01397"></a>01397   };
+<a name="l01398"></a>01398   
+<a name="l01412"></a><a class="code" href="interfaceRTC_1_1Mode.html">01412</a>   interface <a class="code" href="interfaceRTC_1_1Mode.html">Mode</a>
+<a name="l01413"></a>01413   {
+<a name="l01414"></a>01414   };
+<a name="l01415"></a>01415   
+<a name="l01458"></a><a class="code" href="interfaceRTC_1_1ModeCapable.html">01458</a>   interface <a class="code" href="interfaceRTC_1_1ModeCapable.html">ModeCapable</a>
+<a name="l01459"></a>01459   {
+<a name="l01477"></a>01477     <a class="code" href="interfaceRTC_1_1Mode.html">Mode</a> get_default_mode();
+<a name="l01496"></a>01496     <a class="code" href="interfaceRTC_1_1Mode.html">Mode</a> get_current_mode();
+<a name="l01514"></a>01514     <a class="code" href="interfaceRTC_1_1Mode.html">Mode</a> get_current_mode_in_context(in ExecutionContext exec_context);
+<a name="l01529"></a>01529     <a class="code" href="interfaceRTC_1_1Mode.html">Mode</a> get_pending_mode();
+<a name="l01551"></a>01551     <a class="code" href="interfaceRTC_1_1Mode.html">Mode</a> get_pending_mode_in_context(in ExecutionContext exec_context);
+<a name="l01578"></a>01578     <a class="code" href="namespaceRTC.html#a0475158fee75648eda4ea6e56584dc4e" title="ReturnCode_t.">ReturnCode_t</a> set_mode(in <a class="code" href="interfaceRTC_1_1Mode.html">Mode</a> new_mode,
+<a name="l01579"></a>01579                           in <span class="keywordtype">boolean</span> immediate);
+<a name="l01580"></a>01580   };
+<a name="l01581"></a>01581   
+<a name="l01593"></a><a class="code" href="interfaceRTC_1_1MultiModeComponentAction.html">01593</a>   interface <a class="code" href="interfaceRTC_1_1MultiModeComponentAction.html">MultiModeComponentAction</a>
+<a name="l01594"></a>01594   {
+<a name="l01617"></a>01617     <a class="code" href="namespaceRTC.html#a0475158fee75648eda4ea6e56584dc4e" title="ReturnCode_t.">ReturnCode_t</a> on_mode_changed(in ExecutionContextHandle_t exec_handle);
+<a name="l01618"></a>01618   };
+<a name="l01619"></a>01619   
+<a name="l01627"></a><a class="code" href="interfaceRTC_1_1MultiModeObject.html">01627</a>   interface <a class="code" href="interfaceRTC_1_1MultiModeObject.html">MultiModeObject</a>
+<a name="l01628"></a>01628     : <a class="code" href="interfaceRTC_1_1LightweightRTObject.html">LightweightRTObject</a>, <a class="code" href="interfaceRTC_1_1ModeCapable.html">ModeCapable</a>, <a class="code" href="interfaceRTC_1_1MultiModeComponentAction.html">MultiModeComponentAction</a>
+<a name="l01629"></a>01629   {
+<a name="l01630"></a>01630   };
+<a name="l01631"></a>01631   
+<a name="l01632"></a>01632   interface <a class="code" href="interfaceRTC_1_1RTObject.html">RTObject</a>;
+<a name="l01633"></a>01633   
+<a name="l01645"></a><a class="code" href="namespaceRTC.html#a01b5972e2cb7bb0d2ca429d32555138b">01645</a>   <span class="keyword">enum</span> <a class="code" href="namespaceRTC.html#a01b5972e2cb7bb0d2ca429d32555138b">PortInterfacePolarity</a>
+<a name="l01646"></a>01646   {
+<a name="l01660"></a><a class="code" href="namespaceRTC.html#a01b5972e2cb7bb0d2ca429d32555138bad2db4bbdde5e1ff78c6aaf97fbe0032e">01660</a>     <a class="code" href="namespaceRTC.html#a01b5972e2cb7bb0d2ca429d32555138bad2db4bbdde5e1ff78c6aaf97fbe0032e">PROVIDED</a>,
+<a name="l01673"></a><a class="code" href="namespaceRTC.html#a01b5972e2cb7bb0d2ca429d32555138ba9d9e65168f566d2918739b1bde071746">01673</a>     <a class="code" href="namespaceRTC.html#a01b5972e2cb7bb0d2ca429d32555138ba9d9e65168f566d2918739b1bde071746">REQUIRED</a>
+<a name="l01674"></a>01674   };
+<a name="l01675"></a>01675   
+<a name="l01691"></a><a class="code" href="structRTC_1_1PortInterfaceProfile.html">01691</a>   <span class="keyword">struct </span><a class="code" href="structRTC_1_1PortInterfaceProfile.html">PortInterfaceProfile</a>
+<a name="l01692"></a>01692   {
+<a name="l01705"></a><a class="code" href="structRTC_1_1PortInterfaceProfile.html#a725784d1451e8f16269c57b571aa0ed6">01705</a>     <span class="keywordtype">string</span> instance_name;
+<a name="l01718"></a><a class="code" href="structRTC_1_1PortInterfaceProfile.html#ad5ffa44cfad5a86628ddeea5a294d801">01718</a>     <span class="keywordtype">string</span> type_name;
+<a name="l01732"></a><a class="code" href="structRTC_1_1PortInterfaceProfile.html#a65e7b1f54dc9334341257609cc70a9b6">01732</a>     <a class="code" href="namespaceRTC.html#a01b5972e2cb7bb0d2ca429d32555138b">PortInterfacePolarity</a> polarity;
+<a name="l01733"></a>01733   };
+<a name="l01734"></a>01734   
+<a name="l01735"></a><a class="code" href="namespaceRTC.html#a0761efda7ea5aa8b31c9be5a0a899fab">01735</a>   <span class="keyword">typedef</span> sequence&lt;PortInterfaceProfile&gt; <a class="code" href="namespaceRTC.html#a0761efda7ea5aa8b31c9be5a0a899fab">PortInterfaceProfileList</a>;
+<a name="l01736"></a>01736   
+<a name="l01737"></a><a class="code" href="namespaceRTC.html#a8ff318652f3c7f48f3b3a2db227ae9eb">01737</a>   interface <a class="code" href="interfaceRTC_1_1PortService.html">PortService</a>;
+<a name="l01738"></a>01738   <span class="keyword">typedef</span> sequence&lt;PortService&gt; <a class="code" href="namespaceRTC.html#a8ff318652f3c7f48f3b3a2db227ae9eb">PortServiceList</a>;
+<a name="l01739"></a><a class="code" href="namespaceRTC.html#ac48d40811e84d1e2d5961833c5026d7d">01739</a>   <span class="keyword">typedef</span> sequence&lt;RTObject&gt; <a class="code" href="namespaceRTC.html#ac48d40811e84d1e2d5961833c5026d7d">RTCList</a>;
+<a name="l01740"></a>01740   
+<a name="l01754"></a><a class="code" href="structRTC_1_1ConnectorProfile.html">01754</a>   <span class="keyword">struct </span><a class="code" href="structRTC_1_1ConnectorProfile.html">ConnectorProfile</a>
+<a name="l01755"></a>01755   {
+<a name="l01768"></a><a class="code" href="structRTC_1_1ConnectorProfile.html#a7388e47fe2c24d93b0f583cb13a18b52">01768</a>     <span class="keywordtype">string</span> name;
+<a name="l01783"></a><a class="code" href="structRTC_1_1ConnectorProfile.html#a35ab0f337d42a13f145884b8d1fb0ceb">01783</a>     UniqueIdentifier connector_id;
+<a name="l01797"></a><a class="code" href="structRTC_1_1ConnectorProfile.html#a84117d3a0082f25b2846a35c23cf54ac">01797</a>     PortServiceList ports;
+<a name="l01816"></a><a class="code" href="structRTC_1_1ConnectorProfile.html#a7968dd3b23e93c8c5af7b2762bbd4e80">01816</a>     NVList properties;
+<a name="l01817"></a>01817   };
+<a name="l01818"></a>01818   
+<a name="l01819"></a><a class="code" href="namespaceRTC.html#a9ebb08b59be20c718b209abc3b0f6d04">01819</a>   <span class="keyword">typedef</span> sequence&lt;ConnectorProfile&gt; <a class="code" href="namespaceRTC.html#a9ebb08b59be20c718b209abc3b0f6d04">ConnectorProfileList</a>;
+<a name="l01820"></a>01820   
+<a name="l01836"></a><a class="code" href="structRTC_1_1PortProfile.html">01836</a>   <span class="keyword">struct </span><a class="code" href="structRTC_1_1PortProfile.html">PortProfile</a>
+<a name="l01837"></a>01837   {
+<a name="l01856"></a><a class="code" href="structRTC_1_1PortProfile.html#aad548e10074a048a2d37282d75373d83">01856</a>     <span class="keywordtype">string</span> name;
+<a name="l01870"></a><a class="code" href="structRTC_1_1PortProfile.html#ab9cda86e55b788ed3dc7d793d9849dab">01870</a>     PortInterfaceProfileList interfaces;
+<a name="l01883"></a><a class="code" href="structRTC_1_1PortProfile.html#aa0ed1c408a064f19080bc0a21a96bc43">01883</a>     PortService port_ref;
+<a name="l01897"></a><a class="code" href="structRTC_1_1PortProfile.html#a2222e576d0995c9a84663fb485f24aff">01897</a>     ConnectorProfileList connector_profiles;
+<a name="l01910"></a><a class="code" href="structRTC_1_1PortProfile.html#a91b5c831f6c0dff96d0aa69d7cd84392">01910</a>     RTObject owner;
+<a name="l01929"></a><a class="code" href="structRTC_1_1PortProfile.html#aa9b72d4c51a62eab04ac2c701e39eaeb">01929</a>     NVList properties;
+<a name="l01930"></a>01930   };
+<a name="l01931"></a>01931   
+<a name="l01932"></a><a class="code" href="namespaceRTC.html#a310ff24a8ad21d8e20deca6265757849">01932</a>   <span class="keyword">typedef</span> sequence&lt;PortProfile&gt; <a class="code" href="namespaceRTC.html#a310ff24a8ad21d8e20deca6265757849">PortProfileList</a>;
+<a name="l01933"></a>01933   
+<a name="l01941"></a><a class="code" href="structRTC_1_1ExecutionContextProfile.html">01941</a>   <span class="keyword">struct </span><a class="code" href="structRTC_1_1ExecutionContextProfile.html">ExecutionContextProfile</a>
+<a name="l01942"></a>01942   {
+<a name="l01955"></a><a class="code" href="structRTC_1_1ExecutionContextProfile.html#af2b553b126a5e1a2513f4027a106d8fb">01955</a>     <a class="code" href="namespaceRTC.html#a3cab55785dde75414f8a8ae8492eee65">ExecutionKind</a> kind;
+<a name="l01975"></a><a class="code" href="structRTC_1_1ExecutionContextProfile.html#af6009ee3292a68761c00ed02c93c5c8c">01975</a>     <span class="keywordtype">double</span> rate;
+<a name="l01988"></a><a class="code" href="structRTC_1_1ExecutionContextProfile.html#a2a15098a9cb4f5986f620ad716c40176">01988</a>     RTObject owner;
+<a name="l02001"></a><a class="code" href="structRTC_1_1ExecutionContextProfile.html#a072fa9a4e6e23e252b7ee1ea2a84226a">02001</a>     RTCList participants;
+<a name="l02021"></a><a class="code" href="structRTC_1_1ExecutionContextProfile.html#aeb613f6da4b2289ac3a3e89ef973f19b">02021</a>     NVList properties;
+<a name="l02022"></a>02022   };
+<a name="l02023"></a>02023   
+<a name="l02024"></a>02024   <span class="keyword">typedef</span> sequence&lt;ExecutionContextProfile&gt;
+<a name="l02025"></a><a class="code" href="namespaceRTC.html#acacc4f1e423d3cd1e36695f4747a6ad5">02025</a>   <a class="code" href="namespaceRTC.html#acacc4f1e423d3cd1e36695f4747a6ad5">ExecutionContextProfileList</a>;
+<a name="l02026"></a>02026   
+<a name="l02040"></a><a class="code" href="interfaceRTC_1_1FsmObject.html">02040</a>   interface <a class="code" href="interfaceRTC_1_1FsmObject.html">FsmObject</a>
+<a name="l02041"></a>02041   {
+<a name="l02076"></a>02076     <a class="code" href="namespaceRTC.html#a0475158fee75648eda4ea6e56584dc4e" title="ReturnCode_t.">ReturnCode_t</a> send_stimulus(in <span class="keywordtype">string</span> message,
+<a name="l02077"></a>02077                                in ExecutionContextHandle_t exec_handle);
+<a name="l02078"></a>02078   };
+<a name="l02079"></a>02079   
+<a name="l02099"></a><a class="code" href="structRTC_1_1FsmBehaviorProfile.html">02099</a>   <span class="keyword">struct </span><a class="code" href="structRTC_1_1FsmBehaviorProfile.html">FsmBehaviorProfile</a>
+<a name="l02100"></a>02100   {
+<a name="l02115"></a><a class="code" href="structRTC_1_1FsmBehaviorProfile.html#acade0f218ed2bda5766f29609b35f3b6">02115</a>     <a class="code" href="interfaceRTC_1_1FsmParticipantAction.html">FsmParticipantAction</a> action_component;
+<a name="l02128"></a><a class="code" href="structRTC_1_1FsmBehaviorProfile.html#a6b2f6efca3063fd7bbdea7a934aaec60">02128</a>     UniqueIdentifier id;
+<a name="l02129"></a>02129   };
+<a name="l02130"></a>02130   
+<a name="l02131"></a><a class="code" href="namespaceRTC.html#a11cef18a0d08fafa1954a3c31b8f307a">02131</a>   <span class="keyword">typedef</span> sequence&lt;FsmBehaviorProfile&gt; <a class="code" href="namespaceRTC.html#a11cef18a0d08fafa1954a3c31b8f307a">FsmBehaviorProfileList</a>;
+<a name="l02146"></a><a class="code" href="structRTC_1_1FsmProfile.html">02146</a>   <span class="keyword">struct </span><a class="code" href="structRTC_1_1FsmProfile.html">FsmProfile</a>
+<a name="l02147"></a>02147   {
+<a name="l02161"></a><a class="code" href="structRTC_1_1FsmProfile.html#a3f1aa3d58fcd0beb4ed3ac833487856d">02161</a>     FsmBehaviorProfileList behavior_profiles;
+<a name="l02162"></a>02162   };
+<a name="l02163"></a>02163   
+<a name="l02177"></a><a class="code" href="interfaceRTC_1_1FsmService.html">02177</a>   interface <a class="code" href="interfaceRTC_1_1FsmService.html">FsmService</a>
+<a name="l02178"></a>02178     : <a class="code" href="interfaceSDOPackage_1_1SDOService.html">SDOPackage::SDOService</a>
+<a name="l02179"></a>02179   {
+<a name="l02198"></a>02198     <a class="code" href="structRTC_1_1FsmProfile.html">FsmProfile</a> get_fsm_profile();
+<a name="l02212"></a>02212     <a class="code" href="namespaceRTC.html#a0475158fee75648eda4ea6e56584dc4e" title="ReturnCode_t.">ReturnCode_t</a> set_fsm_profile(in <a class="code" href="structRTC_1_1FsmProfile.html">FsmProfile</a> fsm_profile);
+<a name="l02213"></a>02213   };
+<a name="l02214"></a>02214   
+<a name="l02228"></a><a class="code" href="structRTC_1_1ComponentProfile.html">02228</a>   <span class="keyword">struct </span><a class="code" href="structRTC_1_1ComponentProfile.html">ComponentProfile</a>
+<a name="l02229"></a>02229   {
+<a name="l02247"></a><a class="code" href="structRTC_1_1ComponentProfile.html#a52fa51e07ac15e9d35b13ddb227fe991">02247</a>     <span class="keywordtype">string</span> instance_name;
+<a name="l02265"></a><a class="code" href="structRTC_1_1ComponentProfile.html#a1b44c935bf684d94ecd7866074025213">02265</a>     <span class="keywordtype">string</span> type_name;
+<a name="l02279"></a><a class="code" href="structRTC_1_1ComponentProfile.html#a874f3699d88630b493e81409071fc119">02279</a>     <span class="keywordtype">string</span> description;
+<a name="l02298"></a><a class="code" href="structRTC_1_1ComponentProfile.html#a3d9684f83c019123418bb644ae23372f">02298</a>     <span class="keywordtype">string</span> version;
+<a name="l02312"></a><a class="code" href="structRTC_1_1ComponentProfile.html#a681e9805c9ebbe5b380991aa50841b0f">02312</a>     <span class="keywordtype">string</span> vendor;
+<a name="l02327"></a><a class="code" href="structRTC_1_1ComponentProfile.html#ac79fc17eb8db9fd42ed8e5f84f9171be">02327</a>     <span class="keywordtype">string</span> category;
+<a name="l02347"></a><a class="code" href="structRTC_1_1ComponentProfile.html#ade5f8ab4b6048f3e924f404e9937404c">02347</a>     PortProfileList port_profiles;
+<a name="l02362"></a><a class="code" href="structRTC_1_1ComponentProfile.html#aad7ac4df3d915687a69409be951d1907">02362</a>     RTObject parent;
+<a name="l02381"></a><a class="code" href="structRTC_1_1ComponentProfile.html#a5403556c149d6540bd168ae33451d7d1">02381</a>     NVList properties;
+<a name="l02382"></a>02382   };
+<a name="l02383"></a>02383   
+<a name="l02384"></a><a class="code" href="namespaceRTC.html#a25889b6c869bf7ac8b8f988f86ef0258">02384</a>   <span class="keyword">typedef</span> sequence&lt;ComponentProfile&gt; <a class="code" href="namespaceRTC.html#a25889b6c869bf7ac8b8f988f86ef0258">ComponentProfileList</a>;
+<a name="l02385"></a>02385   
+<a name="l02413"></a><a class="code" href="interfaceRTC_1_1PortService.html">02413</a>   interface PortService
+<a name="l02414"></a>02414     : <a class="code" href="interfaceSDOPackage_1_1SDOService.html">SDOPackage::SDOService</a>
+<a name="l02415"></a>02415   {
+<a name="l02428"></a>02428     <a class="code" href="structRTC_1_1PortProfile.html">PortProfile</a> get_port_profile();
+<a name="l02442"></a>02442     ConnectorProfileList get_connector_profiles();
+<a name="l02456"></a>02456     <a class="code" href="structRTC_1_1ConnectorProfile.html">ConnectorProfile</a> get_connector_profile(in UniqueIdentifier connector_id);
+<a name="l02479"></a>02479     <a class="code" href="namespaceRTC.html#a0475158fee75648eda4ea6e56584dc4e" title="ReturnCode_t.">ReturnCode_t</a> connect(inout <a class="code" href="structRTC_1_1ConnectorProfile.html">ConnectorProfile</a> connector_profile);
+<a name="l02501"></a>02501     <a class="code" href="namespaceRTC.html#a0475158fee75648eda4ea6e56584dc4e" title="ReturnCode_t.">ReturnCode_t</a> disconnect(in UniqueIdentifier connector_id);
+<a name="l02515"></a>02515     <a class="code" href="namespaceRTC.html#a0475158fee75648eda4ea6e56584dc4e" title="ReturnCode_t.">ReturnCode_t</a> disconnect_all();
+<a name="l02540"></a>02540     <a class="code" href="namespaceRTC.html#a0475158fee75648eda4ea6e56584dc4e" title="ReturnCode_t.">ReturnCode_t</a> notify_connect(inout <a class="code" href="structRTC_1_1ConnectorProfile.html">ConnectorProfile</a> connector_profile);
+<a name="l02565"></a>02565     <a class="code" href="namespaceRTC.html#a0475158fee75648eda4ea6e56584dc4e" title="ReturnCode_t.">ReturnCode_t</a> notify_disconnect(in UniqueIdentifier connector_id);
+<a name="l02566"></a>02566   };
+<a name="l02567"></a>02567   
+<a name="l02586"></a><a class="code" href="interfaceRTC_1_1ExecutionContextService.html">02586</a>   interface <a class="code" href="interfaceRTC_1_1ExecutionContextService.html">ExecutionContextService</a>
+<a name="l02587"></a>02587     : ExecutionContext, <a class="code" href="interfaceSDOPackage_1_1SDOService.html">SDOPackage::SDOService</a>
+<a name="l02588"></a>02588   {
+<a name="l02602"></a>02602     <a class="code" href="structRTC_1_1ExecutionContextProfile.html">ExecutionContextProfile</a> get_profile();
+<a name="l02603"></a><a class="code" href="namespaceRTC.html#abe5a8d760ab7c7df8f7f3f9482fac459">02603</a>   };
+<a name="l02604"></a>02604   
+<a name="l02605"></a>02605   <span class="keyword">typedef</span> sequence&lt;ExecutionContextService&gt;
+<a name="l02606"></a>02606   <a class="code" href="namespaceRTC.html#abe5a8d760ab7c7df8f7f3f9482fac459">ExecutionContextServiceList</a>;
+<a name="l02607"></a>02607   
+<a name="l02621"></a><a class="code" href="interfaceRTC_1_1RTObject.html">02621</a>   interface RTObject
+<a name="l02622"></a>02622     : <a class="code" href="interfaceRTC_1_1LightweightRTObject.html">LightweightRTObject</a>, <a class="code" href="interfaceSDOPackage_1_1SDO.html">SDOPackage::SDO</a>
+<a name="l02623"></a>02623   {
+<a name="l02636"></a>02636     <a class="code" href="structRTC_1_1ComponentProfile.html">ComponentProfile</a> get_component_profile();
+<a name="l02649"></a>02649     PortServiceList get_ports();
+<a name="l02650"></a>02650   };
+<a name="l02651"></a>02651 };
+<a name="l02652"></a>02652 
+<a name="l02653"></a>02653 <span class="preprocessor">#endif // RTC_IDL</span>
+</pre></div></div>
+<hr class="footer"/><address style="text-align: right;"><small>OpenRTMに対してThu May 24 23:25:23 2012に生成されました。&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.6.3 </small></address>
+</body>
+</html>

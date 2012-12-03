@@ -1,0 +1,134 @@
+/* include/coil/config_coil.h.in.  Generated from configure.ac by autoheader.  */
+
+/* ACE version 5.6.1 or earlier */
+#undef ACE_5_6_1_OR_EARLIER
+
+/* COIL major version */
+#undef COIL_MAJOR_VERSION
+
+/* COIL minor version */
+#undef COIL_MINOR_VERSION
+
+/* OS is Cygwin */
+#undef COIL_OS_CYGWIN
+
+/* OS is Max OS X */
+#undef COIL_OS_DARWIN
+
+/* OS is FreeBSD */
+#undef COIL_OS_FREEBSD
+
+/* OS is HP-UX */
+#undef COIL_OS_HPUX
+
+/* OS is IRIX */
+#undef COIL_OS_IRIX
+
+/* OS is Linux */
+#undef COIL_OS_LINUX
+
+/* OS is OSF1 */
+#undef COIL_OS_OSF1
+
+/* OS is QNX */
+#undef COIL_OS_QNX
+
+/* OS is SunOS */
+#undef COIL_OS_SUNOS
+
+/* coil platform is ACE */
+#undef COIL_PLATFORM
+
+/* COIL revision numver */
+#undef COIL_REVISION_NUM
+
+/* COIL short version */
+#undef COIL_SHORT_VERSION
+
+/* COIL version */
+#undef COIL_VERSION
+
+/* Define to 1 if you have the <dlfcn.h> header file. */
+#undef HAVE_DLFCN_H
+
+/* Define to 1 if you have the <inttypes.h> header file. */
+#undef HAVE_INTTYPES_H
+
+/* Define to 1 if you have the <memory.h> header file. */
+#undef HAVE_MEMORY_H
+
+/* Define to 1 if you have the <nlist.h> header file. */
+#undef HAVE_NLIST_H
+
+/* Define to 1 if you have the <stdint.h> header file. */
+#undef HAVE_STDINT_H
+
+/* Define to 1 if you have the <stdlib.h> header file. */
+#undef HAVE_STDLIB_H
+
+/* Define to 1 if you have the <strings.h> header file. */
+#undef HAVE_STRINGS_H
+
+/* Define to 1 if you have the <string.h> header file. */
+#undef HAVE_STRING_H
+
+/* Define to 1 if you have the <sys/stat.h> header file. */
+#undef HAVE_SYS_STAT_H
+
+/* Define to 1 if you have the <sys/types.h> header file. */
+#undef HAVE_SYS_TYPES_H
+
+/* Define to 1 if you have the `uname' function. */
+#undef HAVE_UNAME
+
+/* Define to 1 if you have the <unistd.h> header file. */
+#undef HAVE_UNISTD_H
+
+/* Define to the sub-directory in which libtool stores uninstalled libraries.
+   */
+#undef LT_OBJDIR
+
+/* Name of package */
+#undef COIL_PACKAGE
+
+/* Define to the address where bug reports for this package should be sent. */
+#undef COIL_PACKAGE_BUGREPORT
+
+/* Define to the full name of this package. */
+#undef COIL_PACKAGE_NAME
+
+/* Define to the full name and version of this package. */
+#undef COIL_PACKAGE_STRING
+
+/* Define to the one symbol short name of this package. */
+#undef COIL_PACKAGE_TARNAME
+
+/* Define to the home page for this package. */
+#undef COIL_PACKAGE_URL
+
+/* Define to the version of this package. */
+#undef COIL_PACKAGE_VERSION
+
+/* RTM is compiled with gcc2 */
+#undef RTM_GCC2
+
+/* ARTLinux is enable */
+#undef RTM_OS_ARTLINUX
+
+/* RDTSC is enable */
+#undef RTM_RTDSC
+
+/* Define to 1 if you have the ANSI C header files. */
+#undef STDC_HEADERS
+
+/* Version number of package */
+
+
+/* compiled with ACE */
+#undef WITH_ACE
+
+/* Define if using the dmalloc debugging malloc package */
+#undef WITH_DMALLOC
+
+/* Multi Thread Support */
+#undef _REENTRANT

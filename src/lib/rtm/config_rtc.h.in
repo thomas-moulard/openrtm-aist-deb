@@ -1,0 +1,155 @@
+/* src/lib/rtm/config_rtc.h.in.  Generated from configure.ac by autoheader.  */
+
+/* ARTLinux is avaiable */
+#undef ARTLINUX
+
+/* Define to 1 if you have the <dlfcn.h> header file. */
+#undef HAVE_DLFCN_H
+
+/* Define to 1 if you have the <inttypes.h> header file. */
+#undef HAVE_INTTYPES_H
+
+/* Define to 1 if you have the <memory.h> header file. */
+#undef HAVE_MEMORY_H
+
+/* Define to 1 if you have the <nlist.h> header file. */
+#undef HAVE_NLIST_H
+
+/* Define to 1 if you have the <stdint.h> header file. */
+#undef HAVE_STDINT_H
+
+/* Define to 1 if you have the <stdlib.h> header file. */
+#undef HAVE_STDLIB_H
+
+/* Define to 1 if you have the <strings.h> header file. */
+#undef HAVE_STRINGS_H
+
+/* Define to 1 if you have the <string.h> header file. */
+#undef HAVE_STRING_H
+
+/* Define to 1 if you have the <sys/stat.h> header file. */
+#undef HAVE_SYS_STAT_H
+
+/* Define to 1 if you have the <sys/types.h> header file. */
+#undef HAVE_SYS_TYPES_H
+
+/* Define to 1 if you have the `uname' function. */
+#undef HAVE_UNAME
+
+/* Define to 1 if you have the <unistd.h> header file. */
+#undef HAVE_UNISTD_H
+
+/* Define to the sub-directory in which libtool stores uninstalled libraries.
+   */
+#undef LT_OBJDIR
+
+/* ORB is MICO */
+#undef ORB_IS_MICO
+
+/* ORB is omniORB */
+#undef ORB_IS_OMNIORB
+
+/* ORB is ORBacus */
+#undef ORB_IS_ORBACUS
+
+/* ORB is ORBit2 */
+#undef ORB_IS_ORBIT2
+
+/* ORB is Orbix */
+#undef ORB_IS_ORBIX
+
+/* ORB is RtORB */
+#undef ORB_IS_RTORB
+
+/* ORB is TAO */
+#undef ORB_IS_TAO
+
+/* Name of package */
+#undef RTM_PACKAGE
+
+/* Define to the address where bug reports for this package should be sent. */
+#undef RTM_PACKAGE_BUGREPORT
+
+/* Define to the full name of this package. */
+#undef RTM_PACKAGE_NAME
+
+/* Define to the full name and version of this package. */
+#undef RTM_PACKAGE_STRING
+
+/* Define to the one symbol short name of this package. */
+#undef RTM_PACKAGE_TARNAME
+
+/* Define to the home page for this package. */
+#undef RTM_PACKAGE_URL
+
+/* Define to the version of this package. */
+#undef RTM_PACKAGE_VERSION
+
+/* Python wrapper is enable */
+#undef PYTHON_WRAPPER
+
+/* CORBA C++ mapping is ver1.1 */
+#undef RTC_CORBA_CXXMAPPING11
+
+/* Socket DataPort is enable */
+#undef RTC_SOCK_DATAPORT
+
+/* RTM is compiled with gcc2 */
+#undef RTM_GCC2
+
+/* RTM major version */
+#undef RTM_MAJOR_VERSION
+
+/* RTM minor version */
+#undef RTM_MINOR_VERSION
+
+/* OS is Cygwin */
+#undef RTM_OS_CYGWIN
+
+/* OS is Max OS X */
+#undef RTM_OS_DARWIN
+
+/* OS is FreeBSD */
+#undef RTM_OS_FREEBSD
+
+/* OS is HP-UX */
+#undef RTM_OS_HPUX
+
+/* OS is IRIX */
+#undef RTM_OS_IRIX
+
+/* OS is Linux */
+#undef RTM_OS_LINUX
+
+/* OS is OSF1 */
+#undef RTM_OS_OSF1
+
+/* OS is QNX */
+#undef RTM_OS_QNX
+
+/* OS is SunOS */
+#undef RTM_OS_SUNOS
+
+/* RTM revision numver */
+#undef RTM_REVISION_NUM
+
+/* RDTSC is enable */
+#undef RTM_RTDSC
+
+/* RTM short version */
+#undef RTM_SHORT_VERSION
+
+/* RTM version */
+#undef RTM_VERSION
+
+/* Define to 1 if you have the ANSI C header files. */
+#undef STDC_HEADERS
+
+/* Version number of package */
+#undef VERSION
+
+/* Define if using the dmalloc debugging malloc package */
+#undef WITH_DMALLOC
+
+/* Multi Thread Support */
+#undef _REENTRANT

@@ -1,0 +1,511 @@
+\section{RTC::ModuleManager Class Reference}
+\label{classRTC_1_1ModuleManager}\index{RTC::ModuleManager@{RTC::ModuleManager}}
+
+
+\doxyref{ModuleManager}{p.}{classRTC_1_1ModuleManager} class.  
+
+
+
+
+{\ttfamily \#include $<$ModuleManager.h$>$}
+
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct {\bf DLLEntity}
+\begin{DoxyCompactList}\small\item\em Structure for DLL management. \item\end{DoxyCompactList}\item 
+class {\bf DllPred}
+\begin{DoxyCompactList}\small\item\em Module list that has already loaded. \item\end{DoxyCompactList}\item 
+struct {\bf Error}
+\begin{DoxyCompactList}\small\item\em Structure for exception handling when file open is failed. \item\end{DoxyCompactList}\item 
+struct {\bf FileNotFound}
+\begin{DoxyCompactList}\small\item\em Structure for exception handling when specified file cannot be found. \item\end{DoxyCompactList}\item 
+struct {\bf InvalidArguments}
+\begin{DoxyCompactList}\small\item\em Structure for exception handling when specified argument is invalid. \item\end{DoxyCompactList}\item 
+struct {\bf InvalidOperation}
+\begin{DoxyCompactList}\small\item\em Structure for exception handling when specified operation is invalid. \item\end{DoxyCompactList}\item 
+struct {\bf ModuleNotFound}
+\begin{DoxyCompactList}\small\item\em Structure for exception handling when specified module cannot be found. \item\end{DoxyCompactList}\item 
+struct {\bf NotAllowedOperation}
+\begin{DoxyCompactList}\small\item\em Structure for exception handling when specified operation cannot be allowed. \item\end{DoxyCompactList}\item 
+struct {\bf NotFound}
+\begin{DoxyCompactList}\small\item\em Structure for exception handling of unimplemented part and specified module missing. \item\end{DoxyCompactList}\item 
+struct {\bf SymbolNotFound}
+\begin{DoxyCompactList}\small\item\em Structure for exception handling when specified symbol cannot be found. \item\end{DoxyCompactList}\item 
+class {\bf UnloadPred}
+\begin{DoxyCompactList}\small\item\em Module unloading functor. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef void($\ast$ {\bf ModuleInitFunc} )({\bf Manager} $\ast$)
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf ModuleManager} ({\bf coil::Properties} \&prop)
+\begin{DoxyCompactList}\small\item\em Constructor. \item\end{DoxyCompactList}\item 
+{\bf $\sim$ModuleManager} (void)
+\begin{DoxyCompactList}\small\item\em Destructor. \item\end{DoxyCompactList}\item 
+std::string {\bf load} (const std::string \&file\_\-name)
+\begin{DoxyCompactList}\small\item\em Load the module. \item\end{DoxyCompactList}\item 
+std::string {\bf load} (const std::string \&file\_\-name, const std::string \&init\_\-func)
+\begin{DoxyCompactList}\small\item\em Load and intialize the module. \item\end{DoxyCompactList}\item 
+void {\bf unload} (const std::string \&file\_\-name)
+\begin{DoxyCompactList}\small\item\em Unload the module. \item\end{DoxyCompactList}\item 
+void {\bf unloadAll} ()
+\begin{DoxyCompactList}\small\item\em Unload all modules. \item\end{DoxyCompactList}\item 
+void $\ast$ {\bf symbol} (const std::string \&file\_\-name, const std::string \&func\_\-name)  throw (ModuleNotFound, SymbolNotFound)
+\begin{DoxyCompactList}\small\item\em Refer to the symbol of the module. \item\end{DoxyCompactList}\item 
+void {\bf setLoadpath} (const std::vector$<$ std::string $>$ \&load\_\-path)
+\begin{DoxyCompactList}\small\item\em Set the module load path. \item\end{DoxyCompactList}\item 
+std::vector$<$ std::string $>$ {\bf getLoadPath} ()
+\begin{DoxyCompactList}\small\item\em Get the module load path. \item\end{DoxyCompactList}\item 
+void {\bf addLoadpath} (const std::vector$<$ std::string $>$ \&load\_\-path)
+\begin{DoxyCompactList}\small\item\em Add the module load path. \item\end{DoxyCompactList}\item 
+std::vector$<$ {\bf coil::Properties} $>$ {\bf getLoadedModules} ()
+\begin{DoxyCompactList}\small\item\em Get the module list that has been loaded. \item\end{DoxyCompactList}\item 
+std::vector$<$ {\bf coil::Properties} $>$ {\bf getLoadableModules} ()
+\begin{DoxyCompactList}\small\item\em Get the loadable module list. \item\end{DoxyCompactList}\item 
+void {\bf allowAbsolutePath} ()
+\begin{DoxyCompactList}\small\item\em Allow absolute path when specify module path. \item\end{DoxyCompactList}\item 
+void {\bf disallowAbsolutePath} ()
+\begin{DoxyCompactList}\small\item\em Disallow absolute path when specify module path. \item\end{DoxyCompactList}\item 
+void {\bf allowModuleDownload} ()
+\begin{DoxyCompactList}\small\item\em Allow URL when specify module path. \item\end{DoxyCompactList}\item 
+void {\bf disallowModuleDownload} ()
+\begin{DoxyCompactList}\small\item\em Disallow URL when specify module path. \item\end{DoxyCompactList}\item 
+std::string {\bf findFile} (const std::string \&fname, const std::vector$<$ std::string $>$ \&load\_\-path)
+\begin{DoxyCompactList}\small\item\em Search the file from the LoadPath. \item\end{DoxyCompactList}\item 
+bool {\bf fileExist} (const std::string \&filename)
+\begin{DoxyCompactList}\small\item\em Check whether the file exists. \item\end{DoxyCompactList}\item 
+std::string {\bf getInitFuncName} (const std::string \&file\_\-path)
+\begin{DoxyCompactList}\small\item\em Create initialization function symbol. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef std::vector$<$ std::string $>$ {\bf StringVector}
+\item 
+typedef StringVector::iterator {\bf StringVectorItr}
+\item 
+typedef StringVector::const\_\-iterator {\bf StringVectorConstItr}
+\item 
+typedef std::vector$<$ {\bf DLLEntity} $>$ {\bf DllMap}
+\item 
+typedef DllMap::iterator {\bf DllMapItr}
+\item 
+typedef DllMap::const\_\-iterator {\bf DllMapConstItr}
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bf removeInvalidModules} ()
+\begin{DoxyCompactList}\small\item\em Removing incalid module profiles. \item\end{DoxyCompactList}\item 
+void {\bf getModuleList} (const std::string \&lang, {\bf coil::vstring} \&modules)
+\begin{DoxyCompactList}\small\item\em Getting loadable file list on the loadpath for given language. \item\end{DoxyCompactList}\item 
+void {\bf addNewFile} (const std::string \&fpath, {\bf coil::vstring} \&modules)
+\begin{DoxyCompactList}\small\item\em Adding file path not existing cache. \item\end{DoxyCompactList}\item 
+void {\bf getModuleProfiles} (const std::string \&lang, const {\bf coil::vstring} \&modules, vProperties \&modprops)
+\begin{DoxyCompactList}\small\item\em Getting module properties from given language and file list. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Logger} {\bf rtclog}
+\begin{DoxyCompactList}\small\item\em \doxyref{Logger}{p.}{classRTC_1_1Logger} stream. \item\end{DoxyCompactList}\item 
+{\bf coil::Properties} \& {\bf m\_\-properties}
+\begin{DoxyCompactList}\small\item\em Module \doxyref{Manager}{p.}{classRTC_1_1Manager} properties. \item\end{DoxyCompactList}\item 
+{\bf ObjectManager}$<$ const char $\ast$, {\bf DLLEntity}, {\bf DllPred} $>$ {\bf m\_\-modules}
+\begin{DoxyCompactList}\small\item\em Module list that has already loaded. \item\end{DoxyCompactList}\item 
+{\bf StringVector} {\bf m\_\-loadPath}
+\begin{DoxyCompactList}\small\item\em Module load path list. \item\end{DoxyCompactList}\item 
+{\bf StringVector} {\bf m\_\-configPath}
+\begin{DoxyCompactList}\small\item\em Configuration path list. \item\end{DoxyCompactList}\item 
+bool {\bf m\_\-downloadAllowed}
+\begin{DoxyCompactList}\small\item\em Flag of URL when specify module for the load. \item\end{DoxyCompactList}\item 
+bool {\bf m\_\-absoluteAllowed}
+\begin{DoxyCompactList}\small\item\em Flag of absolute path when specify module for the load. \item\end{DoxyCompactList}\item 
+std::string {\bf m\_\-initFuncSuffix}
+\begin{DoxyCompactList}\small\item\em Initial execution function suffix. \item\end{DoxyCompactList}\item 
+std::string {\bf m\_\-initFuncPrefix}
+\begin{DoxyCompactList}\small\item\em Initial execution function prefix. \item\end{DoxyCompactList}\item 
+vProperties {\bf m\_\-modprofs}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\doxyref{ModuleManager}{p.}{classRTC_1_1ModuleManager} class. This is a class to manage for loading and unloading modules.
+
+\begin{DoxySince}{Since}
+0.4.0 
+\end{DoxySince}
+
+
+\subsection{Member Typedef Documentation}
+\index{RTC::ModuleManager@{RTC::ModuleManager}!DllMap@{DllMap}}
+\index{DllMap@{DllMap}!RTC::ModuleManager@{RTC::ModuleManager}}
+\subsubsection[{DllMap}]{\setlength{\rightskip}{0pt plus 5cm}typedef std::vector$<${\bf DLLEntity}$>$ {\bf RTC::ModuleManager::DllMap}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC_1_1ModuleManager_a4bf6eb35c8dbcddbbe69f33a13eae2e8}
+\index{RTC::ModuleManager@{RTC::ModuleManager}!DllMapConstItr@{DllMapConstItr}}
+\index{DllMapConstItr@{DllMapConstItr}!RTC::ModuleManager@{RTC::ModuleManager}}
+\subsubsection[{DllMapConstItr}]{\setlength{\rightskip}{0pt plus 5cm}typedef DllMap::const\_\-iterator {\bf RTC::ModuleManager::DllMapConstItr}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC_1_1ModuleManager_a52c43ae4ff43e97ef6a45cce2de863b2}
+\index{RTC::ModuleManager@{RTC::ModuleManager}!DllMapItr@{DllMapItr}}
+\index{DllMapItr@{DllMapItr}!RTC::ModuleManager@{RTC::ModuleManager}}
+\subsubsection[{DllMapItr}]{\setlength{\rightskip}{0pt plus 5cm}typedef DllMap::iterator {\bf RTC::ModuleManager::DllMapItr}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC_1_1ModuleManager_a0e1ed0036b9f54938a6ee37e63bb605a}
+\index{RTC::ModuleManager@{RTC::ModuleManager}!ModuleInitFunc@{ModuleInitFunc}}
+\index{ModuleInitFunc@{ModuleInitFunc}!RTC::ModuleManager@{RTC::ModuleManager}}
+\subsubsection[{ModuleInitFunc}]{\setlength{\rightskip}{0pt plus 5cm}typedef void($\ast$ {\bf RTC::ModuleManager::ModuleInitFunc})({\bf Manager} $\ast$)}\label{classRTC_1_1ModuleManager_aa5e548456f074df07906340f50cce9e7}
+\index{RTC::ModuleManager@{RTC::ModuleManager}!StringVector@{StringVector}}
+\index{StringVector@{StringVector}!RTC::ModuleManager@{RTC::ModuleManager}}
+\subsubsection[{StringVector}]{\setlength{\rightskip}{0pt plus 5cm}typedef std::vector$<$std::string$>$ {\bf RTC::ModuleManager::StringVector}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC_1_1ModuleManager_a8c80c86dad3290da6fb4b129ac747912}
+\index{RTC::ModuleManager@{RTC::ModuleManager}!StringVectorConstItr@{StringVectorConstItr}}
+\index{StringVectorConstItr@{StringVectorConstItr}!RTC::ModuleManager@{RTC::ModuleManager}}
+\subsubsection[{StringVectorConstItr}]{\setlength{\rightskip}{0pt plus 5cm}typedef StringVector::const\_\-iterator {\bf RTC::ModuleManager::StringVectorConstItr}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC_1_1ModuleManager_a9ea1b817f70e2bf44c167189e02684ab}
+\index{RTC::ModuleManager@{RTC::ModuleManager}!StringVectorItr@{StringVectorItr}}
+\index{StringVectorItr@{StringVectorItr}!RTC::ModuleManager@{RTC::ModuleManager}}
+\subsubsection[{StringVectorItr}]{\setlength{\rightskip}{0pt plus 5cm}typedef StringVector::iterator {\bf RTC::ModuleManager::StringVectorItr}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC_1_1ModuleManager_adc3036fbdfd38ec02e653b152752ae36}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{RTC::ModuleManager@{RTC::ModuleManager}!ModuleManager@{ModuleManager}}
+\index{ModuleManager@{ModuleManager}!RTC::ModuleManager@{RTC::ModuleManager}}
+\subsubsection[{ModuleManager}]{\setlength{\rightskip}{0pt plus 5cm}RTC::ModuleManager::ModuleManager ({\bf coil::Properties} \& {\em prop})}\label{classRTC_1_1ModuleManager_a51c7217718f483676b134687b5c5c2e6}
+
+
+Constructor. 
+
+Constructor. Initialize based on information in the set Property object.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em prop}]Properties for initialization \end{DoxyParams}
+\index{RTC::ModuleManager@{RTC::ModuleManager}!$\sim$ModuleManager@{$\sim$ModuleManager}}
+\index{$\sim$ModuleManager@{$\sim$ModuleManager}!RTC::ModuleManager@{RTC::ModuleManager}}
+\subsubsection[{$\sim$ModuleManager}]{\setlength{\rightskip}{0pt plus 5cm}RTC::ModuleManager::$\sim$ModuleManager (void)}\label{classRTC_1_1ModuleManager_a8ed480b9713d43b69e4b673bdb8413a8}
+
+
+Destructor. 
+
+
+
+\subsection{Member Function Documentation}
+\index{RTC::ModuleManager@{RTC::ModuleManager}!addLoadpath@{addLoadpath}}
+\index{addLoadpath@{addLoadpath}!RTC::ModuleManager@{RTC::ModuleManager}}
+\subsubsection[{addLoadpath}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::ModuleManager::addLoadpath (const std::vector$<$ std::string $>$ \& {\em load\_\-path})}\label{classRTC_1_1ModuleManager_a0efdbf53e0becea909543df403608c70}
+
+
+Add the module load path. 
+
+Add specified path list to search path list.
+
+\begin{DoxyReturn}{Returns}
+load\_\-path List of additional module search path 
+\end{DoxyReturn}
+\index{RTC::ModuleManager@{RTC::ModuleManager}!addNewFile@{addNewFile}}
+\index{addNewFile@{addNewFile}!RTC::ModuleManager@{RTC::ModuleManager}}
+\subsubsection[{addNewFile}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::ModuleManager::addNewFile (const std::string \& {\em fpath}, \/  {\bf coil::vstring} \& {\em modules})\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC_1_1ModuleManager_a43db88053dcde41668134874ca96181e}
+
+
+Adding file path not existing cache. 
+
+\index{RTC::ModuleManager@{RTC::ModuleManager}!allowAbsolutePath@{allowAbsolutePath}}
+\index{allowAbsolutePath@{allowAbsolutePath}!RTC::ModuleManager@{RTC::ModuleManager}}
+\subsubsection[{allowAbsolutePath}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::ModuleManager::allowAbsolutePath ()\hspace{0.3cm}{\ttfamily  [inline]}}\label{classRTC_1_1ModuleManager_a521ccf8d7a994b0e775fbea9bc08fa77}
+
+
+Allow absolute path when specify module path. 
+
+Set to allow the absolute path when specify the module for the load. 
+
+References m\_\-absoluteAllowed.
+
+\index{RTC::ModuleManager@{RTC::ModuleManager}!allowModuleDownload@{allowModuleDownload}}
+\index{allowModuleDownload@{allowModuleDownload}!RTC::ModuleManager@{RTC::ModuleManager}}
+\subsubsection[{allowModuleDownload}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::ModuleManager::allowModuleDownload ()\hspace{0.3cm}{\ttfamily  [inline]}}\label{classRTC_1_1ModuleManager_aae4da48e6813c672613a6a56ab5f46fc}
+
+
+Allow URL when specify module path. 
+
+Allow URL when specify module for the load. When this setup is allowed, downloading and loading the module will be allowed. 
+
+References m\_\-downloadAllowed.
+
+\index{RTC::ModuleManager@{RTC::ModuleManager}!disallowAbsolutePath@{disallowAbsolutePath}}
+\index{disallowAbsolutePath@{disallowAbsolutePath}!RTC::ModuleManager@{RTC::ModuleManager}}
+\subsubsection[{disallowAbsolutePath}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::ModuleManager::disallowAbsolutePath ()\hspace{0.3cm}{\ttfamily  [inline]}}\label{classRTC_1_1ModuleManager_a16a6945a5a535660c03fad17895572b2}
+
+
+Disallow absolute path when specify module path. 
+
+Set to disallow the absolute path when specify the module for the load. 
+
+References m\_\-absoluteAllowed.
+
+\index{RTC::ModuleManager@{RTC::ModuleManager}!disallowModuleDownload@{disallowModuleDownload}}
+\index{disallowModuleDownload@{disallowModuleDownload}!RTC::ModuleManager@{RTC::ModuleManager}}
+\subsubsection[{disallowModuleDownload}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::ModuleManager::disallowModuleDownload ()\hspace{0.3cm}{\ttfamily  [inline]}}\label{classRTC_1_1ModuleManager_a7bd86d3dfa7dbe423e6ade7eeb9abef3}
+
+
+Disallow URL when specify module path. 
+
+Disallow URL when specify module for the load. 
+
+References m\_\-downloadAllowed.
+
+\index{RTC::ModuleManager@{RTC::ModuleManager}!fileExist@{fileExist}}
+\index{fileExist@{fileExist}!RTC::ModuleManager@{RTC::ModuleManager}}
+\subsubsection[{fileExist}]{\setlength{\rightskip}{0pt plus 5cm}bool RTC::ModuleManager::fileExist (const std::string \& {\em filename})}\label{classRTC_1_1ModuleManager_ae03069ed62ebf893761407fc4055c2a6}
+
+
+Check whether the file exists. 
+
+Check whether the specified file exists.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em filename}]Name of file existence for checking\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+File existence result(File existence:true, Else:false) 
+\end{DoxyReturn}
+\index{RTC::ModuleManager@{RTC::ModuleManager}!findFile@{findFile}}
+\index{findFile@{findFile}!RTC::ModuleManager@{RTC::ModuleManager}}
+\subsubsection[{findFile}]{\setlength{\rightskip}{0pt plus 5cm}std::string RTC::ModuleManager::findFile (const std::string \& {\em fname}, \/  const std::vector$<$ std::string $>$ \& {\em load\_\-path})}\label{classRTC_1_1ModuleManager_a8b377a2f2cb867d42bd24398c3b56f46}
+
+
+Search the file from the LoadPath. 
+
+Check whether the specified file exists in the specified path.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em fname}]Target file name of the search \item[{\em load\_\-path}]Path list for the search\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+File name that was found 
+\end{DoxyReturn}
+\index{RTC::ModuleManager@{RTC::ModuleManager}!getInitFuncName@{getInitFuncName}}
+\index{getInitFuncName@{getInitFuncName}!RTC::ModuleManager@{RTC::ModuleManager}}
+\subsubsection[{getInitFuncName}]{\setlength{\rightskip}{0pt plus 5cm}std::string RTC::ModuleManager::getInitFuncName (const std::string \& {\em file\_\-path})}\label{classRTC_1_1ModuleManager_a9d4c81411dcefb094b917b87fdfbfa84}
+
+
+Create initialization function symbol. 
+
+Assemble names of the initialization functions.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em file\_\-path}]Name of module for initialization\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Assembly result of initialization function name 
+\end{DoxyReturn}
+\index{RTC::ModuleManager@{RTC::ModuleManager}!getLoadableModules@{getLoadableModules}}
+\index{getLoadableModules@{getLoadableModules}!RTC::ModuleManager@{RTC::ModuleManager}}
+\subsubsection[{getLoadableModules}]{\setlength{\rightskip}{0pt plus 5cm}std::vector$<${\bf coil::Properties}$>$ RTC::ModuleManager::getLoadableModules ()}\label{classRTC_1_1ModuleManager_aa7c345afaff2313e061d6d3000766985}
+
+
+Get the loadable module list. 
+
+Get the loadable module list (not implemented).
+
+\begin{DoxyReturn}{Returns}
+Loadable module list 
+\end{DoxyReturn}
+\index{RTC::ModuleManager@{RTC::ModuleManager}!getLoadedModules@{getLoadedModules}}
+\index{getLoadedModules@{getLoadedModules}!RTC::ModuleManager@{RTC::ModuleManager}}
+\subsubsection[{getLoadedModules}]{\setlength{\rightskip}{0pt plus 5cm}std::vector$<${\bf coil::Properties}$>$ RTC::ModuleManager::getLoadedModules ()}\label{classRTC_1_1ModuleManager_af10aa20eaefa88ed92313e80b5ba101d}
+
+
+Get the module list that has been loaded. 
+
+Get the module list that has been loaded.
+
+\begin{DoxyReturn}{Returns}
+List of module that has been loaded 
+\end{DoxyReturn}
+\index{RTC::ModuleManager@{RTC::ModuleManager}!getLoadPath@{getLoadPath}}
+\index{getLoadPath@{getLoadPath}!RTC::ModuleManager@{RTC::ModuleManager}}
+\subsubsection[{getLoadPath}]{\setlength{\rightskip}{0pt plus 5cm}std::vector$<$std::string$>$ RTC::ModuleManager::getLoadPath ()\hspace{0.3cm}{\ttfamily  [inline]}}\label{classRTC_1_1ModuleManager_a0dddd2c6436b6c9014f2c39c0a431a9a}
+
+
+Get the module load path. 
+
+Get the search path of the set module.
+
+\begin{DoxyReturn}{Returns}
+load\_\-path List of module search path 
+\end{DoxyReturn}
+
+
+References m\_\-loadPath.
+
+\index{RTC::ModuleManager@{RTC::ModuleManager}!getModuleList@{getModuleList}}
+\index{getModuleList@{getModuleList}!RTC::ModuleManager@{RTC::ModuleManager}}
+\subsubsection[{getModuleList}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::ModuleManager::getModuleList (const std::string \& {\em lang}, \/  {\bf coil::vstring} \& {\em modules})\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC_1_1ModuleManager_ad07e7617a2b5e36e8cb23359876a3e0f}
+
+
+Getting loadable file list on the loadpath for given language. 
+
+\index{RTC::ModuleManager@{RTC::ModuleManager}!getModuleProfiles@{getModuleProfiles}}
+\index{getModuleProfiles@{getModuleProfiles}!RTC::ModuleManager@{RTC::ModuleManager}}
+\subsubsection[{getModuleProfiles}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::ModuleManager::getModuleProfiles (const std::string \& {\em lang}, \/  const {\bf coil::vstring} \& {\em modules}, \/  vProperties \& {\em modprops})\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC_1_1ModuleManager_a6725527644fe798d6078eb005ef337c3}
+
+
+Getting module properties from given language and file list. 
+
+\index{RTC::ModuleManager@{RTC::ModuleManager}!load@{load}}
+\index{load@{load}!RTC::ModuleManager@{RTC::ModuleManager}}
+\subsubsection[{load}]{\setlength{\rightskip}{0pt plus 5cm}std::string RTC::ModuleManager::load (const std::string \& {\em file\_\-name}, \/  const std::string \& {\em init\_\-func})}\label{classRTC_1_1ModuleManager_a5ebaefa05371102e4b71d036d6687393}
+
+
+Load and intialize the module. 
+
+Load the specified file as DLL or a shared library, and execute operation for specified initialization.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em file\_\-name}]The target module name for the loading \item[{\em init\_\-func}]Operation for initialization\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Name of module for the specified load 
+\end{DoxyReturn}
+\index{RTC::ModuleManager@{RTC::ModuleManager}!load@{load}}
+\index{load@{load}!RTC::ModuleManager@{RTC::ModuleManager}}
+\subsubsection[{load}]{\setlength{\rightskip}{0pt plus 5cm}std::string RTC::ModuleManager::load (const std::string \& {\em file\_\-name})}\label{classRTC_1_1ModuleManager_a0f2d840f92530ff78896bcf254696cc2}
+
+
+Load the module. 
+
+Load file\_\-name as DLL or a shared liblary. The file\_\-name is specified by the relative path to default load path (manager.modules.load\_\-path).
+
+If Property manager.modules.abs\_\-path\_\-allowed is yes, the load module can be specified by the absolute path.\par
+ If Property manager.modules.download\_\-allowed is yes, the load module can be specified with URL.
+
+The file\_\-name can be specified by the absolute path. If manager.modules.abs\_\-path\_\-allowed is no, module of file\_\-name will be searched from the default module load path and loaded.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em file\_\-name}]The target module name for the loading\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Name of module for the specified load 
+\end{DoxyReturn}
+\index{RTC::ModuleManager@{RTC::ModuleManager}!removeInvalidModules@{removeInvalidModules}}
+\index{removeInvalidModules@{removeInvalidModules}!RTC::ModuleManager@{RTC::ModuleManager}}
+\subsubsection[{removeInvalidModules}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::ModuleManager::removeInvalidModules ()\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC_1_1ModuleManager_a99bb2f2703d2682555ff7daf3e7143cf}
+
+
+Removing incalid module profiles. 
+
+\index{RTC::ModuleManager@{RTC::ModuleManager}!setLoadpath@{setLoadpath}}
+\index{setLoadpath@{setLoadpath}!RTC::ModuleManager@{RTC::ModuleManager}}
+\subsubsection[{setLoadpath}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::ModuleManager::setLoadpath (const std::vector$<$ std::string $>$ \& {\em load\_\-path})}\label{classRTC_1_1ModuleManager_ab6871cbf2121c9d026a5fa5ab2ec2ed9}
+
+
+Set the module load path. 
+
+Specify searching path to find the target module when loading module.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em load\_\-path}]List of module search path \end{DoxyParams}
+\index{RTC::ModuleManager@{RTC::ModuleManager}!symbol@{symbol}}
+\index{symbol@{symbol}!RTC::ModuleManager@{RTC::ModuleManager}}
+\subsubsection[{symbol}]{\setlength{\rightskip}{0pt plus 5cm}void$\ast$ RTC::ModuleManager::symbol (const std::string \& {\em file\_\-name}, \/  const std::string \& {\em func\_\-name})  throw ({\bf ModuleNotFound}, {\bf SymbolNotFound})}\label{classRTC_1_1ModuleManager_a645591b66f8ddfcf8fd4bea4ee04b8f2}
+
+
+Refer to the symbol of the module. 
+
+\index{RTC::ModuleManager@{RTC::ModuleManager}!unload@{unload}}
+\index{unload@{unload}!RTC::ModuleManager@{RTC::ModuleManager}}
+\subsubsection[{unload}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::ModuleManager::unload (const std::string \& {\em file\_\-name})}\label{classRTC_1_1ModuleManager_a2060494f5105da430a649b66bc2fafcf}
+
+
+Unload the module. 
+
+Close and unload the specified module that has been loaded.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em file\_\-name}]Name of module for the unloading \end{DoxyParams}
+\index{RTC::ModuleManager@{RTC::ModuleManager}!unloadAll@{unloadAll}}
+\index{unloadAll@{unloadAll}!RTC::ModuleManager@{RTC::ModuleManager}}
+\subsubsection[{unloadAll}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::ModuleManager::unloadAll ()}\label{classRTC_1_1ModuleManager_ab2c2c447932d76c261b075799d9b4cb5}
+
+
+Unload all modules. 
+
+Unload all modules that have been loaded. 
+
+\subsection{Member Data Documentation}
+\index{RTC::ModuleManager@{RTC::ModuleManager}!m\_\-absoluteAllowed@{m\_\-absoluteAllowed}}
+\index{m\_\-absoluteAllowed@{m\_\-absoluteAllowed}!RTC::ModuleManager@{RTC::ModuleManager}}
+\subsubsection[{m\_\-absoluteAllowed}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf RTC::ModuleManager::m\_\-absoluteAllowed}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC_1_1ModuleManager_a9e7a552c49cefcaf9d7ade14812b73ea}
+
+
+Flag of absolute path when specify module for the load. 
+
+
+
+Referenced by allowAbsolutePath(), and disallowAbsolutePath().
+
+\index{RTC::ModuleManager@{RTC::ModuleManager}!m\_\-configPath@{m\_\-configPath}}
+\index{m\_\-configPath@{m\_\-configPath}!RTC::ModuleManager@{RTC::ModuleManager}}
+\subsubsection[{m\_\-configPath}]{\setlength{\rightskip}{0pt plus 5cm}{\bf StringVector} {\bf RTC::ModuleManager::m\_\-configPath}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC_1_1ModuleManager_ae76d0bb81f805eed81c2797d61dd9ed8}
+
+
+Configuration path list. 
+
+\index{RTC::ModuleManager@{RTC::ModuleManager}!m\_\-downloadAllowed@{m\_\-downloadAllowed}}
+\index{m\_\-downloadAllowed@{m\_\-downloadAllowed}!RTC::ModuleManager@{RTC::ModuleManager}}
+\subsubsection[{m\_\-downloadAllowed}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf RTC::ModuleManager::m\_\-downloadAllowed}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC_1_1ModuleManager_ad5f3be84f6dc21b34fb1781da3224879}
+
+
+Flag of URL when specify module for the load. 
+
+
+
+Referenced by allowModuleDownload(), and disallowModuleDownload().
+
+\index{RTC::ModuleManager@{RTC::ModuleManager}!m\_\-initFuncPrefix@{m\_\-initFuncPrefix}}
+\index{m\_\-initFuncPrefix@{m\_\-initFuncPrefix}!RTC::ModuleManager@{RTC::ModuleManager}}
+\subsubsection[{m\_\-initFuncPrefix}]{\setlength{\rightskip}{0pt plus 5cm}std::string {\bf RTC::ModuleManager::m\_\-initFuncPrefix}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC_1_1ModuleManager_a09359fd1843333b7301ea6a5b42aab02}
+
+
+Initial execution function prefix. 
+
+\index{RTC::ModuleManager@{RTC::ModuleManager}!m\_\-initFuncSuffix@{m\_\-initFuncSuffix}}
+\index{m\_\-initFuncSuffix@{m\_\-initFuncSuffix}!RTC::ModuleManager@{RTC::ModuleManager}}
+\subsubsection[{m\_\-initFuncSuffix}]{\setlength{\rightskip}{0pt plus 5cm}std::string {\bf RTC::ModuleManager::m\_\-initFuncSuffix}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC_1_1ModuleManager_ae6272d2cd177c3980a9d323416b58902}
+
+
+Initial execution function suffix. 
+
+\index{RTC::ModuleManager@{RTC::ModuleManager}!m\_\-loadPath@{m\_\-loadPath}}
+\index{m\_\-loadPath@{m\_\-loadPath}!RTC::ModuleManager@{RTC::ModuleManager}}
+\subsubsection[{m\_\-loadPath}]{\setlength{\rightskip}{0pt plus 5cm}{\bf StringVector} {\bf RTC::ModuleManager::m\_\-loadPath}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC_1_1ModuleManager_a06d98081e3e75dbb1bab992d8c619b17}
+
+
+Module load path list. 
+
+
+
+Referenced by getLoadPath().
+
+\index{RTC::ModuleManager@{RTC::ModuleManager}!m\_\-modprofs@{m\_\-modprofs}}
+\index{m\_\-modprofs@{m\_\-modprofs}!RTC::ModuleManager@{RTC::ModuleManager}}
+\subsubsection[{m\_\-modprofs}]{\setlength{\rightskip}{0pt plus 5cm}vProperties {\bf RTC::ModuleManager::m\_\-modprofs}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC_1_1ModuleManager_af683f9f9f2f9185a28fde8e2fe43bdec}
+\index{RTC::ModuleManager@{RTC::ModuleManager}!m\_\-modules@{m\_\-modules}}
+\index{m\_\-modules@{m\_\-modules}!RTC::ModuleManager@{RTC::ModuleManager}}
+\subsubsection[{m\_\-modules}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ObjectManager}$<$const char$\ast$, {\bf DLLEntity}, {\bf DllPred}$>$ {\bf RTC::ModuleManager::m\_\-modules}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC_1_1ModuleManager_a3e30cca331b5146ad8ac857a9fc556d4}
+
+
+Module list that has already loaded. 
+
+\index{RTC::ModuleManager@{RTC::ModuleManager}!m\_\-properties@{m\_\-properties}}
+\index{m\_\-properties@{m\_\-properties}!RTC::ModuleManager@{RTC::ModuleManager}}
+\subsubsection[{m\_\-properties}]{\setlength{\rightskip}{0pt plus 5cm}{\bf coil::Properties}\& {\bf RTC::ModuleManager::m\_\-properties}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC_1_1ModuleManager_ab8ff4e8e442d9d96f5e9988712b85af1}
+
+
+Module \doxyref{Manager}{p.}{classRTC_1_1Manager} properties. 
+
+\index{RTC::ModuleManager@{RTC::ModuleManager}!rtclog@{rtclog}}
+\index{rtclog@{rtclog}!RTC::ModuleManager@{RTC::ModuleManager}}
+\subsubsection[{rtclog}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Logger} {\bf RTC::ModuleManager::rtclog}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC_1_1ModuleManager_afce28674a05955b065052804090a8ce6}
+
+
+\doxyref{Logger}{p.}{classRTC_1_1Logger} stream. 
+

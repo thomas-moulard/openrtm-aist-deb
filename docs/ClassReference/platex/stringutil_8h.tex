@@ -1,0 +1,76 @@
+\section{stringutil.h}
+\label{stringutil_8h}\index{stringutil.h@{stringutil.h}}
+{\ttfamily \#include $<$string$>$}\par
+{\ttfamily \#include $<$vector$>$}\par
+{\ttfamily \#include $<$sstream$>$}\par
+\subsection*{ネームスペース}
+\begin{DoxyCompactItemize}
+\item 
+namespace {\bf coil}
+
+
+\begin{DoxyCompactList}\small\item\em Common Object Interface Layer. \item\end{DoxyCompactList}
+
+\end{DoxyCompactItemize}
+\subsection*{型定義}
+\begin{DoxyCompactItemize}
+\item 
+typedef std::vector$<$ std::string $>$ {\bf coil::vstring}
+\end{DoxyCompactItemize}
+\subsection*{関数}
+\begin{DoxyCompactItemize}
+\item 
+std::wstring {\bf coil::string2wstring} (std::string str)
+\begin{DoxyCompactList}\small\item\em string から wstring への変換 \item\end{DoxyCompactList}\item 
+std::string {\bf coil::wstring2string} (std::wstring wstr)
+\begin{DoxyCompactList}\small\item\em wstring から string への変換 \item\end{DoxyCompactList}\item 
+void {\bf coil::toUpper} (std::string \&str)
+\begin{DoxyCompactList}\small\item\em 大文字への変換 \item\end{DoxyCompactList}\item 
+void {\bf coil::toLower} (std::string \&str)
+\begin{DoxyCompactList}\small\item\em 小文字への変換 \item\end{DoxyCompactList}\item 
+int {\bf coil::getlinePortable} (std::istream \&istr, std::string \&line)
+\begin{DoxyCompactList}\small\item\em 入力ストリームから1行読み込む \item\end{DoxyCompactList}\item 
+bool {\bf coil::isEscaped} (const std::string \&str, std::string::size\_\-type pos)
+\begin{DoxyCompactList}\small\item\em 文字列がエスケープされているか判断する \item\end{DoxyCompactList}\item 
+std::string {\bf coil::escape} (const std::string str)
+\begin{DoxyCompactList}\small\item\em 文字列をエスケープする \item\end{DoxyCompactList}\item 
+std::string {\bf coil::unescape} (const std::string str)
+\begin{DoxyCompactList}\small\item\em 文字列のエスケープを戻す \item\end{DoxyCompactList}\item 
+void {\bf coil::eraseBlank} (std::string \&str)
+\begin{DoxyCompactList}\small\item\em 文字列の空白文字を削除する \item\end{DoxyCompactList}\item 
+void {\bf coil::eraseHeadBlank} (std::string \&str)
+\begin{DoxyCompactList}\small\item\em 文字列の先頭の空白文字を削除する \item\end{DoxyCompactList}\item 
+void {\bf coil::eraseTailBlank} (std::string \&str)
+\begin{DoxyCompactList}\small\item\em 文字列の末尾の空白文字を削除する \item\end{DoxyCompactList}\item 
+void {\bf coil::eraseBothEndsBlank} (std::string \&str)
+\begin{DoxyCompactList}\small\item\em 文字列の先頭・末尾の空白文字を削除する \item\end{DoxyCompactList}\item 
+std::string {\bf coil::normalize} (std::string \&str)
+\begin{DoxyCompactList}\small\item\em 文字列を正規化する \item\end{DoxyCompactList}\item 
+unsigned int {\bf coil::replaceString} (std::string \&str, const std::string from, const std::string to)
+\begin{DoxyCompactList}\small\item\em 文字列を置き換える \item\end{DoxyCompactList}\item 
+vstring {\bf coil::split} (const std::string \&input, const std::string \&delimiter, bool ignore\_\-empty=false)
+\begin{DoxyCompactList}\small\item\em 文字列を分割文字で分割する \item\end{DoxyCompactList}\item 
+bool {\bf coil::toBool} (std::string str, std::string yes, std::string no, bool default\_\-value=true)
+\begin{DoxyCompactList}\small\item\em 与えられた文字列をbool値に変換する \item\end{DoxyCompactList}\item 
+bool {\bf coil::includes} (const vstring \&list, std::string value, bool ignore\_\-case=true)
+\begin{DoxyCompactList}\small\item\em 文字列リスト中にある文字列が含まれるかどうかを判断する \item\end{DoxyCompactList}\item 
+bool {\bf coil::includes} (const std::string \&list, std::string value, bool ignore\_\-case=true)
+\begin{DoxyCompactList}\small\item\em 文字列リスト中にある文字列が含まれるかどうかを判断する \item\end{DoxyCompactList}\item 
+bool {\bf coil::isAbsolutePath} (const std::string \&str)
+\begin{DoxyCompactList}\small\item\em 与えられた文字列が絶対パスかどうかを判断する \item\end{DoxyCompactList}\item 
+bool {\bf coil::isURL} (const std::string \&str)
+\begin{DoxyCompactList}\small\item\em 与えられた文字列がURLかどうかを判断する \item\end{DoxyCompactList}\item 
+{\footnotesize template$<$class Printable $>$ }\\std::string {\bf coil::otos} (Printable n)
+\begin{DoxyCompactList}\small\item\em 与えられたオブジェクトをstdstringに変換 \item\end{DoxyCompactList}\item 
+{\footnotesize template$<$typename To $>$ }\\bool {\bf coil::stringTo} (To \&val, const char $\ast$str)
+\begin{DoxyCompactList}\small\item\em 与えられたstdstringをオブジェクトに変換 \item\end{DoxyCompactList}\item 
+{\footnotesize template$<$$>$ }\\bool {\bf coil::stringTo$<$ std::string $>$} (std::string \&val, const char $\ast$str)
+\begin{DoxyCompactList}\small\item\em 与えられた文字列をstdstringに変換 \item\end{DoxyCompactList}\item 
+vstring {\bf coil::unique\_\-sv} (vstring sv)
+\begin{DoxyCompactList}\small\item\em 与えられた文字列リストから重複を削除 \item\end{DoxyCompactList}\item 
+std::string {\bf coil::flatten} (vstring sv)
+\begin{DoxyCompactList}\small\item\em 与えられた文字列リストからCSVを生成 \item\end{DoxyCompactList}\item 
+char $\ast$$\ast$ {\bf coil::toArgv} (const vstring \&args)
+\begin{DoxyCompactList}\small\item\em 与えられた文字列リストを引数リストに変換 \item\end{DoxyCompactList}\item 
+std::string {\bf coil::sprintf} (char const $\ast$\_\-\_\-restrict fmt,...)
+\begin{DoxyCompactList}\small\item\em 指定された書式に変換 \item\end{DoxyCompactList}\end{DoxyCompactItemize}

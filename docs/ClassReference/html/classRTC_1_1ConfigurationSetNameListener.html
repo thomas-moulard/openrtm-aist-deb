@@ -1,0 +1,133 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<title>OpenRTM: クラス RTC::ConfigurationSetNameListener</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<!-- 作成： Doxygen 1.6.3 -->
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="index.html"><span>メインページ</span></a></li>
+      <li><a href="namespaces.html"><span>ネームスペース</span></a></li>
+      <li class="current"><a href="annotated.html"><span>クラス</span></a></li>
+      <li><a href="files.html"><span>ファイル</span></a></li>
+    </ul>
+  </div>
+  <div class="tabs">
+    <ul>
+      <li><a href="annotated.html"><span>構成</span></a></li>
+      <li><a href="hierarchy.html"><span>クラス階層</span></a></li>
+      <li><a href="functions.html"><span>構成メンバ</span></a></li>
+    </ul>
+  </div>
+  <div class="navpath"><a class="el" href="namespaceRTC.html">RTC</a>::<a class="el" href="classRTC_1_1ConfigurationSetNameListener.html">ConfigurationSetNameListener</a>
+  </div>
+</div>
+<div class="contents">
+<h1>クラス RTC::ConfigurationSetNameListener</h1><!-- doxytag: class="RTC::ConfigurationSetNameListener" -->
+<p><a class="el" href="classRTC_1_1ConfigurationSetNameListener.html" title="ConfigurationSetNameListener クラス.">ConfigurationSetNameListener</a> クラス.  
+<a href="#_details">[詳細]</a></p>
+
+<p><code>#include &lt;<a class="el" href="ConfigurationListener_8h_source.html">ConfigurationListener.h</a>&gt;</code></p>
+
+<p><a href="classRTC_1_1ConfigurationSetNameListener-members.html">すべてのメンバ一覧</a></p>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr><td colspan="2"><h2>Public メソッド</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1ConfigurationSetNameListener.html#affbd649610f0f92fc7d67ca0326cdab4">~ConfigurationSetNameListener</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">デストラクタ  <a href="#affbd649610f0f92fc7d67ca0326cdab4"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1ConfigurationSetNameListener.html#a6c6c1aad210408a9ca302363f8f652b7">operator()</a> (const char *config_set_name)=0</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">仮想コールバック関数  <a href="#a6c6c1aad210408a9ca302363f8f652b7"></a><br/></td></tr>
+<tr><td colspan="2"><h2>Static Public メソッド</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static const char *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1ConfigurationSetNameListener.html#ade79a962e7a15ddae7ef638157f3c429">toString</a> (<a class="el" href="namespaceRTC.html#a93709e2f94e525230cc561c7374690c4">ConfigurationSetNameListenerType</a> type)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">ConfigurationSetNameListenerType を文字列に変換.  <a href="#ade79a962e7a15ddae7ef638157f3c429"></a><br/></td></tr>
+</table>
+<hr/><a name="_details"></a><h2>説明</h2>
+<p><a class="el" href="classRTC_1_1ConfigurationSetNameListener.html" title="ConfigurationSetNameListener クラス.">ConfigurationSetNameListener</a> クラス. </p>
+<p>ConfigurationSetに関するイベントに関するリスナークラス。</p>
+<ul>
+<li>ON_UPDATE_CONFIG_SET:</li>
+<li>ON_REMOVE_CONFIG_SET:</li>
+<li>ON_ACTIVATE_CONFIG_SET: </li>
+</ul>
+<hr/><h2>コンストラクタとデストラクタ</h2>
+<a class="anchor" id="affbd649610f0f92fc7d67ca0326cdab4"></a><!-- doxytag: member="RTC::ConfigurationSetNameListener::~ConfigurationSetNameListener" ref="affbd649610f0f92fc7d67ca0326cdab4" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual RTC::ConfigurationSetNameListener::~ConfigurationSetNameListener </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>デストラクタ </p>
+
+</div>
+</div>
+<hr/><h2>関数</h2>
+<a class="anchor" id="a6c6c1aad210408a9ca302363f8f652b7"></a><!-- doxytag: member="RTC::ConfigurationSetNameListener::operator()" ref="a6c6c1aad210408a9ca302363f8f652b7" args="(const char *config_set_name)=0" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void RTC::ConfigurationSetNameListener::operator() </td>
+          <td>(</td>
+          <td class="paramtype">const char *&nbsp;</td>
+          <td class="paramname"> <em>config_set_name</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [pure virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>仮想コールバック関数 </p>
+<p><a class="el" href="classRTC_1_1ConfigurationSetNameListener.html" title="ConfigurationSetNameListener クラス.">ConfigurationSetNameListener</a> のコールバック関数 </p>
+
+</div>
+</div>
+<a class="anchor" id="ade79a962e7a15ddae7ef638157f3c429"></a><!-- doxytag: member="RTC::ConfigurationSetNameListener::toString" ref="ade79a962e7a15ddae7ef638157f3c429" args="(ConfigurationSetNameListenerType type)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">static const char* RTC::ConfigurationSetNameListener::toString </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespaceRTC.html#a93709e2f94e525230cc561c7374690c4">ConfigurationSetNameListenerType</a>&nbsp;</td>
+          <td class="paramname"> <em>type</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [inline, static]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>ConfigurationSetNameListenerType を文字列に変換. </p>
+<p>ConfigurationSetNameListenerType を文字列に変換する</p>
+<dl><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>type</em>&nbsp;</td><td>変換対象 ConfigurationSetNameListenerType</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>戻り値:</b></dt><dd>文字列変換結果 </dd></dl>
+
+<p>参照先 <a class="el" href="ConfigurationListener_8h_source.html#l00271">RTC::CONFIG_SET_NAME_LISTENER_NUM</a>.</p>
+
+</div>
+</div>
+</div>
+<hr class="footer"/><address style="text-align: right;"><small>OpenRTMに対してThu May 24 23:25:19 2012に生成されました。&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.6.3 </small></address>
+</body>
+</html>

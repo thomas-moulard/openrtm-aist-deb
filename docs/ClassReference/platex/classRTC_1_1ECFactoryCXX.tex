@@ -1,0 +1,144 @@
+\section{クラス RTC::ECFactoryCXX}
+\label{classRTC_1_1ECFactoryCXX}\index{RTC::ECFactoryCXX@{RTC::ECFactoryCXX}}
+
+
+\doxyref{ECFactoryCXX}{p.}{classRTC_1_1ECFactoryCXX} クラス.  
+
+
+
+
+{\ttfamily \#include $<$ECFactory.h$>$}
+
+RTC::ECFactoryCXXに対する継承グラフ\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2cm]{classRTC_1_1ECFactoryCXX}
+\end{center}
+\end{figure}
+\subsection*{Public メソッド}
+\begin{DoxyCompactItemize}
+\item 
+{\bf ECFactoryCXX} (const char $\ast$name, {\bf ECNewFunc} new\_\-func, {\bf ECDeleteFunc} delete\_\-func)
+\begin{DoxyCompactList}\small\item\em コンストラクタ \item\end{DoxyCompactList}\item 
+{\bf $\sim$ECFactoryCXX} (void)
+\begin{DoxyCompactList}\small\item\em 仮想デストラクタ \item\end{DoxyCompactList}\item 
+virtual const char $\ast$ {\bf name} ()
+\begin{DoxyCompactList}\small\item\em 生成対象ExecutionContext名称を取得 \item\end{DoxyCompactList}\item 
+virtual {\bf ExecutionContextBase} $\ast$ {\bf create} ()
+\begin{DoxyCompactList}\small\item\em 生成対象ExecutionContextインスタンスを生成 \item\end{DoxyCompactList}\item 
+virtual void {\bf destroy} ({\bf ExecutionContextBase} $\ast$comp)
+\begin{DoxyCompactList}\small\item\em 対象ExecutionContextインスタンスを破棄 \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected 変数}
+\begin{DoxyCompactItemize}
+\item 
+std::string {\bf m\_\-name}
+\begin{DoxyCompactList}\small\item\em 生成対象ExecutionContext名称 \item\end{DoxyCompactList}\item 
+{\bf ECNewFunc} {\bf m\_\-New}
+\begin{DoxyCompactList}\small\item\em 対象ExecutionContext生成用関数 \item\end{DoxyCompactList}\item 
+{\bf ECDeleteFunc} {\bf m\_\-Delete}
+\begin{DoxyCompactList}\small\item\em 対象ExecutionContext破棄用関数 \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{説明}
+\doxyref{ECFactoryCXX}{p.}{classRTC_1_1ECFactoryCXX} クラス. C++言語用ExecutionContextインスタンスを生成するFactoryクラス。
+
+\begin{DoxySince}{から}
+0.4.0 
+\end{DoxySince}
+
+
+\subsection{コンストラクタとデストラクタ}
+\index{RTC::ECFactoryCXX@{RTC::ECFactoryCXX}!ECFactoryCXX@{ECFactoryCXX}}
+\index{ECFactoryCXX@{ECFactoryCXX}!RTC::ECFactoryCXX@{RTC::ECFactoryCXX}}
+\subsubsection[{ECFactoryCXX}]{\setlength{\rightskip}{0pt plus 5cm}RTC::ECFactoryCXX::ECFactoryCXX (const char $\ast$ {\em name}, \/  {\bf ECNewFunc} {\em new\_\-func}, \/  {\bf ECDeleteFunc} {\em delete\_\-func})}\label{classRTC_1_1ECFactoryCXX_a2e7a2762ae32cea607e448b64b71db4f}
+
+
+コンストラクタ 
+
+コンストラクタ
+
+
+\begin{DoxyParams}{引数}
+\item[{\em name}]生成対象ExecutionContext名称 \item[{\em new\_\-func}]ExecutionContext生成用関数 \item[{\em delete\_\-func}]ExecutionContext破棄用関数 \end{DoxyParams}
+\index{RTC::ECFactoryCXX@{RTC::ECFactoryCXX}!$\sim$ECFactoryCXX@{$\sim$ECFactoryCXX}}
+\index{$\sim$ECFactoryCXX@{$\sim$ECFactoryCXX}!RTC::ECFactoryCXX@{RTC::ECFactoryCXX}}
+\subsubsection[{$\sim$ECFactoryCXX}]{\setlength{\rightskip}{0pt plus 5cm}RTC::ECFactoryCXX::$\sim$ECFactoryCXX (void)}\label{classRTC_1_1ECFactoryCXX_a590418963cdbd6bcf38e75b61b9ddaee}
+
+
+仮想デストラクタ 
+
+仮想デストラクタ。 
+
+\subsection{関数}
+\index{RTC::ECFactoryCXX@{RTC::ECFactoryCXX}!create@{create}}
+\index{create@{create}!RTC::ECFactoryCXX@{RTC::ECFactoryCXX}}
+\subsubsection[{create}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf ExecutionContextBase}$\ast$ RTC::ECFactoryCXX::create ()\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classRTC_1_1ECFactoryCXX_a3b9c612725a509f21908105334f2bc36}
+
+
+生成対象ExecutionContextインスタンスを生成 
+
+生成対象のExecutionContextクラスのインスタンスを生成する。
+
+\begin{DoxyReturn}{戻り値}
+生成したExecutionContextインスタンス 
+\end{DoxyReturn}
+
+
+{\bf RTC::ECFactoryBase} \doxyref{}{p.}{classRTC_1_1ECFactoryBase_a3a69009a302cb67881576fc407a6cb57}を実装しています。
+
+\index{RTC::ECFactoryCXX@{RTC::ECFactoryCXX}!destroy@{destroy}}
+\index{destroy@{destroy}!RTC::ECFactoryCXX@{RTC::ECFactoryCXX}}
+\subsubsection[{destroy}]{\setlength{\rightskip}{0pt plus 5cm}virtual void RTC::ECFactoryCXX::destroy ({\bf ExecutionContextBase} $\ast$ {\em comp})\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classRTC_1_1ECFactoryCXX_a57dbab7164220dd469c3d23cf36ff721}
+
+
+対象ExecutionContextインスタンスを破棄 
+
+対象ExecutionContextクラスのインスタンスを破棄する。
+
+
+\begin{DoxyParams}{引数}
+\item[{\em comp}]破棄対象ExecutionContextインスタンス \end{DoxyParams}
+
+
+{\bf RTC::ECFactoryBase} \doxyref{}{p.}{classRTC_1_1ECFactoryBase_ad9eeff1fd2bdece6e696bc23eb6e9bcc}を実装しています。
+
+\index{RTC::ECFactoryCXX@{RTC::ECFactoryCXX}!name@{name}}
+\index{name@{name}!RTC::ECFactoryCXX@{RTC::ECFactoryCXX}}
+\subsubsection[{name}]{\setlength{\rightskip}{0pt plus 5cm}virtual const char$\ast$ RTC::ECFactoryCXX::name ()\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classRTC_1_1ECFactoryCXX_a7de52069a2c215b6fb4757b4cbe378ec}
+
+
+生成対象ExecutionContext名称を取得 
+
+生成対象のExecutionContext名称を取得する。
+
+\begin{DoxyReturn}{戻り値}
+生成対象ExecutionContext名称 
+\end{DoxyReturn}
+
+
+{\bf RTC::ECFactoryBase} \doxyref{}{p.}{classRTC_1_1ECFactoryBase_a521d5c350bf08586034dc034c46f5c70}を実装しています。
+
+
+
+\subsection{変数}
+\index{RTC::ECFactoryCXX@{RTC::ECFactoryCXX}!m\_\-Delete@{m\_\-Delete}}
+\index{m\_\-Delete@{m\_\-Delete}!RTC::ECFactoryCXX@{RTC::ECFactoryCXX}}
+\subsubsection[{m\_\-Delete}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ECDeleteFunc} {\bf RTC::ECFactoryCXX::m\_\-Delete}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC_1_1ECFactoryCXX_a74a87e7532e5693799961389f6c397c8}
+
+
+対象ExecutionContext破棄用関数 
+
+\index{RTC::ECFactoryCXX@{RTC::ECFactoryCXX}!m\_\-name@{m\_\-name}}
+\index{m\_\-name@{m\_\-name}!RTC::ECFactoryCXX@{RTC::ECFactoryCXX}}
+\subsubsection[{m\_\-name}]{\setlength{\rightskip}{0pt plus 5cm}std::string {\bf RTC::ECFactoryCXX::m\_\-name}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC_1_1ECFactoryCXX_adf4b96999d4f3bec518ffb3dfd27a57e}
+
+
+生成対象ExecutionContext名称 
+
+\index{RTC::ECFactoryCXX@{RTC::ECFactoryCXX}!m\_\-New@{m\_\-New}}
+\index{m\_\-New@{m\_\-New}!RTC::ECFactoryCXX@{RTC::ECFactoryCXX}}
+\subsubsection[{m\_\-New}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ECNewFunc} {\bf RTC::ECFactoryCXX::m\_\-New}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classRTC_1_1ECFactoryCXX_a0665c1d3150e57bb2373fa9bac7e1b06}
+
+
+対象ExecutionContext生成用関数 
+

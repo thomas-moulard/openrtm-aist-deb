@@ -1,0 +1,193 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<title>OpenRTM: PortProfileHelper.h ソースファイル</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<!-- 作成： Doxygen 1.6.3 -->
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="index.html"><span>メインページ</span></a></li>
+      <li><a href="namespaces.html"><span>ネームスペース</span></a></li>
+      <li><a href="annotated.html"><span>クラス</span></a></li>
+      <li class="current"><a href="files.html"><span>ファイル</span></a></li>
+    </ul>
+  </div>
+  <div class="tabs">
+    <ul>
+      <li><a href="files.html"><span>ファイル一覧</span></a></li>
+      <li><a href="globals.html"><span>ファイルメンバ</span></a></li>
+    </ul>
+  </div>
+<h1>PortProfileHelper.h</h1><a href="PortProfileHelper_8h.html">説明を見る。</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="comment">// -*- C++ -*-</span>
+<a name="l00019"></a>00019 <span class="comment"></span><span class="preprocessor">#ifndef RTC_PORTPROFILEHELPER_H</span>
+<a name="l00020"></a>00020 <span class="preprocessor"></span><span class="preprocessor">#define RTC_PORTPROFILEHELPER_H</span>
+<a name="l00021"></a>00021 <span class="preprocessor"></span>
+<a name="l00022"></a>00022 
+<a name="l00023"></a>00023 <span class="comment">// RTC header include</span>
+<a name="l00024"></a>00024 <span class="preprocessor">#include &lt;<a class="code" href="RTC_8h.html" title="RTComponent header.">rtm/RTC.h</a>&gt;</span>
+<a name="l00025"></a>00025 <span class="preprocessor">#include &lt;rtm/Util.h&gt;</span>
+<a name="l00026"></a>00026 
+<a name="l00027"></a>00027 <span class="comment">// ACE includes</span>
+<a name="l00028"></a>00028 <span class="preprocessor">#include &lt;<a class="code" href="Mutex_8h.html">coil/Mutex.h</a>&gt;</span>
+<a name="l00029"></a>00029 
+<a name="l00030"></a>00030 <span class="comment">// CORBA header include</span>
+<a name="l00031"></a>00031 <span class="preprocessor">#include &lt;rtm/idl/RTCSkel.h&gt;</span>
+<a name="l00032"></a>00032 
+<a name="l00033"></a>00033 
+<a name="l00034"></a>00034 
+<a name="l00035"></a>00035 
+<a name="l00036"></a>00036 <span class="keyword">namespace </span>RTC
+<a name="l00037"></a>00037 {
+<a name="l00057"></a><a class="code" href="classRTC_1_1PortProfileHelper.html">00057</a>   <span class="keyword">class </span><a class="code" href="classRTC_1_1PortProfileHelper.html" title="PortProfile ヘルパークラス.">PortProfileHelper</a>
+<a name="l00058"></a>00058   {
+<a name="l00059"></a>00059     <span class="keyword">typedef</span> <a class="code" href="classcoil_1_1Mutex.html" title="Mutex クラス.">coil::Mutex</a> <a class="code" href="classcoil_1_1Mutex.html" title="Mutex クラス.">Mutex</a>;
+<a name="l00060"></a>00060 
+<a name="l00061"></a>00061   <span class="keyword">public</span>:
+<a name="l00075"></a>00075     <a class="code" href="classRTC_1_1PortProfileHelper.html#a9461fe0f4c58e4556ad8620e0f952e04">PortProfileHelper</a>();
+<a name="l00091"></a>00091     <span class="keyword">virtual</span> <a class="code" href="classRTC_1_1PortProfileHelper.html#aa193920a7ca90f2f6f88413e37d2ddc6">~PortProfileHelper</a>(<span class="keywordtype">void</span>);
+<a name="l00092"></a>00092 
+<a name="l00093"></a>00093 
+<a name="l00115"></a>00115     <span class="keywordtype">void</span> <a class="code" href="classRTC_1_1PortProfileHelper.html#acfe228eb5e5f95633c537cb00006c430" title="PortProfile を設定する.">setPortProfile</a>(<span class="keyword">const</span> PortProfile&amp; profile);
+<a name="l00116"></a>00116 
+<a name="l00117"></a>00117 
+<a name="l00137"></a>00137     PortProfile* <a class="code" href="classRTC_1_1PortProfileHelper.html#a96ad86397d2fbb7cd0bd931bea2a8e8b" title="PortProfile を取得する.">getPortProfile</a>();
+<a name="l00138"></a>00138 
+<a name="l00139"></a>00139 
+<a name="l00160"></a>00160     <span class="keywordtype">void</span> <a class="code" href="classRTC_1_1PortProfileHelper.html#ab97df83e386d84d250109bb3770eee64" title="PortProfile.name を設定する.">setName</a>(<span class="keyword">const</span> <span class="keywordtype">char</span>* name);
+<a name="l00161"></a>00161 
+<a name="l00162"></a>00162 
+<a name="l00182"></a>00182     <span class="keyword">const</span> <span class="keywordtype">char</span>* <a class="code" href="classRTC_1_1PortProfileHelper.html#a1ea140e419f0353b2e3ba53cf2f95a55" title="PortProfile.name を取得する.">getName</a>() <span class="keyword">const</span>;
+<a name="l00183"></a>00183 
+<a name="l00184"></a>00184 
+<a name="l00204"></a>00204     <span class="keywordtype">void</span> <a class="code" href="classRTC_1_1PortProfileHelper.html#a3688e99bab76f91ec066d687733d8311" title="PortInterfaceProfile を追加する.">appendPortInterfaceProfile</a>(PortInterfaceProfile if_prof);
+<a name="l00205"></a>00205 
+<a name="l00206"></a>00206 
+<a name="l00226"></a>00226     <span class="keyword">const</span> PortInterfaceProfileList&amp; <a class="code" href="classRTC_1_1PortProfileHelper.html#acf235a771a40ccaf67b8d48fd91ce430" title="PortInterfaceProfileList を取得する.">getPortInterfaceProfiles</a>() <span class="keyword">const</span>;
+<a name="l00227"></a>00227 
+<a name="l00228"></a>00228 
+<a name="l00252"></a>00252     <span class="keyword">const</span> PortInterfaceProfile
+<a name="l00253"></a>00253     <a class="code" href="classRTC_1_1PortProfileHelper.html#a27dcb6af463b32a020c102492c68dd7f" title="PortInterfaceProfile を取得する.">getPortInterfaceProfile</a>(<span class="keyword">const</span> <span class="keywordtype">char</span>* instance_name) <span class="keyword">const</span>;
+<a name="l00254"></a>00254 
+<a name="l00255"></a>00255 
+<a name="l00278"></a>00278     <span class="keywordtype">void</span> <a class="code" href="classRTC_1_1PortProfileHelper.html#a1fe482f149415a6695daf871b27ec7ba" title="PortInterfaceProfile を削除する.">erasePortInterfaceProfile</a>(<span class="keyword">const</span> <span class="keywordtype">char</span>* instance_name);
+<a name="l00279"></a>00279 
+<a name="l00280"></a>00280 
+<a name="l00301"></a>00301     <span class="keywordtype">void</span> <a class="code" href="classRTC_1_1PortProfileHelper.html#a819b0c4f1532c14781a94329dad59962" title="Port のオブジェクト参照をセットする.">setPortRef</a>(PortService_ptr port);
+<a name="l00302"></a>00302 
+<a name="l00303"></a>00303 
+<a name="l00324"></a>00324     PortService_ptr <a class="code" href="classRTC_1_1PortProfileHelper.html#a0ff844c3336b2ff3cb0b3dd265ac16d7" title="Port のオブジェクト参照を取得する.">getPortRef</a>() <span class="keyword">const</span>;
+<a name="l00325"></a>00325 
+<a name="l00326"></a>00326 
+<a name="l00346"></a>00346     <span class="keywordtype">void</span> <a class="code" href="classRTC_1_1PortProfileHelper.html#aeb9e2b522ace6358c47b078d0d24a2df" title="ConnectorProfile を追加する.">appendConnectorProfile</a>(ConnectorProfile conn_profile);
+<a name="l00347"></a>00347 
+<a name="l00348"></a>00348 
+<a name="l00369"></a>00369     <span class="keyword">const</span> ConnectorProfileList <a class="code" href="classRTC_1_1PortProfileHelper.html#a317a4707085ace828989e40a4cd9df72" title="ConnectorProfileList を取得する.">getConnectorProfiles</a>() <span class="keyword">const</span>;
+<a name="l00370"></a>00370 
+<a name="l00371"></a>00371 
+<a name="l00393"></a>00393     <span class="keyword">const</span> ConnectorProfile <a class="code" href="classRTC_1_1PortProfileHelper.html#af8f4c120d1270b9f765f44f9abbcd385" title="ConnectorProfile を取得する.">getConnectorProfile</a>(<span class="keyword">const</span> <span class="keywordtype">char</span>* name) <span class="keyword">const</span>;
+<a name="l00394"></a>00394 
+<a name="l00395"></a>00395 
+<a name="l00417"></a>00417     <span class="keyword">const</span> ConnectorProfile <a class="code" href="classRTC_1_1PortProfileHelper.html#a6588b2165e50ba60b72919141cf77d90" title="ConnectorProfile を取得する.">getConnectorProfileById</a>(<span class="keyword">const</span> <span class="keywordtype">char</span>* <span class="keywordtype">id</span>) <span class="keyword">const</span>;
+<a name="l00418"></a>00418 
+<a name="l00419"></a>00419 
+<a name="l00440"></a>00440     <span class="keywordtype">void</span> <a class="code" href="classRTC_1_1PortProfileHelper.html#a17027ea239a500648b2f8b5c71604a92" title="ConnectorProfile を削除する.">eraseConnectorProfile</a>(<span class="keyword">const</span> <span class="keywordtype">char</span>* name);
+<a name="l00441"></a>00441 
+<a name="l00442"></a>00442 
+<a name="l00463"></a>00463     <span class="keywordtype">void</span> <a class="code" href="classRTC_1_1PortProfileHelper.html#a6ce8029af5d7c1eac6a600d1392e19f8" title="ConnectorProfile を削除する.">eraseConnectorProfileById</a>(<span class="keyword">const</span> <span class="keywordtype">char</span>* <span class="keywordtype">id</span>);
+<a name="l00464"></a>00464 
+<a name="l00465"></a>00465 
+<a name="l00485"></a>00485     <span class="keywordtype">void</span> <a class="code" href="classRTC_1_1PortProfileHelper.html#aa97f28b29ab594657a5d201854e2bb6a" title="PortProfile の owner を設定する.">setOwner</a>(RTObject_ptr owner);
+<a name="l00486"></a>00486 
+<a name="l00487"></a>00487 
+<a name="l00507"></a>00507     RTObject_ptr <a class="code" href="classRTC_1_1PortProfileHelper.html#a3586f461074369276a5a4c2b72986dd8" title="PortProfile の owner を取得する.">getOwner</a>() <span class="keyword">const</span>;
+<a name="l00508"></a>00508 
+<a name="l00509"></a>00509 
+<a name="l00529"></a>00529     <span class="keywordtype">void</span> <a class="code" href="classRTC_1_1PortProfileHelper.html#adf607e508e6848e24a8b57367756e7ce" title="PortProfile の properties を設定する.">setProperties</a>(NVList&amp; prop);
+<a name="l00530"></a>00530 
+<a name="l00531"></a>00531 
+<a name="l00551"></a>00551     <span class="keyword">const</span> NVList&amp; <a class="code" href="classRTC_1_1PortProfileHelper.html#a988bc4ec7976f5fd653c1dcb48bf16ec" title="PortProfile の properties を取得する.">getProperties</a>() <span class="keyword">const</span>;
+<a name="l00552"></a>00552 
+<a name="l00553"></a>00553 
+<a name="l00554"></a>00554 
+<a name="l00555"></a>00555   <span class="keyword">private</span>:
+<a name="l00556"></a>00556     <span class="comment">// Specialization of SequenceEx template class</span>
+<a name="l00557"></a>00557 
+<a name="l00558"></a>00558 
+<a name="l00559"></a>00559     <span class="comment">// PortProfile.name</span>
+<a name="l00560"></a>00560     std::string m_name;
+<a name="l00561"></a>00561 
+<a name="l00562"></a>00562     <span class="comment">// PortProfile.interfaces</span>
+<a name="l00563"></a>00563     <span class="keyword">typedef</span> SequenceEx&lt;PortInterfaceProfileList,
+<a name="l00564"></a>00564                        PortInterfaceProfile,
+<a name="l00565"></a>00565                        <a class="code" href="classcoil_1_1Mutex.html" title="Mutex クラス.">Mutex</a>&gt; IfProfiles;
+<a name="l00566"></a>00566     IfProfiles m_ifProfiles;
+<a name="l00567"></a>00567 
+<a name="l00568"></a>00568     <span class="comment">// PortProfile.port_ref</span>
+<a name="l00569"></a>00569     PortService_var m_portRef;
+<a name="l00570"></a>00570 
+<a name="l00571"></a>00571     <span class="comment">// PortProfile.connector_profile</span>
+<a name="l00572"></a>00572     <span class="keyword">typedef</span> SequenceEx&lt;ConnectorProfileList,
+<a name="l00573"></a>00573                        ConnectorProfile,
+<a name="l00574"></a>00574                        <a class="code" href="classcoil_1_1Mutex.html" title="Mutex クラス.">Mutex</a>&gt; ConnProfiles;
+<a name="l00575"></a>00575     ConnProfiles m_connProfiles ;
+<a name="l00576"></a>00576 
+<a name="l00577"></a>00577     <span class="comment">// PortProfile.owner</span>
+<a name="l00578"></a>00578     RTObject_var m_owner;
+<a name="l00579"></a>00579 
+<a name="l00580"></a>00580     <span class="comment">// PortProfile.properties</span>
+<a name="l00581"></a>00581     NVList m_properties;
+<a name="l00582"></a>00582 
+<a name="l00583"></a>00583     <span class="comment">// Mutex</span>
+<a name="l00584"></a>00584     <span class="keyword">mutable</span> <a class="code" href="classcoil_1_1Mutex.html" title="Mutex クラス.">Mutex</a> m_mutex;
+<a name="l00585"></a>00585 
+<a name="l00586"></a>00586 
+<a name="l00587"></a>00587     <span class="comment">// Functor to find PortInterfaceProfile by name</span>
+<a name="l00588"></a>00588     <span class="keyword">struct </span>if_name
+<a name="l00589"></a>00589     {
+<a name="l00590"></a>00590       if_name(<span class="keyword">const</span> <span class="keywordtype">char</span>* name) :  m_name(name) {};
+<a name="l00591"></a>00591       <span class="keywordtype">bool</span> operator()(<span class="keyword">const</span> PortInterfaceProfile&amp; p)
+<a name="l00592"></a>00592       {
+<a name="l00593"></a>00593         std::string name(p.instance_name);
+<a name="l00594"></a>00594         <span class="keywordflow">return</span> m_name == name;
+<a name="l00595"></a>00595       }
+<a name="l00596"></a>00596       <span class="keyword">const</span> std::string m_name;
+<a name="l00597"></a>00597     };
+<a name="l00598"></a>00598 
+<a name="l00599"></a>00599     <span class="comment">// Functor to find ConnectorProfile by name</span>
+<a name="l00600"></a>00600     <span class="keyword">struct </span>conn_name
+<a name="l00601"></a>00601     {
+<a name="l00602"></a>00602       conn_name(<span class="keyword">const</span> <span class="keywordtype">char</span>* name) :  m_name(name) {};
+<a name="l00603"></a>00603       <span class="keywordtype">bool</span> operator()(<span class="keyword">const</span> ConnectorProfile&amp; c)
+<a name="l00604"></a>00604       {
+<a name="l00605"></a>00605         std::string name(c.name);
+<a name="l00606"></a>00606         <span class="keywordflow">return</span> m_name == name;
+<a name="l00607"></a>00607       }
+<a name="l00608"></a>00608       <span class="keyword">const</span> std::string m_name;
+<a name="l00609"></a>00609     };
+<a name="l00610"></a>00610     
+<a name="l00611"></a>00611     <span class="comment">// Functor to find ConnectorProfile by id</span>
+<a name="l00612"></a>00612     <span class="keyword">struct </span>conn_id
+<a name="l00613"></a>00613     {
+<a name="l00614"></a>00614       conn_id(<span class="keyword">const</span> <span class="keywordtype">char</span>* <span class="keywordtype">id</span>) :  m_id(<span class="keywordtype">id</span>) {};
+<a name="l00615"></a>00615       <span class="keywordtype">bool</span> operator()(<span class="keyword">const</span> ConnectorProfile&amp; c)
+<a name="l00616"></a>00616       {
+<a name="l00617"></a>00617         std::string id(c.connector_id);
+<a name="l00618"></a>00618         <span class="keywordflow">return</span> m_id == id;
+<a name="l00619"></a>00619       }
+<a name="l00620"></a>00620       <span class="keyword">const</span> std::string m_id;
+<a name="l00621"></a>00621     };
+<a name="l00622"></a>00622 
+<a name="l00623"></a>00623   };   <span class="comment">// class PortProfileHelper</span>
+<a name="l00624"></a>00624 };     <span class="comment">// namespace RTC</span>
+<a name="l00625"></a>00625 <span class="preprocessor">#endif // RTC_PORTPROFILEHELPER_H</span>
+</pre></div></div>
+<hr class="footer"/><address style="text-align: right;"><small>OpenRTMに対してThu May 24 23:25:18 2012に生成されました。&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.6.3 </small></address>
+</body>
+</html>

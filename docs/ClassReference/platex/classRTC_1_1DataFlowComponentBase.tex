@@ -1,0 +1,63 @@
+\section{クラス RTC::DataFlowComponentBase}
+\label{classRTC_1_1DataFlowComponentBase}\index{RTC::DataFlowComponentBase@{RTC::DataFlowComponentBase}}
+
+
+\doxyref{DataFlowComponentBase}{p.}{classRTC_1_1DataFlowComponentBase} クラス.  
+
+
+
+
+{\ttfamily \#include $<$DataFlowComponentBase.h$>$}
+
+RTC::DataFlowComponentBaseに対する継承グラフ\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2cm]{classRTC_1_1DataFlowComponentBase}
+\end{center}
+\end{figure}
+\subsection*{Public メソッド}
+\begin{DoxyCompactItemize}
+\item 
+{\bf DataFlowComponentBase} ({\bf Manager} $\ast$manager)
+\begin{DoxyCompactList}\small\item\em コンストラクタ \item\end{DoxyCompactList}\item 
+virtual {\bf $\sim$DataFlowComponentBase} (void)
+\item 
+void {\bf init} ()
+\begin{DoxyCompactList}\small\item\em 初期化 \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{説明}
+\doxyref{DataFlowComponentBase}{p.}{classRTC_1_1DataFlowComponentBase} クラス. データフロー型RTComponentの基底クラス。 各種データフロー型RTComponentを実装する場合は、本クラスを継承する形で実装 する。
+
+\begin{DoxySince}{から}
+0.4.0 
+\end{DoxySince}
+
+
+\subsection{コンストラクタとデストラクタ}
+\index{RTC::DataFlowComponentBase@{RTC::DataFlowComponentBase}!DataFlowComponentBase@{DataFlowComponentBase}}
+\index{DataFlowComponentBase@{DataFlowComponentBase}!RTC::DataFlowComponentBase@{RTC::DataFlowComponentBase}}
+\subsubsection[{DataFlowComponentBase}]{\setlength{\rightskip}{0pt plus 5cm}RTC::DataFlowComponentBase::DataFlowComponentBase ({\bf Manager} $\ast$ {\em manager})}\label{classRTC_1_1DataFlowComponentBase_ac93dffa99b69b93f382aac906f8591ae}
+
+
+コンストラクタ 
+
+コンストラクタ
+
+
+\begin{DoxyParams}{引数}
+\item[{\em manager}]マネージャオブジェクト \end{DoxyParams}
+\index{RTC::DataFlowComponentBase@{RTC::DataFlowComponentBase}!$\sim$DataFlowComponentBase@{$\sim$DataFlowComponentBase}}
+\index{$\sim$DataFlowComponentBase@{$\sim$DataFlowComponentBase}!RTC::DataFlowComponentBase@{RTC::DataFlowComponentBase}}
+\subsubsection[{$\sim$DataFlowComponentBase}]{\setlength{\rightskip}{0pt plus 5cm}virtual RTC::DataFlowComponentBase::$\sim$DataFlowComponentBase (void)\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classRTC_1_1DataFlowComponentBase_aefcb5d65ed4ccac35e20cf8caa17c279}
+デストラクタ 
+
+\subsection{関数}
+\index{RTC::DataFlowComponentBase@{RTC::DataFlowComponentBase}!init@{init}}
+\index{init@{init}!RTC::DataFlowComponentBase@{RTC::DataFlowComponentBase}}
+\subsubsection[{init}]{\setlength{\rightskip}{0pt plus 5cm}void RTC::DataFlowComponentBase::init ()}\label{classRTC_1_1DataFlowComponentBase_aaab8d77b9eddf9fe6ccb321d5bcef4f4}
+
+
+初期化 
+
+データフロー型 RTComponent の初期化を実行する。 実際の初期化処理は、各具象クラス内に記述する。 

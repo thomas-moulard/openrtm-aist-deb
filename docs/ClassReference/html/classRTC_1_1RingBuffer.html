@@ -1,0 +1,776 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<title>OpenRTM: クラス テンプレート RTC::RingBuffer&lt; DataType &gt;</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<!-- 作成： Doxygen 1.6.3 -->
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="index.html"><span>メインページ</span></a></li>
+      <li><a href="namespaces.html"><span>ネームスペース</span></a></li>
+      <li class="current"><a href="annotated.html"><span>クラス</span></a></li>
+      <li><a href="files.html"><span>ファイル</span></a></li>
+    </ul>
+  </div>
+  <div class="tabs">
+    <ul>
+      <li><a href="annotated.html"><span>構成</span></a></li>
+      <li><a href="hierarchy.html"><span>クラス階層</span></a></li>
+      <li><a href="functions.html"><span>構成メンバ</span></a></li>
+    </ul>
+  </div>
+  <div class="navpath"><a class="el" href="namespaceRTC.html">RTC</a>::<a class="el" href="classRTC_1_1RingBuffer.html">RingBuffer</a>
+  </div>
+</div>
+<div class="contents">
+<h1>クラス テンプレート RTC::RingBuffer&lt; DataType &gt;</h1><!-- doxytag: class="RTC::RingBuffer" --><!-- doxytag: inherits="RTC::BufferBase" -->
+<p>リングバッファ実装クラス  
+<a href="#_details">[詳細]</a></p>
+
+<p><code>#include &lt;<a class="el" href="RingBuffer_8h_source.html">RingBuffer.h</a>&gt;</code></p>
+<div class="dynheader">
+RTC::RingBuffer&lt; DataType &gt;に対する継承グラフ</div>
+<div class="dynsection">
+ <div class="center">
+  <img src="classRTC_1_1RingBuffer.png" usemap="#RTC::RingBuffer&lt; DataType &gt;_map" alt=""/>
+  <map id="RTC::RingBuffer&lt; DataType &gt;_map" name="RTC::RingBuffer&lt; DataType &gt;_map">
+<area href="classRTC_1_1BufferBase.html" alt="RTC::BufferBase&lt; DataType &gt;" shape="rect" coords="0,56,183,80"/>
+<area href="classRTC_1_1BufferStatus.html" alt="RTC::BufferStatus" shape="rect" coords="0,0,183,24"/>
+</map>
+ </div>
+</div>
+
+<p><a href="classRTC_1_1RingBuffer-members.html">すべてのメンバ一覧</a></p>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr><td colspan="2"><h2>構成</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">struct &nbsp;</td><td class="memItemRight" valign="bottom"><b>condition</b></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">条件変数構造体 <br/></td></tr>
+<tr><td colspan="2"><h2>Public メソッド</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1RingBuffer.html#a52360492539178ddfaba389938a18426">RingBuffer</a> (long int length=RINGBUFFER_DEFAULT_LENGTH)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">コンストラクタ  <a href="#a52360492539178ddfaba389938a18426"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1RingBuffer.html#a04de65576d77749cb895e9d9bf65bf71">~RingBuffer</a> (void)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">仮想デストラクタ  <a href="#a04de65576d77749cb895e9d9bf65bf71"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1RingBuffer.html#a8bd57fca9d29703083c8ff0817dc0a55">init</a> (const <a class="el" href="classcoil_1_1Properties.html">coil::Properties</a> &amp;prop)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">バッファの設定  <a href="#a8bd57fca9d29703083c8ff0817dc0a55"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual size_t&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1RingBuffer.html#a00c6d912326c1bc65aaf8bc2f0e8895f">length</a> (void) const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">バッファ長を取得する  <a href="#a00c6d912326c1bc65aaf8bc2f0e8895f"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual ReturnCode&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1RingBuffer.html#a9584ba6385836d6936d4fda2e595136e">length</a> (size_t n)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">バッファの長さをセットする  <a href="#a9584ba6385836d6936d4fda2e595136e"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual ReturnCode&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1RingBuffer.html#add373502f0292178296f3750d5e962a0">reset</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">バッファの状態をリセットする  <a href="#add373502f0292178296f3750d5e962a0"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual DataType *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1RingBuffer.html#ad9aba4e554f5fd23a1cc7b9d63b0fe07">wptr</a> (long int n=0)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">バッファの現在の書込み要素のポインタ  <a href="#ad9aba4e554f5fd23a1cc7b9d63b0fe07"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual ReturnCode&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1RingBuffer.html#a208c5454c6466f09a6cb1cbcd1297871">advanceWptr</a> (long int n=1)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">書込みポインタを進める  <a href="#a208c5454c6466f09a6cb1cbcd1297871"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual ReturnCode&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1RingBuffer.html#acc983b57ac5fd73a47afdfdaab1e3845">put</a> (const DataType &amp;value)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">バッファにデータを書き込む  <a href="#acc983b57ac5fd73a47afdfdaab1e3845"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual ReturnCode&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1RingBuffer.html#a4b062367982f9748b3ba5891cf753040">write</a> (const DataType &amp;value, long int sec=-1, long int nsec=0)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">バッファに書き込む  <a href="#a4b062367982f9748b3ba5891cf753040"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual size_t&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1RingBuffer.html#a7bebdef8031509955d74327ccad2ceec">writable</a> () const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">バッファに書込み可能な要素数  <a href="#a7bebdef8031509955d74327ccad2ceec"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1RingBuffer.html#ae7a8906ed3de0c95ffed9dd4f5f74f3b">full</a> (void) const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">バッファfullチェック  <a href="#ae7a8906ed3de0c95ffed9dd4f5f74f3b"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual DataType *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1RingBuffer.html#a65401c71cb216a0730f6793f5a00dd1d">rptr</a> (long int n=0)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">バッファの現在の読み出し要素のポインタ  <a href="#a65401c71cb216a0730f6793f5a00dd1d"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual ReturnCode&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1RingBuffer.html#a329834c2988670fa5f849923e9070ed8">advanceRptr</a> (long int n=1)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">読み出しポインタを進める  <a href="#a329834c2988670fa5f849923e9070ed8"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual ReturnCode&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1RingBuffer.html#a10506341647d0f93cbea400fe9628bf0">get</a> (DataType &amp;value)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">バッファからデータを読み出す  <a href="#a10506341647d0f93cbea400fe9628bf0"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual DataType &amp;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1RingBuffer.html#a229d439990825b2a829daf2f747b8b1b">get</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">バッファからデータを読み出す  <a href="#a229d439990825b2a829daf2f747b8b1b"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual ReturnCode&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1RingBuffer.html#ae1b487f7b32dd15db9760b236edb0e5d">read</a> (DataType &amp;value, long int sec=-1, long int nsec=0)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">バッファから読み出す  <a href="#ae1b487f7b32dd15db9760b236edb0e5d"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual size_t&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1RingBuffer.html#ae5c8def9186589ac7ad53239a37fe99e">readable</a> () const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">バッファから読み出し可能な要素数  <a href="#ae5c8def9186589ac7ad53239a37fe99e"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1RingBuffer.html#ace2d405ddf45929f635ed596cd62f110">empty</a> (void) const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">バッファemptyチェック  <a href="#ace2d405ddf45929f635ed596cd62f110"></a><br/></td></tr>
+<tr><td colspan="2"><h2>Public 変数</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">BUFFERSTATUS_ENUM typedef <br class="typebreak"/>
+<a class="el" href="classcoil_1_1Guard.html">coil::Guard</a>&lt; <a class="el" href="classcoil_1_1Mutex.html">coil::Mutex</a> &gt;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTC_1_1RingBuffer.html#a760c724310a72642b606df7788f50890">Guard</a></td></tr>
+</table>
+<hr/><a name="_details"></a><h2>説明</h2>
+<h3>template&lt;class DataType&gt;<br/>
+ class RTC::RingBuffer&lt; DataType &gt;</h3>
+
+<p>リングバッファ実装クラス </p>
+<p>指定した長さのリング状バッファを持つバッファ実装クラス。 バッファ全体にデータが格納された場合、以降のデータは古いデータから 順次上書きされる。 従って、バッファ内には直近のバッファ長分のデータのみ保持される。</p>
+<p>注)現在の実装では、一番最後に格納したデータのみバッファから読み出し可能</p>
+<dl><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>DataType</em>&nbsp;</td><td>バッファに格納するデータ型</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="since"><dt><b>から:</b></dt><dd>0.4.0 </dd></dl>
+<hr/><h2>コンストラクタとデストラクタ</h2>
+<a class="anchor" id="a52360492539178ddfaba389938a18426"></a><!-- doxytag: member="RTC::RingBuffer::RingBuffer" ref="a52360492539178ddfaba389938a18426" args="(long int length=RINGBUFFER_DEFAULT_LENGTH)" -->
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class DataType &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classRTC_1_1RingBuffer.html">RTC::RingBuffer</a>&lt; DataType &gt;::<a class="el" href="classRTC_1_1RingBuffer.html">RingBuffer</a> </td>
+          <td>(</td>
+          <td class="paramtype">long int&nbsp;</td>
+          <td class="paramname"> <em>length</em> = <code>RINGBUFFER_DEFAULT_LENGTH</code></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>コンストラクタ </p>
+<p>コンストラクタ 指定されたバッファ長でバッファを初期化する。</p>
+<dl><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>length</em>&nbsp;</td><td>バッファ長 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>参照先 <a class="el" href="RingBuffer_8h_source.html#l00272">RTC::RingBuffer&lt; DataType &gt;::reset()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a04de65576d77749cb895e9d9bf65bf71"></a><!-- doxytag: member="RTC::RingBuffer::~RingBuffer" ref="a04de65576d77749cb895e9d9bf65bf71" args="(void)" -->
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class DataType &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual <a class="el" href="classRTC_1_1RingBuffer.html">RTC::RingBuffer</a>&lt; DataType &gt;::~<a class="el" href="classRTC_1_1RingBuffer.html">RingBuffer</a> </td>
+          <td>(</td>
+          <td class="paramtype">void&nbsp;</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [inline, virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>仮想デストラクタ </p>
+<p>仮想デストラクタ。 </p>
+
+</div>
+</div>
+<hr/><h2>関数</h2>
+<a class="anchor" id="a329834c2988670fa5f849923e9070ed8"></a><!-- doxytag: member="RTC::RingBuffer::advanceRptr" ref="a329834c2988670fa5f849923e9070ed8" args="(long int n=1)" -->
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class DataType &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual ReturnCode <a class="el" href="classRTC_1_1RingBuffer.html">RTC::RingBuffer</a>&lt; DataType &gt;::advanceRptr </td>
+          <td>(</td>
+          <td class="paramtype">long int&nbsp;</td>
+          <td class="paramname"> <em>n</em> = <code>1</code></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [inline, virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>読み出しポインタを進める </p>
+<p>現在の読み出し位置のポインタを n 個進める。</p>
+<dl><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>n</em>&nbsp;</td><td>読み出しポインタ + n の位置のポインタ </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>戻り値:</b></dt><dd>BUFFER_OK: 正常終了 BUFFER_ERROR: 異常終了 </dd></dl>
+
+<p><a class="el" href="classRTC_1_1BufferBase.html#aebc3b8b032109963dfa0e3c48f59a333">RTC::BufferBase&lt; DataType &gt;</a>を実装しています。</p>
+
+<p>参照先 <a class="el" href="RingBuffer_8h_source.html#l00094">RTC::RingBuffer&lt; DataType &gt;::Guard</a>.</p>
+
+<p>参照元 <a class="el" href="RingBuffer_8h_source.html#l00711">RTC::RingBuffer&lt; DataType &gt;::read()</a>, と <a class="el" href="RingBuffer_8h_source.html#l00430">RTC::RingBuffer&lt; DataType &gt;::write()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a208c5454c6466f09a6cb1cbcd1297871"></a><!-- doxytag: member="RTC::RingBuffer::advanceWptr" ref="a208c5454c6466f09a6cb1cbcd1297871" args="(long int n=1)" -->
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class DataType &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual ReturnCode <a class="el" href="classRTC_1_1RingBuffer.html">RTC::RingBuffer</a>&lt; DataType &gt;::advanceWptr </td>
+          <td>(</td>
+          <td class="paramtype">long int&nbsp;</td>
+          <td class="paramname"> <em>n</em> = <code>1</code></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [inline, virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>書込みポインタを進める </p>
+<p>現在の書き込み位置のポインタを n 個進める。 書き込み可能な要素数以上の数値を指定した場合、PRECONDITION_NOT_MET を返す。</p>
+<dl><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>n</em>&nbsp;</td><td>書込みポインタ + n の位置のポインタ </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>戻り値:</b></dt><dd>BUFFER_OK: 正常終了 PRECONDITION_NOT_MET: n &gt; <a class="el" href="classRTC_1_1RingBuffer.html#a7bebdef8031509955d74327ccad2ceec" title="バッファに書込み可能な要素数">writable()</a> </dd></dl>
+
+<p><a class="el" href="classRTC_1_1BufferBase.html#a75c0360e0621ebfcbd08e6e937d03ed2">RTC::BufferBase&lt; DataType &gt;</a>を実装しています。</p>
+
+<p>参照先 <a class="el" href="RingBuffer_8h_source.html#l00094">RTC::RingBuffer&lt; DataType &gt;::Guard</a>.</p>
+
+<p>参照元 <a class="el" href="RingBuffer_8h_source.html#l00430">RTC::RingBuffer&lt; DataType &gt;::write()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ace2d405ddf45929f635ed596cd62f110"></a><!-- doxytag: member="RTC::RingBuffer::empty" ref="ace2d405ddf45929f635ed596cd62f110" args="(void) const " -->
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class DataType &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual bool <a class="el" href="classRTC_1_1RingBuffer.html">RTC::RingBuffer</a>&lt; DataType &gt;::empty </td>
+          <td>(</td>
+          <td class="paramtype">void&nbsp;</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const<code> [inline, virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>バッファemptyチェック </p>
+<p>バッファemptyチェック用純粋仮想関数</p>
+<dl class="return"><dt><b>戻り値:</b></dt><dd>emptyチェック結果(true:バッファempty，false:バッファデータあり) </dd></dl>
+
+<p><a class="el" href="classRTC_1_1BufferBase.html#a00e5f836b601681073173740fdaa44d8">RTC::BufferBase&lt; DataType &gt;</a>を実装しています。</p>
+
+<p>参照先 <a class="el" href="RingBuffer_8h_source.html#l00094">RTC::RingBuffer&lt; DataType &gt;::Guard</a>.</p>
+
+<p>参照元 <a class="el" href="RingBuffer_8h_source.html#l00711">RTC::RingBuffer&lt; DataType &gt;::read()</a>, と <a class="el" href="RingBuffer_8h_source.html#l00430">RTC::RingBuffer&lt; DataType &gt;::write()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ae7a8906ed3de0c95ffed9dd4f5f74f3b"></a><!-- doxytag: member="RTC::RingBuffer::full" ref="ae7a8906ed3de0c95ffed9dd4f5f74f3b" args="(void) const " -->
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class DataType &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual bool <a class="el" href="classRTC_1_1RingBuffer.html">RTC::RingBuffer</a>&lt; DataType &gt;::full </td>
+          <td>(</td>
+          <td class="paramtype">void&nbsp;</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const<code> [inline, virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>バッファfullチェック </p>
+<p>バッファfullチェック用純粋仮想関数</p>
+<dl class="return"><dt><b>戻り値:</b></dt><dd>fullチェック結果(true:バッファfull，false:バッファ空きあり) </dd></dl>
+
+<p><a class="el" href="classRTC_1_1BufferBase.html#a66948bc482a6e127b0ed839a95d692b3">RTC::BufferBase&lt; DataType &gt;</a>を実装しています。</p>
+
+<p>参照先 <a class="el" href="RingBuffer_8h_source.html#l00094">RTC::RingBuffer&lt; DataType &gt;::Guard</a>.</p>
+
+<p>参照元 <a class="el" href="RingBuffer_8h_source.html#l00711">RTC::RingBuffer&lt; DataType &gt;::read()</a>, と <a class="el" href="RingBuffer_8h_source.html#l00430">RTC::RingBuffer&lt; DataType &gt;::write()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a229d439990825b2a829daf2f747b8b1b"></a><!-- doxytag: member="RTC::RingBuffer::get" ref="a229d439990825b2a829daf2f747b8b1b" args="()" -->
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class DataType &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual DataType&amp; <a class="el" href="classRTC_1_1RingBuffer.html">RTC::RingBuffer</a>&lt; DataType &gt;::get </td>
+          <td>(</td>
+          <td class="paramtype">void&nbsp;</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [inline, virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>バッファからデータを読み出す </p>
+<p>バッファからデータを読みだす。読み出しポインタの位置は変更されない。</p>
+<dl class="return"><dt><b>戻り値:</b></dt><dd>読み出しデータ </dd></dl>
+
+<p><a class="el" href="classRTC_1_1BufferBase.html#af12dcf239b3842fe6c946cb61c3d0bd2">RTC::BufferBase&lt; DataType &gt;</a>を実装しています。</p>
+
+<p>参照先 <a class="el" href="RingBuffer_8h_source.html#l00094">RTC::RingBuffer&lt; DataType &gt;::Guard</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a10506341647d0f93cbea400fe9628bf0"></a><!-- doxytag: member="RTC::RingBuffer::get" ref="a10506341647d0f93cbea400fe9628bf0" args="(DataType &amp;value)" -->
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class DataType &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual ReturnCode <a class="el" href="classRTC_1_1RingBuffer.html">RTC::RingBuffer</a>&lt; DataType &gt;::get </td>
+          <td>(</td>
+          <td class="paramtype">DataType &amp;&nbsp;</td>
+          <td class="paramname"> <em>value</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [inline, virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>バッファからデータを読み出す </p>
+<p>バッファからデータを読みだす。読み出しポインタの位置は変更されない。</p>
+<dl><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>value</em>&nbsp;</td><td>読み出しデータ</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>戻り値:</b></dt><dd>BUFFER_OK: 正常終了 BUFFER_ERROR: 異常終了 </dd></dl>
+
+<p><a class="el" href="classRTC_1_1BufferBase.html#a82263a34b3274b316b6563ee5339a7a0">RTC::BufferBase&lt; DataType &gt;</a>を実装しています。</p>
+
+<p>参照先 <a class="el" href="RingBuffer_8h_source.html#l00094">RTC::RingBuffer&lt; DataType &gt;::Guard</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a8bd57fca9d29703083c8ff0817dc0a55"></a><!-- doxytag: member="RTC::RingBuffer::init" ref="a8bd57fca9d29703083c8ff0817dc0a55" args="(const coil::Properties &amp;prop)" -->
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class DataType &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void <a class="el" href="classRTC_1_1RingBuffer.html">RTC::RingBuffer</a>&lt; DataType &gt;::init </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classcoil_1_1Properties.html">coil::Properties</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>prop</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [inline, virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>バッファの設定 </p>
+<p><a class="el" href="classcoil_1_1Properties.html" title="プロパティセットを表現するクラス">coil::Properties</a> で与えられるプロパティにより、 バッファの設定を初期化する。 使用できるオプションと意味は以下の通り</p>
+<ul>
+<li>buffer.length: バッファの長さ。自然数以外の数値が指定されても無視される。す でにバッファが使用状態でも、長さが再設定されたのち、すべての ポインタが初期化される。</li>
+</ul>
+<ul>
+<li>buffer.write.full_policy: 上書きするかどうかのポリシー。 overwrite (上書き), do_nothing (何もしない), block (ブロックする) block を指定した場合、次の timeout 値を指定すれば、指定時間後 書き込み不可能であればタイムアウトする。 デフォルトは overwrite (上書き)。</li>
+</ul>
+<ul>
+<li>buffer.write.timeout: タイムアウト時間を [sec] で指定する。デフォルトは 1.0 [sec]。 1 sec -&gt; 1.0, 1 ms -&gt; 0.001, タイムアウトしない -&gt; 0.0</li>
+</ul>
+<ul>
+<li>buffer.read.empty_policy: バッファが空のときの読み出しポリシー。 readback (最後の要素), do_nothing (何もしない), block (ブロックする) block を指定した場合、次の timeout 値を指定すれば、指定時間後 読み出し不可能であればタイムアウトする。 デフォルトは readback (最後の要素)。</li>
+</ul>
+<ul>
+<li>buffer.read.timeout: タイムアウト時間 [sec] で指定する。デフォルトは 1.0 [sec]。 1sec -&gt; 1.0, 1ms -&gt; 0.001, タイムアウトしない -&gt; 0.0 </li>
+</ul>
+
+<p><a class="el" href="classRTC_1_1BufferBase.html#a75adf7ba27bb2e795761bce1c7d76413">RTC::BufferBase&lt; DataType &gt;</a>を実装しています。</p>
+
+</div>
+</div>
+<a class="anchor" id="a9584ba6385836d6936d4fda2e595136e"></a><!-- doxytag: member="RTC::RingBuffer::length" ref="a9584ba6385836d6936d4fda2e595136e" args="(size_t n)" -->
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class DataType &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual ReturnCode <a class="el" href="classRTC_1_1RingBuffer.html">RTC::RingBuffer</a>&lt; DataType &gt;::length </td>
+          <td>(</td>
+          <td class="paramtype">size_t&nbsp;</td>
+          <td class="paramname"> <em>n</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [inline, virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>バッファの長さをセットする </p>
+<p>バッファ長を設定する。設定不可な場合はNOT_SUPPORTEDが返る。 この実装では BUFFER_OK しか返さない。</p>
+<dl class="return"><dt><b>戻り値:</b></dt><dd>BUFFER_OK: 正常終了 NOT_SUPPORTED: バッファ長変更不可 BUFFER_ERROR: 異常終了 </dd></dl>
+
+<p><a class="el" href="classRTC_1_1BufferBase.html#a9da737609dfc79b3f10f63ca7efc2203">RTC::BufferBase&lt; DataType &gt;</a>を実装しています。</p>
+
+<p>参照先 <a class="el" href="RingBuffer_8h_source.html#l00272">RTC::RingBuffer&lt; DataType &gt;::reset()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a00c6d912326c1bc65aaf8bc2f0e8895f"></a><!-- doxytag: member="RTC::RingBuffer::length" ref="a00c6d912326c1bc65aaf8bc2f0e8895f" args="(void) const " -->
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class DataType &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual size_t <a class="el" href="classRTC_1_1RingBuffer.html">RTC::RingBuffer</a>&lt; DataType &gt;::length </td>
+          <td>(</td>
+          <td class="paramtype">void&nbsp;</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const<code> [inline, virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>バッファ長を取得する </p>
+<p>バッファ長を取得する。</p>
+<dl class="return"><dt><b>戻り値:</b></dt><dd>バッファ長 </dd></dl>
+
+<p><a class="el" href="classRTC_1_1BufferBase.html#ad41d5476f9bce0e737115e8ab7cc615f">RTC::BufferBase&lt; DataType &gt;</a>を実装しています。</p>
+
+<p>参照先 <a class="el" href="RingBuffer_8h_source.html#l00094">RTC::RingBuffer&lt; DataType &gt;::Guard</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="acc983b57ac5fd73a47afdfdaab1e3845"></a><!-- doxytag: member="RTC::RingBuffer::put" ref="acc983b57ac5fd73a47afdfdaab1e3845" args="(const DataType &amp;value)" -->
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class DataType &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual ReturnCode <a class="el" href="classRTC_1_1RingBuffer.html">RTC::RingBuffer</a>&lt; DataType &gt;::put </td>
+          <td>(</td>
+          <td class="paramtype">const DataType &amp;&nbsp;</td>
+          <td class="paramname"> <em>value</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [inline, virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>バッファにデータを書き込む </p>
+<p>バッファにデータを書き込む。書き込みポインタの位置は変更されない。 この実装では常に BUFFER_OK を返す。</p>
+<dl><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>value</em>&nbsp;</td><td>書き込み対象データ</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>戻り値:</b></dt><dd>BUFFER_OK: 正常終了 BUFFER_ERROR: 異常終了 </dd></dl>
+
+<p><a class="el" href="classRTC_1_1BufferBase.html#af6274c9bc458580643560752f9150235">RTC::BufferBase&lt; DataType &gt;</a>を実装しています。</p>
+
+<p>参照先 <a class="el" href="RingBuffer_8h_source.html#l00094">RTC::RingBuffer&lt; DataType &gt;::Guard</a>.</p>
+
+<p>参照元 <a class="el" href="RingBuffer_8h_source.html#l00430">RTC::RingBuffer&lt; DataType &gt;::write()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ae1b487f7b32dd15db9760b236edb0e5d"></a><!-- doxytag: member="RTC::RingBuffer::read" ref="ae1b487f7b32dd15db9760b236edb0e5d" args="(DataType &amp;value, long int sec=&#45;1, long int nsec=0)" -->
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class DataType &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual ReturnCode <a class="el" href="classRTC_1_1RingBuffer.html">RTC::RingBuffer</a>&lt; DataType &gt;::read </td>
+          <td>(</td>
+          <td class="paramtype">DataType &amp;&nbsp;</td>
+          <td class="paramname"> <em>value</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">long int&nbsp;</td>
+          <td class="paramname"> <em>sec</em> = <code>-1</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">long int&nbsp;</td>
+          <td class="paramname"> <em>nsec</em> = <code>0</code></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td><code> [inline, virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>バッファから読み出す </p>
+<p>バッファに格納されたデータを読み出す。</p>
+<p>第2引数(sec)、第3引数(nsec)が指定されていない場合、バッファ空状 態での読み出しモード (readback, do_nothing, block) は <a class="el" href="classRTC_1_1RingBuffer.html#a8bd57fca9d29703083c8ff0817dc0a55" title="バッファの設定">init()</a> で設 定されたモードに従う。</p>
+<p>第2引数(sec) に引数が指定された場合は、init() で設定されたモード に関わらず、block モードとなり、バッファが空状態であれば指定時間 待ち、タイムアウトする。第3引数(nsec)は指定されない場合0として扱 われる。タイムアウト待ち中に、書込みスレッド側でバッファへ書込み があれば、ブロッキングは解除されデータが読みだされる。</p>
+<p>読み出し時にバッファが空(empty)状態で、別のスレッドがblockモード で書込み待ちをしている場合、signalを発行して書込み側のブロッキン グが解除される。</p>
+<dl><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>value</em>&nbsp;</td><td>読み出し対象データ </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>sec</em>&nbsp;</td><td>タイムアウト時間 sec (default -1: 無効) </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>nsec</em>&nbsp;</td><td>タイムアウト時間 nsec (default 0) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>戻り値:</b></dt><dd>BUFFER_OK 正常終了 BUFFER_EMPTY バッファが空状態 TIMEOUT 書込みがタイムアウトした PRECONDITION_NOT_MET 設定異常 </dd></dl>
+
+<p><a class="el" href="classRTC_1_1BufferBase.html#a92f188cb4e9a92c9c1079273b1deadc0">RTC::BufferBase&lt; DataType &gt;</a>を実装しています。</p>
+
+<p>参照先 <a class="el" href="RingBuffer_8h_source.html#l00594">RTC::RingBuffer&lt; DataType &gt;::advanceRptr()</a>, <a class="el" href="RingBuffer_8h_source.html#l00829">RTC::RingBuffer&lt; DataType &gt;::empty()</a>, <a class="el" href="RingBuffer_8h_source.html#l00540">RTC::RingBuffer&lt; DataType &gt;::full()</a>, <a class="el" href="RingBuffer_8h_source.html#l00094">RTC::RingBuffer&lt; DataType &gt;::Guard</a>, <a class="el" href="TimeValue_8h_source.html#l00110">coil::TimeValue::sec()</a>, と <a class="el" href="TimeValue_8h_source.html#l00131">coil::TimeValue::usec()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ae5c8def9186589ac7ad53239a37fe99e"></a><!-- doxytag: member="RTC::RingBuffer::readable" ref="ae5c8def9186589ac7ad53239a37fe99e" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class DataType &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual size_t <a class="el" href="classRTC_1_1RingBuffer.html">RTC::RingBuffer</a>&lt; DataType &gt;::readable </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const<code> [inline, virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>バッファから読み出し可能な要素数 </p>
+<p>バッファから読み出し可能な要素数を返す。</p>
+<dl class="return"><dt><b>戻り値:</b></dt><dd>読み出し可能な要素数</dd>
+<dd>
+BUFFER_OK: 正常終了 BUFFER_ERROR: 異常終了 </dd></dl>
+
+<p><a class="el" href="classRTC_1_1BufferBase.html#a7dd8259e299a273e2fe3744e669b381a">RTC::BufferBase&lt; DataType &gt;</a>を実装しています。</p>
+
+<p>参照先 <a class="el" href="RingBuffer_8h_source.html#l00094">RTC::RingBuffer&lt; DataType &gt;::Guard</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="add373502f0292178296f3750d5e962a0"></a><!-- doxytag: member="RTC::RingBuffer::reset" ref="add373502f0292178296f3750d5e962a0" args="()" -->
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class DataType &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual ReturnCode <a class="el" href="classRTC_1_1RingBuffer.html">RTC::RingBuffer</a>&lt; DataType &gt;::reset </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [inline, virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>バッファの状態をリセットする </p>
+<p>バッファの読み出しポインタと書き込みポインタの位置をリセットする。 この実装では BUFFER_OK しか返さない。</p>
+<dl class="return"><dt><b>戻り値:</b></dt><dd>BUFFER_OK: 正常終了 NOT_SUPPORTED: リセット不可能 BUFFER_ERROR: 異常終了 </dd></dl>
+
+<p><a class="el" href="classRTC_1_1BufferBase.html#a941b36c7352c76da52725a169e094e16">RTC::BufferBase&lt; DataType &gt;</a>を実装しています。</p>
+
+<p>参照先 <a class="el" href="RingBuffer_8h_source.html#l00094">RTC::RingBuffer&lt; DataType &gt;::Guard</a>.</p>
+
+<p>参照元 <a class="el" href="RingBuffer_8h_source.html#l00242">RTC::RingBuffer&lt; DataType &gt;::length()</a>, と <a class="el" href="RingBuffer_8h_source.html#l00118">RTC::RingBuffer&lt; DataType &gt;::RingBuffer()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a65401c71cb216a0730f6793f5a00dd1d"></a><!-- doxytag: member="RTC::RingBuffer::rptr" ref="a65401c71cb216a0730f6793f5a00dd1d" args="(long int n=0)" -->
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class DataType &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual DataType* <a class="el" href="classRTC_1_1RingBuffer.html">RTC::RingBuffer</a>&lt; DataType &gt;::rptr </td>
+          <td>(</td>
+          <td class="paramtype">long int&nbsp;</td>
+          <td class="paramname"> <em>n</em> = <code>0</code></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [inline, virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>バッファの現在の読み出し要素のポインタ </p>
+<p>バッファの現在の読み出し要素のポインタまたは、n個先のポインタを返す</p>
+<dl><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>n</em>&nbsp;</td><td>読み出しポインタ + n の位置のポインタ </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>戻り値:</b></dt><dd>読み出し位置のポインタ </dd></dl>
+
+<p><a class="el" href="classRTC_1_1BufferBase.html#a854fd94174172b67034cf727e6c0a2d1">RTC::BufferBase&lt; DataType &gt;</a>を実装しています。</p>
+
+<p>参照先 <a class="el" href="RingBuffer_8h_source.html#l00094">RTC::RingBuffer&lt; DataType &gt;::Guard</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ad9aba4e554f5fd23a1cc7b9d63b0fe07"></a><!-- doxytag: member="RTC::RingBuffer::wptr" ref="ad9aba4e554f5fd23a1cc7b9d63b0fe07" args="(long int n=0)" -->
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class DataType &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual DataType* <a class="el" href="classRTC_1_1RingBuffer.html">RTC::RingBuffer</a>&lt; DataType &gt;::wptr </td>
+          <td>(</td>
+          <td class="paramtype">long int&nbsp;</td>
+          <td class="paramname"> <em>n</em> = <code>0</code></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [inline, virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>バッファの現在の書込み要素のポインタ </p>
+<p>バッファの現在の書込み要素のポインタまたは、n個先のポインタを返す</p>
+<dl><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>n</em>&nbsp;</td><td>書込みポインタ + n の位置のポインタ </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>戻り値:</b></dt><dd>書込み位置のポインタ </dd></dl>
+
+<p><a class="el" href="classRTC_1_1BufferBase.html#a27d6bb261714e84f16ef17e6920413ce">RTC::BufferBase&lt; DataType &gt;</a>を実装しています。</p>
+
+<p>参照先 <a class="el" href="RingBuffer_8h_source.html#l00094">RTC::RingBuffer&lt; DataType &gt;::Guard</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a7bebdef8031509955d74327ccad2ceec"></a><!-- doxytag: member="RTC::RingBuffer::writable" ref="a7bebdef8031509955d74327ccad2ceec" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class DataType &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual size_t <a class="el" href="classRTC_1_1RingBuffer.html">RTC::RingBuffer</a>&lt; DataType &gt;::writable </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const<code> [inline, virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>バッファに書込み可能な要素数 </p>
+<p>バッファに書込み可能な要素数を返す。</p>
+<dl class="return"><dt><b>戻り値:</b></dt><dd>書き込み可能な要素数 </dd></dl>
+
+<p><a class="el" href="classRTC_1_1BufferBase.html#a089b1c57c7d8aea9f1bdcc055e20bff0">RTC::BufferBase&lt; DataType &gt;</a>を実装しています。</p>
+
+<p>参照先 <a class="el" href="RingBuffer_8h_source.html#l00094">RTC::RingBuffer&lt; DataType &gt;::Guard</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a4b062367982f9748b3ba5891cf753040"></a><!-- doxytag: member="RTC::RingBuffer::write" ref="a4b062367982f9748b3ba5891cf753040" args="(const DataType &amp;value, long int sec=&#45;1, long int nsec=0)" -->
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class DataType &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual ReturnCode <a class="el" href="classRTC_1_1RingBuffer.html">RTC::RingBuffer</a>&lt; DataType &gt;::write </td>
+          <td>(</td>
+          <td class="paramtype">const DataType &amp;&nbsp;</td>
+          <td class="paramname"> <em>value</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">long int&nbsp;</td>
+          <td class="paramname"> <em>sec</em> = <code>-1</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">long int&nbsp;</td>
+          <td class="paramname"> <em>nsec</em> = <code>0</code></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td><code> [inline, virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>バッファに書き込む </p>
+<p>引数で与えられたデータをバッファに書き込む。</p>
+<p>第2引数(sec)、第3引数(nsec)が指定されていない場合、バッファフル 時の書込みモード (overwrite, do_nothing, block) は <a class="el" href="classRTC_1_1RingBuffer.html#a8bd57fca9d29703083c8ff0817dc0a55" title="バッファの設定">init()</a> で設定 されたモードに従う。</p>
+<p>第2引数(sec) に引数が指定された場合は、init() で設定されたモード に関わらず、block モードとなり、バッファがフル状態であれば指定時 間まち、タイムアウトする。第3引数(nsec)は指定されない場合0として 扱われる。タイムアウト待ち中に、読み出しスレッド側でバッファから 読み出せば、ブロッキングは解除されデータが書き込まれる。</p>
+<p>書き込み時にバッファが空(empty)状態で、別のスレッドがblockモード で読み出し待ちをしている場合、signalを発行して読み出し側のブロッ キングが解除される。</p>
+<dl><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>value</em>&nbsp;</td><td>書き込み対象データ </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>sec</em>&nbsp;</td><td>タイムアウト時間 sec (default -1: 無効) </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>nsec</em>&nbsp;</td><td>タイムアウト時間 nsec (default 0) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>戻り値:</b></dt><dd>BUFFER_OK 正常終了 BUFFER_FULL バッファがフル状態 TIMEOUT 書込みがタイムアウトした PRECONDITION_NOT_MET 設定異常 </dd></dl>
+
+<p><a class="el" href="classRTC_1_1BufferBase.html#ad9df647826ca2f05664aa0f53e4142f7">RTC::BufferBase&lt; DataType &gt;</a>を実装しています。</p>
+
+<p>参照先 <a class="el" href="RingBuffer_8h_source.html#l00594">RTC::RingBuffer&lt; DataType &gt;::advanceRptr()</a>, <a class="el" href="RingBuffer_8h_source.html#l00334">RTC::RingBuffer&lt; DataType &gt;::advanceWptr()</a>, <a class="el" href="RingBuffer_8h_source.html#l00829">RTC::RingBuffer&lt; DataType &gt;::empty()</a>, <a class="el" href="RingBuffer_8h_source.html#l00540">RTC::RingBuffer&lt; DataType &gt;::full()</a>, <a class="el" href="RingBuffer_8h_source.html#l00094">RTC::RingBuffer&lt; DataType &gt;::Guard</a>, <a class="el" href="RingBuffer_8h_source.html#l00382">RTC::RingBuffer&lt; DataType &gt;::put()</a>, <a class="el" href="TimeValue_8h_source.html#l00110">coil::TimeValue::sec()</a>, と <a class="el" href="TimeValue_8h_source.html#l00131">coil::TimeValue::usec()</a>.</p>
+
+</div>
+</div>
+<hr/><h2>変数</h2>
+<a class="anchor" id="a760c724310a72642b606df7788f50890"></a><!-- doxytag: member="RTC::RingBuffer::Guard" ref="a760c724310a72642b606df7788f50890" args="" -->
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class DataType &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">BUFFERSTATUS_ENUM typedef <a class="el" href="classcoil_1_1Guard.html">coil::Guard</a>&lt;<a class="el" href="classcoil_1_1Mutex.html">coil::Mutex</a>&gt; <a class="el" href="classRTC_1_1RingBuffer.html">RTC::RingBuffer</a>&lt; DataType &gt;::<a class="el" href="classRTC_1_1RingBuffer.html#a760c724310a72642b606df7788f50890">Guard</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>参照元 <a class="el" href="RingBuffer_8h_source.html#l00594">RTC::RingBuffer&lt; DataType &gt;::advanceRptr()</a>, <a class="el" href="RingBuffer_8h_source.html#l00334">RTC::RingBuffer&lt; DataType &gt;::advanceWptr()</a>, <a class="el" href="RingBuffer_8h_source.html#l00829">RTC::RingBuffer&lt; DataType &gt;::empty()</a>, <a class="el" href="RingBuffer_8h_source.html#l00540">RTC::RingBuffer&lt; DataType &gt;::full()</a>, <a class="el" href="RingBuffer_8h_source.html#l00638">RTC::RingBuffer&lt; DataType &gt;::get()</a>, <a class="el" href="RingBuffer_8h_source.html#l00214">RTC::RingBuffer&lt; DataType &gt;::length()</a>, <a class="el" href="RingBuffer_8h_source.html#l00382">RTC::RingBuffer&lt; DataType &gt;::put()</a>, <a class="el" href="RingBuffer_8h_source.html#l00711">RTC::RingBuffer&lt; DataType &gt;::read()</a>, <a class="el" href="RingBuffer_8h_source.html#l00804">RTC::RingBuffer&lt; DataType &gt;::readable()</a>, <a class="el" href="RingBuffer_8h_source.html#l00272">RTC::RingBuffer&lt; DataType &gt;::reset()</a>, <a class="el" href="RingBuffer_8h_source.html#l00567">RTC::RingBuffer&lt; DataType &gt;::rptr()</a>, <a class="el" href="RingBuffer_8h_source.html#l00305">RTC::RingBuffer&lt; DataType &gt;::wptr()</a>, <a class="el" href="RingBuffer_8h_source.html#l00515">RTC::RingBuffer&lt; DataType &gt;::writable()</a>, と <a class="el" href="RingBuffer_8h_source.html#l00430">RTC::RingBuffer&lt; DataType &gt;::write()</a>.</p>
+
+</div>
+</div>
+</div>
+<hr class="footer"/><address style="text-align: right;"><small>OpenRTMに対してThu May 24 23:25:20 2012に生成されました。&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.6.3 </small></address>
+</body>
+</html>
