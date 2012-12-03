@@ -1,0 +1,8 @@
+usr/include/*
+usr/lib/libcoil.so
+usr/lib/libRTC.so
+usr/lib/openrtm-1.1/ec/RTPreemptEC.so.0.*
+usr/lib/openrtm-1.1/sdo/ComponentObserverConsumer.so.0.*
+usr/lib/pkgconfig/*.pc
+#usr/share/openrtm-1.1/example/
+usr/share/openrtm-1.1/doc/

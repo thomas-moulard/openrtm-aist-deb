@@ -1,0 +1,5 @@
+openrtm-aist-c++ (1.1.0-1ubuntu1~rc1) lucid; urgency=low
+
+  * Initial release.
+
+ -- Thomas Moulard <thomas.moulard@gmail.com>  Mon, 03 Dec 2012 16:45:09 +0900

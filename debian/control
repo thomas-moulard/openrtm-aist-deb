@@ -1,0 +1,46 @@
+Source: openrtm-aist-c++
+Priority: extra
+Maintainer: Thomas Moulard <thomas.moulard@gmail.com>
+Build-Depends: debhelper (>= 7.0.50), cmake (>= 2.6),
+	       doxygen (>= 1.6.3),
+	       graphviz,
+	       libboost-all-dev,
+	       uuid-dev,
+	       libomniorb4-dev,
+	       omniidl4,
+	       omniorb4-nameserver,
+	       python-yaml
+Standards-Version: 3.8.4
+Section: contrib/science
+Homepage: http://www.openrtm.org/
+
+Package: libopenrtm-aist-c++
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, python (>= 2.6)
+Description: Component-oriented robotics system development platform
+ Development platform allowing robotics system design by writing
+ RT-components and connecting them together.
+ .
+ This package contains the C++ version of this software.
+
+Package: libopenrtm-aist-c++-dev
+Architecture: any
+Section: contrib/libdevel
+Depends: libopenrtm-aist-c++ (= ${binary:Version}), ${misc:Depends}
+Description: Component-oriented robotics system development platform
+ Development platform allowing robotics system design by writing
+ RT-components and connecting them together.
+ .
+ This package contains the development files for the C++ version of
+ this software.
+
+Package: libopenrtm-aist-c++-dbg
+Architecture: any
+Section: contrib/debug
+Depends: libopenrtm-aist-c++ (= ${binary:Version}), ${misc:Depends}
+Description: Component-oriented robotics system development platform
+ Development platform allowing robotics system design by writing
+ RT-components and connecting them together.
+ .
+ This package contains the debugging information for the C++ version
+ of this software.

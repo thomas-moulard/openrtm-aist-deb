@@ -1,0 +1,17 @@
+#!/usr/bin/make -f
+# -*- makefile -*-
+
+# Uncomment this to turn on verbose mode.
+#export DH_VERBOSE=1
+
+export DEBUILD_DPKG_BUILDPACKAGE_OPTS="-I.svn -I.git"
+
+.PHONY: override_dh_strip
+
+override_dh_strip:
+	dh_strip -a --dbg-package=libopenrtm-aist-c++-dbg
+
+override_dh_auto_test:
+
+%:
+	dh  $@
