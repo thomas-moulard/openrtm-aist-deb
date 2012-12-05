@@ -1,0 +1,4 @@
+usr/include/coil-1.1
+usr/lib/libcoil.so
+usr/lib/libcoil.a
+usr/lib/pkgconfig/libcoil.pc

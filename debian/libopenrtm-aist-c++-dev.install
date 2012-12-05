@@ -1,5 +1,5 @@
 usr/include/openrtm-1.1
-usr/lib/libcoil.so
 usr/lib/libRTC.so
-usr/lib/pkgconfig/*.pc
+usr/lib/libRTC.a
+usr/lib/pkgconfig/openrtm-aist.pc
 #usr/share/openrtm-1.1/example/
