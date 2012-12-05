@@ -1,0 +1,2 @@
+package-name-doesnt-match-sonames libcoil-1.1.0
+no-symbols-control-file usr/lib/libcoil-1.1.0.so

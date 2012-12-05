@@ -57,6 +57,7 @@ Package: libopenrtm-aist-c++-dev
 Architecture: any
 Section: contrib/libdevel
 Depends: libcoil-dev (= ${binary:Version}), libopenrtm-aist-c++ (= ${binary:Version}), libboost-all-dev, libomniorb4-dev, uuid-dev, ${misc:Depends}
+Suggests: libopenrtm-aist-c++-doc (= ${binary:Version})
 Description: Component-oriented robotics system development platform (development files)
  Development platform allowing robotics system design by writing
  RT-components and connecting them together.

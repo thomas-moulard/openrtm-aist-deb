@@ -1,0 +1,8 @@
+package-name-doesnt-match-sonames libRTC-1.1.0
+binary-without-manpage usr/bin/rtc-template
+binary-without-manpage usr/bin/rtcd
+binary-without-manpage usr/bin/rtcprof
+binary-without-manpage usr/bin/rtm-config
+binary-without-manpage usr/bin/rtm-naming
+binary-without-manpage usr/bin/rtm-skelwrapper
+no-symbols-control-file usr/lib/libRTC-1.1.0.so
