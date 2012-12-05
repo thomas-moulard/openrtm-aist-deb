@@ -6,13 +6,14 @@
 
 export DEBUILD_DPKG_BUILDPACKAGE_OPTS="-I.svn -I.git"
 
-.PHONY: override_dh_strip
+.PHONY: override_dh_strip override_dh_shlibdeps
 
 override_dh_strip:
 	dh_strip -a --dbg-package=libcoil-dbg -Xrtc
 	dh_strip -a --dbg-package=libopenrtm-aist-c++-dbg -Xcoil
 
-override_dh_auto_test:
+override_dh_shlibdeps:
+	LD_LIBRARY_PATH="debian/tmp/usr/lib:$$LD_LIBRARY_PATH" dh_shlibdeps --
 
 %:
 	dh  $@
