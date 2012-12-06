@@ -11,7 +11,7 @@ Build-Depends: debhelper (>= 7.0.50), cmake (>= 2.6),
 	       omniorb-nameserver,
 	       python-yaml,
 	       libelf-dev
-Standards-Version: 3.8.4
+Standards-Version: 3.9.3
 Section: contrib/science
 Homepage: http://www.openrtm.org/
 Vcs-Git: git://github.com/thomas-moulard/openrtm-aist-deb.git
