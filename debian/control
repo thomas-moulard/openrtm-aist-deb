@@ -1,4 +1,4 @@
-Source: openrtm-aist-c++
+Source: openrtm-aist
 Priority: extra
 Maintainer: Thomas Moulard <thomas.moulard@gmail.com>
 Build-Depends: debhelper (>= 7.0.50), cmake (>= 2.6),
