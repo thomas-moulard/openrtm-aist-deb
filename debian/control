@@ -19,7 +19,7 @@ Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}
 Description: Internal OpenRTM library
  Internal OpenRTM library which should only be used in
- in coordination with openrtm-c++.
+ in coordination with libopenrtm.
  .
  This package contains the library binary.
 
@@ -27,10 +27,10 @@ Description: Internal OpenRTM library
 Package: libcoil-dev
 Architecture: any
 Section: contrib/libdevel
-Depends: libcoil (= ${binary:Version}), ${misc:Depends}
+Depends: uuid-dev, libcoil (= ${binary:Version}), ${misc:Depends}
 Description: Internal OpenRTM library (development files)
  Internal OpenRTM library which should only be used in
- in coordination with openrtm-c++.
+ in coordination with libopenrtm.
  .
  This package contains the library development files.
 
@@ -40,11 +40,11 @@ Section: contrib/debug
 Depends: libcoil (= ${binary:Version}), ${misc:Depends}
 Description: Internal OpenRTM library (debugging files)
  Internal OpenRTM library which should only be used in
- in coordination with openrtm-c++.
+ in coordination with libopenrtm.
  .
  This package contains the library debugging files.
 
-Package: libopenrtm-aist-c++
+Package: libopenrtm-aist
 Architecture: any
 Depends: libcoil (= ${binary:Version}), ${shlibs:Depends}, ${misc:Depends}, python (>= 2.6)
 Description: Component-oriented robotics system development platform
@@ -53,11 +53,11 @@ Description: Component-oriented robotics system development platform
  .
  This package contains the C++ version of this software.
 
-Package: libopenrtm-aist-c++-dev
+Package: libopenrtm-aist-dev
 Architecture: any
 Section: contrib/libdevel
-Depends: libcoil-dev (= ${binary:Version}), libopenrtm-aist-c++ (= ${binary:Version}), libboost-all-dev, libomniorb4-dev, uuid-dev, ${misc:Depends}
-Suggests: libopenrtm-aist-c++-doc (= ${binary:Version})
+Depends: libcoil-dev (= ${binary:Version}), libopenrtm-aist (= ${binary:Version}), libboost-all-dev, libomniorb4-dev, uuid-dev, ${misc:Depends}
+Suggests: libopenrtm-aist-doc (= ${binary:Version})
 Description: Component-oriented robotics system development platform (development files)
  Development platform allowing robotics system design by writing
  RT-components and connecting them together.
@@ -65,10 +65,10 @@ Description: Component-oriented robotics system development platform (developmen
  This package contains the development files for the C++ version of
  this software.
 
-Package: libopenrtm-aist-c++-dbg
+Package: libopenrtm-aist-dbg
 Architecture: any
 Section: contrib/debug
-Depends: libopenrtm-aist-c++ (= ${binary:Version}), libcoil-dbg (= ${binary:Version}), ${misc:Depends}
+Depends: libopenrtm-aist (= ${binary:Version}), libcoil-dbg (= ${binary:Version}), ${misc:Depends}
 Description: Component-oriented robotics system development platform (debugging files)
  Development platform allowing robotics system design by writing
  RT-components and connecting them together.
@@ -76,7 +76,7 @@ Description: Component-oriented robotics system development platform (debugging 
  This package contains the debugging information for the C++ version
  of this software.
 
-Package: libopenrtm-aist-c++-doc
+Package: libopenrtm-aist-doc
 Architecture: all
 Section: contrib/doc
 Depends: ${misc:Depends}
