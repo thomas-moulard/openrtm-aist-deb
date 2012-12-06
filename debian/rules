@@ -6,15 +6,11 @@
 
 export DEBUILD_DPKG_BUILDPACKAGE_OPTS="-I.svn -I.git"
 
-.PHONY: override_dh_strip override_dh_makeshlibs
+.PHONY: override_dh_stripx
 
 override_dh_strip:
 	dh_strip -plibcoil --dbg-package=libcoil-dbg
-	dh_strip -plibopenrtm-aist-c++ --dbg-package=libopenrtm-aist-c++-dbg
-
-override_dh_makeshlibs:
-	dh_makeshlibs -plibcoil
-	dh_makeshlibs -plibopenrtm-aist-c++
+	dh_strip -plibopenrtm-aist --dbg-package=libopenrtm-aist-dbg
 
 %:
 	dh  $@
