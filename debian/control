@@ -6,7 +6,7 @@ Build-Depends: debhelper (>= 7.0.50), cmake (>= 2.6),
 	       graphviz,
 	       libboost-all-dev,
 	       uuid-dev,
-	       libomniorb-dev,
+	       libomniorb4-dev,
 	       omniidl,
 	       python-yaml
 Standards-Version: 3.8.4
@@ -57,7 +57,7 @@ Description: Component-oriented robotics system development platform
 Package: libopenrtm-aist-dev
 Architecture: any
 Section: contrib/libdevel
-Depends: libcoil-dev (= ${binary:Version}), libopenrtm-aist (= ${binary:Version}), libboost-all-dev, libomniorb-dev, uuid-dev, omniidl, ${misc:Depends}
+Depends: libcoil-dev (= ${binary:Version}), libopenrtm-aist (= ${binary:Version}), libboost-all-dev, libomniorb4-dev, uuid-dev, omniidl, ${misc:Depends}
 Suggests: libopenrtm-aist-doc (= ${binary:Version})
 Description: Component-oriented robotics system development platform (development files)
  Development platform allowing robotics system design by writing
