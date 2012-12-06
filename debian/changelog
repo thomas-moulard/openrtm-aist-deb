@@ -1,5 +1,6 @@
 openrtm-aist (1.1.0-1) unstable; urgency=low
 
-  * Initial release.
+  * Install coil-config man page.
+  * Import new upstream version 1.1.0 (closes: #695240).
 
  -- Thomas Moulard <thomas.moulard@gmail.com>  Mon, 03 Dec 2012 16:45:09 +0900
