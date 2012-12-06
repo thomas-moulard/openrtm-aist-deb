@@ -36,9 +36,6 @@
 #ifdef USE_MONITORING
 #include <CosNotifyComm.idl>
 #endif
-#ifndef ORBIT2_IDL
-#define TypeCode CORBA::TypeCode
-#endif
 /** CORBA specific model for SDOs */
 
 #pragma prefix "org.omg"
@@ -121,7 +118,7 @@ module SDOPackage
   {
     string         name;
 #ifndef ORBIT2_IDL
-    TypeCode       type;
+    CORBA::TypeCode       type;
 #else
     TypeCode       type;
 #endif
