@@ -1,4 +1,4 @@
-etc/
+etc/rtc.conf.sample
 usr/bin/rtc*
 usr/bin/rtm*
 usr/lib/libRTC-1.1.0.so

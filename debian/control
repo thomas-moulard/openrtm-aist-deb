@@ -13,6 +13,8 @@ Build-Depends: debhelper (>= 7.0.50), cmake (>= 2.6),
 Standards-Version: 3.8.4
 Section: contrib/science
 Homepage: http://www.openrtm.org/
+Vcs-Git: git://github.com/thomas-moulard/openrtm-aist-deb.git
+Vcs-Browser: https://github.com/thomas-moulard/openrtm-aist-deb
 
 Package: libcoil
 Architecture: any
