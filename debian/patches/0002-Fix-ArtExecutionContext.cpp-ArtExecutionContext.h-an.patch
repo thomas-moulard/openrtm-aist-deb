@@ -1,7 +1,9 @@
 From: Thomas Moulard <thomas.moulard@gmail.com>
 Date: Thu, 6 Dec 2012 10:03:16 +0900
-Subject: [PATCH] Fix ArtExecutionContext.cpp, ArtExecutionContext.h and associated Makefile.am.
+Subject: Fix ArtExecutionContext.cpp, ArtExecutionContext.h and associated Makefile.am.
 
+Forwarded: yes
+Origin: http://rtm-ros-robotics.googlecode.com/svn/tags/latest/rtmros_common/openrtm/
 ---
  src/ext/ec/artlinux/ArtExecutionContext.cpp |   13 +++++++++++--
  src/ext/ec/artlinux/ArtExecutionContext.h   |   16 ++++++++++++++++
