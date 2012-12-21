@@ -8,9 +8,9 @@ export DEBUILD_DPKG_BUILDPACKAGE_OPTS="-I.svn -I.git"
 
 .PHONY: override_dh_stripx
 
+%:
+	dh  $@
+
 override_dh_strip:
 	dh_strip -plibcoil --dbg-package=libcoil-dbg
 	dh_strip -plibopenrtm-aist --dbg-package=libopenrtm-aist-dbg
-
-%:
-	dh  $@
