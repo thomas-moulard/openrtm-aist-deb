@@ -1,2 +1,4 @@
 package-name-doesnt-match-sonames libcoil-1.1.0
 no-symbols-control-file usr/lib/*/libcoil-1.1.0.so
+hardening-no-fortify-functions usr/lib/*/libcoil-1.1.0.so
+dev-pkg-without-shlib-symlink usr/lib/*/libcoil-1.1.0.so usr/lib/*/libcoil-1.1.0.so
