@@ -1,2 +1,2 @@
 usr/bin/coil-config
-usr/lib/libcoil-1.1.0.so
+usr/lib/*/libcoil-1.1.0.so
