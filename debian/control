@@ -1,8 +1,8 @@
 Source: openrtm-aist
 Priority: extra
 Maintainer: Thomas Moulard <thomas.moulard@gmail.com>
-Build-Depends: debhelper (>= 9), cmake (>= 2.6),
-	       doxygen (>= 1.6.3),
+Build-Depends: debhelper (>= 9), cmake,
+	       doxygen, doxygen-latex,
 	       graphviz,
 	       libboost-all-dev,
 	       uuid-dev,
@@ -11,7 +11,7 @@ Build-Depends: debhelper (>= 9), cmake (>= 2.6),
 	       omniorb-nameserver,
 	       python-yaml,
 	       libelf-dev
-Standards-Version: 3.9.3
+Standards-Version: 3.9.4
 Section: contrib/science
 Homepage: http://www.openrtm.org/
 Vcs-Git: git://github.com/thomas-moulard/openrtm-aist-deb.git
@@ -19,7 +19,7 @@ Vcs-Browser: https://github.com/thomas-moulard/openrtm-aist-deb
 
 Package: libcoil
 Architecture: any
-Pre-depends: ${misc:Pre-Depends}
+Pre-Depends: ${misc:Pre-Depends}
 Depends: ${shlibs:Depends}, ${misc:Depends}
 Description: Internal OpenRTM library
  Internal OpenRTM library which should only be used in
@@ -32,7 +32,7 @@ Package: libcoil-dev
 Architecture: any
 Section: contrib/libdevel
 Depends: uuid-dev, libcoil (= ${binary:Version}), ${misc:Depends}
-Description: Internal OpenRTM library (development files)
+Description: Internal OpenRTM library - development files
  Internal OpenRTM library which should only be used in
  in coordination with libopenrtm.
  .
@@ -42,17 +42,17 @@ Package: libcoil-dbg
 Architecture: any
 Section: contrib/debug
 Depends: libcoil (= ${binary:Version}), ${misc:Depends}
-Description: Internal OpenRTM library (debugging files)
+Description: Internal OpenRTM library - debugging symbols
  Internal OpenRTM library which should only be used in
  in coordination with libopenrtm.
  .
- This package contains the library debugging files.
+ This package contains the library debugging symbols.
 
 Package: libopenrtm-aist
 Architecture: any
-Pre-depends: ${misc:Pre-Depends}
-Depends: omniorb-nameserver, libcoil (= ${binary:Version}), ${shlibs:Depends}, ${misc:Depends}, python (>= 2.6)
-Description: Component-oriented robotics system development platform
+Pre-Depends: ${misc:Pre-Depends}
+Depends: omniorb-nameserver, libcoil (= ${binary:Version}), ${shlibs:Depends}, ${misc:Depends}, python
+Description: Component-oriented robotics middleware
  Development platform allowing robotics system design by writing
  RT-components and connecting them together.
  .
@@ -63,7 +63,7 @@ Architecture: any
 Section: contrib/libdevel
 Depends: libcoil-dev (= ${binary:Version}), libopenrtm-aist (= ${binary:Version}), libboost-all-dev, libomniorb4-dev, uuid-dev, libelf-dev, omniidl, ${misc:Depends}
 Suggests: libopenrtm-aist-doc (= ${binary:Version})
-Description: Component-oriented robotics system development platform (development files)
+Description: Component-oriented robotics middleware - development files
  Development platform allowing robotics system design by writing
  RT-components and connecting them together.
  .
@@ -74,7 +74,7 @@ Package: libopenrtm-aist-dbg
 Architecture: any
 Section: contrib/debug
 Depends: libopenrtm-aist (= ${binary:Version}), libcoil-dbg (= ${binary:Version}), ${misc:Depends}
-Description: Component-oriented robotics system development platform (debugging files)
+Description: Component-oriented robotics middleware - debugging symbols
  Development platform allowing robotics system design by writing
  RT-components and connecting them together.
  .
@@ -85,7 +85,7 @@ Package: libopenrtm-aist-doc
 Architecture: all
 Section: contrib/doc
 Depends: ${misc:Depends}
-Description: Component-oriented robotics system development platform (documentation)
+Description: Component-oriented robotics middleware - documentation
  Development platform allowing robotics system design by writing
  RT-components and connecting them together.
  .
