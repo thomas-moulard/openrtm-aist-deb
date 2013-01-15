@@ -1,11 +1,11 @@
-package-name-doesnt-match-sonames libRTC-1.1.0
+package-name-doesnt-match-sonames libRTC-*
 binary-without-manpage usr/bin/rtc-template
 binary-without-manpage usr/bin/rtcd
 binary-without-manpage usr/bin/rtcprof
 binary-without-manpage usr/bin/rtm-config
 binary-without-manpage usr/bin/rtm-naming
 binary-without-manpage usr/bin/rtm-skelwrapper
-no-symbols-control-file usr/lib/*/libRTC-1.1.0.so
-hardening-no-fortify-functions usr/lib/*/libRTC-1.1.0.so
-hardening-no-fortify-functions usr/lib/*/openrtm-1.1/sdo/ComponentObserverConsumer.so.0.0.0
-dev-pkg-without-shlib-symlink usr/lib/*/libRTC-1.1.0.so usr/lib/x86_64-linux-gnu/libRTC-1.1.0.so
+no-symbols-control-file usr/lib/*/libRTC-*.so
+hardening-no-fortify-functions usr/lib/*/libRTC-*.so
+hardening-no-fortify-functions usr/lib/*/openrtm-*/sdo/ComponentObserverConsumer.so.*
+dev-pkg-without-shlib-symlink usr/lib/*/libRTC-*.so usr/lib/*/libRTC-*.so
