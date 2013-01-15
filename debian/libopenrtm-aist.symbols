@@ -7131,7 +7131,7 @@ libRTC-1.1.0.so libopenrmt-aist #MINVER#
  handler@Base 1.1.0
  openrtm_name@Base 1.1.0
  openrtm_version@Base 1.1.0
-libcoil-1.1.0.so libopenrmt-aist #MINVER#
+libcoil-1.1.0.so libopenrtm-aist #MINVER#
  ForExternTest@Base 1.1.0
  _ZN4coil10DynamicLib4openEPKcii@Base 1.1.0
  _ZN4coil10DynamicLib5closeEv@Base 1.1.0
