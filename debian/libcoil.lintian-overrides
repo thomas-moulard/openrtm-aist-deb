@@ -1,3 +1,2 @@
 package-name-doesnt-match-sonames libcoil-*
 hardening-no-fortify-functions usr/lib/*/libcoil-*.so
-dev-pkg-without-shlib-symlink usr/lib/*/libcoil-*.so usr/lib/*/libcoil-*.so
