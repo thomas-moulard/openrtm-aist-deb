@@ -5,7 +5,6 @@ binary-without-manpage usr/bin/rtcprof
 binary-without-manpage usr/bin/rtm-config
 binary-without-manpage usr/bin/rtm-naming
 binary-without-manpage usr/bin/rtm-skelwrapper
-no-symbols-control-file usr/lib/*/libRTC-*.so
 hardening-no-fortify-functions usr/lib/*/libRTC-*.so
 hardening-no-fortify-functions usr/lib/*/openrtm-*/sdo/ComponentObserverConsumer.so.*
 dev-pkg-without-shlib-symlink usr/lib/*/libRTC-*.so usr/lib/*/libRTC-*.so
