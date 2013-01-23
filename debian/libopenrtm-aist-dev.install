@@ -1,3 +1,4 @@
+usr/bin/rtm-config
 usr/include/openrtm-*
 usr/lib/*/libRTC.so
 usr/lib/*/libRTC.a

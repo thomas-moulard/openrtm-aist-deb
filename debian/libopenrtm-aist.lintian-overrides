@@ -1,9 +1,3 @@
 package-name-doesnt-match-sonames libRTC-*
-binary-without-manpage usr/bin/rtc-template
-binary-without-manpage usr/bin/rtcd
-binary-without-manpage usr/bin/rtcprof
-binary-without-manpage usr/bin/rtm-config
-binary-without-manpage usr/bin/rtm-naming
-binary-without-manpage usr/bin/rtm-skelwrapper
 hardening-no-fortify-functions usr/lib/*/libRTC-*.so
 hardening-no-fortify-functions usr/lib/*/openrtm-*/sdo/ComponentObserverConsumer.so.*

@@ -1,3 +1,4 @@
+usr/bin/coil-config
 usr/include/coil-*
 usr/lib/*/libcoil.so
 usr/lib/*/libcoil.a

@@ -1,0 +1,5 @@
+debian/rtc-template.1
+debian/rtcd.1
+debian/rtcprof.1
+debian/rtm-naming.1
+debian/rtm-skelwrapper.1
