@@ -1,4 +1,4 @@
-openrtm-aist (1.1.0-1) unstable; urgency=low
+openrtm-aist (1.1.0+dfsg1-1) unstable; urgency=low
 
   * Install coil-config man page.
   * Import new upstream version 1.1.0 (closes: #695240).
