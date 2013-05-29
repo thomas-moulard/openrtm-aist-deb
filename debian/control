@@ -2,6 +2,7 @@ Source: openrtm-aist
 Priority: extra
 Maintainer: Thomas Moulard <thomas.moulard@gmail.com>
 Build-Depends: debhelper (>= 9), cmake,
+	       hardening-wrapper,
 	       doxygen, doxygen-latex,
 	       graphviz,
 	       libboost-all-dev,
@@ -14,8 +15,8 @@ Build-Depends: debhelper (>= 9), cmake,
 Standards-Version: 3.9.4
 Section: contrib/science
 Homepage: http://www.openrtm.org/
-Vcs-Git: git://github.com/thomas-moulard/openrtm-aist-deb.git
-Vcs-Browser: https://github.com/thomas-moulard/openrtm-aist-deb
+Vcs-Browser: http://git.debian.org/?p=debian-science/packages/openrtm-aist.git
+Vcs-Git: git://git.debian.org/debian-science/packages/openrtm-aist.git
 
 Package: libcoil
 Architecture: any
