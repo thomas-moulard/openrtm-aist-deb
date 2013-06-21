@@ -1,16 +1,22 @@
 #!/usr/bin/make -f
 # -*- makefile -*-
 
-# Uncomment this to turn on verbose mode.
-#export DH_VERBOSE=1
+# Hardening flags.
+export DEB_BUILD_MAINT_OPTIONS=hardening=+all,-pie
 
-export DEBUILD_DPKG_BUILDPACKAGE_OPTS="-I.svn -I.git"
+CPPFLAGS:=$(shell dpkg-buildflags --get CPPFLAGS)
+CFLAGS:=$(shell dpkg-buildflags --get CFLAGS)
+CXXFLAGS:=$(shell dpkg-buildflags --get CXXFLAGS)
+LDFLAGS:=$(shell dpkg-buildflags --get LDFLAGS) -Wl,--as-needed
 
-.PHONY: override_dh_stripx
+#export DEBUILD_DPKG_BUILDPACKAGE_OPTS="-I.svn -I.git"
+
+.PHONY: override_dh_strip
 
 %:
-	dh  $@
+	dh  $@  --parallel --with pkgkde-symbolshelper
 
 override_dh_strip:
 	dh_strip -plibcoil --dbg-package=libcoil-dbg
 	dh_strip -plibopenrtm-aist --dbg-package=libopenrtm-aist-dbg
+	dh_strip -plibopenrtm-aist-tools

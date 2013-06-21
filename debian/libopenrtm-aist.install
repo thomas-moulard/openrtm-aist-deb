@@ -1,7 +1,4 @@
 etc/rtc.conf.sample
-usr/bin/rtc*
-usr/bin/rtm-naming
-usr/bin/rtm-skelwrapper
 usr/lib/*/libRTC-*.so
 usr/lib/*/openrtm-*/ec/RTPreemptEC.so*
 usr/lib/*/openrtm-*/sdo/ComponentObserverConsumer.so*
