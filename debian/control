@@ -16,8 +16,8 @@ Build-Depends: debhelper (>= 9), dh-autoreconf,
 Standards-Version: 3.9.4
 Section: science
 Homepage: http://www.openrtm.org/
-Vcs-Browser: http://git.debian.org/?p=debian-science/packages/openrtm-aist.git
-Vcs-Git: git://git.debian.org/debian-science/packages/openrtm-aist.git
+Vcs-Browser: http://anonscm.debian.org/gitweb/?p=debian-science/packages/openrtm-aist.git
+Vcs-Git: git://anonscm.debian.org/debian-science/packages/openrtm-aist.git
 
 Package: libcoil
 Architecture: any
