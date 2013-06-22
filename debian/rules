@@ -9,12 +9,13 @@ CFLAGS:=$(shell dpkg-buildflags --get CFLAGS)
 CXXFLAGS:=$(shell dpkg-buildflags --get CXXFLAGS)
 LDFLAGS:=$(shell dpkg-buildflags --get LDFLAGS) -Wl,--as-needed
 
-#export DEBUILD_DPKG_BUILDPACKAGE_OPTS="-I.svn -I.git"
-
-.PHONY: override_dh_strip
+.PHONY: override_dh_autoreconf override_dh_strip
 
 %:
-	dh  $@  --parallel --with pkgkde-symbolshelper
+	dh  $@  --parallel --with pkgkde-symbolshelper,autoreconf
+
+override_dh_autoreconf:
+	dh_autoreconf --as-needed build/autogen
 
 override_dh_strip:
 	dh_strip -plibcoil --dbg-package=libcoil-dbg
